@@ -248,3 +248,43 @@
 	icon = 'icons/obj/clockwork_objects.dmi'
 	icon_state = "clockwork_floor"
 	floor_tile = /obj/item/stack/tile/bronze
+
+/turf/open/floor/bronze
+	name = "bronze floor"
+	desc = "Some heavy bronze tiles."
+	icon = 'icons/obj/clockwork_objects.dmi'
+	icon_state = "clockwork_floor"
+	floor_tile = /obj/item/stack/tile/bronze
+
+/turf/open/f13/outside
+
+	light_range = 3
+	light_power = 0.75
+
+/turf/open/f13/outside/desert
+	name = "\proper desert"
+	desc = "A stretch of desert."
+	icon = 'icons/turf/f13desert.dmi'
+	icon_state = "wasteland1"
+	//light_color = LIGHT_COLOR_LAVA
+	slowdown = 3
+	//PIT
+	//var/turf_type = /turf/ground/desert
+	//var/dug = 0
+	//var/storedindex = 0
+	//var/mob/living/gravebody
+	//var/obj/structure/closet/coffin/gravecoffin
+	//var/pitcontents = list()
+	//var/obj/dugpit/ground/mypit
+	//var/unburylevel = 0
+
+/turf/open/f13/outside/desert/New()
+	..()
+	icon_state = "wasteland[rand(1,31)]"
+	//plant_grass()
+
+/turf/open/f13/outside/road
+	name = "\proper road"
+	desc = "A stretch of road."
+	icon = 'icons/turf/f13road.dmi'
+	icon_state = "outermiddle"
