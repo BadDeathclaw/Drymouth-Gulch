@@ -1321,3 +1321,27 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/tcommsat/lounge
 	name = "Telecommunications Satellite Lounge"
 	icon_state = "tcomsatlounge"
+
+//FALLOUT
+
+/area/desert
+	name = "Desert"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "desert"
+	//requires_power = FALSE //Should we disable power?
+
+
+/*
+
+### This file contains a list of all the areas in your station. Format is as follows:
+
+/area/CATEGORY/OR/DESCRIPTOR/NAME 	(you can make as many subdivisions as you want)
+	name = "NICE NAME" 				(not required but makes things really nice)
+	icon = 'ICON FILENAME' 			(defaults to 'icons/turf/areas.dmi')
+	icon_state = "NAME OF ICON" 	(defaults to "unknown" (blank))
+	requires_power = FALSE 				(defaults to true)
+	music = null					(defaults to nothing, look in sound/ambience for music)
+
+NOTE: there are two lists of areas in the end of this file: centcom and station itself. Please maintain these lists valid. --rastaf0
+
+*/
