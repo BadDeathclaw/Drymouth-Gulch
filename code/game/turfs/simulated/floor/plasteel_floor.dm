@@ -422,3 +422,7 @@
 
 /turf/open/floor/plasteel/sepia
 	icon_state = "sepia"
+
+/turf/open/floor/plasteel/f13
+	icon = 'icons/turf/f13floors2.dmi'
+	icon_state = "floor"

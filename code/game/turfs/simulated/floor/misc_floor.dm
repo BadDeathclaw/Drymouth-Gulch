@@ -257,7 +257,8 @@
 	floor_tile = /obj/item/stack/tile/bronze
 
 /turf/open/f13/outside
-
+	icon = 'icons/turf/f13desert.dmi'
+	icon_state = "wasteland1"
 	light_range = 3
 	light_power = 0.75
 
@@ -288,3 +289,11 @@
 	desc = "A stretch of road."
 	icon = 'icons/turf/f13road.dmi'
 	icon_state = "outermiddle"
+
+/turf/open/f13/inside
+	icon = 'icons/turf/f13floorsmisc.dmi'
+	icon_state = "housewood1"
+
+/turf/open/f13/inside/wood
+	name = "wood planks"
+	desc = "Rotting wooden flooring."
