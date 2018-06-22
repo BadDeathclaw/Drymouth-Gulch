@@ -203,3 +203,12 @@
 	name = "resting contraption"
 	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
 	icon_state = "abed"
+
+/obj/structure/bed/matress
+	name = "matress"
+	desc = "This is used to lie in, sleep in or strap on."
+	icon_state = "mattress0"
+
+/obj/structure/bed/matress/New()
+	..()
+	icon_state = "mattress[rand(1,6)]"

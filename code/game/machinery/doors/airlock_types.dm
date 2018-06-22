@@ -689,3 +689,4 @@
 
 /obj/machinery/door/airlock/glass_large/narsie_act()
 	return
+

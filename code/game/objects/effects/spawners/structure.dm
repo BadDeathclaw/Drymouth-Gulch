@@ -355,3 +355,10 @@ again.
 		if(NORTHWEST)
 			spawn_list = list(/obj/structure/grille, /obj/structure/window/plasma/reinforced/spawner/north, /obj/structure/window/plasma/reinforced/spawner/west)
 	. = ..()
+
+//f13
+
+///obj/effect/spawner/structure/window/wood
+//	name = "wood window spawner"
+//	icon_state = "woodwindow_spawner"
+//	spawn_list = list(/obj/structure/window/reinforced/fulltile/ice)

@@ -418,3 +418,27 @@
 	. = ..()
 	if(has_gravity())
 		playsound(src, 'sound/machines/clockcult/integration_cog_install.ogg', 50, TRUE)
+
+/obj/structure/chair/f13foldupchair
+	icon_state = "f13foldupchair"
+	item_chair = null
+
+/obj/structure/chair/f13chair1
+	icon_state = "f13chair1"
+	item_chair = null
+
+/obj/structure/chair/f13chair2
+	icon_state = "f13chair2"
+	item_chair = null
+
+///obj/structure/chair/stool/f13stool
+	//name = "stool"
+	//item_state = "f13stool"
+	//origin_type = /obj/structure/chair/stool
+	//break_chance = 0
+
+/obj/structure/chair/stool/f13stool
+	name = "bar stool"
+	desc = "It has some unsavory stains on it..."
+	icon_state = "f13stool"
+	item_chair = /obj/item/chair/stool/bar
