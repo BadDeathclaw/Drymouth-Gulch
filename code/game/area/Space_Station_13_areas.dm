@@ -1330,6 +1330,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "desert"
 	//requires_power = FALSE //Should we disable power?
 
+/area/sunny_dale
+	name = "Sunny Dale"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "sunny_dale"
+
+/area/enclave_base
+	name = "Enclave Base"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "enclave_base"
+
+/area/den
+	name = "Den"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "den"
+
 
 /*
 
