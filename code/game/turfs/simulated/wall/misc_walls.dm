@@ -200,6 +200,12 @@
 	icon = 'icons/turf/walls/f13composite.dmi'
 	hardness = 50
 
+/turf/closed/wall/r_wall/f13superstore
+	name = "store wall"
+	desc = "A huge chunk of metal used to separate rooms."
+	icon = 'icons/turf/walls/f13superstore.dmi'
+	hardness = 50
+
 /turf/closed/wall/f13wood
 	name = "wood wall"
 	desc = "A rotting hunk of wood."
