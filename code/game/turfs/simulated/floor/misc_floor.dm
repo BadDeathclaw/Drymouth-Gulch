@@ -290,6 +290,7 @@
 	icon = 'icons/turf/f13road.dmi'
 	icon_state = "outermiddle"
 
+
 /turf/open/f13/inside
 	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewood1"
@@ -297,3 +298,18 @@
 /turf/open/f13/inside/wood
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
+
+/turf/open/f13/inside/vault_floor
+	name = "vault floor"
+	icon = 'icons/turf/f13floors2.dmi'
+	icon_state = "vault_floor"
+
+/turf/open/f13/inside/mountain
+	name = "mountain"
+	desc = "Damn cave flooring."
+	icon = 'icons/turf/f13floors2.dmi'
+	icon_state = "mountain0"
+
+/turf/open/f13/inside/mountain/New()
+	..()
+	icon_state = "mountain[rand(0,10)]"
