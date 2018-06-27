@@ -40,3 +40,9 @@
 	desc = "Helps with burn injuries."
 	list_reagents = list("silver_sulfadiazine" = 20)
 	icon_state = "bandaid_burn"
+	
+/obj/item/reagent_containers/pill/patch/jet
+	name = "Jet"
+	desc = "A highly addictive drug that produces a fast-acting, intense euphoric high on the user."
+	list_reagents = list("jet" = 10)
+	icon_state = "bandaid_jet"
