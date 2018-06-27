@@ -53,7 +53,8 @@
 	M.silent = FALSE
 	M.dizziness = 0
 	M.disgust = 0
-	M.drowsyness = 0
+	M.
+	ness = 0
 	M.stuttering = 0
 	M.slurring = 0
 	M.confused = 0
@@ -1274,3 +1275,234 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/stimpak
+	name = "Stimpak Fluid"
+	id = "stimpak"
+	description = "Rapidly heals damage when injected. Deals minor toxin damage if injested."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	taste_description = "grossness"
+	metabolization_rate = 3 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(iscarbon(M) && M.stat != DEAD)
+		if(method in list(INGEST, VAPOR))
+			M.adjustToxLoss(0.5*reac_volume)
+			if(show_message)
+				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
+	..()
+
+/datum/reagent/medicine/stimpak/on_mob_life(mob/living/M)
+	M.adjustBruteLoss(-3*REM, 0)
+	M.adjustFireLoss(-3*REM, 0)
+	M.adjustOxyLoss(-2*REM, 0)
+	. = 1
+	..()
+	
+/datum/reagent/medicine/healing_powder
+	name = "Healing Powder"
+	id = "healing_powder"
+	description = "A healing powder derived from a mix of ground broc flowers and xander roots. Consumed orally, and produces a euphoric high."
+	reagent_state = SOLID
+	color = "#A9FBFB"
+	taste_description = "bitterness"
+
+/datum/reagent/medicine/healing_powder/on_mob_life(mob/living/M)
+	M.adjustFireLoss(-0.5*REM)
+	M.adjustBruteLoss(-0.5*REM)
+	M.druggy = max(M.druggy, 5)
+	if(isturf(M.loc) && !istype(M.loc, /turf/space))
+		if(M.canmove)
+			if(prob(5)) step(M, pick(cardinal))
+	if(prob(7))
+		M.emote(pick("twitch","drool","moan","giggle"))
+		M.drowsyness = max(M.drowsyness, 2)
+	. = 1
+	..()
+
+/datum/reagent/medicine/radx
+	name = "Rad-X"
+	id = "radx"
+	description = "Reduces massive amounts of radiation and some toxin damage."
+	reagent_state = LIQUID
+	color = "#ff6100"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/radx/on_mob_life(mob/living/M)
+	if(M.radiation > 0)
+		M.radiation -= min(M.radiation, 8)
+	M.adjustToxLoss(-0.5*REM)
+	. = 1
+	..()
+	
+/datum/reagent/medicine/radaway
+	name = "Radaway"
+	id = "radaway"
+	description = "A potent anti-toxin drug."
+	reagent_state = LIQUID
+	color = "#ff7200"
+	metabolization_rate = 2 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/radaway/on_mob_life(mob/living/M)
+	M.adjustToxLoss(-3*REM)
+	M.radiation -= min(M.radiation, 16)
+	if(prob(7))
+		M.vomit(10)
+		M.confused = max(M.confused, 3)
+	. = 1
+	..()
+
+/datum/reagent/medicine/medx
+	name = "Med-X"
+	id = "medx"
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
+	reagent_state = LIQUID
+	color = "#6D6374"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 30
+	addiction_threshold = 20
+	
+/datum/reagent/medicine/medx/on_mob_life(mob/living/M)
+	if(iscarbon(M))
+		var/mob/living/carbon/N = M
+		N.hal_screwyhud = SCREWYHUD_HEALTHY
+		N.add_trait(TRAIT_IGNORESLOWDOWN, id)
+	M.AdjustStun(-30, 0)
+	M.AdjustKnockdown(-30, 0)
+	M.AdjustUnconscious(-30, 0)
+	M.adjustStaminaLoss(-5, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/medx/overdose_process(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(2)
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		. = 1
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		. = 1
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+
+/datum/reagent/medicine/mentat
+	name = "Mentat Powder"
+	id = "mentats"
+	description = "A powerful drug that heals and increases the perception and intelligence of the user."
+	color = "#C8A5DC"
+	reagent_state = SOLID
+	overdose_threshold = 30
+	addiction_threshold = 20
+
+/datum/reagent/medicine/mentat/on_mob_life(mob/living/M)
+	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
+	if (!eyes)
+		return
+	if(M.has_trait(TRAIT_BLIND, EYE_DAMAGE))
+		if(prob(20))
+			to_chat(M, "<span class='warning'>Your vision slowly returns...</span>")
+			M.cure_blind(EYE_DAMAGE)
+			M.cure_nearsighted(EYE_DAMAGE)
+			M.blur_eyes(35)
+
+	else if(M.has_trait(TRAIT_NEARSIGHT, EYE_DAMAGE))
+		to_chat(M, "<span class='warning'>The blackness in your peripheral vision fades.</span>")
+		M.cure_nearsighted(EYE_DAMAGE)
+		M.blur_eyes(10)
+	else if(M.eye_blind || M.eye_blurry)
+		M.set_blindness(0)
+		M.set_blurriness(0)
+	else if(eyes.eye_damage > 0)
+		M.adjust_eye_damage(-1)
+	M.adjustBrainLoss(-2*REM)
+	if (prob(5))
+		to_chat(M, "<span class='notice'>You feel way more intelligent!</span>")
+	..()
+	. = 1
+
+/datum/reagent/medicine/mentat/overdose_process(mob/living/M)
+	if(prob(33))
+		M.Dizzy(2)
+		M.Jitter(2)
+		M.adjustBrainLoss(2*REM)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		. = 1
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.adjustToxLoss(1*REM, 0)
+		M.adjustBrainLoss(2*REM)
+		. = 1
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		M.adjustBrainLoss(4*REM)
+		. = 1
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+
+/datum/reagent/medicine/fixer
+	name = "Fixer Powder"
+	id = "fixer"
+	description = "Treats addictions while also purging other chemicals from the body. Side effects include nausea."
+	reagent_state = SOLID
+	color = "#C8A5DC"
+
+/datum/reagent/medicine/fixer/on_mob_life(mob/living/M)
+	for(var/datum/reagent/R in M.reagents.reagent_list)
+		if(R != src)
+			M.reagents.remove_reagent(R.id,2)
+	for(var/datum/reagent/R in M.reagents.addiction_list)
+		M.reagents.addiction_list.Remove(R)
+		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
+	MM.confused = max(M.confused, 4)
+	if (prob(5))
+		M.vomit(10)
+	..()
+	. = 1
