@@ -1366,14 +1366,54 @@
 		var/mob/living/carbon/N = M
 		N.hal_screwyhud = SCREWYHUD_HEALTHY
 		N.add_trait(TRAIT_IGNORESLOWDOWN, id)
-	M.AdjustStun(-40, 0)
-	M.AdjustKnockdown(-40, 0)
-	M.AdjustUnconscious(-40, 0)
-	M.adjustStaminaLoss(-3, 0)
+	M.AdjustStun(-60, 0)
+	M.AdjustKnockdown(-60, 0)
+	M.AdjustUnconscious(-60, 0)
+	M.adjustStaminaLoss(-5, 0)
 	..()
 	. = 1
 
-/datum/reagent/medicine/mentats
+/datum/reagent/medicine/medx/overdose_process(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(2)
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		. = 1
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		. = 1
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+
+/datum/reagent/medicine/mentat
 	name = "Mentat Powder"
 	id = "mentats"
 	description = "A powerful drug that heals and increases the perception and intelligence of the user."
@@ -1382,7 +1422,7 @@
 	overdose_threshold = 30
 	addiction_threshold = 20
 
-/datum/reagent/medicine/mentats/on_mob_life(mob/living/M)
+/datum/reagent/medicine/mentat/on_mob_life(mob/living/M)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
@@ -1402,11 +1442,50 @@
 		M.set_blurriness(0)
 	else if(eyes.eye_damage > 0)
 		M.adjust_eye_damage(-1)
+	M.adjustBrainLoss(-2*REM)
 	if (prob(5))
 		to_chat(M, "<span class='notice'>You feel way more intelligent!</span>")
 	..()
 	. = 1
-	
+
+/datum/reagent/medicine/mentat/overdose_process(mob/living/M)
+	if(prob(33))
+		M.Dizzy(2)
+		M.Jitter(2)
+		M.adjustBrainLoss(2*REM)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		. = 1
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.adjustToxLoss(1*REM, 0)
+		M.adjustBrainLoss(2*REM)
+		. = 1
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+
+/datum/reagent/medicine/mentat/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		M.adjustBrainLoss(4*REM)
+		. = 1
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+
 /datum/reagent/medicine/fixer
 	name = "Fixer Powder"
 	id = "fixer"
