@@ -174,3 +174,21 @@
 	volume = 250
 	list_reagents = list("holywater" = 150, "tiresolution" = 50, "dizzysolution" = 50)
 	amount_per_transfer_from_this = 50
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak
+	name = "stimpak"
+	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
+	icon_state = "stimpakpen"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list("stimpak" = 10)
+	
+/*
+/obj/item/reagent_containers/hypospray/medipen/psycho
+	name = "Psycho"
+	desc = "Contains Psycho, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
+	icon_state = "psychopen"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list("psycho" = 10)
+*/
