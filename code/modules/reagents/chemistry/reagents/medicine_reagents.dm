@@ -1502,7 +1502,7 @@
 		M.reagents.addiction_list.Remove(R)
 		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
 	MM.confused = max(M.confused, 4)
-	if (prob(5)
+	if (prob(5))
 		M.vomit(10)
 	..()
 	. = 1
