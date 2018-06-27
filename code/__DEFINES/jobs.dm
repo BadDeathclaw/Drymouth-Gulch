@@ -42,6 +42,71 @@
 #define MIME			(1<<12)
 #define ASSISTANT		(1<<13)
 
+//F13
+
+#define NCR				(1<<3)
+
+#define F13COLONEL		(1<<0)
+#define F13CAPTAIN		(1<<1)
+#define F13LIEUTENANT	(1<<2)
+#define F13SERGEANT		(1<<3)
+#define F13TROOPER		(1<<4)
+#define F13RECRUIT		(1<<5)
+#define F13VETRANGER	(1<<6)
+#define F13RANGER		(1<<7)
+#define F13RECRANGER	(1<<8)
+
+#define LEGION			(1<<4)
+
+#define F13LEGATE		(1<<0)
+#define F13CENTURION	(1<<1)
+#define F13VEXILLARIUS	(1<<2)
+#define F13DECAN		(1<<3)
+#define F13VETLEGION	(1<<4)
+#define F13LEGIONARY	(1<<5)
+
+#define BOS				(1<<5)
+
+#define F13ELDER		(1<<0)
+#define F13PALADIN		(1<<1)
+#define F13KNIGHT		(1<<2)
+#define F13SCRIBE		(1<<3)
+#define F13INITIATE		(1<<4)
+
+#define DEN				(1<<6)
+
+#define F13SHERIFF		(1<<0)
+#define F13SETTLER		(1<<1)
+
+#define VAULT			(1<<7)
+
+#define F13OVERSEER		(1<<0)
+#define F13HOS			(1<<1)
+#define F13DOCTOR		(1<<2)
+#define F13VAULTSCIENTIST	(1<<3)
+#define F13OFFICER		(1<<4)
+#define F13VAULTENGINEER	(1<<5)
+#define F13DWELLER		(1<<6)
+#define F13AI			(1<<7)
+#define F13CYBORG		(1<<8)
+
+#define WASTELAND		(1<<8)
+
+#define F13CULTLEADER	(1<<0)
+#define F13WASTELANDER	(1<<1)
+#define F13RAIDER		(1<<2)
+#define F13PUSHER		(1<<3)
+#define F13PREACHER		(1<<4)
+
+#define ENCLAVE			(1<<9)
+
+#define F13USCOMMANDER	(1<<0)
+#define F13USMEDIC		(1<<1)
+#define F13USPRIVATE	(1<<2)
+#define F13USSCIENTIST	(1<<3)
+#define F13USENGINEER	(1<<4)
+#define F13USCOLONIST	(1<<5)
+
 #define JOB_AVAILABLE 0
 #define JOB_UNAVAILABLE_GENERIC 1
 #define JOB_UNAVAILABLE_BANNED 2

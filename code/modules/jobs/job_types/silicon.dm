@@ -5,7 +5,7 @@ AI
 	title = "AI"
 	flag = AI_JF
 	department_flag = ENGSEC
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#ccffcc"
@@ -72,7 +72,7 @@ Cyborg
 	title = "Cyborg"
 	flag = CYBORG
 	department_flag = ENGSEC
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 0
 	spawn_positions = 1
 	supervisors = "your laws and the AI"	//Nodrak
