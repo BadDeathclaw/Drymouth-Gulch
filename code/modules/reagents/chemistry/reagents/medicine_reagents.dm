@@ -1366,9 +1366,9 @@
 		var/mob/living/carbon/N = M
 		N.hal_screwyhud = SCREWYHUD_HEALTHY
 		N.add_trait(TRAIT_IGNORESLOWDOWN, id)
-	M.AdjustStun(-60, 0)
-	M.AdjustKnockdown(-60, 0)
-	M.AdjustUnconscious(-60, 0)
+	M.AdjustStun(-30, 0)
+	M.AdjustKnockdown(-30, 0)
+	M.AdjustUnconscious(-30, 0)
 	M.adjustStaminaLoss(-5, 0)
 	..()
 	. = 1
