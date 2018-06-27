@@ -1282,6 +1282,7 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
+	metabolization_rate = 3 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -1292,8 +1293,8 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/M)
-	M.adjustBruteLoss(-2*REM, 0)
-	M.adjustFireLoss(-2*REM, 0)
+	M.adjustBruteLoss(-3*REM, 0)
+	M.adjustFireLoss(-3*REM, 0)
 	M.adjustOxyLoss(-2*REM, 0)
 	. = 1
 	..()
