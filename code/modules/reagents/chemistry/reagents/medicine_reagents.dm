@@ -53,8 +53,7 @@
 	M.silent = FALSE
 	M.dizziness = 0
 	M.disgust = 0
-	M.
-	ness = 0
+	M.drowsyness = 0
 	M.stuttering = 0
 	M.slurring = 0
 	M.confused = 0
@@ -1282,6 +1281,7 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
+	metabolization_rate = 3 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -1292,12 +1292,12 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/M)
-	M.adjustBruteLoss(-2*REM, 0)
-	M.adjustFireLoss(-2*REM, 0)
+	M.adjustBruteLoss(-3*REM, 0)
+	M.adjustFireLoss(-3*REM, 0)
 	M.adjustOxyLoss(-2*REM, 0)
 	. = 1
 	..()
-	
+
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
 	id = "healing_powder"
@@ -1310,9 +1310,9 @@
 	M.adjustFireLoss(-0.5*REM)
 	M.adjustBruteLoss(-0.5*REM)
 	M.druggy = max(M.druggy, 5)
-	if(isturf(M.loc) && !istype(M.loc, /turf/space))
-		if(M.canmove)
-			if(prob(5)) step(M, pick(cardinal))
+	if(M.canmove && !ismovableatom(M.loc))
+		for(var/i = 0, i < 4, i++)
+			step(M, pick(GLOB.cardinals))
 	if(prob(7))
 		M.emote(pick("twitch","drool","moan","giggle"))
 		M.drowsyness = max(M.drowsyness, 2)
@@ -1333,7 +1333,7 @@
 	M.adjustToxLoss(-0.5*REM)
 	. = 1
 	..()
-	
+
 /datum/reagent/medicine/radaway
 	name = "Radaway"
 	id = "radaway"
@@ -1345,9 +1345,10 @@
 /datum/reagent/medicine/radaway/on_mob_life(mob/living/M)
 	M.adjustToxLoss(-3*REM)
 	M.radiation -= min(M.radiation, 16)
-	if(prob(7))
-		M.vomit(10)
-		M.confused = max(M.confused, 3)
+	if(ishuman(M) && prob(7))
+		var/mob/living/carbon/human/H = M
+		H.vomit(10)
+		H.confused = max(M.confused, 3)
 	. = 1
 	..()
 
@@ -1360,7 +1361,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	addiction_threshold = 20
-	
+
 /datum/reagent/medicine/medx/on_mob_life(mob/living/M)
 	if(iscarbon(M))
 		var/mob/living/carbon/N = M
@@ -1500,8 +1501,9 @@
 	for(var/datum/reagent/R in M.reagents.addiction_list)
 		M.reagents.addiction_list.Remove(R)
 		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
-	MM.confused = max(M.confused, 4)
-	if (prob(5)
-		M.vomit(10)
+	M.confused = max(M.confused, 4)
+	if(ishuman(M) && prob(5))
+		var/mob/living/carbon/human/H = M
+		H.vomit(10)
 	..()
 	. = 1

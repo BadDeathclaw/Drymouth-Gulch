@@ -91,7 +91,7 @@
 	else
 		return ..()
 
-/obj/item/weapon/reagent_containers/blood/radaway
+/obj/item/reagent_containers/blood/radaway
 	name = "radaway"
 	icon_state = "bloodpack_radaway"
 	desc = "RadAway is an intravenous chemical solution that bonds with radiation and toxin particles and passes them through the body's system. It takes some time to work and is a potent diuretic."

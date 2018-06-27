@@ -43,6 +43,18 @@
 	
 /obj/item/reagent_containers/pill/patch/jet
 	name = "Jet"
-	desc = "A highly addictive drug that produces a fast-acting, intense euphoric high on the user."
+	desc = "A highly addictive chem that produces a fast-acting, intense euphoric high on the user."
 	list_reagents = list("jet" = 10)
 	icon_state = "bandaid_jet"
+	
+/obj/item/reagent_containers/pill/patch/turbo
+	name = "turbo"
+	desc = "A chem that vastly increases the user's reflexes and slows their perception of time."
+	list_reagents = list("turbo" = 5)
+	icon_state = "bandaid_turbo"
+
+/obj/item/reagent_containers/pill/patch/healingpowder
+	name = "healingpowder"
+	desc = "A powder used to heal physical wounds derived from ground broc flowers and xander roots, commonly used by tribals."
+	list_reagents = list("healingpowder" = 30)
+	icon_state = "bandaid_healingpowder"
