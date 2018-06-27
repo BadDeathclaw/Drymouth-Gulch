@@ -265,9 +265,3 @@
 	name = "syringe (med-x)"
 	desc = "Contains Med-X, a powerful analgesic drug that allows the user to overcome high amounts of pain or stun. Risk of addiction or overdose."
 	list_reagents = list("medx" = 15)
-/*
-/obj/item/reagent_containers/syringe/psycho
-	name = "syringe (psycho)"
-	desc = "Contains Med-X, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
-	list_reagents = list("psycho" = 10)
-*/
