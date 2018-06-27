@@ -172,3 +172,9 @@
 	Side effects include heavy nausea."
 	icon_state = "pill3"
 	list_reagents = list("fixer" = 10)
+
+/obj/item/reagent_containers/pill/radx
+	name = "rad-x pill"
+	desc = "A pill that stabilizes radiation levels and treats small amounts of toxin damage."
+	icon_state = "pill18"
+	list_reagents = list("radx" = 20)
