@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(title)
 
 	if(length(title_screens))
 		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
-	
+
 	if(!file_path)
 		file_path = "icons/default_title.dmi"
 
@@ -36,8 +36,8 @@ SUBSYSTEM_DEF(title)
 
 	icon = new(fcopy_rsc(file_path))
 
-	if(splash_turf)
-		splash_turf.icon = icon
+	//if(splash_turf)
+	//	splash_turf.icon = icon
 
 /datum/controller/subsystem/title/vv_edit_var(var_name, var_value)
 	. = ..()
