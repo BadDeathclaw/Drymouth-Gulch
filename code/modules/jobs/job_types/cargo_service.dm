@@ -6,7 +6,7 @@ Quartermaster
 	flag = QUARTERMASTER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
@@ -38,7 +38,7 @@ Cargo Technician
 	flag = CARGOTECH
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
 	supervisors = "the quartermaster and the head of personnel"
@@ -66,7 +66,7 @@ Shaft Miner
 	flag = MINER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the quartermaster and the head of personnel"
@@ -146,7 +146,7 @@ Bartender
 	flag = BARTENDER
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of personnel"
@@ -178,7 +178,7 @@ Cook
 	flag = COOK
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 2
 	spawn_positions = 1
 	supervisors = "the head of personnel"
@@ -231,7 +231,7 @@ Botanist
 	flag = BOTANIST
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
 	supervisors = "the head of personnel"
@@ -269,7 +269,7 @@ Janitor
 	flag = JANITOR
 	department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 2
 	spawn_positions = 1
 	supervisors = "the head of personnel"

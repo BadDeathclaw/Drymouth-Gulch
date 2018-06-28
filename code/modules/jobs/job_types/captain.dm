@@ -6,7 +6,7 @@ Captain
 	flag = CAPTAIN
 	department_head = list("CentCom")
 	department_flag = ENGSEC
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Nanotrasen officials and Space law"
@@ -61,7 +61,7 @@ Head of Personnel
 	department_head = list("Captain")
 	department_flag = CIVILIAN
 	head_announce = list("Supply", "Service")
-	faction = "Station"
+	//faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the captain"

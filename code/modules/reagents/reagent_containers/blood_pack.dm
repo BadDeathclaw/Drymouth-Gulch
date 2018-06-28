@@ -90,3 +90,10 @@
 			update_pack_name()
 	else
 		return ..()
+
+/obj/item/reagent_containers/blood/radaway
+	name = "radaway"
+	icon_state = "bloodpack_radaway"
+	desc = "RadAway is an intravenous chemical solution that bonds with radiation and toxin particles and passes them through the body's system. It takes some time to work and is a potent diuretic."
+	blood_type = null
+	list_reagents = list("radaway" = 200)

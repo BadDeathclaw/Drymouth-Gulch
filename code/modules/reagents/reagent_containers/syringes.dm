@@ -260,3 +260,8 @@
 	desc = "A diamond-tipped syringe that pierces armor when launched at high velocity. It can hold up to 10 units."
 	volume = 10
 	proj_piercing = 1
+
+/obj/item/reagent_containers/syringe/medx
+	name = "syringe (med-x)"
+	desc = "Contains Med-X, a powerful analgesic drug that allows the user to overcome high amounts of pain or stun. Risk of addiction or overdose."
+	list_reagents = list("medx" = 15)
