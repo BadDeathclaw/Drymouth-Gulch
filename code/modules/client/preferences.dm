@@ -96,6 +96,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/job_engsec_med = 0
 	var/job_engsec_low = 0
 
+	var/job_ncr_high = 0
+	var/job_ncr_med = 0
+	var/job_ncr_low = 0
+
+	var/job_legion_high = 0
+	var/job_legion_med = 0
+	var/job_legion_low = 0
+
+	var/job_bos_high = 0
+	var/job_bos_med = 0
+	var/job_bos_low = 0
+
+	var/job_den_high = 0
+	var/job_den_med = 0
+	var/job_den_low = 0
+
+	var/job_vault_high = 0
+	var/job_vault_med = 0
+	var/job_vault_low = 0
+
+	var/job_wasteland_high = 0
+	var/job_wasteland_med = 0
+	var/job_wasteland_low = 0
+
+	var/job_enclave_high = 0
+	var/job_enclave_med = 0
+	var/job_enclave_low = 0
+
 		// Want randomjob if preferences already filled - Donkie
 	var/joblessrole = BERANDOMJOB  //defaults to 1 for fewer assistants
 
@@ -109,7 +137,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/list/ignoring = list()
 
-	var/clientfps = 0
+	var/clientfps = 40
 
 	var/parallax
 
@@ -749,9 +777,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		job_civilian_med |= job_civilian_high
 		job_engsec_med |= job_engsec_high
 		job_medsci_med |= job_medsci_high
+		job_ncr_med |= job_ncr_high
+		job_legion_med |= job_legion_high
+		job_bos_med |= job_bos_high
+		job_den_med |= job_den_high
+		job_vault_med |= job_vault_high
+		job_wasteland_med |= job_wasteland_high
+		job_enclave_med |= job_enclave_high
 		job_civilian_high = 0
 		job_engsec_high = 0
 		job_medsci_high = 0
+		job_ncr_high = 0
+		job_legion_high = 0
+		job_bos_high = 0
+		job_den_high = 0
+		job_vault_high = 0
+		job_wasteland_high = 0
+		job_enclave_high = 0
 
 	if (job.department_flag == CIVILIAN)
 		job_civilian_low &= ~job.flag
@@ -795,7 +837,108 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				job_medsci_low |= job.flag
 
 		return 1
+	else if (job.department_flag == NCR)
+		job_ncr_low &= ~job.flag
+		job_ncr_med &= ~job.flag
+		job_ncr_high &= ~job.flag
 
+		switch(level)
+			if (1)
+				job_ncr_high |= job.flag
+			if (2)
+				job_ncr_med |= job.flag
+			if (3)
+				job_ncr_low |= job.flag
+
+		return 1
+	else if (job.department_flag == LEGION)
+		job_legion_low &= ~job.flag
+		job_legion_med &= ~job.flag
+		job_legion_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_legion_high |= job.flag
+			if (2)
+				job_legion_med |= job.flag
+			if (3)
+				job_legion_low |= job.flag
+
+		return 1
+	else if (job.department_flag == BOS)
+		job_bos_low &= ~job.flag
+		job_bos_med &= ~job.flag
+		job_bos_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_bos_high |= job.flag
+			if (2)
+				job_bos_med |= job.flag
+			if (3)
+				job_bos_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == DEN)
+		job_den_low &= ~job.flag
+		job_den_med &= ~job.flag
+		job_den_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_den_high |= job.flag
+			if (2)
+				job_den_med |= job.flag
+			if (3)
+				job_den_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == VAULT)
+		job_vault_low &= ~job.flag
+		job_vault_med &= ~job.flag
+		job_vault_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_vault_high |= job.flag
+			if (2)
+				job_vault_med |= job.flag
+			if (3)
+				job_vault_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == WASTELAND)
+		job_wasteland_low &= ~job.flag
+		job_wasteland_med &= ~job.flag
+		job_wasteland_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_wasteland_high |= job.flag
+			if (2)
+				job_wasteland_med |= job.flag
+			if (3)
+				job_wasteland_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == ENCLAVE)
+		job_enclave_low &= ~job.flag
+		job_enclave_med &= ~job.flag
+		job_enclave_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_enclave_high |= job.flag
+			if (2)
+				job_enclave_med |= job.flag
+			if (3)
+				job_enclave_low |= job.flag
+
+		return 1
 	return 0
 
 /datum/preferences/proc/UpdateJobPreference(mob/user, role, desiredLvl)
@@ -841,6 +984,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	job_engsec_med = 0
 	job_engsec_low = 0
 
+	job_ncr_high = 0
+	job_ncr_med = 0
+	job_ncr_low = 0
+
+	job_legion_high = 0
+	job_legion_med = 0
+	job_legion_low = 0
+
+	job_bos_high = 0
+	job_bos_med = 0
+	job_bos_low = 0
+
+	job_den_high = 0
+	job_den_med = 0
+	job_den_low = 0
+
+	job_vault_high = 0
+	job_vault_med = 0
+	job_vault_low = 0
+
+	job_wasteland_high = 0
+	job_wasteland_med = 0
+	job_wasteland_low = 0
+
+	job_enclave_high = 0
+	job_enclave_med = 0
+	job_enclave_low = 0
+
 
 /datum/preferences/proc/GetJobDepartment(datum/job/job, level)
 	if(!job || !level)
@@ -870,6 +1041,62 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					return job_engsec_med
 				if(3)
 					return job_engsec_low
+		if(NCR)
+			switch(level)
+				if(1)
+					return job_ncr_high
+				if(2)
+					return job_ncr_med
+				if(3)
+					return job_ncr_low
+		if(LEGION)
+			switch(level)
+				if(1)
+					return job_legion_high
+				if(2)
+					return job_legion_med
+				if(3)
+					return job_legion_low
+		if(BOS)
+			switch(level)
+				if(1)
+					return job_bos_high
+				if(2)
+					return job_bos_med
+				if(3)
+					return job_bos_low
+		if(DEN)
+			switch(level)
+				if(1)
+					return job_den_high
+				if(2)
+					return job_den_med
+				if(3)
+					return job_den_low
+		if(VAULT)
+			switch(level)
+				if(1)
+					return job_vault_high
+				if(2)
+					return job_vault_med
+				if(3)
+					return job_vault_low
+		if(WASTELAND)
+			switch(level)
+				if(1)
+					return job_wasteland_high
+				if(2)
+					return job_wasteland_med
+				if(3)
+					return job_wasteland_low
+		if(ENCLAVE)
+			switch(level)
+				if(1)
+					return job_enclave_high
+				if(2)
+					return job_enclave_med
+				if(3)
+					return job_enclave_low
 	return 0
 
 /datum/preferences/proc/SetQuirks(mob/user)

@@ -39,10 +39,10 @@
 
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob
-	var/highRankFlag = job_civilian_high | job_medsci_high | job_engsec_high
+	var/highRankFlag = job_civilian_high | job_medsci_high | job_engsec_high | job_ncr_high | job_legion_high | job_bos_high | job_den_high | job_vault_high | job_wasteland_high | job_enclave_high
 
-	if(job_civilian_low & ASSISTANT)
-		previewJob = SSjob.GetJob("Assistant")
+	if(job_civilian_low & F13DWELLER) //if(job_civilian_low & ASSISTANT)
+		previewJob = SSjob.GetJob("Dweller") // previewJob = SSjob.GetJob("Assistant")
 	else if(highRankFlag)
 		var/highDeptFlag
 		if(job_civilian_high)
@@ -51,6 +51,20 @@
 			highDeptFlag = MEDSCI
 		else if(job_engsec_high)
 			highDeptFlag = ENGSEC
+		else if(job_ncr_high)
+			highDeptFlag = NCR
+		else if(job_legion_high)
+			highDeptFlag = LEGION
+		else if(job_bos_high)
+			highDeptFlag = BOS
+		else if(job_den_high)
+			highDeptFlag = DEN
+		else if(job_vault_high)
+			highDeptFlag = VAULT
+		else if(job_wasteland_high)
+			highDeptFlag = WASTELAND
+		else if(job_enclave_high)
+			highDeptFlag = ENCLAVE
 
 		for(var/datum/job/job in SSjob.occupations)
 			if(job.flag == highRankFlag && job.department_flag == highDeptFlag)

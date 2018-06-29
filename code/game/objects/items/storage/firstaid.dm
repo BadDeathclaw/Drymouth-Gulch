@@ -231,3 +231,30 @@
 	new /obj/item/reagent_containers/pill/patch/silver_sulf(src)
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/pill/patch/styptic(src)
+		
+/obj/item/storage/pill_bottle/mentats
+	name = "tin of mentat pills"
+	icon_state = "pill_canister_mentats"
+	desc = "Contains pills used to increase intelligence and perception."
+
+/obj/item/storage/pill_bottle/mentats/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/mentat(src)
+		
+/obj/item/storage/pill_bottle/fixer
+	name = "tin of fixer pills"
+	icon_state = "pill_canister_fixer"
+	desc = "Contains pills used to treat addiction and overdose on other chems."
+
+/obj/item/storage/pill_bottle/fixer/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/fixer(src)
+		
+/obj/item/storage/pill_bottle/radx
+	name = "tin of rad-x pills"
+	icon_state = "pill_canister_radx"
+	desc = "Contains pills used to treat and prevent radiation and minor toxin damage."
+
+/obj/item/storage/pill_bottle/radx/PopulateContents()
+	for(var/i in 1 to 5)
+		new /obj/item/reagent_containers/pill/radx(src)

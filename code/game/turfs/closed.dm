@@ -51,18 +51,51 @@
 /turf/closed/indestructible/oldshuttle/corner
 	icon_state = "corner"
 
+
+
+
 /turf/closed/indestructible/splashscreen
-	name = "Space Station 13"
-	icon = 'icons/blank_title.png'
-	icon_state = ""
-	layer = FLY_LAYER
+	var/tickerPeriod = 300 //in deciseconds
+	var/atom/movable/fullDark
 	bullet_bounce_sound = null
+	name = "Bad Deathclaw"
+	desc = "The wasteland is calling.."
+	//icon = 'icons/blank_title.png'
+	layer = FLY_LAYER
 
 /turf/closed/indestructible/splashscreen/New()
-	SStitle.splash_turf = src
-	if(SStitle.icon)
-		icon = SStitle.icon
-	..()
+	icon = 'icons/misc/splashscreen.dmi'
+	icon_state = "title1"
+
+	src.fullDark = new/atom/movable{
+		icon = 'icons/misc/splashscreen.dmi' //Replace with actual icon
+		icon_state = "transition" //Replace with actual state
+		layer = 61;
+		alpha = 0;
+		}(src)
+
+	spawn() src.ticker()
+	return
+
+	//icon_state = "title[rand(1,13)]"
+	//SStitle.splash_turf = src
+	//if(SStitle.icon)
+	//	icon = SStitle.icon
+	//..()
+
+/turf/closed/indestructible/splashscreen/proc/ticker()
+	while(src && istype(src,/turf/closed/indestructible/splashscreen))
+		src.swapImage()
+		sleep(tickerPeriod)
+	world << "Badmins spawned shit and title screen was deleted.<br>No more sexy splash screen for you!"
+	return
+
+/turf/closed/indestructible/splashscreen/proc/swapImage()
+	animate(fullDark,alpha=255,time=10,easing=CUBIC_EASING)
+	sleep(12) //buffer of about 1/5 of the time of the animation, since they are not synchronized: the sleep happens on the server, but the animation is played for each client using directX. It's good to leave a buffer, but most of the time the directX will be much faster than the server anyway so you probably wont have any problems.
+	icon_state = "title[rand(1,13)]"
+	animate(fullDark,alpha=0,time=10,easing=CUBIC_EASING)
+	return
 
 /turf/closed/indestructible/splashscreen/vv_edit_var(var_name, var_value)
 	. = ..()
@@ -70,6 +103,10 @@
 		switch(var_name)
 			if("icon")
 				SStitle.icon = icon
+
+
+
+
 
 /turf/closed/indestructible/riveted
 	icon = 'icons/turf/walls/riveted.dmi'

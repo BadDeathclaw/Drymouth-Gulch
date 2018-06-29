@@ -15,6 +15,7 @@ SUBSYSTEM_DEF(vote)
 	var/list/voted = list()
 	var/list/voting = list()
 	var/list/generated_actions = list()
+	var/vote_sound = 'sound/f13/mysterious_stranger.ogg'
 
 /datum/controller/subsystem/vote/fire()	//called by master_controller
 	if(mode)
@@ -191,6 +192,7 @@ SUBSYSTEM_DEF(vote)
 		log_vote(text)
 		var/vp = CONFIG_GET(number/vote_period)
 		to_chat(world, "\n<font color='purple'><b>[text]</b>\nType <b>vote</b> or click <a href='?src=[REF(src)]'>here</a> to place your votes.\nYou have [DisplayTimeText(vp)] to vote.</font>")
+		world << sound(vote_sound, repeat = 0, wait = 0, volume = 85, channel = 12)
 		time_remaining = round(vp/10)
 		for(var/c in GLOB.clients)
 			var/client/C = c

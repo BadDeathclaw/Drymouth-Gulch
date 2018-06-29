@@ -1,4 +1,6 @@
-sound/ambience/title1.ogg
-sound/ambience/title2.ogg
-sound/ambience/title3.ogg
-sound/ambience/clown.ogg
+sound/f13/lobby1.ogg
+sound/f13/lobby2.ogg
+sound/f13/lobby3.ogg
+sound/f13/lobby4.ogg
+sound/f13/lobby5.ogg
+sound/f13/lobby6.ogg

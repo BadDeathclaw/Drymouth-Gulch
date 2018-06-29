@@ -243,16 +243,12 @@ GLOBAL_PROTECT(security_mode)
 		features += "[CONFIG_GET(flag/norespawn) ? "no " : ""]respawn"
 		if(CONFIG_GET(flag/allow_vote_mode))
 			features += "vote"
-		if(CONFIG_GET(flag/allow_ai))
-			features += "AI allowed"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>[station_name()]</b>";
-	s += " ("
-	s += "<a href=\"http://\">" //Change this to wherever you want the hub to link to.
-	s += "Default"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
-	s += "</a>"
-	s += ")"
+	s += "<b>\[ENG] Bad Deathclaw</b> - Unofficial Fallout 13<br>"
+	s += "<br>"
+	s += "Medium RP \[https://discord.gg/pY33Q8c]<br>"
+	s += "Hosted by degenerates"
 
 	var/n = 0
 	for (var/mob/M in GLOB.player_list)
