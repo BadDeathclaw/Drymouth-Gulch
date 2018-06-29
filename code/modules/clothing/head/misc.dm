@@ -185,7 +185,6 @@
 	name = "fedora"
 	icon_state = "fedora"
 	item_state = "fedora"
-	armor = list("melee" = 25, "bullet" = 5, "laser" = 25, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 50)
 	desc = "A really cool hat if you're a mobster. A really lame hat if you're not."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
@@ -279,7 +278,7 @@
 	name = "crown"
 	desc = "A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = list("melee" = 25, "bullet" = 0, "laser" = 0,"energy" = 16, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	dynamic_hair_suffix = ""
 
@@ -345,3 +344,53 @@
 		if(prob(3))
 			M += pick(" Honh honh honh!"," Honh!"," Zut Alors!")
 	return trim(M)
+
+//Fluff
+
+/obj/item/clothing/head/fluff/cowboy
+	name = "cowboy hat"
+	desc = "It's a high-crowned, wide-brimmed hat best known as the defining piece of attire for the North American cowboy."
+	icon_state = "cowboy"
+	item_state = "dethat"
+
+/obj/item/clothing/head/fluff/bandit
+	name = "bandit hat"
+	desc = "A black cowboy hat with a large brim, curved to the sides, and a silver eagle pinned to the front."
+	icon_state = "bandit"
+	item_state = "fedora"
+
+/obj/item/clothing/head/fluff/gambler
+	name = "gambler hat"
+	desc = "Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
+	icon_state = "gambler"
+	item_state = "dethat"
+
+/obj/item/clothing/head/fluff/pot
+	name = "metal cooking pot"
+	desc = "Step one: Start with the sauce.<br>Step two: Add the noodles.<br>Step three: Stir the pasta.<br>Step four: Turn up the heat.<br>Step five: Burn the house."
+	icon_state = "pot"
+	item_state = "fedora"
+	force = 10
+	hitsound = 'sound/items/trayhit1.ogg'
+
+/obj/item/clothing/head/fluff/battlecruiser
+	name = "captain's hat"
+	icon_state = "battlecruiser"
+	item_state = "battlecruiser"
+	desc = "The Yamato is loaded. And so am I."
+	armor = list(melee = 10, bullet = 16, laser = 0, energy = 0, bomb = 16, bio = 0, rad = 0)
+
+//Fallout 13
+
+/obj/item/clothing/head/f13/police
+	name = "pre-War police hat"
+	desc = "It's the police hat of dark blue in color with a silver colored badge on the frontside.<br>The badge is inscripted with the words SPECIAL and POLICE."
+	icon_state = "retropolice"
+	item_state = "fedora"
+	armor = list(melee = 10, bullet = 16, laser = 0, energy = 0, bomb = 25, bio = 0, rad = 0)
+
+/obj/item/clothing/head/f13/stormchaser
+	name = "stormchaser hat"
+	icon_state = "stormchaser"
+	item_state = "fedora"
+	desc = "Home, home on the wastes,<br>Where the mole rat and the fire gecko play.<br>Where seldom is heard a discouraging word,<br>And my skin is not glowing all day."
