@@ -98,6 +98,10 @@
 	port_id = "snowdin"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/vault
+	port_id = "vault"
+	can_be_bought = FALSE
+
 // Shuttles start here:
 
 /datum/map_template/shuttle/emergency/airless
@@ -444,3 +448,7 @@
 /datum/map_template/shuttle/snowdin/excavation
 	suffix = "excavation"
 	name = "Snowdin Excavation Elevator"
+
+/datum/map_template/shuttle/vault/elevator
+	suffix = "elevator"
+	name = "Vault Elevator"
