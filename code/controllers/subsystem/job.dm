@@ -255,7 +255,7 @@ SUBSYSTEM_DEF(job)
 		return 0
 
 	//Scale number of open security officer slots to population
-	setup_officer_positions()
+	//setup_officer_positions()
 
 	//Jobs will have fewer access permissions if the number of players exceeds the threshold defined in game_options.txt
 	var/mat = CONFIG_GET(number/minimal_access_threshold)

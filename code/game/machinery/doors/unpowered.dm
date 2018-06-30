@@ -42,6 +42,8 @@
 /obj/machinery/door/unpowered/wooddoor/do_animate(animation)
 	switch(animation)
 		if("opening")
+			playsound(src,'sound/machines/door_open.ogg',40,1)
 			flick("roomc0", src)
 		if("closing")
+			playsound(src,'sound/machines/door_close.ogg',40,1)
 			flick("roomc1", src)
