@@ -1375,7 +1375,8 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "vault_atrium_upper"
 
-
+/area/shuttle/vault_elevator
+	name = "Vault Elevator"
 
 /*
 
