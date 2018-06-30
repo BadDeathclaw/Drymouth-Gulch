@@ -1,5 +1,17 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Space Station 13!</h1>
+<h1>Welcome to Bad Deathclaw!</h1>
 
-<i>This server is running a /tg/station 13 Git build.</i>
+<b>THIS IS AN 18+ SERVER, LEAVE NOW IF YOU ARE NOT OLD ENOUGH (also leave if you like to act under 18)</b>
+
+<i>
+This is a lax medium RP server meaning you're free to do things such as kidnap and rape but please remember you're not the only person trying to have fun. Don't kill for no reason, do not kill on sight, don't be a huge dick and read the rules!.
+
+For general questions regarding the server, contact Smells#6121 or TeaTree#4450 on our Discord.
+Development is active, we are running on a modified version of the F13 Legacy code and we are always looking for more developers.
+
+Discord: https://discord.gg/pY33Q8c
+Github: https://github.com/Digdugxx/bad-deathclaw
+
+This server takes place before the Second Battle of Hoover Dam, in Nevada.
+</i>

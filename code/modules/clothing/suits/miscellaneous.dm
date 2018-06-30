@@ -485,7 +485,7 @@
 	name = "captain's winter coat"
 	icon_state = "coatcaptain"
 	item_state = "coatcaptain"
-	armor = list("melee" = 25, "bullet" = 30, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/captain
 
 /obj/item/clothing/suit/hooded/wintercoat/captain/Initialize()
@@ -499,7 +499,7 @@
 	name = "security winter coat"
 	icon_state = "coatsecurity"
 	item_state = "coatsecurity"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 30, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 45)
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/security
 
 /obj/item/clothing/suit/hooded/wintercoat/security/Initialize()
@@ -594,3 +594,99 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_cuirass_old"
 	armor = list("melee" = 5, "bullet" = 0, "laser" = -5, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
+
+
+//Fallout 13
+
+/obj/item/clothing/suit/fluff/vest
+	name = "tan vest"
+	desc = "It's a vest made of tanned leather."
+	icon_state = "tanleather"
+	item_state = "det_suit"
+	body_parts_covered = CHEST
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/fluff/battlecruiser //Do we have Star Craft here as well?!
+	name = "captain's coat"
+	desc = "Battlecruiser operational!"
+	icon_state = "battlecruiser"
+	item_state = "hostrench"
+	body_parts_covered = CHEST|ARMS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/fluff/cowboybvest //Originally cowboy stuff by Nienhaus
+	name = "brown vest"
+	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	icon_state = "cowboybvest"
+	item_state = "lb_suit"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/fluff/cowboygvest
+	name = "grey vest"
+	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	icon_state = "cowboygvest"
+	item_state = "gy_suit"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/f13/mfp //Mad Max 1979 babe!
+	name = "mfp jacket"
+	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
+	icon_state = "wornmfp"
+	item_state = "hostrench"
+	body_parts_covered = CHEST|ARMS|LEGS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	flags_inv = HIDEJUMPSUIT
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/f13/veteran
+	name = "merc veteran coat"
+	desc = "A blue leather coat along with a few war medals.<br>That type of outfit is common for professional mercenaries and bounty hunters."
+	icon_state = "veteran"
+	item_state = "suit-command"
+	body_parts_covered = CHEST|GROIN
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/f13/duster
+	name = "duster"
+	desc = "Long brown leather overcoat.<br>Powerful accessory of a respectful sherif or fearsome bounty hunter."
+	icon_state = "duster"
+	item_state = "det_suit"
+	body_parts_covered = CHEST|LEGS|FEET|ARMS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/f13/autumn //Based of Colonel Autumn's uniform.
+	name = "tan trenchcoat"
+	desc = "A resistant, tan trenchcoat, typically worn by pre-War generals."
+	icon_state = "autumn"
+	item_state = "autumn"
+	body_parts_covered = CHEST|LEGS|ARMS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/f13/elder //Robes are made of finest cloth, so you won't be able to put sharp objects but pens in.
+	name = "Brotherhood Elder's robe"
+	desc = "A blue cloth robe with some scarlet red parts, traditionally worn by the Brotherhood of Steel Elder."
+	icon_state = "elder"
+	item_state = "suit-command"
+	body_parts_covered = CHEST|ARMS|LEGS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+/obj/item/clothing/suit/f13/scribe
+	name = "Brotherhood Scribe's robe"
+	desc = "A blue cloth robe worn by the Brotherhood of Steel Scribes."
+	icon_state = "scribe"
+	item_state = "suit-command"
+	body_parts_covered = CHEST|ARMS|LEGS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
+

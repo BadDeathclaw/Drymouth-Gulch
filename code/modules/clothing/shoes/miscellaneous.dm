@@ -6,26 +6,6 @@
 	icon_state = "mime"
 	item_color = "mime"
 
-/obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
-	name = "combat boots"
-	desc = "High speed, low drag combat boots."
-	icon_state = "jackboots"
-	item_state = "jackboots"
-	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
-	strip_delay = 70
-	resistance_flags = NONE
-	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
-
-/obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
-	name = "\improper SWAT boots"
-	desc = "High speed, no drag combat boots."
-	permeability_coefficient = 0.01
-	clothing_flags = NOSLIP
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 25, "bomb" = 50, "bio" = 30, "rad" = 30, "fire" = 90, "acid" = 50)
-
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain, wooden sandals."
 	name = "sandals"
@@ -312,3 +292,57 @@
 		set_light(0)
 		lightCycle = 0
 		active = FALSE
+
+
+//Fallout 13
+
+/obj/item/clothing/shoes/legionleather
+	name = "legion leather boots"
+	desc = "A pair of boots worn by the Legion recruits."
+	icon_state = "legionleather"
+	item_state = "legionleather"
+	item_color = "cult"
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/legionmetal
+	name = "legion metal boots"
+	desc = "A pair of boots worn by the Legion veterans."
+	icon_state = "legionmetal"
+	item_state = "legionmetal"
+	item_color = "cult"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/legionlegat
+	name = "legion legate boots"
+	desc = "A pair of boots worn by the Legion legates."
+	icon_state = "legionlegat"
+	item_state = "legionlegat"
+	item_color = "cult"
+	armor = list("melee" = 60, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
+	name = "combat boots"
+	desc = "High speed, low drag combat boots."
+	icon_state = "jackboots"
+	item_state = "jackboots"
+	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
+	strip_delay = 70
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
+/obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
+	name = "\improper SWAT boots"
+	desc = "High speed, no drag combat boots."
+	permeability_coefficient = 0.01
+	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 30, "rad" = 30, "fire" = 90, "acid" = 50)
+
+/obj/item/clothing/shoes/combat/plate
+	name = "plated combat boots"
+	desc = "A pair of boots with armored plates on them"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "legionmetal"
+	item_state = "legionmetal"
+	item_color = "cult"

@@ -1,4 +1,5 @@
 #define ROUND_START_MUSIC_LIST "strings/round_start_sounds.txt"
+#define ROUND_BEGIN_MUSIC_LIST "strings/round_begin_sounds.txt"
 
 SUBSYSTEM_DEF(ticker)
 	name = "Ticker"
@@ -20,6 +21,7 @@ SUBSYSTEM_DEF(ticker)
 	var/event = 0
 
 	var/login_music							//music played in pregame lobby
+	var/begin_music
 	var/round_end_sound						//music/jingle played when the world reboots
 	var/round_end_sound_sent = TRUE			//If all clients have loaded it
 
@@ -117,6 +119,8 @@ SUBSYSTEM_DEF(ticker)
 		music -= S
 
 	if(isemptylist(music))
+		music = world.file2list(ROUND_BEGIN_MUSIC_LIST, "\n")
+		begin_music = pick(music)
 		music = world.file2list(ROUND_START_MUSIC_LIST, "\n")
 		login_music = pick(music)
 	else
@@ -285,7 +289,7 @@ SUBSYSTEM_DEF(ticker)
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<FONT color='blue'><B>Welcome to [station_name()], enjoy your stay!</B></FONT>")
-	SEND_SOUND(world, sound('sound/ai/welcome.ogg'))
+	SEND_SOUND(world, sound(begin_music))
 
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
@@ -461,6 +465,7 @@ SUBSYSTEM_DEF(ticker)
 	event = SSticker.event
 
 	login_music = SSticker.login_music
+	begin_music = SSticker.begin_music
 	round_end_sound = SSticker.round_end_sound
 
 	minds = SSticker.minds

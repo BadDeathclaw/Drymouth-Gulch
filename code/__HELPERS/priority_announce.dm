@@ -1,4 +1,4 @@
-/proc/priority_announce(text, title = "", sound = 'sound/ai/attention.ogg', type , sender_override)
+/proc/priority_announce(text, title = "", sound = 'sound/f13/quest.ogg', type , sender_override)
 	if(!text)
 		return
 
@@ -19,7 +19,7 @@
 			announcement += "<h1 class='alert'>[sender_override]</h1>"
 		if (title && length(title) > 0)
 			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
-		
+
 		if(!sender_override)
 			if(title == "")
 				GLOB.news_network.SubmitArticle(text, "Central Command Update", "Station Announcements", null)
@@ -46,7 +46,7 @@
 	var/datum/comm_message/M  = new
 	M.title = title
 	M.content =  text
-	
+
 	SScommunications.send_message(M)
 
 /proc/minor_announce(message, title = "Attention:", alert)
