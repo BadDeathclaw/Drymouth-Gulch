@@ -1,0 +1,11 @@
+"a" = (/obj/machinery/computer/shuttle/vaultelevator,/turf/open/floor/engine,/area/shuttle/vault_elevator)
+"b" = (/turf/open/floor/engine,/area/shuttle/vault_elevator)
+"c" = (/obj/machinery/light/small{icon_state = "bulb"; dir = 8},/turf/open/floor/engine,/area/shuttle/vault_elevator)
+"d" = (/obj/docking_port/mobile/elevator{dheight = 0; dir = 8; dwidth = 1; height = 3; id = "vault_elevator"; name = "vault elevator"; timid = 1; width = 4},/turf/open/floor/engine,/area/shuttle/vault_elevator)
+
+(1,1,1) = {"
+abb
+bbb
+cbd
+bbb
+"}

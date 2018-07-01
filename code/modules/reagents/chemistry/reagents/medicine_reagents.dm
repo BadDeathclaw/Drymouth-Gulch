@@ -1416,7 +1416,7 @@
 
 /datum/reagent/medicine/mentat
 	name = "Mentat Powder"
-	id = "mentats"
+	id = "mentat"
 	description = "A powerful drug that heals and increases the perception and intelligence of the user."
 	color = "#C8A5DC"
 	reagent_state = SOLID
