@@ -4,6 +4,7 @@
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	casing_ejector = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/Initialize()
 	. = ..()
@@ -85,9 +86,10 @@
 	to_chat(user, "[get_ammo(0,0)] of those are live rounds.")
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "\improper .38 Mars Special"
-	desc = "A cheap Martian knock-off of a classic law enforcement firearm. Uses .38-special rounds."
+	name = "\improper .38 Special"
+	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
@@ -141,6 +143,7 @@
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A retro high-powered autorevolver typically used by officers of the New Russia military. Uses .357 ammo."
 	icon_state = "mateba"
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/golden
 	name = "\improper Golden revolver"
@@ -149,15 +152,15 @@
 	fire_sound = 'sound/weapons/resonator_blast.ogg'
 	recoil = 8
 	pin = /obj/item/firing_pin
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/nagant
 	name = "nagant revolver"
 	desc = "An old model of revolver that originated in Russia. Able to be suppressed. Uses 7.62x38mmR ammo."
 	icon_state = "nagant"
 	can_suppress = TRUE
-
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev762
-
+	w_class = WEIGHT_CLASS_NORMAL
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.
@@ -252,7 +255,7 @@
 	name = "double-barreled shotgun"
 	desc = "A true classic."
 	icon_state = "dshotgun"
-	item_state = "shotgun"
+	item_state = "dshotgun1"
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	force = 10
@@ -300,14 +303,14 @@
 	name = "improvised shotgun"
 	desc = "Essentially a tube that aims shotgun shells."
 	icon_state = "ishotgun"
-	item_state = "shotgun"
-	w_class = WEIGHT_CLASS_BULKY
+	item_state = "improvshotgun"
 	force = 10
 	slot_flags = null
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	sawn_desc = "I'm just here for the gasoline."
 	unique_reskin = null
 	var/slung = FALSE
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/doublebarrel/improvised/attackby(obj/item/A, mob/user, params)
 	..()
@@ -337,7 +340,7 @@
 	name = "sawn-off improvised shotgun"
 	desc = "A single-shot shotgun. Better not miss."
 	icon_state = "ishotgun"
-	item_state = "gun"
+	item_state = "sawnshotgun"
 	w_class = WEIGHT_CLASS_NORMAL
 	sawn_off = TRUE
 	slot_flags = ITEM_SLOT_BELT
@@ -354,3 +357,64 @@
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.Knockdown(80)
+
+//Fallout 13
+
+/obj/item/gun/ballistic/revolver/m29
+	name = "\improper S&W Model 29"
+	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
+	item_state = "model29"
+	icon_state = "m29"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/ballistic/revolver/m29/alt
+	item_state = "44magnum"
+	icon_state = "mysterious_m29"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/ballistic/revolver/m29/scoped
+	name = "\improper Scoped S&W Model 29"
+	icon_state = "scoped_m29"
+	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? Now with a scope!"
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/ballistic/revolver/needler
+	name = "needler pistol"
+	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
+	icon_state = "needler"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
+	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/gun/ballistic/revolver/colt6250
+	name = "colt 6250"
+	desc = "The Colt 6520 10mm autoloading pistol is a highly durable and efficient weapon developed by Colt Firearms prior to the Great War.It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
+	icon_state = "colt6250"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
+	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/ballistic/revolver/sequoia
+	name = "Ranger Sequoia"
+	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	icon_state = "sequoia"
+	item_state = "sequoia"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/ballistic/revolver/sequoia/scoped
+	name = "Magnum Research BFR"
+	desc = "A scoped double action revolver chambered in 45-70."
+	icon_state = "hunting_revolver"
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_NORMAL
+
+

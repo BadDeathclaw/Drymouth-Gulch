@@ -13,3 +13,8 @@
 /obj/item/ammo_box/magazine/internal/boltaction/enchanted/arcane_barrage
 	ammo_type = /obj/item/ammo_casing/magic/arcane_barrage
 
+//Fallout 13
+/obj/item/ammo_box/magazine/internal/boltaction/rangemaster
+	max_ammo = 10
+	multiload = 1
+

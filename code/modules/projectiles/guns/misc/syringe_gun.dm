@@ -102,3 +102,14 @@
 		else
 			to_chat(user, "<span class='warning'>[src] cannot hold more syringes!</span>")
 	return FALSE
+
+//Fallout 13
+
+/obj/item/gun/syringe/syringer
+	name = "syringer rifle"
+	desc = "A scoped syringe rifle."
+	icon_state = "syringer"
+	item_state = "shotgun"
+	w_class = 4
+	zoomable = TRUE
+	zoom_amt = 7

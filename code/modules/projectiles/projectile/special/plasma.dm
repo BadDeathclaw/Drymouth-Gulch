@@ -1,4 +1,4 @@
-/obj/item/projectile/plasma
+/obj/item/projectile/plasma/weak
 	name = "plasma blast"
 	icon_state = "plasmacutter"
 	damage_type = BRUTE
@@ -13,14 +13,14 @@
 	muzzle_type = /obj/effect/projectile/muzzle/plasma_cutter
 	impact_type = /obj/effect/projectile/impact/plasma_cutter
 
-/obj/item/projectile/plasma/Initialize()
+/obj/item/projectile/plasma/weak/Initialize()
 	. = ..()
 	if(!lavaland_equipment_pressure_check(get_turf(src)))
 		name = "weakened [name]"
 		damage = damage * pressure_decrease
 		pressure_decrease_active = TRUE
 
-/obj/item/projectile/plasma/on_hit(atom/target)
+/obj/item/projectile/plasma/weak/on_hit(atom/target)
 	. = ..()
 	if(ismineralturf(target))
 		var/turf/closed/mineral/M = target
@@ -31,12 +31,12 @@
 		if(range > 0)
 			return -1
 
-/obj/item/projectile/plasma/adv
+/obj/item/projectile/plasma/weak/adv
 	damage = 28
 	range = 5
 	mine_range = 5
 
-/obj/item/projectile/plasma/adv/mech
+/obj/item/projectile/plasma/weak/adv/mech
 	damage = 40
 	range = 9
 	mine_range = 3
