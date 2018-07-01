@@ -114,12 +114,12 @@
 	minimum_distance = 5
 	icon_state = "syndicateranged"
 	icon_living = "syndicateranged"
-	casingtype = /obj/item/ammo_casing/c45/nostamina
+	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
 	loot = list(/obj/effect/gibspawner/human)
 
 /mob/living/simple_animal/hostile/syndicate/ranged/pilot
-	name = "Syndicate Salvage Pilot"	
+	name = "Syndicate Salvage Pilot"
 	loot = list(/obj/effect/mob_spawn/human/corpse/syndicatesoldier)
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space

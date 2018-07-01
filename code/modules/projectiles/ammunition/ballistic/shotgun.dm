@@ -6,14 +6,13 @@
 	icon_state = "blshell"
 	caliber = "shotgun"
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug
-	materials = list(MAT_METAL=4000)
+	materials = list(MAT_METAL=1000)
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"
 	desc = "A weak beanbag slug for riot control."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
-	materials = list(MAT_METAL=250)
 
 /obj/item/ammo_casing/shotgun/incendiary
 	name = "incendiary slug"
@@ -71,7 +70,6 @@
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	pellets = 6
 	variance = 25
-	materials = list(MAT_METAL=4000)
 
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"

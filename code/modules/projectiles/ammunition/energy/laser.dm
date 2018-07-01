@@ -4,7 +4,7 @@
 
 /obj/item/ammo_casing/energy/lasergun
 	projectile_type = /obj/item/projectile/beam/laser
-	e_cost = 83
+	e_cost = 50
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun/old
@@ -19,12 +19,6 @@
 	projectile_type = /obj/item/projectile/beam/practice
 	select_name = "practice"
 	harmful = FALSE
-
-/obj/item/ammo_casing/energy/laser/scatter
-	projectile_type = /obj/item/projectile/beam/scatter
-	pellets = 5
-	variance = 25
-	select_name = "scatter"
 
 /obj/item/ammo_casing/energy/laser/scatter/disabler
 	projectile_type = /obj/item/projectile/beam/disabler
@@ -68,3 +62,4 @@
 	projectile_type = /obj/item/projectile/beam/mindflayer
 	select_name = "MINDFUCK"
 	fire_sound = 'sound/weapons/laser.ogg'
+

@@ -54,11 +54,6 @@
 /obj/item/gun/energy/laser/cyborg/emp_act()
 	return
 
-/obj/item/gun/energy/laser/scatter
-	name = "scatter laser gun"
-	desc = "A laser gun equipped with a refraction kit that spreads bolts."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
-
 /obj/item/gun/energy/laser/scatter/shotty
 	name = "energy shotgun"
 	icon = 'icons/obj/guns/projectile.dmi'
@@ -138,3 +133,133 @@
 
 /obj/item/gun/energy/laser/redtag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag/hitscan)
+
+
+//Fallout
+
+/obj/item/gun/energy/laser/lasergatling
+	name = "H&K L30 Gatling laser"
+	desc = "Designed specifically for military use, these were in the prototype stage at the beginning of the Great War. Multiple barrels allowed longer firing before overheating."
+	icon_state = "lasergatling"
+	burst_size = 8
+	fire_delay = 0
+	spread = 12
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	w_class = WEIGHT_CLASS_HUGE
+
+/obj/item/gun/energy/laser/aer9
+	name = "AER9 Laser Rifle"
+	desc = "A sturdy and advanced military grade pre-war service laser rifle"
+	icon_state = "laser"
+	item_state = "laser-rifle9"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	w_class = WEIGHT_CLASS_HUGE
+
+/obj/item/gun/energy/laser/pistol
+	name = "AEP7 laser pistol"
+	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
+	icon_state = "AEP7"
+	item_state = "laser-pistol"
+	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 0
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+
+/obj/item/gun/energy/laser/scatter
+	name = "Tri-beam Laser Rifle"
+	desc = "A modified AER9 equipped with a refraction kit that spreads its bolts."
+	item_state = "laser-rifle9"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	w_class = WEIGHT_CLASS_HUGE
+
+/obj/item/gun/energy/laser/plasma
+	name ="A3-20 Plasma Rifle"
+	item_state = "plasma"
+	icon_state = "plasma"
+	desc = "A top of line miniaturized plasma caster built by REPCONN in the wake of the Z43-521P failure. It is supperior to all previous rifles to enter service in the USCC."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	w_class = WEIGHT_CLASS_HUGE
+
+/obj/item/gun/energy/laser/plasma/scatter
+	name = "A3e-20b Multiplas Rifle"
+	item_state = "multiplas"
+	icon_state = "multiplas"
+	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/scatter)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+
+/obj/item/gun/energy/laser/plasma/pistol
+	name ="MPL-A Plasma Pistol"
+	item_state = "plasma-pistol"
+	icon_state = "plasma-pistol"
+	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires heavy low penetration plasma clots."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol)
+	w_class = WEIGHT_CLASS_NORMAL
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+
+
+//projectiles
+/obj/item/projectile/beam/laser/lasgun
+	name = "laser beam"
+	damage = 34
+	armour_penetration = -9
+
+/obj/item/projectile/beam/laser/pistol
+	name = "laser beam"
+	damage = 25
+
+/obj/item/projectile/beam/laser/tribeam
+	name = "tribeam laser"
+	damage = 15
+
+/obj/item/projectile/plasma
+	name = "plasma clot"
+	icon_state = "plasma_clot"
+	damage = 60
+
+/obj/item/projectile/plasma/pistol
+	damage = 60
+	armour_penetration = -18
+
+/obj/item/projectile/plasma/scatter
+	damage = 22
+
+//Casings
+//plasma
+/obj/item/ammo_casing/energy/plasma
+	projectile_type = /obj/item/projectile/plasma
+	select_name = "plasma burst"
+	icon_state = "neurotoxin"
+	fire_sound = 'sound/weapons/plasma_cutter.ogg'
+	delay = 5
+	e_cost = 100
+
+/obj/item/ammo_casing/energy/plasma/scatter
+	projectile_type = /obj/item/projectile/plasma/scatter
+	pellets = 3
+	variance = 14
+	select_name = "scatter"
+
+/obj/item/ammo_casing/energy/plasma/pistol
+	projectile_type = /obj/item/projectile/plasma/pistol
+	e_cost = 50
+
+//laser
+/obj/item/ammo_casing/energy/laser/scatter
+	projectile_type = /obj/item/projectile/beam/laser/tribeam
+	pellets = 3
+	variance = 14
+	select_name = "scatter"
+	e_cost = 50
+
+/obj/item/ammo_casing/energy/laser/pistol
+	projectile_type = /obj/item/projectile/beam/laser/pistol
+	e_cost = 10
+
+/obj/item/ammo_casing/energy/laser/lasgun
+	projectile_type = /obj/item/projectile/beam/laser/lasgun
+	e_cost = 50

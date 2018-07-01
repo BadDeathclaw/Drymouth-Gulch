@@ -118,7 +118,7 @@
 	desc = "A mining tool capable of expelling concentrated plasma bursts. You could use it to cut limbs off xenos! Or, you know, mine stuff."
 	icon_state = "plasmacutter"
 	item_state = "plasmacutter"
-	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
+	ammo_type = list(/obj/item/ammo_casing/energy/plasma/weak)
 	flags_1 = CONDUCT_1
 	attack_verb = list("attacked", "slashed", "cut", "sliced")
 	force = 12

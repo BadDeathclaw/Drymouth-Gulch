@@ -356,3 +356,40 @@
 	var/area/A = get_area(src)
 	if(!A.lightswitch || !A.light_power)
 		charge = 0 //For naturally depowered areas, we start with no power
+
+
+
+// energy weapon ammotypes
+
+/obj/item/stock_parts/cell/ammo
+	name = "ammo cell"
+	desc = "You shouldn't be holding this."
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/stock_parts/cell/ammo/New()
+	..()
+	return
+
+/obj/item/stock_parts/cell/ammo/update_icon()
+	return
+
+/obj/item/stock_parts/cell/ammo/mfc
+	name = "microfusion cell"
+	desc = "A microfusion cell, typically used as ammunition for large energy weapons. YOU CAN RECHARGE THIS STUPID SON OF A BITCH FOR THE LOW RATE OF 0.99 NO SHIPPING AND HANDLING MOTHERFUCKER"
+	icon_state = "mfc"
+	maxcharge = 1200
+	chargerate = 300
+
+/obj/item/stock_parts/cell/ammo/ecp
+	name = "electron charge pack"
+	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons."
+	icon_state = "icell"
+	maxcharge = 2400
+	chargerate = 400
+
+/obj/item/stock_parts/cell/ammo/ec
+	name = "energy cell"
+	desc = "An energy cell, typically used as ammunition for small-arms energy weapons."
+	icon_state = "ec"
+	maxcharge = 300
+	chargerate = 300
