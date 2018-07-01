@@ -102,6 +102,10 @@
 	port_id = "vault"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/enclavefort
+	port_id = "enclavefort"
+	can_be_bought = FALSE
+
 // Shuttles start here:
 
 /datum/map_template/shuttle/emergency/airless
@@ -452,3 +456,7 @@
 /datum/map_template/shuttle/vault/elevator
 	suffix = "elevator"
 	name = "Vault Elevator"
+
+/datum/map_template/shuttle/enclavefort/elevator
+	suffix = "elevator"
+	name = "Enclave Fort Elevator"

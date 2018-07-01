@@ -486,10 +486,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/decanus
 	name = "Decanus"
 
-	/obj/effect/landmark/start/f13/veteranlegionnaire
+/obj/effect/landmark/start/f13/veteranlegionnaire
 	name = "Veteran Legionnaire"
 
-	/obj/effect/landmark/start/f13/legionary
+/obj/effect/landmark/start/f13/legionary
 	name = "Legionary"
 
 // Brotherhood of Steel
