@@ -549,6 +549,54 @@
 		desc = "A makeshift spear with [G] attached to it."
 	update_icon()
 
+//THERMIC LANCE
+/obj/item/twohanded/required/thermic_lance
+	name = "thermic lance"
+	desc = "A versatile power-welding tool. Useful for cutting apart metal and limbs."
+	icon_state = "thermiclance_off"
+	item_state = "thermiclance_off"
+	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	force = 10
+	var/force_on = 72
+	w_class = WEIGHT_CLASS_HUGE
+	throwforce = 20
+	throw_speed = 2
+	throw_range = 4
+	materials = list(MAT_METAL=13000)
+	attack_verb = list("burned", "welded", "cut", "melted", "splashed")
+	hitsound = "swing_hit"
+	actions_types = list(/datum/action/item_action/toggle_lance)
+	var/on = FALSE
+
+
+/obj/item/twohanded/required/thermic_lance/attack_self(mob/user)
+	on = !on
+	to_chat(user, "As you turn the lever from [src], [on ? "it begins to heat." : "the flame goes off."]")
+	force = on ? force_on : initial(force)
+	throwforce = on ? force_on : initial(force)
+	icon_state = "thermiclance_[on ? "on" : "off"]"
+	item_state = "thermiclance_[on ? "on" : "off"]"
+
+	if(on)
+		hitsound = 'sound/items/welder2.ogg'
+		damtype = "fire"
+	else
+		hitsound = "swing_hit"
+		damtype = "brute"
+
+	if(src == user.get_active_held_item()) //update inhands
+		user.update_inv_hands()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/twohanded/required/thermic_lance/get_dismemberment_chance()
+	if(wielded)
+		. = ..()
+
 // CHAINSAW
 /obj/item/twohanded/required/chainsaw
 	name = "chainsaw"
