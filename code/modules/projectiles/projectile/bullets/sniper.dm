@@ -3,10 +3,10 @@
 /obj/item/projectile/bullet/p50
 	name =".50 bullet"
 	speed = 0.4
-	damage = 70
+	damage = 60
 	knockdown = 100
 	dismemberment = 50
-	armour_penetration = 50
+	armour_penetration = 0
 	var/breakthings = TRUE
 
 /obj/item/projectile/bullet/p50/on_hit(atom/target, blocked = 0)

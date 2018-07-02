@@ -685,6 +685,16 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/rubbershot(src)
 
+/obj/item/storage/box/rubbershot/beanbag
+	name = "box of beanbag slugs"
+	desc = "A box full of beanbag slugs, designed for riot shotguns."
+	icon_state = "rubbershot_box"
+	illustration = null
+
+/obj/item/storage/box/rubbershot/beanbag/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun/beanbag(src)
+
 /obj/item/storage/box/lethalshot
 	name = "box of lethal shotgun shots"
 	desc = "A box full of lethal shots, designed for riot shotguns."
