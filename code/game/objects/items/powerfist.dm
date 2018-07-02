@@ -15,7 +15,7 @@
 	resistance_flags = FIRE_PROOF
 	var/click_delay = 1.5
 	var/fisto_setting = 1
-	var/gasperfist = 3
+	var/gasperfist = 1
 	var/obj/item/tank/internals/tank = null //Tank used for the gauntlet's piston-ram.
 
 
