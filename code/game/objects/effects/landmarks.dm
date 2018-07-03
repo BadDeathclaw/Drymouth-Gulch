@@ -57,8 +57,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 		GLOB.jobspawn_overrides[name] -= src
 	return ..()
 
+/obj/effect/landmark/start/f13
+	icon = 'icons/mob/landmarks.dmi'
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+	icon_state = "Assistant"
+
 // START LANDMARKS FOLLOW. Don't change the names unless
 // you are refactoring shitty landmark code.
+
 /obj/effect/landmark/start/assistant
 	name = "Assistant"
 	icon_state = "Assistant"
@@ -432,3 +439,137 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.ruin_landmarks -= src
 	ruin_template = null
 	. = ..()
+
+// FO13 Faction Start. Set to override for the time being to allow latejoining in their original spots.
+
+// NCR
+
+/obj/effect/landmark/start/f13/ncrcolonel
+	name = "NCR Colonel"
+
+/obj/effect/landmark/start/f13/ncrcaptain
+	name = "NCR Captain"
+
+/obj/effect/landmark/start/f13/ncrlieutenant
+	name = "NCR Lieutenant"
+
+/obj/effect/landmark/start/f13/ncrsergeant
+	name = "NCR Sergeant"
+
+/obj/effect/landmark/start/f13/ncrtrooper
+	name = "NCR Trooper"
+
+/obj/effect/landmark/start/f13/ncrrecruit
+	name = "NCR Recruit"
+
+/obj/effect/landmark/start/f13/ncrveteranranger
+	name = "NCR Veteran Ranger"
+
+/obj/effect/landmark/start/f13/ncrranger
+	name = "NCR Ranger"
+
+/obj/effect/landmark/start/f13/ncrreconranger
+	name = "NCR Recon Ranger"
+
+// Legion
+
+/obj/effect/landmark/start/f13/legate
+	name = "Legate"
+
+/obj/effect/landmark/start/f13/centurion
+	name = "Centurion"
+
+
+/obj/effect/landmark/start/f13/vexillarius
+	name = "Vexillarius"
+
+/obj/effect/landmark/start/f13/decanus
+	name = "Decanus"
+
+/obj/effect/landmark/start/f13/veteranlegionnaire
+	name = "Veteran Legionnaire"
+
+/obj/effect/landmark/start/f13/legionary
+	name = "Legionary"
+
+// Brotherhood of Steel
+
+/obj/effect/landmark/start/f13/elder
+	name = "Elder"
+
+/obj/effect/landmark/start/f13/paladin
+	name = "Paladin"
+
+/obj/effect/landmark/start/f13/knight
+	name = "Knight"
+
+/obj/effect/landmark/start/f13/scribe
+	name = "Scribe"
+
+/obj/effect/landmark/start/f13/initiate
+	name = "Initiate"
+
+// Vault
+
+/obj/effect/landmark/start/f13/overseer
+	name = "Overseer"
+
+/obj/effect/landmark/start/f13/vaultheadofsecurity
+	name = "Vault Head of Security"
+
+/obj/effect/landmark/start/f13/vaultdoctor
+	name = "Vault Doctor"
+
+/obj/effect/landmark/start/f13/vaultscientist
+	name = "Vault Scientist"
+
+/obj/effect/landmark/start/f13/vaultsecurityofficer
+	name = "Vault Security Officer"
+
+/obj/effect/landmark/start/f13/vaultengineer
+	name = "Vault Engineer"
+
+// Den
+
+/obj/effect/landmark/start/f13/sheriff
+	name = "Sheriff"
+
+/obj/effect/landmark/start/f13/settler
+	name = "Settler"
+
+// Wasteland
+
+/obj/effect/landmark/start/f13/cultleader
+	name = "Cult Leader"
+
+/obj/effect/landmark/start/f13/wastelander
+	name = "Wastelander"
+
+/obj/effect/landmark/start/f13/raider
+	name = "Raider"
+
+/obj/effect/landmark/start/f13/pusher
+	name = "Pusher"
+
+/obj/effect/landmark/start/f13/preacher
+	name = "Preacher"
+
+// Enclave
+
+/obj/effect/landmark/start/f13/uscommander
+	name = "US Commander"
+
+/obj/effect/landmark/start/f13/usmedic
+	name = "US Medic"
+
+/obj/effect/landmark/start/f13/usprivate
+	name = "US Private"
+
+/obj/effect/landmark/start/f13/usscientist
+	name = "US Scientist"
+
+/obj/effect/landmark/start/f13/usengineer
+	name = "US Engineer"
+
+/obj/effect/landmark/start/f13/uscolonist
+	name = "US Colonist"

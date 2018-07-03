@@ -7,7 +7,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	flags_1 = CONDUCT_1
 	attack_verb = list("whacked", "fisted", "power-punched")
-	force = 20
+	force = 72
 	throwforce = 10
 	throw_range = 7
 	w_class = WEIGHT_CLASS_NORMAL
@@ -15,7 +15,7 @@
 	resistance_flags = FIRE_PROOF
 	var/click_delay = 1.5
 	var/fisto_setting = 1
-	var/gasperfist = 3
+	var/gasperfist = 1
 	var/obj/item/tank/internals/tank = null //Tank used for the gauntlet's piston-ram.
 
 

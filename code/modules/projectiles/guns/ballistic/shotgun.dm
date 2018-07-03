@@ -1,8 +1,8 @@
 /obj/item/gun/ballistic/shotgun
-	name = "shotgun"
-	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath."
-	icon_state = "shotgun"
-	item_state = "shotgun"
+	name = "Ithaca Model 37"
+	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
+	icon_state = "Itaca"
+	item_state = "huntingshotgun"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	flags_1 =  CONDUCT_1
@@ -75,15 +75,6 @@
 /obj/item/gun/ballistic/shotgun/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 
-// RIOT SHOTGUN //
-
-/obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
-	name = "riot shotgun"
-	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
-	icon_state = "riotshotgun"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
-	sawn_desc = "Come with me if you want to live."
-
 /obj/item/gun/ballistic/shotgun/riot/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -108,6 +99,8 @@
 	can_bayonet = TRUE
 	knife_x_offset = 27
 	knife_y_offset = 13
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/boltaction/pump(mob/M)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
@@ -193,8 +186,10 @@
 	name = "combat shotgun"
 	desc = "A semi automatic shotgun with tactical furniture and a six-shell capacity underneath."
 	icon_state = "cshotgun"
+	item_state = "cshotgun1"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
 	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact
 	name = "compact combat shotgun"
@@ -202,6 +197,7 @@
 	icon_state = "cshotgunc"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
 	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
 
 //Dual Feed Shotgun
 
@@ -211,6 +207,7 @@
 	icon_state = "cycler"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 
@@ -247,3 +244,106 @@
 
 
 // DOUBLE BARRELED SHOTGUN and IMPROVISED SHOTGUN are in revolver.dm
+
+
+//Fallout 13
+
+// Trenchgun //
+/obj/item/gun/ballistic/shotgun/trench
+	name = "Winchester M97"
+	desc = "A pre-war military grade shotgun with wood furniture and a five-shell capacity underneath plus one in chamber."
+	icon_state = "trenchgun"
+	item_state = "trenchgun"
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
+
+// RIOT SHOTGUN //
+/obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
+	name = "BHS M1"
+	desc = "A Big Heavy Shotgun Model 1, the staple of pre-war riot controll grade shotguns with a longer magazine and a fixed heavy reinforced tactical stock designed for tactical use when tactically bashing heads."
+	icon_state = "riotshotgun"
+	item_state = "shotgunriot"
+	force = 56
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
+	sawn_desc = "Come with me if you want to live."
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
+
+//Remington 700
+/obj/item/gun/ballistic/shotgun/boltaction/remington
+	name = "Remington 700"
+	desc = "A sturdy hunting rifle, chambered in 308. and in use before the war."
+	icon_state = "308"
+	item_state = "rifle"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/shotgun/boltaction/remington/scoped
+	name = "Scoped Remington 700"
+	desc = "A sturdy hunting rifle, chambered in 308. and in use before the war. This one has a 8x scope mounted to it."
+	icon_state = "rifle308_scope"
+	item_state = "rifle"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+
+//Colt Rangemaster
+/obj/item/gun/ballistic/shotgun/automatic/hunting
+	name = "Colt Rangemaster"
+	desc = "A semi automatic Colt Rangemaster semi-automatic rifle chambered in .308."
+	icon_state = "rangemaster"
+	item_state = "fnfal"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/rangemaster
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
+
+
+//Single Shot
+obj/item/gun/ballistic/revolver/caravan_shotgun
+	name = "caravan shotgun"
+	desc = "An common over under double barreled shotgun."
+	icon_state = "caravan_shotgun"
+	item_state = "dshotgun1"
+	force = 25
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/revolver/single_shotgun
+	name = "single shotgun"
+	desc = "A dirt cheap single shot shotgun."
+	icon_state = "single_shotgun"
+	item_state = "singleshot"
+	force = 15
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/revolver/zipgun
+	name = "zipgun"
+	desc = "A crudely made single shot 10mm pistol."
+	icon_state = "zipgun"
+	item_state = "gun"
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
+
+/obj/item/gun/ballistic/revolver/pipe_rifle
+	name = "pipe rifle"
+	desc = "A crudely made single shot 10mm rifle."
+	icon_state = "pipe_rifle"
+	item_state = "improvshotgun"
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
+	w_class = WEIGHT_CLASS_HUGE
+	weapon_weight = WEAPON_HEAVY
+
+
+
+

@@ -1334,33 +1334,49 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Sunny Dale"
 	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "sunny_dale"
-	//requires_power = FALSE
+
+/area/klamat
+	name = "Klamat"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "klamat"
+
+/area/farmhouse
+	name = "Farmhouse"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "farmhouse"
+
+/area/legioncamp
+	name = "Legion Camp"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "legioncamp"
+
+/area/powerplant
+	name = "Power Plant"
+	icon = 'icons/turf/f13areas.dmi'
+	icon_state = "powerplant"
 
 /area/enclave_base
 	name = "Enclave Base"
 	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "enclave_base"
-	//requires_power = FALSE
 
 /area/den
 	name = "Den"
 	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "den"
-	//requires_power = FALSE
 
 /area/overseer_office
 	name = "Overseer's Office"
 	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "overseer_office"
-	//requires_power = FALSE
 
 /area/vault_atrium_upper
 	name = "Vault Atrium Upper"
 	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "vault_atrium_upper"
-	//requires_power = FALSE
 
-
+/area/shuttle/vault_elevator
+	name = "Vault Elevator"
 
 /*
 

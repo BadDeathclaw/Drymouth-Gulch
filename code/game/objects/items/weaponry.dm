@@ -60,15 +60,42 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 40
-	throwforce = 10
+	force = 25
+	throwforce = 20
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 50
+	block_chance = 0
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
+
+/obj/item/claymore/machete
+	name = "Machete"
+	desc = "A makeshift machete made of a lawn mower blade."
+	icon_state = "imp_machete"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = "machete"
+	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/claymore/machete/pipe
+	name = "Pipe"
+	desc = "A heavy rusted pipe, good for smashing heads. "
+	icon_state = "pipe"
+	item_state = "pipe"
+	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
+	force = 20
+	sharpness = IS_BLUNT
+
+/obj/item/claymore/machete/golf
+	name = "Golf Club"
+	desc = "A old rusted 9 iron golf club."
+	icon_state = "golf"
+	item_state = "golf"
+	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
+	force = 25
+	sharpness = IS_BLUNT
 
 /obj/item/claymore/Initialize()
 	. = ..()
@@ -211,12 +238,12 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 40
+	force = 25
 	throwforce = 10
 	w_class = WEIGHT_CLASS_HUGE
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 50
+	block_chance = 0
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
@@ -486,71 +513,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/melee/skateboard/attack_self(mob/user)
 	new /obj/vehicle/ridden/scooter/skateboard(get_turf(user))
 	qdel(src)
-
-/obj/item/melee/baseball_bat
-	name = "baseball bat"
-	desc = "There ain't a skull in the league that can withstand a swatter."
-	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "baseball_bat"
-	item_state = "baseball_bat"
-	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 10
-	throwforce = 12
-	attack_verb = list("beat", "smacked")
-	w_class = WEIGHT_CLASS_HUGE
-	var/homerun_ready = 0
-	var/homerun_able = 0
-
-/obj/item/melee/baseball_bat/homerun
-	name = "home run bat"
-	desc = "This thing looks dangerous... Dangerously good at baseball, that is."
-	homerun_able = 1
-
-/obj/item/melee/baseball_bat/attack_self(mob/user)
-	if(!homerun_able)
-		..()
-		return
-	if(homerun_ready)
-		to_chat(user, "<span class='notice'>You're already ready to do a home run!</span>")
-		..()
-		return
-	to_chat(user, "<span class='warning'>You begin gathering strength...</span>")
-	playsound(get_turf(src), 'sound/magic/lightning_chargeup.ogg', 65, 1)
-	if(do_after(user, 90, target = src))
-		to_chat(user, "<span class='userdanger'>You gather power! Time for a home run!</span>")
-		homerun_ready = 1
-	..()
-
-/obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
-	. = ..()
-	var/atom/throw_target = get_edge_target_turf(target, user.dir)
-	if(homerun_ready)
-		user.visible_message("<span class='userdanger'>It's a home run!</span>")
-		target.throw_at(throw_target, rand(8,10), 14, user)
-		target.ex_act(EXPLODE_HEAVY)
-		playsound(get_turf(src), 'sound/weapons/homerun.ogg', 100, 1)
-		homerun_ready = 0
-		return
-	else if(!target.anchored)
-		target.throw_at(throw_target, rand(1,2), 7, user)
-
-/obj/item/melee/baseball_bat/ablative
-	name = "metal baseball bat"
-	desc = "This bat is made of highly reflective, highly armored material."
-	icon_state = "baseball_bat_metal"
-	item_state = "baseball_bat_metal"
-	force = 12
-	throwforce = 15
-
-/obj/item/melee/baseball_bat/ablative/IsReflect()//some day this will reflect thrown items instead of lasers
-	var/picksound = rand(1,2)
-	var/turf = get_turf(src)
-	if(picksound == 1)
-		playsound(turf, 'sound/weapons/effects/batreflect1.ogg', 50, 1)
-	if(picksound == 2)
-		playsound(turf, 'sound/weapons/effects/batreflect2.ogg', 50, 1)
-	return 1
 
 /obj/item/melee/flyswatter
 	name = "flyswatter"

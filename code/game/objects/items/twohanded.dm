@@ -225,8 +225,8 @@
 	throwforce = 15
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	force_unwielded = 5
-	force_wielded = 24
+	force_unwielded = 10
+	force_wielded = 56
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
@@ -459,12 +459,12 @@
 	force = 10
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	force_unwielded = 10
-	force_wielded = 18
+	force_unwielded = 20
+	force_wielded = 25
 	throwforce = 20
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
-	armour_penetration = 10
+	armour_penetration = 0
 	materials = list(MAT_METAL=1150, MAT_GLASS=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
@@ -549,6 +549,54 @@
 		desc = "A makeshift spear with [G] attached to it."
 	update_icon()
 
+//THERMIC LANCE
+/obj/item/twohanded/required/thermic_lance
+	name = "thermic lance"
+	desc = "A versatile power-welding tool. Useful for cutting apart metal and limbs."
+	icon_state = "thermiclance_off"
+	item_state = "thermiclance_off"
+	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	force = 10
+	var/force_on = 72
+	w_class = WEIGHT_CLASS_HUGE
+	throwforce = 20
+	throw_speed = 2
+	throw_range = 4
+	materials = list(MAT_METAL=13000)
+	attack_verb = list("burned", "welded", "cut", "melted", "splashed")
+	hitsound = "swing_hit"
+	actions_types = list(/datum/action/item_action/toggle_lance)
+	var/on = FALSE
+
+
+/obj/item/twohanded/required/thermic_lance/attack_self(mob/user)
+	on = !on
+	to_chat(user, "As you turn the lever from [src], [on ? "it begins to heat." : "the flame goes off."]")
+	force = on ? force_on : initial(force)
+	throwforce = on ? force_on : initial(force)
+	icon_state = "thermiclance_[on ? "on" : "off"]"
+	item_state = "thermiclance_[on ? "on" : "off"]"
+
+	if(on)
+		hitsound = 'sound/items/welder2.ogg'
+		damtype = "fire"
+	else
+		hitsound = "swing_hit"
+		damtype = "brute"
+
+	if(src == user.get_active_held_item()) //update inhands
+		user.update_inv_hands()
+	for(var/X in actions)
+		var/datum/action/A = X
+		A.UpdateButtonIcon()
+
+/obj/item/twohanded/required/thermic_lance/get_dismemberment_chance()
+	if(wielded)
+		. = ..()
+
 // CHAINSAW
 /obj/item/twohanded/required/chainsaw
 	name = "chainsaw"
@@ -557,10 +605,10 @@
 	lefthand_file = 'icons/mob/inhands/weapons/chainsaw_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	flags_1 = CONDUCT_1
-	force = 13
-	var/force_on = 24
+	force = 10
+	var/force_on = 72
 	w_class = WEIGHT_CLASS_HUGE
-	throwforce = 13
+	throwforce = 10
 	throw_speed = 2
 	throw_range = 4
 	materials = list(MAT_METAL=13000)
@@ -626,9 +674,9 @@
 //GREY TIDE
 /obj/item/twohanded/spear/grey_tide
 	icon_state = "spearglass0"
-	name = "\improper Grey Tide"
-	desc = "Recovered from the aftermath of a revolt aboard Defense Outpost Theta Aegis, in which a seemingly endless tide of Assistants caused heavy casualities among Nanotrasen military forces."
-	force_unwielded = 15
+	name = "\improper Metal Spear"
+	desc = "A improvised metal spear."
+	force_unwielded = 20
 	force_wielded = 25
 	throwforce = 20
 	throw_speed = 4
@@ -775,7 +823,7 @@
 	icon_state = "bone_axe0"
 	name = "bone axe"
 	desc = "A large, vicious axe crafted out of several sharpened bone plates and crudely tied together. Made of monsters, by killing monsters, for killing monsters."
-	force_wielded = 23
+	force_wielded = 56
 
 /obj/item/twohanded/fireaxe/boneaxe/update_icon()
 	icon_state = "bone_axe[wielded]"
@@ -804,3 +852,46 @@
 
 /obj/item/twohanded/bonespear/update_icon()
 	icon_state = "bone_spear[wielded]"
+
+//Baeball
+
+/obj/item/twohanded/baseball
+	name = "baseball bat"
+	desc = "There ain't a skull in the league that can withstand a swatter."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "baseball0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force_unwielded = 10
+	force_wielded = 25
+	throwforce = 20
+	attack_verb = list("beat", "smacked")
+	w_class = WEIGHT_CLASS_HUGE
+	sharpness = IS_BLUNT
+
+/obj/item/twohanded/baseball/update_icon()  //Currently only here to fuck with the on-mob icons.
+	icon_state = "baseball[wielded]"
+	return
+
+/obj/item/twohanded/fireaxe/sledgehammer
+	name = "sledgehammer"
+	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
+	icon_state = "sledgehammer0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force_wielded = 56
+	sharpness = IS_BLUNT
+
+/obj/item/twohanded/fireaxe/sledgehammer/update_icon()
+	icon_state = "sledgehammer[wielded]"
+
+/obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
+	icon_state = "bmprsword0"
+	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+
+/obj/item/twohanded/fireaxe/bmprsword/update_icon()
+	name = "bumper sword"
+	desc = "A heavy makeshift sword fashioned out of a car bumper."
+	icon_state = "bmprsword[wielded]"
+

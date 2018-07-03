@@ -9,7 +9,7 @@
 
 /obj/item/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
-	damage = 20
+	damage = 25
 
 /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
@@ -29,7 +29,7 @@
 	name = "meteorslug"
 	icon = 'icons/obj/meteor.dmi'
 	icon_state = "dust"
-	damage = 20
+	damage = 25
 	knockdown = 80
 	hitsound = 'sound/effects/meteorimpact.ogg'
 
@@ -91,5 +91,5 @@
 // Mech Scattershot
 
 /obj/item/projectile/bullet/scattershot
-	damage = 20
+	damage = 25
 	stamina = 65
