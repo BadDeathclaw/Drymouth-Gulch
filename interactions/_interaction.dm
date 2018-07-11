@@ -5,13 +5,14 @@
 ** Rewritten 30/08/16 by Zuhayr, sry if I removed anything important.
 **I removed ERP and replaced it with handholding. Nothing of worth was lost. - Vic
 **Fuck you, Vic. ERP is back. - TT
+**>using var/ on everything, also TRUE
 ***********************************/
 
 
 // Rectum? Damn near killed 'em.
 var/list/interactions
 
-/proc/make_interactions(var/interaction)
+/proc/make_interactions(interaction)
 	if(!interactions)
 		interactions = list()
 		for(var/itype in typesof(/datum/interaction)-/datum/interaction)
@@ -46,46 +47,44 @@ var/list/interactions
 	var/require_target_hands
 	var/needs_physical_contact
 
-/datum/interaction/proc/evaluate_user(var/mob/user, var/silent=1)
-
+/datum/interaction/proc/evaluate_user(mob/user, silent = TRUE)
 	if(require_user_mouth)
 		if(!user.has_mouth())
 			if(!silent) user << "<span class = 'warning'>You don't have a mouth.</span>"
-			return 0
+			return FALSE
 		if(!user.mouth_is_free())
 			if(!silent) user << "<span class = 'warning'>Your mouth is covered.</span>"
-			return 0
+			return FALSE
 	if(require_user_hands && !user.has_hands())
 		if(!silent) user << "<span class = 'warning'>You don't have hands.</span>"
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
-/datum/interaction/proc/evaluate_target(var/mob/user, var/mob/target, var/silent=1)
-
+/datum/interaction/proc/evaluate_target(mob/user, mob/target, silent = TRUE)
 	if(require_target_mouth)
 		if(!target.has_mouth())
 			if(!silent) user << "<span class = 'warning'>They don't have a mouth.</span>"
-			return 0
+			return FALSE
 		if(!target.mouth_is_free())
 			if(!silent) user << "<span class = 'warning'>Their mouth is covered.</span>"
-			return 0
+			return FALSE
 	if(require_target_hands && !target.has_hands())
 		if(!silent) user << "<span class = 'warning'>They don't have hands.</span>"
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
-/datum/interaction/proc/get_action_link_for(var/mob/user, var/mob/target)
+/datum/interaction/proc/get_action_link_for(mob/user, mob/target)
 	return "<a href='?src=\ref[src];action=1;action_user=\ref[user];action_target=\ref[target]'>[description]</a><br>"
 
 /datum/interaction/Topic(href, href_list)
 	if(..())
-		return 1
+		return TRUE
 	if(href_list["action"])
 		do_action(locate(href_list["action_user"]), locate(href_list["action_target"]))
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
-/datum/interaction/proc/do_action(var/mob/user, var/mob/target)
+/datum/interaction/proc/do_action(mob/user, mob/target)
 	if(get_dist(user, target) > max_distance)
 		//user << "<span class='warning'>They are too far away.</span>"
 		user.visible_message("<span class='warning'>They are too far away.</span>")
@@ -94,9 +93,9 @@ var/list/interactions
 		//user << "<span class='warning'>You cannot get to them.</span>"
 		user.visible_message("<span class='warning'>You cannot get to them.</span>")
 		return
-	if(!evaluate_user(user, silent=0))
+	if(!evaluate_user(user, silent = FALSE))
 		return
-	if(!evaluate_target(user, target, silent=0))
+	if(!evaluate_target(user, target, silent = FALSE))
 		return
 
 	display_interaction(user, target)
@@ -110,13 +109,13 @@ var/list/interactions
 		//add_logs(target, user, "fucked2")
 	//target.attack_log += text("\[[time_stamp()]\] <font color='orange'>[write_log_target] [user.name] ([user.ckey])</font>")
 
-/datum/interaction/proc/display_interaction(var/mob/user, var/mob/target)
+/datum/interaction/proc/display_interaction(mob/user, mob/target)
 	if(simple_message)
 		var/use_message = replacetext(simple_message, "USER", "\the [user]")
 		use_message = replacetext(use_message, "TARGET", "\the [target]")
 		user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
 
-/datum/interaction/proc/post_interaction(var/mob/user, var/mob/target)
+/datum/interaction/proc/post_interaction(mob/user, mob/target)
 	if(interaction_sound)
 		if(interaction_sound_age_pitch)
 			playsound(get_turf(user), interaction_sound, 50, 1, -1)//, pitch = user.get_age_pitch())
@@ -128,24 +127,24 @@ var/list/interactions
 	. = ..()
 	if(can_buckle && buckled_mob)
 		if(user_unbuckle_mob(user))
-			return 1
+			return TRUE
 
 /atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
 	. = ..()
 	if(can_buckle && istype(M) && !buckled_mob)
 		if(user_buckle_mob(M, user))
-			return 1
+			return TRUE
 
 
 /atom/movable/attack_hand(mob/living/user)
 	. = ..()
 	if(can_buckle && buckled_mob)
 		if(user_unbuckle_mob(user))
-			return 1
+			return TRUE
 
 /atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
 	. = ..()
 	if(can_buckle && istype(M) && !buckled_mob)
 		if(user_buckle_mob(M, user))
-			return 1
+			return TRUE
 */
