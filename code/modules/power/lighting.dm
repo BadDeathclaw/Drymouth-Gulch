@@ -818,8 +818,8 @@
 	fitting = "bulb"
 
 //F13 EDIT
-/obj/machinery/light
-	name = "light fixture"
+/obj/machinery/light/lampost
+	name = "light post"
 	icon = 'icons/obj/f13lamppost.dmi'
 	icon_state = "lamppost0"
 	base_state = "lamppost1"
