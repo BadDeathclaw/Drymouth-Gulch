@@ -828,7 +828,7 @@
 	//active_power_usage = 100
 	density = 0
 	layer = WALL_OBJ_LAYER
-	sun_triger = 1
+	//sun_triger = 1
 	nightshift_allowed = FALSE
 	start_with_cell = FALSE
 	on = TRUE
