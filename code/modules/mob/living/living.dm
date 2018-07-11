@@ -218,7 +218,7 @@
 		for(var/thing in diseases)
 			var/datum/disease/D = thing
 			if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-				L.ContactContractDisease(D)
+				M.ContactContractDisease(D)
 
 		for(var/thing in L.diseases)
 			var/datum/disease/D = thing
@@ -232,8 +232,6 @@
 			M.LAssailant = null
 		else
 			M.LAssailant = usr
-		if(isliving(M))
-			var/mob/living/L = M
 			
 //mob verbs are a lot faster than object verbs
 //for more info on why this is not atom/pull, see examinate() in mob.dm
