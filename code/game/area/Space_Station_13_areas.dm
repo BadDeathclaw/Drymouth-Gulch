@@ -1323,59 +1323,70 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "tcomsatlounge"
 
 //FALLOUT
+/area/f13
+	name = "F13"
+	icon = 'icons/turf/f13areas.dmi'
+	requires_power = FALSE //Should we disable power?
+	has_gravity = STANDARD_GRAVITY //we dont use gravgen on the fucking planet
+	//music = F13AMBIANCE //soon(C)
 
-/area/desert
+/area/f13/desert
 	name = "Desert"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "desert"
-	//requires_power = FALSE //Should we disable power?
+	poweralm = FALSE	//disables poweralarm
+	power_environ = FALSE	//disables atmos vents and shit
+	power_equip = FALSE	//disables equipment
+	outdoors = TRUE		//makes it so that you can make a room on this room
+	flags_1 = NONE //>dirt randomly on desert
 
-/area/sunny_dale
+/area/f13/desert/mountain
+	name = "mountain"
+	icon_state = "green"
+/*
+/area/f13/building
+	name = "Building 1"
+	icon_state = "yellow"
+
+/area/f13/building/building2
+	name = "Building 2"
+*/
+/area/f13/sunny_dale
 	name = "Sunny Dale"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "sunny_dale"
 
-/area/klamat
+/area/f13/klamat
 	name = "Klamat"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "klamat"
 
-/area/farmhouse
+/area/f13/farmhouse
 	name = "Farmhouse"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "farmhouse"
 
-/area/legioncamp
+/area/f13/legioncamp
 	name = "Legion Camp"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "legioncamp"
 
-/area/powerplant
+/area/f13/powerplant
 	name = "Power Plant"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "powerplant"
 
-/area/enclave_base
+/area/f13/enclave_base
 	name = "Enclave Base"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "enclave_base"
 
-/area/den
+/area/f13/den
 	name = "Den"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "den"
 
 /area/overseer_office
 	name = "Overseer's Office"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "overseer_office"
 
-/area/vault_atrium_upper
+/area/f13/vault_atrium_upper
 	name = "Vault Atrium Upper"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "vault_atrium_upper"
 
-/area/shuttle/vault_elevator
+/area/f13/shuttle/vault_elevator
 	name = "Vault Elevator"
 
 /*
