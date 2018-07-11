@@ -214,11 +214,12 @@
 
 	if(ismob(AM))
 		var/mob/M = AM
+		var/mob/living/L = AM
 		//Share diseases that are spread by touch
 		for(var/thing in diseases)
 			var/datum/disease/D = thing
 			if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-				M.ContactContractDisease(D)
+				L.ContactContractDisease(D)
 
 		for(var/thing in L.diseases)
 			var/datum/disease/D = thing
