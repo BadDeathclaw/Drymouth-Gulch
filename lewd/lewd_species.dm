@@ -1,6 +1,6 @@
 /datum/species
-	var/has_genitals = 1
-	var/has_anus = 1
+	var/has_genitals = TRUE //if this goes to 2, blame coders
+	var/has_anus = TRUE //same with this
 
 /datum/species/proc/has_penis(var/mob/living/carbon/human/H)
 	return has_genitals && (H.gender == MALE)
