@@ -833,3 +833,18 @@
 	start_with_cell = FALSE
 	on = TRUE
 	no_emergency = TRUE
+	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
+	var/nightshift_start_time = 702000		//7:30 PM, station time
+	var/nightshift_end_time = 270000		//7:30 AM, station time
+	
+/obj/machinery/light/lampost/proc/update()
+	var/time = station_time()
+	var/night_time = (time < nightshift_end_time) || (time > nightshift_start_time)
+	if(night_time)	//night
+		nightshift_active = TRUE
+		brightness = 8
+
+	if(nightshift_active != night_time) //d a y
+		nightshift_active = FALSE
+		brightness = 0
+	
