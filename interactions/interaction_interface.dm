@@ -31,7 +31,7 @@
 	if(usr != src && !usr.restrained())
 		usr.try_interaction(src)
 
-/mob/living/carbon/human/try_interaction(var/mob/partner)
+/mob/living/carbon/human/try_interaction(mob/partner)
 
 	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
 
@@ -48,7 +48,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/mob/living/simple_animal/hostile/deathclaw/try_interaction(var/mob/partner)
+/mob/living/simple_animal/hostile/deathclaw/try_interaction(mob/partner)
 
 	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
 

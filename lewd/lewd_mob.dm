@@ -1,22 +1,22 @@
 /*
 mob/proc/get_age_pitch()
-	return 1
+	return TRUE
 /mob/living/carbon/human/get_age_pitch() // The existence of this proc raises concerns.
 	return 1.0 + 0.5*(30 - age)/80
 */
 
 /mob/proc/has_lips()
-	return 0
+	return FALSE
 
 /mob/living/carbon/human/has_lips()
-	return 1
+	return TRUE
 
 /mob/living/carbon/human/New(var/new_loc, var/new_species_name = null, var/delay_ready_dna=0)
 	. = ..()
 	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
 	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
 
-/mob/proc/do_fucking_animation(var/fuckdir) // Today I wrote 'var/fuckdir' with a straight face. Not a milestone I ever expected to pass.
+/mob/proc/do_fucking_animation(fuckdir) // Today I wrote 'var/fuckdir' with a straight face. Not a milestone I ever expected to pass. dont worry, we dont use heretic proc/name(var/dir)
 
 	if(!fuckdir)
 		return
@@ -60,10 +60,10 @@ mob/proc/get_age_pitch()
 	return (gender == FEMALE)
 
 /mob/proc/has_anus()
-	return 1
+	return TRUE
 
 /mob/proc/has_hand()
-	return 1
+	return TRUE
 
 ///mob/living/carbon/human/has_penis()
 	//return species.has_penis(src)
@@ -75,7 +75,7 @@ mob/proc/get_age_pitch()
 	//return species.has_anus()
 
 /mob/proc/is_nude()
-	return 1
+	return TRUE
 
 /mob/living/carbon/human/is_nude()
 	return (!wear_suit || !(wear_suit.body_parts_covered)) && (!w_uniform || !(w_uniform.body_parts_covered))

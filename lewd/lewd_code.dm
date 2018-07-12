@@ -19,7 +19,7 @@
 	visible_message("<font color=purple> <B>\The [src]</B> [pick("moans", "moans in pleasure",)].</font>")
 	playsound(get_turf(src), "honk/sound/interactions/moan_[gender == FEMALE ? "f" : "m"][moan].ogg", 70, 1, 0)//, pitch = get_age_pitch())
 
-/mob/proc/cum(var/mob/partner, var/target_orifice)
+/mob/proc/cum(mob/partner, target_orifice)
 
 	var/message
 	if(has_penis())
@@ -90,7 +90,7 @@
 		refactory_period = 300
 		src.set_drugginess(6)
 
-/mob/living/carbon/human/cum(var/mob/partner, var/target_orifice)
+/mob/living/carbon/human/cum(mob/partner, target_orifice)
 	if (multiorgasms < sexual_potency)
 		//cum_splatter(get_blood(vessel), (gender == MALE && partner) ? partner : src)
 		cum_splatter((gender == MALE && partner) ? partner : src)
@@ -99,16 +99,16 @@
 /mob/var/last_partner
 /mob/var/last_orifice
 
-/mob/proc/is_fucking(var/mob/partner, var/orifice)
+/mob/proc/is_fucking(mob/partner, orifice)
 	if(partner == last_partner && orifice == last_orifice)
 		return 1
 	return 0
 
-/mob/proc/set_is_fucking(var/mob/partner, var/orifice)
+/mob/proc/set_is_fucking(mob/partner, orifice)
 	last_partner = partner
 	last_orifice = orifice
 
-/mob/proc/do_oral(var/mob/partner)
+/mob/proc/do_oral(mob/partner)
 	var/message
 	var/lust_increase = 10
 
@@ -141,7 +141,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_facefuck(var/mob/partner)
+/mob/proc/do_facefuck(mob/partner)
 	var/message
 	var/lust_increase = 10
 
@@ -170,7 +170,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_throatfuck(var/mob/partner)
+/mob/proc/do_throatfuck(mob/partner)
 	var/message
 	var/lust_increase = 10
 
@@ -192,7 +192,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_anal(var/mob/partner)
+/mob/proc/do_anal(mob/partner)
 	var/message
 	var/lust_increase = 10
 	if(is_fucking(partner, CUM_TARGET_ANUS))
@@ -208,7 +208,7 @@
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_vaginal(var/mob/partner)
+/mob/proc/do_vaginal(mob/partner)
 	var/message
 	var/lust_increase = 10
 
@@ -225,7 +225,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_mount(var/mob/partner)
+/mob/proc/do_mount(mob/partner)
 	var/message
 	var/lust_increase = 10
 	if(partner.is_fucking(src, CUM_TARGET_VAGINA))
@@ -240,7 +240,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_mountass(var/mob/partner)
+/mob/proc/do_mountass(mob/partner)
 	var/message
 	var/lust_increase = 10
 	if(partner.is_fucking(src, CUM_TARGET_ANUS))
@@ -255,28 +255,28 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_fingering(var/mob/partner)
+/mob/proc/do_fingering(mob/partner)
 	visible_message("<b>\The [src]<b> [pick(list("fingers \the [partner].", "fingers \the [partner]'s pussy.", "fingers \the [partner] hard."))]</span>")
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(10, null, src)
 	partner.dir = get_dir(partner, src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_fingerass(var/mob/partner)
+/mob/proc/do_fingerass(mob/partner)
 	visible_message("<b>\The [src]<b> [pick(list("fingers \the [partner].", "fingers \the [partner]'s asshole.", "fingers \the [partner] hard."))]</span>")
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(10, null, src)
 	partner.dir = get_dir(partner, src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_rimjob(var/mob/partner)
+/mob/proc/do_rimjob(mob/partner)
 	visible_message("<b>\The [src]<b> licks \the [partner]'s asshole.</span>")
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(10, null, src)
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_handjob(var/mob/partner)
+/mob/proc/do_handjob(mob/partner)
 	var/message
 	var/lust_increase = 10
 
@@ -292,7 +292,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_breastfuck(var/mob/partner)
+/mob/proc/do_breastfuck(mob/partner)
 	var/message
 	var/lust_increase = 10
 
@@ -309,7 +309,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_mountface(var/mob/partner)
+/mob/proc/do_mountface(mob/partner)
 	var/message
 	var/lust_increase = 1
 
@@ -325,7 +325,7 @@
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/proc/do_lickfeet(var/mob/partner)
+/mob/proc/do_lickfeet(mob/partner)
 	var/message
 	var/lust_increase = 1
 
@@ -342,7 +342,7 @@
 	do_fucking_animation(get_dir(src, partner))
 
 /*Grinding YOUR feet in TARGET's face*/
-/mob/proc/do_grindface(var/mob/partner)
+/mob/proc/do_grindface(mob/partner)
 	var/message
 	var/lust_increase = 1
 
@@ -382,7 +382,7 @@
 	do_fucking_animation(get_dir(src, partner))
 
 	/*Grinding YOUR feet in TARGET's mouth*/
-/mob/proc/do_grindmouth(var/mob/partner)
+/mob/proc/do_grindmouth(mob/partner)
 	var/message
 	var/lust_increase = 1
 
@@ -430,7 +430,7 @@
 		return A.name
 	}
 
-/mob/proc/handle_post_sex(var/amount, var/orifice, var/mob/partner)
+/mob/proc/handle_post_sex(amount, orifice, mob/partner)
 
 	sleep(5)
 
