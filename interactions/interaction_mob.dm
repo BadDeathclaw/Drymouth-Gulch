@@ -1,17 +1,17 @@
 /mob/proc/has_hands()
-	return 0
+	return FALSE
 
 /mob/living/carbon/human/has_hands()
-	return 1//(can_use_hand("l_hand") || can_use_hand("r_hand"))
+	return TRUE//(can_use_hand("l_hand") || can_use_hand("r_hand"))
 
 /mob/proc/has_mouth()
-	return 1
+	return TRUE
 
 /mob/proc/mouth_is_free()
-	return 1
+	return TRUE
 
 /mob/proc/foot_is_free()
-	return 1
+	return TRUE
 
 ///mob/living/carbon/human/has_mouth()
 //	var/datum/organ/external/head/head = get_organ("head")
@@ -33,6 +33,6 @@
 	. = ..()
 	if(can_buckle && istype(M) && !buckled_mob)
 		if(user_buckle_mob(M, user))
-			return 1
+			return TRUE
 
 */
