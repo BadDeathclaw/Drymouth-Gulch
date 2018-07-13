@@ -165,8 +165,6 @@
 	attacktext = "bites"
 	attack_sound = 'sound/weapons/bite.ogg'
 	gold_core_spawnable = HOSTILE_SPAWN
-	see_invisible = SEE_INVISIBLE_MINIMUM
-	see_in_dark = 4
 
 /mob/living/simple_animal/hostile/rad_scorpion/blue
 	name = "giant rad scorpion"
