@@ -354,5 +354,3 @@
 	emote_hear = list("brays.")
 	emote_see = list("shakes its head.")
 	speak_chance = 1
-	turns_per_move = 5
-	see_in_dark = 6
