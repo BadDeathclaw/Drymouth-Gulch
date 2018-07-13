@@ -1325,53 +1325,54 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 //FALLOUT
 
 /area/desert
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Desert"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "desert"
+	//requires_power = FALSE //Should we disable power?
 
 /area/sunny_dale
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Sunny Dale"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "sunny_dale"
 
 /area/klamat
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Klamat"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "klamat"
 
 /area/farmhouse
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Farmhouse"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "farmhouse"
 
 /area/legioncamp
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Legion Camp"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "legioncamp"
 
 /area/powerplant
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Power Plant"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "powerplant"
 
 /area/enclave_base
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Enclave Base"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "enclave_base"
 
 /area/den
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Den"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "den"
 
 /area/overseer_office
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Overseer's Office"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "overseer_office"
 
 /area/vault_atrium_upper
-	icon = 'icons/turf/f13areas.dmi'
 	name = "Vault Atrium Upper"
+	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "vault_atrium_upper"
 
 /area/shuttle/vault_elevator
