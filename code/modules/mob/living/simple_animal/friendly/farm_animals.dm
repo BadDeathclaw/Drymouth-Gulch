@@ -338,3 +338,19 @@
 		user.visible_message("[user] milks [src] using \the [O].", "<span class='notice'>You milk [src] using \the [O].</span>")
 	else
 		to_chat(user, "<span class='danger'>The udder is dry. Wait a bit longer...</span>")
+
+//F13 EDIT
+
+/mob/living/simple_animal/cow/bhramin
+	name = "brahmin"
+	desc = "Brahmin or brahma are mutated cattle with two heads and giant udders.<br>Known for their milk, just don't tip them over."
+	icon = 'icons/mob/f13animal.dmi'
+	icon_state = "cow"
+	icon_living = "cow"
+	icon_dead = "cow_dead"
+	icon_gib = "cow_gib"
+	speak = list("Moo?","Moo!","MOOOOOO","Heeey brooo!","Heeey yooou!")
+	speak_emote = list("moos","moos hauntingly")
+	emote_hear = list("brays.")
+	emote_see = list("shakes its head.")
+	speak_chance = 1
