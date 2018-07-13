@@ -100,7 +100,6 @@
 	faction = list("syndicate")
 	vision_range = 12
 	aggro_vision_range = 12
-	idle_vision_range = 12 //wow, huge range
 /*
 /mob/living/simple_animal/hostile/robot/death(gibbed)
 	..(gibbed)
