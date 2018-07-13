@@ -672,6 +672,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 //Takes: Area type as text string or as typepath OR an instance of the area.
 //Returns: A list of all turfs in areas of that type of that type in the world.
 /proc/get_area_turfs(areatype, target_z = 0, subtypes=FALSE)
+	set background = 1;
 	if(istext(areatype))
 		areatype = text2path(areatype)
 	else if(isarea(areatype))

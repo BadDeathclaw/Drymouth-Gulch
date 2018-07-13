@@ -106,6 +106,10 @@
 	port_id = "enclavefort"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/bos
+	port_id = "bos"
+	can_be_bought = FALSE
+
 // Shuttles start here:
 
 /datum/map_template/shuttle/emergency/airless
@@ -460,3 +464,7 @@
 /datum/map_template/shuttle/enclavefort/elevator
 	suffix = "elevator"
 	name = "Enclave Fort Elevator"
+
+/datum/map_template/shuttle/bos/elevator
+	suffix = "elevator"
+	name = "BOS Elevator"
