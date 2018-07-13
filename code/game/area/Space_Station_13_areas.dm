@@ -1323,70 +1323,58 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "tcomsatlounge"
 
 //FALLOUT
-/area/f13
-	name = "F13"
-	icon = 'icons/turf/f13areas.dmi'
-	requires_power = FALSE //Should we disable power?
-	has_gravity = STANDARD_GRAVITY //we dont use gravgen on the fucking planet
-	//music = F13AMBIANCE //soon(C)
 
-/area/f13/desert
+/area/desert
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Desert"
 	icon_state = "desert"
-	poweralm = FALSE	//disables poweralarm
-	power_environ = FALSE	//disables atmos vents and shit
-	power_equip = FALSE	//disables equipment
-	outdoors = TRUE		//makes it so that you can make a room on this room
-	flags_1 = NONE //>dirt randomly on desert
 
-/area/f13/desert/mountain
-	name = "mountain"
-	icon_state = "green"
-/*
-/area/f13/building
-	name = "Building 1"
-	icon_state = "yellow"
-
-/area/f13/building/building2
-	name = "Building 2"
-*/
-/area/f13/sunny_dale
+/area/sunny_dale
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Sunny Dale"
 	icon_state = "sunny_dale"
 
-/area/f13/klamat
+/area/klamat
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Klamat"
 	icon_state = "klamat"
 
-/area/f13/farmhouse
+/area/farmhouse
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Farmhouse"
 	icon_state = "farmhouse"
 
-/area/f13/legioncamp
+/area/legioncamp
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Legion Camp"
 	icon_state = "legioncamp"
 
-/area/f13/powerplant
+/area/powerplant
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Power Plant"
 	icon_state = "powerplant"
 
-/area/f13/enclave_base
+/area/enclave_base
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Enclave Base"
 	icon_state = "enclave_base"
 
-/area/f13/den
+/area/den
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Den"
 	icon_state = "den"
 
 /area/overseer_office
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Overseer's Office"
 	icon_state = "overseer_office"
 
-/area/f13/vault_atrium_upper
+/area/vault_atrium_upper
+	icon = 'icons/turf/f13areas.dmi'
 	name = "Vault Atrium Upper"
 	icon_state = "vault_atrium_upper"
 
-/area/f13/shuttle/vault_elevator
+/area/shuttle/vault_elevator
 	name = "Vault Elevator"
 
 /*
