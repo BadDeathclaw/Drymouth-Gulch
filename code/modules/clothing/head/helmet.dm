@@ -282,6 +282,8 @@
 	name = "raider blastmaster helmet"
 	icon_state = "blastmaster"
 	item_state = "blastmaster"
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/raider/yankee
 	name = "yankee raider helmet"
@@ -302,7 +304,7 @@
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
-
+	dynamic_fhair_suffix = ""
 //Combat armor
 /obj/item/clothing/head/helmet/f13
 	icon_state = "helmet"
@@ -320,6 +322,7 @@
 	flash_protect = 1
 	tint = 0
 	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/combat/mk2
 	name = "reinforced combat helmet"
@@ -351,6 +354,8 @@
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/legion/legveteran
 	name = "legion veteran helmet"
@@ -361,6 +366,8 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/legion/legvexil
 	name = "legion vexillarius helmet"
@@ -371,6 +378,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan
 	name = "legion decanus helmet"
@@ -381,6 +389,8 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/legion/legcenturion
 	name = "legion centurion helmet"
@@ -391,7 +401,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	dynamic_hair_suffix = ""
+
 
 /obj/item/clothing/head/helmet/f13/legion/leglegat
 	name = "legion legate helmet"
@@ -404,6 +414,8 @@
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+
 
 //Ranger Armors
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat
@@ -412,11 +424,12 @@
 	icon_state = "ranger"
 	item_state = "ranger"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 100, "rad" = 50, "fire" = 0, "acid" = 0)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 /*
 	darkness_view = 8
 	invis_view = SEE_INVISIBLE_MINIMUM
@@ -465,7 +478,7 @@
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 48, "energy" = 48, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	var/hit_reflect_chance = 70
 	strip_delay = 10
-	dynamic_hair_suffix = ""
+
 
 /obj/item/clothing/head/helmet/f13/tesla/IsReflect(def_zone)
 	if(!(def_zone in list("head"))) //If not shot where ablative is covering you, you don't get the reflection bonus!
@@ -488,6 +501,7 @@
 	flash_protect = 2
 	tint = 0
 	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/brokenpa/t45d
 	name = "broken T-45d power helmet"
@@ -520,6 +534,7 @@
 	flash_protect = 2
 	tint = 0
 	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/power_armor/f13/mob_can_equip(mob/user, slot)
 	if (ishuman(user))
