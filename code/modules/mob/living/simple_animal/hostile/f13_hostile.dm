@@ -80,11 +80,11 @@
 	response_help = "pokes"
 	response_disarm = "shoves"
 	response_harm = "hits"
-	speed = 3
-	stat_attack = 1
-	robust_searching = 1
 	maxHealth = 230
 	health = 230
+	speed = 3
+	stat_attack = CONSCIOUS
+	robust_searching = 1
 	harm_intent_damage = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 30
@@ -95,7 +95,6 @@
 	a_intent = "harm"
 //	var/weapon1
 //	var/weapon2
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list("syndicate")
 	vision_range = 12
