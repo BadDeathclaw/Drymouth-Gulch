@@ -9,7 +9,7 @@
 	taste_mult = 2
 	reagent_state = LIQUID
 	nutriment_factor = 0.5 * REAGENTS_METABOLISM
-
+	
 /datum/reagent/consumable/cum/reaction_turf(turf/T, reac_volume)
 	if(!istype(T))
 		return
@@ -22,7 +22,7 @@
 	S.reagents.add_reagent("cum", reac_volume)
 	if(data["blood_DNA"])
 		S.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"])) //yes. STD
-
+	
 //cleanable here
 
 /obj/effect/decal/cleanable/cum
@@ -36,7 +36,7 @@
 	mergeable_decal = FALSE
 	blood_state = null
 	bloodiness = null
-	//var/blood_DNA = list()
+	var/blood_DNA = list()
 	beauty = -50
 
 /obj/effect/decal/cleanable/cum/New()
@@ -44,6 +44,10 @@
 	dir = pick(1,2,4,8)
 	add_blood_DNA(list("Unknown DNA" = "O+"))
 
+/obj/effect/decal/cleanable/cum/replace_decal(/obj/effect/decal/cleanable/cum/F)
+	F.add_blood_DNA(return_blood_DNA())
+	..()
+	
 ///proc/cum_splatter(datum/reagent/blood/source, atom/target) // Like blood_splatter(), but much more questionable on a resume.
 /proc/cum_splatter(atom/target) // Like blood_splatter(), but much more questionable on a resume.
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
@@ -53,6 +57,7 @@
 /mob/var/lastmoan
 
 /mob/proc/moan()
+
 	if(!(prob(lust / lust_tolerance * 65)))
 		return
 
