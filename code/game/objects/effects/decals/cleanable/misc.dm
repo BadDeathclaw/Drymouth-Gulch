@@ -232,16 +232,3 @@
 	icon_state = "xfloor1"
 	random_icon_states = list("xfloor1", "xfloor2", "xfloor3", "xfloor4", "xfloor5", "xfloor6", "xfloor7")
 	beauty = -300
-
-/obj/effect/decal/cleanable/cum
-	name = "cum"
-	desc = "Thick, sticky splooge. It smells pretty bad."
-	icon = 'honk/icons/effects/cum.dmi'
-	turf_loc_check = FALSE
-	mergeable_decal = FALSE
-	random_icon_states = list("cum1", "cum3", "cum4", "cum5", "cum6", "cum7", "cum8", "cum9", "cum10", "cum11", "cum12")
-	beauty = -50
-	//density = 0
-	//layer = 2
-	//blood_DNA = list()
-	//anchored = 1
