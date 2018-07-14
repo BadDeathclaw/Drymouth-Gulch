@@ -40,6 +40,12 @@
 	item_state = "ncr_officer"
 	item_color = "ncr_officer"
 
+/obj/item/clothing/under/f13/caravaneer
+	name = "caravaneer outfit"
+	desc = "A soft outfit used by NCR caravaneers."
+	icon_state = "caravaneer"
+	item_state = "caravaneer"
+	item_color = "caravaneer"
 
 //Settlers
 
@@ -126,9 +132,160 @@
 	item_color = "recon"
 
 
-//
+//Legion
+
+/obj/item/clothing/under/f13/legskirt
+	name = "legionary fatigues"
+	desc = "A black learthery skirt and a thick long sleeve cotton shirt."
+	icon_state = "legskirt"
+	item_state = "legskirt"
+	item_color = "legskirt"
 
 
+// Generic
 
+/obj/item/clothing/under/f13/machinist
+	name = "machinist bodysuit"
+	desc = "Apparel of an old-time machinist."
+	icon_state = "machinist"
+	item_state = "machinist"
+	item_color = "machinist"
+
+/obj/item/clothing/under/f13/lumberjack
+	name = "lumberjack outfit"
+	desc = "Apparel of an old-time lumberjack."
+	icon_state = "lumberjack"
+	item_state = "lumberjack"
+	item_color = "lumberjack"
+
+/obj/item/clothing/under/f13/shiny
+	name = "shiny outfit"
+	desc = "Perfect outfit for a brave and reckless cowboy. Shiny!"
+	icon_state = "shiny"
+	item_state = "shiny"
+	item_color = "shiny"
+
+/obj/item/clothing/under/f13/merca
+	name = "merc outfit"
+	desc = "A mercenary ragtag outfit."
+	icon_state = "merca"
+	item_state = "merca"
+	item_color = "merca"
+
+/obj/item/clothing/under/f13/mercc
+	name = "merc outfit"
+	desc = "A mercenary ragtag outfit."
+	icon_state = "mercc"
+	item_state = "mercc"
+	item_color = "mercc"
+
+/obj/item/clothing/under/f13/cowboyb
+	name = "Cowboy outfit"
+	desc = "A dirt brown cowboy outfit. Specially usefull for herding brahmins."
+	icon_state = "cowboyb"
+	item_state = "cowboyb"
+	item_color = "cowboyb"
+
+/obj/item/clothing/under/f13/cowboyg
+	name = "Cowboy outfit"
+	desc = "A dirt Grey cowboy outfit. Specially usefull for herding brahmins."
+	icon_state = "cowboyg"
+	item_state = "cowboyg"
+	item_color = "cowboyg"
+
+/obj/item/clothing/under/f13/combat_shirt
+	name = "combat uniform"
+	desc = "An old combat uniform, out of use around the time of the war."
+	icon_state = "combat_shirt"
+	item_state = "combat_shirt"
+	item_color = "combat_shirt"
+
+
+//Minor Factions
+
+//Roving Traders
+
+/obj/item/clothing/under/f13/roving
+	name = "roving trader outfit "
+	desc = "It's an outfit commonly worn by the roving traders."
+	icon_state = "roving"
+	item_state = "roving"
+	item_color = "roving"
+
+//Followers of the Apocalypse
+
+/obj/item/clothing/under/f13/follower
+	name = "follower volunteer uniform"
+	desc = "The uniform of the volunteers in the followers of the apocalypse retinue."
+	icon_state = "follower"
+	item_state = "follower"
+	item_color = "follower"
+
+
+//Gangs
+
+//Khans
+
+/obj/item/clothing/under/f13/khan
+	name = "great khan uniform"
+	desc = "The uniform of the the Great Khans."
+	icon_state = "khan"
+	item_state = "khan"
+	item_color = "khan"
+
+//Dust Devils
+
+//Boomers
+
+//Bright Brotherhood
+
+//Nightkin Gang
+
+//The Chairmen
+
+//Greasers
+
+//Maud's Muggers
+
+//Jackals
+
+//Powder Gangers
+
+//White Legs
+
+//Dead Horses
+
+//The Kings
+
+//Mutant Band
+
+
+//Masks
+/obj/item/clothing/mask/facewrap
+	name = "desert facewrap"
+	desc = "An NCR issued facewrap used to protect the wearer from the harsh desert elements."
+	icon_state = "facewrap"
+	item_state = "facewrap"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/clothing/mask/facewrap/blue
+	name = "blue facewrap"
+	desc = "An thick facewrap used to protect the wearer from the harsh wasteland elements."
+	icon_state = "blue_facewrap"
+	item_state = "blue_facewrap"
+
+/obj/item/clothing/mask/facewrap/red
+	name = "red facewrap"
+	desc = "An thick facewrap used to protect the wearer from the harsh desert elements."
+	icon_state = "red_facewrap"
+	item_state = "red_facewrap"
+
+/obj/item/clothing/mask/facewrap/black
+	name = "black facewrap"
+	desc = "An thick facewrap used to protect the wearer from the harsh desert elements."
+	icon_state = "black_facewrap"
+	item_state = "black_facewrap"
 
 
