@@ -48,7 +48,7 @@
 /obj/item/shield/riot/roman/legion
 	name = "legion shield"
 	desc = "A well balanced hard wood shield, fashioned together with long iron bands. It has a legion emblem charred into the inside."
-	block_chance = 35
+	block_chance = 25
 
 /obj/item/shield/riot/roman/fake
 	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
@@ -64,7 +64,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	materials = list()
 	resistance_flags = FLAMMABLE
-	block_chance = 30
+	block_chance = 25
 
 /obj/item/shield/energy
 	name = "energy combat shield"

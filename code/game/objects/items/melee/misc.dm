@@ -97,7 +97,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
-	force = 12 //9 hit crit
+	force = 10 //9 hit crit
 	w_class = WEIGHT_CLASS_NORMAL
 	var/cooldown = 0
 	var/on = TRUE

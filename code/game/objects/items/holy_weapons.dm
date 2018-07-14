@@ -174,7 +174,7 @@
 	item_state = "nullrod"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	force = 18
+	force = 25
 	throw_speed = 3
 	throw_range = 4
 	throwforce = 10
@@ -295,6 +295,7 @@
 	item_state = "chainswordon"
 	name = "sacred chainsaw sword"
 	desc = "Suffer not a heretic to live."
+	force = 56
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
 	hitsound = 'sound/weapons/chainsawhit.ogg'
