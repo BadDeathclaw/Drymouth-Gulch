@@ -24,8 +24,27 @@ Needs whitelist
 	name = "Legate"
 	jobtype = /datum/job/f13legate
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+
+	id = null
+	ears = null
+	belt = null
+
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionlegat
+	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/leglegat
+	head = 			/obj/item/clothing/head/helmet/f13/legion/leglegat
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	mask = 			/obj/item/clothing/mask/facewrap/red
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=2, \
+		/*/obj/item/stack/spear/bundle=1, \ */
+		/obj/item/melee/powerfist=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/flashlight/flare/torch=1)
+
 
 /*
 Centurion
@@ -49,8 +68,26 @@ Centurion
 	name = "Centurion"
 	jobtype = /datum/job/f13centurion
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	id = null
+	ears = null
+	belt = null
+
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionmetal
+	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
+	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	mask = 			/obj/item/clothing/mask/facewrap/red
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/*/obj/item/stack/spear/bundle=1, \ */
+		/obj/item/melee/powerfist=1, \
+		/obj/item/book/granter/martial/cqc=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/flashlight/flare/torch=1)
 
 /*
 Vexillarius
@@ -71,8 +108,26 @@ Vexillarius
 	name = "Vexillarius"
 	jobtype = /datum/job/f13vexillarius
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	id = null
+	ears = null
+	belt = null
+
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionmetal
+	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
+	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	mask = 			/obj/item/clothing/mask/facewrap/red
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
+	r_hand = 		/obj/item/twohanded/fireaxe
+	backpack_contents = list(
+		/obj/item/restraints/handcuffs=1, \
+		/*/obj/item/stack/spear/bundle=1, \ */
+		/obj/item/claymore/machete=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/magazine/r20=1, \
+		/obj/item/flashlight/flare/torch=1)
 
 /*
 Decan
@@ -93,8 +148,26 @@ Decan
 	name = "Decanus"
 	jobtype = /datum/job/f13decan
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	id = null
+	ears = null
+	belt = null
+
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionleather
+	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
+	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	mask = 			/obj/item/clothing/mask/facewrap/red
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic
+	r_hand = 		/obj/item/twohanded/fireaxe
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/*/obj/item/stack/spear/bundle=1, \ */
+		/obj/item/claymore/machete=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/magazine/d12g=2, \
+		/obj/item/flashlight/flare/torch=1)
 
 /*
 Veteran
@@ -115,8 +188,25 @@ Veteran
 	name = "Veteran Legionnaire"
 	jobtype = /datum/job/f13vetlegion
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	id = null
+	ears = null
+	belt = null
+
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionmetal
+	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
+	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	mask = 			/obj/item/clothing/mask/facewrap/red
+	suit_store = 	/obj/item/gun/ballistic/shotgun
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/*/obj/item/stack/spear/bundle=1, \ */
+		/obj/item/claymore/machete=1, \
+		/obj/item/storage/box/lethalshot=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/flashlight/flare/torch=1)
 
 /*
 Legionary
@@ -137,5 +227,22 @@ Legionary
 	name = "Legionary"
 	jobtype = /datum/job/f13legionary
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	id = null
+	ears = null
+	belt = null
+
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionleather
+	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
+	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	mask = 			/obj/item/clothing/mask/facewrap/red
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/*/obj/item/stack/spear/bundle=1, \ */
+		/obj/item/claymore/machete=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/m44=2, \
+		/obj/item/flashlight/flare/torch=1)
