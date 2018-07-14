@@ -43,7 +43,16 @@
 
 /datum/techweb/science	//Global science techweb for RND consoles.
 	id = "SCIENCE"
-	organization = "Nanotrasen"
+	organization = "Vault Tech"
+
+/datum/techweb/bos	//BOS tech "channel"
+	id = "BOS"
+	organization = "Brotherhood of Steel"
+	
+/datum/techweb/enclave	//Enclave tech "channel"
+	id = "ENCLAVE"
+	organization = "Enclave"
+	
 
 /datum/techweb/Destroy()
 	researched_nodes = null
