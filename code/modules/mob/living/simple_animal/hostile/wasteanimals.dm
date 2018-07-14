@@ -1,0 +1,165 @@
+/mob/living/simple_animal/hostile/cazador
+	name = "cazador"
+	desc = "A mutated insect known for it's fast speed, deadly sting, and being huge bastards."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "cazador"
+	icon_living = "cazador"
+	icon_dead = "cazador_dead"
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	speak_chance = 0
+	turns_per_move = 5
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 2)
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	emote_taunt = list("buzzes")
+	taunt_chance = 30
+	speed = 0
+	maxHealth = 25
+	health = 25
+
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	attacktext = "stings"
+	speak_emote = list("buzzes")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("cazador")
+	movement_type = FLYING
+	gold_core_spawnable = HOSTILE_SPAWN
+
+/mob/living/simple_animal/hostile/cazador/AttackingTarget()
+	. = ..()
+	if(. && ishuman(target))
+		var/mob/living/carbon/human/H = target
+		H.reagents.add_reagent("cazador_venom", 5)
+
+/mob/living/simple_animal/hostile/cazador/melee/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(50))
+		return ..()
+	else
+		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
+		return 0
+
+/mob/living/simple_animal/hostile/cazador/young
+	name = "young cazador"
+	desc = "A mutated insect known for it's fast speed, deadly sting, and being huge bastards. This one's little."
+	maxHealth = 15
+	health = 15
+	speed = 1
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+
+/mob/living/simple_animal/hostile/cazador/young/Initialize()
+	. = ..()
+	src.resize = 0.5
+
+/datum/reagent/toxin/cazador_venom
+	name = "Cazador venom"
+	id = "cazador_venom"
+	description = "A potent toxin resulting from cazador stings that quickly kills if too much remains in the body."
+	color = "#801E28" // rgb: 128, 30, 40
+	toxpwr = 1
+	taste_description = "pain"
+	taste_mult = 1.3
+
+/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
+	if(volume >= 15)
+		M.adjustToxLoss(5, 0)
+	..()
+
+/mob/living/simple_animal/hostile/radscorpion
+	name = "giant radscorpion"
+	desc = "A mutated arthropod with an armored carapace and a powerful sting."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "radscorpion"
+	icon_living = "radscorpion"
+	icon_dead = "radscorpion_dead"
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	speak_chance = 0
+	turns_per_move = 5
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 2)
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	emote_taunt = list("snips")
+	taunt_chance = 30
+	speed = 1
+	maxHealth = 120
+	health = 120
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 20
+	melee_damage_upper = 30
+	attacktext = "stings"
+	speak_emote = list("hisses")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("radscorpion")
+	gold_core_spawnable = HOSTILE_SPAWN
+
+/mob/living/simple_animal/hostile/radscorpion/AttackingTarget()
+	. = ..()
+	if(. && ishuman(target))
+		var/mob/living/carbon/human/H = target
+		H.reagents.add_reagent("toxin", 5)
+
+/mob/living/simple_animal/hostile/gecko
+	name = "gecko"
+	desc = "A large mutated reptile with sharp teeth."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "gecko"
+	icon_living = "gecko"
+	icon_dead = "gecko_dead"
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	speak_chance = 0
+	turns_per_move = 5
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat = 2)
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	emote_taunt = list("screeches")
+	taunt_chance = 30
+	speed = 1
+	maxHealth = 40
+	health = 40
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 10
+	melee_damage_upper = 15
+	attacktext = "claws"
+	speak_emote = list("hisses")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("gecko")
+	gold_core_spawnable = HOSTILE_SPAWN
+
+/mob/living/simple_animal/hostile/radroach
+	name = "radroach"
+	desc = "A large mutated insect that finds it's way everywhere."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "radroach"
+	icon_living = "radroach"
+	icon_dead = "radroach_dead"
+	icon_gib = "radroach_gib"
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	speak_chance = 0
+	turns_per_move = 5
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	emote_taunt = list("clicks")
+	taunt_chance = 30
+	speed = 1
+	maxHealth = 20
+	health = 20
+	harm_intent_damage = 8
+	obj_damage = 20
+	melee_damage_lower = 5
+	melee_damage_upper = 10
+	attacktext = "stings"
+	speak_emote = list("skitters")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("gecko")
+	gold_core_spawnable = HOSTILE_SPAWN

@@ -204,3 +204,38 @@
 	back = /obj/item/storage/backpack/satchel/med
 	id = /obj/item/card/id
 	glasses = /obj/item/clothing/glasses/hud/health
+
+obj/effect/mob_spawn/human/corpse/raider
+	name = "Raider Melee"
+	outfit = /datum/outfit/russiancorpse
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+
+/datum/outfit/raidercorpse
+	name = "Raider Melee Corpse"
+	uniform = /obj/item/clothing/under/soviet
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/bearpelt
+	gloves = /obj/item/clothing/gloves/color/black
+	mask = /obj/item/clothing/mask/gas
+
+
+
+/obj/effect/mob_spawn/human/corpse/russian/ranged
+	outfit = /datum/outfit/russiancorpse/ranged
+
+/datum/outfit/raidercorpse/ranged
+	name = "Raider Ranged Corpse"
+	head = /obj/item/clothing/head/ushanka
+
+/obj/effect/mob_spawn/human/corpse/raider/ranged/boss
+	name = "Raider Boss"
+	outfit = /datum/outfit/russiancorpse/officer
+
+/datum/outfit/raidercorpse/boss
+	name = "Raider Boss Corpse"
+	uniform = /obj/item/clothing/under/rank/security/navyblue/russian
+	suit = /obj/item/clothing/suit/security/officer/russian
+	shoes = /obj/item/clothing/shoes/combat
+	ears = /obj/item/radio/headset
+	head = /obj/item/clothing/head/ushanka
