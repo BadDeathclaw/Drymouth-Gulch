@@ -145,3 +145,67 @@ Code:
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
+//F13 EDIT
+/obj/item/electropack/shockcollar
+	name = "slave collar"
+	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. Strange.."
+	icon = 'icons/obj/f13misc.dmi'
+	icon_state = "slavecollar_ico"
+	item_state = "slavecollar"
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_DENYPOCKET //CEASE THE POCKET SHOCKER MEMES
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = NECK
+	strip_delay = 60
+	equip_delay_other = 60
+	
+/obj/item/electropack/shockcollar/attack_hand(mob/user)
+	if(loc == user && user.get_item_by_slot(SLOT_NECK))
+		to_chat(user, "<span class='warning'>The collar is fastened tight! You'll need help taking this off!</span>")
+		return
+	..()
+	
+/obj/item/electropack/shockcollar/receive_signal(datum/signal/signal) //this removes the "on" check
+	if(!signal || signal.data["code"] != code)
+		return
+
+	if(isliving(loc) && on)
+		if(shock_cooldown != 0)
+			return
+		shock_cooldown = 1
+		spawn(100)
+			shock_cooldown = 0
+		var/mob/living/L = loc
+		step(L, pick(GLOB.cardinals))
+
+		to_chat(L, "<span class='danger'>You feel a sharp shock from the collar!</span>")
+		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+		s.set_up(3, 1, L)
+		s.start()
+
+		L.Knockdown(100)
+
+	if(master)
+		master.receive_signal()
+	return
+	
+/obj/item/electropack/attack_self(mob/user)
+	if(!ishuman(user))
+		return
+	
+	user.set_machine(src)
+	var/dat = {"<B>Frequency/Code</B> for slave collar:<BR>
+Frequency:
+<A href='byond://?src=[REF(src)];freq=-10'>-</A>
+<A href='byond://?src=[REF(src)];freq=-2'>-</A> [format_frequency(frequency)]
+<A href='byond://?src=[REF(src)];freq=2'>+</A>
+<A href='byond://?src=[REF(src)];freq=10'>+</A><BR>
+
+Code:
+<A href='byond://?src=[REF(src)];code=-5'>-</A>
+<A href='byond://?src=[REF(src)];code=-1'>-</A> [code]
+<A href='byond://?src=[REF(src)];code=1'>+</A>
+<A href='byond://?src=[REF(src)];code=5'>+</A><BR>
+</TT>"}
+	user << browse(dat, "window=radio")
+	onclose(user, "radio")
+	return
