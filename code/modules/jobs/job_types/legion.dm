@@ -31,7 +31,7 @@ Needs whitelist
 
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionlegat
-	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/leglegat
 	head = 			/obj/item/clothing/head/helmet/f13/legion/leglegat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -74,7 +74,7 @@ Centurion
 
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
-	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -114,7 +114,7 @@ Vexillarius
 
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
-	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -154,7 +154,7 @@ Decan
 
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
-	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -194,7 +194,7 @@ Veteran
 
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
-	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -233,7 +233,7 @@ Legionary
 
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
-	//gloves = 		/obj/item/clothing/gloves/f13/legion
+	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
