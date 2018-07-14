@@ -1324,62 +1324,63 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 //FALLOUT
 /area/f13
+	icon = 'icons/turf/f13areas.dmi'
 	has_gravity = STANDARD_GRAVITY
 	requires_power = FALSE
 
 /area/f13/desert
 	name = "Desert"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "desert"
-	requires_power = TRUE
+	poweralm = FALSE
+	power_environ = FALSE
+	power_equip = FALSE
+	outdoors = TRUE
+	lightswitch = FALSE //no. just no
+	ambientsounds = list('sound/f13ambience/wasteland.ogg', 'sound/f13ambience/sewer.ogg')
+	flags_1 = NONE //>desert >>has destroyed robo dirt on it
 
 /area/f13/sunny_dale
 	name = "Sunny Dale"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "sunny_dale"
 
 /area/f13/klamat
 	name = "Klamat"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "klamat"
 
 /area/f13/farmhouse
 	name = "Farmhouse"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "farmhouse"
 
 /area/f13/legioncamp
 	name = "Legion Camp"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "legioncamp"
 
 /area/f13/powerplant
 	name = "Power Plant"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "powerplant"
 	requires_power = TRUE
+	ambientsounds = ENGINEERING
 
 /area/f13/enclave_base
 	name = "Enclave Base"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "enclave_base"
+	ambientsounds = list('sound/f13ambience/enclave_vault.ogg')
 
 /area/f13/den
 	name = "Den"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "den"
 
 /area/f13/overseer_office
 	name = "Overseer's Office"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "overseer_office"
 	requires_power = TRUE
+	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
 
 /area/f13/vault_atrium_upper
 	name = "Vault Atrium Upper"
-	icon = 'icons/turf/f13areas.dmi'
 	icon_state = "vault_atrium_upper"
 	requires_power = TRUE
+	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
 
 /area/shuttle/vault_elevator
 	name = "Vault Elevator"
