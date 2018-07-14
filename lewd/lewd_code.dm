@@ -46,7 +46,7 @@
 ///proc/cum_splatter(datum/reagent/blood/source, atom/target) // Like blood_splatter(), but much more questionable on a resume.
 /proc/cum_splatter(atom/target) // Like blood_splatter(), but much more questionable on a resume.
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
-	///var/obj/effect/decal/cleanable/cum/C = (get_turf(target))
+	//var/obj/effect/decal/cleanable/cum/C = (get_turf(target))
 	//C.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
 /mob/var/lastmoan
@@ -76,25 +76,25 @@
 			if(CUM_TARGET_MOUTH)
 				if(partner.has_mouth() && partner.mouth_is_free())
 					message = "cums right in \the [partner]'s mouth."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s face."
 			if(CUM_TARGET_THROAT)
 				if(partner.has_mouth() && partner.mouth_is_free())
 					message = "shoves deep into \the [partner]'s throat and cums."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s face."
 			if(CUM_TARGET_VAGINA)
 				if(partner.is_nude() && partner.has_vagina())
 					message = "cums in \the [partner]'s pussy."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s belly."
 			if(CUM_TARGET_ANUS)
 				if(partner.is_nude() && partner.has_anus())
 					message = "cums in \the [partner]'s asshole."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s backside."
 			if(CUM_TARGET_HAND)
