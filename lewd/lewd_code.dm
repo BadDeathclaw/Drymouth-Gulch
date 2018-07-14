@@ -19,7 +19,7 @@
 	var/obj/effect/decal/cleanable/cum/S = locate() in T
 	if(!S)
 		S = new(T)
-	S.reagents.add_reagent("lewd", reac_volume)
+	S.reagents.add_reagent("cum", reac_volume)
 	if(data["blood_DNA"])
 		S.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"])) //yes. STD
 	
@@ -33,11 +33,16 @@
 	density = 0
 	icon = 'honk/icons/effects/cum.dmi'
 	random_icon_states = list("cum1", "cum3", "cum4", "cum5", "cum6", "cum7", "cum8", "cum9", "cum10", "cum11", "cum12")
-	
+	mergeable_decal = FALSE
+	blood_state = null
+	bloodiness = null
+	var/blood_DNA = list()
+	beauty = -50
+
 /obj/effect/decal/cleanable/cum/New()
 	..()
 	dir = pick(1,2,4,8)
-	add_blood_DNA(list("Non-human DNA" = "O+"))
+	add_blood_DNA(list("Unknown DNA" = "O+"))
 
 /obj/effect/decal/cleanable/cum/replace_decal(/obj/effect/decal/cleanable/cum/F)
 	F.add_blood_DNA(return_blood_DNA())
