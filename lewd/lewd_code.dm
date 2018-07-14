@@ -37,6 +37,7 @@
 	blood_state = null
 	bloodiness = null
 	var/blood_DNA = list()
+	beauty = -50
 
 /obj/effect/decal/cleanable/cum/New()
 	..()
