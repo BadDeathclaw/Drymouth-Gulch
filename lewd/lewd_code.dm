@@ -1,8 +1,53 @@
-///proc/cum_splatter(var/datum/reagent/blood/source, var/atom/target) // Like blood_splatter(), but much more questionable on a resume.
-/proc/cum_splatter(var/atom/target) // Like blood_splatter(), but much more questionable on a resume.
+//reagent here
+/datum/reagent/consumable/cum
+	name = "cum"
+	id = "cum"
+	description = "Where you found this is your own business."
+	color = "#AAAAAA77"
+	taste_description = "something with a tang"
+	data = list("donor"=null,"viruses"=null,"donor_DNA"=null,"blood_type"=null,"resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null)
+	taste_mult = 2
+	reagent_state = LIQUID
+	nutriment_factor = 0.5 * REAGENTS_METABOLISM
+	
+/datum/reagent/consumable/cum/reaction_turf(turf/T, reac_volume)
+	if(!istype(T))
+		return
+	if(reac_volume < 3)
+		return
+
+	var/obj/effect/decal/cleanable/cum/S = locate() in T
+	if(!S)
+		S = new(T)
+	S.reagents.add_reagent("lewd", reac_volume)
+	if(data["blood_DNA"])
+		S.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"])) //yes. STD
+	
+//cleanable here
+
+/obj/effect/decal/cleanable/cum
+	name = "cum"
+	desc = "It's pie cream from a cream pie. Or not..."
+	gender = PLURAL
+	layer = ABOVE_NORMAL_TURF_LAYER
+	density = 0
+	icon = 'honk/icons/effects/cum.dmi'
+	random_icon_states = list("cum1", "cum3", "cum4", "cum5", "cum6", "cum7", "cum8", "cum9", "cum10", "cum11", "cum12")
+	
+/obj/effect/decal/cleanable/cum/New()
+	..()
+	dir = pick(1,2,4,8)
+	add_blood_DNA(list("Non-human DNA" = "O+"))
+
+/obj/effect/decal/cleanable/cum/replace_decal(/obj/effect/decal/cleanable/cum/F)
+	F.add_blood_DNA(return_blood_DNA())
+	..()
+	
+///proc/cum_splatter(datum/reagent/blood/source, atom/target) // Like blood_splatter(), but much more questionable on a resume.
+/proc/cum_splatter(atom/target) // Like blood_splatter(), but much more questionable on a resume.
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
-	//C.blood_DNA = list()
-	//C.blood_DNA[source.data["blood_DNA"]] = (source && source.data && source.data["blood_type"]) ? source.data["blood_type"] : "O+"
+	//var/obj/effect/decal/cleanable/cum/C = (get_turf(target))
+	//C.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
 /mob/var/lastmoan
 
@@ -31,25 +76,25 @@
 			if(CUM_TARGET_MOUTH)
 				if(partner.has_mouth() && partner.mouth_is_free())
 					message = "cums right in \the [partner]'s mouth."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s face."
 			if(CUM_TARGET_THROAT)
 				if(partner.has_mouth() && partner.mouth_is_free())
 					message = "shoves deep into \the [partner]'s throat and cums."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s face."
 			if(CUM_TARGET_VAGINA)
 				if(partner.is_nude() && partner.has_vagina())
 					message = "cums in \the [partner]'s pussy."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s belly."
 			if(CUM_TARGET_ANUS)
 				if(partner.is_nude() && partner.has_anus())
 					message = "cums in \the [partner]'s asshole."
-					//partner.reagents.add_reagent("cum", 10)
+					partner.reagents.add_reagent("cum", 10)
 				else
 					message = "cums on \the [partner]'s backside."
 			if(CUM_TARGET_HAND)
