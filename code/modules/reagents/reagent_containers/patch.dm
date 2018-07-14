@@ -54,7 +54,7 @@
 	icon_state = "bandaid_turbo"
 
 /obj/item/reagent_containers/pill/patch/healingpowder
-	name = "Healing Powder"
+	name = "Broc Powder"
 	desc = "A powder used to heal physical wounds derived from ground broc flowers and xander roots, commonly used by tribals."
 	list_reagents = list("healing_powder" = 30)
 	icon_state = "bandaid_healingpowder"

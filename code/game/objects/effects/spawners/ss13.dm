@@ -110,7 +110,11 @@ obj
 									del src
 								if(3)
 									var/obj/item/reagent_containers/blood/radaway/lb = new
+									var/obj/item/reagent_containers/blood/radaway/lb2 = new
+									var/obj/item/reagent_containers/blood/radaway/lb3 = new
 									lb.loc=src.loc
+									lb2.loc=src.loc
+									lb3.loc=src.loc
 									del src
 								if(4)
 									var/obj/item/storage/pill_bottle/mentats/lb = new
@@ -120,14 +124,235 @@ obj
 									var/obj/item/storage/pill_bottle/fixer/lb = new
 									lb.loc=src.loc
 									del src
+								if(6)
+									var/obj/item/reagent_containers/hypospray/medipen/stimpak/lb = new
+									lb.loc=src.loc
+									del src
+								if(7)
+									var/obj/item/reagent_containers/medspray/styptic/lb = new
+									lb.loc=src.loc
+									del src
+								if(8)
+									var/obj/item/reagent_containers/medspray/silver_sulf/lb = new
+									lb.loc=src.loc
+									del src
+								if(9)
+									var/obj/item/reagent_containers/medspray/synthflesh/lb = new
+									lb.loc=src.loc
+									del src
+								if(10)
+									var/obj/item/reagent_containers/medspray/sterilizine/lb = new
+									lb.loc=src.loc
+									del src
+
 						drugs
-			weaponspawners //1.6
+						New()
+							switch(rand(1,5))
+								if(1)
+									var/obj/item/reagent_containers/pill/patch/jet/lb = new
+									lb.loc=src.loc
+									del src
+								if(2)
+									var/obj/item/reagent_containers/pill/patch/turbo/lb = new
+									lb.loc=src.loc
+									del src
+								if(3)
+									var/obj/item/reagent_containers/pill/patch/healingpowder/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/reagent_containers/pill/stimulant/lb = new
+									lb.loc=src.loc
+									del src
+								if(5)
+									var/obj/item/reagent_containers/syringe/medx/lb = new
+									lb.loc=src.loc
+									del src
+
+
+			weaponspawners //port
 				melee
 					tier1
+						New()
+							switch(rand(1,7))
+								if(1)
+									var/obj/item/crowbar/lb = new
+									lb.loc=src.loc
+									del src
+								if(2)
+									var/obj/item/extinguisher/lb = new
+									lb.loc=src.loc
+									del src
+								if(3)
+									var/obj/item/hatchet/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/pickaxe/mini/lb = new
+									lb.loc=src.loc
+									del src
+								if(5)
+									var/obj/item/wrench/lb = new
+									lb.loc=src.loc
+									del src
+								if(6)
+									var/obj/item/kitchen/knife/lb = new
+									lb.loc=src.loc
+									del src
+								if(7)
+									var/obj/item/kitchen/rollingpin/lb = new
+									lb.loc=src.loc
+									del src
+
+
 					tier2
+						New()
+							switch(rand(1,14))
+								if(1)
+									var/obj/item/gavelhammer/lb = new
+									lb.loc=src.loc
+									del src
+								if(2)
+									var/obj/item/oar/lb = new
+									lb.loc=src.loc
+									del src
+								if(3)
+									var/obj/item/pickaxe/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/shovel/lb = new
+									lb.loc=src.loc
+									del src
+								if(5)
+									var/obj/item/switchblade/lb = new
+									lb.loc=src.loc
+									del src
+								if(6)
+									var/obj/item/throwing_star/spear/lb = new
+									lb.loc=src.loc
+									del src
+								if(7)
+									var/obj/item/surgicaldrill/lb = new
+									lb.loc=src.loc
+									del src
+								if(8)
+									var/obj/item/kitchen/knife/combat/lb = new
+									lb.loc=src.loc
+									del src
+								if(9)
+									var/obj/item/kitchen/knife/combat/survival/lb = new
+									lb.loc=src.loc
+									del src
+								if(10)
+									var/obj/item/kitchen/knife/combat/bone/lb = new
+									lb.loc=src.loc
+									del src
+								if(11)
+									var/obj/item/instrument/guitar/lb = new
+									lb.loc=src.loc
+									del src
+								if(12)
+									var/obj/item/instrument/violin/lb = new
+									lb.loc=src.loc
+									del src
+								if(13)
+									var/obj/item/instrument/saxophone/lb = new
+									lb.loc=src.loc
+									del src
+								if(14)
+									var/obj/item/claymore/machete/pipe/lb = new
+									lb.loc=src.loc
+									del src
+
 					tier3
+						New()
+							switch(rand(1,9))
+								if(1)
+									var/obj/item/weldingtool/lb = new
+									lb.loc=src.loc
+									del src
+								if(2)
+									var/obj/item/twohanded/spear/lb = new
+									lb.loc=src.loc
+									del src
+								if(3)
+									var/obj/item/twohanded/bostaff/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/twohanded/baseball/lb = new
+									lb.loc=src.loc
+									del src
+								if(5)
+									var/obj/item/kitchen/knife/butcher/lb = new
+									lb.loc=src.loc
+									del src
+								if(6)
+									var/obj/item/claymore/machete/golf/lb = new
+									lb.loc=src.loc
+									del src
+								if(7)
+									var/obj/item/claymore/machete/lb = new
+									lb.loc=src.loc
+									del src
+								if(8)
+									var/obj/item/circular_saw/lb = new
+									lb.loc=src.loc
+									del src
+								if(9)
+									var/obj/item/shield/riot/buckler/lb = new
+									lb.loc=src.loc
+									del src
+
 					tier4
+						New()
+							switch(rand(1,4))
+								if(1)
+									var/obj/item/twohanded/fireaxe/lb = new
+									lb.loc=src.loc
+									del src
+								if(2)
+									var/obj/item/twohanded/fireaxe/sledgehammer/lb = new
+									lb.loc=src.loc
+									del src
+								if(3)
+									var/obj/item/twohanded/fireaxe/bmprsword/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/shield/riot/lb = new
+									lb.loc=src.loc
+									del src
+
+
 					tier5
+						New()
+							switch(rand(1,6))
+								if(1)
+									var/obj/item/twohanded/required/thermic_lance/lb = new
+									lb.loc=src.loc
+									del src
+								if(2)
+									var/obj/item/twohanded/required/chainsaw/lb = new
+									lb.loc=src.loc
+									del src
+								if(3)
+									var/obj/item/twohanded/required/kinetic_crusher/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/nullrod/claymore/chainsaw_sword/lb = new
+									lb.loc=src.loc
+									del src
+								if(5)
+									var/obj/item/melee/powerfist/lb = new
+									lb.loc=src.loc
+									del src
+								if(6)
+									var/obj/item/melee/transforming/energy/axe/lb = new
+									lb.loc=src.loc
+									del src
 
 
 				gun

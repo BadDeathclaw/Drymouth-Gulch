@@ -7,7 +7,7 @@
 	desc = "Order, order! No bombs in my courthouse."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "gavelhammer"
-	force = 5
+	force = 20
 	throwforce = 6
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("bashed", "battered", "judged", "whacked")

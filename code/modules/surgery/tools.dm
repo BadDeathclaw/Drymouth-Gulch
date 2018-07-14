@@ -75,7 +75,7 @@
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	materials = list(MAT_METAL=10000, MAT_GLASS=6000)
 	flags_1 = CONDUCT_1
-	force = 15
+	force = 25
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("drilled")
 
@@ -148,9 +148,9 @@
 	hitsound = 'sound/weapons/circsawhit.ogg'
 	throwhitsound =  'sound/weapons/pierce.ogg'
 	flags_1 = CONDUCT_1
-	force = 15
+	force = 25
 	w_class = WEIGHT_CLASS_NORMAL
-	throwforce = 9
+	throwforce = 10
 	throw_speed = 2
 	throw_range = 5
 	materials = list(MAT_METAL=10000, MAT_GLASS=6000)

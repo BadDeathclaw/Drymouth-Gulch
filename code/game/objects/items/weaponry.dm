@@ -310,6 +310,14 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	materials = list(MAT_METAL=500, MAT_GLASS=500)
 	resistance_flags = FIRE_PROOF
 
+/obj/item/throwing_star/spear
+	name = "throwing spear"
+	desc = "An heavy hefty ancient weapon used to this day, due to its ease of lodging itself into its victim's body parts."
+	icon_state = "throw_spear"
+	item_state = "tribalspear"
+	force = 20
+	throwforce = 35
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 60, "embedded_fall_chance" = 20)
 
 /obj/item/switchblade
 	name = "switchblade"
@@ -444,7 +452,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	item_flags = NODROP | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
-	force = 24
+	force = 56
 	throwforce = 0
 	throw_range = 0
 	throw_speed = 0

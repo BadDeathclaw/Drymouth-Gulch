@@ -2,7 +2,7 @@
 /obj/item/instrument
 	name = "generic instrument"
 	resistance_flags = FLAMMABLE
-	force = 10
+	force = 20
 	max_integrity = 100
 	icon = 'icons/obj/musician.dmi'
 	lefthand_file = 'icons/mob/inhands/equipment/instruments_lefthand.dmi'
@@ -92,7 +92,7 @@
 	desc = "Makes all your shredding needs possible."
 	icon_state = "eguitar"
 	item_state = "eguitar"
-	force = 12
+	force = 20
 	attack_verb = list("played metal on", "shredded", "crashed", "smashed")
 	hitsound = 'sound/weapons/stringsmash.ogg'
 	instrumentId = "eguitar"

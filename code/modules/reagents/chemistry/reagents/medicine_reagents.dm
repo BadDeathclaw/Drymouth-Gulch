@@ -1424,6 +1424,7 @@
 	addiction_threshold = 20
 
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/M)
+	M.adjustOxyLoss(-3*REM, 0)
 	var/obj/item/organ/eyes/eyes = M.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return
