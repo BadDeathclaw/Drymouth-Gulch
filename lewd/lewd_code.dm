@@ -36,7 +36,7 @@
 	mergeable_decal = FALSE
 	blood_state = null
 	bloodiness = null
-	blood_DNA = list()
+	var/blood_DNA = list()
 
 /obj/effect/decal/cleanable/cum/New()
 	..()
