@@ -44,6 +44,7 @@ Needs whitelist
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=2, \
 		/obj/item/flashlight/flare/torch=1)
+	box = null
 
 
 /*
@@ -88,6 +89,7 @@ Centurion
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=2, \
 		/obj/item/flashlight/flare/torch=1)
+	box = null
 
 /*
 Vexillarius
@@ -128,6 +130,7 @@ Vexillarius
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
 		/obj/item/flashlight/flare/torch=1)
+	box = null
 
 /*
 Decan
@@ -168,6 +171,7 @@ Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/d12g=2, \
 		/obj/item/flashlight/flare/torch=1)
+	box = null
 
 /*
 Veteran
@@ -207,6 +211,7 @@ Veteran
 		/obj/item/storage/box/lethalshot=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1)
+	box = null
 
 /*
 Legionary
@@ -246,3 +251,4 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1)
+	box = null
