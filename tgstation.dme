@@ -2621,6 +2621,7 @@
 #include "code\modules\vending\drinnerware.dm"
 #include "code\modules\vending\engineering.dm"
 #include "code\modules\vending\engivend.dm"
+#include "code\modules\vending\f13nukacola.dm"
 #include "code\modules\vending\games.dm"
 #include "code\modules\vending\liberation.dm"
 #include "code\modules\vending\liberation_toy.dm"

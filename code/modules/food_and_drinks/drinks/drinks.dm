@@ -497,3 +497,16 @@
 	desc = "There is no air shortage. Do not drink."
 	icon_state = "air"
 	list_reagents = list("nitrogen" = 24, "oxygen" = 6)
+//F13 EDIT
+
+/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola
+	name = "Nuka-Cola"
+	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state."
+	icon = 'icons/obj/f13vending.dmi'
+	icon_state = "cola"
+	list_reagents = list("cola" = 20, "nuka_cola" = 1, "radium" = 1)
+	foodtype = SUGAR
+
+/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola/radioactive
+	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state.<br>The bottle is slightly glowing."
+	list_reagents = list("cola" = 15, "radium" = 5)
