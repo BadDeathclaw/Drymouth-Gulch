@@ -46,6 +46,7 @@ Captain
 	name = "NCR Captain"
 	jobtype = /datum/job/f13captain
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
@@ -84,6 +85,7 @@ Lieutenant
 	name = "NCR Lieutenant"
 	jobtype = /datum/job/f13lieutenant
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
@@ -123,6 +125,7 @@ Sergeant
 	name = "NCR Sergeant"
 	jobtype = /datum/job/f13sergeant
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/f13/ncr
@@ -162,6 +165,7 @@ Trooper
 	name = "NCR Trooper"
 	jobtype = /datum/job/f13trooper
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
@@ -201,6 +205,7 @@ Recruit
 	name = "NCR Recruit"
 	jobtype = /datum/job/f13recruit
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
@@ -241,6 +246,7 @@ Veteran Ranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/f13vetranger
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
@@ -280,6 +286,7 @@ Ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/f13ranger
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
@@ -320,6 +327,7 @@ Recon Ranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/f13recranger
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/f13/duster
 	head = 			/obj/item/clothing/head/fluff/cowboy

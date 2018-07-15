@@ -50,6 +50,7 @@ Paladin
 	name = "Paladin"
 	jobtype = /datum/job/f13paladin
 
+	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
@@ -88,6 +89,7 @@ Knight
 	name = "Knight"
 	jobtype = /datum/job/f13knight
 
+	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
@@ -126,6 +128,7 @@ Scribe
 	name = "Scribe"
 	jobtype = /datum/job/f13scribe
 
+	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/syndicate
 	shoes = 		/obj/item/clothing/shoes/combat
 	gloves = 		/obj/item/clothing/gloves/combat
@@ -163,6 +166,7 @@ Initiate
 	name = "Initiate"
 	jobtype = /datum/job/f13initiate
 
+	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat

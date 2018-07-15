@@ -20,10 +20,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"t" = "Syndicate",
 	"y" = "CentCom",
 	"v" = "Vault",
-	"k" = "NCR",
-	"b" = "BOS",
-	"p" = "Enclave",
-	"d" = "Den",
+	"w" = "NCR",
+	"q" = "BOS",
+	"z" = "Enclave",
+	"f" = "Den",
 
 	// Admin
 	"p" = "admin",
