@@ -91,6 +91,31 @@
 	freq_listening = list(FREQ_SERVICE)
 	autolinkers = list("service")
 
+/obj/machinery/telecomms/server/presets/vault
+	id = "Vault Server"
+	freq_listening = list(FREQ_VAULT)
+	autolinkers = list("vault")
+
+/obj/machinery/telecomms/server/presets/ncr
+	id = "NCR Server"
+	freq_listening = list(FREQ_NCR)
+	autolinkers = list("ncr")
+
+/obj/machinery/telecomms/server/presets/bos
+	id = "BOS Server"
+	freq_listening = list(FREQ_BOS)
+	autolinkers = list("bos")
+
+/obj/machinery/telecomms/server/presets/enclave
+	id = "Enclave Server"
+	freq_listening = list(FREQ_ENCLAVE)
+	autolinkers = list("enclave")
+
+/obj/machinery/telecomms/server/presets/den
+	id = "Den Server"
+	freq_listening = list(FREQ_DEN)
+	autolinkers = list("den")
+
 /obj/machinery/telecomms/server/presets/common
 	id = "Common Server"
 	freq_listening = list()
