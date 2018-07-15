@@ -46,6 +46,7 @@ Captain
 	name = "NCR Captain"
 	jobtype = /datum/job/f13captain
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
@@ -59,6 +60,7 @@ Captain
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1)
+	box = null
 
 /*
 Lieutenant
@@ -82,6 +84,7 @@ Lieutenant
 	name = "NCR Lieutenant"
 	jobtype = /datum/job/f13lieutenant
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
@@ -96,6 +99,7 @@ Lieutenant
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+	box = null
 
 /*
 Sergeant
@@ -119,6 +123,7 @@ Sergeant
 	name = "NCR Sergeant"
 	jobtype = /datum/job/f13sergeant
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/f13/ncr
@@ -133,6 +138,7 @@ Sergeant
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1)
+	box = null
 
 /*
 Trooper
@@ -156,6 +162,7 @@ Trooper
 	name = "NCR Trooper"
 	jobtype = /datum/job/f13trooper
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
@@ -170,6 +177,7 @@ Trooper
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1)
+	box = null
 
 /*
 Recruit
@@ -193,6 +201,7 @@ Recruit
 	name = "NCR Recruit"
 	jobtype = /datum/job/f13recruit
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
@@ -207,6 +216,7 @@ Recruit
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1)
+	box = null
 
 /*
 Veteran Ranger
@@ -231,7 +241,8 @@ Veteran Ranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/f13vetranger
 
-	uniform =  		/obj/item/clothing/under/f13/ranger
+	ears = 			/obj/item/radio/headset/headset_ncr
+	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	mask =			/obj/item/clothing/mask/gas/sechailer
@@ -270,9 +281,10 @@ Ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/f13ranger
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
-	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	head = 			/obj/item/clothing/head/f13/ranger
 	gloves =		/obj/item/clothing/gloves/combat
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/combat/swat
@@ -286,6 +298,7 @@ Ranger
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/melee/classic_baton=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+	box = null
 
 /*
 Recon Ranger
@@ -309,6 +322,7 @@ Recon Ranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/f13recranger
 
+	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/f13/duster
 	head = 			/obj/item/clothing/head/fluff/cowboy
@@ -324,3 +338,4 @@ Recon Ranger
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/melee/classic_baton=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+	box = null

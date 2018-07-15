@@ -304,7 +304,7 @@
 
 
 //Single Shot
-obj/item/gun/ballistic/revolver/caravan_shotgun
+/obj/item/gun/ballistic/revolver/caravan_shotgun
 	name = "caravan shotgun"
 	desc = "An common over under double barreled shotgun."
 	icon_state = "caravan_shotgun"

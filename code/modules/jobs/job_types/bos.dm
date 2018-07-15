@@ -50,8 +50,21 @@ Paladin
 	name = "Paladin"
 	jobtype = /datum/job/f13paladin
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	ears = 			/obj/item/radio/headset/headset_bos
+	uniform =		/obj/item/clothing/under/f13/recon
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	gloves = 		/obj/item/clothing/gloves/combat
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
+	suit_store =	/obj/item/gun/energy/laser/scatter
+	belt = 			/obj/item/storage/belt/military/assault
+	glasses =		/obj/item/clothing/glasses/night
+	mask =			/obj/item/clothing/mask/gas/sechailer/swat
+	backpack_contents = list(
+		/obj/item/ammo_casing/energy/laser/scatter=2, \
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/gun/ballistic/revolver/colt6250=1)
+	//PA training not in yet
 
 /*
 Knight
@@ -76,8 +89,21 @@ Knight
 	name = "Knight"
 	jobtype = /datum/job/f13knight
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	ears = 			/obj/item/radio/headset/headset_bos
+	uniform =		/obj/item/clothing/under/f13/recon
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	gloves = 		/obj/item/clothing/gloves/combat
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
+	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
+	suit_store =	/obj/item/gun/energy/laser/scatter
+	belt = 			/obj/item/storage/belt/military/assault
+	glasses =		/obj/item/clothing/glasses/night
+	mask =			/obj/item/clothing/mask/gas/sechailer/swat
+	backpack_contents = list(
+		/obj/item/ammo_casing/energy/laser/scatter=2, \
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/gun/ballistic/revolver/colt6250=1)
+	//PA training not in yet
 
 /*
 Scribe
@@ -102,8 +128,20 @@ Scribe
 	name = "Scribe"
 	jobtype = /datum/job/f13scribe
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	ears = 			/obj/item/radio/headset/headset_bos
+	uniform =		/obj/item/clothing/under/syndicate
+	shoes = 		/obj/item/clothing/shoes/combat
+	gloves = 		/obj/item/clothing/gloves/combat
+	suit = 			/obj/item/clothing/suit/f13/scribe
+	belt = 			/obj/item/storage/belt/utility/full/engi
+	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
+	glasses =		/obj/item/clothing/glasses/sunglasses/big
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m10mm_auto=2, \
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/gun/energy/laser/pistol=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=4) //super paks not in yet
+	//PA training not in yet
 
 /*
 Initiate
@@ -128,5 +166,16 @@ Initiate
 	name = "Initiate"
 	jobtype = /datum/job/f13initiate
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	ears = 			/obj/item/radio/headset/headset_bos
+	uniform =		/obj/item/clothing/under/f13/recon
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	gloves = 		/obj/item/clothing/gloves/combat
+	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
+	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
+	suit_store =	/obj/item/gun/ballistic/automatic/assault_rifle
+	belt = 			/obj/item/storage/belt/military/assault
+	glasses =		/obj/item/clothing/glasses/night
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/r20=3, \
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/gun/energy/laser/pistol=1)

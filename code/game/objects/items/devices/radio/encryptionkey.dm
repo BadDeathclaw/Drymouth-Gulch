@@ -118,6 +118,50 @@
 	icon_state = "srv_cypherkey"
 	channels = list("Service" = 1)
 
+//FALLOUT
+
+/obj/item/encryptionkey/headset_vault
+	name = "vault radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the vault channel, use :v."
+	icon_state = "cypherkey"
+	channels = list("Vault" = 1)
+
+/obj/item/encryptionkey/headset_overseer
+	name = "\proper the Overseer's encryption key"
+	desc = "An encryption key for a radio headset.  Channels are as follows: :v - vault, :c - command, :s - security, :e - engineering, :m - medical, :n - science."
+	icon_state = "cap_cypherkey"
+	channels = list("Vault" = 1, "Command" = 1, "Security" = 1, "Engineering" = 0, "Science" = 0, "Medical" = 0)
+
+/obj/item/encryptionkey/headset_vault_hos
+	name = "\proper the Head of Security's encryption key"
+	desc = "An encryption key for a radio headset.  Channels are as follows: :v - vault, :c - command, :s - security"
+	icon_state = "hos_cypherkey"
+	channels = list("Vault" = 1, "Command" = 1, "Security" = 1)
+
+/obj/item/encryptionkey/headset_ncr
+	name = "NCR radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the vault channel, use :w."
+	icon_state = "cypherkey"
+	channels = list("NCR" = 1)
+
+/obj/item/encryptionkey/headset_bos
+	name = "Brotherhood radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the vault channel, use :q."
+	icon_state = "cypherkey"
+	channels = list("BOS" = 1)
+
+/obj/item/encryptionkey/headset_enclave
+	name = "Enclave radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the vault channel, use :z."
+	icon_state = "cypherkey"
+	channels = list("Enclave" = 1)
+
+/obj/item/encryptionkey/headset_den
+	name = "Den radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the vault channel, use :f."
+	icon_state = "cypherkey"
+	channels = list("Den" = 1)
+
 /obj/item/encryptionkey/headset_cent
 	name = "\improper CentCom radio encryption key"
 	desc = "An encryption key for a radio headset.  To access the CentCom channel, use :y."
