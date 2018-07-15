@@ -18,10 +18,25 @@ Sheriff
 	name = "Sheriff"
 	jobtype = /datum/job/f13sheriff
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	id = null
+	belt = null
+
+	uniform =  		/obj/item/clothing/under/f13/cowboyb
+	shoes = 		/obj/item/clothing/shoes/workboots
+	suit = 			/obj/item/clothing/suit/det_suit
+	head = 			/obj/item/clothing/head/fluff/cowboy
+	glasses =		/obj/item/clothing/glasses/sunglasses
+	l_hand = 		/obj/item/gun/ballistic/shotgun
 
 
+
+	//pick("grey", "white", "yellow", "purple", "brown", "whatever")
+	//var/item1_type = pick( /obj/item/stack/spacecash/c10, /obj/item/stack/spacecash/c100, /obj/item/stack/spacecash/c1000, /obj/item/stack/spacecash/c20, /obj/item/stack/spacecash/c200, /obj/item/stack/spacecash/c50, /obj/item/stack/spacecash/c500)
+
+	/datum/outfit/job/f13sheriff/pre_equip(mob/living/carbon/human/H)
+		..()
+		r_pocket = pick(/obj/item/flashlight/flare/torch, /obj/item/flashlight/flare)
+		suit_store = pick(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/item/gun/ballistic/revolver/m29, /obj/item/gun/ballistic/revolver/colt6250)
 /*
 Settler
 */
@@ -42,5 +57,19 @@ Settler
 	name = "Settler"
 	jobtype = /datum/job/f13settler
 
-	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	id = null
+	belt = null
+	backpack = null
+	satchel = null
+
+/datum/outfit/job/f13settler/pre_equip(mob/living/carbon/human/H)
+	..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/settler, \
+		/obj/item/clothing/under/f13/brahminm, \
+		/obj/item/clothing/under/f13/machinist, \
+		/obj/item/clothing/under/f13/lumberjack, \
+		/obj/item/clothing/under/f13/roving)
+	r_pocket = pick(
+		/obj/item/flashlight/flare/torch, \
+		/obj/item/flashlight/flare)

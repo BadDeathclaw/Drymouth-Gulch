@@ -60,6 +60,7 @@ Captain
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1)
+	box = null
 
 /*
 Lieutenant
@@ -98,6 +99,7 @@ Lieutenant
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+	box = null
 
 /*
 Sergeant
@@ -136,6 +138,7 @@ Sergeant
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1)
+	box = null
 
 /*
 Trooper
@@ -174,6 +177,7 @@ Trooper
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1)
+	box = null
 
 /*
 Recruit
@@ -212,6 +216,7 @@ Recruit
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1)
+	box = null
 
 /*
 Veteran Ranger
@@ -236,7 +241,7 @@ Veteran Ranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/f13vetranger
 
-	uniform =  		/obj/item/clothing/under/f13/ranger
+	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	mask =			/obj/item/clothing/mask/gas/sechailer
@@ -291,6 +296,7 @@ Ranger
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/melee/classic_baton=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+	box = null
 
 /*
 Recon Ranger
@@ -329,3 +335,4 @@ Recon Ranger
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/melee/classic_baton=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+	box = null
