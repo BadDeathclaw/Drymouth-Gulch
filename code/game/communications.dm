@@ -91,7 +91,7 @@ GLOBAL_LIST_EMPTY(all_radios)
 // use in maps, such as in intercoms.
 
 GLOBAL_LIST_INIT(radiochannels, list(
-	"Wasteland" = FREQ_COMMON,
+	"Common" = FREQ_COMMON,
 	"Science" = FREQ_SCIENCE,
 	"Command" = FREQ_COMMAND,
 	"Medical" = FREQ_MEDICAL,
@@ -103,16 +103,11 @@ GLOBAL_LIST_INIT(radiochannels, list(
 	"Service" = FREQ_SERVICE,
 	"AI Private" = FREQ_AI_PRIVATE,
 	"Red Team" = FREQ_CTF_RED,
-	"Blue Team" = FREQ_CTF_BLUE,
-	"Vault" = FREQ_VAULT,
-	"NCR" = FREQ_NCR,
-	"BOS" = FREQ_BOS,
-	"Enclave" = FREQ_ENCLAVE,
-	"Den" = FREQ_DEN
+	"Blue Team" = FREQ_CTF_BLUE
 ))
 
 GLOBAL_LIST_INIT(reverseradiochannels, list(
-	"[FREQ_COMMON]" = "Wasteland",
+	"[FREQ_COMMON]" = "Common",
 	"[FREQ_SCIENCE]" = "Science",
 	"[FREQ_COMMAND]" = "Command",
 	"[FREQ_MEDICAL]" = "Medical",
@@ -124,12 +119,7 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 	"[FREQ_SERVICE]" = "Service",
 	"[FREQ_AI_PRIVATE]" = "AI Private",
 	"[FREQ_CTF_RED]" = "Red Team",
-	"[FREQ_CTF_BLUE]" = "Blue Team",
-	"[FREQ_VAULT]" = "Vault",
-	"[FREQ_NCR]" = "NCR",
-	"[FREQ_BOS]" = "BOS",
-	"[FREQ_ENCLAVE]" = "Enclave",
-	"[FREQ_DEN]" = "Den"
+	"[FREQ_CTF_BLUE]" = "Blue Team"
 ))
 
 /datum/radio_frequency

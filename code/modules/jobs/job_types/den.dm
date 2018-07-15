@@ -20,10 +20,7 @@ Sheriff
 
 	id = null
 	belt = null
-	backpack = null
-	satchel = null
 
-	ears = 			/obj/item/radio/headset/headset_den
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	shoes = 		/obj/item/clothing/shoes/workboots
 	suit = 			/obj/item/clothing/suit/det_suit
@@ -60,7 +57,6 @@ Settler
 	name = "Settler"
 	jobtype = /datum/job/f13settler
 
-	ears = 			/obj/item/radio/headset/headset_den
 	id = null
 	belt = null
 	backpack = null

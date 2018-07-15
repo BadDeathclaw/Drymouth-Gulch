@@ -14,11 +14,6 @@
 #define FREQ_MEDICAL 1355  // Medical comms frequency, soft blue
 #define FREQ_ENGINEERING 1357  // Engineering comms frequency, orange
 #define FREQ_SECURITY 1359  // Security comms frequency, red
-#define FREQ_VAULT 1361 //Vault
-#define FREQ_NCR 1363 //NCR
-#define FREQ_BOS 1365 //BOS
-#define FREQ_ENCLAVE 1367 //ENCLAVE
-#define FREQ_DEN 1369 //DEN
 
 #define FREQ_STATUS_DISPLAYS 1435
 #define FREQ_ATMOS_ALARMS 1437  // air alarms <-> alert computers

@@ -130,16 +130,6 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "CTF red team")
 		if(FREQ_CTF_BLUE)
 			record_feedback("tally", "radio_usage", 1, "CTF blue team")
-		if(FREQ_VAULT)
-			record_feedback("tally", "radio_usage", 1, "Vault")
-		if(FREQ_NCR)
-			record_feedback("tally", "radio_usage", 1, "NCR")
-		if(FREQ_BOS)
-			record_feedback("tally", "radio_usage", 1, "BOS")
-		if(FREQ_ENCLAVE)
-			record_feedback("tally", "radio_usage", 1, "Enclave")
-		if(FREQ_DEN)
-			record_feedback("tally", "radio_usage", 1, "Den")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 
@@ -308,7 +298,7 @@ Versioning
 
 	if(!SSdbcore.Connect())
 		return
-
+	
 	sqlname = sanitizeSQL(sqlname)
 	sqlkey = sanitizeSQL(sqlkey)
 	sqljob = sanitizeSQL(sqljob)
