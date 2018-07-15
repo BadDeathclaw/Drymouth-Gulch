@@ -14,16 +14,11 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"e" = "Engineering",
 	"s" = "Security",
 	"u" = "Supply",
-	//"v" = "Service",
+	"v" = "Service",
 
 	// Faction
 	"t" = "Syndicate",
 	"y" = "CentCom",
-	"v" = "Vault",
-	"w" = "NCR",
-	"q" = "BOS",
-	"z" = "Enclave",
-	"f" = "Den",
 
 	// Admin
 	"p" = "admin",

@@ -30,19 +30,13 @@ Overseer
 	uniform = 		/obj/item/clothing/under/f13/vault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	ears = 			/obj/item/radio/headset/headset_overseer
+	ears = 			/obj/item/radio/headset/heads/captain
 	shoes = 		/obj/item/clothing/shoes/sneakers/brown
 	backpack_contents = list(
 		/obj/item/storage/box/ids=1,\
 		/obj/item/melee/classic_baton/telescopic=1)
 
-///datum/outfit/f13overseer/post_equip(mob/living/carbon/human/H)
-	//..()
-	//var/obj/item/radio/headset/heads/captain/R = H.ears
-	//R.set_frequency(FREQ_F13_VAULT)
-	//R.freqlock = TRUE
-	//R.independent = TRUE
-	//H.dna.species.stunmod = 0
+
 
 /*
 Head of Security
@@ -73,7 +67,7 @@ Head of Security
 
 	id = /obj/item/card/id/silver
 	//pda
-	ears = 			/obj/item/radio/headset/headset_vault_hos/alt
+	ears = 			/obj/item/radio/headset/heads/hos/alt
 	uniform = 		/obj/item/clothing/under/f13/vault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit = 			/obj/item/clothing/suit/armor/hos/trenchcoat

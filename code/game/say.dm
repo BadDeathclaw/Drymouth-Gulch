@@ -15,12 +15,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_SYNDICATE]" = "syndradio",
 	"[FREQ_CENTCOM]" = "centcomradio",
 	"[FREQ_CTF_RED]" = "redteamradio",
-	"[FREQ_CTF_BLUE]" = "blueteamradio",
-	"[FREQ_VAULT]" = "vaultradio",
-	"[FREQ_NCR]" = "ncrradio",
-	"[FREQ_BOS]" = "bosradio",
-	"[FREQ_ENCLAVE]" = "enclaveradio",
-	"[FREQ_DEN]" = "denradio"
+	"[FREQ_CTF_BLUE]" = "blueteamradio"
 	))
 
 /atom/movable/proc/say(message, datum/language/language = null)
