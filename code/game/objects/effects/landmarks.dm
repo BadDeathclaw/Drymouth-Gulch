@@ -533,6 +533,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/sheriff
 	name = "Sheriff"
+	icon_state = "Sheriff"
 
 /obj/effect/landmark/start/f13/settler
 	name = "Settler"
