@@ -168,7 +168,7 @@ Code:
 	if(!signal || signal.data["code"] != code)
 		return
 
-	if(isliving(loc) && on)
+	if(isliving(loc))
 		if(shock_cooldown != 0)
 			return
 		shock_cooldown = 1
