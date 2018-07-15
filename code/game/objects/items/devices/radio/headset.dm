@@ -199,6 +199,49 @@
 	icon_state = "srv_headset"
 	keyslot = new /obj/item/encryptionkey/headset_service
 
+//FALLOUT
+/obj/item/radio/headset/headset_overseer
+	name = "\proper the overseer's radio headset"
+	desc = "This is used by the vault overseer.\nChannels are as follows: :v - vault, :c - command, :s - security, :e - engineering, :m - medical, :n - science."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/headset_overseer
+
+/obj/item/radio/headset/headset_vault_hos
+	name = "\proper the head of security's radio headset"
+	desc = "The headset of the man in charge of keeping order and protecting the vault.\nChannels are as follows: :v - vault, :c - command, :s - security."
+	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/headset_vault_hos
+
+/obj/item/radio/headset/headset_vault_hos/alt
+	name = "\proper the head of security's bowman headset"
+	desc = "The headset of the man in charge of keeping order and protecting the station. Protects ears from flashbangs.\nTo access the security channel, use :s. For command, use :c."
+	icon_state = "com_headset_alt"
+	item_state = "com_headset_alt"
+
+/obj/item/radio/headset/headset_ncr
+	name = "ncr radio headset"
+	desc = "This is used by the new california republic.\nTo access the NCR channel, use :w."
+	icon_state = "mine_headset"
+	keyslot = new /obj/item/encryptionkey/headset_ncr
+
+/obj/item/radio/headset/headset_bos
+	name = "brotherhood radio headset"
+	desc = "This is used by the brotherhood of steel.\nTo access the BOS channel, use :q."
+	icon_state = "cent_headset"
+	keyslot = new /obj/item/encryptionkey/headset_bos
+
+/obj/item/radio/headset/headset_enclave
+	name = "enclave radio headset"
+	desc = "This is used by the enclave.\nTo access the enclave channel, use :z."
+	icon_state = "sec_headset"
+	keyslot = new /obj/item/encryptionkey/headset_enclave
+
+/obj/item/radio/headset/headset_den
+	name = "den radio headset"
+	desc = "This is used by the den.\nTo access the den channel, use :f."
+	icon_state = "mine_headset"
+	keyslot = new /obj/item/encryptionkey/headset_den
+
 /obj/item/radio/headset/headset_cent
 	name = "\improper CentCom headset"
 	desc = "A headset used by the upper echelons of Nanotrasen.\nTo access the CentCom channel, use :y."
