@@ -289,7 +289,7 @@ Ranger
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
-	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
+	head = 			/obj/item/clothing/head/f13/ranger
 	gloves =		/obj/item/clothing/gloves/combat
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/combat/swat

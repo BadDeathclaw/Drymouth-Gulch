@@ -106,7 +106,7 @@ GLOBAL_LIST_INIT(radiochannels, list(
 	"Blue Team" = FREQ_CTF_BLUE,
 	"Vault" = FREQ_VAULT,
 	"NCR" = FREQ_NCR,
-	"Brotherhood" = FREQ_BOS,
+	"BOS" = FREQ_BOS,
 	"Enclave" = FREQ_ENCLAVE,
 	"Den" = FREQ_DEN
 ))
@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 	"[FREQ_CTF_BLUE]" = "Blue Team",
 	"[FREQ_VAULT]" = "Vault",
 	"[FREQ_NCR]" = "NCR",
-	"[FREQ_BOS]" = "Brotherhood",
+	"[FREQ_BOS]" = "BOS",
 	"[FREQ_ENCLAVE]" = "Enclave",
 	"[FREQ_DEN]" = "Den"
 ))

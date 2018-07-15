@@ -150,13 +150,13 @@
 	icon_state = "cypherkey"
 	channels = list("BOS" = 1)
 
-	/obj/item/encryptionkey/headset_enclave
+/obj/item/encryptionkey/headset_enclave
 	name = "Enclave radio encryption key"
 	desc = "An encryption key for a radio headset.  To access the vault channel, use :z."
 	icon_state = "cypherkey"
 	channels = list("Enclave" = 1)
 
-	/obj/item/encryptionkey/headset_den
+/obj/item/encryptionkey/headset_den
 	name = "Den radio encryption key"
 	desc = "An encryption key for a radio headset.  To access the vault channel, use :f."
 	icon_state = "cypherkey"
