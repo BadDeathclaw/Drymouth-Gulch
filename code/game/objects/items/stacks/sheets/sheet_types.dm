@@ -166,6 +166,9 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 /obj/item/stack/sheet/plasteel/twenty
 	amount = 20
 
+/obj/item/stack/sheet/plasteel/five
+	amount = 5
+
 /obj/item/stack/sheet/plasteel/fifty
 	amount = 50
 
@@ -298,6 +301,9 @@ GLOBAL_LIST_INIT(cardboard_recipes, list ( \
 
 /obj/item/stack/sheet/cardboard/fifty
 	amount = 50
+
+/obj/item/stack/sheet/cardboard/twenty
+	amount = 20
 
 /obj/item/stack/sheet/cardboard/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stamp/clown) && !istype(loc, /obj/item/storage))

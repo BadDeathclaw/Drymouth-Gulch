@@ -29,3 +29,7 @@
 	icon = 'icons/obj/smooth_structures/lattice.dmi'
 	icon_state = "lattice"
 	density = TRUE
+
+/obj/effect/decal/roadline
+	name = "road line"
+	icon_state = "doublehorizontal"

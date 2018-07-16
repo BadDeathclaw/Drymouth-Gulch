@@ -27,8 +27,3 @@
 	desc = "A rotting hunk of wood."
 	icon = 'icons/turf/walls/f13wood_wall.dmi'
 	hardness = 25
-
-/turf/closed/indestructible/f13matrix
-	name = "matrix"
-	desc = "<font color='#157206'>You suddenly realize the truth - there is no spoon.<br>Digital simulation ends here.</font>"
-	icon = 'icons/turf/walls/f13misc.dmi'

@@ -254,6 +254,7 @@
 	desc = "A pre-war military grade shotgun with wood furniture and a five-shell capacity underneath plus one in chamber."
 	icon_state = "trenchgun"
 	item_state = "trenchgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
 	w_class = WEIGHT_CLASS_HUGE
 	weapon_weight = WEAPON_HEAVY
 

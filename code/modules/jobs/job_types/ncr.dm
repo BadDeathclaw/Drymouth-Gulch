@@ -50,7 +50,6 @@ Captain
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
-	//gloves
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -89,7 +88,6 @@ Lieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
-	//gloves
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -129,7 +127,6 @@ Sergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/f13/ncr
-	//gloves
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -169,7 +166,6 @@ Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
-	//gloves
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -209,7 +205,6 @@ Recruit
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
-	//gloves
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
