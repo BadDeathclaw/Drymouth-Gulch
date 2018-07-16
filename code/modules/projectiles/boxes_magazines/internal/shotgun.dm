@@ -1,9 +1,12 @@
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	caliber = "shotgun"
 	max_ammo = 4
 	multiload = 0
+
+/obj/item/ammo_box/magazine/internal/shot/trench
+	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/shot/ammo_count(countempties = 1)
 	if (!countempties)

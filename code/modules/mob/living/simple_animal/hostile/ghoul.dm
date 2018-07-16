@@ -2,9 +2,9 @@
 	name = "feral ghoul"
 	desc = "A ghoul that has lost it's mind and become aggressive."
 	icon = 'icons/mob/wastemobs.dmi'
-	icon_state = "ghoul"
-	icon_living = "ghoul"
-	icon_dead = "ghoul"
+	icon_state = "feralghoul"
+	icon_living = "feralghoul"
+	icon_dead = "feralghoul_dead"
 	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	turns_per_move = 5
 	speak_emote = list("growls")
@@ -28,10 +28,10 @@
 /mob/living/simple_animal/hostile/ghoul/reaver
 	name = "feral ghoul reaver"
 	desc = "A ghoul that has lost it's mind and become aggressive. This one is strapped with metal armor, and appears far stronger."
-	icon = 'icons/mob/simple_human.dmi'
-	icon_state = "ghoul_reaver"
-	icon_living = "ghoul_reaver"
-	icon_dead = "ghoul_reaver"
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "ghoulreaver"
+	icon_living = "ghoulreaver"
+	icon_dead = "ghoulreaver_dead"
 	a_intent = INTENT_HARM
 	maxHealth = 160
 	health = 160

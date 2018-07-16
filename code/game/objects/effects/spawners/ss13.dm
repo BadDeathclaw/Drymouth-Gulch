@@ -1157,3 +1157,424 @@ obj
 								lb2.loc=src.loc
 								del src
 								return
+
+
+			junkspawners //port
+				junk
+					New()
+						switch(rand(1,24))
+							if(1)
+								var/obj/item/broken_bottle/lb = new
+								var/obj/item/candle/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(2)
+								var/obj/item/poster/wanted/lb = new
+								var/obj/item/multitool/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(3)
+								var/obj/item/cigbutt/cigarbutt/lb = new
+								var/obj/item/trash/sosjerky/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(4)
+								var/obj/item/razor/lb = new
+								var/obj/item/candle/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(5)
+								var/obj/item/rollingpaper/lb = new
+								var/obj/item/trash/coal/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(6)
+								var/obj/item/trash/pistachios/lb = new
+								var/obj/item/soap/homemade/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(7)
+								var/obj/item/bikehorn/lb = new
+								var/obj/item/stack/cable_coil/random/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(8)
+								var/obj/item/stack/medical/bruise_pack/lb = new
+								var/obj/item/trash/popcorn/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(9)
+								var/obj/item/trash/syndi_cakes/lb = new
+								var/obj/item/valentine/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(10)
+								var/obj/item/taperecorder/lb = new
+								var/obj/item/tape/random/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(11)
+								var/obj/item/bikehorn/airhorn/lb = new
+								var/obj/item/trash/can/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(12)
+								var/obj/item/trash/candy/lb = new
+								var/obj/item/stack/medical/gauze/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(13)
+								var/obj/item/trash/plate/lb = new
+								var/obj/item/storage/box/snappops/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(14)
+								var/obj/item/bikehorn/rubberducky/lb = new
+								var/obj/item/stack/packageWrap/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(15)
+								var/obj/item/weapon/dildo/lb = new
+								var/obj/item/storage/box/matches/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(16)
+								var/obj/item/toner/lb = new
+								var/obj/item/tank/internals/oxygen/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(17)
+								var/obj/item/storage/box/papersack/lb = new
+								var/obj/item/storage/box/lights/mixed/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(18)
+								var/obj/item/storage/box/beakers/lb = new
+								var/obj/item/storage/belt/fannypack/black/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(19)
+								var/obj/item/camera/lb = new
+								var/obj/item/bodypart/l_arm/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(20)
+								var/obj/item/trash/can/lb = new
+								var/obj/item/toy/dummy/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(21)
+								var/obj/item/toy/eightball/lb = new
+								var/obj/item/toy/cards/deck/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(22)
+								var/obj/item/trash/tray/lb = new
+								var/obj/item/toy/xmas_cracker/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(23)
+								var/obj/item/reagent_containers/spray/spraytan/lb = new
+								var/obj/item/reagent_containers/glass/bowl/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(24)
+								var/obj/item/reagent_containers/spray/cleaner/lb = new
+								var/obj/item/reagent_containers/glass/bucket/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+
+
+
+			foodspawner
+				New()
+					switch(rand(1,32))
+						if(1)
+							var/obj/item/storage/box/ingredients/american/lb = new
+							var/obj/item/storage/box/ingredients/carnivore/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(2)
+							var/obj/item/storage/box/ingredients/delights/lb = new
+							var/obj/item/storage/box/ingredients/exotic/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(3)
+							var/obj/item/storage/box/ingredients/fiesta/lb = new
+							var/obj/item/storage/box/ingredients/fruity/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(4)
+							var/obj/item/storage/box/ingredients/grains/lb = new
+							var/obj/item/storage/box/ingredients/italian/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(5)
+							var/obj/item/storage/box/ingredients/sweets/lb = new
+							var/obj/item/storage/box/ingredients/vegetarian/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(6)
+							var/obj/item/storage/box/ingredients/wildcard/lb = new
+							var/obj/item/storage/box/ingredients/wildcard/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(7)
+							var/obj/item/storage/box/donkpockets/lb = new
+							var/obj/item/storage/box/donkpockets/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(8)
+							var/obj/item/reagent_containers/food/condiment/flour/lb = new
+							var/obj/item/reagent_containers/food/condiment/flour/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(9)
+							var/obj/item/reagent_containers/food/condiment/rice/lb = new
+							var/obj/item/reagent_containers/food/condiment/rice/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(10)
+							var/obj/item/reagent_containers/food/condiment/enzyme/lb = new
+							var/obj/item/reagent_containers/food/condiment/enzyme/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(11)
+							var/obj/item/reagent_containers/food/condiment/soymilk/lb = new
+							var/obj/item/reagent_containers/food/condiment/soymilk/lb2 = new
+							var/obj/item/reagent_containers/food/condiment/soymilk/lb3 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							lb3.loc=src.loc
+							del src
+						if(12)
+							var/obj/item/reagent_containers/food/condiment/milk/lb = new
+							var/obj/item/reagent_containers/food/condiment/milk/lb2 = new
+							var/obj/item/reagent_containers/food/condiment/milk/lb3 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							lb3.loc=src.loc
+							del src
+						if(13)
+							var/obj/item/reagent_containers/food/condiment/saltshaker/lb = new
+							var/obj/item/reagent_containers/food/condiment/peppermill/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(14)
+							var/obj/item/reagent_containers/food/condiment/mayonnaise/lb = new
+							var/obj/item/reagent_containers/food/condiment/soysauce/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(15)
+							var/obj/item/reagent_containers/food/snacks/beans/lb = new
+							var/obj/item/reagent_containers/food/snacks/baguette/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(16)
+							var/obj/item/reagent_containers/food/snacks/bun/lb = new
+							var/obj/item/reagent_containers/food/snacks/bun/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(17)
+							var/obj/item/reagent_containers/food/snacks/butter/lb = new
+							var/obj/item/reagent_containers/food/snacks/butter/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(18)
+							var/obj/item/reagent_containers/food/snacks/cheesewedge/lb = new
+							var/obj/item/reagent_containers/food/snacks/cheesewedge/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(19)
+							var/obj/item/reagent_containers/food/snacks/chips/lb = new
+							var/obj/item/reagent_containers/food/snacks/chips/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(20)
+							var/obj/item/reagent_containers/food/snacks/chocolatebar/lb = new
+							var/obj/item/reagent_containers/food/snacks/chocolatebar/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(21)
+							var/obj/item/reagent_containers/food/snacks/cracker/lb = new
+							var/obj/item/reagent_containers/food/snacks/cracker/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(22)
+							var/obj/item/reagent_containers/food/snacks/icecream/lb = new
+							var/obj/item/reagent_containers/food/snacks/lollipop/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(23)
+							var/obj/item/reagent_containers/food/snacks/meat/rawbacon/lb = new
+							var/obj/item/reagent_containers/food/snacks/meat/rawbacon/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(24)
+							var/obj/item/reagent_containers/food/snacks/meat/slab/human/lb = new
+							var/obj/item/reagent_containers/food/snacks/meat/slab/human/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(25)
+							var/obj/item/reagent_containers/food/snacks/meat/slab/pug/lb = new
+							var/obj/item/reagent_containers/food/snacks/meat/slab/pug/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(26)
+							var/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct/lb = new
+							var/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(27)
+							var/obj/item/reagent_containers/food/snacks/muffin/berry/lb = new
+							var/obj/item/reagent_containers/food/snacks/muffin/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(28)
+							var/obj/item/reagent_containers/food/snacks/no_raisin/lb = new
+							var/obj/item/reagent_containers/food/snacks/no_raisin/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(29)
+							var/obj/item/reagent_containers/food/snacks/popcorn/lb = new
+							var/obj/item/reagent_containers/food/snacks/raisincookie/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(30)
+							var/obj/item/reagent_containers/food/snacks/sosjerky/lb = new
+							var/obj/item/reagent_containers/food/snacks/sosjerky/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(31)
+							var/obj/item/reagent_containers/food/snacks/sausage/lb = new
+							var/obj/item/reagent_containers/food/snacks/sausage/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(32)
+							var/obj/item/reagent_containers/food/snacks/store/cheesewheel/lb = new
+							lb.loc=src.loc
+							del src
+
+
+
+
+			resourcespawner
+				New()
+					switch(rand(1,10))
+						if(1)
+							var/obj/item/stack/rods/ten/lb = new
+							var/obj/item/stack/sheet/metal/ten/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(2)
+							var/obj/item/stack/rods/ten/lb = new
+							var/obj/item/stack/sheet/metal/ten/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(3)
+							var/obj/item/stack/sheet/cardboard/fifty/lb = new
+							lb.loc=src.loc
+							del src
+						if(4)
+							var/obj/item/stack/sheet/glass/ten/lb = new
+							var/obj/item/stack/sheet/metal/ten/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(5)
+							var/obj/item/stack/sheet/metal/five/lb = new
+							var/obj/item/stack/sheet/plasteel/five/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(6)
+							var/obj/item/stack/sheet/plastic/five/lb = new
+							var/obj/item/stack/sheet/plastic/five/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(7)
+							var/obj/item/stack/sheet/paperframes/twenty/lb = new
+							var/obj/item/stack/sheet/metal/five/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(8)
+							var/obj/item/stack/sheet/plastic/five/lb = new
+							var/obj/item/stack/sheet/cloth/ten/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(9)
+							var/obj/item/stack/sheet/glass/ten/lb = new
+							var/obj/item/stack/sheet/cardboard/twenty/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+						if(10)
+							var/obj/item/stack/sheet/plasteel/five/lb = new
+							var/obj/item/stack/sheet/metal/ten/lb2 = new
+							lb.loc=src.loc
+							lb2.loc=src.loc
+							del src
+
+
+
+
+
+
