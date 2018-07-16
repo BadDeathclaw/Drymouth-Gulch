@@ -123,6 +123,10 @@
 /turf/closed/indestructible/opshuttle
 	icon_state = "wall3"
 
+/turf/closed/indestructible/matrix
+	icon_state = "matrix"
+	desc = "<font color='#157206'>You suddenly realize the truth - there is no spoon.<br>Digital simulation ends here.</font>"
+
 /turf/closed/indestructible/fakeglass
 	name = "window"
 	icon_state = "fake_window"
