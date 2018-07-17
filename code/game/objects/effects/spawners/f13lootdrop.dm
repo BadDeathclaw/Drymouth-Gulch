@@ -24,13 +24,15 @@
 				/obj/item/clothing/suit/armor/vest,
 				/obj/item/clothing/head/helmet/riot/vaultsec
 				)
-
+				//"" returns absolutley nothing
 	var/loot2 = list(
-				/obj/item/clothing/suit/armor/vest/det_suit
+				/obj/item/clothing/suit/armor/vest/det_suit,
+				""
 				)
 
 	var/loot3 = list(
-				/obj/item/clothing/suit/armor/f13/kit
+				/obj/item/clothing/suit/armor/f13/kit,
+				""
 				)
 
 	var/loot4 = list(
@@ -54,39 +56,48 @@
 				)
 
 	var/loot8 = list(
-				/obj/item/clothing/suit/armor/f13/leatherarmor
+				/obj/item/clothing/suit/armor/f13/leatherarmor,
+				""
 				)
 
 	var/loot9 = list(
-				/obj/item/clothing/suit/f13/mfp
+				/obj/item/clothing/suit/f13/mfp,
+				""
 				)
 
 	var/loot10 = list(
-				/obj/item/clothing/suit/fluff/cowboybvest
+				/obj/item/clothing/suit/fluff/cowboybvest,
+				""
 				)
 
 	var/loot11 = list(
-				/obj/item/clothing/suit/fluff/cowboygvest
+				/obj/item/clothing/suit/fluff/cowboygvest,
+				""
 				)
 
 	var/loot12 = list(
-				/obj/item/clothing/suit/fluff/battlecruiser
+				/obj/item/clothing/suit/fluff/battlecruiser,
+				""
 				)
 
 	var/loot13 = list(
-				/obj/item/clothing/suit/fluff/vest
+				/obj/item/clothing/suit/fluff/vest,
+				""
 				)
 
 	var/loot14 = list(
-				/obj/item/clothing/suit/f13/veteran
+				/obj/item/clothing/suit/f13/veteran,
+				""
 				)
 
 	var/loot15 = list(
-				/obj/item/clothing/suit/f13/duster
+				/obj/item/clothing/suit/f13/duster,
+				""
 				)
 
 	var/loot16 = list(
-				/obj/item/clothing/suit/f13/autumn
+				/obj/item/clothing/suit/f13/autumn,
+				""
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
@@ -112,7 +123,8 @@
 				)
 
 	var/loot4 = list(
-				/obj/item/clothing/suit/armor/fluff/chestplate
+				/obj/item/clothing/suit/armor/fluff/chestplate,
+				""
 				)
 
 	var/loot5 = list(
@@ -170,7 +182,8 @@
 				)
 
 	var/loot2 = list(
-				/obj/item/clothing/suit/armor/f13/ibmetalarmor
+				/obj/item/clothing/suit/armor/f13/ibmetalarmor,
+				""
 				)
 
 	var/loot3 = list(
@@ -194,7 +207,8 @@
 				)
 
 	var/loot7 = list(
-				/obj/item/clothing/suit/armor/f13/ibmetalarmor
+				/obj/item/clothing/suit/armor/f13/ibmetalarmor,
+				""
 				)
 
 	var/loot8 = list(
@@ -309,54 +323,19 @@
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds //remove equipment, has nothing on it
 	name = "wasteland meds spawner"
-	lootcount = 3
+	lootcount = 1
 
-	var/loot1 = list(
-				/obj/item/reagent_containers/pill/patch/healingpowder
-				)
-
-	var/loot2 = list(
-				/obj/item/storage/pill_bottle/radx
-				)
-
-	var/loot3 = list(
+	loot = list(/obj/item/reagent_containers/pill/patch/healingpowder,
+				/obj/item/storage/pill_bottle/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/reagent_containers/blood/radaway
-				)
-
-	var/loot4 = list(
-				/obj/item/storage/pill_bottle/mentats
-				)
-
-	var/loot5 = list(
-				/obj/item/storage/pill_bottle/fixer
-				)
-
-	var/loot6 = list(
-				/obj/item/reagent_containers/hypospray/medipen/stimpak
-				)
-
-	var/loot7 = list(
-				/obj/item/reagent_containers/medspray/styptic
-				)
-
-	var/loot8 = list(
-				/obj/item/reagent_containers/medspray/silver_sulf
-				)
-
-	var/loot9 = list(
-				/obj/item/reagent_containers/medspray/synthflesh
-				)
-
-	var/loot10 = list(
+				/obj/item/storage/pill_bottle/mentats,
+				/obj/item/storage/pill_bottle/fixer,
+				/obj/item/reagent_containers/hypospray/medipen/stimpak,
+				/obj/item/reagent_containers/medspray/styptic,
+				/obj/item/reagent_containers/medspray/silver_sulf,
+				/obj/item/reagent_containers/medspray/synthflesh,
 				/obj/item/reagent_containers/medspray/sterilizine
 				)
-
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
-	. = ..()
-
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug //remove equipment, has nothing on it
 	name = "wasteland drugs spawner"
@@ -471,12 +450,14 @@
 	lootcount = 3
 	var/loot1 = list(
 				/obj/item/gun/ballistic/revolver/single_shotgun,
-				/obj/item/storage/box/rubbershot/beanbag
+				/obj/item/storage/box/rubbershot/beanbag,
+				""
 				)
 
 	var/loot2 = list(
 				/obj/item/gun/ballistic/revolver/caravan_shotgun,
-				/obj/item/storage/box/rubbershot/beanbag
+				/obj/item/storage/box/rubbershot/beanbag,
+				""
 				)
 
 	var/loot3 = list(
@@ -486,11 +467,15 @@
 				)
 
 	var/loot4 = list(
-				/obj/item/gun/ballistic/revolver/zipgun
+				/obj/item/gun/ballistic/revolver/zipgun,
+				"",
+				""
 				)
 
 	var/loot5 = list(
-				/obj/item/gun/ballistic/revolver/pipe_rifle
+				/obj/item/gun/ballistic/revolver/pipe_rifle,
+				"",
+				""
 				)
 
 	var/loot6 = list(
@@ -525,7 +510,8 @@
 
 	var/loot11 = list(
 				/obj/item/gun/ballistic/revolver/colt6250,
-				/obj/item/ammo_box/c10mm
+				/obj/item/ammo_box/c10mm,
+				""
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
@@ -537,12 +523,14 @@
 	lootcount = 3
 	var/loot1 = list(
 				/obj/item/gun/ballistic/shotgun/trench,
-				/obj/item/storage/box/lethalshot
+				/obj/item/storage/box/lethalshot,
+				""
 				)
 
 	var/loot2 = list(
 				/obj/item/gun/ballistic/shotgun,
-				/obj/item/storage/box/lethalshot
+				/obj/item/storage/box/lethalshot,
+				""
 				)
 
 	var/loot3 = list(
@@ -613,7 +601,9 @@
 				)
 
 	var/loot8 = list(
-				/obj/item/gun/energy/laser/pistol
+				/obj/item/gun/energy/laser/pistol,
+				"",
+				""
 				)
 
 	var/loot9 = list(
@@ -643,24 +633,32 @@
 
 	var/loot3 = list(
 				/obj/item/gun/ballistic/automatic/pistol/deagle,
-				/obj/item/ammo_box/magazine/m50
+				/obj/item/ammo_box/magazine/m50,
+				""
 				)
 
 	var/loot4 = list(
-				/obj/item/gun/energy/laser/scatter
+				/obj/item/gun/energy/laser/scatter,
+				"",
+				""
 				)
 
 	var/loot5 = list(
-				/obj/item/gun/energy/laser/plasma/pistol
+				/obj/item/gun/energy/laser/plasma/pistol,
+				"",
+				""
 				)
 
 	var/loot6 = list(
-				/obj/item/gun/energy/laser/aer9
+				/obj/item/gun/energy/laser/aer9,
+				"",
+				""
 				)
 
 	var/loot7 = list(
 				/obj/item/gun/ballistic/automatic/tommygun,
-				/obj/item/ammo_box/magazine/tommygunm45
+				/obj/item/ammo_box/magazine/tommygunm45,
+				""
 				)
 
 	var/loot8 = list(
