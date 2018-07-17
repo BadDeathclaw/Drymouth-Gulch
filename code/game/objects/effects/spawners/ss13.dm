@@ -468,7 +468,7 @@ obj
 									lb3.loc=src.loc
 									del src
 								if(5)
-									var/obj/item/gun/ballistic/revolver/m29/scoped/lb = new
+									var/obj/item/gun/ballistic/shotgun/lethal/lb = new
 									var/obj/item/ammo_box/m44/lb2 = new
 									var/obj/item/ammo_box/m44/lb3 = new
 									lb.loc=src.loc
@@ -1572,8 +1572,6 @@ obj
 							lb.loc=src.loc
 							lb2.loc=src.loc
 							del src
-
-
 
 
 

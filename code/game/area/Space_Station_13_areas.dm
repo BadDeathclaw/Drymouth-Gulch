@@ -1351,6 +1351,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Farmhouse"
 	icon_state = "farmhouse"
 
+/area/f13/farmhousesouth
+	name = "Farmhouse"
+	icon_state = "farmhouse"
+
 /area/f13/legioncamp
 	name = "Legion Camp"
 	icon_state = "legioncamp"
