@@ -208,7 +208,7 @@ Recruit
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/boltaction/remington
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
 		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/internal/boltaction=3, \
@@ -330,7 +330,7 @@ Recon Ranger
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	suit_store = 	/obj/item/gun/ballistic/shotgun/boltaction/remington/scoped
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \

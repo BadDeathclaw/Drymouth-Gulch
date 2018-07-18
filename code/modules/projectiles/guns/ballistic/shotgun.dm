@@ -271,7 +271,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 //Remington 700
-/obj/item/gun/ballistic/shotgun/boltaction/remington
+/obj/item/gun/ballistic/shotgun/remington
 	name = "Remington 700"
 	desc = "A sturdy hunting rifle, chambered in 308. and in use before the war."
 	icon_state = "308"
@@ -281,7 +281,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	weapon_weight = WEAPON_HEAVY
 
-/obj/item/gun/ballistic/shotgun/boltaction/remington/scoped
+/obj/item/gun/ballistic/shotgun/remington/scoped
 	name = "Scoped Remington 700"
 	desc = "A sturdy hunting rifle, chambered in 308. and in use before the war. This one has a 8x scope mounted to it."
 	icon_state = "rifle308_scope"

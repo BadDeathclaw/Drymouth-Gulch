@@ -260,7 +260,7 @@ Preacher
 	backpack = 		/obj/item/storage/backpack/cultpack
 	satchel = 		/obj/item/storage/backpack/cultpack
 	mask = 			/obj/item/clothing/mask/gas/syndicate
-	r_hand = 		/obj/item/gun/ballistic/shotgun/boltaction/remington/scoped
+	r_hand = 		/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/internal/boltaction=2, \
 		/obj/item/reagent_containers/food/drinks/flask=1)

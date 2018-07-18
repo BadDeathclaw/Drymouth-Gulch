@@ -8,7 +8,7 @@
 /obj/item/storage/get_dumping_location(obj/item/storage/source,mob/user)
 	return src
 
-/obj/item/storage/LateInitialize()
+/obj/item/storage/Initialize()
 	. = ..()
 	PopulateContents()
 
