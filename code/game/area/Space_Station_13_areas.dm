@@ -1386,6 +1386,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = TRUE
 	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
 
+/area/f13/vault_atrium_Lower
+	name = "Vault Atrium Lower"
+	icon_state = "vault_atrium_upper"
+	requires_power = TRUE
+	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
+
 /area/shuttle/vault_elevator
 	name = "Vault Elevator"
 

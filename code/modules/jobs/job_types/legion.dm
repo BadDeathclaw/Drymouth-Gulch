@@ -27,15 +27,14 @@ Needs whitelist
 
 	id = null
 	ears = null
-	belt = null
-
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionlegat
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/leglegat
 	head = 			/obj/item/clothing/head/helmet/f13/legion/leglegat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	mask = 			/obj/item/clothing/mask/facewrap/red
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=2, \
@@ -71,23 +70,23 @@ Centurion
 
 	id = null
 	ears = null
-	belt = null
-
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
+	r_hand =		/obj/item/melee/powerfist
+	l_hand =		/obj/item/tank/internals/oxygen
+	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	mask = 			/obj/item/clothing/mask/facewrap/red
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/melee/powerfist=1, \
 		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
@@ -112,17 +111,15 @@ Vexillarius
 
 	id = null
 	ears = null
-	belt = null
-
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	mask = 			/obj/item/clothing/mask/facewrap/red
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
-	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
@@ -154,23 +151,22 @@ Decan
 
 	id = null
 	ears = null
-	belt = null
-
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	mask = 			/obj/item/clothing/mask/facewrap/red
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
 	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/d12g=2, \
+		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
@@ -195,15 +191,14 @@ Veteran
 
 	id = null
 	ears = null
-	belt = null
-
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	mask = 			/obj/item/clothing/mask/facewrap/red
 	suit_store = 	/obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
@@ -235,15 +230,14 @@ Legionary
 
 	id = null
 	ears = null
-	belt = null
-
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	mask = 			/obj/item/clothing/mask/facewrap/red
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \

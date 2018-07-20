@@ -99,7 +99,7 @@
 	can_bayonet = TRUE
 	knife_x_offset = 27
 	knife_y_offset = 13
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/boltaction/pump(mob/M)
@@ -188,7 +188,7 @@
 	icon_state = "cshotgun"
 	item_state = "cshotgun1"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/compact
@@ -206,7 +206,7 @@
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
 	icon_state = "cycler"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
@@ -255,7 +255,7 @@
 	icon_state = "trenchgun"
 	item_state = "trenchgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 // RIOT SHOTGUN //
@@ -267,7 +267,7 @@
 	force = 56
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 //Remington 700
@@ -278,7 +278,7 @@
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/remington/scoped
@@ -298,9 +298,9 @@
 	desc = "A semi automatic Colt Rangemaster semi-automatic rifle chambered in .308."
 	icon_state = "rangemaster"
 	item_state = "fnfal"
-	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/rangemaster
+	mag_type = /obj/item/ammo_box/magazine/internal/rangemaster
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 
@@ -313,7 +313,7 @@
 	force = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/revolver/single_shotgun
@@ -324,7 +324,7 @@
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/revolver/zipgun
@@ -342,7 +342,7 @@
 	item_state = "improvshotgun"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 

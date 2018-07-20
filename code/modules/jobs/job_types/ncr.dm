@@ -45,7 +45,7 @@ Captain
 /datum/outfit/job/f13captain
 	name = "NCR Captain"
 	jobtype = /datum/job/f13captain
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -55,7 +55,6 @@ Captain
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/shotgun/caws
 	backpack_contents = list(
-		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -83,7 +82,7 @@ Lieutenant
 /datum/outfit/job/f13lieutenant
 	name = "NCR Lieutenant"
 	jobtype = /datum/job/f13lieutenant
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -93,7 +92,6 @@ Lieutenant
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/a762/doublestacked=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -122,7 +120,7 @@ Sergeant
 /datum/outfit/job/f13sergeant
 	name = "NCR Sergeant"
 	jobtype = /datum/job/f13sergeant
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -132,7 +130,6 @@ Sergeant
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/greasegun
 	backpack_contents = list(
-		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/greasegun=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -161,7 +158,7 @@ Trooper
 /datum/outfit/job/f13trooper
 	name = "NCR Trooper"
 	jobtype = /datum/job/f13trooper
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
@@ -171,7 +168,6 @@ Trooper
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
-		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/r20=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -200,7 +196,7 @@ Recruit
 /datum/outfit/job/f13recruit
 	name = "NCR Recruit"
 	jobtype = /datum/job/f13recruit
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
@@ -210,8 +206,7 @@ Recruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
-		/obj/item/clothing/mask/facewrap=1, \
-		/obj/item/ammo_box/magazine/internal/boltaction=3, \
+		/obj/item/ammo_box/a762=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -240,7 +235,7 @@ Veteran Ranger
 /datum/outfit/job/f13vetranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/f13vetranger
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
@@ -256,8 +251,7 @@ Veteran Ranger
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
 
 /*
 Ranger
@@ -280,7 +274,7 @@ Ranger
 /datum/outfit/job/f13ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/f13ranger
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
@@ -296,8 +290,7 @@ Ranger
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/melee/classic_baton=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
 	box = null
 
 /*
@@ -321,7 +314,7 @@ Recon Ranger
 /datum/outfit/job/f13recranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/f13recranger
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/f13/duster
@@ -333,9 +326,8 @@ Recon Ranger
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/a762=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/melee/classic_baton=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
 	box = null
