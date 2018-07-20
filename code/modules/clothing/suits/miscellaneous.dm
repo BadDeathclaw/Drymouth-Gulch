@@ -597,6 +597,8 @@
 
 
 //Fallout 13
+/obj/item/clothing/suit/fluff
+	allowed = list(/obj/item/gun)
 
 /obj/item/clothing/suit/fluff/vest
 	name = "tan vest"

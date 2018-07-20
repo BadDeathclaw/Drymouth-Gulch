@@ -233,6 +233,21 @@
 	item_state = "khan"
 	item_color = "khan"
 
+
+/obj/item/clothing/suit/armor/khan
+	name = "khan armored vest"
+	desc = "The symbol of the greatest pushers."
+	icon_state = "khan"
+	item_state = "khan"
+
+//Warriors
+
+/obj/item/clothing/suit/armor/warriors
+	name = "warriors armored vest"
+	desc = "The symbol of the greatest gangers."
+	icon_state = "warriors"
+	item_state = "warriors"
+
 //Dust Devils
 
 //Boomers

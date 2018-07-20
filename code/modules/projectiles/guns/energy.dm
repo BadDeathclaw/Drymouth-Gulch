@@ -223,3 +223,34 @@
 			playsound(user, BB.hitsound, 50, 1)
 			cell.use(E.e_cost)
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
+
+
+/obj/item/gun/energy/attack_self(mob/living/user)
+	if(cell)
+		cell.forceMove(drop_location())
+		user.put_in_hands(cell)
+		cell.update_icon()
+		cell = null
+		to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+	else
+		to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
+	update_icon()
+	return
+
+
+/obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
+	..()
+	if (istype(A, /obj/item/stock_parts/cell/ammo))
+		var/obj/item/stock_parts/cell/ammo/AM = A
+		if (!cell && istype(AM, cell_type))
+			if(user.transferItemToLoc(AM, src))
+				cell = AM
+				to_chat(user, "<span class='notice'>You load a new cell into \the [src].</span>")
+				A.update_icon()
+				update_icon()
+				return 1
+			else
+				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+				return
+		else if (cell)
+			to_chat(user, "<span class='notice'>There's already a cell in \the [src].</span>")

@@ -372,7 +372,7 @@ obj
 									lb2.loc=src.loc
 									del src
 								if(3)
-									var/obj/item/gun/ballistic/shotgun/boltaction/lb = new
+									var/obj/item/gun/ballistic/shotgun/remington/lb = new
 									var/obj/item/ammo_box/a762/lb2 = new
 									var/obj/item/ammo_box/a762/lb3 = new
 									lb.loc=src.loc
@@ -388,7 +388,7 @@ obj
 									lb.loc=src.loc
 									del src
 								if(6)
-									var/obj/item/gun/ballistic/shotgun/boltaction/remington/lb = new
+									var/obj/item/gun/ballistic/shotgun/remington/lb = new
 									var/obj/item/ammo_box/a762/lb2 = new
 									var/obj/item/ammo_box/a762/lb3 = new
 									lb.loc=src.loc
@@ -460,7 +460,7 @@ obj
 									lb3.loc=src.loc
 									del src
 								if(4)
-									var/obj/item/gun/ballistic/shotgun/boltaction/remington/scoped/lb = new
+									var/obj/item/gun/ballistic/shotgun/remington/scoped/lb = new
 									var/obj/item/ammo_box/a762/lb2 = new
 									var/obj/item/ammo_box/a762/lb3 = new
 									lb.loc=src.loc
@@ -468,7 +468,7 @@ obj
 									lb3.loc=src.loc
 									del src
 								if(5)
-									var/obj/item/gun/ballistic/revolver/m29/scoped/lb = new
+									var/obj/item/gun/ballistic/shotgun/lethal/lb = new
 									var/obj/item/ammo_box/m44/lb2 = new
 									var/obj/item/ammo_box/m44/lb3 = new
 									lb.loc=src.loc
@@ -1572,8 +1572,6 @@ obj
 							lb.loc=src.loc
 							lb2.loc=src.loc
 							del src
-
-
 
 
 

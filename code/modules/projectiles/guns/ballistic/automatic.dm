@@ -3,6 +3,7 @@
 	var/alarmed = 0
 	var/select = 1
 	can_suppress = TRUE
+	w_class = WEIGHT_CLASS_BULKY
 	burst_size = 3
 	fire_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -220,7 +221,7 @@
 	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed 'Bulldog' by boarding parties. Compatible only with specialized 8-round drum magazines."
 	icon_state = "bulldog"
 	item_state = "bulldog"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_MEDIUM
 	mag_type = /obj/item/ammo_box/magazine/m12g
 	fire_sound = 'sound/weapons/gunshot.ogg'
@@ -257,7 +258,7 @@
 	desc = "A heavily modified 1.95x129mm light machine gun, designated 'L6 SAW'. Has 'Aussec Armoury - 2531' engraved on the receiver below the designation."
 	icon_state = "l6closed100"
 	item_state = "l6closedmag"
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/mm195x129
 	weapon_weight = WEAPON_HEAVY
@@ -339,7 +340,7 @@
 	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 13
@@ -372,7 +373,7 @@
 	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
 
@@ -407,6 +408,7 @@
 	name = "\improper Type U3 Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "mini-uzi"
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
 
@@ -415,7 +417,7 @@
 	desc = "Based on the classic 'Chicago Typewriter'."
 	icon_state = "tommygun"
 	item_state = "tommygun"
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
@@ -429,6 +431,7 @@
 	desc = "A select fire open bolt 10mm submachine gun. The serial number and manufactuer markings have been scratched off."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
+	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
@@ -445,7 +448,7 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
 	fire_delay = 1
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
@@ -464,7 +467,7 @@
 	desc = "A R94 marksman carbine, chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This one isn't a select fire variant."
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/r20
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = 0
@@ -504,7 +507,7 @@
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	burst_size = 3
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/shotgun/caws
@@ -516,7 +519,7 @@
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	burst_size = 3
 	fire_delay = 4
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/greasegun
@@ -539,7 +542,7 @@
 	mag_type = /obj/item/ammo_box/magazine/r20
 	burst_size = 3
 	fire_delay = 2
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
 	zoomable = TRUE
@@ -560,7 +563,7 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/lsw
@@ -574,7 +577,7 @@
 	can_suppress = 0
 	burst_size = 5
 	fire_delay = 0.3
-	w_class = WEIGHT_CLASS_HUGE
+	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
 
@@ -685,6 +688,13 @@
 	name = "357 bullet casing"
 	desc = "A .357 bullet casing."
 	caliber = "357"
+	projectile_type = /obj/item/projectile/bullet/medbullet
+
+/obj/item/ammo_casing/a762lp
+	name = "7.62 lowpower bullet casing"
+	desc = "A 7.62 bullet casing."
+	icon_state = "762-casing"
+	caliber = "a762lp"
 	projectile_type = /obj/item/projectile/bullet/medbullet
 
 //MedAP

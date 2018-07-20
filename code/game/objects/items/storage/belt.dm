@@ -317,9 +317,13 @@
 
 /obj/item/storage/belt/military
 	name = "chest rig"
-	desc = "A set of tactical webbing worn by Syndicate boarding parties."
+	desc = "A set of tactical webbing to be used tactically."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
+
+/obj/item/storage/belt/military/alt
+	icon_state = "explorer2"
+	item_state = "explorer2"
 
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
@@ -343,7 +347,7 @@
 		/obj/item/reagent_containers/food/snacks,
 		/obj/item/reagent_containers/food/drinks
 		))
-	
+
 	var/amount = 5
 	var/rig_snacks
 	while(contents.len <= amount)

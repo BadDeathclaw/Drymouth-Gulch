@@ -88,10 +88,12 @@
 	materials = list(MAT_METAL = 5000)
 
 /obj/item/ammo_box/a762/doublestacked
-	name = "double stacked stripper clip (7.62mm)"
-	desc = "A stripper clip."
+	name = "lowpower double stacked stripper clip (7.62mm)"
+	desc = "A 762 lowpower stripper."
 	icon_state = "762a"
+	ammo_type = /obj/item/ammo_casing/a762lp
 	max_ammo = 10
+	multiple_sprites = 1
 	materials = list(MAT_METAL = 10000)
 
 /obj/item/ammo_box/n762

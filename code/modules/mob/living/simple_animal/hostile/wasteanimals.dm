@@ -15,12 +15,12 @@
 	emote_taunt = list("buzzes")
 	taunt_chance = 30
 	speed = 0
-	maxHealth = 25
-	health = 25
+	maxHealth = 40
+	health = 40
 
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 15
+	melee_damage_lower = 20
 	melee_damage_upper = 20
 	attacktext = "stings"
 	speak_emote = list("buzzes")
@@ -35,7 +35,7 @@
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent("cazador_venom", 5)
 
-/mob/living/simple_animal/hostile/cazador/melee/bullet_act(obj/item/projectile/Proj)
+/mob/living/simple_animal/hostile/cazador/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
 	if(prob(50))
@@ -47,8 +47,8 @@
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
 	desc = "A mutated insect known for it's fast speed, deadly sting, and being huge bastards. This one's little."
-	maxHealth = 15
-	health = 15
+	maxHealth = 20
+	health = 20
 	speed = 1
 	melee_damage_lower = 5
 	melee_damage_upper = 10
@@ -88,12 +88,12 @@
 	emote_taunt = list("snips")
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 120
-	health = 120
+	maxHealth = 150
+	health = 150
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 20
-	melee_damage_upper = 30
+	melee_damage_lower = 35
+	melee_damage_upper = 35
 	attacktext = "stings"
 	speak_emote = list("hisses")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -156,7 +156,7 @@
 	health = 20
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 5
+	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attacktext = "stings"
 	speak_emote = list("skitters")

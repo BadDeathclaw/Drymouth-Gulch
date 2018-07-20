@@ -222,6 +222,9 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 /obj/item/stack/sheet/mineral/wood/fifty
 	amount = 50
 
+/obj/item/stack/sheet/mineral/wood/five
+	amount = 5
+
 /*
  * Cloth
  */
