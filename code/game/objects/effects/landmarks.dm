@@ -466,7 +466,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Veteran Ranger"
 
 /obj/effect/landmark/start/f13/ncrranger
-	name = "NCR Ranger"
+	name = "NCR Patrol Ranger"
 
 /obj/effect/landmark/start/f13/ncrreconranger
 	name = "NCR Recon Ranger"

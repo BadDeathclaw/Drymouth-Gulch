@@ -14,8 +14,8 @@ Colonel
 
 	outfit = /datum/outfit/job/f13colonel
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13colonel
 	name = "NCR Colonel"
@@ -39,8 +39,8 @@ Captain
 
 	outfit = /datum/outfit/job/f13captain
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13captain
 	name = "NCR Captain"
@@ -76,8 +76,8 @@ Lieutenant
 
 	outfit = /datum/outfit/job/f13lieutenant
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13lieutenant
 	name = "NCR Lieutenant"
@@ -114,8 +114,8 @@ Sergeant
 
 	outfit = /datum/outfit/job/f13sergeant
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13sergeant
 	name = "NCR Sergeant"
@@ -152,8 +152,8 @@ Trooper
 
 	outfit = /datum/outfit/job/f13trooper
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13trooper
 	name = "NCR Trooper"
@@ -190,8 +190,8 @@ Recruit
 
 	outfit = /datum/outfit/job/f13recruit
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13recruit
 	name = "NCR Recruit"
@@ -229,8 +229,8 @@ Veteran Ranger
 
 	outfit = /datum/outfit/job/f13vetranger
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13vetranger
 	name = "NCR Veteran Ranger"
@@ -257,7 +257,7 @@ Veteran Ranger
 Ranger
 */
 /datum/job/f13ranger
-	title = "NCR Ranger"
+	title = "NCR Patrol Ranger"
 	flag = F13RANGER
 	department_flag = NCR
 	faction = "Station"
@@ -268,8 +268,8 @@ Ranger
 
 	outfit = /datum/outfit/job/f13ranger
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13ranger
 	name = "NCR Ranger"
@@ -308,8 +308,8 @@ Recon Ranger
 
 	outfit = /datum/outfit/job/f13recranger
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_SECURITY)
+	minimal_access = list(ACCESS_SECURITY)
 
 /datum/outfit/job/f13recranger
 	name = "NCR Recon Ranger"
