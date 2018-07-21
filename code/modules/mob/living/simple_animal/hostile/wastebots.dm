@@ -4,10 +4,10 @@
 /mob/living/simple_animal/hostile/handy
 	name = "mr. handy"
 	desc = "A crazed pre-war household assistant robot, armed with a cutting saw."
-	icon = 'icons/mob/wastemobs.dmi'
+	icon = 'icons/mob/robots.dmi'
 	icon_state = "handy"
 	icon_living = "handy"
-	icon_dead = "handy"
+	icon_dead = "gib7"
 	gender = NEUTER
 	mob_biotypes = list(MOB_ROBOTIC)
 	health = 80
@@ -32,7 +32,7 @@
 	desc = "A pre-war combat robot based off the Mr. Handy designed, armed with plasma weaponry and a deadly close-range flamer."
 	icon_state = "gutsy"
 	icon_living = "gutsy"
-	icon_dead = "gutsy"
+	icon_dead = "gib7"
 	health = 120
 	maxHealth = 120
 	melee_damage_lower = 0
@@ -57,14 +57,14 @@
 	desc = "A pre-war security robot armed with deadly lasers."
 	icon_state = "protectron"
 	icon_living = "protectron"
-	icon_dead = "protectron"
+	icon_dead = "protectron_dead"
 	health = 150
 	maxHealth = 150
 	healable = 0
 	speed = 5
 	rapid = 1
-	melee_damage_lower = 2
-	melee_damage_upper = 3
+	melee_damage_lower = 10
+	melee_damage_upper = 10
 	attacktext = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'

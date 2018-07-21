@@ -14,7 +14,9 @@
 	ammo_type = /obj/item/ammo_casing/magic/arcane_barrage
 
 //Fallout 13
-/obj/item/ammo_box/magazine/internal/boltaction/rangemaster
+/obj/item/ammo_box/magazine/internal/rangemaster
+	ammo_type = /obj/item/ammo_casing/a762lp
+	caliber = "a762lp"
 	max_ammo = 10
 	multiload = 1
 

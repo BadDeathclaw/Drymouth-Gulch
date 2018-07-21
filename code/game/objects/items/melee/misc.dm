@@ -88,6 +88,60 @@
 	if(istype(B))
 		playsound(B, 'sound/items/sheath.ogg', 25, 1)
 
+/obj/item/melee/oldstyle
+	name = "telescopic baton"
+	desc = "A compact yet robust personal defense weapon. Can be concealed when folded."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "telebaton_0"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = null
+	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
+	item_flags = NONE
+	force = 0
+	var/on = FALSE
+
+/obj/item/melee/oldstyle/suicide_act(mob/user)
+	var/mob/living/carbon/human/H = user
+	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
+
+	user.visible_message("<span class='suicide'>[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind.</span>")
+	if(!on)
+		src.attack_self(user)
+	else
+		playsound(loc, 'sound/weapons/batonextend.ogg', 50, 1)
+		add_fingerprint(user)
+	sleep(3)
+	if (H && !QDELETED(H))
+		if (B && !QDELETED(B))
+			H.internal_organs -= B
+			qdel(B)
+		new /obj/effect/gibspawner/generic(get_turf(H), H.dna)
+		return (BRUTELOSS)
+
+/obj/item/melee/oldstyle/attack_self(mob/user)
+	on = !on
+	if(on)
+		to_chat(user, "<span class ='warning'>You extend the baton.</span>")
+		icon_state = "telebaton_1"
+		item_state = "nullrod"
+		w_class = WEIGHT_CLASS_BULKY //doesnt fit in backpack when its on for balance
+		force = 25 //stunbaton damage
+		attack_verb = list("smacked", "struck", "cracked", "beaten")
+	else
+		to_chat(user, "<span class ='notice'>You collapse the baton.</span>")
+		icon_state = "telebaton_0"
+		item_state = null //no sprite for concealment even when in hand
+		slot_flags = ITEM_SLOT_BELT
+		w_class = WEIGHT_CLASS_SMALL
+		force = 0 //not so robust now
+		attack_verb = list("hit", "poked")
+
+	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
+	add_fingerprint(user)
+
+
 /obj/item/melee/classic_baton
 	name = "police baton"
 	desc = "A wooden truncheon for beating criminal scum."

@@ -466,7 +466,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Veteran Ranger"
 
 /obj/effect/landmark/start/f13/ncrranger
-	name = "NCR Ranger"
+	name = "NCR Patrol Ranger"
 
 /obj/effect/landmark/start/f13/ncrreconranger
 	name = "NCR Recon Ranger"
@@ -515,19 +515,22 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Overseer"
 
 /obj/effect/landmark/start/f13/vaultheadofsecurity
-	name = "Vault Head of Security"
+	name = "Chief of Security"
 
 /obj/effect/landmark/start/f13/vaultdoctor
-	name = "Vault Doctor"
+	name = "Vault-tec Doctor"
 
 /obj/effect/landmark/start/f13/vaultscientist
-	name = "Vault Scientist"
+	name = "Vault-tec Scientist"
 
 /obj/effect/landmark/start/f13/vaultsecurityofficer
-	name = "Vault Security Officer"
+	name = "Vault-tec Security"
 
 /obj/effect/landmark/start/f13/vaultengineer
-	name = "Vault Engineer"
+	name = "Vault-tec Engineer"
+
+/obj/effect/landmark/start/f13/vaultdweller
+	name = "Vault Dweller"
 
 // Den
 

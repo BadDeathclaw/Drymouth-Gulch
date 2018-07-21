@@ -252,9 +252,9 @@
 	operating = TRUE
 	do_animate("opening")
 	set_opacity(0)
-	sleep(5)
+	sleep(0)
 	density = FALSE
-	sleep(5)
+	sleep(0)
 	layer = initial(layer)
 	update_icon()
 	set_opacity(0)

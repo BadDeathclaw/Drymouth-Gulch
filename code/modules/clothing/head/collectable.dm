@@ -59,6 +59,10 @@
 
 	dog_fashion = /datum/dog_fashion/head/warden
 
+/obj/item/clothing/head/collectable/police/cos
+	name = "Chief of Security Hat"
+	desc = "This hat emphasizes that you are THE LAW."
+
 /obj/item/clothing/head/collectable/beret
 	name = "collectable beret"
 	desc = "A collectable red beret. It smells faintly of garlic."

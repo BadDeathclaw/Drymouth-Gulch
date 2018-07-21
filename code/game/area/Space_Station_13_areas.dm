@@ -1351,6 +1351,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Farmhouse"
 	icon_state = "farmhouse"
 
+/area/f13/farmhousesouth
+	name = "Farmhouse"
+	icon_state = "farmhouse"
+
 /area/f13/legioncamp
 	name = "Legion Camp"
 	icon_state = "legioncamp"
@@ -1378,6 +1382,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/vault_atrium_upper
 	name = "Vault Atrium Upper"
+	icon_state = "vault_atrium_upper"
+	requires_power = TRUE
+	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
+
+/area/f13/vault_atrium_Lower
+	name = "Vault Atrium Lower"
 	icon_state = "vault_atrium_upper"
 	requires_power = TRUE
 	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
