@@ -44,8 +44,8 @@ Wastelander
 	id = null
 	ears = null
 	belt = null
-	backpack = null
-	satchel = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 
 /datum/outfit/job/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -61,8 +61,8 @@ Wastelander
 		/obj/item/flashlight/flare)
 	belt = 			/obj/item/kitchen/knife/combat/survival
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=3, \
-		/obj/item/reagent_containers/blood/radaway=2, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/reagent_containers/blood/radaway=1, \
 		/obj/item/reagent_containers/food/drinks/flask)
 
 
@@ -95,6 +95,8 @@ Raider
 	id = null
 	ears = null
 	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 
 /datum/outfit/job/f13raider/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -123,7 +125,6 @@ Raider
 		/obj/item/clothing/suit/f13/autumn,\
 		/obj/item/clothing/suit/poncho,\
 		/obj/item/clothing/suit/poncho/green,\
-		/obj/item/clothing/suit/poncho/ponchoshame,\
 		/obj/item/clothing/suit/poncho/red,\
 		/obj/item/clothing/suit/det_suit/grey,\
 		/obj/item/clothing/suit/det_suit,\
@@ -136,7 +137,6 @@ Raider
 		/obj/item/clothing/suit/toggle/labcoat/mad,\
 		/obj/item/clothing/suit/pirate,\
 		/obj/item/clothing/suit/cardborg,\
-		/obj/item/clothing/suit/armor/f13/bmetalarmor,\
 		/obj/item/clothing/suit/armor/f13/raider/yankee, \
 		/obj/item/clothing/suit/armor/f13/raider/sadist, \
 		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
@@ -158,7 +158,6 @@ Raider
 		/obj/item/clothing/head/welding,\
 		/obj/item/clothing/head/sombrero,\
 		/obj/item/clothing/head/sombrero/green,\
-		/obj/item/clothing/head/sombrero/shamebrero,\
 		/obj/item/clothing/head/collectable,\
 		/obj/item/clothing/head/rice_hat,\
 		/obj/item/clothing/head/jester,\
@@ -213,8 +212,8 @@ Pusher
 	id = null
 	ears = null
 	belt = null
-	backpack = null
-	satchel = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	uniform =  		/obj/item/clothing/under/jabroni
 /datum/outfit/job/f13pusher/pre_equip(mob/living/carbon/human/H)
@@ -251,8 +250,8 @@ Preacher
 	id = null
 	ears = null
 	belt = null
-	backpack = null
-	satchel = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	uniform = 		/obj/item/clothing/under/rank/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
@@ -260,7 +259,7 @@ Preacher
 	backpack = 		/obj/item/storage/backpack/cultpack
 	satchel = 		/obj/item/storage/backpack/cultpack
 	mask = 			/obj/item/clothing/mask/gas/syndicate
-	r_hand = 		/obj/item/gun/ballistic/shotgun/boltaction/remington/scoped
+	r_hand = 		/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/internal/boltaction=2, \
 		/obj/item/reagent_containers/food/drinks/flask=1)

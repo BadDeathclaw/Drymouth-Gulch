@@ -20,8 +20,8 @@ Sheriff
 
 	id = null
 	belt = null
-	backpack = null
-	satchel = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	ears = 			/obj/item/radio/headset/headset_den
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
@@ -63,8 +63,8 @@ Settler
 	ears = 			/obj/item/radio/headset/headset_den
 	id = null
 	belt = null
-	backpack = null
-	satchel = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 
 /datum/outfit/job/f13settler/pre_equip(mob/living/carbon/human/H)
 	..()
