@@ -1,6 +1,3 @@
-/obj/item/projectile/beam/protectron
-	damage = 15
-
 /mob/living/simple_animal/hostile/handy
 	name = "mr. handy"
 	desc = "A crazed pre-war household assistant robot, armed with a cutting saw."
@@ -10,12 +7,12 @@
 	icon_dead = "gib7"
 	gender = NEUTER
 	mob_biotypes = list(MOB_ROBOTIC)
-	health = 80
-	maxHealth = 80
+	health = 160
+	maxHealth = 160
 	healable = 0
-	speed = 1
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	speed = 2
+	melee_damage_lower = 56
+	melee_damage_upper = 56
 	attacktext = "slaps"
 	attack_sound = 'sound/weapons/circsawhit.ogg'
 	faction = list("wastebot")
@@ -33,14 +30,14 @@
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "gib7"
-	health = 120
-	maxHealth = 120
-	melee_damage_lower = 0
-	melee_damage_upper = 5
+	health = 210
+	maxHealth = 210
+	melee_damage_lower = 56
+	melee_damage_upper = 56
 	attack_sound = 'sound/items/welder.ogg'
 	attacktext = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/beam/protectron
+	projectiletype = /obj/item/projectile/plasma
 	ranged = 1
 	retreat_distance = 5
 	minimum_distance = 5
@@ -58,16 +55,16 @@
 	icon_state = "protectron"
 	icon_living = "protectron"
 	icon_dead = "protectron_dead"
-	health = 150
-	maxHealth = 150
+	health = 160
+	maxHealth = 160
 	healable = 0
 	speed = 5
-	rapid = 1
-	melee_damage_lower = 10
-	melee_damage_upper = 10
+	melee_damage_lower = 25
+	melee_damage_upper = 25
+	ranged = 1
 	attacktext = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/beam/protectron
+	projectiletype = /obj/item/projectile/beam/laser/lasgun
 	faction = list("wastebot")
 	check_friendly_fire = 1

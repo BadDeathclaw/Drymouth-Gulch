@@ -1328,6 +1328,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = STANDARD_GRAVITY
 	requires_power = FALSE
 
+/area/f13/mountain
+	name = "mountain"
+	requires_power = TRUE
+
 /area/f13/desert
 	name = "Desert"
 	icon_state = "desert"
@@ -1342,18 +1346,27 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13/sunny_dale
 	name = "Sunny Dale"
 	icon_state = "sunny_dale"
+	requires_power = TRUE
+
+/area/f13/prison
+	name = "prison"
+	icon_state = "sunny_dale"
+	requires_power = TRUE
 
 /area/f13/klamat
 	name = "Klamat"
 	icon_state = "klamat"
+	requires_power = TRUE
 
 /area/f13/farmhouse
 	name = "Farmhouse"
 	icon_state = "farmhouse"
+	requires_power = TRUE
 
 /area/f13/farmhousesouth
 	name = "Farmhouse"
 	icon_state = "farmhouse"
+	requires_power = TRUE
 
 /area/f13/legioncamp
 	name = "Legion Camp"
@@ -1364,6 +1377,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "powerplant"
 	requires_power = TRUE
 	ambientsounds = ENGINEERING
+	requires_power = TRUE
 
 /area/f13/enclave_base
 	name = "Enclave Base"
