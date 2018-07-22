@@ -907,13 +907,11 @@ obj
 					New()
 						switch(rand(1,17))
 							if(1)
-								var/obj/item/clothing/suit/armor/vest/lb = new
-								var/obj/item/clothing/head/helmet/riot/vaultsec/lb2 = new
+								var/obj/item/clothing/head/helmet/riot/vaultsec/lb = new
 								lb.loc=src.loc
-								lb2.loc=src.loc
 								del src
 							if(2)
-								var/obj/item/clothing/suit/armor/vest/det_suit/lb = new
+								var/obj/item/clothing/suit/armor/fluff/chestplate/lb = new
 								lb.loc=src.loc
 								del src
 							if(4)
