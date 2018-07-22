@@ -12,8 +12,8 @@ Assistant
 	spawn_positions = -1
 	supervisors = "absolutely everyone"
 	selection_color = "#ddffdd"
-	access = list()			//See /datum/job/assistant/get_access()
-	minimal_access = list()	//See /datum/job/assistant/get_access()
+	access = list(ACCESS_CARGO)			//See /datum/job/assistant/get_access()
+	minimal_access = list(ACCESS_CARGO)	//See /datum/job/assistant/get_access()
 	outfit = /datum/outfit/job/assistant
 	antag_rep = 7
 
@@ -32,9 +32,13 @@ Assistant
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
 	if (CONFIG_GET(flag/grey_assistants))
-		uniform = /obj/item/clothing/under/color/grey
+		uniform = /obj/item/clothing/under/f13/vault13
+		ears = /obj/item/radio/headset/headset_vault
+		shoes = /obj/item/clothing/shoes/jackboots
 	else
-		uniform = /obj/item/clothing/under/color/random
+		uniform = /obj/item/clothing/under/f13/vault13
+		ears = /obj/item/radio/headset/headset_vault
+		shoes = /obj/item/clothing/shoes/jackboots
 
 
 //Replacing with dwellers

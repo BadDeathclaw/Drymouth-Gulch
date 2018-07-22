@@ -1,7 +1,7 @@
 // 7.62 (Nagant Rifle)
 
 /obj/item/ammo_casing/a762/enchanted
-	projectile_type = /obj/item/projectile/bullet/a762_enchanted
+	projectile_type = /obj/item/projectile/bullet/medbullet
 
 // 40mm (Grenade Launcher)
 

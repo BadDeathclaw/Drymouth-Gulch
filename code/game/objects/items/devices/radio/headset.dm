@@ -207,9 +207,20 @@
 	keyslot = new /obj/item/encryptionkey/headset_overseer
 
 /obj/item/radio/headset/headset_vault_hos
-	name = "\proper the head of security's radio headset"
+	name = "\proper the chief of security's radio headset"
 	desc = "The headset of the man in charge of keeping order and protecting the vault.\nChannels are as follows: :v - vault, :c - command, :s - security."
 	icon_state = "com_headset"
+	keyslot = new /obj/item/encryptionkey/headset_vault_hos
+
+/obj/item/radio/headset/headset_vault
+	name = "\proper vault radio headset"
+	desc = "A vault-tec radio.\nChannels are as follows: :v - vault."
+	keyslot = new /obj/item/encryptionkey/headset_vault
+
+/obj/item/radio/headset/headset_vaultsec
+	name = "security radio headset"
+	desc = "This is used by your elite security force.\nTo access the security channel, use :s."
+	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_vault_hos
 
 /obj/item/radio/headset/headset_vault_hos/alt
