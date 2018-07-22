@@ -381,11 +381,15 @@ obj
 									del src
 								if(4)
 									var/obj/item/gun/ballistic/revolver/zipgun/lb = new
+									var/obj/item/ammo_box/c10mm/lb2 = new
 									lb.loc=src.loc
+									lb2.loc=src.loc
 									del src
 								if(5)
 									var/obj/item/gun/ballistic/revolver/pipe_rifle/lb = new
+									var/obj/item/ammo_box/c10mm/lb2 = new
 									lb.loc=src.loc
+									lb2.loc=src.loc
 									del src
 								if(6)
 									var/obj/item/gun/ballistic/shotgun/remington/lb = new
@@ -469,8 +473,8 @@ obj
 									del src
 								if(5)
 									var/obj/item/gun/ballistic/shotgun/lethal/lb = new
-									var/obj/item/ammo_box/m44/lb2 = new
-									var/obj/item/ammo_box/m44/lb3 = new
+									var/obj/item/storage/box/lethalshot/lb2 = new
+									var/obj/item/storage/box/lethalshot/lb3 = new
 									lb.loc=src.loc
 									lb2.loc=src.loc
 									lb3.loc=src.loc

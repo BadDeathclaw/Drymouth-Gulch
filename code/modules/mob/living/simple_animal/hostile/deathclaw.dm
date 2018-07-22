@@ -12,19 +12,19 @@
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
 	emote_taunt = list("stares ferociously", "stomps")
-	speak_chance = 1
+	speak_chance = 10
 	taunt_chance = 25
-	turns_per_move = 5
-	see_in_dark = 6
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 5)
+	speed = 1
+	see_in_dark = 8
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 5)
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "hits"
-	maxHealth = 100
-	health = 100
+	maxHealth = 420
+	health = 420
 	obj_damage = 60
-	melee_damage_lower = 25
-	melee_damage_upper = 40
+	melee_damage_lower = 56
+	melee_damage_upper = 56
 	attacktext = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	friendly = "hugs"
@@ -36,7 +36,7 @@
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
-	health = 180
-	melee_damage_lower = 35
-	melee_damage_upper = 50
+	health = 600
+	melee_damage_lower = 72
+	melee_damage_upper = 72
 	color = rgb(95,104,94)
