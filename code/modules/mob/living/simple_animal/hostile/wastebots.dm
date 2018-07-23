@@ -10,7 +10,7 @@
 	health = 160
 	maxHealth = 160
 	healable = 0
-	speed = 2
+	speed = 1
 	melee_damage_lower = 56
 	melee_damage_upper = 56
 	attacktext = "slaps"
@@ -30,17 +30,18 @@
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "gib7"
-	health = 210
-	maxHealth = 210
-	melee_damage_lower = 56
-	melee_damage_upper = 56
+	health = 400
+	maxHealth = 400
+	melee_damage_lower = 72
+	melee_damage_upper = 72
 	attack_sound = 'sound/items/welder.ogg'
 	attacktext = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/plasma
+	projectiletype = /obj/item/projectile/plasma/pistol
+	rapid = 1
 	ranged = 1
-	retreat_distance = 5
-	minimum_distance = 5
+	retreat_distance = 2
+	minimum_distance = 2
 
 /mob/living/simple_animal/hostile/handy/gutsy/AttackingTarget()
 	. = ..()
@@ -58,13 +59,14 @@
 	health = 160
 	maxHealth = 160
 	healable = 0
-	speed = 5
+	speed = 2
 	melee_damage_lower = 25
 	melee_damage_upper = 25
+	rapid = 1
 	ranged = 1
 	attacktext = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/beam/laser/lasgun
+	projectiletype = /obj/item/projectile/beam/laser/pistol
 	faction = list("wastebot")
 	check_friendly_fire = 1
