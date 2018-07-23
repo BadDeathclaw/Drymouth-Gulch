@@ -44,5 +44,5 @@
 	. = ..()
 	var/turf/T = loc
 	if(!istype(T)) //you know this will happen somehow
-		CRASH("Turf decal initialized in an object/nullspace")
+		CRASH("Turf decal initialized in an object/nullspace at x [T.x], Y [T.y]")
 	T.AddComponent(/datum/component/decal, icon, icon_state, dir, CLEAN_GOD, color)

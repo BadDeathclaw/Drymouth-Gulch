@@ -1326,7 +1326,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13
 	icon = 'icons/turf/f13areas.dmi'
 	has_gravity = STANDARD_GRAVITY
-	requires_power = FALSE
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/f13/desert
 	name = "Desert"
