@@ -1495,7 +1495,7 @@
 "aCM" = (/obj/machinery/light/small,/obj/structure/table/wood,/obj/spawners/objectspawners/weaponspawners/melee/tier3,/turf/open/f13/inside/wood,/area/f13/farmhouse)
 "aCN" = (/turf/open/f13/inside/vault_floor,/area/ai_monitored/security/armory)
 "aCO" = (/obj/machinery/light{dir = 1},/turf/open/f13/inside/vault_floor,/area/ai_monitored/security/armory)
-"aCP" = (/obj/structure/table,/obj/structure/cable,/obj/machinery/power/terminal,/obj/machinery/power/apc{name = "Exam Room APC"; pixel_x = 0; pixel_y = -25},/obj/spawners/objectspawners/medicalspawn/wasteland/meds,/turf/open/f13/inside/vault_floor,/area/medical/sleeper)
+"aCP" = (/obj/structure/table,/obj/structure/cable,/obj/machinery/power/terminal,/obj/machinery/power/apc{name = "Exam Room APC"; pixel_y = -25},/obj/spawners/objectspawners/medicalspawn/wasteland/meds,/turf/open/f13/inside/vault_floor,/area/medical/sleeper)
 "aCQ" = (/obj/structure/table,/turf/open/f13/inside/vault_floor,/area/ai_monitored/security/armory)
 "aCR" = (/obj/machinery/light{dir = 8},/turf/open/f13/inside/vault_floor,/area/f13/overseer_office)
 "aCS" = (/obj/machinery/holopad,/turf/open/floor/plasteel/f13{icon_state = "bluefull"},/area/f13/overseer_office)
