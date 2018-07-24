@@ -262,6 +262,11 @@
 	light_range = 3
 	light_power = 0.75
 
+//zzz - add new() and add self to global outside turf list
+/turf/open/f13/outside/New()
+	. = ..()
+	flags_1 |= GLOBAL_LIGHT_TURF_1
+
 /turf/open/f13/outside/desert
 	name = "\proper desert"
 	desc = "A stretch of desert."

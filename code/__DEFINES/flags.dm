@@ -32,6 +32,7 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define NO_DEATHRATTLE_1			(1<<4) // Do not notify deadchat about any deaths that occur on this turf.
 #define NO_RUINS_1					(1<<5) //Blocks ruins spawning on the turf
 #define NO_LAVA_GEN_1				(1<<6) //Blocks lava rivers being generated on the turf
+#define GLOBAL_LIGHT_TURF_1         (1<<16) //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask

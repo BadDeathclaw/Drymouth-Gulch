@@ -64,6 +64,8 @@
 #define DYNAMIC_LIGHTING_IFSTARLIGHT 3 //dynamic lighting enabled only if starlight is.
 #define IS_DYNAMIC_LIGHTING(A) A.dynamic_lighting
 
+//flags for lighting datum lightFlag
+#define GLOBAL_LIGHTING 1 //Don't affect turfs that are GLOBAL_LIGHT_TURF_1
 
 //code assumes higher numbers override lower numbers.
 #define LIGHTING_NO_UPDATE 0
