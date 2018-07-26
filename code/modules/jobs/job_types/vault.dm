@@ -36,7 +36,7 @@ Overseer
 
 	id = 			/obj/item/card/id/gold
 	//pda
-	uniform = 		/obj/item/clothing/under/f13/vault
+	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	ears = 			/obj/item/radio/headset/headset_overseer
@@ -84,7 +84,7 @@ Head of Security
 	id = /obj/item/card/id/silver
 	//pda
 	ears = 			/obj/item/radio/headset/headset_vault_hos/alt
-	uniform = 		/obj/item/clothing/under/f13/vault
+	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit = 			/obj/item/clothing/suit/armor/vest/alt
 	head = 			/obj/item/clothing/head/collectable/police/cos
@@ -127,8 +127,8 @@ Medical Doctor
 	jobtype = /datum/job/f13doctor
 
 	//pda
-	uniform = 		/obj/item/clothing/under/f13/vault
-	ears = 			/obj/item/radio/headset/headset_med
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	ears = 			/obj/item/radio/headset/headset_vault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit =			/obj/item/clothing/suit/toggle/labcoat
 	l_hand = 		/obj/item/storage/firstaid/regular
@@ -162,8 +162,8 @@ Scientist
 	jobtype = /datum/job/f13vaultscientist
 
 	//pda
-	uniform = 		/obj/item/clothing/under/f13/vault
-	ears = 			/obj/item/radio/headset/headset_sci
+	uniform = 		/obj/item/clothing/under/f13/vault13
+	ears = 			/obj/item/radio/headset/headset_vault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit =			/obj/item/clothing/suit/toggle/labcoat
 	backpack = 		/obj/item/storage/backpack/science
@@ -278,8 +278,8 @@ Security Officer
 	jobtype = /datum/job/f13officer
 
 	//pda
-	ears = 			/obj/item/radio/headset/headset_sec/alt
-	uniform = 		/obj/item/clothing/under/f13/vault
+	ears = 			/obj/item/radio/headset/headset_vaultsec
+	uniform = 		/obj/item/clothing/under/f13/vault13
 	head = 			/obj/item/clothing/head/helmet/riot/vaultsec
 	suit =			/obj/item/clothing/suit/armor/vest/alt
 	shoes = 		/obj/item/clothing/shoes/jackboots
@@ -343,8 +343,8 @@ Station Engineer
 	jobtype = /datum/job/f13vaultengineer
 
 	//pda
-	ears = 			/obj/item/radio/headset/headset_eng
-	uniform = 		/obj/item/clothing/under/f13/vault
+	ears = 			/obj/item/radio/headset/headset_vault
+	uniform = 		/obj/item/clothing/under/f13/vault13
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	shoes = 		/obj/item/clothing/shoes/workboots
 	head = 			/obj/item/clothing/head/hardhat
@@ -354,23 +354,5 @@ Station Engineer
 	duffelbag = 	/obj/item/storage/backpack/duffelbag/engineering
 	box = 			/obj/item/storage/box/engineer
 
-/datum/job/f13vaultdweller
-	title = "Vault Dweller"
-	flag = F13DWELLER
-	department_head = list("Overseer")
-	department_flag = VAULT
-	faction = "Station"
-	total_positions = 6
-	spawn_positions = 6
-	supervisors = "the overseer"
-	selection_color = "#ddffdd"
-
-	outfit = /datum/outfit/job/f13vaultdweller
-
-	access = list(ACCESS_CARGO)
-	minimal_access = list(ACCESS_CARGO)
 
 
-/datum/outfit/job/f13vaultdweller
-	uniform = 		/obj/item/clothing/under/f13/vault
-	ears = 			/obj/item/radio/headset/headset_med

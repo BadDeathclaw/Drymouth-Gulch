@@ -2274,21 +2274,21 @@
 "RL" = (/turf/closed/wall/r_wall/f13superstore{icon_state = "supermart0"},/area/comms)
 "RM" = (/turf/closed/wall/r_wall,/area/comms)
 "RN" = (/turf/open/floor/circuit/telecomms/mainframe,/area/comms)
-"RO" = (/obj/machinery/telecomms/server/presets/engineering,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"RP" = (/obj/machinery/telecomms/bus/preset_four,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"RQ" = (/obj/machinery/light{dir = 1},/turf/open/floor/circuit/telecomms/mainframe,/area/space)
-"RR" = (/obj/machinery/telecomms/processor/preset_three,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
+"RO" = (/turf/open/floor/circuit,/area/comms)
+"RP" = (/obj/structure/cable{icon_state = "0-2"},/obj/machinery/power/apc{dir = 1; name = "Mining Communications APC"; pixel_x = 1; pixel_y = 25},/turf/open/floor/plasteel/dark,/area/comms)
+"RQ" = (/obj/machinery/telecomms/relay/preset/mining,/obj/machinery/light/small{dir = 1},/turf/open/floor/plasteel/vault{dir = 8},/area/comms)
+"RR" = (/obj/machinery/atmospherics/components/unary/vent_pump/on,/turf/open/floor/plasteel/dark,/area/comms)
 "RS" = (/obj/machinery/light{dir = 8},/obj/structure/rack,/obj/item/nullrod/claymore/glowing{damtype = "stamina"; force = 30},/turf/open/floor/wood,/area/centcom/holding)
-"RT" = (/obj/machinery/telecomms/server/presets/security,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
+"RT" = (/obj/machinery/airalarm{pixel_y = 24},/turf/open/floor/circuit,/area/comms)
 "RU" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plating,/area/comms)
 "RV" = (/obj/structure/table,/turf/open/floor/plasteel/yellow/side{dir = 9},/area/comms)
 "RW" = (/obj/item/radio/intercom{dir = 8; freerange = 1; name = "Station Intercom (Telecomms)"; pixel_y = 26},/turf/open/floor/plasteel,/area/comms)
-"RX" = (/obj/machinery/light{dir = 1},/obj/machinery/announcement_system,/turf/open/floor/plasteel,/area/comms)
-"RY" = (/obj/machinery/telecomms/server/presets/common,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"RZ" = (/obj/machinery/telecomms/processor/preset_four,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"Sa" = (/turf/open/floor/circuit/telecomms/mainframe,/area/space)
-"Sb" = (/obj/machinery/telecomms/bus/preset_three,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"Sc" = (/obj/machinery/telecomms/server/presets/command,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
+"RX" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/comms)
+"RY" = (/obj/structure/cable{icon_state = "1-4"},/turf/open/floor/circuit,/area/comms)
+"RZ" = (/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 6},/turf/open/floor/plasteel/dark,/area/comms)
+"Sa" = (/obj/machinery/light_switch{pixel_y = -25},/obj/machinery/atmospherics/pipe/simple/supply/hidden{dir = 9},/turf/open/floor/circuit,/area/comms)
+"Sb" = (/obj/machinery/camera{c_tag = "Communications Relay"; dir = 8; network = list("mine")},/turf/open/floor/circuit,/area/comms)
+"Sc" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/atmospherics/pipe/simple/supply/hidden,/turf/open/floor/circuit/telecomms/mainframe,/area/comms)
 "Sd" = (/turf/open/floor/carpet/black,/area/centcom/holding)
 "Se" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/cable{icon_state = "0-2"},/obj/structure/cable,/turf/open/floor/plating,/area/comms)
 "Sf" = (/obj/machinery/computer/message_monitor{dir = 4},/turf/open/floor/plasteel/yellow/side{dir = 8},/area/comms)
@@ -2296,9 +2296,7 @@
 "Sh" = (/turf/open/floor/plasteel,/area/comms)
 "Si" = (/obj/structure/table,/obj/item/paper_bin,/turf/open/floor/plasteel,/area/comms)
 "Sj" = (/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"Sk" = (/obj/machinery/blackbox_recorder,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"Sl" = (/obj/machinery/telecomms/broadcaster/preset_right,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"Sm" = (/obj/machinery/telecomms/receiver/preset_right,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
+"Sk" = (/obj/effect/baseturf_helper/lava_land/surface,/turf/closed/wall/r_wall,/area/comms)
 "Sn" = (/obj/machinery/computer/telecomms/server{dir = 4; network = "tcommsat"},/turf/open/floor/plasteel/yellow/side{dir = 10},/area/comms)
 "So" = (/obj/structure/table,/obj/item/folder/blue,/obj/item/pen/blue,/turf/open/floor/plasteel,/area/comms)
 "Sp" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/cable{icon_state = "0-4"},/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plating,/area/comms)
@@ -2307,9 +2305,7 @@
 "Ss" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/comms)
 "St" = (/obj/machinery/door/airlock/command/glass{name = "Control Room"; req_access_txt = "19; 61"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/turf/open/floor/plasteel,/area/comms)
 "Su" = (/turf/open/floor/plasteel/dark,/area/comms)
-"Sv" = (/obj/machinery/ntnet_relay,/turf/open/floor/circuit/telecomms/mainframe,/area/comms)
 "Sw" = (/obj/machinery/hydroponics/constructable,/obj/machinery/light{dir = 8},/turf/open/floor/plasteel/whitegreen,/area/centcom/holding)
-"Sx" = (/obj/machinery/telecomms/hub/preset,/turf/open/floor/plasteel/vault/telecomms/mainframe{dir = 8},/area/comms)
 "Sy" = (/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 4},/obj/machinery/door/airlock/engineering/glass{name = "Server Room"; req_access_txt = "61"},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/vault{dir = 5},/area/comms)
 "Sz" = (/turf/open/floor/plasteel/vault{dir = 5},/area/comms)
 "SA" = (/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 8},/obj/machinery/door/airlock/engineering/glass{name = "Server Room"; req_access_txt = "61"},/turf/open/floor/plasteel/vault{dir = 5},/area/comms)
@@ -2326,25 +2322,14 @@
 "SL" = (/turf/open/floor/plasteel,/area/space)
 "SM" = (/obj/machinery/requests_console{announcementConsole = 1; department = "Telecomms Admin"; departmentType = 5; name = "Telecomms RC"; pixel_x = 30},/turf/open/floor/plasteel,/area/comms)
 "SN" = (/obj/structure/mopbucket,/obj/item/mop,/turf/open/floor/plasteel/cafeteria,/area/centcom/holding)
-"SO" = (/obj/machinery/telecomms/message_server,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"SP" = (/obj/machinery/telecomms/broadcaster/preset_left,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"SQ" = (/obj/machinery/telecomms/receiver/preset_left,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
 "SR" = (/obj/structure/table,/obj/item/multitool,/turf/open/floor/plasteel/yellow/side{dir = 9},/area/comms)
 "SS" = (/obj/machinery/light_switch{pixel_x = 27},/turf/open/floor/plasteel,/area/comms)
 "ST" = (/obj/machinery/gravity_generator/main/station,/obj/effect/turf_decal/bot_white,/turf/open/floor/plasteel/vault{dir = 8},/area/comms)
 "SU" = (/obj/structure/table/wood,/obj/item/camera/detective{desc = "A polaroid camera with extra capacity for social media marketing."; name = "Professional camera"},/obj/item/camera_film,/obj/item/wallframe/newscaster,/obj/item/paper_bin,/obj/item/pen/fountain,/turf/open/floor/wood,/area/centcom/holding)
-"SV" = (/obj/machinery/telecomms/server/presets/supply,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
 "SW" = (/obj/machinery/seed_extractor,/turf/open/floor/plasteel/whitegreen,/area/centcom/holding)
-"SX" = (/obj/machinery/telecomms/bus/preset_two,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"SY" = (/obj/machinery/telecomms/processor/preset_one,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"SZ" = (/obj/machinery/telecomms/server/presets/medical,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
 "Ta" = (/obj/machinery/computer/telecomms/monitor{dir = 4; network = "tcommsat"},/turf/open/floor/plasteel/yellow/side{dir = 8},/area/comms)
 "Tb" = (/obj/item/clothing/under/roman,/obj/structure/closet,/turf/open/floor/wood,/area/centcom/holding)
-"Tc" = (/obj/machinery/telecomms/server/presets/service,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"Td" = (/obj/machinery/telecomms/processor/preset_two,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
 "Te" = (/obj/structure/sign/warning/nosmoking{pixel_y = -32},/obj/machinery/light,/turf/open/floor/circuit/telecomms/mainframe,/area/comms)
-"Tf" = (/obj/machinery/telecomms/bus/preset_one,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
-"Tg" = (/obj/machinery/telecomms/server/presets/science,/turf/open/floor/plasteel/dark/telecomms/mainframe,/area/comms)
 "Th" = (/obj/effect/spawner/structure/window/reinforced,/obj/structure/cable,/turf/open/floor/plating,/area/comms)
 "Ti" = (/obj/structure/table,/obj/item/radio/off,/turf/open/floor/plasteel/yellow/side{dir = 10},/area/comms)
 "Tj" = (/obj/item/radio/intercom{name = "Station Intercom (General)"; pixel_y = -35},/turf/open/floor/plasteel,/area/comms)
@@ -2515,15 +2500,15 @@ aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalIlIlIlIZclIlIlIlIlIlIlIlIlIlIlIlIZcZclIlIlIlIlIlIlIlIlIlIlIlIaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaanbncndnenfaaaaaanbncndnenfaaaaaaaaaaaaaaaedmdGdGdGdmageWeXeWeXeWageYeYeZeYeYagfafbfcfdfeageReSeBeReSagdAeDdAffdAagdBfgfhfidFag
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIlIaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaedmdGdGdGdmagfjfkflfmfjagdLdLdLdLdLagfnfofofofnageMeNeBeMeNagdAeOdAeOdAagdBfpfpfpdFag
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMRMRMRMRMRMRMRMRMRMRMRMRMRLRLaaaakokpkqkrksaaaaaakokpkqkrksaaaaaaaaaaaaaaaedmdmdmdmdmagdndndndndnagfqfqfqfqfqagfrfsfsfsftagepeneBepenagdAdAdAdAdAagdBfufvfwdFag
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMRNRORPRQRRRTRNRURVRWRXRMRMRLaakKkLLKLLLMkPkQaakKkLkMkNkOkPkQaaaaaaaaaaaaabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxab
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMRNRYRZSaSbScRNSeSfSgShSiRMRLaalgLSlilililjlkaalglhlilililjlkaaLVLVLVLVLVLVLVLVLVLVLVLVLVLVLVabababababababababfyfzfAfzfzfzfzfzfzfzfzfzfAfzfyababababababababab
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRLRLRLRLRLRLRLRLRLRMSjSkSlRNSmSjSjSeSnShShSoRMRLaalBlCLTlELUlGlHaalBlClDlElFlGlHaaLVLWLWLWLWLWLWLXLWLWLWLWLWLWLVabfBfCabababababfDfEfzfFfGfHfHfHfHfHfHfHfIfFfzfJfDabababababfCfKab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMRMRORPRQRRRTRMRURVRWRXRMRMRLaakKkLLKLLLMkPkQaakKkLkMkNkOkPkQaaaaaaaaaaaaabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxabfxfxfxfxfxab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMRMRORYRZSaSbRMSeSfSgShSiRMRLaalgLSlilililjlkaalglhlilililjlkaaLVLVLVLVLVLVLVLVLVLVLVLVLVLVLVabababababababababfyfzfAfzfzfzfzfzfzfzfzfzfAfzfyababababababababab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRLRLRLRLRLRLRLRLRLRMRMRMRMScRMSkRMSeSnShShSoRMRLaalBlCLTlELUlGlHaalBlClDlElFlGlHaaLVLWLWLWLWLWLWLXLWLWLWLWLWLWLVabfBfCabababababfDfEfzfFfGfHfHfHfHfHfHfHfIfFfzfJfDabababababfCfKab
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMRMRMRMRMRMRMRLRLRMSjSjRNRNRNSjSpSqSrSsStSsRMRLaalXlYlilililjlZaalXlYlilililjlZaaLVLWLYLYLYLZLYLYLYLZLYLYLYLWLVabfBfCabababababfDfLfzfFfGfHfHfHfHfHfHfHfIfFfzfMfDabababababfCfKab
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSuSuSuSuRMRLRLRMSvRNRNSxRNRNSySzSASCShSDRMRLaamrmsmtmumvmwmxaamrmsmtmumvmwmxaaLVLWLYLYLYLZLYLYLYLZLYLYLYLWLVabfBfCabababababfDfNfzfFfGfHfHfOfPfOfHfHfIfFfzfQfDabababababfCfKab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSuSuSuSuRMRLRLRMSjRNRNSjRNRNSySzSASCShSDRMRLaamrmsmtmumvmwmxaamrmsmtmumvmwmxaaLVLWLYLYLYLZLYLYLYLZLYLYLYLWLVabfBfCabababababfDfNfzfFfGfHfHfOfPfOfHfHfIfFfzfQfDabababababfCfKab
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSESFSHSuRMRLRLRMSjSjRNRNRNSjSISJSKShSLSMRMRLaaaanbncndnenfaaaaaanbncndnenfaaaaLVLWLYLYLYLZLYLYLYLZLYLYLYLWLVabfBfCabababababfDfNfzfFfGfHfHfOfOfOfHfHfIfFfzfQfDabababababfCfKab
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSFSuSFSuRMRLRLRMSjSOSPRNSQSjSjSeSRShShSSRMRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLZLZLZLZLZLZLZLZLZLZLZLWLVabfBfCabababababfDfSfzfFfGfHfHfHfHfHfHfHfIfFfzfTfDabababababfCfKab
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSHSTSESuRMRLRLRMRNSVSXRNSYSZRNSeTaSgShShRMRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLYLYLYLZLZLZLZLZLYLYLYLWLVabfBfCabababababfDfEfzfFfGfHfHfHfHfHfHfHfIfFfzfJfDabababababfCfKab
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSuSuSuSuRMRLRLRMRNTcTdTeTfTgRNThTiTjTkTlRMRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLYLYLYLZLZMaLZLZLYLYLYLWLVabababfUfUfUfUfUabfyfzfAfzfzfzfzfzfzfzfzfzfAfzfyabfUfUfUfUfUababab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSFSuSFSuRMRLRLRMSjSjSjRNSjSjSjSeSRShShSSRMRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLZLZLZLZLZLZLZLZLZLZLZLWLVabfBfCabababababfDfSfzfFfGfHfHfHfHfHfHfHfIfFfzfTfDabababababfCfKab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSHSTSESuRMRLRLRMRNSjSjRNSjSjRNSeTaSgShShRMRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLYLYLYLZLZLZLZLZLYLYLYLWLVabfBfCabababababfDfEfzfFfGfHfHfHfHfHfHfHfIfFfzfJfDabababababfCfKab
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMSuSuSuSuSuRMRLRLRMRNSjSjTeSjSjRNThTiTjTkTlRMRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLYLYLYLZLZMaLZLZLYLYLYLWLVabababfUfUfUfUfUabfyfzfAfzfzfzfzfzfzfzfzfzfAfzfyabfUfUfUfUfUababab
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRMRMRMRMRMRMRMRLRLRMRMRMRMRMRMRMRMRMRMRMRMRMRMRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLYLYLYLZLZMbLZLZLYLYLYLWLVaaaaabfVfVfVfVfVabababababababababababababababababfWfWfWfWfWabaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLRLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLWLWLWLWLWLWLWLWLWLWLWLWLWLVaaaaabababababababaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabababababababaaaa
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhlhhaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaLVLVLVLVLVLVLVLVLVLVLVLVLVLVLVaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

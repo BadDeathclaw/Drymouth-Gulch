@@ -543,7 +543,7 @@
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
 	time = 60
-	reqs = list(/obj/item/grown/log = 5)
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 5)
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
