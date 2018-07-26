@@ -65,6 +65,8 @@ if [ "$BUILD_TOOLS" = false ]; then
 			mv mariadb_client-2.0.0-linux/libmariadb.so $HOME/libmariadb/libmariadb.so
 			rm -rf mariadb_client-2.0.0-linux.tgz mariadb_client-2.0.0-linux
 		fi
+		#violently delete libmariadb.so, because its in the repo for some reason
+		rm -f  libmariadb.so
     	ln -s $HOME/libmariadb/libmariadb.so libmariadb.so
 	
 		DreamDaemon tgstation.dmb -close -trusted -params "test-run&log-directory=travis"
