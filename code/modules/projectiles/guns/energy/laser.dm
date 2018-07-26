@@ -226,7 +226,7 @@
 	armour_penetration = -18
 
 /obj/item/projectile/plasma/scatter
-	damage = 22
+	damage = 24
 
 //Casings
 //plasma
@@ -258,7 +258,7 @@
 
 /obj/item/ammo_casing/energy/laser/pistol
 	projectile_type = /obj/item/projectile/beam/laser/pistol
-	e_cost = 10
+	e_cost = 25
 
 /obj/item/ammo_casing/energy/laser/lasgun
 	projectile_type = /obj/item/projectile/beam/laser/lasgun
