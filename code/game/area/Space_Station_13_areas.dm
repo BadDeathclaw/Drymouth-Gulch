@@ -1328,9 +1328,20 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
+/area/f13/bos
+	name = "BoS"
+	flags_1 = NONE
+	requires_power = TRUE
+	icon_state = "nuke_storage"
+
 /area/f13/mountain
 	name = "mountain"
 	requires_power = TRUE
+
+/area/f13/tcoms
+	name = "tcom"
+	icon_state = "tcomsatcham"
+	requires_power = FALSE
 
 /area/f13/desert
 	name = "Desert"

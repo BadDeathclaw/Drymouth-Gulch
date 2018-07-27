@@ -388,6 +388,7 @@
 	icon_state = "retropolice"
 	item_state = "fedora"
 	armor = list(melee = 10, bullet = 16, laser = 0, energy = 0, bomb = 25, bio = 0, rad = 0)
+	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/f13/stormchaser
 	name = "stormchaser hat"

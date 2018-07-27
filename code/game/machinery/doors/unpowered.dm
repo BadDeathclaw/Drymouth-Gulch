@@ -34,7 +34,7 @@
 	opacity = 1
 	density = TRUE
 	explosion_block = 1
-
+	autoclose = TRUE
 
 /obj/machinery/door/unpowered/wooddoor/update_icon()
 	if(density)
