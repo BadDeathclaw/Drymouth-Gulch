@@ -273,7 +273,7 @@
 	icon = 'icons/turf/f13desert.dmi'
 	icon_state = "wasteland1"
 	//light_color = LIGHT_COLOR_LAVA
-	slowdown = 3
+	slowdown = 2
 	//PIT
 	//var/turf_type = /turf/ground/desert
 	//var/dug = 0
