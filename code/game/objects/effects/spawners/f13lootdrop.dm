@@ -780,9 +780,137 @@
 				/obj/item/ammo_box/magazine/sniper_rounds,
 				/obj/item/ammo_box/magazine/sniper_rounds/penetrator,
 				/obj/item/ammo_box/magazine/d12g,
-				/obj/item/ammo_box/magazine/m2mm,
+				/obj/item/ammo_box/magazine/m2mm
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2, 3, 4)
 	. = ..()
+
+
+/obj/effect/spawner/lootdrop/f13/junkspawners //TIER 4 GARBAGE
+	name = "garbage spawner"
+	lootcount = 2
+
+	loot = list(
+				/obj/item/broken_bottle,
+				/obj/item/poster/wanted,
+				/obj/item/multitool,
+				/obj/item/cigbutt/cigarbutt,
+				/obj/item/trash/sosjerky,
+				/obj/item/razor,
+				/obj/item/candle,
+				/obj/item/rollingpaper,
+				/obj/item/trash/coal,
+				/obj/item/trash/pistachios,
+				/obj/item/soap/homemade,
+				/obj/item/bikehorn,
+				/obj/item/stack/cable_coil/random,
+				/obj/item/stack/medical/bruise_pack,
+				/obj/item/trash/popcorn,
+				/obj/item/trash/syndi_cakes,
+				/obj/item/valentine,
+				/obj/item/taperecorder,
+				/obj/item/trash/can,
+				/obj/item/bikehorn/airhorn,
+				/obj/item/tape/random,
+				/obj/item/trash/candy,
+				/obj/item/stack/medical/gauze,
+				/obj/item/trash/plate,
+				/obj/item/storage/box/snappops,
+				/obj/item/bikehorn/rubberducky,
+				/obj/item/stack/packageWrap,
+				/obj/item/weapon/dildo,
+				/obj/item/storage/box/matches,
+				/obj/item/toner,
+				/obj/item/tank/internals/oxygen,
+				/obj/item/storage/box/papersack,
+				/obj/item/storage/box/lights/mixed,
+				/obj/item/storage/box/beakers,
+				/obj/item/storage/belt/fannypack/black,
+				/obj/item/camera,
+				/obj/item/bodypart/l_arm,
+				/obj/item/trash/can,
+				/obj/item/toy/dummy,
+				/obj/item/toy/eightball,
+				/obj/item/toy/cards/deck,
+				/obj/item/trash/tray,
+				/obj/item/toy/xmas_cracker,
+				/obj/item/reagent_containers/spray/spraytan,
+				/obj/item/reagent_containers/glass/bowl,
+				/obj/item/reagent_containers/spray/cleaner,
+				/obj/item/reagent_containers/glass/bucket
+				)
+
+/obj/effect/spawner/lootdrop/f13/foodspawner //TIER 5 FOOD
+	name = "food spawner"
+	lootdoubles = TRUE
+
+	loot = list(
+				/obj/item/storage/box/ingredients/american,
+				/obj/item/storage/box/ingredients/carnivore,
+				/obj/item/storage/box/ingredients/delights,
+				/obj/item/storage/box/ingredients/exotic,
+				/obj/item/storage/box/ingredients/fiesta,
+				/obj/item/storage/box/ingredients/fruity,
+				/obj/item/storage/box/ingredients/grains,
+				/obj/item/storage/box/ingredients/italian,
+				/obj/item/storage/box/ingredients/sweets,
+				/obj/item/storage/box/ingredients/vegetarian,
+				/obj/item/storage/box/ingredients/wildcard,
+				/obj/item/storage/box/donkpockets,
+				/obj/item/reagent_containers/food/condiment/flour,
+				/obj/item/reagent_containers/food/condiment/rice,
+				/obj/item/reagent_containers/food/condiment/enzyme,
+				/obj/item/reagent_containers/food/condiment/soymilk,
+				/obj/item/reagent_containers/food/condiment/milk,
+				/obj/item/reagent_containers/food/condiment/saltshaker,
+				/obj/item/reagent_containers/food/condiment/peppermill,
+				/obj/item/reagent_containers/food/condiment/mayonnaise,
+				/obj/item/reagent_containers/food/condiment/soysauce,
+				/obj/item/reagent_containers/food/snacks/beans,
+				/obj/item/reagent_containers/food/snacks/baguette,
+				/obj/item/reagent_containers/food/snacks/bun,
+				/obj/item/reagent_containers/food/snacks/butter,
+				/obj/item/reagent_containers/food/snacks/cheesewedge,
+				/obj/item/reagent_containers/food/snacks/chips,
+				/obj/item/reagent_containers/food/snacks/chocolatebar,
+				/obj/item/reagent_containers/food/snacks/cracker,
+				/obj/item/reagent_containers/food/snacks/icecream,
+				/obj/item/reagent_containers/food/snacks/lollipop,
+				/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+				/obj/item/reagent_containers/food/snacks/meat/slab/human,
+				/obj/item/reagent_containers/food/snacks/meat/slab/pug,
+				/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
+				/obj/item/reagent_containers/food/snacks/muffin/berry,
+				/obj/item/reagent_containers/food/snacks/muffin,
+				/obj/item/reagent_containers/food/snacks/no_raisin,
+				/obj/item/reagent_containers/food/snacks/popcorn,
+				/obj/item/reagent_containers/food/snacks/raisincookie,
+				/obj/item/reagent_containers/food/snacks/sosjerky,
+				/obj/item/reagent_containers/food/snacks/sausage,
+				/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+				"" // a chance to spawn nothing
+				)
+
+
+/obj/effect/spawner/lootdrop/f13/foodspawner/Initialize(mapload) //on mapload, pick how many shit to spawn
+	lootcount = pick(2, 3)
+	. = ..()
+
+/obj/effect/spawner/lootdrop/f13/resourcespawner //now include R N G (TM) (higher number means it has a bigger spawn chance)
+	name = "resource spawner"
+	lootcount = 2
+
+	loot = list(
+				/obj/item/stack/rods/ten = 3,
+				/obj/item/stack/sheet/metal/ten = 5,
+				/obj/item/stack/sheet/cardboard/fifty = 1,
+				/obj/item/stack/sheet/cardboard/twenty = 1,
+				/obj/item/stack/sheet/glass/ten = 2,
+				/obj/item/stack/sheet/metal/five = 2,
+				/obj/item/stack/sheet/plasteel/five = 1,
+				/obj/item/stack/sheet/plastic/five = 4,
+				/obj/item/stack/sheet/paperframes/twenty = 1,
+				/obj/item/stack/sheet/cloth/ten = 1
+				)
