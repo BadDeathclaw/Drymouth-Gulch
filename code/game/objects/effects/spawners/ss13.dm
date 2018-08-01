@@ -372,7 +372,7 @@ obj
 									lb2.loc=src.loc
 									del src
 								if(3)
-									var/obj/item/gun/ballistic/shotgun/boltaction/lb = new
+									var/obj/item/gun/ballistic/shotgun/remington/lb = new
 									var/obj/item/ammo_box/a762/lb2 = new
 									var/obj/item/ammo_box/a762/lb3 = new
 									lb.loc=src.loc
@@ -381,14 +381,18 @@ obj
 									del src
 								if(4)
 									var/obj/item/gun/ballistic/revolver/zipgun/lb = new
+									var/obj/item/ammo_box/c10mm/lb2 = new
 									lb.loc=src.loc
+									lb2.loc=src.loc
 									del src
 								if(5)
 									var/obj/item/gun/ballistic/revolver/pipe_rifle/lb = new
+									var/obj/item/ammo_box/c10mm/lb2 = new
 									lb.loc=src.loc
+									lb2.loc=src.loc
 									del src
 								if(6)
-									var/obj/item/gun/ballistic/shotgun/boltaction/remington/lb = new
+									var/obj/item/gun/ballistic/shotgun/remington/lb = new
 									var/obj/item/ammo_box/a762/lb2 = new
 									var/obj/item/ammo_box/a762/lb3 = new
 									lb.loc=src.loc
@@ -460,7 +464,7 @@ obj
 									lb3.loc=src.loc
 									del src
 								if(4)
-									var/obj/item/gun/ballistic/shotgun/boltaction/remington/scoped/lb = new
+									var/obj/item/gun/ballistic/shotgun/remington/scoped/lb = new
 									var/obj/item/ammo_box/a762/lb2 = new
 									var/obj/item/ammo_box/a762/lb3 = new
 									lb.loc=src.loc
@@ -469,8 +473,8 @@ obj
 									del src
 								if(5)
 									var/obj/item/gun/ballistic/shotgun/lethal/lb = new
-									var/obj/item/ammo_box/m44/lb2 = new
-									var/obj/item/ammo_box/m44/lb3 = new
+									var/obj/item/storage/box/lethalshot/lb2 = new
+									var/obj/item/storage/box/lethalshot/lb3 = new
 									lb.loc=src.loc
 									lb2.loc=src.loc
 									lb3.loc=src.loc
@@ -903,13 +907,11 @@ obj
 					New()
 						switch(rand(1,17))
 							if(1)
-								var/obj/item/clothing/suit/armor/vest/lb = new
-								var/obj/item/clothing/head/helmet/riot/vaultsec/lb2 = new
+								var/obj/item/clothing/head/helmet/riot/vaultsec/lb = new
 								lb.loc=src.loc
-								lb2.loc=src.loc
 								del src
 							if(2)
-								var/obj/item/clothing/suit/armor/vest/det_suit/lb = new
+								var/obj/item/clothing/suit/armor/fluff/chestplate/lb = new
 								lb.loc=src.loc
 								del src
 							if(4)

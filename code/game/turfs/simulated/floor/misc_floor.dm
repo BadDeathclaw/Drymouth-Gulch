@@ -262,13 +262,18 @@
 	light_range = 3
 	light_power = 0.75
 
+//zzz - add new() and add self to global outside turf list
+/turf/open/f13/outside/New()
+	. = ..()
+	flags_1 |= GLOBAL_LIGHT_TURF_1
+
 /turf/open/f13/outside/desert
 	name = "\proper desert"
 	desc = "A stretch of desert."
 	icon = 'icons/turf/f13desert.dmi'
 	icon_state = "wasteland1"
 	//light_color = LIGHT_COLOR_LAVA
-	slowdown = 3
+	slowdown = 2
 	//PIT
 	//var/turf_type = /turf/ground/desert
 	//var/dug = 0

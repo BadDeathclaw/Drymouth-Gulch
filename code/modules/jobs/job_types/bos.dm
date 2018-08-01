@@ -1,4 +1,11 @@
 /*
+BoS access:
+Main doors: ACCESS_CAPTAIN 20
+*/
+
+
+
+/*
 Elder
 */
 /datum/job/f13elder
@@ -15,8 +22,8 @@ Elder
 
 	outfit = /datum/outfit/job/f13elder
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
+	minimal_access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 
 /datum/outfit/job/f13elder
 	name = "Elder"
@@ -43,13 +50,13 @@ Paladin
 
 	outfit = /datum/outfit/job/f13paladin
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
+	minimal_access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 
 /datum/outfit/job/f13paladin
 	name = "Paladin"
 	jobtype = /datum/job/f13paladin
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
@@ -57,13 +64,13 @@ Paladin
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
 	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
 	suit_store =	/obj/item/gun/energy/laser/scatter
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(
-		/obj/item/ammo_casing/energy/laser/scatter=2, \
+		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/revolver/colt6250=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1)
 	//PA training not in yet
 
 /*
@@ -82,13 +89,13 @@ Knight
 
 	outfit = /datum/outfit/job/f13knight
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
+	minimal_access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 
 /datum/outfit/job/f13knight
 	name = "Knight"
 	jobtype = /datum/job/f13knight
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
@@ -96,13 +103,13 @@ Knight
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
 	suit_store =	/obj/item/gun/energy/laser/scatter
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(
-		/obj/item/ammo_casing/energy/laser/scatter=2, \
+		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/revolver/colt6250=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1)
 	//PA training not in yet
 
 /*
@@ -121,13 +128,13 @@ Scribe
 
 	outfit = /datum/outfit/job/f13scribe
 
-	access = list()
-	minimal_access = list()
+	access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
+	minimal_access = list(ACCESS_CAPTAIN, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 
 /datum/outfit/job/f13scribe
 	name = "Scribe"
 	jobtype = /datum/job/f13scribe
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/syndicate
 	shoes = 		/obj/item/clothing/shoes/combat
@@ -165,7 +172,7 @@ Initiate
 /datum/outfit/job/f13initiate
 	name = "Initiate"
 	jobtype = /datum/job/f13initiate
-
+	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
@@ -173,9 +180,9 @@ Initiate
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
 	suit_store =	/obj/item/gun/ballistic/automatic/assault_rifle
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/r20=3, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/energy/laser/pistol=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1)

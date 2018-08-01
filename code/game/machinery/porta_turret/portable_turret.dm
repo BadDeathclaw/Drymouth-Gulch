@@ -634,10 +634,10 @@
 	always_up = 1
 	use_power = NO_POWER_USE
 	has_cover = 0
-	scan_range = 9
+	scan_range = 8
 	req_access = list(ACCESS_SYNDICATE)
-	stun_projectile = /obj/item/projectile/bullet
-	lethal_projectile = /obj/item/projectile/bullet
+	stun_projectile = /obj/item/projectile/bullet/medbullet
+	lethal_projectile = /obj/item/projectile/bullet/medbullet
 	lethal_projectile_sound = 'sound/weapons/gunshot.ogg'
 	stun_projectile_sound = 'sound/weapons/gunshot.ogg'
 	icon_state = "syndie_off"
