@@ -25,10 +25,6 @@ SUBSYSTEM_DEF(nightcycle)
 	var/working = 3
 	var/doColumns //number of columns to do at a time
 
-
-
-/datum/controller/subsystem/nightcycle/Initialize()
-
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
 	if (working)
 		doWork()
