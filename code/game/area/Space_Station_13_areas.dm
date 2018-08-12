@@ -202,7 +202,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/maintenance/central/secondary
 	name = "Central Maintenance"
 	icon_state = "maintcentral"
-	flags_2 = BLOCK_RADIO_2
 
 /area/maintenance/fore
 	name = "Fore Maintenance"
@@ -302,7 +301,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/hallway/secondary/exit
 	name = "Escape Shuttle Hallway"
 	icon_state = "escape"
-	flags_2 = BLOCK_RADIO_2
 
 /area/hallway/secondary/exit/departure_lounge
 	name = "Departure Lounge"
@@ -357,7 +355,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/crew_quarters/heads/cmo
 	name = "Chief Medical Officer's Office"
 	icon_state = "cmo_office"
-	flags_2 = BLOCK_RADIO_2
 
 /area/crew_quarters/heads/cmo/private
 	name = "Chief Medical Officer's Private Quarters"
@@ -366,7 +363,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/crew_quarters/heads/hop
 	name = "Head of Personnel's Office"
 	icon_state = "hop_office"
-	flags_2 = BLOCK_RADIO_2
 
 /area/crew_quarters/heads/hop/private
 	name = "Head of Personnel's Private Quarters"
@@ -375,8 +371,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/crew_quarters/heads/hos
 	name = "Head of Security's Office"
 	icon_state = "hos_office"
-	flags_2 = BLOCK_RADIO_2
-
 
 /area/crew_quarters/heads/hos/private
 	name = "Head of Security's Private Quarters"
@@ -563,7 +557,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/engine/engineering
 	name = "Engineering"
 	icon_state = "engine"
-	flags_2 = BLOCK_RADIO_2
 
 /area/engine/atmos
  	name = "Atmospherics"
@@ -736,7 +729,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Medbay Central"
 	icon_state = "medbay"
 	music = 'sound/ambience/signal.ogg'
-	flags_2 = BLOCK_RADIO_2
 
 /area/medical/medbay/front_office
 	name = "Medbay Front Office"
@@ -791,12 +783,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Morgue"
 	icon_state = "morgue"
 	ambientsounds = SPOOKY
-	flags_2 = BLOCK_RADIO_2
 
 /area/medical/chemistry
 	name = "Chemistry"
 	icon_state = "chem"
-	flags_2 = BLOCK_RADIO_2
 
 /area/medical/surgery
 	name = "Surgery"
@@ -821,7 +811,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/sleeper
 	name = "Medbay Treatment Center"
 	icon_state = "exam_room"
-	flags_2 = BLOCK_RADIO_2
+
 
 //Security
 
@@ -861,7 +851,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security/armory
 	name = "Armory"
 	icon_state = "armory"
-	flags_2 = BLOCK_RADIO_2
 
 /area/security/detectives_office
 	name = "Detective's Office"
@@ -968,12 +957,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/quartermaster/storage
 	name = "Cargo Bay"
 	icon_state = "cargo_bay"
-	flags_2 = BLOCK_RADIO_2
 
 /area/quartermaster/qm
 	name = "Quartermaster's Office"
 	icon_state = "quart"
-	flags_2 = BLOCK_RADIO_2
 
 /area/quartermaster/qm/private
 	name = "Quartermaster's Private Quarters"
@@ -1087,7 +1074,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/science/research
 	name = "Research Division"
 	icon_state = "medresearch"
-	flags_2 = BLOCK_RADIO_2
 
 /area/science/circuit
 	name = "Circuitry Lab"
@@ -1238,7 +1224,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/ai_monitored/turret_protected/ai_upload
 	name = "AI Upload Chamber"
 	icon_state = "ai_upload"
-	flags_2 = BLOCK_RADIO_2
 
 /area/ai_monitored/turret_protected/ai_upload_foyer
 	name = "AI Upload Access"
@@ -1343,16 +1328,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
-/area/f13/underground
-	flags_2 = BLOCK_RADIO_2
-
 /area/f13/underground/bos
 	name = "BoS"
 	flags_1 = NONE
 	requires_power = TRUE
 	icon_state = "nuke_storage"
+	flags_2 = BLOCK_RADIO_2
 
-/area/f13/underground/mountain
+/area/f13/mountain
 	name = "mountain"
 	requires_power = TRUE
 
@@ -1386,12 +1369,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Klamat"
 	icon_state = "klamat"
 	requires_power = TRUE
-
-/area/f13/klamat/mine
-	name = "Klamat mine"
-	icon_state = "klamat"
-	requires_power = TRUE
-	flags_2 = BLOCK_RADIO_2
 
 /area/f13/farmhouse
 	name = "Farmhouse"
@@ -1455,7 +1432,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/underground/cave/vault
 	name = "Vault Mine"
-	icon_state = "klamat"
+	icon_state = "mine"
 	outdoors = TRUE
 
 /area/f13/underground/cave
