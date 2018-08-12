@@ -5,6 +5,7 @@
 	var/article  // If non-null, overrides a/an/some in all cases
 
 	var/flags_1 = NONE
+	var/flags_2 = NONE // Sorry, we ran out of space and needed a second flag pit
 	var/interaction_flags_atom = NONE
 	var/container_type = NONE
 	var/datum/reagents/reagents = null

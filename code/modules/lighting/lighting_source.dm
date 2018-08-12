@@ -47,7 +47,7 @@
 	parse_light_color()
 
 	//Check if we are the light for an outside turf, set flag
-	if(source_atom.flags_1 & GLOBAL_LIGHT_TURF_1)
+	if(source_atom.flags_2 & GLOBAL_LIGHT_TURF_2)
 		lightFlag |= GLOBAL_LIGHTING
 
 	update()
@@ -90,7 +90,7 @@
 			LAZYADD(top_atom.light_sources, src) // Add ourselves to the light sources of our new top atom.
 
 		//Check if we are the light for an outside turf, set flag
-		if(source_atom.flags_1 & GLOBAL_LIGHT_TURF_1)
+		if(source_atom.flags_2 & GLOBAL_LIGHT_TURF_2)
 			lightFlag |= GLOBAL_LIGHTING
 
 	EFFECT_UPDATE(LIGHTING_CHECK_UPDATE)
@@ -252,7 +252,7 @@
 			var/oldlum = source_turf.luminosity
 			source_turf.luminosity = CEILING(light_range, 1)
 			for(T in view(CEILING(light_range, 1), source_turf))
-				if( (lightFlag & GLOBAL_LIGHTING) && (T.flags_1 & GLOBAL_LIGHT_TURF_1 ) && (T != source_atom))
+				if( (lightFlag & GLOBAL_LIGHTING) && (T.flags_2 & GLOBAL_LIGHT_TURF_2 ) && (T != source_atom))
 					continue
 				for (thing in T.get_corners(source_turf))
 					C = thing
@@ -316,7 +316,7 @@
 /datum/light_source/proc/checkAdjacent()
 	if(lightFlag & GLOBAL_LIGHTING)
 		for(var/turf/T in GLOB.alldirs)
-			if(!(T.flags_1 & GLOBAL_LIGHT_TURF_1))
+			if(!(T.flags_2 & GLOBAL_LIGHT_TURF_2))
 				return 0
 	else
 		return 0

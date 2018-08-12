@@ -1328,11 +1328,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
-/area/f13/bos
+/area/f13/underground/bos
 	name = "BoS"
 	flags_1 = NONE
 	requires_power = TRUE
 	icon_state = "nuke_storage"
+	flags_2 = BLOCK_RADIO_2
 
 /area/f13/mountain
 	name = "mountain"
@@ -1390,7 +1391,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = ENGINEERING
 	requires_power = TRUE
 
-/area/f13/enclave_base
+/area/f13/underground/enclave_base
 	name = "Enclave Base"
 	icon_state = "enclave_base"
 	ambientsounds = list('sound/f13ambience/enclave_vault.ogg')
@@ -1399,19 +1400,19 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Den"
 	icon_state = "den"
 
-/area/f13/overseer_office
+/area/f13/underground/overseer_office
 	name = "Overseer's Office"
 	icon_state = "overseer_office"
 	requires_power = TRUE
 	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
 
-/area/f13/vault_atrium_upper
+/area/f13/underground/vault_atrium_upper
 	name = "Vault Atrium Upper"
 	icon_state = "vault_atrium_upper"
 	requires_power = TRUE
 	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
 
-/area/f13/vault_atrium_Lower
+/area/f13/underground/vault_atrium_Lower
 	name = "Vault Atrium Lower"
 	icon_state = "vault_atrium_upper"
 	requires_power = TRUE
@@ -1419,12 +1420,25 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/shuttle/vault_elevator
 	name = "Vault Elevator"
+	flags_2 = BLOCK_RADIO_2
 
 /area/shuttle/enclavefort_elevator
 	name = "Enclave Fort Elevator"
+	flags_2 = BLOCK_RADIO_2
 
 /area/shuttle/bos_elevator
 	name = "BOS Elevator"
+	flags_2 = BLOCK_RADIO_2
+
+/area/f13/underground/cave/vault
+	name = "Vault Mine"
+	icon_state = "mine"
+	outdoors = TRUE
+
+/area/f13/underground/cave
+	name = "Cave"
+	icon_state = "cave"
+	outdoors = TRUE
 
 /*
 

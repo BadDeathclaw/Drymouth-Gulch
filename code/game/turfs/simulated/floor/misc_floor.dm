@@ -256,16 +256,18 @@
 	icon_state = "clockwork_floor"
 	floor_tile = /obj/item/stack/tile/bronze
 
+/*Surely setting planetary atmos won't fuck everything?*/
 /turf/open/f13/outside
 	icon = 'icons/turf/f13desert.dmi'
 	icon_state = "wasteland1"
 	light_range = 3
 	light_power = 0.75
+	planetary_atmos = TRUE
 
 //zzz - add new() and add self to global outside turf list
 /turf/open/f13/outside/New()
 	. = ..()
-	flags_1 |= GLOBAL_LIGHT_TURF_1
+	flags_2 |= GLOBAL_LIGHT_TURF_2
 
 /turf/open/f13/outside/desert
 	name = "\proper desert"
@@ -296,11 +298,11 @@
 	icon_state = "outermiddle"
 
 
-/turf/open/f13/inside
+/turf/open/floor/wood/f13
 	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewood1"
 
-/turf/open/f13/inside/wood
+/turf/open/floor/wood/f13/old
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
 

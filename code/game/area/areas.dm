@@ -92,6 +92,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	map_name = name // Save the initial (the name set in the map) name of the area.
 	canSmoothWithAreas = typecacheof(canSmoothWithAreas)
 
+	/*set block radio for turfs, so they can't cheat by buggering the area*/
+	if(flags_2 & BLOCK_RADIO_2)
+		for(var/turf/T in contents)
+			T.flags_2 |= BLOCK_RADIO_2
+
 	if(requires_power)
 		luminosity = 0
 	else
@@ -444,7 +449,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /atom/proc/has_gravity(turf/T)
 	if(!T || !isturf(T))
 		T = get_turf(src)
-	
+
 	if(!T)
 		return 0
 
@@ -455,7 +460,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			return 0
 		else
 			return FG.gravity
-	
+
 	//Gravity forced on the turf
 	FG = T.GetComponent(/datum/component/forced_gravity)
 	if(FG)
