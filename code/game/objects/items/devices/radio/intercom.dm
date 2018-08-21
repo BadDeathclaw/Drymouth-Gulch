@@ -96,12 +96,13 @@
 	ui_interact(user, state = GLOB.default_state)
 
 /obj/item/radio/intercom/can_receive(freq, level)
+
+	var/turf/position = get_turf(src)
 	if(!on)
 		return FALSE
 	if(wires.is_cut(WIRE_RX))
 		return FALSE
 	if(!(0 in level))
-		var/turf/position = get_turf(src)
 		if(isnull(position) || !(position.z in level))
 			return FALSE
 	if(!src.listening)

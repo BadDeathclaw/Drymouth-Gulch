@@ -224,6 +224,7 @@
 	CentCom radios can hear the CentCom frequency no matter what.
 	*/
 
+	var/turf/position = get_turf(src)
 	// From the channel, determine the frequency and get a reference to it.
 	var/freq
 	if(channel && channels && channels.len > 0)
@@ -233,11 +234,17 @@
 		if (!channels[channel]) // if the channel is turned off, don't broadcast
 			return
 	else
+		/*
+		because we aren't broadcasting on encryptionkey, check that
+		we aren't underground or something, and if not, use
+		current frequeence
+		*/
+		if ((position.flags_2 & BLOCK_RADIO_2))
+			return
 		freq = frequency
 		channel = null
 
 	// Nearby active jammers severely gibberish the message
-	var/turf/position = get_turf(src)
 	for(var/obj/item/jammer/jammer in GLOB.active_jammers)
 		var/turf/jammer_turf = get_turf(jammer)
 		if(position.z == jammer_turf.z && (get_dist(position, jammer_turf) < jammer.range))
@@ -300,6 +307,9 @@
 
 // Checks if this radio can receive on the given frequency.
 /obj/item/radio/proc/can_receive(freq, level)
+	// get current turf
+	var/turf/position = get_turf(src)
+
 	// deny checks
 	if (!on || !listening || wires.is_cut(WIRE_RX))
 		return FALSE
@@ -308,12 +318,13 @@
 	if (freq == FREQ_CENTCOM)
 		return independent  // hard-ignores the z-level check
 	if (!(0 in level))
-		var/turf/position = get_turf(src)
 		if(!position || !(position.z in level))
 			return FALSE
 
 	// allow checks: are we listening on that frequency?
-	if (freq == frequency)
+	/* If we are NOT underground, frequency check as normal. otherwise
+	   we rely on encryption key to hear (magic signal boost or some shit) */
+	if ((freq == frequency) && !(position.flags_2 & BLOCK_RADIO_2))
 		return TRUE
 	for(var/ch_name in channels)
 		if(channels[ch_name] & FREQ_LISTENING)
