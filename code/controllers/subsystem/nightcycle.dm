@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(nightcycle)
 
 	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
 		currentTurfs += block(locate(currentColumn,1,z), locate(x,world.maxy,z))
-	for(var/turf/open/f13/outside/T in currentTurfs)
+	for(var/turf/open/floor/plating/f13/outside/T in currentTurfs)
 		spawn(5)
 			T.set_light(T.light_range, sunPower, sunColour)
 	currentColumn = x + 1

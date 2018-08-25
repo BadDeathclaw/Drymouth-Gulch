@@ -256,20 +256,54 @@
 	icon_state = "clockwork_floor"
 	floor_tile = /obj/item/stack/tile/bronze
 
+
+
+
+
+
+/* Fallout stuff - TODO: Move to a separate folder/file */
+/* Also, a terrain class or something needs to be used as the common parent  for asteroid and outside */
+/* lazy Saturday coding */
+
 /*Surely setting planetary atmos won't fuck everything?*/
-/turf/open/f13/outside
+/turf/open/floor/plating/f13/outside
 	icon = 'icons/turf/f13desert.dmi'
 	icon_state = "wasteland1"
 	light_range = 3
 	light_power = 0.75
 	planetary_atmos = TRUE
 
-//zzz - add new() and add self to global outside turf list
-/turf/open/f13/outside/New()
+/turf/open/floor/plating/f13
+	gender = PLURAL
+	name = "\proper desert"
+	baseturfs = /turf/open/floor/plating/f13/outside
+	icon = 'icons/turf/f13desert.dmi'
+	icon_state = "wasteland1"
+	icon_plating = "wasteland1"
+	attachment_holes = FALSE
+	light_range = 3
+	light_power = 0.75
+	planetary_atmos = TRUE
+
+/* so we can't break this */
+/turf/open/floor/plating/f13/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
+
+/turf/open/floor/plating/f13/burn_tile()
+	return
+
+/turf/open/floor/plating/f13/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
+
+/turf/open/floor/plating/f13/MakeDry()
+	return
+
+/* Outside turfs get global lighting */
+/turf/open/floor/plating/f13/outside/Initialize()
 	. = ..()
 	flags_2 |= GLOBAL_LIGHT_TURF_2
 
-/turf/open/f13/outside/desert
+/turf/open/floor/plating/f13/outside/desert
 	name = "\proper desert"
 	desc = "A stretch of desert."
 	icon = 'icons/turf/f13desert.dmi'
@@ -286,17 +320,16 @@
 	//var/obj/dugpit/ground/mypit
 	//var/unburylevel = 0
 
-/turf/open/f13/outside/desert/New()
+/turf/open/floor/plating/f13/outside/desert/New()
 	..()
 	icon_state = "wasteland[rand(1,31)]"
 	//plant_grass()
 
-/turf/open/f13/outside/road
+/turf/open/floor/plating/f13/outside/road
 	name = "\proper road"
 	desc = "A stretch of road."
 	icon = 'icons/turf/f13road.dmi'
 	icon_state = "outermiddle"
-
 
 /turf/open/floor/wood/f13
 	icon = 'icons/turf/f13floorsmisc.dmi'
@@ -306,17 +339,17 @@
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
 
-/turf/open/f13/inside/vault_floor
+/turf/open/floor/plasteel/f13/vault_floor
 	name = "vault floor"
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "vault_floor"
 
-/turf/open/f13/inside/mountain
+/turf/open/floor/plating/f13/inside/mountain
 	name = "mountain"
-	desc = "Damn cave flooring."
+	desc = "Damp cave flooring."
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "mountain0"
 
-/turf/open/f13/inside/mountain/New()
+/turf/open/floor/plating/f13/inside/mountain/New()
 	..()
 	icon_state = "mountain[rand(0,10)]"
