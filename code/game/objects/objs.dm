@@ -27,7 +27,7 @@
 	var/req_access_txt = "0"
 	var/list/req_one_access
 	var/req_one_access_txt = "0"
-	
+
 	var/renamedByPlayer = FALSE //set when a player uses a pen on a renamable object
 
 /obj/vv_edit_var(vname, vval)
