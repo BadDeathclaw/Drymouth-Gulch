@@ -7,7 +7,7 @@
 	var/smooth_icon = 'icons/turf/smoothrocks.dmi'
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = null
-	baseturfs = /turf/open/floor/plating/asteroid
+	baseturfs = /turf/open/floor/plating/f13/inside/mountain
 	initial_gas_mix = "TEMP=2.7"
 	opacity = 1
 	density = TRUE
@@ -15,7 +15,7 @@
 	layer = EDGED_TURF_LAYER
 	temperature = TCMB
 	var/environment_type = "asteroid"
-	var/turf/open/floor/plating/turf_type = /turf/open/floor/plating/asteroid/airless
+	var/turf/open/floor/plating/f13/inside/mountain/turf_type = /turf/open/floor/plating/f13/inside/mountain
 	var/mineralType = null
 	var/mineralAmt = 3
 	var/spread = 0 //will the seam spread?
@@ -140,7 +140,7 @@
 		mineralSpawnChanceList = list(
 			/turf/closed/mineral/uranium = 5, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 10,
 			/turf/closed/mineral/silver = 12, /turf/closed/mineral/plasma = 20, /turf/closed/mineral/iron = 40, /turf/closed/mineral/titanium = 11,
-			/turf/closed/mineral/gibtonite = 4, /turf/open/floor/plating/asteroid/airless/cave = 2, /turf/closed/mineral/bscrystal = 1)
+			/turf/closed/mineral/gibtonite = 4, /turf/closed/mineral/bscrystal = 1)
 	if (display_icon_state)
 		icon_state = display_icon_state
 	. = ..()

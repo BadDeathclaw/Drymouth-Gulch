@@ -256,24 +256,65 @@
 	icon_state = "clockwork_floor"
 	floor_tile = /obj/item/stack/tile/bronze
 
+
+
+
+
+
+/* Fallout stuff - TODO: Move to a separate folder/file */
+/* Also, a terrain class or something needs to be used as the common parent  for asteroid and outside */
+/* lazy Saturday coding */
+
 /*Surely setting planetary atmos won't fuck everything?*/
-/turf/open/f13/outside
+/turf/open/floor/plating/f13/outside
 	icon = 'icons/turf/f13desert.dmi'
 	icon_state = "wasteland1"
 	light_range = 3
 	light_power = 0.75
 	planetary_atmos = TRUE
 
-//zzz - add new() and add self to global outside turf list
-/turf/open/f13/outside/New()
+/turf/open/floor/plating/f13
+	gender = PLURAL
+	name = "\proper desert"
+	baseturfs = /turf/open/floor/plating/f13/outside
+	icon = 'icons/turf/f13desert.dmi'
+	icon_state = "wasteland1"
+	icon_plating = "wasteland1"
+	attachment_holes = FALSE
+	light_range = 3
+	light_power = 0.75
+	planetary_atmos = TRUE
+
+/* so we can't break this */
+/turf/open/floor/plating/f13/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+	return
+
+/turf/open/floor/plating/f13/burn_tile()
+	return
+
+/turf/open/floor/plating/f13/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
+
+/turf/open/floor/plating/f13/MakeDry()
+	return
+
+#define GRASS_SPONTANEOUS 		1
+#define GRASS_WEIGHT 			5
+#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/tree/wasteland = 1)
+#define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
+/* Outside turfs get global lighting */
+/turf/open/floor/plating/f13/outside/Initialize()
 	. = ..()
 	flags_2 |= GLOBAL_LIGHT_TURF_2
 
-/turf/open/f13/outside/desert
+
+
+/turf/open/floor/plating/f13/outside/desert
 	name = "\proper desert"
 	desc = "A stretch of desert."
 	icon = 'icons/turf/f13desert.dmi'
 	icon_state = "wasteland1"
+	var/obj/structure/flora/turfPlant = null
 	//light_color = LIGHT_COLOR_LAVA
 	slowdown = 2
 	//PIT
@@ -286,17 +327,57 @@
 	//var/obj/dugpit/ground/mypit
 	//var/unburylevel = 0
 
-/turf/open/f13/outside/desert/New()
+
+
+/turf/open/floor/plating/f13/outside/desert/Initialize()
+	. = ..()
+	plantGrass()
+
+
+/turf/open/floor/plating/f13/outside/desert/proc/plantGrass(Plantforce = FALSE)
+	var/Weight = 0
+	var/randPlant = null
+
+	//spontaneously spawn grass
+	if(Plantforce || prob(GRASS_SPONTANEOUS))
+		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST) //Create a new grass object at this location, and assign var
+		turfPlant = new randPlant(src)
+		. = TRUE //in case we ever need this to return if we spawned
+		return.
+
+	//loop through neighbouring desert turfs, if they have grass, then increase weight
+	for(var/turf/open/floor/plating/f13/outside/desert/T in RANGE_TURFS(3, src))
+		if(T.turfPlant)
+			Weight += GRASS_WEIGHT
+
+	//use weight to try to spawn grass
+	if(prob(Weight))
+
+		//If surrounded on 5+ sides, pick from lush
+		if(Weight == (5 * GRASS_WEIGHT))
+			randPlant = pickweight(LUSH_PLANT_SPAWN_LIST)
+		else
+			randPlant = pickweight(DESOLATE_PLANT_SPAWN_LIST)
+		turfPlant = new randPlant(src)
+		. = TRUE
+
+
+//Make sure we delete the plant if we ever change turfs
+/turf/open/floor/plating/f13/outside/desert/ChangeTurf()
+	if(turfPlant)
+		qdel(turfPlant)
+	. =  ..()
+
+
+/turf/open/floor/plating/f13/outside/desert/New()
 	..()
 	icon_state = "wasteland[rand(1,31)]"
-	//plant_grass()
 
-/turf/open/f13/outside/road
+/turf/open/floor/plating/f13/outside/road
 	name = "\proper road"
 	desc = "A stretch of road."
 	icon = 'icons/turf/f13road.dmi'
 	icon_state = "outermiddle"
-
 
 /turf/open/floor/wood/f13
 	icon = 'icons/turf/f13floorsmisc.dmi'
@@ -306,17 +387,17 @@
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
 
-/turf/open/f13/inside/vault_floor
+/turf/open/floor/plasteel/f13/vault_floor
 	name = "vault floor"
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "vault_floor"
 
-/turf/open/f13/inside/mountain
+/turf/open/floor/plating/f13/inside/mountain
 	name = "mountain"
-	desc = "Damn cave flooring."
+	desc = "Damp cave flooring."
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "mountain0"
 
-/turf/open/f13/inside/mountain/New()
+/turf/open/floor/plating/f13/inside/mountain/New()
 	..()
 	icon_state = "mountain[rand(0,10)]"
