@@ -576,7 +576,13 @@
 	desc = "A puddle used for washing one's hands and face."
 	icon_state = "puddle"
 	resistance_flags = UNACIDABLE
-
+/*
+/obj/structure/sink/well
+	name = "well"
+	desc = "A well used for washing one's hands and face."
+	icon_state = list()
+	resistance_flags = UNACIDABLE
+*/
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /obj/structure/sink/puddle/attack_hand(mob/M)
 	icon_state = "puddle-splash"

@@ -10,6 +10,12 @@
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
 
+/obj/effect/spawner/lootdrop/f13/discomeme
+	name = "dancemachine or piano"
+	lootcount = 1
+	loot = list(
+				/obj/structure/piano,
+				/obj/machinery/jukebox)
 /* ------------------------------------------------
    ----------------ARMOR SPAWNERS------------------
    ------------------------------------------------ */
@@ -820,7 +826,7 @@
 				/obj/item/storage/box/snappops,
 				/obj/item/bikehorn/rubberducky,
 				/obj/item/stack/packageWrap,
-				/obj/item/weapon/dildo,
+				/obj/item/dildo,
 				/obj/item/storage/box/matches,
 				/obj/item/toner,
 				/obj/item/tank/internals/oxygen,

@@ -9,7 +9,7 @@ obj
 		objectspawners //1
 			medicalspawn //1.1
 				surgical //1.2
-					New()
+					Initialize(mapload)
 						switch(rand(1,10))//get a random num between 1 and 10 inside a switch proc set the ifs bellow that
 							if(1)
 								var/obj/item/hemostat/lb = new //creates a new copy of the item
@@ -52,7 +52,7 @@ obj
 								lb.loc=src.loc
 								del src
 					bloodpack //1.3
-						New()
+						Initialize(mapload)
 							switch(rand(1,1))
 								if(1)
 									var/obj/item/reagent_containers/blood/random/lb = new
@@ -61,7 +61,7 @@ obj
 
 				vault //1.4
 					equipment
-						New()
+						Initialize(mapload)
 							switch(rand(1,2))
 								if(1)
 									var/obj/item/gun/medbeam/lb = new
@@ -72,7 +72,7 @@ obj
 									lb.loc=src.loc
 									del src
 					meds
-						New()
+						Initialize(mapload)
 							switch(rand(1,5))
 								if(1)
 									var/obj/item/reagent_containers/hypospray/medipen/stimpak/lb = new
@@ -98,7 +98,7 @@ obj
 				wasteland //1.5
 					equipment
 					meds
-						New()
+						Initialize(mapload)
 							switch(rand(1,5))
 								if(1)
 									var/obj/item/reagent_containers/pill/patch/healingpowder/lb = new
@@ -146,7 +146,7 @@ obj
 									del src
 
 						drugs
-						New()
+						Initialize(mapload)
 							switch(rand(1,5))
 								if(1)
 									var/obj/item/reagent_containers/pill/patch/jet/lb = new
@@ -173,7 +173,7 @@ obj
 			weaponspawners //port
 				melee
 					tier1
-						New()
+						Initialize(mapload)
 							switch(rand(1,7))
 								if(1)
 									var/obj/item/crowbar/lb = new
@@ -206,7 +206,7 @@ obj
 
 
 					tier2
-						New()
+						Initialize(mapload)
 							switch(rand(1,14))
 								if(1)
 									var/obj/item/gavelhammer/lb = new
@@ -266,7 +266,7 @@ obj
 									del src
 
 					tier3
-						New()
+						Initialize(mapload)
 							switch(rand(1,9))
 								if(1)
 									var/obj/item/weldingtool/lb = new
@@ -306,7 +306,7 @@ obj
 									del src
 
 					tier4
-						New()
+						Initialize(mapload)
 							switch(rand(1,4))
 								if(1)
 									var/obj/item/twohanded/fireaxe/lb = new
@@ -327,7 +327,7 @@ obj
 
 
 					tier5
-						New()
+						Initialize(mapload)
 							switch(rand(1,6))
 								if(1)
 									var/obj/item/twohanded/required/thermic_lance/lb = new
@@ -357,7 +357,7 @@ obj
 
 				gun
 					tier1
-						New()
+						Initialize(mapload)
 							switch(rand(1,10))
 								if(1)
 									var/obj/item/gun/ballistic/revolver/single_shotgun/lb = new
@@ -441,7 +441,7 @@ obj
 
 
 					tier2
-						New()
+						Initialize(mapload)
 							switch(rand(1,5))
 								if(1)
 									var/obj/item/gun/ballistic/shotgun/trench/lb = new
@@ -483,7 +483,7 @@ obj
 
 
 					tier3
-						New()
+						Initialize(mapload)
 							switch(rand(1,9))
 								if(1)
 									var/obj/item/gun/ballistic/shotgun/automatic/hunting/lb = new
@@ -556,7 +556,7 @@ obj
 
 
 					tier4
-						New()
+						Initialize(mapload)
 							switch(rand(1,9))
 								if(1)
 									var/obj/item/gun/ballistic/automatic/assault_rifle/lb = new
@@ -617,7 +617,7 @@ obj
 
 
 					tier5
-						New()
+						Initialize(mapload)
 							switch(rand(1,8))
 								if(1)
 									var/obj/item/gun/energy/laser/plasma/lb = new
@@ -655,7 +655,7 @@ obj
 
 					ammo
 						tier1
-							New()
+							Initialize(mapload)
 								switch(rand(1,5))
 									if(1)
 										var/obj/item/ammo_box/magazine/m9mm/lb = new
@@ -685,7 +685,7 @@ obj
 
 
 						tier2
-							New()
+							Initialize(mapload)
 								switch(rand(1,7))
 									if(1)
 										var/obj/item/ammo_box/c45/lb = new
@@ -726,7 +726,7 @@ obj
 
 
 						tier3
-							New()
+							Initialize(mapload)
 								switch(rand(1,11))
 									if(1)
 										var/obj/item/ammo_box/magazine/r20/lb = new
@@ -810,7 +810,7 @@ obj
 										del src
 
 						tier4
-							New()
+							Initialize(mapload)
 								switch(rand(1,6))
 									if(1)
 										var/obj/item/ammo_box/magazine/d12g/lb = new
@@ -861,7 +861,7 @@ obj
 
 
 						tier5
-							New()
+							Initialize(mapload)
 								switch(rand(1,14))
 									if(1)
 										var/obj/item/ammo_box/magazine/mm195x129/lb = new
@@ -904,7 +904,7 @@ obj
 
 			armorspawners //1.8
 				tier1
-					New()
+					Initialize(mapload)
 						switch(rand(1,17))
 							if(1)
 								var/obj/item/clothing/head/helmet/riot/vaultsec/lb = new
@@ -981,7 +981,7 @@ obj
 
 
 				tier2
-					New()
+					Initialize(mapload)
 						switch(rand(1,6))
 							if(1)
 								var/obj/item/clothing/suit/armor/fluff/chestplate/lb = new
@@ -1020,7 +1020,7 @@ obj
 
 
 				tier3
-					New()
+					Initialize(mapload)
 						switch(rand(1,5))
 							if(1)
 								var/obj/item/clothing/suit/armor/f13/combat/mk2/lb = new
@@ -1056,7 +1056,7 @@ obj
 
 
 				tier4
-					New()
+					Initialize(mapload)
 						switch(rand(1,8))
 							if(1)
 								var/obj/item/clothing/suit/armor/fluff/chestplate/mk2/lb = new
@@ -1109,7 +1109,7 @@ obj
 
 
 				tier5
-					New()
+					Initialize(mapload)
 						switch(rand(1,7))
 							if(1)
 								var/obj/item/clothing/suit/armor/f13/power_armor/advanced/lb = new
@@ -1163,7 +1163,7 @@ obj
 
 			junkspawners //port
 				junk
-					New()
+					Initialize(mapload)
 						switch(rand(1,24))
 							if(1)
 								var/obj/item/broken_bottle/lb = new
@@ -1250,7 +1250,7 @@ obj
 								lb2.loc=src.loc
 								del src
 							if(15)
-								var/obj/item/weapon/dildo/lb = new
+								var/obj/item/dildo/lb = new
 								var/obj/item/storage/box/matches/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
@@ -1313,7 +1313,7 @@ obj
 
 
 			foodspawner
-				New()
+				Initialize(mapload)
 					switch(rand(1,32))
 						if(1)
 							var/obj/item/storage/box/ingredients/american/lb = new
@@ -1514,7 +1514,7 @@ obj
 
 
 			resourcespawner
-				New()
+				Initialize(mapload)
 					switch(rand(1,10))
 						if(1)
 							var/obj/item/stack/rods/ten/lb = new
