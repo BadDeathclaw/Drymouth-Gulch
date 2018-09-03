@@ -867,7 +867,7 @@
 "aqI" = (/obj/structure/window/reinforced{icon_state = "rwindow"; dir = 1},/obj/structure/window/reinforced{dir = 4},/turf/open/floor/plating,/area/f13/underground/vault_atrium_upper)
 "aqJ" = (/obj/structure/window/reinforced{dir = 8},/turf/open/floor/plating,/area/f13/underground/vault_atrium_upper)
 "aqK" = (/obj/machinery/shower{icon_state = "shower"; dir = 1},/turf/open/floor/plating,/area/f13/powerplant)
-"aqL" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/vending/wallmed{pixel_x = -30; step_x = 0; step_y = 0},/turf/open/floor/plasteel/f13{icon_state = "dark"},/area/engine/engineering)
+"aqL" = (/obj/structure/cable{icon_state = "1-2"},/obj/machinery/vending/wallmed{pixel_x = -30},/turf/open/floor/plasteel/f13{icon_state = "dark"},/area/engine/engineering)
 "aqM" = (/obj/structure/closet/firecloset,/turf/open/floor/plating,/area/f13/powerplant)
 "aqN" = (/obj/structure/closet/crate/radiation,/turf/open/floor/plating,/area/f13/powerplant)
 "aqO" = (/obj/machinery/light{dir = 8},/turf/open/floor/plating,/area/f13/powerplant)
