@@ -1455,7 +1455,7 @@
 "CD" = (/obj/structure/table/reinforced,/obj/item/storage/box/emps,/obj/item/gun/energy/ionrifle,/obj/structure/sign/departments/medbay/alt{pixel_y = -32},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/centcom/ferry)
 "CE" = (/obj/structure/table/reinforced,/obj/item/storage/box/syringes,/obj/item/gun/syringe/rapidsyringe,/obj/structure/reagent_dispensers/peppertank{pixel_y = -32},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/centcom/ferry)
 "CF" = (/obj/structure/closet/secure_closet/ertSec,/obj/effect/turf_decal/stripes/line{dir = 9},/turf/open/floor/plasteel,/area/centcom/ferry)
-"CG" = (/obj/structure/closet/secure_closet/ertSec,/obj/structure/sign/directions/security{dir = 1; pixel_y = 0},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/centcom/ferry)
+"CG" = (/obj/structure/closet/secure_closet/ertSec,/obj/structure/sign/directions/security{dir = 1},/obj/effect/turf_decal/stripes/line{dir = 1},/turf/open/floor/plasteel,/area/centcom/ferry)
 "CH" = (/obj/structure/table/reinforced,/obj/item/book/manual/wiki/security_space_law,/obj/item/taperecorder,/obj/machinery/firealarm{dir = 4; pixel_x = 24},/turf/open/floor/plasteel/vault{dir = 8},/area/centcom/control)
 "CI" = (/obj/structure/table,/obj/item/paper_bin,/obj/item/pen,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/green/side{dir = 9},/area/centcom/control)
 "CJ" = (/obj/structure/chair,/turf/open/floor/plasteel/green/corner{dir = 1},/area/centcom/control)
