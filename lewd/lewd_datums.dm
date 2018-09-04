@@ -9,8 +9,10 @@
 
 /datum/interaction/lewd/kiss/post_interaction(mob/user, mob/target)
 	. = ..()
-	if(user.lust < 5)   user.lust = 5
-	if(target.lust < 5) target.lust = 5
+	if(user.lust < 5)
+		user.lust = 5
+	if(target.lust < 5)
+		target.lust = 5
 
 /datum/interaction/lewd/kiss/evaluate_user(mob/user, silent = TRUE)
 	if(..())
@@ -21,7 +23,7 @@
 	return FALSE
 
 /datum/interaction/lewd/kiss/display_interaction(mob/user, mob/target)
-	if (user.lust >= 3)
+	if(user.lust >= 3)
 		user.visible_message("<span class='warning'>\The [user] gives an intense, lingering kiss to \the [target].</span>")
 	else
 		user.visible_message("<span class='warning'>\The [user] kisses \the [target] deeply.</span>")

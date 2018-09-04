@@ -163,10 +163,12 @@
 	else if(istype(AM, /obj/structure/closet))
 		return
 	else if(isobj(AM))
-		if (istype(AM, /obj/item))
+		if(istype(AM, /obj/item))
 			var/obj/item/I = AM
-			if (I.item_flags & NODROP)
+			if(I.item_flags & NODROP)
 				return
+		else if(istype(AM, /obj/effect))
+			return
 		else if(!allow_objects && !istype(AM, /obj/effect/dummy/chameleon))
 			return
 		if(!allow_dense && AM.density)

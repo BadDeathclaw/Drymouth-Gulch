@@ -9,7 +9,7 @@
 	..()
 	icon_state = "tall_grass_[rand(1,8)]"
 
-/obj/structure/flora/grass/wasteland/attackby(obj/item/weapon/W, mob/user, params)
+/obj/structure/flora/grass/wasteland/attackby(obj/item/W, mob/user, params) //we dont use /weapon any more
 	if(W.sharpness && W.force > 0 && !(NODECONSTRUCT_1 in flags_1))
 		to_chat(user, "You begin to harvest [src]...")
 		if(do_after(user, 100/W.force, target = user))

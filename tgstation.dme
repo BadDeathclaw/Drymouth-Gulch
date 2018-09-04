@@ -2656,8 +2656,8 @@
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
 #include "lewd\_lewd.dm"
-#include "lewd\lewd_code.dm"
-#include "lewd\lewd_definitions.dm"
-#include "lewd\lewd_mob.dm"
+#include "lewd\lewd_datums.dm"
+#include "lewd\lewd_interactions.dm"
 #include "lewd\lewd_species.dm"
+#include "lewd\objects.dm"
 // END_INCLUDE
