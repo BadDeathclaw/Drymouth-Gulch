@@ -15,7 +15,31 @@
 	lootcount = 1
 	loot = list(
 				/obj/structure/piano,
-				/obj/machinery/jukebox)
+				/obj/machinery/jukebox
+				)
+
+/obj/effect/spawner/lootdrop/f13/discomeme/Initialize(mapload) //dont want it to init same time as piano
+	return
+
+/obj/effect/spawner/lootdrop/f13/discomeme/New()
+	..()
+	if(loot && loot.len)
+		var/turf/T = get_turf(src)
+		var/loot_spawned = 0
+		while((lootcount-loot_spawned) && loot.len)
+			var/lootspawn = pickweight(loot)
+			if(!lootdoubles)
+				loot.Remove(lootspawn)
+
+			if(lootspawn)
+				var/atom/movable/spawned_loot = new lootspawn(T)
+				if(pixel_x != 0)
+					spawned_loot.pixel_x = pixel_x
+				if(pixel_y != 0)
+					spawned_loot.pixel_y = pixel_y
+			loot_spawned++
+	return INITIALIZE_HINT_QDEL
+
 /* ------------------------------------------------
    ----------------ARMOR SPAWNERS------------------
    ------------------------------------------------ */
