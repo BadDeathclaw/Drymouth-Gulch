@@ -41,11 +41,3 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 
 /obj/item/stack/sheet/hay/five
 	amount = 5
-
-
-/obj/item/stack/sheet/update_icon()
-	var/amount = get_amount()
-	if((amount <= 4) && (amount > 0))
-		icon_state = "hay[amount]"
-	else
-		icon_state = "hay"
