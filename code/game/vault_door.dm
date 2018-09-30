@@ -4,13 +4,15 @@
 	icon_state = "closed"
 	density = TRUE
 	opacity = 1
-	layer = 4.2
+	layer = WALL_OBJ_LAYER
 	anchored = TRUE
 	var/is_busy = FALSE
 	var/destroyed = FALSE
-	var/isworn = 0
-	max_integrity = 1200 
-	resistance_flags = FIRE_PROOF //it's a fucking steel door
+	var/isworn = FALSE
+	var/is_open = FALSE
+	max_integrity = 450
+	resistance_flags = FIRE_PROOF | ACID_PROOF   //it's a fucking steel door
+	armor = list("melee" = 75, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 45, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100)
 
 /obj/structure/vaultdoor/blob_act()
 	if(prob(1))
@@ -40,6 +42,7 @@
 	set_opacity(0)
 	src.density = FALSE
 	is_busy = FALSE
+	is_open = TRUE
 
 /obj/structure/vaultdoor/proc/close()
 	is_busy = TRUE
@@ -50,6 +53,7 @@
 	set_opacity(1)
 	src.density = TRUE
 	is_busy = FALSE
+	is_open = FALSE
 
 /obj/structure/vaultdoor/proc/vaultactivate()
 	if(destroyed)
@@ -63,7 +67,27 @@
 		return
 	close()
 
+/obj/structure/vaultdoor/attackby(obj/item/I, mob/living/user, params)
+	add_fingerprint(user)
+	if(istype(I, /obj/item/weldingtool) && user.a_intent == INTENT_HELP)
+		if(obj_integrity < max_integrity)
+			if(!I.tool_start_check(user, amount=0))
+				return
+
+			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			if(I.use_tool(src, user, 40, volume=50))
+				obj_integrity = max_integrity
+				to_chat(user, "<span class='notice'>You repair [src].</span>")
+		else
+			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+		return
+
 //ß íå õî÷ó ïåðåäåëûâàòü ýòî äåðüìî  - Google translate tells me that from Russian to english this is "Do not move your arms around this way." so dont.
+
+
+
+
+
 /obj/machinery/doorButtons/vaultButton
 	name = "vault access"
 	icon = 'icons/obj/lever.dmi'
@@ -90,7 +114,7 @@
 
 /obj/machinery/doorButtons/wornvaultButton/proc/activate()
 	for(var/obj/structure/vaultdoor/vdoor in world)
-		if(vdoor.isworn==1)
+		if(vdoor.isworn == TRUE)
 			vdoor.vaultactivate()
 
 /obj/machinery/doorButtons/wornvaultButton/attackby(obj/item/weapon/W, mob/user, params)

@@ -17,8 +17,8 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	area_type = /area/lavaland/surface/outdoors
-	target_trait = ZTRAIT_MINING
+	area_type = /area/f13/desert
+	target_trait = ZTRAIT_STATION
 
 	immunity_type = "acid" // temp
 
@@ -26,6 +26,20 @@
 
 
 /datum/weather/acid_rain/weather_act(mob/living/L)
+	if(is_acidrain_immune(L))
+		return
 	var/resist = L.getarmor(null, "acid")
 	if(prob(max(0,100-resist)))
 		L.acid_act(20,20)
+
+/datum/weather/acid_rain/proc/is_acidrain_immune(atom/L)
+	while (L && !isturf(L))
+		if(ismecha(L)) //Mechs are immune
+			return TRUE
+		if(ishuman(L)) //Are you immune?
+			var/mob/living/carbon/human/H = L
+			var/thermal_protection = H.get_thermal_protection()
+			if(thermal_protection >= FIRE_IMMUNITY_SUIT_MAX_TEMP_PROTECT)
+				return TRUE
+		L = L.loc //Matryoshka check
+	return FALSE //RIP you
