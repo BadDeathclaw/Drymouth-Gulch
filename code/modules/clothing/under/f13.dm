@@ -3,6 +3,7 @@
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = FALSE
 	resistance_flags = NONE
+	has_sensor = NO_SENSORS //kek
 
 
 //Vault
@@ -14,6 +15,9 @@
 	item_state = "vault"
 	item_color = "vault"
 	can_adjust = TRUE
+	has_sensor = LOCKED_SENSORS
+	sensor_mode = SENSOR_COORDS
+	random_sensor = FALSE
 
 /obj/item/clothing/under/f13/vault13
 	name = "vault 13 jumpsuit"
@@ -22,6 +26,9 @@
 	item_state = "vault13"
 	item_color = "vault13"
 	can_adjust = TRUE
+	has_sensor = LOCKED_SENSORS
+	sensor_mode = SENSOR_COORDS
+	random_sensor = FALSE
 
 
 //NCR
@@ -188,7 +195,7 @@
 
 /obj/item/clothing/under/f13/cowboyg
 	name = "Cowboy outfit"
-	desc = "A dirt Grey cowboy outfit. Specially usefull for herding brahmins."
+	desc = "A dirt grey cowboy outfit. Specially usefull for herding brahmins."
 	icon_state = "cowboyg"
 	item_state = "cowboyg"
 	item_color = "cowboyg"

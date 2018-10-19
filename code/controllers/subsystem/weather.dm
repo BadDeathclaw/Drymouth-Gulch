@@ -6,7 +6,7 @@
 //Used for all kinds of weather, ex. lavaland ash storms.
 SUBSYSTEM_DEF(weather)
 	name = "Weather"
-	flags = SS_BACKGROUND
+	flags = SS_NO_FIRE|SS_NO_INIT //SS_BACKGROUND < disabled it for now
 	wait = 10
 	runlevels = RUNLEVEL_GAME
 	var/list/processing = list()
