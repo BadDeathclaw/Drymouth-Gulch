@@ -276,7 +276,7 @@
 
 /obj/effect/mob_spawn/human/corpse/assistant
 	name = "Assistant"
-	outfit = /datum/outfit/job/assistant
+	outfit = /datum/job/f13wastelander
 
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
@@ -396,7 +396,7 @@
 	name = "lifeguard sleeper"
 	id_job = "Lifeguard"
 	uniform = /obj/item/clothing/under/shorts/red
-	
+
 /datum/outfit/beachbum
 	name = "Beach Bum"
 	glasses = /obj/item/clothing/glasses/sunglasses
