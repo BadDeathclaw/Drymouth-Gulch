@@ -298,8 +298,8 @@
 /turf/open/floor/plating/f13/MakeDry()
 	return
 
-#define GRASS_SPONTANEOUS 		1
-#define GRASS_WEIGHT 			5
+#define GRASS_SPONTANEOUS 		2
+#define GRASS_WEIGHT 			4
 #define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/tree/wasteland = 1)
 #define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
 /* Outside turfs get global lighting */
@@ -331,9 +331,13 @@
 
 /turf/open/floor/plating/f13/outside/desert/Initialize()
 	. = ..()
-	plantGrass()
+	//If no fences, machines (soil patches are machines), etc. try to plant grass
+	if(!(\
+			(locate(/obj/structure) in src) || \
+			(locate(/obj/machinery) in src) ))
+		plantGrass()
 
-
+//Pass PlantForce for admin stuff I guess?
 /turf/open/floor/plating/f13/outside/desert/proc/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
 	var/randPlant = null

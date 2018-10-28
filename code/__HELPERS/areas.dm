@@ -12,6 +12,10 @@
 	var/list/checked_turfs = list()
 	var/list/found_turfs = list(origin)
 	while(found_turfs.len)
+
+		/*To prevent the loop from running  too long, kill if we are twice the limit*/
+		if(length(.) > (2 * BP_MAX_ROOM_SIZE))
+			break
 		var/turf/sourceT = found_turfs[1]
 		if(break_if_found[sourceT.type])
 			return FALSE

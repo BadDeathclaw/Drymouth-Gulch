@@ -576,7 +576,6 @@
 	desc = "A puddle used for washing one's hands and face."
 	icon_state = "puddle"
 	resistance_flags = UNACIDABLE
-
 /obj/structure/sink/well
 	name = "well"
 	desc = "A well used for washing one's hands and face."
