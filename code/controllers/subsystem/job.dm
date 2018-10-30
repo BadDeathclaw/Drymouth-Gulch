@@ -13,7 +13,7 @@ SUBSYSTEM_DEF(job)
 	var/list/prioritized_jobs = list()
 	var/list/latejoin_trackers = list()	//Don't read this list, use GetLateJoinTurfs() instead
 
-	var/overflow_role = "Assistant"
+	var/overflow_role = "Wastelander" //CHANGE
 
 /datum/controller/subsystem/job/Initialize(timeofday)
 	if(!occupations.len)
