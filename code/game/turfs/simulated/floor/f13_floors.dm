@@ -396,6 +396,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/plaque
 	icon_state = "plaque"
 
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust
+	icon_state = "vaultrust"
+
+/turf/open/floor/plasteel/f13/vault_floor/misc/vault1
+	icon_state = "vault1"
+
+
 /turf/open/floor/circuit/f13_blue
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "bcircuit2"
