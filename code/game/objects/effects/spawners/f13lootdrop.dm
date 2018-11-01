@@ -14,8 +14,8 @@
 	name = "dancemachine or piano"
 	lootcount = 1
 	loot = list(
-				/obj/structure/piano,
-				/obj/machinery/jukebox
+				/obj/structure/piano = 3,
+				/obj/machinery/jukebox = 1
 				)
 
 /obj/effect/spawner/lootdrop/f13/discomeme/Initialize(mapload) //dont want it to init same time as piano

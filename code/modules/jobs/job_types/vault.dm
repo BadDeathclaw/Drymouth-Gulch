@@ -5,6 +5,7 @@ Security: 1 ACCESS_SECURITY
 General access: 31 ACCESS_CARGO
 Engineering: 10, 11 ACCESS_ENGINE_EQUIP, ACCESS_ENGINE
 Science: 47 ACCESS_RESEARCH
+here's a tip, go search DEFINES/access.dm
 */
 
 /*
@@ -25,8 +26,11 @@ Overseer
 
 	outfit = /datum/outfit/job/f13overseer
 
-	access = list(ACCESS_HEADS, ACCESS_CARGO, ACCESS_SECURITY,ACCESS_RESEARCH, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_CHANGE_IDS)
-	minimal_access = list(ACCESS_HEADS, ACCESS_CARGO, ACCESS_SECURITY,ACCESS_RESEARCH, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_CHANGE_IDS)
+	access = list()			//See get_access()
+	minimal_access = list()	//See get_access()
+
+/datum/job/f13overseer/get_access()
+	return get_all_accesses()
 
 /datum/outfit/job/f13overseer
 	name = "Overseer"
@@ -42,9 +46,7 @@ Overseer
 	ears = 			/obj/item/radio/headset/headset_overseer
 	shoes = 		/obj/item/clothing/shoes/sneakers/brown
 	backpack = /obj/item/storage/backpack/satchel/leather
-	backpack_contents = list(
-		/obj/item/storage/box/ids=1,\
-		/obj/item/melee/oldstyle=1)
+	backpack_contents = list(/obj/item/storage/box/ids = 1, /obj/item/melee/oldstyle = 1)
 
 ///datum/outfit/f13overseer/post_equip(mob/living/carbon/human/H)
 	//..()
@@ -74,8 +76,12 @@ Head of Security
 
 	outfit = /datum/outfit/job/f13hos
 
-	access = list(ACCESS_HEADS, ACCESS_SECURITY, ACCESS_CARGO)
-	minimal_access = list(ACCESS_HEADS, ACCESS_SECURITY, ACCESS_CARGO)
+	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_WEAPONS,ACCESS_FORENSICS_LOCKERS,
+						ACCESS_MORGUE, ACCESS_MAINT_TUNNELS, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_MINING, ACCESS_MEDICAL,
+						ACCESS_CARGO, ACCESS_HEADS, ACCESS_HOS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_MINERAL_STOREROOM)
+	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS,
+						ACCESS_MORGUE, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_MINING, ACCESS_MEDICAL, ACCESS_CARGO, ACCESS_HEADS,
+						ACCESS_HOS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_MINERAL_STOREROOM)
 
 /datum/outfit/job/f13hos
 	name = "Chief of Security"
@@ -96,9 +102,7 @@ Head of Security
 	satchel = 		/obj/item/storage/backpack/satchel/sec
 	duffelbag = 	/obj/item/storage/backpack/duffelbag/sec
 	box = 			/obj/item/storage/box/security
-	backpack_contents = list(
-		/obj/item/melee/oldstyle=1,\
-		/obj/item/restraints/handcuffs=2)
+	backpack_contents = list(/obj/item/melee/oldstyle = 1, /obj/item/restraints/handcuffs = 2)
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -119,8 +123,8 @@ Medical Doctor
 
 	outfit = /datum/outfit/job/f13doctor
 
-	access = list(ACCESS_CARGO)
-	minimal_access = list(ACCESS_CARGO)
+	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO)
+	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO)
 
 /datum/outfit/job/f13doctor
 	name = "Medical Doctor"
@@ -154,8 +158,8 @@ Scientist
 
 	outfit = /datum/outfit/job/f13vaultscientist
 
-	access = list(ACCESS_CARGO, ACCESS_RESEARCH)
-	minimal_access = list(ACCESS_CARGO, ACCESS_RESEARCH)
+	access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_CARGO)
+	minimal_access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO)
 
 /datum/outfit/job/f13vaultscientist
 	name = "Scientist"
@@ -186,8 +190,8 @@ Security Officer
 
 	outfit = /datum/outfit/job/f13security
 
-	access = list(ACCESS_SECURITY, ACCESS_CARGO)
-	minimal_access = list(ACCESS_SECURITY, ACCESS_CARGO)
+	access = list(ACCESS_CARGO, ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM)
+	minimal_access = list(ACCESS_CARGO, ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //BUT SEE /DATUM/JOB/WARDEN/GET_ACCESS()
 
 
 /datum/job/f13officer/get_access()
@@ -290,9 +294,7 @@ Security Officer
 	satchel = 		/obj/item/storage/backpack/satchel/sec
 	duffelbag = 	/obj/item/storage/backpack/duffelbag/sec
 	box = 			/obj/item/storage/box/security
-	backpack_contents = list(
-		/obj/item/melee/oldstyle=1, \
-		/obj/item/restraints/handcuffs=1)
+	backpack_contents = list(/obj/item/melee/oldstyle = 1, /obj/item/restraints/handcuffs = 1)
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -335,8 +337,8 @@ Station Engineer
 
 	outfit = /datum/outfit/job/f13vaultengineer
 
-	access = list(ACCESS_CARGO, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE)
-	minimal_access = list(ACCESS_CARGO, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE)
+	access = list(ACCESS_CARGO, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_ATMOSPHERICS, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM)
+	minimal_access = list(ACCESS_CARGO, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_MINERAL_STOREROOM)
 
 /datum/outfit/job/f13vaultengineer
 	name = "Vault-tec Engineer"
