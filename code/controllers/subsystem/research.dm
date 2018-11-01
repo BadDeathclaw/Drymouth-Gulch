@@ -10,6 +10,8 @@ SUBSYSTEM_DEF(research)
 	var/list/obj/machinery/rnd/server/servers = list()
 	var/datum/techweb/science/science_tech
 	var/datum/techweb/admin/admin_tech
+	var/datum/techweb/bos/bos_tech
+	var/datum/techweb/enclave/enclave_tech
 	var/list/techweb_nodes = list()				//associative id = node datum
 	var/list/techweb_categories = list()		//category name = list(node.id = node)
 	var/list/techweb_designs = list()			//associative id = node datum
@@ -37,6 +39,8 @@ SUBSYSTEM_DEF(research)
 	initialize_all_techweb_nodes()
 	science_tech = new /datum/techweb/science
 	admin_tech = new /datum/techweb/admin
+	bos_tech = new /datum/techweb/bos
+	enclave_tech = new /datum/techweb/enclave
 	autosort_categories()
 	return ..()
 
