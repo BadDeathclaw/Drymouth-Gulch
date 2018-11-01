@@ -19,7 +19,7 @@ Nothing else in the console has ID requirements.
 	desc = "A console used to interface with R&D tools."
 	icon_screen = "rdcomp"
 	icon_keyboard = "rd_key"
-	var/datum/techweb/stored_research					//Reference to global science techweb.
+	var/datum/techweb/stored_research //Reference to global science techweb.
 	var/obj/item/disk/tech_disk/t_disk	//Stores the technology disk.
 	var/obj/item/disk/design_disk/d_disk	//Stores the design disk.
 	circuit = /obj/item/circuitboard/computer/rdconsole
@@ -28,7 +28,7 @@ Nothing else in the console has ID requirements.
 	var/obj/machinery/rnd/production/protolathe/linked_lathe				//Linked Protolathe
 	var/obj/machinery/rnd/production/circuit_imprinter/linked_imprinter	//Linked Circuit Imprinter
 
-	req_access = list(ACCESS_TOX)	//lA AND SETTING MANIPULATION REQUIRES SCIENTIST ACCESS.
+	req_access = list(ACCESS_RESEARCH)	//lA AND SETTING MANIPULATION REQUIRES SCIENTIST ACCESS.
 
 	//UI VARS
 	var/screen = RDSCREEN_MENU
@@ -86,7 +86,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/Initialize()
 	. = ..()
-	stored_research = SSresearch.science_tech
+	stored_research = SSresearch.science_tech //lettern, note about this
 	stored_research.consoles_accessing[src] = TRUE
 	matching_designs = list()
 	SyncRDevices()
@@ -1099,6 +1099,16 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/core
 	name = "Core R&D Console"
+
+/obj/machinery/computer/rdconsole/core/bos
+	name = "Core R&D Console"
+
+/obj/machinery/computer/rdconsole/core/bos/Initialize()
+	. = ..()
+	stored_research = SSresearch.bos_tech //lettern, note about this
+	stored_research.consoles_accessing[src] = TRUE
+	matching_designs = list()
+	SyncRDevices()
 
 /obj/machinery/computer/rdconsole/experiment
 	name = "E.X.P.E.R.I-MENTOR R&D Console"

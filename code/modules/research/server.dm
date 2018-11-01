@@ -20,7 +20,7 @@
 /obj/machinery/rnd/server/Initialize()
 	. = ..()
 	SSresearch.servers |= src
-	stored_research = SSresearch.science_tech
+	stored_research = SSresearch.science_tech //note this lettern
 	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
 	B.apply_default_parts(src)
 
@@ -160,3 +160,12 @@
 	playsound(src, "sparks", 75, 1)
 	obj_flags |= EMAGGED
 	to_chat(user, "<span class='notice'>You disable the security protocols.</span>")
+
+
+/obj/machinery/rnd/server/bos/Initialize()
+	. = ..()
+	SSresearch.servers |= src
+	stored_research = SSresearch.science_tech //note this lettern
+	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
+	B.apply_default_parts(src)
+
