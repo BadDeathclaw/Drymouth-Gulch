@@ -1,4 +1,4 @@
-/obj/item/weapon/circuitboard/virusmaker
+/obj/item/circuitboard/computer/virusmaker
 	name = "Virus Maker (Computer Board)"
 	build_path = /obj/machinery/computer/virusmaker
 
