@@ -1,6 +1,61 @@
 
 //Current rate: 132500 research points in 90 minutes
 
+/datum/techweb_node/base
+	id = "base"
+	starting_node = TRUE
+	display_name = "Basic Research Technology"
+	description = "Default research technologies."
+	design_ids = list("basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani",
+	"destructive_analyzer", "circuit_imprinter", "experimentor", "rdconsole", "design_disk", "tech_disk", "rdserver", "rdservercontrol", "mechfab",
+	"space_heater", "xlarge_beaker", "sec_rshot", "sec_bshot", "sec_slug", "sec_Islug", "sec_dart", "sec_38", "ore_redemption")			//Default research tech, prevents bricking
+	//Also include ore redemption as the only way to currently refine ores is by using a welder which is pretty bad
+	
+/datum/techweb/node/stockparthigh
+	id = "stockparthigh"
+	prereq_id = list("base")
+	display_name = "Second Tier Stock Parts"
+	description = "Unlocks the second tier of stock parts."
+	design_ids = list("adv_capacitor", "adv_scanning", "high_cell", "adv_matter_bin", "high_micro_laser", "nano_mani")
+	
+/datum/techweb/node/stockpartadv
+	id = "stockpartadv"
+	prereq_id = list("stockparthigh")
+	display_name = "Third Tier Stock Parts"
+	description = "Unlocks the third tier of stock parts."
+	design_ids = list("hyper_cell", "super_capacitor", "phasic_scanning", "pico_mani", "ultra_micro_laser", "super_matter_bin")
+	
+/datum/techweb/node/stockpartultra
+	id = "stockpartultra"
+	prereq_id = list("stockpartadv")
+	display_name = "Ultra Tier Stock Parts"
+	description = "Unlocks the final tier of stock parts."
+	design_ids = list("bluespace_cell", "bluespace_matter_bin", "femto_mani", "triphasic_scanning", "quadratic_capacitor", "quadultra_micro_laser")
+
+/datum/techweb/node/engineering
+	id = "basicengie"
+	prereq_id = list("base")
+	display_name = "Basic Engineering"
+	description = "Allows the production of power, basic building tools and the means to make them."
+	design_ids = list("recharger", "powermonitor", "rped", "pacman", "emitter", "recycler", "autolathe", 
+	"apc_control", "cell_charger", "power control", "airlock_board", "firelock_board", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine")
+
+/datum/techweb/node/glasses
+	id = "glasses"
+	prereq_id = list("base")
+	display_name = "Glasses Production"
+	description = "Allows for the production of rudimentary HUD glasses."
+	design_ids = list("mesons", "health_hud", "security_hud", "diagnostic_hud", "scigoggles")
+	
+/datum/techweb/node/nvghud
+	id = "nvghud"
+	prereq_id = list("nvgglass", "glasses")
+	display_name = "Night Vision HUD Glasses"
+	description = "Enables Night Vision HUD Glasses to be made, very high tech."
+	design_ids = list()
+
+/*
+//TG-Claw change; complete revamp fo all the nodes, be sure to remind me when everything breaks because of the changes here -ma44
 //Base Node
 /datum/techweb_node/base
 	id = "base"
@@ -891,6 +946,8 @@
 		if(!UI.item)
 			continue
 		boost_item_paths |= UI.item	//allows deconning to unlock.
+
+*/
 
 //Helpers for debugging/balancing the techweb in its entirety!
 /proc/total_techweb_exports()
