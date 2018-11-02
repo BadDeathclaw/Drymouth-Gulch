@@ -255,7 +255,7 @@
 	anchored = 1
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "mixer0"
-	circuit = /obj/item/circuitboard/virusmaker
+	circuit = /obj/item/circuitboard/computer/virusmaker
 	use_power = 1
 	idle_power_usage = 20
 
