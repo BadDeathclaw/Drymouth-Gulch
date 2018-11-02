@@ -2,6 +2,28 @@
 ////////////Medical Tools////////////////
 /////////////////////////////////////////
 
+/datum/design/medbeam
+	name = "Medbeam Gun"
+	desc = "DONT CROSS THE DAMM BEAMS!"
+	id = "medbeam"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
+	construction_time = 50
+	build_path = /obj/item/gun/medbeam
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	
+/datum/design/autosurgeon
+	name = "Autosurgeon
+	desc = "Automatically implants things inside of it."
+	id = "autosurgeon"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
+	construction_time = 50
+	build_path = / 
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
 /datum/design/mmi
 	name = "Man-Machine Interface"
 	desc = "The Warrior's bland acronym, MMI, obscures the true horror of this monstrosity."
