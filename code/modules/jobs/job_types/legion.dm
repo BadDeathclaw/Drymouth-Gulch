@@ -54,7 +54,7 @@ Centurion
 	flag = F13CENTURION
 	department_flag = LEGION
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "Legion"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Legate"
@@ -97,7 +97,7 @@ Vexillarius
 	title = "Vexillarius"
 	flag = F13VEXILLARIUS
 	department_flag = LEGION
-	faction = "Station"
+	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the centurion"
@@ -137,7 +137,7 @@ Decan
 	title = "Decanus"
 	flag = F13DECAN
 	department_flag = LEGION
-	faction = "Station"
+	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "vexillarius troops"
@@ -177,7 +177,7 @@ Veteran
 	title = "Veteran Legionnaire"
 	flag = F13VETLEGION
 	department_flag = LEGION
-	faction = "Station"
+	faction = "Legion"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "decanus troops"
@@ -216,7 +216,7 @@ Legionary
 	title = "Legionary"
 	flag = F13LEGIONARY
 	department_flag = LEGION
-	faction = "Station"
+	faction = "Legion"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "decanus troops"

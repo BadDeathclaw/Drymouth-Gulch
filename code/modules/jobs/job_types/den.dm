@@ -6,7 +6,7 @@ Sheriff
 	flag = F13SHERIFF
 	department_flag = DEN
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "Den"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "no one"
@@ -48,7 +48,7 @@ Settler
 	title = "Settler"
 	flag = F13SETTLER
 	department_flag = DEN
-	faction = "Station"
+	faction = "Den"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "the sheriff"

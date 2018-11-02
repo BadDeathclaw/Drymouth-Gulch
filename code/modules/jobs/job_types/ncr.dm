@@ -29,7 +29,7 @@ Captain
 	flag = F13CAPTAIN
 	department_flag = NCR
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the colonel"
@@ -68,7 +68,7 @@ Lieutenant
 	title = "NCR Lieutenant"
 	flag = F13LIEUTENANT
 	department_flag = NCR
-	faction = "Station"
+	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the captain"
@@ -106,7 +106,7 @@ Sergeant
 	title = "NCR Sergeant"
 	flag = F13SERGEANT
 	department_flag = NCR
-	faction = "Station"
+	faction = "NCR"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the lieutenant"
@@ -144,7 +144,7 @@ Trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
 	department_flag = NCR
-	faction = "Station"
+	faction = "NCR"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "sergeants"
@@ -182,7 +182,7 @@ Recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
 	department_flag = NCR
-	faction = "Station"
+	faction = "NCR"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "sergeants"
@@ -220,7 +220,7 @@ Veteran Ranger
 	title = "NCR Veteran Ranger"
 	flag = F13VETRANGER
 	department_flag = NCR
-	faction = "Station"
+	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the lieutenant"
@@ -260,7 +260,7 @@ Ranger
 	title = "NCR Patrol Ranger"
 	flag = F13RANGER
 	department_flag = NCR
-	faction = "Station"
+	faction = "NCR"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the veteran ranger"
@@ -300,7 +300,7 @@ Recon Ranger
 	title = "NCR Recon Ranger"
 	flag = F13RECRANGER
 	department_flag = NCR
-	faction = "Station"
+	faction = "NCR"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the veteran ranger"

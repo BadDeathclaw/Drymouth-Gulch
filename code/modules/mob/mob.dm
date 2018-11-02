@@ -399,28 +399,80 @@
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
 
-	log_game("[key_name(usr)] used abandon mob.")
+	var/is_admin = check_rights_for(src.client, R_ADMIN)
+	if(!src.mind.current) //No body sanity check; instantly respawn
+		if ((stat != DEAD || !( SSticker )))
+			to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
+			return
+		log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+		to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
 
-	if(!client)
-		log_game("[key_name(usr)] AM failed due to disconnect.")
+		if(!client)
+			log_game("[key_name(usr)] AM failed due to disconnect.")
+			return
+		client.screen.Cut()
+		client.screen += client.void
+		if(!client)
+			log_game("[key_name(usr)] AM failed due to disconnect.")
+			return
+
+		var/mob/dead/new_player/M = new /mob/dead/new_player()
+		if(!client)
+			log_game("[key_name(usr)] AM failed due to disconnect.")
+			qdel(M)
+			return
+
+	var/deathtime = world.time - mind.current.timeofdeath //How long dead for in deciseconds
+	if(deathtime < 1800)
+		to_chat(src, "You've been dead for [deathtime / 10] seconds. You must be dead for at least three minutes to respawn.")
+		if(is_admin)
+			if(alert("Normal players must wait at least 3 minutes to respawn! Continue?","Warning", "Respawn", "Cancel") == "Cancel")
+				return
+			else
+				if ((stat != DEAD || !( SSticker )))
+					to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
+					return
+
+				log_game("[key_name(usr)] used abandon mob while bypassing the regular death cooldown VIA admin prompt.")
+
+				to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+
+				if(!client)
+					log_game("[key_name(usr)] AM failed due to disconnect.")
+					return
+				client.screen.Cut()
+				client.screen += client.void
+				if(!client)
+					log_game("[key_name(usr)] AM failed due to disconnect.")
+					return
+	else
+
+		if ((stat != DEAD || !( SSticker )))
+			to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
+			return
+		log_game("[key_name(usr)] used abandon mob.")
+
+		to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+
+		if(!client)
+			log_game("[key_name(usr)] AM failed due to disconnect.")
+			return
+		client.screen.Cut()
+		client.screen += client.void
+		if(!client)
+			log_game("[key_name(usr)] AM failed due to disconnect.")
+			return
+
+		var/mob/dead/new_player/M = new /mob/dead/new_player()
+		if(!client)
+			log_game("[key_name(usr)] AM failed due to disconnect.")
+			qdel(M)
+			return
+
+		M.key = key
+		//	M.Login()	//wat
 		return
-	client.screen.Cut()
-	client.screen += client.void
-	if(!client)
-		log_game("[key_name(usr)] AM failed due to disconnect.")
-		return
-
-	var/mob/dead/new_player/M = new /mob/dead/new_player()
-	if(!client)
-		log_game("[key_name(usr)] AM failed due to disconnect.")
-		qdel(M)
-		return
-
-	M.key = key
-//	M.Login()	//wat
-	return
 
 
 
