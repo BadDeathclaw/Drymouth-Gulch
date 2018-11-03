@@ -63,9 +63,11 @@ SUBSYSTEM_DEF(research)
 				break			//Just need one to work.
 	var/income_time_difference = world.time - last_income
 	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
+	bos_tech.last_bitcoins = bitcoins
 	for(var/i in bitcoins)
 		bitcoins[i] *= income_time_difference / 10
 	science_tech.add_point_list(bitcoins)
+	bos_tech.add_point_list(bitcoins)
 	last_income = world.time
 
 /datum/controller/subsystem/research/proc/calculate_server_coefficient()	//Diminishing returns.

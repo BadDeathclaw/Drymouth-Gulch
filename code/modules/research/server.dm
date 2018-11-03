@@ -165,7 +165,7 @@
 /obj/machinery/rnd/server/bos/Initialize()
 	. = ..()
 	SSresearch.servers |= src
-	stored_research = SSresearch.science_tech //note this lettern
+	stored_research = SSresearch.bos_tech //note this lettern
 	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
 	B.apply_default_parts(src)
 
