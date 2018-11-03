@@ -25,9 +25,9 @@
 	var/raised = 0			//if the turret cover is "open" and the turret is raised
 	var/raising= 0			//if the turret is currently opening or closing its cover
 
-	max_integrity = 160		//the turret's health
-	integrity_failure = 80
-	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+	max_integrity = 200		//the turret's health
+	integrity_failure = 25
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
 
 	var/locked = TRUE			//if the turret's behaviour control access is locked
 	var/controllock = FALSE		//if the turret responds to control panels
@@ -45,7 +45,7 @@
 
 	var/reqpower = 500		//power needed per shot
 	var/always_up = 0		//Will stay active
-	var/has_cover = 1		//Hides the cover
+	var/has_cover = 0		//Hides the cover
 
 	var/obj/machinery/porta_turret_cover/cover = null	//the cover that is covering this turret
 
@@ -460,6 +460,20 @@
 
 	if(obj_flags & EMAGGED)
 		return 10	//if emagged, always return 10.
+
+	if(shootnonfaction) //Shoot all people not in the faction if setting is enabled
+		var/passcheck = 0
+		if(islist(perp.faction))
+			for(var/factions in perp.faction)
+				if (factions in factiontarget)
+					passcheck = 1
+				else
+					continue
+		else
+			if(perp.faction in factiontarget)
+				passcheck = 1
+		if (passcheck == 0)
+			return 10 //Not a member of the faction; is a valid target
 
 	if((stun_all || attacked) && !allowed(perp))
 		//if the turret has been attacked or is angry, target all non-sec people
@@ -1039,3 +1053,32 @@
 				on = FALSE
 				spawn(100)
 					on = TRUE
+
+	var/factiontarget = list()
+	var/shootnonfaction = 0 //If it shoots at people that don't have the same faction
+
+/obj/machinery/porta_turret/AltClick(mob/user)
+	if(!in_range(src, user) || user.incapacitated() || locked)
+		return
+	if(!shootnonfaction)
+		var/safety1 = alert(user, "Enable shooting people not in the same faction as you?", "Turret Faction Control", "Proceed", "Abort")
+		if(safety1 == "Abort")
+			return
+		if(safety1 == "Proceed")
+			shootnonfaction = 1
+			if(islist(user.faction))
+				for(var/factionss in user.faction)
+					factiontarget += factionss
+			else
+				factiontarget += user.faction
+			user << "Targeting by non members of the faction set, members of the faction can still be shot by other settings."
+	else
+		var/safety2 = alert(user, "Do you want to disable faction control or add another faction?", "Turret Faction Control", "Disable Control", "Add A Faction")
+		if(safety2 == "Disable Control")
+			shootnonfaction = 0
+			factiontarget = list()
+			user << "You disable the shooting of non faction members. Now only normal settings may apply."
+		if(safety2 == "Add A Faction")
+			var/factiontoadd = stripped_input(user, "What faction would you like to add? Valid faction tags are: Vault, BOS, Den, NCR, Legion, wasteland and Wasteland for raiders.", "Turret Faction Control" , null , 10)
+			factiontarget += factiontoadd
+			user << "You add the [factiontoadd] to the list of factions."
