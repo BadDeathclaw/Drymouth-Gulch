@@ -44,7 +44,7 @@
 	var/lethal_projectile_sound
 
 	var/reqpower = 500		//power needed per shot
-	var/always_up = 0		//Will stay active
+	var/always_up = 1		//Will stay active
 	var/has_cover = 0		//Hides the cover
 
 	var/obj/machinery/porta_turret_cover/cover = null	//the cover that is covering this turret
@@ -286,6 +286,10 @@
 		var/obj/item/multitool/M = I
 		M.buffer = src
 		to_chat(user, "<span class='notice'>You add [src] to multitool buffer.</span>")
+	else if(istype(I, /obj/item/welding_tool)
+		to_chat(user, "<span class='notice'>You repair the turret.</span>")
+		obj_integrity = min(max_integrity, obj_integrity += 50)
+		return
 	else
 		return ..()
 
