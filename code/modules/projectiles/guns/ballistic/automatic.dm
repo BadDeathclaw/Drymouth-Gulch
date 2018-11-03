@@ -84,8 +84,8 @@
 	return
 
 /obj/item/gun/ballistic/automatic/c20r
-	name = "\improper C-20r SMG"
-	desc = "A bullpup two-round burst .45 SMG, designated 'C-20r'. Has a 'Scarborough Arms - Per falcis, per pravitas' buttstamp."
+	name = "\improper Advanced SMG"
+	desc = "A bullpup two-round burst .45 SMG, can be suppressed."
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
@@ -114,8 +114,8 @@
 	icon_state = "c20r[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
 
 /obj/item/gun/ballistic/automatic/wt550
-	name = "security auto rifle"
-	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 Automatic Rifle."
+	name = "Advanced SMG"
+	desc = "A very advanced SMG that can be suppressed, takes unique ammo and starts off with a advanced firing pin."
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
@@ -126,6 +126,7 @@
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
+	pin = /obj/item/firing_pin/implant/pindicate
 
 /obj/item/gun/ballistic/automatic/wt550/update_icon()
 	..()
@@ -203,8 +204,8 @@
 	return
 
 /obj/item/gun/ballistic/automatic/ar
-	name = "\improper NT-ARG 'Boarder'"
-	desc = "A robust assault rifle used by Nanotrasen fighting forces."
+	name = "\improper Advanced Assault Rifle"
+	desc = "A robust assault rifle used by most likely advanced fighting forces."
 	icon_state = "arg"
 	item_state = "arg"
 	slot_flags = 0

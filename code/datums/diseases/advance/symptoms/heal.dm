@@ -1,14 +1,14 @@
 /datum/symptom/heal
-	name = "Basic Healing (does nothing)" //warning for adminspawn viruses
-	desc = "You should not be seeing this."
-	stealth = 0
-	resistance = 0
-	stage_speed = 0
-	transmittable = 0
-	level = 0 //not obtainable
+	name = "Basic Healing"
+	desc = "Gives the host some useful reagents."
+	stealth = 8
+	resistance = 15
+	stage_speed = 15
+	transmittable = -10
+	level = 8
 	base_message_chance = 20 //here used for the overlays
-	symptom_delay_min = 1
-	symptom_delay_max = 1
+	symptom_delay_min = 2
+	symptom_delay_max = 2
 	var/passive_message = "" //random message to infected but not actively healing people
 	threshold_desc = "<b>Stage Speed 6:</b> Doubles healing speed.<br>\
 					  <b>Stealth 4:</b> Healing will no longer be visible to onlookers."
@@ -37,7 +37,21 @@
 /datum/symptom/heal/proc/CanHeal(datum/disease/advance/A)
 	return power
 
-/datum/symptom/heal/proc/Heal(mob/living/M, datum/disease/advance/A, actual_power)
+/datum/symptom/heal/proc/Heal(mob/living/carbon/M, datum/disease/advance/A, actual_power)
+
+	var/heal_amt = 4.5
+
+	var/list/parts = M.get_damaged_bodyparts(1,1)
+
+	if(!parts.len)
+		return
+
+	for(var/obj/item/bodypart/L in parts)
+		if(L.heal_damage(heal_amt/parts.len, heal_amt/parts.len))
+			M.update_damage_overlays()
+
+	if(!(M.reagents.has_reagent("stimulants")))
+		M.reagents.add_reagent("stimulants" = 10)
 	return TRUE
 
 /datum/symptom/heal/proc/passive_message_condition(mob/living/M)
@@ -129,11 +143,11 @@
 
 /datum/symptom/heal/metabolism
 	name = "Metabolic Boost"
-	stealth = -1
-	resistance = -2
-	stage_speed = 2
+	stealth = -5
+	resistance = -5
+	stage_speed = -5
 	transmittable = 1
-	level = 7
+	level = 8
 	var/triple_metabolism = FALSE
 	var/reduced_hunger = FALSE
 	desc = "The virus causes the host's metabolism to accelerate rapidly, making them process chemicals twice as fast,\

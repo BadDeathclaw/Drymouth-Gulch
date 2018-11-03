@@ -270,7 +270,7 @@
 
 	var/list/symptoms = list()
 	symptoms += "Done"
-	symptoms += list_symptoms.Copy()
+	symptoms += SSdisease.list_symptoms.Copy()
 	do
 		if(user)
 			var/symptom = input(user, "Choose a symptom to add ([i] remaining)", "Choose a Symptom") in symptoms
@@ -292,14 +292,14 @@
 			return
 		D.AssignName(new_name)
 		D.Refresh()
-		
+
 		for(var/datum/disease/advance/AD in SSdisease.active_diseases)
 			AD.Refresh()
-			
+
 	//if(D)
 		//if(D.data && D.data["viruses"])
 			//var/list/viruses = D.data["viruses"]
-	var/obj/item/weapon/reagent_containers/glass/bottle/B = new/obj/item/weapon/reagent_containers/glass/bottle(src.loc)
+	var/obj/item/reagent_containers/glass/bottle/B = new/obj/item/reagent_containers/glass/bottle(src.loc)
 	B.icon_state = "bottle3"
 	B.pixel_x = rand(-3, 3)
 	B.pixel_y = rand(-3, 3)

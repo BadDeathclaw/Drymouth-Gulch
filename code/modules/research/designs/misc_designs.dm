@@ -13,6 +13,26 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
+/datum/design/mindshield
+	name = "Mindshield Implant"
+	desc = "A mindshield implant."
+	id = "implant_loyal"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	build_path = /obj/item/implantcase/mindshield
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/weaponauth
+	name = "Weapon Authorization Implant"
+	desc = "A weapon authorization implant."
+	id = "implant_auth"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	build_path = /obj/item/implantcase/weapons_auth
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/health_hud_night
 	name = "Night Vision Health Scanner HUD"
 	desc = "An advanced medical head-up display that allows doctors to find patients in complete darkness."
@@ -188,8 +208,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienwrench
-	name = "Alien Wrench"
-	desc = "An advanced wrench obtained through Abductor technology."
+	name = "Advanced Wrench"
+	desc = "An advanced wrench obtained through Advanced technology."
 	id = "alien_wrench"
 	build_path = /obj/item/wrench/abductor
 	build_type = PROTOLATHE
@@ -198,8 +218,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienwirecutters
-	name = "Alien Wirecutters"
-	desc = "Advanced wirecutters obtained through Abductor technology."
+	name = "Advanced Wirecutters"
+	desc = "Advanced wirecutters obtained through Advanced technology."
 	id = "alien_wirecutters"
 	build_path = /obj/item/wirecutters/abductor
 	build_type = PROTOLATHE
@@ -208,8 +228,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienscrewdriver
-	name = "Alien Screwdriver"
-	desc = "An advanced screwdriver obtained through Abductor technology."
+	name = "Advanced Screwdriver"
+	desc = "An advanced screwdriver obtained through Advanced technology."
 	id = "alien_screwdriver"
 	build_path = /obj/item/screwdriver/abductor
 	build_type = PROTOLATHE
@@ -218,8 +238,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/aliencrowbar
-	name = "Alien Crowbar"
-	desc = "An advanced crowbar obtained through Abductor technology."
+	name = "Advanced Crowbar"
+	desc = "An advanced crowbar obtained through Advanced technology."
 	id = "alien_crowbar"
 	build_path = /obj/item/crowbar/abductor
 	build_type = PROTOLATHE
@@ -228,8 +248,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienwelder
-	name = "Alien Welding Tool"
-	desc = "An advanced welding tool obtained through Abductor technology."
+	name = "Advanced Welding Tool"
+	desc = "An advanced welding tool obtained through Advanced technology."
 	id = "alien_welder"
 	build_path = /obj/item/weldingtool/abductor
 	build_type = PROTOLATHE
@@ -238,8 +258,8 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/alienmultitool
-	name = "Alien Multitool"
-	desc = "An advanced multitool obtained through Abductor technology."
+	name = "Advanced Multitool"
+	desc = "An advanced multitool obtained through Advanced technology."
 	id = "alien_multitool"
 	build_path = /obj/item/multitool/abductor
 	build_type = PROTOLATHE
@@ -376,5 +396,25 @@
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 10000, MAT_DIAMOND = 5000, MAT_URANIUM = 8000, MAT_SILVER = 4500, MAT_GOLD = 5000)
 	build_path = /obj/item/reactive_armour_shell
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/circuitboardthing
+	name = "Advanced Machine Builder"
+	id = "circuitboardthing"
+	id = "circuitmaker"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 20000, MAT_GLASS = 1000, MAT_PLASMA = 10000, MAT_URANIUM = 10000)
+	build_path = /obj/item/circuitboardthing
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/portaturretconstruct
+	name = "Portable Turret Constructor"
+	id = "portaturretconstruct"
+	id = "turretmaker"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 20000, MAT_GLASS = 1000, MAT_PLASMA = 10000, MAT_URANIUM = 10000)
+	build_path = /obj/item/portaturretconstruct
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

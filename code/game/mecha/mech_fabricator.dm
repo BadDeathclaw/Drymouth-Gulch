@@ -53,13 +53,15 @@
 	//resources adjustment coefficient (1 -> 0.85 -> 0.7 -> 0.55)
 	T = 1.15
 	for(var/obj/item/stock_parts/micro_laser/Ma in component_parts)
-		T -= Ma.rating*0.15
+		T = max(0.05, T - Ma.rating*0.15)
+		//T -= Ma.rating*0.15
 	component_coeff = T
 
 	//building time adjustment coefficient (1 -> 0.8 -> 0.6)
 	T = -1
 	for(var/obj/item/stock_parts/manipulator/Ml in component_parts)
 		T += Ml.rating
+	time_coeff = max(0.05, 1 - T)
 	time_coeff = round(initial(time_coeff) - (initial(time_coeff)*(T))/5,0.01)
 
 

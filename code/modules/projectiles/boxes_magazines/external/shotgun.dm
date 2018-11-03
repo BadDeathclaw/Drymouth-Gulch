@@ -35,3 +35,12 @@
 	icon_state = "m12gbc"
 	ammo_type = /obj/item/ammo_casing/shotgun/meteorslug
 
+/obj/item/ammo_box/magazine/m12g/rubbershot
+	name = "shotgun magazine (12g rubbershot)"
+	icon_state = "m12gb"
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+
+ /obj/item/ammo_box/magazine/m12g/beanslug
+	name = "shotgun magazine (12g beanbag slug)"
+	icon_state = "m12gb"
+	ammo_type = /obj/item/ammo_casing/shotgun/beanbag

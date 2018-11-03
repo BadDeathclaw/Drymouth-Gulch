@@ -10,7 +10,7 @@
 	name = "Computer Design (Virus Maker)"
 	desc = "Allows for the construction of circuit boards used to build a new virus maker console."
 	id = "virusmaker"
-	build_path = /obj/item/weapon/circuitboard/virusmaker
+	build_path = /obj/item/circuitboard/computer/virusmaker
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
