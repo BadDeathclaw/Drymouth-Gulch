@@ -847,8 +847,6 @@
 	design_ids = list("industrcd", "circuitmaker", "turretmaker", "protolathe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 20000
-	hidden = TRUE
-	design_ids = list("alienalloy")
 
 /datum/techweb_node/alien_bio
 	id = "alien_bio"

@@ -659,7 +659,7 @@ RLD
 /obj/item/circuitboardthing/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/circuitboard))
 		if(!circuit)
-			user << "You insert the [W.name] into the [src]."
+			to_chat(user, "You insert the [W.name] into the [src].")
 			circuit = new W.type(loc)
 			qdel(W)
 
@@ -685,12 +685,12 @@ RLD
 /obj/item/portaturretconstruct/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/gun/energy))
 		if(!gun)
-			user << "You insert the [W.name] into the [src]."
+			to_chat(user, "You insert the [W.name] into the [src].")
 			src.gun = new W.type(src)
 			qdel(W)
 	if(istype(W, /obj/item/screwdriver))
 		if(gun)
-			user << "You remove the [gun.name] from the [src]."
+			to_chat(user, "You remove the [gun.name] from the [src].")
 			var/obj/item/gun/energy/temporgun = new gun.type(src)
 			user.put_in_hands(temporgun)
 			gun = null
