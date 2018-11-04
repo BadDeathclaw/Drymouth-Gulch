@@ -13,7 +13,7 @@ Elder
 	flag = F13ELDER
 	department_flag = BOS
 	head_announce = list("Security")
-	//faction = "Station"
+	faction = "BOS"
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "the high elders"
@@ -30,7 +30,23 @@ Elder
 	jobtype = /datum/job/f13elder
 
 	id = /obj/item/card/id/gold
-	uniform =  /obj/item/clothing/under/rank/captain
+	
+	backpack = /obj/item/storage/backpack/explorer
+	ears = 			/obj/item/radio/headset/headset_bos
+	uniform =		/obj/item/clothing/under/f13/recon
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	gloves = 		/obj/item/clothing/gloves/combat
+	suit = 			/obj/item/clothing/suit/f13/elder
+	suit_store =	/obj/item/gun/energy/laser/plasma
+	belt = 			/obj/item/storage/belt/military
+	glasses =		/obj/item/clothing/glasses/night
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/mfc=2, \
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+
+
+
 
 /*
 Paladin

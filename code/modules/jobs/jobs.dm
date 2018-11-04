@@ -1,12 +1,61 @@
+
 GLOBAL_LIST_INIT(command_positions, list(
-	"Captain",
-	"Head of Personnel",
-	"Head of Security",
-	"Chief Engineer",
-	"Research Director",
-	"Chief Medical Officer"))
+	"Elder",
+	"Centurion",
+	"NCR Captain",
+	"Overseer",
+	"Sheriff",
+))
 
+GLOBAL_LIST_INIT(brotherhood_positions, list(
+	"Elder",
+	"Paladin",
+	"Knight",
+	"Scribe",
+	"Initiate",
+))
 
+GLOBAL_LIST_INIT(den_positions, list(
+	"Sheriff",
+	"Settler",
+))
+
+GLOBAL_LIST_INIT(legion_positions, list(
+	"Centurion",
+	"Vexillarius",
+	"Decanus",
+	"Veteran Legionnaire",
+	"Legionary",
+))
+
+GLOBAL_LIST_INIT(ncr_positions, list(
+	"NCR Captain",
+	"NCR Lieutenant",
+	"NCR Sergeant",
+	"NCR Trooper",
+	"NCR Recruit",
+	"NCR Veteran Ranger",
+	"NCR Patrol Ranger",
+	"NCR Recon Ranger",
+))
+
+GLOBAL_LIST_INIT(vault_positions, list(
+	"Overseer",
+	"Chief of Security",
+	"Vault-tec Doctor",
+	"Vault-tec Scientist",
+	"Vault-tec Security",
+	"Vault-tec Engineer",
+	"Vault Dweller",
+))
+
+GLOBAL_LIST_INIT(wasteland_positions, list(
+	"Wastelander",
+	"Raider",
+	"Pusher",
+	"Preacher",
+))
+/*
 GLOBAL_LIST_INIT(engineering_positions, list(
 	"Chief Engineer",
 	"Station Engineer",
@@ -58,99 +107,39 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 	"AI",
 	"Cyborg",
 	ROLE_PAI))
-
-//f13
-
-/*
-GLOBAL_LIST_INIT(ncr_positions, list(
-	"Colonel",
-	"Captain",
-	"Lieutenant",
-	"Sergeant",
-	"Trooper",
-	"Recruit",
-	"Veteran Ranger",
-	"Ranger",
-	"Recon Ranger"))
-	/*
-GLOBAL_LIST_INIT(legion_positions, list(
-	"Legate",
-	"Centurion",
-	"Vex",
-	"Decan",
-	"Veteran",
-	"Legionary"))
-
-GLOBAL_LIST_INIT(brotherhood_positions, list(
-	"Elder",
-	"Paladin",
-	"Knight",
-	"Scribe",
-	"Initiate"))
-
-GLOBAL_LIST_INIT(den_positions, list(
-	"Sherif",
-	"Settler"))
-	*/
-
-GLOBAL_LIST_INIT(vault_positions, list(
-	"Overseer",
-	"Head of Security",
-	"Doctor",
-	"Scientist",
-	"Officer",
-	"Engineer"))
-	//"Dweller"))
-	//"AI",
-	//"Cyborg"))
-	/*
-GLOBAL_LIST_INIT(wastelander_positions, list(
-	"Cult Leader",
-	"Wastelander",
-	"Raider",
-	"Pusher",
-	"Preacher"))
-
-GLOBAL_LIST_INIT(enclave_positions, list(
-	"Commander",
-	"Medic",
-	"Private",
-	"Scientist",
-	"Engineer",
-	"Colonist"))
 */
-*/
-
 GLOBAL_LIST_INIT(exp_jobsmap, list(
-	EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
-	EXP_TYPE_COMMAND = list("titles" = command_positions),
-	EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
-	EXP_TYPE_MEDICAL = list("titles" = medical_positions),
-	EXP_TYPE_SCIENCE = list("titles" = science_positions),
-	EXP_TYPE_SUPPLY = list("titles" = supply_positions),
-	EXP_TYPE_SECURITY = list("titles" = security_positions),
-	EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
-	EXP_TYPE_SERVICE = list("titles" = civilian_positions),
-	//EXP_TYPE_NCR = list("titles" = ncr_positions),
-	//EXP_TYPE_LEGION = list("titles" = legion_positions),
-	//EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
-	//EXP_TYPE_DEN = list("titles" = den_positions),
-	//EXP_TYPE_VAULT = list("titles" = vault_positions),
-	//EXP_TYPE_WASTELANDER = list("titles" = wastelander_positions),
+	EXP_TYPE_CREW		 = list("titles" = command_positions | brotherhood_positions | den_positions | legion_positions | ncr_positions | vault_positions),
+	EXP_TYPE_COMMAND     = list("titles" = command_positions	),
+	EXP_TYPE_BROTHERHOOD = list("titles" = brotherhood_positions),
+	EXP_TYPE_DEN         = list("titles" = den_positions		),
+	EXP_TYPE_LEGION      = list("titles" = legion_positions		),
+	EXP_TYPE_NCR         = list("titles" = ncr_positions		),
+	EXP_TYPE_VAULT       = list("titles" = vault_positions		),
+	EXP_TYPE_WASTELAND	 = list("titles" = wasteland_positions	),
 	//EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
+	// EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
+	// EXP_TYPE_COMMAND = list("titles" = command_positions),
+	// EXP_TYPE_ENGINEERING = list("titles" = engineering_positions),
+	// EXP_TYPE_MEDICAL = list("titles" = medical_positions),
+	// EXP_TYPE_SCIENCE = list("titles" = science_positions),
+	// EXP_TYPE_SUPPLY = list("titles" = supply_positions),
+	// EXP_TYPE_SECURITY = list("titles" = security_positions),
+	// EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
+	// EXP_TYPE_SERVICE = list("titles" = civilian_positions),
 ))
-
+/*
 GLOBAL_LIST_INIT(exp_specialmap, list(
 	EXP_TYPE_LIVING = list(), // all living mobs
 	EXP_TYPE_ANTAG = list(),
 	EXP_TYPE_SPECIAL = list("Lifebringer","Ash Walker","Exile","Servant Golem","Free Golem","Hermit","Translocated Vet","Escaped Prisoner","Hotel Staff","SuperFriend","Space Syndicate","Ancient Crew","Space Doctor","Space Bartender","Beach Bum","Skeleton","Zombie","Space Bar Patron","Lavaland Syndicate","Ghost Role"), // Ghost roles
 	EXP_TYPE_GHOST = list() // dead people, observers
-))
+))*/
 GLOBAL_PROTECT(exp_jobsmap)
-GLOBAL_PROTECT(exp_specialmap)
+//GLOBAL_PROTECT(exp_specialmap)
 
 /proc/guest_jobbans(job)
-	return ((job in GLOB.command_positions) || (job in GLOB.nonhuman_positions) || (job in GLOB.security_positions))
+	return ((job in GLOB.command_positions)) // || (job in GLOB.nonhuman_positions) || (job in GLOB.security_positions))
 
 
 
