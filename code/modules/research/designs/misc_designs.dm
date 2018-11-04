@@ -401,7 +401,6 @@
 
 /datum/design/circuitboardthing
 	name = "Advanced Machine Builder"
-	id = "circuitboardthing"
 	id = "circuitmaker"
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 20000, MAT_GLASS = 1000, MAT_PLASMA = 10000, MAT_URANIUM = 10000)
@@ -411,7 +410,6 @@
 
 /datum/design/portaturretconstruct
 	name = "Portable Turret Constructor"
-	id = "portaturretconstruct"
 	id = "turretmaker"
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 20000, MAT_GLASS = 1000, MAT_PLASMA = 10000, MAT_URANIUM = 10000)
