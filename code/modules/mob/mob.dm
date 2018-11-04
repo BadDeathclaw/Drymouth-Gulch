@@ -393,12 +393,29 @@
 	set name = "Respawn"
 	set category = "OOC"
 
+	/* check respawn is on */
 	if (CONFIG_GET(flag/norespawn))
 		return
+	/* check player is actually dead */
 	if ((stat != DEAD || !( SSticker )))
 		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
 		return
 
+	/* if player has no body, allow instant respawn, otherwise do standard checks */
+	if(src.mind.current)
+		var/is_admin = check_rights_for(src.client, R_ADMIN)
+		var/deathtime = world.time - src.timeofdeath //How long dead for in deciseconds -- src can either be the corpse or ghost
+		/* check if the respawn cooldown has expired, and check for admin override if not */
+		if(deathtime < RESPAWN_TIMER)
+			to_chat(src, "You've been dead for [deathtime / 10] seconds. You must be dead for at least three minutes to respawn.")
+			if(is_admin) /* if player is an admin, and cancels the override, return */
+				if(alert("Normal players must wait at least 3 minutes to respawn! Continue?","Warning", "Respawn", "Cancel") == "Cancel")
+					return
+				else /* admin chose to override, so log it rather than returning */
+					log_game("[key_name(usr)] used abandon mob while bypassing the regular death cooldown VIA admin prompt.")
+			else /* if player is not an admin, they can't override, so return */
+				return
+	/*end src.mind.current - we survived the various checks, so perform the actual respawn */
 	log_game("[key_name(usr)] used abandon mob.")
 
 	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
@@ -419,7 +436,6 @@
 		return
 
 	M.key = key
-//	M.Login()	//wat
 	return
 
 

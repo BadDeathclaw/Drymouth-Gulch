@@ -95,6 +95,13 @@
 	if(!visualsOnly && announce)
 		announce(H)
 
+	//TGCLAW Change: Adds faction according to the job datum and is sanity checked because of nightmares from before -ma44
+	if(faction)
+		if(islist(faction))
+			H.faction |= faction
+		else
+			H.faction += faction
+
 /datum/job/proc/get_access()
 	if(!config)	//Needed for robots.
 		return src.minimal_access.Copy()

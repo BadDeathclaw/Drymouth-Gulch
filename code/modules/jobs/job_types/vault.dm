@@ -16,7 +16,7 @@ Overseer
 	flag = F13OVERSEER
 	department_flag = VAULT
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "Vault"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Vault-Tec"
@@ -66,7 +66,7 @@ Head of Security
 	department_head = list("Overseer")
 	department_flag = VAULT
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "Vault"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the overseer"
@@ -115,7 +115,7 @@ Medical Doctor
 	flag = F13DOCTOR
 	department_head = list("Overseer")
 	department_flag = VAULT
-	faction = "Station"
+	faction = "Vault"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the overseer"
@@ -150,7 +150,7 @@ Scientist
 	flag = F13VAULTSCIENTIST
 	department_head = list("Overseer")
 	department_flag = VAULT
-	faction = "Station"
+	faction = "Vault"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the overseer"
@@ -181,7 +181,7 @@ Security Officer
 	flag = F13OFFICER
 	department_head = list("Chief of Security")
 	department_flag = VAULT
-	faction = "Station"
+	faction = "Vault"
 	total_positions = 2 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	spawn_positions = 2 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	supervisors = "the head of security"
@@ -329,7 +329,7 @@ Station Engineer
 	flag = F13VAULTENGINEER
 	department_head = list("Overseer")
 	department_flag = VAULT
-	faction = "Station"
+	faction = "Vault"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the overseer"
@@ -362,9 +362,9 @@ Station Engineer
 	title = "Vault Dweller"
 	flag = ASSISTANT
 	department_flag = VAULT
-	faction = "Station"
-	total_positions = -1
-	spawn_positions = -1
+	faction = "Vault"
+	total_positions = 8
+	spawn_positions = 8
 	supervisors = "absolutely everyone"
 	selection_color = "#ddffdd"
 	access = list()			//See /datum/job/assistant/get_access()

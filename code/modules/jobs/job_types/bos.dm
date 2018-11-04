@@ -41,7 +41,7 @@ Paladin
 	flag = F13PALADIN
 	department_flag = BOS
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "BOS"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the elder"
@@ -80,7 +80,7 @@ Knight
 	title = "Knight"
 	flag = F13KNIGHT
 	department_flag = BOS
-	faction = "Station"
+	faction = "BOS"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the elder"
@@ -119,7 +119,7 @@ Scribe
 	title = "Scribe"
 	flag = F13SCRIBE
 	department_flag = BOS
-	faction = "Station"
+	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the elder"
@@ -157,7 +157,7 @@ Initiate
 	title = "Initiate"
 	flag = F13INITIATE
 	department_flag = BOS
-	faction = "Station"
+	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the scribes and knights"
