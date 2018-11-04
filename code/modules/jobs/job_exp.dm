@@ -72,19 +72,6 @@ GLOBAL_PROTECT(exp_to_update)
 			exp_data[category] = text2num(play_records[category])
 		else
 			exp_data[category] = 0
-	for(var/category in GLOB.exp_specialmap)
-		if(category == EXP_TYPE_SPECIAL || category == EXP_TYPE_ANTAG)
-			if(GLOB.exp_specialmap[category])
-				for(var/innercat in GLOB.exp_specialmap[category])
-					if(play_records[innercat])
-						exp_data[innercat] = text2num(play_records[innercat])
-					else
-						exp_data[innercat] = 0
-		else
-			if(play_records[category])
-				exp_data[category] = text2num(play_records[category])
-			else
-				exp_data[category] = 0
 	if(prefs.db_flags & DB_FLAG_EXEMPT)
 		return_text += "<LI>Exempt (all jobs auto-unlocked)</LI>"
 
@@ -166,9 +153,7 @@ GLOBAL_PROTECT(exp_to_update)
 	for(var/rtype in SSjob.name_occupations)
 		if(!play_records[rtype])
 			play_records[rtype] = 0
-	for(var/rtype in GLOB.exp_specialmap)
-		if(!play_records[rtype])
-			play_records[rtype] = 0
+
 
 	prefs.exp = play_records
 
@@ -217,13 +202,6 @@ GLOBAL_PROTECT(exp_to_update)
 						play_records[job] += minutes
 						if(announce_changes)
 							to_chat(src,"<span class='notice'>You got: [minutes] [job] EXP!</span>")
-				if(!rolefound)
-					for(var/role in GLOB.exp_specialmap[EXP_TYPE_SPECIAL])
-						if(mob.mind.assigned_role == role)
-							rolefound = TRUE
-							play_records[role] += minutes
-							if(announce_changes)
-								to_chat(mob,"<span class='notice'>You got: [minutes] [role] EXP!</span>")
 				if(mob.mind.special_role && !(mob.mind.datum_flags & DF_VAR_EDITED))
 					var/trackedrole = mob.mind.special_role
 					play_records[trackedrole] += minutes
