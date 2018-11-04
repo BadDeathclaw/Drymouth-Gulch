@@ -13,7 +13,7 @@ Elder
 	flag = F13ELDER
 	department_flag = BOS
 	head_announce = list("Security")
-	faction = "BOS"
+	//faction = "BOS"
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "the high elders"
@@ -30,7 +30,7 @@ Elder
 	jobtype = /datum/job/f13elder
 
 	id = /obj/item/card/id/gold
-	
+
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
