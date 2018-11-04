@@ -77,6 +77,9 @@
 	var/datum/action/turret_toggle/toggle_action
 	var/mob/remote_controller
 
+	var/factiontarget = list()
+	var/shootnonfaction = 0 //If it shoots at people that don't have the same faction
+
 /obj/machinery/porta_turret/Initialize()
 	. = ..()
 	if(!base)
@@ -286,7 +289,7 @@
 		var/obj/item/multitool/M = I
 		M.buffer = src
 		to_chat(user, "<span class='notice'>You add [src] to multitool buffer.</span>")
-	else if(istype(I, /obj/item/welding_tool)
+	else if(istype(I, /obj/item/weldingtool))
 		to_chat(user, "<span class='notice'>You repair the turret.</span>")
 		obj_integrity = min(max_integrity, obj_integrity += 50)
 		return
@@ -1057,9 +1060,6 @@
 				on = FALSE
 				spawn(100)
 					on = TRUE
-
-	var/factiontarget = list()
-	var/shootnonfaction = 0 //If it shoots at people that don't have the same faction
 
 /obj/machinery/porta_turret/AltClick(mob/user)
 	if(!in_range(src, user) || user.incapacitated() || locked)

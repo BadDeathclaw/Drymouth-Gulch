@@ -637,38 +637,38 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 
 
 /obj/item/scalpel/alien
-	name = "alien scalpel"
+	name = "advanced scalpel"
 	desc = "It's a gleaming sharp knife made out of silvery-green metal."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/hemostat/alien
-	name = "alien hemostat"
+	name = "advanced hemostat"
 	desc = "You've never seen this before."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/retractor/alien
-	name = "alien retractor"
+	name = "advanced retractor"
 	desc = "You're not sure if you want the veil pulled back."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/circular_saw/alien
-	name = "alien saw"
-	desc = "Do the aliens also lose this, and need to find an alien hatchet?"
+	name = "advanced saw"
+	desc = "Do the advanced people also lose this, and need to find an advanced hatchet?"
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/surgicaldrill/alien
-	name = "alien drill"
-	desc = "Maybe alien surgeons have finally found a use for the drill."
+	name = "advanced drill"
+	desc = "Maybe advanced surgeons have finally found a use for the drill."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25
 
 /obj/item/cautery/alien
-	name = "alien cautery"
-	desc = "Why would bloodless aliens have a tool to stop bleeding? \
+	name = "advanced cautery"
+	desc = "Why would bloodless advanced have a tool to stop bleeding? \
 		Unless..."
 	icon = 'icons/obj/abductor.dmi'
 	toolspeed = 0.25

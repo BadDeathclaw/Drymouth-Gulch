@@ -10,7 +10,7 @@
 	var/destroyed = FALSE
 	var/isworn = FALSE
 	var/is_open = FALSE
-	max_integrity = 500
+	max_integrity = 1000
 	resistance_flags = FIRE_PROOF | ACID_PROOF   //it's a fucking steel door
 	armor = list("melee" = 95, "bullet" = 75, "laser" = 75, "energy" = 75, "bomb" = 95, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100) //it's a fucking steel door 2.0
 
@@ -23,7 +23,8 @@
 		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 		s.set_up(2, 1, src)
 		s.start()
-		destroy()
+		if(prob(25)) //Get memed
+			destroy()
 		return
 
 /obj/structure/vaultdoor/proc/repair()

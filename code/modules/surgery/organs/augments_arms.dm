@@ -226,4 +226,4 @@
 /obj/item/organ/cyberimp/arm/surgery
 	name = "surgical toolset implant"
 	desc = "A set of surgical tools hidden behind a concealed panel on the user's arm."
-	contents = newlist(/obj/item/retractor/abductor, /obj/item/hemostat/abductor, /obj/item/cautery/abductor, /obj/item/surgicaldrill/abductor, /obj/item/scalpel/abductor, /obj/item/circular_saw/abductor, /obj/item/surgical_drapes)
+	contents = newlist(/obj/item/retractor/alien, /obj/item/hemostat/alien, /obj/item/cautery/alien, /obj/item/surgicaldrill/alien, /obj/item/scalpel/alien, /obj/item/circular_saw/alien, /obj/item/surgical_drapes)
