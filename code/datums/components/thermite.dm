@@ -2,8 +2,9 @@
 	dupe_mode = COMPONENT_DUPE_UNIQUE_PASSARGS
 	var/amount
 	var/overlay
-
+	//Stop melting the goddamm platings you nerds -ma44
 	var/static/list/blacklist = typecacheof(list(
+		/turf/open/floor/plating,
 		/turf/open/lava,
 		/turf/open/space,
 		/turf/open/water,

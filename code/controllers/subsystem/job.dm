@@ -48,7 +48,9 @@ SUBSYSTEM_DEF(job)
 		var/datum/job/job = new J()
 		if(!job)
 			continue
-		if(job.faction != faction)
+		//if(job.faction != faction) //TGCLAW Change: Any faction can now join and have the appropriate faction tag IE BoS and Den -ma44
+		//	continue
+		if(job.faction == "None") //No faction or commented out; remove
 			continue
 		if(!job.config_check())
 			continue

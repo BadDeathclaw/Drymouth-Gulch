@@ -11,7 +11,8 @@
 	name = "plating"
 	icon_state = "plating"
 	intact = FALSE
-	baseturfs = /turf/open/space
+	baseturfs = /turf/open/floor/plating //Stop deleting the ground you kids -ma44
+	//baseturfs = /turf/open/space
 	var/attachment_holes = TRUE
 
 /turf/open/floor/plating/examine(mob/user)
@@ -88,6 +89,12 @@
 		broken = FALSE
 
 	return TRUE
+
+/turf/open/floor/plating/ex_act() //Stop trying to make space tiles -ma44
+	return
+	
+/turf/open/floor/plating/ScrapeAway() //Stop trying to make space tiles -ma44
+	return
 
 /turf/open/floor/plating/make_plating()
 	return

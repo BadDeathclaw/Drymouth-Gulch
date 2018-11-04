@@ -29,7 +29,7 @@ Wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
 	department_flag = WASTELAND
-	faction = "Station"
+	faction = "Wastelander"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "no one"
@@ -77,7 +77,7 @@ Raider
 	department_head = list("Captain")
 	department_flag = WASTELAND
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "Wastelander"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "no one"
@@ -194,7 +194,7 @@ Pusher
 	department_head = list("Captain")
 	department_flag = WASTELAND
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "Wastelander"
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "no one"
@@ -232,7 +232,7 @@ Preacher
 	department_head = list("Captain")
 	department_flag = WASTELAND
 	head_announce = list("Security")
-	faction = "Station"
+	faction = "Wastelander"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "no one"

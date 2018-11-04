@@ -547,18 +547,6 @@
 	overdose_threshold = 45
 	addiction_threshold = 30
 
-/datum/reagent/medicine/ephedrine/on_mob_add(mob/M)
-	..()
-	if(isliving(M))
-		var/mob/living/L = M
-		L.add_trait(TRAIT_GOTTAGOFAST, id)
-
-/datum/reagent/medicine/ephedrine/on_mob_delete(mob/M)
-	if(isliving(M))
-		var/mob/living/L = M
-		L.remove_trait(TRAIT_GOTTAGOFAST, id)
-	..()
-
 /datum/reagent/medicine/ephedrine/on_mob_life(mob/living/M)
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
@@ -877,18 +865,6 @@
 	color = "#78008C"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
-
-/datum/reagent/medicine/stimulants/on_mob_add(mob/M)
-	..()
-	if(isliving(M))
-		var/mob/living/L = M
-		L.add_trait(TRAIT_GOTTAGOFAST, id)
-
-/datum/reagent/medicine/stimulants/on_mob_delete(mob/M)
-	if(isliving(M))
-		var/mob/living/L = M
-		L.remove_trait(TRAIT_GOTTAGOFAST, id)
-	..()
 
 /datum/reagent/medicine/stimulants/on_mob_life(mob/living/M)
 	if(M.health < 50 && M.health > 0)
@@ -1305,17 +1281,14 @@
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-0.5*REM)
-	M.adjustBruteLoss(-0.5*REM)
+	M.adjustFireLoss(-3*REM)
+	M.adjustBruteLoss(-3*REM)
 	M.druggy = max(M.druggy, 5)
-	if(M.canmove && !ismovableatom(M.loc))
-		for(var/i = 0, i < 4, i++)
-			step(M, pick(GLOB.cardinals))
 	if(prob(7))
 		M.emote(pick("twitch","drool","moan","giggle"))
-		M.drowsyness = max(M.drowsyness, 2)
 	. = 1
 	..()
 
