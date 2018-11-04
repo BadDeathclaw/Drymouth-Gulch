@@ -62,7 +62,7 @@
 	return 0
 
 /datum/species/plasmaman/qualifies_for_rank(rank, list/features)
-	if(rank in GLOB.security_positions)
+	if(rank in GLOB.ncr_positions) /* NCR HATES plasma people */
 		return 0
 	if(rank == "Clown" || rank == "Mime")//No funny bussiness
 		return 0

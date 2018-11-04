@@ -369,13 +369,15 @@
 			data["id_owner"] = id_card && id_card.registered_name ? html_encode(id_card.registered_name) : "-----"
 			data["id_name"] = id_card ? strip_html_simple(id_card.name) : "-----"
 
+
+			/* TODO: update this + tgui with new job lists */
 			if(show_assignments)
-				data["engineering_jobs"] = format_jobs(GLOB.engineering_positions)
-				data["medical_jobs"] = format_jobs(GLOB.medical_positions)
-				data["science_jobs"] = format_jobs(GLOB.science_positions)
-				data["security_jobs"] = format_jobs(GLOB.security_positions)
-				data["cargo_jobs"] = format_jobs(GLOB.supply_positions)
-				data["civilian_jobs"] = format_jobs(GLOB.civilian_positions)
+				data["engineering_jobs"] = format_jobs(GLOB.brotherhood_positions)
+				data["medical_jobs"] = format_jobs(GLOB.den_positions)
+				data["science_jobs"] = format_jobs(GLOB.ncr_positions)
+				data["security_jobs"] = format_jobs(GLOB.legion_positions)
+				data["cargo_jobs"] = format_jobs(GLOB.vault_positions)
+				data["civilian_jobs"] = format_jobs(GLOB.wasteland_positions)
 				data["centcom_jobs"] = format_jobs(get_all_centcom_jobs())
 
 
