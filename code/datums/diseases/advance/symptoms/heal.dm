@@ -2,8 +2,8 @@
 	name = "Basic Healing"
 	desc = "Gives the host some useful reagents."
 	stealth = 8
-	resistance = 15
-	stage_speed = 15
+	resistance = 30
+	stage_speed = 10
 	transmittable = -10
 	level = 8
 	base_message_chance = 20 //here used for the overlays
