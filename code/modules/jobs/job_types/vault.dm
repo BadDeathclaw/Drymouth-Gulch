@@ -363,8 +363,8 @@ Station Engineer
 	flag = ASSISTANT
 	department_flag = VAULT
 	faction = "Vault"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 8
+	spawn_positions = 8
 	supervisors = "absolutely everyone"
 	selection_color = "#ddffdd"
 	access = list()			//See /datum/job/assistant/get_access()

@@ -262,6 +262,9 @@ Works together with spawning an observer, noted above.
 			SStgui.on_transfer(src, ghost) // Transfer NanoUIs.
 			ghost.can_reenter_corpse = can_reenter_corpse
 			ghost.key = key
+			ghost.timeofdeath = src.timeofdeath /* used for respawn */
+			if(src.timeofdeath == 0)
+				ghost.timeofdeath = world.time
 			return ghost
 
 /*

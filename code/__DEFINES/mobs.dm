@@ -263,3 +263,6 @@
 // AI Toggles
 #define AI_CAMERA_LUMINOSITY	5
 #define AI_VOX // Comment out if you don't want VOX to be enabled and have players download the voice sounds.
+
+//Respawn timer
+#define RESPAWN_TIMER 1800 // in deciseconds, the time to wait before allowing respawn. 3 minutes = 3 * 60 (seconds in minute) * 10 (seconds to deciseconds)
