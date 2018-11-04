@@ -38,6 +38,16 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/minibomb
+	name = "Minibomb Grenade"
+	desc = "A somewhat destructive grenade, does damage."
+	id = "minibomb"
+	build_type = PROTOLATHE
+	materials = list(MAT_SILVER = 600, MAT_DIAMOND = 600, MAT_URANIUM = 200)
+	build_path = /obj/item/grenade/syndieminibomb
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/pin_testing
 	name = "Test-Range Firing Pin"
 	desc = "This safety firing pin allows firearms to be operated within proximity to a firing range."

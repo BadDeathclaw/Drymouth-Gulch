@@ -585,7 +585,7 @@
 	display_name = "Explosive & Pyrotechnical Weaponry"
 	description = "If the light stuff just won't do it."
 	prereq_ids = list("adv_weaponry")
-	design_ids = list("large_Grenade", "pyro_Grenade", "adv_Grenade")
+	design_ids = list("large_Grenade", "pyro_Grenade", "adv_Grenade", "minibomb")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -844,7 +844,7 @@
 	display_name = "Advanced Tool Technology"
 	description = "Things used by the really advanced people."
 	prereq_ids = list("biotech","engineering")
-	design_ids = list("industrcd", "circuitmaker", "turretmaker")
+	design_ids = list("industrcd", "circuitmaker", "turretmaker", "protolathe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 20000
 	hidden = TRUE
