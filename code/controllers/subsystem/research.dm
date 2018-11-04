@@ -8,10 +8,13 @@ SUBSYSTEM_DEF(research)
 	var/list/invalid_node_ids = list()			//associative id = number of times
 	var/list/invalid_node_boost = list()		//associative id = error message
 	var/list/obj/machinery/rnd/server/servers = list()
+
 	var/datum/techweb/science/science_tech
 	var/datum/techweb/admin/admin_tech
 	var/datum/techweb/bos/bos_tech
 	var/datum/techweb/enclave/enclave_tech
+	var/datum/techweb/unknown/unknown_tech
+
 	var/list/techweb_nodes = list()				//associative id = node datum
 	var/list/techweb_categories = list()		//category name = list(node.id = node)
 	var/list/techweb_designs = list()			//associative id = node datum
@@ -25,7 +28,7 @@ SUBSYSTEM_DEF(research)
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
 	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 54.3)
-	var/multiserver_calculation = FALSE
+	var/multiserver_calculation = FALSE //turning this on is a bad idea
 	var/last_income = 0
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
 
@@ -37,10 +40,13 @@ SUBSYSTEM_DEF(research)
 	point_types = TECHWEB_POINT_TYPE_LIST_ASSOCIATIVE_NAMES
 	initialize_all_techweb_designs()
 	initialize_all_techweb_nodes()
+
 	science_tech = new /datum/techweb/science
 	admin_tech = new /datum/techweb/admin
 	bos_tech = new /datum/techweb/bos
 	enclave_tech = new /datum/techweb/enclave
+	unknown_tech = new /datum/techweb/unknown
+
 	autosort_categories()
 	return ..()
 
@@ -62,12 +68,18 @@ SUBSYSTEM_DEF(research)
 				bitcoins = single_server_income.Copy()
 				break			//Just need one to work.
 	var/income_time_difference = world.time - last_income
+
 	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
 	bos_tech.last_bitcoins = bitcoins
+	unknown_tech.last_bitcoins = bitcoins
+
 	for(var/i in bitcoins)
 		bitcoins[i] *= income_time_difference / 10
+
 	science_tech.add_point_list(bitcoins)
 	bos_tech.add_point_list(bitcoins)
+	unknown_tech.add_point_list(bitcoins) //tbh these guys can get a fuckton of points, because it isn't even being used
+
 	last_income = world.time
 
 /datum/controller/subsystem/research/proc/calculate_server_coefficient()	//Diminishing returns.

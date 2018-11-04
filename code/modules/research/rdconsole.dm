@@ -86,7 +86,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/Initialize()
 	. = ..()
-	stored_research = SSresearch.science_tech //lettern, note about this
+	stored_research = SSresearch.unknown_tech //lettern, note about this
 	stored_research.consoles_accessing[src] = TRUE
 	matching_designs = list()
 	SyncRDevices()
@@ -1100,12 +1100,17 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/core
 	name = "Core R&D Console"
 
-/obj/machinery/computer/rdconsole/core/bos
-	name = "Core R&D Console"
-
+//lettern's lazy way of adding more channels
 /obj/machinery/computer/rdconsole/core/bos/Initialize()
 	. = ..()
 	stored_research = SSresearch.bos_tech //lettern, note about this
+	stored_research.consoles_accessing[src] = TRUE
+	matching_designs = list()
+	SyncRDevices()
+
+/obj/machinery/computer/rdconsole/core/vault/Initialize()
+	. = ..()
+	stored_research = SSresearch.science_tech //lettern, note about this
 	stored_research.consoles_accessing[src] = TRUE
 	matching_designs = list()
 	SyncRDevices()

@@ -41,18 +41,22 @@
 		research_points[i] = INFINITY
 	hidden_nodes = list()
 
-/datum/techweb/science	//Global science techweb for RND consoles.
+/datum/techweb/unknown	//Global science techweb for RND consoles.
+	id = "UNKNOWN"
+	organization = "Unknown network"
+
+/datum/techweb/science	//science tech channel
 	id = "SCIENCE"
 	organization = "Vault Tech"
 
 /datum/techweb/bos	//BOS tech "channel"
 	id = "BOS"
 	organization = "Brotherhood of Steel"
-	
+
 /datum/techweb/enclave	//Enclave tech "channel"
 	id = "ENCLAVE"
 	organization = "Enclave"
-	
+
 
 /datum/techweb/Destroy()
 	researched_nodes = null
