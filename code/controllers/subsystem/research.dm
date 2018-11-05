@@ -9,11 +9,11 @@ SUBSYSTEM_DEF(research)
 	var/list/invalid_node_boost = list()		//associative id = error message
 	var/list/obj/machinery/rnd/server/servers = list()
 
-	var/datum/techweb/science/science_tech
-	var/datum/techweb/admin/admin_tech
-	var/datum/techweb/bos/bos_tech
-	var/datum/techweb/enclave/enclave_tech
-	var/datum/techweb/unknown/unknown_tech
+	var/datum/techweb/science/science_tech //Vault starting tech
+	var/datum/techweb/admin/admin_tech //Has every single tech node unlocked
+	var/datum/techweb/bos/bos_tech //BoS starting tech
+	var/datum/techweb/enclave/enclave_tech //Could probably be used if enclave ever gets implemented as a faction
+	var/datum/techweb/unknown/unknown_tech //Global tech; all newly built consoles, departmental crafters, imprinters and servers will use this
 
 	var/list/techweb_nodes = list()				//associative id = node datum
 	var/list/techweb_categories = list()		//category name = list(node.id = node)
@@ -55,8 +55,19 @@ SUBSYSTEM_DEF(research)
 
 /datum/controller/subsystem/research/proc/handle_research_income()
 	var/list/bitcoins = list()
+	var/boscache = 0 //Amount of bitcoins for each techweb to then be distributed to the appropriate techweb
+	var/sciencecache = 0
+	var/unknowncache = 0
 	if(multiserver_calculation)
-		var/eff = calculate_server_coefficient()
+		for(var/obj/machinery/rnd/server/miners in servers)
+			switch(miners.stored_research)
+				if(bos_tech) //Check if its the same as the techwebs
+					boscache += miners.mine() //SLAVE AWAY 2.0
+				if(science_tech)
+					sciencecache += miners.mine()
+				if(unknown_tech)
+					unknowncache += miners.mine()
+		//var/eff = calculate_server_coefficient() tfw math
 		for(var/obj/machinery/rnd/server/miner in servers)
 			var/list/result = (miner.mine())	//SLAVE AWAY, SLAVE.
 			for(var/i in result)
@@ -68,17 +79,26 @@ SUBSYSTEM_DEF(research)
 				bitcoins = single_server_income.Copy()
 				break			//Just need one to work.
 	var/income_time_difference = world.time - last_income
-
-	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
-	bos_tech.last_bitcoins = bitcoins
-	unknown_tech.last_bitcoins = bitcoins
+	if(multiserver_calculation)
+		science_tech.last_bitcoins = sciencecache  // Doesn't take tick drift into account
+		bos_tech.last_bitcoins = boscache
+		unknown_tech.last_bitcoins = unknowncache
+	else
+		science_tech.last_bitcoins(bitcoins)
+		bos_tech.last_bitcoins(bitcoins)
+		unknown_tech.last_bitcoins(bitcoins)
 
 	for(var/i in bitcoins)
 		bitcoins[i] *= income_time_difference / 10
 
-	science_tech.add_point_list(bitcoins)
-	bos_tech.add_point_list(bitcoins)
-	unknown_tech.add_point_list(bitcoins) //tbh these guys can get a fuckton of points, because it isn't even being used
+	if(multiserver_calculation)
+		science_tech.add_point_list(sciencecache)
+		bos_tech.add_point_list(boscache)
+		unknown_tech.add_point_list(unknowncache) //tbh these guys can get a fuckton of points, because it isn't even being used
+	else
+		science_tech.add_point_list(bitcoins)
+		bos_tech.add_point_list(bitcoins)
+		unknown_tech.add_point_list(bitcoins)
 
 	last_income = world.time
 
