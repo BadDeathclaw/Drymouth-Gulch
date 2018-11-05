@@ -67,7 +67,7 @@ SUBSYSTEM_DEF(research)
 				sciencecache += miners.mine()
 				
 			if(miners.stored_research == unknown_tech)
-					unknowncache += miners.mine()
+				unknowncache += miners.mine()
 	else
 		for(var/obj/machinery/rnd/server/miner in servers)
 			if(miner.working)
