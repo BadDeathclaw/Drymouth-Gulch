@@ -30,7 +30,7 @@
 	matching_designs = list()
 	cached_designs = list()
 	stored_research = new
-	host_research = SSresearch.science_tech
+	host_research = SSresearch.unknown_tech //>Make a new departmental protolathe and get vault science before -ma44
 	update_research()
 
 /obj/machinery/rnd/production/proc/update_research()
