@@ -35,7 +35,7 @@
 	toolspeed = 0.5
 
 /obj/item/crowbar/abductor
-	name = "alien crowbar"
+	name = "advanced crowbar"
 	desc = "A hard-light crowbar. It appears to pry by itself, without any effort required."
 	icon = 'icons/obj/abductor.dmi'
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'

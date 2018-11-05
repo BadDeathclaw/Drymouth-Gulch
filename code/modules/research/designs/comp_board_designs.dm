@@ -6,6 +6,14 @@
 	build_type = IMPRINTER
 	materials = list(MAT_GLASS = 1000)
 
+/datum/design/virusmaker
+	name = "Computer Design (Virus Maker)"
+	desc = "Allows for the construction of circuit boards used to build a new virus maker console."
+	id = "virusmaker"
+	build_path = /obj/item/circuitboard/computer/virusmaker
+	category = list("Computer Boards")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/board/arcade_battle
 	name = "Computer Design (Battle Arcade Machine)"
 	desc = "Allows for the construction of circuit boards used to build a new arcade machine."

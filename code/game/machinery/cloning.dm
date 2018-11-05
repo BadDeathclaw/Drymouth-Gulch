@@ -250,6 +250,7 @@
 					var/obj/item/bodypart/BP = I
 					BP.attach_limb(mob_occupant)
 
+
 			//Premature clones may have brain damage.
 			mob_occupant.adjustBrainLoss(-((speed_coeff / 2) * dmg_mult))
 

@@ -92,7 +92,7 @@
 	random_color = FALSE
 
 /obj/item/screwdriver/abductor
-	name = "alien screwdriver"
+	name = "advanced screwdriver"
 	desc = "An ultrasonic screwdriver."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "screwdriver_a"
