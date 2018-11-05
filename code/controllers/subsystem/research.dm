@@ -60,12 +60,13 @@ SUBSYSTEM_DEF(research)
 	var/unknowncache = 0
 	if(multiserver_calculation)
 		for(var/obj/machinery/rnd/server/miners in servers)
-			switch(miners.stored_research)
-				if(bos_tech) //Check if its the same as the techwebs
-					boscache += miners.mine() //SLAVE AWAY 2.0
-				if(science_tech)
-					sciencecache += miners.mine()
-				if(unknown_tech)
+			if(miners.stored_research == bos_tech) //Check if its the same as the techwebs
+				boscache += miners.mine()
+				
+			if(miners.stored_research == science_tech)
+				sciencecache += miners.mine()
+				
+			if(miners.stored_research == unknown_tech)
 					unknowncache += miners.mine()
 	else
 		for(var/obj/machinery/rnd/server/miner in servers)
