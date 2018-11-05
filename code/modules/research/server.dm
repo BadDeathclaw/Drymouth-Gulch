@@ -1,6 +1,6 @@
 /obj/machinery/rnd/server
 	name = "\improper R&D Server"
-	desc = "A computer system running a deep neural network that processes arbitrary information to produce data useable in the development of new technologies. In layman's terms, it makes research points."
+	desc = "You can hit this piece of machinery with a techdisk and it will produce points for the techweb that's stored on the tech disk. A computer system running a deep neural network that processes arbitrary information to produce data useable in the development of new technologies. In layman's terms, it makes research points."
 	icon = 'icons/obj/machines/research.dmi'
 	icon_state = "server"
 	var/datum/techweb/stored_research
@@ -20,9 +20,20 @@
 /obj/machinery/rnd/server/Initialize()
 	. = ..()
 	SSresearch.servers |= src
-	stored_research = SSresearch.unknown_tech //note this lettern
+	stored_research = SSresearch.unknown //note this lettern
 	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
 	B.apply_default_parts(src)
+
+/obj/machinery/rnd/server/attackby(obj/item/D, mob/user, params)
+	if(istype(D, /obj/item/disk/tech_disk))
+		var/obj/item/disk/tech_disk/disk = D
+		if(stored_research == disk.stored_research) //Same research; inform user that it's the same
+			to_chat(user, "This server is already producing points for the techweb stored on the [disk.name].")
+		else
+			stored_research = disk.stored_research
+			to_chat(user, "This server will now produce for the techweb organization [disk.stored_research.organization].")
+	else
+		..()
 
 /obj/machinery/rnd/server/Destroy()
 	SSresearch.servers -= src
