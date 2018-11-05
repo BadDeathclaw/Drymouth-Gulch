@@ -67,12 +67,6 @@ SUBSYSTEM_DEF(research)
 					sciencecache += miners.mine()
 				if(unknown_tech)
 					unknowncache += miners.mine()
-		//var/eff = calculate_server_coefficient() tfw math
-		for(var/obj/machinery/rnd/server/miner in servers)
-			var/list/result = (miner.mine())	//SLAVE AWAY, SLAVE.
-			for(var/i in result)
-				result[i] *= eff
-				bitcoins[i] = bitcoins[i]? bitcoins[i] + result[i] : result[i]
 	else
 		for(var/obj/machinery/rnd/server/miner in servers)
 			if(miner.working)
@@ -84,9 +78,9 @@ SUBSYSTEM_DEF(research)
 		bos_tech.last_bitcoins = boscache
 		unknown_tech.last_bitcoins = unknowncache
 	else
-		science_tech.last_bitcoins(bitcoins)
-		bos_tech.last_bitcoins(bitcoins)
-		unknown_tech.last_bitcoins(bitcoins)
+		science_tech.last_bitcoins = bitcoins
+		bos_tech.last_bitcoins = bitcoins
+		unknown_tech.last_bitcoins = bitcoins
 
 	for(var/i in bitcoins)
 		bitcoins[i] *= income_time_difference / 10
