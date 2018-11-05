@@ -305,7 +305,7 @@
 	remove_mutations_static = list(LASEREYES)
 
 /obj/item/dnainjector/timed
-	var/duration = 600
+	var/duration = 6000
 
 /obj/item/dnainjector/timed/inject(mob/living/carbon/M, mob/user)
 	prepare()

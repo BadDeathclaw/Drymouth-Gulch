@@ -73,7 +73,7 @@
 	id = "inducer"
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
-	build_path = /obj/item/inducer/sci
+	build_path = /obj/item/inducer
 	category = list("Power Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 

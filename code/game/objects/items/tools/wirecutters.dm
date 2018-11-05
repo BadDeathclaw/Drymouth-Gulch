@@ -70,7 +70,7 @@
 	toolspeed = 0.5
 
 /obj/item/wirecutters/abductor
-	name = "alien wirecutters"
+	name = "advanced wirecutters"
 	desc = "Extremely sharp wirecutters, made out of a silvery-green metal."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cutters"

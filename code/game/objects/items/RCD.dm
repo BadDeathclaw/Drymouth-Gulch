@@ -441,6 +441,7 @@ RLD
 	max_matter = 500
 	matter = 500
 	canRturf = TRUE
+	delay_mod = 0.25 //Nice and advanced
 
 /obj/item/rcd_ammo
 	name = "compressed matter cartridge"
@@ -645,6 +646,63 @@ RLD
 				G.update_brightness()
 				return TRUE
 			return FALSE
+
+/obj/item/circuitboardthing
+	name = "Advanced Machine Builder"
+	desc = "Takes circuit boards and makes machines out of them quickly."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "rcd"
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	var/circuit = 0
+
+/obj/item/circuitboardthing/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/circuitboard))
+		if(!circuit)
+			to_chat(user, "You insert the [W.name] into the [src].")
+			circuit = new W.type(loc)
+			qdel(W)
+
+/obj/item/circuitboardthing/afterattack(atom/A, mob/user, proximity)
+	if(!proximity)
+		return 0
+	if(circuit)
+		var/obj/item/circuitboard/circuitthing = src.circuit
+		var/obj/item/circuitboard/thingtospawn = circuitthing.build_path
+		new thingtospawn(A)
+		qdel(circuit)
+		circuit = 0
+
+/obj/item/portaturretconstruct
+	name = "Advanced Turret Constructor"
+	desc = "Takes energy weapons and quickly constructs portable turrets out of them. Use a screwdriver to take the gun out."
+	icon = 'icons/obj/tools.dmi'
+	icon_state = "rcd"
+	lefthand_file = 'icons/mob/inhands/equipment/tools_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/tools_righthand.dmi'
+	var/obj/item/gun/energy/gun = null
+
+/obj/item/portaturretconstruct/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/gun/energy))
+		if(!gun)
+			to_chat(user, "You insert the [W.name] into the [src].")
+			src.gun = new W.type(src)
+			qdel(W)
+	if(istype(W, /obj/item/screwdriver))
+		if(gun)
+			to_chat(user, "You remove the [gun.name] from the [src].")
+			var/obj/item/gun/energy/temporgun = new gun.type(src)
+			user.put_in_hands(temporgun)
+			gun = null
+
+/obj/item/portaturretconstruct/afterattack(atom/A, mob/user, proximity)
+	if(gun)
+		var/obj/machinery/porta_turret/Turret = new/obj/machinery/porta_turret(A)
+		Turret.installation = gun.type
+		Turret.setup()
+		gun = null
+
+
 
 #undef GLOW_MODE
 #undef LIGHT_MODE

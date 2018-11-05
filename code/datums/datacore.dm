@@ -90,14 +90,13 @@
 		foundrecord.fields["rank"] = assignment
 
 /datum/datacore/proc/get_manifest(monochrome, OOC)
-	var/list/heads = list()
-	var/list/sec = list()
-	var/list/eng = list()
-	var/list/med = list()
-	var/list/sci = list()
-	var/list/sup = list()
-	var/list/civ = list()
-	var/list/bot = list()
+	var/list/command = list()
+	var/list/bos = list()
+	var/list/den = list()
+	var/list/leg = list()
+	var/list/ncr = list()
+	var/list/vault = list()
+	var/list/was = list()
 	var/list/misc = list()
 	var/dat = {"
 	<head><style>
@@ -118,71 +117,62 @@
 		var/rank = t.fields["rank"]
 		var/department = 0
 		if(rank in GLOB.command_positions)
-			heads[name] = rank
+			command[name] = rank
 			department = 1
-		if(rank in GLOB.security_positions)
-			sec[name] = rank
+		if(rank in GLOB.brotherhood_positions)
+			bos[name] = rank
 			department = 1
-		if(rank in GLOB.engineering_positions)
-			eng[name] = rank
+		if(rank in GLOB.den_positions)
+			den[name] = rank
 			department = 1
-		if(rank in GLOB.medical_positions)
-			med[name] = rank
+		if(rank in GLOB.legion_positions)
+			leg[name] = rank
 			department = 1
-		if(rank in GLOB.science_positions)
-			sci[name] = rank
+		if(rank in GLOB.ncr_positions)
+			ncr[name] = rank
 			department = 1
-		if(rank in GLOB.supply_positions)
-			sup[name] = rank
+		if(rank in GLOB.vault_positions)
+			vault[name] = rank
 			department = 1
-		if(rank in GLOB.civilian_positions)
-			civ[name] = rank
+		if(rank in GLOB.wasteland_positions)
+			was[name] = rank
 			department = 1
-		if(rank in GLOB.nonhuman_positions)
-			bot[name] = rank
-			department = 1
-		if(!department && !(name in heads))
+		if(!department && !(name in command))
 			misc[name] = rank
-	if(heads.len > 0)
-		dat += "<tr><th colspan=3>Heads</th></tr>"
-		for(var/name in heads)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[heads[name]]</td></tr>"
+	if(command.len > 0)
+		dat += "<tr><th colspan=3>Command</th></tr>"
+		for(var/name in command)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[command[name]]</td></tr>"
 			even = !even
-	if(sec.len > 0)
-		dat += "<tr><th colspan=3>Security</th></tr>"
-		for(var/name in sec)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[sec[name]]</td></tr>"
+	if(bos.len > 0)
+		dat += "<tr><th colspan=3>Brotherhood of Steel</th></tr>"
+		for(var/name in bos)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
 			even = !even
-	if(eng.len > 0)
-		dat += "<tr><th colspan=3>Engineering</th></tr>"
-		for(var/name in eng)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[eng[name]]</td></tr>"
+	if(den.len > 0)
+		dat += "<tr><th colspan=3>Den</th></tr>"
+		for(var/name in den)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[den[name]]</td></tr>"
 			even = !even
-	if(med.len > 0)
-		dat += "<tr><th colspan=3>Medical</th></tr>"
-		for(var/name in med)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[med[name]]</td></tr>"
+	if(leg.len > 0)
+		dat += "<tr><th colspan=3>Legion</th></tr>"
+		for(var/name in leg)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[leg[name]]</td></tr>"
 			even = !even
-	if(sci.len > 0)
-		dat += "<tr><th colspan=3>Science</th></tr>"
-		for(var/name in sci)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[sci[name]]</td></tr>"
+	if(ncr.len > 0)
+		dat += "<tr><th colspan=3>NCR</th></tr>"
+		for(var/name in ncr)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ncr[name]]</td></tr>"
 			even = !even
-	if(sup.len > 0)
-		dat += "<tr><th colspan=3>Supply</th></tr>"
-		for(var/name in sup)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[sup[name]]</td></tr>"
+	if(vault.len > 0)
+		dat += "<tr><th colspan=3>Vault</th></tr>"
+		for(var/name in vault)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[vault[name]]</td></tr>"
 			even = !even
-	if(civ.len > 0)
-		dat += "<tr><th colspan=3>Civilian</th></tr>"
-		for(var/name in civ)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[civ[name]]</td></tr>"
-			even = !even
-	// in case somebody is insane and added them to the manifest, why not
-	if(bot.len > 0)
-		dat += "<tr><th colspan=3>Silicon</th></tr>"
-		for(var/name in bot)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bot[name]]</td></tr>"
+	if(was.len > 0)
+		dat += "<tr><th colspan=3>Wasteland</th></tr>"
+		for(var/name in was)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[was[name]]</td></tr>"
 			even = !even
 	// misc guys
 	if(misc.len > 0)
@@ -216,7 +206,7 @@
 		var/image = get_id_photo(H, C, show_directions)
 		var/obj/item/photo/photo_front = new()
 		var/obj/item/photo/photo_side = new()
-		for(var/D in show_directions) 
+		for(var/D in show_directions)
 			if(D == SOUTH)
 				photo_front.photocreate(null, icon(image, dir = D))
 			if(D == WEST || D == EAST)

@@ -16,9 +16,9 @@ BONUS
 /datum/symptom/viraladaptation
 	name = "Viral self-adaptation"
 	desc = "The virus mimics the function of normal body cells, becoming harder to spot and to eradicate, but reducing its speed."
-	stealth = 3
-	resistance = 5
-	stage_speed = -3
+	stealth = 15
+	resistance = 15
+	stage_speed = 0
 	transmittable = 0
 	level = 3
 
@@ -41,8 +41,8 @@ BONUS
 	name = "Viral evolutionary acceleration"
 	desc = "The virus quickly adapts to spread as fast as possible both outside and inside a host. \
 	This, however, makes the virus easier to spot, and less able to fight off a cure."
-	stealth = -2
-	resistance = -3
-	stage_speed = 5
-	transmittable = 3
+	stealth = 0
+	resistance = 0
+	stage_speed = 15
+	transmittable = 15
 	level = 3

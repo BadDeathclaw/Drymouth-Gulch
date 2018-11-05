@@ -74,7 +74,7 @@
 		ckey = ckey(banckey)
 		computerid = bancid
 		ip = banip
-	
+
 	var/had_banned_mob = banned_mob != null
 	var/client/banned_client = banned_mob?.client
 	var/banned_mob_guest_key = had_banned_mob && IsGuestKey(banned_mob.key)
@@ -406,8 +406,6 @@
 	output += "<td><b>Job:</b><select name='dbbanaddjob'>"
 	output += "<option value=''>--</option>"
 	for(var/j in get_all_jobs())
-		output += "<option value='[j]'>[j]</option>"
-	for(var/j in GLOB.nonhuman_positions)
 		output += "<option value='[j]'>[j]</option>"
 	for(var/j in list(ROLE_TRAITOR, ROLE_CHANGELING, ROLE_OPERATIVE, ROLE_REV, ROLE_CULTIST, ROLE_WIZARD))
 		output += "<option value='[j]'>[j]</option>"

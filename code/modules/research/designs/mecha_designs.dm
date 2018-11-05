@@ -386,3 +386,48 @@
 	construction_time = 250
 	build_path = /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
 	category = list("Exosuit Equipment")
+
+/datum/design/ripley_Whole
+	name = "APLU (\"Ripley\") Completed"
+	id = "ripley_whole"
+	build_type = MECHFAB
+	build_path = /obj/mecha/working/ripley
+	materials = list(MAT_METAL=100000,MAT_GLASS=7500)
+	construction_time = 900
+	category = list("Ripley","Firefighter")
+
+/datum/design/odysseus_whole
+	name = "(\"Odysseus\") Completed"
+	id = "odysseus_whole"
+	build_type = MECHFAB
+	build_path = /obj/mecha/medical/odysseus
+	materials = list(MAT_METAL=64000,MAT_GLASS=12000)
+	construction_time = 880
+	category = list("Odysseus")
+
+/datum/design/gygax_whole
+	name = "(\"Gygax\") Whole"
+	id = "gygax_whole"
+	build_type = MECHFAB
+	build_path = /obj/mecha/combat/gygax
+	materials = list(MAT_METAL=135000,MAT_GLASS=15000,MAT_DIAMOND=20000)
+	construction_time = 2000
+	category = list("Gygax")
+
+/datum/design/durand_whole
+	name = "(\"Durand\") Whole"
+	id = "durand_whole"
+	build_type = MECHFAB
+	build_path = /obj/mecha/combat/durand
+	materials = list(MAT_METAL=160000,MAT_URANIUM=30000,MAT_GLASS=25000,MAT_SILVER=28000)
+	construction_time = 2000
+	category = list("Durand")
+
+/datum/design/borg_complete
+	name = "Cyborg Complete"
+	id = "borg_complete"
+	build_type = MECHFAB
+	build_path = /obj/item/robot_suit/prebuilt
+	materials = list(MAT_METAL=100000)
+	construction_time = 1900
+	category = list("Cyborg")

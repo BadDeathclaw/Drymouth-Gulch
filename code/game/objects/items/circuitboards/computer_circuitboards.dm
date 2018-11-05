@@ -1,3 +1,7 @@
+/obj/item/circuitboard/computer/virusmaker
+	name = "Virus Maker (Computer Board)"
+	build_path = /obj/machinery/computer/virusmaker
+
 /obj/item/circuitboard/computer/turbine_computer
 	name = "Turbine Computer (Computer Board)"
 	build_path = /obj/machinery/computer/turbine_computer

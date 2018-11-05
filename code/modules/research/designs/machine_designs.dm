@@ -238,7 +238,7 @@
 	name = "Machine Design (Protolathe Board)"
 	desc = "The circuit board for a protolathe."
 	id = "protolathe"
-	build_path = /obj/item/circuitboard/machine/protolathe
+	build_path = /obj/item/circuitboard/machine/protolathe/department
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
