@@ -28,7 +28,7 @@ SUBSYSTEM_DEF(research)
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
 	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 60)
-	var/multiserver_calculation = FALSE //turning this on is a bad idea
+	var/multiserver_calculation = TRUE //turning this on is a bad idea
 	var/last_income = 0
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
 

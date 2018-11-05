@@ -6,13 +6,15 @@
 	opacity = 1
 	layer = WALL_OBJ_LAYER
 	anchored = TRUE
+	
 	var/is_busy = FALSE
 	var/destroyed = FALSE
 	var/isworn = FALSE
 	var/is_open = FALSE
-	max_integrity = 450
-	resistance_flags = FIRE_PROOF | ACID_PROOF | UNACIDABLE | LAVA_PROOF | FREEZE_PROOF  //it's a fucking steel blast door
-	armor = list("melee" = 75, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 45, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100)
+	
+	max_integrity = 1000
+	resistance_flags = FIRE_PROOF | ACID_PROOF | UNACIDABLE | FREEZE_PROOF  //it's a fucking steel blast door
+	armor = list("melee" = 95, "bullet" = 75, "laser" = 75, "energy" = 75, "bomb" = 95, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100) //it's a fucking steel door 2.0
 
 /obj/structure/vaultdoor/blob_act()
 	if(prob(1))
