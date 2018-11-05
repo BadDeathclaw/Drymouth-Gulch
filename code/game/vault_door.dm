@@ -11,7 +11,7 @@
 	var/isworn = FALSE
 	var/is_open = FALSE
 	max_integrity = 450
-	resistance_flags = FIRE_PROOF | ACID_PROOF   //it's a fucking steel door
+	resistance_flags = FIRE_PROOF | ACID_PROOF | UNACIDABLE | LAVA_PROOF | FREEZE_PROOF  //it's a fucking steel blast door
 	armor = list("melee" = 75, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 45, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100)
 
 /obj/structure/vaultdoor/blob_act()
