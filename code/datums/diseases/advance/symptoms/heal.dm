@@ -52,6 +52,7 @@
 
 	if(!(M.reagents.has_reagent("stimulants")))
 		M.reagents.add_reagent("stimulants" = 10)
+	M.adjustToxLoss(-4)
 	return TRUE
 
 /datum/symptom/heal/proc/passive_message_condition(mob/living/M)
