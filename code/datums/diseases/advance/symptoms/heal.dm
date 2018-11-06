@@ -51,7 +51,7 @@
 			M.update_damage_overlays()
 
 	if(!(M.reagents.has_reagent("stimulants")))
-		M.reagents.add_reagent("stimulants" = 10)
+		M.reagents.add_reagent("stimulants", 10)
 	M.adjustToxLoss(-4)
 	return TRUE
 
