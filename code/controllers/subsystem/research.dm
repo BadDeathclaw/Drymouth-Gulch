@@ -27,6 +27,7 @@ SUBSYSTEM_DEF(research)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
+	var/singleincome = 60 //hardcode memes
 	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 60)
 	var/multiserver_calculation = TRUE //turning this on is a bad idea
 	var/last_income = 0
@@ -55,45 +56,30 @@ SUBSYSTEM_DEF(research)
 
 /datum/controller/subsystem/research/proc/handle_research_income()
 	var/list/bitcoins = list()
-	var/boscache = 0 //Amount of bitcoins for each techweb to then be distributed to the appropriate techweb
-	var/sciencecache = 0
-	var/unknowncache = 0
-	if(multiserver_calculation)
-		for(var/obj/machinery/rnd/server/miners in servers)
-			if(miners.stored_research == bos_tech) //Check if its the same as the techwebs
-				boscache += miners.mine()
-				
-			if(miners.stored_research == science_tech)
-				sciencecache += miners.mine()
-				
-			if(miners.stored_research == unknown_tech)
-				unknowncache += miners.mine()
-	else
+	if(!multiserver_calculation)
 		for(var/obj/machinery/rnd/server/miner in servers)
 			if(miner.working)
 				bitcoins = single_server_income.Copy()
 				break			//Just need one to work.
 	var/income_time_difference = world.time - last_income
-	if(multiserver_calculation)
-		science_tech.last_bitcoins = sciencecache  // Doesn't take tick drift into account
-		bos_tech.last_bitcoins = boscache
-		unknown_tech.last_bitcoins = unknowncache
-	else
-		science_tech.last_bitcoins = bitcoins
-		bos_tech.last_bitcoins = bitcoins
-		unknown_tech.last_bitcoins = bitcoins
 
-	for(var/i in bitcoins)
-		bitcoins[i] *= income_time_difference / 10
+	if(bitcoins)
+		for(var/i in bitcoins)
+			bitcoins[i] *= income_time_difference / 10
 
 	if(multiserver_calculation)
-		science_tech.add_point_list(sciencecache)
-		bos_tech.add_point_list(boscache)
-		unknown_tech.add_point_list(unknowncache) //tbh these guys can get a fuckton of points, because it isn't even being used
+		for(var/obj/machinery/rnd/server/miner in servers)
+			switch(miner.stored_research.id)
+				if("SCIENCE")
+					science_tech.add_points_all(singleincome)
+				if("BOS")
+					bos_tech.add_points_all(singleincome)
+				if("UNKNOWN")
+					unknown_tech.add_points_all(singleincome)
 	else
-		science_tech.add_point_list(bitcoins)
-		bos_tech.add_point_list(bitcoins)
-		unknown_tech.add_point_list(bitcoins)
+		science_tech.add_points_all(bitcoins)
+		bos_tech.add_points_all(bitcoins)
+		unknown_tech.add_points_all(bitcoins)
 
 	last_income = world.time
 

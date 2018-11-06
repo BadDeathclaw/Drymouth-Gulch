@@ -31,7 +31,9 @@
 			to_chat(user, "This server is already producing points for the techweb stored on the [disk.name].")
 		else
 			stored_research = disk.stored_research
-			to_chat(user, "This server will now produce for the techweb organization [disk.stored_research.organization].")
+			//stored_research.id = disk.stored_research.id
+			//stored_research.organization = disk.stored_research.organization
+			to_chat(user, "This server will now produce for the techweb organization [disk.stored_research.organization] with ID [disk.stored_research.id].")
 	else
 		..()
 
