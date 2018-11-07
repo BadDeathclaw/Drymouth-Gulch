@@ -499,7 +499,7 @@
 
 /obj/machinery/porta_turret/proc/in_faction(mob/target)
 	for(var/faction1 in faction)
-		if(islist(target.faction)
+		if(islist(target.faction))
 			if(faction1 in target.faction)
 				return TRUE
 		else
