@@ -11,7 +11,7 @@
 	layer = OBJ_LAYER
 	invisibility = INVISIBILITY_OBSERVER	//the turret is invisible if it's inside its cover
 	density = TRUE
-	desc = "A covered turret that shoots at its enemies."
+	desc = "A covered turret that shoots at its enemies. Alt clicking this will allow you to set targeting by faction once this turret isn't locked."
 	use_power = IDLE_POWER_USE				//this turret uses and requires power
 	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
 	active_power_usage = 300	//when active, this turret takes up constant 300 Equipment power
@@ -77,7 +77,6 @@
 	var/datum/action/turret_toggle/toggle_action
 	var/mob/remote_controller
 
-	var/factiontarget = list()
 	var/shootnonfaction = 0 //If it shoots at people that don't have the same faction
 
 /obj/machinery/porta_turret/Initialize()
@@ -400,8 +399,8 @@
 				continue
 
 			//if the target is a human and not in our faction, analyze threat level
-			if(ishuman(C) && !in_faction(C))
-				if(assess_perp(C) >= 4)
+			if(ishuman(C) && shootnonfaction)
+				if(!in_faction(C))
 					targets += C
 
 			else if(check_anomalies) //non humans who are not simple animals (xenos etc)
@@ -468,20 +467,6 @@
 	if(obj_flags & EMAGGED)
 		return 10	//if emagged, always return 10.
 
-	if(shootnonfaction) //Shoot all people not in the faction if setting is enabled
-		var/passcheck = 0
-		if(islist(perp.faction))
-			for(var/factions in perp.faction)
-				if (factions in factiontarget)
-					passcheck = 1
-				else
-					continue
-		else
-			if(perp.faction in factiontarget)
-				passcheck = 1
-		if (passcheck == 0)
-			return 10 //Not a member of the faction; is a valid target
-
 	if((stun_all || attacked) && !allowed(perp))
 		//if the turret has been attacked or is angry, target all non-sec people
 		if(!allowed(perp))
@@ -514,8 +499,12 @@
 
 /obj/machinery/porta_turret/proc/in_faction(mob/target)
 	for(var/faction1 in faction)
-		if(faction1 in target.faction)
-			return TRUE
+		if(islist(target.faction)
+			if(faction1 in target.faction)
+				return TRUE
+		else
+			if(faction1 == target.faction)
+				return TRUE
 	return FALSE
 
 /obj/machinery/porta_turret/proc/target(atom/movable/target)
@@ -1083,6 +1072,6 @@
 			factiontarget = list()
 			user << "You disable the shooting of non faction members. Now only normal settings may apply."
 		if(safety2 == "Add A Faction")
-			var/factiontoadd = stripped_input(user, "What faction would you like to add? Valid faction tags are: Vault, BOS, Den, NCR, Legion, wasteland and Wasteland for raiders.", "Turret Faction Control" , null , 10)
+			var/factiontoadd = stripped_input(user, "What faction would you like to add? Valid faction tags are: Vault, BOS, Den, NCR, Legion, Wastelander, capitalization matters and must be put in exactly that and separately.", "Turret Faction Control" , null , 10)
 			factiontarget += factiontoadd
 			user << "You add the [factiontoadd] to the list of factions."
