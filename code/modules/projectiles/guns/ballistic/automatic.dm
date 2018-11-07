@@ -85,13 +85,13 @@
 
 /obj/item/gun/ballistic/automatic/c20r
 	name = "\improper Advanced SMG"
-	desc = "A bullpup two-round burst .45 SMG, can be suppressed."
+	desc = "A bullpup three-round burst .45 SMG, can be suppressed."
 	icon_state = "c20r"
 	item_state = "c20r"
 	mag_type = /obj/item/ammo_box/magazine/smgm45
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
-	fire_delay = 2
-	burst_size = 2
+	fire_delay = 1
+	burst_size = 3
 	pin = /obj/item/firing_pin/implant/pindicate
 	can_bayonet = TRUE
 	knife_x_offset = 26
@@ -214,6 +214,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
+	pin = /obj/item/firing_pin/implant/pindicate
 
 // Bulldog shotgun //
 
@@ -389,7 +390,7 @@
 
 /obj/item/gun/ballistic/automatic/laser
 	name = "laser rifle"
-	desc = "Though sometimes mocked for the relatively weak firepower of their energy weapons, the logistic miracle of rechargeable ammunition has given Nanotrasen a decisive edge over many a foe."
+	desc = "Though sometimes mocked for the relatively weak firepower of their energy weapons, the logistic miracle of rechargeable ammunition has given it's users a decisive edge over many a foe."
 	icon_state = "oldrifle"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/recharge
