@@ -30,6 +30,21 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	. = ..()
 
 	var/list/jobs = new/list()
+	jobs["Overseer"] = 00
+	jobs["Chief of Security"] = 10
+	jobs["Vault-tec Security"] = 15
+	jobs["Vault-tec Doctor"] = 20
+	jobs["Vault-tec Scientist"] = 25
+	jobs["Vault-tec Engineer"] = 30
+	jobs["Admiral"] = 200
+	jobs["CentCom Commander"] = 210
+	jobs["Emergency Response Team Commander"] = 220
+	jobs["Security Response Officer"] = 221
+	jobs["Engineer Response Officer"] = 222
+	jobs["Medical Response Officer"] = 223
+	jobs["Vault Dweller"] = 999 //Unknowns/custom jobs should appear after civilians, and before Vault Dweller
+
+	/*
 	jobs["Captain"] = 00
 	jobs["Head of Personnel"] = 50
 	jobs["Head of Security"] = 10
@@ -69,7 +84,7 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	jobs["Engineer Response Officer"] = 222
 	jobs["Medical Response Officer"] = 223
 	jobs["Assistant"] = 999 //Unknowns/custom jobs should appear after civilians, and before assistants
-
+	*/
 	src.jobs = jobs
 
 /datum/crewmonitor/Destroy()
