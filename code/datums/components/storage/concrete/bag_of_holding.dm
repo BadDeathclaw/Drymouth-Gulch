@@ -1,5 +1,6 @@
 /datum/component/storage/concrete/bluespace/bag_of_holding/handle_item_insertion(obj/item/W, prevent_warning = FALSE, mob/living/user)
-	//STOP: GET SOME HELP
+	//BWOINK
+	//DON'T UNCOMMENT THIS AND REMEMBER TO COMMENT THIS OUT IF THIS EVER GETS ANOTHER REBASE -ma44
 	/*
 	var/atom/A = parent
 	if((istype(W, /obj/item/storage/backpack/holding) || count_by_type(W.GetAllContents(), /obj/item/storage/backpack/holding)))
