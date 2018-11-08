@@ -928,7 +928,7 @@ Nothing else in the console has ID requirements.
 	if(ls["research_node"])
 		if(!research_control)
 			return				//honestly should call them out for href exploiting :^)
-		if(!SSresearch.science_tech.available_nodes[ls["research_node"]])
+		if(!stored_research.available_nodes[ls["research_node"]])
 			return			//Nope!
 		research_node(ls["research_node"], usr)
 	if(ls["clear_tech"]) //Erase la on the technology disk.
