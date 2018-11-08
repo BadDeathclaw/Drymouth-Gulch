@@ -6,7 +6,7 @@
 #define ACCESS_MORGUE 6
 #define ACCESS_TOX 7 //R&D department, R&D console, burn chamber on some maps
 #define ACCESS_TOX_STORAGE 8 //Toxins storage, burn chamber on some maps
-#define ACCESS_GENETICS 9 
+#define ACCESS_GENETICS 9
 #define ACCESS_ENGINE 10 //Engineering area, power monitor, power flow control console
 #define ACCESS_ENGINE_EQUIP 11 //APCs, EngiVend/YouTool, engineering equipment lockers
 #define ACCESS_MAINT_TUNNELS 12
@@ -77,6 +77,9 @@
 #define ACCESS_CENT_TELEPORTER 107//Teleporter.
 #define ACCESS_CENT_CAPTAIN 109//Captain's office/ID comp/AI.
 #define ACCESS_CENT_BAR 110 // The non-existent CentCom Bar
+
+	//F13 special access meme
+#define ACCESS_BOS 120 //general bos access
 
 	//The Syndicate
 #define ACCESS_SYNDICATE 150//General Syndicate Access. Includes Syndicate mechs and ruins.

@@ -321,6 +321,8 @@
 			return "Network Access"
 		if(ACCESS_CLONING)
 			return "Cloning Room"
+		if(ACCESS_BOS)
+			return "BOS Access"
 
 /proc/get_centcom_access_desc(A)
 	switch(A)
