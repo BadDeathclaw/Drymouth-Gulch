@@ -1061,17 +1061,17 @@
 			shootnonfaction = 1
 			if(islist(user.faction))
 				for(var/factionss in user.faction)
-					factiontarget += factionss
+					faction += factionss
 			else
-				factiontarget += user.faction
+				faction += user.faction
 			user << "Targeting by non members of the faction set, members of the faction can still be shot by other settings."
 	else
 		var/safety2 = alert(user, "Do you want to disable faction control or add another faction?", "Turret Faction Control", "Disable Control", "Add A Faction")
 		if(safety2 == "Disable Control")
 			shootnonfaction = 0
-			factiontarget = list()
+			faction = list("turret")
 			user << "You disable the shooting of non faction members. Now only normal settings may apply."
 		if(safety2 == "Add A Faction")
 			var/factiontoadd = stripped_input(user, "What faction would you like to add? Valid faction tags are: Vault, BOS, Den, NCR, Legion, Wastelander, capitalization matters and must be put in exactly that and separately.", "Turret Faction Control" , null , 10)
-			factiontarget += factiontoadd
+			faction += factiontoadd
 			user << "You add the [factiontoadd] to the list of factions."
