@@ -131,6 +131,8 @@
 			CHECK_TICK
 			if(!hidden_nodes[i])
 				reciever.hidden_nodes -= i		//We can see it so let them see it too.
+	reciever.id = id //Also copy the ID and organization over, tg claw stuff nuff said
+	reciever.organization = organization
 	reciever.recalculate_nodes()
 
 /datum/techweb/proc/copy()

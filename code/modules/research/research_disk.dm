@@ -20,3 +20,15 @@
 /obj/item/disk/tech_disk/debug/Initialize()
 	. = ..()
 	stored_research = new /datum/techweb/admin
+
+/obj/item/disk/tech_disk/unknown/Initialize()
+	. = ..()
+	stored_research = new /datum/techweb/unknown
+
+/obj/item/disk/tech_disk/bos/Initialize()
+	. = ..()
+	stored_research = new /datum/techweb/bos
+
+/obj/item/disk/tech_disk/vault/Initialize()
+	. = ..()
+	stored_research = new /datum/techweb/science
