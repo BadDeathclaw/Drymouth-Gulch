@@ -338,3 +338,5 @@
 		host_research = disk.stored_research
 		to_chat(user, "You slap the [src.name] with the tech disk, replacing it's techweb with the one in the disk.")
 		update_research()
+	else
+		. = ..()
