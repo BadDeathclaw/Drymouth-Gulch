@@ -47,6 +47,148 @@
 /obj/effect/spawner/lootdrop/f13/armor
 	name = "armor spawners - DO NOT USE THIS"
 
+/obj/effect/spawner/lootdrop/f13/armor/clothes
+	name = "pre-war clothes spawner"
+	lootcount = 2
+	var/loot1 = list(
+				/obj/item/clothing/under/overalls,
+				/obj/item/clothing/head/flatcap
+				)
+	var/loot2 = list(
+				/obj/item/clothing/under/plaid_skirt/green,
+				/obj/item/clothing/under/plaid_skirt/purple
+				)
+	var/loot3 = list(
+				/obj/item/clothing/under/blacktango,
+				""
+				)
+	var/loot4 = list(
+				/obj/item/clothing/under/redeveninggown,
+				""
+				)
+	var/loot5 = list(
+				/obj/item/clothing/under/janimaid,
+				""
+				)
+	var/loot6 = list(
+				/obj/item/clothing/suit/jacket/leather,
+				/obj/item/clothing/gloves/fingerless
+				)
+	var/loot7 = list(
+				/obj/item/clothing/suit/jacket/puffer/vest,
+				/obj/item/clothing/under/pants/jeans
+				)
+	var/loot8 = list(
+				/obj/item/clothing/under/suit_jacket/charcoal,
+				/obj/item/clothing/head/that
+				)
+	var/loot9 = list(
+				/obj/item/clothing/under/suit_jacket/checkered, // It's Benny time!
+				/obj/item/clothing/shoes/laceup
+				)
+	var/loot10 = list(
+				/obj/item/clothing/under/suit_jacket/burgundy,
+				/obj/item/clothing/shoes/laceup
+				)
+	var/loot11 = list(
+				/obj/item/clothing/under/scratch,
+				/obj/item/clothing/shoes/sneakers/white
+				)
+	var/loot12 = list(
+				/obj/item/clothing/head/beanie/black,
+				/obj/item/clothing/suit/hooded/chaplain_hoodie
+				)
+	var/loot13 = list(
+				/obj/item/clothing/under/pants/camo,
+				""
+				)
+	var/loot14 = list(
+				/obj/item/clothing/suit/apron/purple_bartender,
+				/obj/item/clothing/under/rank/bartender/purple
+				)
+	var/loot15 = list(
+				/obj/item/clothing/under/plaid_skirt/blue, 
+				/obj/item/clothing/under/plaid_skirt
+				)
+	var/loot16 = list(
+				/obj/item/clothing/under/suit_jacket/navy, 
+				/obj/item/clothing/shoes/laceup
+				)
+	var/loot17 = list(
+				/obj/item/clothing/under/suit_jacket/female,
+				/obj/item/clothing/shoes/laceup
+				)
+
+
+/obj/effect/spawner/lootdrop/f13/armor/clothes/Initialize(mapload) //on mapload, pick what shit to spawn
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13, loot14, loot15, loot16, loot17)
+	. = ..()
+
+/obj/effect/spawner/lootdrop/f13/armor/costumes
+	name = "pre-war costumes spawner"
+	lootcount = 2
+	var/loot1 = list(
+				/obj/item/clothing/head/ushanka,
+				/obj/item/clothing/under/soviet
+				)
+	var/loot2 = list(
+				/obj/item/clothing/under/geisha,
+				/obj/item/clothing/shoes/sandal
+				)
+	var/loot3 = list(
+				/obj/item/clothing/under/blacktango,
+				""
+				)
+	var/loot4 = list(
+				/obj/item/clothing/under/redeveninggown,
+				""
+				)
+	var/loot5 = list(
+				/obj/item/clothing/head/sombrero,
+				/obj/item/clothing/suit/poncho
+				)
+	var/loot6 = list(
+				/obj/item/clothing/under/sailor,
+				""
+				)
+	var/loot7 = list(
+				/obj/item/clothing/under/schoolgirl/red, 
+				/obj/item/clothing/under/schoolgirl
+				)
+	var/loot8 = list(
+				/obj/item/clothing/head/fluff/bandit, 
+				/obj/item/clothing/head/fluff/gambler
+				)
+	var/loot9 = list(
+				/obj/item/clothing/under/jabroni,
+				/obj/item/clothing/glasses/sunglasses/blindfold
+				)
+	var/loot10 = list(
+				/obj/item/clothing/under/gladiator,
+				/obj/item/clothing/shoes/roman
+				)
+	var/loot11 = list(
+				/obj/item/clothing/under/maid,
+				""
+				)
+	var/loot12 = list(
+				/obj/item/clothing/under/draculass,
+				""
+				)
+	var/loot13 = list(
+				/obj/item/clothing/under/kilt,
+				""
+				)
+	var/loot14 = list(
+				/obj/item/clothing/under/pirate,
+				/obj/item/clothing/suit/pirate
+				)
+
+/obj/effect/spawner/lootdrop/f13/armor/costumes/Initialize(mapload) //on mapload, pick what shit to spawn
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13, loot14)
+	. = ..()
+
+
 /obj/effect/spawner/lootdrop/f13/armor/tier1 //TIER 1 ARMOR
 	name = "tier 1 armor"
 	lootcount = 2 //guranteeing it /will/ spawn
