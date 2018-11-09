@@ -77,6 +77,7 @@ Centurion
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
+	mask =			/obj/item/clothing/mask/bandana/legcenturion
 	r_hand =		/obj/item/melee/powerfist
 	l_hand =		/obj/item/tank/internals/oxygen
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
@@ -158,7 +159,7 @@ Decan
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
-	mask =			/obj/item/clothing/mask/bandana/red
+	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
 	r_hand = 		/obj/item/twohanded/fireaxe
@@ -199,7 +200,7 @@ Veteran
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
-	mask =			/obj/item/clothing/mask/bandana/red
+	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
@@ -239,7 +240,7 @@ Legionary
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
-	mask =			/obj/item/clothing/mask/bandana/black
+	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(

@@ -259,6 +259,26 @@
 	desc = "A fine black bandana with nanotech lining and a skull emblem."
 	icon_state = "bandskull"
 
+/obj/item/clothing/mask/bandana/legrecruit
+	name = "recruit bandana"
+	desc = "A fine recruit bandana."
+	icon_state = "legrecruit"
+
+/obj/item/clothing/mask/bandana/legdecan
+	name = "decan bandana"
+	desc = "A fine decan bandana."
+	icon_state = "legdecan"
+
+/obj/item/clothing/mask/bandana/legcenturion
+	name = "centurion bandana"
+	desc = "A fine centurion bandana."
+	icon_state = "legcenturion"
+
+/obj/item/clothing/mask/bandana/legvet
+	name = "veteran bandana"
+	desc = "A fine prime bandana."
+	icon_state = "bandred"
+	
 /obj/item/clothing/mask/mummy
 	name = "mummy mask"
 	desc = "Ancient bandages."
