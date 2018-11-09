@@ -492,6 +492,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/legionary
 	name = "Legionary"
 
+/obj/effect/landmark/start/f13/scout
+	name = "Scout"
+
+/obj/effect/landmark/start/f13/explorer
+	name = "Explorer"
+
+/obj/effect/landmark/start/f13/campfollower
+	name = "Camp Follower"
+
 // Brotherhood of Steel
 
 /obj/effect/landmark/start/f13/elder
