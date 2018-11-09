@@ -551,6 +551,18 @@
 	var/zoom_out_amt = 13
 	var/datum/action/toggle_binoc_zoom/azoom
 
+/obj/item/binocs/pickup(mob/user)
+	..()
+	if(azoom)
+		azoom.Grant(user)
+
+/obj/item/binocs/dropped(mob/user)
+	..()
+	if(zoomed)
+		zoom(user,FALSE)
+	if(azoom)
+		azoom.Remove(user)
+
 /datum/action/toggle_binoc_zoom
 	name = "Use Binoculars"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
