@@ -342,20 +342,21 @@ Legionary
 	id = null
 	ears = null
 	belt = null
+	shoes = /obj/item/clothing/shoes/sandal
 
 /datum/outfit/job/f13campfollower/pre_equip(mob/living/carbon/human/H)
 	..()
-	var/follower_job = "capture"
+	var/follower_job = "nothing"
 	if (H.gender == MALE)
 		uniform = pick(
 			/obj/item/clothing/under/f13/caravan, \
 			/obj/item/clothing/under/f13/brahminm)
-		follower_job = pick("miner", "farmer", "smith", "healer", "capture")
+		follower_job = pick("miner", "farmer", "smith", "healer", "nothing")
 	else
 		uniform = pick(
 			/obj/item/clothing/under/f13/caravan, \
 			/obj/item/clothing/under/f13/brahminf)
-		follower_job = pick("cook", "farmer", "healer", "caretaker", "capture")
+		follower_job = pick("cook", "farmer", "healer", "caretaker", "nothing")
 
 	if (follower_job == "cook")
 		belt = /obj/item/kitchen/knife
@@ -383,8 +384,5 @@ Legionary
 	else if (follower_job == "caretaker")
 		backpack = /obj/item/storage/backpack/satchel/explorer
 		backpack_contents = list(/obj/item/soap/homemade, /obj/item/melee/flyswatter, /obj/item/reagent_containers/glass/rag, /obj/item/reagent_containers/glass/bucket, /obj/item/stack/medical/gauze/improvised)
-	else
-		// eighteen karat run of bad luck!
-		neck = /obj/item/electropack/shockcollar
 
 	r_pocket = /obj/item/flashlight/flare/torch
