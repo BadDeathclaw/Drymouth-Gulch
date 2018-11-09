@@ -20,6 +20,8 @@
 	var/sheetAmount = 7
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
+	var/uid
+	var/lock = 0
 	CanAtmosPass = ATMOS_PASS_DENSITY
 
 /obj/structure/mineral_door/Initialize()
@@ -71,6 +73,9 @@
 		return
 	if(isliving(user))
 		var/mob/living/M = user
+		if((/obj/structure/barricade in src.loc)||(lock == 2))
+			M << "It won't budge!"
+			return
 		if(world.time - M.last_bumped <= 60)
 			return //NOTE do we really need that?
 		if(M.client)
@@ -81,6 +86,9 @@
 			else
 				SwitchState()
 	else if(ismecha(user))
+		if(lock == 2)
+			lock = 0
+			user.visible_message("The lock breaks!")
 		SwitchState()
 
 /obj/structure/mineral_door/proc/SwitchState()
@@ -128,6 +136,35 @@
 		icon_state = initial_state
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/lock) && do_after(user, 5, target = src))
+		if(lock == 1)
+			user << "<span class='notice'>You key the lock to be the same.</span>"
+			uid = src.uid
+		return
+		if(lock == 2)
+			user << "<span class='notice'>This door already has a lock on it!</span>"
+	src.uid = uid
+	lock = 1
+	spawn(/obj/item/key)
+		uid = src.uid
+	qdel(/obj/item/lock)
+	user.visible_message("[user] adds a lock to the door.")
+	return
+	if(istype(I, /obj/item/key))
+		if(lock == 0)
+			user << "<span class='notice'>This door doesn't have a lock.</span>"
+			return
+		if((src.lock > 1) && (uid != src.uid))
+			user << "<span class='notice'>This is the wrong key!</span>"
+			return
+		if((src.lock == 1) && (uid == src.uid))
+			lock = 2
+			user.visible_message("[user] locks the door.")
+			return
+		if((src.lock == 2) && (uid == src.uid))
+			lock = 1
+			user.visible_message("[user] unlocks the door.")
+			return
 	if(I.tool_behaviour == TOOL_MINING)
 		to_chat(user, "<span class='notice'>You start digging the [name]...</span>")
 		if(I.use_tool(src, user, 40, volume=50))
