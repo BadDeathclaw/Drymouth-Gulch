@@ -348,7 +348,7 @@
 //Legion
 /obj/item/clothing/head/helmet/f13/legion/legrecruit
 	name = "legion recruit helmet"
-	desc = "It's leather legion recruit helmet."
+	desc = "It's a leather legion recruit helmet."
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -356,6 +356,20 @@
 	strip_delay = 50
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+
+/obj/item/clothing/head/helmet/f13/legion/scout
+	name = "legion scout hood"
+	desc = "It's a leather hood worn by legion scouts."
+	icon_state = "cult_hoodalt"
+	item_state = "cult_hoodalt"
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/explorer
+	name = "legion explorer hood"
+	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted."
+	icon_state = "cult_hoodalt"
+	item_state = "cult_hoodalt"
+	armor = list("melee" = 10, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legveteran
 	name = "legion veteran helmet"

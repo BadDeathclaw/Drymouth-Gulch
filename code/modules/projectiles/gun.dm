@@ -482,7 +482,6 @@
 	gun.zoom(L, FALSE)
 	..()
 
-
 /obj/item/gun/proc/zoom(mob/living/user, forced_zoom)
 	if(!user || !user.client)
 		return
@@ -530,3 +529,85 @@
 	if(A == chambered)
 		chambered = null
 		update_icon()
+
+/obj/item/binocs
+	name = "binoculars"
+	desc = "Lets you see trouble coming - or get into it - from a distance."
+	icon = 'icons/obj/clothing/glasses.dmi'
+	icon_state = "binocs"
+	item_state = "binocs"
+	slot_flags = ITEM_SLOT_BELT
+	materials = list(MAT_METAL=400)
+	w_class = WEIGHT_CLASS_SMALL
+	attack_verb = list("struck", "hit", "zoomed")
+	throwforce = 5
+	throw_speed = 3
+	throw_range = 5
+	force = 5
+
+	var/zoomable = TRUE //whether the binoc generates a Zoom action on creation - it would be pretty awful if it didn't
+	var/zoomed = FALSE //Zoom toggle
+	var/zoom_amt = 10 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
+	var/zoom_out_amt = 13
+	var/datum/action/toggle_binoc_zoom/azoom
+
+/datum/action/toggle_binoc_zoom
+	name = "Use Binoculars"
+	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
+	icon_icon = 'icons/mob/actions/actions_items.dmi'
+	button_icon_state = "binoc_zoom"
+	var/obj/item/binocs/B = null
+
+/datum/action/toggle_binoc_zoom/Trigger()
+	B.zoom(owner)
+
+/datum/action/toggle_binoc_zoom/IsAvailable()
+	. = ..()
+	if(!. && B)
+		B.zoom(owner, FALSE)
+
+/datum/action/toggle_binoc_zoom/Remove(mob/living/L)
+	B.zoom(L, FALSE)
+	..()
+
+/obj/item/binocs/proc/zoom(mob/living/user, forced_zoom)
+	if(!user || !user.client)
+		return
+
+	switch(forced_zoom)
+		if(FALSE)
+			zoomed = FALSE
+		if(TRUE)
+			zoomed = TRUE
+		else
+			zoomed = !zoomed
+
+	if(zoomed)
+		var/_x = 0
+		var/_y = 0
+		switch(user.dir)
+			if(NORTH)
+				_y = zoom_amt
+			if(EAST)
+				_x = zoom_amt
+			if(SOUTH)
+				_y = -zoom_amt
+			if(WEST)
+				_x = -zoom_amt
+
+		user.client.change_view(zoom_out_amt)
+		user.client.pixel_x = world.icon_size*_x
+		user.client.pixel_y = world.icon_size*_y
+	else
+		user.client.change_view(CONFIG_GET(string/default_view))
+		user.client.pixel_x = 0
+		user.client.pixel_y = 0
+	return zoomed
+
+/obj/item/binocs/proc/build_zooming()
+	if(azoom)
+		return
+
+	if(zoomable)
+		azoom = new()
+		azoom.B = src

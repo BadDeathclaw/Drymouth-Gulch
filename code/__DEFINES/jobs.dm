@@ -64,6 +64,9 @@
 #define F13DECAN		(1<<3)
 #define F13VETLEGION	(1<<4)
 #define F13LEGIONARY	(1<<5)
+#define F13EXPLORER		(1<<6)
+#define F13SCOUT		(1<<7)
+#define F13CAMPFOLLOWER	(1<<8)
 
 #define BOS				(1<<5)
 
