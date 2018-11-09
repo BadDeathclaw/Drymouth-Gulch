@@ -154,7 +154,7 @@
 		if(lock == 0)
 			user << "<span class='notice'>This door doesn't have a lock.</span>"
 			return
-		if((src.lock > 1) && (uid != src.uid))
+		if((src.lock > 0) && (uid != src.uid))
 			user << "<span class='notice'>This is the wrong key!</span>"
 			return
 		if((src.lock == 1) && (uid == src.uid))
