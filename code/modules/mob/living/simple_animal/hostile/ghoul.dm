@@ -10,12 +10,12 @@
 	speak_emote = list("growls")
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
-	maxHealth = 40
-	health = 40
-	speed = 3
+	maxHealth = 20
+	health = 20
+	speed = 2
 	harm_intent_damage = 5
-	melee_damage_lower = 10
-	melee_damage_upper = 10
+	melee_damage_lower = 5
+	melee_damage_upper = 5
 	attacktext = "claws"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -34,23 +34,23 @@
 	icon_dead = "ghoulreaver_dead"
 	speed = 2
 	a_intent = INTENT_HARM
-	maxHealth = 160
-	health = 160
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 5
-	melee_damage_lower = 25
-	melee_damage_upper = 25
+	melee_damage_lower = 15
+	melee_damage_upper = 15
 
 /mob/living/simple_animal/hostile/ghoul/glowing
 	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly.."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
-	maxHealth = 120
-	health = 120
+	maxHealth = 60
+	health = 60
 	speed = 2
-	harm_intent_damage = 15
-	melee_damage_lower = 25
-	melee_damage_upper = 25
+	harm_intent_damage = 10
+	melee_damage_lower = 20
+	melee_damage_upper = 20
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Initialize()
 	. = ..()
