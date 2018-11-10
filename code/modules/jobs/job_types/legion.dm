@@ -282,7 +282,7 @@ Legionary
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/claymore/machete=1, \
-		/obj/item/ammo_box/magazine/internal/rangemaster=2, \
+		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
@@ -319,7 +319,7 @@ Legionary
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/internal/boltaction=2, \
+		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
