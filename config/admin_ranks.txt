@@ -34,14 +34,13 @@
 # END_KEYWORDS
 
 Admin Observer	= -AUTOLOGIN
-Moderator		= +ADMIN
+Prime Legionary = +ADMIN
 Admin Candidate	= +@
-Trial Admin		= +@ +SPAWN +VAREDIT +BAN
-Badmin			= +@ +POSSESS +POLL +BUILDMODE +SERVER +FUN
-Admin			= +@ +STEALTH +SOUNDS +DEBUG
-Game Master		= +EVERYTHING *EVERYTHING
-Lazy Master 	= +EVERYTHING -AUTOLOGIN *EVERYTHING
+Decanus 		= +@ +SPAWN +VAREDIT +BAN
+Vexillarius	    = +@ +POSSESS +POLL +BUILDMODE +SERVER +FUN
+Centurion		= +@ +STEALTH +SOUNDS +DEBUG
+Legate  		= +EVERYTHING *EVERYTHING
 
-Host			= +EVERYTHING *EVERYTHING
+Caesar			= +EVERYTHING *EVERYTHING
 
 Coder			= +DEBUG +VAREDIT +SERVER +SPAWN +POLL -AUTOLOGIN
