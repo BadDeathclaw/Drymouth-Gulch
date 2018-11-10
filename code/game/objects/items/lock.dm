@@ -2,7 +2,7 @@
 	name = "lock"
 	desc = "A heavy-duty lock for doors."
 	icon = 'icons/obj/lock.dmi'
-	w_class = 2
+	w_class = WEIGHT_CLASS_SMALL
 	var/uid
 	var/static/lock_uid = 0
 

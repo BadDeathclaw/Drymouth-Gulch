@@ -2,7 +2,7 @@
 	name = "key"
 	desc = "A simple key for locks."
 	icon = 'icons/obj/key.dmi'
-	w_class = 1
+	w_class = WEIGHT_CLASS_TINY
 	var/uid
 
 /obj/item/key/attackby(/obj/item/stack/rods, mob/user, params)

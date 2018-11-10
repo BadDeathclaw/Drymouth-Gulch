@@ -74,7 +74,7 @@
 	if(isliving(user))
 		var/mob/living/M = user
 		if((/obj/structure/barricade in src.loc)||(lock == 2))
-			M << "It won't budge!"
+			to_chat(M, "It won't budge!")
 			return
 		if(world.time - M.last_bumped <= 60)
 			return //NOTE do we really need that?
@@ -138,11 +138,11 @@
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/lock) && do_after(user, 5, target = src))
 		if(lock == 1)
-			user << "<span class='notice'>You key the lock to be the same.</span>"
+			to_chat(user, "You key the lock to be the same.")
 			uid = src.uid
 		return
 		if(lock == 2)
-			user << "<span class='notice'>This door already has a lock on it!</span>"
+			to_chat(user, "This door already has a lock on it!")
 	src.uid = uid
 	lock = 1
 	spawn(/obj/item/key)
@@ -152,10 +152,10 @@
 	return
 	if(istype(I, /obj/item/key))
 		if(lock == 0)
-			user << "<span class='notice'>This door doesn't have a lock.</span>"
+			to_chat(user, "This door doesn't have a lock.")
 			return
 		if((src.lock > 0) && (uid != src.uid))
-			user << "<span class='notice'>This is the wrong key!</span>"
+			to_chat(user, "This is the wrong key!")
 			return
 		if((src.lock == 1) && (uid == src.uid))
 			lock = 2
