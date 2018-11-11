@@ -38,7 +38,7 @@
 				if(pixel_y != 0)
 					spawned_loot.pixel_y = pixel_y
 			loot_spawned++
-	return INITIALIZE_HINT_QDEL
+		qdel(src)
 
 /* ------------------------------------------------
    ----------------ARMOR SPAWNERS------------------
