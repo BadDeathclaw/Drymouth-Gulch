@@ -10,12 +10,12 @@
 	speak_emote = list("growls")
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
-	maxHealth = 20
-	health = 20
-	speed = 2
-	harm_intent_damage = 5
-	melee_damage_lower = 5
-	melee_damage_upper = 5
+	maxHealth = 40
+	health = 40
+	speed = 3
+	harm_intent_damage = 15
+	melee_damage_lower = 15
+	melee_damage_upper = 15
 	attacktext = "claws"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
@@ -34,8 +34,8 @@
 	icon_dead = "ghoulreaver_dead"
 	speed = 2
 	a_intent = INTENT_HARM
-	maxHealth = 80
-	health = 80
+	maxHealth = 100
+	health = 100
 	harm_intent_damage = 5
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -45,8 +45,8 @@
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
-	maxHealth = 60
-	health = 60
+	maxHealth = 80
+	health = 80
 	speed = 2
 	harm_intent_damage = 10
 	melee_damage_lower = 20
