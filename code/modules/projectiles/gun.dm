@@ -616,6 +616,10 @@
 		user.client.pixel_y = 0
 	return zoomed
 
+/obj/item/binocs/Initialize()
+	. = ..()
+	build_zooming()
+
 /obj/item/binocs/proc/build_zooming()
 	if(azoom)
 		return
