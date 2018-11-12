@@ -160,17 +160,26 @@
 	can_buckle = 1
 	bound_height = 64
 
+/obj/structure/kitchenspike/cross/crowbar_act(mob/living/user, obj/item/I)
+	if(has_buckled_mobs())
+		to_chat(user, "<span class='notice'>You can't do that while something's on the spike!</span>")
+		return TRUE
+
+	if(I.use_tool(src, user, 20, volume=100))
+		deconstruct()
+	return TRUE
+
+/obj/structure/kitchenspike/cross/Destroy()
+	if(has_buckled_mobs())
+		for(var/mob/living/L in buckled_mobs)
+			release_mob(L)
+	return ..()
+
+/obj/structure/kitchenspike/cross/deconstruct()
+	new /obj/item/stack/sheet/mineral/wood(src.loc, 10)
+	qdel(src)
+
 /obj/structure/kitchenspike/cross/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/crowbar))
-		if(!src.buckled_mobs)
-			playsound(loc, 'sound/items/Crowbar.ogg', 100, 1)
-			if(do_after(user, 30/I.toolspeed, target = src))
-				user << "<span class='notice'>You tear down the cross.</span>"
-				new /obj/item/stack/sheet/mineral/wood(loc, 10)
-				qdel(src)
-		else
-			user << "<span class='notice'>You can't do that while something's on the cross!</span>"
-		return
 	if(VIABLE_MOB_CHECK(user.pulling) && user.a_intent == INTENT_GRAB && !has_buckled_mobs())
 		var/mob/living/L = user.pulling
 		if(do_mob(user, src, 120))

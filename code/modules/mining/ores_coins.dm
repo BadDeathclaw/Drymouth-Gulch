@@ -5,6 +5,11 @@
 
 #define ORESTACK_OVERLAYS_MAX 10
 
+// #define COIN_VALUE_BUCK 1
+#define COIN_VALUE_CAP 2.5
+#define COIN_VALUE_DENARIUS 10
+#define COIN_VALUE_AUREUS 250
+
 /**********************Mineral ores**************************/
 
 /obj/item/stack/ore
@@ -360,7 +365,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	desc = "The image of Caesar in his elder years looks sternly at you from this heavy gold Aureus. It's worth about 100 caps."
 	cmineral = "gold"
 	icon_state = "aureus_heads"
-	value = 250
+	value = COIN_VALUE_AUREUS
 	materials = list(MAT_GOLD = MINERAL_MATERIAL_AMOUNT*0.2)
 	grind_results = list("gold" = 4)
 
@@ -369,7 +374,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	desc = "The image of Caesar in his younger years looks boldly at you from this heavy silver Denarius. It's worth about 4 caps."
 	cmineral = "silver"
 	icon_state = "denarius_heads"
-	value = 10
+	value = COIN_VALUE_DENARIUS
 	materials = list(MAT_SILVER = MINERAL_MATERIAL_AMOUNT*0.2)
 	grind_results = list("silver" = 4)
 
@@ -388,7 +393,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	icon_state = "coin_iron_heads"
 	is_non_flippable = TRUE
 	sideslist = list("heads")
-	value = 2.5
+	value = COIN_VALUE_CAP
 	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT*0.2)
 	grind_results = list("iron" = 4)
 
@@ -396,27 +401,27 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	name = "bottle caps"
 	desc = "A small pile of Nuka Cola caps."
 	icon_state = "bottle_cap2"
-	value = 2.5 * 10
+	value = COIN_VALUE_CAP * 10
 	is_stack = TRUE
 
 /obj/item/coin/iron/pile_twenty
 	name = "bottle caps"
 	desc = "A pile of twenty Nuka Cola caps."
 	icon_state = "bottle_cap3"
-	value = 2.5 * 20
+	value = COIN_VALUE_CAP * 20
 	is_stack = TRUE
 
 /obj/item/coin/iron/pile_fifty
 	name = "bottle caps"
 	desc = "A pile of fifty Nuka Cola caps."
 	icon_state = "bottle_cap4"
-	value = 2.5 * 50
+	value = COIN_VALUE_CAP * 50
 	is_stack = TRUE
 
 /obj/item/coin/iron/pile_fifty
 	name = "bottle caps"
 	desc = "A pile of a hundred Nuka Cola caps. Wow, that's heavy!"
-	value = 2.5 * 100
+	value = COIN_VALUE_CAP * 100
 	is_stack = TRUE
 
 /obj/item/coin/plasma
@@ -519,8 +524,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/gold/attack_self(mob/user)
 	if(!is_stack)
 		return FALSE // Can't split single caps
-	value = value - 2.5
-	if (value <= 2.5)
+	value = value - COIN_VALUE_CAP
+	if (value <= COIN_VALUE_CAP)
 		is_stack = FALSE
 		name = "bottle cap"
 	user.put_in_hands(new /obj/item/coin/gold)
@@ -554,8 +559,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/silver/attack_self(mob/user)
 	if(!is_stack)
 		return FALSE // Can't split single coins
-	value = value - 10
-	if (value <= 10)
+	value = value - COIN_VALUE_DENARIUS
+	if (value <= COIN_VALUE_DENARIUS)
 		is_stack = FALSE
 		name = "silver Denarius"
 	user.put_in_hands(new /obj/item/coin/silver)
@@ -589,8 +594,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/coin/gold/attack_self(mob/user)
 	if(!is_stack)
 		return FALSE // Can't split single coins
-	value = value - 250
-	if (value <= 250)
+	value = value - COIN_VALUE_AUREUS
+	if (value <= COIN_VALUE_AUREUS)
 		is_stack = FALSE
 		name = "gold Aureus"
 	user.put_in_hands(new /obj/item/coin/gold)
