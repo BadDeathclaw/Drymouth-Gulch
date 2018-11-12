@@ -2,7 +2,8 @@
 
 
 /obj/machinery/mineral/mint
-	name = "coin press"
+	name = "cap press"
+	desc = "A heavy metal pressing machine used for making coins and bottle caps. This one seems to come from a Nuka Cola plant."
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "coinpress0"
 	density = TRUE
