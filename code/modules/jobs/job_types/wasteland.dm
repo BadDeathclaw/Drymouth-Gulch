@@ -63,7 +63,8 @@ Wastelander
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/blood/radaway=1, \
-		/obj/item/reagent_containers/food/drinks/flask)
+		/obj/item/reagent_containers/food/drinks/flask, \
+		/obj/item/storage/bag/money/small/wastelander)
 
 
 
@@ -172,11 +173,8 @@ Raider
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=2, \
 		/obj/item/claymore/machete/pipe=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
-		//if(prob(5))
-		//	glasses = 	/obj/item/clothing/glasses/sunglasses
-		//if(prob(8))
-		//	l_hand = 	/obj/item/hatchet
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/storage/bag/money/small/raider=1)
 
 	suit_store = pick(
 		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
@@ -221,7 +219,7 @@ Pusher
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
-
+	l_pocket = /obj/item/storage/bag/money/small/wastelander
 /*
 Preacher
 */
@@ -263,7 +261,6 @@ Preacher
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/internal/boltaction=2, \
 		/obj/item/reagent_containers/food/drinks/flask=1)
-
 
 /*
 Trader

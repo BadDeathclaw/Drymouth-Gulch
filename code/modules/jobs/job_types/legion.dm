@@ -42,7 +42,8 @@ Needs whitelist
 		/obj/item/melee/powerfist=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/storage/bag/money/small/legion)
 	box = null
 
 
@@ -88,7 +89,8 @@ Centurion
 		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/storage/bag/money/small/legion)
 	box = null
 
 /*
@@ -128,7 +130,8 @@ Vexillarius
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/coin/silver=3)
 	box = null
 
 /*
@@ -169,7 +172,8 @@ Decan
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/coin/silver=3)
 	box = null
 
 /*
@@ -209,7 +213,8 @@ Veteran
 		/obj/item/claymore/machete=1, \
 		/obj/item/storage/box/lethalshot=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/coin/silver=2)
 	box = null
 
 /*
@@ -249,7 +254,8 @@ Legionary
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/coin/silver=1)
 	box = null
 
 /datum/job/f13explorer
@@ -284,7 +290,8 @@ Legionary
 		/obj/item/claymore/machete=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/coin/silver=3)
 	box = null
 	r_pocket = /obj/item/binocs
 
@@ -320,7 +327,8 @@ Legionary
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/coin/silver=1)
 	box = null
 
 /datum/job/f13campfollower

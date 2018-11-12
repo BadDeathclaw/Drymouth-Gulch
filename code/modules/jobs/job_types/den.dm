@@ -30,7 +30,7 @@ Sheriff
 	head = 			/obj/item/clothing/head/fluff/cowboy
 	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_hand = 		/obj/item/gun/ballistic/shotgun
-
+	l_pocket =		/obj/item/storage/bag/money/small/den
 
 
 	//pick("grey", "white", "yellow", "purple", "brown", "whatever")
@@ -65,6 +65,7 @@ Settler
 	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
+	l_pocket = /obj/item/storage/bag/money/small/settler
 
 /datum/outfit/job/f13settler/pre_equip(mob/living/carbon/human/H)
 	..()
