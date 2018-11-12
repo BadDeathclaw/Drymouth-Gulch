@@ -20,8 +20,8 @@
 	var/sheetAmount = 7
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
-	var/uid
-	var/lock = 0
+	var/lock_data = ""
+	var/lock = NO_LOCK
 	CanAtmosPass = ATMOS_PASS_DENSITY
 
 /obj/structure/mineral_door/Initialize()
@@ -73,7 +73,7 @@
 		return
 	if(isliving(user))
 		var/mob/living/M = user
-		if((/obj/structure/barricade in src.loc)||(lock == 2))
+		if((/obj/structure/barricade in src.loc)||(lock == LOCKED))
 			to_chat(M, "It won't budge!")
 			return
 		if(world.time - M.last_bumped <= 60)
@@ -86,8 +86,8 @@
 			else
 				SwitchState()
 	else if(ismecha(user))
-		if(lock == 2)
-			lock = 0
+		if(lock == LOCKED)
+			lock = NO_LOCK
 			user.visible_message("The lock breaks!")
 		SwitchState()
 
@@ -136,33 +136,34 @@
 		icon_state = initial_state
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/lock) && do_after(user, 5, target = src))
-		if(lock == 1)
+	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
+		var/obj/item/lock_construct/L = I
+		if(lock == UNLOCKED, do_after(user, 40))
 			to_chat(user, "You key the lock to be the same.")
-			uid = src.uid
-		return
-		if(lock == 2)
+			L.lock_data = lock_data
+			L.update_icon()
+			return
+		if(lock == LOCKED)
 			to_chat(user, "This door already has a lock on it!")
-	src.uid = uid
-	lock = 1
-	spawn(/obj/item/key)
-		uid = src.uid
-	qdel(/obj/item/lock)
-	user.visible_message("[user] adds a lock to the door.")
-	return
+			return
+		lock_data = L.lock_data
+		lock = UNLOCKED
+		qdel(L)
+		user.visible_message("[user] adds a lock to the door.")
 	if(istype(I, /obj/item/key))
-		if(lock == 0)
+		var/obj/item/key/K = I
+		if(lock == NO_LOCK)
 			to_chat(user, "This door doesn't have a lock.")
 			return
-		if((src.lock > 0) && (uid != src.uid))
+		if((src.lock > NO_LOCK) && (K.lock_data != lock_data))
 			to_chat(user, "This is the wrong key!")
 			return
-		if((src.lock == 1) && (uid == src.uid))
-			lock = 2
+		if((src.lock == UNLOCKED) && (K.lock_data == lock_data))
+			lock = LOCKED
 			user.visible_message("[user] locks the door.")
 			return
-		if((src.lock == 2) && (uid == src.uid))
-			lock = 1
+		if((src.lock == LOCKED) && (K.lock_data == lock_data))
+			lock = UNLOCKED
 			user.visible_message("[user] unlocks the door.")
 			return
 	if(I.tool_behaviour == TOOL_MINING)
