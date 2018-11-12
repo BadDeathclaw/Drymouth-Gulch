@@ -325,6 +325,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	var/value = 1
 	var/coinflip
 	var/is_stack = 0
+	var/is_non_flippable = FALSE
 
 /obj/item/coin/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
