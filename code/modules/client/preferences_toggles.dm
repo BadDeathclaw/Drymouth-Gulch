@@ -151,6 +151,23 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, togglemidis)()
 /datum/verbs/menu/Settings/Sound/togglemidis/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_MIDI
 
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleradio)()
+	set name = "Hear/Silence Mojave Radio"
+	set category = "Preferences"
+	set desc = "Hear Player Curated Music"
+	usr.client.prefs.toggles ^= SOUND_RADIO
+	usr.client.prefs.save_preferences()
+	if(usr.client.prefs.toggles & SOUND_RADIO)
+		to_chat(usr, "You will now hear music uploaded by allowed players")
+	else
+		to_chat(usr, "You will no longer hear music uploaded by allowed players")
+		usr.stop_sound_channel(CHANNEL_RADIO)
+		var/client/C = usr.client
+		if(C && C.chatOutput && !C.chatOutput.broken && C.chatOutput.loaded)
+			C.chatOutput.stopMusic()
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Mojave Radio", "[usr.client.prefs.toggles & SOUND_RADIO ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+/datum/verbs/menu/Settings/Sound/togglemidis/Get_checked(client/C)
+	return C.prefs.toggles & SOUND_RADIO
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_instruments)()
 	set name = "Hear/Silence Instruments"
