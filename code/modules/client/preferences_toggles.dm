@@ -166,7 +166,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleradio)()
 		if(C && C.chatOutput && !C.chatOutput.broken && C.chatOutput.loaded)
 			C.chatOutput.stopMusic()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Mojave Radio", "[usr.client.prefs.toggles & SOUND_RADIO ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-/datum/verbs/menu/Settings/Sound/togglemidis/Get_checked(client/C)
+/datum/verbs/menu/Settings/Sound/toggleradio/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_RADIO
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_instruments)()
