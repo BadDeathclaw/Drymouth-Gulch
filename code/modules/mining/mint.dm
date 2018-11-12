@@ -2,7 +2,7 @@
 
 
 /obj/machinery/mineral/mint
-	name = "cap press"
+	name = "metal press"
 	desc = "A heavy metal pressing machine used for making coins and bottle caps. This one seems to come from a Nuka Cola plant."
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "coinpress0"
@@ -46,7 +46,15 @@
 
 	var/datum/material/M = materials.materials[chosen]
 
-	dat += "<br><br>Will produce [coinsToProduce] [lowertext(M.name)] coins if enough materials are available.<br>"
+	if(M.name == "iron")
+		dat += "<br><br>Will press [coinsToProduce] bottle caps if enough materials are available.<br>"
+	else if(M.name == "gold")
+		dat += "<br><br>Will produce [coinsToProduce] gold Aureii if enough materials are available.<br>"
+	else if(M.name == "silver")
+		dat += "<br><br>Will produce [coinsToProduce] silver Denarii if enough materials are available.<br>"
+	else
+		dat += "<br><br>Will produce [coinsToProduce] [lowertext(M.name)] coins if enough materials are available.<br>"
+
 	dat += "<A href='?src=[REF(src)];chooseAmt=-10'>-10</A> "
 	dat += "<A href='?src=[REF(src)];chooseAmt=-5'>-5</A> "
 	dat += "<A href='?src=[REF(src)];chooseAmt=-1'>-1</A> "
@@ -54,8 +62,8 @@
 	dat += "<A href='?src=[REF(src)];chooseAmt=5'>+5</A> "
 	dat += "<A href='?src=[REF(src)];chooseAmt=10'>+10</A> "
 
-	dat += "<br><br>In total this machine produced <font color='green'><b>[newCoins]</b></font> coins."
-	dat += "<br><A href='?src=[REF(src)];makeCoins=[1]'>Make coins</A>"
+	dat += "<br><br>In total this machine produced <font color='green'><b>[newCoins]</b></font> units."
+	dat += "<br><A href='?src=[REF(src)];makeCoins=[1]'>Activate press</A>"
 	user << browse(dat, "window=mint")
 
 /obj/machinery/mineral/mint/Topic(href, href_list)
