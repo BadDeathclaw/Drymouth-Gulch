@@ -138,7 +138,7 @@
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
 		var/obj/item/lock_construct/L = I
-		if(lock == UNLOCKED, do_after(user, 40))
+		if(lock == UNLOCKED)
 			to_chat(user, "You key the lock to be the same.")
 			L.lock_data = lock_data
 			L.update_icon()
