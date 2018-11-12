@@ -32,7 +32,7 @@
 			icon_state = "spacecash500"
 		else if(amount >= 1000)
 			icon_state = "spacecash1000"
-	desc = "NCR-issued cash worth $" + amount + ", or about " + (amount * 0.4) + " caps."
+	desc = "NCR-issued cash worth $[amount], or about [amount * 0.4] caps."
 
 /obj/item/stack/spacecash/random
 	//Used to generate a random stack of dosh
