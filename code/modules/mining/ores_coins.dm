@@ -385,6 +385,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	desc = "A humble bottle cap. This one seems to be of the Nuka Cola variety."
 	cmineral = "iron"
 	icon_state = "coin_iron_heads"
+	is_non_flippable = TRUE
 	sideslist = list("heads")
 	value = 2.5
 	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT*0.2)
@@ -608,9 +609,11 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	if(cooldown < world.time)
 		if(string_attached) //does the coin have a wire attached
 			to_chat(user, "<span class='warning'>The coin won't flip very well with something attached!</span>" )
-			return FALSE// do not flip the coin
+			return FALSE // do not flip the coin
 		if(is_stack)
-			return FALSE// you can't flip a stack
+			return FALSE // you can't flip a stack
+		if(is_non_flippable)
+			return FALSE // you can't flip bottle caps
 		coinflip = pick(sideslist)
 		cooldown = world.time + 15
 		flick("coin_[cmineral]_flip", src)
