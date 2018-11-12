@@ -5,7 +5,7 @@
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "spacecash"
 	amount = 1
-	max_amount = 20
+	max_amount = 2000
 	throwforce = 0
 	throw_speed = 2
 	throw_range = 2
@@ -32,7 +32,7 @@
 			icon_state = "spacecash500"
 		else if(amount >= 1000)
 			icon_state = "spacecash1000"
-	desc = "It's worth $" + amount + ", or about " + (amount * 0.4) + " caps."
+	desc = "NCR-issued cash worth $" + amount + ", or about " + (amount * 0.4) + " caps."
 
 /obj/item/stack/spacecash/random
 	//Used to generate a random stack of dosh

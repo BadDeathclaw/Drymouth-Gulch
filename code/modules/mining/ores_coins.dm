@@ -390,6 +390,33 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT*0.2)
 	grind_results = list("iron" = 4)
 
+/obj/item/coin/iron/pile_ten
+	name = "bottle caps"
+	desc = "A small pile of Nuka Cola caps."
+	icon_state = "bottle_cap2"
+	value = 2.5 * 10
+	is_stack = TRUE
+
+/obj/item/coin/iron/pile_twenty
+	name = "bottle caps"
+	desc = "A pile of twenty Nuka Cola caps."
+	icon_state = "bottle_cap3"
+	value = 2.5 * 20
+	is_stack = TRUE
+
+/obj/item/coin/iron/pile_fifty
+	name = "bottle caps"
+	desc = "A pile of fifty Nuka Cola caps."
+	icon_state = "bottle_cap4"
+	value = 2.5 * 50
+	is_stack = TRUE
+
+/obj/item/coin/iron/pile_fifty
+	name = "bottle caps"
+	desc = "A pile of a hundred Nuka Cola caps. Wow, that's heavy!"
+	value = 2.5 * 100
+	is_stack = TRUE
+
 /obj/item/coin/plasma
 	name = "plasma coin"
 	cmineral = "plasma"
@@ -482,6 +509,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 				icon_state = "bottle_cap5"
 			else if(value >= 200)
 				icon_state = "bottle_cap6"
+		name = "bottle caps"
 		desc = "A stack of " + (0.4 * value) + " caps."
 	else
 		..()
@@ -492,6 +520,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	value = value - 2.5
 	if (value <= 2.5)
 		is_stack = FALSE
+		name = "bottle cap"
 	user.put_in_hands(new /obj/item/coin/gold)
 	..()
 
@@ -515,6 +544,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 				icon_state = "denarius5"
 			else if(value >= 51)
 				icon_state = "denarius6"
+		name = "silver Denarii"
 		desc = "A stack of Legion Denarii. It's worth about " + (0.4 * value) + " caps."
 	else
 		..()
@@ -525,6 +555,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	value = value - 10
 	if (value <= 10)
 		is_stack = FALSE
+		name = "silver Denarius"
 	user.put_in_hands(new /obj/item/coin/silver)
 	..()
 
@@ -548,6 +579,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 				icon_state = "aureus5"
 			else if(value >= 1251)
 				icon_state = "aureus6"
+		name = "gold Aureii"
 		desc = "A stack of Legion Aureii. It's worth about " + (0.4 * value) + " caps."
 	else
 		..()
@@ -558,6 +590,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	value = value - 250
 	if (value <= 250)
 		is_stack = FALSE
+		name = "gold Aureus"
 	user.put_in_hands(new /obj/item/coin/gold)
 	..()
 
