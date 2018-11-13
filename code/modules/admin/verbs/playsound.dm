@@ -40,6 +40,7 @@
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Global Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+
 /client/proc/play_local_sound(S as sound)
 	set category = "Fun"
 	set name = "Play Local Sound"
@@ -50,41 +51,6 @@
 	message_admins("[key_name_admin(src)] played a local sound [S]")
 	playsound(get_turf(src.mob), S, 50, 0, 0)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Local Sound") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-// A nerfed form of Play Global, for those with the whitelisted DJ role
-/client/proc/play_radio_sound(S as sound)
-	set category = "DJ"
-	set name = "Play Radio Song"
-	if(!check_rights(R_DJ))
-		return
-
-	var/freq = 1
-	var/vol = input(usr, "What volume would you like the sound to play at?",, 40) as null|num
-	if(!vol)
-		return
-	vol = CLAMP(vol, 1, 40) // Your Despacito remix cannot go to 100, I'm not sorry.
-
-	var/sound/threedog_sound = new()
-	threedog_sound.file = S
-	threedog_sound.priority = 250
-	threedog_sound.channel = CHANNEL_RADIO
-	threedog_sound.frequency = freq
-	threedog_sound.wait = 1
-	threedog_sound.repeat = 0
-	threedog_sound.status = SOUND_STREAM
-	threedog_sound.volume = vol
-
-	for(var/mob/M in GLOB.player_list)
-		if(M.client.prefs.toggles & SOUND_RADIO)
-			var/user_vol = M.client.chatOutput.adminMusicVolume
-			if(user_vol)
-				threedog_sound.volume = vol * (user_vol / 100)
-			SEND_SOUND(M, threedog_sound)
-			threedog_sound.volume = vol
-
-	log_admin("[key_name(src)] played a radio song [S]")
-	message_admins("[key_name_admin(src)] played a radio song [S]")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Play Mojave Radio Song") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/play_web_sound()
 	set category = "Fun"
