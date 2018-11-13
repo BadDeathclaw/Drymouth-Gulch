@@ -180,8 +180,8 @@ Decan
 	flag = F13DECAN
 	department_flag = LEGION
 	faction = "Legion"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
 
