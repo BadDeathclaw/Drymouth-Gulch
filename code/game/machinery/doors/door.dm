@@ -80,7 +80,7 @@
 	return ..()
 
 /obj/machinery/door/CollidedWith(atom/movable/AM)
-	if(operating || (obj_flags & EMAGGED))
+	if(operating || (obj_flags & EMAGGED) || (locked == TRUE))
 		return
 	if(ismob(AM))
 		var/mob/B = AM
@@ -147,7 +147,7 @@
 
 /obj/machinery/door/proc/try_to_activate_door(mob/user)
 	add_fingerprint(user)
-	if(operating || (obj_flags & EMAGGED))
+	if(operating || (obj_flags & EMAGGED) || (locked == TRUE))
 		return
 	if(!requiresID())
 		user = null //so allowed(user) always succeeds
