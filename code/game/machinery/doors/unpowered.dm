@@ -1,15 +1,44 @@
 /obj/machinery/door/unpowered
-
-/obj/machinery/door/unpowered/CollidedWith(atom/movable/AM)
-	..()
-	return
-
-
-/obj/machinery/door/unpowered/attackby(obj/item/I, mob/user, params)
-	return ..()
+	var/lock_data
+	var/lock
 
 /obj/machinery/door/unpowered/emag_act()
 	return
+
+/obj/machinery/door/unpowered/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
+		var/obj/item/lock_construct/L = I
+		if((lock) && (!locked))
+			to_chat(user, "You key the lock to be the same.")
+			L.lock_data = lock_data
+			L.desc = "A heavy-duty lock for doors. It has a [lock_data] engraved on it."
+			return
+		if((lock) && (locked))
+			to_chat(user, "This door already has a lock on it!")
+			return
+		lock_data = L.lock_data
+		lock = TRUE
+		qdel(L)
+		user.visible_message("[user] adds a lock to the door.")
+		desc = "Has a lock with [lock_data] etched into it."
+	if(istype(I, /obj/item/key))
+		var/obj/item/key/K = I
+		if(!lock)
+			to_chat(user, "This door doesn't have a lock.")
+			return
+		if((lock) && (K.lock_data != lock_data))
+			to_chat(user, "This is the wrong key!")
+			return
+		if((lock) && (K.lock_data == lock_data) && (locked == FALSE))
+			locked = TRUE
+			user.visible_message("[user] locks the door.")
+			return
+		if((lock) && (K.lock_data == lock_data) && (locked == TRUE))
+			locked = FALSE
+			user.visible_message("[user] unlocks the door.")
+			return
+	else
+		return ..()
 
 /obj/machinery/door/unpowered/shuttle
 	icon = 'icons/turf/shuttle.dmi'
@@ -30,8 +59,6 @@
 	density = TRUE
 	explosion_block = 1
 	autoclose = TRUE
-	var/lock_data
-	var/lock
 
 /obj/machinery/door/unpowered/wooddoor/update_icon()
 	if(density)
@@ -47,39 +74,3 @@
 		if("closing")
 			playsound(src,'sound/machines/door_close.ogg',40,1)
 			flick("roomc1", src)
-
-/obj/machinery/door/unpowered/wooddoor/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
-		var/obj/item/lock_construct/L = I
-		if((lock == 1) && (locked == FALSE))
-			to_chat(user, "You key the lock to be the same.")
-			L.lock_data = lock_data
-			return
-		if((lock == 1) && (locked == TRUE))
-			to_chat(user, "This door already has a lock on it!")
-			return
-		lock_data = L.lock_data
-		lock = 1
-		qdel(L)
-		user.visible_message("[user] adds a lock to the door.")
-		desc = "Has a lock with [lock_data] etched into it."
-	if(istype(I, /obj/item/key))
-		var/obj/item/key/K = I
-		if(lock == 0)
-			to_chat(user, "This door doesn't have a lock.")
-			return
-		if((src.lock > 0) && (K.lock_data != lock_data))
-			to_chat(user, "This is the wrong key!")
-			return
-		if((src.lock == 1) && (K.lock_data == lock_data) && (locked == FALSE))
-			lock = 2
-			locked = TRUE
-			user.visible_message("[user] locks the door.")
-			return
-		if((src.lock == 2) && (K.lock_data == lock_data) && (locked == TRUE))
-			lock = 1
-			locked = FALSE
-			user.visible_message("[user] unlocks the door.")
-			return
-	else
-		return ..()

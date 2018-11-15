@@ -21,7 +21,8 @@
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/lock_data = ""
-	var/lock = NO_LOCK
+	var/lock
+	var/locked
 	CanAtmosPass = ATMOS_PASS_DENSITY
 
 /obj/structure/mineral_door/Initialize()
@@ -73,7 +74,7 @@
 		return
 	if(isliving(user))
 		var/mob/living/M = user
-		if((/obj/structure/barricade in src.loc)||(lock == LOCKED))
+		if((/obj/structure/barricade in src.loc) || (locked))
 			to_chat(M, "It won't budge!")
 			return
 		if(world.time - M.last_bumped <= 60)
@@ -86,8 +87,8 @@
 			else
 				SwitchState()
 	else if(ismecha(user))
-		if(lock == LOCKED)
-			lock = NO_LOCK
+		if((locked) && (lock))
+			lock = !lock
 			user.visible_message("The lock breaks!")
 		SwitchState()
 
@@ -138,32 +139,32 @@
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
 		var/obj/item/lock_construct/L = I
-		if(lock == UNLOCKED)
+		if((!locked) && (lock))
 			to_chat(user, "You key the lock to be the same.")
 			L.lock_data = lock_data
 			L.update_icon()
 			return
-		if(lock == LOCKED)
+		if(locked)
 			to_chat(user, "This door already has a lock on it!")
 			return
 		lock_data = L.lock_data
-		lock = UNLOCKED
+		lock = TRUE
 		qdel(L)
 		user.visible_message("[user] adds a lock to the door.")
 	if(istype(I, /obj/item/key))
 		var/obj/item/key/K = I
-		if(lock == NO_LOCK)
+		if(!lock)
 			to_chat(user, "This door doesn't have a lock.")
 			return
-		if((src.lock > NO_LOCK) && (K.lock_data != lock_data))
+		if((lock) && (K.lock_data != lock_data))
 			to_chat(user, "This is the wrong key!")
 			return
-		if((src.lock == UNLOCKED) && (K.lock_data == lock_data))
-			lock = LOCKED
+		if((!locked) && (K.lock_data == lock_data))
+			locked = TRUE
 			user.visible_message("[user] locks the door.")
 			return
-		if((src.lock == LOCKED) && (K.lock_data == lock_data))
-			lock = UNLOCKED
+		if((locked) && (K.lock_data == lock_data))
+			locked = FALSE
 			user.visible_message("[user] unlocks the door.")
 			return
 	if(I.tool_behaviour == TOOL_MINING)
