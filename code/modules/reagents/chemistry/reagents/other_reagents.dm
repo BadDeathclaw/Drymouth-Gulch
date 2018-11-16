@@ -84,6 +84,24 @@
 	if(data["blood_DNA"])
 		B.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
+/datum/reagent/consumable/blood/cum
+	name = "Cum"
+	id = "cum"
+	color = "#FFFFFF" // rgb: 255, 255, 255
+	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+	taste_description = "warm salty-biterness with an edge of sweet"
+	taste_mult = 2
+	glass_icon_state = "glass_white"
+	glass_name = "glass of cream"
+	glass_desc = "Smells suspicious."
+	shot_glass_icon_state = "shotglasscream"
+
+/datum/reagent/blood/reaction_mob(mob/M, method=TOUCH, reac_volume)
+	. = ..()
+	if(iscarbon(M))
+		return
+
+
 /datum/reagent/liquidgibs
 	name = "Liquid gibs"
 	id = "liquidgibs"
