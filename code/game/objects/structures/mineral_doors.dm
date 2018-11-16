@@ -78,7 +78,7 @@
 			to_chat(M, "It won't budge!")
 			return
 		if(world.time - M.last_bumped <= 60)
-			return //NOTE do we really need that?
+			return
 		if(M.client)
 			if(iscarbon(M))
 				var/mob/living/carbon/C = M
@@ -87,8 +87,9 @@
 			else
 				SwitchState()
 	else if(ismecha(user))
-		if((locked) && (lock))
+		if(locked)
 			lock = !lock
+			locked = !locked
 			user.visible_message("The lock breaks!")
 		SwitchState()
 
