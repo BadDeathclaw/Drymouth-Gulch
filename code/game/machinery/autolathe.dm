@@ -379,3 +379,18 @@
 //Has a reference to the autolathe so you can do !!FUN!! things with hacked lathes
 /obj/item/proc/autolathe_crafted(obj/machinery/autolathe/A)
 	return
+
+/obj/machinery/autolathe/constructionlathe
+	name = "constructionlathe"
+	desc = "An autolathe that had VAULT-TEK DRM added to it to prevent it from producing weaponry."
+	list/categories = list(
+							"Tools",
+							"Electronics",
+							"Construction",
+							"T-Comm",
+							"Machinery",
+							"Medical",
+							"Misc",
+							"Dinnerware",
+							"Imported"
+							)
