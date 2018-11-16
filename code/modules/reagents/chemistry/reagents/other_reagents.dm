@@ -96,10 +96,23 @@
 	glass_desc = "Smells suspicious."
 	shot_glass_icon_state = "shotglasscream"
 
-/datum/reagent/blood/reaction_mob(mob/M, method=TOUCH, reac_volume)
+/datum/reagent/consumable/blood/cum/reaction_mob(mob/M, method=TOUCH, reac_volume)
 	. = ..()
 	if(iscarbon(M))
+	if(C.get_blood_id() == "blood" && (method == INJECT || (method == INGEST && C.dna && C.dna.species && (DRINKSBLOOD in C.dna.species.species_traits))))
 		return
+
+/datum/reagent/consumable/blood/cum/reaction_turf(turf/T, reac_volume)
+	if(!istype(T))
+		return
+	if(reac_volume < 3)
+		return
+
+	var/obj/effect/decal/cleanable/cum/B = locate() in T
+	if(!B)
+		B = new(T)
+	if(data["blood_DNA"])
+		B.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
 
 /datum/reagent/liquidgibs
