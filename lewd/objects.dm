@@ -33,7 +33,7 @@
 	to_chat(user, "<span class='warning'>Hmmm. Maybe we should put it in \a [hole]?</span>")
 
 //reagent here
-/datum/reagent/consumable/cum // could probably be made /consumable/blood/cum to just inherit the DNA procs sometime
+/datum/reagent/consumable/cum // could probably be made /blood/consumable/cum to just inherit the DNA procs sometime
 	name = "cum"
 	id = "cum"
 	description = "Where you found this is your own business."
