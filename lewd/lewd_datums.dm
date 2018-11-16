@@ -28,6 +28,26 @@
 	else
 		user.visible_message("<span class='warning'>\The [user] kisses \the [target] deeply.</span>")
 
+/datum/interaction/lewd/titgrope
+	command = "titgrope"
+	description = "Grope their breasts."
+	require_target_breasts = TRUE
+	write_log_user = "groped"
+	write_log_target = "was groped by"
+	interaction_sound = null
+	max_distance = 1
+
+/datum/interaction/lewd/titgrope/post_interaction(mob/user, mob/target)
+	. = ..()
+	if(user.lust < 5)
+		user.lust = 5
+
+/datum/interaction/lewd/titgrope/display_interaction(mob/user, mob/target)
+	if(user.a_intent == INTENT_HELP)
+		user.visible_message("<span class='warning'>\The [user] gently gropes \the [target]'s breasts.</span>")
+	else if(user.a_intent == INTENT_HARM)
+		user.visible_message("<span class='warning'>\The [user] aggressively gropes \the [target]'s breasts.</span>")
+
 /datum/interaction/lewd/oral
 	command = "suckvag"
 	description = "Go down on them."
@@ -241,3 +261,5 @@
 
 /datum/interaction/lewd/grindmouth/display_interaction(mob/user, mob/target)
 	user.do_grindmouth(target)
+
+/datum/inter

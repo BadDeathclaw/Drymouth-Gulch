@@ -42,6 +42,9 @@
 /mob/proc/has_vagina()
 	return (gender == FEMALE)
 
+/mob/proc/has_breasts()
+	return (gender == FEMALE)
+
 /mob/proc/has_anus()
 	return TRUE
 
