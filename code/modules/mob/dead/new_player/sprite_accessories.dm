@@ -512,6 +512,27 @@
 	name = "Large Bun"
 	icon_state = "hair_largebun"
 
+/datum/sprite_accessory/hair/halfshaved
+	name = "Half Shaved"
+	icon_state = "hair_halfshaved"
+
+/datum/sprite_accessory/hair/halfshavedemo
+	name = "Half Shaved Emo"
+	icon_state = "hair_halfshavedemo"
+
+/datum/sprite_accessory/hair/longsideemo
+	name = "Long Side Emo"
+	icon_state = "hair_longsideemo"
+
+/datum/sprite_accessory/hair/leftsidecut
+	name = "Left Side Cut"
+	icon_state = "hair_leftside"
+
+/datum/sprite_accessory/hair/rightsidecut
+	name = "Right Side Cut"
+	icon_state = "hair_rightside"
+
+
 /////////////////////////////
 // Facial Hair Definitions //
 /////////////////////////////

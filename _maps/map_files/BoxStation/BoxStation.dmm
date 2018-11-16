@@ -2194,7 +2194,7 @@
 "aQj" = (/obj/machinery/button{dir = 4; id = "bosgarage"; name = "Garage Door"; pixel_x = 24},/turf/open/floor/wood/f13/old,/area/f13/prison)
 "aQk" = (/turf/open/floor/plating/f13/outside/road,/area/f13/prison)
 "aQl" = (/obj/structure/rack,/turf/open/floor/plating/f13/outside/road,/area/f13/prison)
-"aQm" = (/obj/machinery/door/airlock/hatch{req_access_txt = "20"},/obj/machinery/door/unpowered/wooddoor,/turf/open/floor/wood/f13/old,/area/f13/prison)
+"aQm" = (/obj/machinery/door/airlock/hatch{req_access_txt = "120"},/obj/machinery/door/unpowered/wooddoor,/turf/open/floor/wood/f13/old,/area/f13/prison)
 "aQn" = (/obj/structure/window/fulltile/wood_window,/turf/open/floor/wood/f13/old,/area/f13/farmhousesouth)
 "aQo" = (/obj/machinery/conveyor{dir = 10; id = "mining_internal"},/obj/machinery/light/small{dir = 4},/obj/effect/turf_decal/stripes/corner{dir = 4},/turf/open/floor/plating,/area/f13/klamat/mine)
 "aQp" = (/obj/item/reagent_containers/blood/radaway,/obj/item/reagent_containers/blood/radaway,/turf/open/floor/plasteel/f13{icon_state = "yellowrustyfull"},/area/f13/klamat/mine)
