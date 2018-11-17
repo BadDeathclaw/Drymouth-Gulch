@@ -74,7 +74,7 @@
 		return
 	if(isliving(user))
 		var/mob/living/M = user
-		if((/obj/structure/barricade in src.loc) || (locked))
+		if((/obj/structure/barricade in src.loc) || locked)
 			to_chat(M, "It won't budge!")
 			return
 		if(Lock)

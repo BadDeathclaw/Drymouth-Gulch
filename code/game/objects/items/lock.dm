@@ -6,12 +6,12 @@
 	var/lock_data
 	var/static/lock_uid = 1
 
-/obj/item/lock_construct/New() // Same system machines use for UID. Could probably add a global UID for everything if you wanted and use it for shenanigans, or simpler loading.
+/obj/item/lock_construct/Initialize() // Same system machines use for UID. Could probably add a global UID for everything if you wanted and use it for shenanigans, or simpler loading.
 	..()
 	lock_data = lock_uid++
 	desc = "A heavy-duty lock for doors. It has a [lock_data] engraved on it."
 
-/obj/item/lock_construct/attackby(var/obj/item/I, var/mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
+/obj/item/lock_construct/attackby(/obj/item/I, var/mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
 	if(istype(I,/obj/item/key))
 		var/obj/item/key/K = I
 		if(!K.lock_data)
