@@ -45,12 +45,6 @@ Needs whitelist
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
-/datum/outfit/job/f13legate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
 /*
 Centurion
 */
@@ -189,11 +183,6 @@ Decan
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
-/datum/outfit/job/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
 /*
 Veteran
 */
@@ -322,12 +311,6 @@ Legionary
 	box = null
 	r_pocket = /obj/item/binocs
 
-/datum/outfit/job/f13explorer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
 /datum/job/f13scout
 	title = "Scout"
 	flag = F13SCOUT
@@ -362,12 +345,6 @@ Legionary
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
-
-/datum/outfit/job/f13scout/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13campfollower
 	title = "Camp Follower"
