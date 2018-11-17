@@ -45,6 +45,11 @@ Needs whitelist
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13legate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /*
 Centurion
@@ -91,6 +96,12 @@ Centurion
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /*
 Vexillarius
 */
@@ -130,6 +141,12 @@ Vexillarius
 		/obj/item/ammo_box/magazine/r20=1, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/outfit/job/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /*
 Decan
@@ -172,6 +189,11 @@ Decan
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 /*
 Veteran
 */
@@ -211,6 +233,12 @@ Veteran
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/outfit/job/f13vetlegion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /*
 Legionary
@@ -252,6 +280,12 @@ Legionary
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13legionary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /datum/job/f13explorer
 	title = "Explorer"
 	flag = F13EXPLORER
@@ -288,6 +322,12 @@ Legionary
 	box = null
 	r_pocket = /obj/item/binocs
 
+/datum/outfit/job/f13explorer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /datum/job/f13scout
 	title = "Scout"
 	flag = F13SCOUT
@@ -322,6 +362,12 @@ Legionary
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/outfit/job/f13scout/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13campfollower
 	title = "Camp Follower"

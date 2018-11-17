@@ -348,7 +348,10 @@
 			macrotier = M.rating
 	powerefficiency = round(newpowereff, 0.01)
 
-
+/obj/machinery/chem_dispenser/MouseDrop_T(mob/target, mob/user)
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
+		return
 
 /obj/machinery/chem_dispenser/on_deconstruction()
 	cell = null
