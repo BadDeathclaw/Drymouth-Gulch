@@ -4,7 +4,7 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Centurion",
 	"NCR Captain",
 	"Overseer",
-	"Sheriff",
+	"Sheriff"
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
@@ -12,12 +12,12 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Paladin",
 	"Knight",
 	"Scribe",
-	"Initiate",
+	"Initiate"
 ))
 
 GLOBAL_LIST_INIT(den_positions, list(
 	"Sheriff",
-	"Settler",
+	"Settler"
 ))
 
 GLOBAL_LIST_INIT(legion_positions, list(
@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(legion_positions, list(
 	"Scout",
 	"Veteran Legionnaire",
 	"Legionary",
-	"Camp Follower",
+	"Camp Follower"
 ))
 
 GLOBAL_LIST_INIT(ncr_positions, list(
@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Recruit",
 	"NCR Veteran Ranger",
 	"NCR Patrol Ranger",
-	"NCR Recon Ranger",
+	"NCR Recon Ranger"
 ))
 
 GLOBAL_LIST_INIT(vault_positions, list(
@@ -49,14 +49,18 @@ GLOBAL_LIST_INIT(vault_positions, list(
 	"Vault-tec Scientist",
 	"Vault-tec Security",
 	"Vault-tec Engineer",
-	"Vault Dweller",
+	"Vault Dweller"
 ))
 
 GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Wastelander",
 	"Raider",
 	"Pusher",
-	"Preacher",
+	"Preacher"
+))
+GLOBAL_LIST_INIT(security_positions, list(
+	"Chief of Security",
+	"Vault-tec Security"
 ))
 /*
 GLOBAL_LIST_INIT(engineering_positions, list(
@@ -120,6 +124,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_NCR         = list("titles" = ncr_positions		),
 	EXP_TYPE_VAULT       = list("titles" = vault_positions		),
 	EXP_TYPE_WASTELAND	 = list("titles" = wasteland_positions	),
+	EXP_TYPE_SECURITY 	= list("titles" = security_positions)
 	//EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
 	// EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
 	// EXP_TYPE_COMMAND = list("titles" = command_positions),
@@ -127,7 +132,6 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	// EXP_TYPE_MEDICAL = list("titles" = medical_positions),
 	// EXP_TYPE_SCIENCE = list("titles" = science_positions),
 	// EXP_TYPE_SUPPLY = list("titles" = supply_positions),
-	// EXP_TYPE_SECURITY = list("titles" = security_positions),
 	// EXP_TYPE_SILICON = list("titles" = list("AI","Cyborg")),
 	// EXP_TYPE_SERVICE = list("titles" = civilian_positions),
 ))
