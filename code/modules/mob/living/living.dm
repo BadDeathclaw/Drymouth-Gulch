@@ -798,6 +798,9 @@
 		return FALSE
 	return TRUE
 
+/mob/living/proc/can_use_guns(obj/item/G)//actually used for more than guns!
+	return TRUE
+
 /mob/living/proc/update_stamina()
 	return
 

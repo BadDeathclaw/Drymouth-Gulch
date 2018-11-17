@@ -375,7 +375,7 @@
 	. = ..()
 	adjust_hacked(TRUE)
 
-/obj/machinery/autolathe/MouseDrop_T(mob/target, mob/user)
+/obj/machinery/autolathe/interact(mob/user)
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, "<span class='warning'>You stare at the blinking lights, fascinated.</span>")
 		return
