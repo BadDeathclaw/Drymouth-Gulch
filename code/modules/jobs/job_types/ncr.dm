@@ -11,7 +11,7 @@ Colonel
 	supervisors = "the general"
 	selection_color = "#ffeeaa"
 	req_admin_notify = 1
-	exp_requirements = 100
+	exp_requirements = 45
 	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13colonel

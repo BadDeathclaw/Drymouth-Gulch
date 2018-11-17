@@ -19,7 +19,7 @@ Elder
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
-	exp_requirements = 100
+	exp_requirements = 45
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/f13elder
@@ -65,7 +65,7 @@ Paladin
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
 	minimal_player_age = 2
-	exp_requirements = 50
+	exp_requirements = 30
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/f13paladin

@@ -24,7 +24,7 @@ Overseer
 	req_admin_notify = 1
 	minimal_player_age = 6
 
-	exp_requirements = 100
+	exp_requirements = 45
 	exp_type = EXP_TYPE_VAULT
 
 	outfit = /datum/outfit/job/f13overseer
@@ -76,7 +76,7 @@ Head of Security
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
 	minimal_player_age = 4
-	exp_requirements = 50
+	exp_requirements = 30
 	exp_type = EXP_TYPE_VAULT
 	exp_type_department = EXP_TYPE_SECURITY
 
