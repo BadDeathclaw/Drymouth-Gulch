@@ -1,17 +1,43 @@
 /obj/machinery/door/unpowered
-	var/obj/item/lock_construct/lock
+	var/obj/item/lock_construct/Lock
 	var/lock_data
 
 /obj/machinery/door/unpowered/emag_act()
 	return
 
 /obj/machinery/door/unpowered/attackby(obj/item/I, mob/user, params)
-	if(islock(W))
-	var/obj/item/lock_construct/I = W
-		if(!user.transferItemToLoc(W, src))
+	if(istype(I, /obj/item/lock_construct/) && do_after(user, 10, target = src))
+		var/obj/item/lock_construct/L = I
+		if(!user.transferItemToLoc(I, src))
 			return
-		lock_construct = I
+		Lock = L
+		src.lock_data = L.lock_data
+		user.visible_message("[user] adds a lock to the door.")
+		desc = "[desc] has a lock engraved with a [L.lock_data]"
 		return
+	if(istype(I, /obj/item/key))
+		var/obj/item/key/K = I
+		if(Lock) //to check if we have added a lock, and should test the key
+			return Lock.check_key(K)
+	else
+		return ..()
+
+/obj/machinery/door/unpowered/CollidedWith(atom/movable/AM)
+	..()
+	if(Lock)
+		if(Lock.check_key())
+			return
+..()
+
+/obj/machinery/door/unpowered/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	if(Lock)
+		if(Lock.check_key())
+			to_chat(user, "It's locked!")
+			return
+	return try_to_activate_door(user)
 
 /obj/machinery/door/unpowered/shuttle
 	icon = 'icons/turf/shuttle.dmi'

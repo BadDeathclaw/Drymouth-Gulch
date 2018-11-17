@@ -2,6 +2,7 @@
 	name = "lock"
 	icon = 'icons/obj/lock.dmi'
 	w_class = WEIGHT_CLASS_SMALL
+	var/locked
 	var/lock_data
 	var/static/lock_uid = 1
 
@@ -28,6 +29,17 @@
 		return
 	..()
 
+/obj/item/lock_construct/proc/check_key(obj/item/key/K, mob/user = null)
+	if(K.lock_data == src.lock_data) //if the key matches us
+		if(locked)
+			user.visible_message("[user] unlocks the door.")
+			locked = FALSE
+		else
+			user.visible_message("[user] locks the door.")
+			locked = TRUE
+	else
+		to_chat(user, "This is the wrong key!")
+
 /obj/item/key
 	name = "key"
 	icon = 'icons/obj/key.dmi'
@@ -52,67 +64,3 @@
 	else
 		return ..()
 
-	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
-		var/obj/item/lock_construct/L = I
-		if((lock) && (!locked))
-			to_chat(user, "You key the lock to be the same.")
-			L.lock_data = lock_data
-			L.desc = "A heavy-duty lock for doors. It has a [lock_data] engraved on it."
-			return
-		if((lock) && (locked))
-			to_chat(user, "This door already has a lock on it!")
-			return
-		lock_data = L.lock_data
-		lock = TRUE
-		qdel(L)
-		user.visible_message("[user] adds a lock to the door.")
-		desc = "Has a lock with [lock_data] etched into it."
-	if(istype(I, /obj/item/key))
-		var/obj/item/key/K = I
-		if(!lock)
-			to_chat(user, "This door doesn't have a lock.")
-			return
-		if((lock) && (K.lock_data != lock_data))
-			to_chat(user, "This is the wrong key!")
-			return
-		if((lock) && (K.lock_data == lock_data) && (locked == FALSE))
-			locked = TRUE
-			user.visible_message("[user] locks the door.")
-			return
-		if((lock) && (K.lock_data == lock_data) && (locked == TRUE))
-			locked = FALSE
-			user.visible_message("[user] unlocks the door.")
-			return
-	else
-		return ..()
-
-	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
-		var/obj/item/lock_construct/L = I
-		if((!locked) && (lock))
-			to_chat(user, "You key the lock to be the same.")
-			L.lock_data = lock_data
-			L.update_icon()
-			return
-		if(locked)
-			to_chat(user, "This door already has a lock on it!")
-			return
-		lock_data = L.lock_data
-		lock = TRUE
-		qdel(L)
-		user.visible_message("[user] adds a lock to the door.")
-	if(istype(I, /obj/item/key))
-		var/obj/item/key/K = I
-		if(!lock)
-			to_chat(user, "This door doesn't have a lock.")
-			return
-		if((lock) && (K.lock_data != lock_data))
-			to_chat(user, "This is the wrong key!")
-			return
-		if((!locked) && (K.lock_data == lock_data))
-			locked = TRUE
-			user.visible_message("[user] locks the door.")
-			return
-		if((locked) && (K.lock_data == lock_data))
-			locked = FALSE
-			user.visible_message("[user] unlocks the door.")
-			return

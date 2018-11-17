@@ -21,7 +21,7 @@
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/lock_data = ""
-	var/obj/item/lock_construct/lock
+	var/obj/item/lock_construct/Lock
 	var/locked
 	CanAtmosPass = ATMOS_PASS_DENSITY
 
@@ -77,6 +77,10 @@
 		if((/obj/structure/barricade in src.loc) || (locked))
 			to_chat(M, "It won't budge!")
 			return
+		if(Lock)
+			if(Lock.check_key())
+				to_chat(M, "It won't budge!")
+				return
 		if(world.time - M.last_bumped <= 60)
 			return
 		if(M.client)
@@ -88,7 +92,7 @@
 				SwitchState()
 	else if(ismecha(user))
 		if(locked)
-			lock = !lock
+			qdel(/obj/item/lock_construct)
 			locked = !locked
 			user.visible_message("The lock breaks!")
 		SwitchState()
@@ -138,6 +142,19 @@
 		icon_state = initial_state
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/lock_construct/) && do_after(user, 10, target = src))
+		var/obj/item/lock_construct/L = I
+		if(!user.transferItemToLoc(I, src))
+			return
+		Lock = L
+		src.lock_data = L.lock_data
+		user.visible_message("[user] adds a lock to the door.")
+		desc = "[desc] has a lock engraved with a [L.lock_data]"
+		return
+	if(istype(I, /obj/item/key))
+		var/obj/item/key/K = I
+		if(Lock) //to check if we have added a lock, and should test the key
+			return Lock.check_key(K)
 	if(I.tool_behaviour == TOOL_MINING)
 		to_chat(user, "<span class='notice'>You start digging the [name]...</span>")
 		if(I.use_tool(src, user, 40, volume=50))
