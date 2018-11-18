@@ -402,7 +402,7 @@
 		return
 
 	/* if player has no body, allow instant respawn, otherwise do standard checks */
-	if(src.mind.current)
+	if(src.mind && src.mind.current) /* check if mind is null, as observers don't have one - they can instant respawn */
 		var/is_admin = check_rights_for(src.client, R_ADMIN)
 		var/deathtime = world.time - src.timeofdeath //How long dead for in deciseconds -- src can either be the corpse or ghost
 		/* check if the respawn cooldown has expired, and check for admin override if not */

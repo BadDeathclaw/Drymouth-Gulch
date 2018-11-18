@@ -189,3 +189,11 @@
 	var/obj/item/circuitboard/machine/B = new /obj/item/circuitboard/machine/rdserver(null)
 	B.apply_default_parts(src)
 
+
+/* so we can link lathes and such to this server's techweb */
+/obj/machinery/rnd/server/multitool_act(mob/living/user, obj/item/I)
+	if(istype(I, /obj/item/multitool))
+		var/obj/item/multitool/M = I
+		M.buffer = src
+		to_chat(user, "<span class='notice'>You store server information in [I]'s buffer.</span>")
+		return TRUE

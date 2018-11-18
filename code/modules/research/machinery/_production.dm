@@ -331,12 +331,17 @@
 
 	l += "</tr></table></div>"
 	return l
+/* allows production machinery to be manually linked to rnd server as part of round setup */
+/obj/machinery/rnd/production/multitool_act(mob/living/user, obj/item/I)
+	if(istype(I, /obj/item/multitool))
+		var/obj/item/multitool/M = I
+		if(!istype(M.buffer, /obj/machinery/rnd/server))
+			to_chat(user, "<span class='warning'>The [I] has no linkage data in its buffer.</span>")
+			return FALSE
+		else
+			var/obj/machinery/rnd/server/S = M.buffer
+			host_research = S.stored_research
+			to_chat(user, "<span class='notice'>You link [src] to the server in [I]'s buffer.</span>")
+			INVOKE_ASYNC(src, .proc/update_research)
+			return TRUE
 
-/obj/machinery/rnd/production/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/disk/tech_disk))
-		var/obj/item/disk/tech_disk/disk = I
-		host_research = disk.stored_research
-		to_chat(user, "You slap the [src.name] with the tech disk, replacing it's techweb with the one in the disk.")
-		update_research()
-	else
-		. = ..()

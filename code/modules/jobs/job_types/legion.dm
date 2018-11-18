@@ -77,6 +77,7 @@ Centurion
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
+	mask =			/obj/item/clothing/mask/bandana/legcenturion
 	r_hand =		/obj/item/melee/powerfist
 	l_hand =		/obj/item/tank/internals/oxygen
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
@@ -98,8 +99,8 @@ Vexillarius
 	flag = F13VEXILLARIUS
 	department_flag = LEGION
 	faction = "Legion"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the centurion"
 	selection_color = "#ffeeee"
 
@@ -140,7 +141,7 @@ Decan
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "vexillarius troops"
+	supervisors = "the centurion"
 	selection_color = "#ffeeee"
 
 	outfit = /datum/outfit/job/f13decan
@@ -158,6 +159,7 @@ Decan
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
+	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
 	r_hand = 		/obj/item/twohanded/fireaxe
@@ -198,6 +200,7 @@ Veteran
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
+	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
@@ -237,6 +240,7 @@ Legionary
 	gloves =		/obj/item/clothing/gloves/legion
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
+	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
@@ -247,3 +251,138 @@ Legionary
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/job/f13explorer
+	title = "Explorer"
+	flag = F13EXPLORER
+	department_flag = LEGION
+	faction = "Legion"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "decanus troops"
+	selection_color = "#ffeeee"
+
+	outfit = /datum/outfit/job/f13explorer
+
+/datum/outfit/job/f13explorer
+	name = "Explorer"
+	jobtype = /datum/job/f13explorer
+
+	id = null
+	ears = null
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionmetal
+	gloves =		/obj/item/clothing/gloves/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
+	head = 			/obj/item/clothing/head/helmet/f13/legion/explorer
+	glasses = null
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/claymore/machete=1, \
+		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/flashlight/flare/torch=1)
+	box = null
+	r_pocket = /obj/item/binocs
+
+/datum/job/f13scout
+	title = "Scout"
+	flag = F13SCOUT
+	department_flag = LEGION
+	faction = "Legion"
+	total_positions = 4
+	spawn_positions = 4
+	supervisors = "explorer troops"
+	selection_color = "#ffeeee"
+
+	outfit = /datum/outfit/job/f13scout
+
+/datum/outfit/job/f13scout
+	name = "Scout"
+	jobtype = /datum/job/f13scout
+
+	id = null
+	ears = null
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionleather
+	gloves =		/obj/item/clothing/gloves/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
+	head = 			/obj/item/clothing/head/helmet/f13/legion/scout
+	glasses = null
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/claymore/machete=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/a762=2, \
+		/obj/item/flashlight/flare/torch=1)
+	box = null
+
+/datum/job/f13campfollower
+	title = "Camp Follower"
+	flag = F13CAMPFOLLOWER
+	department_flag = LEGION
+	faction = "Legion"
+	total_positions = 3
+	spawn_positions = 3
+	supervisors = "the entire legion"
+	selection_color = "#ffeeee"
+
+	outfit = /datum/outfit/job/f13campfollower
+
+/datum/outfit/job/f13campfollower
+	name = "Camp Follower"
+	jobtype = /datum/outfit/job/f13campfollower
+
+	id = null
+	ears = null
+	belt = null
+	shoes = /obj/item/clothing/shoes/sandal
+
+/datum/outfit/job/f13campfollower/pre_equip(mob/living/carbon/human/H)
+	..()
+	var/follower_job = "nothing"
+	if (H.gender == MALE)
+		uniform = pick(
+			/obj/item/clothing/under/f13/caravan, \
+			/obj/item/clothing/under/f13/brahminm)
+		follower_job = pick("miner", "farmer", "smith", "healer", "nothing")
+	else
+		uniform = pick(
+			/obj/item/clothing/under/f13/caravan, \
+			/obj/item/clothing/under/f13/brahminf)
+		follower_job = pick("cook", "farmer", "healer", "caretaker", "nothing")
+
+	if (follower_job == "cook")
+		belt = /obj/item/kitchen/knife
+		if (prob(50))
+			suit = /obj/item/clothing/suit/apron/chef
+	else if (follower_job == "miner")
+		belt = /obj/item/storage/bag/ore
+		backpack = /obj/item/pickaxe
+		if (prob(50))
+			suit = /obj/item/clothing/suit/fluff/vest
+	else if (follower_job == "farmer")
+		belt = /obj/item/storage/bag/plants
+		if (prob(50))
+			suit = /obj/item/clothing/suit/fluff/vest
+	else if (follower_job == "smith")
+		backpack = /obj/item/storage/backpack/satchel/explorer
+		backpack_contents = list(/obj/item/screwdriver, /obj/item/wrench, /obj/item/crowbar, /obj/item/wirecutters)
+		if (prob(50))
+			suit = /obj/item/clothing/suit/fluff/vest
+	else if (follower_job == "healer")
+		backpack = /obj/item/storage/backpack/satchel/explorer
+		backpack_contents = list(/obj/item/reagent_containers/pill/patch/healingpowder=4, /obj/item/stack/medical/gauze/improvised = 2)
+		if (prob(50))
+			suit = /obj/item/clothing/suit/apron/surgical
+	else if (follower_job == "caretaker")
+		backpack = /obj/item/storage/backpack/satchel/explorer
+		backpack_contents = list(/obj/item/soap/homemade, /obj/item/melee/flyswatter, /obj/item/reagent_containers/glass/rag, /obj/item/reagent_containers/glass/bucket, /obj/item/stack/medical/gauze/improvised)
+
+	r_pocket = /obj/item/flashlight/flare/torch
