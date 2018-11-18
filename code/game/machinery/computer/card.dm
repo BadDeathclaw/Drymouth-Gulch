@@ -34,7 +34,33 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Head of Security",
 		"Chief Engineer",
 		"Research Director",
-		"Chief Medical Officer")
+		"Chief Medical Officer",
+		"Overseer",
+		"Chief of Security",
+		"Sheriff",
+		"Settler",
+		"NCR Captain",
+		"Paladin",
+		"Knight",
+		"Scribe",
+		"Initiate",
+		"Centurion",
+		"Vexillarius",
+		"Decanus",
+		"Veteran Legionnaire",
+		"Legionary",
+		"NCR Lieutenant",
+		"NCR Sergeant",
+		"NCR Trooper",
+		"NCR Recruit",
+		"NCR Veteran Ranger",
+		"NCR Patrol Ranger",
+		"NCR Recon Ranger",
+		"Wastelander",
+		"Raider",
+		"Pusher",
+		"Preacher"
+		)
 
 	//The scaling factor of max total positions in relation to the total amount of people on board the station in %
 	var/max_relative_positions = 30 //30%: Seems reasonable, limit of 6 @ 20 players

@@ -331,3 +331,12 @@
 
 	l += "</tr></table></div>"
 	return l
+
+/obj/machinery/rnd/production/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/disk/tech_disk))
+		var/obj/item/disk/tech_disk/disk = I
+		host_research = disk.stored_research
+		to_chat(user, "You slap the [src.name] with the tech disk, replacing it's techweb with the one in the disk.")
+		update_research()
+	else
+		. = ..()
