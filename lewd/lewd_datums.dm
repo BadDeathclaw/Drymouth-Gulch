@@ -261,5 +261,3 @@
 
 /datum/interaction/lewd/grindmouth/display_interaction(mob/user, mob/target)
 	user.do_grindmouth(target)
-
-/datum/inter
