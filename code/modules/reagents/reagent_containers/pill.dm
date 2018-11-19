@@ -158,10 +158,10 @@
 	icon_state = "pill9"
 	color = "#454545"
 	list_reagents = list("shadowmutationtoxin" = 1)
-	
+
 /obj/item/reagent_containers/pill/mentat
 	name = "mentat pill"
-	desc = "A chalky pill that induces increased memory and cognotive functions, as well as heightened perception and creative faculties. \
+	desc = "A chalky pill that induces increased memory and cognitive functions, as well as heightened perception and creative faculties. \
 	Also known for fixing eye damage and blindness, for some reason."
 	icon_state = "pill20"
 	list_reagents = list("mentat" = 10)
