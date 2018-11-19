@@ -76,3 +76,7 @@
 //Shuttle defaults
 #define SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE /area/shuttle
 #define SHUTTLE_DEFAULT_UNDERLYING_AREA /area/space
+
+//turfs for transit area, in case you need to fiddle
+#define TRANSIT_TURF /turf/closed/indestructible/riveted ///turf/open/space/transit
+#define RESERVE_TURF /turf/open/floor/bronze /* idk, thats pretty */
