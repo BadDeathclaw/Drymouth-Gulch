@@ -30,8 +30,8 @@
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "gib7"
-	health = 400
-	maxHealth = 400
+	health = 200
+	maxHealth = 200
 	melee_damage_lower = 72
 	melee_damage_upper = 72
 	attack_sound = 'sound/items/welder.ogg'
@@ -45,10 +45,6 @@
 
 /mob/living/simple_animal/hostile/handy/gutsy/AttackingTarget()
 	. = ..()
-	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.adjust_fire_stacks(2)
-		H.IgniteMob()
 
 /mob/living/simple_animal/hostile/handy/protectron
 	name = "protectron"
