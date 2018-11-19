@@ -114,7 +114,6 @@ Raider
 		/obj/item/clothing/under/f13/doctorm, \
 		/obj/item/clothing/under/roman)
 	suit = pick(
-		/obj/item/clothing/head/helmet/f13/raider,\
 		/obj/item/clothing/suit/fluff/cowboybvest,\
 		/obj/item/clothing/suit/fluff/cowboygvest,\
 		/obj/item/clothing/suit/fluff/battlecruiser,\
@@ -133,10 +132,11 @@ Raider
 		/obj/item/clothing/suit/bio_suit/security,\
 		/obj/item/clothing/suit/apron/chef,\
 		/obj/item/clothing/suit/apron/overalls,\
-		/obj/item/clothing/suit/straight_jacket,\
 		/obj/item/clothing/suit/toggle/labcoat/mad,\
 		/obj/item/clothing/suit/pirate,\
-		/obj/item/clothing/suit/cardborg,\
+		/obj/item/clothing/suit/armor/f13/kit/terrible,\
+		/obj/item/clothing/suit/armor/f13/leatherarmor/terrible, \
+		/obj/item/clothing/suit/armor/f13/bmetalarmor/terrible, \
 		/obj/item/clothing/suit/armor/f13/raider/yankee, \
 		/obj/item/clothing/suit/armor/f13/raider/sadist, \
 		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
@@ -148,11 +148,8 @@ Raider
 		/obj/item/clothing/head/santa,\
 		/obj/item/clothing/head/helmet/roman,\
 		/obj/item/clothing/head/helmet/gladiator,\
-		/obj/item/clothing/head/helmet/bluetaghelm,\
-		/obj/item/clothing/head/helmet/redtaghelm,\
 		/obj/item/clothing/head/festive,\
 		/obj/item/clothing/head/canada,\
-		/obj/item/clothing/head/cardborg,\
 		/obj/item/clothing/head/bio_hood/security,\
 		/obj/item/clothing/head/bandana,\
 		/obj/item/clothing/head/welding,\
@@ -216,11 +213,15 @@ Pusher
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	uniform =  		/obj/item/clothing/under/jabroni
+	suit = /obj/item/clothing/suit/f13/duster
 /datum/outfit/job/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/jet=3, \
+		/obj/item/reagent_containers/syringe/medx=2)
 
 /*
 Preacher

@@ -326,6 +326,21 @@
 	slowdown = 1
 	strip_delay = 60
 
+/obj/item/clothing/suit/armor/f13/kit/terrible
+	name = "scorched armor kit"
+	desc = "A few football pads and a belt. At this point, it's really just for looks."
+	armor = list("melee" = 1, "bullet" = 1, "laser" = 0, "energy" = 0, "bomb" = 1, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/leatherarmor/terrible
+	name = "battered leather armor"
+	desc = "A set of heavily worn brahmin leather armor. It looks like it's about to fall apart."
+	armor = list("melee" = 3, "bullet" = 3, "laser" = 0, "energy" = 0, "bomb" = 3, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/bmetalarmor/terrible
+	name = "rusting metal armor"
+	desc = "A set of rusting metal armor made from various bits of scrap metal. Several bullet holes have weakened it."
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/ibmetalarmor
 	name = "reflective metal armor"
 	desc = "A set of reflective metal armor made from various bits of scrap metal.<br>Will protect against bullets and dissipate lasers a lot better, still slowing you down."
