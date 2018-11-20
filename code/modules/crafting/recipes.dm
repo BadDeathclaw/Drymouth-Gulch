@@ -684,3 +684,44 @@
 	reqs = list(/obj/item/clothing/under = 1)
 	time = 20
 	category = CAT_MISC
+
+/datum/crafting_recipe/metalarmor
+	name = "metal armor"	result = /obj/item/clothing/suit/armor/f13/bmetalarmor
+	reqs = list(/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
+	time = 120
+	category = CAT_ARMOR
+	
+/datum/crafting_recipe/Imetalarmor
+	name = "improved metal armor"
+	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
+	reqs = list(/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 4,
+				/obj/item/stack/sheet/plasteel = 2)
+	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
+	time = 120
+	category = CAT_ARMOR
+	
+/datum/crafting_recipe/IImetalarmor
+	name = "upgrading metal armor"
+	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
+	reqs = list(/obj/item/clothing/suit/armor/f13/bmetalarmor = 1,
+				/obj/item/stack/cable_coil = 1,
+				/obj/item/stack/sheet/plasteel = 2)
+	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
+	time = 120
+	category = CAT_ARMOR
+	
+/datum/crafting_recipe/healpowder
+	name = "Healing powder"
+	result = /obj/item/weapon/reagent_containers/pill/patch/healpowder
+	reqs = list(/obj/item/weapon/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/grown/xander = 1)
+	time = 20
+	category = CAT_MED
+	
+	
+	
