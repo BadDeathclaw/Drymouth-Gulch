@@ -1,12 +1,10 @@
 /obj/machinery/door/unpowered
 
-/obj/machinery/door/unpowered/CollidedWith(atom/movable/AM)
-	..()
-	return
-
-
 /obj/machinery/door/unpowered/attackby(obj/item/I, mob/user, params)
-	return ..()
+	if(locked)
+		return
+	else
+		return ..()
 
 /obj/machinery/door/unpowered/emag_act()
 	return
@@ -23,15 +21,10 @@
 	icon = 'icons/obj/doors/wasteland_doors.dmi' //
 	name = "wooden door"
 	icon_state = "room1" //
-	max_integrity = 60
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
-	assemblytype = /obj/item/stack/sheet/mineral/wood/five
 	opacity = 1
 	density = TRUE
 	explosion_block = 1
-	autoclose = TRUE
-	var/lock_data
-	var/lock
+
 
 /obj/machinery/door/unpowered/wooddoor/update_icon()
 	if(density)

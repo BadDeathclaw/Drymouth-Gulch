@@ -20,8 +20,7 @@
 	var/sheetAmount = 7
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
-	var/lock_data = ""
-	var/lock = NO_LOCK
+	var/obj/item/lock_construct/Lock = null
 	CanAtmosPass = ATMOS_PASS_DENSITY
 
 /obj/structure/mineral_door/Initialize()
@@ -35,6 +34,8 @@
 /obj/structure/mineral_door/Destroy()
 	density = FALSE
 	air_update_turf(1)
+	if(Lock)
+		qdel(Lock)
 	return ..()
 
 /obj/structure/mineral_door/Move()
@@ -73,11 +74,13 @@
 		return
 	if(isliving(user))
 		var/mob/living/M = user
-		if((/obj/structure/barricade in src.loc)||(lock == LOCKED))
+		if((/obj/structure/barricade in src.loc))
 			to_chat(M, "It won't budge!")
 			return
 		if(world.time - M.last_bumped <= 60)
 			return //NOTE do we really need that?
+		if(check_locked(user))
+			return
 		if(M.client)
 			if(iscarbon(M))
 				var/mob/living/carbon/C = M
@@ -86,9 +89,12 @@
 			else
 				SwitchState()
 	else if(ismecha(user))
+<<<<<<< master
 		if(lock == LOCKED)
 			lock = NO_LOCK
 			user.visible_message("The lock breaks!")
+=======
+>>>>>>> local
 		SwitchState()
 
 /obj/structure/mineral_door/proc/SwitchState()
@@ -136,6 +142,7 @@
 		icon_state = initial_state
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
+<<<<<<< master
 	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
 		var/obj/item/lock_construct/L = I
 		if(lock == UNLOCKED)
@@ -166,15 +173,52 @@
 			lock = UNLOCKED
 			user.visible_message("[user] unlocks the door.")
 			return
+=======
+>>>>>>> local
 	if(I.tool_behaviour == TOOL_MINING)
 		to_chat(user, "<span class='notice'>You start digging the [name]...</span>")
 		if(I.use_tool(src, user, 40, volume=50))
 			to_chat(user, "<span class='notice'>You finish digging.</span>")
 			deconstruct(TRUE)
+	else if(istype(I, /obj/item/lock_construct)) /* attempt to add a lock */
+		return add_lock(I, user) /* call add_lock proc, so we can disable for airlocks */
+	else if(istype(I, /obj/item/key))
+		return check_key(I, user)
 	else if(user.a_intent != INTENT_HARM)
 		return attack_hand(user)
 	else
 		return ..()
+
+/obj/structure/mineral_door/crowbar_act(mob/living/user, obj/item/I)
+	if(Lock) /* attempt to pry the lock off */
+		if(Lock.pry_off(user,src))
+			qdel(Lock)
+			Lock = null
+	return
+
+/obj/structure/mineral_door/proc/check_key(var/obj/item/key/K, mob/user)
+	if(!Lock)
+		to_chat(user, "[src] has no lock attached")
+		return
+	else
+		return Lock.check_key(K,user)
+
+/obj/structure/mineral_door/proc/check_locked(mob/user)
+	if(Lock)
+		if(Lock.check_locked())
+			to_chat(user, "[src]'s [Lock] is bolted shut")
+			return TRUE
+	return FALSE
+
+/obj/structure/mineral_door/proc/add_lock(var/obj/item/lock_construct/L, mob/user)
+	if(Lock)
+		to_chat(user, "[src] already has [Lock] attached")
+		return
+	else
+		if(user.transferItemToLoc(L, src))
+			user.visible_message("<span class='notice'>[user] adds [L] to [src].</span>", \
+								 "<span class='notice'>You adds [L] to [src].</span>")
+			Lock = L
 
 /obj/structure/mineral_door/deconstruct(disassembled = TRUE)
 	var/turf/T = get_turf(src)
