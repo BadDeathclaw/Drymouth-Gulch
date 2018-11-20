@@ -25,3 +25,36 @@
 		reagents.add_reagent("salglu_solution", 1 + round((potency / 5), 1))
 		reagents.add_reagent("vitamin", 1 + round((potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
+/obj/item/seeds/broc
+	name = "pack of broc seeds"	desc = "These seeds grow into broc flower."
+	icon_state = "seed-broc"
+	species = "broc"
+	plantname = "Broc Plants"
+	product = /obj/item/weapon/reagent_containers/food/snacks/grown/broc
+	lifespan = 25
+	endurance = 10
+	maturation = 8
+	production = 6
+	yield = 6
+	potency = 20
+	plant_type = 0
+	oneharvest = 1
+	growthstages = 3
+	//mutatelist = list(/obj/item/seeds/geraniumseed, /obj/item/seeds/lilyseed)
+
+/obj/item/seeds/xander
+	name = "pack of xander seeds"
+	desc = "These seeds grow into xander root."
+	icon_state = "seed-xander"
+	species = "xander"
+	plantname = "Xander Plants"
+	product = /obj/item/weapon/reagent_containers/food/snacks/grown/xander
+	lifespan = 25
+	endurance = 10
+	maturation = 8
+	production = 3
+	yield = 6
+	potency = 20
+	plant_type = 0
+	oneharvest = 1
+	growthstages = 3
