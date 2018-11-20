@@ -74,11 +74,11 @@
 		return
 	if(isliving(user))
 		var/mob/living/M = user
+		if(world.time - M.last_bumped <= 60)
+			return //NOTE do we really need that?
 		if((/obj/structure/barricade in src.loc))
 			to_chat(M, "It won't budge!")
 			return
-		if(world.time - M.last_bumped <= 60)
-			return //NOTE do we really need that?
 		if(check_locked(user))
 			return
 		if(M.client)
@@ -89,13 +89,19 @@
 			else
 				SwitchState()
 	else if(ismecha(user))
-<<<<<<< master
-		if(lock == LOCKED)
-			lock = NO_LOCK
-			user.visible_message("The lock breaks!")
-=======
->>>>>>> local
+		if(density)
+			var/obj/mecha/mecha = user
+			if(mecha.occupant)
+				if(world.time - mecha.occupant.last_bumped <= 10)
+					return
+				mecha.occupant.last_bumped = world.time
+			if(mecha.occupant && (src.allowed(mecha.occupant) || src.check_access_list(mecha.operation_req_access)))
+				if(check_locked()) /* if a lock is locked, mechs just push through */
+					user.visible_message("<span class='notice'>[Lock] breaks off [src] and falls to pieces.</span>")
+					qdel(Lock)
+					Lock = null
 		SwitchState()
+
 
 /obj/structure/mineral_door/proc/SwitchState()
 	if(state)
@@ -142,39 +148,6 @@
 		icon_state = initial_state
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
-<<<<<<< master
-	if(istype(I, /obj/item/lock_construct) && do_after(user, 5, target = src))
-		var/obj/item/lock_construct/L = I
-		if(lock == UNLOCKED)
-			to_chat(user, "You key the lock to be the same.")
-			L.lock_data = lock_data
-			L.update_icon()
-			return
-		if(lock == LOCKED)
-			to_chat(user, "This door already has a lock on it!")
-			return
-		lock_data = L.lock_data
-		lock = UNLOCKED
-		qdel(L)
-		user.visible_message("[user] adds a lock to the door.")
-	if(istype(I, /obj/item/key))
-		var/obj/item/key/K = I
-		if(lock == NO_LOCK)
-			to_chat(user, "This door doesn't have a lock.")
-			return
-		if((src.lock > NO_LOCK) && (K.lock_data != lock_data))
-			to_chat(user, "This is the wrong key!")
-			return
-		if((src.lock == UNLOCKED) && (K.lock_data == lock_data))
-			lock = LOCKED
-			user.visible_message("[user] locks the door.")
-			return
-		if((src.lock == LOCKED) && (K.lock_data == lock_data))
-			lock = UNLOCKED
-			user.visible_message("[user] unlocks the door.")
-			return
-=======
->>>>>>> local
 	if(I.tool_behaviour == TOOL_MINING)
 		to_chat(user, "<span class='notice'>You start digging the [name]...</span>")
 		if(I.use_tool(src, user, 40, volume=50))
@@ -188,6 +161,7 @@
 		return attack_hand(user)
 	else
 		return ..()
+
 
 /obj/structure/mineral_door/crowbar_act(mob/living/user, obj/item/I)
 	if(Lock) /* attempt to pry the lock off */

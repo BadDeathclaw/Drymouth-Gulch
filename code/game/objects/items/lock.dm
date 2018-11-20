@@ -4,6 +4,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	var/lock_data
 	var/static/lock_uid = 1
+	var/locked = FALSE
 	var/prying = FALSE //if somebody is trying to pry us off
 
 /obj/item/lock_construct/New() // Same system machines use for UID. Could probably add a global UID for everything if you wanted and use it for shenanigans, or simpler loading.
@@ -41,7 +42,7 @@
 		to_chat(user, "This is the wrong key!")
 
 /obj/item/lock_construct/proc/check_locked()
-	return src.locked
+	return locked
 
 /obj/item/lock_construct/proc/pry_off(mob/living/user, atom/A)
 	if(!prying)
