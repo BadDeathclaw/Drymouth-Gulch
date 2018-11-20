@@ -676,3 +676,11 @@
 	time = 20
 	reqs = list(/datum/reagent/consumable/milk = 25, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
 	category = CAT_DRUGS
+	
+	
+/datum/crafting_recipe/rags
+	name = "Cut clothing into rags"
+	result = /obj/manyRags
+	reqs = list(/obj/item/clothing/under = 1)
+	time = 20
+	category = CAT_MISC
