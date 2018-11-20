@@ -35,6 +35,7 @@
 #define R_SPAWN			(1<<12)
 #define R_AUTOLOGIN		(1<<13)
 #define R_DBRANKS		(1<<14)
+#define R_DJ			(1<<15)
 
 #define R_DEFAULT R_AUTOLOGIN
 

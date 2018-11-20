@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(den_positions, list(
 
 GLOBAL_LIST_INIT(legion_positions, list(
 	"Centurion",
+	"Veteran Decanus",
 	"Vexillarius",
 	"Decanus",
 	"Explorer",

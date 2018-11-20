@@ -45,6 +45,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		"Scribe",
 		"Initiate",
 		"Centurion",
+		"Veteran Decanus",
 		"Vexillarius",
 		"Decanus",
 		"Veteran Legionnaire",
