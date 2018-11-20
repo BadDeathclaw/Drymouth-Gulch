@@ -92,6 +92,47 @@ Centurion
 	box = null
 
 /*
+Veteran Decan
+*/
+/datum/job/f13vetdecan
+	title = "Veteran Decanus"
+	flag = F13VETDECAN
+	department_flag = LEGION
+	faction = "Legion"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the centurion"
+	selection_color = "#ffeeee"
+
+	outfit = /datum/outfit/job/f13vetdecan
+
+/datum/outfit/job/f13vetdecan
+	name = "Veteran Decanus"
+	jobtype = /datum/job/f13vetdecan
+
+	id = null
+	ears = null
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionmetal
+	gloves =		/obj/item/clothing/gloves/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
+	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
+	mask =			/obj/item/clothing/mask/bandana/legdecan
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
+	r_hand = 		/obj/item/twohanded/fireaxe
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/throwing_star/spear, \
+		/obj/item/claymore/machete=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/m44=2, \
+		/obj/item/flashlight/flare/torch=1)
+	box = null
+
+/*
 Vexillarius
 */
 /datum/job/f13vexillarius
@@ -101,7 +142,7 @@ Vexillarius
 	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the centurion"
+	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
 
 	outfit = /datum/outfit/job/f13vexillarius
@@ -139,9 +180,9 @@ Decan
 	flag = F13DECAN
 	department_flag = LEGION
 	faction = "Legion"
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "the centurion"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
 
 	outfit = /datum/outfit/job/f13decan

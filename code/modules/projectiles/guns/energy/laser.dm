@@ -205,12 +205,12 @@
 //projectiles
 /obj/item/projectile/beam/laser/lasgun
 	name = "laser beam"
-	damage = 34
+	damage = 30
 	armour_penetration = -9
 
 /obj/item/projectile/beam/laser/pistol
 	name = "laser beam"
-	damage = 25
+	damage = 20
 
 /obj/item/projectile/beam/laser/tribeam
 	name = "tribeam laser"
@@ -222,11 +222,11 @@
 	damage = 60
 
 /obj/item/projectile/plasma/pistol
-	damage = 60
+	damage = 40
 	armour_penetration = -18
 
 /obj/item/projectile/plasma/scatter
-	damage = 24
+	damage = 25
 
 //Casings
 //plasma
@@ -236,17 +236,18 @@
 	icon_state = "neurotoxin"
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
 	delay = 5
-	e_cost = 100
+	e_cost = 75
 
 /obj/item/ammo_casing/energy/plasma/scatter
 	projectile_type = /obj/item/projectile/plasma/scatter
 	pellets = 3
 	variance = 14
 	select_name = "scatter"
+	e_cost = 150
 
 /obj/item/ammo_casing/energy/plasma/pistol
 	projectile_type = /obj/item/projectile/plasma/pistol
-	e_cost = 50
+	e_cost = 75
 
 //laser
 /obj/item/ammo_casing/energy/laser/scatter
@@ -254,11 +255,11 @@
 	pellets = 3
 	variance = 14
 	select_name = "scatter"
-	e_cost = 50
+	e_cost = 150
 
 /obj/item/ammo_casing/energy/laser/pistol
 	projectile_type = /obj/item/projectile/beam/laser/pistol
-	e_cost = 25
+	e_cost = 10
 
 /obj/item/ammo_casing/energy/laser/lasgun
 	projectile_type = /obj/item/projectile/beam/laser/lasgun
