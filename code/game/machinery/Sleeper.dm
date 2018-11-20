@@ -34,17 +34,16 @@
 /obj/machinery/sleeper/RefreshParts()
 	var/E
 	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
-		E += B.rating
+		E = max(1, round(sqrt(B.rating),1))
 	var/I
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		I += M.rating
+		I = max(1, round(sqrt(M.rating),1))
 
 	efficiency = initial(efficiency)* E
 	min_health = initial(min_health) * E
 	available_chems = list()
 	for(var/i in 1 to I)
 		available_chems |= possible_chems[i]
-		chem_buttons |= possible_chems[i]
 	reset_chem_buttons()
 
 /obj/machinery/sleeper/update_icon()
