@@ -12,7 +12,7 @@
 	lock_data = lock_uid++
 	desc = "A heavy-duty lock for doors. It has [lock_data] engraved on it."
 
-/obj/item/lock_construct/attackby(obj/item/I, mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
+/obj/item/lock_construct/attackby(var/obj/item/I, var/mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
 	if(istype(I,/obj/item/key))
 		var/obj/item/key/K = I
 		if(!K.lock_data)
@@ -33,13 +33,13 @@
 /obj/item/lock_construct/proc/check_key(obj/item/key/K, mob/user = null)
 	if(K.lock_data == src.lock_data) //if the key matches us
 		if(locked)
-			user.visible_message("[user] unlocks the door.")
+			user.visible_message("<span class='warning'>[user] unlocks the door.</span>")
 			locked = FALSE
 		else
-			user.visible_message("[user] locks the door.")
+			user.visible_message("<span class='warning'>[user] locks the door.</span>")
 			locked = TRUE
 	else
-		to_chat(user, "This is the wrong key!")
+		to_chat(user, "<span class='warning'>This is the wrong key!</span>")
 
 /obj/item/lock_construct/proc/check_locked()
 	return locked
