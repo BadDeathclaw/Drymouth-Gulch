@@ -12,7 +12,7 @@
 	lock_data = lock_uid++
 	desc = "A heavy-duty lock for doors. It has [lock_data] engraved on it."
 
-/obj/item/lock_construct/attackby(var/obj/item/I, var/mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
+/obj/item/lock_construct/attackby(obj/item/I, mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
 	if(istype(I,/obj/item/key))
 		var/obj/item/key/K = I
 		if(!K.lock_data)
