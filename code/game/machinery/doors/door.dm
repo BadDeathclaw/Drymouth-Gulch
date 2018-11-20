@@ -83,7 +83,8 @@
 	return ..()
 
 /obj/machinery/door/CollidedWith(atom/movable/AM)
-	if(operating || (obj_flags & EMAGGED))		return
+	if(operating || (obj_flags & EMAGGED))
+		return
 	if(ismob(AM))
 		var/mob/B = AM
 		if((isdrone(B) || iscyborg(B)) && B.stat)
@@ -155,7 +156,8 @@
 
 /obj/machinery/door/proc/try_to_activate_door(mob/user)
 	add_fingerprint(user)
-	if(operating || (obj_flags & EMAGGED))		return
+	if(operating || (obj_flags & EMAGGED))
+		return
 	if(!requiresID())
 		user = null //so allowed(user) always succeeds
 	if(allowed(user))
