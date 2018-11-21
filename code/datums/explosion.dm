@@ -180,7 +180,7 @@ GLOBAL_LIST_EMPTY(explosions)
 				Trajectory = get_step_towards(Trajectory, epicenter)
 				dist += cached_exp_block[Trajectory]
 
-		var/flame_dist = dist < flame_range
+		//var/flame_dist = dist < flame_range
 		var/throw_dist = dist
 
 		if(dist < devastation_range)
