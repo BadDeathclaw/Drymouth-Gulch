@@ -13,6 +13,8 @@
 	item_color = "engineering" //Determines used sprites: hardsuit[on]-[color] and hardsuit[on]-[color]2 (lying down sprite)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 
+	var/offlinetint //For powerarmor
+
 	var/rad_count = 0
 	var/rad_record = 0
 	var/grace_count = 0
@@ -814,3 +816,126 @@
 	strip_delay = 130
 	max_heat_protection_temperature = FIRE_IMMUNITY_HELM_MAX_TEMP_PROTECT
 	actions_types = list()
+
+
+///////////////////////
+//////POWER ARMOR//////
+///////////////////////
+//Power armor is a type of armor that takes power cells while possibly also allowing cool things like night vision
+//Meant for fallout and to be more immersive as well as a replacement for mecha suits
+
+//THE HELMET SHOULD NOT EXIST AS A STANDALONE ITEM
+//IT'S MEANT TO BE ACTIVATED AND APPEAR VIA THE BASE SUIT
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor
+	name = "default power armor helmet"
+	desc = "Default power armor helmet, this should DEFINITELY not exist at all sadly."
+	clothing_flags = THICKMATERIAL //It better stop syringes
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
+	strip_delay = 200
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEJUMPSUIT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	flash_protect = 3
+	tint = 0
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+	ispowerarmor = 1
+	offlinetint = 2 //Rip your eyes
+
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor
+	name = "default power armor suit"
+	desc = "Default power armor suit, this shouldn't really exist at all sadly. Altclick this to get the power cell out."
+	slowdown = 1
+	ispowerarmor = 1
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
+	flags_inv = HIDEJUMPSUIT
+	strip_delay = 200
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	clothing_flags = THICKMATERIAL //It better stop syringes
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor
+	var/offlineslowdown = 4 //How slow you go when its powered off
+	var/obj/item/stock_parts/cell/cell = new/obj/item/stock_parts/cell/upgraded/plus //Power source used to power said armor, 5000 charge default
+	var/putondelay = 80 //To prevent lugging this armor and putting it on instantly when combat happens; gotta have it on you
+	var/energydrain = 0.5 //default drain of energy percentage wise per 2 seconds; this equals about 6.6 minutes of life for any power cell without item usage
+	var/offline = 0 //If it's offline
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/Initialize()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	..()
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/process()
+	if(cell)
+		if(!(cell.use(cell.maxcharge * (energydrain / 100))))
+			offline = 1
+	if(offline) //TODO; ASK FOR SPRITES THAT LIGHT UP WHEN POWERED
+		slowdown = offlineslowdown
+		helmet.tint = helmet.offlinetint
+		src.visible_message("The [src.name] suddenly runs out of power!")
+		return
+	else
+		slowdown = initial(slowdown)
+		helmet.tint = initial(helmet.tint)
+
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/AltClick(mob/user)
+	if(cell && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		if(!(user.put_in_hands(cell)))
+			to_chat(user, "Your hands are currently occupied and you can't take out the powercell!")
+			return
+		else
+			to_chat(user,"You take the powercell out of the power armor, turning off the powerarmor.")
+			cell = null //Power cell no longer in the dang armor
+			return
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/stock_parts/cell) && cell) //Swap out them batteries
+		var/obj/item/stock_parts/cell/cell2 = I
+		cell2.forceMove(src)
+		if(cell)
+			user.put_in_hands(cell)
+		cell = cell2
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/user, slot)
+	if (ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if (!H.mind.martial_art && H.mind.martial_art.name != "Power Armor Training" && slot == SLOT_WEAR_SUIT || !ispowerarmor)
+			to_chat(H, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+			return 0
+		else
+			to_chat(H, "<span class='notice'>You start to put on the [src.name]...</span>")
+			if(do_after(user, putondelay, target = src))
+				to_chat(H, "<span class='notice'>You put on the [src.name]! Ready to rock and roll.</span>")
+				return 1
+			else
+				to_chat(H, "<span class='warning'>You somehow failed to put on the [src.name].</span>")
+				return 0
+	return ..()
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45d
+	name = "T-45d power helmet"
+	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	icon_state = "t45dhelmet"
+	item_state = "t45dhelmet"
+	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 60, "fire" = 50, "acid" = 0)
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
+	name = "T-45d power armor"
+	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
+	icon_state = "t45dpowerarmor"
+	item_state = "t45dpowerarmor"
+	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 60, "fire" = 0, "acid" = 0)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45d
+
+
