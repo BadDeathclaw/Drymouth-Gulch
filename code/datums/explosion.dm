@@ -203,9 +203,9 @@ GLOBAL_LIST_EMPTY(explosions)
 				var/atom/A = O
 				if(!QDELETED(A))
 					A.ex_act(dist)
-
-		if(flame_dist && prob(40) && !isspaceturf(T) && !T.density)
-			new /obj/effect/hotspot(T) //Mostly for ambience!
+		//TG CLAW: No fire upon explosions, if it did then it makes areas perma heated because atmos gets heavily slowed down by all of the atmos things that never clear up
+		//if(flame_dist && prob(40) && !isspaceturf(T) && !T.density)
+		//	new /obj/effect/hotspot(T) //Mostly for ambience!
 
 		if(dist > EXPLODE_NONE)
 			T.explosion_level = max(T.explosion_level, dist)	//let the bigger one have it
