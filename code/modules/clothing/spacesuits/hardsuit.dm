@@ -845,6 +845,10 @@
 	dynamic_fhair_suffix = ""
 	ispowerarmor = 1
 	offlinetint = 2 //Rip your eyes
+	var/offline = 0 //If it's offline
+	var/nightvision = 0 //If it has built in night vision
+	var/darkness_view = 2
+	var/lighting_alpha = 256
 
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor
@@ -860,7 +864,8 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	clothing_flags = THICKMATERIAL //It better stop syringes
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor
+	obj/item/clothing/head/helmet/spacec/hardsuit/powerarmor/helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor //Recast bois
+	obj/item/clothing/head/helmet/spacec/hardsuit/powerarmor/helmet
 	var/offlineslowdown = 4 //How slow you go when its powered off
 	var/obj/item/stock_parts/cell/cell = new/obj/item/stock_parts/cell/upgraded/plus //Power source used to power said armor, 5000 charge default
 	var/putondelay = 80 //To prevent lugging this armor and putting it on instantly when combat happens; gotta have it on you
@@ -875,18 +880,56 @@
 	STOP_PROCESSING(SSobj, src)
 	..()
 
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/Initialize()
+	..()
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	..()
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/process()
+	if(suit)
+		var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
+		if(armor.cell.charge == 0)
+			if(!offline)
+				darkness_view = initial(darkness_view)
+				lighting_alpha = initial(lighting_alpha)
+				offline = TRUE
+				tint = offlinetint
+		else
+			if(nightvision)
+				darkness_view = 8
+				lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+			return
+	else
+		if(offline)
+			tint = initial(tint)
+			offline = FALSE
+
 /obj/item/clothing/suit/space/hardsuit/powerarmor/process()
 	if(cell)
 		if(!(cell.use(cell.maxcharge * (energydrain / 100))))
-			offline = 1
+			if(!offline)
+				offline = TRUE
+				slowdown = offlineslowdown
+				src.visible_message("The [src.name] suddenly runs out of power!")
 	if(offline) //TODO; ASK FOR SPRITES THAT LIGHT UP WHEN POWERED
-		slowdown = offlineslowdown
-		helmet.tint = helmet.offlinetint
-		src.visible_message("The [src.name] suddenly runs out of power!")
 		return
 	else
 		slowdown = initial(slowdown)
-		helmet.tint = initial(helmet.tint)
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/item_action_slot_check(slot)
+	if(cell.charge == 0) //Power is ded; no use
+		return
+	else
+		..()
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/item_action_slot_check(slot)
+	if(offline)
+		return
+	else
+		..()
 
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/AltClick(mob/user)
@@ -900,17 +943,23 @@
 			return
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/stock_parts/cell) && cell) //Swap out them batteries
+	if(istype(I, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/cell2 = I
-		cell2.forceMove(src)
-		if(cell)
+		if(cell) //Swap
+			cell2.forceMove(src)
 			user.put_in_hands(cell)
-		cell = cell2
+			cell = cell2
+		else //Put in if there's no cell
+			cell2.forceMove(src)
+			cell = cell2
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/user, slot)
+	if(slot != SLOT_WEAR_SUIT)
+		mob_can_equip(user, SLOT_WEAR_SUIT) //Snowflake code yo
+		return
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if (!H.mind.martial_art && H.mind.martial_art.name != "Power Armor Training" && slot == SLOT_WEAR_SUIT || !ispowerarmor)
+		if (!H.mind.martial_art && H.mind.martial_art.name != "Power Armor Training" && ispowerarmor)
 			to_chat(H, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 			return 0
 		else
@@ -921,7 +970,7 @@
 			else
 				to_chat(H, "<span class='warning'>You somehow failed to put on the [src.name].</span>")
 				return 0
-	return ..()
+	return 0
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
 	name = "Salvaged T-45b helmet"
@@ -960,6 +1009,7 @@
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48,"energy" = 48, "bomb" = 72, "bio" = 100,"rad" = 100, "fire" = 50, "acid" = 0)
+	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/advanced
 	name = "Advanced power armor"
@@ -975,6 +1025,7 @@
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
+	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/advanced/mk2
 	name = "Advanced power armor MKII"
@@ -991,6 +1042,7 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 80, "energy" = 80, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
+	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/tesla
 	name = "tesla power armor"
@@ -1006,6 +1058,7 @@
 	icon_state = "t51bhelmet"
 	item_state = "t51bhelmet"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
+	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
 	name = "T-51b power armor"
