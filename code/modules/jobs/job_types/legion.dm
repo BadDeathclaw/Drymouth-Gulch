@@ -137,6 +137,12 @@ Veteran Decan
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13vetdecan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /*
 Vexillarius
 */
@@ -223,6 +229,12 @@ Decan
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/outfit/job/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /*
 Veteran
@@ -352,6 +364,12 @@ Legionary
 	box = null
 	r_pocket = /obj/item/binocs
 
+/datum/outfit/job/f13explorer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /datum/job/f13scout
 	title = "Scout"
 	flag = F13SCOUT
@@ -386,6 +404,12 @@ Legionary
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/outfit/job/f13scout/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13campfollower
 	title = "Camp Follower"
