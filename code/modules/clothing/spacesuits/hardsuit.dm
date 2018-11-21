@@ -923,6 +923,22 @@
 				return 0
 	return ..()
 
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
+	name = "Salvaged T-45b helmet"
+	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."
+	icon_state = "t45bhelmet"
+	item_state = "t45bhelmet"
+	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 0)
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/t45b
+	ispowerarmor = 0
+	name = "Salvaged T-45b power armor"
+	desc = "It's a set of T-45b power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors."
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
+	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
+
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45d
 	name = "T-45d power helmet"
 	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
@@ -938,4 +954,63 @@
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 60, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45d
 
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/advanced
+	name = "Advanced power helmet"
+	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
+	icon_state = "advhelmet1"
+	item_state = "advhelmet1"
+	armor = list("melee" = 72, "bullet" = 72, "laser" = 48,"energy" = 48, "bomb" = 72, "bio" = 100,"rad" = 100, "fire" = 50, "acid" = 0)
 
+/obj/item/clothing/suit/space/hardsuit/powerarmor/advanced
+	name = "Advanced power armor"
+	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	icon_state = "advpowerarmor1"
+	item_state = "advpowerarmor1"
+	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/advanced
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/mk2
+	name = "Advanced power helmet MKII"
+	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	icon_state = "advhelmet2"
+	item_state = "advhelmet2"
+	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/advanced/mk2
+	name = "Advanced power armor MKII"
+	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
+	icon_state = "advpowerarmor2"
+	item_state = "advpowerarmor2"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/mk2
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/tesla
+	name = "tesla power helmet"
+	desc = "A helmet typically used by Enclave special forces.<br>There are three orange energy capacitors on the side."
+	icon_state = "tesla"
+	item_state = "tesla"
+	armor = list("melee" = 68, "bullet" = 62, "laser" = 80, "energy" = 80, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/tesla
+	name = "tesla power armor"
+	desc = "A variant of the Enclave's advanced power armor Mk I, jury-rigged with a Tesla device that is capable of dispersing a large percentage of the damage done by directed-energy attacks.<br>As it's made of complex composite materials designed to block most of energy damage - it's notably weaker against kinetic impacts."
+	icon_state = "tesla"
+	item_state = "tesla"
+	armor = list("melee" = 68, "bullet" = 62, "laser" = 80, "energy" = 80, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/tesla
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t51b
+	name = "T-51b power helmet"
+	desc = "It's a t51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	icon_state = "t51bhelmet"
+	item_state = "t51bhelmet"
+	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
+	name = "T-51b power armor"
+	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	icon_state = "t51bpowerarmor"
+	item_state = "t51bpowerarmor"
+	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t51b
