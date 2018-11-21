@@ -344,3 +344,4 @@
 			to_chat(user, "<span class='notice'>You link [src] to the server in [I]'s buffer.</span>")
 			INVOKE_ASYNC(src, .proc/update_research)
 			return TRUE
+

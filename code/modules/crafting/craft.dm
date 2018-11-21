@@ -8,7 +8,8 @@
 				CAT_MISC,
 				CAT_PRIMAL,
 				CAT_FOOD,
-				CAT_CLOTHING)
+				CAT_CLOTHING,
+				CAT_DRUGS)
 	var/list/subcategories = list(
 						list(	//Weapon subcategories
 							CAT_WEAPON,
@@ -30,7 +31,8 @@
 							CAT_SANDWICH,
 							CAT_SOUP,
 							CAT_SPAGHETTI),
-                        CAT_CLOTHING) //Clothing subcategories
+                        CAT_CLOTHING,
+                        CAT_NONE) //Clothing subcategories
 
 	var/datum/action/innate/crafting/button
 	var/display_craftable_only = FALSE

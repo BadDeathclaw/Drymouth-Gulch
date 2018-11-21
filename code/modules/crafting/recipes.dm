@@ -669,3 +669,10 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/sunglasses/reagent = 1)
 	category = CAT_CLOTHING
+
+/datum/crafting_recipe/jet
+	name = "Jet"
+	result = /obj/item/reagent_containers/pill/patch/jet
+	time = 20
+	reqs = list(/datum/reagent/consumable/milk = 25, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
+	category = CAT_DRUGS

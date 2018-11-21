@@ -266,6 +266,8 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 				verbs += /client/proc/play_web_sound
 		if(rights & R_SPAWN)
 			verbs += GLOB.admin_verbs_spawn
+		if(rights & R_DJ)
+			verbs += /client/proc/play_radio_sound
 
 /client/proc/remove_admin_verbs()
 	verbs.Remove(
