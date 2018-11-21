@@ -17,7 +17,7 @@
 	var/environment_type = "asteroid"
 	var/turf/open/floor/plating/f13/inside/mountain/turf_type = /turf/open/floor/plating/f13/inside/mountain
 	var/mineralType = null
-	var/mineralAmt = 3
+	var/mineralAmt = 1
 	var/spread = 0 //will the seam spread?
 	var/spreadChance = 0 //the percentual chance of an ore spreading to the neighbouring tiles
 	var/last_act = 0
@@ -132,7 +132,7 @@
 /turf/closed/mineral/random
 	var/mineralSpawnChanceList
 		//Currently, Adamantine won't spawn as it has no uses. -Durandan
-	var/mineralChance = 13
+	var/mineralChance = 65
 	var/display_icon_state = "rock"
 
 /turf/closed/mineral/random/Initialize()
@@ -150,7 +150,7 @@
 
 		if(T && ismineralturf(T))
 			var/turf/closed/mineral/M = T
-			M.mineralAmt = rand(1, 5)
+			M.mineralAmt = 1
 			M.environment_type = src.environment_type
 			M.turf_type = src.turf_type
 			M.baseturfs = src.baseturfs
@@ -160,7 +160,7 @@
 
 /turf/closed/mineral/random/high_chance
 	icon_state = "rock_highchance"
-	mineralChance = 25
+	mineralChance = 100
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 35, /turf/closed/mineral/diamond = 30, /turf/closed/mineral/gold = 45, /turf/closed/mineral/titanium = 45,
 		/turf/closed/mineral/silver = 50, /turf/closed/mineral/plasma = 50, /turf/closed/mineral/bscrystal = 20)
@@ -179,7 +179,7 @@
 
 /turf/closed/mineral/random/low_chance
 	icon_state = "rock_lowchance"
-	mineralChance = 6
+	mineralChance = 30
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 2, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 4, /turf/closed/mineral/titanium = 4,
 		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40,
