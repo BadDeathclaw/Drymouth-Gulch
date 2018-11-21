@@ -212,6 +212,17 @@
 	attempting = FALSE
 	return TRUE
 
+/obj/machinery/clonepod/proc/reattach_limbs(amount, mob_occupant)
+	while(amount > 0) //Totally good code
+		var/obj/item/I = pick_n_take(unattached_flesh)
+		if(isorgan(I))
+			var/obj/item/organ/O = I
+			O.Insert(mob_occupant)
+		else if(isbodypart(I))
+			var/obj/item/bodypart/BP = I
+			BP.attach_limb(mob_occupant)
+		amount--
+
 //Grow clones to maturity then kick them out.  FREELOADERS
 /obj/machinery/clonepod/process()
 	var/mob/living/mob_occupant = occupant
@@ -241,14 +252,8 @@
 			var/installed = flesh_number - unattached_flesh.len
 
 			if((progress / milestone) >= installed)
-				// attach some flesh
-				var/obj/item/I = pick_n_take(unattached_flesh)
-				if(isorgan(I))
-					var/obj/item/organ/O = I
-					O.Insert(mob_occupant)
-				else if(isbodypart(I))
-					var/obj/item/bodypart/BP = I
-					BP.attach_limb(mob_occupant)
+				//attach some flesh
+				reattach_limbs(2, mob_occupant)
 
 
 			//Premature clones may have brain damage.

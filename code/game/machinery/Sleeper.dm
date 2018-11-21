@@ -37,7 +37,7 @@
 		E += B.rating
 	var/I
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		I += M.rating
+		I += M.tier
 
 	efficiency = initial(efficiency)* E
 	min_health = initial(min_health) * E

@@ -67,6 +67,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon = 'icons/obj/stock_parts.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	var/rating = 1
+	var/tier = 1 //The tier; 1 2 3 4 correlates to 1 4 8 16
 
 /obj/item/stock_parts/Initialize()
 	. = ..()
@@ -108,13 +109,14 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon_state = "matter_bin"
 	materials = list(MAT_METAL=80)
 
-//Rating 2
+//Tier 2
 
 /obj/item/stock_parts/capacitor/adv
 	name = "advanced capacitor"
 	desc = "An advanced capacitor used in the construction of a variety of devices."
 	icon_state = "adv_capacitor"
 	rating = 4
+	tier = 2
 	materials = list(MAT_METAL=50, MAT_GLASS=50)
 
 /obj/item/stock_parts/scanning_module/adv
@@ -122,6 +124,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A compact, high resolution scanning module used in the construction of certain devices."
 	icon_state = "adv_scan_module"
 	rating = 4
+	tier = 2
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 
 /obj/item/stock_parts/manipulator/nano
@@ -129,6 +132,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "nano_mani"
 	rating = 4
+	tier = 2
 	materials = list(MAT_METAL=30)
 
 /obj/item/stock_parts/micro_laser/high
@@ -136,6 +140,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A tiny laser used in certain devices."
 	icon_state = "high_micro_laser"
 	rating = 4
+	tier = 2
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
 
 /obj/item/stock_parts/matter_bin/adv
@@ -143,15 +148,17 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "advanced_matter_bin"
 	rating = 4
+	tier = 2
 	materials = list(MAT_METAL=80)
 
-//Rating 3
+//Tier 3
 
 /obj/item/stock_parts/capacitor/super
 	name = "super capacitor"
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "super_capacitor"
 	rating = 8
+	tier = 3
 	materials = list(MAT_METAL=50, MAT_GLASS=50)
 
 /obj/item/stock_parts/scanning_module/phasic
@@ -159,6 +166,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "super_scan_module"
 	rating = 8
+	tier = 3
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 
 /obj/item/stock_parts/manipulator/pico
@@ -166,6 +174,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "pico_mani"
 	rating = 8
+	tier = 3
 	materials = list(MAT_METAL=30)
 
 /obj/item/stock_parts/micro_laser/ultra
@@ -173,6 +182,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon_state = "ultra_high_micro_laser"
 	desc = "A tiny laser used in certain devices."
 	rating = 8
+	tier = 3
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
 
 /obj/item/stock_parts/matter_bin/super
@@ -180,15 +190,17 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "super_matter_bin"
 	rating = 8
+	tier = 3
 	materials = list(MAT_METAL=80)
 
-//Rating 4
+//Tier 4
 
 /obj/item/stock_parts/capacitor/quadratic
 	name = "quadratic capacitor"
 	desc = "An capacity capacitor used in the construction of a variety of devices."
 	icon_state = "quadratic_capacitor"
 	rating = 16
+	tier = 4
 	materials = list(MAT_METAL=50, MAT_GLASS=50)
 
 /obj/item/stock_parts/scanning_module/triphasic
@@ -196,6 +208,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A compact, ultra resolution triphasic scanning module used in the construction of certain devices."
 	icon_state = "triphasic_scan_module"
 	rating = 16
+	tier = 4
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 
 /obj/item/stock_parts/manipulator/femto
@@ -203,6 +216,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "femto_mani"
 	rating = 16
+	tier = 4
 	materials = list(MAT_METAL=30)
 
 /obj/item/stock_parts/micro_laser/quadultra
@@ -210,6 +224,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon_state = "quadultra_micro_laser"
 	desc = "A tiny laser used in certain devices."
 	rating = 16
+	tier = 4
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
 
 /obj/item/stock_parts/matter_bin/bluespace
@@ -217,6 +232,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "bluespace_matter_bin"
 	rating = 16
+	tier = 4
 	materials = list(MAT_METAL=80)
 
 // Subspace stock parts
