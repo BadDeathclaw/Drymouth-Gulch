@@ -73,7 +73,8 @@
 	//var/blood_DNA = list()
 	beauty = -50
 
-/obj/effect/decal/cleanable/cum/New()
+/obj/effect/decal/cleanable/cum/Initialize()
 	..()
 	dir = pick(1,2,4,8)
+	reagents.add_reagent("cum", rand(8.13))
 	add_blood_DNA(list("Unknown DNA" = "O+"))
