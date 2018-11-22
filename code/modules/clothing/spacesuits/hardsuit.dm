@@ -846,10 +846,8 @@
 	ispowerarmor = 1
 	offlinetint = 2 //Rip your eyes
 	var/offline = 0 //If it's offline
-	var/nightvision = 0 //If it has built in night vision
-	var/darkness_view = 2
-	var/lighting_alpha = 256
-
+	//actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	actions_types = list()
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor
 	name = "default power armor suit"
@@ -868,8 +866,8 @@
 	obj/item/clothing/head/helmet/spacec/hardsuit/powerarmor/helmet
 	var/offlineslowdown = 4 //How slow you go when its powered off
 	var/obj/item/stock_parts/cell/cell = new/obj/item/stock_parts/cell/upgraded/plus //Power source used to power said armor, 5000 charge default
-	var/putondelay = 80 //To prevent lugging this armor and putting it on instantly when combat happens; gotta have it on you
-	var/energydrain = 0.5 //default drain of energy percentage wise per 2 seconds; this equals about 6.6 minutes of life for any power cell without item usage
+	var/putondelay = 120 //To prevent lugging this armor and putting it on instantly when combat happens; gotta have it on you
+	var/energydrain = 25 //default drain of energy per 2 seconds
 	var/offline = 0 //If it's offline
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/Initialize()
@@ -893,14 +891,9 @@
 		var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
 		if(armor.cell.charge == 0)
 			if(!offline)
-				darkness_view = initial(darkness_view)
-				lighting_alpha = initial(lighting_alpha)
 				offline = TRUE
 				tint = offlinetint
 		else
-			if(nightvision)
-				darkness_view = 8
-				lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 			return
 	else
 		if(offline)
@@ -909,11 +902,18 @@
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/process()
 	if(cell)
-		if(!(cell.use(cell.maxcharge * (energydrain / 100))))
+		if(!(cell.use(energydrain)))
 			if(!offline)
 				offline = TRUE
 				slowdown = offlineslowdown
-				src.visible_message("The [src.name] suddenly runs out of power!")
+				playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
+				visible_message("The [src.name] suddenly runs out of power!", "The hardsuit runs out of power, that can't be good.")
+			else
+				if(offline) //Used power but it's offline; turn it on
+					offline = FALSE
+					slowdown = initial(slowdown)
+					playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
+					visible_message("The [name] suddenly powers back up!", "The hardsuit gets back up and running, that's pretty good.")
 	if(offline) //TODO; ASK FOR SPRITES THAT LIGHT UP WHEN POWERED
 		return
 	else
@@ -921,15 +921,15 @@
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/item_action_slot_check(slot)
 	if(cell.charge == 0) //Power is ded; no use
-		return
+		return FALSE
 	else
-		..()
+		return TRUE //Thing is powered; give the cool stuff
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/item_action_slot_check(slot)
 	if(offline)
-		return
+		return FALSE
 	else
-		..()
+		return TRUE
 
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/AltClick(mob/user)
@@ -949,28 +949,30 @@
 			cell2.forceMove(src)
 			user.put_in_hands(cell)
 			cell = cell2
+			to_chat(user, "You swap out the cells in the [name].")
 		else //Put in if there's no cell
 			cell2.forceMove(src)
 			cell = cell2
+			to_chat(user, "You insert a cell into the [name].")
 
-/obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/user, slot)
-	if(slot != SLOT_WEAR_SUIT)
-		mob_can_equip(user, SLOT_WEAR_SUIT) //Snowflake code yo
-		return
+/obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/living/carbon/human/user, slot)
+	if(src == user.wear_suit) //Suit is already equipped; stops message spam
+		return FALSE //Do it quietly
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if (!H.mind.martial_art && H.mind.martial_art.name != "Power Armor Training" && ispowerarmor)
+		if ((!H.mind.martial_art && H.mind.martial_art.name != "Power Armor Training") && ispowerarmor)
 			to_chat(H, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-			return 0
+			return FALSE
 		else
 			to_chat(H, "<span class='notice'>You start to put on the [src.name]...</span>")
 			if(do_after(user, putondelay, target = src))
+				user.equip_to_slot(src, SLOT_WEAR_SUIT) //say it with me; hardcored slots
 				to_chat(H, "<span class='notice'>You put on the [src.name]! Ready to rock and roll.</span>")
-				return 1
+				return FALSE //Already equipped the armor; don't want the armor being equipped to another slot
 			else
 				to_chat(H, "<span class='warning'>You somehow failed to put on the [src.name].</span>")
-				return 0
-	return 0
+				return FALSE
+	return FALSE
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
 	name = "Salvaged T-45b helmet"
@@ -1009,7 +1011,6 @@
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48,"energy" = 48, "bomb" = 72, "bio" = 100,"rad" = 100, "fire" = 50, "acid" = 0)
-	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/advanced
 	name = "Advanced power armor"
@@ -1025,7 +1026,6 @@
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
-	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/advanced/mk2
 	name = "Advanced power armor MKII"
@@ -1042,7 +1042,6 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 80, "energy" = 80, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
-	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/tesla
 	name = "tesla power armor"
@@ -1058,7 +1057,6 @@
 	icon_state = "t51bhelmet"
 	item_state = "t51bhelmet"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 0)
-	nightvision = 1
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
 	name = "T-51b power armor"
