@@ -32,7 +32,7 @@
 	var/obj/item/rig/rig = holder
 	var/list/status = list()
 	status += "The ID check light is [rig.security_check_enabled ? "on" : "off"]."
-	status += "The AI control light is [rig.ai_override_enable ? "off" : "blinking"]."
+	status += "The AI control light is [rig.ai_override_enabled ? "off" : "blinking"]."
 	status += "The System control light is [rig.malfunction_delay ? "on" : "blinking"]."
 	status += "The Interface lock light is [rig.interface_locked ? "red" : "green"]."
 	status += "The yellow light is [rig.electrified ? "off" : "on"]."

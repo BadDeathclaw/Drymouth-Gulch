@@ -2448,7 +2448,6 @@
 #include "code\modules\rigsuits\modules\computer.dm"
 #include "code\modules\rigsuits\modules\handheld.dm"
 #include "code\modules\rigsuits\modules\modules.dm"
-#include "code\modules\rigsuits\modules\ninja.dm"
 #include "code\modules\rigsuits\modules\utility.dm"
 #include "code\modules\rigsuits\modules\vision.dm"
 #include "code\modules\rigsuits\suits\light.dm"

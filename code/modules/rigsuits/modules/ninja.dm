@@ -36,7 +36,7 @@
 	var/mob/living/carbon/human/H = holder.wearer
 
 	to_chat(H, "<font color='blue'><b>You are now invisible to normal detection.</b></font>")
-	H.invisibility = INVISIBILITY_LEVEL_TWO
+	animate(H, alpha = 50,time = 15)
 	H.visible_message("[H.name] vanishes into thin air!",1)
 
 /obj/item/rig_module/stealth_field/deactivate()
@@ -46,7 +46,7 @@
 	var/mob/living/carbon/human/H = holder.wearer
 
 	to_chat(H, "<span class='danger'>You are now visible.</span>")
-	H.invisibility = 0
+	animate(H, alpha = 255, time = 15)
 
 	new /obj/effect/temp_visual/dir_setting/ninja(get_turf(H), H.dir)
 
@@ -105,7 +105,7 @@
 		to_chat(H, "<span class='warning'>You cannot teleport into solid walls.</span>")
 		return 0*///Who the fuck cares? Ninjas in walls are cool.
 
-	if(!is_teleport_allowed(T.z))
+	if(is_centcom_level(T.z))
 		to_chat(H, "<span class='warning'>You cannot use your teleporter on this Z-level.</span>")
 		return 0
 
@@ -113,11 +113,11 @@
 	H.forceMove(T)
 	phase_in(H,get_turf(H))
 
-	for(var/obj/item/grab/G in H.contents)
-		if(G.affecting)
-			phase_out(G.affecting,get_turf(G.affecting))
-			G.affecting.forceMove(locate(T.x+rand(-1,1),T.y+rand(-1,1),T.z))
-			phase_in(G.affecting,get_turf(G.affecting))
+//	for(var/obj/item/grab/G in H.contents)
+//		if(G.affecting)
+//			phase_out(G.affecting,get_turf(G.affecting))
+//			G.affecting.forceMove(locate(T.x+rand(-1,1),T.y+rand(-1,1),T.z))
+//			phase_in(G.affecting,get_turf(G.affecting))
 
 	return 1
 
@@ -175,13 +175,13 @@
 /obj/item/rig_module/self_destruct/engage()
 	explosion(get_turf(src), 1, 2, 4, 5)
 	if(holder && holder.wearer)
-		holder.wearer.unEquip(src)
+		//holder.wearer.unEquip(src)
 		qdel(holder)
 	qdel(src)
 
 /obj/item/rig_module/self_destruct/small/engage()
 	explosion(get_turf(src), 0, 0, 3, 4)
 	if(holder && holder.wearer)
-		holder.wearer.unEquip(src)
+		//holder.wearer.unEquip(src)s
 		qdel(holder)
 	qdel(src)
