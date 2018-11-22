@@ -14,6 +14,8 @@ Needs whitelist
 	supervisors = "Caesar"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
+	exp_requirements = 100
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13legate
 
@@ -60,6 +62,8 @@ Centurion
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
 	minimal_player_age = 6
+	exp_requirements = 45
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13centurion
 
@@ -155,6 +159,8 @@ Vexillarius
 	spawn_positions = 2
 	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
+	exp_requirements = 20
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13vexillarius
 
@@ -201,6 +207,8 @@ Decan
 	spawn_positions = 2
 	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
+	exp_requirements = 20
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13decan
 
@@ -248,6 +256,8 @@ Veteran
 	spawn_positions = -1
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
+	exp_requirements = 10
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13vetlegion
 
@@ -337,6 +347,8 @@ Legionary
 	spawn_positions = 2
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
+	exp_requirements = 5
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13explorer
 
