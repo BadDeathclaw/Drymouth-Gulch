@@ -33,7 +33,7 @@
 	to_chat(user, "<span class='warning'>Hmmm. Maybe we should put it in \a [hole]?</span>")
 
 //reagent here
-/datum/reagent/consumable/cum
+/datum/reagent/consumable/cum // could probably be made /blood/consumable/cum to just inherit the DNA procs sometime
 	name = "cum"
 	id = "cum"
 	description = "Where you found this is your own business."
@@ -43,6 +43,10 @@
 	taste_mult = 2
 	reagent_state = LIQUID
 	nutriment_factor = 0.5 * REAGENTS_METABOLISM
+	glass_icon_state = "glass_white"
+	glass_name = "glass of cream"
+	glass_desc = "Smells suspicious."
+	shot_glass_icon_state = "shotglasscream"
 
 /datum/reagent/consumable/cum/reaction_turf(turf/T, reac_volume)
 	if(!istype(T))
