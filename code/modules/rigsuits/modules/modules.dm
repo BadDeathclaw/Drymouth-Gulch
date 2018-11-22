@@ -136,13 +136,12 @@
 	stat_modules +=	new/stat_rig_module/charge(src)
 
 // Called when the module is installed into a suit.
-/obj/item/rig_module/proc/installed(var/obj/item/rig/new_holder)
+/obj/item/rig_module/proc/installed(obj/item/rig/new_holder)
 	holder = new_holder
 	return
 
 //Proc for one-use abilities like teleport.
 /obj/item/rig_module/proc/engage()
-
 	if(damage >= 2)
 		to_chat(usr, "<span class='warning'>The [interface_name] is damaged beyond use!</span>")
 		return 0
@@ -167,7 +166,7 @@
 		to_chat(usr, "<span class='danger'>Access denied.</span>")
 		return 0
 
-	if(!holder.check_power_cost(usr, use_power_cost, 0, src, (istype(usr,/mob/living/silicon ? 1 : 0) ) ) )
+	if(!holder.check_power_cost(usr, use_power_cost, 0, src, (istype(usr,/mob/living/silicon ? 1 : 0))))
 		return 0
 
 	next_use = world.time + module_cooldown
@@ -176,11 +175,10 @@
 
 // Proc for toggling on active abilities.
 /obj/item/rig_module/proc/activate()
-
 	if(active || !engage())
 		return 0
 
-	active = 1
+	active = TRUE
 
 	spawn(1)
 		if(suit_overlay_active)
@@ -193,11 +191,10 @@
 
 // Proc for toggling off active abilities.
 /obj/item/rig_module/proc/deactivate()
-
 	if(!active)
 		return 0
 
-	active = 0
+	active = FALSE
 
 	spawn(1)
 		if(suit_overlay_inactive)
@@ -224,20 +221,19 @@
 
 // Called by holder rigsuit attackby()
 // Checks if an item is usable with this module and handles it if it is
-/obj/item/rig_module/proc/accepts_item(var/obj/item/input_device)
+/obj/item/rig_module/proc/accepts_item(obj/item/input_device)
 	return 0
 
-/mob/proc/SetupStat(var/obj/item/rig/R)
+/mob/proc/SetupStat(obj/item/rig/R)
 	if(R && (R.item_flags & NODROP) && R.installed_modules.len && statpanel("Hardsuit Modules"))
 		var/cell_status = R.cell ? "[R.cell.charge]/[R.cell.maxcharge]" : "ERROR"
 		stat("Suit charge", cell_status)
 		for(var/obj/item/rig_module/module in R.installed_modules)
-		{
 			for(var/stat_rig_module/SRM in module.stat_modules)
 				if(SRM.CanUse())
 					stat(SRM.module.interface_name,SRM)
-		}
 
+// i dont even want to go deeper there, it's a fucking horror
 /stat_rig_module
 	parent_type = /atom/movable
 	var/module_mode = ""

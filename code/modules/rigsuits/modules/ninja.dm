@@ -7,14 +7,13 @@
  */
 
 /obj/item/rig_module/stealth_field
-
 	name = "active camouflage module"
 	desc = "A robust hardsuit-integrated stealth module."
 	icon_state = "cloak"
 
-	toggleable = 1
-	disruptable = 1
-	disruptive = 0
+	toggleable = TRUE
+	disruptable = TRUE
+	disruptive = FALSE
 
 	use_power_cost = 50
 	active_power_cost = 10
@@ -31,7 +30,6 @@
 	suit_overlay_inactive = "stealth_inactive"
 
 /obj/item/rig_module/stealth_field/activate()
-
 	if(!..())
 		return 0
 
@@ -39,11 +37,9 @@
 
 	to_chat(H, "<font color='blue'><b>You are now invisible to normal detection.</b></font>")
 	H.invisibility = INVISIBILITY_LEVEL_TWO
-
 	H.visible_message("[H.name] vanishes into thin air!",1)
 
 /obj/item/rig_module/stealth_field/deactivate()
-
 	if(!..())
 		return 0
 
@@ -60,22 +56,20 @@
 
 
 /obj/item/rig_module/teleporter
-
 	name = "teleportation module"
 	desc = "A complex, sleek-looking, hardsuit-integrated teleportation module."
 	icon_state = "teleporter"
 	use_power_cost = 40
 	redundant = 1
-	usable = 1
-	selectable = 1
+	usable = TRUE
+	selectable = TRUE
 
 	engage_string = "Emergency Leap"
 
 	interface_name = "VOID-shift phase projector"
 	interface_desc = "An advanced teleportation system. It is capable of pinpoint precision or random leaps forward."
 
-/obj/item/rig_module/teleporter/proc/phase_in(var/mob/M,var/turf/T)
-
+/obj/item/rig_module/teleporter/proc/phase_in(mob/M,turf/T)
 	if(!M || !T)
 		return
 
@@ -84,17 +78,16 @@
 	playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
 	new /obj/effect/temp_visual/dir_setting/ninja/phase(T, M.dir)
 
-/obj/item/rig_module/teleporter/proc/phase_out(var/mob/M,var/turf/T)
-
+/obj/item/rig_module/teleporter/proc/phase_out(mob/M,turf/T)
 	if(!M || !T)
 		return
 
 	playsound(T, "sparks", 50, 1)
 	new /obj/effect/temp_visual/dir_setting/ninja/phase/out(T, M.dir)
 
-/obj/item/rig_module/teleporter/engage(var/atom/target, var/notify_ai)
-
-	if(!..()) return 0
+/obj/item/rig_module/teleporter/engage(atom/target, notify_ai)
+	if(!..())
+		return 0
 
 	var/mob/living/carbon/human/H = holder.wearer
 
@@ -152,13 +145,12 @@
 	return 0*/
 
 /obj/item/rig_module/self_destruct
-
 	name = "self-destruct module"
 	desc = "Oh my God, Captain. A bomb."
 	icon_state = "deadman"
-	usable = 1
-	active = 1
-	permanent = 1
+	usable = TRUE
+	active = TRUE
+	permanent = TRUE
 
 	engage_string = "Detonate"
 
@@ -172,7 +164,6 @@
 	return
 
 /obj/item/rig_module/self_destruct/process()
-
 	// Not being worn, leave it alone.
 	if(!holder || !holder.wearer || !holder.wearer.wear_suit == holder)
 		return 0
