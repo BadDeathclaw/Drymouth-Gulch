@@ -59,8 +59,8 @@
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth += 10
-	mob_tar.health += 10
+	mob_tar.maxHealth += 15
+	mob_tar.health += 15
 
 /datum/quirk/light_step
 	name = "Light Step"
