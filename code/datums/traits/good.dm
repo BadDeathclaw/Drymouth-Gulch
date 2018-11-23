@@ -9,8 +9,6 @@
 	gain_text = "<span class='notice'>You feel like you could drink a whole keg!</span>"
 	lose_text = "<span class='danger'>You don't feel as resistant to alcohol anymore. Somehow.</span>"
 
-
-
 /datum/quirk/apathetic
 	name = "Apathetic"
 	desc = "You just don't care as much as other people. That's nice to have in a place like this, I guess."
@@ -27,8 +25,6 @@
 	if(mood)
 		mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
 
-
-
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
 	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
@@ -38,7 +34,6 @@
 	lose_text = "<span class='danger'>You no longer feel like drinking would ease your pain.</span>"
 	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
 
-
 /datum/quirk/freerunning
 	name = "Freerunning"
 	desc = "You're great at quick moves! You can climb tables more quickly."
@@ -47,8 +42,6 @@
 	gain_text = "<span class='notice'>You feel lithe on your feet!</span>"
 	lose_text = "<span class='danger'>You feel clumsy again.</span>"
 
-
-
 /datum/quirk/jolly
 	name = "Jolly"
 	desc = "You sometimes just feel happy, for no reason at all."
@@ -56,7 +49,18 @@
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
 
+/datum/quirk/lifegiver
+	name = "Lifegiver"
+	desc = "You embody wellness! Instantly gain +5 maximum Health"
+	value = 3
+	mob_trait = TRAIT_LIFEGIVER
+	gain_text = "<span class='notice'>You feel more healthy than usual.</span>"
+	lose_text = "<span class='danger'>You feel less healthy than usual.</span>"
 
+/datum/quirk/lifegiver/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth += 5
+	mob_tar.health += 5
 
 /datum/quirk/light_step
 	name = "Light Step"
@@ -65,8 +69,6 @@
 	mob_trait = TRAIT_LIGHT_STEP
 	gain_text = "<span class='notice'>You walk with a little more litheness.</span>"
 	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"
-
-
 
 /datum/quirk/night_vision
 	name = "Night Vision"
@@ -83,23 +85,17 @@
 		return
 	eyes.Insert(H) //refresh their eyesight and vision
 
-
-
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds."
 	value = 2
 	mob_trait = TRAIT_SELF_AWARE
 
-
-
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "You can conceal yourself in danger. Ctrl-shift-click a closed locker to jump into it, as long as you have access."
 	value = 2
 	mob_trait = TRAIT_SKITTISH
-
-
 
 /datum/quirk/spiritual
 	name = "Spiritual"
@@ -108,8 +104,6 @@
 	mob_trait = TRAIT_SPIRITUAL
 	gain_text = "<span class='notice'>You feel a little more faithful to the gods today.</span>"
 	lose_text = "<span class='danger'>You feel less faithful in the gods.</span>"
-
-
 
 /datum/quirk/voracious
 	name = "Voracious"
