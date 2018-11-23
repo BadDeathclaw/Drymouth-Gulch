@@ -19,7 +19,7 @@
 	name = "carp fillet"
 	desc = "A fillet of spess carp meat."
 	icon_state = "fishfillet"
-	list_reagents = list("nutriment" = 3, "carpotoxin" = 2, "vitamin" = 2)
+	list_reagents = list("nutriment" = 3, "carpotoxin" = 5, "vitamin" = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1)
