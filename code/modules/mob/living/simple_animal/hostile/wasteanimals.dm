@@ -17,7 +17,7 @@
 	speed = 0
 	maxHealth = 40
 	health = 40
-
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 2)
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 20
@@ -52,6 +52,7 @@
 	speed = 1
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 1)
 
 /mob/living/simple_animal/hostile/cazador/young/Initialize()
 	. = ..()
