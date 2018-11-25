@@ -101,6 +101,7 @@
 #define F13RAIDER		(1<<2)
 #define F13PUSHER		(1<<3)
 #define F13PREACHER		(1<<4)
+//#define F13PUNRAIDER	(1<<5)
 
 #define ENCLAVE			(1<<9)
 
