@@ -273,6 +273,9 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 /obj/item/stack/sheet/cloth/ten
 	amount = 10
 
+/obj/item/stack/sheet/cloth/five
+	amount = 5
+
 /*
  * Cardboard
  */

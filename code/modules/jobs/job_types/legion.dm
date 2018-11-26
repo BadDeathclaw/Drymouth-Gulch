@@ -14,6 +14,8 @@ Needs whitelist
 	supervisors = "Caesar"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
+	exp_requirements = 100
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13legate
 
@@ -45,7 +47,6 @@ Needs whitelist
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
-
 /*
 Centurion
 */
@@ -61,6 +62,8 @@ Centurion
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
 	minimal_player_age = 6
+	exp_requirements = 45
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13centurion
 
@@ -91,6 +94,59 @@ Centurion
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
+/*
+Veteran Decan
+*/
+/datum/job/f13vetdecan
+	title = "Veteran Decanus"
+	flag = F13VETDECAN
+	department_flag = LEGION
+	faction = "Legion"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the centurion"
+	selection_color = "#ffeeee"
+
+	outfit = /datum/outfit/job/f13vetdecan
+
+/datum/outfit/job/f13vetdecan
+	name = "Veteran Decanus"
+	jobtype = /datum/job/f13vetdecan
+
+	id = null
+	ears = null
+	belt = /obj/item/storage/belt/military/alt
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	uniform = 		/obj/item/clothing/under/f13/legskirt
+	shoes = 		/obj/item/clothing/shoes/legionmetal
+	gloves =		/obj/item/clothing/gloves/legion
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
+	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
+	mask =			/obj/item/clothing/mask/bandana/legdecan
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
+	r_hand = 		/obj/item/twohanded/fireaxe
+	backpack_contents = list(
+		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/throwing_star/spear, \
+		/obj/item/claymore/machete=1, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/ammo_box/m44=2, \
+		/obj/item/flashlight/flare/torch=1)
+	box = null
+
+/datum/outfit/job/f13vetdecan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /*
 Vexillarius
 */
@@ -101,8 +157,10 @@ Vexillarius
 	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the centurion"
+	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
+	exp_requirements = 20
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13vexillarius
 
@@ -131,6 +189,12 @@ Vexillarius
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /*
 Decan
 */
@@ -139,10 +203,12 @@ Decan
 	flag = F13DECAN
 	department_flag = LEGION
 	faction = "Legion"
-	total_positions = 3
-	spawn_positions = 3
-	supervisors = "the centurion"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
+	exp_requirements = 20
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13decan
 
@@ -172,6 +238,12 @@ Decan
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /*
 Veteran
 */
@@ -184,6 +256,8 @@ Veteran
 	spawn_positions = -1
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
+	exp_requirements = 10
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13vetlegion
 
@@ -211,6 +285,12 @@ Veteran
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/outfit/job/f13vetlegion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /*
 Legionary
@@ -252,6 +332,12 @@ Legionary
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 
+/datum/outfit/job/f13legionary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /datum/job/f13explorer
 	title = "Explorer"
 	flag = F13EXPLORER
@@ -261,6 +347,8 @@ Legionary
 	spawn_positions = 2
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
+	exp_requirements = 5
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13explorer
 
@@ -287,6 +375,12 @@ Legionary
 		/obj/item/flashlight/flare/torch=1)
 	box = null
 	r_pocket = /obj/item/binocs
+
+/datum/outfit/job/f13explorer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13scout
 	title = "Scout"
@@ -322,6 +416,12 @@ Legionary
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1)
 	box = null
+
+/datum/outfit/job/f13scout/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13campfollower
 	title = "Camp Follower"

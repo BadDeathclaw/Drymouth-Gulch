@@ -24,6 +24,7 @@
 	var/require_target_penis
 	var/require_target_anus
 	var/require_target_vagina
+	var/require_target_breasts
 
 	var/user_refactory_cost
 	var/target_refactory_cost
@@ -86,7 +87,7 @@
 		dat += "<br>...are sexually exhausted for the time being."
 	if(is_nude())
 		dat += "<br>...are naked."
-		if(has_vagina())
+		if(has_breasts())
 			dat += "<br>...have breasts."
 		if(has_penis())
 			dat += "<br>...have a penis."

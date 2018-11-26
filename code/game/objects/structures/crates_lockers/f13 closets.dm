@@ -14,6 +14,8 @@
 	new /obj/item/storage/bag/plants(src)
 	new /obj/item/seeds/tower(src)
 	new /obj/item/seeds/watermelon(src)
+	new /obj/item/seeds/poppy/broc(src)
+	new /obj/item/seeds/xander(src)
 	//new /obj/item/seeds/plantnamehrere(src)
 
 /obj/structure/closet/f13/leigon/scollar
