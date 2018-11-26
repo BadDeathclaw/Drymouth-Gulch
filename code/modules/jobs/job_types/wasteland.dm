@@ -288,7 +288,7 @@ Preacher
 /*
 Punished Raider
 */
-/*
+
 /datum/job/f13Punraider
 	title = "Punished Raider"
 	flag = F13PUNRAIDER
@@ -366,12 +366,7 @@ Punished Raider
 		/obj/item/restraints/handcuffs, \
 		/obj/item/gun/ballistic/revolver/russian, \
 		/obj/item/reagent_containers/food/snacks/grown/banana)
-		//if(prob(5))
-		//	glasses = 	/obj/item/clothing/glasses/sunglasses
-		//if(prob(8))
-		//	l_hand = 	/obj/item/hatchet
 	belt  = (/obj/item/claymore/machete/pipe)
-*/
 
 /*
 Trader
