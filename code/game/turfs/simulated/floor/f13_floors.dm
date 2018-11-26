@@ -7,19 +7,13 @@
 */
 
 /turf/open/floor/plating/f13/outside
-	icon = 'icons/turf/f13desert.dmi'
-	icon_state = "wasteland1"
-	light_range = 3
-	light_power = 0.75
-	planetary_atmos = TRUE
 
 /turf/open/floor/plating/f13
 	gender = PLURAL
 	name = "\proper desert"
-	baseturfs = /turf/open/floor/plating/f13/outside
-	icon = 'icons/turf/f13desert.dmi'
+	baseturfs = /turf/open/floor/plating/f13
 	icon_state = "wasteland1"
-	icon_plating = "wasteland1"
+	icon = 'icons/turf/f13desert.dmi'
 	attachment_holes = FALSE
 	light_range = 3
 	light_power = 0.75
@@ -52,7 +46,6 @@
 	name = "\proper desert"
 	desc = "A stretch of desert."
 	icon = 'icons/turf/f13desert.dmi'
-	icon_state = "wasteland1"
 	var/obj/structure/flora/turfPlant = null
 	//light_color = LIGHT_COLOR_LAVA
 	slowdown = 2
@@ -66,6 +59,9 @@
 	//var/obj/dugpit/ground/mypit
 	//var/unburylevel = 0
 
+/turf/open/floor/plating/f13/outside/desert/New()
+	..()
+	icon_state = "wasteland[rand(1,31)]"
 
 /turf/open/floor/plating/f13/outside/desert/Initialize()
 	. = ..()
@@ -109,11 +105,6 @@
 	if(turfPlant)
 		qdel(turfPlant)
 	. =  ..()
-
-
-/turf/open/floor/plating/f13/outside/desert/New()
-	..()
-	icon_state = "wasteland[rand(1,31)]"
 
 /turf/open/floor/plating/f13/outside/road
 	name = "\proper road"

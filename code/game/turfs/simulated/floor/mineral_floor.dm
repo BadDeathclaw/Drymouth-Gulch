@@ -12,7 +12,6 @@
 /turf/open/floor/mineral
 	name = "mineral floor"
 	icon_state = ""
-	var/list/icons
 
 
 
