@@ -289,7 +289,7 @@ Preacher
 Punished Raider
 */
 
-/datum/job/f13Punraider
+/datum/job/f13punraider
 	title = "Punished Raider"
 	flag = F13PUNRAIDER
 	department_head = list("Captain")
@@ -306,9 +306,9 @@ Punished Raider
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/f13Punraider
+/datum/outfit/job/f13punraider
 	name = "Punished Raider"
-	jobtype = /datum/job/f13Punraider
+	jobtype = /datum/job/f13punraider
 
 	id = null
 	ears = null
