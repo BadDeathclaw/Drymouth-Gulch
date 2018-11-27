@@ -296,8 +296,8 @@ Punished Raider
 	department_flag = WASTELAND
 	head_announce = list("Security")
 	faction = "Wastelander"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
