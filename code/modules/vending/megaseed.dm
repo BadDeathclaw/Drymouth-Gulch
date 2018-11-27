@@ -8,7 +8,7 @@
 		            /obj/item/seeds/apple = 3,
 		            /obj/item/seeds/banana = 3,
 		            /obj/item/seeds/berry = 3,
-		            /obj/item/seeds/broc = 3,
+		            /obj/item/seeds/poppy/broc = 3,
 					/obj/item/seeds/cabbage = 3,
 					/obj/item/seeds/carrot = 3,
 					/obj/item/seeds/cherry = 3,
