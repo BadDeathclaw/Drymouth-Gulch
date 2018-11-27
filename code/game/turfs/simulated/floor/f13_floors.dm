@@ -59,12 +59,9 @@
 	//var/obj/dugpit/ground/mypit
 	//var/unburylevel = 0
 
-/turf/open/floor/plating/f13/outside/desert/New()
-	..()
-	icon_state = "wasteland[rand(1,31)]"
-
 /turf/open/floor/plating/f13/outside/desert/Initialize()
 	. = ..()
+	icon_state = "wasteland[rand(1,31)]"
 	//If no fences, machines (soil patches are machines), etc. try to plant grass
 	if(!(\
 			(locate(/obj/structure) in src) || \
