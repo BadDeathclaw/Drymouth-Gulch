@@ -8,13 +8,13 @@
 	gas_transfer_coefficient = 0.9
 	equip_delay_other = 20
 
-/obj/item/clothing/mask/muzzle/attack_paw(mob/user)
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		if(src == C.wear_mask)
-			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
-			return
-	..()
+///obj/item/clothing/mask/muzzle/attack_paw(mob/user)
+//	if(iscarbon(user))
+//		var/mob/living/carbon/C = user
+//		if(src == C.wear_mask)
+//			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
+//			return
+//	..()
 
 /obj/item/clothing/mask/surgical
 	name = "sterile mask"
@@ -278,7 +278,7 @@
 	name = "veteran bandana"
 	desc = "A fine prime bandana."
 	icon_state = "bandred"
-	
+
 /obj/item/clothing/mask/mummy
 	name = "mummy mask"
 	desc = "Ancient bandages."
