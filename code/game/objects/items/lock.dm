@@ -7,7 +7,7 @@
 	var/locked = FALSE
 	var/prying = FALSE //if somebody is trying to pry us off
 
-/obj/item/lock_construct/New() // Same system machines use for UID. Could probably add a global UID for everything if you wanted and use it for shenanigans, or simpler loading.
+/obj/item/lock_construct/initialize() // Same system machines use for UID. Could probably add a global UID for everything if you wanted and use it for shenanigans, or simpler loading.
 	..()
 	lock_data = lock_uid++
 	desc = "A heavy-duty lock for doors. It has [lock_data] engraved on it."
@@ -64,7 +64,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	var/lock_data = ""
 
-/obj/item/key/New()
+/obj/item/key/initialize()
 	..()
 	desc = "A simple key for locks. It has [src.lock_data ? src.lock_data : "nothing"] engraved on it."
 
