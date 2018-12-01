@@ -512,8 +512,15 @@
 	health = maxHealth - getOxyLoss() - getToxLoss() - getCloneLoss() - total_burn - total_brute
 	staminaloss = total_stamina
 	update_stat()
-	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD) && stat == DEAD )
-		become_husk("burn")
+	if(stat == DEAD)
+		if((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD)
+			become_husk("burn")
+		if(total_burn >= 400)
+			dust(drop_items = TRUE)
+		if(toxloss >= 199)
+			liquefy()
+		if(total_brute >= 400)
+			gib()
 	med_hud_set_health()
 
 /mob/living/carbon/update_sight()

@@ -115,7 +115,6 @@
 		I.forceMove(T)
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
-//Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
 /obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE)
 	if(owner && (owner.status_flags & GODMODE))
@@ -135,17 +134,6 @@
 	switch(animal_origin)
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take double burn
 			burn *= 2
-
-	var/can_inflict = max_damage - (brute_dam + burn_dam)
-	if(can_inflict <= 0)
-		return FALSE
-
-	var/total_damage = brute + burn
-
-	if(total_damage > can_inflict)
-		var/excess = total_damage - can_inflict
-		brute = brute * (excess / total_damage)
-		burn = burn * (excess / total_damage)
 
 	brute_dam += brute
 	burn_dam += burn

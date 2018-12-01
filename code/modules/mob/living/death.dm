@@ -45,6 +45,17 @@
 /mob/living/proc/spawn_dust(just_ash = FALSE)
 	new /obj/effect/decal/cleanable/ash(loc)
 
+/mob/living/liquefy(drop_items = TRUE)
+	death(TRUE)
+
+	if(drop_items)
+		unequip_everything()
+
+	if(buckled)
+		buckled.unbuckle_mob(src,force=1)
+
+	new /obj/effect/decal/cleanable/molten_object/large(loc)
+	qdel(src)
 
 /mob/living/death(gibbed)
 	stat = DEAD

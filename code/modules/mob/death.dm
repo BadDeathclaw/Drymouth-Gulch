@@ -9,5 +9,10 @@
 /mob/proc/dust()
 	return
 
+//Proc for bodies liquifying.
+//I don't know why everything is so split up like this, it's horrible, but the bulk of these three procs is buried in mob/living/death.
+/mob/proc/liquefy()
+	return
+
 /mob/proc/death(gibbed)
 	return
