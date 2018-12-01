@@ -1419,6 +1419,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!damage || hit_percent <= 0)
+		if(istype(H.def_zone, /obj/item/clothing/suit/space/hardsuit/powerarmor))
+			var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = H.def_zone
+			armor.take_damage(damage, damagetype, damage_flag = 0, sound_effect = 0, armour_penetration = 0)
 		return 0
 
 	var/obj/item/bodypart/BP = null
@@ -1514,10 +1517,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	// +/- 50 degrees from 310K is the 'safe' zone, where no damage is dealt.
 	if(H.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT && !H.has_trait(TRAIT_RESISTHEAT))
 		//Body temperature is too hot.
-		
+
 		SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "cold")
 		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "hot", /datum/mood_event/hot)
-		
+
 		var/burn_damage
 		switch(H.bodytemperature)
 			if(BODYTEMP_HEAT_DAMAGE_LIMIT to 400)

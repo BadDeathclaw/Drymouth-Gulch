@@ -851,7 +851,8 @@
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor
 	name = "default power armor suit"
-	desc = "Default power armor suit, this shouldn't really exist at all sadly. Altclick this to get the power cell out."
+	desc = "Default power armor suit, this shouldn't really exist at all sadly. Altclick this to get the power cell out. You may attack this with a welding tool to repair it"
+	w_class = WEIGHT_CLASS_GIGANTIC //No putting it anywhere
 	slowdown = 1
 	ispowerarmor = 1
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
@@ -869,6 +870,8 @@
 	var/putondelay = 120 //To prevent lugging this armor and putting it on instantly when combat happens; gotta have it on you
 	var/energydrain = 25 //default drain of energy per 2 seconds
 	var/offline = 0 //If it's offline
+	max_integrity = 400
+	obj_integrity = 400
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/Initialize()
 	..()
@@ -931,7 +934,6 @@
 	else
 		return TRUE
 
-
 /obj/item/clothing/suit/space/hardsuit/powerarmor/AltClick(mob/user)
 	if(cell && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(!(user.put_in_hands(cell)))
@@ -943,6 +945,14 @@
 			return
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/weldingtool))
+		if(I.use_tool(src, user, 40, volume=10))
+			to_chat(user, "You repair part of the [src].")
+			obj_integrity = max(obj_integrity + (max_integrity / 2), max_integrity) //Expensive on welding fuel, 200 seconds and 500 welding fuel to repair a just about destroyed power armor
+			recalc_armor
+			return 1
+		else
+			to_chat(user, "Your [I] needs more fuel.")
 	if(istype(I, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/cell2 = I
 		if(cell) //Swap
@@ -973,6 +983,31 @@
 				to_chat(H, "<span class='warning'>You somehow failed to put on the [src.name].</span>")
 				return FALSE
 	return FALSE
+
+//New power armor feature; Scaling defense based on current obj_integrity
+//When brand new, power armor basically tanks just about anything; when it's damaged enough it will have regular levels of armor
+//Damage done to power armor is based on damage absorbed
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0)
+	if(QDELETED(src))
+		stack_trace("[src] taking damage after deletion")
+		return
+	if(sound_effect)
+		play_attack_sound(damage_amount, damage_type, damage_flag)
+	var/damagestuff = run_obj_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
+	obj_integrity -= (damage_amount - damagestuff) //If more than 100 armor power armor takes all the damage; otherwise human will also take damage, human taking damage is already applied
+	recalc_armor() //Remake the armor values
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/proc/recalc_armor()
+	armor = initial(armor)
+	if(obj_integrity == max_integrity)
+		return
+	else
+		armor.modifyAllRatings(max_integrity / obj_integrity) //Sets all armor to a multiplier; if the armor gets damaged enough, it won't provide much armor at all
+
+/obj/item/clothing/suit/space/hardsuit/powerarmor/examine(mob/user)
+	..()
+	to_chat(user, "This [name] seems to have about [(cell.charge / cell.maxcharge) * 100] percentage battery left. It also seems to have an integrity of about [(obj_integrity / max_integrity) * 100] percent.")
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
 	name = "Salvaged T-45b helmet"
