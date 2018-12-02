@@ -44,7 +44,7 @@
 	randy.loc = src.loc //sets stack location to randstack location
 	randy.amount = rand(min_dollars, max_dollars)
 	randy.update_icon()
-	del src
+	qdel(src)
 
 /obj/item/stack/spacecash/random/low
 	min_dollars = 1

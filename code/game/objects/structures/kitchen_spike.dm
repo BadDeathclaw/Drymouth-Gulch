@@ -200,7 +200,7 @@
 			L.pixel_y = 26
 			L.overlays += image('icons/obj/cross.dmi', "lashing")
 			return
-		user << "<span class='danger'>You can't use that on the cross!</span>"
+		to_chat(user, "<span class='danger'>You can't use that on the cross!</span>")
 		return
 	..()
 
@@ -227,7 +227,7 @@
 			M.adjustBruteLoss(20)
 			if(!do_after(M, 1200, target = src))
 				if(M && M.buckled)
-					M << "<span class='warning'>You fail to free yourself!</span>"
+					to_chat(M, "<span class='warning'>You fail to free yourself!</span>")
 				return
 		if(!M.buckled)
 			return
