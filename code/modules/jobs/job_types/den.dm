@@ -11,6 +11,8 @@ Sheriff
 	spawn_positions = 1
 	supervisors = "no one"
 	selection_color = "#d7b088"
+	exp_requirements = 10
+	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/f13sheriff
 

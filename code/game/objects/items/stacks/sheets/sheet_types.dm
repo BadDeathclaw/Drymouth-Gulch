@@ -200,6 +200,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("baseball bat", /obj/item/twohanded/baseball, 5, time = 15),\
+	new/datum/stack_recipe("bonfire", /obj/structure/bonfire, 15, time = 60, one_per_turf = TRUE),\
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -251,6 +252,8 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("black gloves", /obj/item/clothing/gloves/color/black, 3), \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
+	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2), \
+	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2), \
 	))
 
 /obj/item/stack/sheet/cloth
@@ -270,6 +273,12 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 
 /obj/item/stack/sheet/cloth/ten
 	amount = 10
+
+/obj/item/stack/sheet/cloth/five
+	amount = 5
+
+/obj/item/stack/sheet/cloth/three
+	amount = 3
 
 /*
  * Cardboard

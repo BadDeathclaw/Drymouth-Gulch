@@ -15,7 +15,8 @@
 
 /obj/effect/decal/cleanable/ash/Initialize()
 	. = ..()
-	reagents.add_reagent("ash", 30)
+	reagents.add_reagent("ash", 25)
+	reagents.add_reagent("carbon", 5)
 	pixel_x = rand(-5, 5)
 	pixel_y = rand(-5, 5)
 
@@ -31,6 +32,7 @@
 /obj/effect/decal/cleanable/ash/large/Initialize()
 	. = ..()
 	reagents.add_reagent("ash", 30) //double the amount of ash.
+	reagents.add_reagent("carbon", 5)
 
 /obj/effect/decal/cleanable/glass
 	name = "tiny shards"
