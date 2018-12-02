@@ -5,11 +5,6 @@
 
 #define ORESTACK_OVERLAYS_MAX 10
 
-// #define COIN_VALUE_BUCK 1
-#define COIN_VALUE_CAP 2.5
-#define COIN_VALUE_DENARIUS 10
-#define COIN_VALUE_AUREUS 250
-
 /**********************Mineral ores**************************/
 
 /obj/item/stack/ore
@@ -329,8 +324,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	var/cooldown = 0
 	var/value = 1
 	var/coinflip
-	var/is_stack = 0
-	var/is_non_flippable = FALSE
 
 /obj/item/coin/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] contemplates suicide with \the [src]!</span>")
@@ -361,20 +354,18 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		to_chat(user, "<span class='info'>It's worth [value] credit\s.</span>")
 
 /obj/item/coin/gold
-	name = "gold Aureus"
-	desc = "The image of Caesar in his elder years looks sternly at you from this heavy gold Aureus. It's worth about 100 caps."
+	name = "gold coin"
 	cmineral = "gold"
-	icon_state = "aureus_heads"
-	value = COIN_VALUE_AUREUS
+	icon_state = "coin_gold_heads"
+	value = 50
 	materials = list(MAT_GOLD = MINERAL_MATERIAL_AMOUNT*0.2)
 	grind_results = list("gold" = 4)
 
 /obj/item/coin/silver
-	name = "silver Denarius"
-	desc = "The image of Caesar in his younger years looks boldly at you from this heavy silver Denarius. It's worth about 4 caps."
+	name = "silver coin"
 	cmineral = "silver"
-	icon_state = "denarius_heads"
-	value = COIN_VALUE_DENARIUS
+	icon_state = "coin_silver_heads"
+	value = 20
 	materials = list(MAT_SILVER = MINERAL_MATERIAL_AMOUNT*0.2)
 	grind_results = list("silver" = 4)
 
@@ -387,42 +378,12 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	grind_results = list("carbon" = 4)
 
 /obj/item/coin/iron
-	name = "bottle cap"
-	desc = "A humble bottle cap. This one seems to be of the Nuka Cola variety."
+	name = "iron coin"
 	cmineral = "iron"
 	icon_state = "coin_iron_heads"
-	is_non_flippable = TRUE
-	sideslist = list("heads")
-	value = COIN_VALUE_CAP
+	value = 1
 	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT*0.2)
 	grind_results = list("iron" = 4)
-
-/obj/item/coin/iron/pile_ten
-	name = "bottle caps"
-	desc = "A small pile of Nuka Cola caps."
-	icon_state = "bottle_cap2"
-	value = COIN_VALUE_CAP * 10
-	is_stack = TRUE
-
-/obj/item/coin/iron/pile_twenty
-	name = "bottle caps"
-	desc = "A pile of twenty Nuka Cola caps."
-	icon_state = "bottle_cap3"
-	value = COIN_VALUE_CAP * 20
-	is_stack = TRUE
-
-/obj/item/coin/iron/pile_fifty
-	name = "bottle caps"
-	desc = "A pile of fifty Nuka Cola caps."
-	icon_state = "bottle_cap4"
-	value = COIN_VALUE_CAP * 50
-	is_stack = TRUE
-
-/obj/item/coin/iron/pile_fifty
-	name = "bottle caps"
-	desc = "A pile of a hundred Nuka Cola caps. Wow, that's heavy!"
-	value = COIN_VALUE_CAP * 100
-	is_stack = TRUE
 
 /obj/item/coin/plasma
 	name = "plasma coin"
@@ -484,8 +445,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 		if(string_attached)
 			to_chat(user, "<span class='warning'>There already is a string attached to this coin!</span>")
 			return
-		if(is_stack)
-			return // you can't string a stack
+
 		if (CC.use(1))
 			add_overlay("coin_string_overlay")
 			string_attached = 1
@@ -495,111 +455,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 			return
 	else
 		..()
-
-/obj/item/coin/iron/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/coin/iron))
-		var/obj/item/coin/iron/C = W
-		value = value + C.value
-		qdel(C)
-		is_stack = TRUE
-		to_chat(user, "<span class='notice'>You stack up " + (0.4 * value) + " caps.</span>")
-		switch(value)
-			if(1 to 3)
-				icon_state = "bottle_cap"
-			if(4 to 9)
-				icon_state = "bottle_cap2"
-			if(10 to 49)
-				icon_state = "bottle_cap3"
-			if(50 to 100)
-				icon_state = "bottle_cap4"
-			if(100 to 199)
-				icon_state = "bottle_cap5"
-			else if(value >= 200)
-				icon_state = "bottle_cap6"
-		name = "bottle caps"
-		desc = "A stack of " + (0.4 * value) + " caps."
-	else
-		..()
-
-/obj/item/coin/gold/attack_self(mob/user)
-	if(!is_stack)
-		return FALSE // Can't split single caps
-	value = value - COIN_VALUE_CAP
-	if (value <= COIN_VALUE_CAP)
-		is_stack = FALSE
-		name = "bottle cap"
-	user.put_in_hands(new /obj/item/coin/gold)
-	..()
-
-/obj/item/coin/silver/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/coin/silver))
-		var/obj/item/coin/silver/C = W
-		value = value + C.value
-		qdel(C)
-		is_stack = TRUE
-		to_chat(user, "<span class='notice'>You stack up the Denarii.</span>")
-		switch(value)
-			if(1 to 10)
-				icon_state = "denarius_heads"
-			if(11 to 20)
-				icon_state = "denarius2"
-			if(21 to 30)
-				icon_state = "denarius3"
-			if(31 to 40)
-				icon_state = "denarius4"
-			if(41 to 50)
-				icon_state = "denarius5"
-			else if(value >= 51)
-				icon_state = "denarius6"
-		name = "silver Denarii"
-		desc = "A stack of Legion Denarii. It's worth about " + (0.4 * value) + " caps."
-	else
-		..()
-
-/obj/item/coin/silver/attack_self(mob/user)
-	if(!is_stack)
-		return FALSE // Can't split single coins
-	value = value - COIN_VALUE_DENARIUS
-	if (value <= COIN_VALUE_DENARIUS)
-		is_stack = FALSE
-		name = "silver Denarius"
-	user.put_in_hands(new /obj/item/coin/silver)
-	..()
-
-/obj/item/coin/gold/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/coin/gold))
-		var/obj/item/coin/gold/C = W
-		value = value + C.value
-		qdel(C)
-		is_stack = TRUE
-		to_chat(user, "<span class='notice'>You stack up the Aureii.</span>")
-		switch(value)
-			if(1 to 250)
-				icon_state = "aureus_heads"
-			if(251 to 500)
-				icon_state = "aureus2"
-			if(501 to 750)
-				icon_state = "aureus3"
-			if(751 to 1000)
-				icon_state = "aureus4"
-			if(1001 to 1250)
-				icon_state = "aureus5"
-			else if(value >= 1251)
-				icon_state = "aureus6"
-		name = "gold Aureii"
-		desc = "A stack of Legion Aureii. It's worth about " + (0.4 * value) + " caps."
-	else
-		..()
-
-/obj/item/coin/gold/attack_self(mob/user)
-	if(!is_stack)
-		return FALSE // Can't split single coins
-	value = value - COIN_VALUE_AUREUS
-	if (value <= COIN_VALUE_AUREUS)
-		is_stack = FALSE
-		name = "gold Aureus"
-	user.put_in_hands(new /obj/item/coin/gold)
-	..()
 
 /obj/item/coin/wirecutter_act(mob/living/user, obj/item/I)
 	if(!string_attached)
@@ -615,11 +470,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	if(cooldown < world.time)
 		if(string_attached) //does the coin have a wire attached
 			to_chat(user, "<span class='warning'>The coin won't flip very well with something attached!</span>" )
-			return FALSE // do not flip the coin
-		if(is_stack)
-			return FALSE // you can't flip a stack
-		if(is_non_flippable)
-			return FALSE // you can't flip bottle caps
+			return FALSE//do not flip the coin
 		coinflip = pick(sideslist)
 		cooldown = world.time + 15
 		flick("coin_[cmineral]_flip", src)
