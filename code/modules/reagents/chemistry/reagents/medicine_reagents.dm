@@ -1335,13 +1335,13 @@
 	overdose_threshold = 30
 	addiction_threshold = 20
 
-/datum/reagent/medicine/medx/on_mob_add(mob/liing/M)
+/datum/reagent/medicine/medx/on_mob_add(mob/M)
 	..()
 	if(isliving(M))
 		var/mob/living/L = M
 		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
 
-/datum/reagent/medicine/medx/on_mob_delete(mob/living/M)
+/datum/reagent/medicine/medx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/L = M
 		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
