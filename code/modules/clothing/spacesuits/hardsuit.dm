@@ -847,7 +847,7 @@
 	offlinetint = 2 //Rip your eyes
 	var/offline = 0 //If it's offline
 	//actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	actions_types = list() //No helmet light; activating it sets the sprite to the default engineering light, going to need custom sprites for this
+	actions_types = list()
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor
 	name = "default power armor suit"
@@ -867,8 +867,8 @@
 	obj/item/clothing/head/helmet/spacec/hardsuit/powerarmor/helmet
 	var/offlineslowdown = 4 //How slow you go when its powered off
 	var/obj/item/stock_parts/cell/cell = new/obj/item/stock_parts/cell/upgraded/plus //Power source used to power said armor, 5000 charge default
-	var/putondelay = 120 //To prevent lugging this armor and putting it on instantly when combat happens; takes time to put on
-	var/energydrain = 25 //default drain of energy per 2 seconds; 5000 power cell runs out of power in 6 and 2/3rd minutes
+	var/putondelay = 120 //To prevent lugging this armor and putting it on instantly when combat happens; gotta have it on you
+	var/energydrain = 25 //default drain of energy per 2 seconds
 	var/offline = 0 //If it's offline
 	max_integrity = 400
 	obj_integrity = 400
@@ -926,7 +926,9 @@
 	if(cell.charge == 0) //Power is ded; no use
 		return FALSE
 	else
-		return TRUE //Thing is powered; give the cool stuff
+		if(src == SLOT_WEAR_SUIT)
+			return TRUE //Thing is powered; give the cool stuff
+		return FALSE
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/item_action_slot_check(slot)
 	if(offline)
@@ -949,7 +951,7 @@
 		if(I.use_tool(src, user, 40, volume=10))
 			to_chat(user, "You repair part of the [src].")
 			obj_integrity = max(obj_integrity + (max_integrity / 2), max_integrity) //Expensive on welding fuel, 200 seconds and 500 welding fuel to repair a just about destroyed power armor
-			recalc_armor
+			recalc_armor()
 			return 1
 		else
 			to_chat(user, "Your [I] needs more fuel.")
