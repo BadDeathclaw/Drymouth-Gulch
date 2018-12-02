@@ -115,7 +115,6 @@ Raider
 		/obj/item/clothing/under/f13/doctorm, \
 		/obj/item/clothing/under/roman)
 	suit = pick(
-		/obj/item/clothing/head/helmet/f13/raider,\
 		/obj/item/clothing/suit/fluff/cowboybvest,\
 		/obj/item/clothing/suit/fluff/cowboygvest,\
 		/obj/item/clothing/suit/fluff/battlecruiser,\
@@ -134,14 +133,17 @@ Raider
 		/obj/item/clothing/suit/bio_suit/security,\
 		/obj/item/clothing/suit/apron/chef,\
 		/obj/item/clothing/suit/apron/overalls,\
-		/obj/item/clothing/suit/straight_jacket,\
 		/obj/item/clothing/suit/toggle/labcoat/mad,\
 		/obj/item/clothing/suit/pirate,\
-		/obj/item/clothing/suit/cardborg,\
+		/obj/item/clothing/suit/armor/f13/kit/terrible,\
+		/obj/item/clothing/suit/armor/f13/leatherarmor/terrible, \
+		/obj/item/clothing/suit/armor/f13/bmetalarmor/terrible, \
 		/obj/item/clothing/suit/armor/f13/raider/yankee, \
 		/obj/item/clothing/suit/armor/f13/raider/sadist, \
 		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
-	head = pick(/obj/item/clothing/head/helmet/f13/raider,\
+	head = pick(
+		/obj/item/clothing/head/papersack, \
+		/obj/item/clothing/head/helmet/f13/raider,\
 		/obj/item/clothing/head/helmet/f13/eyebot,\
 		/obj/item/clothing/head/helmet/f13/brokenpa/t45d,\
 		/obj/item/clothing/head/chicken,\
@@ -149,11 +151,8 @@ Raider
 		/obj/item/clothing/head/santa,\
 		/obj/item/clothing/head/helmet/roman,\
 		/obj/item/clothing/head/helmet/gladiator,\
-		/obj/item/clothing/head/helmet/bluetaghelm,\
-		/obj/item/clothing/head/helmet/redtaghelm,\
 		/obj/item/clothing/head/festive,\
 		/obj/item/clothing/head/canada,\
-		/obj/item/clothing/head/cardborg,\
 		/obj/item/clothing/head/bio_hood/security,\
 		/obj/item/clothing/head/bandana,\
 		/obj/item/clothing/head/welding,\
@@ -165,7 +164,12 @@ Raider
 		/obj/item/clothing/head/cone,\
 		/obj/item/clothing/head/helmet/f13/raider/arclight,\
 		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
-		/obj/item/clothing/head/helmet/f13/raider/yankee)
+		/obj/item/clothing/head/helmet/f13/raider/yankee,\
+		/obj/item/clothing/head/hooded/carp_hood,\
+		/obj/item/clothing/head/jester/alt,\
+		/obj/item/clothing/head/lobsterhat,\
+		/obj/item/clothing/head/cueball,\
+		/obj/item/clothing/head/fedora)
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
@@ -214,12 +218,17 @@ Pusher
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	uniform =  		/obj/item/clothing/under/jabroni
+	suit = /obj/item/clothing/suit/f13/duster
 /datum/outfit/job/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/jet=3, \
+		/obj/item/reagent_containers/syringe/medx=2)
+
 /*
 Preacher
 */
@@ -261,6 +270,85 @@ Preacher
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/internal/boltaction=2, \
 		/obj/item/reagent_containers/food/drinks/flask=1)
+
+/*
+Punished Raider
+*/
+/*
+/datum/job/f13Punraider
+	title = "Punished Raider"
+	flag = F13PUNRAIDER
+	department_head = list("Captain")
+	department_flag = WASTELAND
+	head_announce = list("Security")
+	faction = "Wastelander"
+	total_positions = -1
+	spawn_positions = -1
+	supervisors = "no one"
+	selection_color = "#dddddd"
+
+	outfit = /datum/outfit/job/f13punraider
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/f13Punraider
+	name = "Punished Raider"
+	jobtype = /datum/job/f13Punraider
+
+	id = null
+	ears = null
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+
+/datum/outfit/job/f13raider/pre_equip(mob/living/carbon/human/H)
+	..()
+	uniform = pick(
+		/obj/item/clothing/under/kilt/highlander, \
+		/obj/item/clothing/under/sexymime, \
+		/obj/item/clothing/under/sundress, \
+		/obj/item/clothing/under/schoolgirl, \
+		/obj/item/clothing/under/rank/clown, \
+		null)
+	suit = pick(
+		/obj/item/clothing/suit/whitedress, \
+		/obj/item/clothing/suit/poncho/ponchoshame, \
+		/obj/item/clothing/suit/chickensuit, \
+		/obj/item/clothing/suit/straight_jacket, \
+		null)
+	head = pick(
+		/obj/item/clothing/head/sombrero/shamebrero, \
+		/obj/item/clothing/head/papersack, \
+		/obj/item/clothing/head/chicken,\
+		/obj/item/clothing/head/santa,\
+		/obj/item/clothing/head/festive,\
+		/obj/item/clothing/head/canada,\
+		/obj/item/clothing/head/bandana,\
+		/obj/item/clothing/head/collectable,\
+		/obj/item/clothing/head/rice_hat,\
+		/obj/item/clothing/head/jester,\
+		/obj/item/clothing/head/cone,\
+		/obj/item/clothing/head/hooded/carp_hood
+		/obj/item/clothing/head/fedora,\
+		/obj/item/clothing/head/lobsterhat)
+	r_pocket = pick(
+		/obj/item/organ/appendix, \
+		/obj/item/reagent_containers/food/snacks/grown/potato,\
+		null)
+	shoes = pick(
+		/obj/item/clothing/shoes/clown_shoes,\
+		null)
+	backpack_contents = pick(
+		/obj/item/restraints/handcuffs, \
+		/obj/item/gun/ballistic/revolver/russian, \
+		/obj/item/reagent_containers/food/snacks/grown/banana)
+		//if(prob(5))
+		//	glasses = 	/obj/item/clothing/glasses/sunglasses
+		//if(prob(8))
+		//	l_hand = 	/obj/item/hatchet
+	belt  = (/obj/item/claymore/machete/pipe)
+*/
 
 /*
 Trader
