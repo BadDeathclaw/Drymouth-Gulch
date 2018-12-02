@@ -54,6 +54,15 @@
 	flavor_desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\n\
 		A common unit of exchange, backed by water in the Hub"
 
+/obj/item/stack/f13Cash/bottle_cap/random_low
+	amount = rand(10, 50)
+
+/obj/item/stack/f13Cash/bottle_cap/random_med
+	amount = rand(50, 200)
+
+/obj/item/stack/f13Cash/bottle_cap/random_high
+	amount = rand(200, 500)
+
 /obj/item/stack/f13Cash/denarius
 	name = "Denarius"
 	singular_name = "Denari" /* denari/denaris is sort of like sheep, rather than using denarius/denarii  */
@@ -64,6 +73,24 @@
 		'Magnum Chasma' on the back."
 	value = DEN * CAP
 
+/obj/item/stack/f13Cash/denarius/random_low
+	amount = rand(1, 5)
+
+/obj/item/stack/f13Cash/denarius/random_med
+	amount = rand(5, 20)
+
+/obj/item/stack/f13Cash/denarius/random_high
+	amount = rand(20, 50)
+
+/obj/item/stack/f13Cash/denarius/legion_pay_lowrank
+	amount = rand(1, 2)
+
+/obj/item/stack/f13Cash/denarius/legion_pay_midrank
+	amount = rand(3, 4)
+
+/obj/item/stack/f13Cash/denarius/legion_pay_highrank
+	amount = rand(5, 6)
+
 /obj/item/stack/f13Cash/aureus
 	name = "Aureus"
 	singular_name = "Aurei"  /* same as denarius, we can pretend the legion can't latin properly */
@@ -73,6 +100,15 @@
 					'Aeternit Imperi' on the front and\n\
 					'Pax Per Bellum' on the back."
 	value = AUR * CAP
+
+/obj/item/stack/f13Cash/aureus/random_low
+	amount = rand(1, 2)
+
+/obj/item/stack/f13Cash/aureus/random_med
+	amount = rand(3, 5)
+
+/obj/item/stack/f13Cash/aureus/random_high
+	amount = rand(6, 20)
 
 /obj/item/stack/f13Cash/ncr
 	name = "NCR Dollar"
@@ -97,6 +133,16 @@
 			icon_state = "[initial(icon_state)]200"
 		if(500 to max_amount)
 			icon_state = "[initial(icon_state)]500"
+
+/obj/item/stack/f13Cash/ncr/random_low
+	amount = rand(1, 40)
+
+/obj/item/stack/f13Cash/ncr/random_med
+	amount = rand(41, 100)
+
+/obj/item/stack/f13Cash/ncr/random_high
+	amount = rand(101, 1000)
+
 
 #undef maxCoinIcon
 #undef CAP
