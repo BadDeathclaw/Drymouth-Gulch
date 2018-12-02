@@ -1335,11 +1335,22 @@
 	overdose_threshold = 30
 	addiction_threshold = 20
 
+/datum/reagent/medicine/medx/on_mob_add(mob/liing/M)
+	..()
+	if(isliving(M))
+		var/mob/living/L = M
+		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+
+/datum/reagent/medicine/medx/on_mob_delete(mob/living/M)
+	if(isliving(M))
+		var/mob/living/L = M
+		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+	..()
+
 /datum/reagent/medicine/medx/on_mob_life(mob/living/M)
 	if(iscarbon(M))
 		var/mob/living/carbon/N = M
 		N.hal_screwyhud = SCREWYHUD_HEALTHY
-		N.add_trait(TRAIT_IGNORESLOWDOWN, id)
 	M.AdjustStun(-30, 0)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)
