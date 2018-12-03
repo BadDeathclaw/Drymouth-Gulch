@@ -1343,6 +1343,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
+/area/f13/admeme
+	requires_power = FALSE
+
 /area/f13/underground
 	flags_2 = BLOCK_RADIO_2
 
@@ -1355,7 +1358,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13/underground/mountain
 	name = "mountain"
 	requires_power = TRUE
-	outdoors = FALSE
 
 /area/f13/tcoms
 	name = "tcom"
