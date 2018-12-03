@@ -872,6 +872,7 @@
 	var/offline = 0 //If it's offline
 	max_integrity = 400
 	obj_integrity = 400
+	var/health_buffer = 0 //New thing to make power armor scary; it can now absorb damage that is repairable by a welder
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/Initialize()
 	..()
@@ -910,13 +911,17 @@
 				offline = TRUE
 				slowdown = offlineslowdown
 				playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
-				visible_message("The [src.name] suddenly runs out of power!", "The hardsuit runs out of power, that can't be good.")
+				visible_message("The [name] suddenly runs out of power!", "The hardsuit runs out of power, that can't be good.")
 			else
 				if(offline) //Used power but it's offline; turn it on
 					offline = FALSE
 					slowdown = initial(slowdown)
 					playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
 					visible_message("The [name] suddenly powers back up!", "The hardsuit gets back up and running, that's pretty good.")
+		if(cell.charge == 1000)
+			var/mob/living/carbon/human/M = loc
+			to_chat(M, ">span class='warning'>WARNING: LOW BATTERYY CHARGE!</span>")
+			playsound(loc, 'sound/machines/ping.ogg', 30, 1)
 	if(offline) //TODO; ASK FOR SPRITES THAT LIGHT UP WHEN POWERED
 		return
 	else
@@ -948,10 +953,9 @@
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/weldingtool))
-		if(I.use_tool(src, user, 40, volume=10))
+		if(I.use_tool(src, user, 100, volume=15))
 			to_chat(user, "You repair part of the [src].")
-			obj_integrity = max(obj_integrity + (max_integrity / 2), max_integrity) //Expensive on welding fuel, 200 seconds and 500 welding fuel to repair a just about destroyed power armor
-			recalc_armor()
+			health_buffer = min(initial(health_buffer), health_buffer + (initial(health_buffer) / 5)) //Expensive on welding fuel, 200 seconds and 500 welding fuel to repair a just about destroyed power armor
 			return 1
 		else
 			to_chat(user, "Your [I] needs more fuel.")
@@ -986,30 +990,30 @@
 				return FALSE
 	return FALSE
 
-//New power armor feature; Scaling defense based on current obj_integrity
-//When brand new, power armor basically tanks just about anything; when it's damaged enough it will have regular levels of armor
-//Damage done to power armor is based on damage absorbed
+//Absorb the damage
+/obj/item/clothing/suit/space/hardsuit/powerarmor/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	if(health_buffer > 0)
+		visible_message("The [src] easily deflects the [hitby]!", "<span class='notice'>Your [src] blocks the [hitby] with ease.</span>")
+		health_buffer -= damage
+		if(health_buffer <= 0)
+			to_chat(owner, "<span class='danger'> Your [src] seems to shut off, it will no longer deflect projectiles until you repair it with a welder!</span>")
+	else //No more health absorb, do stuff regulary
+		..()
 
-/obj/item/clothing/suit/space/hardsuit/powerarmor/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0)
-	if(QDELETED(src))
-		stack_trace("[src] taking damage after deletion")
-		return
-	if(sound_effect)
-		play_attack_sound(damage_amount, damage_type, damage_flag)
-	var/damagestuff = run_obj_armor(damage_amount, damage_type, damage_flag, attack_dir, armour_penetration)
-	obj_integrity -= (damage_amount - damagestuff) //If more than 100 armor power armor takes all the damage; otherwise human will also take damage, human taking damage is already applied
-	recalc_armor() //Remake the armor values
-
-/obj/item/clothing/suit/space/hardsuit/powerarmor/proc/recalc_armor()
-	armor = initial(armor)
-	if(obj_integrity == max_integrity)
-		return
-	else
-		armor.modifyAllRatings(max_integrity / obj_integrity) //Sets all armor to a multiplier; if the armor gets damaged enough, it won't provide much armor at all
+//Same for helmet but uses the suits health buffer
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
+	if(armor.health_buffer > 0)
+		visible_message("The [src] easily deflects the [hitby]!", "<span class='notice'>Your [src] blocks the [hitby] with ease.</span>")
+		armor.health_buffer -= damage
+		if(armor.health_buffer <= 0)
+			to_chat(owner, "<span class='danger'> Your [src] seems to shut off, it will no longer deflect projectiles until you repair it with a welder!</span>")
+	else //No more health absorb, do stuff regulary
+		..()
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/examine(mob/user)
 	..()
-	to_chat(user, "This [name] seems to have about [(cell.charge / cell.maxcharge) * 100] percentage battery left. It also seems to have an integrity of about [(obj_integrity / max_integrity) * 100] percent.")
+	to_chat(user, "This [name] seems to have about [(cell.charge / cell.maxcharge) * 100] percentage battery left. It also seems to have a shielding to withstand about [health_buffer] of damage.")
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
 	name = "Salvaged T-45b helmet"
@@ -1041,6 +1045,7 @@
 	item_state = "t45dpowerarmor"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 60, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45d
+	health_buffer = 50
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/advanced
 	name = "Advanced power helmet"
@@ -1056,6 +1061,7 @@
 	item_state = "advpowerarmor1"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/advanced
+	health_buffer = 150
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/mk2
 	name = "Advanced power helmet MKII"
@@ -1072,6 +1078,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/mk2
+	health_buffer = 175
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/tesla
 	name = "tesla power helmet"
@@ -1102,3 +1109,4 @@
 	item_state = "t51bpowerarmor"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t51b
+	health_buffer = 100
