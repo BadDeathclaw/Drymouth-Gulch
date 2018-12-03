@@ -6,6 +6,21 @@
 #define DEN 4 /* 4 caps to 1 DEN */
 #define NCR 0.4 /* $100 to 40 caps */
 
+/* value of coins to spawn, use as-is for caps */
+/* LOW_MIN / AUR = amount in AUR */
+
+// A low value cash spawn is on average worth 12
+#define LOW_MIN 5
+#define LOW_MAX 20
+
+// A medium value cash spawn is on average worth 75
+#define MED_MIN 50
+#define MED_MAX 100
+
+// A high value cash spawn is on average worth 300 
+#define HIGH_MIN 100
+#define HIGH_MAX 500
+
 /obj/item/stack/f13Cash
 	name = "bottle cap"
 	singular_name = "cap"
@@ -38,6 +53,17 @@
 	. = ..()
 	update_desc()
 
+/obj/item/stack/f13Cash/random
+	var/min_qty = LOW_MIN
+	var/max_qty = LOW_MAX
+
+/obj/item/stack/f13Cash/random/New()
+	var/obj/item/stack/f13Cash/randy = new //makes new stack
+	randy.loc = src.loc //sets stack location to randstack location
+	randy.amount = round(rand(min_qty, max_qty))
+	randy.update_icon()
+	qdel(src)
+
 /* we have 6 icons, so we will use our own, instead of stack's   */
 /obj/item/stack/f13Cash/update_icon()
 	if(amount == 1)
@@ -54,14 +80,17 @@
 	flavor_desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\n\
 		A common unit of exchange, backed by water in the Hub"
 
-/obj/item/stack/f13Cash/bottle_cap/random_low
-	amount = rand(10, 50)
+/obj/item/stack/f13Cash/random/bottle_cap/low
+	min_qty = LOW_MIN / CAP
+	max_qty = LOW_MAX / CAP
 
-/obj/item/stack/f13Cash/bottle_cap/random_med
-	amount = rand(50, 200)
+/obj/item/stack/f13Cash/random/bottle_cap/med
+	min_qty = MED_MIN / CAP
+	max_qty = MED_MAX / CAP
 
-/obj/item/stack/f13Cash/bottle_cap/random_high
-	amount = rand(200, 500)
+/obj/item/stack/f13Cash/random/bottle_cap/high
+	min_qty = HIGH_MIN / CAP
+	max_qty = HIGH_MAX / CAP
 
 /obj/item/stack/f13Cash/denarius
 	name = "Denarius"
@@ -73,23 +102,29 @@
 		'Magnum Chasma' on the back."
 	value = DEN * CAP
 
-/obj/item/stack/f13Cash/denarius/random_low
-	amount = rand(1, 5)
+/obj/item/stack/f13Cash/random/denarius/low
+	min_qty = LOW_MIN / DEN
+	max_qty = LOW_MAX / DEN
 
-/obj/item/stack/f13Cash/denarius/random_med
-	amount = rand(5, 20)
+/obj/item/stack/f13Cash/random/denarius/med
+	min_qty = MED_MIN / DEN
+	max_qty = MED_MAX / DEN
 
-/obj/item/stack/f13Cash/denarius/random_high
-	amount = rand(20, 50)
+/obj/item/stack/f13Cash/random/denarius/high
+	min_qty = HIGH_MIN / DEN
+	max_qty = HIGH_MAX / DEN
 
-/obj/item/stack/f13Cash/denarius/legion_pay_lowrank
-	amount = rand(1, 2)
+/obj/item/stack/f13Cash/random/denarius/legionpay_basic
+	min_qty = 1
+	max_qty = 2
 
-/obj/item/stack/f13Cash/denarius/legion_pay_midrank
-	amount = rand(3, 4)
+/obj/item/stack/f13Cash/random/denarius/legionpay_veteran
+	min_qty = 2
+	max_qty = 3
 
-/obj/item/stack/f13Cash/denarius/legion_pay_highrank
-	amount = rand(5, 6)
+/obj/item/stack/f13Cash/random/denarius/legionpay_officer
+	min_qty = 4
+	max_qty = 5
 
 /obj/item/stack/f13Cash/aureus
 	name = "Aureus"
@@ -101,14 +136,17 @@
 					'Pax Per Bellum' on the back."
 	value = AUR * CAP
 
-/obj/item/stack/f13Cash/aureus/random_low
-	amount = rand(1, 2)
+/obj/item/stack/f13Cash/random/aureus/low
+	min_qty = LOW_MIN / AUR
+	max_qty = LOW_MAX / AUR
 
-/obj/item/stack/f13Cash/aureus/random_med
-	amount = rand(3, 5)
+/obj/item/stack/f13Cash/random/aureus/med
+	min_qty = MED_MIN / AUR
+	max_qty = MED_MAX / AUR
 
-/obj/item/stack/f13Cash/aureus/random_high
-	amount = rand(6, 20)
+/obj/item/stack/f13Cash/random/aureus/high
+	min_qty = HIGH_MIN / AUR
+	max_qty = HIGH_MAX / AUR
 
 /obj/item/stack/f13Cash/ncr
 	name = "NCR Dollar"
@@ -134,14 +172,17 @@
 		if(500 to max_amount)
 			icon_state = "[initial(icon_state)]500"
 
-/obj/item/stack/f13Cash/ncr/random_low
-	amount = rand(1, 40)
+/obj/item/stack/f13Cash/random/ncr/low
+	min_qty = LOW_MIN / NCR
+	max_qty = LOW_MAX / NCR
 
-/obj/item/stack/f13Cash/ncr/random_med
-	amount = rand(41, 100)
+/obj/item/stack/f13Cash/random/ncr/med
+	min_qty = MED_MIN / NCR
+	max_qty = MED_MAX / NCR
 
-/obj/item/stack/f13Cash/ncr/random_high
-	amount = rand(101, 1000)
+/obj/item/stack/f13Cash/random/ncr/high
+	min_qty = HIGH_MIN / NCR
+	max_qty = HIGH_MAX / NCR
 
 
 #undef maxCoinIcon
@@ -149,3 +190,9 @@
 #undef AUR
 #undef DEN
 #undef NCR
+#undef LOW_MIN
+#undef LOW_MAX
+#undef MED_MIN
+#undef MED_MAX
+#undef HIGH_MIN
+#undef HIGH_MAX

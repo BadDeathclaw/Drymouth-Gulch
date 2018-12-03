@@ -141,7 +141,7 @@ Veteran Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/denarius/legion_pay_highrank)
+		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
 /datum/outfit/job/f13vetdecan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -190,7 +190,7 @@ Vexillarius
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/denarius/legion_pay_highrank)
+		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
 /datum/outfit/job/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -240,7 +240,7 @@ Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/denarius/legion_pay_highrank)
+		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
 /datum/outfit/job/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -289,7 +289,7 @@ Veteran
 		/obj/item/storage/box/lethalshot=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/denarius/legion_pay_midrank)
+		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
 	box = null
 
 /datum/outfit/job/f13vetlegion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -336,7 +336,7 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/denarius/legion_pay_lowrank)
+		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
 	box = null
 
 /datum/outfit/job/f13legionary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -380,7 +380,7 @@ Legionary
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/denarius/legion_pay_midrank)
+		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
 	box = null
 	r_pocket = /obj/item/binocs
 
@@ -423,7 +423,7 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/denarius/legion_pay_lowrank)
+		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
 	box = null
 
 /datum/outfit/job/f13scout/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
