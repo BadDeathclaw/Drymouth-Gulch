@@ -36,14 +36,14 @@
 	resistance_flags = FLAMMABLE
 	var/flavor_desc = ""
 	var/value = CAP
+	var/latin = 0
 
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
 	update_desc()
 
 /obj/item/stack/f13Cash/proc/update_desc()
-	desc = "It's worth [amount] [singular_name][( amount > 1 ) ? "s" : ""]\n[flavor_desc]"
-
+	desc = "It's worth [amount] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s" : "")]\n[flavor_desc]"
 
 /obj/item/stack/f13Cash/merge(obj/item/stack/S)
 	. = ..()
@@ -58,27 +58,40 @@
 	var/max_qty = LOW_MAX
 
 /obj/item/stack/f13Cash/random/New()
-	var/obj/item/stack/f13Cash/randy = new //makes new stack
-	randy.loc = src.loc //sets stack location to randstack location
+	var/obj/item/stack/f13Cash/randy = new
+	randy.loc = src.loc
 	randy.amount = round(rand(min_qty, max_qty))
 	randy.update_icon()
 	qdel(src)
 
 /* we have 6 icons, so we will use our own, instead of stack's   */
 /obj/item/stack/f13Cash/update_icon()
-	if(amount == 1)
-		icon_state = "[initial(icon_state)]"
-	else if(amount >= maxCoinIcon)
-		icon_state = "[initial(icon_state)][maxCoinIcon]"
-	else
-		icon_state = "[initial(icon_state)][( amount > 1 ) ? amount : ""]"
-
+	switch(amount)
+		if(1)
+			icon_state = "[initial(icon_state)]"
+		if(1 to 5)
+			icon_state = "[initial(icon_state)]2"
+		if(6 to 50)
+			icon_state = "[initial(icon_state)]3"
+		if(51 to 100)
+			icon_state = "[initial(icon_state)]4"
+		if(101 to 500)
+			icon_state = "[initial(icon_state)]5"
+		if(501 to max_amount)
+			icon_state = "[initial(icon_state)]6"
 
 
 /* same as base, just classed for merging reasons */
 /obj/item/stack/f13Cash/bottle_cap
 	flavor_desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\n\
 		A common unit of exchange, backed by water in the Hub"
+
+/obj/item/stack/f13Cash/random/bottle_cap/New()
+	var/obj/item/stack/f13Cash/bottle_cap/R = new
+	R.loc = src.loc
+	R.amount = round(rand(min_qty, max_qty))
+	R.update_icon()
+	qdel(src)
 
 /obj/item/stack/f13Cash/random/bottle_cap/low
 	min_qty = LOW_MIN / CAP
@@ -94,13 +107,21 @@
 
 /obj/item/stack/f13Cash/denarius
 	name = "Denarius"
-	singular_name = "Denari" /* denari/denaris is sort of like sheep, rather than using denarius/denarii  */
+	latin = 1
+	singular_name = "Denari" // -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "denarius"
 	flavor_desc =	"The inscriptions are in Latin,\n\
 		'Caesar Dictator' on the front and\n\
 		'Magnum Chasma' on the back."
 	value = DEN * CAP
+
+/obj/item/stack/f13Cash/random/denarius/New()
+	var/obj/item/stack/f13Cash/denarius/R = new
+	R.loc = src.loc
+	R.amount = round(rand(min_qty, max_qty))
+	R.update_icon()
+	qdel(src)
 
 /obj/item/stack/f13Cash/random/denarius/low
 	min_qty = LOW_MIN / DEN
@@ -128,13 +149,21 @@
 
 /obj/item/stack/f13Cash/aureus
 	name = "Aureus"
-	singular_name = "Aurei"  /* same as denarius, we can pretend the legion can't latin properly */
+	latin = 1
+	singular_name = "Aure"// -us or -i
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "aureus"
 	flavor_desc = 	"The inscriptions are in Latin,\n\
 					'Aeternit Imperi' on the front and\n\
 					'Pax Per Bellum' on the back."
 	value = AUR * CAP
+
+/obj/item/stack/f13Cash/random/aureus/New()
+	var/obj/item/stack/f13Cash/aureus/R = new
+	R.loc = src.loc
+	R.amount = round(rand(min_qty, max_qty))
+	R.update_icon()
+	qdel(src)
 
 /obj/item/stack/f13Cash/random/aureus/low
 	min_qty = LOW_MIN / AUR
@@ -171,6 +200,13 @@
 			icon_state = "[initial(icon_state)]200"
 		if(500 to max_amount)
 			icon_state = "[initial(icon_state)]500"
+
+/obj/item/stack/f13Cash/random/ncr/New()
+	var/obj/item/stack/f13Cash/ncr/R = new
+	R.loc = src.loc
+	R.amount = round(rand(min_qty, max_qty))
+	R.update_icon()
+	qdel(src)
 
 /obj/item/stack/f13Cash/random/ncr/low
 	min_qty = LOW_MIN / NCR

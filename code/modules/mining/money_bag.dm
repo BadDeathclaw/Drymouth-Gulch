@@ -15,7 +15,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 40
 	STR.max_combined_w_class = 40
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash))
+	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash))
 
 /obj/item/storage/bag/money/vault/PopulateContents()
 	new /obj/item/coin/silver(src)
@@ -41,7 +41,7 @@
 	GET_COMPONENT(STR, /datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 20
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash))
+	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash))
 
 // Legion reserves. Spawns with the Centurion.
 /obj/item/storage/bag/money/small/legion/PopulateContents()
@@ -51,8 +51,7 @@
 
 // NCR reserves. Spawns with the Captain.
 /obj/item/storage/bag/money/small/ncr/PopulateContents()
-	// ~600 worth of ncr money
-	new /obj/item/stack/f13Cash/random/ncr/high(src)
+	// ~300 worth of ncr money
 	new /obj/item/stack/f13Cash/random/ncr/high(src)
 
 // Den reserves. Spawns with the Sheriff.
