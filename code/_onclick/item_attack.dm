@@ -56,25 +56,23 @@
 	SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user)
 	if(item_flags & NOBLUDGEON)
 		return
-
 	if(force && user.has_trait(TRAIT_PACIFISM))
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
+
+	M.lastattacker = user.real_name
+	M.lastattackerckey = user.ckey
+
+	add_logs(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
+	add_fingerprint(user)
 
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 
-	M.lastattacker = user.real_name
-	M.lastattackerckey = user.ckey
-
 	user.do_attack_animation(M)
-	M.attacked_by(src, user)
-
-	add_logs(user, M, "attacked", src.name, "(INTENT: [uppertext(user.a_intent)]) (DAMTYPE: [uppertext(damtype)])")
-	add_fingerprint(user)
-
+	return M.attacked_by(src, user)
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
@@ -98,7 +96,6 @@
 /mob/living/attacked_by(obj/item/I, mob/living/user)
 	send_item_attack_message(I, user)
 	if(I.force)
-		apply_damage(I.force, I.damtype)
 		if(I.damtype == BRUTE)
 			if(prob(33))
 				I.add_mob_blood(src)
@@ -106,7 +103,7 @@
 				add_splatter_floor(location)
 				if(get_dist(user, src) <= 1)	//people with TK won't get smeared with blood
 					user.add_mob_blood(src)
-		return TRUE //successful attack
+		return apply_damage(I.force, I.damtype) && TRUE //successful attack
 
 /mob/living/simple_animal/attacked_by(obj/item/I, mob/living/user)
 	if(I.force < force_threshold || I.damtype == STAMINA)
