@@ -623,7 +623,7 @@
 	description = "Mechanized exosuits that are several magnitudes stronger and more powerful than the average human."
 	prereq_ids = list("robotics", "adv_engi")
 	design_ids = list("mecha_tracking", "mechacontrol", "mechapower", "mech_recharger", "ripley_chassis", "firefighter_chassis", "ripley_torso", "ripley_left_arm", "ripley_right_arm", "ripley_left_leg", "ripley_right_leg",
-	"ripley_main", "ripley_peri", "mech_hydraulic_clamp", "ripley_whole", "odysseus_whole", "gygax_whole", "durand_whole", "borg_complete")
+	"ripley_main", "ripley_peri", "mech_hydraulic_clamp", "ripley_whole", "odysseus_whole", "borg_complete")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -656,6 +656,31 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
+/datum/techweb_node/basicpowerarmor
+	id = "power_armor"
+	display_name = "BASIC POWERED ARMOR"
+	description = "Unlocks production of T45D powered armor."
+	prereq_ids = list("adv_mecha", "weaponry")
+	design_ids = list("t45d")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+
+/datum/techweb_node/betterpowerarmor
+	id = "betterpower_armor"
+	display_name = "BETTER POWERED ARMOR"
+	description = "Unlocks production of T51D powered armor."
+	prereq_ids = list("power_armor")
+	design_ids = list("t51b")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 20000)
+
+/datum/techweb_node/bestpowerarmor
+	id = "bestpower_armor"
+	display_name = "ADVANCED POWERED ARMOR"
+	description = "Unlocks production of advanced powered armor."
+	prereq_ids = list("betterpower_armor")
+	design_ids = list("advancearmor")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 40000)
+
+/*
 /datum/techweb_node/durand
 	id = "mech_durand"
 	display_name = "EXOSUIT: Durand"
@@ -665,7 +690,7 @@
 	"durand_peri", "durand_targ", "durand_armor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-/*
+
 /datum/techweb_node/phazon
 	id = "mecha_phazon"
 	display_name = "EXOSUIT: Phazon"
@@ -800,7 +825,7 @@
 	design_ids = list("mech_teleporter")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+/*
 /datum/techweb_node/mech_wormhole_gen
 	id = "mech_wormhole_gen"
 	display_name = "Exosuit Module (Localized Wormhole Generator)"
@@ -809,7 +834,7 @@
 	design_ids = list("mech_wormhole_gen")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-/*
+
 /datum/techweb_node/mech_taser
 	id = "mech_taser"
 	display_name =  "Exosuit Weapon (PBT \"Pacifier\" Mounted Taser)"

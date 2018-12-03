@@ -33,7 +33,7 @@
 	build_path = /obj/item/circuitboard/mecha/odysseus/peripherals
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
+/*
 /datum/design/board/gygax_main
 	name = "\"Gygax\" Central Control module"
 	desc = "Allows for the construction of a \"Gygax\" Central Control module."
@@ -132,7 +132,7 @@
 	build_path = /obj/item/circuitboard/mecha/phazon/targeting
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
+*/
 ////////////////////////////////////////
 /////////// Mecha Equpment /////////////
 ////////////////////////////////////////
@@ -386,7 +386,7 @@
 	construction_time = 250
 	build_path = /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
 	category = list("Exosuit Equipment")
-
+/*
 /datum/design/ripley_Whole
 	name = "APLU (\"Ripley\") Completed"
 	id = "ripley_whole"
@@ -395,7 +395,7 @@
 	materials = list(MAT_METAL=100000,MAT_GLASS=7500)
 	construction_time = 900
 	category = list("Ripley","Firefighter")
-
+*/
 /datum/design/odysseus_whole
 	name = "(\"Odysseus\") Completed"
 	id = "odysseus_whole"
@@ -404,7 +404,7 @@
 	materials = list(MAT_METAL=64000,MAT_GLASS=12000)
 	construction_time = 880
 	category = list("Odysseus")
-
+/*
 /datum/design/gygax_whole
 	name = "(\"Gygax\") Whole"
 	id = "gygax_whole"
@@ -422,7 +422,7 @@
 	materials = list(MAT_METAL=160000,MAT_URANIUM=30000,MAT_GLASS=25000,MAT_SILVER=28000)
 	construction_time = 2000
 	category = list("Durand")
-
+*/
 /datum/design/borg_complete
 	name = "Cyborg Complete"
 	id = "borg_complete"
@@ -430,4 +430,31 @@
 	build_path = /obj/item/robot_suit/prebuilt
 	materials = list(MAT_METAL=100000)
 	construction_time = 1900
+	category = list("Cyborg")
+
+/datum/design/t45d
+	name = "T45D Powered Armor"
+	id = "t45d"
+	build_type = MECHFAB
+	build_path = /obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
+	materials = list(MAT_METAL=80000,MAT_URANIUM=20000,MAT_GLASS=12500,MAT_SILVER=20000)
+	construction_time = 1200
+	category = list("Cyborg") //Could be better but oh well
+
+/datum/design/t51b
+	name = "T51B Powered Armor"
+	id = "t51b"
+	build_type = MECHFAB
+	build_path = /obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
+	materials = list(MAT_METAL=160000,MAT_URANIUM=40000,MAT_GLASS=25000,MAT_SILVER=40000)
+	construction_time = 1800
+	category = list("Cyborg")
+
+/datum/design/advancedarmor
+	name = "Advanced Powered Armor"
+	id = "advancearmor"
+	build_type = MECHFAB
+	build_path = /obj/item/clothing/suit/space/hardsuit/powerarmor/advanced
+	materials = list(MAT_METAL=320000,MAT_URANIUM=80000,MAT_GLASS=50000,MAT_SILVER=80000)
+	construction_time = 2400
 	category = list("Cyborg")
