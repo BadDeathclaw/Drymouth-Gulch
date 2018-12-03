@@ -3549,7 +3549,7 @@
 "bqm" = (/obj/structure/table,/obj/machinery/light,/obj/spawners/objectspawners/medicalspawn/wasteland/meds,/obj/effect/turf_decal/delivery,/obj/machinery/camera/autoname{icon_state = "camera"; dir = 1},/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,/area/medical/medbay/central)
 "bqn" = (/obj/structure/table,/obj/machinery/button{id = 102; name = "Window Shutter"; pixel_x = 5; pixel_y = -5},/obj/machinery/button{id = 103; name = "Vault Blastdoor 1"; pixel_x = -5; pixel_y = -5},/obj/machinery/camera/autoname{icon_state = "camera"; dir = 10},/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,/area/security/checkpoint)
 "bqo" = (/obj/spawners/objectspawners/resourcespawner,/obj/structure/rack,/obj/item/stack/sheet/plastic/fifty,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/den)
-"bqp" = (/obj/structure/table/wood,/obj/item/cigbutt/cigarbutt,/turf/open/floor/wood/f13/old,/area/f13/den)
+"bqp" = (/obj/structure/table/wood,/obj/item/cigbutt/cigarbutt,/obj/item/paper_bin,/obj/item/pen,/turf/open/floor/wood/f13/old,/area/f13/den)
 "bqq" = (/obj/effect/spawner/lootdrop/f13/cash_random_low,/turf/open/floor/plasteel/f13{icon_state = "whitepurplerustychess2"},/area/f13/sunny_dale)
 "bqr" = (/obj/item/trash/can{icon_state = "mechanist"},/obj/machinery/light{dir = 1},/turf/open/floor/wood/f13/old,/area/f13/den)
 "bqs" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/fulltile/wood_window,/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced,/obj/machinery/door/poddoor/preopen{id = "den_window"},/turf/open/floor/wood/f13/old,/area/f13/den)
