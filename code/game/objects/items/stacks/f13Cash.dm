@@ -36,7 +36,6 @@
 	resistance_flags = FLAMMABLE
 	var/flavor_desc = ""
 	var/value = CAP
-	var/latin = 0
 
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
@@ -68,7 +67,7 @@
 /obj/item/stack/f13Cash/update_icon()
 	switch(amount)
 		if(1)
-			icon_state = "[initial(icon_state)]1"
+			icon_state = "[initial(icon_state)]"
 		if(1 to 5)
 			icon_state = "[initial(icon_state)]2"
 		if(6 to 50)

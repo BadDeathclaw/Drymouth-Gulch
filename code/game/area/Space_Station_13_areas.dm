@@ -1355,6 +1355,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13/underground/mountain
 	name = "mountain"
 	requires_power = TRUE
+	outdoors = FALSE
 
 /area/f13/tcoms
 	name = "tcom"
