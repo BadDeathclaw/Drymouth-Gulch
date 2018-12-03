@@ -7,16 +7,16 @@
 */
 
 /turf/open/floor/plating/f13/outside
-
-/turf/open/floor/plating/f13
-	gender = PLURAL
 	name = "\proper desert"
-	baseturfs = /turf/open/floor/plating/f13
 	icon_state = "wasteland1"
 	icon = 'icons/turf/f13desert.dmi'
-	attachment_holes = FALSE
 	light_range = 3
 	light_power = 0.75
+
+/turf/open/floor/plating/f13 // don't use this for anything, /f13/ is essentially just the new /unsimulated/ but for planets and should probably be phased out entirely everywhere
+	gender = PLURAL
+	baseturfs = /turf/open/floor/plating/f13
+	attachment_holes = FALSE
 	planetary_atmos = TRUE
 
 /* so we can't break this */
