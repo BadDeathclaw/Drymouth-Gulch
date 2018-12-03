@@ -43,7 +43,7 @@
 	update_desc()
 
 /obj/item/stack/f13Cash/proc/update_desc()
-	desc = "It's worth [amount] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s" : "")]\n[flavor_desc]"
+	desc = "It's worth [amount] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s" : "")].\n[flavor_desc]"
 
 /obj/item/stack/f13Cash/merge(obj/item/stack/S)
 	. = ..()
@@ -68,7 +68,7 @@
 /obj/item/stack/f13Cash/update_icon()
 	switch(amount)
 		if(1)
-			icon_state = "[initial(icon_state)]"
+			icon_state = "[initial(icon_state)]1"
 		if(1 to 5)
 			icon_state = "[initial(icon_state)]2"
 		if(6 to 50)
@@ -220,6 +220,17 @@
 	min_qty = HIGH_MIN / NCR
 	max_qty = HIGH_MAX / NCR
 
+/obj/item/stack/f13Cash/random/ncr/ncrpay_basic
+	min_qty = 10
+	max_qty = 20
+
+/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran
+	min_qty = 40
+	max_qty = 80
+
+/obj/item/stack/f13Cash/random/ncr/ncrpay_officer
+	min_qty = 200
+	max_qty = 400
 
 #undef maxCoinIcon
 #undef CAP
