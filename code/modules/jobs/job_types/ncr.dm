@@ -55,6 +55,7 @@ Captain
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
 	belt = 			/obj/item/storage/belt/military/assault
+	gloves =		/obj/item/clothing/gloves/combat
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/m1911
@@ -94,6 +95,7 @@ Lieutenant
 	head = 			/obj/item/clothing/head/beret/ncr
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
+	gloves =		/obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
@@ -135,9 +137,9 @@ Sergeant
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/automatic/greasegun
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/combat
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/greasegun=3, \
+		/obj/item/storage/box/lethalshot, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -249,12 +251,10 @@ Veteran Ranger
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
-	mask =			/obj/item/clothing/mask/gas/sechailer
-	gloves =		/obj/item/clothing/gloves/combat
+	gloves =		/obj/item/clothing/gloves/fingerless
 	belt = 			/obj/item/storage/belt/military/assault
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	glasses = 		/obj/item/clothing/glasses/night
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
+	shoes = 		/obj/item/clothing/shoes/workboots
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
@@ -290,11 +290,11 @@ Ranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
-	gloves =		/obj/item/clothing/gloves/combat
+	gloves =	/obj/item/clothing/gloves/fingerless
 	belt = 			/obj/item/storage/belt/military/assault
-	shoes = 		/obj/item/clothing/shoes/combat/swat
+	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
@@ -332,7 +332,7 @@ Recon Ranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/f13/duster
 	head = 			/obj/item/clothing/head/fluff/cowboy
-	gloves =		/obj/item/clothing/gloves/combat
+	gloves =		/obj/item/clothing/gloves/botanic_leather
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
