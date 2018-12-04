@@ -71,7 +71,7 @@
 	switch(amount)
 		if(1)
 			icon_state = "[initial(icon_state)]"
-		if(1 to 5)
+		if(2 to 5)
 			icon_state = "[initial(icon_state)]2"
 		if(6 to 50)
 			icon_state = "[initial(icon_state)]3"
