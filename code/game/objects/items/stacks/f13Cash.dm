@@ -40,6 +40,7 @@
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
 	update_desc()
+	update_icon()
 
 /obj/item/stack/f13Cash/proc/update_desc()
 	desc = "It's worth [amount] [singular_name][ (latin) ? (( amount > 1 ) ? "i" : "us") : (( amount > 1 ) ? "s" : "")].\n[flavor_desc]"
@@ -47,10 +48,12 @@
 /obj/item/stack/f13Cash/merge(obj/item/stack/S)
 	. = ..()
 	update_desc()
+	update_icon()
 
 /obj/item/stack/f13Cash/use(used, transfer = FALSE)
 	. = ..()
 	update_desc()
+	update_icon()
 
 /obj/item/stack/f13Cash/random
 	var/min_qty = LOW_MIN
