@@ -63,6 +63,14 @@
 	else if(subjectjob)
 		S.name = "[subjectjob] meatsteak"
 
+/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul
+	name = "ghoul meat"
+	icon_state = "flymeat"
+	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
+	list_reagents = list("nutriment" = 3, "uranium" = 3)
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
+	slice_path = null
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
 	icon_state = "slimemeat"
@@ -309,6 +317,13 @@
 	trash = null
 	tastes = list("meat" = 1, "rock" = 1)
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/steak/ghoul
+	name = "ghoul steak"
+	desc = "Why would you even cook this?"
+	list_reagents = list("nutriment" = 4)
+	bonus_reagents = list("uranium" = 3)
+
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
 

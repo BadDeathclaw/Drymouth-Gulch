@@ -5,6 +5,7 @@
 	item_state = "sheet-hide"
 	novariants = TRUE
 
+
 /obj/item/stack/sheet/animalhide/human
 	name = "human skin"
 	desc = "The by-product of human farming."
@@ -24,6 +25,18 @@ GLOBAL_LIST_INIT(human_recipes, list( \
 	desc = "A piece of skin."
 	singular_name = "skin piece"
 	novariants = FALSE
+
+/obj/item/stack/sheet/animalhide/brahmin
+	name = "brahmin skin"
+	desc = "The by-product of brahmin farming."
+	singular_name = "brahmin skin piece"
+	icon_state = "sheet-hide" //ToDo: Brahmin Mat
+
+/obj/item/stack/sheet/animalhide/deathclaw
+	name = "deathclaw skin"
+	desc = "The hard skin of a slain Deathclaw."
+	singular_name = "deathclaw skin piece"
+	icon_state = "sheet-hide" //ToDo: deathclaw Mat
 
 /obj/item/stack/sheet/animalhide/corgi
 	name = "corgi hide"

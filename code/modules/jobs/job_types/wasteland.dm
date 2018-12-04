@@ -140,6 +140,18 @@ Raider
 		/obj/item/clothing/suit/armor/f13/raider/yankee, \
 		/obj/item/clothing/suit/armor/f13/raider/sadist, \
 		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
+	if(prob(10))
+		mask = pick(
+			/obj/item/clothing/mask/joy,\
+			/obj/item/clothing/mask/pig,\
+			/obj/item/clothing/mask/frog,\
+			/obj/item/clothing/mask/rat,\
+			/obj/item/clothing/mask/rat/fox,\
+			/obj/item/clothing/mask/rat/bee,\
+			/obj/item/clothing/mask/rat/bear,\
+			/obj/item/clothing/mask/rat/bat,\
+			/obj/item/clothing/mask/rat/raven,\
+			/obj/item/clothing/mask/rat/jackal)
 	head = pick(
 		/obj/item/clothing/head/papersack, \
 		/obj/item/clothing/head/helmet/f13/raider,\
@@ -276,16 +288,16 @@ Preacher
 /*
 Punished Raider
 */
-/*
-/datum/job/f13Punraider
+
+/datum/job/f13punraider
 	title = "Punished Raider"
 	flag = F13PUNRAIDER
 	department_head = list("Captain")
 	department_flag = WASTELAND
 	head_announce = list("Security")
 	faction = "Wastelander"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
@@ -294,9 +306,9 @@ Punished Raider
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/f13Punraider
+/datum/outfit/job/f13punraider
 	name = "Punished Raider"
-	jobtype = /datum/job/f13Punraider
+	jobtype = /datum/job/f13punraider
 
 	id = null
 	ears = null
@@ -333,7 +345,16 @@ Punished Raider
 		/obj/item/clothing/head/cone,\
 		/obj/item/clothing/head/hooded/carp_hood
 		/obj/item/clothing/head/fedora,\
-		/obj/item/clothing/head/lobsterhat)
+		/obj/item/clothing/head/lobsterhat,\
+		null)
+	mask = pick(
+		/obj/item/clothing/mask/joy,\
+		/obj/item/clothing/mask/spig,\
+		/obj/item/clothing/mask/joy/joyful,\
+		/obj/item/clothing/mask/cowmask,\
+		/obj/item/clothing/mask/frog/cursed,\
+		/obj/item/clothing/mask/horsehead,\
+		null)
 	r_pocket = pick(
 		/obj/item/organ/appendix, \
 		/obj/item/reagent_containers/food/snacks/grown/potato,\
@@ -345,12 +366,7 @@ Punished Raider
 		/obj/item/restraints/handcuffs, \
 		/obj/item/gun/ballistic/revolver/russian, \
 		/obj/item/reagent_containers/food/snacks/grown/banana)
-		//if(prob(5))
-		//	glasses = 	/obj/item/clothing/glasses/sunglasses
-		//if(prob(8))
-		//	l_hand = 	/obj/item/hatchet
 	belt  = (/obj/item/claymore/machete/pipe)
-*/
 
 /*
 Trader
