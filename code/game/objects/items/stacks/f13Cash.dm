@@ -56,7 +56,7 @@
 	var/min_qty = LOW_MIN
 	var/max_qty = LOW_MAX
 
-/obj/item/stack/f13Cash/random/New()
+/obj/item/stack/f13Cash/random/Initialize()
 	var/obj/item/stack/f13Cash/randy = new
 	randy.loc = src.loc
 	randy.amount = round(rand(min_qty, max_qty))
@@ -85,7 +85,7 @@
 	flavor_desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\n\
 		A common unit of exchange, backed by water in the Hub"
 
-/obj/item/stack/f13Cash/random/bottle_cap/New()
+/obj/item/stack/f13Cash/random/bottle_cap/Initialize()
 	var/obj/item/stack/f13Cash/bottle_cap/R = new
 	R.loc = src.loc
 	R.amount = round(rand(min_qty, max_qty))
@@ -115,7 +115,7 @@
 		'Magnum Chasma' on the back."
 	value = DEN * CAP
 
-/obj/item/stack/f13Cash/random/denarius/New()
+/obj/item/stack/f13Cash/random/denarius/Initialize()
 	var/obj/item/stack/f13Cash/denarius/R = new
 	R.loc = src.loc
 	R.amount = round(rand(min_qty, max_qty))
@@ -157,7 +157,7 @@
 					'Pax Per Bellum' on the back."
 	value = AUR * CAP
 
-/obj/item/stack/f13Cash/random/aureus/New()
+/obj/item/stack/f13Cash/random/aureus/Initialize()
 	var/obj/item/stack/f13Cash/aureus/R = new
 	R.loc = src.loc
 	R.amount = round(rand(min_qty, max_qty))
@@ -200,7 +200,7 @@
 		if(500 to max_amount)
 			icon_state = "[initial(icon_state)]500"
 
-/obj/item/stack/f13Cash/random/ncr/New()
+/obj/item/stack/f13Cash/random/ncr/Initialize()
 	var/obj/item/stack/f13Cash/ncr/R = new
 	R.loc = src.loc
 	R.amount = round(rand(min_qty, max_qty))
