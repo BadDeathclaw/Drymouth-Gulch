@@ -60,13 +60,14 @@
 
 #define F13LEGATE		(1<<0)
 #define F13CENTURION	(1<<1)
-#define F13VEXILLARIUS	(1<<2)
-#define F13DECAN		(1<<3)
-#define F13VETLEGION	(1<<4)
-#define F13LEGIONARY	(1<<5)
-#define F13EXPLORER		(1<<6)
-#define F13SCOUT		(1<<7)
-#define F13CAMPFOLLOWER	(1<<8)
+#define F13VETDECAN		(1<<2)
+#define F13VEXILLARIUS	(1<<3)
+#define F13DECAN		(1<<4)
+#define F13VETLEGION	(1<<5)
+#define F13LEGIONARY	(1<<6)
+#define F13EXPLORER		(1<<7)
+#define F13SCOUT		(1<<8)
+#define F13CAMPFOLLOWER	(1<<9)
 
 #define BOS				(1<<5)
 
@@ -100,6 +101,7 @@
 #define F13RAIDER		(1<<2)
 #define F13PUSHER		(1<<3)
 #define F13PREACHER		(1<<4)
+//#define F13PUNRAIDER	(1<<5)
 
 #define ENCLAVE			(1<<9)
 

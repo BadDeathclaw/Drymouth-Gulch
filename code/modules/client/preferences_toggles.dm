@@ -152,8 +152,8 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, togglemidis)()
 	return C.prefs.toggles & SOUND_MIDI
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleradio)()
-	set name = "Hear/Silence Mojave Radio"
-	set category = "Preferences"
+	set name = "Toggle Mojave Radio"
+	set category = "IC"
 	set desc = "Hear Player Curated Music"
 	usr.client.prefs.toggles ^= SOUND_RADIO
 	usr.client.prefs.save_preferences()

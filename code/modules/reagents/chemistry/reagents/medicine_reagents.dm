@@ -1282,15 +1282,22 @@
 	color = "#A9FBFB"
 	taste_description = "bitterness"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/M)
 	M.adjustFireLoss(-3*REM)
 	M.adjustBruteLoss(-3*REM)
-	M.druggy = max(M.druggy, 5)
+	M.hallucination = max(M.hallucination, 5)
 	if(prob(7))
 		M.emote(pick("twitch","drool","moan","giggle"))
 	. = 1
 	..()
+
+/datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
+	M.adjustToxLoss(4*REM, 0)
+	M.adjustOxyLoss(4*REM, 0)
+	..()
+	. = 1
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"

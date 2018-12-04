@@ -53,16 +53,16 @@
 
 // A nerfed form of Play Global, for those with the whitelisted DJ role
 /client/proc/play_radio_sound(S as sound)
-	set category = "DJ"
+	set category = "IC"
 	set name = "Play Radio Song"
 	if(!check_rights(R_DJ))
 		return
 
 	var/freq = 1
-	var/vol = input(usr, "What volume would you like the sound to play at?",, 40) as null|num
+	var/vol = input(usr, "What volume would you like the sound to play at?",, 60) as null|num
 	if(!vol)
 		return
-	vol = CLAMP(vol, 1, 40) // Your Despacito remix cannot go to 100, I'm not sorry.
+	vol = CLAMP(vol, 1, 60) // Your Despacito remix cannot go to 100, I'm not sorry.
 
 	var/sound/threedog_sound = new()
 	threedog_sound.file = S
