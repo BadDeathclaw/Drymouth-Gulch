@@ -57,11 +57,10 @@ Captain
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/automatic/shotgun/caws
+	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/m1911
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/d12g=3, \
+		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1)
 	box = null
 
