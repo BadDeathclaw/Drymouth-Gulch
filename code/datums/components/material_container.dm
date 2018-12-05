@@ -327,7 +327,7 @@
 	name = "Metal"
 	id = MAT_METAL
 	sheet_type = /obj/item/stack/sheet/metal
-	coin_type = /obj/item/coin/iron
+	coin_type = /obj/item/stack/f13Cash/bottle_cap
 
 /datum/material/glass
 	name = "Glass"
@@ -338,13 +338,13 @@
 	name = "Silver"
 	id = MAT_SILVER
 	sheet_type = /obj/item/stack/sheet/mineral/silver
-	coin_type = /obj/item/coin/silver
+	coin_type = /obj/item/stack/f13Cash/denarius
 
 /datum/material/gold
 	name = "Gold"
 	id = MAT_GOLD
 	sheet_type = /obj/item/stack/sheet/mineral/gold
-	coin_type = /obj/item/coin/gold
+	coin_type = /obj/item/stack/f13Cash/aureus
 
 /datum/material/diamond
 	name = "Diamond"

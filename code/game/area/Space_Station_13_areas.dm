@@ -1343,6 +1343,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
+/area/f13/admeme
+	requires_power = FALSE
+
 /area/f13/underground
 	flags_2 = BLOCK_RADIO_2
 
@@ -1391,7 +1394,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Klamat mine"
 	icon_state = "klamat"
 	requires_power = TRUE
-	flags_2 = BLOCK_RADIO_2
+
+/area/f13/deepmine
+	name = "Klamat deep mine"
+	requires_power = TRUE
 
 /area/f13/farmhouse
 	name = "Farmhouse"
