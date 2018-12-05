@@ -6,8 +6,8 @@ This guide is designed to help you make small changes to TGClaw, even if you hav
 2. Go to https://github.com/BadDeathclaw/TG-Claw and click the Fork button in the upper right. This creates your own personal copy of the code.
 3. Download and install GitHub Desktop: https://desktop.github.com/ , then sign in with the account you just made.
 4. On the Configure Git page, click Continue - the defaults are fine. Finish the setup.
-5. Click Clone A Repository and select your copy of Persistence (e.g. rhicora/TG-Claw). Await the download!
-6. Now you can open up File Explorer and see your copy of Persistence, most likely at C:\Users\Admin\Documents\GitHub\TG-Claw
+5. Click Clone A Repository and select your copy of TG-Claw (e.g. rhicora/TG-Claw). Await the download!
+6. Now you can open up File Explorer and see your copy of TG-Claw, most likely at C:\Users\Admin\Documents\GitHub\TG-Claw
 
 Congrats! You're all set up to contribute!
 
