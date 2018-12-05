@@ -282,7 +282,7 @@ Preacher
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/internal/boltaction=2, \
 		/obj/item/reagent_containers/food/drinks/flask=1)
-	
+
 /*
 Punished Raider
 */
@@ -298,7 +298,6 @@ Punished Raider
 	spawn_positions = 0
 	supervisors = "no one"
 	selection_color = "#dddddd"
-
 	outfit = /datum/outfit/job/f13punraider
 
 	access = list()
@@ -314,7 +313,7 @@ Punished Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-/datum/outfit/job/f13raider/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/f13punraider/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
 		/obj/item/clothing/under/kilt/highlander, \
