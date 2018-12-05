@@ -72,6 +72,10 @@
 	. = ..()
 	set_light(1)
 
+/obj/effect/decal/cleanable/greenglow/process()
+	..()
+	radiation_pulse(src, 40)
+
 /obj/effect/decal/cleanable/greenglow/ex_act()
 	return
 

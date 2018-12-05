@@ -15,21 +15,21 @@
 	set src = usr.contents
 
 	if(!istype(wearer) || !wearer.back == src)
-		to_chat(usr, "<span class='warning'>The hardsuit is not being worn.</span>")
+		to_chat(usr, "<span class='warning'>The hardsuit is not being worn!</span>")
 		return
 
 	if(!check_power_cost(usr))
 		return
 
 	if(!(item_flags & NODROP))
-		to_chat(usr, "<span class='warning'>The suit is not active.</span>")
+		to_chat(usr, "<span class='warning'>The suit is not active!</span>")
 		return
 
 	if(!check_suit_access(usr))
 		return
 
 	if(!visor)
-		to_chat(usr, "<span class='warning'>The hardsuit does not have a configurable visor.</span>")
+		to_chat(usr, "<span class='warning'>The hardsuit does not have a configurable visor!</span>")
 		return
 
 	var/mob/M = usr

@@ -310,12 +310,11 @@
 	return 0
 */ //NOPE
 /obj/item/rig_module/electrowarfare_suite
-
 	name = "electrowarfare module"
 	desc = "A bewilderingly complex bundle of fiber optics and chips."
 	icon_state = "ewar"
-	toggleable = 1
-	usable = 0
+	toggleable = TRUE
+	usable = FALSE
 
 	activate_string = "Enable Countermeasures"
 	deactivate_string = "Disable Countermeasures"
@@ -324,7 +323,6 @@
 	interface_desc = "An active counter-electronic warfare suite that disrupts AI tracking."
 
 /obj/item/rig_module/electrowarfare_suite/activate()
-
 	if(!..())
 		return
 
@@ -333,7 +331,6 @@
 	M.digitalcamo++
 
 /obj/item/rig_module/electrowarfare_suite/deactivate()
-
 	if(!..())
 		return
 

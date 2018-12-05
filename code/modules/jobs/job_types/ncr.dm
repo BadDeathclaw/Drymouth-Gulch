@@ -62,7 +62,8 @@ Captain
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/melee/classic_baton/telescopic=1)
+		/obj/item/melee/classic_baton/telescopic=1, \
+		/obj/item/storage/bag/money/small/ncr)
 	box = null
 
 /*
@@ -102,7 +103,8 @@ Lieutenant
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
 	box = null
 
 /*
@@ -142,7 +144,8 @@ Sergeant
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
 	box = null
 
 /*
@@ -180,7 +183,8 @@ Trooper
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -218,7 +222,8 @@ Recruit
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -261,7 +266,8 @@ Veteran Ranger
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
 
 /*
 Ranger
@@ -302,7 +308,8 @@ Ranger
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -343,5 +350,6 @@ Recon Ranger
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
 	box = null

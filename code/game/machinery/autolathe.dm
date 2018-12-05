@@ -59,6 +59,9 @@
 
 /obj/machinery/autolathe/ui_interact(mob/user)
 	. = ..()
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, "<span class='warning'>You stare at the blinking lights, fascinated.</span>")
+		return
 	if(!is_operational())
 		return
 
@@ -154,6 +157,7 @@
 
 			var/multiplier = text2num(href_list["multiplier"])
 			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
+			multiplier = CLAMP(multiplier,1,50)
 
 			/////////////////
 
@@ -374,11 +378,6 @@
 /obj/machinery/autolathe/hacked/Initialize()
 	. = ..()
 	adjust_hacked(TRUE)
-
-/obj/machinery/autolathe/interact(mob/user)
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You stare at the blinking lights, fascinated.</span>")
-		return
 
 //Called when the object is constructed by an autolathe
 //Has a reference to the autolathe so you can do !!FUN!! things with hacked lathes

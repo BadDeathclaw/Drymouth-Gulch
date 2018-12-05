@@ -588,14 +588,14 @@
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
-/datum/design/borg_upgrade_vtec
-	name = "Cyborg Upgrade (VTEC Module)"
-	id = "borg_upgrade_vtec"
-	build_type = MECHFAB
-	build_path = /obj/item/borg/upgrade/vtec
-	materials = list(MAT_METAL=80000 , MAT_GLASS=6000 , MAT_URANIUM= 5000)
-	construction_time = 120
-	category = list("Cyborg Upgrade Modules")
+// /datum/design/borg_upgrade_vtec
+// 	name = "Cyborg Upgrade (VTEC Module)"
+// 	id = "borg_upgrade_vtec"
+// 	build_type = MECHFAB
+// 	build_path = /obj/item/borg/upgrade/vtec
+// 	materials = list(MAT_METAL=80000 , MAT_GLASS=6000 , MAT_URANIUM= 5000)
+// 	construction_time = 120
+// 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/borg_upgrade_thrusters
 	name = "Cyborg Upgrade (Ion Thrusters)"
@@ -714,14 +714,14 @@
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
-/datum/design/borg_upgrade_expand
-	name = "Cyborg Upgrade (Expand)"
-	id = "borg_upgrade_expand"
-	build_type = MECHFAB
-	build_path = /obj/item/borg/upgrade/expand
-	materials = list(MAT_METAL=200000, MAT_TITANIUM=5000)
-	construction_time = 120
-	category = list("Cyborg Upgrade Modules")
+// /datum/design/borg_upgrade_expand
+// 	name = "Cyborg Upgrade (Expand)"
+// 	id = "borg_upgrade_expand"
+// 	build_type = MECHFAB
+// 	build_path = /obj/item/borg/upgrade/expand
+// 	materials = list(MAT_METAL=200000, MAT_TITANIUM=5000)
+// 	construction_time = 120
+// 	category = list("Cyborg Upgrade Modules")
 
 /datum/design/boris_ai_controller
 	name = "B.O.R.I.S. AI-Cyborg Remote Control Module"
