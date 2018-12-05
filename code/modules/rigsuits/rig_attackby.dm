@@ -1,6 +1,6 @@
 /obj/item/rig/attackby(obj/item/W as obj, mob/living/carbon/user as mob)
-
-	if(!istype(user,/mob/living/carbon)) return 0
+	if(!istype(user,/mob/living/carbon)) 
+		return 0
 
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
@@ -32,7 +32,6 @@
 		return
 
 	else if(istype(W,/obj/item/crowbar))
-
 		if(!open && locked)
 			to_chat(user, "The access panel is locked shut.")
 			return
@@ -42,7 +41,6 @@
 		return
 
 	if(open)
-
 		// Hacking.
 		if(istype(W,/obj/item/wirecutters) || istype(W,/obj/item/multitool))
 			if(open)
@@ -52,7 +50,6 @@
 			return
 		// Air tank.
 		if(istype(W,/obj/item/tank)) //Todo, some kind of check for suits without integrated air supplies.
-
 			if(air_supply)
 				to_chat(user, "\The [src] already has a tank installed.")
 				return
@@ -65,14 +62,14 @@
 
 		// Check if this is a hardsuit upgrade or a modification.
 		else if(istype(W,/obj/item/rig_module))
-
 			if(istype(src.loc,/mob/living/carbon/human))
 				var/mob/living/carbon/human/H = src.loc
 				if(H.back == src)
 					to_chat(user, "<span class='danger'>You can't install a hardsuit module while the suit is being worn.</span>")
 					return 1
 
-			if(!installed_modules) installed_modules = list()
+			if(!installed_modules) 
+				installed_modules = list()
 			if(installed_modules.len)
 				for(var/obj/item/rig_module/installed_mod in installed_modules)
 					if(!installed_mod.redundant && istype(installed_mod,W))
@@ -94,7 +91,6 @@
 			return 1
 
 		else if(!cell && istype(W,/obj/item/stock_parts/cell))
-
 			to_chat(user, "You jack \the [W] into \the [src]'s battery mount.")
 			user.doUnEquip(W)
 			W.forceMove(src)
@@ -102,7 +98,6 @@
 			return
 
 		else if(istype(W,/obj/item/wrench))
-
 			if(!air_supply)
 				to_chat(user, "There is not tank to remove.")
 				return
@@ -115,7 +110,6 @@
 			return
 
 		else if(istype(W,/obj/item/screwdriver))
-
 			var/list/current_mounts = list()
 			if(cell) current_mounts   += "cell"
 			if(installed_modules && installed_modules.len) current_mounts += "system module"
@@ -131,9 +125,7 @@
 					return
 
 			switch(to_remove)
-
 				if("cell")
-
 					if(cell)
 						to_chat(user, "You detatch \the [cell] from \the [src]'s battery mount.")
 						for(var/obj/item/rig_module/module in installed_modules)
@@ -149,7 +141,6 @@
 						to_chat(user, "There is nothing loaded in that mount.")
 
 				if("system module")
-
 					var/list/possible_removals = list()
 					for(var/obj/item/rig_module/module in installed_modules)
 						if(module.permanent)
@@ -181,18 +172,17 @@
 	..()
 
 
-/obj/item/rig/attack_hand(var/mob/user)
-
+/obj/item/rig/attack_hand(mob/user)
 	if(electrified != 0)
 		if(shock(user)) //Handles removing charge from the cell, as well. No need to do that here.
 			return
 	..()
 
-/obj/item/rig/emag_act(var/remaining_charges, var/mob/user)
+/obj/item/rig/emag_act(remaining_charges, mob/user)
 	if(!subverted)
 		req_access.Cut()
 		req_one_access.Cut()
-		locked = 0
-		subverted = 1
+		locked = FALSE
+		subverted = TRUE
 		to_chat(user, "<span class='danger'>You short out the access protocol for the suit.</span>")
-		return 1
+		return TRUE

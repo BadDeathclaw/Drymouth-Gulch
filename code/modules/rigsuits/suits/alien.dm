@@ -22,25 +22,28 @@
 	icon_state = "breacher_rig"
 	armor = list(melee = 45, bullet = 45, laser = 45, energy = 45, bomb = 45, bio = 100, rad = 75) //Takes TEN TIMES as much damage to stop someone in a breacher. In exchange, it's slow. //Whoever made this was on meth
 	vision_restriction = 0
-
+/*
 /obj/item/clothing/head/helmet/space/new_rig/unathi
-	icon = 'icons/obj/clothing/species/unathi/hats.dmi'
+	//icon = 'icons/obj/clothing/species/unathi/hats.dmi'
 	species_restricted = list("Unathi")
 
 /obj/item/clothing/suit/space/new_rig/unathi
-	icon = 'icons/obj/clothing/species/unathi/suits.dmi'
+	//icon = 'icons/obj/clothing/species/unathi/suits.dmi'
 	species_restricted = list("Unathi")
-
+*/
 /obj/item/clothing/gloves/rig/unathi
 	icon = 'icons/obj/clothing/species/unathi/gloves.dmi'
-	species_restricted = list("Unathi")
+	/* species_restricted = list("Unathi")
 	sprite_sheets = list(
 		"Unathi" = 'icons/mob/species/unathi/gloves.dmi'
 		)
+	*/
 
 /obj/item/clothing/shoes/magboots/rig/unathi
 	icon = 'icons/obj/clothing/species/unathi/shoes.dmi'
-	species_restricted = list("Unathi")
+	/*
+	//species_restricted = list("Unathi")
 	sprite_sheets = list(
 		"Unathi" = 'icons/mob/species/unathi/feet.dmi'
 		)
+	*/
