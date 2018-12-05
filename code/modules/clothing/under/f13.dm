@@ -230,6 +230,20 @@
 
 
 //Gangs
+/obj/item/clothing/under/f13/raider_leather
+	name = "raider leathers"
+	desc = "Scraps of material thrown together and typically worn by raiders."
+	icon_state = "raider_leather"
+	item_state = "raider_leather"
+	item_color = "raider_leather"
+
+/obj/item/clothing/suit/armor/fluff/chestplate/rusty
+	name = "rusty armor"
+	desc = "scrap beaten together until it becomes something wearable"
+	icon_state = "rusty_armor"
+	item_state = "rustyl_armor"
+	item_color = "rusty_armor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 
 //Khans
 
