@@ -128,7 +128,7 @@
 	body_parts_covered = HEAD
 	heat_protection =    HEAD
 	cold_protection =    HEAD
-	clothing_flags =              THICKMATERIAL
+	clothing_flags =     THICKMATERIAL
 
 /obj/item/clothing/suit/lightrig
 	name = "suit"

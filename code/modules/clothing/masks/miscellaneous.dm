@@ -67,6 +67,15 @@
 	desc = "Express your happiness or hide your sorrows with this laughing face with crying tears of joy cutout."
 	icon_state = "joy"
 
+/obj/item/clothing/mask/joy/joyful
+	item_flags = NODROP
+
+/obj/item/clothing/mask/joy/joyful/equipped(mob/user, slot)
+	var/mob/living/carbon/C = user
+	if(C.wear_mask == src)
+		to_chat(user, "<span class='warning'><B>When you put [src] on, you feel nothing but Joy. Spread it to others.</B></span>")
+	return ..()
+
 /obj/item/clothing/mask/pig
 	name = "pig mask"
 	desc = "A rubber pig mask."
@@ -94,6 +103,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/spig/speechModification(message)
 	if(voicechange)
@@ -144,6 +154,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/cowmask/speechModification(message)
 	if(voicechange)
@@ -158,6 +169,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEYES|HIDEEARS
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/horsehead/speechModification(message)
 	if(voicechange)
