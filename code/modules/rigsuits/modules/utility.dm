@@ -20,10 +20,10 @@
 /obj/item/rig_module/device
 	name = "mounted device"
 	desc = "Some kind of hardsuit mount."
-	usable = 0
-	selectable = 1
-	toggleable = 0
-	disruptive = 0
+	usable = FALSE
+	selectable = TRUE
+	toggleable = FALSE
+	disruptive = FALSE
 
 	var/device_type
 	var/obj/item/device
@@ -80,7 +80,7 @@
 
 	device_type = /obj/item/rcd/mounted
 */
-/obj/item/rig_module/device/New()
+/obj/item/rig_module/device/Initialize()
 	..()
 	if(device_type)
 		device = new device_type(src)
@@ -102,8 +102,6 @@
 	if(!resolved && device && target)
 		device.afterattack(target,holder.wearer,1)
 	return 1
-
-
 
 /obj/item/rig_module/chem_dispenser
 	name = "mounted chemical dispenser"
@@ -148,8 +146,7 @@
 		)
 
 
-/obj/item/rig_module/chem_dispenser/accepts_item(var/obj/item/input_item, var/mob/living/user)
-
+/obj/item/rig_module/chem_dispenser/accepts_item(obj/item/input_item, mob/living/user)
 	if(!input_item.is_open_container())
 		return 0
 
@@ -176,13 +173,12 @@
 				break
 
 	if(total_transferred)
-		to_chat(user, "<font color='blue'>You transfer [total_transferred] units into the suit reservoir.</font>")
+		to_chat(user, "<span class='notice'>You transfer [total_transferred] units into the suit reservoir.</span>")
 	else
 		to_chat(user, "<span class='danger'>None of the reagents seem suitable.</span>")
 	return 1
 
 /obj/item/rig_module/chem_dispenser/engage(atom/target)
-
 	if(!..())
 		return 0
 
@@ -224,7 +220,6 @@
 	return 1
 
 /obj/item/rig_module/chem_dispenser/combat
-
 	name = "combat chemical injector"
 	desc = "A complex web of tubing and needles suitable for hardsuit use."
 
@@ -239,12 +234,11 @@
 
 
 /obj/item/rig_module/chem_dispenser/injector
-
 	name = "mounted chemical injector"
 	desc = "A complex web of tubing and a large needle suitable for hardsuit use."
-	usable = 0
-	selectable = 1
-	disruptive = 1
+	usable = FALSE
+	selectable = TRUE
+	disruptive = TRUE
 
 	interface_name = "mounted chem injector"
 	interface_desc = "Dispenses loaded chemicals via an arm-mounted injector."
@@ -376,12 +370,11 @@
 	interface_name = "paper dispenser"
 	interface_desc = "Dispenses warm, clean, and crisp sheets of paper."
 	engage_string = "Dispense"
-	usable = 1
-	selectable = 0
+	usable = TRUE
+	selectable = FALSE
 	device_type = /obj/item/paper_bin
 
 /obj/item/rig_module/device/paperdispenser/engage(atom/target)
-
 	if(!..() || !device)
 		return 0
 
@@ -396,7 +389,7 @@
 	interface_name = "mounted pen"
 	interface_desc = "Signatures with style(tm)."
 	engage_string = "Change color"
-	usable = 1
+	usable = TRUE
 	device_type = /obj/item/pen
 /*
 /obj/item/rig_module/device/stamp
@@ -438,13 +431,12 @@
 	interface_name = "mounted welding fuel tank"
 	interface_desc = "A minitaure fuel tank used for storage of welding fuel, built into a hardsuit."
 	engage_string = "Dispense fuel"
-	usable = 1
+	usable = TRUE
 
 	var/max_fuel = 300
 
-/obj/item/rig_module/welding_tank/New()
+/obj/item/rig_module/welding_tank/Initialize()
 	..()
-
 	create_reagents(max_fuel)
 	reagents.add_reagent("fuel", max_fuel)
 
@@ -466,7 +458,7 @@
 	else
 		to_chat(holder.wearer, "<span class='notice'>You need to have a welding tool in one of your hands to dispense fuel.</span>")
 
-/obj/item/rig_module/welding_tank/proc/fill_welder(var/obj/item/weldingtool/W)
+/obj/item/rig_module/welding_tank/proc/fill_welder(obj/item/weldingtool/W)
 	if(!istype(W))
 		return 0
 

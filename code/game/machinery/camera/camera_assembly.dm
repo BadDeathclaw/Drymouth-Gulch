@@ -91,7 +91,7 @@
 		return FALSE
 
 	tool.play_tool_sound(src)
-	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: SS13,Security,Secret ", "Set Network", "SS13")
+	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: den,vault,secret ", "Set Network", "")
 	if(!input)
 		to_chat(user, "<span class='warning'>No input found, please hang up and try your call again!</span>")
 		return

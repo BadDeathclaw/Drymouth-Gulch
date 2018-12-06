@@ -7,7 +7,6 @@
  */
 
 /obj/item/rig
-
 	name = "hardsuit control module"
 	icon = 'icons/obj/rig_modules.dmi'
 	desc = "A back-mounted hardsuit deployment and control mechanism."
@@ -57,32 +56,30 @@
 	var/list/installed_modules = list()                       // Power consumption/use bookkeeping.
 
 	// Rig status vars.
-	var/open = 0                                              // Access panel status.
-	var/locked = 1                                            // Lock status.
-	var/subverted = 0
-	var/interface_locked = 0
-	var/control_overridden = 0
-	var/ai_override_enabled = 0
-	var/security_check_enabled = 1
-	var/malfunctioning = 0
+	var/open = FALSE                                              // Access panel status.
+	var/locked = TRUE                                            // Lock status.
+	var/subverted = FALSE
+	var/interface_locked = FALSE
+	var/control_overridden = FALSE
+	var/ai_override_enabled = FALSE
+	var/security_check_enabled = TRUE
+	var/malfunctioning = FALSE
 	var/malfunction_delay = 0
-	var/electrified = 0
-	var/locked_down = 0
+	var/electrified = FALSE
+	var/locked_down = FALSE
 
 	var/seal_delay = SEAL_DELAY
-	var/sealing                                               // Keeps track of seal status independantly of NODROP.
-	var/offline = 1                                           // Should we be applying suit maluses?
-	var/offline_slowdown = 3                                  // If the suit is deployed and unpowered, it sets slowdown to this.
-	var/active_slowdown = 3																		// How much the deployed suit slows down if powered.
+	var/sealing                                     // Keeps track of seal status independantly of NODROP.
+	var/offline = 1                                 // Should we be applying suit maluses?
+	var/offline_slowdown = 3                        // If the suit is deployed and unpowered, it sets slowdown to this.
+	var/active_slowdown = 3							// How much the deployed suit slows down if powered.
 	var/vision_restriction
-	var/offline_vision_restriction = 1                        // 0 - none, 1 - welder vision, 2 - blind. Maybe move this to helmets.
-	var/airtight = 1 //If set, will adjust AIRTIGHT and STOPSPRESSUREDMAGE flags on components. Otherwise it should leave them untouched.
+	var/offline_vision_restriction = 1              // 0 - none, 1 - welder vision, 2 - blind. Maybe move this to helmets.
+	var/airtight = TRUE 							//If set, will adjust AIRTIGHT and STOPSPRESSUREDMAGE flags on components. Otherwise it should leave them untouched.
 
 	var/emp_protection = 0
-	var/has_emergency_release = 1 //Allows suit to be removed from outside.
+	var/has_emergency_release = TRUE 					//Allows suit to be removed from outside.
 
-	// Wiring! How exciting.
-	wires = new/datum/wires/rig
 	var/datum/effect_system/spark_spread/spark_system
 
 /obj/item/rig/examine()
@@ -100,14 +97,14 @@
 		to_chat(usr, "The maintenance panel is [open ? "open" : "closed"].")
 		to_chat(usr, "Hardsuit systems are [offline ? "<font color='red'>offline</font>" : "<font color='green'>online</font>"].")
 
-/obj/item/rig/New()
+/obj/item/rig/Initialize()
 	..()
 
 	item_state = icon_state
-	wires = new(src)
+	wires = new /datum/wires/rig(src)
 
 	if((!req_access || !req_access.len) && (!req_one_access || !req_one_access.len))
-		locked = 0
+		locked = FALSE
 
 	spark_system = new()
 	spark_system.set_up(5, 0, src)
@@ -491,7 +488,7 @@
 	for(var/obj/item/rig_module/module in installed_modules)
 		cell.use(module.process()*10)
 
-/obj/item/rig/proc/check_power_cost(var/mob/living/user, var/cost, var/use_unconcious, var/obj/item/rig_module/mod, var/user_is_ai)
+/obj/item/rig/proc/check_power_cost(mob/living/user, cost, use_unconcious, obj/item/rig_module/mod, user_is_ai)
 	if(!istype(user))
 		return 0
 
@@ -525,7 +522,7 @@
 	cell.use(cost*10)
 	return 1
 
-/obj/item/rig/ui_interact(mob/user, ui_key = "main", var/datum/tgui/ui = null, var/force_open = 1)
+/obj/item/rig/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = TRUE)
 	if(!user)
 		return
 
@@ -605,8 +602,7 @@
 
 	return data
 
-/obj/item/rig/update_icon(var/update_mob_icon)
-
+/obj/item/rig/update_icon(update_mob_icon)
 	//TODO: Maybe consider a cache for this (use mob_icon as blank canvas, use suit icon overlay).
 	overlays.Cut()
 //	if(!mob_icon || update_mob_icon)
@@ -630,8 +626,7 @@
 		wearer.update_inv_back()
 	return
 
-/obj/item/rig/proc/check_suit_access(var/mob/living/carbon/human/user)
-
+/obj/item/rig/proc/check_suit_access(mob/living/carbon/human/user)
 	if(!security_check_enabled)
 		return 1
 
@@ -689,7 +684,7 @@
 	add_fingerprint(usr)
 	return 0
 
-/obj/item/rig/proc/notify_ai(var/message)
+/obj/item/rig/proc/notify_ai(message)
 	if(!message || !installed_modules || !installed_modules.len)
 		return
 	for(var/obj/item/rig_module/module in installed_modules)
@@ -720,7 +715,7 @@
 				M.verbs |= /obj/item/rig/proc/emergency_release
 			update_icon()
 
-/obj/item/rig/proc/toggle_piece(var/piece, var/mob/living/user, var/deploy_mode, var/force)
+/obj/item/rig/proc/toggle_piece(piece, mob/living/user, deploy_mode, force)
 	if(!istype(wearer) || wearer.back != src)
 		if(force) //can only force retracting sorry
 			for(var/obj/item/uneq_piece in list(helmet, gloves, boots, chest))
@@ -832,7 +827,7 @@
 	for(var/piece in list("helmet", "gauntlets", "chest", "boots"))
 		toggle_piece(piece, user, ONLY_DEPLOY)
 
-/obj/item/rig/dropped(var/mob/user)
+/obj/item/rig/dropped(mob/user)
 	..()
 	user.verbs -= /obj/item/rig/proc/emergency_release
 	for(var/piece in list("helmet","gauntlets","chest","boots"))
@@ -853,7 +848,8 @@
 	//		malfunction_delay = max(malfunction_delay, round(30/severity_class))
 
 	//drain some charge
-	if(cell) cell.emp_act(severity_class + 15)
+	if(cell) 
+		cell.emp_act(severity_class + 15)
 
 	//possibly damage some modules
 	//take_hit((100/severity_class), "electrical pulse", 1)
@@ -958,12 +954,12 @@
 		return 0
 	return 1
 */
-/obj/item/rig/proc/force_rest(var/mob/user)
+/obj/item/rig/proc/force_rest(mob/user)
 //	if(!ai_can_move_suit(user, check_user_module = 1))
 	wearer.lay_down()
 	to_chat(user, "<span class='notice'>\The [wearer] is now [wearer.resting ? "resting" : "getting up"].</span>")
 
-/obj/item/rig/proc/forced_move(var/direction, var/mob/user)
+/obj/item/rig/proc/forced_move(direction, mob/user)
 
 	// Why is all this shit in client/Move()? Who knows?
 	if(world.time < wearer_move_delay)
@@ -992,7 +988,7 @@
 		return O.relaymove(wearer, direction)
 
 	if(isturf(wearer.loc))
-		if(wearer.restrained())//Why being pulled while cuffed prevents you from moving
+		if(wearer.restrained())//because they can just escape
 			for(var/mob/M in range(wearer, 1))
 				if(M.pulling == wearer)
 					if(!M.restrained() && M.stat == 0 && M.canmove && wearer.Adjacent(M))
@@ -1046,7 +1042,7 @@
 	unseal(user)
 	return 1
 
-/obj/item/rig/proc/can_touch(var/mob/user, var/mob/wearer)
+/obj/item/rig/proc/can_touch(mob/user, mob/wearer)
 	if(!user)
 		return 0
 	if(!wearer.Adjacent(user))

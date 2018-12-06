@@ -17,10 +17,9 @@
 	device_type = /obj/item/assembly/flash
 
 /obj/item/rig_module/grenade_launcher
-
 	name = "mounted grenade launcher"
 	desc = "A shoulder-mounted micro-explosive dispenser."
-	selectable = 1
+	selectable = TRUE
 	icon_state = "grenade"
 
 	interface_name = "integrated grenade launcher"
@@ -35,8 +34,7 @@
 		list("EMP grenade", "EMP grenade", /obj/item/grenade/empgrenade, 3),
 		)
 
-/obj/item/rig_module/grenade_launcher/accepts_item(var/obj/item/input_device, var/mob/living/user)
-
+/obj/item/rig_module/grenade_launcher/accepts_item(obj/item/input_device, mob/living/user)
 	if(!istype(input_device) || !istype(user))
 		return 0
 
@@ -61,7 +59,6 @@
 	return 1
 
 /obj/item/rig_module/grenade_launcher/engage(atom/target)
-
 	if(!..())
 		return 0
 
@@ -90,11 +87,10 @@
 	new_grenade.prime()
 
 /obj/item/rig_module/mounted
-
 	name = "mounted laser cannon"
 	desc = "A shoulder-mounted battery-powered laser cannon mount."
-	selectable = 1
-	usable = 1
+	selectable = TRUE
+	usable = TRUE
 	module_cooldown = 0
 	icon_state = "lcannon"
 
@@ -106,12 +102,11 @@
 	var/gun_type = /obj/item/gun/energy/lasercannon
 	var/obj/item/gun/gun
 
-/obj/item/rig_module/mounted/New()
+/obj/item/rig_module/mounted/Initialize()
 	..()
 	gun = new gun_type(src)
 
 /obj/item/rig_module/mounted/engage(atom/target)
-
 	if(!..())
 		return 0
 
@@ -123,7 +118,6 @@
 	return 1
 
 /obj/item/rig_module/mounted/egun
-
 	name = "mounted energy gun"
 	desc = "A forearm-mounted energy projector."
 	icon_state = "egun"
@@ -134,12 +128,11 @@
 	gun_type = /obj/item/gun/energy/e_gun
 
 /obj/item/rig_module/mounted/taser
-
 	name = "mounted taser"
 	desc = "A palm-mounted nonlethal energy projector."
 	icon_state = "taser"
 
-	usable = 0
+	usable = FALSE
 
 	suit_overlay_active = "mounted-taser"
 	suit_overlay_inactive = "mounted-taser"
@@ -150,7 +143,6 @@
 	gun_type = /obj/item/gun/energy/taser
 
 /obj/item/rig_module/mounted/energy_blade
-
 	name = "energy blade projector"
 	desc = "A powerful cutting beam projector."
 	icon_state = "eblade"
@@ -161,9 +153,9 @@
 	interface_name = "spider fang blade"
 	interface_desc = "A lethal energy projector that can shape a blade projected from the hand of the wearer or launch radioactive darts."
 
-	usable = 0
-	selectable = 1
-	toggleable = 1
+	usable = FALSE
+	selectable = TRUE
+	toggleable = TRUE
 	use_power_cost = 50
 	active_power_cost = 10
 	passive_power_cost = 0
@@ -171,7 +163,6 @@
 	gun_type = /obj/item/gun/energy/kinetic_accelerator/crossbow
 
 /obj/item/rig_module/mounted/energy_blade/process()
-
 	if(holder && holder.wearer)
 		if(!(locate(/obj/item/melee/transforming/energy/blade/hardlight) in holder.wearer))
 			deactivate()
@@ -180,9 +171,7 @@
 	return ..()
 
 /obj/item/rig_module/mounted/energy_blade/activate()
-
 	..()
-
 	var/mob/living/carbon/M = holder.wearer
 	var/l_hand = M.get_item_for_held_index(1)
 	var/r_hand = M.get_item_for_held_index(2)
@@ -195,11 +184,8 @@
 	M.put_in_hands(blade)
 
 /obj/item/rig_module/mounted/energy_blade/deactivate()
-
 	..()
-
 	var/mob/living/M = holder.wearer
-
 	if(!M)
 		return
 
@@ -208,11 +194,10 @@
 		qdel(blade)
 
 /obj/item/rig_module/fabricator
-
 	name = "matter fabricator"
 	desc = "A self-contained microfactory system for hardsuit integration."
-	selectable = 1
-	usable = 1
+	selectable = TRUE
+	usable = TRUE
 	use_power_cost = 15
 	icon_state = "enet"
 

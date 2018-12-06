@@ -49,6 +49,19 @@
 	icon_state = "post"
 	cuttable = FALSE
 
+/obj/structure/fence/pole_t
+	name = "pole"
+	icon_state = "pole_t"
+	cuttable = FALSE
+	density = FALSE
+	layer = ABOVE_MOB_LAYER
+
+/obj/structure/fence/pole_b
+	name = "pole"
+	icon_state = "pole_b"
+	cuttable = FALSE
+	density = FALSE
+
 /obj/structure/fence/cut/medium
 	icon_state = "straight_cut2"
 	hole_size = MEDIUM_HOLE

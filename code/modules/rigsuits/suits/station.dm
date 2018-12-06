@@ -31,9 +31,7 @@
 	boot_type = null
 
 /obj/item/rig/internalaffairs/equipped
-
-	req_access = list(access_lawyer)
-
+	req_access = list(ACCESS_LAWYER)
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/device/flash,
@@ -66,7 +64,6 @@
 
 
 /obj/item/rig/industrial/equipped
-
 	initial_modules = list(
 		/obj/item/rig_module/device/plasmacutter,
 		/obj/item/rig_module/device/drill,
@@ -92,7 +89,6 @@
 	req_one_access = list()
 
 /obj/item/rig/eva/equipped
-
 	initial_modules = list(
 		/obj/item/rig_module/device/plasmacutter,
 		/obj/item/rig_module/maneuvering_jets,
@@ -102,7 +98,6 @@
 
 //Chief Engineer's rig. This is sort of a halfway point between the old hardsuits (voidsuits) and the rig class.
 /obj/item/rig/ce
-
 	name = "advanced voidsuit control module"
 	suit_type = "advanced voidsuit"
 	desc = "An advanced voidsuit that protects against hazardous, low pressure environments. Shines with a high polish."
@@ -124,8 +119,7 @@
 	glove_type = null
 
 /obj/item/rig/ce/equipped
-
-	req_access = list(access_ce)
+	req_access = list(ACCESS_CE)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
@@ -144,7 +138,6 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
 
 /obj/item/rig/hazmat
-
 	name = "AMI control module"
 	suit_type = "hazmat hardsuit"
 	desc = "An Anomalous Material Interaction hardsuit that protects against the strangest energies the universe can throw at it."
@@ -162,15 +155,13 @@
 	req_one_access = list()
 
 /obj/item/rig/hazmat/equipped
-
-	req_access = list(access_rd)
+	req_access = list(ACCESS_RD)
 
 	initial_modules = list(
 		/obj/item/rig_module/ai_container,
 		/obj/item/rig_module/maneuvering_jets)
 
 /obj/item/rig/medical
-
 	name = "rescue suit control module"
 	suit_type = "rescue hardsuit"
 	desc = "A durable suit designed for medical rescue in high risk areas."
@@ -187,7 +178,6 @@
 	req_one_access = list()
 
 /obj/item/rig/medical/equipped
-
 	initial_modules = list(
 		/obj/item/rig_module/chem_dispenser/injector,
 		/obj/item/rig_module/maneuvering_jets,
@@ -214,7 +204,6 @@
 
 
 /obj/item/rig/hazard/equipped
-
 	initial_modules = list(
 		/obj/item/rig_module/vision/sechud,
 		/obj/item/rig_module/maneuvering_jets,

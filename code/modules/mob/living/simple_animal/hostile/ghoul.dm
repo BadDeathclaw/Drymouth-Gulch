@@ -24,6 +24,8 @@
 	stat_attack = UNCONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("ghoul")
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+							/obj/item/stack/sheet/animalhide/human = 1)
 
 /mob/living/simple_animal/hostile/ghoul/reaver
 	name = "feral ghoul reaver"
