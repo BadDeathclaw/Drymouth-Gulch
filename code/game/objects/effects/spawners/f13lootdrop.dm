@@ -384,8 +384,8 @@
 				)
 
 	var/loot8 = list(
-				/obj/item/clothing/head/helmet/f13/brokenpa/t45b,
-				/obj/item/clothing/suit/armor/f13/brokenpa/t45b
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45b,
+				""
 				)
 /obj/effect/spawner/lootdrop/f13/armor/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
 	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8)
@@ -394,40 +394,33 @@
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5 //TIER 5 ARMOR
 	name = "tier 5 armor"
-	lootcount = 2
+	lootcount = 1
 	var/loot1 = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/advanced,
-				/obj/item/clothing/head/helmet/power_armor/advanced
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/advanced
 				)
 
 	var/loot2 = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2,
-				/obj/item/clothing/head/helmet/power_armor/advanced/mk2
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/advanced/mk2
 				)
 
 	var/loot3 = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/tesla,
-				/obj/item/clothing/head/helmet/power_armor/tesla
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/tesla
 				)
 
 	var/loot4 = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
-				/obj/item/clothing/head/helmet/power_armor/t45d
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
 				)
 
 	var/loot5 = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/t51b,
-				/obj/item/clothing/head/helmet/power_armor/t51b
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
 				)
 
 	var/loot6 = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
-				/obj/item/clothing/head/helmet/power_armor/t45d
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
 				)
 
 	var/loot7 = list(
-				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
-				/obj/item/clothing/head/helmet/power_armor/t45d
+				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5/Initialize(mapload) //on mapload, pick what shit to spawn
