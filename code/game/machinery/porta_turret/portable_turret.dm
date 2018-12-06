@@ -400,8 +400,9 @@
 
 			//if the target is a human and not in our faction, analyze threat level
 			if(ishuman(C) && shootnonfaction)
-				if(!in_faction(C))
-					targets += C
+				var/mob/living/carbon/human/H = C
+				if(!in_faction(H))
+					targets += H
 
 			else if(check_anomalies) //non humans who are not simple animals (xenos etc)
 				if(!in_faction(C))
@@ -410,8 +411,7 @@
 		if((get_dist(A, base) < scan_range) && can_see(base, A, scan_range))
 			var/obj/mecha/Mech = A
 			if(Mech.occupant && !in_faction(Mech.occupant)) //If there is a user and they're not in our faction
-				if(assess_perp(Mech.occupant) >= 4)
-					targets += Mech
+				targets += Mech
 
 	if(targets.len)
 		tryToShootAt(targets)
@@ -498,12 +498,13 @@
 
 
 /obj/machinery/porta_turret/proc/in_faction(mob/target)
-	for(var/faction1 in faction)
-		if(islist(target.faction))
+	if(islist(target.faction)
+		for(var/faction1 in faction)
 			if(faction1 in target.faction)
 				return TRUE
-		else
-			if(faction1 == target.faction)
+	else
+		for(var/faction2 in faction)
+			if(faction2 == target.faction)
 				return TRUE
 	return FALSE
 
