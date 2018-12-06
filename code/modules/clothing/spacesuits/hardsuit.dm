@@ -851,7 +851,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor
 	name = "default power armor suit"
-	desc = "Default power armor suit, this shouldn't really exist at all sadly. Altclick this to get the power cell out. You may attack this with a welding tool to repair it"
+	desc = "Default power armor suit, this shouldn't really exist at all sadly. Altclick this to get the power cell out, or attack it with a cell to swap out the cells. You may attack this with a welding tool to repair it"
 	w_class = WEIGHT_CLASS_GIGANTIC //No putting it anywhere
 	slowdown = 1
 	ispowerarmor = 1
@@ -1014,6 +1014,7 @@
 /obj/item/clothing/suit/space/hardsuit/powerarmor/examine(mob/user)
 	..()
 	to_chat(user, "This [name] seems to have about [(cell.charge / cell.maxcharge) * 100] percentage battery left. It also seems to have a shielding to withstand about [health_buffer] of damage.")
+	to_chat(user, "You can alt click the suit to get the power cell out, or attack it with a power cell to swap it out.")
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
 	name = "Salvaged T-45b helmet"
