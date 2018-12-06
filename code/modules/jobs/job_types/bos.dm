@@ -77,8 +77,8 @@ Paladin
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
-	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
+	suit = 			/obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
+	//head = 			/obj/item/clothing/head/helmet/power_armor/t51b
 	suit_store =	/obj/item/gun/energy/laser/scatter
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
@@ -116,8 +116,8 @@ Knight
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
-	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
+	suit = 			/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
+	//head = 			/obj/item/clothing/head/helmet/power_armor/t45d
 	suit_store =	/obj/item/gun/energy/laser/scatter
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
