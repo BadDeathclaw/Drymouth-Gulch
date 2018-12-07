@@ -74,8 +74,9 @@
 		return
 	if(isliving(user))
 		var/mob/living/M = user
-		if(world.time - M.last_bumped <= 60)
-			return //NOTE do we really need that?
+		if(world.time - M.last_bumped <= 10)
+			return //Return to prevent spam
+		M.last_bumped = world.time
 		if((/obj/structure/barricade in src.loc))
 			to_chat(M, "It won't budge!")
 			return
@@ -180,18 +181,18 @@
 /obj/structure/mineral_door/proc/check_locked(mob/user)
 	if(Lock)
 		if(Lock.check_locked())
-			to_chat(user, "[src]'s [Lock] is bolted shut")
+			to_chat(user, "[src] is bolted [density ? "shut" : "open"]")
 			return TRUE
 	return FALSE
 
 /obj/structure/mineral_door/proc/add_lock(var/obj/item/lock_construct/L, mob/user)
 	if(Lock)
-		to_chat(user, "[src] already has [Lock] attached")
+		to_chat(user, "[src] already has \a [Lock] attached")
 		return
 	else
 		if(user.transferItemToLoc(L, src))
-			user.visible_message("<span class='notice'>[user] adds [L] to [src].</span>", \
-								 "<span class='notice'>You adds [L] to [src].</span>")
+			user.visible_message("<span class='notice'>[user] adds [L] to \the [src].</span>", \
+								 "<span class='notice'>You adds [L] to \the [src].</span>")
 			Lock = L
 
 /obj/structure/mineral_door/deconstruct(disassembled = TRUE)

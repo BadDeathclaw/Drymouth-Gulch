@@ -367,7 +367,7 @@
 
 /obj/machinery/door/proc/add_lock(var/obj/item/lock_construct/L, mob/user)
 	if(Lock)
-		to_chat(user, "[src] already has [Lock] attached")
+		to_chat(user, "[src] already has \a [Lock] attached")
 		return
 	else
 		if(user.transferItemToLoc(L, src))
@@ -378,7 +378,7 @@
 /obj/machinery/door/proc/check_locked(mob/user)
 	if(Lock)
 		if(Lock.check_locked())
-			to_chat(user, "[src]'s [Lock] is bolted shut")
+			to_chat(user, "[src] is bolted [density ? "shut" : "open"]")
 			return TRUE
 	return FALSE
 
