@@ -893,12 +893,13 @@
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/process()
 	if(suit)
 		var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
-		if(armor.cell.charge == 0)
-			if(!offline)
-				offline = TRUE
-				tint = offlinetint
-		else
-			return
+		if(cell)
+			if(armor.cell.charge == 0)
+				if(!offline)
+					offline = TRUE
+					tint = offlinetint
+			else
+				return
 	else
 		if(offline)
 			tint = initial(tint)
@@ -922,18 +923,27 @@
 			var/mob/living/carbon/human/M = loc
 			to_chat(M, ">span class='warning'>WARNING: LOW BATTERYY CHARGE!</span>")
 			playsound(loc, 'sound/machines/ping.ogg', 30, 1)
+	else //No cell inside the thing
+		offline = TRUE
+		slowdown = offlineslowdown
+		playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
+		visible_message("The [name] suddenly runs out of power!", "The hardsuit runs out of power, that can't be good.")
+		return
 	if(offline) //TODO; ASK FOR SPRITES THAT LIGHT UP WHEN POWERED
 		return
 	else
 		slowdown = initial(slowdown)
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/item_action_slot_check(slot)
-	if(cell.charge == 0) //Power is ded; no use
-		return FALSE
-	else
+	if(cell)
+		if(cell.charge == 0) //Power is ded; no use
+			return FALSE
+		else
 		if(src == SLOT_WEAR_SUIT)
 			return TRUE //Thing is powered; give the cool stuff
 		return FALSE
+	else
+		return FALSE //No cell
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/item_action_slot_check(slot)
 	if(offline)
