@@ -100,14 +100,12 @@
 	return
 
 /turf/open/floor/proc/update_icon()
-	..()
-	if(!update_visuals())
+	update_visuals()
+	if(!..()
 		return 0
 	if(!broken && !burnt)
 		if( !(icon_state in icons) )
 			icon_state = initial(icon_state)
-	update_visuals()
-	return 1
 
 /turf/open/floor/attack_paw(mob/user)
 	return attack_hand(user)
