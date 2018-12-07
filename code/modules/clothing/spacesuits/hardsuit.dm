@@ -893,10 +893,13 @@
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/process()
 	if(suit)
 		var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
-		if(armor.cell.charge == 0)
-			if(!offline)
-				offline = TRUE
-				tint = offlinetint
+		if(armor.cell)
+			if(armor.cell.charge == 0)
+				if(!offline)
+					offline = TRUE
+					tint = offlinetint
+			else
+				return
 		else
 			return
 	else
@@ -928,19 +931,22 @@
 		slowdown = initial(slowdown)
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/item_action_slot_check(slot)
-	if(cell.charge == 0) //Power is ded; no use
-		return FALSE
+	if(cell)
+		if(cell.charge == 0) //Power is ded; no use
+			return FALSE
+		else
+			if(src == SLOT_WEAR_SUIT)
+				return TRUE //Thing is powered; give the cool stuff
+			return FALSE
 	else
-		if(src == SLOT_WEAR_SUIT)
-			return TRUE //Thing is powered; give the cool stuff
-		return FALSE
+		return FALSE //No cell, no runtimes
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/item_action_slot_check(slot)
 	if(offline)
 		return FALSE
 	else
 		return TRUE
-   
+
 /obj/item/clothing/suit/space/hardsuit/powerarmor/AltClick(mob/user)
 	if(cell && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(!(user.put_in_hands(cell)))
@@ -1063,7 +1069,7 @@
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48, "energy" = 48, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/advanced
 	health_buffer = 150
-  
+
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/mk2
 	name = "Advanced power helmet MKII"
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
