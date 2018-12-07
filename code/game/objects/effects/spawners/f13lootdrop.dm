@@ -107,11 +107,11 @@
 				/obj/item/clothing/under/rank/bartender/purple
 				)
 	var/loot15 = list(
-				/obj/item/clothing/under/plaid_skirt/blue, 
+				/obj/item/clothing/under/plaid_skirt/blue,
 				/obj/item/clothing/under/plaid_skirt
 				)
 	var/loot16 = list(
-				/obj/item/clothing/under/suit_jacket/navy, 
+				/obj/item/clothing/under/suit_jacket/navy,
 				/obj/item/clothing/shoes/laceup
 				)
 	var/loot17 = list(
@@ -152,11 +152,11 @@
 				""
 				)
 	var/loot7 = list(
-				/obj/item/clothing/under/schoolgirl/red, 
+				/obj/item/clothing/under/schoolgirl/red,
 				/obj/item/clothing/under/schoolgirl
 				)
 	var/loot8 = list(
-				/obj/item/clothing/head/fluff/bandit, 
+				/obj/item/clothing/head/fluff/bandit,
 				/obj/item/clothing/head/fluff/gambler
 				)
 	var/loot9 = list(
@@ -1079,7 +1079,7 @@
 				/obj/item/stack/sheet/paperframes/twenty = 1,
 				/obj/item/stack/sheet/cloth/ten = 1
 				)
- 
+
 /obj/effect/spawner/lootdrop/f13/cash_random_low
 	name = "low value cash spawner"
 	lootcount = 1

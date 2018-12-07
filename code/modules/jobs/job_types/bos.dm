@@ -19,7 +19,8 @@ Elder
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
-
+	exp_requirements = 45
+	exp_type = EXP_TYPE_BROTHERHOOD
 	outfit = /datum/outfit/job/f13elder
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
@@ -63,7 +64,8 @@ Paladin
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
 	minimal_player_age = 2
-
+	exp_requirements = 45
+	exp_type = EXP_TYPE_BROTHERHOOD
 	outfit = /datum/outfit/job/f13paladin
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
@@ -102,7 +104,8 @@ Knight
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
 	minimal_player_age = 2
-
+	exp_requirements = 25
+	exp_type = EXP_TYPE_BROTHERHOOD
 	outfit = /datum/outfit/job/f13knight
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
@@ -140,7 +143,8 @@ Scribe
 	spawn_positions = 2
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
-
+	exp_requirements = 10
+	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/f13scribe
 
