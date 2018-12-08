@@ -590,8 +590,8 @@
 	icon_state = "jester2"
 
 /obj/item/clothing/under/jester/dark
-	name = “chaos jester suit”
-	desc = “Filled with chaos, this outfit makes it feel like you can do anything!”
+	name = "chaos jester suit"
+	desc = "Filled with chaos, this outfit makes it feel like you can do anything!"
 	icon_state = "d_jester"
 	item_state = "dark_jester"
 	item_color = "d_jester"
