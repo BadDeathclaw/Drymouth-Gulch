@@ -894,7 +894,7 @@
 	if(offline)
 		offline = FALSE
 		slowdown = initial(slowdown)
-		playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
+		playsound(src, 'sound/weapons/saberon.ogg', 35, 1)
 		visible_message("The [name] suddenly powers back up!", "The hardsuit gets back up and running, that's pretty good.")
 	else
 		offline = TRUE
