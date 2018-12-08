@@ -890,59 +890,56 @@
 	STOP_PROCESSING(SSobj, src)
 	..()
 
-/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/process()
-	if(suit)
-		var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
-		if(armor.cell)
-			if(armor.cell.charge == 0)
-				if(!offline)
-					offline = TRUE
-					tint = offlinetint
-			else
-				return
-		else
-			return
+/obj/item/clothing/suit/space/hardsuit/powerarmor/proc/togglepower() //If it should be turned on or off
+	if(offline)
+		offline = FALSE
+		slowdown = initial(slowdown)
+		playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
+		visible_message("The [name] suddenly powers back up!", "The hardsuit gets back up and running, that's pretty good.")
 	else
-		if(offline)
-			tint = initial(tint)
-			offline = FALSE
+		offline = TRUE
+		slowdown = offlineslowdown
+		playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
+		visible_message("The [name] suddenly runs out of power!", "The hardsuit runs out of power, that can't be good.")
+
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/process()
+	var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
+	if(armor.offline)
+		tint = offlinetint
+		offline = TRUE
+	else
+		tint = initial(tint)
+		offline = FALSE
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/process()
 	if(cell)
 		if(!(cell.use(energydrain)))
 			if(!offline)
-				offline = TRUE
-				slowdown = offlineslowdown
-				playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
-				visible_message("The [name] suddenly runs out of power!", "The hardsuit runs out of power, that can't be good.")
-			else
-				if(offline) //Used power but it's offline; turn it on
-					offline = FALSE
-					slowdown = initial(slowdown)
-					playsound(src, 'sound/weapons/saberoff.ogg', 35, 1)
-					visible_message("The [name] suddenly powers back up!", "The hardsuit gets back up and running, that's pretty good.")
+				togglepower()
+				return
 		if(cell.charge == 1000)
 			var/mob/living/carbon/human/M = loc
-			to_chat(M, ">span class='warning'>WARNING: LOW BATTERYY CHARGE!</span>")
+			to_chat(M, "<span class='warning'>WARNING: LOW BATTERYY CHARGE! [1000 / (energydrain / 2)] SECONDS LEFT OF OPERATION UNTIL SHUTDOWN!</span>")
 			playsound(loc, 'sound/machines/ping.ogg', 30, 1)
-	if(offline) //TODO; ASK FOR SPRITES THAT LIGHT UP WHEN POWERED
-		return
+			return
 	else
-		slowdown = initial(slowdown)
+		if(!offline)
+			togglepower() //No energy cell and its on, turn it off
+			return
 
-/obj/item/clothing/suit/space/hardsuit/powerarmor/item_action_slot_check(slot)
+/obj/item/clothing/suit/space/hardsuit/powerarmor/item_action_slot_check(slot, mob/user)
 	if(cell)
-		if(cell.charge == 0) //Power is ded; no use
-			return FALSE
+		var/mob/living/carbon/human/H = user //If it isn't human then something went HORRIBLY wrong
+		if(!offline && src == H.wear_suit) //Not offline and is on a person; you can use the abilities
+			return TRUE
 		else
-			if(src == SLOT_WEAR_SUIT)
-				return TRUE //Thing is powered; give the cool stuff
 			return FALSE
 	else
-		return FALSE //No cell, no runtimes
+		return FALSE //No cell, no runtimes, no power
 
-/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/item_action_slot_check(slot)
-	if(offline)
+/obj/item/clothing/head/helmet/space/hardsuit/powerarmor/item_action_slot_check(slot, mob/user)
+	var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
+	if(armor.offline)
 		return FALSE
 	else
 		return TRUE
@@ -979,7 +976,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/living/carbon/human/user, slot)
 	if(src == user.wear_suit) //Suit is already equipped; stops message spam
-		return FALSE //Do it quietly
+		return TRUE
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if ((!H.mind.martial_art && H.mind.martial_art.name != "Power Armor Training") && ispowerarmor)
@@ -998,28 +995,37 @@
 
 //Absorb the damage
 /obj/item/clothing/suit/space/hardsuit/powerarmor/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	if(health_buffer > 0)
-		visible_message("The [src] easily deflects the [hitby]!", "<span class='notice'>Your [src] blocks the [hitby] with ease.</span>")
-		health_buffer -= damage
-		if(health_buffer <= 0)
-			to_chat(owner, "<span class='danger'> Your [src] seems to shut off, it will no longer deflect projectiles until you repair it with a welder!</span>")
-	else //No more health absorb, do stuff regulary
+	if(cell && !offline) //Needs to be powered to make use of the built in shield
+		if(health_buffer > 0)
+			visible_message("The [src] easily deflects the [hitby]!", "<span class='notice'>Your [src] blocks the [hitby] with ease.</span>")
+			health_buffer -= damage
+			if(health_buffer <= 0)
+				to_chat(owner, "<span class='danger'> Your [src] seems to shut off, it will no longer deflect projectiles until you repair it with a welder!</span>")
+		else //No more health absorb, do stuff regulary
+			..()
+	else //No power to the suit, do stuff regulary
 		..()
 
 //Same for helmet but uses the suits health buffer
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/item/clothing/suit/space/hardsuit/powerarmor/armor = suit
-	if(armor.health_buffer > 0)
-		visible_message("The [src] easily deflects the [hitby]!", "<span class='notice'>Your [src] blocks the [hitby] with ease.</span>")
-		armor.health_buffer -= damage
-		if(armor.health_buffer <= 0)
-			to_chat(owner, "<span class='danger'> Your [src] seems to shut off, it will no longer deflect projectiles until you repair it with a welder!</span>")
-	else //No more health absorb, do stuff regulary
+	if(armor.cell && !offline) //Needs to be powered to make use of the built in shield
+		if(armor.health_buffer > 0)
+			visible_message("The [src] easily deflects the [hitby]!", "<span class='notice'>Your [src] blocks the [hitby] with ease.</span>")
+			armor.health_buffer -= damage
+			if(armor.health_buffer <= 0)
+				to_chat(owner, "<span class='danger'> Your [src] seems to shut off, it will no longer deflect projectiles until you repair it with a welder!</span>")
+		else //No more health absorb, do stuff regulary
+			..()
+	else //No power to the suit, do stuff regulary
 		..()
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/examine(mob/user)
 	..()
-	to_chat(user, "This [name] seems to have about [(cell.charge / cell.maxcharge) * 100] percentage battery left. It also seems to have a shielding to withstand about [health_buffer] of damage.")
+	if(cell)
+		to_chat(user, "This [name] seems to have about [(cell.charge / cell.maxcharge) * 100] percentage battery left. It also seems to have a shielding to withstand about [health_buffer] of damage.")
+	else
+		to_chat(user, "This [name] doesn't seem to have a power cell in it, it will instead provide reduced mobility and no additional shielding.")
 	to_chat(user, "You can alt click the suit to get the power cell out, or attack it with a power cell to swap it out.")
 
 /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t45b
