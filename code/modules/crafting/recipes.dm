@@ -543,7 +543,7 @@
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
 	time = 60
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 5)
+	reqs = list(/obj/item/grown/log = 5)
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
@@ -680,7 +680,7 @@
 
 /datum/crafting_recipe/rags
 	name = "Cut clothing into rags"
-	result = /obj/item/stack/sheet/cloth/five
+	result = /obj/item/stack/sheet/cloth/three
 	reqs = list(/obj/item/clothing/under = 1)
 	time = 20
 	category = CAT_MISC
@@ -724,5 +724,11 @@
 	time = 20
 	category = CAT_DRUGS
 
-
-
+/datum/crafting_recipe/slavecollar
+	name = "Slave Collar"
+	result = /obj/item/electropack/shockcollar
+	reqs = list(/obj/item/clothing/neck/petcollar = 1,
+				/obj/item/assembly/signaler = 1,
+				/obj/item/assembly/igniter =1)
+	time = 40
+	category = CAT_MISC

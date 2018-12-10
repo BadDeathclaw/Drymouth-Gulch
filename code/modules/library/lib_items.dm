@@ -351,3 +351,15 @@
 	else
 		to_chat(user, "<font color=red>No associated computer found. Only local scans will function properly.</font>")
 	to_chat(user, "\n")
+
+
+/obj/structure/altar
+	name = "altar"
+	icon = 'icons/obj/cult.dmi'
+	icon_state = "tomealtar"
+	desc = "An altar to the gods - or at least, one of them."
+	anchored = TRUE
+	density = TRUE
+	resistance_flags = FLAMMABLE
+	max_integrity = 200
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)

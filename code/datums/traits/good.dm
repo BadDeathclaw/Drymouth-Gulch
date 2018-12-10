@@ -34,7 +34,6 @@
 	lose_text = "<span class='danger'>You no longer feel like drinking would ease your pain.</span>"
 	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
 
-
 /datum/quirk/freerunning
 	name = "Freerunning"
 	desc = "You're great at quick moves! You can climb tables more quickly."
@@ -42,7 +41,6 @@
 	mob_trait = TRAIT_FREERUNNING
 	gain_text = "<span class='notice'>You feel lithe on your feet!</span>"
 	lose_text = "<span class='danger'>You feel clumsy again.</span>"
-
 
 /datum/quirk/iron_fist
 	name = "Iron Fist"
@@ -63,6 +61,19 @@
 	value = 1
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
+
+/datum/quirk/lifegiver
+	name = "Lifegiver"
+	desc = "You embody wellness! Instantly gain +15 maximum Health"
+	value = 3
+	mob_trait = TRAIT_LIFEGIVER
+	gain_text = "<span class='notice'>You feel more healthy than usual.</span>"
+	lose_text = "<span class='danger'>You feel less healthy than usual.</span>"
+
+/datum/quirk/lifegiver/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth += 15
+	mob_tar.health += 15
 
 /datum/quirk/light_step
 	name = "Light Step"

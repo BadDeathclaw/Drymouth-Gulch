@@ -1,13 +1,12 @@
-/datum/wires/rig
-	randomize = 1
-	holder_type = /obj/item/rig
-	//wire_count = 5
-
 #define RIG_SECURITY 1
 #define RIG_AI_OVERRIDE 2
 #define RIG_SYSTEM_CONTROL 4
 #define RIG_INTERFACE_LOCK 8
 #define RIG_INTERFACE_SHOCK 16
+/datum/wires/rig
+	holder_type = /obj/item/rig
+	randomize = 1
+
 /*
  * Rig security can be snipped to disable ID access checks on rig.
  * Rig AI override can be pulsed to toggle whether or not the AI can take control of the suit.
@@ -15,22 +14,48 @@
  * Interface lock can be pulsed to toggle whether or not the interface can be accessed.
  */
 
-/datum/wires/rig/on_cut(var/index, var/mended)
+/datum/wires/rig/New(atom/holder)
+	wires = list(
+		RIG_SECURITY, RIG_AI_OVERRIDE, RIG_SYSTEM_CONTROL,
+		RIG_INTERFACE_LOCK, RIG_INTERFACE_SHOCK
+	)
+	add_duds(1)
+	..()
 
+/datum/wires/rig/interactable(mob/living/L)
 	var/obj/item/rig/rig = holder
+	if(rig.open)
+		return TRUE
+	return FALSE
+
+/datum/wires/rig/get_status()
+	var/obj/item/rig/rig = holder
+	var/list/status = list()
+	status += "The ID check light is [rig.security_check_enabled ? "on" : "off"]."
+	status += "The AI control light is [rig.ai_override_enabled ? "off" : "blinking"]."
+	status += "The System control light is [rig.malfunction_delay ? "on" : "blinking"]."
+	status += "The Interface lock light is [rig.interface_locked ? "red" : "green"]."
+	status += "The yellow light is [rig.electrified ? "off" : "on"]."
+	return status
+
+/*
+/datum/wires/rig/GetWireName(index)
 	switch(index)
 		if(RIG_SECURITY)
-			if(mended)
-				rig.req_access = initial(rig.req_access)
-				rig.req_one_access = initial(rig.req_one_access)
+			return "ID check"
+		if(RIG_AI_OVERRIDE)
+			return "AI control"
+		if(RIG_SYSTEM_CONTROL)
+			return "System control"
+		if(RIG_INTERFACE_LOCK)
+			return "Interface lock"
 		if(RIG_INTERFACE_SHOCK)
-			rig.electrified = mended ? 0 : -1
-			rig.shock(usr,100)
+			return "Electrification"
+*/
 
-/datum/wires/rig/on_pulse(var/index)
-
+/datum/wires/rig/on_pulse(wire)
 	var/obj/item/rig/rig = holder
-	switch(index)
+	switch(wire)
 		if(RIG_SECURITY)
 			rig.security_check_enabled = !rig.security_check_enabled
 			rig.visible_message("\The [rig] twitches as several suit locks [rig.security_check_enabled?"close":"open"].")
@@ -48,23 +73,15 @@
 		if(RIG_INTERFACE_SHOCK)
 			if(rig.electrified != -1)
 				rig.electrified = 30
-			rig.shock(usr,100)
-/*
-/datum/wires/rig/GetWireName(index)
-	switch(index)
-		if(RIG_SECURITY)
-			return "ID check"
-		if(RIG_AI_OVERRIDE)
-			return "AI control"
-		if(RIG_SYSTEM_CONTROL)
-			return "System control"
-		if(RIG_INTERFACE_LOCK)
-			return "Interface lock"
-		if(RIG_INTERFACE_SHOCK)
-			return "Electrification"
-*/
-/datum/wires/rig/interactable(var/mob/living/L)
+			rig.shock(usr, 100)
+
+/datum/wires/rig/on_cut(wire, mend)
 	var/obj/item/rig/rig = holder
-	if(rig.open)
-		return 1
-	return 0
+	switch(wire)
+		if(RIG_SECURITY)
+			if(mend)
+				rig.req_access = initial(rig.req_access)
+				rig.req_one_access = initial(rig.req_one_access)
+		if(RIG_INTERFACE_SHOCK)
+			rig.electrified = mend ? 0 : -1
+			rig.shock(usr, 100)

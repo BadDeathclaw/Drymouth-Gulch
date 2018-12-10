@@ -1,10 +1,11 @@
-/obj/item/stack/spacecash  //Don't use base space cash stacks. Any other space cash stack can merge with them, and could cause potential money duping exploits.
-	name = "space cash"
+/obj/item/stack/spacecash
+	name = "dollars"
+	desc = "It's one NCR dollar, which isn't even worth a cap these days."
 	singular_name = "bill"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "spacecash"
 	amount = 1
-	max_amount = 20
+	max_amount = 2000
 	throwforce = 0
 	throw_speed = 2
 	throw_range = 2
@@ -13,59 +14,75 @@
 	resistance_flags = FLAMMABLE
 	var/value = 0
 
-/obj/item/stack/spacecash/Initialize()
-	. = ..()
-	update_desc()
+/obj/item/stack/spacecash/update_icon()
+	switch(amount)
+		if(1 to 9)
+			icon_state = "spacecash"
+		if(10 to 19)
+			icon_state = "spacecash10"
+		if(20 to 49)
+			icon_state = "spacecash20"
+		if(50 to 99)
+			icon_state = "spacecash50"
+		if(100 to 199)
+			icon_state = "spacecash100"
+		if(200 to 499)
+			icon_state = "spacecash200"
+		if(500 to 999)
+			icon_state = "spacecash500"
+		else if(amount >= 1000)
+			icon_state = "spacecash1000"
+	desc = "NCR-issued cash worth $[amount], or about [amount * 0.4] caps."
 
-/obj/item/stack/spacecash/proc/update_desc()
-	var/total_worth = amount*value
-	desc = "It's worth [total_worth] credit[( total_worth > 1 ) ? "s" : ""]"
+/obj/item/stack/spacecash/random
+	//Used to generate a random stack of dosh
+	var/min_dollars = 1
+	var/max_dollars = 500
 
+/obj/item/stack/spacecash/random/New()
+	var/obj/item/stack/spacecash/randy = new //makes new stack
+	randy.loc = src.loc //sets stack location to randstack location
+	randy.amount = rand(min_dollars, max_dollars)
+	randy.update_icon()
+	qdel(src)
 
-/obj/item/stack/spacecash/merge(obj/item/stack/S)
-	. = ..()
-	update_desc()
+/obj/item/stack/spacecash/random/low
+	min_dollars = 1
+	max_dollars = 50
 
-/obj/item/stack/spacecash/use(used, transfer = FALSE)
-	. = ..()
-	update_desc()
+/obj/item/stack/spacecash/random/med
+	min_dollars = 50
+	max_dollars = 100
 
-/obj/item/stack/spacecash/c1
-	icon_state = "spacecash"
-	singular_name = "one credit bill"
-	value = 1
+/obj/item/stack/spacecash/random/high
+	min_dollars = 100
+	max_dollars = 500
 
 /obj/item/stack/spacecash/c10
 	icon_state = "spacecash10"
-	singular_name = "ten credit bill"
-	value = 10
-
+	amount = 10
+	desc = "Ten NCR dollars. Worth about 4 caps."
 /obj/item/stack/spacecash/c20
 	icon_state = "spacecash20"
-	singular_name = "twenty credit bill"
-	value = 20
-
+	amount = 20
+	desc = "Twenty NCR dollars. Worth about 8 caps."
 /obj/item/stack/spacecash/c50
 	icon_state = "spacecash50"
-	singular_name = "fifty credit bill"
-	value = 50
-
+	amount = 50
+	desc = "Fifty NCR dollars. Worth about 20 caps."
 /obj/item/stack/spacecash/c100
 	icon_state = "spacecash100"
-	singular_name = "one hundred credit bill"
-	value = 100
-
+	amount = 100
+	desc = "A hundred NCR dollars. Worth about 40 caps."
 /obj/item/stack/spacecash/c200
 	icon_state = "spacecash200"
-	singular_name = "two hundred credit bill"
-	value = 200
-
+	amount = 200
+	desc = "Two hundred NCR dollars. Worth about 80 caps."
 /obj/item/stack/spacecash/c500
 	icon_state = "spacecash500"
-	singular_name = "five hundred credit bill"
-	value = 500
-
+	amount = 500
+	desc = "Five hundred NCR dollars. Worth about 200 caps."
 /obj/item/stack/spacecash/c1000
 	icon_state = "spacecash1000"
-	singular_name = "one thousand credit bill"
-	value = 1000
+	amount = 1000
+	desc = "A thousand NCR dollars. Worth about 400 caps."
