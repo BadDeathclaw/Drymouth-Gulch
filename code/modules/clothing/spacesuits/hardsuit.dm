@@ -984,13 +984,16 @@
 			return FALSE
 		else
 			to_chat(H, "<span class='notice'>You start to put on the [src.name]...</span>")
-			if(do_after(user, putondelay, target = src))
-				user.equip_to_slot(src, SLOT_WEAR_SUIT) //say it with me; hardcored slots
-				to_chat(H, "<span class='notice'>You put on the [src.name]! Ready to rock and roll.</span>")
-				return FALSE //Already equipped the armor; don't want the armor being equipped to another slot
-			else
-				to_chat(H, "<span class='warning'>You somehow failed to put on the [src.name].</span>")
-				return FALSE
+			if(slot == SLOT_WEAR_SUIT) //Anywhere else can be instantly moved
+				if(do_after(user, putondelay, target = src))
+					user.equip_to_slot(src, SLOT_WEAR_SUIT) //say it with me; hardcored slots
+					to_chat(H, "<span class='notice'>You put on the [src.name]! Ready to rock and roll.</span>")
+					return FALSE //Already equipped the armor; don't want the armor being equipped to another slot
+				else
+					return FALSE
+			if(slot == SLOT_HANDS) //Putting into hands work, anywhere else besides armor slot won't work
+				return TRUE
+			return FALSE
 	return FALSE
 
 //Absorb the damage
