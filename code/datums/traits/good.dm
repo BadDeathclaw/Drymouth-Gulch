@@ -54,7 +54,7 @@
 
 /datum/quirk/iron_fist/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 5
+	mob_tar.dna.species.punchdamagelow = 7
 	mob_tar.dna.species.punchdamagehigh = 10
 
 /datum/quirk/jolly
