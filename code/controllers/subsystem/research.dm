@@ -27,7 +27,7 @@ SUBSYSTEM_DEF(research)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
-	var/singleincome = 60 //hardcode memes
+	var/singleincome = 20 //hardcode memes
 	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 60)
 	var/multiserver_calculation = TRUE //turning this on is a bad idea
 	var/last_income = 0

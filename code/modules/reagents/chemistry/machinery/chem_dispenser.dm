@@ -138,6 +138,9 @@
 /obj/machinery/chem_dispenser/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
 											datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
+		return
 	if(!ui)
 		ui = new(user, src, ui_key, "chem_dispenser", name, 550, 550, master_ui, state)
 		if(user.hallucinating())
@@ -347,8 +350,6 @@
 		if (M.rating > macrotier)
 			macrotier = M.rating
 	powerefficiency = round(newpowereff, 0.01)
-
-
 
 /obj/machinery/chem_dispenser/on_deconstruction()
 	cell = null

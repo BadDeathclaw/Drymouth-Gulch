@@ -11,6 +11,8 @@ Colonel
 	supervisors = "the general"
 	selection_color = "#ffeeaa"
 	req_admin_notify = 1
+	exp_requirements = 45
+	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13colonel
 
@@ -36,6 +38,8 @@ Captain
 	selection_color = "#ffeeaa"
 	req_admin_notify = 1
 	minimal_player_age = 6
+	exp_requirements = 30
+	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13captain
 
@@ -58,7 +62,8 @@ Captain
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/melee/classic_baton/telescopic=1)
+		/obj/item/melee/classic_baton/telescopic=1, \
+		/obj/item/storage/bag/money/small/ncr)
 	box = null
 
 /*
@@ -73,6 +78,8 @@ Lieutenant
 	spawn_positions = 1
 	supervisors = "the captain"
 	selection_color = "#fff5cc"
+	exp_requirements = 20
+	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13lieutenant
 
@@ -96,7 +103,8 @@ Lieutenant
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
 	box = null
 
 /*
@@ -111,6 +119,8 @@ Sergeant
 	spawn_positions = 2
 	supervisors = "the lieutenant"
 	selection_color = "#fff5cc"
+	exp_requirements = 5
+	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13sergeant
 
@@ -134,7 +144,8 @@ Sergeant
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
 	box = null
 
 /*
@@ -172,7 +183,8 @@ Trooper
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -210,7 +222,8 @@ Recruit
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -226,6 +239,8 @@ Veteran Ranger
 	supervisors = "the lieutenant"
 	selection_color = "#ffeeaa"
 	minimal_player_age = 2
+	exp_requirements = 25
+	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13vetranger
 
@@ -251,7 +266,8 @@ Veteran Ranger
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
 
 /*
 Ranger
@@ -265,6 +281,8 @@ Ranger
 	spawn_positions = 3
 	supervisors = "the veteran ranger"
 	selection_color = "#fff5cc"
+	exp_requirements = 12
+	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13ranger
 
@@ -290,7 +308,8 @@ Ranger
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -305,6 +324,8 @@ Recon Ranger
 	spawn_positions = 3
 	supervisors = "the veteran ranger"
 	selection_color = "#fff5cc"
+	exp_requirements = 7
+	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13recranger
 
@@ -329,5 +350,6 @@ Recon Ranger
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
 	box = null

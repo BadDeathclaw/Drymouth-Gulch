@@ -12,6 +12,9 @@
 #define REEL_DEACTIVATE_DELAY 7
 #define SEVEN "<font color='red'>7</font>"
 
+#define NORM_COIN /obj/item/stack/f13Cash/bottle_cap
+#define EMAG_COIN /obj/item/stack/f13Cash/aureus
+
 /obj/machinery/computer/slot_machine
 	name = "slot machine"
 	desc = "Gambling for the antisocial."
@@ -44,6 +47,10 @@
 		randomize_reels()
 
 	toggle_reel_spin(0)
+
+	for(var/cointype in typesof(/obj/item/stack/f13Cash))
+		var/obj/item/stack/f13Cash/C = cointype
+		coinvalues["[cointype]"] = initial(C.value)
 
 	for(var/cointype in typesof(/obj/item/coin))
 		var/obj/item/coin/C = cointype
@@ -95,6 +102,11 @@
 			to_chat(user, "<span class='notice'>You insert a [C.cmineral] coin into [src]'s slot!</span>")
 			balance += C.value
 			qdel(C)
+	else if(istype(I, /obj/item/stack/f13Cash)) /* no buggery trying to insert currency */
+		var/obj/item/stack/f13Cash/cash = I
+		if(cash.use(1))
+			to_chat(user, "<span class='notice'>You add one [cash.singular_name] to the [src.name].</span>")
+			balance += cash.value
 	else
 		return ..()
 
@@ -234,9 +246,14 @@
 		money = 0
 
 		for(var/i = 0, i < 5, i++)
-			var/cointype = pick(subtypesof(/obj/item/coin))
-			var/obj/item/coin/C = new cointype(loc)
-			random_step(C, 2, 50)
+			if(prob(80))
+				var/cointype = pick(subtypesof(/obj/item/stack/f13Cash))
+				var/obj/item/stack/f13Cash/C = new cointype(loc)
+				random_step(C, 2, 50)
+			else
+				var/cointype = pick(subtypesof(/obj/item/coin))
+				var/obj/item/coin/C = new cointype(loc)
+				random_step(C, 2, 50)
 
 	else if(linelength == 5)
 		visible_message("<b>[src]</b> says, 'Big Winner! You win a thousand credits worth of coins!'")
@@ -280,7 +297,7 @@
 	balance += surplus
 
 /obj/machinery/computer/slot_machine/proc/give_coins(amount)
-	var/cointype = obj_flags & EMAGGED ? /obj/item/coin/iron : /obj/item/coin/silver
+	var/cointype = obj_flags & EMAGGED ? EMAG_COIN : NORM_COIN
 
 	if(!(obj_flags & EMAGGED))
 		amount = dispense(amount, cointype, null, 0)
@@ -292,12 +309,12 @@
 
 	return amount
 
-/obj/machinery/computer/slot_machine/proc/dispense(amount = 0, cointype = /obj/item/coin/silver, mob/living/target, throwit = 0)
+/obj/machinery/computer/slot_machine/proc/dispense(amount = 0, cointype = NORM_COIN, mob/living/target, throwit = 0)
 	var/value = coinvalues["[cointype]"]
 
 
 	while(amount >= value)
-		var/obj/item/coin/C = new cointype(loc) //DOUBLE THE PAIN
+		var/obj/item/stack/f13Cash/C = new cointype(loc) //DOUBLE THE PAIN
 		amount -= value
 		if(throwit && target)
 			C.throw_at(target, 3, 10)
@@ -312,3 +329,5 @@
 #undef BIG_PRIZE
 #undef SMALL_PRIZE
 #undef SPIN_PRICE
+#undef NORM_COIN
+#undef EMAG_COIN

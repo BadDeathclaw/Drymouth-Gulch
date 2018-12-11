@@ -11,9 +11,9 @@
 	w_class = WEIGHT_CLASS_HUGE
 	materials = list(MAT_METAL=10000, MAT_GLASS=2500)
 	var/on = TRUE
+	var/shock_cooldown = 0
 	var/code = 2
 	var/frequency = FREQ_ELECTROPACK
-	var/shock_cooldown = 0
 
 /obj/item/electropack/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -157,13 +157,21 @@ Code:
 	body_parts_covered = NECK
 	strip_delay = 60
 	equip_delay_other = 60
-	
+	code = ""
+	frequency = ""
+
+/obj/item/electropack/shockcollar/Initialize()
+	..()
+	frequency = rand(1441,1489)
+	code = rand(1,100)
+	name = "[name] #[frequency]/[code]"
+
 /obj/item/electropack/shockcollar/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK))
 		to_chat(user, "<span class='warning'>The collar is fastened tight! You'll need help taking this off!</span>")
 		return
 	..()
-	
+
 /obj/item/electropack/shockcollar/receive_signal(datum/signal/signal) //this removes the "on" check
 	if(!signal || signal.data["code"] != code)
 		return
@@ -187,11 +195,11 @@ Code:
 	if(master)
 		master.receive_signal()
 	return
-	
-/obj/item/electropack/attack_self(mob/user)
+
+/obj/item/electropack/shockcollar/attack_self(mob/user)
 	if(!ishuman(user))
 		return
-	
+
 	user.set_machine(src)
 	var/dat = {"<B>Frequency/Code</B> for slave collar:<BR>
 Frequency:
@@ -209,3 +217,12 @@ Code:
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
+
+/obj/item/electropack/shockcollar/attackby(obj/item/W, mob/user, params)
+	if(issignaler(W))
+		var/obj/item/assembly/signaler/signaler2 = W
+		if(signaler2.secured)
+			signaler2.code = code
+			signaler2.set_frequency(frequency)
+			to_chat(user, "You transfer the frequency and code of \the [name] to \the [signaler2.name]")
+	..()

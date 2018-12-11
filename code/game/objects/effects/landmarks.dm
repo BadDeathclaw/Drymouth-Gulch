@@ -479,6 +479,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/centurion
 	name = "Centurion"
 
+/obj/effect/landmark/start/f13/vetdecanus
+	name = "Veteran Decanus"
 
 /obj/effect/landmark/start/f13/vexillarius
 	name = "Vexillarius"
