@@ -12,6 +12,7 @@
 	active_power_usage = 100
 	circuit = /obj/item/circuitboard/machine/autolathe
 	layer = BELOW_OBJ_LAYER
+	super_advanced_technology = TRUE
 
 	var/operating = FALSE
 	var/list/L = list()
@@ -92,7 +93,7 @@
 		updateUsrDialog()
 		return TRUE
 
-	if(default_deconstruction_crowbar(O))
+	if(default_unfasten_wrench(O))
 		return TRUE
 
 	if(panel_open && is_wire_tool(O))
