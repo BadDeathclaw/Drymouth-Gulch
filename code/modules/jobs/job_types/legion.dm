@@ -44,7 +44,8 @@ Needs whitelist
 		/obj/item/melee/powerfist=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/storage/bag/money/small/legion)
 	box = null
 
 /*
@@ -91,7 +92,8 @@ Centurion
 		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/storage/bag/money/small/legion)
 	box = null
 
 /datum/outfit/job/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -138,7 +140,8 @@ Veteran Decan
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
 /datum/outfit/job/f13vetdecan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -186,7 +189,8 @@ Vexillarius
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
 /datum/outfit/job/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -235,7 +239,8 @@ Decan
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
 /datum/outfit/job/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -283,7 +288,8 @@ Veteran
 		/obj/item/claymore/machete=1, \
 		/obj/item/storage/box/lethalshot=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
 	box = null
 
 /datum/outfit/job/f13vetlegion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -329,7 +335,8 @@ Legionary
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
 	box = null
 
 /datum/outfit/job/f13legionary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -372,7 +379,8 @@ Legionary
 		/obj/item/claymore/machete=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
 	box = null
 	r_pocket = /obj/item/binocs
 
@@ -414,7 +422,8 @@ Legionary
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762=2, \
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
 	box = null
 
 /datum/outfit/job/f13scout/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -443,6 +452,7 @@ Legionary
 	ears = null
 	belt = null
 	shoes = /obj/item/clothing/shoes/sandal
+	box = null
 
 /datum/outfit/job/f13campfollower/pre_equip(mob/living/carbon/human/H)
 	..()

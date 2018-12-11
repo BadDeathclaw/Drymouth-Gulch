@@ -1,11 +1,10 @@
-
 /obj/item/rig_module/handheld
 	name = "mounted device"
 	desc = "Some kind of hardsuit extension."
-	usable = 0
-	selectable = 0
-	toggleable = 1
-	disruptive = 0
+	usable = FALSE
+	selectable = FALSE
+	toggleable = TRUE
+	disruptive = FALSE
 	activate_string = "Deploy"
 	deactivate_string = "Retract"
 
@@ -18,7 +17,7 @@
 
 	if(!holder.wearer.put_in_hands(device))
 		to_chat(holder.wearer, "<span class='notice'>You need a free hand to hold \the [device].</span>")
-		active = 0
+		active = FALSE
 		return
 
 	to_chat(holder.wearer, "<span class='notice'>You deploy \the [device].</span>")
@@ -34,7 +33,7 @@
 	device.loc = src
 	to_chat(holder.wearer, "<span class='notice'>You retract \the [device].</span>")
 
-/obj/item/rig_module/handheld/New()
+/obj/item/rig_module/handheld/Initialize()
 	..()
 	if(device_type)
 		device = new device_type(src)

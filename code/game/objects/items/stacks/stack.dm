@@ -22,6 +22,7 @@
 	var/full_w_class = WEIGHT_CLASS_NORMAL //The weight class the stack should have at amount > 2/3rds max_amount
 	var/novariants = TRUE //Determines whether the item should update it's sprites based on amount.
 	//NOTE: When adding grind_results, the amounts should be for an INDIVIDUAL ITEM - these amounts will be multiplied by the stack size in on_grind()
+	var/latin = 0 // Use weird latin pluralization.
 
 /obj/item/stack/on_grind()
 	for(var/i in 1 to grind_results.len) //This should only call if it's ground, so no need to check if grind_results exists
@@ -83,10 +84,16 @@
 			to_chat(user, "There is enough energy for [get_amount()].")
 		return
 	if(singular_name)
-		if(get_amount()>1)
-			to_chat(user, "There are [get_amount()] [singular_name]\s in the stack.")
+		if (latin)
+			if(get_amount()>1)
+				to_chat(user, "There are [get_amount()] [singular_name]i in the stack.")
+			else
+				to_chat(user, "There is [get_amount()] [singular_name]us in the stack.")
 		else
-			to_chat(user, "There is [get_amount()] [singular_name] in the stack.")
+			if(get_amount()>1)
+				to_chat(user, "There are [get_amount()] [singular_name]\s in the stack.")
+			else
+				to_chat(user, "There is [get_amount()] [singular_name] in the stack.")
 	else if(get_amount()>1)
 		to_chat(user, "There are [get_amount()] in the stack.")
 	else
