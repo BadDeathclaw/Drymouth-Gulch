@@ -384,7 +384,6 @@
 //Has a reference to the autolathe so you can do !!FUN!! things with hacked lathes
 /obj/item/proc/autolathe_crafted(obj/machinery/autolathe/A)
 	return
-<<<<<<< HEAD
 
 /obj/machinery/autolathe/constructionlathe
 	name = "constructionlathe"
@@ -400,5 +399,3 @@
 							"Dinnerware",
 							"Imported"
 							)
-=======
->>>>>>> parent of d55dc59... Update autolathe.dm
