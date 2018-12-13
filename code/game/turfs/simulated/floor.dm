@@ -102,8 +102,6 @@
 /turf/open/floor/proc/update_icon()
 	..()
 	update_visuals()
-	if(!..())
-		return 0
 	if(!broken && !burnt)
 		if( !(icon_state in icons) )
 			icon_state = initial(icon_state)
