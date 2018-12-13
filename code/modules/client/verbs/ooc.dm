@@ -211,6 +211,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 			continue
 
 		if(C.prefs.toggles & CHAT_LOOC)
+/*
 			var/display_name = key
 			if(holder)
 				if(holder.fakekey)
@@ -221,14 +222,15 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 			if(istype(mob, /mob/dead/observer)) // admins
 				if(holder) // final sanity check
 					display_name = key // admins display key as dead mobs.
-			to_chat(C, "<span class='looc'><span class='prefix'>LOOC:</span> <EM>[display_name]:</EM> <span class='message'>[msg]</span></span>")
+*/
+			to_chat(C, "<span class='looc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
 
 	for(var/client/C in GLOB.admins)
 		if(C.prefs.toggles & CHAT_LOOC)
 			var/prefix = "(R)LOOC"
 			if (C.mob in heard)
 				prefix = "LOOC"
-			to_chat(C, "<span class='looc'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]:</EM> <span class='message'>[msg]</span></span>")
+			to_chat(C, "<span class='looc'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.mob.key]:</EM> <span class='message'>[msg]</span></span>")
 
 
 //Checks admin notice
