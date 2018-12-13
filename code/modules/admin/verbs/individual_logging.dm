@@ -1,11 +1,11 @@
 /proc/show_individual_logging_panel(mob/M, source = LOGSRC_CLIENT, type = INDIVIDUAL_ATTACK_LOG)
 	if(!M || !ismob(M))
 		return
-	
+
 	//Add client links
 	var/dat = ""
-	if(M.client) 
-		dat += "<center><p>Client</p></center>"	
+	if(M.client)
+		dat += "<center><p>Client</p></center>"
 		dat += "<center><a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_ATTACK_LOG];log_src=[LOGSRC_CLIENT]'>Attack log</a> | "
 		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_SAY_LOG];log_src=[LOGSRC_CLIENT]'>Say log</a> | "
 		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_EMOTE_LOG];log_src=[LOGSRC_CLIENT]'>Emote log</a> | "
@@ -16,12 +16,13 @@
 		dat += "<p> No client attached to mob </p>"
 
 	dat += "<hr style='background:#000000; border:0; height:1px'>"
-	dat += "<center><p>Mob</p></center>"	
+	dat += "<center><p>Mob</p></center>"
 	//Add the links for the mob specific log
 	dat += "<center><a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_ATTACK_LOG];log_src=[LOGSRC_MOB]'>Attack log</a> | "
 	dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_SAY_LOG];log_src=[LOGSRC_MOB]'>Say log</a> | "
 	dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_EMOTE_LOG];log_src=[LOGSRC_MOB]'>Emote log</a> | "
 	dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_OOC_LOG];log_src=[LOGSRC_MOB]'>OOC log</a> | "
+	dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_LOOC_LOG];log_src=[LOGSRC_MOB]'>LOOC log</a> | "
 	dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_SHOW_ALL_LOG];log_src=[LOGSRC_MOB]'>Show all</a> | "
 	dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[type];log_src=[LOGSRC_MOB]'>Refresh</a></center>"
 

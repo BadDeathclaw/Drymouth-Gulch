@@ -131,6 +131,106 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 		prefs.ooccolor = initial(prefs.ooccolor)
 		prefs.save_preferences()
 
+/client/verb/looc(msg as text)
+	set name = "LOOC"
+	set category = "OOC"
+	set desc = "Local OOC, seen only by those in view."
+
+	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		return
+
+	if(!mob)
+		return
+
+	if(IsGuestKey(key))
+		to_chat(src, "<span class='warning'>Guests may not use OOC.</span>")
+		return
+
+	if(istype(mob, /mob/dead/observer))
+		if(!holder)
+			to_chat(src, "<span class='warning'>Ghosts cannot use LOOC.</span>")
+			return
+
+	if(isliving(mob))
+		var/mob/living/L = mob
+		if(L.health < 0)
+			to_chat(src, "<span class='warning'>LOOC doesn't work while you're in crit.</span>")
+			return
+
+		if(L.stat != CONSCIOUS)
+			to_chat(src, "<span class='warning>Nice try.</span>")
+			return
+
+	if(!holder)
+		if(!GLOB.ooc_allowed)
+			to_chat(src, "<span class='danger'>OOC is globally muted.</span>")
+			return
+		if(!GLOB.dooc_allowed && (mob.stat == DEAD))
+			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+			return
+		if(prefs.muted & MUTE_OOC)
+			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
+			return
+		if(prefs.muted & MUTE_LOOC)
+			to_chat(src, "<span class='danger'>You cannot use LOOC (muted).</span>")
+			return
+	if(jobban_isbanned(src.mob, "LOOC"))
+		to_chat(src, "<span class='danger'>You have been banned from LOOC.</span>")
+		return
+	if(QDELETED(src))
+		return
+
+	msg = copytext(sanitize(msg), 1, MAX_MESSAGE_LEN)
+	var/raw_msg = msg
+
+	if(!msg)
+		return
+
+	msg = emoji_parse(msg)
+
+	if((copytext(msg, 1, 2) in list(".",";",":","#")) || (findtext(lowertext(copytext(msg, 1, 5)), "say")))
+		if(alert("Your message \"[raw_msg]\" looks like it was meant for in game communication, say it in LOOC?", "Meant for LOOC?", "No", "Yes") != "Yes")
+			return
+
+	if(!(prefs.chat_toggles & CHAT_LOOC))
+		to_chat(src, "<span class='danger'>You have LOOC muted.</span>")
+		return
+
+
+	log_talk(mob,"[key_name(src)] : [raw_msg]",LOGLOOC)
+	mob.log_message("[key]: [raw_msg]", INDIVIDUAL_LOOC_LOG)
+
+	var/list/heard = view(7, mob)
+	for(var/mob/M in heard)
+		if(!M.client)
+			continue
+
+		var/client/C = M.client
+		if (C in GLOB.admins) // admins are handled LATER with ckeys.
+			continue
+
+		if(C.prefs.toggles & CHAT_LOOC)
+			var/display_name = key
+			if(holder)
+				if(holder.fakekey)
+					if(C.holder)
+						display_name = "[holder.fakekey]/([key])"
+					else
+						display_name = holder.fakekey
+			if(istype(mob, /mob/dead/observer)) // admins
+				if(holder) // final sanity check
+					display_name = key // admins display key as dead mobs.
+			to_chat(C, "<span class='looc'><span class='prefix'>LOOC:</span> <EM>[display_name]:</EM> <span class='message'>[msg]</span></span>")
+
+	for(var/client/C in GLOB.admins)
+		if(C.prefs.toggles & CHAT_LOOC)
+			var/prefix = "(R)LOOC"
+			if (C.mob in heard)
+				prefix = "LOOC"
+			to_chat(C, "<span class='looc'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]:</EM> <span class='message'>[msg]</span></span>")
+
+
 //Checks admin notice
 /client/verb/admin_notice()
 	set name = "Adminnotice"
