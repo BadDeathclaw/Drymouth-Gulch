@@ -3,7 +3,7 @@
 
 /obj/machinery/syndicatebomb
 	icon = 'icons/obj/assemblies.dmi'
-	name = "syndicate bomb"
+	name = "big bomb device"
 	icon_state = "syndicate-bomb"
 	desc = "A large and menacing device. Can be bolted down with a wrench."
 
@@ -14,8 +14,8 @@
 
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_OFFLINE
 
-	var/minimum_timer = 90
-	var/timer_set = 90
+	var/minimum_timer = 180
+	var/timer_set = 180
 	var/maximum_timer = 60000
 
 	var/can_unanchor = TRUE
