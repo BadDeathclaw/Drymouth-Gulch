@@ -1,6 +1,8 @@
 /*Power cells are in code\modules\power\cell.dm
 
-If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fit with the clamp to not confuse the user or cause possible exploits.*/
+If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fit with the clamp to not confuse the user or cause possible exploits.
+gene_modder.dm is future proofed against stock parts now, yay
+*/
 /obj/item/storage/part_replacer
 	name = "rapid part exchange device"
 	desc = "Special mechanical module made to store, sort, and apply standard machine parts."
@@ -76,7 +78,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/stock_parts/get_part_rating()
 	return rating
 
-//Rating 1
+//Tier 1
 
 /obj/item/stock_parts/capacitor
 	name = "capacitor"
@@ -108,7 +110,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	icon_state = "matter_bin"
 	materials = list(MAT_METAL=80)
 
-//Rating 2
+//Tier 2
 
 /obj/item/stock_parts/capacitor/adv
 	name = "advanced capacitor"
@@ -145,78 +147,78 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	rating = 2
 	materials = list(MAT_METAL=80)
 
-//Rating 3
+//Tier 3
 
 /obj/item/stock_parts/capacitor/super
 	name = "super capacitor"
 	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
 	icon_state = "super_capacitor"
-	rating = 3
+	rating = 4
 	materials = list(MAT_METAL=50, MAT_GLASS=50)
 
 /obj/item/stock_parts/scanning_module/phasic
 	name = "phasic scanning module"
 	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
 	icon_state = "super_scan_module"
-	rating = 3
+	rating = 4
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 
 /obj/item/stock_parts/manipulator/pico
 	name = "pico-manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "pico_mani"
-	rating = 3
+	rating = 4
 	materials = list(MAT_METAL=30)
 
 /obj/item/stock_parts/micro_laser/ultra
 	name = "ultra-high-power micro-laser"
 	icon_state = "ultra_high_micro_laser"
 	desc = "A tiny laser used in certain devices."
-	rating = 3
+	rating = 4
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
 
 /obj/item/stock_parts/matter_bin/super
 	name = "super matter bin"
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "super_matter_bin"
-	rating = 3
+	rating = 4
 	materials = list(MAT_METAL=80)
 
-//Rating 4
+//Tier 4
 
 /obj/item/stock_parts/capacitor/quadratic
 	name = "quadratic capacitor"
 	desc = "An capacity capacitor used in the construction of a variety of devices."
 	icon_state = "quadratic_capacitor"
-	rating = 4
+	rating = 8
 	materials = list(MAT_METAL=50, MAT_GLASS=50)
 
 /obj/item/stock_parts/scanning_module/triphasic
 	name = "triphasic scanning module"
 	desc = "A compact, ultra resolution triphasic scanning module used in the construction of certain devices."
 	icon_state = "triphasic_scan_module"
-	rating = 4
+	rating = 8
 	materials = list(MAT_METAL=50, MAT_GLASS=20)
 
 /obj/item/stock_parts/manipulator/femto
 	name = "femto-manipulator"
 	desc = "A tiny little manipulator used in the construction of certain devices."
 	icon_state = "femto_mani"
-	rating = 4
+	rating = 8
 	materials = list(MAT_METAL=30)
 
 /obj/item/stock_parts/micro_laser/quadultra
 	name = "quad-ultra micro-laser"
 	icon_state = "quadultra_micro_laser"
 	desc = "A tiny laser used in certain devices."
-	rating = 4
+	rating = 8
 	materials = list(MAT_METAL=10, MAT_GLASS=20)
 
 /obj/item/stock_parts/matter_bin/bluespace
 	name = "bluespace matter bin"
 	desc = "A container designed to hold compressed matter awaiting reconstruction."
 	icon_state = "bluespace_matter_bin"
-	rating = 4
+	rating = 8
 	materials = list(MAT_METAL=80)
 
 // Subspace stock parts
