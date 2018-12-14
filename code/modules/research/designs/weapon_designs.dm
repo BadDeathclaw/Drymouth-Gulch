@@ -472,3 +472,33 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 */
+
+/datum/design/powersink
+	name = "Power Sink Beacon Tool"
+	desc = "A handheld device that when activated deploys a power sink, it can take power out of a network and explodes once it has enough charge."
+	id = "powersink"
+	build_type = PROTOLATHE
+	materials = list(MAT_SILVER = 1000, MAT_URANIUM = 1000, MAT_METAL = 20000, MAT_DIAMOND = 200, MAT_BLUESPACE = 500) //Tame compared to big bomb
+	build_path = /obj/item/sbeacondrop/powersink
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/bigbomb //Fun fact: the advanced multitool can easily disarm this without it ever exploding
+	name = "Big Bomb Beacon Tool"
+	desc = "A handheld device that when activated deploys a unarmed bomb, this bomb can be wrenched down as well as having a built in timer. Be sure not to be around once it ticks off."
+	id = "bigbomb"
+	build_type = PROTOLATHE
+	materials = list(MAT_SILVER = 4000, MAT_URANIUM = 4000, MAT_METAL = 20000, MAT_DIAMOND = 1000, MAT_BLUESPACE = 2000)
+	build_path = /obj/item/sbeacondrop/bomb
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/bigredbutton
+	name = "Big Red Button"
+	desc = "A tiny big red button, pressing this while planted bombs exist is either a great or horrible idea."
+	id = "bigredbutton"
+	build_type = PROTOLATHE
+	materials = list(
+	build_path = /obj/item/syndicatedetonator
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
