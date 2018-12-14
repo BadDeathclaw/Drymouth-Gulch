@@ -446,7 +446,7 @@
 	display_name = "Advanced Cybernetic Implants"
 	description = "Upgraded and more powerful cybernetic implants."
 	prereq_ids = list("neural_programming", "cyber_implants","integrated_HUDs")
-	design_ids = list("ci-toolset", "ci-surgery", "ci-reviver", "ci-nutrimentplus")
+	design_ids = list("ci-toolset", "ci-surgery", "ci-reviver", "ci-nutrimentplus", "advancedliver")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -828,6 +828,15 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 */
+
+/datum/techweb_node/advmedicalweapon
+	id = "advmedical_weapon"
+	display_name = "Advanced Medical Weaponry"
+	description = "Allows construction of a scaled down odysseus syringe gun, it can also synthesize reagents and different kinds of syringes on the go."
+	prereq_ids = list("medical_weapons", "med_mech_tools")
+	design_ids = list("advsyringe")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+
 /datum/techweb_node/mech_diamond_drill
 	id = "mech_diamond_drill"
 	display_name =  "Exosuit Diamond Drill"
@@ -844,7 +853,7 @@
 	display_name = "Advanced Tool Technology"
 	description = "Things used by the really advanced people."
 	prereq_ids = list("biotech","engineering")
-	design_ids = list("industrcd", "circuitmaker", "turretmaker", "protolathe")
+	design_ids = list("industrcd", "circuitmaker", "turretmaker", "protolathe", "rld")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 20000
 
@@ -853,7 +862,7 @@
 	display_name = "Advanced Biological Tools"
 	description = "Advanced biological tools."
 	prereq_ids = list("alientech", "adv_biotech")
-	design_ids = list("alien_scalpel", "alien_hemostat", "alien_retractor", "alien_saw", "alien_drill", "alien_cautery")
+	design_ids = list("advancedtoolbox")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 20000
 
@@ -862,7 +871,7 @@
 	display_name = "Advanced Engineering"
 	description = "Very advanced engineering tools"
 	prereq_ids = list("alientech", "adv_engi")
-	design_ids = list("alien_wrench", "alien_wirecutters", "alien_screwdriver", "alien_crowbar", "alien_welder", "alien_multitool")
+	design_ids = list("advancedduffelbag")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 20000
 
