@@ -14,7 +14,7 @@
 	var/cube_production = 1
 
 /obj/machinery/monkey_recycler/RefreshParts()
-	var/req_grind = 5
+	var/req_grind = 9
 	var/cubes_made = 1
 	for(var/obj/item/stock_parts/manipulator/B in component_parts)
 		req_grind -= B.rating
