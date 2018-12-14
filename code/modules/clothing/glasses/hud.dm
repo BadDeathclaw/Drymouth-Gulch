@@ -199,3 +199,26 @@
 	if(. & EMP_PROTECT_SELF)
 		return
 	thermal_overload()
+
+/obj/item/clothing/glasses/hud/advanced
+	name = "advanced HUD glasses"
+	desc = "A combination of several HUD glasses and NVG technology results in this pair of glasses."
+	darkness_view = 8
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	vision_flags = SEE_MOB
+	flash_protect = 3
+	scan_reagents = 1
+	icon_state = "thermal"
+	glass_colour_type = /datum/client_colour/glass_color/red
+
+/obj/item/clothing/glasses/hud/advanced/equipped(mob/living/carbon/human/user, slot)
+	..()
+	for(var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
+		var/datum/atom_hud/H = GLOB.huds[hudtype]
+		H.add_hud_to(user)
+
+/obj/item/clothing/glasses/hud/advanced/dropped(mob/living/carbon/human/user, slot)
+	..()
+	for(var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
+		var/datum/atom_hud/H = GLOB.huds[hudtype]
+		H.remove_hud_from(user)
