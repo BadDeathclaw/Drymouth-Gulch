@@ -45,3 +45,80 @@
 	if(chambered && !chambered.BB)
 		chambered.newshot()
 	last_synth = world.time
+
+/obj/item/gun/chem/advanced
+	name = "advanced syringe gun"
+	desc = "A special syringe gun that can synthesize syringes and reagents to go into the syringe. Fires fifteen unit syringes and will copy any reagents inserted into the internal fifteen unit storage."
+	time_per_syringe = 30
+	syringes_left = 6
+	var/syringetype = "regular"
+	var/syringecapacity = 15
+
+//The parent of this already handles processing on init and destroy
+/obj/item/gun/chem/advanced/Initialize()
+	. = ..()
+	chambered = new /obj/item/ammo_casing/chemgun/advanced(src)
+	create_reagents(60)
+
+/obj/item/gun/chem/advanced/attack_self(mob/user)
+	switch(syringetype)
+		if("regular")
+			time_per_syringe = 50
+			syringecapacity = 20
+			syringetype = "cyro"
+		if("cyro")
+			time_per_syringe = 75
+			syringecapacity = 10
+			syringetype = "piercing"
+		if("piercing")
+			syringecapacity = 60
+			syringetype = "bluespace"
+			time_per_syringe = 150
+		if("bluespace")
+			syringecapacity = 15
+			syringetype = "regular"
+			time_per_syringe = 30
+	to_chat(user, "You switch the syringe to synthesize to [syringetype] syringes, it will now copy up to [syringecapacity] units of reagents.")
+
+/obj/item/ammo_casing/chemgun/advanced
+	projectile_type = /obj/item/projectile/bullet/dart/advanced
+	firing_effect_type = null
+
+/obj/item/ammo_casing/chemgun/advanced/ready_proj(atom/target, mob/living/user, quiet, zone_override = "")
+	if(!BB)
+		return
+	if(istype(loc, /obj/item/gun/chem/advanced))
+		var/obj/item/gun/chem/advanced/CG = loc
+		switch(syringetype)
+			if("regular")
+				BB.sy = new obj/item/syringe(src)
+			if("cyro")
+				BB.sy = new obj/item/syringe/noreact(src)
+			if("piercing")
+				BB.sy = new obj/item/syringe/piercing(src)
+			if("bluespace")
+				BB.sy = new obj/item/syringe/bluespace(src)
+		if(BB.sy)
+			CG.reagents.copy_to(BB.sy, CG.syringecapacity)
+		if(CG.syringes_left <= 0)
+			return
+		if(syringetype == "piercing")
+			BB.piercing = TRUE
+		BB.reagents.set_reacting(TRUE)
+		if(syringetype == "cyro")
+			BB.reagents.set_reacting(FALSE)
+		BB.create_reagents(CG.syringecapacity)
+		CG.reagents.copy_to(BB, CG.syringecapacity)
+		BB.name = "chemical dart"
+		CG.syringes_left--
+	..()
+
+/obj/item/projectile/bullet/dart/advanced
+	var/obj/item/syringe/sy
+	damage = 0
+
+/obj/item/projectile/bullet/dart/advanced/on_hit(atom/target, blocked = FALSE)
+	if(blocked == 100 || iscarbon(target) || target.density)
+		return ..()
+	BB.sy.forceMove(get_turf(src))
+	return
