@@ -1,5 +1,7 @@
 
-//Current rate: 132500 research points in 90 minutes
+//Current rate: 108000 research points in 90 minutes
+//20 points per second, 1200 per minute, 72000 an hour
+
 
 //Base Node
 /datum/techweb_node/base
@@ -853,7 +855,7 @@
 	display_name = "Advanced Tool Technology"
 	description = "Things used by the really advanced people."
 	prereq_ids = list("biotech","engineering")
-	design_ids = list("industrcd", "circuitmaker", "turretmaker", "protolathe", "rld")
+	design_ids = list("industrcd", "circuitmaker", "turretmaker", "rld")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 20000
 
