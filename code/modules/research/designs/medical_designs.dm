@@ -597,3 +597,13 @@
 	build_path = /obj/item/disk/surgery/necrotic_revival
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/advancedliver
+	name = "Advanced Cybernetic Liver Implant"
+	desc = "A liver replacement that can also synthesize chemicals on the go."
+	id = "advancedliver"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 2000, MAT_DIAMOND = 1500, MAT_BLUESPACE = 2000)
+	build_path = 
+	category = list("Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL || DEPARTMENTAL_FLAG_SCIENCE
