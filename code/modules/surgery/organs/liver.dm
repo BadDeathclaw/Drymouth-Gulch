@@ -87,7 +87,7 @@
 			damage+=50
 
 /obj/item/organ/liver/cybernetic/upgraded/advanced //hey thats pretty good
-	name = "advanced cybernetic liver
+	name = "advanced cybernetic liver"
 	desc = "An upgraded version of the advanced cybernetic liver, this time it can heal the body VIA synthesis of various chemicals."
 
 /obj/item/organ/liver/cybernetic/upgraded/advanced/on_life()
