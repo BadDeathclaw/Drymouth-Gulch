@@ -882,7 +882,7 @@
 	display_name = "Very Dangerous Technology"
 	description = "Dangerous research used to create dangerous objects."
 	prereq_ids = list("adv_engi", "adv_weaponry", "explosive_weapons")
-	design_ids = list("borg_syndicate_module", "suppressor")
+	design_ids = list("borg_syndicate_module", "suppressor", "powersink", "bigbomb", "bigredbutton") //Advanced multitool can disarm the big bomb no problem, thankfully
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
