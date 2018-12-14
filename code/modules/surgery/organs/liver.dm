@@ -85,3 +85,21 @@
 			damage+=100
 		if(2)
 			damage+=50
+
+/obj/item/organ/liver/cybernetic/upgraded/advanced //hey thats pretty good
+	name = "advanced cybernetic liver
+	desc = "An upgraded version of the advanced cybernetic liver, this time it can heal the body VIA synthesis of various chemicals."
+
+/obj/item/organ/liver/cybernetic/upgraded/advanced/on_life()
+	..()
+	var/mob/living/carbon/C = owner
+
+	if(istype(C))
+		if(!(C.has_reagent("mannitol", 10)))
+			C.add_reagent("mannitol", 10)
+		if(!(C.has_reagent("earthsblood", 10)))
+			C.add_reagent("earthsblood", 10)
+		if(!(C.has_reagent("tricordrazine", 10)))
+			C.add_reagent("tricordrazine", 10)
+		if(!(C.has_reagent("omnizine", 5)))
+			C.add_reagent("omnizine", 5)
