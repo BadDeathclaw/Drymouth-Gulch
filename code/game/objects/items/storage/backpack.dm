@@ -445,12 +445,12 @@
 	desc = "A large duffel bag for holding extra medical supplies - this one seems to be designed for holding advanced surgical tools."
 
 /obj/item/storage/backpack/duffelbag/med/surgery/advanced/PopulateContents()
-	new /obj/item/scalpel/abductor(src)
-	new /obj/item/hemostat/abductor(src)
-	new /obj/item/retractor/abductor(src)
-	new /obj/item/circular_saw/abductor(src)
-	new /obj/item/surgicaldrill/abductor(src)
-	new /obj/item/cautery/abductor(src)
+	new /obj/item/scalpel/alien(src)
+	new /obj/item/hemostat/alien(src)
+	new /obj/item/retractor/alien(src)
+	new /obj/item/circular_saw/alien(src)
+	new /obj/item/surgicaldrill/alien(src)
+	new /obj/item/cautery/alien(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/ammo
 	name = "ammunition duffel bag"
