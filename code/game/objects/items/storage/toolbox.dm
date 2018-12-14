@@ -207,3 +207,13 @@
 	new/obj/item/stack/cable_coil/orange(src)
 	new/obj/item/stack/cable_coil/cyan(src)
 	new/obj/item/stack/cable_coil/white(src)
+
+/obj/item/storage/toolbox/advanced //A toolbox for holding advanced tools, used to cut down on clutter in the RnD menu, it's otherwise a regular toolbox but it contains the tools
+
+/obj/item/storage/toolbox/advanced/PopulateContents()
+	new /obj/item/screwdriver/abductor(src)
+	new /obj/item/wrench/abductor(src)
+	new /obj/item/weldingtool/abductor(src)
+	new /obj/item/crowbar/abductor(src)
+	new /obj/item/wirecutters/abductor(src)
+	new /obj/item/multitool/abductor(src)
