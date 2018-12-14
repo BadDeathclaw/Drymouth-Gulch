@@ -41,3 +41,43 @@
 	construction_time = 100
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+	
+/datum/design/advancedhud
+	name = "Advanced HUD"
+	desc = "Some pretty advanced glasses."
+	id = "advanced_hud"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_URANIUM = 1000, MAT_PLASMA = 300)
+	build_path = /obj/item/clothing/glasses/hud/advanced
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/advancedtoolbox
+	name = "Toolbox of Advanced Construction Tools"
+	desc = "A toolbox that contains advanced construction tools."
+	id = "advancedtoolbox" //Put into design_ids of subdermal_implants
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 10000, MAT_SILVER = 5000, MAT_PLASMA = 5000, MAT_TITANIUM = 5000, MAT_DIAMOND = 5000)
+	build_path = /obj/item/storage/toolbox/advanced
+	category = list("Misc")
+	departmental_flags =  DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/advancedduffelbag
+	name = "Surgery Duffelbag of Advanced Surgical Tools"
+	desc = "A duffelbag containing advanced surgical tools."
+	id = "advancedduffelbag" //Put into design_ids of subdermal_implants
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 10000, MAT_SILVER = 5000, MAT_PLASMA = 5000, MAT_TITANIUM = 5000, MAT_DIAMOND = 5000)
+	build_path = /obj/item/storage/backpack/duffelbag/med/surgery/advanced
+	category = list("Misc")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL || DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/rld
+	name = "Rapid Light Construction Device"
+	desc = "A tool that can make multi colored flares and light structures."
+	id = "rld"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 20000, MAT_SILVER = 1000, MAT_PLASMA = 1000, MAT_URANIUM = 1000)
+	build_path = /obj/item/construction/rld
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
