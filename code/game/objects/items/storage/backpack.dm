@@ -441,6 +441,17 @@
 	new /obj/item/clothing/mask/muzzle(src)
 	new /obj/item/mmi/syndie(src)
 
+/obj/item/storage/backpack/duffelbag/med/surgery/advanced //Same as the advanced toolbox but contains the advanced versions, used for techwebs to cut down on clutter
+	desc = "A large duffel bag for holding extra medical supplies - this one seems to be designed for holding advanced surgical tools."
+
+/obj/item/storage/backpack/duffelbag/med/surgery/advanced/PopulateContents()
+	new /obj/item/scalpel/abductor(src)
+	new /obj/item/hemostat/abductor(src)
+	new /obj/item/retractor/abductor(src)
+	new /obj/item/circular_saw/abductor(src)
+	new /obj/item/surgicaldrill/abductor(src)
+	new /obj/item/cautery/abductor(src)
+
 /obj/item/storage/backpack/duffelbag/syndie/ammo
 	name = "ammunition duffel bag"
 	desc = "A large duffel bag for holding extra weapons ammunition and supplies."
