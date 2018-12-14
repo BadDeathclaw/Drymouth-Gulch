@@ -42,7 +42,7 @@
 	efficiency = initial(efficiency)* E
 	min_health = initial(min_health) * E
 	available_chems = list()
-	for(var/i in 1 to I)
+	for(var/i in 1 to min(4, I))
 		available_chems |= possible_chems[i]
 	reset_chem_buttons()
 
