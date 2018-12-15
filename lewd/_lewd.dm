@@ -61,7 +61,10 @@
 	return FALSE
 
 /mob/living/carbon/human/has_lips()
-	return TRUE
+	if(!is_muzzled())
+		return FALSE
+	else
+		return TRUE
 
 /proc/cum_splatter(target) // Like blood_splatter(), but much more questionable on a resume.
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
@@ -145,11 +148,11 @@
 		add_logs(partner, src, "came on")
 
 	if(multiorgasms > (sexual_potency * 0.34)) //AAAAA, WE DONT WANT NEGATIVES HERE, RE
-		refactory_period = rand(250,400) - sexual_potency//sex cooldown
-		src.set_drugginess(rand(20,30))
+		refactory_period = rand(250, 400) - sexual_potency//sex cooldown
+		src.set_drugginess(rand(20, 30))
 	else
-		refactory_period = rand(250,400) - sexual_potency
-		src.set_drugginess(6)
+		refactory_period = rand(250, 400) - sexual_potency
+		src.set_drugginess(rand(5, 10))
 
 /mob/living/carbon/human/cum(mob/partner, target_orifice)
 	if(multiorgasms < sexual_potency)

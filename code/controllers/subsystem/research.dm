@@ -29,7 +29,7 @@ SUBSYSTEM_DEF(research)
 	//----------------------------------------------
 	var/singleincome = 20 //hardcode memes
 	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 60)
-	var/multiserver_calculation = TRUE //turning this on is a bad idea
+	var/multiserver_calculation = FALSE //turning this on is a bad idea (re: told you)
 	var/last_income = 0
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
 
