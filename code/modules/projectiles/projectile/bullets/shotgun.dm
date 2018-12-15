@@ -60,12 +60,12 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 20 //Up to 120 damage point blank compared to 90 damage from 3 burst of 556
+	damage = 9 //Up to 108 damage point blank
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
-	damage = 3
-	stamina = 25
+	damage = 1
+	stamina = 10
 
 /obj/item/projectile/bullet/pellet/Range()
 	..()
