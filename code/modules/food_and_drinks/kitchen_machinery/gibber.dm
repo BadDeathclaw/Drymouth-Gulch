@@ -26,7 +26,7 @@
 	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
 		meat_produced += B.rating
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		gib_time -= 5 * M.rating
+		gibtime -= 5 * M.rating
 		if(M.rating >= 2)
 			ignore_clothing = TRUE
 
@@ -98,7 +98,7 @@
 /obj/machinery/gibber/attackby(obj/item/P, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "grinder_open", "grinder", P))
 		return
-		
+
 	else if(default_pry_open(P))
 		return
 

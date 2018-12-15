@@ -498,7 +498,7 @@
 	desc = "A tiny big red button, pressing this while planted bombs exist is either a great or horrible idea."
 	id = "bigredbutton"
 	build_type = PROTOLATHE
-	materials = list(
+	materials = list(MAT_METAL = 10000, MAT_BLUESPACE = 500)
 	build_path = /obj/item/syndicatedetonator
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

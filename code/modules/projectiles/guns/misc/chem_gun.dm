@@ -85,40 +85,41 @@
 	firing_effect_type = null
 
 /obj/item/ammo_casing/chemgun/advanced/ready_proj(atom/target, mob/living/user, quiet, zone_override = "")
-	if(!BB)
+	if(!BB || !istype(BB, /obj/item/projectile/bullet/dart/advanced))
 		return
+	var/obj/item/projectile/bullet/dart/advanced/BB1 = BB
 	if(istype(loc, /obj/item/gun/chem/advanced))
 		var/obj/item/gun/chem/advanced/CG = loc
-		switch(syringetype)
+		switch(CG.syringetype)
 			if("regular")
-				BB.sy = new obj/item/syringe(src)
+				BB1.sy = new /obj/item/reagent_containers/syringe(src)
 			if("cyro")
-				BB.sy = new obj/item/syringe/noreact(src)
+				BB1.sy = new /obj/item/reagent_containers/syringe/noreact(src)
 			if("piercing")
-				BB.sy = new obj/item/syringe/piercing(src)
+				BB1.sy = new /obj/item/reagent_containers/syringe/piercing(src)
 			if("bluespace")
-				BB.sy = new obj/item/syringe/bluespace(src)
-		if(BB.sy)
-			CG.reagents.copy_to(BB.sy, CG.syringecapacity)
+				BB1.sy = new /obj/item/reagent_containers/syringe/bluespace(src)
+		if(BB1.sy)
+			CG.reagents.copy_to(BB1.sy, CG.syringecapacity)
 		if(CG.syringes_left <= 0)
 			return
-		if(syringetype == "piercing")
-			BB.piercing = TRUE
-		BB.reagents.set_reacting(TRUE)
-		if(syringetype == "cyro")
-			BB.reagents.set_reacting(FALSE)
-		BB.create_reagents(CG.syringecapacity)
-		CG.reagents.copy_to(BB, CG.syringecapacity)
-		BB.name = "chemical dart"
+		if(CG.syringetype == "piercing")
+			BB1.piercing = TRUE
+		BB1.reagents.set_reacting(TRUE)
+		if(CG.syringetype == "cyro")
+			BB1.reagents.set_reacting(FALSE)
+		BB1.create_reagents(CG.syringecapacity)
+		CG.reagents.copy_to(BB1, CG.syringecapacity)
+		BB1.name = "chemical dart"
 		CG.syringes_left--
 	..()
 
 /obj/item/projectile/bullet/dart/advanced
-	var/obj/item/syringe/sy
+	var/obj/item/reagent_containers/syringe/sy
 	damage = 0
 
 /obj/item/projectile/bullet/dart/advanced/on_hit(atom/target, blocked = FALSE)
 	if(blocked == 100 || iscarbon(target) || target.density)
 		return ..()
-	BB.sy.forceMove(get_turf(src))
+	sy.forceMove(get_turf(src))
 	return
