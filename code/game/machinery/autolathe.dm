@@ -388,6 +388,7 @@
 /obj/machinery/autolathe/constructionlathe
 	name = "Construction Lathe"
 	desc = "An autolathe that had VAULT-TEK DRM added to it to prevent it from producing weaponry."
+	circuit = /obj/item/circuitboard/machine/autolathe/constructionlathe
 	super_advanced_technology = FALSE
 
 	list/categories = list(
@@ -404,3 +405,8 @@
 
 /obj/machinery/autolathe/constructionlathe/adjust_hacked()
 	return
+
+/obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
+	..()
+	if(default_deconstruction_crowbar(O))
+		return TRUE

@@ -31,6 +31,10 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1)
 
+/obj/item/circuitboard/machine/autolathe/constructionlathe
+	name = "Constructionlathe (Machine Board)"
+	build_path = /obj/machinery/autolathe/constructionlathe
+
 /obj/item/circuitboard/machine/clonepod
 	name = "Clone Pod (Machine Board)"
 	build_path = /obj/machinery/clonepod
