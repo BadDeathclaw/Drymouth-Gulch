@@ -8,10 +8,16 @@ Science: 47 ACCESS_RESEARCH
 here's a tip, go search DEFINES/access.dm
 */
 
+/datum/outfit/job/vaultie/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_TECHNOPHREAK)
+
 /*
 Overseer
 */
-/datum/job/f13overseer
+/datum/job/vaultie/f13overseer
 	title = "Overseer"
 	flag = F13OVERSEER
 	department_flag = VAULT
@@ -27,17 +33,17 @@ Overseer
 	exp_requirements = 45
 	exp_type = EXP_TYPE_VAULT
 
-	outfit = /datum/outfit/job/f13overseer
+	outfit = /datum/outfit/job/vaultie/f13overseer
 
 	access = list()			//See get_access()
 	minimal_access = list()	//See get_access()
 
-/datum/job/f13overseer/get_access()
+/datum/job/vaultie/f13overseer/get_access()
 	return get_all_accesses()
 
-/datum/outfit/job/f13overseer
+/datum/outfit/job/vaultie/f13overseer
 	name = "Overseer"
-	jobtype = /datum/job/f13overseer
+	jobtype = /datum/job/vaultie/f13overseer
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -63,7 +69,7 @@ Overseer
 Head of Security
 */
 
-/datum/job/f13hos
+/datum/job/vaultie/f13hos
 	title = "Chief of Security"
 	flag = F13HOS
 	department_head = list("Overseer")
@@ -80,7 +86,7 @@ Head of Security
 	exp_type = EXP_TYPE_VAULT
 	exp_type_department = EXP_TYPE_SECURITY
 
-	outfit = /datum/outfit/job/f13hos
+	outfit = /datum/outfit/job/vaultie/f13hos
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_WEAPONS,ACCESS_FORENSICS_LOCKERS,
 						ACCESS_MORGUE, ACCESS_MAINT_TUNNELS, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_MINING, ACCESS_MEDICAL,
@@ -89,9 +95,9 @@ Head of Security
 						ACCESS_MORGUE, ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_MINING, ACCESS_MEDICAL, ACCESS_CARGO, ACCESS_HEADS,
 						ACCESS_HOS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_MINERAL_STOREROOM)
 
-/datum/outfit/job/f13hos
+/datum/outfit/job/vaultie/f13hos
 	name = "Chief of Security"
-	jobtype = /datum/job/f13hos
+	jobtype = /datum/job/vaultie/f13hos
 
 	id = /obj/item/card/id/silver
 	//pda
@@ -116,7 +122,7 @@ Head of Security
 /*
 Medical Doctor
 */
-/datum/job/f13doctor
+/datum/job/vaultie/f13doctor
 	title = "Vault-tec Doctor"
 	flag = F13DOCTOR
 	department_head = list("Overseer")
@@ -127,14 +133,14 @@ Medical Doctor
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
 
-	outfit = /datum/outfit/job/f13doctor
+	outfit = /datum/outfit/job/vaultie/f13doctor
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO)
 	minimal_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY, ACCESS_CHEMISTRY, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO)
 
-/datum/outfit/job/f13doctor
+/datum/outfit/job/vaultie/f13doctor
 	name = "Medical Doctor"
-	jobtype = /datum/job/f13doctor
+	jobtype = /datum/job/vaultie/f13doctor
 
 	//pda
 	uniform = 		/obj/item/clothing/under/f13/vault13
@@ -151,7 +157,7 @@ Medical Doctor
 /*
 Scientist
 */
-/datum/job/f13vaultscientist
+/datum/job/vaultie/f13vaultscientist
 	title = "Vault-tec Scientist"
 	flag = F13VAULTSCIENTIST
 	department_head = list("Overseer")
@@ -162,14 +168,14 @@ Scientist
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
 
-	outfit = /datum/outfit/job/f13vaultscientist
+	outfit = /datum/outfit/job/vaultie/f13vaultscientist
 
 	access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_TECH_STORAGE, ACCESS_CARGO)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO)
 
-/datum/outfit/job/f13vaultscientist
+/datum/outfit/job/vaultie/f13vaultscientist
 	name = "Scientist"
-	jobtype = /datum/job/f13vaultscientist
+	jobtype = /datum/job/vaultie/f13vaultscientist
 
 	//pda
 	uniform = 		/obj/item/clothing/under/f13/vault13
@@ -182,7 +188,7 @@ Scientist
 /*
 Security Officer
 */
-/datum/job/f13officer
+/datum/job/vaultie/f13officer
 	title = "Vault-tec Security"
 	flag = F13OFFICER
 	department_head = list("Chief of Security")
@@ -196,18 +202,18 @@ Security Officer
 	exp_requirements = 15
 	exp_type = EXP_TYPE_VAULT
 
-	outfit = /datum/outfit/job/f13security
+	outfit = /datum/outfit/job/vaultie/f13security
 
 	access = list(ACCESS_CARGO, ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_CARGO, ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //BUT SEE /DATUM/JOB/WARDEN/GET_ACCESS()
 
 
-/datum/job/f13officer/get_access()
+/datum/job/vaultie/f13officer/get_access()
 	var/list/L = list()
 	L |= ..() | check_config_for_sec_maint()
 	return L
 
-/datum/job/f13officer/after_spawn(mob/living/carbon/human/H, mob/M)
+/datum/job/vaultie/f13officer/after_spawn(mob/living/carbon/human/H, mob/M)
 	// Assign department security
 	var/department
 	if(M && M.client && M.client.prefs)
@@ -285,9 +291,9 @@ Security Officer
 
 
 
-/datum/outfit/job/f13security
+/datum/outfit/job/vaultie/f13security
 	name = "Vault-tec Security"
-	jobtype = /datum/job/f13officer
+	jobtype = /datum/job/vaultie/f13officer
 
 	//pda
 	ears = 			/obj/item/radio/headset/headset_vaultsec
@@ -332,7 +338,7 @@ Security Officer
 /*
 Station Engineer
 */
-/datum/job/f13vaultengineer
+/datum/job/vaultie/f13vaultengineer
 	title = "Vault-tec Engineer"
 	flag = F13VAULTENGINEER
 	department_head = list("Overseer")
@@ -343,14 +349,14 @@ Station Engineer
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
 
-	outfit = /datum/outfit/job/f13vaultengineer
+	outfit = /datum/outfit/job/vaultie/f13vaultengineer
 
 	access = list(ACCESS_CARGO, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_ATMOSPHERICS, ACCESS_TCOMSAT, ACCESS_MINERAL_STOREROOM)
 	minimal_access = list(ACCESS_CARGO, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_TECH_STORAGE, ACCESS_MINERAL_STOREROOM)
 
-/datum/outfit/job/f13vaultengineer
+/datum/outfit/job/vaultie/f13vaultengineer
 	name = "Vault-tec Engineer"
-	jobtype = /datum/job/f13vaultengineer
+	jobtype = /datum/job/vaultie/f13vaultengineer
 
 	//pda
 	ears = 			/obj/item/radio/headset/headset_vault
@@ -366,7 +372,7 @@ Station Engineer
 
 
 
-/datum/job/f13vaultDweller
+/datum/job/vaultie/f13vaultDweller
 	title = "Vault Dweller"
 	flag = ASSISTANT
 	department_flag = VAULT
@@ -375,23 +381,23 @@ Station Engineer
 	spawn_positions = 8
 	supervisors = "absolutely everyone"
 	selection_color = "#ddffdd"
-	access = list()			//See /datum/job/assistant/get_access()
-	minimal_access = list()	//See /datum/job/assistant/get_access()
-	outfit = /datum/outfit/job/f13vaultDweller
+	access = list()			//See /datum/job/vaultie/assistant/get_access()
+	minimal_access = list()	//See /datum/job/vaultie/assistant/get_access()
+	outfit = /datum/outfit/job/vaultie/f13vaultDweller
 	//antag_rep = 7
 
-/datum/job/f13vaultDweller/get_access()
+/datum/job/vaultie/f13vaultDweller/get_access()
 	if(CONFIG_GET(flag/assistants_have_maint_access) || !CONFIG_GET(flag/jobs_have_minimal_access)) //Config has assistant maint access set
 		. = ..()
 		. |= list(ACCESS_MAINT_TUNNELS)
 	else
 		return ..()
 
-/datum/outfit/job/f13vaultDweller
+/datum/outfit/job/vaultie/f13vaultDweller
 	name = "Vault Dweller"
-	jobtype = /datum/job/f13vaultDweller
+	jobtype = /datum/job/vaultie/f13vaultDweller
 
-/datum/outfit/job/f13vaultDweller/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/vaultie/f13vaultDweller/pre_equip(mob/living/carbon/human/H)
 	..()
 	if (CONFIG_GET(flag/grey_assistants))
 		uniform = /obj/item/clothing/under/f13/vault13

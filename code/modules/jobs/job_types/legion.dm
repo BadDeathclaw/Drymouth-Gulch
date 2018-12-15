@@ -1,9 +1,15 @@
+/datum/outfit/job/Legionnaire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_MONKEYLIKE)
+
 /*
-Legat
+Legate
 
 Needs whitelist
 */
-/datum/job/f13legate
+/datum/job/Legionnaire/f13legate
 	title = "Legate"
 	flag = F13LEGATE
 	department_flag = LEGION
@@ -17,14 +23,14 @@ Needs whitelist
 	exp_requirements = 100
 	exp_type = EXP_TYPE_LEGION
 
-	outfit = /datum/outfit/job/f13legate
+	outfit = /datum/outfit/job/Legionnaire/f13legate
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/f13legate
+/datum/outfit/job/Legionnaire/f13legate
 	name = "Legate"
-	jobtype = /datum/job/f13legate
+	jobtype = /datum/job/Legionnaire/f13legate
 
 
 	id = null
@@ -51,7 +57,7 @@ Needs whitelist
 /*
 Centurion
 */
-/datum/job/f13centurion
+/datum/job/Legionnaire/f13centurion
 	title = "Centurion"
 	flag = F13CENTURION
 	department_flag = LEGION
@@ -66,11 +72,11 @@ Centurion
 	exp_requirements = 45
 	exp_type = EXP_TYPE_LEGION
 
-	outfit = /datum/outfit/job/f13centurion
+	outfit = /datum/outfit/job/Legionnaire/f13centurion
 
-/datum/outfit/job/f13centurion
+/datum/outfit/job/Legionnaire/f13centurion
 	name = "Centurion"
-	jobtype = /datum/job/f13centurion
+	jobtype = /datum/job/Legionnaire/f13centurion
 
 	id = null
 	ears = null
@@ -96,16 +102,10 @@ Centurion
 		/obj/item/storage/bag/money/small/legion)
 	box = null
 
-/datum/outfit/job/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
 /*
 Veteran Decan
 */
-/datum/job/f13vetdecan
+/datum/job/Legionnaire/f13vetdecan
 	title = "Veteran Decanus"
 	flag = F13VETDECAN
 	department_flag = LEGION
@@ -115,11 +115,11 @@ Veteran Decan
 	supervisors = "the centurion"
 	selection_color = "#ffeeee"
 
-	outfit = /datum/outfit/job/f13vetdecan
+	outfit = /datum/outfit/job/Legionnaire/f13vetdecan
 
-/datum/outfit/job/f13vetdecan
+/datum/outfit/job/Legionnaire/f13vetdecan
 	name = "Veteran Decanus"
-	jobtype = /datum/job/f13vetdecan
+	jobtype = /datum/job/Legionnaire/f13vetdecan
 
 	id = null
 	ears = null
@@ -144,16 +144,10 @@ Veteran Decan
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
-/datum/outfit/job/f13vetdecan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
 /*
 Vexillarius
 */
-/datum/job/f13vexillarius
+/datum/job/Legionnaire/f13vexillarius
 	title = "Vexillarius"
 	flag = F13VEXILLARIUS
 	department_flag = LEGION
@@ -165,11 +159,11 @@ Vexillarius
 	exp_requirements = 20
 	exp_type = EXP_TYPE_LEGION
 
-	outfit = /datum/outfit/job/f13vexillarius
+	outfit = /datum/outfit/job/Legionnaire/f13vexillarius
 
-/datum/outfit/job/f13vexillarius
+/datum/outfit/job/Legionnaire/f13vexillarius
 	name = "Vexillarius"
-	jobtype = /datum/job/f13vexillarius
+	jobtype = /datum/job/Legionnaire/f13vexillarius
 
 	id = null
 	ears = null
@@ -193,16 +187,10 @@ Vexillarius
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
-/datum/outfit/job/f13vexillarius/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
 /*
 Decan
 */
-/datum/job/f13decan
+/datum/job/Legionnaire/f13decan
 	title = "Decanus"
 	flag = F13DECAN
 	department_flag = LEGION
@@ -214,11 +202,11 @@ Decan
 	exp_requirements = 20
 	exp_type = EXP_TYPE_LEGION
 
-	outfit = /datum/outfit/job/f13decan
+	outfit = /datum/outfit/job/Legionnaire/f13decan
 
-/datum/outfit/job/f13decan
+/datum/outfit/job/Legionnaire/f13decan
 	name = "Decanus"
-	jobtype = /datum/job/f13decan
+	jobtype = /datum/job/Legionnaire/f13decan
 
 	id = null
 	ears = null
@@ -243,16 +231,10 @@ Decan
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
-/datum/outfit/job/f13decan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
 /*
 Veteran
 */
-/datum/job/f13vetlegion
+/datum/job/Legionnaire/f13vetlegion
 	title = "Veteran Legionnaire"
 	flag = F13VETLEGION
 	department_flag = LEGION
@@ -264,11 +246,11 @@ Veteran
 	exp_requirements = 10
 	exp_type = EXP_TYPE_LEGION
 
-	outfit = /datum/outfit/job/f13vetlegion
+	outfit = /datum/outfit/job/Legionnaire/f13vetlegion
 
-/datum/outfit/job/f13vetlegion
+/datum/outfit/job/Legionnaire/f13vetlegion
 	name = "Veteran Legionnaire"
-	jobtype = /datum/job/f13vetlegion
+	jobtype = /datum/job/Legionnaire/f13vetlegion
 
 	id = null
 	ears = null
@@ -292,16 +274,10 @@ Veteran
 		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
 	box = null
 
-/datum/outfit/job/f13vetlegion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
 /*
 Legionary
 */
-/datum/job/f13legionary
+/datum/job/Legionnaire/f13legionary
 	title = "Legionary"
 	flag = F13LEGIONARY
 	department_flag = LEGION
@@ -311,11 +287,11 @@ Legionary
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
 
-	outfit = /datum/outfit/job/f13legionary
+	outfit = /datum/outfit/job/Legionnaire/f13legionary
 
-/datum/outfit/job/f13legionary
+/datum/outfit/job/Legionnaire/f13legionary
 	name = "Legionary"
-	jobtype = /datum/job/f13legionary
+	jobtype = /datum/job/Legionnaire/f13legionary
 
 	id = null
 	ears = null
@@ -339,13 +315,7 @@ Legionary
 		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
 	box = null
 
-/datum/outfit/job/f13legionary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
-/datum/job/f13explorer
+/datum/job/Legionnaire/f13explorer
 	title = "Explorer"
 	flag = F13EXPLORER
 	department_flag = LEGION
@@ -357,11 +327,11 @@ Legionary
 	exp_requirements = 5
 	exp_type = EXP_TYPE_LEGION
 
-	outfit = /datum/outfit/job/f13explorer
+	outfit = /datum/outfit/job/Legionnaire/f13explorer
 
-/datum/outfit/job/f13explorer
+/datum/outfit/job/Legionnaire/f13explorer
 	name = "Explorer"
-	jobtype = /datum/job/f13explorer
+	jobtype = /datum/job/Legionnaire/f13explorer
 
 	id = null
 	ears = null
@@ -384,13 +354,7 @@ Legionary
 	box = null
 	r_pocket = /obj/item/binocs
 
-/datum/outfit/job/f13explorer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
-
-/datum/job/f13scout
+/datum/job/Legionnaire/f13scout
 	title = "Scout"
 	flag = F13SCOUT
 	department_flag = LEGION
@@ -400,11 +364,11 @@ Legionary
 	supervisors = "explorer troops"
 	selection_color = "#ffeeee"
 
-	outfit = /datum/outfit/job/f13scout
+	outfit = /datum/outfit/job/Legionnaire/f13scout
 
-/datum/outfit/job/f13scout
+/datum/outfit/job/Legionnaire/f13scout
 	name = "Scout"
-	jobtype = /datum/job/f13scout
+	jobtype = /datum/job/Legionnaire/f13scout
 
 	id = null
 	ears = null
@@ -425,12 +389,6 @@ Legionary
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
 	box = null
-
-/datum/outfit/job/f13scout/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13campfollower
 	title = "Camp Follower"

@@ -386,8 +386,10 @@
 	return
 
 /obj/machinery/autolathe/constructionlathe
-	name = "constructionlathe"
+	name = "Construction Lathe"
 	desc = "An autolathe that had VAULT-TEK DRM added to it to prevent it from producing weaponry."
+	super_advanced_technology = FALSE
+
 	list/categories = list(
 							"Tools",
 							"Electronics",
@@ -399,3 +401,6 @@
 							"Dinnerware",
 							"Imported"
 							)
+
+/obj/machinery/autolathe/constructionlathe/adjust_hacked()
+	return
