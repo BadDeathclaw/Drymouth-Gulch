@@ -276,7 +276,7 @@
 
 /obj/effect/mob_spawn/human/corpse/assistant
 	name = "Assistant"
-	outfit = /datum/job/f13wastelander
+	outfit = /datum/job/wastelander/f13wastelander
 
 /obj/effect/mob_spawn/human/corpse/assistant/beesease_infection
 	disease = /datum/disease/beesease
