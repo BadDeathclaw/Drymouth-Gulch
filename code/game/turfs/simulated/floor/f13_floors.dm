@@ -7,7 +7,8 @@
 */
 
 /turf/open/floor/plating/f13/outside
-	name = "\proper desert"
+	name = "What the fuck mappers? why is this here"
+	desc = "If found, scream at the github repo about this"
 	icon_state = "wasteland1"
 	icon = 'icons/turf/f13desert.dmi'
 	light_range = 3
