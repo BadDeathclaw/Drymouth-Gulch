@@ -10,6 +10,7 @@
 		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_SAY_LOG];log_src=[LOGSRC_CLIENT]'>Say log</a> | "
 		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_EMOTE_LOG];log_src=[LOGSRC_CLIENT]'>Emote log</a> | "
 		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_OOC_LOG];log_src=[LOGSRC_CLIENT]'>OOC log</a> | "
+		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_LOOC_LOG];log_src=[LOGSRC_CLIENT]'>LOOC log</a> | "
 		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[INDIVIDUAL_SHOW_ALL_LOG];log_src=[LOGSRC_CLIENT]'>Show all</a> | "
 		dat += "<a href='?_src_=holder;[HrefToken()];individuallog=[REF(M)];log_type=[type];log_src=[LOGSRC_CLIENT]'>Refresh</a></center>"
 	else

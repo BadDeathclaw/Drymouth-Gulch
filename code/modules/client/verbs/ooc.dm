@@ -163,21 +163,20 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 			return
 
 	if(!holder)
-		if(!GLOB.ooc_allowed)
-			to_chat(src, "<span class='danger'>OOC is globally muted.</span>")
+		if(!GLOB.looc_allowed)
+			to_chat(src, "<span class='danger'>LOOC is globally muted.</span>")
 			return
-		if(!GLOB.dooc_allowed && (mob.stat == DEAD))
-			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+		if(!GLOB.dlooc_allowed && (mob.stat == DEAD))
+			to_chat(usr, "<span class='danger'>LOOC for dead mobs has been turned off.</span>")
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
-			return
-		if(prefs.muted & MUTE_LOOC)
 			to_chat(src, "<span class='danger'>You cannot use LOOC (muted).</span>")
 			return
-	if(jobban_isbanned(src.mob, "LOOC"))
+
+	if(jobban_isbanned(src.mob, "OOC"))
 		to_chat(src, "<span class='danger'>You have been banned from LOOC.</span>")
 		return
+
 	if(QDELETED(src))
 		return
 
@@ -201,37 +200,78 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 	log_talk(mob,"[key_name(src)] : [raw_msg]",LOGLOOC)
 	mob.log_message("[key]: [raw_msg]", INDIVIDUAL_LOOC_LOG)
 
-	var/list/heard = view(7, mob)
-	for(var/mob/M in heard)
-		if(!M.client)
+
+	var/list/clients_to_hear = list()
+	var/turf/looc_source = get_turf(mob.get_looc_source())
+	var/list/stuff_that_hears = list()
+	for(var/mob/M in get_hear(7, looc_source))
+		stuff_that_hears += M
+
+	for(var/mob/M in stuff_that_hears)
+		if((((M.client_mobs_in_contents) && (M.client_mobs_in_contents.len <= 0)) || !M.client_mobs_in_contents))
 			continue
 
-		var/client/C = M.client
-		if (C in GLOB.admins) // admins are handled LATER with ckeys.
-			continue
+		if(M.client && M.client.prefs.chat_toggles & CHAT_LOOC)
+			clients_to_hear += M.client
 
-		if(C.prefs.toggles & CHAT_LOOC)
-/*
-			var/display_name = key
-			if(holder)
-				if(holder.fakekey)
-					if(C.holder)
-						display_name = "[holder.fakekey]/([key])"
-					else
-						display_name = holder.fakekey
-			if(istype(mob, /mob/dead/observer)) // admins
-				if(holder) // final sanity check
-					display_name = key // admins display key as dead mobs.
-*/
-			to_chat(C, "<span class='looc'><span class='prefix'>LOOC:</span> <EM>[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
+		for(var/mob/mob in M.client_mobs_in_contents)
+			if(mob.client && mob.client.prefs && mob.client.prefs.chat_toggles & CHAT_LOOC)
+				clients_to_hear += mob.client
 
-	for(var/client/C in GLOB.admins)
-		if(C.prefs.toggles & CHAT_LOOC)
-			var/prefix = "(R)LOOC"
-			if (C.mob in heard)
-				prefix = "LOOC"
-			to_chat(C, "<span class='looc'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
+	var/message_admin = "<span class='looc'>LOOC: [ADMIN_LOOKUPFLW(mob)]: [msg]</span>"
+	var/message_admin_remote = "<span class='looc'><font color='black'>(R)</font>LOOC: [ADMIN_LOOKUPFLW(mob)]: [msg]</span>"
+	var/message_regular
+	if(isobserver(mob)) //if you're a spooky ghost
+		var/key_to_print = mob.key
+		if(holder && holder.fakekey)
+			key_to_print = holder.fakekey //stealthminning
 
+		message_regular = "<span class='looc'>LOOC: [key_to_print]: [msg]</span>"
+	else
+		message_regular = "<span class='looc'>LOOC: [mob.name]: [msg]</span>"
+
+	for(var/T in GLOB.clients)
+		var/client/C = T
+		if(C in GLOB.admins)
+			if(C in clients_to_hear)
+				to_chat(C, message_admin)
+			else
+				to_chat(C, message_admin_remote)
+
+		else if(C in clients_to_hear)
+			to_chat(C, message_regular)
+
+/mob/proc/get_looc_source()
+	return src
+
+/mob/living/silicon/ai/get_looc_source()
+	if(eyeobj)
+		return eyeobj
+
+	return src
+
+/proc/toggle_looc(toggle = null)
+	if(toggle != null) //if we're specifically en/disabling ooc
+		if(toggle != GLOB.looc_allowed)
+			GLOB.looc_allowed = toggle
+		else
+			return
+	else //otherwise just toggle it
+		GLOB.looc_allowed = !GLOB.looc_allowed
+	to_chat(world, "<B>The LOOC channel has been globally [GLOB.looc_allowed ? "enabled" : "disabled"].</B>")
+
+/proc/toggle_dlooc(toggle = null)
+	if(toggle != null)
+		if(toggle != GLOB.dlooc_allowed)
+			GLOB.dlooc_allowed = toggle
+		else
+			return
+	else
+		GLOB.dlooc_allowed = !GLOB.dlooc_allowed
+
+/client/proc/get_looc()
+	var/msg = input(src, null, "looc \"text\"") as text|null
+	looc(msg)
 
 //Checks admin notice
 /client/verb/admin_notice()
