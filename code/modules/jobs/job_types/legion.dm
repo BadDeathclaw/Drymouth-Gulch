@@ -3,9 +3,10 @@
 	if(visualsOnly)
 		return
 	H.add_trait(TRAIT_MONKEYLIKE)
-	if(H.gender = female)
+	if(H.gender == female)
 		to_chat(H.mob, "You need to be male.")
 		H.gender = male
+			H.real_name = random_unique_name(H.gender)
 
 /*
 Legate
