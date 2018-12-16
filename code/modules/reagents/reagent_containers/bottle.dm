@@ -77,10 +77,10 @@
 	desc = "A small bottle of charcoal, which removes toxins and other chemicals from the bloodstream."
 	list_reagents = list("charcoal" = 30)
 
-/obj/item/reagent_containers/glass/bottle/mutagen
-	name = "unstable mutagen bottle"
-	desc = "A small bottle of unstable mutagen. Randomly changes the DNA structure of whoever comes in contact."
-	list_reagents = list("mutagen" = 30)
+/obj/item/reagent_containers/glass/bottle/FEV_solution
+	name = "unstable FEV_solution bottle"
+	desc = "A small bottle of unstable FEV_solution. Randomly changes the DNA structure of whoever comes in contact."
+	list_reagents = list("FEV_solution" = 30)
 
 /obj/item/reagent_containers/glass/bottle/plasma
 	name = "liquid plasma bottle"

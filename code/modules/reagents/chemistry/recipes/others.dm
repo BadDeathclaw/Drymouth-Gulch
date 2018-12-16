@@ -130,7 +130,7 @@
 	name = "Mulligan"
 	id = "mulligan"
 	results = list("mulligan" = 1)
-	required_reagents = list("slime_toxin" = 1, "mutagen" = 1)
+	required_reagents = list("slime_toxin" = 1, "FEV_solution" = 1)
 
 
 ////////////////////////////////// VIROLOGY //////////////////////////////////////////
@@ -141,11 +141,11 @@
 	results = list("virusfood" = 15)
 	required_reagents = list("water" = 5, "milk" = 5)
 
-/datum/chemical_reaction/virus_food_mutagen
-	name = "mutagenic agar"
-	id = "mutagenvirusfood"
-	results = list("mutagenvirusfood" = 1)
-	required_reagents = list("mutagen" = 1, "virusfood" = 1)
+/datum/chemical_reaction/virus_food_FEV_solution
+	name = "FEV_solutionic agar"
+	id = "FEV_solutionvirusfood"
+	results = list("FEV_solutionvirusfood" = 1)
+	required_reagents = list("FEV_solution" = 1, "virusfood" = 1)
 
 /datum/chemical_reaction/virus_food_synaptizine
 	name = "virus rations"
@@ -165,17 +165,17 @@
 	results = list("weakplasmavirusfood" = 2)
 	required_reagents = list("synaptizine" = 1, "plasmavirusfood" = 1)
 
-/datum/chemical_reaction/virus_food_mutagen_sugar
+/datum/chemical_reaction/virus_food_FEV_solution_sugar
 	name = "sucrose agar"
 	id = "sugarvirusfood"
 	results = list("sugarvirusfood" = 2)
-	required_reagents = list("sugar" = 1, "mutagenvirusfood" = 1)
+	required_reagents = list("sugar" = 1, "FEV_solutionvirusfood" = 1)
 
-/datum/chemical_reaction/virus_food_mutagen_salineglucose
+/datum/chemical_reaction/virus_food_FEV_solution_salineglucose
 	name = "sucrose agar"
 	id = "salineglucosevirusfood"
 	results = list("sugarvirusfood" = 2)
-	required_reagents = list("salglu_solution" = 1, "mutagenvirusfood" = 1)
+	required_reagents = list("salglu_solution" = 1, "FEV_solutionvirusfood" = 1)
 
 /datum/chemical_reaction/virus_food_uranium
 	name = "Decaying uranium gel"
@@ -223,7 +223,7 @@
 
 	name = "Mix Virus 2"
 	id = "mixvirus2"
-	required_reagents = list("mutagen" = 1)
+	required_reagents = list("FEV_solution" = 1)
 	level_min = 2
 	level_max = 4
 
@@ -247,7 +247,7 @@
 
 	name = "Mix Virus 5"
 	id = "mixvirus5"
-	required_reagents = list("mutagenvirusfood" = 1)
+	required_reagents = list("FEV_solutionvirusfood" = 1)
 	level_min = 3
 	level_max = 3
 
@@ -544,7 +544,7 @@
 	name = "concentrated_barbers_aid"
 	id = "concentrated_barbers_aid"
 	results = list("concentrated_barbers_aid" = 2)
-	required_reagents = list("barbers_aid" = 1, "mutagen" = 1)
+	required_reagents = list("barbers_aid" = 1, "FEV_solution" = 1)
 
 /datum/chemical_reaction/saltpetre
 	name = "saltpetre"
@@ -568,7 +568,7 @@
 	name = "royal bee jelly"
 	id = "royal_bee_jelly"
 	results = list("royal_bee_jelly" = 5)
-	required_reagents = list("mutagen" = 10, "honey" = 40)
+	required_reagents = list("FEV_solution" = 10, "honey" = 40)
 
 /datum/chemical_reaction/laughter
 	name = "laughter"

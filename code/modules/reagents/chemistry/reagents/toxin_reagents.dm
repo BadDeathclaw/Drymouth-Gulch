@@ -24,16 +24,16 @@
 	toxpwr = 2.5
 	taste_description = "mushroom"
 
-/datum/reagent/toxin/mutagen
-	name = "Unstable mutagen"
-	id = "mutagen"
+/datum/reagent/toxin/FEV_solution
+	name = "Unstable FEV_solution"
+	id = "FEV_solution"
 	description = "Might cause unpredictable mutations. Keep away from children."
 	color = "#00FF00"
 	toxpwr = 0
 	taste_description = "slime"
 	taste_mult = 0.9
 
-/datum/reagent/toxin/mutagen/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
+/datum/reagent/toxin/FEV_solution/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
 	if(!..())
 		return
 	if(!M.has_dna())
@@ -48,7 +48,7 @@
 		M.domutcheck()
 	..()
 
-/datum/reagent/toxin/mutagen/on_mob_life(mob/living/carbon/M)
+/datum/reagent/toxin/FEV_solution/on_mob_life(mob/living/carbon/M)
 	if(istype(M))
 		M.apply_effect(5,EFFECT_IRRADIATE,0)
 	return ..()
