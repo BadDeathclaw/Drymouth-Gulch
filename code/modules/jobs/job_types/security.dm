@@ -1,4 +1,8 @@
-//Or you can just use the hierarchy properly. Or migrate the whole access system to a set of procs so you only have to write things once. Not this bullshit.
+//Warden and regular officers add this result to their get_access()
+/datum/job/proc/check_config_for_sec_maint()
+	if(CONFIG_GET(flag/security_has_maint_access))
+		return list(ACCESS_MAINT_TUNNELS)
+	return list()
 
 /*
 Head of Security
@@ -78,7 +82,12 @@ Warden
 	outfit = /datum/outfit/job/warden
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM)
-	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //No. Stop copy-pasting.
+	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //SEE /DATUM/JOB/WARDEN/GET_ACCESS()
+
+/datum/job/warden/get_access()
+	var/list/L = list()
+	L = ..() | check_config_for_sec_maint()
+	return L
 
 /datum/outfit/job/warden
 	name = "Warden"
@@ -150,21 +159,13 @@ Detective
 
 	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses)
 
-/datum/job/detective/New()
-	..()
-	MAP_JOB_CHECK
-	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS)
-	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS)
-
-/datum/outfit/job/detective/New()
-	..()
-	MAP_JOB_CHECK
-	box = /obj/item/storage/box/security/radio
-
 /datum/outfit/job/detective/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	var/obj/item/clothing/mask/cigarette/cig = H.wear_mask
 	cig.light("")
+
+	if(visualsOnly)
+		return
 
 /*
 Security Officer
@@ -186,7 +187,93 @@ Security Officer
 	outfit = /datum/outfit/job/security
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM)
-	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //Or you can reconfig the hierarchy to be /datum/job/security/etc and make things work properly.
+	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MINERAL_STOREROOM) //BUT SEE /DATUM/JOB/WARDEN/GET_ACCESS()
+
+
+/datum/job/officer/get_access()
+	var/list/L = list()
+	L |= ..() | check_config_for_sec_maint()
+	return L
+
+GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY))
+
+/datum/job/officer/after_spawn(mob/living/carbon/human/H, mob/M)
+	// Assign department security
+	var/department
+	if(M && M.client && M.client.prefs)
+		department = M.client.prefs.prefered_security_department
+		if(!LAZYLEN(GLOB.available_depts) || department == "None")
+			return
+		else if(department in GLOB.available_depts)
+			LAZYREMOVE(GLOB.available_depts, department)
+		else
+			department = pick_n_take(GLOB.available_depts)
+	var/ears = null
+	var/accessory = null
+	var/list/dep_access = null
+	var/destination = null
+	var/spawn_point = null
+	switch(department)
+		if(SEC_DEPT_SUPPLY)
+			ears = /obj/item/radio/headset/headset_sec/alt/department/supply
+			dep_access = list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION)
+			destination = /area/security/checkpoint/supply
+			spawn_point = locate(/obj/effect/landmark/start/depsec/supply) in GLOB.department_security_spawns
+			accessory = /obj/item/clothing/accessory/armband/cargo
+		if(SEC_DEPT_ENGINEERING)
+			ears = /obj/item/radio/headset/headset_sec/alt/department/engi
+			dep_access = list(ACCESS_CONSTRUCTION, ACCESS_ENGINE)
+			destination = /area/security/checkpoint/engineering
+			spawn_point = locate(/obj/effect/landmark/start/depsec/engineering) in GLOB.department_security_spawns
+			accessory = /obj/item/clothing/accessory/armband/engine
+		if(SEC_DEPT_MEDICAL)
+			ears = /obj/item/radio/headset/headset_sec/alt/department/med
+			dep_access = list(ACCESS_MEDICAL)
+			destination = /area/security/checkpoint/medical
+			spawn_point = locate(/obj/effect/landmark/start/depsec/medical) in GLOB.department_security_spawns
+			accessory =  /obj/item/clothing/accessory/armband/medblue
+		if(SEC_DEPT_SCIENCE)
+			ears = /obj/item/radio/headset/headset_sec/alt/department/sci
+			dep_access = list(ACCESS_RESEARCH)
+			destination = /area/security/checkpoint/science
+			spawn_point = locate(/obj/effect/landmark/start/depsec/science) in GLOB.department_security_spawns
+			accessory = /obj/item/clothing/accessory/armband/science
+
+	if(accessory)
+		var/obj/item/clothing/under/U = H.w_uniform
+		U.attach_accessory(new accessory)
+	if(ears)
+		if(H.ears)
+			qdel(H.ears)
+		H.equip_to_slot_or_del(new ears(H),SLOT_EARS)
+
+	var/obj/item/card/id/W = H.wear_id
+	W.access |= dep_access
+
+	var/teleport = 0
+	if(!CONFIG_GET(flag/sec_start_brig))
+		if(destination || spawn_point)
+			teleport = 1
+	if(teleport)
+		var/turf/T
+		if(spawn_point)
+			T = get_turf(spawn_point)
+			H.Move(T)
+		else
+			var/safety = 0
+			while(safety < 25)
+				T = safepick(get_area_turfs(destination))
+				if(T && !H.Move(T))
+					safety += 1
+					continue
+				else
+					break
+	if(department)
+		to_chat(M, "<b>You have been assigned to [department]!</b>")
+	else
+		to_chat(M, "<b>You have not been assigned to any department. Patrol the halls and help where needed.</b>")
+
+
 
 /datum/outfit/job/security
 	name = "Security Officer"
