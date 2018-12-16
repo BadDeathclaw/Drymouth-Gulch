@@ -1405,7 +1405,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = TRUE
 
 /area/f13/farmhousesouth
-	name = "Farmhouse"
+	name = "FarmhouseS"
 	icon_state = "farmhouse"
 	requires_power = TRUE
 
@@ -1418,7 +1418,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "powerplant"
 	requires_power = TRUE
 	ambientsounds = ENGINEERING
-	requires_power = TRUE
 
 /area/f13/underground/enclave_base
 	name = "Enclave Base"
