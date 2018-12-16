@@ -13,6 +13,7 @@
 	circuit = /obj/item/circuitboard/machine/autolathe
 	layer = BELOW_OBJ_LAYER
 	super_advanced_technology = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 	var/operating = FALSE
 	var/list/L = list()
@@ -387,9 +388,10 @@
 
 /obj/machinery/autolathe/constructionlathe
 	name = "Construction Lathe"
-	desc = "An autolathe that had VAULT-TEK DRM added to it to prevent it from producing weaponry."
+	desc = "An autolathe that had VAULT-TEK DRM poorly added to it to prevent it from producing weaponry."
 	circuit = /obj/item/circuitboard/machine/autolathe/constructionlathe
 	super_advanced_technology = FALSE
+	resistance_flags = ""
 
 	list/categories = list(
 							"Tools",
