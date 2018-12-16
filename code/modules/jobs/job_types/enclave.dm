@@ -1,7 +1,7 @@
 /*
 Commander
 */
-/datum/job/Enclave/f13uscommander
+/datum/job/f13uscommander
 	title = "US Commander"
 	flag = F13USCOMMANDER
 	department_flag = ENCLAVE
@@ -12,14 +12,14 @@ Commander
 	selection_color = "#aaaaf7"
 	minimal_player_age = 6
 
-	outfit = /datum/outfit/job/Enclave/f13uscommander
+	outfit = /datum/outfit/job/f13uscommander
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/Enclave/f13uscommander
+/datum/outfit/job/f13uscommander
 	name = "US Commander"
-	jobtype = /datum/job/Enclave/f13uscommander
+	jobtype = /datum/job/f13uscommander
 
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
@@ -28,7 +28,7 @@ Commander
 /*
 Medic
 */
-/datum/job/Enclave/f13usmedic
+/datum/job/f13usmedic
 	title = "US Medic"
 	flag = F13USMEDIC
 	department_flag = ENCLAVE
@@ -39,14 +39,14 @@ Medic
 	selection_color = "#ccccff"
 	minimal_player_age = 3
 
-	outfit = /datum/outfit/job/Enclave/f13usmedic
+	outfit = /datum/outfit/job/f13usmedic
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/Enclave/f13usmedic
+/datum/outfit/job/f13usmedic
 	name = "US Medic"
-	jobtype = /datum/job/Enclave/f13usmedic
+	jobtype = /datum/job/f13usmedic
 
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
@@ -55,7 +55,7 @@ Medic
 /*
 Private
 */
-/datum/job/Enclave/f13usprivate
+/datum/job/f13usprivate
 	title = "US Private"
 	flag = F13USPRIVATE
 	department_flag = ENCLAVE
@@ -66,14 +66,14 @@ Private
 	selection_color = "#ccccff"
 	minimal_player_age = 3
 
-	outfit = /datum/outfit/job/Enclave/f13usprivate
+	outfit = /datum/outfit/job/f13usprivate
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/Enclave/f13usprivate
+/datum/outfit/job/f13usprivate
 	name = "US Private"
-	jobtype = /datum/job/Enclave/f13usprivate
+	jobtype = /datum/job/f13usprivate
 
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
@@ -82,7 +82,7 @@ Private
 /*
 Scientist
 */
-/datum/job/Enclave/f13usscientist
+/datum/job/f13usscientist
 	title = "US Scientist"
 	flag = F13USSCIENTIST
 	department_flag = ENCLAVE
@@ -93,14 +93,14 @@ Scientist
 	selection_color = "#ccccff"
 	minimal_player_age = 3
 
-	outfit = /datum/outfit/job/Enclave/f13usscientist
+	outfit = /datum/outfit/job/f13usscientist
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/Enclave/f13usscientist
+/datum/outfit/job/f13usscientist
 	name = "US Scientist"
-	jobtype = /datum/job/Enclave/f13usscientist
+	jobtype = /datum/job/f13usscientist
 
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
@@ -109,7 +109,7 @@ Scientist
 /*
 Engineer
 */
-/datum/job/Enclave/f13usengineer
+/datum/job/f13usengineer
 	title = "US Engineer"
 	flag = F13USENGINEER
 	department_flag = ENCLAVE
@@ -120,14 +120,14 @@ Engineer
 	selection_color = "#ccccff"
 	minimal_player_age = 3
 
-	outfit = /datum/outfit/job/Enclave/f13usengineer
+	outfit = /datum/outfit/job/f13usengineer
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/Enclave/f13usengineer
+/datum/outfit/job/f13usengineer
 	name = "US Engineer"
-	jobtype = /datum/job/Enclave/f13usengineer
+	jobtype = /datum/job/f13usengineer
 
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
@@ -135,7 +135,7 @@ Engineer
 /*
 Colonist
 */
-/datum/job/Enclave/f13uscolonist
+/datum/job/f13uscolonist
 	title = "US Colonist"
 	flag = F13USCOLONIST
 	department_flag = ENCLAVE
@@ -146,14 +146,15 @@ Colonist
 	selection_color = "#ccccff"
 	minimal_player_age = 3
 
-	outfit = /datum/outfit/job/Enclave/f13uscolonist
+	outfit = /datum/outfit/job/f13uscolonist
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/Enclave/f13uscolonist
+/datum/outfit/job/f13uscolonist
 	name = "US Colonist"
-	jobtype = /datum/job/Enclave/f13uscolonist
+	jobtype = /datum/job/f13uscolonist
 
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
+

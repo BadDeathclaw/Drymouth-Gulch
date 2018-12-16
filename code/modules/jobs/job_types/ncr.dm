@@ -1,7 +1,7 @@
 /*
 Colonel
 */
-/datum/job/NCR/f13colonel
+/datum/job/f13colonel
 	title = "NCR Colonel"
 	flag = F13COLONEL
 	department_flag = NCR
@@ -14,19 +14,19 @@ Colonel
 	exp_requirements = 45
 	exp_type = EXP_TYPE_NCR
 
-	outfit = /datum/outfit/job/NCR/f13colonel
+	outfit = /datum/outfit/job/f13colonel
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13colonel
+/datum/outfit/job/f13colonel
 	name = "NCR Colonel"
-	jobtype = /datum/job/NCR/f13colonel
+	jobtype = /datum/job/f13colonel
 
 /*
 Captain
 */
-/datum/job/NCR/f13captain
+/datum/job/f13captain
 	title = "NCR Captain"
 	flag = F13CAPTAIN
 	department_flag = NCR
@@ -41,14 +41,14 @@ Captain
 	exp_requirements = 30
 	exp_type = EXP_TYPE_NCR
 
-	outfit = /datum/outfit/job/NCR/f13captain
+	outfit = /datum/outfit/job/f13captain
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13captain
+/datum/outfit/job/f13captain
 	name = "NCR Captain"
-	jobtype = /datum/job/NCR/f13captain
+	jobtype = /datum/job/f13captain
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
@@ -70,7 +70,7 @@ Captain
 /*
 Lieutenant
 */
-/datum/job/NCR/f13lieutenant
+/datum/job/f13lieutenant
 	title = "NCR Lieutenant"
 	flag = F13LIEUTENANT
 	department_flag = NCR
@@ -82,14 +82,14 @@ Lieutenant
 	exp_requirements = 20
 	exp_type = EXP_TYPE_NCR
 
-	outfit = /datum/outfit/job/NCR/f13lieutenant
+	outfit = /datum/outfit/job/f13lieutenant
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13lieutenant
+/datum/outfit/job/f13lieutenant
 	name = "NCR Lieutenant"
-	jobtype = /datum/job/NCR/f13lieutenant
+	jobtype = /datum/job/f13lieutenant
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
@@ -112,7 +112,7 @@ Lieutenant
 /*
 Sergeant
 */
-/datum/job/NCR/f13sergeant
+/datum/job/f13sergeant
 	title = "NCR Sergeant"
 	flag = F13SERGEANT
 	department_flag = NCR
@@ -124,14 +124,14 @@ Sergeant
 	exp_requirements = 5
 	exp_type = EXP_TYPE_NCR
 
-	outfit = /datum/outfit/job/NCR/f13sergeant
+	outfit = /datum/outfit/job/f13sergeant
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13sergeant
+/datum/outfit/job/f13sergeant
 	name = "NCR Sergeant"
-	jobtype = /datum/job/NCR/f13sergeant
+	jobtype = /datum/job/f13sergeant
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
@@ -153,7 +153,7 @@ Sergeant
 /*
 Trooper
 */
-/datum/job/NCR/f13trooper
+/datum/job/f13trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
 	department_flag = NCR
@@ -163,14 +163,14 @@ Trooper
 	supervisors = "sergeants"
 	selection_color = "#fff5cc"
 
-	outfit = /datum/outfit/job/NCR/f13trooper
+	outfit = /datum/outfit/job/f13trooper
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13trooper
+/datum/outfit/job/f13trooper
 	name = "NCR Trooper"
-	jobtype = /datum/job/NCR/f13trooper
+	jobtype = /datum/job/f13trooper
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
@@ -192,7 +192,7 @@ Trooper
 /*
 Recruit
 */
-/datum/job/NCR/f13recruit
+/datum/job/f13recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
 	department_flag = NCR
@@ -202,14 +202,14 @@ Recruit
 	supervisors = "sergeants"
 	selection_color = "#fff5cc"
 
-	outfit = /datum/outfit/job/NCR/f13recruit
+	outfit = /datum/outfit/job/f13recruit
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13recruit
+/datum/outfit/job/f13recruit
 	name = "NCR Recruit"
-	jobtype = /datum/job/NCR/f13recruit
+	jobtype = /datum/job/f13recruit
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr
@@ -231,7 +231,7 @@ Recruit
 /*
 Veteran Ranger
 */
-/datum/job/NCR/f13vetranger
+/datum/job/f13vetranger
 	title = "NCR Veteran Ranger"
 	flag = F13VETRANGER
 	department_flag = NCR
@@ -244,14 +244,14 @@ Veteran Ranger
 	exp_requirements = 25
 	exp_type = EXP_TYPE_NCR
 
-	outfit = /datum/outfit/job/NCR/f13vetranger
+	outfit = /datum/outfit/job/f13vetranger
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13vetranger
+/datum/outfit/job/f13vetranger
 	name = "NCR Veteran Ranger"
-	jobtype = /datum/job/NCR/f13vetranger
+	jobtype = /datum/job/f13vetranger
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
@@ -272,7 +272,7 @@ Veteran Ranger
 /*
 Ranger
 */
-/datum/job/NCR/f13ranger
+/datum/job/f13ranger
 	title = "NCR Patrol Ranger"
 	flag = F13RANGER
 	department_flag = NCR
@@ -284,14 +284,14 @@ Ranger
 	exp_requirements = 12
 	exp_type = EXP_TYPE_NCR
 
-	outfit = /datum/outfit/job/NCR/f13ranger
+	outfit = /datum/outfit/job/f13ranger
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13ranger
+/datum/outfit/job/f13ranger
 	name = "NCR Ranger"
-	jobtype = /datum/job/NCR/f13ranger
+	jobtype = /datum/job/f13ranger
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
@@ -315,7 +315,7 @@ Ranger
 /*
 Recon Ranger
 */
-/datum/job/NCR/f13recranger
+/datum/job/f13recranger
 	title = "NCR Recon Ranger"
 	flag = F13RECRANGER
 	department_flag = NCR
@@ -327,14 +327,14 @@ Recon Ranger
 	exp_requirements = 7
 	exp_type = EXP_TYPE_NCR
 
-	outfit = /datum/outfit/job/NCR/f13recranger
+	outfit = /datum/outfit/job/f13recranger
 
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
-/datum/outfit/job/NCR/f13recranger
+/datum/outfit/job/f13recranger
 	name = "NCR Recon Ranger"
-	jobtype = /datum/job/NCR/f13recranger
+	jobtype = /datum/job/f13recranger
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	uniform =  		/obj/item/clothing/under/f13/ranger
