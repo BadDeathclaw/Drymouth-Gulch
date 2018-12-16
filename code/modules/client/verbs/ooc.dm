@@ -230,7 +230,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 			var/prefix = "(R)LOOC"
 			if (C.mob in heard)
 				prefix = "LOOC"
-			to_chat(C, "<span class='looc'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.mob.key]:</EM> <span class='message'>[msg]</span></span>")
+			to_chat(C, "<span class='looc'><span class='ooc'><span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></span>")
 
 
 //Checks admin notice
