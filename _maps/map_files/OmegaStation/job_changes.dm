@@ -46,17 +46,6 @@
 	MAP_JOB_CHECK
 	box = /obj/item/storage/box/security/radio
 
-/datum/job/detective/New()
-	..()
-	MAP_JOB_CHECK
-	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS)
-	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS)
-
-/datum/outfit/job/detective/New()
-	..()
-	MAP_JOB_CHECK
-	box = /obj/item/storage/box/security/radio
-
 //Medbay
 
 /datum/job/doctor/New()
