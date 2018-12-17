@@ -830,7 +830,7 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 */
-
+/*
 /datum/techweb_node/advmedicalweapon
 	id = "advmedical_weapon"
 	display_name = "Advanced Medical Weaponry"
@@ -838,7 +838,7 @@
 	prereq_ids = list("medical_weapons", "med_mech_tools")
 	design_ids = list("advsyringe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
-
+*/
 /datum/techweb_node/mech_diamond_drill
 	id = "mech_diamond_drill"
 	display_name =  "Exosuit Diamond Drill"

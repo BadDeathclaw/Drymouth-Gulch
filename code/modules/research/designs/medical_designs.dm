@@ -607,7 +607,7 @@
 	build_path = /obj/item/organ/liver/cybernetic/upgraded/advanced
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL || DEPARTMENTAL_FLAG_SCIENCE
-
+/*
 /datum/design/advsyringe
 	name = "Advanced Syringe Gun"
 	desc = "A syringe gun that can synthesize syringes and reagents."
@@ -617,3 +617,4 @@
 	build_path = /obj/item/gun/chem/advanced
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL || DEPARTMENTAL_FLAG_SCIENCE
+*/

@@ -210,6 +210,7 @@
 	scan_reagents = 1
 	icon_state = "thermal"
 	glass_colour_type = /datum/client_colour/glass_colour/red
+	hud_type = DATA_HUD_SECURITY_ADVANCED
 
 /obj/item/clothing/glasses/hud/advanced/equipped(mob/living/carbon/human/user, slot)
 	..()
