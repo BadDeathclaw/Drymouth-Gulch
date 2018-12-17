@@ -95,11 +95,9 @@
 
 // Ordinary survival box
 /obj/item/storage/box/survival/PopulateContents()
-	new /obj/item/clothing/mask/bandana/black(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/reagent_containers/blood/radaway(src)
-	new /obj/item/stack/medical/gauze/improvised(src)
-	new /obj/item/flashlight/flare(src)
+	new /obj/item/clothing/mask/breath(src)
+	new /obj/item/tank/internals/emergency_oxygen(src)
+	new /obj/item/reagent_containers/hypospray/medipen(src)
 
 /obj/item/storage/box/survival/radio/PopulateContents()
 	..() // we want the survival stuff too.

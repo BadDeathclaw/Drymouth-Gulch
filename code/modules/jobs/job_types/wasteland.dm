@@ -231,7 +231,6 @@ Pusher
 
 	uniform =  		/obj/item/clothing/under/jabroni
 	suit = /obj/item/clothing/suit/f13/duster
-
 /datum/outfit/job/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
@@ -241,6 +240,48 @@ Pusher
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/jet=3, \
 		/obj/item/reagent_containers/syringe/medx=2)
+
+/*
+Preacher
+*/
+
+/datum/job/f13preacher
+	title = "Preacher"
+	flag = F13PREACHER
+	department_head = list("Captain")
+	department_flag = WASTELAND
+	head_announce = list("Security")
+	faction = "Wastelander"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "no one"
+	selection_color = "#dddddd"
+
+	outfit = /datum/outfit/job/f13preacher
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/f13preacher
+	name = "Preacher"
+	jobtype = /datum/job/f13preacher
+
+	id = null
+	ears = null
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+
+	uniform = 		/obj/item/clothing/under/rank/chaplain
+	gloves =		/obj/item/clothing/gloves/fingerless
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	backpack = 		/obj/item/storage/backpack/cultpack
+	satchel = 		/obj/item/storage/backpack/cultpack
+	mask = 			/obj/item/clothing/mask/gas/syndicate
+	r_hand = 		/obj/item/gun/ballistic/shotgun/remington/scoped
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/internal/boltaction=2, \
+		/obj/item/reagent_containers/food/drinks/flask=1)
 
 /*
 Punished Raider
