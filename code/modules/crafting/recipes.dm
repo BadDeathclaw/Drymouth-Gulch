@@ -732,3 +732,11 @@
 				/obj/item/assembly/igniter =1)
 	time = 40
 	category = CAT_MISC
+
+/datum/crafting_recipe/mop
+	name = "Mop"
+	result = /obj/item/mop
+	reqs = list(/obj/item/stack/rods = 2,
+				/obj/item/reagent_containers/glass/rag = 1)
+	time = 30
+	category = CAT_MISC

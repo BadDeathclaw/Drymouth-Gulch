@@ -60,16 +60,16 @@
 	desc = "A 12 gauge buckshot shell."
 	icon_state = "gshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
-	pellets = 6
-	variance = 25
+	pellets = 12
+	variance = 35
 
 /obj/item/ammo_casing/shotgun/rubbershot
 	name = "rubber shot"
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
-	pellets = 6
-	variance = 25
+	pellets = 12
+	variance = 35
 
 /obj/item/ammo_casing/shotgun/improvised
 	name = "improvised shell"
@@ -78,7 +78,7 @@
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
 	materials = list(MAT_METAL=250)
 	pellets = 10
-	variance = 25
+	variance = 35
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"

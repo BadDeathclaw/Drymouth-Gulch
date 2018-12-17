@@ -42,6 +42,19 @@
 	gain_text = "<span class='notice'>You feel lithe on your feet!</span>"
 	lose_text = "<span class='danger'>You feel clumsy again.</span>"
 
+/datum/quirk/iron_fist
+	name = "Iron Fist"
+	desc = "You have fists of kung-fury! Increases unarmed damage."
+	value = 2
+	mob_trait = TRAIT_IRONFIST
+	gain_text = "<span class='notice'>Your fists feel furious!</span>"
+	lose_text = "<span class='danger'>Your fists feel calm again.</span>"
+
+/datum/quirk/iron_fist/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.dna.species.punchdamagelow = 7
+	mob_tar.dna.species.punchdamagehigh = 10
+
 /datum/quirk/jolly
 	name = "Jolly"
 	desc = "You sometimes just feel happy, for no reason at all."
