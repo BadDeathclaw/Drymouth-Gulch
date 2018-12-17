@@ -37,7 +37,7 @@
 	@param data:
 		If specified:
 				1 -- Will only broadcast to intercoms
-				2 -- Will only broadcast to intercoms and station-bounced radios
+				2 -- Will only broadcast to intercoms and shortwave radios
 				3 -- Broadcast to syndicate frequency
 				4 -- AI can't track down this person. Useful for imitation broadcasts where you can't find the actual mob
 
