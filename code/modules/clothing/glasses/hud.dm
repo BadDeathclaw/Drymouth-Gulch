@@ -210,16 +210,17 @@
 	scan_reagents = 1
 	icon_state = "thermal"
 	glass_colour_type = /datum/client_colour/glass_colour/red
-	hud_type = DATA_HUD_SECURITY_ADVANCED
 
 /obj/item/clothing/glasses/hud/advanced/equipped(mob/living/carbon/human/user, slot)
 	..()
-	for(var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
-		var/datum/atom_hud/H = GLOB.huds[hudtype]
-		H.add_hud_to(user)
+	if(slot == SLOT_GLASSES)
+		for(var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
+			var/datum/atom_hud/H = GLOB.huds[hudtype]
+			H.add_hud_to(user)
 
 /obj/item/clothing/glasses/hud/advanced/dropped(mob/living/carbon/human/user, slot)
 	..()
-	for(var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
-		var/datum/atom_hud/H = GLOB.huds[hudtype]
-		H.remove_hud_from(user)
+	if(istype(user) && user.glasses == src)
+		for(var/hudtype in list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_ADVANCED))
+			var/datum/atom_hud/H = GLOB.huds[hudtype]
+			H.remove_hud_from(user)
