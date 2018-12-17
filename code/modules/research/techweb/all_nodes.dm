@@ -397,6 +397,14 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
+/datum/techweb_node/advancedhud
+	id = "advanced_hud"
+	display_name = "Advanced HUD Tech"
+	description = "By combining existing glass and HUD technology, it's possible to make advanced versions of it."
+	prereq_ids = list("NVGtech")
+	design_ids = list("advanced_hud")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+
 ////////////////////////Medical////////////////////////
 /datum/techweb_node/cloning
 	id = "cloning"
