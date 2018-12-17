@@ -5,7 +5,7 @@
 	H.add_trait(TRAIT_MONKEYLIKE)
 	if(H.gender == FEMALE)
 		H.gender = MALE
-			H.real_name = random_unique_name(H.gender)
+		H.real_name = random_unique_name(MALE)
 
 /*
 Legate
