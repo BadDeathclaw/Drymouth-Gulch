@@ -15,8 +15,6 @@
 
 
 /obj/item/rig/combat/equipped
-
-
 	initial_modules = list(
 		/obj/item/rig_module/mounted,
 		/obj/item/rig_module/vision/thermal,

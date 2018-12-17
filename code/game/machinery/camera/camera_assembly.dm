@@ -17,6 +17,7 @@
 	var/static/list/possible_upgrades = typecacheof(list(/obj/item/assembly/prox_sensor, /obj/item/stack/sheet/mineral/plasma, /obj/item/analyzer))
 	var/list/upgrades
 	var/state = 1
+	var/c_tag
 
 	/*
 			1 = Wrenched in place
@@ -91,7 +92,7 @@
 		return FALSE
 
 	tool.play_tool_sound(src)
-	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: SS13,Security,Secret ", "Set Network", "SS13")
+	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: den,vault,secret ", "Set Network", "")
 	if(!input)
 		to_chat(user, "<span class='warning'>No input found, please hang up and try your call again!</span>")
 		return
@@ -109,7 +110,11 @@
 
 	C.network = tempnetwork
 	var/area/A = get_area(src)
-	C.c_tag = "[A.name] ([rand(1, 999)])"
+	var/name_input = stripped_input(user, "What would you like to name this camera? ", "Set Name", "")
+	if(name_input)
+		C.c_tag = name_input
+	else
+		C.c_tag = "[A.name] ([rand(1, 999)])"
 	return TRUE
 
 /obj/structure/camera_assembly/wirecutter_act(mob/user, obj/item/I)

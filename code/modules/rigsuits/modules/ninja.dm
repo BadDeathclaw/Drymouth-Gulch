@@ -7,14 +7,13 @@
  */
 
 /obj/item/rig_module/stealth_field
-
 	name = "active camouflage module"
 	desc = "A robust hardsuit-integrated stealth module."
 	icon_state = "cloak"
 
-	toggleable = 1
-	disruptable = 1
-	disruptive = 0
+	toggleable = TRUE
+	disruptable = TRUE
+	disruptive = FALSE
 
 	use_power_cost = 50
 	active_power_cost = 10
@@ -31,26 +30,23 @@
 	suit_overlay_inactive = "stealth_inactive"
 
 /obj/item/rig_module/stealth_field/activate()
-
 	if(!..())
 		return 0
 
 	var/mob/living/carbon/human/H = holder.wearer
 
 	to_chat(H, "<font color='blue'><b>You are now invisible to normal detection.</b></font>")
-	H.invisibility = INVISIBILITY_LEVEL_TWO
-
+	animate(H, alpha = 50,time = 15)
 	H.visible_message("[H.name] vanishes into thin air!",1)
 
 /obj/item/rig_module/stealth_field/deactivate()
-
 	if(!..())
 		return 0
 
 	var/mob/living/carbon/human/H = holder.wearer
 
 	to_chat(H, "<span class='danger'>You are now visible.</span>")
-	H.invisibility = 0
+	animate(H, alpha = 255, time = 15)
 
 	new /obj/effect/temp_visual/dir_setting/ninja(get_turf(H), H.dir)
 
@@ -60,22 +56,20 @@
 
 
 /obj/item/rig_module/teleporter
-
 	name = "teleportation module"
 	desc = "A complex, sleek-looking, hardsuit-integrated teleportation module."
 	icon_state = "teleporter"
 	use_power_cost = 40
 	redundant = 1
-	usable = 1
-	selectable = 1
+	usable = TRUE
+	selectable = TRUE
 
 	engage_string = "Emergency Leap"
 
 	interface_name = "VOID-shift phase projector"
 	interface_desc = "An advanced teleportation system. It is capable of pinpoint precision or random leaps forward."
 
-/obj/item/rig_module/teleporter/proc/phase_in(var/mob/M,var/turf/T)
-
+/obj/item/rig_module/teleporter/proc/phase_in(mob/M,turf/T)
 	if(!M || !T)
 		return
 
@@ -84,17 +78,16 @@
 	playsound(T, 'sound/effects/sparks2.ogg', 50, 1)
 	new /obj/effect/temp_visual/dir_setting/ninja/phase(T, M.dir)
 
-/obj/item/rig_module/teleporter/proc/phase_out(var/mob/M,var/turf/T)
-
+/obj/item/rig_module/teleporter/proc/phase_out(mob/M,turf/T)
 	if(!M || !T)
 		return
 
 	playsound(T, "sparks", 50, 1)
 	new /obj/effect/temp_visual/dir_setting/ninja/phase/out(T, M.dir)
 
-/obj/item/rig_module/teleporter/engage(var/atom/target, var/notify_ai)
-
-	if(!..()) return 0
+/obj/item/rig_module/teleporter/engage(atom/target, notify_ai)
+	if(!..())
+		return 0
 
 	var/mob/living/carbon/human/H = holder.wearer
 
@@ -112,7 +105,7 @@
 		to_chat(H, "<span class='warning'>You cannot teleport into solid walls.</span>")
 		return 0*///Who the fuck cares? Ninjas in walls are cool.
 
-	if(!is_teleport_allowed(T.z))
+	if(is_centcom_level(T.z))
 		to_chat(H, "<span class='warning'>You cannot use your teleporter on this Z-level.</span>")
 		return 0
 
@@ -120,11 +113,11 @@
 	H.forceMove(T)
 	phase_in(H,get_turf(H))
 
-	for(var/obj/item/grab/G in H.contents)
-		if(G.affecting)
-			phase_out(G.affecting,get_turf(G.affecting))
-			G.affecting.forceMove(locate(T.x+rand(-1,1),T.y+rand(-1,1),T.z))
-			phase_in(G.affecting,get_turf(G.affecting))
+//	for(var/obj/item/grab/G in H.contents)
+//		if(G.affecting)
+//			phase_out(G.affecting,get_turf(G.affecting))
+//			G.affecting.forceMove(locate(T.x+rand(-1,1),T.y+rand(-1,1),T.z))
+//			phase_in(G.affecting,get_turf(G.affecting))
 
 	return 1
 
@@ -152,13 +145,12 @@
 	return 0*/
 
 /obj/item/rig_module/self_destruct
-
 	name = "self-destruct module"
 	desc = "Oh my God, Captain. A bomb."
 	icon_state = "deadman"
-	usable = 1
-	active = 1
-	permanent = 1
+	usable = TRUE
+	active = TRUE
+	permanent = TRUE
 
 	engage_string = "Detonate"
 
@@ -172,7 +164,6 @@
 	return
 
 /obj/item/rig_module/self_destruct/process()
-
 	// Not being worn, leave it alone.
 	if(!holder || !holder.wearer || !holder.wearer.wear_suit == holder)
 		return 0
@@ -184,13 +175,13 @@
 /obj/item/rig_module/self_destruct/engage()
 	explosion(get_turf(src), 1, 2, 4, 5)
 	if(holder && holder.wearer)
-		holder.wearer.unEquip(src)
+		//holder.wearer.unEquip(src)
 		qdel(holder)
 	qdel(src)
 
 /obj/item/rig_module/self_destruct/small/engage()
 	explosion(get_turf(src), 0, 0, 3, 4)
 	if(holder && holder.wearer)
-		holder.wearer.unEquip(src)
+		//holder.wearer.unEquip(src)s
 		qdel(holder)
 	qdel(src)

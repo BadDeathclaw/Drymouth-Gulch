@@ -55,14 +55,16 @@ Captain
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
 	belt = 			/obj/item/storage/belt/military/assault
+	gloves =		/obj/item/clothing/gloves/combat
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/automatic/shotgun/caws
+	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/m1911
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/d12g=3, \
+		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/melee/classic_baton/telescopic=1)
+		/obj/item/melee/classic_baton/telescopic=1, \
+		/obj/item/storage/bag/money/small/ncr)
 	box = null
 
 /*
@@ -95,6 +97,7 @@ Lieutenant
 	head = 			/obj/item/clothing/head/beret/ncr
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
+	gloves =		/obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
@@ -102,7 +105,8 @@ Lieutenant
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
 	box = null
 
 /*
@@ -136,13 +140,14 @@ Sergeant
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/automatic/greasegun
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/combat
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/greasegun=3, \
+		/obj/item/storage/box/lethalshot, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
 	box = null
 
 /*
@@ -180,7 +185,8 @@ Trooper
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -218,7 +224,8 @@ Recruit
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1)
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -250,18 +257,17 @@ Veteran Ranger
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
-	mask =			/obj/item/clothing/mask/gas/sechailer
-	gloves =		/obj/item/clothing/gloves/combat
+	gloves =		/obj/item/clothing/gloves/fingerless
 	belt = 			/obj/item/storage/belt/military/assault
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	glasses = 		/obj/item/clothing/glasses/night
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
 		/obj/item/ammo_box/magazine/r20=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
 
 /*
 Ranger
@@ -291,18 +297,19 @@ Ranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
-	gloves =		/obj/item/clothing/gloves/combat
+	gloves =	/obj/item/clothing/gloves/fingerless
 	belt = 			/obj/item/storage/belt/military/assault
-	shoes = 		/obj/item/clothing/shoes/combat/swat
+	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
 	box = null
 
 /*
@@ -333,7 +340,7 @@ Recon Ranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/f13/duster
 	head = 			/obj/item/clothing/head/fluff/cowboy
-	gloves =		/obj/item/clothing/gloves/combat
+	gloves =		/obj/item/clothing/gloves/botanic_leather
 	belt = 			/obj/item/storage/belt/military/assault
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
@@ -343,5 +350,6 @@ Recon Ranger
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
 	box = null

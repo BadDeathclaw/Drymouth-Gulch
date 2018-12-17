@@ -255,7 +255,7 @@
 	display_name = "Cyborg Upgrades: Utility"
 	description = "Utility upgrades for cybogs."
 	prereq_ids = list("engineering", "cyborg")
-	design_ids = list("borg_upgrade_holding", "borg_upgrade_lavaproof", "borg_upgrade_thrusters", "borg_upgrade_selfrepair", "borg_upgrade_expand", "borg_upgrade_rped")
+	design_ids = list("borg_upgrade_holding", "borg_upgrade_lavaproof", "borg_upgrade_thrusters", "borg_upgrade_selfrepair", "borg_upgrade_rped")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
 
@@ -273,7 +273,7 @@
 	display_name = "Cyborg Upgrades: Combat"
 	description = "Military grade upgrades for cyborgs."
 	prereq_ids = list("adv_robotics", "adv_engi" , "weaponry")
-	design_ids = list("borg_upgrade_vtec", "borg_upgrade_disablercooler")
+	design_ids = list("borg_upgrade_disablercooler")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -623,7 +623,7 @@
 	description = "Mechanized exosuits that are several magnitudes stronger and more powerful than the average human."
 	prereq_ids = list("robotics", "adv_engi")
 	design_ids = list("mecha_tracking", "mechacontrol", "mechapower", "mech_recharger", "ripley_chassis", "firefighter_chassis", "ripley_torso", "ripley_left_arm", "ripley_right_arm", "ripley_left_leg", "ripley_right_leg",
-	"ripley_main", "ripley_peri", "mech_hydraulic_clamp", "ripley_whole", "odysseus_whole", "gygax_whole", "durand_whole", "borg_complete")
+	"ripley_main", "ripley_peri", "mech_hydraulic_clamp", "ripley_whole", "odysseus_whole", "borg_complete")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -645,7 +645,7 @@
 	"odysseus_main", "odysseus_peri")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+/*
 /datum/techweb_node/gygax
 	id = "mech_gygax"
 	display_name = "EXOSUIT: Gygax"
@@ -665,7 +665,7 @@
 	"durand_peri", "durand_targ", "durand_armor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-/*
+
 /datum/techweb_node/phazon
 	id = "mecha_phazon"
 	display_name = "EXOSUIT: Phazon"
@@ -710,7 +710,7 @@
 	design_ids = list("mech_energy_relay", "mech_ccw_armor", "mech_proj_armor", "mech_generator_nuclear")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+/*
 /datum/techweb_node/mech_scattershot
 	id = "mecha_tools"
 	display_name = "Exosuit Weapon (LBX AC 10 \"Scattershot\")"
@@ -809,7 +809,7 @@
 	design_ids = list("mech_wormhole_gen")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-/*
+
 /datum/techweb_node/mech_taser
 	id = "mech_taser"
 	display_name =  "Exosuit Weapon (PBT \"Pacifier\" Mounted Taser)"
@@ -818,7 +818,7 @@
 	design_ids = list()
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-*/
+
 /datum/techweb_node/mech_lmg
 	id = "mech_lmg"
 	display_name = "Exosuit Weapon (\"Ultra AC 2\" LMG)"
@@ -827,7 +827,7 @@
 	design_ids = list("mech_lmg")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+*/
 /datum/techweb_node/mech_diamond_drill
 	id = "mech_diamond_drill"
 	display_name =  "Exosuit Diamond Drill"

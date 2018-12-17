@@ -9,7 +9,6 @@
 	gain_text = "<span class='notice'>You feel like you could drink a whole keg!</span>"
 	lose_text = "<span class='danger'>You don't feel as resistant to alcohol anymore. Somehow.</span>"
 
-
 /datum/quirk/apathetic
 	name = "Apathetic"
 	desc = "You just don't care as much as other people. That's nice to have in a place like this, I guess."
@@ -26,7 +25,6 @@
 	if(mood)
 		mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
 
-
 /datum/quirk/bigleagues
 	name = "Big Leauges"
 	desc = "Swing for the fences! You deal additional damage with melee weapons."
@@ -34,7 +32,6 @@
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = "<span class='notice'>You feel like swinging for the fences!</span>"
 	lose_text = "<span class='danger'>You feel like bunting.</span>"
-
 
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
@@ -45,7 +42,6 @@
 	lose_text = "<span class='danger'>You no longer feel like drinking would ease your pain.</span>"
 	medical_record_text = "Patient has unusually efficient liver metabolism and can slowly regenerate wounds by drinking alcoholic beverages."
 
-
 /datum/quirk/freerunning
 	name = "Freerunning"
 	desc = "You're great at quick moves! You can climb tables more quickly."
@@ -54,6 +50,18 @@
 	gain_text = "<span class='notice'>You feel lithe on your feet!</span>"
 	lose_text = "<span class='danger'>You feel clumsy again.</span>"
 
+/datum/quirk/iron_fist
+	name = "Iron Fist"
+	desc = "You have fists of kung-fury! Increases unarmed damage."
+	value = 2
+	mob_trait = TRAIT_IRONFIST
+	gain_text = "<span class='notice'>Your fists feel furious!</span>"
+	lose_text = "<span class='danger'>Your fists feel calm again.</span>"
+
+/datum/quirk/iron_fist/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.dna.species.punchdamagelow = 7
+	mob_tar.dna.species.punchdamagehigh = 10
 
 /datum/quirk/jolly
 	name = "Jolly"
@@ -62,6 +70,18 @@
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
 
+/datum/quirk/lifegiver
+	name = "Lifegiver"
+	desc = "You embody wellness! Instantly gain +15 maximum Health"
+	value = 3
+	mob_trait = TRAIT_LIFEGIVER
+	gain_text = "<span class='notice'>You feel more healthy than usual.</span>"
+	lose_text = "<span class='danger'>You feel less healthy than usual.</span>"
+
+/datum/quirk/lifegiver/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth += 15
+	mob_tar.health += 15
 
 /datum/quirk/light_step
 	name = "Light Step"
@@ -70,7 +90,6 @@
 	mob_trait = TRAIT_LIGHT_STEP
 	gain_text = "<span class='notice'>You walk with a little more litheness.</span>"
 	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"
-
 
 /datum/quirk/night_vision
 	name = "Night Vision"
@@ -87,20 +106,17 @@
 		return
 	eyes.Insert(H) //refresh their eyesight and vision
 
-
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds."
 	value = 2
 	mob_trait = TRAIT_SELF_AWARE
 
-
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "You can conceal yourself in danger. Ctrl-shift-click a closed locker to jump into it, as long as you have access."
 	value = 2
 	mob_trait = TRAIT_SKITTISH
-
 
 /datum/quirk/spiritual
 	name = "Spiritual"
@@ -109,7 +125,6 @@
 	mob_trait = TRAIT_SPIRITUAL
 	gain_text = "<span class='notice'>You feel a little more faithful to the gods today.</span>"
 	lose_text = "<span class='danger'>You feel less faithful in the gods.</span>"
-
 
 /datum/quirk/voracious
 	name = "Voracious"

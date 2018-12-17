@@ -129,6 +129,22 @@
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
 
+/turf/open/floor/wood/f13/stage_tl
+	icon_state = "housewood_stage_top_left"
+/turf/open/floor/wood/f13/stage_t
+	icon_state = "housewood_stage_top"
+/turf/open/floor/wood/f13/stage_l
+	icon_state = "housewood_stage_left"
+/turf/open/floor/wood/f13/stage_bl
+	icon_state = "housewood_stage_bottom_left"
+/turf/open/floor/wood/f13/stage_b
+	icon_state = "housewood_stage_bottom"
+/turf/open/floor/wood/f13/stage_tr
+	icon_state = "housewood_stage_top_right"
+/turf/open/floor/wood/f13/stage_r
+	icon_state = "housewood_stage_right"
+/turf/open/floor/wood/f13/stage_br
+	icon_state = "housewood_stage_bottom_right"
 
 /turf/open/floor/plating/f13/inside/mountain
 	name = "mountain"

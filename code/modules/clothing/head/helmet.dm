@@ -456,6 +456,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	flash_protect = 1
 /*
 	darkness_view = 8
 	invis_view = SEE_INVISIBLE_MINIMUM
