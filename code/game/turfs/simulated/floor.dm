@@ -16,8 +16,11 @@
 	var/floor_tile = null //tile that this floor drops
 	var/list/broken_states
 	var/list/burnt_states
+	var/list/icons
+	icon_state = ""
 
 /turf/open/floor/Initialize(mapload)
+	broken_states = list("[initial(icon_state)]_dam")
 	if (!broken_states)
 		broken_states = list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5")
 	if (!burnt_states)
@@ -47,6 +50,8 @@
 		icon_regular_floor = icon_state
 	if(mapload)
 		MakeDirty()
+	if (!icons)
+		icons = list()
 
 /turf/open/floor/ex_act(severity, target)
 	var/shielded = is_shielded()
@@ -95,7 +100,12 @@
 	return
 
 /turf/open/floor/proc/update_icon()
+	if(!..())
+		return 0
 	update_visuals()
+	if(!broken && !burnt)
+		if( !(icon_state in icons) )
+			icon_state = initial(icon_state)
 	return 1
 
 /turf/open/floor/attack_paw(mob/user)
