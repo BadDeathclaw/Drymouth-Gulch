@@ -7,22 +7,17 @@
 */
 
 /turf/open/floor/plating/f13/outside
-	icon = 'icons/turf/f13desert.dmi'
+	name = "What the fuck mappers? why is this here"
+	desc = "If found, scream at the github repo about this"
 	icon_state = "wasteland1"
+	icon = 'icons/turf/f13desert.dmi'
 	light_range = 3
 	light_power = 0.75
-	planetary_atmos = TRUE
 
-/turf/open/floor/plating/f13
+/turf/open/floor/plating/f13 // don't use this for anything, /f13/ is essentially just the new /unsimulated/ but for planets and should probably be phased out entirely everywhere
 	gender = PLURAL
-	name = "\proper desert"
-	baseturfs = /turf/open/floor/plating/f13/outside
-	icon = 'icons/turf/f13desert.dmi'
-	icon_state = "wasteland1"
-	icon_plating = "wasteland1"
+	baseturfs = /turf/open/floor/plating/f13
 	attachment_holes = FALSE
-	light_range = 3
-	light_power = 0.75
 	planetary_atmos = TRUE
 
 /* so we can't break this */
@@ -52,7 +47,6 @@
 	name = "\proper desert"
 	desc = "A stretch of desert."
 	icon = 'icons/turf/f13desert.dmi'
-	icon_state = "wasteland1"
 	var/obj/structure/flora/turfPlant = null
 	//light_color = LIGHT_COLOR_LAVA
 	slowdown = 2
@@ -66,9 +60,9 @@
 	//var/obj/dugpit/ground/mypit
 	//var/unburylevel = 0
 
-
 /turf/open/floor/plating/f13/outside/desert/Initialize()
 	. = ..()
+	icon_state = "wasteland[rand(1,31)]"
 	//If no fences, machines (soil patches are machines), etc. try to plant grass
 	if(!(\
 			(locate(/obj/structure) in src) || \
@@ -109,11 +103,6 @@
 	if(turfPlant)
 		qdel(turfPlant)
 	. =  ..()
-
-
-/turf/open/floor/plating/f13/outside/desert/New()
-	..()
-	icon_state = "wasteland[rand(1,31)]"
 
 /turf/open/floor/plating/f13/outside/road
 	name = "\proper road"
