@@ -10,4 +10,3 @@
 # and will override any duplicate entries in the database.									  #
 ###############################################################################################
 Gomble = Host
-Rhicora = Three Dog
