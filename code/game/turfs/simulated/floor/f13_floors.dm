@@ -47,7 +47,7 @@
 	name = "\proper desert"
 	desc = "A stretch of desert."
 	icon = 'icons/turf/f13desert.dmi'
-	icon_state = "wasteland1
+	icon_state = "wasteland1"
   
 	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
 	var/obj/structure/flora/turfPlant = null
