@@ -139,14 +139,3 @@
 /client/proc/get_looc()
 	var/msg = input(src, null, "looc \"text\"") as text|null
 	looc(msg)
-
-//Checks admin notice
-/client/verb/admin_notice()
-	set name = "Adminnotice"
-	set category = "Admin"
-	set desc ="Check the admin notice if it has been set"
-
-	if(GLOB.admin_notice)
-		to_chat(src, "<span class='boldnotice'>Admin Notice:</span>\n \t [GLOB.admin_notice]")
-	else
-		to_chat(src, "<span class='notice'>There are no admin notices at the moment.</span>")

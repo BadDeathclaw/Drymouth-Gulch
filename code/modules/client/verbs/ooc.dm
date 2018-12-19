@@ -131,6 +131,17 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 		prefs.ooccolor = initial(prefs.ooccolor)
 		prefs.save_preferences()
 
+//Checks admin notice
+/client/verb/admin_notice()
+	set name = "Adminnotice"
+	set category = "Admin"
+	set desc ="Check the admin notice if it has been set"
+
+	if(GLOB.admin_notice)
+		to_chat(src, "<span class='boldnotice'>Admin Notice:</span>\n \t [GLOB.admin_notice]")
+	else
+		to_chat(src, "<span class='notice'>There are no admin notices at the moment.</span>")
+
 /client/verb/fix_chat()
 	set name = "Fix chat"
 	set category = "OOC"
