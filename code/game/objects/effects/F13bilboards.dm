@@ -73,7 +73,7 @@
 	desc = "A bilboard advertising Rita's cafe. It has a spray saying \"AVE CAESAR\"."
 	icon_state = "ritas4"
 
-/obj/structure/sign/bilboards/kden
+/obj/structure/sign/bilboards/den
 	name = "Den sign"
 	desc =  "A sprayed metal sheet that says \"The Den \"."
 	icon_state = "den"
