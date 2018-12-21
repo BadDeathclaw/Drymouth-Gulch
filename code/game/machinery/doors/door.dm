@@ -34,6 +34,7 @@
 	var/real_explosion_block	//ignore this, just use explosion_block
 	var/red_alert_access = FALSE //if TRUE, this door will always open on red alert
 	var/poddoor = FALSE
+	var/obj/item/lock_construct/Lock /* this is our lock/trap/etc. */
 
 /obj/machinery/door/examine(mob/user)
 	..()
@@ -77,6 +78,8 @@
 	if(spark_system)
 		qdel(spark_system)
 		spark_system = null
+	if(Lock)
+		qdel(Lock)
 	return ..()
 
 /obj/machinery/door/CollidedWith(atom/movable/AM)
@@ -104,6 +107,10 @@
 					return
 				mecha.occupant.last_bumped = world.time
 			if(mecha.occupant && (src.allowed(mecha.occupant) || src.check_access_list(mecha.operation_req_access)))
+				if(check_locked()) /* if a lock is locked, mechs just push through */
+					AM.visible_message("<span class='notice'>[Lock] breaks off [src] and falls to pieces.</span>")
+					qdel(Lock)
+					Lock = null
 				open()
 			else
 				do_animate("deny")
@@ -128,6 +135,8 @@
 		user = null
 
 	if(density && !(obj_flags & EMAGGED))
+		if (check_locked(user))
+			return
 		if(allowed(user))
 			open()
 		else
@@ -152,6 +161,8 @@
 	if(!requiresID())
 		user = null //so allowed(user) always succeeds
 	if(allowed(user))
+		if (check_locked(user))
+			return
 		if(density)
 			open()
 		else
@@ -168,24 +179,35 @@
 /obj/machinery/door/proc/try_to_weld(obj/item/weldingtool/W, mob/user)
 	return
 
+/* can crowbar off a lock, to force a door open. This is overriden in airlock so shouldnt be an issue */
 /obj/machinery/door/proc/try_to_crowbar(obj/item/I, mob/user)
+	if(Lock) /* attempt to pry the lock off */
+		if(Lock.pry_off(user,src))
+			qdel(Lock)
+			Lock = null
+			open()
 	return
+
 
 /obj/machinery/door/attackby(obj/item/I, mob/user, params)
 	if(user.a_intent != INTENT_HARM && (istype(I, /obj/item/crowbar) || istype(I, /obj/item/twohanded/fireaxe)))
 		try_to_crowbar(I, user)
-		return 1
+		return TRUE
 	else if(istype(I, /obj/item/weldingtool))
 		try_to_weld(I, user)
-		return 1
+		return TRUE
+	else if(istype(I, /obj/item/lock_construct)) /* attempt to add a lock */
+		return add_lock(I, user) /* call add_lock proc, so we can disable for airlocks */
+	else if(istype(I, /obj/item/key))
+		return check_key(I, user)
 	else if(!(I.item_flags & NOBLUDGEON) && user.a_intent != INTENT_HARM)
 		try_to_activate_door(user)
-		return 1
+		return TRUE
 	return ..()
 
 /obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
 	if(damage_flag == "melee" && damage_amount < damage_deflection)
-		return 0
+		return FALSE
 	. = ..()
 
 /obj/machinery/door/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
@@ -246,7 +268,7 @@
 
 /obj/machinery/door/proc/open()
 	if(!density)
-		return 1
+		return TRUE
 	if(operating)
 		return
 	operating = TRUE
@@ -264,10 +286,12 @@
 	if(autoclose)
 		spawn(autoclose)
 			close()
-	return 1
+	return TRUE
 
 /obj/machinery/door/proc/close()
 	if(density)
+		return TRUE
+	if(check_locked())
 		return TRUE
 	if(operating || welded)
 		return
@@ -295,7 +319,7 @@
 		CheckForMobs()
 	else
 		crush()
-	return 1
+	return TRUE
 
 /obj/machinery/door/proc/CheckForMobs()
 	if(locate(/mob/living) in get_turf(src))
@@ -331,7 +355,7 @@
 	addtimer(CALLBACK(src, .proc/autoclose), wait, TIMER_UNIQUE | TIMER_NO_HASH_WAIT | TIMER_OVERRIDE)
 
 /obj/machinery/door/proc/requiresID()
-	return 1
+	return TRUE
 
 /obj/machinery/door/proc/hasPower()
 	return !(stat & NOPOWER)
@@ -340,10 +364,35 @@
 	if(!glass && GLOB.cameranet)
 		GLOB.cameranet.updateVisibility(src, 0)
 
+
+/obj/machinery/door/proc/add_lock(var/obj/item/lock_construct/L, mob/user)
+	if(Lock)
+		to_chat(user, "[src] already has \a [Lock] attached")
+		return
+	else
+		if(user.transferItemToLoc(L, src))
+			user.visible_message("<span class='notice'>[user] adds [L] to [src].</span>", \
+								 "<span class='notice'>You adds [L] to [src].</span>")
+			Lock = L
+
+/obj/machinery/door/proc/check_locked(mob/user)
+	if(Lock)
+		if(Lock.check_locked())
+			to_chat(user, "[src] is bolted [density ? "shut" : "open"]")
+			return TRUE
+	return FALSE
+
+/obj/machinery/door/proc/check_key(var/obj/item/key/K, mob/user)
+	if(!Lock)
+		to_chat(user, "[src] has no lock attached")
+		return
+	else
+		return Lock.check_key(K,user)
+
 /obj/machinery/door/BlockSuperconductivity() // All non-glass airlocks block heat, this is intended.
 	if(opacity || heat_proof)
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/machinery/door/morgue
 	icon = 'icons/obj/doors/doormorgue.dmi'
