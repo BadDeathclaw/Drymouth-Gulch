@@ -20,6 +20,7 @@
 	var/require_user_penis
 	var/require_user_anus
 	var/require_user_vagina
+	var/require_user_breasts
 
 	var/require_target_penis
 	var/require_target_anus
@@ -33,7 +34,7 @@
 	if(..(user, silent))
 		if(user_not_tired && user.refactory_period)
 			if(!silent) //bye spam
-				to_chat(user, "<span class='warning'>You're still exhausted from the last time.</span>")
+				to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
 
 		if(require_user_naked && !user.is_nude())
@@ -52,7 +53,13 @@
 			return FALSE
 
 		if(require_user_vagina && !user.has_vagina())
-			if(!silent) user << "<span class = 'warning'>You don't have a vagina.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have a vagina.</span>")
+			return FALSE
+
+		if(require_user_breasts && !user.has_breasts())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have breasts.</span>")
 			return FALSE
 
 		return TRUE
@@ -62,7 +69,7 @@
 	if(..(user, target, silent))
 		if(target_not_tired && target.refactory_period)
 			if(!silent) //same with this
-				to_chat(user, "<span class='warning'>They're still exhausted from the last time.</span>")
+				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
 
 		if(require_target_naked && !target.is_nude())
@@ -84,7 +91,10 @@
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have a vagina.</span>")
 			return FALSE
-
+		if(require_target_breasts && !user.has_breasts())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>They don't have breasts.</span>")
+			return FALSE
 		return TRUE
 	return FALSE
 
