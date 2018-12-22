@@ -13,6 +13,14 @@
 	name = "mineral floor"
 	icon_state = ""
 
+
+
+/turf/open/floor/mineral/Initialize()
+	broken_states = list("[initial(icon_state)]_dam")
+	. = ..()
+	if (!icons)
+		icons = list()
+
 //PLASMA
 
 /turf/open/floor/mineral/plasma
