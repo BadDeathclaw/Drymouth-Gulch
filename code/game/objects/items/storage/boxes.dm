@@ -394,6 +394,15 @@
 	for(var/i in 1 to 7)
 		new /obj/item/card/id(src)
 
+/obj/item/storage/box/deputy_badges
+	name = "box of spare badges"
+	desc = "A box containing the spare badges for deputies, use your sheriff badge on a deputy badge to assign it's owner."
+	illustration = "id"
+
+/obj/item/storage/box/deputy_badges/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/card/id/deputy(src)
+
 //Some spare PDAs in a box
 /obj/item/storage/box/PDAs
 	name = "spare PDAs"
