@@ -9,14 +9,18 @@
 */
 
 /mob/living/carbon/human/MouseDrop_T(mob/M as mob, mob/user as mob)
-	if(M == src || src == usr || M != usr)		return
-	if(usr.restrained())		return
+	if(M == src || src == usr || M != usr)
+		return
+	if(usr.restrained())
+		return
 
 	user.try_interaction(src)
 
 /mob/living/simple_animal/hostile/deathclaw/MouseDrop_T(mob/M as mob, mob/user as mob)
-	if(M == src || src == usr || M != usr)		return
-	if(usr.restrained())		return
+	if(M == src || src == usr || M != usr)
+		return
+	if(usr.restrained())
+		return
 
 	visible_message("Attempting")
 	user.try_interaction(src)
@@ -32,7 +36,6 @@
 		usr.try_interaction(src)
 
 /mob/living/carbon/human/try_interaction(mob/partner)
-
 	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
 
 	dat += "You...<br>[list_interaction_attributes()]<hr>"
@@ -48,8 +51,7 @@
 	popup.set_content(dat)
 	popup.open()
 
-/mob/living/simple_animal/hostile/deathclaw/try_interaction(mob/partner)
-
+/mob/living/simple_animal/hostile/deathclaw/try_interaction(mob/partner) //what the fuck
 	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
 
 	dat += "You...<br>[list_interaction_attributes()]<hr>"
