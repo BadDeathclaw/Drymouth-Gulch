@@ -80,6 +80,9 @@ USE_EXP_RESTRICTIONS_ADMIN_BYPASS
 ## log OOC channel
 LOG_OOC
 
+## log LOOC channel
+LOG_LOOC
+
 ## log client Say
 LOG_SAY
 
