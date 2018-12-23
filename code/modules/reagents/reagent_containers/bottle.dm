@@ -78,8 +78,8 @@
 	list_reagents = list("charcoal" = 30)
 
 /obj/item/reagent_containers/glass/bottle/FEV_solution
-	name = "unstable FEV_solution bottle"
-	desc = "A small bottle of unstable FEV_solution. Randomly changes the DNA structure of whoever comes in contact."
+	name = "unstable FEV solution bottle"
+	desc = "A small bottle of unstable FEV solution. Randomly changes the DNA structure of whoever comes in contact."
 	list_reagents = list("FEV_solution" = 30)
 
 /obj/item/reagent_containers/glass/bottle/plasma
@@ -240,7 +240,7 @@
 	name = "Rhinovirus culture bottle"
 	desc = "A small bottle. Contains XY-rhinovirus culture in synthblood medium."
 	spawned_disease = /datum/disease/advance/cold
-	
+
 /obj/item/reagent_containers/glass/bottle/flu_virion
 	name = "Flu virion culture bottle"
 	desc = "A small bottle. Contains H13N1 flu virion culture in synthblood medium."

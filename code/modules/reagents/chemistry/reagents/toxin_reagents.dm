@@ -25,7 +25,7 @@
 	taste_description = "mushroom"
 
 /datum/reagent/toxin/FEV_solution
-	name = "Unstable FEV_solution"
+	name = "Unstable FEV solution"
 	id = "FEV_solution"
 	description = "Might cause unpredictable mutations. Keep away from children."
 	color = "#00FF00"

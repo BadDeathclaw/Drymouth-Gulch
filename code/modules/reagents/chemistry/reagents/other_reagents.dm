@@ -1628,7 +1628,7 @@
 // Virology virus food chems.
 
 /datum/reagent/toxin/FEV_solution/FEV_solutionvirusfood
-	name = "FEV_solutionic agar"
+	name = "FEV solutionic agar"
 	id = "FEV_solutionvirusfood"
 	color = "#A3C00F" // rgb: 163,192,15
 	taste_description = "sourness"

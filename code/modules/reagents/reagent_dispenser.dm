@@ -180,7 +180,7 @@
 
 /obj/structure/reagent_dispensers/virusfood
 	name = "virus food dispenser"
-	desc = "A dispenser of low-potency virus FEV_solutionic."
+	desc = "A dispenser of low-potency virus mutagenic."
 	icon_state = "virus_food"
 	anchored = TRUE
 	density = FALSE

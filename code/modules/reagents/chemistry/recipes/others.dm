@@ -142,7 +142,7 @@
 	required_reagents = list("water" = 5, "milk" = 5)
 
 /datum/chemical_reaction/virus_food_FEV_solution
-	name = "FEV_solutionic agar"
+	name = "FEV solutionic agar"
 	id = "FEV_solutionvirusfood"
 	results = list("FEV_solutionvirusfood" = 1)
 	required_reagents = list("FEV_solution" = 1, "virusfood" = 1)

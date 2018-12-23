@@ -46,7 +46,7 @@
 	required_reagents = list("mercury" = 1, "diethylamine" = 1, "ephedrine" = 1)
 
 /datum/chemical_reaction/FEV_solution
-	name = "Unstable FEV_solution"
+	name = "Unstable FEV solution"
 	id = "FEV_solution"
 	results = list("FEV_solution" = 5)
 	required_reagents = list("radium" = 1, "phosphorus" = 1, "chlorine" = 1, "virusfood" = 1, "blood" = 1)

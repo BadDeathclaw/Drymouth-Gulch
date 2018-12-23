@@ -481,7 +481,7 @@
 
 /obj/machinery/chem_dispenser/FEV_solution
 	name = "FEV solution dispenser"
-	desc = "Creates and dispenses FEV_solution."
+	desc = "Creates and dispenses FEV solution."
 	dispensable_reagents = list("FEV_solution")
 	emagged_reagents = list("plasma")
 
