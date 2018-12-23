@@ -150,7 +150,7 @@
 		forceMove(tank.loc)
 
 /obj/item/reagent_containers/spray/mister/afterattack(obj/target, mob/user, proximity)
-	if(target.loc == loc) //Safety check so you don't fill your mister with mutagen or something and then blast yourself in the face with it
+	if(target.loc == loc) //Safety check so you don't fill your mister with FEV_solution or something and then blast yourself in the face with it
 		return
 	..()
 
@@ -455,7 +455,7 @@
 
 /obj/item/watertank/op/New()
 	..()
-	reagents.add_reagent("mutagen",350)
+	reagents.add_reagent("FEV_solution",350)
 	reagents.add_reagent("napalm",125)
 	reagents.add_reagent("welding_fuel",125)
 	reagents.add_reagent("clf3",300)

@@ -45,11 +45,11 @@
 	results = list("lipolicide" = 3)
 	required_reagents = list("mercury" = 1, "diethylamine" = 1, "ephedrine" = 1)
 
-/datum/chemical_reaction/mutagen
-	name = "Unstable mutagen"
-	id = "mutagen"
-	results = list("mutagen" = 3)
-	required_reagents = list("radium" = 1, "phosphorus" = 1, "chlorine" = 1)
+/datum/chemical_reaction/FEV_solution
+	name = "Unstable FEV solution"
+	id = "FEV_solution"
+	results = list("FEV_solution" = 5)
+	required_reagents = list("radium" = 1, "phosphorus" = 1, "chlorine" = 1, "virusfood" = 1, "blood" = 1)
 
 /datum/chemical_reaction/lexorin
 	name = "Lexorin"

@@ -1627,13 +1627,13 @@
 
 // Virology virus food chems.
 
-/datum/reagent/toxin/mutagen/mutagenvirusfood
-	name = "mutagenic agar"
-	id = "mutagenvirusfood"
+/datum/reagent/toxin/FEV_solution/FEV_solutionvirusfood
+	name = "FEV solutionic agar"
+	id = "FEV_solutionvirusfood"
 	color = "#A3C00F" // rgb: 163,192,15
 	taste_description = "sourness"
 
-/datum/reagent/toxin/mutagen/mutagenvirusfood/sugar
+/datum/reagent/toxin/FEV_solution/FEV_solutionvirusfood/sugar
 	name = "sucrose agar"
 	id = "sugarvirusfood"
 	color = "#41B0C0" // rgb: 65,176,192

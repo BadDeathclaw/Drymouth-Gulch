@@ -555,7 +555,7 @@
 	B1.reagents.add_reagent("spore", 75)
 	B1.reagents.add_reagent("itching_powder", 50)
 	B2.reagents.add_reagent("fluorosurfactant", 150)
-	B2.reagents.add_reagent("mutagen", 150)
+	B2.reagents.add_reagent("FEV_solution", 150)
 	beakers += B1
 	beakers += B2
 
