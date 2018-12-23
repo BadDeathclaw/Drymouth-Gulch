@@ -15,8 +15,8 @@
 
 //Fallout 13
 /obj/item/ammo_box/magazine/internal/rangemaster
-	ammo_type = /obj/item/ammo_casing/a762lp
-	caliber = "a762lp"
+	ammo_type = /obj/item/ammo_casing/a762
+	caliber = "a762"
 	max_ammo = 10
 	multiload = 1
 
