@@ -20,7 +20,6 @@
 	icon_state = ""
 
 /turf/open/floor/Initialize(mapload)
-	broken_states = list("[initial(icon_state)]_dam")
 	if (!broken_states)
 		broken_states = list("damaged1", "damaged2", "damaged3", "damaged4", "damaged5")
 	if (!burnt_states)

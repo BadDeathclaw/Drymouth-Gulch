@@ -744,7 +744,7 @@
 	armour_penetration = -9
 
 /obj/item/projectile/bullet/medapbullet
-	damage = 26
+	damage = 40
 	armour_penetration = 20
 
 /obj/item/projectile/bullet/medapbullet/needle

@@ -49,6 +49,8 @@
 	return TRUE
 
 /mob/proc/has_hand()
+	if(get_num_arms() < 1)
+		return FALSE
 	return TRUE
 
 /mob/proc/is_nude()
@@ -298,7 +300,7 @@
 		set_is_fucking(partner, CUM_TARGET_ANUS)
 
 	playsound(loc, "honk/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
-	visible_message("<b>\The [src]</b> [message]")
+	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, partner)
 	partner.handle_post_sex(NORMAL_LUST, null, src)
 	partner.dir = get_dir(src, partner)

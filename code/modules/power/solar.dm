@@ -154,7 +154,7 @@
 	var/dx = SSsun.dx
 	var/dy = SSsun.dy
 
-	for(var/i = 1 to 20)		// 20 steps is enough
+	for(var/i = 1 to 5)		// 5 steps is enough
 		ax += dx	// do step
 		ay += dy
 

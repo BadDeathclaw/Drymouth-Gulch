@@ -257,8 +257,8 @@ Veteran
 	flag = F13VETLEGION
 	department_flag = LEGION
 	faction = "Legion"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 8
+	spawn_positions = 8
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
 	exp_requirements = 10
