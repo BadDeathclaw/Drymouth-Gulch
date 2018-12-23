@@ -3,7 +3,7 @@ BoS access:
 Main doors: ACCESS_CAPTAIN 20
 */
 
-/datum/outfit/job/BoS/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -12,7 +12,7 @@ Main doors: ACCESS_CAPTAIN 20
 /*
 Elder
 */
-/datum/job/BoS/f13elder
+/datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
 	department_flag = BOS
@@ -26,15 +26,15 @@ Elder
 	exp_requirements = 45
 	exp_type = EXP_TYPE_BROTHERHOOD
 
-	outfit = /datum/outfit/job/BoS/f13elder
+	outfit = /datum/outfit/job/bos/f13elder
 
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
 	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
 
-/datum/outfit/job/BoS/f13elder
+/datum/outfit/job/bos/f13elder
 	name = "Elder"
-	jobtype = /datum/job/BoS/f13elder
+	jobtype = /datum/job/bos/f13elder
 
 	id = /obj/item/card/id/gold
 
@@ -59,7 +59,7 @@ Elder
 Paladin
 */
 
-/datum/job/BoS/f13paladin
+/datum/job/bos/f13paladin
 	title = "Paladin"
 	flag = F13PALADIN
 	department_flag = BOS
@@ -72,15 +72,15 @@ Paladin
 	minimal_player_age = 2
 	exp_requirements = 45
 	exp_type = EXP_TYPE_BROTHERHOOD
-  
-	outfit = /datum/outfit/job/BoS/f13paladin
+
+	outfit = /datum/outfit/job/bos/f13paladin
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 
-/datum/outfit/job/BoS/f13paladin
+/datum/outfit/job/bos/f13paladin
 	name = "Paladin"
-	jobtype = /datum/job/BoS/f13paladin
+	jobtype = /datum/job/bos/f13paladin
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
@@ -102,7 +102,7 @@ Paladin
 /*
 Knight
 */
-/datum/job/BoS/f13knight
+/datum/job/bos/f13knight
 	title = "Knight"
 	flag = F13KNIGHT
 	department_flag = BOS
@@ -115,14 +115,14 @@ Knight
 	exp_requirements = 25
 	exp_type = EXP_TYPE_BROTHERHOOD
 
-	outfit = /datum/outfit/job/BoS/f13knight
+	outfit = /datum/outfit/job/bos/f13knight
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS,ACCESS_KITCHEN, ACCESS_BAR)
 
-/datum/outfit/job/BoS/f13knight
+/datum/outfit/job/bos/f13knight
 	name = "Knight"
-	jobtype = /datum/job/BoS/f13knight
+	jobtype = /datum/job/bos/f13knight
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
@@ -144,7 +144,7 @@ Knight
 /*
 Scribe
 */
-/datum/job/BoS/f13scribe
+/datum/job/bos/f13scribe
 	title = "Scribe"
 	flag = F13SCRIBE
 	department_flag = BOS
@@ -156,14 +156,14 @@ Scribe
 	exp_requirements = 10
 	exp_type = EXP_TYPE_BROTHERHOOD
 
-	outfit = /datum/outfit/job/BoS/f13scribe
+	outfit = /datum/outfit/job/bos/f13scribe
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 
-/datum/outfit/job/BoS/f13scribe
+/datum/outfit/job/bos/f13scribe
 	name = "Scribe"
-	jobtype = /datum/job/BoS/f13scribe
+	jobtype = /datum/job/bos/f13scribe
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/syndicate
@@ -183,7 +183,7 @@ Scribe
 /*
 Initiate
 */
-/datum/job/BoS/f13initiate
+/datum/job/bos/f13initiate
 	title = "Initiate"
 	flag = F13INITIATE
 	department_flag = BOS
@@ -194,14 +194,14 @@ Initiate
 	selection_color = "#95a5a6"
 
 
-	outfit = /datum/outfit/job/BoS/f13initiate
+	outfit = /datum/outfit/job/bos/f13initiate
 
 	access = list(ACCESS_BOS)
 	minimal_access = list(ACCESS_BOS)
 
-/datum/outfit/job/BoS/f13initiate
+/datum/outfit/job/bos/f13initiate
 	name = "Initiate"
-	jobtype = /datum/job/BoS/f13initiate
+	jobtype = /datum/job/bos/f13initiate
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon

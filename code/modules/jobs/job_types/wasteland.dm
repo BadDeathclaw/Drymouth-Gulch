@@ -1,7 +1,7 @@
 /*
 Cult Leader
 */
-/datum/job/wastelander/f13cultleader
+/datum/job/wasteland/f13cultleader
 	title = "Cult Leader"
 	flag = F13CULTLEADER
 	department_flag = WASTELAND
@@ -11,21 +11,21 @@ Cult Leader
 	supervisors = "your God"
 	selection_color = "#ffddf0"
 
-	outfit = /datum/outfit/job/wastelander/f13cultleader
+	outfit = /datum/outfit/job/wasteland/f13cultleader
 
-/datum/outfit/job/wastelander/f13cultleader
+/datum/outfit/job/wasteland/f13cultleader
 	name = "Cult Leader"
-	jobtype = /datum/job/wastelander/f13cultleader
+	jobtype = /datum/job/wasteland/f13cultleader
 
 	id = 			/obj/item/card/id/gold
 	uniform =  		/obj/item/clothing/under/rank/captain
 
 
 /*
-Wastelander
+wasteland
 */
 
-/datum/job/wastelander/f13wastelander
+/datum/job/wasteland/f13wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
 	department_flag = WASTELAND
@@ -35,11 +35,11 @@ Wastelander
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/wastelander/f13wastelander
+	outfit = /datum/outfit/job/wasteland/f13wastelander
 
-/datum/outfit/job/wastelander/f13wastelander
+/datum/outfit/job/wasteland/f13wastelander
 	name = "Wastelander"
-	jobtype = /datum/job/wastelander/f13wastelander
+	jobtype = /datum/job/wasteland/f13wastelander
 
 	id = null
 	ears = null
@@ -47,7 +47,7 @@ Wastelander
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-/datum/outfit/job/wastelander/f13wastelander/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
@@ -72,7 +72,7 @@ Wastelander
 Raider
 */
 
-/datum/job/wastelander/f13raider
+/datum/job/wasteland/f13raider
 	title = "Raider"
 	flag = F13RAIDER
 	department_head = list("Captain")
@@ -84,14 +84,14 @@ Raider
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/wastelander/f13raider
+	outfit = /datum/outfit/job/wasteland/f13raider
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/wastelander/f13raider
+/datum/outfit/job/wasteland/f13raider
 	name = "Raider"
-	jobtype = /datum/job/wastelander/f13raider
+	jobtype = /datum/job/wasteland/f13raider
 
 	id = null
 	ears = null
@@ -99,7 +99,7 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-/datum/outfit/job/wastelander/f13raider/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
 		/obj/item/clothing/under/f13/merca, \
@@ -202,7 +202,7 @@ Raider
 Pusher
 */
 
-/datum/job/wastelander/f13pusher
+/datum/job/wasteland/f13pusher
 	title = "Pusher"
 	flag = F13PUSHER
 	department_head = list("Captain")
@@ -214,14 +214,14 @@ Pusher
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/wastelander/f13pusher
+	outfit = /datum/outfit/job/wasteland/f13pusher
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/wastelander/f13pusher
+/datum/outfit/job/wasteland/f13pusher
 	name = "Pusher"
-	jobtype = /datum/job/wastelander/f13pusher
+	jobtype = /datum/job/wasteland/f13pusher
 
 	id = null
 	ears = null
@@ -231,7 +231,7 @@ Pusher
 
 	uniform =  		/obj/item/clothing/under/jabroni
 	suit = /obj/item/clothing/suit/f13/duster
-/datum/outfit/job/wastelander/f13pusher/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
@@ -245,7 +245,7 @@ Pusher
 Preacher
 */
 
-/datum/job/wastelander/f13preacher
+/datum/job/wasteland/f13preacher
 	title = "Preacher"
 	flag = F13PREACHER
 	department_head = list("Captain")
@@ -257,14 +257,14 @@ Preacher
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/wastelander/f13preacher
+	outfit = /datum/outfit/job/wasteland/f13preacher
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/wastelander/f13preacher
+/datum/outfit/job/wasteland/f13preacher
 	name = "Preacher"
-	jobtype = /datum/job/wastelander/f13preacher
+	jobtype = /datum/job/wasteland/f13preacher
 
 	id = null
 	ears = null
@@ -287,7 +287,7 @@ Preacher
 Punished Raider
 */
 
-/datum/job/wastelander/f13punraider
+/datum/job/wasteland/f13punraider
 	title = "Punished Raider"
 	flag = F13PUNRAIDER
 	department_head = list("Captain")
@@ -298,14 +298,14 @@ Punished Raider
 	spawn_positions = 0
 	supervisors = "no one"
 	selection_color = "#dddddd"
-	outfit = /datum/outfit/job/wastelander/f13punraider
+	outfit = /datum/outfit/job/wasteland/f13punraider
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/wastelander/f13punraider
+/datum/outfit/job/wasteland/f13punraider
 	name = "Punished Raider"
-	jobtype = /datum/job/wastelander/f13punraider
+	jobtype = /datum/job/wasteland/f13punraider
 
 	id = null
 	ears = null
@@ -313,7 +313,7 @@ Punished Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-/datum/outfit/job/wastelander/f13punraider/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/f13punraider/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
 		/obj/item/clothing/under/kilt/highlander, \
@@ -370,7 +370,7 @@ Trader
 */
 
 /*
-/datum/job/wastelander/f13traider
+/datum/job/wasteland/f13traider
 	title = "Traider"
 	flag = F13TRAIDER
 	department_head = list("Captain")
@@ -382,14 +382,14 @@ Trader
 	supervisors = "no one"
 	selection_color = "#ffdddd"
 
-	outfit = /datum/outfit/job/wastelander/f13traider
+	outfit = /datum/outfit/job/wasteland/f13traider
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/wastelander/f13traider
+/datum/outfit/job/wasteland/f13traider
 	name = "Traider"
-	jobtype = /datum/job/wastelander/f13traider
+	jobtype = /datum/job/wasteland/f13traider
 
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
