@@ -101,6 +101,7 @@
 					user.visible_message("<span class='notice'>[Lock] breaks off [src] and falls to pieces.</span>")
 					qdel(Lock)
 					Lock = null
+					src.desc = "[initial(desc)]"
 		SwitchState()
 
 
@@ -169,6 +170,7 @@
 		if(Lock.pry_off(user,src))
 			qdel(Lock)
 			Lock = null
+			src.desc = "[initial(desc)]"
 	return
 
 /obj/structure/mineral_door/proc/check_key(var/obj/item/key/K, mob/user)
@@ -192,7 +194,8 @@
 	else
 		if(user.transferItemToLoc(L, src))
 			user.visible_message("<span class='notice'>[user] adds [L] to \the [src].</span>", \
-								 "<span class='notice'>You adds [L] to \the [src].</span>")
+								 "<span class='notice'>You add [L] to \the [src].</span>")
+			desc = "[src.desc] Has a lock engraved with a [L.lock_data]."
 			Lock = L
 
 /obj/structure/mineral_door/deconstruct(disassembled = TRUE)
