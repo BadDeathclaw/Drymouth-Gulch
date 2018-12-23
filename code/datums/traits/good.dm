@@ -25,6 +25,14 @@
 	if(mood)
 		mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
 
+/datum/quirk/bigleagues
+	name = "Big Leauges"
+	desc = "Swing for the fences! You deal additional damage with melee weapons."
+	value = 2
+	mob_trait = TRAIT_BIG_LEAGUES
+	gain_text = "<span class='notice'>You feel like swinging for the fences!</span>"
+	lose_text = "<span class='danger'>You feel like bunting.</span>"
+
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
 	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
