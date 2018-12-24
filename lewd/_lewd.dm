@@ -59,15 +59,6 @@
 /mob/living/carbon/human/is_nude()
 	return (!wear_suit || !(wear_suit.body_parts_covered)) && (!w_uniform || !(w_uniform.body_parts_covered))
 
-/mob/proc/has_lips()
-	return FALSE
-
-/mob/living/carbon/human/has_lips()
-	if(!is_muzzled())
-		return FALSE
-	else
-		return TRUE
-
 /proc/cum_splatter(target) // Like blood_splatter(), but much more questionable on a resume.
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
 	//var/obj/effect/decal/cleanable/cum/C = (get_turf(target))
