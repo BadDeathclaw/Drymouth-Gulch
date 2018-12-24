@@ -1,12 +1,58 @@
-"a" = (/obj/machinery/computer/shuttle/vaultelevator,/turf/open/floor/engine,/area/shuttle/vault_elevator)
-"b" = (/turf/open/floor/engine,/area/shuttle/vault_elevator)
-"c" = (/obj/structure/chair/f13chair2{icon_state = "f13chair2"; dir = 4},/turf/open/floor/engine,/area/shuttle/vault_elevator)
-"d" = (/obj/docking_port/mobile/elevator{dheight = 0; dir = 8; dwidth = 1; height = 3; id = "vault_elevator"; name = "vault elevator"; timid = 1; width = 4},/turf/open/floor/engine,/area/shuttle/vault_elevator)
-"e" = (/obj/machinery/light/small{icon_state = "bulb"; dir = 8},/obj/structure/chair/f13chair2{icon_state = "f13chair2"; dir = 4},/turf/open/floor/engine,/area/shuttle/vault_elevator)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/computer/shuttle/vaultelevator,
+/turf/open/floor/engine,
+/area/shuttle/vault_elevator)
+"b" = (
+/turf/open/floor/engine,
+/area/shuttle/vault_elevator)
+"c" = (
+/obj/structure/chair/f13chair2{
+	icon_state = "f13chair2";
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/shuttle/vault_elevator)
+"d" = (
+/obj/docking_port/mobile/elevator{
+	dheight = 0;
+	dir = 8;
+	dwidth = 1;
+	height = 3;
+	id = "vault_elevator";
+	name = "vault elevator";
+	timid = 1;
+	width = 4
+	},
+/turf/open/floor/engine,
+/area/shuttle/vault_elevator)
+"e" = (
+/obj/machinery/light/small{
+	icon_state = "bulb";
+	dir = 8
+	},
+/obj/structure/chair/f13chair2{
+	icon_state = "f13chair2";
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/shuttle/vault_elevator)
 
 (1,1,1) = {"
-cba
-cbb
-ebd
-cbb
+c
+c
+e
+c
+"}
+(2,1,1) = {"
+b
+b
+b
+b
+"}
+(3,1,1) = {"
+a
+b
+d
+b
 "}
