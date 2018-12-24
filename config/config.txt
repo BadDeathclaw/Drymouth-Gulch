@@ -219,7 +219,7 @@ CHECK_RANDOMIZER
 # WIKIURL http://www.tgstation13.org/wiki
 
 ## Rules address
-RULESURL https://discord.gg/BAzDXnE
+RULESURL https://cdn.discordapp.com/attachments/523918729780789287/523957192790114306/unknown.png
 
 ## Github address
 GITHUBURL https://github.com/Digdugxx/TG-Claw
