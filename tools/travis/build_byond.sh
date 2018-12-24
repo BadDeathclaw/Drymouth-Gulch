@@ -5,10 +5,10 @@ set -e
 shopt -s globstar
 
 if [ "$BUILD_TOOLS" = false ]; then
-	if grep -E '^\".+\" = \(.+\)' _maps/**/*.dmm;	then
-    	echo "Non-TGM formatted map detected. Please convert it using Map Merger!"
-    	exit 1
-	fi;
+#	if grep -E '^\".+\" = \(.+\)' _maps/**/*.dmm;	then
+#    	echo "Non-TGM formatted map detected. Please convert it using Map Merger!"
+#    	exit 1
+#	fi;
 	if grep -P '^\ttag = \"icon' _maps/**/*.dmm;	then
     	echo "tag vars from icon state generation detected in maps, please remove them."
     	exit 1
