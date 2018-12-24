@@ -173,7 +173,7 @@
 			src.desc = "[initial(desc)]"
 	return
 
-/obj/structure/mineral_door/proc/check_key(var/obj/item/key/K, mob/user)
+/obj/structure/mineral_door/proc/check_key(obj/item/key/K, mob/user)
 	if(!Lock)
 		to_chat(user, "[src] has no lock attached")
 		return
@@ -187,7 +187,7 @@
 			return TRUE
 	return FALSE
 
-/obj/structure/mineral_door/proc/add_lock(var/obj/item/lock_construct/L, mob/user)
+/obj/structure/mineral_door/proc/add_lock(obj/item/lock_construct/L, mob/user)
 	if(Lock)
 		to_chat(user, "[src] already has \a [Lock] attached")
 		return

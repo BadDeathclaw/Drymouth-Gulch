@@ -367,7 +367,7 @@
 		GLOB.cameranet.updateVisibility(src, 0)
 
 
-/obj/machinery/door/proc/add_lock(var/obj/item/lock_construct/L, mob/user)
+/obj/machinery/door/proc/add_lock(obj/item/lock_construct/L, mob/user)
 	if(Lock)
 		to_chat(user, "[src] already has \a [Lock] attached")
 		return
@@ -385,7 +385,7 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/door/proc/check_key(var/obj/item/key/K, mob/user)
+/obj/machinery/door/proc/check_key(obj/item/key/K, mob/user)
 	if(!Lock)
 		to_chat(user, "[src] has no lock attached")
 		return
