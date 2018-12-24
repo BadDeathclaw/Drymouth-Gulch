@@ -1,8 +1,32 @@
-"a" = (/obj/machinery/light/small{icon_state = "bulb"; dir = 8},/turf/open/floor/engine,/area/shuttle/bos_elevator)
-"b" = (/turf/open/floor/engine,/area/shuttle/bos_elevator)
-"c" = (/obj/docking_port/mobile/elevator{dir = 8; dwidth = 1; height = 2; id = "bos_elevator"; name = "BOS Elevator"; timid = 1; width = 2},/turf/open/floor/engine,/area/shuttle/bos_elevator)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/light/small{
+	icon_state = "bulb";
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/shuttle/bos_elevator)
+"b" = (
+/turf/open/floor/engine,
+/area/shuttle/bos_elevator)
+"c" = (
+/obj/docking_port/mobile/elevator{
+	dir = 8;
+	dwidth = 1;
+	height = 2;
+	id = "bos_elevator";
+	name = "BOS Elevator";
+	timid = 1;
+	width = 2
+	},
+/turf/open/floor/engine,
+/area/shuttle/bos_elevator)
 
 (1,1,1) = {"
-ac
-bb
+a
+b
+"}
+(2,1,1) = {"
+c
+b
 "}
