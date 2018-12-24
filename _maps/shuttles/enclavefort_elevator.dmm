@@ -1,15 +1,94 @@
-"a" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/window/reinforced{dir = 1; layer = 2.9},/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"b" = (/obj/structure/window/reinforced{dir = 1; layer = 2.9},/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"c" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 1; layer = 2.9},/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"d" = (/obj/structure/window/reinforced{dir = 8},/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"e" = (/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"f" = (/obj/structure/window/reinforced{dir = 4},/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"g" = (/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 8},/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"h" = (/obj/docking_port/mobile/elevator{dheight = 0; dwidth = 1; height = 3; id = "enclavefort_elevator"; name = "enclave fort elevator"; timid = 1; width = 4},/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
-"i" = (/obj/machinery/computer/shuttle/enclavefortelevator{icon_state = "computer"; dir = 1},/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced,/turf/open/floor/engine,/area/shuttle/enclavefort_elevator)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"b" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"c" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"d" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"e" = (
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"f" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"g" = (
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"h" = (
+/obj/docking_port/mobile/elevator{
+	dheight = 0;
+	dwidth = 1;
+	height = 3;
+	id = "enclavefort_elevator";
+	name = "enclave fort elevator";
+	timid = 1;
+	width = 4
+	},
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
+"i" = (
+/obj/machinery/computer/shuttle/enclavefortelevator{
+	icon_state = "computer";
+	dir = 1
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/turf/open/floor/engine,
+/area/shuttle/enclavefort_elevator)
 
 (1,1,1) = {"
-abbc
-deef
-ghei
+a
+d
+g
+"}
+(2,1,1) = {"
+b
+e
+h
+"}
+(3,1,1) = {"
+b
+e
+e
+"}
+(4,1,1) = {"
+c
+f
+i
 "}
