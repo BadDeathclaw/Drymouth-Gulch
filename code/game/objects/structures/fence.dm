@@ -125,11 +125,17 @@
 	icon_state = "door_closed"
 	cuttable = FALSE
 	var/open = FALSE
+	var/obj/item/lock_construct/Lock = null
 
 /obj/structure/fence/door/Initialize()
 	. = ..()
 
 	update_door_status()
+
+/obj/structure/fence/door/Destroy()
+	if(Lock)
+		qdel(Lock)
+	return ..()
 
 /obj/structure/fence/door/opened
 	icon_state = "door_opened"
@@ -137,10 +143,52 @@
 	density = TRUE
 
 /obj/structure/fence/door/attack_hand(mob/user)
-	if(can_open(user))
+	if(check_locked(user))
+		return
+	else if(can_open(user))
 		toggle(user)
-
 	return TRUE
+
+/obj/structure/fence/door/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/lock_construct)) /* attempt to add a lock */
+		return add_lock(I, user) /* call add_lock proc, so we can disable for airlocks */
+	else if(istype(I, /obj/item/key))
+		return check_key(I, user)
+	else
+		return ..()
+
+/obj/structure/fence/door/crowbar_act(mob/living/user, obj/item/I)
+	if(Lock) /* attempt to pry the lock off */
+		if(Lock.pry_off(user,src))
+			qdel(Lock)
+			Lock = null
+			src.desc = "[initial(desc)]"
+	return
+
+/obj/structure/fence/door/proc/check_key(obj/item/key/K, mob/user)
+	if(!Lock)
+		to_chat(user, "[src] has no lock attached")
+		return
+	else
+		return Lock.check_key(K,user)
+
+/obj/structure/fence/door/proc/check_locked(mob/user)
+	if(Lock)
+		if(Lock.check_locked())
+			to_chat(user, "[src] is bolted [density ? "shut" : "open"]")
+			return TRUE
+	return FALSE
+
+/obj/structure/fence/door/proc/add_lock(obj/item/lock_construct/L, mob/user)
+	if(Lock)
+		to_chat(user, "[src] already has \a [Lock] attached")
+		return
+	else
+		if(user.transferItemToLoc(L, src))
+			user.visible_message("<span class='notice'>[user] adds [L] to \the [src].</span>", \
+								 "<span class='notice'>You add [L] to \the [src].</span>")
+			desc = "[src.desc] Has a lock engraved with a [L.lock_data]."
+			Lock = L
 
 /obj/structure/fence/door/proc/toggle(mob/user)
 	switch(open)

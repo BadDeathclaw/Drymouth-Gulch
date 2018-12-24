@@ -111,6 +111,7 @@
 					AM.visible_message("<span class='notice'>[Lock] breaks off [src] and falls to pieces.</span>")
 					qdel(Lock)
 					Lock = null
+					src.desc = "[initial(desc)]"
 				open()
 			else
 				do_animate("deny")
@@ -185,6 +186,7 @@
 		if(Lock.pry_off(user,src))
 			qdel(Lock)
 			Lock = null
+			src.desc = "[initial(desc)]"
 			open()
 	return
 
@@ -365,14 +367,15 @@
 		GLOB.cameranet.updateVisibility(src, 0)
 
 
-/obj/machinery/door/proc/add_lock(var/obj/item/lock_construct/L, mob/user)
+/obj/machinery/door/proc/add_lock(obj/item/lock_construct/L, mob/user)
 	if(Lock)
 		to_chat(user, "[src] already has \a [Lock] attached")
 		return
 	else
 		if(user.transferItemToLoc(L, src))
 			user.visible_message("<span class='notice'>[user] adds [L] to [src].</span>", \
-								 "<span class='notice'>You adds [L] to [src].</span>")
+								 "<span class='notice'>You add [L] to [src].</span>")
+			desc = "[src.desc] Has a lock engraved with a [L.lock_data]."
 			Lock = L
 
 /obj/machinery/door/proc/check_locked(mob/user)
@@ -382,7 +385,7 @@
 			return TRUE
 	return FALSE
 
-/obj/machinery/door/proc/check_key(var/obj/item/key/K, mob/user)
+/obj/machinery/door/proc/check_key(obj/item/key/K, mob/user)
 	if(!Lock)
 		to_chat(user, "[src] has no lock attached")
 		return
