@@ -21,6 +21,7 @@ Elder
 	req_admin_notify = 1
 	exp_requirements = 45
 	exp_type = EXP_TYPE_BROTHERHOOD
+
 	outfit = /datum/outfit/job/f13elder
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
@@ -64,8 +65,9 @@ Paladin
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
 	minimal_player_age = 2
-	exp_requirements = 45
+	exp_requirements = 30
 	exp_type = EXP_TYPE_BROTHERHOOD
+
 	outfit = /datum/outfit/job/f13paladin
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
@@ -79,9 +81,8 @@ Paladin
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	l_hand = /obj/item/clothing/suit/space/hardsuit/powerarmor/t51b //Stops a edge case scenerio where having power armor put onto a suit would basically break spawning in
-	//suit = 			/obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
-	//head = 			/obj/item/clothing/head/helmet/power_armor/t51b
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
 	suit_store =	/obj/item/gun/energy/laser/scatter
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
@@ -107,6 +108,7 @@ Knight
 	minimal_player_age = 2
 	exp_requirements = 25
 	exp_type = EXP_TYPE_BROTHERHOOD
+
 	outfit = /datum/outfit/job/f13knight
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
@@ -120,9 +122,8 @@ Knight
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	l_hand = 		/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
-	//suit = 			/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
-	//head = 			/obj/item/clothing/head/helmet/power_armor/t45d
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
+	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
 	suit_store =	/obj/item/gun/energy/laser/scatter
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
@@ -147,6 +148,7 @@ Scribe
 	selection_color = "#95a5a6"
 	exp_requirements = 10
 	exp_type = EXP_TYPE_BROTHERHOOD
+
 
 	outfit = /datum/outfit/job/f13scribe
 
