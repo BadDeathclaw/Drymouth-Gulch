@@ -64,7 +64,7 @@
 //////////////////////
 // Hair Definitions //
 //////////////////////
-// Please try to ABC lists from now on.
+// Please try to ABC lists from now on in a "smart" fashion with ABC -> associated.
 
 /datum/sprite_accessory/hair
 	icon = 'icons/mob/human_face.dmi'	  // default icon for all hairs
@@ -387,7 +387,7 @@
 
 /datum/sprite_accessory/hair/over_eye
 	name = "Over Eye"
-		icon_state = "hair_shortovereye"
+	icon_state = "hair_shortovereye"
 
 /datum/sprite_accessory/hair/parted
 	name = "Parted"
@@ -444,7 +444,6 @@
 /datum/sprite_accessory/hair/longponytail
 	name = "Long Ponytail"
 	icon_state = "hair_longstraightponytail"
-
 
 /datum/sprite_accessory/hair/protagonist
 	name = "Slightly Long"
