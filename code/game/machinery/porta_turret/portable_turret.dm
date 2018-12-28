@@ -57,7 +57,7 @@
 	var/criminals = 1		//checks if it can shoot people on arrest
 	var/auth_weapons = 0	//checks if it can shoot people that have a weapon they aren't authorized to have
 	var/stun_all = 0		//if this is active, the turret shoots everything that isn't security or head of staff
-	var/check_anomalies = 1	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/check_anomalies = 0	//checks if it can shoot at unidentified lifeforms (ie xenos)
 	var/shoot_unloyal = 0	//checks if it can shoot people that aren't loyalty implantd
 
 	var/attacked = 0		//if set to 1, the turret gets pissed off and shoots at people nearby (unless they have sec access!)
@@ -1061,9 +1061,11 @@
 			shootnonfaction = 1
 			if(islist(user.faction))
 				for(var/factionss in user.faction)
-					faction += factionss
+					if(factionss != "neutral")
+						faction += factionss
 			else
-				faction += user.faction
+				if(user.faction != "neutral")
+					faction += user.faction
 			user << "Targeting by non members of the faction set, members of the faction can still be shot by other settings."
 	else
 		var/safety2 = alert(user, "Do you want to disable faction control or add another faction?", "Turret Faction Control", "Disable Control", "Add A Faction")
