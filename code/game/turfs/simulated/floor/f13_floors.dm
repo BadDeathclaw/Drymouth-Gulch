@@ -55,7 +55,7 @@
 	var/obj/structure/flora/turfPlant = null
 	slowdown = 2
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
-	var/has_been_dug = FALSE //To prevent infinite sand from one tile
+	var/pit_sand = 2
 	var/storedindex = 0 //amount of stored items
 	var/mob/living/gravebody //is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
