@@ -80,9 +80,6 @@ obj/dugpit/return_air()
 				qdel(W)
 
 
-
-
-
 /turf/open/floor/plating/f13/outside/desert/attack_hand(mob/living/carbon/human/M)
 	if (dug)
 		if (storedindex==0)
