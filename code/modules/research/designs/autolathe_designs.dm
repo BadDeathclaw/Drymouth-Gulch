@@ -774,7 +774,7 @@
 	category = list("initial", "Security")
 
 /datum/design/doublestacked
-	name = "Rangermaster Stripper Clip (7.62mm)"
+	name = "Rangemaster Stripper Clip (7.62mm)"
 	id = "doublestacked"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 10000)
