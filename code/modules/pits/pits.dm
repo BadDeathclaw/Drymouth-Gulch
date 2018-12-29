@@ -15,11 +15,10 @@ obj/dugpit/New(lnk)
 	..()
 	parent = lnk
 
-/obj/dugpit/proc/dugresist(usr)
+/obj/dugpit/proc/dugresist(mob/living/user)
 	//try to unbury self
-	var/mob/living/user = usr
 	to_chat(user, "<span class='danger'>You start digging from inside, trying to unbury self!</span>")
-	if(do_after(user, (5*10), target = src))
+	if(do_after(user, (50), target = src))
 		if (prob(10))
 			to_chat(user, "<span class='danger'>You have managed to move some of the ground!</span>")
 			parent.unburylevel++
@@ -29,7 +28,7 @@ obj/dugpit/New(lnk)
 		else
 			to_chat(user, "<span class='danger'>The ground is too heavy!</span>")
 
-obj/dugpit/return_air()
+/obj/dugpit/return_air()
 	var/datum/gas_mixture/GM = new
 	GM.temperature = parent.temperature
 	return GM
@@ -123,7 +122,7 @@ obj/dugpit/return_air()
 			usr.show_message("<span class='notice'>You need to fill the hole with sand!</span>", 1)
 			return
 		var/turf/T = user.loc
-		if (!( istype(T, /turf) ))
+		if (!istype(T, /turf))
 			return
 		if (dug)
 			for (var/mob/living/mobongrave in mypit.loc)
