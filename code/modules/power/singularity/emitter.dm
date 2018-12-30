@@ -96,8 +96,6 @@
 	return TRUE
 
 /obj/machinery/power/emitter/Destroy()
-	if(SSticker.IsRoundInProgress())
-		var/turf/T = get_turf(src)
 	QDEL_NULL(sparks)
 	return ..()
 
