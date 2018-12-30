@@ -197,8 +197,8 @@ Recruit
 	flag = F13RECRUIT
 	department_flag = NCR
 	faction = "NCR"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 12
+	spawn_positions = 12
 	supervisors = "sergeants"
 	selection_color = "#fff5cc"
 
