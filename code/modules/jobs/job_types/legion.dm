@@ -263,7 +263,7 @@ Veteran
 	spawn_positions = 8
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
-	exp_requirements = 600
+	exp_requirements = 300
 	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13vetlegion
@@ -356,7 +356,7 @@ Legionary
 	spawn_positions = 2
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
-	exp_requirements = 300
+	exp_requirements = 600
 	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13explorer
