@@ -114,6 +114,7 @@ Veteran Decan
 	spawn_positions = 1
 	supervisors = "the centurion"
 	selection_color = "#ffeeee"
+	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/f13vetdecan
 
@@ -306,8 +307,8 @@ Legionary
 	flag = F13LEGIONARY
 	department_flag = LEGION
 	faction = "Legion"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 15
+	spawn_positions = 15
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
 
