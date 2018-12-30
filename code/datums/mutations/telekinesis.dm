@@ -11,6 +11,11 @@
 	..()
 	visual_indicators |= mutable_appearance('icons/effects/genetics.dmi', "telekinesishead", -MUTATIONS_LAYER)
 
+/datum/mutation/human/telekinesis/on_acquiring(mob/living/carbon/human/owner)
+	if(..())
+		return
+	message_admins("[ADMIN_LOOKUPFLW(owner)] gained telekinesis in [ADMIN_VERBOSEJMP(owner.loc)].")
+
 /datum/mutation/human/telekinesis/get_visual_indicator(mob/living/carbon/human/owner)
 	return visual_indicators[1]
 
