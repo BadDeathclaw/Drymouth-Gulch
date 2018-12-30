@@ -115,6 +115,7 @@ Veteran Decan
 	supervisors = "the centurion"
 	selection_color = "#ffeeee"
 	exp_requirements = 1500
+	exp_type = EXP_TYPE_LEGION
 
 	outfit = /datum/outfit/job/f13vetdecan
 
