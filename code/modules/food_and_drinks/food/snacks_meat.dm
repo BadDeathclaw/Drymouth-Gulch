@@ -22,8 +22,43 @@
 	list_reagents = list("nutriment" = 3, "carpotoxin" = 5, "vitamin" = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
+	tastes = list("fish" = 1)
+	foodtype = MEAT
+
+
+/obj/item/reagent_containers/food/snacks/mob_meat
+	name = "cazador fillet"
+	desc = "A fillet of cazador meat."
+	icon_state = "fishfillet"
+	list_reagents = list("nutriment" = 3, "vitamin" = 2)
+	bitesize = 6
+	filling_color = "#FA8072"
 	tastes = list("bug flesh" = 1)
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/mob_meat/radroach_meat
+	name = "cazador fillet"
+	desc = "A fillet of radroach meat."
+	icon_state = "fishfillet"
+	list_reagents = list("nutriment" = 3, "bad_food" = 3, "vitamin" = 2)
+	bitesize = 6
+	filling_color = "#FA8072"
+	tastes = list("bug flesh" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/mob_meat/cazador_meat
+	name = "cazador fillet"
+	desc = "A fillet of cazador meat."
+	icon_state = "fishfillet"
+	list_reagents = list("nutriment" = 3, "carpotoxin" = 5, "vitamin" = 2)
+	bitesize = 6
+	filling_color = "#FA8072"
+	tastes = list("bug flesh" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/mob_meat/Initialize()
+	. = ..()
+	eatverb = pick("bite","chew","choke down","gnaw","swallow","chomp")
 
 /obj/item/reagent_containers/food/snacks/carpmeat/Initialize()
 	. = ..()
