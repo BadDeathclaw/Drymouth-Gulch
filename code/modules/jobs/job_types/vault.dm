@@ -24,7 +24,7 @@ Overseer
 	req_admin_notify = 1
 	minimal_player_age = 6
 
-	exp_requirements = 2700
+	exp_requirements = 1800
 	exp_type = EXP_TYPE_VAULT
 
 	outfit = /datum/outfit/job/f13overseer
