@@ -121,7 +121,7 @@ Sergeant
 	spawn_positions = 2
 	supervisors = "the lieutenant"
 	selection_color = "#fff5cc"
-	exp_requirements = 300
+	exp_requirements = 600
 	exp_type = EXP_TYPE_NCR
 
 	outfit = /datum/outfit/job/f13sergeant
