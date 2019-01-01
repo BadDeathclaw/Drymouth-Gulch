@@ -96,11 +96,6 @@
 	return TRUE
 
 /obj/machinery/power/emitter/Destroy()
-	if(SSticker.IsRoundInProgress())
-		var/turf/T = get_turf(src)
-		message_admins("Emitter deleted at [ADMIN_VERBOSEJMP(T)]")
-		log_game("Emitter deleted at [AREACOORD(T)]")
-		investigate_log("<font color='red'>deleted</font> at [AREACOORD(T)]", INVESTIGATE_SINGULO)
 	QDEL_NULL(sparks)
 	return ..()
 
@@ -127,9 +122,7 @@
 				shot_number = 0
 				fire_delay = maximum_fire_delay
 
-			message_admins("Emitter turned [active ? "ON" : "OFF"] by [ADMIN_LOOKUPFLW(user)] in [ADMIN_VERBOSEJMP(src)]")
 			log_game("Emitter turned [active ? "ON" : "OFF"] by [key_name(user)] in [AREACOORD(src)]")
-			investigate_log("turned [active ? "<font color='green'>ON</font>" : "<font color='red'>OFF</font>"] by [key_name(user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 
 			update_icon()
 

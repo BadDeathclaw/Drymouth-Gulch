@@ -292,7 +292,7 @@
 
 /obj/machinery/computer/slot_machine/proc/give_money(amount)
 	var/amount_to_give = money >= amount ? amount : money
-	var/surplus = amount_to_give - give_coins(amount_to_give)
+	var/surplus = give_coins(amount_to_give)
 	money = max(0, money - amount)
 	balance += surplus
 

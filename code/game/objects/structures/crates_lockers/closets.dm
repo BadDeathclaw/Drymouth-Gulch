@@ -40,7 +40,8 @@
 	update_icon()
 	PopulateContents()
 	if(mapload && !opened) //now takes it first because timery thingies does not work with these
-		take_contents()
+		spawn(0)
+			take_contents()
 
 //USE THIS TO FILL IT, NOT INITIALIZE OR NEW
 /obj/structure/closet/proc/PopulateContents()

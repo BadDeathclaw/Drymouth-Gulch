@@ -8,13 +8,6 @@
 	..()
 	to_chat(user, "<span class='notice'>There's a <b>small crack</b> on the edge of it.</span>")
 
-/turf/open/floor/plasteel/update_icon()
-	if(!..())
-		return 0
-	if(!broken && !burnt)
-		icon_state = icon_regular_floor
-
-
 /turf/open/floor/plasteel/airless
 	initial_gas_mix = "TEMP=2.7"
 

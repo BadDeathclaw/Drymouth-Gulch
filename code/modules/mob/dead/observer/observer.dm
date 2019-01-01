@@ -515,6 +515,9 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	set hidden = 1
 	to_chat(src, "<span class='danger'>You are dead! You have no mind to store memory!</span>")
 
+/mob/dead/observer/IsAdvancedToolUser()
+	return TRUE
+
 /mob/dead/observer/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"
 	set desc = "Toggles your ability to see things only ghosts can see, like other ghosts"

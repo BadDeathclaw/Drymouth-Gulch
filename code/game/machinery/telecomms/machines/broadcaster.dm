@@ -1,6 +1,6 @@
 /*
 	The broadcaster sends processed messages to all radio devices in the game. They
-	do not have to be headsets; intercoms and station-bounced radios suffice.
+	do not have to be headsets; intercoms and shortwave radios suffice.
 
 	They receive their message from a server after the message has been logged.
 */

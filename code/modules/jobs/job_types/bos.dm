@@ -23,7 +23,7 @@ Elder
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
-	exp_requirements = 45
+	exp_requirements = 2700
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/bos/f13elder
@@ -70,7 +70,7 @@ Paladin
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
 	minimal_player_age = 2
-	exp_requirements = 45
+	exp_requirements = 1800
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/bos/f13paladin
@@ -86,9 +86,8 @@ Paladin
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	l_hand = /obj/item/clothing/suit/space/hardsuit/powerarmor/t51b //Stops a edge case scenerio where having power armor put onto a suit would basically break spawning in
-	//suit = 			/obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
-	//head = 			/obj/item/clothing/head/helmet/power_armor/t51b
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
 	suit_store =	/obj/item/gun/energy/laser/scatter
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
@@ -112,7 +111,7 @@ Knight
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
 	minimal_player_age = 2
-	exp_requirements = 25
+	exp_requirements = 1500
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/bos/f13knight
@@ -128,9 +127,8 @@ Knight
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	l_hand = 		/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
-	//suit = 			/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
-	//head = 			/obj/item/clothing/head/helmet/power_armor/t45d
+	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
+	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
 	suit_store =	/obj/item/gun/energy/laser/scatter
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
@@ -153,7 +151,7 @@ Scribe
 	spawn_positions = 2
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
-	exp_requirements = 10
+	exp_requirements = 600
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/bos/f13scribe

@@ -563,7 +563,7 @@
 /datum/reagent/flightpotion
 	name = "Flight Potion"
 	id = "flightpotion"
-	description = "Strange mutagenic compound of unknown origins."
+	description = "Strange FEV solutionic compound of unknown origins."
 	reagent_state = LIQUID
 	color = "#FFEBEB"
 

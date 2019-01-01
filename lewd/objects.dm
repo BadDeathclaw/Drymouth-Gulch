@@ -70,8 +70,9 @@
 	layer = ABOVE_NORMAL_TURF_LAYER
 	density = 0
 	icon = 'honk/icons/effects/cum.dmi'
+	icon_state = "cum1"
 	random_icon_states = list("cum1", "cum3", "cum4", "cum5", "cum6", "cum7", "cum8", "cum9", "cum10", "cum11", "cum12")
-	mergeable_decal = FALSE
+	mergeable_decal = TRUE
 	blood_state = null
 	bloodiness = null
 	//var/blood_DNA = list()
