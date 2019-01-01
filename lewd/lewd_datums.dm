@@ -261,3 +261,19 @@
 
 /datum/interaction/lewd/grindmouth/display_interaction(mob/user, mob/target)
 	user.do_grindmouth(target)
+	
+
+/datum/interaction/lewd/thighs
+	command = "thighs"
+	description = "Smother them."
+	max_distance = 0
+	require_user_naked = TRUE
+	require_target_mouth = TRUE
+	write_log_user = "thigh-trapped"
+	write_log_target = "was smothered by"
+
+
+
+/datum/interaction/lewd/thighs/display_interaction(var/mob/user, var/mob/target)
+
+	user.do_thighs(target)
