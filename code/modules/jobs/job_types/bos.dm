@@ -64,7 +64,6 @@ Paladin
 	spawn_positions = 1
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
-	minimal_player_age = 2
 	exp_requirements = 1800
 	exp_type = EXP_TYPE_BROTHERHOOD
 
@@ -105,7 +104,6 @@ Knight
 	spawn_positions = 1
 	supervisors = "the elder"
 	selection_color = "#95a5a6"
-	minimal_player_age = 2
 	exp_requirements = 1500
 	exp_type = EXP_TYPE_BROTHERHOOD
 
