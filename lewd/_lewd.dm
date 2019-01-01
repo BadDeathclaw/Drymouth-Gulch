@@ -123,6 +123,16 @@
 					message = "cums onto \the [partner]'s breasts."
 				else
 					message = "cums on \the [partner]'s chest and neck."
+			if(THIGH_SMOTHERING)
+
+				if(src.has_penis())
+
+					message = "keeps \the [partner] locked in their thighs as their cock throbs, dumping its heavy load all over their face."
+
+				else
+
+					message = "reaches their peak, locking their legs around \the [partner]'s head extra hard as they cum straight onto the head stuck between their thighs"
+					
 			else
 				message = "cums on the floor!"
 
@@ -259,6 +269,70 @@
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner)
 	partner.dir = get_dir(partner,src)
+	do_fucking_animation(get_dir(src, partner))
+
+/mob/proc/thigh_smother(mob/partner)
+
+	var/message
+	var/lust_increase = 1
+
+	if(is_fucking(partner, THIGH_SMOTHERING))
+
+		if(has_vagina())
+
+			message = pick(list("presses their weight down onto \the [partner]'s face, blocking their vision completely.", "rides \the [partner]'s face, grinding their wet pussy all over it."))
+
+		else if(has_penis())
+
+			message = pick(list("presses their weight down onto \the [partner]'s face, blocking their vision completely.", "forces their dick and nutsack into \the [partner]'s face as they're stuck locked inbetween their thighs.", "slips their cock into \the [partner]'s helpless mouth, keeping their groin pressed hard into their face."))
+
+		else
+
+			message = "rubs their groin up and down \the [partner]'s face."
+
+	else
+
+		if(has_vagina())
+
+			message = pick(list("clambers over \the [partner]'s face and pins them down with their meaty thighs, their moist slit rubbing all over \the [partner]'s mouth and nose.", "locks their legs around \the [partner]'s head before pulling it into their taint."))
+
+		else if(has_penis())
+
+			message = pick(list("clambers over \the [partner]'s face and pins them down with their thick thighs, then slowly inching closer and covering their eyes and nose with their leaking erection.", "locks their legs around \the [partner]'s head before pulling it into their fat package, smothering them."))
+
+		else
+
+			message = "deviously locks their legs around \the [partner]'s head and smothers it in their thick meaty thighs."
+
+		set_is_fucking(partner , THIGH_SMOTHERING)
+
+
+
+	if(rand(3))
+
+	var file = pick(list("bj10", "bj3", "foot_wet1", "foot_dry3"))
+
+	playsound(loc, "honk/sound/interactions/[file].ogg", 70, 1, -1)
+
+	visible_message("<b>\The [src]</b> [message]")
+
+	handle_post_sex(lust_increase, THIGH_SMOTHERING, partner)
+
+	partner.dir = get_dir(partner,src)
+
+	do_fucking_animation(get_dir(src, partner))
+
+
+
+
+
+	playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
+
+
+	handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner)
+
+	partner.dir = get_dir(partner,src)
+
 	do_fucking_animation(get_dir(src, partner))
 
 /mob/proc/do_throatfuck(mob/partner)
