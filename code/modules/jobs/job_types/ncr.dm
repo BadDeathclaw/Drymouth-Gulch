@@ -37,7 +37,6 @@ Captain
 	supervisors = "the colonel"
 	selection_color = "#ffeeaa"
 	req_admin_notify = 1
-	minimal_player_age = 6
 	exp_requirements = 1560
 	exp_type = EXP_TYPE_NCR
 
