@@ -239,7 +239,6 @@ Veteran Ranger
 	spawn_positions = 1
 	supervisors = "the lieutenant"
 	selection_color = "#ffeeaa"
-	minimal_player_age = 2
 	exp_requirements = 1500
 	exp_type = EXP_TYPE_NCR
 
