@@ -7,6 +7,7 @@
 #define GRINDING_FACE_WITH_ANUS "faceanus"
 #define GRINDING_FACE_WITH_FEET "facefeet"
 #define GRINDING_MOUTH_WITH_FEET "mouthfeet"
+#define THIGH_SMOTHERING "thigh_smother"
 
 #define NORMAL_LUST 10
 #define LOW_LUST 1
