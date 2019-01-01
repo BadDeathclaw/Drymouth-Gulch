@@ -280,29 +280,23 @@
 	if(is_fucking(partner, THIGH_SMOTHERING))
 
 		if(has_vagina())
-
 			message = pick(list("presses their weight down onto \the [partner]'s face, blocking their vision completely.", "rides \the [partner]'s face, grinding their wet pussy all over it."))
 
 		else if(has_penis())
-
 			message = pick(list("presses their weight down onto \the [partner]'s face, blocking their vision completely.", "forces their dick and nutsack into \the [partner]'s face as they're stuck locked inbetween their thighs.", "slips their cock into \the [partner]'s helpless mouth, keeping their groin pressed hard into their face."))
 
 		else
-
 			message = "rubs their groin up and down \the [partner]'s face."
 
 	else
 
 		if(has_vagina())
-
 			message = pick(list("clambers over \the [partner]'s face and pins them down with their meaty thighs, their moist slit rubbing all over \the [partner]'s mouth and nose.", "locks their legs around \the [partner]'s head before pulling it into their taint."))
 
 		else if(has_penis())
-
 			message = pick(list("clambers over \the [partner]'s face and pins them down with their thick thighs, then slowly inching closer and covering their eyes and nose with their leaking erection.", "locks their legs around \the [partner]'s head before pulling it into their fat package, smothering them."))
 
 		else
-
 			message = "deviously locks their legs around \the [partner]'s head and smothers it in their thick meaty thighs."
 
 		set_is_fucking(partner , THIGH_SMOTHERING)
