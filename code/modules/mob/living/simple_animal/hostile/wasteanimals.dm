@@ -8,7 +8,7 @@
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/mob_meat/cazador_meat = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/bug_meat/cazador_meat = 2)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
@@ -147,7 +147,7 @@
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/mob_meat/radroach_meat = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/bug_meat/radroach_meat = 2)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
