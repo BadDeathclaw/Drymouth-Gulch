@@ -7,6 +7,13 @@ Engineering: 10, 11 ACCESS_ENGINE_EQUIP, ACCESS_ENGINE
 Science: 47 ACCESS_RESEARCH
 here's a tip, go search DEFINES/access.dm
 */
+// I swear to god stop copy-pasting you damn snowflakes
+/datum/job/vault
+	department_flag = VAULT
+	faction = "Vault"
+	total_positions = 0
+	spawn_positions = 0
+	exp_type = EXP_TYPE_VAULT
 
 /datum/outfit/job/vault/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -28,10 +35,7 @@ Overseer
 	supervisors = "Vault-Tec"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	minimal_player_age = 6
-
 	exp_requirements = 1800
-	exp_type = EXP_TYPE_VAULT
 
 	outfit = /datum/outfit/job/vault/f13overseer
 
@@ -81,7 +85,6 @@ Head of Security
 	supervisors = "the overseer"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	minimal_player_age = 4
 	exp_requirements = 1800
 	exp_type = EXP_TYPE_VAULT
 	exp_type_department = EXP_TYPE_SECURITY
@@ -198,7 +201,6 @@ Security Officer
 	spawn_positions = 2 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	supervisors = "the head of security"
 	selection_color = "#ddffdd"
-	minimal_player_age = 1
 	exp_requirements = 900
 	exp_type = EXP_TYPE_VAULT
 

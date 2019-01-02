@@ -1,3 +1,9 @@
+/datum/outfit/job/enclave/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.add_trait(TRAIT_TECHNOPHREAK)
+
 /*
 Commander
 */
@@ -10,7 +16,6 @@ Commander
 	spawn_positions = 1
 	supervisors = "the US Government"
 	selection_color = "#aaaaf7"
-	minimal_player_age = 6
 
 	outfit = /datum/outfit/job/enclave/f13uscommander
 
@@ -37,7 +42,6 @@ Medic
 	spawn_positions = 1
 	supervisors = "the commander"
 	selection_color = "#ccccff"
-	minimal_player_age = 3
 
 	outfit = /datum/outfit/job/enclave/f13usmedic
 
@@ -64,7 +68,6 @@ Private
 	spawn_positions = 2
 	supervisors = "the commander"
 	selection_color = "#ccccff"
-	minimal_player_age = 3
 
 	outfit = /datum/outfit/job/enclave/f13usprivate
 
@@ -91,7 +94,6 @@ Scientist
 	spawn_positions = 2
 	supervisors = "the commander"
 	selection_color = "#ccccff"
-	minimal_player_age = 3
 
 	outfit = /datum/outfit/job/enclave/f13usscientist
 
@@ -118,7 +120,6 @@ Engineer
 	spawn_positions = 1
 	supervisors = "the commander"
 	selection_color = "#ccccff"
-	minimal_player_age = 3
 
 	outfit = /datum/outfit/job/enclave/f13usengineer
 
@@ -144,7 +145,6 @@ Colonist
 	spawn_positions = 0
 	supervisors = "the commander"
 	selection_color = "#ccccff"
-	minimal_player_age = 3
 
 	outfit = /datum/outfit/job/enclave/f13uscolonist
 

@@ -3,6 +3,28 @@ BoS access:
 Main doors: ACCESS_CAPTAIN 20
 */
 
+/datum/job/bos //do NOT use this for anything, it's just to store faction datums
+	department_flag = BOS
+	faction = "BOS"
+	total_positions = 0
+	spawn_positions = 0
+	selection_color = "#95a5a6"
+	exp_type = EXP_TYPE_BROTHERHOOD
+	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
+	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
+	outfit = /datum/outfit/job/bos/
+
+/datum/outfit/job/bos
+	name = "bosdatums"
+	jobtype = /datum/job/bos
+	backpack = /obj/item/storage/backpack/explorer
+	ears = 			/obj/item/radio/headset/headset_bos
+	uniform =		/obj/item/clothing/under/f13/recon
+	shoes = 		/obj/item/clothing/shoes/combat/swat
+	gloves = 		/obj/item/clothing/gloves/combat
+	belt = 			/obj/item/storage/belt/military
+	glasses =		/obj/item/clothing/glasses/night
+
 /datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -15,19 +37,14 @@ Elder
 /datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
-	department_flag = BOS
 	head_announce = list("Security")
 	//faction = "BOS"
-	total_positions = 0
-	spawn_positions = 0
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
 	exp_requirements = 2700
-	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/bos/f13elder
-
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
 	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
@@ -35,24 +52,13 @@ Elder
 /datum/outfit/job/bos/f13elder
 	name = "Elder"
 	jobtype = /datum/job/bos/f13elder
-
 	id = /obj/item/card/id/gold
-
-	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
-	uniform =		/obj/item/clothing/under/f13/recon
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	gloves = 		/obj/item/clothing/gloves/combat
 	suit = 			/obj/item/clothing/suit/f13/elder
 	suit_store =	/obj/item/gun/energy/laser/plasma
-	belt = 			/obj/item/storage/belt/military
-	glasses =		/obj/item/clothing/glasses/night
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/ballistic/automatic/pistol/n99=1)
-
-
 
 
 /*
@@ -62,35 +68,22 @@ Paladin
 /datum/job/bos/f13paladin
 	title = "Paladin"
 	flag = F13PALADIN
-	department_flag = BOS
+
 	head_announce = list("Security")
-	faction = "BOS"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the elder"
-	selection_color = "#95a5a6"
-	minimal_player_age = 2
 	exp_requirements = 1800
-	exp_type = EXP_TYPE_BROTHERHOOD
+
 
 	outfit = /datum/outfit/job/bos/f13paladin
-
-	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
-	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 
 /datum/outfit/job/bos/f13paladin
 	name = "Paladin"
 	jobtype = /datum/job/bos/f13paladin
-	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
-	uniform =		/obj/item/clothing/under/f13/recon
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	gloves = 		/obj/item/clothing/gloves/combat
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
 	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
 	suit_store =	/obj/item/gun/energy/laser/scatter
-	belt = 			/obj/item/storage/belt/military
-	glasses =		/obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
@@ -104,34 +97,21 @@ Knight
 /datum/job/bos/f13knight
 	title = "Knight"
 	flag = F13KNIGHT
-	department_flag = BOS
-	faction = "BOS"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the elder"
-	selection_color = "#95a5a6"
-	minimal_player_age = 2
 	exp_requirements = 1500
-	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/bos/f13knight
 
-	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS,ACCESS_KITCHEN, ACCESS_BAR)
 
 /datum/outfit/job/bos/f13knight
 	name = "Knight"
 	jobtype = /datum/job/bos/f13knight
-	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
-	uniform =		/obj/item/clothing/under/f13/recon
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	gloves = 		/obj/item/clothing/gloves/combat
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
 	suit_store =	/obj/item/gun/energy/laser/scatter
-	belt = 			/obj/item/storage/belt/military
-	glasses =		/obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
@@ -145,14 +125,11 @@ Scribe
 /datum/job/bos/f13scribe
 	title = "Scribe"
 	flag = F13SCRIBE
-	department_flag = BOS
-	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the elder"
-	selection_color = "#95a5a6"
 	exp_requirements = 600
-	exp_type = EXP_TYPE_BROTHERHOOD
+
 
 	outfit = /datum/outfit/job/bos/f13scribe
 
@@ -162,11 +139,8 @@ Scribe
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"
 	jobtype = /datum/job/bos/f13scribe
-	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/syndicate
 	shoes = 		/obj/item/clothing/shoes/combat
-	gloves = 		/obj/item/clothing/gloves/combat
 	suit = 			/obj/item/clothing/suit/f13/scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
@@ -184,13 +158,9 @@ Initiate
 /datum/job/bos/f13initiate
 	title = "Initiate"
 	flag = F13INITIATE
-	department_flag = BOS
-	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the scribes and knights"
-	selection_color = "#95a5a6"
-
 
 	outfit = /datum/outfit/job/bos/f13initiate
 
@@ -200,16 +170,9 @@ Initiate
 /datum/outfit/job/bos/f13initiate
 	name = "Initiate"
 	jobtype = /datum/job/bos/f13initiate
-	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
-	uniform =		/obj/item/clothing/under/f13/recon
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	gloves = 		/obj/item/clothing/gloves/combat
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
 	suit_store =	/obj/item/gun/ballistic/automatic/assault_rifle
-	belt = 			/obj/item/storage/belt/military
-	glasses =		/obj/item/clothing/glasses/night
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/r20=3, \
 		/obj/item/kitchen/knife/combat=1, \
