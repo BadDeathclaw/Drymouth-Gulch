@@ -219,6 +219,29 @@ Pusher
 	access = list()
 	minimal_access = list()
 
+/datum/outfit/job/wasteland/f13pusher
+	name = "Pusher"
+	jobtype = /datum/job/wasteland/f13pusher
+
+	id = null
+	ears = null
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+
+	uniform =  		/obj/item/clothing/under/jabroni
+	suit = /obj/item/clothing/suit/f13/duster
+
+/datum/outfit/job/f13pusher/pre_equip(mob/living/carbon/human/H)
+	..()
+	r_pocket = pick(
+		/obj/item/flashlight/flare/torch, \
+		/obj/item/flashlight/flare)
+	l_pocket = /obj/item/storage/bag/money/small/wastelander
+	backpack_contents = list(
+		/obj/item/reagent_containers/pill/patch/jet=3, \
+		/obj/item/reagent_containers/syringe/medx=2)
+
 /*
 Punished Raider
 */
