@@ -73,6 +73,7 @@ Paladin
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the elder"
+	selection_color = "#95a5a6"
 	exp_requirements = 1800
 
 
@@ -100,6 +101,7 @@ Knight
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the elder"
+	selection_color = "#95a5a6"
 	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/bos/f13knight

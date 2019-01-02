@@ -198,6 +198,7 @@ Veteran Ranger
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the lieutenant"
+	selection_color = "#ffeeaa"
 	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/ncr/f13vetranger

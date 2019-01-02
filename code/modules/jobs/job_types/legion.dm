@@ -91,7 +91,6 @@ Centurion
 	supervisors = "Legate"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
-	minimal_player_age = 6
 	exp_requirements = 2160
 
 
@@ -200,14 +199,14 @@ Vexillarius
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
+	suit_store = 	/obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/r20=1, \
+		/obj/item/storage/box/lethalshot, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 
@@ -288,12 +287,14 @@ Veteran
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
+		/obj/item/throwing_star/spear, \
+		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete=1, \
-		/obj/item/storage/box/lethalshot=1, \
+		/obj/item/ammo_box/m44=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
@@ -329,13 +330,14 @@ Legionary
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
+		/obj/item/throwing_star/spear, \
+		/obj/item/throwing_star/spear, \
+		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
 
