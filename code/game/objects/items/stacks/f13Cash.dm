@@ -168,16 +168,16 @@
 	qdel(src)
 
 /obj/item/stack/f13Cash/random/aureus/low
-	min_qty = LOW_MIN / AUR
-	max_qty = LOW_MAX / AUR
+	min_qty = max(1, LOW_MIN / AUR)
+	max_qty = max(1, LOW_MAX / AUR)
 
 /obj/item/stack/f13Cash/random/aureus/med
-	min_qty = MED_MIN / AUR
-	max_qty = MED_MAX / AUR
+	min_qty = max(1, MED_MIN / AUR)
+	max_qty = max(1, MED_MAX / AUR)
 
 /obj/item/stack/f13Cash/random/aureus/high
-	min_qty = HIGH_MIN / AUR
-	max_qty = HIGH_MAX / AUR
+	min_qty = max(1, HIGH_MIN / AUR)
+	max_qty = max(1, HIGH_MAX / AUR)
 
 /obj/item/stack/f13Cash/ncr
 	name = "NCR Dollar"
