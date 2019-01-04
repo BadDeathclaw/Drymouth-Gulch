@@ -8,7 +8,7 @@
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/bug_meat/cazador_meat = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
@@ -51,7 +51,7 @@
 	speed = 1
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1)
 
 /mob/living/simple_animal/hostile/cazador/young/Initialize()
 	. = ..()
@@ -147,7 +147,7 @@
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/bug_meat/radroach_meat = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat = 2)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
