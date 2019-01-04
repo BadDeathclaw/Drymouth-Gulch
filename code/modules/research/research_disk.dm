@@ -1,4 +1,3 @@
-
 /obj/item/disk/tech_disk
 	name = "technology disk"
 	desc = "A disk for storing technology data for further research."
@@ -32,3 +31,8 @@
 /obj/item/disk/tech_disk/vault/Initialize()
 	. = ..()
 	stored_research = new /datum/techweb/science
+
+/obj/item/disk/rnd_holotape
+	name = "data holotape"
+	desc = "A holotape for storing scientific data, left behind in the wasteland. It can be analyzed for research points."
+	icon_state = "holodisk"

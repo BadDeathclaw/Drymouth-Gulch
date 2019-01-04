@@ -1207,3 +1207,65 @@
 			/obj/item/stack/f13Cash/random/ncr/med = 25,
 			/obj/item/stack/f13Cash/random/bottle_cap/med = 5,
 			)
+
+/obj/effect/spawner/lootdrop/f13/rnd_holo_rare
+	name = "rnd holo 20% chance"
+	lootcount = 1
+
+	loot = list(
+				/obj/item/disk/rnd_holotape = 1,
+				"" = 4
+				)
+
+/obj/effect/spawner/lootdrop/f13/rnd_holo_unlikely
+	name = "rnd holo 25% chance"
+	lootcount = 1
+
+	loot = list(
+				/obj/item/disk/rnd_holotape = 1,
+				"" = 3
+				)
+
+/obj/effect/spawner/lootdrop/f13/rnd_holo_possible
+	name = "rnd holo 33% chance"
+	lootcount = 1
+
+	loot = list(
+				/obj/item/disk/rnd_holotape = 1,
+				"" = 2
+				)
+
+/obj/effect/spawner/lootdrop/f13/rnd_holo_even
+	name = "rnd holo 50% chance"
+	lootcount = 1
+
+	loot = list(
+				/obj/item/disk/rnd_holotape = 1,
+				"" = 1
+				)
+
+/obj/effect/spawner/lootdrop/f13/rnd_holo_probable
+	name = "rnd holo 66% chance"
+	lootcount = 1
+
+	loot = list(
+				/obj/item/disk/rnd_holotape = 2,
+				"" = 1
+				)
+
+/obj/effect/spawner/lootdrop/f13/rnd_holo_likely
+	name = "rnd holo 75% chance"
+	lootcount = 1
+
+	loot = list(
+				/obj/item/disk/rnd_holotape = 3,
+				"" = 1
+				)
+
+/obj/effect/spawner/lootdrop/f13/rnd_holo_certain
+	name = "rnd holo 100% chance"
+	lootcount = 1
+
+	loot = list(
+				/obj/item/disk/rnd_holotape = 1
+				)
