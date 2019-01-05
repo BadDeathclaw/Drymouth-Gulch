@@ -274,5 +274,3 @@
 
 
 
-/datum/interaction/lewd/thighs/display_interaction(var/mob/user, var/mob/target)
-    user.do_thighs(target)
