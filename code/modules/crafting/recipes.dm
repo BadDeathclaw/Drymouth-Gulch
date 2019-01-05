@@ -4,6 +4,7 @@
 	var/reqs[] = list() //type paths of items consumed associated with how many are needed
 	var/result //type path of item resulting from this craft
 	var/tools[] = list() //type paths of items needed but not consumed
+	var/station
 	var/time = 30 //time in deciseconds
 	var/parts[] = list() //type paths of items that will be placed in the result
 	var/chem_catalysts[] = list() //like tools but for reagents
@@ -289,6 +290,19 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+
+//=========== RELOADING RECIPES
+
+/datum/crafting_recipe/c10mm
+	name = "10 mm bullet"
+	result = /obj/item/ammo_casing/c10mm
+	reqs = list(/obj/item/ammo_casing/c10mm = 1)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+//===========
 
 /datum/crafting_recipe/ishotgun
 	name = "Improvised Shotgun"

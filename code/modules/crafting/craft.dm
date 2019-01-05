@@ -13,7 +13,7 @@
 	var/list/subcategories = list(
 						list(	//Weapon subcategories
 							CAT_WEAPON,
-							CAT_AMMO),
+							CAT_AMMO, CAT_RELOAD),
 						CAT_NONE, //Robot subcategories
 						CAT_NONE, //Misc subcategories
 						CAT_NONE, //Tribal subcategories
@@ -94,6 +94,7 @@
 	. = list()
 	.["tool_behaviour"] = list()
 	.["other"] = list()
+	.["crafting_benches"] = list()
 	for(var/obj/item/I in get_environment(user))
 		if(I.flags_1 & HOLOGRAM_1)
 			continue
@@ -110,6 +111,10 @@
 					for(var/datum/reagent/A in RC.reagents.reagent_list)
 						.["other"][A.type] += A.volume
 			.["other"][I.type] += 1
+
+	for (var/obj/machinery/crafting_bench/bench_sel in get_environment(user) )
+		var/obj/machinery/crafting_bench/bench_tar = bench_sel
+		.["crafting_benches"] += bench_tar.name
 
 /datum/personal_crafting/proc/check_tools(mob/user, datum/crafting_recipe/R, list/contents)
 	if(!R.tools.len)
@@ -142,10 +147,56 @@
 			return FALSE
 	return TRUE
 
+
+/datum/personal_crafting/proc/check_station(mob/user, datum/crafting_recipe/R, list/contents)
+	if(!R.station)
+		return TRUE
+	contents = get_surroundings(user)
+	if (R.station in contents.["crafting_benches"])
+		return TRUE
+	else
+		return FALSE
+
+
 /datum/personal_crafting/proc/construct_item(mob/user, datum/crafting_recipe/R)
 	var/list/contents = get_surroundings(user)
 	var/send_feedback = 1
 	if(check_contents(R, contents))
+
+
+		if (!check_station(user, R) )
+			return ", missing crafting bench."
+
+		if (R.subcategory == CAT_RELOAD)
+
+			var/ammo_check = FALSE
+			var/surroundings = get_environment(user)
+
+			for (var/obj/item/ammo_casing/case_sel in surroundings)
+				to_chat(user, "<span class='danger'>[case_sel]</span>")
+				to_chat(user, "<span class='danger'>Test 0</span>")
+
+				var/obj/item/ammo_casing/ammo_type
+				for (var/obj/item/ammo_casing/type_sel in R.reqs)
+					if (istype (type_sel, /obj/item/ammo_casing) )
+						to_chat(user, "<span class='danger'>Test 1</span>")
+						ammo_type = type_sel
+						break
+
+				if (!istype(ammo_type, case_sel) )
+					continue
+
+				to_chat(user, "<span class='danger'>Test 2</span>")
+
+				if (case_sel.BB)
+					continue
+
+				ammo_check = TRUE
+				break
+
+			if (ammo_check == FALSE)
+				return ", missing empty casing."
+
 		if(check_tools(user, R, contents))
 			if(do_after(user, R.time, target = user))
 				contents = get_surroundings(user)

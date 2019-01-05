@@ -424,3 +424,7 @@
 /obj/item/reagent_containers/glass/beaker/large/bromine
 	name = "bromine beaker"
 	list_reagents = list("bromine" = 50)
+
+/obj/item/reagent_containers/glass/beaker/large/blackpowder
+	name = "blackpowder beaker"
+	list_reagents = list("blackpowder" = 50)
