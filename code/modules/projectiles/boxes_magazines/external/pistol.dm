@@ -7,23 +7,17 @@
 	max_ammo = 8
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/m10mm/fire
-	name = "pistol magazine (10mm incendiary)"
-	icon_state = "9x19pI"
-	desc = "A gun magazine. Loaded with rounds which ignite the target."
-	ammo_type = /obj/item/ammo_casing/c10mm/fire
-
 /obj/item/ammo_box/magazine/m10mm/hp
 	name = "pistol magazine (10mm HP)"
 	icon_state = "9x19pH"
 	desc= "A gun magazine. Loaded with hollow-point rounds, extremely effective against unarmored targets, but nearly useless against protective clothing."
-	ammo_type = /obj/item/ammo_casing/c10mm/hp
+	ammo_type = /obj/item/ammo_casing/c10mmhp
 
 /obj/item/ammo_box/magazine/m10mm/ap
 	name = "pistol magazine (10mm AP)"
 	icon_state = "9x19pA"
 	desc= "A gun magazine. Loaded with rounds which penetrate armour, but are less effective against normal targets."
-	ammo_type = /obj/item/ammo_casing/c10mm/ap
+	ammo_type = /obj/item/ammo_casing/c10mmap
 
 /obj/item/ammo_box/magazine/m45
 	name = "handgun magazine (.45)"

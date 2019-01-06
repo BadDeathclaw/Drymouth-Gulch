@@ -53,10 +53,6 @@
 	name = "SMG magazine (Armour Piercing 9mm)"
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
-/obj/item/ammo_box/magazine/smgm9mm/fire
-	name = "SMG Magazine (Incindiary 9mm)"
-	ammo_type = /obj/item/ammo_casing/c9mm/inc
-
 /obj/item/ammo_box/magazine/smgm45
 	name = "SMG magazine (.45)"
 	icon_state = "c20r45-24"
