@@ -173,21 +173,13 @@
 			var/surroundings = get_environment(user)
 
 			for (var/obj/item/ammo_casing/case_sel in surroundings)
-				to_chat(user, "<span class='danger'>[case_sel]</span>")
-				to_chat(user, "<span class='danger'>Test 0</span>")
-
-				var/obj/item/ammo_casing/ammo_type
-				for (var/obj/item/ammo_casing/type_sel in R.reqs)
-					if (istype (type_sel, /obj/item/ammo_casing) )
-						to_chat(user, "<span class='danger'>Test 1</span>")
+				var/ammo_type
+				for (var/type_sel in R.reqs)
+					if (ispath(type_sel, /obj/item/ammo_casing) )
 						ammo_type = type_sel
 						break
-
-				if (!istype(ammo_type, case_sel) )
+				if (!ispath(ammo_type, case_sel) )
 					continue
-
-				to_chat(user, "<span class='danger'>Test 2</span>")
-
 				if (case_sel.BB)
 					continue
 

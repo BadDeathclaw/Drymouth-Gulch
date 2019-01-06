@@ -294,9 +294,90 @@
 //=========== RELOADING RECIPES
 
 /datum/crafting_recipe/c10mm
-	name = "10 mm bullet"
+	name = "10mm bullet"
 	result = /obj/item/ammo_casing/c10mm
-	reqs = list(/obj/item/ammo_casing/c10mm = 1)
+	reqs = list(/obj/item/ammo_casing/c10mm = 1, /datum/reagent/blackpowder = 3)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/c45
+	name = "45 bullet"
+	result = /obj/item/ammo_casing/c45
+	reqs = list(/obj/item/ammo_casing/c45 = 1, /datum/reagent/blackpowder = 3)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/c9mm
+	name = "9mm bullet"
+	result = /obj/item/ammo_casing/c9mm
+	reqs = list(/obj/item/ammo_casing/c9mm = 1, /datum/reagent/blackpowder = 3)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/m44
+	name = "44 bullet"
+	result = /obj/item/ammo_casing/m44
+	reqs = list(/obj/item/ammo_casing/m44 = 1, /datum/reagent/blackpowder = 3)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/c38
+	name = "38 bullet"
+	result = /obj/item/ammo_casing/c38
+	reqs = list(/obj/item/ammo_casing/c38 = 1, /datum/reagent/blackpowder = 2)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/a357
+	name = "357 bullet"
+	result = /obj/item/ammo_casing/a357
+	reqs = list(/obj/item/ammo_casing/a357 = 1, /datum/reagent/blackpowder = 3)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/a762/lp
+	name = "7.62 lowpower bullet"
+	result = /obj/item/ammo_casing/a762/lp
+	reqs = list(/obj/item/ammo_casing/a762 = 1, /datum/reagent/blackpowder = 2)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/a762
+	name = "7.62 bullet"
+	result = /obj/item/ammo_casing/a762
+	reqs = list(/obj/item/ammo_casing/a762 = 1, /datum/reagent/blackpowder = 3)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/c4570
+	name = ".45-70 bullet"
+	result = /obj/item/ammo_casing/c4570
+	reqs = list(/obj/item/ammo_casing/c4570 = 1, /datum/reagent/blackpowder = 5)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/a50AE
+	name = ".50AE bullet"
+	result = /obj/item/ammo_casing/a50AE
+	reqs = list(/obj/item/ammo_casing/a50AE = 1, /datum/reagent/blackpowder = 5)
 	station = "Ammo Crafting Bench"
 	time = 1
 	category = CAT_WEAPONRY

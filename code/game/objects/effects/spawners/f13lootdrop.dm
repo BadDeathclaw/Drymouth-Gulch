@@ -959,6 +959,7 @@
 	lootcount = 2
 
 	loot = list(
+				/obj/item/reagent_containers/glass/beaker/large/blackpowder,
 				/obj/item/broken_bottle,
 				/obj/item/poster/wanted,
 				/obj/item/multitool,
