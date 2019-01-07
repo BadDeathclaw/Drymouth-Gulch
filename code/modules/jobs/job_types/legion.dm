@@ -381,7 +381,7 @@ Legionary
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/claymore/machete=1, \
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/a762=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)

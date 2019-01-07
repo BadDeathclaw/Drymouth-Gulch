@@ -305,7 +305,7 @@
 
 /datum/crafting_recipe/c10mmhp
 	name = "10mm hollow-point bullet"
-	result = /obj/item/ammo_casing/c10mmhp
+	result = /obj/item/ammo_casing/c10mm/hp
 	reqs = list(/obj/item/ammo_casing/c10mm = 1, /datum/reagent/blackpowder = 4)
 	station = "Ammo Crafting Bench"
 	time = 2
@@ -314,7 +314,7 @@
 
 /datum/crafting_recipe/c10mmap
 	name = "10mm bullet"
-	result = /obj/item/ammo_casing/c10mmap
+	result = /obj/item/ammo_casing/c10mm/ap
 	reqs = list(/obj/item/ammo_casing/c10mm = 1, /datum/reagent/blackpowder = 5, /obj/item/stack/sheet/metal = 1)
 	station = "Ammo Crafting Bench"
 	time = 3

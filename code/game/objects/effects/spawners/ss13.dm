@@ -487,8 +487,8 @@ obj
 							switch(rand(1,9))
 								if(1)
 									var/obj/item/gun/ballistic/shotgun/automatic/hunting/lb = new
-									var/obj/item/ammo_box/a762/doublestacked/lb2 = new
-									var/obj/item/ammo_box/a762/doublestacked/lb3 = new
+									var/obj/item/ammo_box/a762/lb2 = new
+									var/obj/item/ammo_box/a762/lb3 = new
 									lb.loc=src.loc
 									lb2.loc=src.loc
 									lb3.loc=src.loc

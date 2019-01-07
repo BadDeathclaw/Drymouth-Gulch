@@ -65,13 +65,13 @@ obj/item/ammo_casing/c22/ap
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm
 
-/obj/item/ammo_casing/c10mmhp
+/obj/item/ammo_casing/c10mm/hp
 	name = "10mm hollow-point bullet casing"
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm/hp
 
-/obj/item/ammo_casing/c10mmap
+/obj/item/ammo_casing/c10mm/ap
 	name = "10mm armour-piercing bullet casing"
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"

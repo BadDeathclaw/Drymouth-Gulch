@@ -726,8 +726,8 @@
 	lootcount = 3
 	var/loot1 = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting,
-				/obj/item/ammo_box/a762/doublestacked,
-				/obj/item/ammo_box/a762/doublestacked
+				/obj/item/ammo_box/a762,
+				/obj/item/ammo_box/a762
 				)
 				//remember gangs gamemode? haha
 	var/loot2 = list(

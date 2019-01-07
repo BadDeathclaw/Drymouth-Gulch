@@ -100,7 +100,7 @@ Lieutenant
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/ammo_box/a762/doublestacked=3, \
+		/obj/item/ammo_box/a762=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
@@ -262,7 +262,7 @@ Veteran Ranger
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/a762=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
@@ -302,7 +302,7 @@ Ranger
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/a762=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \

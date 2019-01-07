@@ -295,7 +295,7 @@
 //Colt Rangemaster
 /obj/item/gun/ballistic/shotgun/automatic/hunting
 	name = "Colt Rangemaster"
-	desc = "A semi automatic Colt Rangemaster semi-automatic rifle chambered in .308."
+	desc = "A semi automatic Colt Rangemaster semi-automatic rifle chambered in 7.62."
 	icon_state = "rangemaster"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/internal/rangemaster

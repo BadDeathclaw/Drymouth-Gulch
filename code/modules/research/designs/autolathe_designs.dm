@@ -773,14 +773,6 @@
 	build_path = /obj/item/ammo_box/a762
 	category = list("initial", "Security")
 
-/datum/design/doublestacked
-	name = "Rangemaster Stripper Clip (7.62mm)"
-	id = "doublestacked"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 10000)
-	build_path = /obj/item/ammo_box/a762/doublestacked
-	category = list("initial", "Security")
-
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
 	id = "cleaver"
