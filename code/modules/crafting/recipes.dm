@@ -292,7 +292,6 @@
 	subcategory = CAT_AMMO
 
 //=========== RELOADING RECIPES
-
 //= 10mm
 /datum/crafting_recipe/c10mm
 	name = "10mm bullet"
@@ -313,7 +312,7 @@
 	subcategory = CAT_RELOAD
 
 /datum/crafting_recipe/c10mmap
-	name = "10mm bullet"
+	name = "10mm armour-piercing bullet"
 	result = /obj/item/ammo_casing/c10mm/ap
 	reqs = list(/obj/item/ammo_casing/c10mm = 1, /datum/reagent/blackpowder = 5, /obj/item/stack/sheet/metal = 1)
 	station = "Ammo Crafting Bench"
@@ -416,7 +415,7 @@
 	subcategory = CAT_RELOAD
 
 /datum/crafting_recipe/c38hp
-	name = "38 bullet"
+	name = "38 hollow-point bullet"
 	result = /obj/item/ammo_casing/c38/hp
 	reqs = list(/obj/item/ammo_casing/c38 = 1, /datum/reagent/blackpowder = 3)
 	station = "Ammo Crafting Bench"
@@ -425,7 +424,7 @@
 	subcategory = CAT_RELOAD
 
 /datum/crafting_recipe/c38ap
-	name = "38 bullet"
+	name = "38 armour-piercing bullet"
 	result = /obj/item/ammo_casing/c38/ap
 	reqs = list(/obj/item/ammo_casing/c38 = 1, /datum/reagent/blackpowder = 4, /obj/item/stack/sheet/metal = 1)
 	station = "Ammo Crafting Bench"
@@ -456,6 +455,34 @@
 	name = "357 armour-piercing bullet"
 	result = /obj/item/ammo_casing/a357/ap
 	reqs = list(/obj/item/ammo_casing/a357 = 1, /datum/reagent/blackpowder = 5, /obj/item/stack/sheet/metal = 1)
+	station = "Ammo Crafting Bench"
+	time = 3
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+//= 556
+/datum/crafting_recipe/a556
+	name = "5.56mm bullet"
+	result = /obj/item/ammo_casing/a556
+	reqs = list(/obj/item/ammo_casing/a556 = 1, /datum/reagent/blackpowder = 3)
+	station = "Ammo Crafting Bench"
+	time = 1
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/a556hp
+	name = "5.56mm hollow-point bullet"
+	result = /obj/item/ammo_casing/a556/hp
+	reqs = list(/obj/item/ammo_casing/a556 = 1, /datum/reagent/blackpowder = 4)
+	station = "Ammo Crafting Bench"
+	time = 2
+	category = CAT_WEAPONRY
+	subcategory = CAT_RELOAD
+
+/datum/crafting_recipe/a556ap
+	name = "5.56mm armour-piercing bullet"
+	result = /obj/item/ammo_casing/a556/ap
+	reqs = list(/obj/item/ammo_casing/a556 = 1, /datum/reagent/blackpowder = 5, /obj/item/stack/sheet/metal = 1)
 	station = "Ammo Crafting Bench"
 	time = 3
 	category = CAT_WEAPONRY
@@ -500,7 +527,7 @@
 	subcategory = CAT_RELOAD
 
 /datum/crafting_recipe/c4570hp
-	name = ".45-70 bullet"
+	name = ".45-70 hollow-point bullet"
 	result = /obj/item/ammo_casing/c4570/hp
 	reqs = list(/obj/item/ammo_casing/c4570 = 1, /datum/reagent/blackpowder = 6)
 	station = "Ammo Crafting Bench"
@@ -509,7 +536,7 @@
 	subcategory = CAT_RELOAD
 
 /datum/crafting_recipe/c4570ap
-	name = ".45-70 bullet"
+	name = ".45-70 armour-piercing bullet"
 	result = /obj/item/ammo_casing/c4570/ap
 	reqs = list(/obj/item/ammo_casing/c4570 = 1, /datum/reagent/blackpowder = 7, /obj/item/stack/sheet/metal = 1)
 	station = "Ammo Crafting Bench"

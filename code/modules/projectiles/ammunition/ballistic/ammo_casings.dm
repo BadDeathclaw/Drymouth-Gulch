@@ -1,25 +1,6 @@
 
 //========== Ammo Casings
 
-//= 22
-/obj/item/ammo_casing/c22
-	name = ".22 bullet casing"
-	desc = "A .22 bullet casing."
-	caliber = ".22"
-	projectile_type = /obj/item/projectile/bullet/c22
-
-obj/item/ammo_casing/c22/hp
-	name = ".22 hollow-point bullet casing"
-	desc = "A .22 hollow-point bullet casing."
-	caliber = ".22"
-	projectile_type = /obj/item/projectile/bullet/c22/hp
-
-obj/item/ammo_casing/c22/ap
-	name = ".22 armour-piercing bullet casing"
-	desc = "A .22 armour-piercing bullet casing."
-	caliber = ".22"
-	projectile_type = /obj/item/projectile/bullet/c22/ap
-
 //= 45
 /obj/item/ammo_casing/c45
 	name = ".45 bullet casing"
@@ -229,19 +210,6 @@ obj/item/ammo_casing/c22/ap
 
 //========== Projectiles
 
-//= 22
-/obj/item/projectile/bullet/c22
-	damage = 15
-	armour_penetration = -10
-
-/obj/item/projectile/bullet/c22/hp
-	damage = 20
-	armour_penetration = -15
-
-/obj/item/projectile/bullet/c22/ap
-	damage = 10
-	armour_penetration = 15
-
 //= 45
 /obj/item/projectile/bullet/c45
 	damage = 30
@@ -322,15 +290,15 @@ obj/item/ammo_casing/c22/ap
 
 //= 556
 /obj/item/projectile/bullet/a556
-	damage = 40
+	damage = 35
 	armour_penetration = 5
 
 /obj/item/projectile/bullet/a556/hp
-	damage = 45
+	damage = 40
 	armour_penetration = -20
 
 /obj/item/projectile/bullet/a556/ap
-	damage = 35
+	damage = 25
 	armour_penetration = 20
 
 //= 45-70
