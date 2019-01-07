@@ -2241,6 +2241,7 @@
 #include "code\modules\projectiles\ammunition\_ammunition.dm"
 #include "code\modules\projectiles\ammunition\_firing.dm"
 #include "code\modules\projectiles\ammunition\ballistic\lmg.dm"
+#include "code\modules\projectiles\ammunition\ballistic\pistol.dm"
 #include "code\modules\projectiles\ammunition\ballistic\revolver.dm"
 #include "code\modules\projectiles\ammunition\ballistic\rifle.dm"
 #include "code\modules\projectiles\ammunition\ballistic\shotgun.dm"
