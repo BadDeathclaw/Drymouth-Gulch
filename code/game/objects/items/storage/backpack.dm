@@ -174,10 +174,12 @@
 /obj/item/storage/backpack/spearquiver/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_items = 5
+	STR.max_items = 7
 	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear))
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
 	new /obj/item/throwing_star/spear(src)
 	new /obj/item/throwing_star/spear(src)
 	new /obj/item/throwing_star/spear(src)
