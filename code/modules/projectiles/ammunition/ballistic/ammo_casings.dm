@@ -277,15 +277,15 @@
 
 //= 762
 /obj/item/projectile/bullet/a762
-	damage = 40
+	damage = 35
 	armour_penetration = 5
 
 /obj/item/projectile/bullet/a762/hp
-	damage = 45
+	damage = 40
 	armour_penetration = -20
 
 /obj/item/projectile/bullet/a762/ap
-	damage = 35
+	damage = 30
 	armour_penetration = 20
 
 //= 556
