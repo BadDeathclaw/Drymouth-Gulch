@@ -1464,6 +1464,7 @@
 #include "code\modules\clothing\under\jobs\engineering.dm"
 #include "code\modules\clothing\under\jobs\medsci.dm"
 #include "code\modules\clothing\under\jobs\security.dm"
+#include "code\modules\crafting\ammo_crafting_recipes.dm"
 #include "code\modules\crafting\craft.dm"
 #include "code\modules\crafting\crafting_benches.dm"
 #include "code\modules\crafting\guncrafting.dm"

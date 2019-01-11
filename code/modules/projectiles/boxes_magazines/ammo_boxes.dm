@@ -83,9 +83,18 @@
 	desc = "A stripper clip."
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a762
-	max_ammo = 5
+	max_ammo = 10
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 5000)
+
+/obj/item/ammo_box/a308
+	name = "stripper clip (.308mm)"
+	desc = "A stripper clip."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/a308
+	max_ammo = 10
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 10000)
 
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"

@@ -133,6 +133,28 @@
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/a357/ap
 
+//= 308
+/obj/item/ammo_casing/a308
+	name = ".308 bullet casing"
+	desc = "A .308 bullet casing."
+	icon_state = "762-casing"
+	caliber = "a308"
+	projectile_type = /obj/item/projectile/bullet/a308
+
+/obj/item/ammo_casing/a308/hp
+	name = ".308 hollow-point bullet casing"
+	desc = "A .308 hollow-point bullet casing."
+	icon_state = "762-casing"
+	caliber = "a308"
+	projectile_type = /obj/item/projectile/bullet/a308/hp
+
+/obj/item/ammo_casing/a308/ap
+	name = ".308 armour-piercing bullet casing"
+	desc = "A .308 armour-piercing bullet casing."
+	icon_state = "762-casing"
+	caliber = "a308"
+	projectile_type = /obj/item/projectile/bullet/a308/ap
+
 
 //= 762
 /obj/item/ammo_casing/a762
@@ -287,6 +309,19 @@
 /obj/item/projectile/bullet/a762/ap
 	damage = 30
 	armour_penetration = 20
+
+//= 308
+/obj/item/projectile/bullet/a308
+	damage = 40
+	armour_penetration = 10
+
+/obj/item/projectile/bullet/a308/hp
+	damage = 45
+	armour_penetration = -25
+
+/obj/item/projectile/bullet/a308/ap
+	damage = 35
+	armour_penetration = 25
 
 //= 556
 /obj/item/projectile/bullet/a556
