@@ -359,7 +359,7 @@
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_THROAT, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
-/mob/proc/do_nuts(var/mob/partner)
+/mob/proc/nut_face(var/mob/partner)
 
 	var/message
 
