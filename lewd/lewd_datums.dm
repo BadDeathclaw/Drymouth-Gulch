@@ -264,7 +264,7 @@
 	
 
 /datum/interaction/lewd/thighs
-	command = "thighs"
+	command = "do_thighs"
 	description = "Smother them."
 	max_distance = 0
 	require_user_naked = TRUE
