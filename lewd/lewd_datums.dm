@@ -272,5 +272,7 @@
 	write_log_user = "thigh-trapped"
 	write_log_target = "was smothered by"
 
-
+ 
+/datum/interaction/lewd/thighs/display_interaction(var/mob/user, var/mob/target) 
+    user.do_thighs(target) 
 
