@@ -230,6 +230,159 @@
 	caliber = "2mm"
 	projectile_type = /obj/item/projectile/bullet/c2mm
 
+//= 12 gauge
+/obj/item/ammo_casing/shotgun
+	name = "shotgun slug"
+	desc = "A 12 gauge lead slug."
+	icon_state = "blshell"
+	caliber = "shotgun"
+	projectile_type = /obj/item/projectile/bullet/shotgun_slug
+	materials = list(MAT_METAL=1000)
+
+//= Beanbag
+/obj/item/ammo_casing/shotgun/beanbag
+	name = "beanbag slug"
+	desc = "A weak beanbag slug for riot control."
+	icon_state = "bshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
+
+//= Incendiary
+/obj/item/ammo_casing/shotgun/incendiary
+	name = "incendiary slug"
+	desc = "An incendiary-coated shotgun slug."
+	icon_state = "ishell"
+	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun
+
+//= Dragon's Breath
+/obj/item/ammo_casing/shotgun/dragonsbreath
+	name = "dragonsbreath shell"
+	desc = "A shotgun shell which fires a spread of incendiary pellets."
+	icon_state = "ishell2"
+	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
+	pellets = 4
+	variance = 35
+
+//= Stun Slug
+/obj/item/ammo_casing/shotgun/stunslug
+	name = "taser slug"
+	desc = "A stunning taser slug."
+	icon_state = "stunshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun_stunslug
+	materials = list(MAT_METAL=250)
+
+//= Meteor Slug
+/obj/item/ammo_casing/shotgun/meteorslug
+	name = "meteorslug shell"
+	desc = "A shotgun shell rigged with CMC technology, which launches a massive slug when fired."
+	icon_state = "mshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun_meteorslug
+
+//= Pulse Slug
+/obj/item/ammo_casing/shotgun/pulseslug
+	name = "pulse slug"
+	desc = "A delicate device which can be loaded into a shotgun. The primer acts as a button which triggers the gain medium and fires a powerful \
+	energy blast. While the heat and power drain limit it to one use, it can still allow an operator to engage targets that ballistic ammunition \
+	would have difficulty with."
+	icon_state = "pshell"
+	projectile_type = /obj/item/projectile/beam/pulse/shotgun
+
+//= Frag Slug
+/obj/item/ammo_casing/shotgun/frag12
+	name = "FRAG-12 slug"
+	desc = "A high explosive breaching round for a 12 gauge shotgun."
+	icon_state = "heshell"
+	projectile_type = /obj/item/projectile/bullet/shotgun_frag12
+
+//= Buckshot
+/obj/item/ammo_casing/shotgun/buckshot
+	name = "buckshot shell"
+	desc = "A 12 gauge buckshot shell."
+	icon_state = "gshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
+	pellets = 12
+	variance = 35
+
+//= Rubbershot
+/obj/item/ammo_casing/shotgun/rubbershot
+	name = "rubber shot"
+	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
+	icon_state = "bshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
+	pellets = 12
+	variance = 35
+
+//= Improvised Shell
+/obj/item/ammo_casing/shotgun/improvised
+	name = "improvised shell"
+	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
+	icon_state = "improvshell"
+	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
+	materials = list(MAT_METAL=250)
+	pellets = 10
+	variance = 35
+
+//= Ion Shell
+/obj/item/ammo_casing/shotgun/ion
+	name = "ion shell"
+	desc = "An advanced shotgun shell which uses a subspace ansible crystal to produce an effect similar to a standard ion rifle. \
+	The unique properties of the crystal split the pulse into a spread of individually weaker bolts."
+	icon_state = "ionshell"
+	projectile_type = /obj/item/projectile/ion/weak
+	pellets = 4
+	variance = 35
+
+//= Laser Slug
+/obj/item/ammo_casing/shotgun/laserslug
+	name = "laser slug"
+	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of a laser weapon in a ballistic package."
+	icon_state = "lshell"
+	projectile_type = /obj/item/projectile/beam/laser
+
+//= Tech Shell
+/obj/item/ammo_casing/shotgun/techshell
+	name = "unloaded technological shell"
+	desc = "A high-tech shotgun shell which can be loaded with materials to produce unique effects."
+	icon_state = "cshell"
+	projectile_type = null
+
+//= Dart Shell
+/obj/item/ammo_casing/shotgun/dart
+	name = "shotgun dart"
+	desc = "A dart for use in shotguns. Can be injected with up to 30 units of any chemical."
+	icon_state = "cshell"
+	projectile_type = /obj/item/projectile/bullet/dart
+	var/reagent_amount = 30
+	var/reagent_react = TRUE
+
+//= Cryo Dart
+/obj/item/ammo_casing/shotgun/dart/noreact
+	name = "cryostasis shotgun dart"
+	desc = "A dart for use in shotguns, using similar technolgoy as cryostatis beakers to keep internal reagents from reacting. Can be injected with up to 10 units of any chemical."
+	icon_state = "cnrshell"
+	reagent_amount = 10
+	reagent_react = FALSE
+
+/obj/item/ammo_casing/shotgun/dart/Initialize()
+	. = ..()
+	container_type |= OPENCONTAINER
+	create_reagents(reagent_amount)
+	reagents.set_reacting(reagent_react)
+
+/obj/item/ammo_casing/shotgun/dart/attackby()
+	return
+
+//= Bioterror Dart
+/obj/item/ammo_casing/shotgun/dart/bioterror
+	desc = "A shotgun dart filled with deadly toxins."
+
+/obj/item/ammo_casing/shotgun/dart/bioterror/Initialize()
+	. = ..()
+	reagents.add_reagent("neurotoxin", 6)
+	reagents.add_reagent("spore", 6)
+	reagents.add_reagent("mutetoxin", 6) //;HELP OPS IN MAINT
+	reagents.add_reagent("coniine", 6)
+	reagents.add_reagent("sodium_thiopental", 6)
+
 //========== Projectiles
 
 //= 45
@@ -387,3 +540,108 @@
 	damage = 50
 	armour_penetration = 20
 
+//= Shotgun Slug
+/obj/item/projectile/bullet/shotgun_slug
+	name = "12g shotgun slug"
+	damage = 70
+
+//= Beanbag Slug
+/obj/item/projectile/bullet/shotgun_beanbag
+	name = "beanbag slug"
+	damage = 5
+	stamina = 80
+
+//= Incendiary Slug
+/obj/item/projectile/bullet/incendiary/shotgun
+	name = "incendiary slug"
+	damage = 25
+
+//= Dragon's Breath Shot
+/obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
+	name = "dragonsbreath pellet"
+	damage = 5
+
+//= Stun Slug
+/obj/item/projectile/bullet/shotgun_stunslug
+	name = "stunslug"
+	damage = 5
+	knockdown = 100
+	stutter = 5
+	jitter = 20
+	range = 7
+	icon_state = "spark"
+	color = "#FFFF00"
+
+//= Meteor Slug
+/obj/item/projectile/bullet/shotgun_meteorslug
+	name = "meteorslug"
+	icon = 'icons/obj/meteor.dmi'
+	icon_state = "dust"
+	damage = 25
+	knockdown = 80
+	hitsound = 'sound/effects/meteorimpact.ogg'
+
+/obj/item/projectile/bullet/shotgun_meteorslug/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(ismovableatom(target))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 3, 2)
+
+/obj/item/projectile/bullet/shotgun_meteorslug/Initialize()
+	. = ..()
+	SpinAnimation()
+
+//= Frag12 Slug
+/obj/item/projectile/bullet/shotgun_frag12
+	name ="frag12 slug"
+	damage = 25
+	knockdown = 50
+
+/obj/item/projectile/bullet/shotgun_frag12/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, -1, 0, 1)
+	return TRUE
+
+/obj/item/projectile/bullet/pellet
+	var/tile_dropoff = 0.75
+	var/tile_dropoff_s = 1.25
+
+//= Buck Shot
+/obj/item/projectile/bullet/pellet/shotgun_buckshot
+	name = "buckshot pellet"
+	damage = 9 //Up to 108 damage point blank
+
+//= Rubber Shot
+/obj/item/projectile/bullet/pellet/shotgun_rubbershot
+	name = "rubbershot pellet"
+	damage = 1
+	stamina = 10
+
+/obj/item/projectile/bullet/pellet/Range()
+	..()
+	if(damage > 0)
+		damage -= tile_dropoff
+	if(stamina > 0)
+		stamina -= tile_dropoff_s
+	if(damage < 0 && stamina < 0)
+		qdel(src)
+
+//= Improvised Shot
+/obj/item/projectile/bullet/pellet/shotgun_improvised
+	tile_dropoff = 0.55		//Come on it does 6 damage don't be like that.
+	damage = 6
+
+/obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
+	. = ..()
+	range = rand(1, 8)
+
+/obj/item/projectile/bullet/pellet/shotgun_improvised/on_range()
+	do_sparks(1, TRUE, src)
+	..()
+
+//= Mech Scattershot
+
+/obj/item/projectile/bullet/scattershot
+	damage = 25
+	stamina = 65

@@ -388,3 +388,4 @@
 	time = 4
 	category = CAT_WEAPONRY
 	subcategory = CAT_RELOAD
+
