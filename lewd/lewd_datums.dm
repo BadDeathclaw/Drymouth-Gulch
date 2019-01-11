@@ -269,6 +269,7 @@
 	max_distance = 0
 	require_user_naked = TRUE
 	require_target_mouth = TRUE
+	user_not_tired = TRUE
 	write_log_user = "thigh-trapped"
 	write_log_target = "was smothered by"
 
