@@ -20,6 +20,12 @@
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/c45/ap
 
+/obj/item/ammo_casing/c45/r
+	name = ".45 rubber bullet casing"
+	desc = "A .45 rubber bullet casing."
+	caliber = ".45"
+	projectile_type = /obj/item/projectile/bullet/c45/r
+
 //= 9mm
 /obj/item/ammo_casing/c9mm
 	name = "9mm bullet casing"
@@ -38,6 +44,12 @@
 	desc = "A 9mm bullet armour-piercing casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/c9mm/ap
+
+/obj/item/ammo_casing/c9mm/r
+	name = "9mm rubber bullet casing"
+	desc = "A 9mm rubber bullet casing."
+	caliber = "9mm"
+	projectile_type = /obj/item/projectile/bullet/c9mm/r
 
 //= 10mm
 /obj/item/ammo_casing/c10mm
@@ -58,24 +70,36 @@
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm/ap
 
+/obj/item/ammo_casing/c10mm/r
+	name = "10mm rubber bullet casing"
+	desc = "A 10mm rubber bullet casing."
+	caliber = "10mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm/r
+
 //= 44
 /obj/item/ammo_casing/m44
-	name = "44 Magnum bullet casing"
-	desc = "A 44 Magnum bullet casing."
+	name = ".44 Magnum bullet casing"
+	desc = "A .44 Magnum bullet casing."
 	caliber = "44"
 	projectile_type = /obj/item/projectile/bullet/m44
 
 /obj/item/ammo_casing/m44/hp
-	name = "44 Magnum hollow-point bullet casing"
-	desc = "A 44 Magnum hollow-point bullet casing."
+	name = ".44 Magnum hollow-point bullet casing"
+	desc = "A .44 Magnum hollow-point bullet casing."
 	caliber = "44"
 	projectile_type = /obj/item/projectile/bullet/m44/hp
 
 /obj/item/ammo_casing/m44/ap
-	name = "44 Magnum armour-piercing bullet casing"
-	desc = "A 44 Magnum armour-piercing bullet casing."
+	name = ".44 Magnum armour-piercing bullet casing"
+	desc = "A .44 Magnum armour-piercing bullet casing."
 	caliber = "44"
 	projectile_type = /obj/item/projectile/bullet/m44/ap
+
+/obj/item/ammo_casing/m44/r
+	name = ".44 Magnum rubber bullet casing"
+	desc = "A .44 Magnum rubber bullet casing."
+	caliber = "44"
+	projectile_type = /obj/item/projectile/bullet/m44/r
 
 //= 38
 /obj/item/ammo_casing/c38
@@ -96,8 +120,16 @@
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38/ap
 
+/obj/item/ammo_casing/c38/r
+	name = ".38 rubber bullet casing"
+	desc = "A .38 rubber bullet casing."
+	caliber = "38"
+	projectile_type = /obj/item/projectile/bullet/c38/r
+
+
 //= 556
 /obj/item/ammo_casing/a556
+	name = "5.56mm bullet casing."
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556
@@ -113,6 +145,13 @@
 	desc = "A 5.56mm armour-piercing bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556/ap
+
+/obj/item/ammo_casing/a556/r
+	name = "5.56mm rubber bullet casing."
+	desc = "A 5.56mm rubber bullet casing."
+	caliber = "a556"
+	projectile_type = /obj/item/projectile/bullet/a556/r
+
 
 //= 357
 /obj/item/ammo_casing/a357
@@ -132,6 +171,12 @@
 	desc = "A .357 armour-piercing bullet casing."
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/a357/ap
+
+/obj/item/ammo_casing/a357/r
+	name = "357 rubber bullet casing"
+	desc = "A .357 rubber bullet casing."
+	caliber = "357"
+	projectile_type = /obj/item/projectile/bullet/a357/r
 
 //= 308
 /obj/item/ammo_casing/a308
@@ -155,6 +200,13 @@
 	caliber = "a308"
 	projectile_type = /obj/item/projectile/bullet/a308/ap
 
+/obj/item/ammo_casing/a308/r
+	name = ".308 rubber bullet casing"
+	desc = "A .308 rubber bullet casing."
+	icon_state = "762-casing"
+	caliber = "a308"
+	projectile_type = /obj/item/projectile/bullet/a308/r
+
 
 //= 762
 /obj/item/ammo_casing/a762
@@ -177,6 +229,13 @@
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/a762/ap
+
+/obj/item/ammo_casing/a762/r
+	name = "7.62 rubber bullet casing"
+	desc = "A 7.62 rubber bullet casing."
+	icon_state = "762-casing"
+	caliber = "a762"
+	projectile_type = /obj/item/projectile/bullet/a762/r
 
 //= Needle
 /obj/item/ammo_casing/caseless/needle
@@ -398,6 +457,11 @@
 	damage = 25
 	armour_penetration = 20
 
+/obj/item/projectile/bullet/c45/r
+	damage = 15
+	armour_penetration = 5
+	stamina = 25
+
 //= 44
 /obj/item/projectile/bullet/m44
 	damage = 40
@@ -410,6 +474,11 @@
 /obj/item/projectile/bullet/m44/ap
 	damage = 35
 	armour_penetration = 20
+
+/obj/item/projectile/bullet/m44/r
+	damage = 15
+	armour_penetration = 10
+	stamina = 25
 
 //= 9mm
 /obj/item/projectile/bullet/c9mm
@@ -424,6 +493,11 @@
 	damage = 20
 	armour_penetration = 15
 
+/obj/item/projectile/bullet/c9mm/r
+	damage = 15
+	armour_penetration = 0
+	stamina = 20
+
 //= 10mm
 /obj/item/projectile/bullet/c10mm
 	damage = 30
@@ -436,6 +510,11 @@
 /obj/item/projectile/bullet/c10mm/ap
 	damage = 25
 	armour_penetration = 15
+
+/obj/item/projectile/bullet/c10mm/r
+	damage = 15
+	armour_penetration = 0
+	stamina = 25
 
 //= 38
 /obj/item/projectile/bullet/c38
@@ -450,6 +529,11 @@
 	damage = 20
 	armour_penetration = 15
 
+/obj/item/projectile/bullet/c38/r
+	damage = 15
+	armour_penetration = 5
+	stamina = 20
+
 //= 762
 /obj/item/projectile/bullet/a762
 	damage = 35
@@ -462,6 +546,11 @@
 /obj/item/projectile/bullet/a762/ap
 	damage = 30
 	armour_penetration = 20
+
+/obj/item/projectile/bullet/a762/r
+	damage = 15
+	armour_penetration = 5
+	stamina = 25
 
 //= 308
 /obj/item/projectile/bullet/a308
@@ -476,6 +565,11 @@
 	damage = 35
 	armour_penetration = 25
 
+/obj/item/projectile/bullet/a308/r
+	damage = 15
+	armour_penetration = 10
+	stamina = 25
+
 //= 556
 /obj/item/projectile/bullet/a556
 	damage = 35
@@ -488,6 +582,11 @@
 /obj/item/projectile/bullet/a556/ap
 	damage = 25
 	armour_penetration = 20
+
+/obj/item/projectile/bullet/a556/r
+	damage = 15
+	armour_penetration = 5
+	stamina = 20
 
 //= 45-70
 /obj/item/projectile/bullet/c4570
@@ -514,6 +613,11 @@
 /obj/item/projectile/bullet/a357/ap
 	damage = 30
 	armour_penetration = 15
+
+/obj/item/projectile/bullet/a357/r
+	damage = 15
+	armour_penetration = 10
+	stamina = 25
 
 //= 50AE
 /obj/item/projectile/bullet/a50AE
