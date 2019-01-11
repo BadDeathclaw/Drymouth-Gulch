@@ -359,6 +359,23 @@
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_THROAT, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
+/mob/proc/do_nuts(var/mob/partner)
+
+	var/message
+
+	var/lust_increase = 1
+	
+	if(is_fucking(partner, NUTS_TO_FACE))
+		message = pick(list("grabs the back of [partner]'s head and pulls it into their crotch.", "jams their nutsack right into [partner]'s face.", "roughly grinds their fat nutsack into [partner]'s mouth.", "pulls out their saliva-covered nuts from [partner]'s violated mouth and then wipes off the slime onto their face."))
+	else
+		message = pick(list("wedges a digit into the side of [partner]'s jaw and pries it open before using their other hand to shove their whole nutsack inside!", "stands with their groin inches away from [partner]'s face, then thrusting their hips forward and smothering [partner]'s whole face with their heavy ballsack."))
+		set_is_fucking(partner , NUTS_TO_FACE)
+
+	playsound(loc, "honk/sound/interactions/nuts[rand(1, 4)].ogg", 70, 1, -1)
+	visible_message("<b>\The [src]</b> [message]")
+	handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
+	partner.dir = get_dir(partner,src)
+	do_fucking_animation(get_dir(src, partner))
 
 /mob/proc/do_anal(mob/partner)
 	var/message
