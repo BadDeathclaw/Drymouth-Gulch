@@ -276,5 +276,20 @@
 
  
 /datum/interaction/lewd/thighs/display_interaction(var/mob/user, var/mob/target) 
-    user.thigh_smother(target) 
+    user.thigh_smother(target)
+	
+/datum/interaction/lewd/nuts
+	command = "nuts"
+	description = "Nuts to face."
+	interaction_sound = null
+	require_user_naked = TRUE
+	require_user_penis = TRUE
+	require_target_mouth = TRUE
+	max_distance = 0
+	write_log_user = "make-them-suck-their-nuts"
+	write_log_target = "was made to suck nuts by"
 
+
+
+/datum/interaction/lewd/nuts/display_interaction(var/mob/user, var/mob/target)
+	user.do_nuts(target)
