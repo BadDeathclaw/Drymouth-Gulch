@@ -264,7 +264,7 @@
 	
 
 /datum/interaction/lewd/thighs
-	command = "do_thighs"
+	command = "thigh_smother"
 	description = "Smother them."
 	max_distance = 0
 	require_user_naked = TRUE
@@ -274,5 +274,5 @@
 
  
 /datum/interaction/lewd/thighs/display_interaction(var/mob/user, var/mob/target) 
-    user.do_thighs(target) 
+    user.thigh_smother(target) 
 
