@@ -289,7 +289,5 @@
 	write_log_user = "make-them-suck-their-nuts"
 	write_log_target = "was made to suck nuts by"
 
-
-
 /datum/interaction/lewd/nuts/display_interaction(var/mob/user, var/mob/target)
 	user.NUTS_TO_FACE(target)
