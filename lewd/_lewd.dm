@@ -8,7 +8,7 @@
 #define GRINDING_FACE_WITH_FEET "facefeet"
 #define GRINDING_MOUTH_WITH_FEET "mouthfeet"
 #define THIGH_SMOTHERING "thigh_smother"
-#define NUTS_TO_FACE "NUTS_TO_FACE"
+#define NUTS_TO_FACE "nut_face"
 
 #define NORMAL_LUST 10
 #define LOW_LUST 1
@@ -128,6 +128,7 @@
 			if(NUTS_TO_FACE)
 
 				if(partner.has_mouth() && partner.mouth_is_free())
+				
 					message = "vigorously ruts their hairy nutsack into \the [partner]'s mouth before shooting their thick, sticky jizz all over their eyes and hair."
 			
 			if(THIGH_SMOTHERING)
