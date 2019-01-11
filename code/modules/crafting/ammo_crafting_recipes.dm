@@ -48,7 +48,7 @@
 
 //= 45
 /datum/crafting_recipe/c45box
-	name = "45 bullet box"
+	name = ".45 bullet box"
 	result = /obj/item/ammo_box/c45
 	reqs = list(/datum/reagent/blackpowder = 60, /obj/item/stack/sheet/metal = 5)
 	station = "Ammo Crafting Bench"
@@ -140,7 +140,7 @@
 
 //= 44
 /datum/crafting_recipe/m44box
-	name = ".44 bullet (Speed Loader)"
+	name = ".44 Speed Loader"
 	result = /obj/item/ammo_casing/m44
 	reqs = list(/datum/reagent/blackpowder = 21, /obj/item/stack/sheet/metal = 2)
 	station = "Ammo Crafting Bench"
@@ -186,7 +186,7 @@
 
 //= 38
 /datum/crafting_recipe/c38box
-	name = ".38 (Speed Loader)"
+	name = ".38 Speed Loader"
 	result = /obj/item/ammo_box/c38
 	reqs = list(/datum/reagent/blackpowder = 12, /obj/item/stack/sheet/metal = 1)
 	station = "Ammo Crafting Bench"
@@ -232,7 +232,7 @@
 
 //= 357
 /datum/crafting_recipe/a357box
-	name = ".357 (Speed Loader)"
+	name = ".357 Speed Loader"
 	result = /obj/item/ammo_box/a357
 	reqs = list(/datum/reagent/blackpowder = 21, /obj/item/stack/sheet/metal = 2)
 	station = "Ammo Crafting Bench"
@@ -372,7 +372,7 @@
 
 //= 308
 /datum/crafting_recipe/a308box
-	name = ".308 (Stripper Clip)"
+	name = ".308 Stripper Clip"
 	result = /obj/item/ammo_box/a308
 	reqs = list(/datum/reagent/blackpowder = 15, /obj/item/stack/sheet/metal = 3)
 	station = "Ammo Crafting Bench"
@@ -418,7 +418,7 @@
 
 //= .45-70
 /datum/crafting_recipe/c4570box
-	name = ".45-70 (Speed Loader)"
+	name = ".45-70 Speed Loader"
 	result = /obj/item/ammo_box/c4570
 	reqs = list(/datum/reagent/blackpowder = 24, , /obj/item/stack/sheet/metal = 2)
 	station = "Ammo Crafting Bench"

@@ -88,7 +88,7 @@
 	materials = list(MAT_METAL = 5000)
 
 /obj/item/ammo_box/a308
-	name = "stripper clip (.308mm)"
+	name = "stripper clip (.308)"
 	desc = "A stripper clip."
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a308

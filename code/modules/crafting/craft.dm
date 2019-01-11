@@ -169,8 +169,13 @@
 
 		if (R.subcategory == CAT_RELOAD)
 
-			var/ammo_check = FALSE
+			var/ammo_check = TRUE
 			var/surroundings = get_environment(user)
+
+			for (var/type_sel in R.reqs)
+				if (ispath(type_sel, /obj/item/ammo_casing) )
+					ammo_check = FALSE
+					break
 
 			for (var/obj/item/ammo_casing/case_sel in surroundings)
 				var/ammo_type
