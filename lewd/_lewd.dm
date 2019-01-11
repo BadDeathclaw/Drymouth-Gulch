@@ -124,10 +124,14 @@
 					message = "cums onto \the [partner]'s breasts."
 				else
 					message = "cums on \the [partner]'s chest and neck."
+			if(NUTS_TO_FACE)
+
+				if(partner.has_mouth() && partner.mouth_is_free())
+					message = "vigorously ruts their hairy nutsack into \the [partner]'s mouth before shooting their thick, sticky jizz all over their eyes and hair."
+			
 			if(THIGH_SMOTHERING)
-
 				if(src.has_penis())
-
+				
 					message = "keeps \the [partner] locked in their thighs as their cock throbs, dumping its heavy load all over their face."
 
 				else
