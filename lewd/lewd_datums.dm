@@ -279,7 +279,7 @@
     user.thigh_smother(target)
 	
 /datum/interaction/lewd/nuts
-	command = "nuts"
+	command = "NUTS_TO_FACE"
 	description = "Nuts to face."
 	interaction_sound = null
 	require_user_naked = TRUE
@@ -292,4 +292,4 @@
 
 
 /datum/interaction/lewd/nuts/display_interaction(var/mob/user, var/mob/target)
-	user.do_nuts(target)
+	user.NUTS_TO_FACE(target)
