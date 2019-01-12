@@ -177,19 +177,20 @@
 					ammo_check = FALSE
 					break
 
-			for (var/obj/item/ammo_casing/case_sel in surroundings)
-				var/ammo_type
-				for (var/type_sel in R.reqs)
-					if (ispath(type_sel, /obj/item/ammo_casing) )
-						ammo_type = type_sel
-						break
-				if (!ispath(ammo_type, case_sel) )
-					continue
-				if (case_sel.BB)
-					continue
+			if (ammo_check == FALSE)
+				for (var/obj/item/ammo_casing/case_sel in surroundings)
+					var/ammo_type
+					for (var/type_sel in R.reqs)
+						if (ispath(type_sel, /obj/item/ammo_casing) )
+							ammo_type = type_sel
+							break
+					if (!ispath(ammo_type, case_sel) )
+						continue
+					if (case_sel.BB)
+						continue
 
-				ammo_check = TRUE
-				break
+					ammo_check = TRUE
+					break
 
 			if (ammo_check == FALSE)
 				return ", missing empty casing."
