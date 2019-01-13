@@ -305,7 +305,6 @@
 
 
 
-	if(rand(3))
 
 	var file = pick(list("bj10", "bj3", "foot_wet1", "foot_dry3"))
 
