@@ -129,7 +129,7 @@
 
 				if(partner.has_mouth() && partner.mouth_is_free())
 				
-					message = "vigorously ruts their hairy nutsack into \the [partner]'s mouth before shooting their thick, sticky jizz all over their eyes and hair."
+					message = "vigorously ruts their nutsack into \the [partner]'s mouth before shooting their thick, sticky jizz all over their eyes and hair."
 			
 			if(THIGH_SMOTHERING)
 				if(src.has_penis())
