@@ -21,6 +21,10 @@
 	var/heavy_metal = TRUE
 	var/harmful = TRUE //pacifism check for boolet, set to FALSE if bullet is non-lethal
 
+	var/blackpowder_total = 0
+	var/metal_total = 0
+	var/plasteel_total = 0
+
 /obj/item/ammo_casing/Initialize()
 	. = ..()
 	if(projectile_type)

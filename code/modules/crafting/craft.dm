@@ -112,6 +112,11 @@
 						.["other"][A.type] += A.volume
 			.["other"][I.type] += 1
 
+			if (istype(I, /obj/item/ammo_casing) )
+				var/obj/item/ammo_casing/case_tar = I
+				.["other"][/datum/reagent/blackpowder] += case_tar.blackpowder_total
+
+
 	for (var/obj/machinery/crafting_bench/bench_sel in get_environment(user) )
 		var/obj/machinery/crafting_bench/bench_tar = bench_sel
 		.["crafting_benches"] += bench_tar.name
@@ -251,6 +256,7 @@
 			if(ispath(A, /datum/reagent))
 				var/datum/reagent/RG = new A
 				var/datum/reagent/RGNT
+
 				while(amt > 0)
 					var/obj/item/reagent_containers/RC = locate() in surroundings
 					RG = RC.reagents.get_reagent(A)
@@ -277,6 +283,7 @@
 						RC.on_reagent_change()
 					else
 						surroundings -= RC
+
 			else if(ispath(A, /obj/item/stack))
 				var/obj/item/stack/S
 				var/obj/item/stack/SD

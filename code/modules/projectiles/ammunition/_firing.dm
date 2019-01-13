@@ -17,6 +17,7 @@
 	else
 		user.changeNext_move(CLICK_CD_RANGE)
 	user.newtonian_move(get_dir(target, user))
+	blackpowder_total = 0
 	update_icon()
 	return 1
 

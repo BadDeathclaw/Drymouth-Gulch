@@ -167,7 +167,7 @@
 	subcategory = CAT_RELOAD
 
 /datum/crafting_recipe/m44ap
-	name = "44 armour-piercing bullet"
+	name = ".44 armour-piercing bullet"
 	result = /obj/item/ammo_casing/m44/ap
 	reqs = list(/obj/item/ammo_casing/m44 = 1, /datum/reagent/blackpowder = 5, /obj/item/stack/sheet/metal = 1)
 	station = "Ammo Crafting Bench"
