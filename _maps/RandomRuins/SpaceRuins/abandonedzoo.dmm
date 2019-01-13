@@ -471,7 +471,7 @@
 "bi" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/hypospray/medipen/stimpack,
-/obj/item/reagent_containers/glass/bottle/mutagen,
+/obj/item/reagent_containers/glass/bottle/FEV_solution,
 /turf/open/floor/plasteel{
 	icon_state = "dark"
 	},

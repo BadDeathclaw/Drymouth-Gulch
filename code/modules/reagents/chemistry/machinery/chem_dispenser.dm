@@ -479,18 +479,18 @@
 	)
 
 
-/obj/machinery/chem_dispenser/mutagen
-	name = "mutagen dispenser"
-	desc = "Creates and dispenses mutagen."
-	dispensable_reagents = list("mutagen")
+/obj/machinery/chem_dispenser/FEV_solution
+	name = "FEV solution dispenser"
+	desc = "Creates and dispenses FEV solution."
+	dispensable_reagents = list("FEV_solution")
 	emagged_reagents = list("plasma")
 
 
-/obj/machinery/chem_dispenser/mutagensaltpeter
+/obj/machinery/chem_dispenser/FEV_solutionsaltpeter
 	name = "botanical chemical dispenser"
 	desc = "Creates and dispenses chemicals useful for botany."
 	dispensable_reagents = list(
-		"mutagen",
+		"FEV_solution",
 		"saltpetre",
 		"eznutriment",
 		"left4zednutriment",

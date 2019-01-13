@@ -27,9 +27,8 @@ SUBSYSTEM_DEF(research)
 	var/list/errored_datums = list()
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
-	var/singleincome = 20 //hardcode memes
 	var/list/single_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 60)
-	var/multiserver_calculation = TRUE //turning this on is a bad idea
+	var/multiserver_calculation = FALSE //turning this on is a bad idea (re: told you)
 	var/last_income = 0
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
 
@@ -56,30 +55,30 @@ SUBSYSTEM_DEF(research)
 
 /datum/controller/subsystem/research/proc/handle_research_income()
 	var/list/bitcoins = list()
-	if(!multiserver_calculation)
+	if(multiserver_calculation)
+		var/eff = calculate_server_coefficient() //reason why is this here is to make sure if you make more server it becomes less better to do so
+		for(var/obj/machinery/rnd/server/miner in servers)
+			var/list/result = (miner.mine())	//SLAVE AWAY, SLAVE.
+			for(var/i in result)
+				result[i] *= eff
+				bitcoins[i] = bitcoins[i]? bitcoins[i] + result[i] : result[i]
+	else
 		for(var/obj/machinery/rnd/server/miner in servers)
 			if(miner.working)
 				bitcoins = single_server_income.Copy()
 				break			//Just need one to work.
 	var/income_time_difference = world.time - last_income
+		
+	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
+	bos_tech.last_bitcoins = bitcoins
+	unknown_tech.last_bitcoins = bitcoins
 
-	if(bitcoins)
-		for(var/i in bitcoins)
-			bitcoins[i] *= income_time_difference / 10
+	for(var/i in bitcoins)
+		bitcoins[i] *= income_time_difference / 10
 
-	if(multiserver_calculation)
-		for(var/obj/machinery/rnd/server/miner in servers)
-			switch(miner.stored_research.id)
-				if("SCIENCE")
-					science_tech.add_points_all(singleincome)
-				if("BOS")
-					bos_tech.add_points_all(singleincome)
-				if("UNKNOWN")
-					unknown_tech.add_points_all(singleincome)
-	else
-		science_tech.add_points_all(bitcoins)
-		bos_tech.add_points_all(bitcoins)
-		unknown_tech.add_points_all(bitcoins)
+	science_tech.add_point_list(bitcoins)
+	bos_tech.add_point_list(bitcoins)
+	unknown_tech.add_point_list(bitcoins) //tbh these guys can get a fuckton of points, because it isn't even being used
 
 	last_income = world.time
 

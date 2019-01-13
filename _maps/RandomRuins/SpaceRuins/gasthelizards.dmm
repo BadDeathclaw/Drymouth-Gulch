@@ -333,8 +333,8 @@
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/syringe,
 /obj/item/reagent_containers/dropper,
-/obj/item/reagent_containers/glass/bottle/mutagen,
-/obj/item/reagent_containers/glass/bottle/mutagen,
+/obj/item/reagent_containers/glass/bottle/FEV_solution,
+/obj/item/reagent_containers/glass/bottle/FEV_solution,
 /obj/item/razor,
 /turf/open/floor/plasteel/airless/dark,
 /area/ruin/space/has_grav/gasthelizard)

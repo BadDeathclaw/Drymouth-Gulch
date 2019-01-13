@@ -67,7 +67,7 @@
 	name = "ghoul meat"
 	icon_state = "flymeat"
 	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
-	list_reagents = list("nutriment" = 3, "uranium" = 3)
+	list_reagents = list("nutriment" = 3, "uranium" = 3, "bad_food" = 2, "FEV_solution" = 1)
 	filling_color = "#FA8072"
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
 	slice_path = null

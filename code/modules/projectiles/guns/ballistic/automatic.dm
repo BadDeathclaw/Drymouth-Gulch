@@ -692,11 +692,11 @@
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/medbullet
 
-/obj/item/ammo_casing/a762lp
+/obj/item/ammo_casing/a762/lp
 	name = "7.62 lowpower bullet casing"
 	desc = "A 7.62 bullet casing."
 	icon_state = "762-casing"
-	caliber = "a762lp"
+	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/medbullet
 
 //MedAP
@@ -744,7 +744,7 @@
 	armour_penetration = -9
 
 /obj/item/projectile/bullet/medapbullet
-	damage = 26
+	damage = 40
 	armour_penetration = 20
 
 /obj/item/projectile/bullet/medapbullet/needle

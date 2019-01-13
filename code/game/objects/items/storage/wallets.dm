@@ -15,6 +15,7 @@
 	STR.max_items = 4
 	STR.can_hold = typecacheof(list(
 		/obj/item/stack/spacecash,
+		/obj/item/stack/f13Cash,
 		/obj/item/card,
 		/obj/item/clothing/mask/cigarette,
 		/obj/item/flashlight/pen,

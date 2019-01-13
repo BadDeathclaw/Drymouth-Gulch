@@ -26,10 +26,11 @@ em						{font-style: normal;	font-weight: bold;}
 .prefix					{					font-weight: bold;}
 
 .ooc					{					font-weight: bold;}
+.looc					{color: #6699CC'	font-weight: bold;}
 .adminobserverooc		{color: #0099cc;	font-weight: bold;}
 .adminooc				{color: #700038;	font-weight: bold;}
 
-.adminobserver			{color: #996600;	font-weight: bold;}
+.adminobserver			{color: #E64B0B;	font-weight: bold;}
 .admin					{color: #386aff;	font-weight: bold;}
 
 .name					{					font-weight: bold;}

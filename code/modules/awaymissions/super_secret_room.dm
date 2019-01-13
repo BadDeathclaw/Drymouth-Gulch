@@ -89,6 +89,87 @@
 	speaking = FALSE
 	times_spoken_to++
 
+
+/obj/structure/speaking_tile/tragedy/interact(mob/user)
+	if(!isliving(user) || speaking)
+		return
+	speaking = TRUE
+	switch(times_spoken_to)
+		if(0)
+			SpeakPeace(list("Welcome to the Bag of Holding handling room.","Something's goofed up bad to send you here.","You should probably tell an admin what you were doing, or make a bug report."))
+			for(var/obj/structure/signpost/salvation/S in orange(7))
+				S.invisibility = 0
+				var/datum/effect_system/smoke_spread/smoke = new
+				smoke.set_up(1, S.loc)
+				smoke.start()
+				break
+		if(1)
+			SpeakPeace(list("Take that ladder up.","It'll send you back to the station.","Hopefully you'll never need to see this place again."))
+		if(2)
+			SpeakPeace(list("Curious about what happened?","Somehow your corporeal form was sent to BOH singulo space with you still in it.","Lucky for you this room exists to save you from that horrible fate."))
+		if(3)
+			SpeakPeace(list("So yeah, you're welcome.","Anyway don't you have things to do?","There's no real point to sticking around here forever."))
+		if(4)
+			SpeakPeace(list("I'm flattered you care this much about this room.","However it's not proper to just stand in here all shift and see what I'll say.","I'm going to work hard to be more boring so you'll leave."))
+		if(5 to 8)
+			SpeakPeace(list("..."))
+		if(9)
+			SpeakPeace(list("Alright maybe that's <b>too</b> boring.", "I can't keep manually typing these lines out though.", "It's hard to explain but the code structure I'm using is kind of terrible."))
+		if(10)
+			SpeakPeace(list("Oh I have an idea!", "Lets outsource this endless banter to Poly!", "Then you'll be able to keep listening to this without getting bored!"))
+		if(11)
+			SpeakPeace(list("Did you ever hear the tragedy of Darth Plagueis the Wise?"))
+		if(12)
+			SpeakPeace(list("I thought not."," It's not a story the Jedi would tell you."))
+		if(13)
+			SpeakPeace(list("It's a Sith legend. ","Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life..."))
+		if(14)
+			SpeakPeace(list("He had such a knowledge of the dark side that he could even keep the ones he cared about from dying."))
+		if(15)
+			SpeakPeace(list("To be quite honest, i could make this listed but im lazy, so dont check the code", "Also if you're trying to get the achivement medal, it's not here!"))
+		if(16)
+			SpeakPeace(list("The dark side of the Force is a pathway to many abilities some consider to be unnatural."))
+		if(17)
+			SpeakPeace(list("He became so powerful... the only thing he was afraid of was losing his power, which eventually, of course, he did."))
+		if(18)
+			SpeakPeace(list("Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep.", "Ironic, he could save others from death, but not himself."))
+		if(19)
+			SpeakPeace(list("Is that enough? no?", "well, let me just outsource it to poly then"))
+		if(20)
+			SpeakPeace(list("wait FUCK!", "Poly does not exist!"))
+		if(21)
+			SpeakPeace(list("Just wait a second..."))
+			sleep(2)
+			SpeakPeace(list("Was it called 'clock_hawk' ?"))
+			sleep(1)
+			SpeakPeace(list("Oh wait, found it"))
+			sleep(3)
+			SpeakPeace(list("Here it is"))
+			for(var/mob/living/simple_animal/parrot/Poly/S in orange(5))
+				S.invisibility = 0
+				var/datum/effect_system/smoke_spread/smoke = new
+				smoke.set_up(1, S.loc)
+				smoke.start()
+				break
+		if(22)
+			SpeakPeace(list("Not enough eh? reee!"))
+		if(23)
+			SpeakPeace(list("Oh I have an idea!", "Lets outsource this endless banter to Poly. For real this time.", "Then you'll be able to keep listening to this without getting bored!"))
+			if(isnull(shenanigans) || !shenanigans.len)
+				shenanigans = list("Except the poly file is missing...")
+		if(24 to 100)
+			SpeakPeace(list(pick(shenanigans),pick(shenanigans),pick(shenanigans)))
+			if(times_spoken_to % 10 == 0)
+				SpeakPeace(list("That's [times_spoken_to] times you've spoken to me by the way."))
+		if(101)
+			SpeakPeace(list("This is the last text", "There isn't anything here", "Even if you felt a sense of pride and accomplishment"))
+		if(102)
+			SpeakPeace(list("Well, that <i>might</i> be a lie, but notice how i didn't teleport you to the station-z?", "Reason is, you die.", "The area you will teleport above is mountain. And turrents"))
+
+	speaking = FALSE
+	times_spoken_to++
+
+
 /obj/structure/speaking_tile/attackby(obj/item/W, mob/user, params)
 	return interact(user)
 

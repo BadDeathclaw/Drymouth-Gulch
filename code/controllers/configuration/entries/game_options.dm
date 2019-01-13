@@ -174,6 +174,8 @@
 
 /datum/config_entry/flag/ooc_during_round
 
+/datum/config_entry/flag/looc_during_round
+
 /datum/config_entry/flag/emojis
 
 /datum/config_entry/number/run_delay	//Used for modifying movement speed for mobs.

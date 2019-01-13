@@ -2,6 +2,7 @@
 	command = "deepkiss"
 	description = "Kiss them deeply."
 	require_user_mouth = TRUE
+	require_target_mouth = TRUE
 	write_log_user = "kissed"
 	write_log_target = "was kissed by"
 	interaction_sound = null
@@ -13,14 +14,6 @@
 		user.lust = 5
 	if(target.lust < 5)
 		target.lust = 5
-
-/datum/interaction/lewd/kiss/evaluate_user(mob/user, silent = TRUE)
-	if(..())
-		//if(!user.has_lips())
-		//	if(!silent) user << "<span class='warning'>You don't have any lips.</span>")
-		//	return FALSE
-		return TRUE
-	return FALSE
 
 /datum/interaction/lewd/kiss/display_interaction(mob/user, mob/target)
 	if(user.lust >= 3)

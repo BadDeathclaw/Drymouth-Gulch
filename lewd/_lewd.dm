@@ -51,6 +51,8 @@
 	return TRUE
 
 /mob/proc/has_hand()
+	if(get_num_arms() < 1)
+		return FALSE
 	return TRUE
 
 /mob/proc/is_nude()
@@ -58,12 +60,6 @@
 
 /mob/living/carbon/human/is_nude()
 	return (!wear_suit || !(wear_suit.body_parts_covered)) && (!w_uniform || !(w_uniform.body_parts_covered))
-
-/mob/proc/has_lips()
-	return FALSE
-
-/mob/living/carbon/human/has_lips()
-	return TRUE
 
 /proc/cum_splatter(target) // Like blood_splatter(), but much more questionable on a resume.
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
@@ -162,11 +158,11 @@
 		add_logs(partner, src, "came on")
 
 	if(multiorgasms > (sexual_potency * 0.34)) //AAAAA, WE DONT WANT NEGATIVES HERE, RE
-		refactory_period = rand(250,400) - sexual_potency//sex cooldown
-		src.set_drugginess(rand(20,30))
+		refactory_period = rand(250, 400) - sexual_potency//sex cooldown
+		src.set_drugginess(rand(20, 30))
 	else
-		refactory_period = rand(250,400) - sexual_potency
-		src.set_drugginess(6)
+		refactory_period = rand(250, 400) - sexual_potency
+		src.set_drugginess(rand(5, 10))
 
 /mob/living/carbon/human/cum(mob/partner, target_orifice)
 	if(multiorgasms < sexual_potency)
@@ -387,7 +383,7 @@
 		set_is_fucking(partner, CUM_TARGET_ANUS)
 
 	playsound(loc, "honk/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
-	visible_message("<b>\The [src]</b> [message]")
+	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, partner)
 	partner.handle_post_sex(NORMAL_LUST, null, src)
 	partner.dir = get_dir(src, partner)

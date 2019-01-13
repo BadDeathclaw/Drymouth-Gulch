@@ -15,7 +15,7 @@ var/list/interactions
 /proc/make_interactions(interaction)
 	if(!interactions)
 		interactions = list()
-		for(var/itype in typesof(/datum/interaction)-/datum/interaction)
+		for(var/itype in subtypesof(/datum/interaction))
 			var/datum/interaction/I = new itype()
 			interactions[I.command] = I
 
@@ -38,7 +38,6 @@ var/list/interactions
 	var/write_log_target
 
 	var/interaction_sound
-	var/interaction_sound_age_pitch
 
 	var/max_distance = 1
 	var/require_user_mouth
@@ -50,31 +49,43 @@ var/list/interactions
 /datum/interaction/proc/evaluate_user(mob/user, silent = TRUE)
 	if(require_user_mouth)
 		if(!user.has_mouth())
-			if(!silent) user << "<span class = 'warning'>You don't have a mouth.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have a mouth.</span>")
 			return FALSE
+
 		if(!user.mouth_is_free())
-			if(!silent) user << "<span class = 'warning'>Your mouth is covered.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Your mouth is covered.</span>")
 			return FALSE
+
 	if(require_user_hands && !user.has_hands())
-		if(!silent) user << "<span class = 'warning'>You don't have hands.</span>"
+		if(!silent)
+			to_chat(user, "<span class = 'warning'>You don't have hands.</span>")
 		return FALSE
+
 	return TRUE
 
 /datum/interaction/proc/evaluate_target(mob/user, mob/target, silent = TRUE)
 	if(require_target_mouth)
 		if(!target.has_mouth())
-			if(!silent) user << "<span class = 'warning'>They don't have a mouth.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>They don't have a mouth.</span>")
 			return FALSE
+
 		if(!target.mouth_is_free())
-			if(!silent) user << "<span class = 'warning'>Their mouth is covered.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Their mouth is covered.</span>")
 			return FALSE
+
 	if(require_target_hands && !target.has_hands())
-		if(!silent) user << "<span class = 'warning'>They don't have hands.</span>"
+		if(!silent)
+			to_chat(user, "<span class = 'warning'>They don't have hands.</span>")
 		return FALSE
+
 	return TRUE
 
 /datum/interaction/proc/get_action_link_for(mob/user, mob/target)
-	return "<a href='?src=\ref[src];action=1;action_user=\ref[user];action_target=\ref[target]'>[description]</a><br>"
+	return "<a HREF='byond://?src=[REF(src)];action=1;action_user=[REF(user)];action_target=[REF(target)]'>[description]</a><br>"
 
 /datum/interaction/Topic(href, href_list)
 	if(..())
@@ -85,6 +96,9 @@ var/list/interactions
 	return FALSE
 
 /datum/interaction/proc/do_action(mob/user, mob/target)
+	if(user == target) //tactical href fix
+		to_chat(user, "<span class='warning'>You cannot target yourself!</span>")
+		return
 	if(get_dist(user, target) > max_distance)
 		//user << "<span class='warning'>They are too far away.</span>"
 		user.visible_message("<span class='warning'>They are too far away.</span>")
@@ -98,9 +112,14 @@ var/list/interactions
 	if(!evaluate_target(user, target, silent = FALSE))
 		return
 
-	display_interaction(user, target)
+	if(write_log_user)
+		user.log_message("[write_log_user] [target]", INDIVIDUAL_ATTACK_LOG)
+	if(write_log_target)
+		target.log_message("[write_log_target] [user]", INDIVIDUAL_ATTACK_LOG)
 
+	display_interaction(user, target)
 	post_interaction(user, target)
+
 
 	//if(write_log_user)
 		//add_logs(target, user, "fucked")
@@ -117,10 +136,7 @@ var/list/interactions
 
 /datum/interaction/proc/post_interaction(mob/user, mob/target)
 	if(interaction_sound)
-		if(interaction_sound_age_pitch)
-			playsound(get_turf(user), interaction_sound, 50, 1, -1)//, pitch = user.get_age_pitch())
-		else
-			playsound(get_turf(user), interaction_sound, 50, 1, -1)
+		playsound(get_turf(user), interaction_sound, 50, 1, -1)
 	return
 /*
 /atom/movable/attack_hand(mob/living/user)

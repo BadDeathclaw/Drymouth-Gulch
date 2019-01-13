@@ -20,6 +20,7 @@
 	var/require_user_penis
 	var/require_user_anus
 	var/require_user_vagina
+	var/require_user_breasts
 
 	var/require_target_penis
 	var/require_target_anus
@@ -32,39 +33,67 @@
 /datum/interaction/lewd/evaluate_user(mob/user, silent = TRUE)
 	if(..(user, silent))
 		if(user_not_tired && user.refactory_period)
-			user << "<span class='warning'>You're still exhausted from the last time.</span>"
+			if(!silent) //bye spam
+				to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
+
 		if(require_user_naked && !user.is_nude())
-			if(!silent) user << "<span class = 'warning'>Your clothes are in the way.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
 			return FALSE
+
 		if(require_user_penis && !user.has_penis())
-			if(!silent) user << "<span class = 'warning'>You don't have a penis.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have a penis.</span>")
 			return FALSE
+
 		if(require_user_anus && !user.has_anus())
-			if(!silent) user << "<span class = 'warning'>You don't have an anus.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have an anus.</span>")
 			return FALSE
+
 		if(require_user_vagina && !user.has_vagina())
-			if(!silent) user << "<span class = 'warning'>You don't have a vagina.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have a vagina.</span>")
 			return FALSE
+
+		if(require_user_breasts && !user.has_breasts())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>You don't have breasts.</span>")
+			return FALSE
+
 		return TRUE
 	return FALSE
 
 /datum/interaction/lewd/evaluate_target(mob/user, mob/target, silent = TRUE)
 	if(..(user, target, silent))
 		if(target_not_tired && target.refactory_period)
-			user << "<span class='warning'>They're still exhausted from the last time.</span>"
+			if(!silent) //same with this
+				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
+
 		if(require_target_naked && !target.is_nude())
-			if(!silent) user << "<span class = 'warning'>Their clothes are in the way.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
 			return FALSE
+
 		if(require_target_penis && !target.has_penis())
-			if(!silent) user << "<span class = 'warning'>They don't have a penis.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>They don't have a penis.</span>")
 			return FALSE
+
 		if(require_target_anus && !target.has_anus())
-			if(!silent) user << "<span class = 'warning'>They don't have an anus.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>They don't have an anus.</span>")
 			return FALSE
+
 		if(require_target_vagina && !target.has_vagina())
-			if(!silent) user << "<span class = 'warning'>They don't have a vagina.</span>"
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>They don't have a vagina.</span>")
+			return FALSE
+		if(require_target_breasts && !user.has_breasts())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>They don't have breasts.</span>")
 			return FALSE
 		return TRUE
 	return FALSE
@@ -79,6 +108,7 @@
 /datum/interaction/lewd/get_action_link_for(mob/user, mob/target)
 	return "<font color='#FF0000'><b>LEWD:</b></font> [..()]"
 	if(user.stat == DEAD)
+		to_chat(user, "<span class='warning'>You cannot erp as ghost!</span>")
 		return
 
 /mob/list_interaction_attributes()
