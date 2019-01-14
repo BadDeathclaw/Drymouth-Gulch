@@ -53,6 +53,7 @@
 		E.emote_list[E.key] = E
 
 	init_subtypes(/datum/crafting_recipe, GLOB.crafting_recipes)
+	init_subtypes(/datum/bench_crafting_recipe, GLOB.bench_crafting_recipes)
 
 //creates every subtype of prototype (excluding prototype) and adds it to list L.
 //if no list/L is provided, one is created.
