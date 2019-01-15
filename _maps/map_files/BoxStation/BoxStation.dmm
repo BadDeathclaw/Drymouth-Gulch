@@ -315,7 +315,7 @@
 "agc" = (/turf/open/floor/wood/f13/old{icon_state = "housewood3-broken1"},/area/f13/den)
 "agd" = (/obj/spawners/objectspawners/resourcespawner,/obj/structure/rack,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/sheet/metal/fifty,/obj/item/stack/sheet/metal/fifty,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/den)
 "age" = (/obj/structure/fence{icon_state = "straight"; dir = 4},/turf/open/floor/plating/f13/outside/road{icon_state = "horizontaltopbordertop0"},/area/f13/desert)
-"agf" = (/obj/structure/table/wood,/obj/item/storage/belt/military/legion,/obj/item/storage/belt/military/legion,/obj/item/storage/belt/military/legion,/obj/item/storage/belt/military/legion,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
+"agf" = (/obj/structure/table/wood,/obj/item/storage/belt/military/legion,/obj/item/storage/belt/military/legion,/obj/item/storage/belt/military/legion,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
 "agg" = (/obj/machinery/light{dir = 1},/obj/machinery/light{dir = 1},/turf/open/floor/wood/f13/old,/area/f13/sunny_dale)
 "agh" = (/obj/structure/mopbucket,/obj/item/reagent_containers/glass/bucket,/obj/item/mop,/turf/open/floor/wood/f13/old,/area/f13/sunny_dale)
 "agi" = (/obj/structure/dresser,/turf/open/floor/wood/f13/old,/area/f13/den)
