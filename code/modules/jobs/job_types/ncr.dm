@@ -53,7 +53,7 @@ Captain
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	gloves =		/obj/item/clothing/gloves/combat
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -94,7 +94,7 @@ Lieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	gloves =		/obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -136,7 +136,7 @@ Sergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/f13/ncr
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun
@@ -175,7 +175,7 @@ Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
@@ -214,7 +214,7 @@ Recruit
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
@@ -256,7 +256,7 @@ Veteran Ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	gloves =		/obj/item/clothing/gloves/fingerless
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
@@ -296,7 +296,7 @@ Ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
 	gloves =	/obj/item/clothing/gloves/fingerless
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
@@ -339,7 +339,7 @@ Recon Ranger
 	suit = 			/obj/item/clothing/suit/f13/duster
 	head = 			/obj/item/clothing/head/fluff/cowboy
 	gloves =		/obj/item/clothing/gloves/botanic_leather
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
