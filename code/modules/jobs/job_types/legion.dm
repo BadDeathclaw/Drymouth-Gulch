@@ -29,7 +29,7 @@ Needs whitelist
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionlegat
@@ -73,7 +73,7 @@ Centurion
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
@@ -124,7 +124,7 @@ Veteran Decan
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
@@ -174,7 +174,7 @@ Vexillarius
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
@@ -223,7 +223,7 @@ Decan
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
@@ -273,7 +273,7 @@ Veteran
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
@@ -322,7 +322,7 @@ Legionary
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
@@ -369,7 +369,7 @@ Legionary
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
@@ -412,7 +412,7 @@ Legionary
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
