@@ -7,28 +7,24 @@
 	desc = "A .45 bullet casing."
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/c45
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/c45/hp
 	name = ".45 hollow-point bullet casing"
 	desc = "A .45 hollow-point bullet casing."
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/c45/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/c45/ap
 	name = ".45 armour-piercing bullet casing"
 	desc = "A .45 armour-piercing bullet casing."
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/c45/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/c45/r
 	name = ".45 rubber bullet casing"
 	desc = "A .45 rubber bullet casing."
 	caliber = ".45"
 	projectile_type = /obj/item/projectile/bullet/c45/r
-	blackpowder_total = 2
 
 //= 9mm
 /obj/item/ammo_casing/c9mm
@@ -36,28 +32,24 @@
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/c9mm
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/c9mm/hp
 	name = "9mm hollow-point bullet casing"
 	desc = "A 9mm hollow-point bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/c9mm/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/c9mm/ap
 	name = "9mm armour-piercing bullet casing"
 	desc = "A 9mm bullet armour-piercing casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/c9mm/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/c9mm/r
 	name = "9mm rubber bullet casing"
 	desc = "A 9mm rubber bullet casing."
 	caliber = "9mm"
 	projectile_type = /obj/item/projectile/bullet/c9mm/r
-	blackpowder_total = 2
 
 //= 10mm
 /obj/item/ammo_casing/c10mm
@@ -65,28 +57,24 @@
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/c10mm/hp
 	name = "10mm hollow-point bullet casing"
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/c10mm/ap
 	name = "10mm armour-piercing bullet casing"
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/c10mm/r
 	name = "10mm rubber bullet casing"
 	desc = "A 10mm rubber bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm/r
-	blackpowder_total = 2
 
 //= 44
 /obj/item/ammo_casing/m44
@@ -94,28 +82,24 @@
 	desc = "A .44 Magnum bullet casing."
 	caliber = "44"
 	projectile_type = /obj/item/projectile/bullet/m44
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/m44/hp
 	name = ".44 Magnum hollow-point bullet casing"
 	desc = "A .44 Magnum hollow-point bullet casing."
 	caliber = "44"
 	projectile_type = /obj/item/projectile/bullet/m44/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/m44/ap
 	name = ".44 Magnum armour-piercing bullet casing"
 	desc = "A .44 Magnum armour-piercing bullet casing."
 	caliber = "44"
 	projectile_type = /obj/item/projectile/bullet/m44/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/m44/r
 	name = ".44 Magnum rubber bullet casing"
 	desc = "A .44 Magnum rubber bullet casing."
 	caliber = "44"
 	projectile_type = /obj/item/projectile/bullet/m44/r
-	blackpowder_total = 2
 
 //= 38
 /obj/item/ammo_casing/c38
@@ -123,28 +107,25 @@
 	desc = "A .38 bullet casing."
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38
-	blackpowder_total = 2
 
 /obj/item/ammo_casing/c38/hp
 	name = ".38 hollow-point bullet casing"
 	desc = "A .38 hollow-point bullet casing."
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38/hp
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/c38/ap
 	name = ".38 armour-piercing bullet casing"
 	desc = "A .38 armour-piercing bullet casing."
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38/ap
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/c38/r
 	name = ".38 rubber bullet casing"
 	desc = "A .38 rubber bullet casing."
 	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38/r
-	blackpowder_total = 1
+
 
 //= 556
 /obj/item/ammo_casing/a556
@@ -152,28 +133,25 @@
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/a556/hp
 	name = "5.56mm hollow-point bullet casing."
 	desc = "A 5.56mm hollow-point bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/a556/ap
 	desc = "5.56mm armour-piercing bullet casing."
 	desc = "A 5.56mm armour-piercing bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/a556/r
 	name = "5.56mm rubber bullet casing."
 	desc = "A 5.56mm rubber bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556/r
-	blackpowder_total = 2
+
 
 //= 357
 /obj/item/ammo_casing/a357
@@ -181,28 +159,24 @@
 	desc = "A .357 bullet casing."
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/a357
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/a357/hp
 	name = "357 hollow-point bullet casing"
 	desc = "A .357 hollow-point bullet casing."
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/a357/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/a357/ap
 	name = "357 armour-piercing bullet casing"
 	desc = "A .357 armour-piercing bullet casing."
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/a357/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/a357/r
 	name = "357 rubber bullet casing"
 	desc = "A .357 rubber bullet casing."
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/a357/r
-	blackpowder_total = 2
 
 //= 308
 /obj/item/ammo_casing/a308
@@ -211,7 +185,6 @@
 	icon_state = "762-casing"
 	caliber = "a308"
 	projectile_type = /obj/item/projectile/bullet/a308
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/a308/hp
 	name = ".308 hollow-point bullet casing"
@@ -219,7 +192,6 @@
 	icon_state = "762-casing"
 	caliber = "a308"
 	projectile_type = /obj/item/projectile/bullet/a308/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/a308/ap
 	name = ".308 armour-piercing bullet casing"
@@ -227,7 +199,6 @@
 	icon_state = "762-casing"
 	caliber = "a308"
 	projectile_type = /obj/item/projectile/bullet/a308/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/a308/r
 	name = ".308 rubber bullet casing"
@@ -235,7 +206,7 @@
 	icon_state = "762-casing"
 	caliber = "a308"
 	projectile_type = /obj/item/projectile/bullet/a308/r
-	blackpowder_total = 2
+
 
 //= 762
 /obj/item/ammo_casing/a762
@@ -244,7 +215,6 @@
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/a762
-	blackpowder_total = 3
 
 /obj/item/ammo_casing/a762/hp
 	name = "7.62 hollow-point bullet casing"
@@ -252,7 +222,6 @@
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/a762/hp
-	blackpowder_total = 4
 
 /obj/item/ammo_casing/a762/ap
 	name = "7.62 armour-piercing bullet casing"
@@ -260,7 +229,6 @@
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/a762/ap
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/a762/r
 	name = "7.62 rubber bullet casing"
@@ -268,7 +236,6 @@
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/a762/r
-	blackpowder_total = 2
 
 //= Needle
 /obj/item/ammo_casing/caseless/needle
@@ -283,21 +250,18 @@
 	desc = "A .45-70 ammo casing."
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/c4570/hp
 	name = ".45-70 hollow-point ammo casing"
 	desc = "A .45-70 hollow-point ammo casing."
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570/hp
-	blackpowder_total = 6
 
 /obj/item/ammo_casing/c4570/ap
 	name = ".45-70 armour-piercing ammo casing"
 	desc = "A .45-70 armour-piercing ammo casing."
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570/ap
-	blackpowder_total = 7
 
 //= 50AE
 /obj/item/ammo_casing/a50AE
@@ -305,21 +269,18 @@
 	desc = "A .50AE bullet casing."
 	caliber = ".50"
 	projectile_type = /obj/item/projectile/bullet/a50AE
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/a50AE/hp
 	name = ".50AE hollow-point bullet casing"
 	desc = "A .50AE hollow-point bullet casing."
 	caliber = ".50"
 	projectile_type = /obj/item/projectile/bullet/a50AE/hp
-	blackpowder_total = 6
 
 /obj/item/ammo_casing/a50AE/ap
 	name = ".50AE armour-piercing bullet casing"
 	desc = "A .50AE armour-piercing bullet casing."
 	caliber = ".50"
 	projectile_type = /obj/item/projectile/bullet/a50AE/ap
-	blackpowder_total = 7
 
 //= Gauss
 /obj/item/ammo_casing/c2mm
@@ -336,7 +297,6 @@
 	caliber = "shotgun"
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug
 	materials = list(MAT_METAL=1000)
-	blackpowder_total = 5
 
 //= Beanbag
 /obj/item/ammo_casing/shotgun/beanbag
@@ -344,7 +304,6 @@
 	desc = "A weak beanbag slug for riot control."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
-	blackpowder_total = 5
 
 //= Incendiary
 /obj/item/ammo_casing/shotgun/incendiary
@@ -352,7 +311,6 @@
 	desc = "An incendiary-coated shotgun slug."
 	icon_state = "ishell"
 	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun
-	blackpowder_total = 5
 
 //= Dragon's Breath
 /obj/item/ammo_casing/shotgun/dragonsbreath
@@ -362,7 +320,6 @@
 	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	pellets = 4
 	variance = 35
-	blackpowder_total = 5
 
 //= Stun Slug
 /obj/item/ammo_casing/shotgun/stunslug
@@ -371,7 +328,6 @@
 	icon_state = "stunshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_stunslug
 	materials = list(MAT_METAL=250)
-	blackpowder_total = 5
 
 //= Meteor Slug
 /obj/item/ammo_casing/shotgun/meteorslug
@@ -379,7 +335,6 @@
 	desc = "A shotgun shell rigged with CMC technology, which launches a massive slug when fired."
 	icon_state = "mshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_meteorslug
-	blackpowder_total = 5
 
 //= Pulse Slug
 /obj/item/ammo_casing/shotgun/pulseslug
@@ -389,7 +344,6 @@
 	would have difficulty with."
 	icon_state = "pshell"
 	projectile_type = /obj/item/projectile/beam/pulse/shotgun
-	blackpowder_total = 5
 
 //= Frag Slug
 /obj/item/ammo_casing/shotgun/frag12
@@ -397,7 +351,6 @@
 	desc = "A high explosive breaching round for a 12 gauge shotgun."
 	icon_state = "heshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_frag12
-	blackpowder_total = 5
 
 //= Buckshot
 /obj/item/ammo_casing/shotgun/buckshot
@@ -405,9 +358,8 @@
 	desc = "A 12 gauge buckshot shell."
 	icon_state = "gshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
-	pellets = 12
-	variance = 35
-	blackpowder_total = 5
+	pellets = 7
+	variance = 10
 
 //= Rubbershot
 /obj/item/ammo_casing/shotgun/rubbershot
@@ -415,9 +367,8 @@
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
-	pellets = 12
-	variance = 35
-	blackpowder_total = 5
+	pellets = 7
+	variance = 10
 
 //= Improvised Shell
 /obj/item/ammo_casing/shotgun/improvised
@@ -426,9 +377,8 @@
 	icon_state = "improvshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
 	materials = list(MAT_METAL=250)
-	pellets = 10
-	variance = 35
-	blackpowder_total = 5
+	pellets = 7
+	variance = 18
 
 //= Ion Shell
 /obj/item/ammo_casing/shotgun/ion
@@ -438,8 +388,7 @@
 	icon_state = "ionshell"
 	projectile_type = /obj/item/projectile/ion/weak
 	pellets = 4
-	variance = 35
-	blackpowder_total = 5
+	variance = 20
 
 //= Laser Slug
 /obj/item/ammo_casing/shotgun/laserslug
@@ -447,7 +396,6 @@
 	desc = "An advanced shotgun shell that uses a micro laser to replicate the effects of a laser weapon in a ballistic package."
 	icon_state = "lshell"
 	projectile_type = /obj/item/projectile/beam/laser
-	blackpowder_total = 5
 
 //= Tech Shell
 /obj/item/ammo_casing/shotgun/techshell
@@ -464,7 +412,6 @@
 	projectile_type = /obj/item/projectile/bullet/dart
 	var/reagent_amount = 30
 	var/reagent_react = TRUE
-	blackpowder_total = 5
 
 //= Cryo Dart
 /obj/item/ammo_casing/shotgun/dart/noreact
@@ -473,7 +420,6 @@
 	icon_state = "cnrshell"
 	reagent_amount = 10
 	reagent_react = FALSE
-	blackpowder_total = 5
 
 /obj/item/ammo_casing/shotgun/dart/Initialize()
 	. = ..()
@@ -501,38 +447,38 @@
 //= 45
 /obj/item/projectile/bullet/c45
 	damage = 30
-	armour_penetration = 5
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/c45/hp
-	damage = 35
-	armour_penetration = -20
+	damage = 40
+	armour_penetration = -15
 
 /obj/item/projectile/bullet/c45/ap
-	damage = 25
-	armour_penetration = 30
+	damage = 20
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/c45/r
-	damage = 10
-	armour_penetration = 5
-	stamina = 25
+	damage = 5
+	armour_penetration = 0
+	stamina = 30
 
 //= 44
 /obj/item/projectile/bullet/m44
-	damage = 40
-	armour_penetration = 10
+	damage = 35
+	armour_penetration = 5
 
 /obj/item/projectile/bullet/m44/hp
 	damage = 45
-	armour_penetration = -20
+	armour_penetration = -15
 
 /obj/item/projectile/bullet/m44/ap
-	damage = 35
-	armour_penetration = 30
+	damage = 25
+	armour_penetration = 25
 
 /obj/item/projectile/bullet/m44/r
-	damage = 10
-	armour_penetration = 10
-	stamina = 25
+	damage = 5
+	armour_penetration = 0
+	stamina = 35
 
 //= 9mm
 /obj/item/projectile/bullet/c9mm
@@ -540,181 +486,185 @@
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c9mm/hp
-	damage = 30
-	armour_penetration = -20
+	damage = 35
+	armour_penetration = -15
 
 /obj/item/projectile/bullet/c9mm/ap
-	damage = 20
-	armour_penetration = 25
+	damage = 15
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/c9mm/r
-	damage = 10
+	damage = 5
 	armour_penetration = 0
-	stamina = 20
+	stamina = 25
 
 //= 10mm
 /obj/item/projectile/bullet/c10mm
-	damage = 30
+	damage = 25
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c10mm/hp
 	damage = 35
-	armour_penetration = -20
+	armour_penetration = -15
 
 /obj/item/projectile/bullet/c10mm/ap
-	damage = 25
-	armour_penetration = 25
+	damage = 15
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/c10mm/r
-	damage = 10
+	damage = 5
 	armour_penetration = 0
 	stamina = 25
 
 //= 38
 /obj/item/projectile/bullet/c38
 	damage = 25
-	armour_penetration = 5
+	armour_penetration = 3
 
 /obj/item/projectile/bullet/c38/hp
-	damage = 30
-	armour_penetration = -20
+	damage = 35
+	armour_penetration = -15
 
 /obj/item/projectile/bullet/c38/ap
-	damage = 20
-	armour_penetration = 25
+	damage = 15
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/c38/r
-	damage = 10
-	armour_penetration = 5
-	stamina = 20
+	damage = 5
+	armour_penetration = 0
+	stamina = 25
 
 //= 762
 /obj/item/projectile/bullet/a762
 	damage = 35
-	armour_penetration = 10
+	armour_penetration = 15
 
 /obj/item/projectile/bullet/a762/hp
-	damage = 40
-	armour_penetration = -20
+	damage = 45
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/a762/ap
-	damage = 30
-	armour_penetration = 30
+	damage = 25
+	armour_penetration = 35
 
 /obj/item/projectile/bullet/a762/r
 	damage = 10
-	armour_penetration = 10
-	stamina = 25
+	armour_penetration = 5
+	stamina = 35
 
 //= 308
 /obj/item/projectile/bullet/a308
-	damage = 40
+	damage = 50
 	armour_penetration = 10
 
 /obj/item/projectile/bullet/a308/hp
-	damage = 45
-	armour_penetration = -20
+	damage = 60
+	armour_penetration = -10
 
 /obj/item/projectile/bullet/a308/ap
-	damage = 35
+	damage = 40
 	armour_penetration = 30
 
 /obj/item/projectile/bullet/a308/r
-	damage = 10
-	armour_penetration = 0
-	stamina = 25
+	damage = 15
+	armour_penetration = 5
+	stamina = 50
 
 //= 556
 /obj/item/projectile/bullet/a556
-	damage = 35
-	armour_penetration = 10
+	damage = 30
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/a556/hp
 	damage = 40
-	armour_penetration = -20
+	armour_penetration = -15
 
 /obj/item/projectile/bullet/a556/ap
-	damage = 25
-	armour_penetration = 30
+	damage = 20
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/a556/r
-	damage = 10
-	armour_penetration = 10
-	stamina = 20
+	damage = 5
+	armour_penetration = 5
+	stamina = 30
 
 //= 45-70
 /obj/item/projectile/bullet/c4570
-	damage = 40
-	armour_penetration = 5
-
-/obj/item/projectile/bullet/c4570/hp
-	damage = 45
+	damage = 60
 	armour_penetration = -20
 
+/obj/item/projectile/bullet/c4570/hp
+	damage = 70
+	armour_penetration = -35
+
 /obj/item/projectile/bullet/c4570/ap
-	damage = 35
-	armour_penetration = 25
+	damage = 50
+	armour_penetration = 0
 
 //= 357
 /obj/item/projectile/bullet/a357
 	damage = 35
-	armour_penetration = 10
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/a357/hp
-	damage = 40
-	armour_penetration = -20
+	damage = 45
+	armour_penetration = -15
 
 /obj/item/projectile/bullet/a357/ap
-	damage = 30
-	armour_penetration = 25
+	damage = 25
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/a357/r
 	damage = 10
-	armour_penetration = 10
-	stamina = 25
+	armour_penetration = 0
+	stamina = 35
 
 //= 50AE
 /obj/item/projectile/bullet/a50AE
-	damage = 50
-	armour_penetration = 10
+	damage = 60
+	armour_penetration = 20
+	stamina = 10
 
 /obj/item/projectile/bullet/a50AE/hp
-	damage = 55
-	armour_penetration = -25
+	damage = 70
+	armour_penetration = 5
+	stamina = 10
 
 /obj/item/projectile/bullet/a50AE/ap
-	damage = 40
-	armour_penetration = 30
+	damage = 50
+	armour_penetration = 40
+	stamina = 10
 
 //= Needle
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "cbbolt"
 	damage = 40
-	armour_penetration = 20
+	armour_penetration = 0
 
 //= Gauss
 /obj/item/projectile/bullet/c2mm
-	damage = 50
-	armour_penetration = 20
+	damage = 60
+	armour_penetration = 30
 
 //= Shotgun Slug
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = 55
-	armour_penetration = 25
+	armour_penetration = 20
 
 //= Beanbag Slug
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
-	damage = 5
-	stamina = 80
-	armour_penetration = -5
+	damage = 15
+	stamina = 70
+	armour_penetration = 0
 
 //= Incendiary Slug
 /obj/item/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
 	damage = 25
+	armour_penetration = 5
 
 //= Dragon's Breath Shot
 /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
@@ -724,7 +674,7 @@
 //= Stun Slug
 /obj/item/projectile/bullet/shotgun_stunslug
 	name = "stunslug"
-	damage = 5
+	damage = 10
 	knockdown = 100
 	stutter = 5
 	jitter = 20
@@ -770,15 +720,14 @@
 //= Buck Shot
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 9 //Up to 108 damage point blank
-	armour_penetration = 8
+	damage = 9 // 9 Up to 63 damage point blank.
+	armour_penetration = 0
 
 //= Rubber Shot
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
-	damage = 1
-	stamina = 10
-	armour_penetration = -5
+	damage = 2 //
+	stamina = 11 // Up to 77 damage point blank.
 
 /obj/item/projectile/bullet/pellet/Range()
 	..()
@@ -791,8 +740,8 @@
 
 //= Improvised Shot
 /obj/item/projectile/bullet/pellet/shotgun_improvised
-	tile_dropoff = 0.55		//Come on it does 6 damage don't be like that.
-	damage = 6
+	damage = 7 // Up to 49 damage point blank.
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
@@ -807,4 +756,3 @@
 /obj/item/projectile/bullet/scattershot
 	damage = 25
 	stamina = 65
-	armour_penetration = -5
