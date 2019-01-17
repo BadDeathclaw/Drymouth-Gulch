@@ -180,6 +180,11 @@ update_label("John Doe", "Clowny")
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
+/obj/item/card/id/dogtag
+	name = "dogtag"
+	desc = "A necklace with two tags, which shows the duty of the soldier"
+	icon_state = "dogtag"
+
 /obj/item/card/id/silver/reaper
 	name = "Thirteen's ID Card (Reaper)"
 	access = list(ACCESS_MAINT_TUNNELS)

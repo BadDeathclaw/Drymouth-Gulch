@@ -31,7 +31,7 @@ Elder
 	name = "Elder"
 	jobtype = /datum/job/f13elder
 
-	id = /obj/item/card/id/gold
+	id = /obj/item/card/id/dogtag
 
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
@@ -86,6 +86,7 @@ Paladin
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
@@ -126,6 +127,7 @@ Knight
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer/swat
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
@@ -165,6 +167,7 @@ Scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/kitchen/knife/combat=1, \
@@ -204,6 +207,7 @@ Initiate
 	suit_store =	/obj/item/gun/ballistic/automatic/assault_rifle
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/r20=3, \
 		/obj/item/kitchen/knife/combat=1, \
