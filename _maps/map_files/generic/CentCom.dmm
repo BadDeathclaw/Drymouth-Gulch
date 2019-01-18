@@ -2185,7 +2185,7 @@
 "Qa" = (/obj/machinery/rnd/production/protolathe,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "Qb" = (/obj/machinery/computer/rdconsole/core/bos,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "Qc" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/item/reagent_containers/food/snacks/bun,/obj/item/reagent_containers/food/snacks/bun,/turf/open/floor/plasteel/f13/vault_floor/misc/bar,/area/f13/underground/bos)
-"Qd" = (/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/terminal{dir = 1},/obj/machinery/power/apc{name = "BoS Bunker APC"; dir = 1; step_y = 31},/turf/open/floor/plating,/area/f13/underground/bos)
+"Qd" = (/obj/structure/cable{icon_state = "0-4"},/obj/machinery/power/terminal{dir = 1},/obj/machinery/power/apc{name = "BoS bunker APC"; step_y = 31},/turf/open/floor/plating,/area/f13/underground/bos)
 "Qe" = (/turf/open/ai_visible,/area/ai_multicam_room)
 "Qf" = (/turf/open/floor/plating,/area/f13/underground/bos)
 "Qg" = (/obj/machinery/rnd/production/circuit_imprinter,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
