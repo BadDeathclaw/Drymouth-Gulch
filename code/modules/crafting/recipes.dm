@@ -724,6 +724,17 @@
 	time = 20
 	category = CAT_DRUGS
 
+/datum/crafting_recipe/stimpak
+	name = "Stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
+	reqs = list(/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+				/obj/item/reagent_containers/syringe = 1,)
+	tools = list(/obj/item/lighter,
+				/obj/item/reagent_containers/glass/beaker)
+	time = 20
+	category = CAT_DRUGS
+
+
 /datum/crafting_recipe/slavecollar
 	name = "Slave Collar"
 	result = /obj/item/electropack/shockcollar
