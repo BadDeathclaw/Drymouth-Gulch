@@ -1380,6 +1380,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "sunny_dale"
 	requires_power = TRUE
 
+/area/f13/ncr_main
+	name= "NCR Mainbase"
+	icon_state= "ncr_main"
+	requires_power= TRUE
+
 /area/f13/prison
 	name = "prison"
 	icon_state = "sunny_dale"
