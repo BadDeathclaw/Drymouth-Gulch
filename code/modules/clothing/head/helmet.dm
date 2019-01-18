@@ -524,6 +524,7 @@
 	strip_delay = 200
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	clothing_flags = THICKMATERIAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	flash_protect = 2
 	tint = 0
@@ -557,6 +558,7 @@
 	strip_delay = 200
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEJUMPSUIT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	clothing_flags = THICKMATERIAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	flash_protect = 2
 	tint = 0

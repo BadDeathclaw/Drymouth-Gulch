@@ -335,7 +335,7 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bag"
 	desc = "A bag for storing pills, patches, and bottles."
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/chemistry/ComponentInitialize()
