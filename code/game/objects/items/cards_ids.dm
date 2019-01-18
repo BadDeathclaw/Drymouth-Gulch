@@ -182,8 +182,19 @@ update_label("John Doe", "Clowny")
 
 /obj/item/card/id/dogtag
 	name = "dogtag"
-	desc = "A necklace with two tags, which shows the duty of the soldier"
+	desc = "A necklace with two tags, which shows the duty of the NCR soldier."
 	icon_state = "dogtag"
+	id_type = "ID tags"
+
+/obj/item/card/id/dogtag/holo
+	name = "holo dogtag"
+	desc = "A advanced holographic dogtag, that shows the duty of the BoS member."
+	icon_state = "holodogtag"
+
+/obj/item/card/id/dogtag/gold
+	name = "gold dogtag"
+	desc = "A pair of golden dogtags, showing the importance of the person"
+	icon_state = "golddogtag"
 
 /obj/item/card/id/silver/reaper
 	name = "Thirteen's ID Card (Reaper)"

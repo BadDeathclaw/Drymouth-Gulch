@@ -58,6 +58,7 @@ Captain
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/m1911
+	id = 			/obj/item/card/id/dogtag/gold
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -99,6 +100,7 @@ Lieutenant
 	gloves =		/obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/ammo_box/a762/doublestacked=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -140,6 +142,7 @@ Sergeant
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -179,6 +182,7 @@ Trooper
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/r20=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -218,6 +222,7 @@ Recruit
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/ammo_box/a762=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -259,6 +264,7 @@ Veteran Ranger
 	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
@@ -300,6 +306,7 @@ Ranger
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
@@ -343,6 +350,7 @@ Recon Ranger
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
 		/obj/item/ammo_box/a762=2, \
