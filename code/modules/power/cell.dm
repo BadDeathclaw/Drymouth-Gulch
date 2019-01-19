@@ -380,11 +380,6 @@
 	maxcharge = 1200
 	chargerate = 300
 
-/obj/item/stock_parts/cell/ammo/mfc/core
-	name = "Weapon core microfusion cell"
-	desc = "A microfusion cell core, thats the orginal cell used in the energy weapon."
-	maxcharge = 1000
-
 /obj/item/stock_parts/cell/ammo/ecp
 	name = "electron charge pack"
 	desc = "An electron charge pack, typically used as ammunition for rapidly-firing energy weapons."
