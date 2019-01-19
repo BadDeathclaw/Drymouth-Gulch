@@ -41,7 +41,7 @@ Overseer
 	implants = list(/obj/item/implant/mindshield)
 
 	id = 			/obj/item/card/id/gold
-	//pda
+	belt =			/obj/item/pda/captain
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
@@ -91,8 +91,8 @@ Head of Security
 	name = "Chief of Security"
 	jobtype = /datum/job/f13hos
 
-	id = /obj/item/card/id/silver
-	//pda
+	id = 			/obj/item/card/id/silver
+	belt = 			/obj/item/pda/heads/hos
 	ears = 			/obj/item/radio/headset/headset_vault_hos/alt
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
@@ -134,7 +134,7 @@ Medical Doctor
 	name = "Medical Doctor"
 	jobtype = /datum/job/f13doctor
 
-	//pda
+	belt =			/obj/item/pda/medical
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	ears = 			/obj/item/radio/headset/headset_vault
 	shoes = 		/obj/item/clothing/shoes/jackboots
@@ -169,7 +169,7 @@ Scientist
 	name = "Scientist"
 	jobtype = /datum/job/f13vaultscientist
 
-	//pda
+	belt =			/obj/item/pda/toxins
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	ears = 			/obj/item/radio/headset/headset_vault
 	shoes = 		/obj/item/clothing/shoes/jackboots
@@ -286,7 +286,7 @@ Security Officer
 	name = "Vault-tec Security"
 	jobtype = /datum/job/f13officer
 
-	//pda
+	belt =			/obj/item/pda/security
 	ears = 			/obj/item/radio/headset/headset_vaultsec
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	head = 			/obj/item/clothing/head/helmet/riot/vaultsec
@@ -349,7 +349,7 @@ Station Engineer
 	name = "Vault-tec Engineer"
 	jobtype = /datum/job/f13vaultengineer
 
-	//pda
+	l_pocket =			/obj/item/pda/engineering
 	ears = 			/obj/item/radio/headset/headset_vault
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	belt = 			/obj/item/storage/belt/utility/full/engi
@@ -394,7 +394,9 @@ Station Engineer
 		uniform = /obj/item/clothing/under/f13/vault13
 		ears = /obj/item/radio/headset/headset_vault
 		shoes = /obj/item/clothing/shoes/jackboots
+		belt = /obj/item/pda
 	else
 		uniform = /obj/item/clothing/under/f13/vault13
 		ears = /obj/item/radio/headset/headset_vault
 		shoes = /obj/item/clothing/shoes/jackboots
+		belt = /obj/item/pda
