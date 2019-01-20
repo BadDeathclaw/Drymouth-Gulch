@@ -409,6 +409,12 @@
 	desc = "A poster advertising a movie about some masked men."
 	icon_state = "poster44"
 
+/obj/structure/sign/poster/gym
+	name = "Gym Logo"
+	desc = "I'll show you who's the boss of this gym."
+	icon = 'icons/fallout/GYM.dmi'
+	icon_state = "gym_logo"
+
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
 	poster_item_desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
