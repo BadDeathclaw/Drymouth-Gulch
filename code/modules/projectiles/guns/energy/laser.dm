@@ -255,7 +255,7 @@
 	pellets = 3
 	variance = 14
 	select_name = "scatter"
-	e_cost = 150
+	e_cost = 75
 
 /obj/item/ammo_casing/energy/laser/pistol
 	projectile_type = /obj/item/projectile/beam/laser/pistol
