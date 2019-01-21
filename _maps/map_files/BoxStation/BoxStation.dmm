@@ -3927,7 +3927,7 @@
 "bxA" = (/obj/structure/chair/stool/f13stool{name = "stool"; icon_state = "bench_center"},/mob/living/simple_animal/hostile/ghoul/glowing,/turf/open/floor/wood/f13/old,/area/f13/sunny_dale)
 "bxB" = (/obj/structure/chair/stool/f13stool{name = "stool"; icon_state = "bench_center"},/obj/item/clothing/under/jabroni,/turf/open/floor/plasteel/f13{icon_state = "whitepurplerustychess2"},/area/f13/sunny_dale)
 "bxC" = (/obj/machinery/door/unpowered/wooddoor,/turf/open/floor/wood/f13,/area/f13/sunny_dale)
-"bxD" = (/obj/effect/spawner/structure/window/reinforced/indestructable,/turf/open/floor/wood/f13,/area/f13/sunny_dale)
+"bxD" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/wood/f13,/area/f13/sunny_dale)
 "bxE" = (/turf/open/space/basic,/obj/effect/decal/cleanable/shreds,/turf/open/floor/plating{icon_state = "platingdmg2"},/area/f13/powerplant)
 "bxF" = (/turf/open/floor/plating/f13/outside/desert,/obj/structure/window/fulltile/wood_window,/turf/closed/wall/r_wall/f13composite,/area/f13/desert)
 "bxG" = (/turf/open/floor/plating/f13/outside/desert,/obj/structure/spacevine{name = "Mutant Vines"},/turf/closed/wall/r_wall/f13composite{icon_state = "ruinswindowbroken"},/area/f13/desert)
