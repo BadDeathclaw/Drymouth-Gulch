@@ -73,9 +73,11 @@
 
 #define F13ELDER		(1<<0)
 #define F13PALADIN		(1<<1)
-#define F13KNIGHT		(1<<2)
-#define F13SCRIBE		(1<<3)
-#define F13INITIATE		(1<<4)
+#define F13HEADSCRIBE	(1<<2)
+#define F13KNIGHT		(1<<3)
+#define F13SCRIBE		(1<<4)
+#define F13INITIATEKNIGHT	(1<<5)
+#define F13INITIATESCRIBE	(1<<6)
 
 #define DEN				(1<<6)
 
