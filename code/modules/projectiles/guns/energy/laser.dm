@@ -33,7 +33,7 @@
 	name = "antique laser gun"
 	icon_state = "caplaser"
 	item_state = "caplaser"
-	desc = "This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy."
+	desc = "This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy.It's usually given to high-ranking members within the Brotherhood."
 	force = 10
 	ammo_x_offset = 3
 	selfcharge = 1
@@ -169,7 +169,7 @@
 
 /obj/item/gun/energy/laser/scatter
 	name = "Tri-beam Laser Rifle"
-	desc = "A modified AER9 equipped with a refraction kit that spreads its bolts."
+	desc = "A modified AER9 equipped with a refraction kit that spreads its bolts. It is usually only given to high-ranking soldiers within the Brotherhood, due to it's level of technology, as well as its reputation of friendly fire."
 	item_state = "laser-rifle9"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -222,7 +222,7 @@
 	damage = 60
 
 /obj/item/projectile/plasma/pistol
-	damage = 40
+	damage = 35
 	armour_penetration = -18
 
 /obj/item/projectile/plasma/scatter

@@ -38,7 +38,7 @@ Elder
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	suit = 			/obj/item/clothing/suit/f13/scribe/elder
+	suit = 			/obj/item/clothing/suit/f13/elder
 	suit_store =	/obj/item/gun/energy/laser/plasma
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
@@ -123,14 +123,12 @@ Paladin
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	suit = 			/obj/item/clothing/suit/f13/scribe/headscribe
-	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
+	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
+	suit_store =	/obj/item/gun/energy/laser/pistol
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_auto=1, \
-		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/energy/laser/captain=1)
+		/obj/item/kitchen/knife/combat=1)
 
 
 /*
@@ -198,7 +196,7 @@ Scribe
 /datum/outfit/job/f13scribe
 	name = "Scribe"
 	jobtype = /datum/job/f13scribe
-	backpack = /obj/item/storage/backpack/explorer
+	backpack = 		/obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat
@@ -244,7 +242,7 @@ Initiate Knight
 	gloves = 		/obj/item/clothing/gloves/combat
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
-	suit_store =	/obj/item/gun/ballistic/automatic/assault_rifle
+	suit_store =	/obj/item/gun/ballistic/automatic/marksman/servicerifle
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
