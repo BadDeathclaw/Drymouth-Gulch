@@ -4,7 +4,7 @@
 	icon_state = "Itaca"
 	item_state = "huntingshotgun"
 	w_class = WEIGHT_CLASS_BULKY
-	force = 10
+	force = 25
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
@@ -264,7 +264,7 @@
 	desc = "A Big Heavy Shotgun Model 1, the staple of pre-war riot controll grade shotguns with a longer magazine and a fixed heavy reinforced tactical stock designed for tactical use when tactically bashing heads."
 	icon_state = "riotshotgun"
 	item_state = "shotgunriot"
-	force = 56
+	force = 40
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	w_class = WEIGHT_CLASS_BULKY
@@ -327,23 +327,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
-/obj/item/gun/ballistic/revolver/zipgun
-	name = "zipgun"
-	desc = "A crudely made single shot 10mm pistol."
-	icon_state = "zipgun"
-	item_state = "gun"
-	fire_sound = 'sound/weapons/Gunshot.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
 
-/obj/item/gun/ballistic/revolver/pipe_rifle
-	name = "pipe rifle"
-	desc = "A crudely made single shot 10mm rifle."
-	icon_state = "pipe_rifle"
-	item_state = "improvshotgun"
-	fire_sound = 'sound/weapons/Gunshot.ogg'
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
 
 
 
