@@ -547,3 +547,11 @@
 	item_state = "ghostechoe"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/headscribe
+    name = "Brotherhood Head Scribe's Robe"
+    desc = "A red cloth robe with gold trimmings, worn eclusively by the Head Scribe of a chapter."
+    icon_state = "headscribe"
+    item_state = "headscribe"
+    body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+    armor = list("melee" = 15, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
