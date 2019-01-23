@@ -354,6 +354,7 @@
 // salvaged/broken power armor, does not require PA training
 
 /obj/item/clothing/suit/armor/f13/brokenpa
+	w_class = WEIGHT_CLASS_BULKY
 	slowdown = 3
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -373,6 +374,7 @@
 // power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor
+	w_class = WEIGHT_CLASS_BULKY
 	slowdown = 1
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
