@@ -143,7 +143,7 @@ Knight
 	spawn_positions = 2
 	supervisors = "the Paladin"
 	selection_color = "#95a5a6"
-	exp_requirements = 600
+	exp_requirements = 900
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	outfit = /datum/outfit/job/f13knight
