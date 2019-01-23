@@ -6,7 +6,7 @@
 CONTAINS:
 RCD - Rapid construction device
 ARCD - Admin Rapid construction device
-RLD
+RLD - Rapid Lightning Device
 AMB - Advanced Machine Builder
 PTC - Portable Turret Constructor
 */
