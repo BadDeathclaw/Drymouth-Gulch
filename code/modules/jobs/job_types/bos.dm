@@ -203,11 +203,9 @@ Scribe
 	gloves = 		/obj/item/clothing/gloves/combat
 	suit = 			/obj/item/clothing/suit/f13/scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/energy/laser/pistol=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=4) //super paks not in yet
