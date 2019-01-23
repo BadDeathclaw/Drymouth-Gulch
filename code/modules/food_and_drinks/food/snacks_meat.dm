@@ -16,14 +16,15 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/carpmeat
-	name = "cazador fillet"
-	desc = "A fillet of cazador meat."
+	name = "carp fillet"
+	desc = "A fillet of carp meat."
 	icon_state = "fishfillet"
 	list_reagents = list("nutriment" = 3, "carpotoxin" = 5, "vitamin" = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
-	tastes = list("bug flesh" = 1)
+	tastes = list("fish" = 1)
 	foodtype = MEAT
+
 
 /obj/item/reagent_containers/food/snacks/carpmeat/Initialize()
 	. = ..()
