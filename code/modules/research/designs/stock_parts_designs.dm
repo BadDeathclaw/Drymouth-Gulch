@@ -106,7 +106,7 @@
 	desc = "A stock part used in the construction of various devices."
 	id = "triphasic_scanning"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 200, MAT_GLASS = 200, MAT_DIAMOND = 30, MAT_BLUESPACE = 30)
+	materials = list(MAT_METAL = 200, MAT_GLASS = 200, MAT_DIAMOND = 50)
 	build_path = /obj/item/stock_parts/scanning_module/triphasic
 	category = list("Stock Parts")
 	lathe_time_factor = 0.2
