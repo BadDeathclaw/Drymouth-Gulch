@@ -380,6 +380,15 @@
 	desc = "The Yamato is loaded. And so am I."
 	armor = list(melee = 10, bullet = 16, laser = 0, energy = 0, bomb = 16, bio = 0, rad = 0)
 
+/obj/item/clothing/head/fluff/Bikerhelmet
+	name = "Future Helmet"
+	desc = "A helmet of some sort as if from the distant future."
+	icon_state = "biker_helmet"
+	item_state = "biker_helmet"
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
+	resistance_flags = FIRE_PROOF
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
 //Fallout 13
 
 /obj/item/clothing/head/f13/police

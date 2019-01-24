@@ -370,6 +370,25 @@
 	item_state = "t45bpowerarmor"
 	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+// salvaged/broken power armor, does not require PA training, fixed up for raiders
+
+/obj/item/clothing/suit/armor/f13/brokenpa
+	slowdown = 1.5
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
+	flags_inv = HIDEJUMPSUIT
+	clothing_flags = THICKMATERIAL
+	strip_delay = 200
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/suit/armor/f13/brokenpa/t45b
+	name = "Salvaged T-45b raider power armor"
+	desc = "It's a set of T-45b power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors.<br> Further reacquired by a raider, Its been painted black, and modified. Some of the heavy bits have been stripped for more free movement."
+	icon_state = "raiderpowerarmor"
+	item_state = "raiderpowerarmor"
+	armor = list("melee" = 40, "bullet" = 38, "laser" = 25, "energy" = 25, "bomb" = 38, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 // power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor
