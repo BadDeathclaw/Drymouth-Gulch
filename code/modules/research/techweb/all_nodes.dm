@@ -131,9 +131,9 @@
 	id = "future_parts"
 	display_name = "Futuristic Parts"
 	description = "The pinnacle of machine parts."
-	prereq_ids = list("adv_power", "high_efficiency")
+	prereq_ids = list("adv_power", "high_efficiency", "alien_engi")
 	design_ids = list("femto_mani", "triphasic_scanning", "quadratic_capacitor")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
 /////////////////////////Bluespace tech/////////////////////////
