@@ -357,6 +357,10 @@
 	name = "Low Braid"
 	icon_state = "hair_hbraid"
 
+/datum/sprite_accessory/hair/longbedhead //f13 addition
+	name = "Long Bedhead"
+	icon_state = "long_bedhead_s"
+
 /datum/sprite_accessory/hair/megaeyebrows
 	name = "Mega Eyebrows"
 	icon_state = "hair_megaeyebrows"
@@ -436,6 +440,10 @@
 /datum/sprite_accessory/hair/ponytail5
 	name = "Ponytail 5"
 	icon_state = "hair_ponytail5"
+
+/datum/sprite_accessory/hair/punk //f13 addition
+	name = "Punk"
+	icon_state = "hair_punk_s"
 
 /datum/sprite_accessory/hair/highponytail
 	name = "High Ponytail"
@@ -524,7 +532,6 @@
 /datum/sprite_accessory/hair/updo
 	name = "Updo"
 	icon_state = "hair_updo"
-
 
 /////////////////////////////
 // Facial Hair Definitions //
