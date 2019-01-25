@@ -301,7 +301,7 @@ obj
 									lb.loc=src.loc
 									del src
 								if(9)
-									var/obj/item/shield/riot/buckler/lb = new
+									var/obj/item/shield/legion/buckler/lb = new
 									lb.loc=src.loc
 									del src
 

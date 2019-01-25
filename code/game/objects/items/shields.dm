@@ -63,7 +63,7 @@
 	var/cooldown = 0 //shield bash cooldown. based on world.time
 
 /obj/item/shield/legion/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/claymore/machete))
+	if(istype(W, /obj/item))
 		if(cooldown < world.time - 25)
 			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
 			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
@@ -76,7 +76,7 @@
 	block_chance = 0
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/shield/riot/buckler
+/obj/item/shield/legion/buckler
 	name = "wooden buckler"
 	desc = "A medieval wooden buckler."
 	icon_state = "buckler"
