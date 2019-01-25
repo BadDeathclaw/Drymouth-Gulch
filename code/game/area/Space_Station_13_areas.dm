@@ -1390,6 +1390,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "raider_mall"
 	requires_power = TRUE
 
+/area/f13/mountain_bunker
+	name = "Mountain Bunker"
+	icon_state = "mountain_bunker"
+	requires_power = TRUE
+
 /area/f13/prison
 	name = "prison"
 	icon_state = "sunny_dale"
