@@ -86,16 +86,6 @@
 	materials = list()
 	resistance_flags = FLAMMABLE
 	block_chance = 25
-	var/cooldown = 0 //shield bash cooldown. based on world.time
-
-/obj/item/shield/riot/buckler/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/claymore/machete))
-		if(cooldown < world.time - 25)
-			user.visible_message("<span class='warning'>[user] bashes [src] with [W]!</span>")
-			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, 1)
-			cooldown = world.time
-	else
-		return ..()
 
 /obj/item/shield/energy
 	name = "energy combat shield"
