@@ -206,9 +206,10 @@ Scribe
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/ec=2, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/energy/laser/pistol=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=4) //super paks not in yet
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2) //super paks not in yet
 	//PA training not in yet
 
 /*
