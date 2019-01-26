@@ -961,7 +961,7 @@
 "asy" = (/obj/machinery/power/apc{dir = 8; name = "Den APC"},/obj/structure/cable{icon_state = "0-4"},/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plating,/area/f13/den)
 "asz" = (/obj/structure/cable{icon_state = "0-8"},/obj/machinery/power/smes/magical,/turf/open/floor/plating,/area/f13/den)
 "asA" = (/obj/machinery/power/apc{dir = 8; name = "Sunnydale APC"},/obj/structure/cable{icon_state = "0-4"},/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plating,/area/f13/sunny_dale)
-"asB" = (/obj/structure/cable{icon_state = "0-8"},/obj/machinery/power/smes/magical{charge = 500000},/turf/open/floor/plating,/area/f13/sunny_dale)
+"asB" = (/obj/structure/cable{icon_state = "0-8"},/obj/machinery/power/smes/magical{charge = 500000; output_level = 150000},/turf/open/floor/plating,/area/f13/sunny_dale)
 "asC" = (/obj/machinery/power/apc{dir = 8; name = "Enclave Base APC"},/obj/structure/cable{icon_state = "0-4"},/obj/structure/cable{icon_state = "0-2"},/turf/open/floor/plating,/area/f13/underground/enclave_base)
 "asD" = (/obj/structure/cable{icon_state = "0-8"},/obj/machinery/power/smes/magical,/turf/open/floor/plating,/area/f13/underground/enclave_base)
 "asE" = (/obj/structure/cable{icon_state = "1-2"},/obj/structure/sign/warning/radiation{pixel_x = -32},/obj/effect/decal/cleanable/dirt,/turf/open/floor/plasteel/f13/vault_floor/yellow,/area/engine/engineering)
