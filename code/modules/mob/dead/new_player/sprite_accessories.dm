@@ -105,6 +105,10 @@
 	name = "Bedhead 3"
 	icon_state = "hair_bedheadv3"
 
+/datum/sprite_accessory/hair/longbedhead //addition
+	name = "Long Bedhead"
+	icon_state = "long_bedhead_s"
+
 /datum/sprite_accessory/hair/beehive
 	name = "Beehive"
 	icon_state = "hair_beehive"
@@ -172,6 +176,10 @@
 /datum/sprite_accessory/hair/largebun
 	name = "Large Bun"
 	icon_state = "hair_largebun"
+
+/datum/sprite_accessory/hair/lowbun //addition
+	name = "Low Bun"
+	icon_state = "hair_bun_s"
 
 /datum/sprite_accessory/hair/business
 	name = "Business Hair"
@@ -357,10 +365,6 @@
 	name = "Low Braid"
 	icon_state = "hair_hbraid"
 
-/datum/sprite_accessory/hair/longbedhead //f13 addition
-	name = "Long Bedhead"
-	icon_state = "long_bedhead_s"
-
 /datum/sprite_accessory/hair/megaeyebrows
 	name = "Mega Eyebrows"
 	icon_state = "hair_megaeyebrows"
@@ -376,6 +380,10 @@
 /datum/sprite_accessory/hair/mohawk_reverse
 	name = "Reverse Mohawk"
 	icon_state = "hair_reversemohawk"
+
+/datum/sprite_accessory/hair/punk //addition
+	name = "Big Mohawk"
+	icon_state = "hair_punk_s"
 
 /datum/sprite_accessory/hair/odango
 	name = "Odango"
@@ -440,10 +448,6 @@
 /datum/sprite_accessory/hair/ponytail5
 	name = "Ponytail 5"
 	icon_state = "hair_ponytail5"
-
-/datum/sprite_accessory/hair/punk //f13 addition
-	name = "Punk"
-	icon_state = "hair_punk_s"
 
 /datum/sprite_accessory/hair/highponytail
 	name = "High Ponytail"
