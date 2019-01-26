@@ -361,7 +361,6 @@
 	anchored = TRUE
 	density = TRUE
 	light_color = "#fe0002"
-	luminosity = 2
 	light_range = 7
 	light_power = 0.8
 	resistance_flags = FLAMMABLE
