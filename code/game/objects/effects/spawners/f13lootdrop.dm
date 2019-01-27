@@ -577,7 +577,7 @@
 				/obj/item/claymore/machete/golf,
 				/obj/item/claymore/machete,
 				/obj/item/circular_saw,
-				/obj/item/shield/riot/buckler,
+				/obj/item/shield/legion/buckler,
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 //TIER 4 MELEE WEAPON
