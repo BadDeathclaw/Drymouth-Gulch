@@ -214,7 +214,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 // Bulldog shotgun //
 
@@ -230,7 +230,7 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
@@ -269,7 +269,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	pin = /obj/item/firing_pin
