@@ -597,8 +597,8 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/blue
     name = "blue winter coat"
-    icon_state = "coatwinterblu"
-    item_state = "coatwinterblu"
+    icon_state = "coatwinterblue"
+    item_state = "coatwinterblue"
     armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
     allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
     hoodtype = /obj/item/clothing/head/hooded/winterhood/blue
