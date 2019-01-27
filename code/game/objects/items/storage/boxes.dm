@@ -98,7 +98,7 @@
 	new /obj/item/clothing/mask/bandana/black(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 	new /obj/item/reagent_containers/blood/radaway(src)
-	new /obj/item/stack/medical/gauze/improvised(src)
+	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/survival/radio/PopulateContents()
