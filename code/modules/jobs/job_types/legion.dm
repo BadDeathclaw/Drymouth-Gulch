@@ -59,6 +59,9 @@ Centurion
 	faction = "Legion"
 	total_positions = 1
 	spawn_positions = 1
+	description = "You are the commander of the Centuria and are the direct superior to the Veteran Decanus, working with them and your soldiers to ensure that your Garrison is prepared for the coming battle of Hoover Dam. You are to establish yourself within the region in order to defeat the Profligates who would oppose Caesar, while allying with those who would make your Legion stronger."
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	supervisors = "Legate"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
@@ -111,7 +114,10 @@ Veteran Decan
 	faction = "Legion"
 	total_positions = 1
 	spawn_positions = 1
+	description = "You answer directly to the Centurion, working with them as their second in command, you run the camp, gather intelligence and lead the Centuria on patrols, raids and scouting missions on behalf of your Commander."
 	supervisors = "the centurion"
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	selection_color = "#ffeeee"
 	exp_requirements = 1500
 	exp_type = EXP_TYPE_LEGION
@@ -161,6 +167,9 @@ Vexillarius
 	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Decanus and Centurion, acting as an elite soldier of the Legion you hold the standard of Caesar in battle, raising troop morale and rallying the Centuria to your banner in the heat of battle, guiding them back to you."
 	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
 	exp_requirements = 1200
@@ -210,6 +219,9 @@ Decan
 	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Veteran Decanus and Centurion, working with them as their lieutenants, running the camp and training recruits, gathering intelligence and leading the Centuria on patrols, raids and scouting missions on behalf of the commander."
 	supervisors = "veteran decanus"
 	selection_color = "#ffeeee"
 	exp_requirements = 960
@@ -260,6 +272,9 @@ Veteran
 	faction = "Legion"
 	total_positions = 8
 	spawn_positions = 8
+	description = "You answer directly to the Decanus, acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a hardened Veteran, and have been waging war for the Legion for the better part of ten years."
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
 	exp_requirements = 300
@@ -311,6 +326,9 @@ Legionary
 	faction = "Legion"
 	total_positions = 15
 	spawn_positions = 15
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Decanus, acting as a loyal soldier within the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave."
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
 
@@ -356,6 +374,9 @@ Legionary
 	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Centurion, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your Commander and lead the Scouts in reconnaissance on their behalf."
 	supervisors = "decanus troops"
 	selection_color = "#ffeeee"
 	exp_requirements = 600
@@ -401,6 +422,9 @@ Legionary
 	faction = "Legion"
 	total_positions = 4
 	spawn_positions = 4
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Explorer, acting as the eyes of the Centuria. You bear the responsibility of obtaining intelligence for your Commander and when under attack, are expected to be the first to respond and assault the enemy."
 	supervisors = "explorer troops"
 	selection_color = "#ffeeee"
 
@@ -443,6 +467,9 @@ Legionary
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to any member of the Legion, working as a Camp Follower for the Centuria, you bear the great honor of supporting Caesar’s Army in its conquest of the Mojave in whatever capacity required from those whom you serve. You perform any tasks required of you, for you know how to serve the Legion well."
 	supervisors = "the entire legion"
 	selection_color = "#ffeeee"
 
