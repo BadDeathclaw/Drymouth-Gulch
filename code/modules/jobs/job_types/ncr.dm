@@ -299,7 +299,7 @@ Ranger
 	belt = 			/obj/item/storage/belt/military/ncr
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
