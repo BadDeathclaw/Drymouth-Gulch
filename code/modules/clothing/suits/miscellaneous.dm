@@ -595,26 +595,6 @@
 	icon_state = "clockwork_cuirass_old"
 	armor = list("melee" = 5, "bullet" = 0, "laser" = -5, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
 
-/obj/item/clothing/suit/hooded/wintercoat/blue
-    name = "blue winter coat"
-    icon_state = "coatwinterblue"
-    item_state = "coatwinterblue"
-    armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
-    allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
-    hoodtype = /obj/item/clothing/head/hooded/winterhood/blue
-
-/obj/item/clothing/head/hooded/winterhood/blue
-    icon_state = "winterhood_blue"
-
-/obj/item/clothing/suit/hooded/wintercoat/blue113
-	name = "Blue vault winter coat"
-	icon_state = "coatwinterblue113"
-	item_state = "coatwinterblue113"
-	hoodtype = /obj/item/clothing/head/hooded/winterhood/blue113
-
-/obj/item/clothing/head/hooded/winterhood/blue113
-	icon_state = "winterhood_blue113"
-
 
 //Fallout 13
 /obj/item/clothing/suit/fluff
