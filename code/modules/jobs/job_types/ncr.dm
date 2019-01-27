@@ -105,7 +105,7 @@ Lieutenant
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
+		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
 /*
@@ -146,7 +146,7 @@ Sergeant
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/stack/f13Cash/random/ncr/ncrpay_officer)
+		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
 /*
@@ -185,7 +185,7 @@ Trooper
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
+		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
 
 /*
@@ -224,7 +224,7 @@ Recruit
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
+		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
 
 /*
@@ -265,7 +265,7 @@ Veteran Ranger
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
+		/obj/item/storage/bag/money/small/ncrofficers)
 
 /*
 Ranger
@@ -307,7 +307,7 @@ Ranger
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/f13Cash/random/ncr/ncrpay_basic)
+		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
 
 /*
@@ -349,5 +349,5 @@ Recon Ranger
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/f13Cash/random/ncr/ncrpay_veteran)
+		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
