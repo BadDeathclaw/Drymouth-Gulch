@@ -14,6 +14,7 @@
 #define TRAIT_IGNORESLOWDOWN	"ignoreslow"
 #define TRAIT_GOTTAGOFAST		"fast"
 #define TRAIT_GOTTAGOREALLYFAST	"2fast"
+#define TRAIT_LEGIONBOIS		"SpeedyLegionBois"
 #define TRAIT_FAKEDEATH			"fakedeath"
 #define TRAIT_DISFIGURED		"disfigured"
 #define TRAIT_XENO_HOST			"xeno_host"	//Tracks whether we're gonna be a baby alien's mummy.
