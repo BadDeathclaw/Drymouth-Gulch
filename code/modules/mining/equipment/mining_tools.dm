@@ -55,7 +55,7 @@
 	icon_state = "handdrill"
 	item_state = "jackhammer"
 	slot_flags = ITEM_SLOT_BELT
-	toolspeed = 0.6 //available from roundstart, faster than a pickaxe.
+	toolspeed = 0.5 //available from roundstart, faster than a pickaxe.
 	usesound = 'sound/weapons/drill.ogg'
 	hitsound = 'sound/weapons/drill.ogg'
 	desc = "An electric mining drill for the especially scrawny."
