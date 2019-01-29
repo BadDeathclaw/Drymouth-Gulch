@@ -27,7 +27,7 @@
 	display_name = "Advanced Biotechnology"
 	description = "Advanced Biotechnology"
 	prereq_ids = list("biotech")
-	design_ids = list("piercesyringe", "smoke_machine", "limbgrower", "defibrillator", "meta_beaker", "medbeam", "autosurgeon", "virusmaker")
+	design_ids = list("piercesyringe", "smoke_machine", "limbgrower", "defibrillator", "meta_beaker", "medbeam", "virusmaker")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -109,22 +109,12 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
-/datum/techweb_node/anomaly
-	id = "anomaly_research"
-	display_name = "Anomaly Research"
-	description = "Unlock the potential of the mysterious anomalies that appear on station."
-	prereq_ids = list("adv_engi", "practical_bluespace")
-	design_ids = list()
-	//design_ids = list("reactive_armour", "anomaly_neutralizer")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
-	export_price = 5000
-
 /datum/techweb_node/high_efficiency
 	id = "high_efficiency"
 	display_name = "High Efficiency Parts"
 	description = "Finely-tooled manufacturing techniques allowing for picometer-perfect precision levels."
 	prereq_ids = list("engineering", "datatheory")
-	design_ids = list("pico_mani", "super_matter_bin")
+	design_ids = list("pico_mani", "super_matter_bin", "phasic_scanning")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
@@ -137,44 +127,16 @@
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
-/////////////////////////Bluespace tech/////////////////////////
-/datum/techweb_node/bluespace_basic //Bluespace-memery
-	id = "bluespace_basic"
-	display_name = "Basic Bluespace Theory"
-	description = "Basic studies into the mysterious alternate dimension known as bluespace."
-	prereq_ids = list("base")
-	design_ids = list("beacon", "telesci_gps")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	export_price = 5000
-
-/datum/techweb_node/adv_bluespace
-	id = "adv_bluespace"
-	display_name = "Advanced Bluespace Research"
-	description = "Deeper understanding of how the Bluespace dimension works"
-	prereq_ids = list("practical_bluespace", "high_efficiency")
-	design_ids = list("bluespace_matter_bin", "femto_mani", "triphasic_scanning", "tele_station", "tele_hub", "quantumpad",
-	"teleconsole", "bag_holding", "bluespace_crystal")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 15000)
-	export_price = 5000
-
-/datum/techweb_node/practical_bluespace
-	id = "practical_bluespace"
-	display_name = "Applied Bluespace Research"
-	description = "Using bluespace to make things faster and better."
-	prereq_ids = list("bluespace_basic", "engineering")
-	design_ids = list("bs_rped","minerbag_holding", "bluespacebeaker", "bluespacesyringe", "bluespacebodybag", "phasic_scanning")
+/datum/techweb_node/future_parts
+	id = "future_parts"
+	display_name = "Futuristic Parts"
+	description = "The pinnacle of machine parts."
+	prereq_ids = list("adv_power", "high_efficiency", "alientech")
+	design_ids = list("femto_mani", "triphasic_scanning", "quadratic_capacitor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
-/datum/techweb_node/bluespace_power
-	id = "bluespace_power"
-	display_name = "Bluespace Power Technology"
-	description = "Even more powerful.. power!"
-	prereq_ids = list("adv_power", "adv_bluespace")
-	design_ids = list("bluespace_cell", "quadratic_capacitor")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	export_price = 5000
-
+/////////////////////////Bluespace tech/////////////////////////
 
 /////////////////////////plasma tech/////////////////////////
 /datum/techweb_node/basic_plasma
@@ -371,7 +333,7 @@
 	id = "telecomms"
 	display_name = "Telecommunications Technology"
 	description = "Subspace transmission technology for near-instant communications devices."
-	prereq_ids = list("comptech", "bluespace_basic")
+	prereq_ids = list("comptech")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 	design_ids = list("s-receiver", "s-bus", "s-broadcaster", "s-processor", "s-hub", "s-server", "s-relay", "comm_monitor", "comm_server",
@@ -483,7 +445,7 @@
 	display_name = "Advanced Sanitation Technology"
 	description = "Clean things better, faster, stronger, and harder!"
 	prereq_ids = list("adv_engi")
-	design_ids = list("advmop", "buffer", "blutrash", "light_replacer")
+	design_ids = list("advmop", "buffer", "light_replacer")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -537,17 +499,8 @@
 	id = "electronic_weapons"
 	display_name = "Electric Weapons"
 	description = "Weapons using electric technology"
-	prereq_ids = list("weaponry", "adv_power"  , "emp_basic")
+	prereq_ids = list("weaponry", "adv_power", "emp_basic")
 	design_ids = list("ioncarbine")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	export_price = 5000
-
-/datum/techweb_node/radioactive_weapons
-	id = "radioactive_weapons"
-	display_name = "Radioactive Weaponry"
-	description = "Weapons using radioactive technology."
-	prereq_ids = list("adv_engi", "adv_weaponry")
-	design_ids = list()
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -585,7 +538,7 @@
 	display_name = "Explosive & Pyrotechnical Weaponry"
 	description = "If the light stuff just won't do it."
 	prereq_ids = list("adv_weaponry")
-	design_ids = list("large_Grenade", "pyro_Grenade", "adv_Grenade", "minibomb")
+	design_ids = list("large_Grenade", "pyro_Grenade", "adv_Grenade")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -706,7 +659,7 @@
 	id = "adv_mecha_modules"
 	display_name = "Simple Exosuit Modules"
 	description = "An advanced piece of mech weaponry"
-	prereq_ids = list("adv_mecha", "bluespace_power")
+	prereq_ids = list("adv_mecha", "adv_power")
 	design_ids = list("mech_energy_relay", "mech_ccw_armor", "mech_proj_armor", "mech_generator_nuclear")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
@@ -844,7 +797,7 @@
 	display_name = "Advanced Tool Technology"
 	description = "Things used by the really advanced people."
 	prereq_ids = list("biotech","engineering")
-	design_ids = list("industrcd", "circuitmaker", "turretmaker", "protolathe")
+	design_ids = list("industrcd", "turretmaker", "protolathe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 20000
 
@@ -853,7 +806,7 @@
 	display_name = "Advanced Biological Tools"
 	description = "Advanced biological tools."
 	prereq_ids = list("alientech", "adv_biotech")
-	design_ids = list("alien_scalpel", "alien_hemostat", "alien_retractor", "alien_saw", "alien_drill", "alien_cautery")
+	design_ids = list("alien_scalpel", "alien_hemostat", "alien_retractor", "alien_saw", "alien_drill", "alien_cautery", "autosurgeon")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 20000
 
