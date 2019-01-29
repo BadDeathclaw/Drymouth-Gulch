@@ -193,7 +193,7 @@
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections"
-	req_access = list(ACCESS_BOS)
+	req_access = list(ACCESS_ENGINE)
 
 /obj/structure/closet/secure_closet/injection/PopulateContents()
 	..()
