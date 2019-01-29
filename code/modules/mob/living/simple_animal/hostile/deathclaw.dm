@@ -16,7 +16,9 @@
 	taunt_chance = 25
 	speed = 1
 	see_in_dark = 8
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 5)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
+							/obj/item/stack/sheet/animalhide/deathclaw = 2,
+							/obj/item/stack/sheet/bone = 4)
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "hits"
@@ -40,3 +42,5 @@
 	melee_damage_lower = 72
 	melee_damage_upper = 72
 	color = rgb(95,104,94)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
+							/obj/item/stack/sheet/animalhide/deathclaw = 3)

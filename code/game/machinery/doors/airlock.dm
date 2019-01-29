@@ -1614,6 +1614,10 @@
 	else
 		open()
 
+/* cant add locks to airlocks */
+/obj/machinery/door/airlock/add_lock()
+	return
+
 #undef AIRLOCK_CLOSED
 #undef AIRLOCK_CLOSING
 #undef AIRLOCK_OPEN

@@ -57,12 +57,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 		GLOB.jobspawn_overrides[name] -= src
 	return ..()
 
-/obj/effect/landmark/start/f13
-	icon = 'icons/mob/landmarks.dmi'
-	jobspawn_override = TRUE
-	delete_after_roundstart = FALSE
-	icon_state = "Assistant"
-
 // START LANDMARKS FOLLOW. Don't change the names unless
 // you are refactoring shitty landmark code.
 
@@ -443,54 +437,76 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 // FO13 Faction Start. Set to override for the time being to allow latejoining in their original spots.
 
 // NCR
+/obj/effect/landmark/start/f13
+	icon = 'icons/mob/landmarks.dmi'
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+	icon_state = "Assistant"
 
 /obj/effect/landmark/start/f13/ncrcolonel
 	name = "NCR Colonel"
+	icon_state = "NCR Colonel"
 
 /obj/effect/landmark/start/f13/ncrcaptain
 	name = "NCR Captain"
+	icon_state = "NCR Captain"
 
 /obj/effect/landmark/start/f13/ncrlieutenant
 	name = "NCR Lieutenant"
+	icon_state = "NCR Lieutenant"
 
 /obj/effect/landmark/start/f13/ncrsergeant
 	name = "NCR Sergeant"
+	icon_state = "NCR Sergeant"
 
 /obj/effect/landmark/start/f13/ncrtrooper
 	name = "NCR Trooper"
+	icon_state = "NCR Trooper"
 
 /obj/effect/landmark/start/f13/ncrrecruit
 	name = "NCR Recruit"
+	icon_state = "NCR Recruit"
 
 /obj/effect/landmark/start/f13/ncrveteranranger
 	name = "NCR Veteran Ranger"
+	icon_state = "NCR Veteran Ranger"
 
 /obj/effect/landmark/start/f13/ncrranger
 	name = "NCR Patrol Ranger"
+	icon_state = "NCR Patrol Ranger"
 
 /obj/effect/landmark/start/f13/ncrreconranger
 	name = "NCR Recon Ranger"
+	icon_state = "NCR Recon Ranger"
 
 // Legion
 
 /obj/effect/landmark/start/f13/legate
 	name = "Legate"
+	icon_state = "Legate"
 
 /obj/effect/landmark/start/f13/centurion
 	name = "Centurion"
+	icon_state = "Centurion"
 
+/obj/effect/landmark/start/f13/vetdecanus
+	name = "Veteran Decanus"
 
 /obj/effect/landmark/start/f13/vexillarius
 	name = "Vexillarius"
+	icon_state = "Vexillarius"
 
 /obj/effect/landmark/start/f13/decanus
 	name = "Decanus"
+	icon_state = "Decanus"
 
 /obj/effect/landmark/start/f13/veteranlegionnaire
 	name = "Veteran Legionnaire"
+	icon_state = "Veteran Legionnaire"
 
 /obj/effect/landmark/start/f13/legionary
 	name = "Legionary"
+	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/scout
 	name = "Scout"
@@ -505,41 +521,61 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/elder
 	name = "Elder"
+	icon_state = "Elder"
+
+/obj/effect/landmark/start/f13/headscribe
+	name = "Head Scribe"
+	icon_state = "Head Scribe"
 
 /obj/effect/landmark/start/f13/paladin
 	name = "Paladin"
+	icon_state = "Paladin"
 
 /obj/effect/landmark/start/f13/knight
 	name = "Knight"
+	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/scribe
 	name = "Scribe"
+	icon_state = "Scribe"
 
-/obj/effect/landmark/start/f13/initiate
-	name = "Initiate"
+/obj/effect/landmark/start/f13/initiateknight
+	name = "Initiate Knight"
+	icon_state = "Initiate Knight"
+
+/obj/effect/landmark/start/f13/initiatescribe
+	name = "Initiate Scribe"
+	icon_state = "Initiate Scribe"
 
 // Vault
 
 /obj/effect/landmark/start/f13/overseer
 	name = "Overseer"
+	icon_state = "Overseer"
 
 /obj/effect/landmark/start/f13/vaultheadofsecurity
 	name = "Chief of Security"
+	icon_state = "Chief of Security"
 
 /obj/effect/landmark/start/f13/vaultdoctor
 	name = "Vault-tec Doctor"
+	icon_state = "Vault-tec Doctor"
 
 /obj/effect/landmark/start/f13/vaultscientist
 	name = "Vault-tec Scientist"
+	icon_state = "Vault-tec Scientist"
 
 /obj/effect/landmark/start/f13/vaultsecurityofficer
 	name = "Vault-tec Security"
+	icon_state = "Vault-tec Security"
 
 /obj/effect/landmark/start/f13/vaultengineer
 	name = "Vault-tec Engineer"
+	icon_state = "Vault-tec Engineer"
 
 /obj/effect/landmark/start/f13/vaultdweller
 	name = "Vault Dweller"
+	icon_state = "Vault Dweller"
 
 // Den
 
@@ -549,6 +585,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/settler
 	name = "Settler"
+	icon_state = "Settler"
 
 // Wasteland
 
@@ -557,15 +594,19 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/wastelander
 	name = "Wastelander"
+	icon_state = "Wastelander"
 
 /obj/effect/landmark/start/f13/raider
 	name = "Raider"
+	icon_state = "Raider"
 
 /obj/effect/landmark/start/f13/pusher
 	name = "Pusher"
+	icon_state = "Pusher"
 
 /obj/effect/landmark/start/f13/preacher
 	name = "Preacher"
+	icon_state = "Preacher"
 
 // Enclave
 

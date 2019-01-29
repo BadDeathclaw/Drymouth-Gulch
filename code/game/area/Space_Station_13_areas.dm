@@ -1343,6 +1343,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
+/area/f13/admeme
+	requires_power = FALSE
+
 /area/f13/underground
 	flags_2 = BLOCK_RADIO_2
 
@@ -1377,6 +1380,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "sunny_dale"
 	requires_power = TRUE
 
+/area/f13/ncr_main
+	name= "NCR Mainbase"
+	icon_state= "ncr_main"
+	requires_power= TRUE
+
 /area/f13/prison
 	name = "prison"
 	icon_state = "sunny_dale"
@@ -1391,7 +1399,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Klamat mine"
 	icon_state = "klamat"
 	requires_power = TRUE
-	flags_2 = BLOCK_RADIO_2
+
+/area/f13/deepmine
+	name = "Klamat deep mine"
+	requires_power = TRUE
 
 /area/f13/farmhouse
 	name = "Farmhouse"
@@ -1399,7 +1410,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = TRUE
 
 /area/f13/farmhousesouth
-	name = "Farmhouse"
+	name = "FarmhouseS"
 	icon_state = "farmhouse"
 	requires_power = TRUE
 
@@ -1412,7 +1423,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "powerplant"
 	requires_power = TRUE
 	ambientsounds = ENGINEERING
-	requires_power = TRUE
 
 /area/f13/underground/enclave_base
 	name = "Enclave Base"

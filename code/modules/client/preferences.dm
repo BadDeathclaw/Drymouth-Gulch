@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 3
+	var/max_save_slots = 7 // lucky number
 
 	//non-preference stuff
 	var/muted = 0
@@ -595,6 +595,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Play Mojave Radio:</b> <a href='?_src_=prefs;preference=hear_radio'>[(toggles & SOUND_RADIO) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
@@ -1681,6 +1682,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("hear_midis")
 					toggles ^= SOUND_MIDI
+
+				if("hear_radio")
+					toggles ^= SOUND_RADIO
 
 				if("lobby_music")
 					toggles ^= SOUND_LOBBY

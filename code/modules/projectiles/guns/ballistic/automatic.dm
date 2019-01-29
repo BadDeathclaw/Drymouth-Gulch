@@ -92,7 +92,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	fire_delay = 1
 	burst_size = 3
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	can_bayonet = TRUE
 	knife_x_offset = 26
 	knife_y_offset = 12
@@ -126,7 +126,7 @@
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/wt550/update_icon()
 	..()
@@ -143,7 +143,7 @@
 	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
 	burst_size = 3
 	fire_delay = 2
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/m90/Initialize()
 	. = ..()
@@ -214,7 +214,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 // Bulldog shotgun //
 
@@ -230,7 +230,7 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
@@ -269,7 +269,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	pin = /obj/item/firing_pin
@@ -692,11 +692,11 @@
 	caliber = "357"
 	projectile_type = /obj/item/projectile/bullet/medbullet
 
-/obj/item/ammo_casing/a762lp
+/obj/item/ammo_casing/a762/lp
 	name = "7.62 lowpower bullet casing"
 	desc = "A 7.62 bullet casing."
 	icon_state = "762-casing"
-	caliber = "a762lp"
+	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/medbullet
 
 //MedAP
@@ -744,7 +744,7 @@
 	armour_penetration = -9
 
 /obj/item/projectile/bullet/medapbullet
-	damage = 26
+	damage = 40
 	armour_penetration = 20
 
 /obj/item/projectile/bullet/medapbullet/needle

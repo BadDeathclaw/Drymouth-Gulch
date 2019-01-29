@@ -353,7 +353,7 @@
 	reqs = list(/obj/item/organ/tail/cat = 1,
 				/obj/item/organ/ears/cat = 1)
 	category = CAT_MISC
-
+/*
 /datum/crafting_recipe/skateboard
 	name = "Skateboard"
 	result = /obj/vehicle/ridden/scooter/skateboard
@@ -369,7 +369,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/rods = 12)
 	category = CAT_MISC
-
+*/
 /datum/crafting_recipe/papersack
 	name = "Paper Sack"
 	result = /obj/item/storage/box/papersack
@@ -543,7 +543,7 @@
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
 	time = 60
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 5)
+	reqs = list(/obj/item/grown/log = 5)
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
@@ -669,3 +669,85 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	reqs = list(/obj/item/clothing/glasses/sunglasses/reagent = 1)
 	category = CAT_CLOTHING
+
+/datum/crafting_recipe/jet
+	name = "Jet"
+	result = /obj/item/reagent_containers/pill/patch/jet
+	time = 20
+	reqs = list(/datum/reagent/consumable/milk = 25, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
+	category = CAT_DRUGS
+
+
+/datum/crafting_recipe/rags
+	name = "Cut clothing into rags"
+	result = /obj/item/stack/sheet/cloth/three
+	reqs = list(/obj/item/clothing/under = 1)
+	time = 20
+	category = CAT_MISC
+
+/datum/crafting_recipe/metalarmor
+	name = "metal armor"
+	result = /obj/item/clothing/suit/armor/f13/bmetalarmor
+	reqs = list(/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/Imetalarmor
+	name = "improved metal armor"
+	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
+	reqs = list(/obj/item/stack/sheet/leather = 1,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/stack/sheet/metal = 4,
+				/obj/item/stack/sheet/plasteel = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/IImetalarmor
+	name = "upgrading metal armor"
+	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
+	reqs = list(/obj/item/clothing/suit/armor/f13/bmetalarmor = 1,
+				/obj/item/stack/cable_coil = 1,
+				/obj/item/stack/sheet/plasteel = 2)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_CLOTHING
+
+/datum/crafting_recipe/healpowder
+	name = "Healing powder"
+	result = /obj/item/reagent_containers/pill/patch/healingpowder
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1)
+	time = 20
+	category = CAT_DRUGS
+
+/datum/crafting_recipe/stimpak
+	name = "Stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
+	reqs = list(/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+				/obj/item/reagent_containers/syringe = 1,)
+	tools = list(/obj/item/lighter,
+				/obj/item/reagent_containers/glass/beaker)
+	time = 20
+	category = CAT_DRUGS
+
+
+/datum/crafting_recipe/slavecollar
+	name = "Slave Collar"
+	result = /obj/item/electropack/shockcollar
+	reqs = list(/obj/item/clothing/neck/petcollar = 1,
+				/obj/item/assembly/signaler = 1,
+				/obj/item/assembly/igniter =1)
+	time = 40
+	category = CAT_MISC
+
+/datum/crafting_recipe/mop
+	name = "Mop"
+	result = /obj/item/mop
+	reqs = list(/obj/item/stack/rods = 2,
+				/obj/item/reagent_containers/glass/rag = 1)
+	time = 30
+	category = CAT_MISC

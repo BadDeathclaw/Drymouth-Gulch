@@ -326,6 +326,21 @@
 	slowdown = 1
 	strip_delay = 60
 
+/obj/item/clothing/suit/armor/f13/kit/terrible
+	name = "scorched armor kit"
+	desc = "A few football pads and a belt. At this point, it's really just for looks."
+	armor = list("melee" = 1, "bullet" = 1, "laser" = 0, "energy" = 0, "bomb" = 1, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/leatherarmor/terrible
+	name = "battered leather armor"
+	desc = "A set of heavily worn brahmin leather armor. It looks like it's about to fall apart."
+	armor = list("melee" = 3, "bullet" = 3, "laser" = 0, "energy" = 0, "bomb" = 3, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/bmetalarmor/terrible
+	name = "rusting metal armor"
+	desc = "A set of rusting metal armor made from various bits of scrap metal. Several bullet holes have weakened it."
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/ibmetalarmor
 	name = "reflective metal armor"
 	desc = "A set of reflective metal armor made from various bits of scrap metal.<br>Will protect against bullets and dissipate lasers a lot better, still slowing you down."
@@ -339,11 +354,13 @@
 // salvaged/broken power armor, does not require PA training
 
 /obj/item/clothing/suit/armor/f13/brokenpa
+	w_class = WEIGHT_CLASS_BULKY
 	slowdown = 3
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	flags_inv = HIDEJUMPSUIT
+	clothing_flags = THICKMATERIAL
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
@@ -357,11 +374,13 @@
 // power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor
+	w_class = WEIGHT_CLASS_BULKY
 	slowdown = 1
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	flags_inv = HIDEJUMPSUIT
+	clothing_flags = THICKMATERIAL
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
@@ -522,3 +541,19 @@
 	icon_state = "ncr_mantle"
 	item_state = "ncr_mantle"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ghostechoe
+	name = "Tattered Peace Coat"
+	desc = "An old coat belonging to a Desert Ranger once. It has been stripped of most useful protection, and has seen better days. A crude peace symbol has been painted on the back in white."
+	icon_state = "ghostechoe"
+	item_state = "ghostechoe"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/headscribe
+    name = "Brotherhood Head Scribe's Robe"
+    desc = "A red cloth robe with gold trimmings, worn eclusively by the Head Scribe of a chapter."
+    icon_state = "headscribe"
+    item_state = "headscribe"
+    body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+    armor = list("melee" = 15, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)

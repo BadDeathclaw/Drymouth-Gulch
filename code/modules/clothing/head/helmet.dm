@@ -406,6 +406,18 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
+	name = "legion veteran decanus helmet"
+	desc = "It's leather legion veteran decan helmet."
+	icon_state = "legdecanvet"
+	item_state = "legdecanvet"
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+	strip_delay = 50
+	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+
 /obj/item/clothing/head/helmet/f13/legion/legcenturion
 	name = "legion centurion helmet"
 	desc = "It's metal legion centurion helmet."
@@ -444,6 +456,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	flash_protect = 1
 /*
 	darkness_view = 8
 	invis_view = SEE_INVISIBLE_MINIMUM
@@ -511,6 +524,7 @@
 	strip_delay = 200
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	clothing_flags = THICKMATERIAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	flash_protect = 2
 	tint = 0
@@ -544,6 +558,7 @@
 	strip_delay = 200
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEJUMPSUIT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	clothing_flags = THICKMATERIAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	flash_protect = 2
 	tint = 0

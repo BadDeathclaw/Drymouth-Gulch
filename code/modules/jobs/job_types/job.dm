@@ -31,6 +31,15 @@
 	//Supervisors, who this person answers to directly
 	var/supervisors = ""
 
+	//Description, short text about the job
+	var/description = ""
+
+	//Against the faction rules, for imporant things that you SHOULDNT do.
+	var/forbids = ""
+
+	//For things that faction Enforces.
+	var/enforces = ""
+
 	//Sellection screen color
 	var/selection_color = "#ffffff"
 

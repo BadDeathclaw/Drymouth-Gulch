@@ -95,9 +95,11 @@
 
 // Ordinary survival box
 /obj/item/storage/box/survival/PopulateContents()
-	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
+	new /obj/item/clothing/mask/bandana/black(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/blood/radaway(src)
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/flashlight/flare(src)
 
 /obj/item/storage/box/survival/radio/PopulateContents()
 	..() // we want the survival stuff too.
@@ -391,6 +393,15 @@
 /obj/item/storage/box/ids/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/card/id(src)
+
+/obj/item/storage/box/deputy_badges
+	name = "box of spare badges"
+	desc = "A box containing the spare badges for deputies, use your sheriff badge on a deputy badge to assign it's owner."
+	illustration = "id"
+
+/obj/item/storage/box/deputy_badges/PopulateContents()
+	for(var/i in 1 to 3)
+		new /obj/item/card/id/deputy(src)
 
 //Some spare PDAs in a box
 /obj/item/storage/box/PDAs

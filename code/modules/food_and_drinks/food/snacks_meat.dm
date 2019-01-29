@@ -17,13 +17,14 @@
 
 /obj/item/reagent_containers/food/snacks/carpmeat
 	name = "carp fillet"
-	desc = "A fillet of spess carp meat."
+	desc = "A fillet of carp meat."
 	icon_state = "fishfillet"
-	list_reagents = list("nutriment" = 3, "carpotoxin" = 2, "vitamin" = 2)
+	list_reagents = list("nutriment" = 3, "carpotoxin" = 5, "vitamin" = 2)
 	bitesize = 6
 	filling_color = "#FA8072"
 	tastes = list("fish" = 1)
 	foodtype = MEAT
+
 
 /obj/item/reagent_containers/food/snacks/carpmeat/Initialize()
 	. = ..()
@@ -96,8 +97,8 @@
 	foodtype = MEAT | ALCOHOL
 
 /obj/item/reagent_containers/food/snacks/faggot
-	name = "faggot"
-	desc = "A great meal all round. Not a cord of wood."
+	name = "meatball"
+	desc = "It's exactly what you'd expect from the name."
 	icon_state = "faggot"
 	list_reagents = list("nutriment" = 4, "vitamin" = 1)
 	filling_color = "#800000"

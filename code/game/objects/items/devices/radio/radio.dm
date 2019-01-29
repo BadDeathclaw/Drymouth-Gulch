@@ -1,6 +1,6 @@
 /obj/item/radio
 	icon = 'icons/obj/radio.dmi'
-	name = "station bounced radio"
+	name = "shortwave radio"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
 	desc = "A basic handheld radio that communicates with local telecommunication networks."
@@ -426,6 +426,6 @@
 		recalculateChannels()
 
 
-/obj/item/radio/off	// Station bounced radios, their only difference is spawning with the speakers off, this was made to help the lag.
+/obj/item/radio/off	// Shortwave radios, their only difference is spawning with the speakers off, this was made to help the lag.
 	listening = 0			// And it's nice to have a subtype too for future features.
 	dog_fashion = /datum/dog_fashion/back

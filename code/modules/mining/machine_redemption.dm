@@ -9,11 +9,9 @@
 	density = TRUE
 	input_dir = NORTH
 	output_dir = SOUTH
-	req_access = list(ACCESS_MINERAL_STOREROOM)
 	speed_process = TRUE
 	circuit = /obj/item/circuitboard/machine/ore_redemption
 	layer = BELOW_OBJ_LAYER
-	var/req_access_reclaim = ACCESS_MINING_STATION
 	var/obj/item/card/id/inserted_id
 	var/points = 0
 	var/ore_pickup_rate = 15

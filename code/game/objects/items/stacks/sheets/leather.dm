@@ -5,6 +5,7 @@
 	item_state = "sheet-hide"
 	novariants = TRUE
 
+
 /obj/item/stack/sheet/animalhide/human
 	name = "human skin"
 	desc = "The by-product of human farming."
@@ -24,6 +25,18 @@ GLOBAL_LIST_INIT(human_recipes, list( \
 	desc = "A piece of skin."
 	singular_name = "skin piece"
 	novariants = FALSE
+
+/obj/item/stack/sheet/animalhide/brahmin
+	name = "brahmin skin"
+	desc = "The by-product of brahmin farming."
+	singular_name = "brahmin skin piece"
+	icon_state = "sheet-hide" //ToDo: Brahmin Mat
+
+/obj/item/stack/sheet/animalhide/deathclaw
+	name = "deathclaw skin"
+	desc = "The hard skin of a slain Deathclaw."
+	singular_name = "deathclaw skin piece"
+	icon_state = "sheet-hide" //ToDo: deathclaw Mat
 
 /obj/item/stack/sheet/animalhide/corgi
 	name = "corgi hide"
@@ -161,10 +174,10 @@ GLOBAL_LIST_INIT(leather_recipes, list ( \
  * Sinew
  */
 /obj/item/stack/sheet/sinew
-	name = "watcher sinew"
+	name = "sinew"
 	icon = 'icons/obj/mining.dmi'
-	desc = "Long stringy filaments which presumably came from a watcher's wings."
-	singular_name = "watcher sinew"
+	desc = "Long stringy filaments which presumably came from a insect's."
+	singular_name = "sinew"
 	icon_state = "sinew"
 	novariants = TRUE
 

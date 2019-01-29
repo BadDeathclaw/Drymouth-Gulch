@@ -325,6 +325,18 @@
 	icon_state = "explorer2"
 	item_state = "explorer2"
 
+/obj/item/storage/belt/military/legion/
+	name = "legionnaire marching belt"
+	desc = "A belt capable of holding the necessities of a legionnaire."
+	icon_state = "legion_belt"
+	item_state = "legion_belt"
+
+/obj/item/storage/belt/military/ncr
+	name = "NCR duty belt"
+	desc = "A standard issue robust duty belt for all NCR troopers."
+	icon_state = "ncr_belt"
+	item_state = "ncr_belt"
+
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)

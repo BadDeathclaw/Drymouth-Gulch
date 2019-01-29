@@ -157,7 +157,7 @@
 	name = "Strange Reagent"
 	id = "strange_reagent"
 	results = list("strange_reagent" = 3)
-	required_reagents = list("omnizine" = 1, "holywater" = 1, "mutagen" = 1)
+	required_reagents = list("omnizine" = 1, "holywater" = 1, "FEV_solution" = 1)
 
 /datum/chemical_reaction/mannitol
 	name = "Mannitol"
@@ -170,7 +170,7 @@
 	name = "Mutadone"
 	id = "mutadone"
 	results = list("mutadone" = 3)
-	required_reagents = list("mutagen" = 1, "acetone" = 1, "bromine" = 1)
+	required_reagents = list("FEV_solution" = 1, "acetone" = 1, "bromine" = 1)
 
 /datum/chemical_reaction/antihol
 	name = "antihol"
@@ -182,7 +182,7 @@
 	name = "Cryoxadone"
 	id = "cryoxadone"
 	results = list("cryoxadone" = 3)
-	required_reagents = list("stable_plasma" = 1, "acetone" = 1, "mutagen" = 1)
+	required_reagents = list("stable_plasma" = 1, "acetone" = 1, "FEV_solution" = 1)
 
 /datum/chemical_reaction/pyroxadone
 	name = "Pyroxadone"
@@ -252,3 +252,10 @@
 	results = list("modafinil" = 5)
 	required_reagents = list("diethylamine" = 1, "ammonia" = 1, "phenol" = 1, "acetone" = 1, "sacid" = 1)
 	required_catalysts = list("bromine" = 1) // as close to the real world synthesis as possible
+
+/datum/chemical_reaction/stimpak
+	name = "Stimpak Fluid"
+	id = "stimpak"
+	results = list("stimpak" = 2)
+	required_reagents = list("blood" = 2, "spaceacillin" = 3)
+	required_temp = 300

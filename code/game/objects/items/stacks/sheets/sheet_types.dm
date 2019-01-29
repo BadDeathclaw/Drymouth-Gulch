@@ -83,6 +83,9 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("button frame", /obj/item/wallframe/button, 1), \
 	null, \
 	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1), \
+	new/datum/stack_recipe("key", /obj/item/key, 1), \
+	null, \
 	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE), \
 ))
 
@@ -192,13 +195,15 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("picture frame", /obj/item/wallframe/picture, 1, time = 10),\
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("wooden buckler", /obj/item/shield/riot/buckler, 20, time = 40), \
+	new/datum/stack_recipe("wooden buckler", /obj/item/shield/legion/buckler, 20, time = 40), \
 	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50),\
 	new/datum/stack_recipe("tiki mask", /obj/item/clothing/mask/gas/tiki_mask, 2), \
 	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10),\
+	new/datum/stack_recipe("cross", /obj/structure/kitchenspike/cross, 10, time = 10),\
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("baseball bat", /obj/item/twohanded/baseball, 5, time = 15),\
+	new/datum/stack_recipe("bonfire", /obj/structure/bonfire, 15, time = 60, one_per_turf = TRUE),\
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -250,6 +255,9 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("black gloves", /obj/item/clothing/gloves/color/black, 3), \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
+	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2), \
+	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2), \
+	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
 	))
 
 /obj/item/stack/sheet/cloth
@@ -269,6 +277,12 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 
 /obj/item/stack/sheet/cloth/ten
 	amount = 10
+
+/obj/item/stack/sheet/cloth/five
+	amount = 5
+
+/obj/item/stack/sheet/cloth/three
+	amount = 3
 
 /*
  * Cardboard

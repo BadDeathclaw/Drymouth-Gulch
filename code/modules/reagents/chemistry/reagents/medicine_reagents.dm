@@ -1268,9 +1268,9 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/M)
-	M.adjustBruteLoss(-3*REM, 0)
-	M.adjustFireLoss(-3*REM, 0)
-	M.adjustOxyLoss(-2*REM, 0)
+	M.adjustBruteLoss(-4*REM, 0)
+	M.adjustFireLoss(-4*REM, 0)
+	M.adjustOxyLoss(-3*REM, 0)
 	. = 1
 	..()
 
@@ -1282,15 +1282,22 @@
 	color = "#A9FBFB"
 	taste_description = "bitterness"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-3*REM)
-	M.adjustBruteLoss(-3*REM)
-	M.druggy = max(M.druggy, 5)
+	M.adjustFireLoss(-2*REM)
+	M.adjustBruteLoss(-2*REM)
+	M.hallucination = max(M.hallucination, 5)
 	if(prob(7))
 		M.emote(pick("twitch","drool","moan","giggle"))
 	. = 1
 	..()
+
+/datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
+	M.adjustToxLoss(4*REM, 0)
+	M.adjustOxyLoss(4*REM, 0)
+	..()
+	. = 1
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"
@@ -1332,14 +1339,24 @@
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 30
-	addiction_threshold = 20
+	overdose_threshold = 20
+	addiction_threshold = 10
+
+/datum/reagent/medicine/medx/on_mob_add(mob/M)
+	..()
+	if(isliving(M))
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_HEALTHY
+		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+
+/datum/reagent/medicine/medx/on_mob_delete(mob/M)
+	if(isliving(M))
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_NONE
+		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/M)
-	if(iscarbon(M))
-		var/mob/living/carbon/N = M
-		N.hal_screwyhud = SCREWYHUD_HEALTHY
-		N.add_trait(TRAIT_IGNORESLOWDOWN, id)
 	M.AdjustStun(-30, 0)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)

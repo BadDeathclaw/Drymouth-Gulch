@@ -111,6 +111,7 @@
 /obj/item/card/id
 	name = "identification card"
 	desc = "A card used to provide ID and determine access across the station."
+	var/id_type = "ID Card"
 	icon_state = "id"
 	item_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -166,10 +167,10 @@ update_label("John Doe", "Clowny")
 */
 /obj/item/card/id/proc/update_label(newname, newjob)
 	if(newname || newjob)
-		name = "[(!newname)	? "identification card"	: "[newname]'s ID Card"][(!newjob) ? "" : " ([newjob])"]"
+		name = "[(!newname)	? "identification card"	: "[newname]'s [id_type]"][(!newjob) ? "" : " ([newjob])"]"
 		return
 
-	name = "[(!registered_name)	? "identification card"	: "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
+	name = "[(!registered_name)	? "identification card"	: "[registered_name]'s [id_type]"][(!assignment) ? "" : " ([assignment])"]"
 
 /obj/item/card/id/silver
 	name = "silver identification card"
@@ -192,6 +193,28 @@ update_label("John Doe", "Clowny")
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+
+/obj/item/card/id/deputy
+	name = "deputy's badge"
+	desc = "A silver badge which shows honour and dedication."
+	id_type = "Badge"
+	assignment = "Deputy"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+
+/obj/item/card/id/deputy/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/card/id/sheriff))
+		registered_name = stripped_input(user, "Who do you want to designate as your deputy?", , "", MAX_NAME_LEN)
+		to_chat(user, "You scribble the [registered_name] for the name on the badge.")
+		update_label()
+	return ..()
+
+/obj/item/card/id/sheriff
+	name = "sheriff's badge"
+	desc = "A golden badge which shows power and might."
+	id_type = "Badge"
+	icon_state = "sheriff"
+	item_state = "badge-sheriff"
 
 /obj/item/card/id/syndicate
 	name = "agent card"
@@ -405,3 +428,9 @@ update_label("John Doe", "Clowny")
 	desc = "Special ID card to allow access to APCs."
 	icon_state = "centcom"
 	access = list(ACCESS_ENGINE_EQUIP)
+
+/obj/item/card/id/dogtag
+	name = "holo dogtag"
+	desc = "An advanced holographic dogtag, that shows the duty of a BoS member."
+	icon_state =	"holodogtag"
+	id_type = "ID tags"

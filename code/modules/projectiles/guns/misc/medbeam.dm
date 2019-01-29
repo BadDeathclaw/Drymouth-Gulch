@@ -44,7 +44,9 @@
 /obj/item/gun/medbeam/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(isliving(user))
 		add_fingerprint(user)
-
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, "<span class='warning'>Pah! Useless! You can't kill anyone with this.</span>")
+		return
 	if(current_target)
 		LoseTarget()
 	if(!isliving(target))

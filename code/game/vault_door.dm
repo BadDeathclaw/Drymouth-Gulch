@@ -6,7 +6,7 @@
 	opacity = 1
 	layer = WALL_OBJ_LAYER
 	anchored = TRUE
-	
+
 	var/is_busy = FALSE
 	var/destroyed = FALSE
 	var/isworn = FALSE
@@ -122,6 +122,8 @@
 
 /obj/machinery/doorButtons/vaultButton/attack_hand(mob/user)
 	activate()
+	message_admins("[ADMIN_LOOKUPFLW(user)] pressed the vault door button at [ADMIN_VERBOSEJMP(user.loc)].")
+
 //new vault door button
 /obj/machinery/doorButtons/wornvaultButton
 	name = "worn vault access"

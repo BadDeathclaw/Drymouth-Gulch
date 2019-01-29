@@ -8,13 +8,13 @@
 	gas_transfer_coefficient = 0.9
 	equip_delay_other = 20
 
-/obj/item/clothing/mask/muzzle/attack_paw(mob/user)
-	if(iscarbon(user))
-		var/mob/living/carbon/C = user
-		if(src == C.wear_mask)
-			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
-			return
-	..()
+///obj/item/clothing/mask/muzzle/attack_paw(mob/user)
+//	if(iscarbon(user))
+//		var/mob/living/carbon/C = user
+//		if(src == C.wear_mask)
+//			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
+//			return
+//	..()
 
 /obj/item/clothing/mask/surgical
 	name = "sterile mask"
@@ -67,6 +67,15 @@
 	desc = "Express your happiness or hide your sorrows with this laughing face with crying tears of joy cutout."
 	icon_state = "joy"
 
+/obj/item/clothing/mask/joy/joyful
+	item_flags = NODROP
+
+/obj/item/clothing/mask/joy/joyful/equipped(mob/user, slot)
+	var/mob/living/carbon/C = user
+	if(C.wear_mask == src)
+		to_chat(user, "<span class='warning'><B>When you put [src] on, you feel nothing but Joy. Spread it to others.</B></span>")
+	return ..()
+
 /obj/item/clothing/mask/pig
 	name = "pig mask"
 	desc = "A rubber pig mask."
@@ -94,6 +103,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/spig/speechModification(message)
 	if(voicechange)
@@ -144,6 +154,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/cowmask/speechModification(message)
 	if(voicechange)
@@ -158,6 +169,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEYES|HIDEEARS
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/horsehead/speechModification(message)
 	if(voicechange)
@@ -278,7 +290,7 @@
 	name = "veteran bandana"
 	desc = "A fine prime bandana."
 	icon_state = "bandred"
-	
+
 /obj/item/clothing/mask/mummy
 	name = "mummy mask"
 	desc = "Ancient bandages."

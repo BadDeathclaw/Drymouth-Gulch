@@ -12,7 +12,6 @@
 /turf/open/floor/mineral
 	name = "mineral floor"
 	icon_state = ""
-	var/list/icons
 
 
 
@@ -21,14 +20,6 @@
 	. = ..()
 	if (!icons)
 		icons = list()
-
-
-/turf/open/floor/mineral/update_icon()
-	if(!..())
-		return 0
-	if(!broken && !burnt)
-		if( !(icon_state in icons) )
-			icon_state = initial(icon_state)
 
 //PLASMA
 

@@ -23,6 +23,11 @@ RENAME_CYBORG
 ## Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
 OOC_DURING_ROUND
 
+## LOOC DURING ROUND ###
+## Comment this out if you want LOOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
+LOOC_DURING_ROUND
+
+
 ## EMOJI ###
 ## Comment this out if you want to disable emojis
 EMOJIS
@@ -137,10 +142,10 @@ MIDROUND_ANTAG CHANGELING
 MIDROUND_ANTAG WIZARD
 #MIDROUND_ANTAG  MONKEY
 
-## Uncomment these for overrides of the minimum / maximum number of players in a round type. 
+## Uncomment these for overrides of the minimum / maximum number of players in a round type.
 ## If you set any of these occasionally check to see if you still need them as the modes
 ## will still be actively rebalanced around the SUGGESTED populations, not your overrides.
-## Notes: For maximum number of players a value of -1 means no maximum. Setting minimums to 
+## Notes: For maximum number of players a value of -1 means no maximum. Setting minimums to
 ## VERY low numbers (< 5) can lead to errors if the roundtypes were not designed for that.
 
 #MIN_POP TRAITOR 0
@@ -262,7 +267,7 @@ EVENTS_MIN_PLAYERS_MUL 1
 
 ## Secborg ###
 ## Uncomment to prevent the security cyborg module from being chosen
-#DISABLE_SECBORG
+DISABLE_SECBORG
 
 ## Peacekeeper Borg ###
 ## Uncomment to prevent the peacekeeper cyborg module from being chosen

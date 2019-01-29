@@ -367,7 +367,7 @@
 	mutate(4, 10, 2, 4, 50, 4, 10, 3)
 
 
-/obj/machinery/hydroponics/proc/mutatespecie() // Mutagent produced a new plant!
+/obj/machinery/hydroponics/proc/mutatespecie() // FEV_solutiont produced a new plant!
 	if(!myseed || dead)
 		return
 
@@ -392,7 +392,7 @@
 	visible_message("<span class='warning'>[oldPlantName] suddenly mutates into [myseed.plantname]!</span>")
 
 
-/obj/machinery/hydroponics/proc/mutateweed() // If the weeds gets the mutagent instead. Mind you, this pretty much destroys the old plant
+/obj/machinery/hydroponics/proc/mutateweed() // If the weeds gets the FEV_solutiont instead. Mind you, this pretty much destroys the old plant
 	if( weedlevel > 5 )
 		if(myseed)
 			qdel(myseed)
@@ -437,8 +437,8 @@
 	if(myseed)
 		myseed.on_chem_reaction(S) //In case seeds have some special interactions with special chems, currently only used by vines
 
-	// Requires 5 mutagen to possibly change species.// Poor man's mutagen.
-	if(S.has_reagent("mutagen", 5) || S.has_reagent("radium", 10) || S.has_reagent("uranium", 10))
+	// Requires 5 FEV_solution to possibly change species.// Poor man's FEV_solution.
+	if(S.has_reagent("FEV_solution", 5) || S.has_reagent("radium", 10) || S.has_reagent("uranium", 10))
 		switch(rand(100))
 			if(91 to 100)
 				adjustHealth(-10)
@@ -458,10 +458,10 @@
 			else
 				to_chat(user, "<span class='notice'>Nothing happens...</span>")
 
-	// 2 or 1 units is enough to change the yield and other stats.// Can change the yield and other stats, but requires more than mutagen
-	else if(S.has_reagent("mutagen", 2) || S.has_reagent("radium", 5) || S.has_reagent("uranium", 5))
+	// 2 or 1 units is enough to change the yield and other stats.// Can change the yield and other stats, but requires more than FEV_solution
+	else if(S.has_reagent("FEV_solution", 2) || S.has_reagent("radium", 5) || S.has_reagent("uranium", 5))
 		hardmutate()
-	else if(S.has_reagent("mutagen", 1) || S.has_reagent("radium", 2) || S.has_reagent("uranium", 2))
+	else if(S.has_reagent("FEV_solution", 1) || S.has_reagent("radium", 2) || S.has_reagent("uranium", 2))
 		mutate()
 
 	// After handling the mutating, we now handle the damage from adding crude radioactives...

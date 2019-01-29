@@ -24,7 +24,6 @@
 /obj/structure/closet/secure_closet/medical2
 	name = "anesthetic closet"
 	desc = "Used to knock people out."
-	req_access = list(ACCESS_SURGERY)
 
 /obj/structure/closet/secure_closet/medical2/PopulateContents()
 	..()

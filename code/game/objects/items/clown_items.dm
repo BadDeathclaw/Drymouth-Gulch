@@ -24,7 +24,7 @@
 	throw_speed = 3
 	throw_range = 7
 	grind_results = list("lye" = 10)
-	var/cleanspeed = 50 //slower than mop
+	var/cleanspeed = 35 //slower than mop
 	force_string = "robust... against germs"
 
 /obj/item/soap/Initialize()
@@ -38,12 +38,12 @@
 /obj/item/soap/homemade
 	desc = "A homemade bar of soap. Smells of... well...."
 	icon_state = "soapgibs"
-	cleanspeed = 45 // a little faster to reward chemists for going to the effort
+	cleanspeed = 30 // a little faster to reward chemists for going to the effort
 
 /obj/item/soap/deluxe
 	desc = "A deluxe Waffle Co. brand bar of soap. Smells of high-class luxury."
 	icon_state = "soapdeluxe"
-	cleanspeed = 40 //same speed as mop because deluxe -- captain gets one of these
+	cleanspeed = 25 //same speed as mop because deluxe -- captain gets one of these
 
 /obj/item/soap/syndie
 	desc = "An untrustworthy bar of soap made of strong chemical agents that dissolve blood faster."
@@ -59,9 +59,6 @@
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
 	if(!proximity || !check_allowed_items(target))
 		return
-	//I couldn't feasibly  fix the overlay bugs caused by cleaning items we are wearing.
-	//So this is a workaround. This also makes more sense from an IC standpoint. ~Carn
-	SEND_SIGNAL(target, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
 	if(user.client && ((target in user.client.screen) && !user.is_holding(target)))
 		to_chat(user, "<span class='warning'>You need to take that [target.name] off before cleaning it!</span>")
 	else if(istype(target, /obj/effect/decal/cleanable))
@@ -69,11 +66,13 @@
 		if(do_after(user, src.cleanspeed, target = target))
 			to_chat(user, "<span class='notice'>You scrub \the [target.name] out.</span>")
 			qdel(target)
+			SEND_SIGNAL(target, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
 	else if(ishuman(target) && user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		var/mob/living/carbon/human/H = user
 		user.visible_message("<span class='warning'>\the [user] washes \the [target]'s mouth out with [src.name]!</span>", "<span class='notice'>You wash \the [target]'s mouth out with [src.name]!</span>") //washes mouth out with soap sounds better than 'the soap' here
 		H.lip_style = null //removes lipstick
 		H.update_body()
+		SEND_SIGNAL(target, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
 		return
 	else if(istype(target, /obj/structure/window))
 		user.visible_message("[user] begins to clean \the [target.name] with [src]...", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
@@ -81,6 +80,7 @@
 			to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			target.set_opacity(initial(target.opacity))
+			SEND_SIGNAL(target, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
 	else
 		user.visible_message("[user] begins to clean \the [target.name] with [src]...", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
 		if(do_after(user, src.cleanspeed, target = target))

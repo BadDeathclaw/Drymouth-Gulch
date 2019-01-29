@@ -359,11 +359,17 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	icon = 'icons/obj/recycling.dmi'
 	icon_state = "switch-off"
 	w_class = WEIGHT_CLASS_BULKY
+	var/oneway = FALSE
 	var/id = "" //inherited by the switch
 
 /obj/item/conveyor_switch_construct/Initialize()
 	. = ..()
 	id = "[rand()]" //this couldn't possibly go wrong
+
+/obj/item/conveyor_switch_construct/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/multitool))
+		to_chat(user, "<span class='notice'>You set [src] to one direction mode.</span>")
+		oneway = TRUE
 
 /obj/item/conveyor_switch_construct/afterattack(atom/A, mob/user, proximity)
 	if(!proximity || user.stat || !isfloorturf(A) || istype(A, /area/shuttle))
@@ -376,7 +382,11 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	if(!found)
 		to_chat(user, "[icon2html(src, user)]<span class=notice>The conveyor switch did not detect any linked conveyor belts in range.</span>")
 		return
-	var/obj/machinery/conveyor_switch/NC = new/obj/machinery/conveyor_switch(A, id)
+	var/obj/machinery/conveyor_switch/oneway/NC
+	if(oneway)
+		NC = new/obj/machinery/conveyor_switch/oneway(A, id)
+	else
+		NC = new/obj/machinery/conveyor_switch(A, id)
 	transfer_fingerprints_to(NC)
 	qdel(src)
 

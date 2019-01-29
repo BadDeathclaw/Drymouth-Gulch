@@ -501,7 +501,7 @@
 	category = list("initial", "T-Comm")
 
 /datum/design/bounced_radio
-	name = "Station Bounced Radio"
+	name = "Shortwave Radio"
 	id = "bounced_radio"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 75, MAT_GLASS = 25)
@@ -774,7 +774,7 @@
 	category = list("initial", "Security")
 
 /datum/design/doublestacked
-	name = "Rangermaster Stripper Clip (7.62mm)"
+	name = "Rangemaster Stripper Clip (7.62mm)"
 	id = "doublestacked"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 10000)

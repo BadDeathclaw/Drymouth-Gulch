@@ -138,6 +138,9 @@
 /obj/machinery/chem_dispenser/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
 											datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
+		return
 	if(!ui)
 		ui = new(user, src, ui_key, "chem_dispenser", name, 550, 550, master_ui, state)
 		if(user.hallucinating())
@@ -348,8 +351,6 @@
 			macrotier = M.rating
 	powerefficiency = round(newpowereff, 0.01)
 
-
-
 /obj/machinery/chem_dispenser/on_deconstruction()
 	cell = null
 	if(beaker)
@@ -478,18 +479,18 @@
 	)
 
 
-/obj/machinery/chem_dispenser/mutagen
-	name = "mutagen dispenser"
-	desc = "Creates and dispenses mutagen."
-	dispensable_reagents = list("mutagen")
+/obj/machinery/chem_dispenser/FEV_solution
+	name = "FEV solution dispenser"
+	desc = "Creates and dispenses FEV solution."
+	dispensable_reagents = list("FEV_solution")
 	emagged_reagents = list("plasma")
 
 
-/obj/machinery/chem_dispenser/mutagensaltpeter
+/obj/machinery/chem_dispenser/FEV_solutionsaltpeter
 	name = "botanical chemical dispenser"
 	desc = "Creates and dispenses chemicals useful for botany."
 	dispensable_reagents = list(
-		"mutagen",
+		"FEV_solution",
 		"saltpetre",
 		"eznutriment",
 		"left4zednutriment",
