@@ -111,14 +111,14 @@ Paladin
 	exp_requirements = 1800
 	exp_type = EXP_TYPE_BROTHERHOOD
 
-	outfit = /datum/outfit/job/f13headscribe
+	outfit = /datum/outfit/job/bos/f13headscribe
 
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
-	jobtype = /datum/job/f13headscribe
+	jobtype = /datum/job/bos/f13headscribe
 	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
 	suit_store =	/obj/item/gun/energy/laser/pistol
 	belt = 			/obj/item/storage/belt/utility/full/engi
@@ -218,7 +218,7 @@ Initiate Knight
 
 /datum/outfit/job/bos/f13initiateknight
 	name = "Initiate Knight"
-	jobtype = /datum/job/f13initiateknight
+	jobtype = /datum/job/bos/f13initiateknight
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
 	suit_store =	/obj/item/gun/ballistic/automatic/marksman/servicerifle
@@ -251,7 +251,7 @@ Initiate Scribe
 
 /datum/outfit/job/f13initiatescribe
 	name = "Initiate Scribe"
-	jobtype = /datum/job/f13initiatescribe
+	jobtype = /datum/job/bos/f13initiatescribe
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
