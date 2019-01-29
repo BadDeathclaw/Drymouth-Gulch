@@ -54,6 +54,16 @@
 	// ~300 worth of ncr money
 	new /obj/item/stack/f13Cash/random/ncr/high(src)
 
+// NCR enlisted. Spawns with the non officers and non Vet Rangers.
+/obj/item/storage/bag/money/small/ncrenlisted/PopulateContents()
+	// ~15 worth of ncr money
+	new /obj/item/stack/f13Cash/random/ncr/low(src)
+
+// NCR officers. Spawns with the officers and Vet Ranger.
+/obj/item/storage/bag/money/small/ncrofficers/PopulateContents()
+	// ~60 worth of ncr money
+	new /obj/item/stack/f13Cash/random/ncr/med(src)
+
 // Den reserves. Spawns with the Sheriff.
 /obj/item/storage/bag/money/small/den/PopulateContents()
 	// ~225 worth of assorted money
@@ -65,12 +75,14 @@
 /obj/item/storage/bag/money/small/wastelander/PopulateContents()
 	// ~36 worth of assorted money
 	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
+	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
 	new /obj/item/stack/f13Cash/random/denarius/low(src)
 	new /obj/item/stack/f13Cash/random/ncr/low(src)
 
 // Standard Settler money bag. They are pretty wealthy, with NCR bucks and caps, no Legion money.
 /obj/item/storage/bag/money/small/settler/PopulateContents()
 	// ~87 worth of non legion money
+	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
 	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
 	new /obj/item/stack/f13Cash/random/ncr/low(src)
 

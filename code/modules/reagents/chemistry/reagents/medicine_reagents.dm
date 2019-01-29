@@ -1339,25 +1339,24 @@
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 30
-	addiction_threshold = 20
+	overdose_threshold = 20
+	addiction_threshold = 10
 
 /datum/reagent/medicine/medx/on_mob_add(mob/M)
 	..()
 	if(isliving(M))
-		var/mob/living/L = M
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_HEALTHY
 		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/M)
 	if(isliving(M))
-		var/mob/living/L = M
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_NONE
 		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/M)
-	if(iscarbon(M))
-		var/mob/living/carbon/N = M
-		N.hal_screwyhud = SCREWYHUD_HEALTHY
 	M.AdjustStun(-30, 0)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)

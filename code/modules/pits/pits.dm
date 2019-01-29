@@ -15,11 +15,11 @@ obj/dugpit/New(lnk)
 	..()
 	parent = lnk
 
-/obj/dugpit/proc/dugresist(mob/living/user)
+/obj/dugpit/container_resist(mob/living/user)
 	//try to unbury self
 	to_chat(user, "<span class='danger'>You start digging from inside, trying to unbury self!</span>")
 	if(do_after(user, (50), target = src))
-		if (prob(10))
+		if (prob(25))
 			to_chat(user, "<span class='danger'>You have managed to move some of the ground!</span>")
 			parent.unburylevel++
 			if (parent.unburylevel>=NUMBURYTIMES)
@@ -38,16 +38,16 @@ obj/dugpit/New(lnk)
 	if(!istype(W))
 		return
 
-	if (storedindex>=NUMCONTENT)
-		to_chat(usr, "<span class='notice'>The pit is filled with items to the limit!</span>")
-		return
-
 
 	if(usr)
 
 		add_fingerprint(usr)
 
 		if(!istype(W, /obj/item/gun/energy/kinetic_accelerator) && !istype(W, /obj/item/stack/ore/glass ) )
+			if (storedindex>=NUMCONTENT)
+				to_chat(usr, "<span class='notice'>The pit is filled with items to the limit!</span>")
+				return
+
 			for(var/mob/M in viewers(usr, null))
 				if(M == usr)
 					usr.show_message("<span class='notice'>You put [W] in the hole.</span>", 1)

@@ -13,7 +13,7 @@
 	box = null
 
 /datum/outfit/job/CaesarsLegion/Legionnaire
-	belt = /obj/item/storage/belt/military/alt
+	belt = /obj/item/storage/belt/military/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
@@ -36,15 +36,11 @@ Needs whitelist
 /datum/job/CaesarsLegion/Legionnaire/f13legate
 	title = "Legate"
 	flag = F13LEGATE
-
 	head_announce = list("Security")
-
-
 	supervisors = "Caesar"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
 	exp_requirements = 2700
-
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 
@@ -54,15 +50,7 @@ Needs whitelist
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 	name = "Legate"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legate
-
-
-
-
-
-
-
 	shoes = 		/obj/item/clothing/shoes/legionlegat
-
 	suit = 			/obj/item/clothing/suit/armor/f13/leglegat
 	head = 			/obj/item/clothing/head/helmet/f13/legion/leglegat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -88,6 +76,9 @@ Centurion
 
 	total_positions = 1
 	spawn_positions = 1
+	description = "You are the commander of the Centuria and are the direct superior to the Veteran Decanus, working with them and your soldiers to ensure that your Garrison is prepared for the coming battle of Hoover Dam. You are to establish yourself within the region in order to defeat the Profligates who would oppose Caesar, while allying with those who would make your Legion stronger."
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	supervisors = "Legate"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
@@ -99,14 +90,6 @@ Centurion
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Centurion"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
-
-
-
-
-
-
-
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
@@ -130,28 +113,19 @@ Veteran Decan
 /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
 	title = "Veteran Decanus"
 	flag = F13VETDECAN
-
-
 	total_positions = 1
 	spawn_positions = 1
+	description = "You answer directly to the Centurion, working with them as their second in command, you run the camp, gather intelligence and lead the Centuria on patrols, raids and scouting missions on behalf of your Commander."
 	supervisors = "the centurion"
-
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	exp_requirements = 1500
-
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 	name = "Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
-
-
-
-
-
-
-
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	mask =			/obj/item/clothing/mask/bandana/legdecan
@@ -174,10 +148,11 @@ Vexillarius
 /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
 	title = "Vexillarius"
 	flag = F13VEXILLARIUS
-
-
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Decanus and Centurion, acting as an elite soldier of the Legion you hold the standard of Caesar in battle, raising troop morale and rallying the Centuria to your banner in the heat of battle, guiding them back to you."
 	supervisors = "veteran decanus"
 
 	exp_requirements = 1200
@@ -188,14 +163,6 @@ Vexillarius
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
 	name = "Vexillarius"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
-
-
-
-
-
-
-
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -217,10 +184,11 @@ Decan
 /datum/job/CaesarsLegion/Legionnaire/f13decan
 	title = "Decanus"
 	flag = F13DECAN
-
-
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Veteran Decanus and Centurion, working with them as their lieutenants, running the camp and training recruits, gathering intelligence and leading the Centuria on patrols, raids and scouting missions on behalf of the commander."
 	supervisors = "veteran decanus"
 
 	exp_requirements = 960
@@ -231,14 +199,7 @@ Decan
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
 	name = "Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13decan
-
-
-
-
-
-
 	shoes = 		/obj/item/clothing/shoes/legionleather
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
@@ -261,28 +222,19 @@ Veteran
 /datum/job/CaesarsLegion/Legionnaire/f13vetlegion
 	title = "Veteran Legionnaire"
 	flag = F13VETLEGION
-
-
 	total_positions = 8
 	spawn_positions = 8
+	description = "You answer directly to the Decanus, acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a hardened Veteran, and have been waging war for the Legion for the better part of ten years."
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	supervisors = "decanus troops"
-
 	exp_requirements = 300
-
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 	name = "Veteran Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetlegion
-
-
-
-
-
-
-
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
@@ -306,10 +258,11 @@ Legionary
 /datum/job/CaesarsLegion/Legionnaire/f13legionary
 	title = "Legionary"
 	flag = F13LEGIONARY
-
-
 	total_positions = 15
 	spawn_positions = 15
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Decanus, acting as a loyal soldier within the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave."
 	supervisors = "decanus troops"
 
 
@@ -318,14 +271,7 @@ Legionary
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 	name = "Legionary"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
-
-
-
-
-
-
 	shoes = 		/obj/item/clothing/shoes/legionleather
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
@@ -345,10 +291,11 @@ Legionary
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
 	title = "Explorer"
 	flag = F13EXPLORER
-
-
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Centurion, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your Commander and lead the Scouts in reconnaissance on their behalf."
 	supervisors = "decanus troops"
 
 	exp_requirements = 600
@@ -359,14 +306,6 @@ Legionary
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
-
-
-
-
-
-
-
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/explorer
 	glasses = null
@@ -383,26 +322,19 @@ Legionary
 /datum/job/CaesarsLegion/Legionnaire/f13scout
 	title = "Scout"
 	flag = F13SCOUT
-
-
 	total_positions = 4
 	spawn_positions = 4
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to the Explorer, acting as the eyes of the Centuria. You bear the responsibility of obtaining intelligence for your Commander and when under attack, are expected to be the first to respond and assault the enemy."
 	supervisors = "explorer troops"
-
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 	name = "Scout"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13scout
-
-
-
-
-
-
 	shoes = 		/obj/item/clothing/shoes/legionleather
-
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/scout
 	glasses = null
@@ -419,23 +351,19 @@ Legionary
 /datum/job/CaesarsLegion/f13campfollower
 	title = "Camp Follower"
 	flag = F13CAMPFOLLOWER
-
 	total_positions = 3
 	spawn_positions = 3
+	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
+	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
+	description = "You answer directly to any member of the Legion, working as a Camp Follower for the Centuria, you bear the great honor of supporting Caesar�s Army in its conquest of the Mojave in whatever capacity required from those whom you serve. You perform any tasks required of you, for you know how to serve the Legion well."
 	supervisors = "the entire legion"
-
 
 	outfit = /datum/outfit/job/CaesarsLegion/f13campfollower
 
 /datum/outfit/job/CaesarsLegion/f13campfollower
 	name = "Camp Follower"
 	jobtype = /datum/outfit/job/CaesarsLegion/f13campfollower
-
-
-
-	belt = null
 	shoes = /obj/item/clothing/shoes/sandal
-	box = null
 
 /datum/outfit/job/CaesarsLegion/f13campfollower/pre_equip(mob/living/carbon/human/H)
 	..()

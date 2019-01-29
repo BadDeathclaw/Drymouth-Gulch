@@ -92,7 +92,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	fire_delay = 1
 	burst_size = 3
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	can_bayonet = TRUE
 	knife_x_offset = 26
 	knife_y_offset = 12
@@ -126,7 +126,7 @@
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/wt550/update_icon()
 	..()
@@ -143,7 +143,7 @@
 	var/obj/item/gun/ballistic/revolver/grenadelauncher/underbarrel
 	burst_size = 3
 	fire_delay = 2
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/m90/Initialize()
 	. = ..()
@@ -214,7 +214,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 // Bulldog shotgun //
 
@@ -230,7 +230,7 @@
 	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/shotgun/bulldog/unrestricted
@@ -269,7 +269,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
-	pin = /obj/item/firing_pin/implant/pindicate
+	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/automatic/l6_saw/unrestricted
 	pin = /obj/item/firing_pin

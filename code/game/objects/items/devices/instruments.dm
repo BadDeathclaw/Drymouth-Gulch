@@ -29,12 +29,6 @@
 	if(mapload)
 		song.tempo = song.sanitize_tempo(song.tempo) // tick_lag isn't set when the map is loaded
 
-/obj/item/instrument/attack_self(mob/user)
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
-		return 1
-	interact(user)
-
 /obj/item/instrument/interact(mob/user)
 	ui_interact(user)
 

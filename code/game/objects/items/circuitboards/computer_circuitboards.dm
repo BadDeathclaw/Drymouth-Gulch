@@ -346,3 +346,15 @@
 /obj/item/circuitboard/computer/sat_control
 	name = "Satellite Network Control (Computer Board)"
 	build_path = /obj/machinery/computer/sat_control
+
+/obj/item/circuitboard/computer/enclave_control
+	name = "Enclave Elevator Control (Computer board)"
+	build_path = /obj/machinery/computer/shuttle/enclavefortelevator
+
+/obj/item/circuitboard/computer/bos_control
+	name = "BoS Elevator Control (Computer board)"
+	build_path = /obj/machinery/computer/shuttle/boselevator
+
+/obj/item/circuitboard/computer/vault_control
+	name = "Vault Elevator Control (Computer board)"
+	build_path = /obj/machinery/computer/shuttle/vaultelevator

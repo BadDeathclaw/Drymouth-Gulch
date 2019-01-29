@@ -32,6 +32,9 @@ Overseer
 	faction = "Vault"
 	total_positions = 1
 	spawn_positions = 1
+	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
+	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations. Participation in special projects (the vaults experiment, which you wont know about.)"
+	description = "You are the leader of the Vault and the direct superior to the Chief Of Security, working with them and your fellow vault dwellers, your goal is to ensure the continued prosperity and survival of the vault through whatever means are at your disposal. "
 	supervisors = "Vault-Tec"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
@@ -82,6 +85,9 @@ Head of Security
 	faction = "Vault"
 	total_positions = 1
 	spawn_positions = 1
+	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
+	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations. Participation in special projects (the vaults experiment, which you wont know about.)"
+	description = "You answer directly to the Overseer, organising the safety, security and readiness of the Vault. If the time comes, you are in charge of organising and preparing an expedition team for the Wasteland. Until such a time, you keep your Vault ready and safe, training capable dwellers in the usage of weapons, issuing permits for their usage."
 	supervisors = "the overseer"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
@@ -133,6 +139,9 @@ Medical Doctor
 	faction = "Vault"
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
+	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations. Participation in special projects (the vaults experiment, which you wont know about.)"
+	description = "You answer directly to the Overseer, administering medical aid to your fellow vault dwellers, you also work around the clock to produce the vital medicines and compounds needed to keep your department running. "
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
 
@@ -168,6 +177,9 @@ Scientist
 	faction = "Vault"
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
+	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations. Participation in special projects (the vaults experiment, which you wont know about.)"
+	description = "You answer directly to the Overseer, conducting vital research for the denizens of the vault, you spend your days pouring over pre-war blueprints in the hopes of revitalizing the sciences of the old world. "
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
 
@@ -199,6 +211,9 @@ Security Officer
 	faction = "Vault"
 	total_positions = 2 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	spawn_positions = 2 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
+	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations. Participation in special projects (the vaults experiment, which you wont know about.)"
+	description = "You answer directly to the Chief Of Security, acting as the first line of defense against civil unrest and outside intrusion, you enforce the laws created by the Overseer, while proactively seeking out potential threats to the safety of vault residents."
 	supervisors = "the head of security"
 	selection_color = "#ddffdd"
 	exp_requirements = 900
@@ -348,6 +363,9 @@ Station Engineer
 	faction = "Vault"
 	total_positions = 2
 	spawn_positions = 2
+	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
+	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations. Participation in special projects (the vaults experiment, which you wont know about.)"
+	description = "You answer directly to the Overseer, tasked with the maintenance of the vaults defenses and machinery, while also overseeing the smooth operation of its generators and electrical systems."
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
 
@@ -381,6 +399,9 @@ Station Engineer
 	faction = "Vault"
 	total_positions = 8
 	spawn_positions = 8
+	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
+	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations. Participation in special projects (the vaults experiment, which you wont know about.)"
+	description = "You answer directly to the Overseer, being assigned to fulfill whatever menial tasks are required. You lack an assignment, but may be given one the Overseer if required or requested. You should otherwise busy yourself with assisting personnel with tasks around the Vault."
 	supervisors = "absolutely everyone"
 	selection_color = "#ddffdd"
 	access = list()			//See /datum/job/vault/assistant/get_access()
