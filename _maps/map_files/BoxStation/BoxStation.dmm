@@ -152,7 +152,7 @@
 "acV" = (/turf/closed/wall/f13wood{icon_state = "girder-end"; dir = 8},/area/f13/klamat)
 "acW" = (/turf/closed/wall/f13wood{icon_state = "wasteland12holes"},/area/f13/klamat)
 "acX" = (/obj/structure/rack,/obj/item/clothing/shoes/legionleather,/obj/item/clothing/shoes/legionleather,/obj/item/clothing/shoes/legionleather,/obj/item/clothing/shoes/legionleather,/obj/item/clothing/shoes/legionleather,/obj/item/clothing/shoes/legionleather,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
-"acY" = (/obj/item/shield/legion,/obj/structure/rack,/obj/item/shield/legion,/obj/item/shield/legion,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
+"acY" = (/obj/item/shield/legion,/obj/structure/rack,/obj/item/shield/legion,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
 "acZ" = (/obj/structure/fence/door{icon_state = "door_closed"; dir = 8},/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
 "ada" = (/obj/structure/table/wood,/obj/item/assembly/signaler,/obj/item/assembly/signaler,/obj/item/assembly/signaler,/obj/item/assembly/signaler,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
 "adb" = (/obj/structure/table/wood,/obj/item/flashlight/lantern,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
