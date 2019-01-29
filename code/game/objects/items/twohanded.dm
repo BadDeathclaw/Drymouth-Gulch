@@ -227,7 +227,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	force_unwielded = 10
 	force_wielded = 56
-	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
+	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
 	max_integrity = 200
@@ -467,7 +467,7 @@
 	armour_penetration = 0
 	materials = list(MAT_METAL=1150, MAT_GLASS=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
+	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
@@ -566,7 +566,7 @@
 	throw_speed = 2
 	throw_range = 4
 	materials = list(MAT_METAL=13000)
-	attack_verb = list("burned", "welded", "cut", "melted", "splashed")
+	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
 	hitsound = "swing_hit"
 	actions_types = list(/datum/action/item_action/toggle_lance)
 	var/on = FALSE
@@ -612,7 +612,7 @@
 	throw_speed = 2
 	throw_range = 4
 	materials = list(MAT_METAL=13000)
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+	attack_verb = list("sawn", "torn", "carved", "chopped", "ripped")
 	hitsound = "swing_hit"
 	sharpness = IS_SHARP
 	actions_types = list(/datum/action/item_action/startchainsaw)
@@ -708,7 +708,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force_unwielded = 7
 	force_wielded = 15
-	attack_verb = list("attacked", "impaled", "pierced")
+	attack_verb = list("attacked", "impaled", "pierced", "perforated")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
 	max_integrity = 200
@@ -790,7 +790,7 @@
 	throwforce = 20
 	throw_speed = 4
 	sharpness = IS_SHARP
-	attack_verb = list("cut", "sliced", "diced")
+	attack_verb = list("cut", "sliced", "diced", "dissected")
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -865,24 +865,29 @@
 	force_unwielded = 10
 	force_wielded = 25
 	throwforce = 20
-	attack_verb = list("beat", "smacked")
-	w_class = WEIGHT_CLASS_HUGE
+	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
+	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = IS_BLUNT
 
 /obj/item/twohanded/baseball/update_icon()  //Currently only here to fuck with the on-mob icons.
 	icon_state = "baseball[wielded]"
 	return
 
-/obj/item/twohanded/fireaxe/sledgehammer
+/obj/item/twohanded/sledgehammer
 	name = "sledgehammer"
 	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sledgehammer0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force_unwielded = 20
 	force_wielded = 56
+	throwforce = 20
+	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
+	w_class = WEIGHT_CLASS_BULKY
 	sharpness = IS_BLUNT
 
-/obj/item/twohanded/fireaxe/sledgehammer/update_icon()
+/obj/item/twohanded/sledgehammer/update_icon()
 	icon_state = "sledgehammer[wielded]"
 
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri

@@ -282,7 +282,7 @@
 	desc = "A roasting stick for cooking sausages in exotic ovens."
 	id = "roastingstick"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL=1000, MAT_GLASS=500, MAT_BLUESPACE = 250)
+	materials = list(MAT_METAL=1000, MAT_GLASS=500, MAT_DIAMOND = 250)
 	build_path = /obj/item/melee/roastingstick
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE

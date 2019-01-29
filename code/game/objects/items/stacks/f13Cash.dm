@@ -17,7 +17,7 @@
 #define MED_MIN 50
 #define MED_MAX 100
 
-// A high value cash spawn is on average worth 300 
+// A high value cash spawn is on average worth 300
 #define HIGH_MIN 100
 #define HIGH_MAX 500
 
@@ -168,16 +168,16 @@
 	qdel(src)
 
 /obj/item/stack/f13Cash/random/aureus/low
-	min_qty = LOW_MIN / AUR
-	max_qty = LOW_MAX / AUR
+	min_qty = 1
+	max_qty = 1
 
 /obj/item/stack/f13Cash/random/aureus/med
-	min_qty = MED_MIN / AUR
-	max_qty = MED_MAX / AUR
+	min_qty = 2
+	max_qty = 2
 
 /obj/item/stack/f13Cash/random/aureus/high
-	min_qty = HIGH_MIN / AUR
-	max_qty = HIGH_MAX / AUR
+	min_qty = 3
+	max_qty = 3
 
 /obj/item/stack/f13Cash/ncr
 	name = "NCR Dollar"
