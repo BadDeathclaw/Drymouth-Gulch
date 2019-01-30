@@ -41,7 +41,8 @@ Elder
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
 	exp_requirements = 2700
-
+	total_positions = 0
+	spawn_positions = 0
 	outfit = /datum/outfit/job/bos/f13elder
 
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
