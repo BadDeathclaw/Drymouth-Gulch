@@ -512,8 +512,8 @@
 /datum/crafting_recipe/gold_horn
 	name = "Golden Bike Horn"
 	result = /obj/item/bikehorn/golden
-	time = 20
-	reqs = list(/obj/item/stack/sheet/mineral/bananium = 5,
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 5,
 				/obj/item/bikehorn)
 	category = CAT_MISC
 
@@ -751,3 +751,95 @@
 				/obj/item/reagent_containers/glass/rag = 1)
 	time = 30
 	category = CAT_MISC
+
+//F13
+///ASSEMBLY ITEMS
+/datum/crafting_recipe/mousetrap
+	name = "Mousetrap"
+	result = /obj/item/assembly/mousetrap
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/igniter
+	name = "Igniter"
+	result = /obj/item/assembly/igniter
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/health_sensor
+	name = "Health sensor"
+	result = /obj/item/assembly/health
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/timer
+	name = "Timer"
+	result = /obj/item/assembly/timer
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/voice
+	name = "Voice analyzer"
+	result = /obj/item/assembly/voice
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/signaler
+	name = "Remote signaling device"
+	result = /obj/item/assembly/signaler
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/infrared
+	name = "Infrared emitter"
+	result = /obj/item/assembly/infra
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/proximity
+	name = "Remote signaling device"
+	result = /obj/item/assembly/prox_sensor
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+///Medical
+/datum/crafting_recipe/healthanalyzer
+	name = "Health analyzer"
+	result = /obj/item/healthanalyzer
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/assembly/infra = 1,
+				/obj/item/assembly/health)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/beaker
+	name = "Beaker"
+	result = /obj/item/reagent_containers/glass/beaker
+	reqs = list(/obj/item/stack/sheet/glass = 1)
+	tools = list(TOOL_WELDER)
+	time = 10
+	category = CAT_MEDICAL
