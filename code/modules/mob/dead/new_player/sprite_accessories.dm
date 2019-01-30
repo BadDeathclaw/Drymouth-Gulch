@@ -105,6 +105,10 @@
 	name = "Bedhead 3"
 	icon_state = "hair_bedheadv3"
 
+/datum/sprite_accessory/hair/longbedhead //addition
+	name = "Long Bedhead"
+	icon_state = "long_bedhead_s"
+
 /datum/sprite_accessory/hair/beehive
 	name = "Beehive"
 	icon_state = "hair_beehive"
@@ -172,6 +176,10 @@
 /datum/sprite_accessory/hair/largebun
 	name = "Large Bun"
 	icon_state = "hair_largebun"
+
+/datum/sprite_accessory/hair/lowbun //addition
+	name = "Low Bun"
+	icon_state = "hair_bun_s"
 
 /datum/sprite_accessory/hair/business
 	name = "Business Hair"
@@ -373,6 +381,10 @@
 	name = "Reverse Mohawk"
 	icon_state = "hair_reversemohawk"
 
+/datum/sprite_accessory/hair/punk //addition
+	name = "Big Mohawk"
+	icon_state = "hair_punk_s"
+
 /datum/sprite_accessory/hair/odango
 	name = "Odango"
 	icon_state = "hair_odango"
@@ -524,7 +536,6 @@
 /datum/sprite_accessory/hair/updo
 	name = "Updo"
 	icon_state = "hair_updo"
-
 
 /////////////////////////////
 // Facial Hair Definitions //
