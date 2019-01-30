@@ -74,7 +74,7 @@
 			to_chat(user, "<span class='notice'>You start adding [I] to [src]...</span>")
 			if(do_after(user, 50, target=src))
 				W.use(5)
-				new /turf/closed/wall/mineral/wood/nonmetal(get_turf(src))
+				new /turf/closed/wall/mineral/wood(get_turf(src))
 				qdel(src)
 				return
 	return ..()

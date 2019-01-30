@@ -143,11 +143,14 @@
 			return
 	return ..()
 
+/*
 /turf/closed/wall/mineral/wood/nonmetal
 	desc = "A solidly wooden wall. It's a bit weaker than a wall made with metal."
 	girder_type = /obj/structure/barricade/wooden
 	hardness = 50
 	canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood, /turf/closed/wall/mineral/wood/nonmetal)
+*/
+//hotfixes by temporarily disabling building nonmetal walls at all.
 
 /turf/closed/wall/mineral/iron
 	name = "rough metal wall"
