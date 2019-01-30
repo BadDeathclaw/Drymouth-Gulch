@@ -64,6 +64,7 @@
 	material = WOOD
 	var/drop_amount = 3
 
+/*
 /obj/structure/barricade/wooden/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = I
@@ -78,7 +79,7 @@
 				qdel(src)
 				return
 	return ..()
-
+*/
 
 /obj/structure/barricade/wooden/crude
 	name = "crude plank barricade"
