@@ -117,6 +117,10 @@
 	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewood1"
 
+/turf/open/floor/wood/f13/carpet
+	icon = 'icons/turf/fo13floorsmisc2.dmi'
+	icon_state="carpet"
+
 /turf/open/floor/wood/f13/old
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
