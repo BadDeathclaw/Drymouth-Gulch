@@ -316,3 +316,11 @@
 	bound_height = 32
 	density = 0
 	layer = TURF_LAYER
+
+/obj/structure/wreck/trash/secway
+	name = "Broken Secway"
+	desc = "Looks like the axle was split in half."
+	icon = 'icons/fallout/trash.dmi'
+	icon_state = "secwaybroke"
+	bound_width = 32
+	bound_height = 32
