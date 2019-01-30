@@ -141,7 +141,7 @@
 /datum/quirk/grenadesloot
 	name = "Grenade Pouch"
 	desc = "You found a grenade in a old house and it works! spawns with a random grenade."
-	value = 1
+	value = 2
 	var/obj/item/heirloom ///SPAGETH CODE DON'T LEAVE TO REMOVE THE NAME.
 	var/where
 
@@ -188,7 +188,7 @@
 /datum/quirk/ammoloot
 	name = "Ammo Pouch"
 	desc = "You found ammo in a secret stash! spawns with a random ammo type."
-	value = 1
+	value = 2
 	var/obj/item/heirloom
 	var/where
 
