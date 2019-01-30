@@ -46,6 +46,183 @@
 	bound_width = 192
 	bound_height = 64
 
+/obj/structure/wreck/bus/rusted/segmented
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus1"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented1
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus2"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented2
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus3"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented3
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus4"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented4
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus5"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented5
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus6"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented6
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus7"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented7
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus8"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented8
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus9"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented9
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus10"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented10
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus11"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented11
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus12"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented12
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus13"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented13
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus14"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented14
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus15"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented15
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus16"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented16
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus17"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented17
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus18"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented18
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus19"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented19
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus20"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/bus/rusted/segmented20
+	name = "wrecked bus"
+	desc = "An old pre-war vehicle, rusted and destroyed with age and weathering."
+	icon = 'icons/obj/vehicles/rustybussegmented.dmi'
+	icon_state = "bus21"
+	density = 0
+	bound_width = 32
+	bound_height = 32
+
 /obj/structure/wreck/trash/five_tires
 	name = "Tire Pile"
 	desc = "A pile of tires."
