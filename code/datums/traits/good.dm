@@ -133,3 +133,113 @@
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = "<span class='notice'>You feel HONGRY.</span>"
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
+
+///////////////////
+//////FL13 weapons traits!
+///DO NOT USE IMPLANTS.
+///Grenades
+/datum/quirk/grenadesloot
+	name = "Grenade Pouch"
+	desc = "You found a grenade in a old house and it works! spawns with a random grenade."
+	value = 2
+	var/obj/item/heirloom ///SPAGETH CODE DON'T LEAVE TO REMOVE THE NAME.
+	var/where
+
+/datum/quirk/grenadesloot/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/heirloom_type  ///DONT CHANGE HERILOOM STUFF FOR SOME REASON DONT WORK IF YOU REMOVE IT AAAAA.
+	switch(quirk_holder.mind.assigned_role)
+		if("Elder")
+			heirloom_type = pick(/obj/item/grenade/flashbang, /obj/item/grenade/smokebomb, /obj/item/grenade/smokebomb, /obj/item/grenade/plastic, /obj/item/grenade/plastic)
+		if("Centurion")
+			heirloom_type = pick(/obj/item/grenade/flashbang, /obj/item/grenade/smokebomb, /obj/item/grenade/smokebomb, /obj/item/grenade/plastic, /obj/item/grenade/plastic)
+		if("Sheriff")
+			heirloom_type = pick(/obj/item/grenade/flashbang, /obj/item/grenade/smokebomb, /obj/item/grenade/smokebomb, /obj/item/grenade/plastic, /obj/item/grenade/plastic)
+		if("NCR Captain")
+			heirloom_type = pick(/obj/item/grenade/flashbang, /obj/item/grenade/smokebomb, /obj/item/grenade/smokebomb, /obj/item/grenade/plastic, /obj/item/grenade/plastic)
+		if("Overseer")
+			heirloom_type = pick(/obj/item/grenade/flashbang, /obj/item/grenade/smokebomb, /obj/item/grenade/smokebomb, /obj/item/grenade/plastic, /obj/item/grenade/plastic)
+	if(!heirloom_type)
+		heirloom_type = pick(
+		/obj/item/grenade/smokebomb,
+		/obj/item/grenade/empgrenade,
+		/obj/item/grenade/smokebomb,
+		/obj/item/grenade/plastic,
+		/obj/item/grenade/flashbang,
+		/obj/item/grenade/empgrenade,
+		/obj/item/grenade/smokebomb,
+		/obj/item/grenade/flashbang)
+	heirloom = new heirloom_type(get_turf(quirk_holder)) //IF YOU CHANGE THIS FOR SOME REASON WILL NOT WORK.
+	var/list/slots = list(
+		"in your left pocket" = SLOT_L_STORE, //SPAWNS IN THE POCKETS
+		"in your right pocket" = SLOT_R_STORE,
+		"in your backpack" = SLOT_IN_BACKPACK	//SPAWNS IN THE BACKPACK
+
+	)
+	where = H.equip_in_one_of_slots(heirloom, slots, FALSE) || "at your feet"
+
+/datum/quirk/grenadesloot/post_add()
+	if(where == "in your backpack")
+		var/mob/living/carbon/human/H = quirk_holder
+		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H) //GOD BLESS SPAGETHY CODE!
+
+///Ammo
+
+/datum/quirk/ammoloot
+	name = "Ammo Pouch"
+	desc = "You found ammo in a secret stash! spawns with a random ammo type."
+	value = 2
+	var/obj/item/heirloom
+	var/where
+
+/datum/quirk/ammoloot/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/heirloom_type
+	switch(quirk_holder.mind.assigned_role)
+		if("Elder")
+			heirloom_type = pick(/obj/item/ammo_box/n762, /obj/item/ammo_box/c45, /obj/item/ammo_box/c10mm, /obj/item/ammo_box/c9mm, /obj/item/ammo_box/m44)
+		if("Centurion")
+			heirloom_type = pick(/obj/item/ammo_box/n762, /obj/item/ammo_box/c45, /obj/item/ammo_box/c10mm, /obj/item/ammo_box/c9mm, /obj/item/ammo_box/m44)
+		if("Sheriff")
+			heirloom_type = pick(/obj/item/ammo_box/n762, /obj/item/ammo_box/c45, /obj/item/ammo_box/c10mm, /obj/item/ammo_box/c9mm, /obj/item/ammo_box/m44)
+		if("NCR Captain")
+			heirloom_type = pick(/obj/item/ammo_box/n762, /obj/item/ammo_box/c45, /obj/item/ammo_box/c10mm, /obj/item/ammo_box/c9mm, /obj/item/ammo_box/m44)
+		if("Overseer")
+			heirloom_type = pick(/obj/item/ammo_box/n762, /obj/item/ammo_box/c45, /obj/item/ammo_box/c10mm, /obj/item/ammo_box/c9mm, /obj/item/ammo_box/m44)
+	if(!heirloom_type)
+		heirloom_type = pick(
+		/obj/item/ammo_box/c9mm,
+		/obj/item/ammo_box/a556,
+		/obj/item/ammo_box/m44,
+		/obj/item/ammo_box/m44,
+		/obj/item/ammo_box/a40mm,
+		/obj/item/ammo_box/foambox/riot,
+		/obj/item/ammo_box/a762,
+		/obj/item/ammo_box/a40mm,
+		/obj/item/ammo_box/c9mm,   ///Holy moly all those ammo stuffs!
+		/obj/item/ammo_box/c9mm,
+		/obj/item/ammo_box/foambox/riot,
+		/obj/item/ammo_box/a762/doublestacked,
+		/obj/item/ammo_box/a762/doublestacked,
+		/obj/item/ammo_box/c45,
+		/obj/item/ammo_box/c45,
+		/obj/item/ammo_box/a762,
+		/obj/item/ammo_box/a40mm,
+		/obj/item/ammo_box/c10mm,
+		/obj/item/ammo_box/c10mm)
+	heirloom = new heirloom_type(get_turf(quirk_holder)) //IF YOU CHANGE THIS FOR SOME REASON WILL NOT WORK.
+	var/list/slots = list(
+		"in your left pocket" = SLOT_L_STORE, //SPAWNS IN THE POCKETS
+		"in your right pocket" = SLOT_R_STORE,
+		"in your backpack" = SLOT_IN_BACKPACK	//SPAWNS IN THE BACKPACK
+
+	)
+	where = H.equip_in_one_of_slots(heirloom, slots, FALSE) || "at your feet"
+
+/datum/quirk/ammoloot/post_add()
+	if(where == "in your backpack")
+		var/mob/living/carbon/human/H = quirk_holder
+		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H)
+///TO DO: TEST IT WITH BOXES LIKE MEDKITS/NORMALS BOXES.
+///ADD MORE EQUIPMENT TRAITS REEEE
+///IMPROVE MY ENGLISH
