@@ -1,9 +1,7 @@
 //Faction datums of sorts, use the dang hierarchies in the future
+//It looks like var/faction controls what becomes visible on setup. Should likely be fixed or something, but I'm not doing it.
 /datum/job/CaesarsLegion
 	department_flag = LEGION
-	faction = "Legion"
-	total_positions = 0
-	spawn_positions = 0
 	selection_color = "#ffeeee"
 	exp_type = EXP_TYPE_LEGION
 
@@ -35,12 +33,15 @@ Needs whitelist
 */
 /datum/job/CaesarsLegion/Legionnaire/f13legate
 	title = "Legate"
+	faction = "Legion"
 	flag = F13LEGATE
 	head_announce = list("Security")
 	supervisors = "Caesar"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
 	exp_requirements = 2700
+	total_positions = 0
+	spawn_positions = 0
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 
@@ -71,7 +72,7 @@ Centurion
 /datum/job/CaesarsLegion/Legionnaire/f13centurion
 	title = "Centurion"
 	flag = F13CENTURION
-
+	faction = "Legion"
 	head_announce = list("Security")
 
 	total_positions = 1
@@ -113,6 +114,7 @@ Veteran Decan
 /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
 	title = "Veteran Decanus"
 	flag = F13VETDECAN
+	faction = "Legion"
 	total_positions = 1
 	spawn_positions = 1
 	description = "You answer directly to the Centurion, working with them as their second in command, you run the camp, gather intelligence and lead the Centuria on patrols, raids and scouting missions on behalf of your Commander."
@@ -148,6 +150,7 @@ Vexillarius
 /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
 	title = "Vexillarius"
 	flag = F13VEXILLARIUS
+	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
 	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
@@ -184,6 +187,7 @@ Decan
 /datum/job/CaesarsLegion/Legionnaire/f13decan
 	title = "Decanus"
 	flag = F13DECAN
+	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
 	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
@@ -222,6 +226,7 @@ Veteran
 /datum/job/CaesarsLegion/Legionnaire/f13vetlegion
 	title = "Veteran Legionnaire"
 	flag = F13VETLEGION
+	faction = "Legion"
 	total_positions = 8
 	spawn_positions = 8
 	description = "You answer directly to the Decanus, acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a hardened Veteran, and have been waging war for the Legion for the better part of ten years."
@@ -258,6 +263,7 @@ Legionary
 /datum/job/CaesarsLegion/Legionnaire/f13legionary
 	title = "Legionary"
 	flag = F13LEGIONARY
+	faction = "Legion"
 	total_positions = 15
 	spawn_positions = 15
 	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
@@ -291,6 +297,7 @@ Legionary
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
 	title = "Explorer"
 	flag = F13EXPLORER
+	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
 	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
@@ -351,6 +358,7 @@ Legionary
 /datum/job/CaesarsLegion/f13campfollower
 	title = "Camp Follower"
 	flag = F13CAMPFOLLOWER
+	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
 	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."

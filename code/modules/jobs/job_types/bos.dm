@@ -5,7 +5,6 @@ Main doors: ACCESS_CAPTAIN 20
 
 /datum/job/bos //do NOT use this for anything, it's just to store faction datums
 	department_flag = BOS
-	faction = "BOS"
 	selection_color = "#95a5a6"
 	exp_type = EXP_TYPE_BROTHERHOOD
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
@@ -36,6 +35,7 @@ Elder
 /datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
+	faction = "BOS"
 	head_announce = list("Security")
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
@@ -66,6 +66,7 @@ Paladin
 /datum/job/bos/f13paladin
 	title = "Paladin"
 	flag = F13PALADIN
+	faction = "BOS"
 	head_announce = list("Security")
 	total_positions = 1
 	spawn_positions = 1
@@ -133,6 +134,7 @@ Knight
 /datum/job/bos/f13knight
 	title = "Knight"
 	flag = F13KNIGHT
+	faction = "BOS"
 	total_positions = 1
 	spawn_positions = 1
 	description = "You answer directly to the Paladin, acting as a foot soldier on patrol and are responsible for the continued training and wellbeing of the initiate-knights. The Brotherhoods presence in the Mojave is unknown to most outsiders, so you should take care in making sure that wastelanders do not recognize your identity, or find the location of your bunker."
@@ -167,6 +169,7 @@ Scribe
 /datum/job/bos/f13scribe
 	title = "Scribe"
 	flag = F13SCRIBE
+	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
 	description = "You answer directly to the Head Scribe, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to. The Brotherhoods presence in the Mojave is unknown to most outsiders, so you should take care in making sure that wastelanders do not recognize your identity, or find the location of your bunker."
@@ -203,6 +206,7 @@ Initiate Knight
 /datum/job/bos/f13initiateknight
 	title = "Initiate Knight"
 	flag = F13INITIATEKNIGHT
+	faction = "BOS"
 	total_positions = 1
 	spawn_positions = 1
 	description = "You answer directly to the Knights, as an inexperienced member of the brotherhood your sole purpose is to train in order to become a fully-fledged Knight in the future. You should take care in not straying from the bunker without an escort. The Brotherhoods presence in the Mojave is unknown to most outsiders, so you should take care in making sure that wastelanders do not recognize your identity, or find the location of your bunker."
@@ -234,7 +238,6 @@ Initiate Scribe
 /datum/job/bos/f13initiatescribe
 	title = "Initiate Scribe"
 	flag = F13INITIATESCRIBE
-	department_flag = BOS
 	faction = "BOS"
 	total_positions = 1
 	spawn_positions = 1

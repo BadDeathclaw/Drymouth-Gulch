@@ -2,9 +2,6 @@
 	department_flag = NCR
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_NCR
-	total_positions = 0
-	spawn_positions = 0
-	faction = "NCR"
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
 
@@ -22,10 +19,13 @@ Colonel
 /datum/job/ncr/f13colonel
 	title = "NCR Colonel"
 	flag = F13COLONEL
+	faction = "NCR"
 	head_announce = list("Security")
 	supervisors = "the general"
 	req_admin_notify = 1
 	exp_requirements = 2700
+	total_positions = 0
+	spawn_positions = 0
 
 	outfit = /datum/outfit/job/ncr/f13colonel
 
@@ -41,6 +41,7 @@ Captain
 	title = "NCR Captain"
 	flag = F13CAPTAIN
 	head_announce = list("Security")
+	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
@@ -77,6 +78,7 @@ Lieutenant
 	flag = F13LIEUTENANT
 	total_positions = 1
 	spawn_positions = 1
+	faction = "NCR"
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are the direct superior to the Sergeant and Enlisted, working with the Captain and under special circumstances, Rangers. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
@@ -112,6 +114,7 @@ Sergeant
 	flag = F13SERGEANT
 	total_positions = 2
 	spawn_positions = 2
+	faction = "NCR"
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are the direct superior to the enlisted troops, working with the chain of command you echo the orders of your superiors and ensure that the Enlisted follow them to the letter. Additionally you are responsible for the well being of the troops and their ongoing training with the NCR."
@@ -144,6 +147,7 @@ Trooper
 /datum/job/ncr/f13trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
+	faction = "NCR"
 	total_positions = 8
 	spawn_positions = 8
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
@@ -177,6 +181,7 @@ Recruit
 /datum/job/ncr/f13recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
+	faction = "NCR"
 	total_positions = 12
 	spawn_positions = 12
 	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
@@ -210,6 +215,7 @@ Veteran Ranger
 /datum/job/ncr/f13vetranger
 	title = "NCR Veteran Ranger"
 	flag = F13VETRANGER
+	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
 	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
@@ -243,6 +249,7 @@ Ranger
 /datum/job/ncr/f13ranger
 	title = "NCR Patrol Ranger"
 	flag = F13RANGER
+	faction = "NCR"
 	total_positions = 2
 	spawn_positions = 2
 	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
@@ -280,6 +287,7 @@ Recon Ranger
 /datum/job/ncr/f13recranger
 	title = "NCR Recon Ranger"
 	flag = F13RECRANGER
+	faction = "NCR"
 	total_positions = 3
 	spawn_positions = 3
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."

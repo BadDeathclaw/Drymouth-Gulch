@@ -1,10 +1,12 @@
+/datum/job/wasteland
+	department_flag = WASTELAND
+
 /*
 Cult Leader
 */
 /datum/job/wasteland/f13cultleader
 	title = "Cult Leader"
 	flag = F13CULTLEADER
-	department_flag = WASTELAND
 	//faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
@@ -28,7 +30,6 @@ wasteland
 /datum/job/wasteland/f13wastelander
 	title = "Wastelander"
 	flag = F13WASTELANDER
-	department_flag = WASTELAND
 	faction = "Wastelander"
 	total_positions = -1
 	spawn_positions = -1
@@ -76,7 +77,6 @@ Raider
 	title = "Raider"
 	flag = F13RAIDER
 	department_head = list("Captain")
-	department_flag = WASTELAND
 	head_announce = list("Security")
 	faction = "Wastelander"
 	total_positions = -1
@@ -206,7 +206,6 @@ Pusher
 	title = "Pusher"
 	flag = F13PUSHER
 	department_head = list("Captain")
-	department_flag = WASTELAND
 	head_announce = list("Security")
 	faction = "Wastelander"
 	total_positions = 4
@@ -250,7 +249,6 @@ Punished Raider
 	title = "Punished Raider"
 	flag = F13PUNRAIDER
 	department_head = list("Captain")
-	department_flag = WASTELAND
 	head_announce = list("Security")
 	faction = "Wastelander"
 	total_positions = 0

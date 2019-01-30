@@ -97,7 +97,11 @@
 		updateUsrDialog()
 		return TRUE
 
-	if(default_unfasten_wrench(O))
+	if(panel_open)
+		default_unfasten_wrench(user, O, 100)
+		return TRUE
+	else
+		attack_hand(user)
 		return TRUE
 
 	if(panel_open && is_wire_tool(O))
@@ -410,5 +414,9 @@
 
 /obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
 	..()
-	if(default_deconstruction_crowbar(O))
+	if(panel_open)
+		default_deconstruction_crowbar(O)
+		return TRUE
+	else
+		attack_hand(user)
 		return TRUE
