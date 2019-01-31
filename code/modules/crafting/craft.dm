@@ -7,6 +7,8 @@
 				CAT_ROBOT,
 				CAT_MISC,
 				CAT_PRIMAL,
+				CAT_MEDICAL,
+				CAT_ASSEM,
 				CAT_FOOD,
 				CAT_CLOTHING,
 				CAT_DRUGS)
@@ -17,6 +19,8 @@
 						CAT_NONE, //Robot subcategories
 						CAT_NONE, //Misc subcategories
 						CAT_NONE, //Tribal subcategories
+						CAT_NONE,//Medical subcategories
+						CAT_NONE, //Assemblies subcategories
 						list(	//Food subcategories
 							CAT_BREAD,
 							CAT_BURGER,
