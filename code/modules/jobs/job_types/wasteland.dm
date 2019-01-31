@@ -236,14 +236,10 @@ Pusher
 	uniform = pick(
 		/obj/item/clothing/under/f13/merca, \
 		/obj/item/clothing/under/f13/mercc, \
-		/obj/item/clothing/under/f13/cowboyb, \
-		/obj/item/clothing/under/f13/cowboyg, \
 		/obj/item/clothing/under/f13/caravaneer, \
-		/obj/item/clothing/under/f13/khan, \
-		/obj/item/clothing/under/f13/ranger, \
 		/obj/item/clothing/under/f13/roving, \
 		/obj/item/clothing/under/f13/doctorm, \
-		/obj/item/clothing/under/roman)
+		/obj/item/clothing/under/jabroni)
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
