@@ -59,7 +59,7 @@
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
-/obj/item/melee/transforming/energy/axe
+/obj/item/melee/transforming/energy/axe//balnce suggested by ren
 	name = "energy axe"
 	desc = "An energized battle axe."
 	icon_state = "axe0"
