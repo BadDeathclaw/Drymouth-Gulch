@@ -231,7 +231,7 @@ Pusher
 	uniform =  		/obj/item/clothing/under/jabroni
 	suit = /obj/item/clothing/suit/f13/duster
 
-/datum/outfit/job/f13pusher/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \

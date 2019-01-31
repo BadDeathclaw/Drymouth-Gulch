@@ -87,7 +87,7 @@ Settler
 Preacher
 */
 
-/datum/job/f13preacher
+/datum/job/den/f13preacher
 	title = "Preacher"
 	flag = F13PREACHER
 	department_head = list("Captain")
@@ -99,14 +99,14 @@ Preacher
 	supervisors = "Your Master(s)."
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/f13preacher
+	outfit = /datum/outfit/job/den/f13preacher
 
 	access = list()
 	minimal_access = list()
 
 
 
-/datum/job/f13preacher/after_spawn(mob/living/H, mob/M)
+/datum/job/den/f13preacher/after_spawn(mob/living/H, mob/M)
 	if(H.mind)
 		H.mind.isholy = TRUE
 
@@ -172,9 +172,9 @@ Preacher
 	SSblackbox.record_feedback("text", "religion_deity", 1, "[new_deity]", 1)
 
 
-/datum/outfit/job/f13preacher
+/datum/outfit/job/den/f13preacher
 	name = "Preacher"
-	jobtype = /datum/job/f13preacher
+	jobtype = /datum/job/den/f13preacher
 	id = null
 	ears = /obj/item/radio/headset/headset_den
 	belt = null
@@ -195,7 +195,7 @@ Preacher
 		/obj/item/storage/fancy/candle_box, \
 		/obj/item/storage/bag/money/small/settler)
 
-/datum/outfit/job/f13preacher/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/den/f13preacher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
