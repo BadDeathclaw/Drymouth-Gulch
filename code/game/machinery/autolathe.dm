@@ -97,11 +97,8 @@
 		updateUsrDialog()
 		return TRUE
 
-	if(panel_open)
+	if(panel_open && TOOL_WRENCH)
 		default_unfasten_wrench(user, O, 100)
-		return TRUE
-	else
-		attack_hand(user)
 		return TRUE
 
 	if(panel_open && is_wire_tool(O))
