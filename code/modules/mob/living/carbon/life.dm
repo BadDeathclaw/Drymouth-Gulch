@@ -246,7 +246,9 @@
 /mob/living/carbon/proc/handle_organs()
 	for(var/V in internal_organs)
 		var/obj/item/organ/O = V
-		O.on_life()
+		if(O == null) // this is NOT the correct fix, but it should hold for now - Nappist
+			return
+		else O.on_life()
 
 /mob/living/carbon/handle_diseases()
 	for(var/thing in diseases)
