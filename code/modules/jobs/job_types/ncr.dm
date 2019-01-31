@@ -52,7 +52,7 @@ Captain
 	name = "NCR Captain"
 	jobtype = /datum/job/f13captain
 	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_ncr
+	ears = 			/obj/item/radio/headset/heads/ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
@@ -96,7 +96,7 @@ Lieutenant
 	name = "NCR Lieutenant"
 	jobtype = /datum/job/f13lieutenant
 	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_ncr
+	ears = 			/obj/item/radio/headset/heads/ncr
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
@@ -269,7 +269,7 @@ Veteran Ranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/f13vetranger
 	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_ncr
+	ears = 			/obj/item/radio/headset/heads/ncr
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat

@@ -125,6 +125,18 @@
 /obj/item/radio/headset/heads
 	command = TRUE
 
+/obj/item/radio/headset/heads/ncr
+	name = "NCR command radio headset"
+	keyslot = new /obj/item/encryptionkey/headset_ncr
+
+/obj/item/radio/headset/heads/bos
+	name = "BoS command radio headset"
+	keyslot = new /obj/item/encryptionkey/headset_bos
+
+/obj/item/radio/headset/heads/vault
+	name = "Vault command radio headset"
+	keyslot = new /obj/item/encryptionkey/headset_overseer
+
 /obj/item/radio/headset/heads/captain
 	name = "\proper the captain's headset"
 	desc = "The headset of the king.\nChannels are as follows: :c - command, :s - security, :e - engineering, :u - supply, :v - service, :m - medical, :n - science."

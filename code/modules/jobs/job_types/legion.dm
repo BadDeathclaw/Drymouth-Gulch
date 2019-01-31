@@ -95,6 +95,7 @@ Centurion
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/megaphone/command=1, \
 		/obj/item/storage/bag/money/small/legion)
 	box = null
 
@@ -148,6 +149,7 @@ Veteran Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/megaphone/command=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
@@ -200,6 +202,7 @@ Vexillarius
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/megaphone/command=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 
@@ -253,6 +256,7 @@ Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/megaphone/command=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 	box = null
 

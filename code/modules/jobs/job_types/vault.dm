@@ -48,7 +48,7 @@ Overseer
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	ears = 			/obj/item/radio/headset/headset_overseer
+	ears = 			/obj/item/radio/headset/heads/vault
 	shoes = 		/obj/item/clothing/shoes/sneakers/brown
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(/obj/item/storage/box/ids = 1, /obj/item/melee/oldstyle = 1)

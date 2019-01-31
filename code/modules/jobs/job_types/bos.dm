@@ -34,7 +34,7 @@ Elder
 	id = /obj/item/card/id/gold
 
 	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
+	ears = 			/obj/item/radio/headset/heads/bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
@@ -80,7 +80,7 @@ Paladin
 	name = "Paladin"
 	jobtype = /datum/job/f13paladin
 	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
+	ears = 			/obj/item/radio/headset/heads/bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
@@ -125,7 +125,7 @@ Paladin
 	name = "Head Scribe"
 	jobtype = /datum/job/f13headscribe
 	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
+	ears = 			/obj/item/radio/headset/heads/bos
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
