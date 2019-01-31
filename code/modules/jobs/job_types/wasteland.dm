@@ -229,11 +229,21 @@ Pusher
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	uniform =  		/obj/item/clothing/under/jabroni
 	suit = /obj/item/clothing/suit/f13/duster
 
 /datum/outfit/job/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/merca, \
+		/obj/item/clothing/under/f13/mercc, \
+		/obj/item/clothing/under/f13/cowboyb, \
+		/obj/item/clothing/under/f13/cowboyg, \
+		/obj/item/clothing/under/f13/caravaneer, \
+		/obj/item/clothing/under/f13/khan, \
+		/obj/item/clothing/under/f13/ranger, \
+		/obj/item/clothing/under/f13/roving, \
+		/obj/item/clothing/under/f13/doctorm, \
+		/obj/item/clothing/under/roman)
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
