@@ -35,7 +35,7 @@ Elder
 /datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
-	faction = "BOS"
+//	faction = "Station"
 	head_announce = list("Security")
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
@@ -207,8 +207,8 @@ Initiate Knight
 	title = "Initiate Knight"
 	flag = F13INITIATEKNIGHT
 	faction = "BOS"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You answer directly to the Knights, as an inexperienced member of the brotherhood your sole purpose is to train in order to become a fully-fledged Knight in the future. You should take care in not straying from the bunker without an escort. The Brotherhoods presence in the Mojave is unknown to most outsiders, so you should take care in making sure that wastelanders do not recognize your identity, or find the location of your bunker."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."

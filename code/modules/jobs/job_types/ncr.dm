@@ -19,7 +19,7 @@ Colonel
 /datum/job/ncr/f13colonel
 	title = "NCR Colonel"
 	flag = F13COLONEL
-	faction = "NCR"
+//	faction = "Station"
 	head_announce = list("Security")
 	supervisors = "the general"
 	req_admin_notify = 1

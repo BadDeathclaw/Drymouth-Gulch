@@ -250,7 +250,8 @@ Punished Raider
 	flag = F13PUNRAIDER
 	department_head = list("Captain")
 	head_announce = list("Security")
-	faction = "Wastelander"
+	req_admin_notify = 1
+//	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
 	supervisors = "no one"
