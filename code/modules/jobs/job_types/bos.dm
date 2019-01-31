@@ -248,12 +248,12 @@ Initiate Scribe
 	selection_color = "#95a5a6"
 
 
-	outfit = /datum/outfit/job/f13initiatescribe
+	outfit = /datum/outfit/job/bos/f13initiatescribe
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 
-/datum/outfit/job/f13initiatescribe
+/datum/outfit/job/bos/f13initiatescribe
 	name = "Initiate Scribe"
 	jobtype = /datum/job/bos/f13initiatescribe
 	backpack = /obj/item/storage/backpack/explorer
