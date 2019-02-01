@@ -1081,6 +1081,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			. -= 1
 		if(H.has_trait(TRAIT_GOTTAGOREALLYFAST))
 			. -= 2
+		if(H.has_trait(TRAIT_LEGIONBOIS))
+			. -= 0.25
 		. += speedmod
 		. += H.physiology.speed_mod
 
