@@ -827,7 +827,7 @@
 //THE HELMET SHOULD NOT EXIST AS A STANDALONE ITEM
 //IT'S MEANT TO BE ACTIVATED AND APPEAR VIA THE BASE SUIT
 
-/obj/item/clothing/head/helmet/space/hardsuit/powerarmor
+/*/obj/item/clothing/head/helmet/space/hardsuit/powerarmor
 	name = "default power armor helmet"
 	desc = "Default power armor helmet, this should DEFINITELY not exist at all sadly."
 	clothing_flags = THICKMATERIAL //It better stop syringes
@@ -1126,3 +1126,4 @@
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t51b
 	health_buffer = 100
+	*/
