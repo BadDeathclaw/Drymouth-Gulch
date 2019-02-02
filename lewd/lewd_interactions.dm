@@ -111,7 +111,7 @@
 		to_chat(user, "<span class='warning'>You cannot erp as ghost!</span>")
 		return
 
-/mob/list_interaction_attributes()
+/mob/carbon/living/list_interaction_attributes()
 	var/dat = ..()
 	if(refactory_period)
 		dat += "<br>...are sexually exhausted for the time being."
