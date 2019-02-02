@@ -226,9 +226,9 @@ Initiate Knight
 	jobtype = /datum/job/bos/f13initiateknight
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
-	suit_store =	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit_store =	/obj/item/gun/energy/laser/aer9
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/r20=3, \
+		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/energy/laser/pistol=1)
 
@@ -264,4 +264,4 @@ Initiate Scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+		/obj/item/gun/energy/laser/pistol=1)
