@@ -51,7 +51,7 @@
 	icon_state = "decloner"
 
 /obj/item/gun/energy/e_gun/hos
-	name = "\improper X-01 MultiPhase Energy Gun"
+	name = "AER17 hybrid laser gun"
 	desc = "This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes, but lacks the ability to recharge over time."
 	icon_state = "hoslaser"
 	force = 10
@@ -76,7 +76,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/trap)
 
 /obj/item/gun/energy/e_gun/turret
-	name = "hybrid turret gun"
+	name = "heavy energy cannon"
 	desc = "A heavy hybrid energy cannon with two settings: Stun and kill."
 	icon_state = "turretlaser"
 	item_state = "turretlaser"
