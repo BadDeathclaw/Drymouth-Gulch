@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/wt550m9
-	name = "submachinegun magazine (4.6x30mm)"
+	name = "submachine gun magazine (4.6x30mm)"
 	icon_state = "46x30mmt-20"
 	ammo_type = /obj/item/ammo_casing/c46x30mm
 	caliber = "4.6x30mm"
@@ -10,7 +10,7 @@
 	icon_state = "46x30mmt-[round(ammo_count(),4)]"
 
 /obj/item/ammo_box/magazine/wt550m9/wtap
-	name = "submachinegun magazine (Armour Piercing 4.6x30mm)"
+	name = "submachine gun magazine (Armour Piercing 4.6x30mm)"
 	icon_state = "46x30mmtA-20"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/ap
 
@@ -19,7 +19,7 @@
 	icon_state = "46x30mmtA-[round(ammo_count(),4)]"
 
 /obj/item/ammo_box/magazine/wt550m9/wtic
-	name = "submachinegun magazine (Incindiary 4.6x30mm)"
+	name = "submachine gun magazine (Incindiary 4.6x30mm)"
 	icon_state = "46x30mmtI-20"
 	ammo_type = /obj/item/ammo_casing/c46x30mm/inc
 
@@ -39,7 +39,7 @@
 	icon_state = "uzi9mm-[round(ammo_count(),4)]"
 
 /obj/item/ammo_box/magazine/smgm9mm
-	name = "submachinegun magazine (9mm)"
+	name = "submachine gun magazine (9mm)"
 	icon_state = "smg9mm-42"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -50,15 +50,15 @@
 	icon_state = "smg9mm-[ammo_count() ? "42" : "0"]"
 
 /obj/item/ammo_box/magazine/smgm9mm/ap
-	name = "submachinegun magazine (Armour Piercing 9mm)"
+	name = "submachine gun magazine (Armour Piercing 9mm)"
 	ammo_type = /obj/item/ammo_casing/c9mm/ap
 
 /obj/item/ammo_box/magazine/smgm9mm/fire
-	name = "submachinegun magazine (Incindiary 9mm)"
+	name = "submachine gun magazine (Incindiary 9mm)"
 	ammo_type = /obj/item/ammo_casing/c9mm/inc
 
 /obj/item/ammo_box/magazine/smgm45
-	name = "submachinegun magazine (.45)"
+	name = "submachine gun magazine (.45)"
 	icon_state = "c20r45-24"
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = ".45"
