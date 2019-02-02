@@ -1,5 +1,5 @@
 /obj/item/melee/powerfist
-	name = "power-fist"
+	name = "powerfist"
 	desc = "A metal gauntlet with a piston-powered ram ontop for that extra 'ompfh' in your punch."
 	icon_state = "powerfist"
 	item_state = "powerfist"
