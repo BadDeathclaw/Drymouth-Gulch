@@ -92,52 +92,61 @@
 	name = "white scarf"
 	icon_state = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
-	item_color = "scarf"
+	item_color = "white"
 	dog_fashion = /datum/dog_fashion/head
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
 	icon_state = "scarf"
+	item_color = "black"
 	color = "#4A4A4B" //Grey but it looks black
 
 /obj/item/clothing/neck/scarf/pink
 	name = "pink scarf"
 	icon_state = "scarf"
+	item_color = "pink"
 	color = "#F699CD" //Pink
 
 /obj/item/clothing/neck/scarf/red
 	name = "red scarf"
 	icon_state = "scarf"
+	item_color = "red"
 	color = "#D91414" //Red
 
 /obj/item/clothing/neck/scarf/green
 	name = "green scarf"
 	icon_state = "scarf"
+	item_color = "green"
 	color = "#5C9E54" //Green
 
 /obj/item/clothing/neck/scarf/darkblue
 	name = "dark blue scarf"
 	icon_state = "scarf"
+	item_color = "blue"
 	color = "#1E85BC" //Blue
 
 /obj/item/clothing/neck/scarf/purple
 	name = "purple scarf"
 	icon_state = "scarf"
+	item_color = "purple"
 	color = "#9557C5" //Purple
 
 /obj/item/clothing/neck/scarf/yellow
 	name = "yellow scarf"
 	icon_state = "scarf"
+	item_color = "yellow"
 	color = "#E0C14F" //Yellow
 
 /obj/item/clothing/neck/scarf/orange
 	name = "orange scarf"
 	icon_state = "scarf"
+	item_color = "orange"
 	color = "#C67A4B" //Orange
 
 /obj/item/clothing/neck/scarf/cyan
 	name = "cyan scarf"
 	icon_state = "scarf"
+	item_color = "cyan"
 	color = "#54A3CE" //Cyan
 
 
