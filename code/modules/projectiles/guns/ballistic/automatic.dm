@@ -9,7 +9,7 @@
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 
 /obj/item/gun/ballistic/automatic/proto
-	name = "\improper Nanotrasen Saber SMG"
+	name = "compact submachine gun"
 	desc = "A prototype three-round burst 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors."
 	icon_state = "saber"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
@@ -84,7 +84,7 @@
 	return
 
 /obj/item/gun/ballistic/automatic/c20r
-	name = "\improper Advanced SMG"
+	name = "tactical submachine gun"
 	desc = "A bullpup three-round burst .45 SMG, can be suppressed."
 	icon_state = "c20r"
 	item_state = "c20r"
@@ -114,7 +114,7 @@
 	icon_state = "c20r[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
 
 /obj/item/gun/ballistic/automatic/wt550
-	name = "Advanced SMG"
+	name = "manufactured submachine gun"
 	desc = "A very advanced SMG that can be suppressed, takes unique ammo and starts off with a advanced firing pin."
 	icon_state = "wt550"
 	item_state = "arg"
@@ -133,7 +133,7 @@
 	icon_state = "wt550[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""]"
 
 /obj/item/gun/ballistic/automatic/m90
-	name = "\improper M-90gl Carbine"
+	name = "\improper M90gl Carbine"
 	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
 	icon_state = "m90"
 	item_state = "m90"
@@ -204,7 +204,7 @@
 	return
 
 /obj/item/gun/ballistic/automatic/ar
-	name = "\improper Advanced Assault Rifle"
+	name = "combat rifle mark II"
 	desc = "A robust assault rifle used by most likely advanced fighting forces."
 	icon_state = "arg"
 	item_state = "arg"
@@ -219,7 +219,7 @@
 // Bulldog shotgun //
 
 /obj/item/gun/ballistic/automatic/shotgun/bulldog
-	name = "\improper Advanced Shotgun"
+	name = "assault shotgun"
 	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors. Compatible only with specialized 8-round drum magazines."
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -331,7 +331,7 @@
 // SNIPER //
 
 /obj/item/gun/ballistic/automatic/sniper_rifle
-	name = "sniper rifle"
+	name = "anti materiel rifle"
 	desc = "A long ranged weapon that does significant damage. No, you can't quickscope."
 	icon_state = "sniper"
 	item_state = "sniper"
@@ -358,14 +358,14 @@
 
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
-	name = "syndicate sniper rifle"
+	name = "anti materiel rifle mark II"
 	desc = "An illegally modified .50 cal sniper rifle with suppression compatibility. Quickscoping still doesn't work."
 	pin = /obj/item/firing_pin/implant/pindicate
 
 // Old Semi-Auto Rifle //
 
 /obj/item/gun/ballistic/automatic/surplus
-	name = "Surplus Rifle"
+	name = "semi automatic rifle"
 	desc = "One of countless obsolete ballistic rifles that still sees use as a cheap deterrent. Uses 10mm ammo and its bulky frame prevents one-hand firing."
 	icon_state = "surplus"
 	item_state = "moistnugget"
@@ -552,7 +552,7 @@
 	zoom_out_amt = 13
 
 /obj/item/gun/ballistic/automatic/m72
-	name = "M72 Gauss Rifle"
+	name = "M72 gauss rifle"
 	desc = "The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled."
 	icon_state = "m72"
 	item_state = "shotgun"
@@ -586,7 +586,7 @@
 //Fallout 13
 //Magazines
 /obj/item/ammo_box/magazine/r20
-	name = "r20 Magazine (5.56mm)"
+	name = ".556 Magazine (5.56mm)"
 	icon_state = "r20"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"

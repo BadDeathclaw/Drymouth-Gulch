@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/shotgun
-	name = "Ithaca Model 37"
+	name = "Ithaca M37"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "Itaca"
 	item_state = "huntingshotgun"
@@ -260,7 +260,7 @@
 
 // RIOT SHOTGUN //
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
-	name = "BHS M1"
+	name = "Remington 870"
 	desc = "A Big Heavy Shotgun Model 1, the staple of pre-war riot controll grade shotguns with a longer magazine and a fixed heavy reinforced tactical stock designed for tactical use when tactically bashing heads."
 	icon_state = "riotshotgun"
 	item_state = "shotgunriot"
