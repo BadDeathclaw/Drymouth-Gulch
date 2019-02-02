@@ -17,26 +17,7 @@
   -------------------MOB STUFF----------------------
   --------------------------------------------------
 */
-
-/mob/living/carbon/human
-	var/last_partner
-	var/last_orifice
-	var/lastmoan
-	var/sexual_potency =  15
-	var/lust_tolerance = 100
-	var/lust = 0
-	var/multiorgasms = 0
-	var/refactory_period = 0
-
-/mob/living/carbon/human/Life()
-	if(refactory_period)
-		refactory_period--
-	return ..()
-
-/mob/living/carbon/human/New()
-	. = ..()
-	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
-	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+//I'm sorry, lewd should not have mob procs such as life() and such in it.
 
 /mob/living/carbon/human/proc/has_penis()
 	if(gender == MALE)
