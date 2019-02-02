@@ -839,7 +839,7 @@
 /datum/crafting_recipe/beaker
 	name = "Beaker"
 	result = /obj/item/reagent_containers/glass/beaker
-	reqs = list(/obj/item/stack/sheet/glass = 1)
+	reqs = list(/obj/item/stack/sheet/glass = 2)
 	tools = list(TOOL_WELDER)
 	time = 10
 	category = CAT_MEDICAL
@@ -847,18 +847,9 @@
 /datum/crafting_recipe/beaker_large
 	name = "Large beaker"
 	result = /obj/item/reagent_containers/glass/beaker/large
-	reqs = list(/obj/item/stack/sheet/glass = 3)
+	reqs = list(/obj/item/stack/sheet/glass = 6)
 	tools = list(TOOL_WELDER)
-	time = 20
-	category = CAT_MEDICAL
-
- /datum/crafting_recipe/beaker_plastic
-	name = "X-Large beaker"
-	result = /obj/item/reagent_containers/glass/beaker/plastic
-	reqs = list(/obj/item/stack/sheet/plastic = 3,
-				/obj/item/stack/sheet/glass = 3)
-	tools = list(TOOL_WELDER)
-	time = 30
+	time = 40
 	category = CAT_MEDICAL
 
  /datum/crafting_recipe/syringe
@@ -874,23 +865,13 @@
 	name = "Syringe gun"
 	result = /obj/item/gun/syringe
 	reqs = list(/obj/item/stack/rods = 20,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/reagent_containers/syringe = 1,
-				/obj/item/stack/sheet/glass = 10)
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 90
-	category = CAT_MEDICAL
-
- /datum/crafting_recipe/rapidsyringegun
-	name = "Rapid syringe gun"
-	result = /obj/item/gun/syringe/rapidsyringe
-	reqs = list(/obj/item/stack/rods = 20,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/gun/syringe = 1,
-				/obj/item/stack/sheet/mineral/uranium = 5,
-				/obj/item/reagent_containers/syringe = 5,
+				/obj/item/stack/cable_coil = 15,
+				/obj/item/reagent_containers/syringe = 2,
+				/obj/item/stack/sheet/plastic = 3,
 				/obj/item/assembly/infra = 1,
-				/obj/item/stack/sheet/glass = 10)
+				/obj/item/assembly/timer = 2,
+				/obj/item/assembly/igniter = 1,
+				/obj/item/stack/sheet/glass = 15)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
 	time = 120
 	category = CAT_MEDICAL
