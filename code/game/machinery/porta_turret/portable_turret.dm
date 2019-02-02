@@ -53,12 +53,12 @@
 	var/shot_delay = 15		//ticks until next shot (1.5 ?)
 
 
-	var/check_records = 1	//checks if it can use the security records
-	var/criminals = 1		//checks if it can shoot people on arrest
-	var/auth_weapons = 0	//checks if it can shoot people that have a weapon they aren't authorized to have
-	var/stun_all = 0		//if this is active, the turret shoots everything that isn't security or head of staff
-	var/check_anomalies = 0	//checks if it can shoot at unidentified lifeforms (ie xenos)
-	var/shoot_unloyal = 0	//checks if it can shoot people that aren't loyalty implantd
+	var/check_records = TRUE	//checks if it can use the security records
+	var/criminals = TRUE		//checks if it can shoot people on arrest
+	var/auth_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
+	var/stun_all = FALSE		//if this is active, the turret shoots everything that isn't security or head of staff
+	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/shoot_unloyal = FALSE	//checks if it can shoot people that aren't loyalty implantd
 
 	var/attacked = 0		//if set to 1, the turret gets pissed off and shoots at people nearby (unless they have sec access!)
 
@@ -77,7 +77,7 @@
 	var/datum/action/turret_toggle/toggle_action
 	var/mob/remote_controller
 
-	var/shootnonfaction = 0 //If it shoots at people that don't have the same faction
+	var/shootnonfaction = TRUE //If it shoots at people that don't have the same faction
 
 /obj/machinery/porta_turret/Initialize()
 	. = ..()

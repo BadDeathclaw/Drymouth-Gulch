@@ -95,8 +95,7 @@
 	description = "A refresher course on modern engineering technology."
 	prereq_ids = list("base")
 	design_ids = list("recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin",
-	"atmosalerts", "atmos_control", "recycler", "constructionlathe", "high_micro_laser", "nano_mani", "mesons", "thermomachine",
-	"apc_control", "cell_charger", "power control", "airlock_board", "firelock_board", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine")
+	"atmosalerts", "atmos_control", "recycler", "autolathe", "high_micro_laser", "nano_mani", "mesons", "thermomachine", "cell_charger", "power control", "airlock_board", "firelock_board", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
@@ -366,7 +365,7 @@
 	design_ids = list("clonecontrol", "clonepod", "clonescanner", "scan_console", "cloning_disk")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-	
+
 /datum/techweb_node/cryotech
 	id = "cryotech"
 	display_name = "Cryostasis Technology"
@@ -559,7 +558,6 @@
 	design_ids = list()
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/gravity_gun
 	id = "gravity_gun"
 	display_name = "One-point Bluespace-gravitational Manipulator"
@@ -608,7 +606,6 @@
 	"gygax_peri", "gygax_targ", "gygax_armor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/durand
 	id = "mech_durand"
 	display_name = "EXOSUIT: Durand"
@@ -618,7 +615,6 @@
 	"durand_peri", "durand_targ", "durand_armor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/phazon
 	id = "mecha_phazon"
 	display_name = "EXOSUIT: Phazon"
@@ -672,7 +668,6 @@
 	design_ids = list("mech_scattershot")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_carbine
 	id = "mech_carbine"
 	display_name = "Exosuit Weapon (FNX-99 \"Hades\" Carbine)"
@@ -681,7 +676,6 @@
 	design_ids = list("mech_carbine")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_ion
 	id = "mmech_ion"
 	display_name = "Exosuit Weapon (MKIV Ion Heavy Cannon)"
@@ -690,7 +684,6 @@
 	design_ids = list("mech_ion")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_tesla
 	id = "mech_tesla"
 	display_name = "Exosuit Weapon (MKI Tesla Cannon)"
@@ -699,7 +692,6 @@
 	design_ids = list("mech_tesla")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_laser
 	id = "mech_laser"
 	display_name = "Exosuit Weapon (CH-PS \"Immolator\" Laser)"
@@ -708,7 +700,6 @@
 	design_ids = list("mech_laser")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_laser_heavy
 	id = "mech_laser_heavy"
 	display_name = "Exosuit Weapon (CH-LC \"Solaris\" Laser Cannon)"
@@ -717,7 +708,6 @@
 	design_ids = list("mech_laser_heavy")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_grenade_launcher
 	id = "mech_grenade_launcher"
 	display_name = "Exosuit Weapon (SGL-6 Grenade Launcher)"
@@ -726,7 +716,6 @@
 	design_ids = list("mech_grenade_launcher")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_missile_rack
 	id = "mech_missile_rack"
 	display_name = "Exosuit Weapon (SRM-8 Missile Rack)"
@@ -735,7 +724,6 @@
 	design_ids = list("mech_missile_rack")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/clusterbang_launcher
 	id = "clusterbang_launcher"
 	display_name = "Exosuit Module (SOB-3 Clusterbang Launcher)"
@@ -744,7 +732,6 @@
 	design_ids = list("clusterbang_launcher")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_teleporter
 	id = "mech_teleporter"
 	display_name = "Exosuit Module (Teleporter Module)"
@@ -753,7 +740,6 @@
 	design_ids = list("mech_teleporter")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_wormhole_gen
 	id = "mech_wormhole_gen"
 	display_name = "Exosuit Module (Localized Wormhole Generator)"
@@ -762,7 +748,6 @@
 	design_ids = list("mech_wormhole_gen")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_taser
 	id = "mech_taser"
 	display_name =  "Exosuit Weapon (PBT \"Pacifier\" Mounted Taser)"
@@ -771,7 +756,6 @@
 	design_ids = list()
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
 /datum/techweb_node/mech_lmg
 	id = "mech_lmg"
 	display_name = "Exosuit Weapon (\"Ultra AC 2\" LMG)"

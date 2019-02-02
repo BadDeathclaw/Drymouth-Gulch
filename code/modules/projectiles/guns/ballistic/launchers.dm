@@ -3,7 +3,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
 	desc = "A break-operated grenade launcher."
-	name = "grenade launcher"
+	name = "M79 grenade launcher"
 	icon_state = "dshotgun-sawn"
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
@@ -21,7 +21,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/cyborg
 	desc = "A 6-shot grenade launcher."
-	name = "multi grenade launcher"
+	name = "Milkor MGL"
 	icon = 'icons/mecha/mecha_equipment.dmi'
 	icon_state = "mecha_grenadelnchr"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
@@ -76,7 +76,7 @@
 
 /obj/item/gun/ballistic/automatic/atlauncher
 	desc = "A pre-loaded, single shot anti-armour launcher."
-	name = "anti-armour grenade launcher"
+	name = "M72 LAW"
 	icon_state = "rocketlauncher"
 	item_state = "rocketlauncher"
 	mag_type = /obj/item/ammo_box/magazine/internal/rocketlauncher
