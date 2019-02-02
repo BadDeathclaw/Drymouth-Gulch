@@ -216,31 +216,163 @@
 	..()
 
 
-
+// tier 1
 
 /obj/item/bodypart/l_arm/robot/surplus
-	name = "surplus prosthetic left arm"
+	name = "surplus mechanical left arm"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	max_damage = 20
 
 /obj/item/bodypart/r_arm/robot/surplus
-	name = "surplus prosthetic right arm"
+	name = "surplus mechanical right arm"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	max_damage = 20
 
 /obj/item/bodypart/l_leg/robot/surplus
-	name = "surplus prosthetic left leg"
+	name = "surplus mechanical left leg"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	max_damage = 20
 
 /obj/item/bodypart/r_leg/robot/surplus
-	name = "surplus prosthetic right leg"
+	name = "surplus mechanical right leg"
 	desc = "A skeletal, robotic limb. Outdated and fragile, but it's still better than nothing."
 	icon = 'icons/mob/augmentation/surplus_augments.dmi'
 	max_damage = 20
+
+//tier 2
+
+/obj/item/bodypart/l_arm/robot/salvaged
+	name = "salvaged mechanical left arm"
+	desc = "A skeletal, robotic limb. Made out of scavenged servos and actuators. Feels pretty flimsy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 40
+
+/obj/item/bodypart/r_arm/robot/salvaged
+	name = "salvaged mechanical right arm"
+	desc = "A skeletal, robotic limb. Made out of scavenged servos and actuators. Feels pretty flimsy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 40
+
+/obj/item/bodypart/l_leg/robot/salvaged
+	name = "salvaged mechanical left leg"
+	desc = "A skeletal, robotic limb. Made out of scavenged servos and actuators. Feels pretty flimsy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 40
+
+/obj/item/bodypart/r_leg/robot/salvaged
+	name = "salvaged mechanical right leg"
+	desc = "A skeletal, robotic limb. Made out of scavenged servos and actuators. Feels pretty flimsy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 40
+
+// tier 3
+
+/obj/item/bodypart/l_arm/robot/forged
+	name = "forged mechanical left arm"
+	desc = "A skeletal, robotic limb. Seems to be handcrafted and carefully constructed out of forged metal and strategically arranged actuators and servos. Feels somewhat sturdy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 60
+
+/obj/item/bodypart/r_arm/robot/forged
+	name = "forged mechanical right arm"
+	desc = "A skeletal, robotic limb. Seems to be handcrafted and carefully constructed out of forged metal and strategically arranged actuators and servos. Feels somewhat sturdy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 60
+
+/obj/item/bodypart/l_leg/robot/forged
+	name = "forged mechanical left leg"
+	desc = "A skeletal, robotic limb. Seems to be handcrafted and carefully constructed out of forged metal and strategically arranged actuators and servos. Feels somewhat sturdy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 60
+
+/obj/item/bodypart/r_leg/robot/forged
+	name = "forged mechanical right leg"
+	desc = "A skeletal, robotic limb. Seems to be handcrafted and carefully constructed out of forged metal and strategically arranged actuators and servos. Feels somewhat sturdy."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 60
+
+// tier 4
+
+/obj/item/bodypart/l_arm/robot/manufactured
+	name = "manufactured mechanical left arm"
+	desc = "A skeletal, robotic limb. Made out of milled aluminum, it seems to be mass manufactured. Has a RobCo company emblem laser cut into the side."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+/obj/item/bodypart/r_arm/robot/manufactured
+	name = "manufactured mechanical right arm"
+	desc = "A skeletal, robotic limb. Made out of milled aluminum, it seems to be mass manufactured. Has a RobCo company emblem laser cut into the side."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+/obj/item/bodypart/l_leg/robot/manufactured
+	name = "manufactured mechanical left leg"
+	desc = "A skeletal, robotic limb. Made out of milled aluminum, it seems to be mass manufactured. Has a RobCo company emblem laser cut into the side."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+/obj/item/bodypart/r_leg/robot/manufactured
+	name = "manufactured mechanical right leg"
+	desc = "A skeletal, robotic limb. Made out of milled aluminum, it seems to be mass manufactured. Has a RobCo company emblem laser cut into the side."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+// tier 5
+
+/obj/item/bodypart/l_arm/robot/alloy
+	name = "alloy mechanical left arm"
+	desc = "A skeletal, robotic limb. Seems to be made out a complex alloy of strong metals. You see several overlapping plates around the kneecap and shins, you figured it could hold up under pressure."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+/obj/item/bodypart/r_arm/robot/alloy
+	name = "alloy mechanical right arm"
+	desc = "A skeletal, robotic limb. Seems to be made out a complex alloy of strong metals. You see several overlapping plates around the kneecap and shins, you figured it could hold up under pressure."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+/obj/item/bodypart/l_leg/robot/alloy
+	name = "alloy mechanical left leg"
+	desc = "A skeletal, robotic limb. Seems to be made out a complex alloy of strong metals. You see several overlapping plates around the kneecap and shins, you figured it could hold up under pressure."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+/obj/item/bodypart/r_leg/robot/alloy
+	name = "alloy mechanical right leg"
+	desc = "A skeletal, robotic limb. Seems to be made out a complex alloy of strong metals. You see several overlapping plates around the kneecap and shins, you figured it could hold up under pressure."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 80
+
+// tier 6
+
+/obj/item/bodypart/l_arm/robot/combat
+	name = "combat mechanical left arm"
+	desc = "A skeletal, robotic limb. A dark grey, very complex limb with shock dampeners and reinforced alloy plates surrounding it. You imagine this was built for combat."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 110
+
+/obj/item/bodypart/r_arm/robot/combat
+	name = "combat mechanical right arm"
+	desc = "A skeletal, robotic limb. A dark grey, very complex limb with shock dampeners and reinforced alloy plates surrounding it. You imagine this was built for combat."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 110
+
+/obj/item/bodypart/l_leg/robot/combat
+	name = "combat mechanical left leg"
+	desc = "A skeletal, robotic limb. A dark grey, very complex limb with shock dampeners and reinforced alloy plates surrounding it. You imagine this was built for combat."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 110
+
+/obj/item/bodypart/r_leg/robot/combat
+	name = "combat  mechanical right leg"
+	desc = "A skeletal, robotic limb. A dark grey, very complex limb with shock dampeners and reinforced alloy plates surrounding it. You imagine this was built for combat."
+	icon = 'icons/mob/augmentation/surplus_augments.dmi'
+	max_damage = 110
+
+
 
 
 #undef ROBOTIC_LIGHT_BRUTE_MSG
