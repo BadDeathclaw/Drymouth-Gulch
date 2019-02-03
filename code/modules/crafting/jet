@@ -674,7 +674,8 @@
 	name = "Jet"
 	result = /obj/item/reagent_containers/pill/patch/jet
 	time = 20
-	reqs = list(/datum/reagent/consumable/milk = 25, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
+	tools = list(TOOL_WELDER)
+	reqs = list(/datum/reagent/consumable/milk = 25, /obj/item/clothing/mask/cigarette = 3)
 	category = CAT_DRUGS
 
 
