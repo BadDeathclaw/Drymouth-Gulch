@@ -167,3 +167,34 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
+	
+/mob/living/simple_animal/hostile/molerat
+	name = "molerat"
+	desc = "A large mutated rat-mole hybrid that finds it's way everywhere. Common in caves and underground areas."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "mole_rat"
+	icon_living = "mole_rat"
+	icon_dead = "mole_rat_dead"
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	speak_chance = 0
+	turns_per_move = 5
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2,
+							/obj/item/stack/sheet/sinew = 1
+							/obj/item/stack/sheet/bone = 1)
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	emote_taunt = list("hisses")
+	taunt_chance = 30
+	speed = -1
+	maxHealth = 25
+	health = 25
+	harm_intent_damage = 8
+	obj_damage = 15
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	attacktext = "bites"
+	speak_emote = list("chitters")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("gecko")
+ 	gold_core_spawnable = HOSTILE_SPAWN
