@@ -243,7 +243,7 @@
 	item_state = "skull"
 	strip_delay = 100
 
-/obj/item/clothing/head/helmet/durathread //F13: Needs numbers tuned and perhaps icon.
+/obj/item/clothing/head/helmet/durathread//F13: Needs numbers tuned and perhaps icon.
 	name = "makeshift helmet"
 	desc = "A hardhat with strips of leather and durathread for additional blunt protection."
 	icon_state = "durathread"

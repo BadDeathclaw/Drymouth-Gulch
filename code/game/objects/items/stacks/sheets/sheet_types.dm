@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	amount = 5
 
 /*
- * Cloth
+ * Cloths
  */
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("white jumpsuit", /obj/item/clothing/under/color/white, 3), \
@@ -277,13 +277,6 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	throwforce = 0
 	merge_type = /obj/item/stack/sheet/cloth
 
-/obj/item/stack/sheet/cloth/durathread
-	name = "durathread"
-	desc = "A fabric sown from incredibly durable threads, known for its usefulness in armor production."
-	singular_name = "durathread roll"
-	icon_state = "sheet-durathread"
-	merge_type = /obj/item/stack/sheet/cloth
-
 /obj/item/stack/sheet/cloth/Initialize(mapload, new_amount, merge = TRUE)
 	recipes = GLOB.cloth_recipes
 	return ..()
@@ -309,15 +302,6 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/cotton
 	pull_effort = 30
 	loom_result = /obj/item/stack/sheet/cloth
-
-/obj/item/stack/sheet/cotton/durathread
-	name = "raw durathread bundle"
-	desc = "A bundle of raw durathread ready to be spun on the loom."
-	singular_name = "raw durathread ball"
-	icon_state = "sheet-durathreadraw"
-	merge_type = /obj/item/stack/sheet/cotton/durathread
-	pull_effort = 70
-	loom_result = /obj/item/stack/sheet/cloth/durathread
 
 /*
  * Cardboard
@@ -610,3 +594,42 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	amount = 20
 /obj/item/stack/sheet/paperframes/fifty
 	amount = 50
+
+	/*
+ * Durathread (This is the best solution I could come up with to the retarded hierarchy problem porting this okay?)
+ */
+ //It'll be changed If we ever decide to add more fabric materials on f13 to just have cloth as the parent.
+ GLOBAL_LIST_INIT(durathread_recipes, list(
+ new /datum/stack_recipe("medical gauze", /obj/item/stack/medical/gauze, 1, 2, 6)))
+
+/obj/item/stack/sheet/durathread
+	name = "durathread"
+	desc = "A fabric sown from incredibly durable threads, known for its usefulness in armor production."
+	singular_name = "durathread roll"
+	icon_state = "sheet-durathread"
+	item_state = "sheet-durathread"
+	merge_type = /obj/item/stack/sheet/durathread
+
+/obj/item/stack/sheet/durathread/Initialize(mapload, new_amount, merge = TRUE)
+	recipes = GLOB.durathread_recipes
+	return ..()
+
+/obj/item/stack/sheet/durathread/ten
+	amount = 10
+
+/obj/item/stack/sheet/durathread/five
+	amount = 5
+
+/obj/item/stack/sheet/durathread/three
+	amount = 3
+
+/obj/item/stack/sheet/durathreadraw
+	name = "raw durathread bundle"
+	desc = "A bundle of raw durathread ready to be spun on the loom."
+	singular_name = "raw durathread ball"
+	is_fabric = TRUE
+	icon_state = "sheet-durathreadraw"
+	merge_type = /obj/item/stack/sheet/durathreadraw
+	pull_effort = 70
+	loom_result = /obj/item/stack/sheet/durathread
+

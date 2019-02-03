@@ -45,7 +45,7 @@
 		to_chat(user, "<span class='notice'>You add the newly-formed [cotton_name] to the stack. It now contains [cotton.amount] [cotton_name].</span>")
 	qdel(src)
 
-//reinforced mutated variant
+//reinforced mutated variant, it will remain in this state until we get more fabric.
 /obj/item/seeds/cotton/durathread
 	name = "pack of durathread seeds"
 	desc = "A pack of seeds that'll grow into an extremely durable thread that could easily rival plasteel if woven properly."
@@ -62,7 +62,7 @@
 	potency = 50
 	growthstages = 3
 	growing_icon = 'icons/obj/hydroponics/growing.dmi'
-	icon_dead = "cotton-dead"
+	icon_dead = "durathread-dead"
 
 /obj/item/grown/cotton/durathread
 	seed = /obj/item/seeds/cotton/durathread
@@ -75,5 +75,5 @@
 	throw_speed = 2
 	throw_range = 3
 	attack_verb = list("bashed", "battered", "bludgeoned", "whacked")
-	cotton_type = /obj/item/stack/sheet/cotton/durathread
+	cotton_type = /obj/item/stack/sheet/durathreadraw
 	cotton_name = "raw durathread"
