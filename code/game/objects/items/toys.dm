@@ -1182,7 +1182,7 @@
 	name = "Cyborg action figure"
 	icon_state = "borg"
 	toysay = "I. LIVE. AGAIN."
-	toysound = 'sound/voice/liveagain.ogg'
+	toysound = 'sound/voice/cyborg/liveagain.ogg'
 
 /obj/item/toy/figure/botanist
 	name = "Botanist action figure"

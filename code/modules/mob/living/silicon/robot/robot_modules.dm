@@ -480,8 +480,8 @@
 	emag_modules = list(/obj/item/reagent_containers/borghypo/borgshaker/hacked)
 	ratvar_modules = list(/obj/item/clockwork/slab/cyborg/service,
 		/obj/item/borg/sight/xray/truesight_lens)
-	moduleselect_icon = "service"
-	special_light_key = "service"
+	moduleselect_icon = "handy"
+	special_light_key = "handy"
 	hat_offset = 0
 
 /obj/item/robot_module/butler/respawn_consumable(mob/living/silicon/robot/R, coeff = 1)

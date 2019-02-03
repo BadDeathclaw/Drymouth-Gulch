@@ -155,7 +155,7 @@
 
 	equippable_hats = typecacheof(equippable_hats)
 
-	playsound(loc, 'sound/voice/liveagain.ogg', 75, 1)
+	playsound(loc, 'sound/voice/cyborg/liveagain.ogg', 75, 1)
 	aicamera = new/obj/item/camera/siliconcam/robot_camera(src)
 	toner = tonermax
 	diag_hud_set_borgcell()

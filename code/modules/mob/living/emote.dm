@@ -88,7 +88,7 @@
 	. = ..()
 	message_simple = initial(message_simple)
 	if(. && isalienadult(user))
-		playsound(user.loc, 'sound/voice/hiss6.ogg', 80, 1, 1)
+		playsound(user.loc, 'sound/voice/xenomorph/hiss6.ogg', 80, 1, 1)
 
 /datum/emote/living/drool
 	key = "drool"
