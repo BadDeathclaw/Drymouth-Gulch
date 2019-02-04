@@ -277,7 +277,7 @@
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	strip_delay = 30
 
-/obj/item/clothing/suit/armor/f13/raider
+/obj/item/clothing/suit/armor/f13/
 	name = "supa-fly raider armor"
 	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
 	icon_state = "supafly"
@@ -369,6 +369,13 @@
 	desc = "It's a set of T-45b power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
+	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/brokenpa/t45b/raider
+	name = "raider power armor"
+	desc = "I LIVE, I DIE, I LIVE AGAIN. REMEMBER ME."
+	icon_state = "raiderpowerarmor"
+	item_state = "raiderpowerarmor"
 	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // power armor
