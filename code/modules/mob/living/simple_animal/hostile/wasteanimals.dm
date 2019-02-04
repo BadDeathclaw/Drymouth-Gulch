@@ -179,8 +179,7 @@
 	speak_chance = 0
 	turns_per_move = 5
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat = 2,
-							/obj/item/stack/sheet/sinew = 1,
-							/obj/item/stack/sheet/bone = 1)
+							/obj/item/stack/sheet/sinew = 1)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
