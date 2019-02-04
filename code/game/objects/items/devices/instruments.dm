@@ -1,4 +1,4 @@
-//copy pasta of the space wasteland piano, don't hurt me -Pete
+//copy pasta of the space piano, don't hurt me -Pete
 /obj/item/instrument
 	name = "generic instrument"
 	resistance_flags = FLAMMABLE
