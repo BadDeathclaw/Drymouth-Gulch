@@ -2,16 +2,18 @@
 
 <h1>Welcome to Bad Deathclaw!</h1>
 
-<b>THIS IS AN 18+ SERVER, LEAVE NOW IF YOU ARE NOT OLD ENOUGH (also leave if you like to act under 18)</b>
+<b>This is an 18+ server, do not play if you are underage.</b>
 
 <i>
-This is a lax medium RP server meaning you're free to do things such as kidnap and rape but please remember you're not the only person trying to have fun. Don't kill for no reason, do not kill on sight, don't be a huge dick and <b>read the rules!</b>.
+This is a light to medium roleplay server, freedom is given to ensure the continuity of the round, however interpretation of this freedom is at the discretion of the admins. Don't be a dick, and <b>read the rules</b> before you play.
 
-For general questions regarding the server, contact @Centurion on our Discord.
-Development is active, we are running on a modified version of the F13 Legacy code and we are always looking for more developers.
+Development is active and we are always looking for more talent, we are open source and running a ported /tg/ version of legacy F13 code.
 
-Discord: https://discord.gg/pY33Q8c
+Questions regarding the sever can be directed to anyone roled as a Scribe or Paladin on our Discord.
+
 Github: https://github.com/BadDeathclaw/TG-Claw
+Discord: https://discord.gg/pY33Q8c
+
 
 This server takes place before the Second Battle of Hoover Dam, in Nevada.
 </i>
