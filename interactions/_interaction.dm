@@ -19,7 +19,7 @@ var/list/interactions
 			var/datum/interaction/I = new itype()
 			interactions[I.command] = I
 
-/mob/proc/list_interaction_attributes()
+/mob/living/carbon/human/proc/list_interaction_attributes()
 	var/dat = ""
 	if(has_hands())
 		dat += "...have hands."
@@ -46,7 +46,7 @@ var/list/interactions
 	var/require_target_hands
 	var/needs_physical_contact
 
-/datum/interaction/proc/evaluate_user(mob/user, silent = TRUE)
+/datum/interaction/proc/evaluate_user(mob/living/carbon/human/user, silent = TRUE)
 	if(require_user_mouth)
 		if(!user.has_mouth())
 			if(!silent)
@@ -65,7 +65,7 @@ var/list/interactions
 
 	return TRUE
 
-/datum/interaction/proc/evaluate_target(mob/user, mob/target, silent = TRUE)
+/datum/interaction/proc/evaluate_target(mob/living/carbon/human/user, mob/living/carbon/human/target, silent = TRUE)
 	if(require_target_mouth)
 		if(!target.has_mouth())
 			if(!silent)
@@ -84,7 +84,7 @@ var/list/interactions
 
 	return TRUE
 
-/datum/interaction/proc/get_action_link_for(mob/user, mob/target)
+/datum/interaction/proc/get_action_link_for(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return "<a HREF='byond://?src=[REF(src)];action=1;action_user=[REF(user)];action_target=[REF(target)]'>[description]</a><br>"
 
 /datum/interaction/Topic(href, href_list)
@@ -95,7 +95,7 @@ var/list/interactions
 		return TRUE
 	return FALSE
 
-/datum/interaction/proc/do_action(mob/user, mob/target)
+/datum/interaction/proc/do_action(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target) //tactical href fix
 		to_chat(user, "<span class='warning'>You cannot target yourself!</span>")
 		return
@@ -128,13 +128,13 @@ var/list/interactions
 		//add_logs(target, user, "fucked2")
 	//target.attack_log += text("\[[time_stamp()]\] <font color='orange'>[write_log_target] [user.name] ([user.ckey])</font>")
 
-/datum/interaction/proc/display_interaction(mob/user, mob/target)
+/datum/interaction/proc/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(simple_message)
 		var/use_message = replacetext(simple_message, "USER", "\the [user]")
 		use_message = replacetext(use_message, "TARGET", "\the [target]")
 		user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
 
-/datum/interaction/proc/post_interaction(mob/user, mob/target)
+/datum/interaction/proc/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(interaction_sound)
 		playsound(get_turf(user), interaction_sound, 50, 1, -1)
 	return
