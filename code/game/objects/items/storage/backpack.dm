@@ -99,7 +99,7 @@
 	item_state = "clownpack"
 
 /obj/item/storage/backpack/explorer
-	name = "explorer bag"
+	name = "rucksack"
 	desc = "A robust backpack for stashing your loot."
 	icon_state = "explorerpack"
 	item_state = "explorerpack"
@@ -117,13 +117,13 @@
 	item_state = "medicalpack"
 
 /obj/item/storage/backpack/security
-	name = "security backpack"
+	name = "tactical backpack"
 	desc = "It's a very robust backpack."
 	icon_state = "securitypack"
 	item_state = "securitypack"
 
 /obj/item/storage/backpack/captain
-	name = "captain's backpack"
+	name = "ceremonial backpack"
 	desc = "It's a special backpack made exclusively for Nanotrasen officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
@@ -247,13 +247,13 @@
 	item_state = "satchel-hyd"
 
 /obj/item/storage/backpack/satchel/sec
-	name = "security satchel"
+	name = "tactical satchel"
 	desc = "A robust satchel for security related needs."
 	icon_state = "satchel-sec"
 	item_state = "securitypack"
 
 /obj/item/storage/backpack/satchel/explorer
-	name = "explorer satchel"
+	name = "expeditionary satchel"
 	desc = "A robust satchel for stashing your loot."
 	icon_state = "satchel-explorer"
 	item_state = "securitypack"
