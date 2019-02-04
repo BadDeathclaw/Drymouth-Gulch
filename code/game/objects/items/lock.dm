@@ -1,5 +1,5 @@
 /obj/item/lock_construct
-	name = "salvaged lock"
+	name = "\improper salvaged lock"
 	icon = 'icons/obj/lock.dmi'
 	icon_state = "salvagedlock"
 	w_class = WEIGHT_CLASS_SMALL
