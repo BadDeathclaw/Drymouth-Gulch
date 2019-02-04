@@ -2210,7 +2210,7 @@
 "Qz" = (/obj/structure/door_assembly/door_assembly_hatch,/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,/area/f13/underground/bos)
 "QA" = (/obj/machinery/deepfryer,/turf/open/floor/plasteel/cafeteria,/area/centcom/holding)
 "QB" = (/obj/item/wallframe/firealarm,/turf/closed/wall/mineral/iron,/area/f13/underground/bos)
-"QC" = (/obj/machinery/button{id = 6},/obj/structure/table,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
+"QC" = (/obj/structure/table,/obj/machinery/button/door{id = 6; name = "blast door button"},/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "QD" = (/obj/machinery/light,/turf/open/floor/plasteel/bar,/area/f13/underground/bos)
 "QE" = (/obj/effect/landmark/start/f13/scribe,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "QF" = (/obj/structure/chair/office/dark{icon_state = "officechair_dark"; dir = 1},/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
