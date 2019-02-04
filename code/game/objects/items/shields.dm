@@ -96,6 +96,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	materials = list()
 	resistance_flags = FLAMMABLE
+	w_class = WEIGHT_CLASS_NORMAL
 	force = 15
 	block_chance = 35
 	throwforce = 15

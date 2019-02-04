@@ -91,7 +91,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 35
 
 /obj/item/claymore/machete/combataxe
-	name = "tactical axe"
+	name = "legion axe"
 	desc = "A axe forged out of reclaimed steel. It's sharpened to a fine edge and is perfectly balanced to allow for effective dismemberment of enemy combatants."
 	icon_state = "combataxe"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'

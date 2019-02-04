@@ -22,6 +22,23 @@ Colonel
 /datum/outfit/job/f13colonel
 	name = "NCR Colonel"
 	jobtype = /datum/job/f13colonel
+	backpack = /obj/item/storage/backpack/explorer
+	ears = 			/obj/item/radio/headset/headset_ncr
+	uniform =  		/obj/item/clothing/under/f13/ncr/officer
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	head = 			/obj/item/clothing/head/beret/ncr
+	belt = 			/obj/item/storage/belt/military/ncr
+	gloves =		/obj/item/clothing/gloves/combat
+	shoes = 		/obj/item/clothing/shoes/jackboots
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/m1911
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m45=3, \
+		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/melee/classic_baton/telescopic=1, \
+		/obj/item/storage/bag/money/small/ncr)
+	box = null
 
 /*
 Captain
@@ -36,7 +53,7 @@ Captain
 	spawn_positions = 1
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
-	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant, coordinating with your staff you must ensure that the objectives of central command are completed to the letter. Working closely with them on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
+	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant, coordinating with your staff you must ensure that the objectives of the republic command are completed to the letter. Working closely with them on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "the colonel"
 	selection_color = "#ffeeaa"
 	req_admin_notify = 1

@@ -98,8 +98,8 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
-	name = "syndicate captain's vest"
-	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking syndicate officer."
+	name = "chinese captain's vest"
+	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking chinese officer."
 	icon_state = "syndievest"
 
 /obj/item/clothing/suit/armor/vest/capcarapace/alt
@@ -452,6 +452,23 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/legrecruit/scout
+	name = "legion scout armor"
+	desc = "A identical version of the recruit armor, except it lacks most of the carrying capacity and damage reduction in exchange for speed and freedom of movement."
+	item_state = "legveteran"
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list("melee" = 15, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/legrecruit/explorer
+	name = "legion explorer armor"
+	desc = "A signifigantly lighter version of the recruit armor, sporting more breathable padding and additional storage for long expeditions into the wasteland."
+	item_state = "legveteran"
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	strip_delay = 60
+
 
 /obj/item/clothing/suit/armor/f13/legrecruit/vet
 	name = "legion veteran armor"

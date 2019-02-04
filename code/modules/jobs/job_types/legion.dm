@@ -4,7 +4,7 @@ Legat
 Needs whitelist
 */
 /datum/job/f13legate
-	title = "The Legate"
+	title = "Legion Legate"
 	flag = F13LEGATE
 	department_flag = LEGION
 	head_announce = list("Security")
@@ -23,7 +23,7 @@ Needs whitelist
 	minimal_access = list()
 
 /datum/outfit/job/f13legate
-	name = "The Legate"
+	name = "Legion Legate"
 	jobtype = /datum/job/f13legate
 
 
@@ -89,8 +89,7 @@ Centurion
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
-		/obj/item/throwing_star/spear, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
@@ -140,11 +139,12 @@ Veteran Decan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
-	r_hand = 		/obj/item/twohanded/fireaxe
+	r_hand = 		/obj/item/claymore/machete/combataxe
+	l_hand =		/obj/item/shield/legion
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -183,8 +183,8 @@ Vexillarius
 
 	id = null
 	ears = null
-	belt = /obj/item/storage/belt/military/legion
-	backpack = /obj/item/storage/backpack/satchel/explorer
+	belt =			/obj/item/storage/belt/military/legion
+	backpack =		/obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
 	gloves =		/obj/item/clothing/gloves/legion
@@ -192,11 +192,12 @@ Vexillarius
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun
+	r_hand =		/obj/item/shield/legion/buckler
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -245,11 +246,11 @@ Decan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
-	r_hand = 		/obj/item/twohanded/fireaxe
+	r_hand = 		/obj/item/claymore/machete/combataxe
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -303,7 +304,7 @@ Veteran
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/m44=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -385,7 +386,7 @@ Legionary
 	outfit = /datum/outfit/job/f13explorer
 
 /datum/outfit/job/f13explorer
-	name = "Explorer"
+	name = "Legion Explorer"
 	jobtype = /datum/job/f13explorer
 
 	id = null
@@ -395,13 +396,13 @@ Legionary
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
 	gloves =		/obj/item/clothing/gloves/legion
-	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/explorer
 	head = 			/obj/item/clothing/head/helmet/f13/legion/explorer
 	glasses = null
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -431,7 +432,7 @@ Legionary
 	outfit = /datum/outfit/job/f13scout
 
 /datum/outfit/job/f13scout
-	name = "Scout"
+	name = "Legion Scout"
 	jobtype = /datum/job/f13scout
 
 	id = null
@@ -441,7 +442,7 @@ Legionary
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	gloves =		/obj/item/clothing/gloves/legion
-	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/scout
 	head = 			/obj/item/clothing/head/helmet/f13/legion/scout
 	glasses = null
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped

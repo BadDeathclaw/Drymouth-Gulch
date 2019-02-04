@@ -2,7 +2,7 @@
 Sheriff
 */
 /datum/job/f13sheriff
-	title = "Sheriff"
+	title = "Den Sheriff"
 	flag = F13SHERIFF
 	department_flag = DEN
 	head_announce = list("Security")
@@ -17,7 +17,7 @@ Sheriff
 	outfit = /datum/outfit/job/f13sheriff
 
 /datum/outfit/job/f13sheriff
-	name = "Sheriff"
+	name = "Den Sheriff"
 	jobtype = /datum/job/f13sheriff
 
 	id = /obj/item/card/id/sheriff
@@ -48,7 +48,7 @@ Settler
 */
 
 /datum/job/f13settler
-	title = "Settler"
+	title = "Den Settler"
 	flag = F13SETTLER
 	department_flag = DEN
 	faction = "Den"
@@ -60,7 +60,7 @@ Settler
 	outfit = /datum/outfit/job/f13settler
 
 /datum/outfit/job/f13settler
-	name = "Settler"
+	name = "Den Settler"
 	jobtype = /datum/job/f13settler
 
 	ears = 			/obj/item/radio/headset/headset_den
@@ -88,7 +88,7 @@ Preacher
 */
 
 /datum/job/f13preacher
-	title = "Preacher"
+	title = "Den Preacher"
 	flag = F13PREACHER
 	department_head = list("Captain")
 	department_flag = DEN
@@ -173,7 +173,7 @@ Preacher
 
 
 /datum/outfit/job/f13preacher
-	name = "Preacher"
+	name = "Den Preacher"
 	jobtype = /datum/job/f13preacher
 	id = null
 	ears = /obj/item/radio/headset/headset_den

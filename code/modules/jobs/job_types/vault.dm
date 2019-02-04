@@ -12,7 +12,7 @@ here's a tip, go search DEFINES/access.dm
 Overseer
 */
 /datum/job/f13overseer
-	title = "Overseer"
+	title = "Vault Overseer"
 	flag = F13OVERSEER
 	department_flag = VAULT
 	head_announce = list("Security")
@@ -38,7 +38,7 @@ Overseer
 	return get_all_accesses()
 
 /datum/outfit/job/f13overseer
-	name = "Overseer"
+	name = "Vault Overseer"
 	jobtype = /datum/job/f13overseer
 
 	implants = list(/obj/item/implant/mindshield)
@@ -66,7 +66,7 @@ Head of Security
 */
 
 /datum/job/f13hos
-	title = "Chief of Security"
+	title = "Vault Chief of Security"
 	flag = F13HOS
 	department_head = list("Overseer")
 	department_flag = VAULT
@@ -94,7 +94,7 @@ Head of Security
 						ACCESS_HOS, ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_MINERAL_STOREROOM)
 
 /datum/outfit/job/f13hos
-	name = "Chief of Security"
+	name = "Vault Chief of Security"
 	jobtype = /datum/job/f13hos
 
 	id = /obj/item/card/id/silver
@@ -121,7 +121,7 @@ Head of Security
 Medical Doctor
 */
 /datum/job/f13doctor
-	title = "Vault-tec Doctor"
+	title = "Vault Doctor"
 	flag = F13DOCTOR
 	department_head = list("Overseer")
 	department_flag = VAULT
@@ -159,7 +159,7 @@ Medical Doctor
 Scientist
 */
 /datum/job/f13vaultscientist
-	title = "Vault-tec Scientist"
+	title = "Vault Scientist"
 	flag = F13VAULTSCIENTIST
 	department_head = list("Overseer")
 	department_flag = VAULT
@@ -178,7 +178,7 @@ Scientist
 	minimal_access = list(ACCESS_ROBOTICS, ACCESS_RESEARCH, ACCESS_MINERAL_STOREROOM, ACCESS_CARGO)
 
 /datum/outfit/job/f13vaultscientist
-	name = "Scientist"
+	name = "Vault Scientist"
 	jobtype = /datum/job/f13vaultscientist
 
 	//pda
@@ -193,7 +193,7 @@ Scientist
 Security Officer
 */
 /datum/job/f13officer
-	title = "Vault-tec Security"
+	title = "Vault Security"
 	flag = F13OFFICER
 	department_head = list("Chief of Security")
 	department_flag = VAULT
@@ -298,7 +298,7 @@ Security Officer
 
 
 /datum/outfit/job/f13security
-	name = "Vault-tec Security"
+	name = "Vault Security"
 	jobtype = /datum/job/f13officer
 
 	//pda
@@ -345,7 +345,7 @@ Security Officer
 Station Engineer
 */
 /datum/job/f13vaultengineer
-	title = "Vault-tec Engineer"
+	title = "Vault Engineer"
 	flag = F13VAULTENGINEER
 	department_head = list("Overseer")
 	department_flag = VAULT

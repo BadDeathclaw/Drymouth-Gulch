@@ -18,7 +18,7 @@ Commander
 	minimal_access = list()
 
 /datum/outfit/job/f13uscommander
-	name = "US Commander"
+	name = "Enclave Commander"
 	jobtype = /datum/job/f13uscommander
 
 	id = /obj/item/card/id/gold
@@ -29,7 +29,7 @@ Commander
 Medic
 */
 /datum/job/f13usmedic
-	title = "US Medic"
+	title = "Enclave Medic"
 	flag = F13USMEDIC
 	department_flag = ENCLAVE
 	//faction = "Station"
@@ -56,7 +56,7 @@ Medic
 Private
 */
 /datum/job/f13usprivate
-	title = "US Private"
+	title = "Enclave Private"
 	flag = F13USPRIVATE
 	department_flag = ENCLAVE
 	//faction = "Station"
@@ -83,7 +83,7 @@ Private
 Scientist
 */
 /datum/job/f13usscientist
-	title = "US Scientist"
+	title = "Enclave Scientist"
 	flag = F13USSCIENTIST
 	department_flag = ENCLAVE
 	//faction = "Station"
@@ -99,7 +99,7 @@ Scientist
 	minimal_access = list()
 
 /datum/outfit/job/f13usscientist
-	name = "US Scientist"
+	name = "Enclave Scientist"
 	jobtype = /datum/job/f13usscientist
 
 	id = /obj/item/card/id/gold
@@ -110,7 +110,7 @@ Scientist
 Engineer
 */
 /datum/job/f13usengineer
-	title = "US Engineer"
+	title = "Enclave Engineer"
 	flag = F13USENGINEER
 	department_flag = ENCLAVE
 	//faction = "Station"
@@ -136,7 +136,7 @@ Engineer
 Colonist
 */
 /datum/job/f13uscolonist
-	title = "US Colonist"
+	title = "Enclave Colonist"
 	flag = F13USCOLONIST
 	department_flag = ENCLAVE
 	//faction = "Station"
