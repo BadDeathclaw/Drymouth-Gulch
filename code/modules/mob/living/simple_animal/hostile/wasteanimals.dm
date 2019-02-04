@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/cazador
 	name = "cazador"
-	desc = "A mutated insect known for it's fast speed, deadly sting, and being huge bastards."
+	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "cazador"
 	icon_living = "cazador"
@@ -46,7 +46,7 @@
 
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
-	desc = "A mutated insect known for it's fast speed, deadly sting, and being huge bastards. This one's little."
+	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
 	maxHealth = 20
 	health = 20
 	speed = 1
@@ -139,7 +139,7 @@
 
 /mob/living/simple_animal/hostile/radroach
 	name = "radroach"
-	desc = "A large mutated insect that finds it's way everywhere."
+	desc = "A large mutated insect that finds its way everywhere."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "radroach"
 	icon_living = "radroach"
@@ -170,7 +170,7 @@
 	
 /mob/living/simple_animal/hostile/molerat
 	name = "molerat"
-	desc = "A large mutated rat-mole hybrid that finds it's way everywhere. Common in caves and underground areas."
+	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "mole_rat"
 	icon_living = "mole_rat"
