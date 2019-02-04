@@ -13,10 +13,6 @@
 	icon = 'icons/obj/lock.dmi'
 	icon_state = "prewarlock"
 	w_class = WEIGHT_CLASS_SMALL
-	var/lock_data
-	var/static/lock_uid = 1
-	var/locked = FALSE
-	var/prying = FALSE
 
 /obj/item/lock_construct/Initialize() // Same system machines use for UID. Could probably add a global UID for everything if you wanted and use it for shenanigans, or simpler loading.
 	..()
@@ -59,22 +55,8 @@
 	if(!prying)
 		user.visible_message("<span class='notice'>[user] starts prying [src] off [A].</span>", \
 							 "<span class='notice'>You start prying [src] off [A].</span>")
-		var/time_to_open = 50
+		var/time_to_open = 100
 		playsound(src, 'sound/machines/airlock_alien_prying.ogg',100,1) //is it aliens or just the CE being a dick?
-		prying = TRUE
-		var/result = do_after(user, time_to_open,target = A)
-		prying = FALSE
-		if(result)
-			user.visible_message("<span class='notice'>[src] breaks off [A] and falls to pieces.</span>")
-			return TRUE
-	return FALSE
-
-/obj/item/lock_construct/prewar/proc/pry_off(mob/living/user, atom/A)
-	if(!prying)
-		user.visible_message("<span class='notice'>[user] starts prying [src] off [A].</span>", \
-							 "<span class='notice'>You start prying [src] off [A].</span>")
-		var/time_to_open = 150
-		playsound(src, 'sound/machines/airlock_alien_prying.ogg',100,1) //is it aliens or just the overseer being a dick?
 		prying = TRUE
 		var/result = do_after(user, time_to_open,target = A)
 		prying = FALSE
