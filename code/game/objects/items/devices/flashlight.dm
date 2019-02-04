@@ -336,7 +336,7 @@
 	item_state = "lantern"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
-	desc = "A gas lantern that seems to never run out of gas."
+	desc = "A lantern with a glowing radioactive rock in the middle. A small label on the side reads (NOT FIT FOR HUMAN CONSUMPTION)"
 	brightness_on = 6			// luminosity when on
 
 
