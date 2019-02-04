@@ -5,7 +5,7 @@
 <b>This is an 18+ server, do not play if you are underage.</b>
 
 <i>
-This is a light to medium roleplay server, freedom is given to ensure the continuity of the round, however interpretation of this freedom is at the discretion of the admins. Don't be a dick, and <b>read the rules</b> before you play.
+Don't be a dick, and <b>read the rules</b> before you play.
 
 Development is active and we are always looking for more talent, we are open source and running a ported /tg/ version of legacy F13 code.
 
@@ -13,7 +13,6 @@ Questions regarding the sever can be directed to anyone roled as a Scribe or Pal
 
 Github: https://github.com/BadDeathclaw/TG-Claw
 Discord: https://discord.gg/pY33Q8c
-
 
 This server takes place before the Second Battle of Hoover Dam, in Nevada.
 </i>
