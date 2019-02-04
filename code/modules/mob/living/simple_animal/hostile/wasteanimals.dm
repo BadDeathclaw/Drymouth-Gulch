@@ -175,6 +175,7 @@
 	icon_state = "mole_rat"
 	icon_living = "mole_rat"
 	icon_dead = "mole_rat_dead"
+	icon_gib = null
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
