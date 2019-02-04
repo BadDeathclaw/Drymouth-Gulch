@@ -325,7 +325,7 @@
 	item_state = "combat_helmet"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 20)
 	strip_delay = 50
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	flash_protect = 1
 	tint = 0
