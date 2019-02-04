@@ -61,6 +61,7 @@
 
 /obj/item/megaphone/cornu/get_held_item_speechspans(mob/living/carbon/user)
 	if(spamcheck > world.time)
+		to_chat(user, "<span class='warning'>\The [src] is not to be overused in battle!</span>")
 	else
 		playsound(loc, 'sound/items/airhorn.ogg', 100, 0, 1)
 		spamcheck = world.time + 50
