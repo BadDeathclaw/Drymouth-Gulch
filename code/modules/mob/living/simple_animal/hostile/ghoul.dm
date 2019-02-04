@@ -8,7 +8,6 @@
 	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	turns_per_move = 5
 	speak_emote = list("growls")
-	loot = list(obj/item/clothes/caravan_pants)
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
 	maxHealth = 40
