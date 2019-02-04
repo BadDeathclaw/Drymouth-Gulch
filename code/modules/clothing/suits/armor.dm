@@ -446,7 +446,7 @@
 
 /obj/item/clothing/suit/armor/f13/legrecruit
 	name = "legion recruit armor"
-	desc = "Legion recruit armor is a common light armor, supplied to recruit legionarys and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
+	desc = "Legion recruit armor is a common light armor, supplied to recruit legionarries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
 	body_parts_covered = CHEST|GROIN|ARMS
