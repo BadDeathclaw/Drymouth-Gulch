@@ -13,7 +13,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /obj/item/pda
 	name = "\improper PDA"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
+	desc = "A portable microcomputer by RobCo Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
 	item_state = "Pip-boy"
@@ -301,7 +301,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<HR><font face=\"[PEN_FONT]\">[(!notehtml ? note : notehtml)]</font>"
 
 			if (2)
-				dat += "<h4>[PDAIMG(mail)] SpaceMessenger V3.9.6</h4>"
+				dat += "<h4>[PDAIMG(mail)] WastelandMessenger V3.9.6</h4>"
 				dat += "<a href='byond://?src=[REF(src)];choice=Toggle Ringer'>[PDAIMG(bell)]Ringer: [silent == 1 ? "Off" : "On"]</a> | "
 				dat += "<a href='byond://?src=[REF(src)];choice=Toggle Messenger'>[PDAIMG(mail)]Send / Receive: [toff == 1 ? "Off" : "On"]</a> | "
 				dat += "<a href='byond://?src=[REF(src)];choice=Ringtone'>[PDAIMG(bell)]Set Ringtone</a> | "
@@ -331,7 +331,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 					dat += "<a href='byond://?src=[REF(src)];choice=MessageAll'>Send To All</a>"
 
 			if(21)
-				dat += "<h4>[PDAIMG(mail)] SpaceMessenger V3.9.6</h4>"
+				dat += "<h4>[PDAIMG(mail)] WastelandMessenger V3.9.6</h4>"
 				dat += "<a href='byond://?src=[REF(src)];choice=Clear'>[PDAIMG(blank)]Clear Messages</a>"
 
 				dat += "<h4>[PDAIMG(mail)] Messages</h4>"

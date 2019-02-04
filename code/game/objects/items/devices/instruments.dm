@@ -1,4 +1,4 @@
-//copy pasta of the space piano, don't hurt me -Pete
+//copy pasta of the space wasteland piano, don't hurt me -Pete
 /obj/item/instrument
 	name = "generic instrument"
 	resistance_flags = FLAMMABLE
@@ -43,8 +43,8 @@
 	song.interact(user)
 
 /obj/item/instrument/violin
-	name = "space violin"
-	desc = "A wooden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
+	name = "violin"
+	desc = "A wooden musical instrument with four strings and a bow."
 	icon_state = "violin"
 	item_state = "violin"
 	hitsound = "swing_hit"
@@ -52,7 +52,7 @@
 
 /obj/item/instrument/violin/golden
 	name = "golden violin"
-	desc = "A golden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
+	desc = "A golden musical instrument with four strings and a bow."
 	icon_state = "golden_violin"
 	item_state = "golden_violin"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -188,7 +188,7 @@
 
 /obj/item/instrument/harmonica
 	name = "harmonica"
-	desc = "For when you get a bad case of the space blues."
+	desc = "For when you get a bad case of the wasteland blues."
 	icon_state = "harmonica"
 	item_state = "harmonica"
 	instrumentId = "harmonica"

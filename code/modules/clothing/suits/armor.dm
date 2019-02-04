@@ -408,6 +408,13 @@
 	item_state = "t51bpowerarmor"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/power_armor/sierra
+	name = "sierra power armor"
+	desc = "A suit of T-45d power armor repurposed by the New California Republic. Unlike their salvaged models, this one is still functional. Based off of its design, it appears to be built for a high ranking officer."
+	icon_state = "sierra"
+	item_state = "sierra"
+	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
@@ -441,16 +448,17 @@
 
 /obj/item/clothing/suit/armor/f13/legrecruit/vet
 	name = "legion veteran armor"
+	desc = "A more refined version of the recruit armor, this one features forged metal plates in key areas along with the removal of unnessceary weight from unimportant areas, allowing better freedom of movement in combat."
 	item_state = "legveteran"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/legvexil
 	name = "legion vexillarius armor"
-	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
+	desc = "The armor appears to be based off of a suit of legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
 	icon_state = "legvexil"
 	item_state = "legvexil"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	strip_delay = 60
 
 /obj/item/clothing/suit/armor/f13/legcenturion
@@ -485,6 +493,13 @@
 	desc = "A reinforced model based of the pre-war combat armor."
 	icon_state = "combat_armor_mk2"
 	item_state = "combat_armor_mk2"
+	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/combat/mk2/ncr
+	name = "NCR combat armor"
+	desc = "A reinforced model based of the pre-war combat armor. This one has been painted and marked with the emblem of the New California Republic."
+	icon_state = "ncrcombatarmor"
+	item_state = "ncrcombatarmor"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/combat/ncr

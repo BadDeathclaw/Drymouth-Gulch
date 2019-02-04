@@ -10,6 +10,18 @@
 	var/prefix = "sharpened"
 	var/requires_sharpness = 1
 
+/obj/item/sharpener/rod
+	name = "sharpening rod"
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "sharpeningrod"
+	desc = "A rod of hardened metal designed to sharpen blades in combat enviroments, comes with a egronomic handle and a lanyard."
+	force = 5
+	var/used = 0
+	var/increment = 4
+	var/max = 30
+	var/prefix = "sharpened"
+	var/requires_sharpness = 1
+
 
 /obj/item/sharpener/attackby(obj/item/I, mob/user, params)
 	if(used)

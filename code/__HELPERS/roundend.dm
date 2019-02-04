@@ -235,7 +235,7 @@
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
-			Reboot("Station destroyed by Nuclear Device.", "nuke")
+			Reboot("Region was destroyed by a Nuclear Device.", "nuke")
 		else
 			Reboot("Round ended.", "proper completion")
 	else
@@ -272,13 +272,13 @@
 	var/list/parts = list()
 	var/station_evacuated = EMERGENCY_ESCAPED_OR_ENDGAMED
 
-	parts += "[GLOB.TAB]Shift Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
-	parts += "[GLOB.TAB]Station Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
+	parts += "[GLOB.TAB]Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
+	parts += "[GLOB.TAB]Regional Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
 	var/total_players = GLOB.joined_player_list.len
 	if(total_players)
 		parts+= "[GLOB.TAB]Total Population: <B>[total_players]</B>"
 		if(station_evacuated)
-			parts += "<BR>[GLOB.TAB]Evacuation Rate: <B>[popcount[POPCOUNT_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_ESCAPEES]/total_players)]%)</B>"
+			parts += "<BR>[GLOB.TAB]Regional Escape Rate: <B>[popcount[POPCOUNT_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_ESCAPEES]/total_players)]%)</B>"
 			parts += "[GLOB.TAB](on emergency shuttle): <B>[popcount[POPCOUNT_SHUTTLE_ESCAPEES]] ([PERCENT(popcount[POPCOUNT_SHUTTLE_ESCAPEES]/total_players)]%)</B>"
 		parts += "[GLOB.TAB]Survival Rate: <B>[popcount[POPCOUNT_SURVIVORS]] ([PERCENT(popcount[POPCOUNT_SURVIVORS]/total_players)]%)</B>"
 		if(SSblackbox.first_death)
@@ -320,17 +320,17 @@
 			if(EMERGENCY_ESCAPED_OR_ENDGAMED)
 				if(!M.onCentCom() && !M.onSyndieBase())
 					parts += "<div class='panel stationborder'>"
-					parts += "<span class='marooned'>You managed to survive, but were marooned on [station_name()]...</span>"
+					parts += "<span class='marooned'>You managed to survive, but never left [station_name()]...</span>"
 				else
 					parts += "<div class='panel greenborder'>"
-					parts += "<span class='greentext'>You managed to survive the events on [station_name()] as [M.real_name].</span>"
+					parts += "<span class='greentext'>You managed to survive the events that occured within [station_name()] as [M.real_name].</span>"
 			else
 				parts += "<div class='panel greenborder'>"
-				parts += "<span class='greentext'>You managed to survive the events on [station_name()] as [M.real_name].</span>"
+				parts += "<span class='greentext'>You managed to survive the events that occured within [station_name()] as [M.real_name].</span>"
 
 		else
 			parts += "<div class='panel redborder'>"
-			parts += "<span class='redtext'>You did not survive the events on [station_name()]...</span>"
+			parts += "<span class='redtext'>You did not survive the events within [station_name()]...</span>"
 	else
 		parts += "<div class='panel stationborder'>"
 	parts += "<br>"

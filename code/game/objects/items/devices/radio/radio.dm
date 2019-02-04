@@ -3,7 +3,7 @@
 	name = "shortwave radio"
 	icon_state = "walkietalkie"
 	item_state = "walkietalkie"
-	desc = "A basic handheld radio that communicates with local telecommunication networks."
+	desc = "A Wattz Armaments shortwave radio inside of a robust shock dampening case with a range amplifier with the ability to send and receive on all frequencies."
 	dog_fashion = /datum/dog_fashion/back
 
 	flags_1 = CONDUCT_1 | HEAR_1

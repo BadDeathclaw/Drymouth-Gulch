@@ -1,5 +1,5 @@
 /obj/structure/headpike
-	name = "spooky head on a spear"
+	name = "head on a spear"
 	desc = "When you really want to send a message."
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "headpike"

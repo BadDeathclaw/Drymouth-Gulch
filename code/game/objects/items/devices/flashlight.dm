@@ -193,8 +193,8 @@
 
 
 /obj/item/flashlight/seclite
-	name = "seclite"
-	desc = "A robust flashlight used by security."
+	name = "tactical flashlight"
+	desc = "A robust flashlight used by the US Army up until the end of the war."
 	icon_state = "seclite"
 	item_state = "seclite"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -246,7 +246,7 @@
 
 /obj/item/flashlight/flare
 	name = "flare"
-	desc = "A red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'."
+	desc = "A red government issued flare. There are instructions on the side, it reads 'pull cord, make light'."
 	w_class = WEIGHT_CLASS_SMALL
 	brightness_on = 7 // Pretty bright.
 	icon_state = "flare"
@@ -336,7 +336,7 @@
 	item_state = "lantern"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
-	desc = "A mining lantern."
+	desc = "A gas lantern that seems to never run out of gas."
 	brightness_on = 6			// luminosity when on
 
 
@@ -535,6 +535,6 @@
 	desc = "This shouldn't exist outside of someone's head, how are you seeing this?"
 	brightness_on = 15
 	flashlight_power = 1
-	flags_1 = CONDUCT_1 
+	flags_1 = CONDUCT_1
 	item_flags = DROPDEL
 	actions_types = list()

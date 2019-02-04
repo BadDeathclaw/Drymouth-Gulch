@@ -71,16 +71,37 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	resistance_flags = FIRE_PROOF
 
 /obj/item/claymore/machete
-	name = "Machete"
+	name = "machete"
 	desc = "A makeshift machete made of a lawn mower blade."
-	icon_state = "imp_machete"
+	icon_state = "salvagedmachete"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	item_state = "machete"
+	item_state = "imp_machete"
 	slot_flags = ITEM_SLOT_BELT
+	icon = 'icons/obj/items_and_weapons.dmi'
+
+/obj/item/claymore/machete/gladius
+	name = "machete gladius"
+	desc = "A machete forged out of reclaimed steel. It's sharpened to a fine edge and has a tightly wrapped red piece of leather wrapped around the handle."
+	icon_state = "machete"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = "imp_machete"
+	slot_flags = ITEM_SLOT_BELT
+	force = 35
+
+/obj/item/claymore/machete/combataxe
+	name = "tactical axe"
+	desc = "A axe forged out of reclaimed steel. It's sharpened to a fine edge and is perfectly balanced to allow for effective dismemberment of enemy combatants."
+	icon_state = "combataxe"
+	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
+	item_state = "tacticalaxe"
+	slot_flags = ITEM_SLOT_BELT
+	force = 40
 
 /obj/item/claymore/machete/pipe
-	name = "Pipe"
+	name = "pipe"
 	desc = "A heavy rusted pipe, good for smashing heads. "
 	icon_state = "pipe"
 	item_state = "pipe"
@@ -89,7 +110,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	sharpness = IS_BLUNT
 
 /obj/item/claymore/machete/golf
-	name = "Golf Club"
+	name = "golf club"
 	desc = "A old rusted 9 iron golf club."
 	icon_state = "golf"
 	item_state = "golf"

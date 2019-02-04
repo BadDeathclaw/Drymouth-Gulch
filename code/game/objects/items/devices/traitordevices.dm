@@ -172,12 +172,13 @@ effective or pretty fucking useless.
 	return
 
 /obj/item/shadowcloak
-	name = "cloaker belt"
+	name = "steath boy"
 	desc = "Makes you invisible for short periods of time. Recharges in darkness."
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("whipped", "lashed", "disciplined")
 
 	var/mob/living/carbon/human/user = null
@@ -237,7 +238,7 @@ effective or pretty fucking useless.
 
 /obj/item/jammer
 	name = "radio jammer"
-	desc = "Device used to disrupt nearby radio communication."
+	desc = "Device used to disrupt nearby radio communication. Has a red hammer and sickle painted onto the side and vaguely smells of potatos."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "jammer"
 	var/active = FALSE

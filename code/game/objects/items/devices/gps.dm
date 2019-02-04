@@ -1,7 +1,7 @@
 GLOBAL_LIST_EMPTY(GPS_list)
 /obj/item/gps
 	name = "global positioning system"
-	desc = "Helping lost spacemen find their way through the planets since 2016."
+	desc = "Helping lost scavengers find their way around the wasteland since before the war."
 	icon = 'icons/obj/telescience.dmi'
 	icon_state = "gps-c"
 	w_class = WEIGHT_CLASS_SMALL
@@ -173,7 +173,7 @@ GLOBAL_LIST_EMPTY(GPS_list)
 
 /obj/item/gps/internal/base
 	gpstag = "NT_AUX"
-	desc = "A homing signal from Nanotrasen's mining base."
+	desc = "A homing signal from Nano Tesser's mining base."
 
 /obj/item/gps/visible_debug
 	name = "visible GPS"

@@ -4,7 +4,7 @@ Legat
 Needs whitelist
 */
 /datum/job/f13legate
-	title = "Legate"
+	title = "The Legate"
 	flag = F13LEGATE
 	department_flag = LEGION
 	head_announce = list("Security")
@@ -23,7 +23,7 @@ Needs whitelist
 	minimal_access = list()
 
 /datum/outfit/job/f13legate
-	name = "Legate"
+	name = "The Legate"
 	jobtype = /datum/job/f13legate
 
 
@@ -52,7 +52,7 @@ Needs whitelist
 Centurion
 */
 /datum/job/f13centurion
-	title = "Centurion"
+	title = "Legion Centurion"
 	flag = F13CENTURION
 	department_flag = LEGION
 	head_announce = list("Security")
@@ -108,7 +108,7 @@ Centurion
 Veteran Decan
 */
 /datum/job/f13vetdecan
-	title = "Veteran Decanus"
+	title = "Legion Veteran Decanus"
 	flag = F13VETDECAN
 	department_flag = LEGION
 	faction = "Legion"
@@ -161,7 +161,7 @@ Veteran Decan
 Vexillarius
 */
 /datum/job/f13vexillarius
-	title = "Vexillarius"
+	title = "Legion Vexillarius"
 	flag = F13VEXILLARIUS
 	department_flag = LEGION
 	faction = "Legion"
@@ -178,7 +178,7 @@ Vexillarius
 	outfit = /datum/outfit/job/f13vexillarius
 
 /datum/outfit/job/f13vexillarius
-	name = "Vexillarius"
+	name = "Legion Vexillarius"
 	jobtype = /datum/job/f13vexillarius
 
 	id = null
@@ -213,7 +213,7 @@ Vexillarius
 Decan
 */
 /datum/job/f13decan
-	title = "Decanus"
+	title = "Legion Decanus"
 	flag = F13DECAN
 	department_flag = LEGION
 	faction = "Legion"
@@ -230,7 +230,7 @@ Decan
 	outfit = /datum/outfit/job/f13decan
 
 /datum/outfit/job/f13decan
-	name = "Decanus"
+	name = "Legion Decanus"
 	jobtype = /datum/job/f13decan
 
 	id = null
@@ -266,7 +266,7 @@ Decan
 Veteran
 */
 /datum/job/f13vetlegion
-	title = "Veteran Legionnaire"
+	title = "Veteran Legionary"
 	flag = F13VETLEGION
 	department_flag = LEGION
 	faction = "Legion"
@@ -283,7 +283,7 @@ Veteran
 	outfit = /datum/outfit/job/f13vetlegion
 
 /datum/outfit/job/f13vetlegion
-	name = "Veteran Legionnaire"
+	name = "Veteran Legionary"
 	jobtype = /datum/job/f13vetlegion
 
 	id = null
@@ -368,7 +368,7 @@ Legionary
 	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13explorer
-	title = "Explorer"
+	title = "Legion Explorer"
 	flag = F13EXPLORER
 	department_flag = LEGION
 	faction = "Legion"
@@ -416,7 +416,7 @@ Legionary
 	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13scout
-	title = "Scout"
+	title = "Legion Scout"
 	flag = F13SCOUT
 	department_flag = LEGION
 	faction = "Legion"
@@ -461,7 +461,7 @@ Legionary
 	H.add_trait(TRAIT_MONKEYLIKE)
 
 /datum/job/f13campfollower
-	title = "Camp Follower"
+	title = "Legion Camp Follower"
 	flag = F13CAMPFOLLOWER
 	department_flag = LEGION
 	faction = "Legion"

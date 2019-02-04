@@ -133,7 +133,7 @@
 	icon_state = "wt550[magazine ? "-[CEILING(get_ammo(0)/4, 1)*4]" : ""]"
 
 /obj/item/gun/ballistic/automatic/m90
-	name = "\improper M90gl Carbine"
+	name = "\improper M90gl carbine"
 	desc = "A three-round burst 5.56 toploading carbine, designated 'M-90gl'. Has an attached underbarrel grenade launcher which can be toggled on and off."
 	icon_state = "m90"
 	item_state = "m90"
@@ -204,8 +204,8 @@
 	return
 
 /obj/item/gun/ballistic/automatic/ar
-	name = "combat rifle mark II"
-	desc = "A robust assault rifle used by most likely advanced fighting forces."
+	name = "R22 carbine rifle"
+	desc = "A extremely early version of the assault rifles used later in the war, employs a balanced recoil system to allow for easier sustained firing."
 	icon_state = "arg"
 	item_state = "arg"
 	slot_flags = 0
@@ -358,7 +358,7 @@
 
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/syndicate
-	name = "anti materiel rifle mark II"
+	name = "anti materiel rifle (GRA)"
 	desc = "An illegally modified .50 cal sniper rifle with suppression compatibility. Quickscoping still doesn't work."
 	pin = /obj/item/firing_pin/implant/pindicate
 
@@ -450,6 +450,19 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
 	fire_delay = 1
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/automatic/assault_rifle/chinese
+	name = "chinese assault rifle"
+	desc = "A standard Chinese assault rifle, in use by Chinese Expeditionary Forces during the Invasion of Anchorage, Alaska. "
+	icon_state = "arg"
+	item_state = "chinese"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/r20
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	burst_size = 2
+	fire_delay = 0.5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
