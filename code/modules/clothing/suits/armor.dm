@@ -277,7 +277,7 @@
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	strip_delay = 30
 
-/obj/item/clothing/suit/armor/f13/
+/obj/item/clothing/suit/armor/f13/raider
 	name = "supa-fly raider armor"
 	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
 	icon_state = "supafly"
