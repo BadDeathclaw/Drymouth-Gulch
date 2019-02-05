@@ -25,7 +25,7 @@
 	else
 		return ..()
 
-/obj/item/dildo/attack_self(mob/user as mob)
+/obj/item/dildo/attack_self(mob/living/carbon/human/user as mob)
 	if(hole == CUM_TARGET_VAGINA)
 		hole = CUM_TARGET_ANUS
 	else
