@@ -339,6 +339,7 @@
 	can_be_pushed = FALSE
 	hat_offset = 3
 
+
 /obj/item/robot_module/security/do_transform_animation()
 	..()
 	to_chat(loc, "<span class='userdanger'>While you have picked the security module, you still have to follow your laws, NOT Space Law. \
@@ -403,6 +404,31 @@
 	hat_offset = -5
 	clean_on_move = TRUE
 
+//SexBot module
+/obj/item/robot_module/fisto_protectron
+	name = "Fisto"
+	basic_modules = list(
+		/obj/item/dildo/cyborg,
+		/obj/item/reagent_containers/spray/sexborg_oil)
+	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
+	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
+	cyborg_base_icon = "protectron"
+	moduleselect_icon = "protectron"
+	can_be_pushed = FALSE
+	hat_offset = 3
+
+/obj/item/robot_module/sexy_handy
+	name = "Hans"
+	basic_modules = list(
+		/obj/item/dildo/cyborg,
+		/obj/item/reagent_containers/spray/sexborg_oil)
+	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
+	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
+	cyborg_base_icon = "mediborg"
+	moduleselect_icon = "mediborg"
+	can_be_pushed = TRUE
+	hat_offset = 3
+
 /obj/item/reagent_containers/spray/cyborg_drying
 	name = "drying agent spray"
 	color = "#A000A0"
@@ -411,6 +437,10 @@
 /obj/item/reagent_containers/spray/cyborg_lube
 	name = "lube spray"
 	list_reagents = list("lube" = 250)
+
+/obj/item/reagent_containers/spray/sexborg_oil
+	name = "oil spray"
+	list_reagents = list("cooking_oil" = 250)
 
 /obj/item/robot_module/janitor/respawn_consumable(mob/living/silicon/robot/R, coeff = 1)
 	..()

@@ -790,6 +790,13 @@
 /mob/living/silicon/robot/modules/janitor
 	set_module = /obj/item/robot_module/janitor
 
+//sexytimes
+/mob/living/silicon/robot/modules/fisto_protectron
+	set_module = /obj/item/robot_module/fisto_protectron
+
+/mob/living/silicon/robot/modules/sexy_handy
+	set_module = /obj/item/robot_module/sexy_handy
+
 /mob/living/silicon/robot/modules/syndicate
 	icon_state = "synd_sec"
 	faction = list(ROLE_SYNDICATE)
