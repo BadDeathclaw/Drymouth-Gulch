@@ -96,7 +96,7 @@ obj/dugpit/New(lnk)
 	if((storedindex >= 4) || ((gravebody || gravecoffin) != null))
 		mypit.icon_state = "mound"
 		update_icon()
-	else if (2 > storedindex >= 3)
+	else if (2 > storedindex > 4)
 		mypit.icon_state = "mound_medium"
 		update_icon()
 	else if (storedindex <= 2)
