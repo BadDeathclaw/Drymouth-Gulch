@@ -83,3 +83,23 @@
 	dir = pick(1,2,4,8)
 	reagents.add_reagent("cum", rand(8,13))
 	add_blood_DNA(list("Unknown DNA" = "O+"))
+
+//begin redds code
+/obj/item/dildo/cyborg
+	name = "F.I.S.T.R. Machine"
+	desc = "Fully Integrated Sexual Tension Relief Machine"
+
+/obj/item/dildo/cyborg/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+	var/message = ""
+	if(istype(M, /mob/living/carbon/human) && M.is_nude())
+		if(hole == CUM_TARGET_VAGINA && M.has_vagina())
+			message = (user == M) ? pick("fucks their own pussy with \the [src]","shoves the [src] into their pussy", "jams the [src] into their pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
+		else if(hole == CUM_TARGET_ANUS && M.has_anus())
+			message = (user == M) ? pick("fucks their own ass with \the [src]","shoves the [src] into their ass", "jams the [src] into their ass") : pick("fucks [M]'s asshole with \the [src]", "jams \the [src] into [M]'s ass")
+	if(message)
+		user.visible_message("<font color=purple>[user] [message].</font>")
+		M.handle_post_sex(5, null, user)
+		playsound(loc, "honk/sound/interactions/bang[rand(4, 6)].ogg", 70, 1, -1)
+	else
+		return ..()
+//end redds code
