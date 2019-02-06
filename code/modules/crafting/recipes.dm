@@ -636,7 +636,7 @@
 	result = /obj/item/reagent_containers/pill/patch/healingpowder
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1)
-	time = 20
+	time = 150
 	category = CAT_DRUGS
 
 /datum/crafting_recipe/stimpak
