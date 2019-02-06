@@ -7,7 +7,7 @@
 	desc = "A basic power cell that holds 1 MJ of energy."
 	id = "basic_cell"
 	build_type = PROTOLATHE | AUTOLATHE |MECHFAB
-	materials = list(MAT_METAL = 700, MAT_GLASS = 50)
+	materials = list(MAT_METAL = 7000, MAT_GLASS = 500)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/empty
 	category = list("Misc","Power Designs","Machinery","initial")
@@ -18,7 +18,7 @@
 	desc = "A power cell that holds 10 MJ of energy."
 	id = "high_cell"
 	build_type = PROTOLATHE | AUTOLATHE | MECHFAB
-	materials = list(MAT_METAL = 700, MAT_GLASS = 60)
+	materials = list(MAT_METAL = 7000, MAT_GLASS = 600)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/high/empty
 	category = list("Misc","Power Designs")
@@ -29,7 +29,7 @@
 	desc = "A power cell that holds 20 MJ of energy."
 	id = "super_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(MAT_METAL = 700, MAT_GLASS = 70)
+	materials = list(MAT_METAL = 7000, MAT_GLASS = 700)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/super/empty
 	category = list("Misc","Power Designs")
@@ -40,7 +40,7 @@
 	desc = "A power cell that holds 30 MJ of energy."
 	id = "hyper_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(MAT_METAL = 700, MAT_GOLD = 150, MAT_SILVER = 150, MAT_GLASS = 80)
+	materials = list(MAT_METAL = 7000, MAT_GOLD = 1500, MAT_SILVER = 1500, MAT_GLASS = 800)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/hyper/empty
 	category = list("Misc","Power Designs")
@@ -51,7 +51,7 @@
 	desc = "A power cell that holds 40 MJ of energy."
 	id = "bluespace_cell"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(MAT_METAL = 800, MAT_GOLD = 120, MAT_GLASS = 160, MAT_DIAMOND = 160, MAT_TITANIUM = 300, MAT_BLUESPACE = 100)
+	materials = list(MAT_METAL = 8000, MAT_GOLD = 1200, MAT_GLASS = 1600, MAT_DIAMOND = 1600, MAT_TITANIUM = 3000, MAT_BLUESPACE = 1000)
 	construction_time=100
 	build_path = /obj/item/stock_parts/cell/bluespace/empty
 	category = list("Misc","Power Designs")
@@ -62,7 +62,7 @@
 	desc = "A device to automatically replace lights. Refill with working lightbulbs."
 	id = "light_replacer"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 1500, MAT_SILVER = 150, MAT_GLASS = 3000)
+	materials = list(MAT_METAL = 1500, MAT_SILVER = 1500, MAT_GLASS = 3000)
 	build_path = /obj/item/lightreplacer
 	category = list("Power Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE

@@ -175,7 +175,7 @@
 	desc = "A gun that fires many syringes."
 	id = "rapidsyringe"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000)
+	materials = list(MAT_METAL = 6000, MAT_GLASS = 1000)
 	build_path = /obj/item/gun/syringe/rapidsyringe
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL		//uwu
@@ -246,7 +246,7 @@
 	desc = "A laser pistol."
 	id = "laserpistol"
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 2500, MAT_URANIUM = 2000, MAT_METAL = 2500, MAT_TITANIUM = 1000)
+	materials = list(MAT_GOLD = 3000, MAT_URANIUM = 5000, MAT_METAL = 10000, MAT_TITANIUM = 2000)
 	build_path = /obj/item/gun/energy/laser/pistol
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -256,7 +256,7 @@
 	desc = "A laser pistol."
 	id = "laserrifle"
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 5000, MAT_URANIUM = 4000, MAT_METAL = 5000, MAT_TITANIUM = 2000)
+	materials = list(MAT_GOLD = 6000, MAT_URANIUM = 10000, MAT_METAL = 20000, MAT_TITANIUM = 4000)
 	build_path = /obj/item/gun/energy/laser
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -299,7 +299,7 @@
 	name = "Microfusion Cell"
 	id = "mfc"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000)
 	build_path =/obj/item/stock_parts/cell/ammo/mfc
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -308,7 +308,7 @@
 	name = "Electron Charge Pack"
 	id = "ecp"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 2000, MAT_DIAMOND = 2000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000, MAT_DIAMOND = 2000)
 	build_path = /obj/item/stock_parts/cell/ammo/ecp
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -360,7 +360,7 @@
 	desc = "A 24 round magazine for the advanced SMG"
 	id = "smgmag"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000)
+	materials = list(MAT_METAL = 12000)
 	build_path = /obj/item/ammo_box/magazine/smgm45
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -370,7 +370,7 @@
 	desc = "A 30 round toploader magazine for the advanced AR."
 	id = "armag"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000)
+	materials = list(MAT_METAL = 15000)
 	build_path = /obj/item/ammo_box/magazine/m556
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -426,7 +426,7 @@
 	desc = "A nice bulletproof vest."
 	id = "bulletarmor"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 2000, MAT_SILVER = 500)
+	materials = list(MAT_METAL = 2000, MAT_SILVER = 4000)
 	build_path = /obj/item/clothing/suit/armor/bulletproof
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

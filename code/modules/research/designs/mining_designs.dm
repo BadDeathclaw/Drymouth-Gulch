@@ -47,7 +47,7 @@
 	desc = "You could use it to cut limbs off of xenos! Or, you know, mine stuff."
 	id = "plasmacutter"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 1500, MAT_GLASS = 500, MAT_PLASMA = 400)
+	materials = list(MAT_METAL = 15000, MAT_GLASS = 5000, MAT_PLASMA = 4000)
 	build_path = /obj/item/gun/energy/plasmacutter
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
@@ -57,7 +57,7 @@
 	desc = "It's an advanced plasma cutter, oh my god."
 	id = "plasmacutter_adv"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000, MAT_PLASMA = 2000, MAT_GOLD = 500)
+	materials = list(MAT_METAL = 30000, MAT_GLASS = 10000, MAT_PLASMA = 20000, MAT_GOLD = 5000)
 	build_path = /obj/item/gun/energy/plasmacutter/adv
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
@@ -77,7 +77,7 @@
 	desc = "An upgraded version of the resonator that allows more fields to be active at once."
 	id = "superresonator"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000, MAT_GLASS = 1500, MAT_SILVER = 1000, MAT_URANIUM = 1000)
+	materials = list(MAT_METAL = 40000, MAT_GLASS = 15000, MAT_SILVER = 10000, MAT_URANIUM = 10000)
 	build_path = /obj/item/resonator/upgraded
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
@@ -87,7 +87,7 @@
 	desc = "A device which allows kinetic accelerators to be wielded by any organism."
 	id = "triggermod"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 2000, MAT_GLASS = 1500, MAT_GOLD = 1500, MAT_URANIUM = 1000)
+	materials = list(MAT_METAL = 20000, MAT_GLASS = 15000, MAT_GOLD = 15000, MAT_URANIUM = 10000)
 	build_path = /obj/item/borg/upgrade/modkit/trigger_guard
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO

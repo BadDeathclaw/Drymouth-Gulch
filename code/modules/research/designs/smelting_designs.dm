@@ -8,6 +8,14 @@
 	build_path = /obj/item/stack/sheet/plasteel
 	category = list("initial")
 
+/datum/design/rglass_alloy
+	name = "Glass + Iron alloy"
+	id = "rglass"
+	build_type = SMELTER
+	materials = list(MAT_GLASS = MINERAL_MATERIAL_AMOUNT, MAT_METAL = MINERAL_MATERIAL_AMOUNT)
+	build_path = /obj/item/stack/sheet/rglass
+	category = list("initial")
+
 
 /datum/design/plastitanium_alloy
 	name = "Plasma + Titanium alloy"
