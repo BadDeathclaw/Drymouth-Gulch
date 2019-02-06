@@ -36,10 +36,12 @@
 		user.lust = 5
 
 /datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user.a_intent == INTENT_HELP)
+	if(user.a_intent == INTENT_HELP && target.gender == FEMALE)
 		user.visible_message("<span class='warning'>\The [user] gently gropes \the [target]'s breasts.</span>")
-	else if(user.a_intent == INTENT_HARM)
+	else if(user.a_intent == INTENT_HARM && target.gender == FEMALE)
 		user.visible_message("<span class='warning'>\The [user] aggressively gropes \the [target]'s breasts.</span>")
+	else
+		return
 
 /datum/interaction/lewd/oral
 	command = "suckvag"
