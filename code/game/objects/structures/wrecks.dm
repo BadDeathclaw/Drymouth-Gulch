@@ -324,3 +324,27 @@
 	icon_state = "secwaybroke"
 	bound_width = 32
 	bound_height = 32
+
+/obj/structure/wreck/trash/brokenvendor
+	name = "Broken Vendor"
+	desc = "Looks like it it fell down by force."
+	icon = 'icons/fallout/trash.dmi'
+	icon_state = "technical_pile3"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/trash/machinepile
+	name = "Broken Machinery"
+	desc = "Looks like broken machinery."
+	icon = 'icons/fallout/trash.dmi'
+	icon_state = "technical_pile1"
+	bound_width = 32
+	bound_height = 32
+
+/obj/structure/wreck/trash/machinepiletwo
+	name = "Broken Machinery"
+	desc = "Looks like broken machinery."
+	icon = 'icons/fallout/trash.dmi'
+	icon_state = "technical_pile2"
+	bound_width = 32
+	bound_height = 32

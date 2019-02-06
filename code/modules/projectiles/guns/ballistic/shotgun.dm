@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/shotgun
-	name = "Ithaca Model 37"
+	name = "Ithaca M37"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "Itaca"
 	item_state = "huntingshotgun"
@@ -10,7 +10,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -260,7 +260,7 @@
 
 // RIOT SHOTGUN //
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
-	name = "BHS M1"
+	name = "Remington 870"
 	desc = "A Big Heavy Shotgun Model 1, the staple of pre-war riot controll grade shotguns with a longer magazine and a fixed heavy reinforced tactical stock designed for tactical use when tactically bashing heads."
 	icon_state = "riotshotgun"
 	item_state = "shotgunriot"
@@ -326,9 +326,3 @@
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-
-
-
-
-
-

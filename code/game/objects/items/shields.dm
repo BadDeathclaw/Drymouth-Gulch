@@ -87,6 +87,21 @@
 	resistance_flags = FLAMMABLE
 	block_chance = 25
 
+/obj/item/shield/legion/buckler
+	name = "legion buckler"
+	desc = "A lightweight well balanced shield made out of a hard oak and lashed together with solid iron bands. It has a legion emblem charred onto the inside."
+	icon_state = "buckler"
+	item_state = "buckler"
+	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
+	materials = list()
+	resistance_flags = FLAMMABLE
+	force = 15
+	block_chance = 35
+	throwforce = 15
+	throw_speed = 4
+	throw_range = 7
+
 /obj/item/shield/energy
 	name = "energy combat shield"
 	desc = "A shield that reflects almost all energy projectiles, but is useless against physical attacks. It can be retracted, expanded, and stored anywhere."

@@ -243,6 +243,14 @@
 	item_state = "skull"
 	strip_delay = 100
 
+/obj/item/clothing/head/helmet/durathread//F13: Needs numbers tuned and perhaps icon.
+	name = "makeshift helmet"
+	desc = "A hardhat with strips of leather and durathread for additional blunt protection."
+	icon_state = "durathread"
+	item_state = "durathread"
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 20,"energy" = 10, "bomb" = 30, "bio" = 15, "rad" = 20, "fire" = 100, "acid" = 50)
+	strip_delay = 60
+
 //Fallout 13
 /obj/item/clothing/head/helmet/knight/fluff/metal
 	name = "metal helmet"
@@ -317,7 +325,7 @@
 	item_state = "combat_helmet"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 20)
 	strip_delay = 50
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	flash_protect = 1
 	tint = 0

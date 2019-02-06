@@ -14,8 +14,8 @@
 	resistance_flags = FLAMMABLE
 	var/mopping = 0
 	var/mopcount = 0
-	var/mopcap = 5
-	var/mopspeed = 20
+	var/mopcap = 7
+	var/mopspeed = 25
 	force_string = "robust... against germs"
 	var/insertable = TRUE
 
@@ -77,7 +77,7 @@
 /obj/item/mop/advanced
 	desc = "The most advanced tool in a custodian's arsenal, complete with a condenser for self-wetting! Just think of all the viscera you will clean up with this!"
 	name = "advanced mop"
-	mopcap = 10
+	mopcap = 20
 	icon_state = "advmop"
 	item_state = "mop"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
@@ -85,7 +85,7 @@
 	force = 6
 	throwforce = 8
 	throw_range = 4
-	mopspeed = 15
+	mopspeed = 45
 	var/refill_enabled = TRUE //Self-refill toggle for when a janitor decides to mop with something other than water.
 	var/refill_rate = 1 //Rate per process() tick mop refills itself
 	var/refill_reagent = "water" //Determins what reagent to use for refilling, just in case someone wanted to make a HOLY MOP OF PURGING
