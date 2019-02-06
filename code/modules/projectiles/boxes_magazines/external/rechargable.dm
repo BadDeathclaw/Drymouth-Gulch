@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/recharge
- 	name = "power pack"
+ 	name = "microfusion cell"
  	desc = "A rechargeable, detachable battery that serves as a magazine for laser rifles."
  	icon_state = "oldrifle-20"
  	ammo_type = /obj/item/ammo_casing/caseless/laser

@@ -249,7 +249,7 @@
 	required_container = /obj/item/slime_extract/orange
 	required_other = 1
 
-/datum/chemical_reaction/slime/slimefire
+/* /datum/chemical_reaction/slime/slimefire
 	name = "Slime fire"
 	id = "m_fire"
 	required_reagents = list("plasma" = 1)
@@ -270,7 +270,7 @@
 	if(holder && holder.my_atom)
 		var/turf/open/T = get_turf(holder.my_atom)
 		if(istype(T))
-			T.atmos_spawn_air("plasma=50;TEMP=1000")
+			T.atmos_spawn_air("plasma=50;TEMP=1000") */
 
 
 /datum/chemical_reaction/slime/slimesmoke
@@ -539,7 +539,7 @@
 	..()
 
 //Sepia
-/datum/chemical_reaction/slime/slimestop
+/* /datum/chemical_reaction/slime/slimestop
 	name = "Slime Stop"
 	id = "m_stop"
 	required_reagents = list("plasma" = 1)
@@ -550,7 +550,7 @@
 	var/turf/T = get_turf(holder.my_atom)
 	var/list/M = list(get_mob_by_key(holder.my_atom.fingerprintslast))
 	new /obj/effect/timestop(T, null, null, M)
-	..()
+	..() */
 
 /datum/chemical_reaction/slime/slimecamera
 	name = "Slime Camera"
@@ -621,7 +621,7 @@
 		S.visible_message("<span class='danger'>Infused with plasma, the core begins to quiver and grow, and a new baby slime emerges from it!</span>")
 	..()
 
-/datum/chemical_reaction/slime/slimebomb
+/* /datum/chemical_reaction/slime/slimebomb
 	name = "Clusterblorble"
 	id = "slimebomb"
 	required_reagents = list("slimejelly" = 1)
@@ -646,7 +646,7 @@
 
 /datum/chemical_reaction/slime/slime_transfer/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/transference(get_turf(holder.my_atom))
-	..()
+	..() */
 
 /datum/chemical_reaction/slime/flight_potion
 	name = "Flight Potion"
