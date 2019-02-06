@@ -852,6 +852,15 @@
 	time = 40
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/solids
+	name = "Solid beaker"
+	result = /obj/item/reagent_containers/glass/beaker/solids
+	reqs = list(/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WELDER)
+	time = 30
+	category = CAT_MEDICAL
+
  /datum/crafting_recipe/syringe
 	name = "Syringe"
 	result = /obj/item/reagent_containers/syringe
@@ -868,7 +877,7 @@
 				/obj/item/stack/cable_coil = 15,
 				/obj/item/reagent_containers/syringe = 2,
 				/obj/item/stack/sheet/plastic = 3,
-				/obj/item/assembly/infra = 1,
+				/obj/item/assembly/infra = 2,
 				/obj/item/assembly/timer = 2,
 				/obj/item/assembly/igniter = 1,
 				/obj/item/stack/sheet/glass = 15)
