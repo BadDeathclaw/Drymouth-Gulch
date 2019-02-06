@@ -254,7 +254,7 @@
 		/obj/item/clockwork/slab/cyborg,
 		/obj/item/clockwork/weapon/ratvarian_spear,
 		/obj/item/clockwork/replica_fabricator/cyborg)
-	moduleselect_icon = "standard"
+	moduleselect_icon = "handy"
 	hat_offset = -3
 
 /obj/item/robot_module/medical
@@ -283,8 +283,8 @@
 	ratvar_modules = list(
 		/obj/item/clockwork/slab/cyborg/medical,
 		/obj/item/clockwork/weapon/ratvarian_spear)
-	cyborg_base_icon = "medical"
-	moduleselect_icon = "medical"
+	cyborg_base_icon = "mediborg"
+	moduleselect_icon = "mediborg"
 	can_be_pushed = FALSE
 	hat_offset = 3
 
