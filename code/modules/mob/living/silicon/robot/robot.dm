@@ -2,10 +2,10 @@
 	name = "Cyborg"
 	real_name = "Cyborg"
 	icon = 'icons/mob/robots.dmi'
-	icon_state = "handy"
+	icon_state = "robot"
 	maxHealth = 100
 	health = 100
-	bubble_icon = "handy"
+	bubble_icon = "robot"
 	designation = "Default" //used for displaying the prefix & getting the current module of cyborg
 	has_limbs = 1
 
@@ -208,9 +208,7 @@
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
 	"Janitor" = /obj/item/robot_module/janitor, \
-	"Service" = /obj/item/robot_module/butler, \
-	"Fisto" = /obj/item/robot_module/fisto_protectron, \
-	"Hans (Fisto)" = /obj/item/robot_module/sexy_handy)
+	"Service" = /obj/item/robot_module/butler)
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper
 	if(!CONFIG_GET(flag/disable_secborg))
