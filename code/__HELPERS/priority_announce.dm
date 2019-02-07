@@ -5,7 +5,7 @@
 	var/announcement
 
 	if(type == "Priority")
-		announcement += "<h1 class='alert'>Priority Announcement</h1>"
+		announcement += "<h1 class='alert'>Vault-Tec Announcement</h1>"
 		if (title && length(title) > 0)
 			announcement += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 	else if(type == "Captain")

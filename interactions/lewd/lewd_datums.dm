@@ -8,14 +8,14 @@
 	interaction_sound = null
 	max_distance = 1
 
-/datum/interaction/lewd/kiss/post_interaction(mob/user, mob/target)
+/datum/interaction/lewd/kiss/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
 	if(user.lust < 5)
 		user.lust = 5
 	if(target.lust < 5)
 		target.lust = 5
 
-/datum/interaction/lewd/kiss/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/kiss/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.lust >= 3)
 		user.visible_message("<span class='warning'>\The [user] gives an intense, lingering kiss to \the [target].</span>")
 	else
@@ -30,16 +30,18 @@
 	interaction_sound = null
 	max_distance = 1
 
-/datum/interaction/lewd/titgrope/post_interaction(mob/user, mob/target)
+/datum/interaction/lewd/titgrope/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
 	if(user.lust < 5)
 		user.lust = 5
 
-/datum/interaction/lewd/titgrope/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.a_intent == INTENT_HELP)
 		user.visible_message("<span class='warning'>\The [user] gently gropes \the [target]'s breasts.</span>")
 	else if(user.a_intent == INTENT_HARM)
 		user.visible_message("<span class='warning'>\The [user] aggressively gropes \the [target]'s breasts.</span>")
+	else
+		return
 
 /datum/interaction/lewd/oral
 	command = "suckvag"
@@ -53,7 +55,7 @@
 	require_target_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/oral/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/oral/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_oral(target)
 
 /datum/interaction/lewd/oral/blowjob
@@ -76,7 +78,7 @@
 	require_target_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/fuck/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/fuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_vaginal(target)
 
 /datum/interaction/lewd/fuck/anal
@@ -86,7 +88,7 @@
 	require_target_anus = TRUE
 	user_not_tired = TRUE
 
-/datum/interaction/lewd/fuck/anal/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/fuck/anal/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_anal(target)
 
 /datum/interaction/lewd/finger
@@ -99,7 +101,7 @@
 	require_target_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/finger/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/finger/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_fingering(target)
 
 /datum/interaction/lewd/fingerass
@@ -112,7 +114,7 @@
 	require_target_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/fingerass/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/fingerass/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_fingerass(target)
 
 
@@ -125,7 +127,7 @@
 	require_user_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/facefuck/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/facefuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_facefuck(target)
 
 /datum/interaction/lewd/throatfuck
@@ -138,7 +140,7 @@
 	require_user_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/throatfuck/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/throatfuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_throatfuck(target)
 
 /datum/interaction/lewd/handjob
@@ -151,7 +153,7 @@
 	require_target_naked = TRUE
 	max_distance = 1
 
-/datum/interaction/lewd/handjob/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/handjob/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_handjob(target)
 
 /datum/interaction/lewd/breastfuck
@@ -165,7 +167,7 @@
 	require_target_vagina = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/breastfuck/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/breastfuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_breastfuck(target)
 
 /datum/interaction/lewd/mount
@@ -180,7 +182,7 @@
 	require_target_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/mount/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/mount/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_mount(target)
 
 /datum/interaction/lewd/mountass
@@ -196,7 +198,7 @@
 	require_target_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/mountass/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/mountass/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_mountass(target)
 
 /datum/interaction/lewd/rimjob
@@ -209,7 +211,7 @@
 	require_target_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/rimjob/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/rimjob/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_rimjob(target)
 
 /datum/interaction/lewd/mountface
@@ -222,7 +224,7 @@
 	require_user_naked = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/mountface/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/mountface/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_mountface(target)
 
 /datum/interaction/lewd/lickfeet
@@ -232,7 +234,7 @@
 	require_user_mouth = TRUE
 	max_distance = 1
 
-/datum/interaction/lewd/lickfeet/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/lickfeet/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_lickfeet(target)
 
 /datum/interaction/lewd/grindface
@@ -242,7 +244,7 @@
 	require_target_mouth = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/grindface/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/grindface/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_grindface(target)
 
 /datum/interaction/lewd/grindmouth
@@ -252,9 +254,9 @@
 	require_target_mouth = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/grindmouth/display_interaction(mob/user, mob/target)
+/datum/interaction/lewd/grindmouth/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_grindmouth(target)
-	
+
 
 /datum/interaction/lewd/thighs
 	command = "thigh_smother"
@@ -267,10 +269,10 @@
 	write_log_user = "thigh-trapped"
 	write_log_target = "was smothered by"
 
- 
-/datum/interaction/lewd/thighs/display_interaction(var/mob/user, var/mob/target) 
+
+/datum/interaction/lewd/thighs/display_interaction(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target)
     user.thigh_smother(target)
-	
+
 /datum/interaction/lewd/nuts
 	command = "nut_face"
 	description = "Nuts to face."
@@ -282,5 +284,5 @@
 	write_log_user = "make-them-suck-their-nuts"
 	write_log_target = "was made to suck nuts by"
 
-/datum/interaction/lewd/nuts/display_interaction(var/mob/user, var/mob/target)
+/datum/interaction/lewd/nuts/display_interaction(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target)
 	user.nut_face(target)

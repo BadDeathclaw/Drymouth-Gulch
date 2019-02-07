@@ -11,7 +11,7 @@
 	force = 2
 	var/stage = EMPTY
 	var/list/beakers = list()
-	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle)
+	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/beaker/solids)
 	var/affected_area = 3
 	var/obj/item/assembly_holder/nadeassembly = null
 	var/assemblyattacher

@@ -616,60 +616,6 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_MISC
 
-/datum/crafting_recipe/hudsunsec
-	name = "Security HUDsunglasses"
-	result = /obj/item/clothing/glasses/hud/security/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/security = 1,
-				  /obj/item/clothing/glasses/sunglasses = 1,
-				  /obj/item/stack/cable_coil = 5)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/hudsunsecremoval
-	name = "Security HUD removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/hudsunmed
-	name = "Medical HUDsunglasses"
-	result = /obj/item/clothing/glasses/hud/health/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/health = 1,
-				  /obj/item/clothing/glasses/sunglasses = 1,
-				  /obj/item/stack/cable_coil = 5)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/hudsunmedremoval
-	name = "Medical HUD removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/health/sunglasses = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/beergoggles
-	name = "Beer Goggles"
-	result = /obj/item/clothing/glasses/sunglasses/reagent
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/science = 1,
-				  /obj/item/clothing/glasses/sunglasses = 1,
-				  /obj/item/stack/cable_coil = 5)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/beergogglesremoval
-	name = "Beer Goggles removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/sunglasses/reagent = 1)
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/jet
 	name = "Jet"
 	result = /obj/item/reagent_containers/pill/patch/jet
@@ -685,43 +631,12 @@
 	time = 20
 	category = CAT_MISC
 
-/datum/crafting_recipe/metalarmor
-	name = "metal armor"
-	result = /obj/item/clothing/suit/armor/f13/bmetalarmor
-	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 120
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/Imetalarmor
-	name = "improved metal armor"
-	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
-	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/stack/sheet/metal = 4,
-				/obj/item/stack/sheet/plasteel = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 120
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/IImetalarmor
-	name = "upgrading metal armor"
-	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
-	reqs = list(/obj/item/clothing/suit/armor/f13/bmetalarmor = 1,
-				/obj/item/stack/cable_coil = 1,
-				/obj/item/stack/sheet/plasteel = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 120
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/healpowder
 	name = "Healing powder"
 	result = /obj/item/reagent_containers/pill/patch/healingpowder
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 1)
-	time = 20
+	time = 150
 	category = CAT_DRUGS
 
 /datum/crafting_recipe/stimpak
@@ -839,7 +754,49 @@
 /datum/crafting_recipe/beaker
 	name = "Beaker"
 	result = /obj/item/reagent_containers/glass/beaker
-	reqs = list(/obj/item/stack/sheet/glass = 1)
+	reqs = list(/obj/item/stack/sheet/glass = 2)
 	tools = list(TOOL_WELDER)
 	time = 10
+	category 
+  
+/datum/crafting_recipe/beaker_large
+	name = "Large beaker"
+	result = /obj/item/reagent_containers/glass/beaker/large
+	reqs = list(/obj/item/stack/sheet/glass = 6)
+	tools = list(TOOL_WELDER)
+	time = 40
 	category = CAT_MEDICAL
+
+/datum/crafting_recipe/solids
+	name = "Solid beaker"
+	result = /obj/item/reagent_containers/glass/beaker/solids
+	reqs = list(/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WELDER)
+	time = 30
+	category = CAT_MEDICAL
+
+ /datum/crafting_recipe/syringe
+	name = "Syringe"
+	result = /obj/item/reagent_containers/syringe
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/glass = 1)
+	tools = list(TOOL_WIRECUTTER)
+	time = 10
+	category = CAT_MEDICAL
+
+ /datum/crafting_recipe/syringegun
+	name = "Syringe gun"
+	result = /obj/item/gun/syringe
+	reqs = list(/obj/item/stack/rods = 20,
+				/obj/item/stack/cable_coil = 15,
+				/obj/item/reagent_containers/syringe = 2,
+				/obj/item/stack/sheet/plastic = 3,
+				/obj/item/assembly/infra = 2,
+				/obj/item/assembly/timer = 2,
+				/obj/item/assembly/igniter = 1,
+				/obj/item/stack/sheet/glass = 15)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_MEDICAL
+
