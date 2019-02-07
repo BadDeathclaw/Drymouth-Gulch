@@ -96,6 +96,11 @@
 		return FALSE
 	return TRUE//Humans can use guns and such
 
+/mob/living/carbon/human/is_super_advanced_tool_user()
+	if(has_trait(TRAIT_TECHNOPHREAK))
+		return TRUE
+	return FALSE // You're not a technophreak without training!
+
 /mob/living/carbon/human/reagent_check(datum/reagent/R)
 	return dna.species.handle_chemicals(R,src)
 	// if it returns 0, it will run the usual on_mob_life for that reagent. otherwise, it will stop after running handle_chemicals for the species.
