@@ -30,6 +30,8 @@
 
 	var/renamedByPlayer = FALSE //set when a player uses a pen on a renamable object
 
+	var/super_advanced_technology = FALSE
+
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
 		if("obj_flags")
@@ -242,3 +244,37 @@
 		current_skin = choice
 		icon_state = unique_reskin[choice]
 		to_chat(M, "[src] is now skinned as '[choice].'")
+
+/obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
+	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
+		to_chat(user, "<span class='warning'>[src] needs to be on the floor to be secured!</span>")
+		return FAILED_UNFASTEN
+	if(!user.is_super_advanced_tool_user() && src.super_advanced_technology)
+		to_chat(user, "<span class='warning'>You don't understand the technology well enough to do this!</span>")
+		return FAILED_UNFASTEN
+	return SUCCESSFUL_UNFASTEN
+
+/obj/proc/default_unfasten_wrench(mob/user, obj/item/I, time = 20) //try to unwrench an object in a WONDERFUL DYNAMIC WAY
+	if(!(flags_1 & NODECONSTRUCT_1) && I.tool_behaviour == TOOL_WRENCH)
+		var/can_be_unfasten = can_be_unfasten_wrench(user)
+		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
+			return can_be_unfasten
+		if(time)
+			to_chat(user, "<span class='notice'>You begin [anchored ? "un" : ""]securing [src]...</span>")
+		I.play_tool_sound(src, 50)
+		var/prev_anchored = anchored
+		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
+		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
+			to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [src].</span>")
+			anchored = !anchored
+			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
+			return SUCCESSFUL_UNFASTEN
+		return FAILED_UNFASTEN
+	return CANT_UNFASTEN
+
+/obj/proc/unfasten_wrench_check(prev_anchored, mob/user) //for the do_after, this checks if unfastening conditions are still valid
+	if(anchored != prev_anchored)
+		return FALSE
+	if(can_be_unfasten_wrench(user, TRUE) != SUCCESSFUL_UNFASTEN) //if we aren't explicitly successful, cancel the fuck out
+		return FALSE
+	return TRUE

@@ -1339,8 +1339,8 @@
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 30
-	addiction_threshold = 20
+	overdose_threshold = 20
+	addiction_threshold = 10
 
 /datum/reagent/medicine/medx/on_mob_add(mob/M)
 	..()

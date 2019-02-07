@@ -195,7 +195,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("dresser", /obj/structure/dresser, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("picture frame", /obj/item/wallframe/picture, 1, time = 10),\
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("wooden buckler", /obj/item/shield/riot/buckler, 20, time = 40), \
+	new/datum/stack_recipe("wooden buckler", /obj/item/shield/legion/buckler, 20, time = 40), \
 	new/datum/stack_recipe("apiary", /obj/structure/beebox, 40, time = 50),\
 	new/datum/stack_recipe("tiki mask", /obj/item/clothing/mask/gas/tiki_mask, 2), \
 	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10),\
@@ -204,6 +204,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("baseball bat", /obj/item/twohanded/baseball, 5, time = 15),\
 	new/datum/stack_recipe("bonfire", /obj/structure/bonfire, 15, time = 60, one_per_turf = TRUE),\
+	new/datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/wood
@@ -231,11 +232,12 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	amount = 5
 
 /*
- * Cloth
+ * Cloths
  */
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
-	new/datum/stack_recipe("grey jumpsuit", /obj/item/clothing/under/color/grey, 3), \
-	new/datum/stack_recipe("black shoes", /obj/item/clothing/shoes/sneakers/black, 2), \
+	new/datum/stack_recipe("white jumpsuit", /obj/item/clothing/under/color/white, 3), \
+	new/datum/stack_recipe("white shoes", /obj/item/clothing/shoes/sneakers/white, 2), \
+	new/datum/stack_recipe("white scarf", /obj/item/clothing/neck/scarf, 1), \
 	null, \
 	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
@@ -252,12 +254,15 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("empty sandbag", /obj/item/emptysandbag, 4), \
 	null, \
 	new/datum/stack_recipe("fingerless gloves", /obj/item/clothing/gloves/fingerless, 1), \
-	new/datum/stack_recipe("black gloves", /obj/item/clothing/gloves/color/black, 3), \
+	new/datum/stack_recipe("white gloves", /obj/item/clothing/gloves/color/white, 3), \
+	new/datum/stack_recipe("white softcap", /obj/item/clothing/head/soft/mime, 2), \
+	new/datum/stack_recipe("white beanie", /obj/item/clothing/head/beanie, 2), \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2), \
 	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2), \
 	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
+	null, \
 	))
 
 /obj/item/stack/sheet/cloth
@@ -283,6 +288,19 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 
 /obj/item/stack/sheet/cloth/three
 	amount = 3
+
+/obj/item/stack/sheet/cotton
+	name = "raw cotton bundle"
+	desc = "A bundle of raw cotton ready to be spun on the loom."
+	singular_name = "raw cotton ball"
+	icon_state = "sheet-cotton"
+	is_fabric = TRUE
+	resistance_flags = FLAMMABLE
+	force = 0
+	throwforce = 0
+	merge_type = /obj/item/stack/sheet/cotton
+	pull_effort = 30
+	loom_result = /obj/item/stack/sheet/cloth
 
 /*
  * Cardboard
@@ -575,3 +593,42 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	amount = 20
 /obj/item/stack/sheet/paperframes/fifty
 	amount = 50
+
+	/*
+ * Durathread (This is the best solution I could come up with to the retarded hierarchy problem porting this okay?)
+ */
+ //It'll be changed If we ever decide to add more fabric materials on f13 to just have cloth as the parent.
+ GLOBAL_LIST_INIT(durathread_recipes, list(
+ new /datum/stack_recipe("medical gauze", /obj/item/stack/medical/gauze, 1, 2, 6)))
+
+/obj/item/stack/sheet/durathread
+	name = "durathread"
+	desc = "A fabric sown from incredibly durable threads, known for its usefulness in armor production."
+	singular_name = "durathread roll"
+	icon_state = "sheet-durathread"
+	item_state = "sheet-durathread"
+	merge_type = /obj/item/stack/sheet/durathread
+
+/obj/item/stack/sheet/durathread/Initialize(mapload, new_amount, merge = TRUE)
+	recipes = GLOB.durathread_recipes
+	return ..()
+
+/obj/item/stack/sheet/durathread/ten
+	amount = 10
+
+/obj/item/stack/sheet/durathread/five
+	amount = 5
+
+/obj/item/stack/sheet/durathread/three
+	amount = 3
+
+/obj/item/stack/sheet/durathreadraw
+	name = "raw durathread bundle"
+	desc = "A bundle of raw durathread ready to be spun on the loom."
+	singular_name = "raw durathread ball"
+	is_fabric = TRUE
+	icon_state = "sheet-durathreadraw"
+	merge_type = /obj/item/stack/sheet/durathreadraw
+	pull_effort = 70
+	loom_result = /obj/item/stack/sheet/durathread
+

@@ -384,16 +384,16 @@
 				""
 				)
 
-	var/loot8 = list(
+/*	var/loot8 = list(
 				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45b,
 				""
-				)
+				)*/
 /obj/effect/spawner/lootdrop/f13/armor/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7)
 	. = ..()
 
 
-/obj/effect/spawner/lootdrop/f13/armor/tier5 //TIER 5 ARMOR
+/*/obj/effect/spawner/lootdrop/f13/armor/tier5 //TIER 5 ARMOR
 	name = "tier 5 armor"
 	lootcount = 1
 	var/loot1 = list(
@@ -426,7 +426,7 @@
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5/Initialize(mapload) //on mapload, pick what shit to spawn
 	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7)
-	. = ..()
+	. = ..()*/
 
 /* ------------------------------------------------
    ---------------MEDICAL SPAWNERS-----------------
@@ -577,7 +577,7 @@
 				/obj/item/claymore/machete/golf,
 				/obj/item/claymore/machete,
 				/obj/item/circular_saw,
-				/obj/item/shield/riot/buckler,
+				/obj/item/shield/legion/buckler,
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 //TIER 4 MELEE WEAPON
@@ -586,7 +586,7 @@
 
 	loot = list(
 				/obj/item/twohanded/fireaxe,
-				/obj/item/twohanded/fireaxe/sledgehammer,
+				/obj/item/twohanded/sledgehammer,
 				/obj/item/twohanded/fireaxe/bmprsword,
 				/obj/item/shield/riot
 				)

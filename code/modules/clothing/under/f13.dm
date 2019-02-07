@@ -207,6 +207,12 @@
 	item_state = "combat_shirt"
 	item_color = "combat_shirt"
 
+/obj/item/clothing/under/f13/Retro_Biker_Vest
+	name = "future vest"
+	desc = "A Pink Vest with Black Pants. Quite futuristic looking."
+	icon_state = "Biker"
+	item_state = "Biker"
+
 
 //Minor Factions
 

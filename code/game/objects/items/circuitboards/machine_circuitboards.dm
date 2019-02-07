@@ -31,6 +31,10 @@
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1)
 
+/obj/item/circuitboard/machine/autolathe/constructionlathe
+	name = "Constructionlathe (Machine Board)"
+	build_path = /obj/machinery/autolathe/constructionlathe
+
 /obj/item/circuitboard/machine/clonepod
 	name = "Clone Pod (Machine Board)"
 	build_path = /obj/machinery/clonepod
@@ -375,7 +379,7 @@
 		/obj/item/stock_parts/manipulator = 1)
 	needs_anchored = FALSE
 
-/obj/item/circuitboard/machine/processor/attackby(obj/item/I, mob/user, params)
+/* /obj/item/circuitboard/machine/processor/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		if(build_path == /obj/machinery/processor)
 			name = "Slime Processor (Machine Board)"
@@ -390,7 +394,7 @@
 
 /obj/item/circuitboard/machine/processor/slime
 	name = "Slime Processor (Machine Board)"
-	build_path = /obj/machinery/processor/slime
+	build_path = /obj/machinery/processor/slime */
 
 /obj/item/circuitboard/machine/smartfridge
 	name = "Smartfridge (Machine Board)"

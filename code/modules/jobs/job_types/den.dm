@@ -1,7 +1,7 @@
 /*
 Sheriff
 */
-/datum/job/f13sheriff
+/datum/job/den/f13sheriff
 	title = "Sheriff"
 	flag = F13SHERIFF
 	department_flag = DEN
@@ -14,11 +14,11 @@ Sheriff
 	exp_requirements = 60
 	exp_type = EXP_TYPE_DEN
 
-	outfit = /datum/outfit/job/f13sheriff
+	outfit = /datum/outfit/job/den/f13sheriff
 
-/datum/outfit/job/f13sheriff
+/datum/outfit/job/den/f13sheriff
 	name = "Sheriff"
-	jobtype = /datum/job/f13sheriff
+	jobtype = /datum/job/den/f13sheriff
 
 	id = /obj/item/card/id/sheriff
 	belt = null
@@ -39,7 +39,7 @@ Sheriff
 	//pick("grey", "white", "yellow", "purple", "brown", "whatever")
 	//var/item1_type = pick( /obj/item/stack/spacecash/c10, /obj/item/stack/spacecash/c100, /obj/item/stack/spacecash/c1000, /obj/item/stack/spacecash/c20, /obj/item/stack/spacecash/c200, /obj/item/stack/spacecash/c50, /obj/item/stack/spacecash/c500)
 
-	/datum/outfit/job/f13sheriff/pre_equip(mob/living/carbon/human/H)
+	/datum/outfit/job/den/f13sheriff/pre_equip(mob/living/carbon/human/H)
 		..()
 		r_pocket = pick(/obj/item/flashlight/flare/torch, /obj/item/flashlight/flare)
 		belt = pick(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/item/gun/ballistic/revolver/m29, /obj/item/gun/ballistic/revolver/colt6250)
@@ -47,7 +47,7 @@ Sheriff
 Settler
 */
 
-/datum/job/f13settler
+/datum/job/den/f13settler
 	title = "Settler"
 	flag = F13SETTLER
 	department_flag = DEN
@@ -57,11 +57,11 @@ Settler
 	supervisors = "the sheriff"
 	selection_color = "#dcba97"
 
-	outfit = /datum/outfit/job/f13settler
+	outfit = /datum/outfit/job/den/f13settler
 
-/datum/outfit/job/f13settler
+/datum/outfit/job/den/f13settler
 	name = "Settler"
-	jobtype = /datum/job/f13settler
+	jobtype = /datum/job/den/f13settler
 
 	ears = 			/obj/item/radio/headset/headset_den
 	id = null
@@ -70,7 +70,7 @@ Settler
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
 
-/datum/outfit/job/f13settler/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
@@ -87,7 +87,7 @@ Settler
 Preacher
 */
 
-/datum/job/f13preacher
+/datum/job/den/f13preacher
 	title = "Preacher"
 	flag = F13PREACHER
 	department_head = list("Captain")
@@ -96,17 +96,17 @@ Preacher
 	faction = "Den"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "your deity."
+	supervisors = "Your Master(s)."
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/f13preacher
+	outfit = /datum/outfit/job/den/f13preacher
 
 	access = list()
 	minimal_access = list()
 
 
 
-/datum/job/f13preacher/after_spawn(mob/living/H, mob/M)
+/datum/job/den/f13preacher/after_spawn(mob/living/H, mob/M)
 	if(H.mind)
 		H.mind.isholy = TRUE
 
@@ -172,9 +172,9 @@ Preacher
 	SSblackbox.record_feedback("text", "religion_deity", 1, "[new_deity]", 1)
 
 
-/datum/outfit/job/f13preacher
+/datum/outfit/job/den/f13preacher
 	name = "Preacher"
-	jobtype = /datum/job/f13preacher
+	jobtype = /datum/job/den/f13preacher
 	id = null
 	ears = /obj/item/radio/headset/headset_den
 	belt = null
@@ -195,7 +195,7 @@ Preacher
 		/obj/item/storage/fancy/candle_box, \
 		/obj/item/storage/bag/money/small/settler)
 
-/datum/outfit/job/f13preacher/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/den/f13preacher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \

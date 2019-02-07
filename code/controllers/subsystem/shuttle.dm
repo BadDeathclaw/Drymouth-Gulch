@@ -141,7 +141,7 @@ SUBSYSTEM_DEF(shuttle)
 		message_admins(msg)
 		log_game("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
 		emergencyNoRecall = TRUE
-		priority_announce("Catastrophic casualties detected: crisis shuttle protocols activated - jamming recall signals across all frequencies.")
+		priority_announce("Catastrophic casualties detected: crisis train protocols activated - jamming recall signals across all frequencies.",null,null,"Vault-Tec")
 		if(emergency.timeLeft(1) > emergencyCallTime * 0.4)
 			emergency.request(null, set_coefficient = 0.4)
 
@@ -185,22 +185,22 @@ SUBSYSTEM_DEF(shuttle)
 
 	switch(emergency.mode)
 		if(SHUTTLE_RECALL)
-			to_chat(user, "The emergency shuttle may not be called while returning to CentCom.")
+			to_chat(user, "The emergency train may not be called while returning to Vault-Tec.")
 			return
 		if(SHUTTLE_CALL)
-			to_chat(user, "The emergency shuttle is already on its way.")
+			to_chat(user, "The emergency train is already on its way.")
 			return
 		if(SHUTTLE_DOCKED)
-			to_chat(user, "The emergency shuttle is already here.")
+			to_chat(user, "The emergency train is already here.")
 			return
 		if(SHUTTLE_IGNITING)
-			to_chat(user, "The emergency shuttle is firing its engines to leave.")
+			to_chat(user, "The emergency train is revving up to leave.")
 			return
 		if(SHUTTLE_ESCAPE)
-			to_chat(user, "The emergency shuttle is moving away to a safe distance.")
+			to_chat(user, "The emergency train is moving toward Vault-Tec.")
 			return
 		if(SHUTTLE_STRANDED)
-			to_chat(user, "The emergency shuttle has been disabled by CentCom.")
+			to_chat(user, "The emergency train has been disabled by Vault-Tec. Have a nice day.")
 			return
 
 	call_reason = trim(html_encode(call_reason))
@@ -234,16 +234,16 @@ SUBSYSTEM_DEF(shuttle)
 
 	if(!admiral_message)
 		admiral_message = pick(GLOB.admiral_messages)
-	var/intercepttext = "<font size = 3><b>Nanotrasen Update</b>: Request For Shuttle.</font><hr>\
+	var/intercepttext = "<font size = 3><b>Vault-Tec Update</b>: Request For Train.</font><hr>\
 						To whom it may concern:<br><br>\
-						We have taken note of the situation upon [station_name()] and have come to the \
-						conclusion that it does not warrant the abandonment of the station.<br>\
+						We have taken note of the situation in the vault and have come to the \
+						conclusion that it does not warrant the abandonment of the Vault.<br>\
 						If you do not agree with our opinion we suggest that you open a direct \
 						line with us and explain the nature of your crisis.<br><br>\
 						<i>This message has been automatically generated based upon readings from long \
 						range diagnostic tools. To assure the quality of your request every finalized report \
-						is reviewed by an on-call rear admiral.<br>\
-						<b>Rear Admiral's Notes:</b> \
+						is reviewed by an on-call representative.<br>\
+						<b>Representative's Notes:</b> \
 						[admiral_message]"
 	print_command_report(intercepttext, announce = TRUE)
 
@@ -351,13 +351,13 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.sound_played = FALSE
 		priority_announce("Hostile environment detected. \
 			Departure has been postponed indefinitely pending \
-			conflict resolution.", null, 'sound/misc/notice1.ogg', "Priority")
+			conflict resolution.", null, 'sound/misc/notice1.ogg', "Vault-Tec")
 	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))
 		emergency.mode = SHUTTLE_DOCKED
 		emergency.setTimer(emergencyDockTime)
 		priority_announce("Hostile environment resolved. \
-			You have 3 minutes to board the Emergency Shuttle.",
-			null, 'sound/ai/shuttledock.ogg', "Priority")
+			You have 3 minutes to board the Emergency Train.",
+			null, 'sound/ai/shuttledock.ogg', "Vault-Tec")
 
 //try to move/request to dockHome if possible, otherwise dockAway. Mainly used for admin buttons
 /datum/controller/subsystem/shuttle/proc/toggleShuttle(shuttleId, dockHome, dockAway, timed)

@@ -835,7 +835,7 @@
 	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
 	var/nightshift_start_time = 702000		//7:30 PM, station time
 	var/nightshift_end_time = 270000		//7:30 AM, station time
-	
+
 /obj/machinery/light/lampost/proc/night_update() //gah, cant have procs with same name from parent
 	var/time = station_time()
 	var/night_time = (time < nightshift_end_time) || (time > nightshift_start_time)
@@ -848,3 +848,30 @@
 		nightshift_active = FALSE
 		on = FALSE
 		update_icon()
+
+//F13 COLORED LIGHTS
+/obj/machinery/light/fo13colored/Pink
+	name = "Arcade Light"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "tube"
+	desc = "A lighting fixture with pink lighting."
+	nightshift_allowed = FALSE
+	no_emergency = TRUE
+	brightness = 5
+	density = 0
+	layer = WALL_OBJ_LAYER
+	bulb_colour = "#FF5ABF"
+	light_color = "#FF00FF"
+
+/obj/machinery/light/fo13colored/Aqua
+	name = "Novelty Store Light"
+	icon = 'icons/obj/lighting.dmi'
+	icon_state = "tube"
+	desc = "A lighting fixture with green lighting."
+	nightshift_allowed = FALSE
+	no_emergency = TRUE
+	brightness = 5
+	density = 0
+	layer = WALL_OBJ_LAYER
+	bulb_colour = "#00FFFF"
+	light_color = "#00FFFF"

@@ -6,7 +6,6 @@
 	icon_screen = "dna"
 	icon_keyboard = "med_key"
 	circuit = /obj/item/circuitboard/computer/cloning
-	req_access = list(ACCESS_HEADS) //ONLY USED FOR RECORD DELETION RIGHT NOW.
 	var/obj/machinery/dna_scannernew/scanner = null //Linked scanner. For scanning.
 	var/list/pods //Linked cloning pods
 	var/temp = "Inactive"
@@ -17,7 +16,6 @@
 	var/datum/data/record/active_record = null
 	var/obj/item/disk/data/diskette = null //Mostly so the geneticist can steal everything.
 	var/loading = 0 // Nice loading text
-	var/autoprocess = 0
 
 	light_color = LIGHT_COLOR_BLUE
 
@@ -57,34 +55,10 @@
 			else if(!. && pod.is_operational() && !(pod.occupant || pod.mess) && pod.efficiency > 5)
 				. = pod
 
-/obj/machinery/computer/cloning/process()
-	if(!(scanner && LAZYLEN(pods) && autoprocess))
-		return
-
-	if(scanner.occupant && scanner.scan_level > 2)
-		scan_occupant(scanner.occupant)
-
-	for(var/datum/data/record/R in records)
-		var/obj/machinery/clonepod/pod = GetAvailableEfficientPod(R.fields["mind"])
-
-		if(!pod)
-			return
-
-		if(pod.occupant)
-			continue	//how though?
-
-		if(pod.growclone(R.fields["ckey"], R.fields["name"], R.fields["UI"], R.fields["SE"], R.fields["mind"], R.fields["mrace"], R.fields["features"], R.fields["factions"], R.fields["quirks"]))
-			temp = "[R.fields["name"]] => <font class='good'>Cloning cycle in progress...</font>"
-			records -= R
-
 /obj/machinery/computer/cloning/proc/updatemodules(findfirstcloner)
 	src.scanner = findscanner()
 	if(findfirstcloner && !LAZYLEN(pods))
 		findcloner()
-	if(!autoprocess)
-		STOP_PROCESSING(SSmachines, src)
-	else
-		START_PROCESSING(SSmachines, src)
 
 /obj/machinery/computer/cloning/proc/findscanner()
 	var/obj/machinery/dna_scannernew/scannerf = null
@@ -157,13 +131,6 @@
 	var/dat = ""
 	dat += "<a href='byond://?src=[REF(src)];refresh=1'>Refresh</a>"
 
-	if(scanner && HasEfficientPod() && scanner.scan_level >= AUTOCLONING_MINIMAL_LEVEL)
-		if(!autoprocess)
-			dat += "<a href='byond://?src=[REF(src)];task=autoprocess'>Autoprocess</a>"
-		else
-			dat += "<a href='byond://?src=[REF(src)];task=stopautoprocess'>Stop autoprocess</a>"
-	else
-		dat += "<span class='linkOff'>Autoprocess</span>"
 	dat += "<h3>Cloning Pod Status</h3>"
 	dat += "<div class='statusDisplay'>[temp]&nbsp;</div>"
 
@@ -279,19 +246,7 @@
 	if(loading)
 		return
 
-	if(href_list["task"])
-		switch(href_list["task"])
-			if("autoprocess")
-				if(scanner && HasEfficientPod() && scanner.scan_level >= AUTOCLONING_MINIMAL_LEVEL)
-					autoprocess = TRUE
-					START_PROCESSING(SSmachines, src)
-					playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
-			if("stopautoprocess")
-				autoprocess = FALSE
-				STOP_PROCESSING(SSmachines, src)
-				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
-
-	else if ((href_list["scan"]) && !isnull(scanner) && scanner.is_operational())
+	if ((href_list["scan"]) && !isnull(scanner) && scanner.is_operational())
 		scantemp = ""
 
 		loading = 1

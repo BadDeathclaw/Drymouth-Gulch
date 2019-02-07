@@ -60,6 +60,13 @@
 	transfer_prints = FALSE
 	armor = list("melee" = 60, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/gloves/Biker
+	name = "Future Gloves"
+	desc = "Gloves in a futuristic color."
+	icon_state = "biker_gloves"
+	item_state = "biker_gloves"
+	transfer_prints = FALSE
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"

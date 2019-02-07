@@ -1,5 +1,5 @@
 /obj/item/ammo_box/magazine/sniper_rounds
-	name = "sniper rounds (.50)"
+	name = "box magazine (.50 BMG)"
 	icon_state = ".50mag"
 	ammo_type = /obj/item/ammo_casing/p50
 	max_ammo = 6
@@ -12,7 +12,7 @@
 		icon_state = "[initial(icon_state)]"
 
 /obj/item/ammo_box/magazine/sniper_rounds/soporific
-	name = "sniper rounds (Zzzzz)"
+	name = "box magazine (50. BMG tranquilizer)"
 	desc = "Soporific sniper rounds, designed for happy days and dead quiet nights..."
 	icon_state = "soporific"
 	ammo_type = /obj/item/ammo_casing/p50/soporific
@@ -20,7 +20,7 @@
 	caliber = ".50"
 
 /obj/item/ammo_box/magazine/sniper_rounds/penetrator
-	name = "sniper rounds (penetrator)"
+	name = "box magazine (50. BMG armor piercing)"
 	desc = "An extremely powerful round capable of passing straight through cover and anyone unfortunate enough to be behind it."
 	ammo_type = /obj/item/ammo_casing/p50/penetrator
 	max_ammo = 5

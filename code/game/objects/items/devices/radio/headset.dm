@@ -74,7 +74,7 @@
 	name = "security radio headset"
 	desc = "This is used by your elite security force.\nTo access the security channel, use :s."
 	icon_state = "sec_headset"
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_hos
 
 /obj/item/radio/headset/headset_sec/alt
 	name = "security bowman headset"
@@ -151,7 +151,7 @@
 	name = "\proper the head of security's headset"
 	desc = "The headset of the man in charge of keeping order and protecting the station.\nTo access the security channel, use :s. For command, use :c."
 	icon_state = "com_headset"
-	keyslot = new /obj/item/encryptionkey/heads/hos
+	keyslot = new /obj/item/encryptionkey/headset_vault_hos
 
 /obj/item/radio/headset/heads/hos/alt
 	name = "\proper the head of security's bowman headset"

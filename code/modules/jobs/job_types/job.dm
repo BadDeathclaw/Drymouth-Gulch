@@ -31,6 +31,15 @@
 	//Supervisors, who this person answers to directly
 	var/supervisors = ""
 
+	//Description, short text about the job
+	var/description = ""
+
+	//Against the faction rules, for imporant things that you SHOULDNT do.
+	var/forbids = ""
+
+	//For things that faction Enforces.
+	var/enforces = ""
+
 	//Sellection screen color
 	var/selection_color = "#ffffff"
 
@@ -39,7 +48,7 @@
 	var/req_admin_notify
 
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
-	var/minimal_player_age = 0
+	var/minimal_player_age = 6 // Sets minimum default account age to six days to prevent angry people from account-spamming.
 
 	var/outfit = null
 
