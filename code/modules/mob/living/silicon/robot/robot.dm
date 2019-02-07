@@ -208,7 +208,9 @@
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
 	"Janitor" = /obj/item/robot_module/janitor, \
-	"Service" = /obj/item/robot_module/butler)
+	"Service" = /obj/item/robot_module/butler, \
+	"Handy Fisto" = /obj/item/robot_module/sexy_handy, \
+	"Fisto" = /obj/item/robot_module/fisto_protectron)
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper
 	if(!CONFIG_GET(flag/disable_secborg))
