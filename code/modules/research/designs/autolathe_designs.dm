@@ -460,6 +460,14 @@
 	build_path = /obj/item/ammo_box/c38
 	category = list("initial", "Security")
 
+/datum/design/solids
+	name = "Solid Beaker"
+	id = "solids"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	build_path = /obj/item/reagent_containers/glass/beaker/solids
+	category = list("initial", "Security")
+
 /datum/design/recorder
 	name = "Universal Recorder"
 	id = "recorder"
