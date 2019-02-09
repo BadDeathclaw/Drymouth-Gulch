@@ -31,7 +31,7 @@
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 100)
 	build_path = /obj/item/disk/design_disk
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -41,7 +41,7 @@
 	desc = "Produce additional disks for storing device designs."
 	id = "design_disk_adv"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100, MAT_SILVER=50)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000, MAT_SILVER=500)
 	build_path = /obj/item/disk/design_disk/adv
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -51,7 +51,7 @@
 	desc = "Produce additional disks for storing technology data."
 	id = "tech_disk"
 	build_type = PROTOLATHE | AUTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/tech_disk
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
@@ -61,7 +61,7 @@
 	desc = "This machine provides all neccesary things for circuitry."
 	id = "icprinter"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 5000, MAT_METAL = 10000)
+	materials = list(MAT_GLASS = 50000, MAT_METAL = 10000)
 	build_path = /obj/item/integrated_circuit_printer
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE

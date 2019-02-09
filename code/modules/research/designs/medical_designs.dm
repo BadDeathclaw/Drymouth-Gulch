@@ -40,7 +40,7 @@
 	desc = "The latest in Artificial Intelligences."
 	id = "mmi_posi"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list(MAT_METAL = 1700, MAT_GLASS = 1350, MAT_GOLD = 500) //Gold, because SWAG.
+	materials = list(MAT_METAL = 17000, MAT_GLASS = 13500, MAT_GOLD = 5000) //Gold, because SWAG.
 	construction_time = 75
 	build_path = /obj/item/mmi/posibrain
 	category = list("Misc", "Medical Designs")
@@ -99,7 +99,7 @@
 	desc = "Produce additional disks for storing genetic data."
 	id = "cloning_disk"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100, MAT_SILVER=50)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000, MAT_SILVER=500)
 	build_path = /obj/item/disk/data
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -233,7 +233,7 @@
 	id = "ci-welding"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 40
-	materials = list(MAT_METAL = 600, MAT_GLASS = 400)
+	materials = list(MAT_METAL = 6000, MAT_GLASS = 4000)
 	build_path = /obj/item/organ/eyes/robotic/shield
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -265,7 +265,7 @@
 	desc = "A set of surgical tools hidden behind a concealed panel on the user's arm."
 	id = "ci-surgery"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list (MAT_METAL = 2500, MAT_GLASS = 1500, MAT_SILVER = 1500)
+	materials = list (MAT_METAL = 24200, MAT_GLASS = 1500, MAT_SILVER = 9500, MAT_TITANIUM = 9000, MAT_PLASMA = 4000)
 	construction_time = 200
 	build_path = /obj/item/organ/cyberimp/arm/surgery
 	category = list("Misc", "Medical Designs")
@@ -332,7 +332,7 @@
 	id = "ci-antidrop"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(MAT_METAL = 6000, MAT_GLASS = 6000, MAT_SILVER = 4000, MAT_GOLD = 4000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 6000, MAT_SILVER = 8000, MAT_GOLD = 4000)
 	build_path = /obj/item/organ/cyberimp/brain/anti_drop
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -343,7 +343,7 @@
 	id = "ci-antistun"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(MAT_METAL = 6000, MAT_GLASS = 6000, MAT_SILVER = 5000, MAT_GOLD = 10000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 6000, MAT_SILVER = 5000, MAT_GOLD = 10000)
 	build_path = /obj/item/organ/cyberimp/brain/anti_stun
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -401,7 +401,7 @@
 	desc = "A sterile automatic implant injector."
 	id = "implanter"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 600, MAT_GLASS = 200)
+	materials = list(MAT_METAL = 6000, MAT_GLASS = 2000)
 	build_path = /obj/item/implanter
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
@@ -411,7 +411,7 @@
 	desc = "A glass case for containing an implant."
 	id = "implantcase"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 500)
+	materials = list(MAT_GLASS = 5000)
 	build_path = /obj/item/implantcase
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
@@ -421,7 +421,7 @@
 	desc = "Makes death amusing."
 	id = "implant_trombone"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 500, MAT_BANANIUM = 500)
+	materials = list(MAT_GLASS = 5000, MAT_BANANIUM = 5000)
 	build_path = /obj/item/implantcase/sad_trombone
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_ALL		//if you get bananium you get the sad trombones.
@@ -431,7 +431,7 @@
 	desc = "A glass case containing an implant."
 	id = "implant_chem"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 700)
+	materials = list(MAT_GLASS = 7000)
 	build_path = /obj/item/implantcase/chem
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
@@ -441,7 +441,7 @@
 	desc = "A glass case containing an implant."
 	id = "implant_tracking"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000)
 	build_path = /obj/item/implantcase/track
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
@@ -453,7 +453,7 @@
 	desc = "A cybernetic liver"
 	id = "cybernetic_liver"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000)
 	build_path = /obj/item/organ/liver/cybernetic
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -463,7 +463,7 @@
 	desc = "A cybernetic heart"
 	id = "cybernetic_heart"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000)
 	build_path = /obj/item/organ/heart/cybernetic
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -473,7 +473,7 @@
 	desc = "An upgraded cybernetic liver"
 	id = "cybernetic_liver_u"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000)
 	build_path = /obj/item/organ/liver/cybernetic/upgraded
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -483,7 +483,7 @@
 	desc = "A pair of cybernetic lungs."
 	id = "cybernetic_lungs"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000)
 	build_path = /obj/item/organ/lungs/cybernetic
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -493,7 +493,7 @@
 	desc = "A pair of upgraded cybernetic lungs."
 	id = "cybernetic_lungs_u"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 500, MAT_GLASS = 500, MAT_SILVER = 500)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000, MAT_SILVER = 5000)
 	build_path = /obj/item/organ/lungs/cybernetic/upgraded
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -503,7 +503,7 @@
 	desc = "A disk containing the instructions for a Lobotomy surgery."
 	id = "surgery_lobotomy"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/lobotomy
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -513,7 +513,7 @@
 	desc = "A disk containing the instructions for a Pacification surgery."
 	id = "surgery_pacify"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/pacification
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -523,7 +523,7 @@
 	desc = "A disk containing the instructions for a Viral Bonding surgery."
 	id = "surgery_viral_bond"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/viral_bonding
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -533,7 +533,7 @@
 	desc = "A disk containing the instructions for a Reconstruction surgery."
 	id = "surgery_reconstruction"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/reconstruction
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -543,7 +543,7 @@
 	desc = "A disk containing the instructions for a Revival surgery."
 	id = "surgery_revival"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/revival
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -553,7 +553,7 @@
 	desc = "A disk containing the instructions for a Brainwashing surgery."
 	id = "surgery_brainwashing"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/brainwashing
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -563,7 +563,7 @@
 	desc = "A disk containing the instructions for a Nerve Splicing surgery."
 	id = "surgery_nerve_splice"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/nerve_splicing
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -573,7 +573,7 @@
 	desc = "A disk containing the instructions for a Nerve Grounding surgery."
 	id = "surgery_nerve_ground"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/nerve_grounding
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -583,7 +583,7 @@
 	desc = "A disk containing the instructions for a Vein Threading surgery."
 	id = "surgery_vein_thread"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 1000)
 	build_path = /obj/item/disk/surgery/vein_threading
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -593,7 +593,7 @@
 	desc = "A disk containing the instructions for a Necrotic Revival surgery."
 	id = "surgery_zombie"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 300, MAT_GLASS = 100)
+	materials = list(MAT_METAL = 3000, MAT_GLASS = 4000)
 	build_path = /obj/item/disk/surgery/necrotic_revival
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE

@@ -370,7 +370,7 @@
 	desc = "An experimental welder capable of self-fuel generation."
 	id = "exwelder"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 1000, MAT_GLASS = 500, MAT_PLASMA = 1500, MAT_URANIUM = 200)
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 5000, MAT_PLASMA = 1500, MAT_URANIUM = 2000)
 	build_path = /obj/item/weldingtool/experimental
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

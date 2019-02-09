@@ -18,7 +18,7 @@
 	desc = "A backpack that opens into a localized pocket of bluespace."
 	id = "bag_holding"
 	build_type = PROTOLATHE
-	materials = list(MAT_GOLD = 3000, MAT_DIAMOND = 1500, MAT_URANIUM = 250, MAT_BLUESPACE = 2000)
+	materials = list(MAT_GOLD = 30000, MAT_DIAMOND = 15000, MAT_URANIUM = 2500, MAT_BLUESPACE = 20000)
 	build_path = /obj/item/storage/backpack/holding
 	category = list("Bluespace Designs")
 	dangerous_construction = TRUE

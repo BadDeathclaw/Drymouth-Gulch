@@ -94,7 +94,7 @@
 	display_name = "Industrial Engineering"
 	description = "A refresher course on modern engineering technology."
 	prereq_ids = list("base")
-	design_ids = list("recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin",
+	design_ids = list("recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin", "nano_mani",
 	"atmosalerts", "atmos_control", "recycler", "autolathe", "high_micro_laser", "mesons", "thermomachine", "cell_charger", "power control", "airlock_board", "firelock_board", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
@@ -113,7 +113,7 @@
 	display_name = "High Efficiency Parts"
 	description = "Finely-tooled manufacturing techniques allowing for picometer-perfect precision levels."
 	prereq_ids = list("engineering", "datatheory")
-	design_ids = list("super_matter_bin", "phasic_scanning")
+	design_ids = list("super_matter_bin", "phasic_scanning", "pico_mani")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
@@ -131,7 +131,7 @@
 	display_name = "Futuristic Parts"
 	description = "The pinnacle of machine parts."
 	prereq_ids = list("adv_power", "high_efficiency", "alientech")
-	design_ids = list("triphasic_scanning", "quadratic_capacitor")
+	design_ids = list("triphasic_scanning", "quadratic_capacitor", "femto_mani")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
