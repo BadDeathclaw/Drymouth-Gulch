@@ -2,14 +2,44 @@
 	name = "dildo"
 	desc = "Hmmm, deal throw."
 	icon = 'honk/icons/obj/items/dildo.dmi'
-	icon_state = "dildo"
-	item_state = "c_tube"
+	icon_state = "dildo_map"
+	item_state = "dildo"
 	throwforce = 0
 	force = 5
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slammed", "bashed", "whipped")
 
 	var/hole = CUM_TARGET_VAGINA
+
+	var/random_color = TRUE
+	var/static/list/dildo_colors = list(
+		"purple" = "#800080",
+		"darkviolet" = "#9400D3",
+		"red" = "#FF0000",
+		"dimgray" = "#696969",
+		"black" = "#000000", //dont kill me for this - lennuel
+		"white" = "#ffffff", //racial equality
+		"green" = "#008000",
+		"pink" = "#FFC0CB",
+		"lightpink" = "#ffc0cb",
+		"blue" = "#7282e5"
+	)
+
+/obj/item/dildo/Initialize()
+	. = ..()
+	if(random_color) //random colors!
+		icon_state = "dildo"
+		var/our_color = pick(dildo_colors)
+		add_atom_colour(dildo_colors[our_color], FIXED_COLOUR_PRIORITY)
+		update_icon()
+
+/obj/item/dildo/update_icon()
+	if(!random_color) //icon override
+		return
+	cut_overlays()
+	var/mutable_appearance/base_overlay = mutable_appearance(icon, "dildo_base")
+	base_overlay.appearance_flags = RESET_COLOR
+	add_overlay(base_overlay)
 
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	var/message = ""
