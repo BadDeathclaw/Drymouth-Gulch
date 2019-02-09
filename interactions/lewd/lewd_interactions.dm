@@ -91,7 +91,7 @@
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have a vagina.</span>")
 			return FALSE
-		if(require_target_breasts && !user.has_breasts())
+		if(require_target_breasts && !target.has_breasts())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have breasts.</span>")
 			return FALSE

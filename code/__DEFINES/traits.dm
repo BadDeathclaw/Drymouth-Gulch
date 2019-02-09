@@ -49,7 +49,7 @@
 #define TRAIT_NODEATH			"nodeath"
 #define TRAIT_NOHARDCRIT		"nohardcrit"
 #define TRAIT_NOSOFTCRIT		"nosoftcrit"
-
+#define TRAIT_TECHNOPHREAK		"technophreak" // Sets is_super_advanced_tool_user to TRUE
 
 #define TRAIT_ALCOHOL_TOLERANCE	"alcohol_tolerance"
 #define TRAIT_AGEUSIA			"ageusia"
