@@ -326,7 +326,7 @@
 	design_ids = list("secdata", "med_data", "prisonmanage", "vendor")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
 	export_price = 2000
-
+/*
 /datum/techweb_node/telecomms
 	id = "telecomms"
 	display_name = "Telecommunications Technology"
@@ -336,7 +336,7 @@
 	export_price = 5000
 	design_ids = list("s-receiver", "s-bus", "s-broadcaster", "s-processor", "s-hub", "s-server", "s-relay", "comm_monitor", "comm_server",
 	"s-ansible", "s-filter", "s-amplifier", "ntnet_relay", "s-treatment", "s-analyzer", "s-crystal", "s-transmitter")
-
+*/
 /datum/techweb_node/integrated_HUDs
 	id = "integrated_HUDs"
 	display_name = "Integrated HUDs"
