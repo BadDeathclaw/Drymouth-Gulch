@@ -40,6 +40,8 @@
 		user.visible_message("<span class='warning'>\The [user] gently gropes \the [target]'s breasts.</span>")
 	else if(user.a_intent == INTENT_HARM)
 		user.visible_message("<span class='warning'>\The [user] aggressively gropes \the [target]'s breasts.</span>")
+	else
+		return
 
 /datum/interaction/lewd/oral
 	command = "suckvag"

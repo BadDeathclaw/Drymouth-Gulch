@@ -12,6 +12,8 @@
 	active_power_usage = 100
 	circuit = /obj/item/circuitboard/machine/autolathe
 	layer = BELOW_OBJ_LAYER
+	super_advanced_technology = TRUE
+	resistance_flags = INDESTRUCTIBLE
 
 	var/operating = FALSE
 	var/list/L = list()
@@ -95,7 +97,8 @@
 		updateUsrDialog()
 		return TRUE
 
-	if(default_deconstruction_crowbar(O))
+	if(panel_open && TOOL_WRENCH)
+		default_unfasten_wrench(user, O, 100)
 		return TRUE
 
 	if(panel_open && is_wire_tool(O))
@@ -383,3 +386,34 @@
 //Has a reference to the autolathe so you can do !!FUN!! things with hacked lathes
 /obj/item/proc/autolathe_crafted(obj/machinery/autolathe/A)
 	return
+
+/obj/machinery/autolathe/constructionlathe
+	name = "Construction Lathe"
+	desc = "An autolathe that had VAULT-TEK DRM poorly added to it to prevent it from producing weaponry."
+	circuit = /obj/item/circuitboard/machine/autolathe/constructionlathe
+	super_advanced_technology = FALSE
+	resistance_flags = ""
+
+	list/categories = list(
+							"Tools",
+							"Electronics",
+							"Construction",
+							"T-Comm",
+							"Machinery",
+							"Medical",
+							"Misc",
+							"Dinnerware",
+							"Imported"
+							)
+
+/obj/machinery/autolathe/constructionlathe/adjust_hacked()
+	return
+
+/obj/machinery/autolathe/constructionlathe/attackby(obj/item/O, mob/user, params)
+	..()
+	if(panel_open)
+		default_deconstruction_crowbar(O)
+		return TRUE
+	else
+		attack_hand(user)
+		return TRUE
