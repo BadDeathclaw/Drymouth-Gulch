@@ -1276,8 +1276,8 @@
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(3*REM, 0)
-	M.adjustOxyLoss(5*REM, 0)
+	M.adjustToxLoss(2.5*REM, 0)
+	M.adjustOxyLoss(4*REM, 0)
 	..()
 	. = 1
 
@@ -1299,8 +1299,8 @@
 	..()
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
-	M.adjustToxLoss(2.5*REM, 0)
-	M.adjustOxyLoss(3*REM, 0)
+	M.adjustToxLoss(2*REM, 0)
+	M.adjustOxyLoss(4*REM, 0)
 	..()
 	. = 1
 
