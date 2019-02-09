@@ -976,11 +976,10 @@
 	taste_description = "grossness"
 
 /datum/reagent/medicine/tricordrazine/on_mob_life(mob/living/M)
-	if(prob(60))
-		M.adjustBruteLoss(-0.5*REM, 0)
-		M.adjustFireLoss(-0.5*REM, 0)
-		M.adjustOxyLoss(-1*REM, 0)
-		M.adjustToxLoss(-1*REM, 0)
+	M.adjustBruteLoss(-0.5*REM, 0)
+	M.adjustFireLoss(-0.5*REM, 0)
+	M.adjustOxyLoss(-1*REM, 0)
+	M.adjustToxLoss(-1*REM, 0)
 		. = 1
 	..()
 
