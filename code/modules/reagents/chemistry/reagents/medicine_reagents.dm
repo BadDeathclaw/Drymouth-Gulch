@@ -1277,7 +1277,7 @@
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(2.5*REM, 0)
-	M.adjustOxyLoss(4*REM, 0)
+	M.adjustOxyLoss(7*REM, 0)
 	..()
 	. = 1
 
