@@ -1258,6 +1258,7 @@
 	color = "#C8A5DC"
 	taste_description = "grossness"
 	metabolization_rate = 3 * REAGENTS_METABOLISM
+	overdose_threshold = 20
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -1274,6 +1275,12 @@
 	. = 1
 	..()
 
+/datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
+	M.adjustToxLoss(2.5*REM, 0)
+	M.adjustOxyLoss(7*REM, 0)
+	..()
+	. = 1
+
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
 	id = "healing_powder"
@@ -1285,16 +1292,14 @@
 	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-2*REM)
-	M.adjustBruteLoss(-2*REM)
+	M.adjustFireLoss(-3*REM)
+	M.adjustBruteLoss(-3*REM)
 	M.hallucination = max(M.hallucination, 5)
-	if(prob(7))
-		M.emote(pick("twitch","drool","moan","giggle"))
 	. = 1
 	..()
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
-	M.adjustToxLoss(4*REM, 0)
+	M.adjustToxLoss(2*REM, 0)
 	M.adjustOxyLoss(4*REM, 0)
 	..()
 	. = 1

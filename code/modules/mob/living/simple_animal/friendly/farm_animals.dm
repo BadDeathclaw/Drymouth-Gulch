@@ -129,6 +129,7 @@
 	var/obj/item/udder/udder = null
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
+	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/cow/Initialize()
 	udder = new()
@@ -205,6 +206,7 @@
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	gold_core_spawnable = FRIENDLY_SPAWN
+	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/chick/Initialize()
 	. = ..()
@@ -261,6 +263,7 @@
 	var/list/validColors = list("brown","black","white")
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/static/chicken_count = 0
+	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/chicken/Initialize()
 	. = ..()
