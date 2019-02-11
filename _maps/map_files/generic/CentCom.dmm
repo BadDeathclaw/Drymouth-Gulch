@@ -2172,7 +2172,7 @@
 "PN" = (/obj/effect/decal/cleanable/generic,/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,/area/f13/underground/bos)
 "PO" = (/obj/machinery/hydroponics/constructable,/turf/open/floor/plasteel/whitegreen,/area/centcom/holding)
 "PP" = (/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,/area/f13/underground/bos)
-"PQ" = (/obj/effect/decal/cleanable/greenglow,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/slime/pet,/turf/open/floor/engine,/area/f13/underground/bos)
+"PQ" = (/obj/effect/decal/cleanable/greenglow,/obj/effect/decal/cleanable/dirt,/mob/living/simple_animal/slime,/turf/open/floor/engine,/area/f13/underground/bos)
 "PR" = (/obj/machinery/door/airlock/hatch{req_access_txt = "120"},/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "PS" = (/obj/structure/grille,/obj/structure/disposalpipe/segment,/obj/machinery/door/poddoor{id = 6; name = "testing blast door"},/obj/structure/window/reinforced/fulltile,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "PT" = (/obj/structure/target_stake,/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,/area/f13/underground/bos)
