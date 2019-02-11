@@ -757,8 +757,8 @@
 	reqs = list(/obj/item/stack/sheet/glass = 2)
 	tools = list(TOOL_WELDER)
 	time = 10
-	category 
-  
+	category = CAT_MEDICAL
+
 /datum/crafting_recipe/beaker_large
 	name = "Large beaker"
 	result = /obj/item/reagent_containers/glass/beaker/large
@@ -767,16 +767,7 @@
 	time = 40
 	category = CAT_MEDICAL
 
-/datum/crafting_recipe/solids
-	name = "Solid beaker"
-	result = /obj/item/reagent_containers/glass/beaker/solids
-	reqs = list(/obj/item/stack/sheet/glass = 2,
-				/obj/item/stack/sheet/metal = 2)
-	tools = list(TOOL_WELDER)
-	time = 30
-	category = CAT_MEDICAL
-
- /datum/crafting_recipe/syringe
+/datum/crafting_recipe/syringe
 	name = "Syringe"
 	result = /obj/item/reagent_containers/syringe
 	reqs = list(/obj/item/stack/rods = 1,
@@ -785,7 +776,7 @@
 	time = 10
 	category = CAT_MEDICAL
 
- /datum/crafting_recipe/syringegun
+/datum/crafting_recipe/syringegun
 	name = "Syringe gun"
 	result = /obj/item/gun/syringe
 	reqs = list(/obj/item/stack/rods = 20,
@@ -800,3 +791,11 @@
 	time = 120
 	category = CAT_MEDICAL
 
+/datum/crafting_recipe/solids
+	name = "Solid beaker"
+	result = /obj/item/reagent_containers/glass/beaker/solids
+	reqs = list(/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WELDER)
+	time = 30
+	category = CAT_MEDICAL
