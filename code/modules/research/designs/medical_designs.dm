@@ -7,7 +7,7 @@
 	desc = "DONT CROSS THE DAMM BEAMS!"
 	id = "medbeam"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
+	materials = list(MAT_METAL = 40000, MAT_GLASS = 20000, MAT_SILVER = 10000, MAT_DIAMOND = 10000)
 	construction_time = 50
 	build_path = /obj/item/gun/medbeam
 	category = list("Misc", "Medical Designs")
@@ -18,7 +18,7 @@
 	desc = "Automatically implants things inside of it."
 	id = "autosurgeon"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
+	materials = list(MAT_METAL = 40000, MAT_GLASS = 20000, MAT_SILVER = 10000, MAT_DIAMOND = 10000)
 	construction_time = 50
 	build_path = /obj/item/autosurgeon
 	category = list("Misc", "Medical Designs")
