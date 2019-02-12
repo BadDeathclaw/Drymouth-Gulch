@@ -276,7 +276,7 @@
 	desc = "A stripped-down version of engineering cyborg toolset, designed to be installed on subject's arm."
 	id = "ci-toolset"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list (MAT_METAL = 2500, MAT_GLASS = 1500, MAT_SILVER = 1500)
+	materials = list (MAT_METAL = 30000, MAT_SILVER = 15000, MAT_PLASMA = 6000, MAT_TITANIUM = 8000, MAT_DIAMOND = 8000)
 	construction_time = 200
 	build_path = /obj/item/organ/cyberimp/arm/toolset
 	category = list("Misc", "Medical Designs")
@@ -321,7 +321,7 @@
 	id = "ci-thermals"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASMA = 1000, MAT_DIAMOND = 2000)
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 1000, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_PLASMA = 4000, MAT_DIAMOND = 6000)
 	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
