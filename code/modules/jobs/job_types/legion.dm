@@ -270,7 +270,7 @@ Legionary
 /datum/job/CaesarsLegion/Legionnaire/f13legionary
 	title = "Legionary"
 	flag = F13LEGIONARY
-//	faction = "Station"
+	faction = "Legion"
 	total_positions = 15
 	spawn_positions = 15
 	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
