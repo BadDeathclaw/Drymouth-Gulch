@@ -78,7 +78,6 @@ Deputy
 	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	r_pocket = 		/obj/item/flashlight/flare/torch
-	backpack_contents = list(/obj/item/storage/box/deputy_badges=1)
 
 /datum/outfit/job/den/f13deputy/pre_equip(mob/living/carbon/human/H)
 		..()
