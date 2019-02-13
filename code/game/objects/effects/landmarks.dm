@@ -587,6 +587,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Settler"
 	icon_state = "Settler"
 
+/obj/effect/landmark/start/f13/deputy
+	name = "Deputy"
+	icon_state = "Deputy"
+
 // Wasteland
 
 /obj/effect/landmark/start/f13/cultleader

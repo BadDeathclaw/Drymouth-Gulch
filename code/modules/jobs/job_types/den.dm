@@ -43,6 +43,46 @@ Sheriff
 		..()
 		r_pocket = pick(/obj/item/flashlight/flare/torch, /obj/item/flashlight/flare)
 		belt = pick(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/item/gun/ballistic/revolver/m29, /obj/item/gun/ballistic/revolver/colt6250)
+
+/*
+Deputy
+*/
+/datum/job/den/f13deputy
+	title = "Deputy"
+	flag = F13SHERIFF
+	department_flag = DEN
+	head_announce = list("Security")
+	faction = "Den"
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "sheriff"
+	selection_color = "#d7b088"
+	exp_requirements = 30
+	exp_type = EXP_TYPE_DEN
+
+	outfit = /datum/outfit/job/den/f13sheriff
+
+/datum/outfit/job/den/f13sheriff
+	name = "Deputy"
+	jobtype = /datum/job/den/f13deputy
+
+	id = /obj/item/card/id/deputy
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+
+	ears = 			/obj/item/radio/headset/headset_den
+	uniform =  		/obj/item/clothing/under/f13/cowboyb
+	shoes = 		/obj/item/clothing/shoes/workboots
+	suit = 			/obj/item/clothing/suit/fluff/cowboybvest
+	glasses =		/obj/item/clothing/glasses/sunglasses
+	l_pocket =		/obj/item/storage/bag/money/small/den
+	r_pocket = 		/obj/item/flashlight/flare/torch
+	backpack_contents = list(/obj/item/storage/box/deputy_badges=1)
+
+/datum/outfit/job/den/f13deputy/pre_equip(mob/living/carbon/human/H)
+		..()
+		belt = pick(/obj/item/gun/ballistic/automatic/pistol/m1911, /obj/item/gun/ballistic/revolver/m29, /obj/item/gun/ballistic/revolver/colt6250)
 /*
 Settler
 */

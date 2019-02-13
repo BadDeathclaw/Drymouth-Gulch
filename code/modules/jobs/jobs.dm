@@ -19,6 +19,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 
 GLOBAL_LIST_INIT(den_positions, list(
 	"Sheriff",
+	"Deputy",
 	"Settler"
 ))
 

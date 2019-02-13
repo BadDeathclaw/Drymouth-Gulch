@@ -82,7 +82,8 @@
 #define DEN				(1<<6)
 
 #define F13SHERIFF		(1<<0)
-#define F13SETTLER		(1<<1)
+#define F13DEPUTY		(1<<1)
+#define F13SETTLER		(1<<2)
 
 #define VAULT			(1<<7)
 
