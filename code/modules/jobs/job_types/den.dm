@@ -33,7 +33,6 @@ Sheriff
 	glasses =		/obj/item/clothing/glasses/sunglasses
 	l_hand = 		/obj/item/gun/ballistic/shotgun
 	l_pocket =		/obj/item/storage/bag/money/small/den
-	backpack_contents = list(/obj/item/storage/box/deputy_badges=1)
 
 
 	//pick("grey", "white", "yellow", "purple", "brown", "whatever")
