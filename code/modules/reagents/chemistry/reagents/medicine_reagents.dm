@@ -595,7 +595,7 @@
 	..()
 
 /datum/reagent/medicine/morphine
-	name = "Morphine"
+	name = "Ether"
 	id = "morphine"
 	description = "A sedative. Causes drowsiness and eventually unconsciousness in high doses. Overdose will cause a variety of effects, ranging from minor to lethal."
 	reagent_state = LIQUID
