@@ -144,8 +144,8 @@
 
 //space cleaner
 /obj/item/reagent_containers/spray/cleaner
-	name = "instant cleaner"
-	desc = "BLAM!-brand non-foaming instant cleaner!"
+	name = "Abraxo-brand cleaner"
+	desc = "BLAM!-brand non-foaming Abraxo cleaner!"
 	volume = 100
 	list_reagents = list("cleaner" = 100)
 	amount_per_transfer_from_this = 2
