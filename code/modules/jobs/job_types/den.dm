@@ -59,7 +59,7 @@ Deputy
 	exp_requirements = 30
 	exp_type = EXP_TYPE_DEN
 
-	outfit = /datum/outfit/job/den/f13sheriff
+	outfit = /datum/outfit/job/den/f13deputy
 
 /datum/outfit/job/den/f13deputy
 	name = "Deputy"
