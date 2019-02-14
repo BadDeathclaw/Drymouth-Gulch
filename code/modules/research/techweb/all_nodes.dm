@@ -358,6 +358,7 @@
 	export_price = 5000
 
 ////////////////////////Medical////////////////////////
+<<<<<<< HEAD
 /datum/techweb_node/cloning
 	id = "cloning"
 	display_name = "Genetic Engineering"
@@ -366,6 +367,9 @@
 	design_ids = list("clonecontrol", "clonepod", "clonescanner", "scan_console", "cloning_disk")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+=======
+
+>>>>>>> parent of 0b643e9c... Update all_nodes.dm
 
 /datum/techweb_node/cryotech
 	id = "cryotech"
