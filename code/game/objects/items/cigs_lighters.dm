@@ -262,37 +262,23 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 // Cigarette brands.
 
-/obj/item/clothing/mask/cigarette/space_cigarette
-	desc = "A Space Cigarette brand cigarette."
+/obj/item/clothing/mask/cigarette/lucky_strike
+	desc = "A Lucky Strikes brand cigarette."
 
-/obj/item/clothing/mask/cigarette/dromedary
-	desc = "A DromedaryCo brand cigarette."
+/obj/item/clothing/mask/cigarette/kings
+	desc = "A Kings brand cigarette."
+	list_reagents = list("nicotine" = 7.5)
 
-/obj/item/clothing/mask/cigarette/uplift
-	desc = "An Uplift Smooth brand cigarette."
-	list_reagents = list("nicotine" = 7.5, "menthol" = 7.5)
+/obj/item/clothing/mask/cigarette/marlboro
+	desc = "A Marlboro brand cigarette."
 
-/obj/item/clothing/mask/cigarette/robust
-	desc = "A Robust brand cigarette."
-
-/obj/item/clothing/mask/cigarette/robustgold
-	desc = "A Robust Gold brand cigarette."
+/obj/item/clothing/mask/cigarette/marlborogold
+	desc = "A Marlboro gold brand cigarette."
 	list_reagents = list("nicotine" = 15, "gold" = 1)
 
-/obj/item/clothing/mask/cigarette/carp
-	desc = "A Carp Classic brand cigarette."
+/obj/item/clothing/mask/cigarette/viceroy
+	desc = "A Viceroy brand cigarette."
 
-/obj/item/clothing/mask/cigarette/syndicate
-	desc = "An unknown brand cigarette."
-	list_reagents = list("nicotine" = 15, "omnizine" = 15)
-
-/obj/item/clothing/mask/cigarette/shadyjims
-	desc = "A Shady Jim's Super Slims cigarette."
-	list_reagents = list("nicotine" = 15, "lipolicide" = 4, "ammonia" = 2, "plantbgone" = 1, "toxin" = 1.5)
-
-/obj/item/clothing/mask/cigarette/xeno
-	desc = "A Xeno Filtered brand cigarette."
-	list_reagents = list ("nicotine" = 20, "regen_jelly" = 15, "krokodil" = 4)
 
 // Rollies.
 
@@ -325,7 +311,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	list_reagents = list("space_drugs" = 15, "lipolicide" = 35)
 
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
-	list_reagents = list("mindbreaker" = 35, "lipolicide" = 15)	
+	list_reagents = list("mindbreaker" = 35, "lipolicide" = 15)
 
 /obj/item/cigbutt/roach
 	name = "roach"
