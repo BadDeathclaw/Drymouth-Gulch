@@ -7,7 +7,7 @@
 	desc = "DONT CROSS THE DAMM BEAMS!"
 	id = "medbeam"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
+	materials = list(MAT_METAL = 40000, MAT_GLASS = 20000, MAT_SILVER = 10000, MAT_DIAMOND = 10000)
 	construction_time = 50
 	build_path = /obj/item/gun/medbeam
 	category = list("Misc", "Medical Designs")
@@ -18,7 +18,7 @@
 	desc = "Automatically implants things inside of it."
 	id = "autosurgeon"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000, MAT_GLASS = 2000, MAT_SILVER = 1000, MAT_DIAMOND = 1000)
+	materials = list(MAT_METAL = 40000, MAT_GLASS = 20000, MAT_SILVER = 10000, MAT_DIAMOND = 10000)
 	construction_time = 50
 	build_path = /obj/item/autosurgeon
 	category = list("Misc", "Medical Designs")
@@ -276,7 +276,7 @@
 	desc = "A stripped-down version of engineering cyborg toolset, designed to be installed on subject's arm."
 	id = "ci-toolset"
 	build_type = PROTOLATHE | MECHFAB
-	materials = list (MAT_METAL = 2500, MAT_GLASS = 1500, MAT_SILVER = 1500)
+	materials = list (MAT_METAL = 30000, MAT_SILVER = 15000, MAT_PLASMA = 6000, MAT_TITANIUM = 8000, MAT_DIAMOND = 8000)
 	construction_time = 200
 	build_path = /obj/item/organ/cyberimp/arm/toolset
 	category = list("Misc", "Medical Designs")
@@ -321,7 +321,7 @@
 	id = "ci-thermals"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASMA = 1000, MAT_DIAMOND = 2000)
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 1000, MAT_SILVER = 2000, MAT_GOLD = 2000, MAT_PLASMA = 4000, MAT_DIAMOND = 6000)
 	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
