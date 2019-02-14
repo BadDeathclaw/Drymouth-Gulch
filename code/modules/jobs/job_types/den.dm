@@ -61,7 +61,7 @@ Deputy
 
 	outfit = /datum/outfit/job/den/f13sheriff
 
-/datum/outfit/job/den/f13sheriff
+/datum/outfit/job/den/f13deputy
 	name = "Deputy"
 	jobtype = /datum/job/den/f13deputy
 
