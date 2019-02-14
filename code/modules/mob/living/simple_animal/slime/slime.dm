@@ -50,7 +50,7 @@
 	var/mob/living/Leader = null // AI variable - tells the slime to follow this person
 
 	var/attacked = 0 // Determines if it's been attacked recently. Can be any number, is a cooloff-ish variable
-	var/rabid = 1 // If set to 1, the slime will attack and eat anything it comes in contact with
+	var/rabid = 0 // If set to 1, the slime will attack and eat anything it comes in contact with
 	var/holding_still = 0 // AI variable, cooloff-ish for how long it's going to stay in one place
 	var/target_patience = 0 // AI variable, cooloff-ish for how long it's going to follow its target
 
