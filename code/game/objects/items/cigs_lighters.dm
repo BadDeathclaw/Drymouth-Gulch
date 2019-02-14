@@ -283,8 +283,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = "A Viceroy brand cigarette."
 
 /obj/item/clothing/mask/cigarette/syndicate //syndicate
-	desc = "An unknown brand cigarette."
-	list_reagents = list("nicotine" = 15, "omnizine" = 15)
+	desc = "A Camel brand cigarette"
 
 /obj/item/clothing/mask/cigarette/shadyjims //shadyjims
 	desc = "A Shady Jim's Super Slims cigarette."
