@@ -270,7 +270,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/uplift //uplift
 	desc = "A Kings brand cigarette."
-    list_reagents = list("nicotine" = 30)
 
 /obj/item/clothing/mask/cigarette/robust //robust
 	desc = "A Marlboro brand cigarette."
