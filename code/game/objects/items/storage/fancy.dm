@@ -229,9 +229,9 @@
 	icon_state = "carp"
 	spawn_type = /obj/item/clothing/mask/cigarette/carp
 
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate //updated syndie sprites
-	name = "Camel packet."
-	desc = "A pack of Camels is your best friend in prison, or the wasteland."
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate //not in vending machines at time of writing 14/02/19
+	name = "cigarette packet"
+	desc = "An obscure brand of cigarettes."
 	icon_state = "syndie"
 	spawn_type = /obj/item/clothing/mask/cigarette/syndicate
 
