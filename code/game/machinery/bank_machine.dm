@@ -1,6 +1,6 @@
 /obj/machinery/computer/bank_machine
 	name = "bank machine"
-	desc = "A machine used to deposit and withdraw station funds."
+	desc = "A machine used to deposit and withdraw funds."
 	icon = 'goon/icons/obj/goon_terminals.dmi'
 	idle_power_usage = 100
 	var/siphoning = FALSE
@@ -22,6 +22,9 @@
 
 /obj/machinery/computer/bank_machine/attackby(obj/item/I, mob/user)
 	var/value = 0
+	if(istype(I, /obj/item/stack/f13Cash))
+		var/obj/item/stack/f13Cash/C = I
+		value = C.value * C.amount
 	if(istype(I, /obj/item/stack/spacecash))
 		var/obj/item/stack/spacecash/C = I
 		value = C.value * C.amount
