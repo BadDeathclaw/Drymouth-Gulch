@@ -12,13 +12,23 @@
 	category = list("Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/BS_RPED
-	name = "Bluespace RPED"
-	desc = "Powered by bluespace technology, this RPED variant can upgrade buildings from a distance, without needing to remove the panel first."
-	id = "bs_rped"
+/datum/design/ARPED
+	name = "Advanced Rapid Part Exchange Device"
+	desc = "Special mechanical module made to store, sort, and apply standard machine parts. engineered to hold more capicity."
+	id = "arped"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 15000, MAT_GLASS = 5000, MAT_SILVER = 2500) //hardcore
-	build_path = /obj/item/storage/part_replacer/bluespace
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 5000, MAT_TITANIUM = 4000)
+	build_path = /obj/item/storage/part_replacer/advanced
+	category = list("Stock Parts")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/DXRPED
+	name = "Deluxe RPED"
+	desc = "Powered by vault-tec technology, this RPED variant can hold up to four hundred stock parts."
+	id = "dxrped"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 15000, MAT_GLASS = 5000, MAT_DIAMOND = 4000, MAT_TITANIUM = 4000) //hardcore
+	build_path = /obj/item/storage/part_replacer/deluxe
 	category = list("Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SCIENCE
 

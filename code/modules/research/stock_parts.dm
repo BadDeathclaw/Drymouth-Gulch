@@ -40,15 +40,22 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 	else
 		playsound(src, pshoom_or_beepboopblorpzingshadashwoosh, 40, 1)
 
-/obj/item/storage/part_replacer/bluespace
-	name = "bluespace rapid part exchange device"
-	desc = "A version of the RPED that allows for replacement of parts and scanning from a distance, along with higher capacity for parts."
+/obj/item/storage/part_replacer/deluxe
+	name = "deluxe rapid part exchange device"
+	desc = "A more compact design of the RPED that allows for replacement of parts, along with higher capacity for parts."
 	icon_state = "BS_RPED"
 	w_class = WEIGHT_CLASS_NORMAL
-	works_from_distance = TRUE
+	works_from_distance = FALSE
 	pshoom_or_beepboopblorpzingshadashwoosh = 'sound/items/pshoom.ogg'
 	alt_sound = 'sound/items/pshoom_2.ogg'
-	component_type = /datum/component/storage/concrete/bluespace/rped
+	component_type = /datum/component/storage/concrete/deluxe/rped
+
+/obj/item/storage/part_replacer/advanced
+	name = "advanced rapid part exchange device"
+	desc = "A expanded version of the RPED, that allows for more carry capacity for parts."
+	item_state = "ARPED"
+	component_type = /datum/component/storage/concrete/advanced/rped
+
 
 /obj/item/storage/part_replacer/cyborg
 	name = "rapid part exchange device"

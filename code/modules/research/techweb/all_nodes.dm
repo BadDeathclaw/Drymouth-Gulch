@@ -821,6 +821,13 @@
 			continue
 		boost_item_paths |= UI.item	//allows deconning to unlock.
 
+////////////////////////////////special nodes///////////////////////////
+/datum/techweb_node/dxrped
+	id = "dxrped"
+	display_name = "Deluxe RPED"
+	description = "Powered by vault-tec technology, this RPED variant can hold up to four hundred stock parts."
+	design_ids = list("dxrped")
+
 
 //Helpers for debugging/balancing the techweb in its entirety!
 /proc/total_techweb_exports()
