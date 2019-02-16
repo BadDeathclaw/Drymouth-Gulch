@@ -1172,13 +1172,13 @@ obj
 								lb2.loc=src.loc
 								del src
 							if(2)
-								var/obj/item/poster/wanted/lb = new
+								var/obj/item/poster/random_contraband/lb = new
 								var/obj/item/multitool/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
 								del src
 							if(3)
-								var/obj/item/cigbutt/cigarbutt/lb = new
+								var/obj/item/poster/random_official/lb = new
 								var/obj/item/trash/sosjerky/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
