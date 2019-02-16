@@ -44,7 +44,7 @@
 
 /obj/item/instrument/violin
 	name = "violin"
-	desc = "A wooden musical instrument with four strings and a bow. ""
+	desc = "A wooden musical instrument with four strings and a bow."
 	icon_state = "violin"
 	item_state = "violin"
 	hitsound = "swing_hit"
@@ -52,7 +52,7 @@
 
 /obj/item/instrument/violin/golden
 	name = "golden violin"
-	desc = "A golden musical instrument with four strings and a bow.""
+	desc = "A golden musical instrument with four strings and a bow."
 	icon_state = "golden_violin"
 	item_state = "golden_violin"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
