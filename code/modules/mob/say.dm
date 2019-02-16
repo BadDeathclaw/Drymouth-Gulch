@@ -20,8 +20,8 @@
 /mob/proc/whisper(message, datum/language/language=null)
 	say(message, language) //only living mobs actually whisper, everything else just talks
 
-/mob/verb/me_verb(message as text)
-	set name = "Me"
+/mob/verb/me_verb(message as null|message)
+	set name = "Emote"
 	set category = "IC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
@@ -47,7 +47,7 @@
 	if(jb)
 		to_chat(src, "<span class='danger'>You have been banned from deadchat.</span>")
 		return
-	
+
 
 
 	if (src.client)
