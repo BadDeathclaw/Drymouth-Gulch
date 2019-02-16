@@ -392,18 +392,6 @@
 	glass_name = "glass of Nuka Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
 
-/datum/reagent/consumable/nuka_cola/on_mob_add(mob/M)
-	..()
-	if(isliving(M))
-		var/mob/living/L = M
-		L.add_trait(TRAIT_GOTTAGOFAST, id)
-
-/datum/reagent/consumable/nuka_cola/on_mob_delete(mob/M)
-	if(isliving(M))
-		var/mob/living/L = M
-		L.remove_trait(TRAIT_GOTTAGOFAST, id)
-	..()
-
 /datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/M)
 	M.Jitter(20)
 	M.set_drugginess(30)
