@@ -20,11 +20,10 @@
 /mob/proc/whisper(message, datum/language/language=null)
 	say(message, language) //only living mobs actually whisper, everything else just talks
 
-/mob/verb/me_verb(message as null|message)
-	set name = "Emote"
+/mob/verb/me_verb(message as message) //messages give you bigger boxes on text inputs, null| can be set before them too.
+	set name = "Me"
 	set category = "IC"
-
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+	if(GLOB.say_disabled)	//This is here to try to identify lag problem
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
