@@ -63,6 +63,6 @@
 	if(spamcheck > world.time)
 		to_chat(user, "<span class='warning'>\The [src] is not to be overused in battle!</span>")
 	else
-		playsound(loc, 'sound/items/airhorn.ogg', 100, 0, 1)
+		playsound(loc, 'sound/items/cornu.ogg', 100, 0, 1)
 		spamcheck = world.time + 50
 		return voicespan

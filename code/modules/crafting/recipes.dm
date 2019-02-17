@@ -732,7 +732,7 @@
 	category = CAT_ASSEM
 
 /datum/crafting_recipe/proximity
-	name = "Remote signaling device"
+	name = "Proximity sensor"
 	result = /obj/item/assembly/prox_sensor
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,

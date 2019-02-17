@@ -162,7 +162,7 @@ Code:
 
 /obj/item/electropack/shockcollar/Initialize()
 	..()
-	frequency = rand(1441,1489)
+	frequency = pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459)
 	code = rand(1,100)
 	name = "[name] #[frequency]/[code]"
 
