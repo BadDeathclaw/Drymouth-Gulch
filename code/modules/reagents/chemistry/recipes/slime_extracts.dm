@@ -99,6 +99,7 @@
 	..()
 
 //Gold
+/*
 /datum/chemical_reaction/slime/slimemobspawn
 	name = "Slime Crit"
 	id = "m_tele"
@@ -136,7 +137,7 @@
 /datum/chemical_reaction/slime/slimemobspawn/friendly/summon_mobs(datum/reagents/holder, turf/T)
 	T.visible_message("<span class='danger'>The slime extract begins to vibrate adorably!</span>")
 	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, 1, "Friendly Gold Slime", FRIENDLY_SPAWN, "neutral"), 50)
-
+*/
 //Silver
 /datum/chemical_reaction/slime/slimebork
 	name = "Slime Bork"
