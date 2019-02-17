@@ -500,6 +500,14 @@
 	build_path = /obj/item/assembly/signaler
 	category = list("initial", "T-Comm")
 
+/datum/design/signaler/advanced
+	name = "Advanced Signaling Device"
+	id = "advanced_signaler"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 400)
+	build_path = /obj/item/assembly/signaler/advanced
+	category = list("initial", "T-Comm")
+
 /datum/design/radio_headset
 	name = "Radio Headset"
 	id = "radio_headset"
