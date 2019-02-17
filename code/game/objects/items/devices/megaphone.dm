@@ -49,3 +49,20 @@
 	desc = "Something that should not exist."
 	icon_state = "megaphone-clown"
 	voicespan = list(SPAN_CLOWN)
+
+/obj/item/megaphone/cornu
+	name = "cornu horn"
+	desc = "A horn carried by roman flagbearers to inform the commander's orders to the troops. Loudly."
+	icon = 'icons/obj/musician.dmi'
+	icon_state = "cornu"
+	item_state = "cornu"
+	lefthand_file = 'icons/mob/inhands/equipment/horns_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/horns_righthand.dmi'
+
+/obj/item/megaphone/cornu/get_held_item_speechspans(mob/living/carbon/user)
+	if(spamcheck > world.time)
+		to_chat(user, "<span class='warning'>\The [src] is not to be overused in battle!</span>")
+	else
+		playsound(loc, 'sound/items/airhorn.ogg', 100, 0, 1)
+		spamcheck = world.time + 50
+		return voicespan
