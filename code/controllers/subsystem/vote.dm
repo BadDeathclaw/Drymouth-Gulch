@@ -133,7 +133,8 @@ SUBSYSTEM_DEF(vote)
 			SSticker.Reboot("Restart vote successful.", "restart vote")
 		else
 			to_chat(world, "<span style='boldannounce'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
-			message_admins("A restart vote has passed, but there are active admins on with +server, so it has been canceled. If you wish, you may restart the server.")
+			message_admins("A restart vote has passed, but there are active admins on with +server, so the shuttle has been called.")
+			SSshuttle.emergency.request()
 
 	return .
 

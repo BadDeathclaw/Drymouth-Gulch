@@ -121,8 +121,6 @@
 	if (T && AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
 
-	NPC_count -= 1
-
 	return ..()
 
 /mob/living/simple_animal/updatehealth()
