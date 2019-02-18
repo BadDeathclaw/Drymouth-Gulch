@@ -5,8 +5,6 @@
 // - If the seed is 3, it will spawn mineable rock, otherwise it will do nothing.
 // - You can also use "procedural dense spawner type 3" to spawn impassable rock, conditional on the seed drawn.
 
-var/SPAWNER_SEED = rand(1, 10)
-
 /obj/effect/spawner/turf
 	name = "map turf spawner"
 	var/list/spawn_list
