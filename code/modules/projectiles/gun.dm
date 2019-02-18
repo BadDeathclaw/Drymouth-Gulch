@@ -92,9 +92,10 @@
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
-	if(user.get_active_held_item() != src)
-		zoom(user, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
-		azoom.Remove(user) // WHY the fuck did it not just remove the action if it wasn't in the hands that second comment above fuck you for this.
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.
+			azoom.Remove(user)
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
