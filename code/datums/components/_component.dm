@@ -58,6 +58,7 @@
 	if(!silent)
 		SEND_SIGNAL(P, COMSIG_COMPONENT_REMOVING, src)
 	parent = null
+	SSdcs.UnregisterSignal(src, signal_procs)
 	LAZYCLEARLIST(signal_procs)
 	return ..()
 
@@ -92,6 +93,9 @@
 	for(var/sig_type in sig_types)
 		if(!override && procs[sig_type])
 			stack_trace("[sig_type] overridden. Use override = TRUE to suppress this warning")
+
+		if(sig_type[1] == "!")
+			SSdcs.RegisterSignal(src, sig_type)
 
 		procs[sig_type] = proc_or_callback
 
