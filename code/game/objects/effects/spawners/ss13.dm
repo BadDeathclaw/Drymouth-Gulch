@@ -1172,13 +1172,13 @@ obj
 								lb2.loc=src.loc
 								del src
 							if(2)
-								var/obj/item/poster/wanted/lb = new
+								var/obj/item/poster/random_contraband/lb = new
 								var/obj/item/multitool/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
 								del src
 							if(3)
-								var/obj/item/cigbutt/cigarbutt/lb = new
+								var/obj/item/poster/random_official/lb = new
 								var/obj/item/trash/sosjerky/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
@@ -1311,6 +1311,99 @@ obj
 								del src
 
 
+				alcoholspawner
+					Initialize(mapload)
+						switch(rand(1,22))
+							if(1)
+								var/obj/item/reagent_containers/food/drinks/beer/lb = new
+								var/obj/item/reagent_containers/food/drinks/ale/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
+								del src
+							if(2)
+								var/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko/lb = new
+								lb.loc=src.loc
+								del src
+							if(3)
+								var/obj/item/reagent_containers/food/drinks/bottle/gin/lb = new
+								lb.loc=src.loc
+								del src
+							if(4)
+								var/obj/item/reagent_containers/food/drinks/bottle/hcider/lb = new
+								lb.loc=src.loc
+								del src
+							if(5)
+								var/obj/item/reagent_containers/food/drinks/bottle/whiskey/lb = new
+								lb.loc=src.loc
+								del src
+							if(6)
+								var/obj/item/reagent_containers/food/drinks/bottle/vodka/lb = new
+								lb.loc=src.loc
+								del src
+							if(7)
+								var/obj/item/reagent_containers/food/drinks/bottle/vodka/badminka/lb = new
+								lb.loc=src.loc
+								del src
+							if(8)
+								var/obj/item/reagent_containers/food/drinks/bottle/tequila/lb = new
+								lb.loc=src.loc
+								del src
+							if(9)
+								var/obj/item/reagent_containers/food/drinks/bottle/patron/lb = new
+								lb.loc=src.loc
+								del src
+							if(10)
+								var/obj/item/reagent_containers/food/drinks/bottle/rum/lb = new
+								lb.loc=src.loc
+								del src
+							if(11)
+								var/obj/item/reagent_containers/food/drinks/bottle/vermouth/lb = new
+								lb.loc=src.loc
+								del src
+							if(12)
+								var/obj/item/reagent_containers/food/drinks/bottle/kahlua/lb = new
+								lb.loc=src.loc
+								del src
+							if(13)
+								var/obj/item/reagent_containers/food/drinks/bottle/goldschlager/lb = new
+								lb.loc=src.loc
+								del src
+							if(14)
+								var/obj/item/reagent_containers/food/drinks/bottle/cognac/lb = new
+								lb.loc=src.loc
+								del src
+							if(15)
+								var/obj/item/reagent_containers/food/drinks/bottle/wine/lb = new
+								lb.loc=src.loc
+								del src
+							if(16)
+								var/obj/item/reagent_containers/food/drinks/bottle/absinthe/lb = new
+								lb.loc=src.loc
+								del src
+							if(17)
+								var/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium/lb = new
+								lb.loc=src.loc
+								del src
+							if(18)
+								var/obj/item/reagent_containers/food/drinks/bottle/lizardwine/lb = new
+								lb.loc=src.loc
+								del src
+							if(19)
+								var/obj/item/reagent_containers/food/drinks/bottle/hcider/lb = new
+								lb.loc=src.loc
+								del src
+							if(20)
+								var/obj/item/reagent_containers/food/drinks/bottle/grappa/lb = new
+								lb.loc=src.loc
+								del src
+							if(21)
+								var/obj/item/reagent_containers/food/drinks/bottle/sake/lb = new
+								lb.loc=src.loc
+								del src
+							if(22)
+								var/obj/item/reagent_containers/food/drinks/bottle/fernet/lb = new
+								lb.loc=src.loc
+								del src
 
 			foodspawner
 				Initialize(mapload)

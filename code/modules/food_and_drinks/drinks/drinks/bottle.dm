@@ -175,7 +175,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequila, served in space night clubs across the galaxy."
+	desc = "Silver laced tequila, served in space night clubs across the region."
 	icon_state = "patronbottle"
 	list_reagents = list("patron" = 100)
 
@@ -251,7 +251,7 @@
 		if("A&A")
 			fullname = "Ash and Asher"
 		if("Generic")
-			fullname = "Nanotrasen Cheap Imitations"
+			fullname = "Chinese Cheap Imitations"
 	var/removals = list("\[REDACTED\]", "\[EXPLETIVE DELETED\]",
 		"\[EXPUNGED\]", "\[INFORMATION ABOVE YOUR SECURITY CLEARANCE\]",
 		"\[MOVE ALONG CITIZEN\]", "\[NOTHING TO SEE HERE\]")
@@ -283,7 +283,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/lizardwine
 	name = "bottle of lizard wine"
-	desc = "An alcoholic beverage from Space China, made by infusing lizard tails in ethanol. Inexplicably popular among command staff."
+	desc = "An alcoholic beverage from China, made by infusing lizard tails in ethanol. Inexplicably popular among command staff."
 	icon_state = "lizardwine"
 	list_reagents = list("lizardwine" = 100)
 	foodtype = FRUIT | ALCOHOL
@@ -320,7 +320,7 @@
 
 /obj/item/reagent_containers/food/drinks/bottle/fernet
 	name = "Fernet Bronca"
-	desc = "A bottle of pure Fernet Bronca, produced in Cordoba Space Station"
+	desc = "A bottle of pure Fernet Bronca, produced in Cordoba."
 	icon_state = "fernetbottle"
 	list_reagents = list("fernet" = 100)
 

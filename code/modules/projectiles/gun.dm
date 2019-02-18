@@ -92,8 +92,10 @@
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
-	if(zoomed && user.get_active_held_item() != src)
-		zoom(user, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.
+			azoom.Remove(user)
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
@@ -561,6 +563,12 @@
 	if(zoomed)
 		zoom(user,FALSE)
 	if(azoom)
+		azoom.Remove(user)
+
+/obj/item/binocs/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.get_active_held_item() != src)
+		zoom(user, FALSE) //Sometimes I wonder why the fuck binoculars are here too with a action.
 		azoom.Remove(user)
 
 /datum/action/toggle_binoc_zoom

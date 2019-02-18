@@ -46,6 +46,7 @@
 	..()
 
 //Green
+/*
 /datum/chemical_reaction/slime/slimemutate
 	name = "Mutation Toxin"
 	id = "slimetoxin"
@@ -69,7 +70,7 @@
 	required_reagents = list("radium" = 1)
 	required_other = 1
 	required_container = /obj/item/slime_extract/green
-
+*/
 //Metal
 /datum/chemical_reaction/slime/slimemetal
 	name = "Slime Metal"
@@ -456,6 +457,7 @@
 	required_other = 1
 
 //Light Pink
+/* // replacing it later with a lust potion? idk lol
 /datum/chemical_reaction/slime/slimepotion2
 	name = "Slime Potion 2"
 	id = "m_potion2"
@@ -466,7 +468,7 @@
 /datum/chemical_reaction/slime/slimepotion2/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/slime/sentience(get_turf(holder.my_atom))
 	..()
-
+*/
 //Adamantine
 /datum/chemical_reaction/slime/adamantine
 	name = "Adamantine"

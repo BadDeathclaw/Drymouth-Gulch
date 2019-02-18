@@ -460,6 +460,14 @@
 	build_path = /obj/item/ammo_box/c38
 	category = list("initial", "Security")
 
+/datum/design/solids
+	name = "Solid Beaker"
+	id = "solids"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	build_path = /obj/item/reagent_containers/glass/beaker/solids
+	category = list("initial", "Security")
+
 /datum/design/recorder
 	name = "Universal Recorder"
 	id = "recorder"
@@ -490,6 +498,14 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 400, MAT_GLASS = 120)
 	build_path = /obj/item/assembly/signaler
+	category = list("initial", "T-Comm")
+
+/datum/design/signaler/advanced
+	name = "Advanced Signaling Device"
+	id = "advanced_signaler"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 400)
+	build_path = /obj/item/assembly/signaler/advanced
 	category = list("initial", "T-Comm")
 
 /datum/design/radio_headset
@@ -692,7 +708,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
-
+/*
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
 	id = "riot_dart"
@@ -708,7 +724,7 @@
 	materials = list(MAT_METAL = 22000) //Comes with 40 darts
 	build_path = /obj/item/ammo_box/foambox/riot
 	category = list("hacked", "Security")
-
+*/
 /datum/design/a357
 	name = "Speed Loader (.357)"
 	id = "a357"

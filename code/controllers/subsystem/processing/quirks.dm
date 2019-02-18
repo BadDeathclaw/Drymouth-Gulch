@@ -18,7 +18,9 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
-	for(var/V in subtypesof(/datum/quirk))
+	var/list/quirk_list = sortList(subtypesof(/datum/quirk), /proc/cmp_quirk_asc)
+
+	for(var/V in quirk_list)
 		var/datum/quirk/T = V
 		quirks[initial(T.name)] = T
 		quirk_points[initial(T.name)] = initial(T.value)
@@ -29,6 +31,4 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		user.add_quirk(V, spawn_effects)
 
 /datum/controller/subsystem/processing/quirks/proc/GenerateQuirks(client/user)
-	if(user.prefs.character_quirks.len)
-		return
 	user.prefs.character_quirks = user.prefs.all_quirks
