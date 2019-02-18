@@ -99,6 +99,8 @@
 	..()
 
 //Gold
+
+/*
 /datum/chemical_reaction/slime/slimemobspawn
 	name = "Slime Crit"
 	id = "m_tele"
@@ -127,6 +129,7 @@
 /datum/chemical_reaction/slime/slimemobspawn/lesser/summon_mobs(datum/reagents/holder, turf/T)
 	T.visible_message("<span class='danger'>The slime extract begins to vibrate violently!</span>")
 	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, 3, "Lesser Gold Slime", HOSTILE_SPAWN, "neutral"), 50)
+*/
 
 /datum/chemical_reaction/slime/slimemobspawn/friendly
 	name = "Slime Crit Friendly"
@@ -470,6 +473,8 @@
 	new /obj/item/slimepotion/slime/sentience(get_turf(holder.my_atom))
 	..()
 */
+
+/*
 //Adamantine
 /datum/chemical_reaction/slime/adamantine
 	name = "Adamantine"
@@ -481,6 +486,8 @@
 /datum/chemical_reaction/slime/adamantine/on_reaction(datum/reagents/holder)
 	new /obj/item/stack/sheet/mineral/adamantine(get_turf(holder.my_atom))
 	..()
+*/
+
 
 //Bluespace
 /datum/chemical_reaction/slime/slimefloor2
