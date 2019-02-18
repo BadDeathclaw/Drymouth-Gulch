@@ -108,7 +108,7 @@
 	NPC_count += 1
 	if(NPC_count > MAX_NPCs)
 		qdel(src)
-		visible_message("<span class='danger'>Die, monster! You don't belong in this world!</span>")
+		message_admins("Die, [src]! You don't belong in this [ADMIN_COORDJMP(loc)]! There's 255 simple_animal in the game.")
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
