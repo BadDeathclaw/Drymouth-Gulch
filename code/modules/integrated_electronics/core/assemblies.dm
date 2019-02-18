@@ -193,7 +193,7 @@
 			else
 				to_chat(usr, "<span class='warning'>The circuit is empty!</span>")
 		return
-		
+
 	if(!check_interactivity(usr))
 		return
 
@@ -412,6 +412,7 @@
 
 
 /obj/item/electronic_assembly/afterattack(atom/target, mob/user, proximity)
+	. = ..()
 	for(var/obj/item/integrated_circuit/input/S in assembly_components)
 		if(S.sense(target,user,proximity))
 			visible_message("<span class='notice'> [user] waves [src] around [target].</span>")
