@@ -207,6 +207,7 @@
 	required_other = 1
 
 //Dark Blue
+/*
 /datum/chemical_reaction/slime/slimefreeze
 	name = "Slime Freeze"
 	id = "m_freeze"
@@ -229,7 +230,7 @@
 		var/turf/open/T = get_turf(holder.my_atom)
 		if(istype(T))
 			T.atmos_spawn_air("nitrogen=50;TEMP=2.7")
-
+*/
 /datum/chemical_reaction/slime/slimefireproof
 	name = "Slime Fireproof"
 	id = "m_fireproof"
@@ -493,7 +494,7 @@
 	new /obj/item/stack/tile/bluespace(get_turf(holder.my_atom), 25)
 	..()
 
-
+/*
 /datum/chemical_reaction/slime/slimecrystal
 	name = "Slime Crystal"
 	id = "m_crystal"
@@ -505,7 +506,7 @@
 	var/obj/item/stack/ore/bluespace_crystal/BC = new (get_turf(holder.my_atom))
 	BC.visible_message("<span class='notice'>The [BC.name] appears out of thin air!</span>")
 	..()
-
+*/
 /datum/chemical_reaction/slime/slimeradio
 	name = "Slime Radio"
 	id = "m_radio"
@@ -648,7 +649,7 @@
 
 /datum/chemical_reaction/slime/slime_transfer/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/transference(get_turf(holder.my_atom))
-	..() */
+	..()
 
 /datum/chemical_reaction/slime/flight_potion
 	name = "Flight Potion"
@@ -659,4 +660,4 @@
 
 /datum/chemical_reaction/slime/flight_potion/on_reaction(datum/reagents/holder)
 	new /obj/item/reagent_containers/glass/bottle/potion/flight(get_turf(holder.my_atom))
-	..()
+	..() */
