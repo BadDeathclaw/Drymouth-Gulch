@@ -1,7 +1,55 @@
 
 //Here are the procs used to modify status effects of a mob.
-//The effects include: stun, knockdown, unconscious, sleeping, resting, jitteriness, dizziness, ear damage,
+//The effects include: paralyze, stun, knockdown, unconscious, sleeping, resting, jitteriness, dizziness, ear damage,
 // eye damage, eye_blind, eye_blurry, druggy, TRAIT_BLIND trait, and TRAIT_NEARSIGHT trait.
+//TODO: Optimize, make everything a derivative of proc/Paralyzed/whatever because why isn't it.
+
+////////////////////////////// Paralyze ////////////////////////////////////
+
+
+/mob/proc/IsParalyzed() //non-living mobs SHOULD be paralyzable, and the stuff down below, they're just missing has_status_effect and apply_status effect. cleanup later - Nappist
+	return FALSE
+
+/mob/living/IsParalyzed() //If we're paralyzed
+	return has_status_effect(STATUS_EFFECT_PARALYZED)
+
+/mob/living/proc/AmountParalyzed() //How many deciseconds remain in our paralyzed
+	var/datum/status_effect/incapacitating/P = IsParalyzed()
+	if(P)
+		return P.duration - world.time
+	return 0
+
+/mob/living/proc/Paralyze(amount, updating = TRUE, ignore_canparalyze = FALSE) //Can't go below remaining duration
+	if(((status_flags & CANPARALYZE) && !has_trait(TRAIT_PARALYZEIMMUNE)) || ignore_canparalyze)
+		var/datum/status_effect/incapacitating/P = IsParalyzed()
+		if(P)
+			P.duration = max(world.time + amount, P.duration)
+		else if(amount > 0)
+			P = apply_status_effect(STATUS_EFFECT_PARALYZED, amount, updating)
+		return P
+
+/mob/living/proc/SetParalyzed(amount, updating = TRUE, ignore_canparalyze = FALSE) //Sets remaining duration
+	if(((status_flags & CANPARALYZE) && !has_trait(TRAIT_PARALYZEIMMUNE)) || ignore_canparalyze)
+		var/datum/status_effect/incapacitating/P = IsParalyzed()
+		if(amount <= 0)
+			if(P)
+				qdel(P)
+		else
+			if(P)
+				P.duration = world.time + amount
+			else
+				P = apply_status_effect(STATUS_EFFECT_PARALYZED, amount, updating)
+		return P
+
+/mob/living/proc/AdjustParalyze(amount, updating = TRUE, ignore_canparalyze = FALSE) //Adds to remaining duration
+	if(((status_flags & CANPARALYZE) && !has_trait(TRAIT_PARALYZEIMMUNE)) || ignore_canparalyze)
+		var/datum/status_effect/incapacitating/P = IsParalyzed()
+		if(P)
+			P.duration += amount
+		else if(amount > 0)
+			P = apply_status_effect(STATUS_EFFECT_PARALYZED, amount, updating)
+		return P
+
 
 /////////////////////////////////// STUN ////////////////////////////////////
 
@@ -102,6 +150,7 @@
 		return S
 
 /////////////////////////////////// RESTING ////////////////////////////////////
+//why can mobs rest but not be stunned or paralyzed or any of those things
 
 /mob/proc/Resting(amount)
 	resting = max(max(resting,amount),0)
