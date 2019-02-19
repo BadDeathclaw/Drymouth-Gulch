@@ -85,7 +85,7 @@
 			<A href='byond://?src=[REF(src)];code=1'>+</A>
 			<A href='byond://?src=[REF(src)];code=5'>+</A><BR>
 			[t1]<BR>
-			[format_frequency(src.slot_1[1])] [src.slot_1[2]] <A href='byond://?src=[REF(src)];store_slot_1=1'>Save</A> <A href='byond://?src=[REF(src)];send_slot_1=1'>Send</A><BR> 
+			[format_frequency(src.slot_1[1])] [src.slot_1[2]] <A href='byond://?src=[REF(src)];store_slot_1=1'>Save</A> <A href='byond://?src=[REF(src)];send_slot_1=1'>Send</A><BR>
 			[format_frequency(src.slot_2[1])] [src.slot_2[2]] <A href='byond://?src=[REF(src)];store_slot_2=1'>Save</A> <A href='byond://?src=[REF(src)];send_slot_2=1'>Send</A><BR>
 			[format_frequency(src.slot_3[1])] [src.slot_3[2]] <A href='byond://?src=[REF(src)];store_slot_3=1'>Save</A> <A href='byond://?src=[REF(src)];send_slot_3=1'>Send</A><BR>
 			[format_frequency(src.slot_4[1])] [src.slot_4[2]] <A href='byond://?src=[REF(src)];store_slot_4=1'>Save</A> <A href='byond://?src=[REF(src)];send_slot_4=1'>Send</A><BR>
@@ -112,7 +112,7 @@
 			<A href='byond://?src=[REF(src)];code=5'>+</A><BR>
 			[t1]
 			</TT>"}
-			
+
 		user << browse(dat, "window=radio")
 		onclose(user, "radio")
 		return
@@ -155,16 +155,16 @@
 			store(1)
 	if(href_list["store_slot_2"])
 		spawn( 0 )
-			store(1)
+			store(2)
 	if(href_list["store_slot_3"])
 		spawn( 0 )
-			store(1)
+			store(3)
 	if(href_list["store_slot_4"])
 		spawn( 0 )
-			store(1)
+			store(4)
 	if(href_list["store_slot_5"])
 		spawn( 0 )
-			store(1)
+			store(5)
 
 	if(href_list["send_slot_1"])
 		spawn( 0 )
