@@ -525,11 +525,14 @@ GLOBAL_LIST_EMPTY(PDAs)
 						hidden_uplink.locked = FALSE
 						hidden_uplink.interact(U)
 						to_chat(U, "The PDA softly beeps.")
+					if(SEND_SIGNAL(src, COMSIG_PDA_CHANGE_RINGTONE, U, t) & COMPONENT_STOP_RINGTONE_CHANGE)
 						U << browse(null, "window=pda")
 						src.mode = 0
+						return
 					else
 						t = copytext(sanitize(t), 1, 20)
 						ttone = t
+						ttone = copytext(sanitize(t), 1, 20)
 				else
 					U << browse(null, "window=pda")
 					return
