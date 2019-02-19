@@ -80,7 +80,7 @@
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.maxHealth += 15
+	mob_tar.maxHealth += 10
 	mob_tar.health += 15
 
 /datum/quirk/light_step
@@ -133,6 +133,59 @@
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = "<span class='notice'>You feel HONGRY.</span>"
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
+
+/datum/quirk/deviant_tastes
+	name = "Deviant Tastes"
+	desc = "You dislike food that most people enjoy, and find delicious what they don't."
+	value = 1
+	gain_text = "<span class='notice'>You start craving something that tastes strange.</span>"
+	lose_text = "<span class='notice'>You feel like eating normal food again.</span>"
+
+/datum/quirk/deviant_tastes/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	var/liked = species.liked_food
+	species.liked_food = species.disliked_food
+	species.disliked_food = liked
+
+/datum/quirk/deviant_tastes/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.liked_food = initial(species.liked_food)
+	species.disliked_food = initial(species.disliked_food)
+
+/datum/quirk/prosthetic_limb
+	name = "Prosthetic Limb"
+	desc = "An accident caused you to lose one of your limbs. Because of this, you now have a random prosthetic!"
+	value = 1
+	var/slot_string = "limb"
+
+/datum/quirk/prosthetic_limb/on_spawn()
+	var/limb_slot = pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/bodypart/old_part = H.get_bodypart(limb_slot)
+	var/obj/item/bodypart/prosthetic
+	switch(limb_slot)
+		if(BODY_ZONE_L_ARM)
+			prosthetic = new/obj/item/bodypart/l_arm/robot/surplus(quirk_holder)
+			slot_string = "left arm"
+		if(BODY_ZONE_R_ARM)
+			prosthetic = new/obj/item/bodypart/r_arm/robot/surplus(quirk_holder)
+			slot_string = "right arm"
+		if(BODY_ZONE_L_LEG)
+			prosthetic = new/obj/item/bodypart/l_leg/robot/surplus(quirk_holder)
+			slot_string = "left leg"
+		if(BODY_ZONE_R_LEG)
+			prosthetic = new/obj/item/bodypart/r_leg/robot/surplus(quirk_holder)
+			slot_string = "right leg"
+	prosthetic.replace_limb(H)
+	qdel(old_part)
+	H.regenerate_icons()
+
+/datum/quirk/prosthetic_limb/post_add()
+	to_chat(quirk_holder, "<span class='boldannounce'>Your [slot_string] has been replaced with a surplus prosthetic. It is fragile and will easily come apart under duress. Additionally, \
+	you need to use a welding tool and cables to repair it, instead of bruise packs and ointment.</span>")
+
 
 ///////////////////
 //////FL13 weapons traits!
