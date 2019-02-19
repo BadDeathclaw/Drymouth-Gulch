@@ -1,6 +1,7 @@
 //Largely negative status effects go here, even if they have small benificial effects
 //STUN EFFECTS
 /datum/status_effect/incapacitating
+	id = "paralyze"
 	tick_interval = 0
 	status_type = STATUS_EFFECT_REPLACE
 	alert_type = null

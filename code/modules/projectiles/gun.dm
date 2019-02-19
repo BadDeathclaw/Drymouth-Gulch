@@ -72,7 +72,6 @@
 	if(gun_light)
 		alight = new /datum/action/item_action/toggle_gunlight(src)
 	build_zooming()
-	slowdown = (w_class / 2)
 
 /obj/item/gun/CheckParts(list/parts_list)
 	..()
@@ -132,6 +131,11 @@
 	user.visible_message("<span class='danger'>[user] grabs a gun!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
 	user.Paralyze(2 * src.weapon_weight, ignore_canparalyze = TRUE) // Need to define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
 	user.log_message("[user] drew a gun", INDIVIDUAL_ATTACK_LOG)
+	src.slowdown = (w_class / 2)
+
+/obj/item/gun/dropped(mob/user)
+	. = ..()
+	src.slowdown = initial(slowdown)
 
 /obj/item/gun/emp_act(severity)
 	. = ..()
