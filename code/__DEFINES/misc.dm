@@ -455,3 +455,4 @@ GLOBAL_LIST_INIT(pda_styles, list(MONO, VT, ORBITRON, SHARE))
 #define UNLOCKED 1
 #define LOCKED 2
 
+#define SPAWNER_SEED rand(1, 10)
