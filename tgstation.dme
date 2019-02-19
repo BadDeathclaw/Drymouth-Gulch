@@ -720,7 +720,6 @@
 #include "code\game\objects\effects\spawners\f13turf.dm"
 #include "code\game\objects\effects\spawners\gibspawner.dm"
 #include "code\game\objects\effects\spawners\lootdrop.dm"
-#include "code\game\objects\effects\spawners\ss13.dm"
 #include "code\game\objects\effects\spawners\structure.dm"
 #include "code\game\objects\effects\spawners\traps.dm"
 #include "code\game\objects\effects\spawners\vaultspawner.dm"
