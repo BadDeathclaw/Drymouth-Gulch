@@ -1250,7 +1250,6 @@ obj
 								lb2.loc=src.loc
 								del src
 							if(15)
-								var/obj/item/dildo/lb = new
 								var/obj/item/storage/box/matches/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
