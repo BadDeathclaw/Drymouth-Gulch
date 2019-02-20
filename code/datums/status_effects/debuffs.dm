@@ -1,7 +1,6 @@
 //Largely negative status effects go here, even if they have small benificial effects
 //STUN EFFECTS
 /datum/status_effect/incapacitating
-	id = "paralyze"
 	tick_interval = 0
 	status_type = STATUS_EFFECT_REPLACE
 	alert_type = null
@@ -21,6 +20,10 @@
 	owner.update_canmove()
 	if(needs_update_stat || issilicon(owner)) //silicons need stat updates in addition to normal canmove updates
 		owner.update_stat()
+
+//PARALYSIS
+/datum/status_effect/incapacitating/paralyze
+	id = "paralyze"
 
 //STUN
 /datum/status_effect/incapacitating/stun

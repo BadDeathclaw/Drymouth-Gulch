@@ -17,6 +17,7 @@
 	force = 5
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
+	item_flags = SLOWS_WHILE_IN_HAND
 
 	var/fire_sound = "gunshot"
 	var/suppressed = null					//whether or not a message is displayed when fired
@@ -72,6 +73,7 @@
 	if(gun_light)
 		alight = new /datum/action/item_action/toggle_gunlight(src)
 	build_zooming()
+	src.slowdown = (w_class / 3)
 
 /obj/item/gun/CheckParts(list/parts_list)
 	..()
@@ -129,9 +131,8 @@
 /obj/item/gun/pickup(mob/living/user)
 	. = ..()
 	user.visible_message("<span class='danger'>[user] grabs a gun!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
-	user.Paralyze(2 * src.weapon_weight, ignore_canparalyze = TRUE) // Need to define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
+	user.SetParalyze(2 * src.weapon_weight) // Need to define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
 	user.log_message("[user] drew a gun", INDIVIDUAL_ATTACK_LOG)
-	src.slowdown = (w_class / 2)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()

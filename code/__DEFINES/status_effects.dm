@@ -37,7 +37,7 @@
 // DEBUFFS //
 /////////////
 
-#define STATUS_EFFECT_PARALYZED /datum/status_effect/incapacitating //the affected is paralyzed, and cannot move
+#define STATUS_EFFECT_PARALYZE /datum/status_effect/incapacitating/paralyze //the affected is paralyzed, and cannot move
 
 #define STATUS_EFFECT_STUN /datum/status_effect/incapacitating/stun //the affected is stunned
 
