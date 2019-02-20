@@ -1,3 +1,6 @@
+/mob/living/carbon/human/Paralyze(amount, updating = 1, ignore_canparalyze = 0)
+	amount = dna.species.spec_stun(src,amount)
+	return ..()
 
 /mob/living/carbon/human/Stun(amount, updating = 1, ignore_canstun = 0)
 	amount = dna.species.spec_stun(src,amount)
