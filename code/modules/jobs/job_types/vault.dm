@@ -16,7 +16,7 @@ here's a tip, go search DEFINES/access.dm
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK)
+	H.mind.istechnophreak = TRUE
 
 /*
 Overseer
