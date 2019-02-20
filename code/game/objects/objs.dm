@@ -249,7 +249,7 @@
 	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
 		to_chat(user, "<span class='warning'>[src] needs to be on the floor to be secured!</span>")
 		return FAILED_UNFASTEN
-	if(!user.mind.istechnophreak && src.super_advanced_technology && !isdead(user))
+	if(!user.mind.istechnophreak && src.super_advanced_technology)
 		to_chat(user, "<span class='warning'>You don't understand the technology well enough to do this!</span>")
 		return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
