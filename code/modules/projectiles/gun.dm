@@ -130,9 +130,7 @@
 //Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
 /obj/item/gun/pickup(mob/living/user)
 	. = ..()
-	user.visible_message("<span class='danger'>[user] grabs a gun!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
-	user.SetParalyze(2 * src.weapon_weight) // Need to define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
-	user.log_message("[user] drew a gun", INDIVIDUAL_ATTACK_LOG)
+	weapondraw(src, user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
