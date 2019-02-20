@@ -369,10 +369,6 @@
 /obj/structure/piano/ui_interact(mob/user)
 	if(!user || !anchored)
 		return
-
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
-		return 1
 	user.set_machine(src)
 	song.interact(user)
 
