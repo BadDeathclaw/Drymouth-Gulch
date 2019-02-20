@@ -158,14 +158,14 @@
 	if(H.gender == FEMALE)
 		user.visible_message("[user] surgically masculinized [target]'s face.", "<span class='notice'>You finished surgically masculinizing [target]'s face.</span>")
 		H.gender = MALE
-		if (!H.has_breasts)
+		if (H.has_breasts)
 			H.gender_ambiguous = 1
 		else
 			H.gender_ambiguous = 0
 	else
 		user.visible_message("[user] surgically feminized [target]'s face.", "<span class='notice'>You finished surgically feminizing [target]'s face.</span>")
 		H.gender = FEMALE
-		if (H.has_breasts)
+		if (!H.has_breasts)
 			H.gender_ambiguous = 1
 		else
 			H.gender_ambiguous = 0
