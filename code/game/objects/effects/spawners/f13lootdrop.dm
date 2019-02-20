@@ -986,7 +986,6 @@
 				/obj/item/storage/box/snappops,
 				/obj/item/bikehorn/rubberducky,
 				/obj/item/stack/packageWrap,
-				/obj/item/dildo,
 				/obj/item/storage/box/matches,
 				/obj/item/toner,
 				/obj/item/tank/internals/oxygen,
