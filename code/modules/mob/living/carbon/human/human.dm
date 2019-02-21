@@ -5,9 +5,9 @@
 	icon_state = "caucasian_m"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
 	var/obj/item/rig/wearing_rig
-	var/has_penis = 0
-	var/has_vagina = 0
-	var/has_breasts = 0
+	var/has_penis = FALSE
+	var/has_vagina = FALSE
+	var/has_breasts = FALSE
 
 //lewd
 	var/last_partner
@@ -42,9 +42,10 @@
 	handcrafting = new()
 
 /mob/living/carbon/human/New()
+	. = ..()
 	if(gender == MALE)
 		has_penis = TRUE
-	else if(gender == FEMALE)
+	else (gender == FEMALE)
 		has_vagina = TRUE
 		has_breasts = TRUE
 
