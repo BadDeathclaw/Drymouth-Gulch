@@ -45,7 +45,8 @@
 	. = ..()
 	if(gender == MALE)
 		has_penis = TRUE
-	else (gender == FEMALE)
+
+	if(gender == FEMALE)
 		has_vagina = TRUE
 		has_breasts = TRUE
 
