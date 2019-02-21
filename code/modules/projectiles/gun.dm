@@ -75,6 +75,7 @@
 	build_zooming()
 
 /obj/item/gun/New()
+	. = ..()
 	src.slowdown = (w_class / 3)
 
 /obj/item/gun/CheckParts(list/parts_list)
