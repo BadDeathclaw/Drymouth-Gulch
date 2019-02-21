@@ -352,7 +352,7 @@
 	playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	if(retaliation_message)
-		visible_message("<font color=red><b>\The [partner]</b> [message]</font>")
+		visible_message("<font color=red><b>\The [partner]</b> [retaliation_message]</font>")
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
@@ -424,6 +424,7 @@
 
 /mob/living/carbon/human/proc/do_throatfuck(mob/living/carbon/human/partner)
 	var/message
+	var/retaliation_message = FALSE
 
 	if(is_fucking(partner, CUM_TARGET_THROAT))
 		message = "[pick(
@@ -436,6 +437,14 @@
 				var/mob/living/carbon/human/H = partner
 				H.adjustOxyLoss(5)
 				add_logs(src, partner, "attacked", src) //cmon, it's 1 in 100. how can it spam logs
+		if(partner.a_intent == INTENT_HARM)
+			src.adjustBruteLoss(5)
+			retaliation_message = pick(
+				"bites down hard on \the [partner]'s cock.",
+				"tightens teeth against \the [partner]'s dick until blood flows.",
+				"stares up from between \the [partner]'s knees, blood on their teeth.",
+				"struggles to escape from between \the [partner]'s legs.",
+			)
 	else if(is_fucking(partner, CUM_TARGET_MOUTH))
 		message = "thrusts deeper into \the [partner]'s mouth and down their throat."
 
@@ -445,6 +454,8 @@
 
 	playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
+	if(retaliation_message)
+		visible_message("<font color=red><b>\The [partner]</b> [retaliation_message]</font>")
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_THROAT, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))

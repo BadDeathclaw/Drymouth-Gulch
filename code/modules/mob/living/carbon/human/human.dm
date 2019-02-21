@@ -43,7 +43,7 @@
 
 	if(gender == MALE)
 		has_penis = TRUE
-	if(gender == FEMALE)
+	else if(gender == FEMALE)
 		has_vagina = TRUE
 		has_breasts = TRUE
 
