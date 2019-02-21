@@ -420,7 +420,7 @@
 		alight.Grant(user)
 
 /obj/item/gun/dropped(mob/user)
-	..()
+	. = ..()
 	if(zoomed)
 		zoom(user,FALSE)
 	if(azoom)
