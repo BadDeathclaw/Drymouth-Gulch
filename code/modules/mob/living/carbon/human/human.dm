@@ -8,7 +8,7 @@
 	var/has_penis = 0
 	var/has_vagina = 0
 	var/has_breasts = 0
-	
+
 //lewd
 	var/last_partner
 	var/last_orifice
@@ -41,6 +41,7 @@
 
 	handcrafting = new()
 
+/mob/living/carbon/human/New()
 	if(gender == MALE)
 		has_penis = TRUE
 	else if(gender == FEMALE)
