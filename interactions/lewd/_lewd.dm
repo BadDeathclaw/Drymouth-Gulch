@@ -275,6 +275,7 @@
 
 /mob/living/carbon/human/proc/do_facefuck(mob/living/carbon/human/partner)
 	var/message
+	var/retaliation_message = FALSE
 
 	if(is_fucking(partner, CUM_TARGET_MOUTH))
 		if(has_vagina())
@@ -286,6 +287,14 @@
 				"looks \the [partner]'s in the eyes as their pussy presses into a waiting tongue.",
 				"sways their hips, pushing their sex into \the [partner]'s face.",
 				)
+			if(partner.a_intent == INTENT_HARM)
+				src.adjustBruteLoss(5)
+				retaliation_message = pick(
+					"bites furiously at \the [partner]'s legs.",
+					"tightens teeth against \the [partner]'s pussy.",
+					"looks deeply displeased to be there.",
+					"struggles to escape from between \the [partner]'s thighs.",
+				)
 		else if(has_penis())
 			message = pick(
 				"roughly fucks \the [partner]'s mouth.",
@@ -295,6 +304,22 @@
 				"looks \the [partner]'s in the eyes as their cock presses into a waiting tongue.",
 				"rolls their hips hard, sinking into \the [partner]'s mouth.",
 				)
+			if(partner.a_intent == INTENT_HARM)
+				src.adjustBruteLoss(5)
+				retaliation_message = pick(
+					"bites down hard on \the [partner]'s cock.",
+					"tightens teeth against \the [partner]'s dick until blood flows.",
+					"stares up from between \the [partner]'s knees, blood on their teeth.",
+					"struggles to escape from between \the [partner]'s legs.",
+				)
+				if(prob(5)) // dick crit
+					src.adjustBruteLoss(20)
+					retaliation_message = pick(
+						"tightens teeth onto \the [partner]'s cock, messily tearing it away!",
+						"bites down on \the [partner]'s cock and doesn't let go until it rips off!",
+						"bites \the [partner]'s cock off completely in the struggle!",
+					)
+					src.has_penis = FALSE
 		else
 			message = pick(
 				"grinds against \the [partner]'s face.",
@@ -303,6 +328,14 @@
 				"grips \the [partner]'s hair, drawing them into the strangely sexless spot between their legs.",
 				"looks \the [partner]'s in the eyes as they're caught beneath two thighs.",
 				"rolls their hips hard against \the [partner]'s face.",
+				)
+			if(partner.a_intent == INTENT_HARM)
+				src.adjustBruteLoss(5)
+				retaliation_message = pick(
+					"bites down hard on \the [partner]'s leg.",
+					"tightens teeth between \the [partner]'s legs.",
+					"stares up from between \the [partner]'s knees, blood on their teeth.",
+					"struggles to escape from between \the [partner]'s legs.",
 				)
 	else
 		if(has_vagina())
@@ -318,6 +351,8 @@
 
 	playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
+	if(retaliation_message)
+		visible_message("<font color=red><b>\The [partner]</b> [message]</font>")
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
