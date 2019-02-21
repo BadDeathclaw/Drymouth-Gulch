@@ -73,6 +73,8 @@
 	if(gun_light)
 		alight = new /datum/action/item_action/toggle_gunlight(src)
 	build_zooming()
+
+/obj/item/gun/New()
 	src.slowdown = (w_class / 3)
 
 /obj/item/gun/CheckParts(list/parts_list)
@@ -131,10 +133,6 @@
 /obj/item/gun/pickup(mob/living/user)
 	. = ..()
 	weapondraw(src, user)
-
-/obj/item/gun/dropped(mob/user)
-	. = ..()
-	src.slowdown = initial(slowdown)
 
 /obj/item/gun/emp_act(severity)
 	. = ..()

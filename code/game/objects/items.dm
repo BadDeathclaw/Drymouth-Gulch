@@ -789,5 +789,5 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
-	user.SetParalyze(2 * G.weapon_weight) // Need to define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
+	user.SetParalyze(3 * G.weapon_weight) // Need to define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
 	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
