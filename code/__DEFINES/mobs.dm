@@ -1,8 +1,6 @@
 /*ALL MOB-RELATED DEFINES THAT DON'T BELONG IN ANOTHER FILE GO HERE*/
 
 //Misc mob defines
-#define MALE 1
-#define FEMALE 2
 
 //Ready states at roundstart for mob/dead/new_player
 #define PLAYER_NOT_READY 0
