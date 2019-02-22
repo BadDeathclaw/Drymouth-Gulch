@@ -206,36 +206,39 @@
 	glasses = /obj/item/clothing/glasses/hud/health
 
 obj/effect/mob_spawn/human/corpse/raider
-	name = "Raider Melee"
-	outfit = /datum/outfit/russiancorpse
+	uniform = /obj/item/clothing/under/jabroni
+	suit = /obj/item/clothing/suit/armor/fluff/chestplate
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/helmet/f13/metalmask
 	hair_style = "Bald"
 	facial_hair_style = "Shaved"
 
-/datum/outfit/raidercorpse
+obj/effect/mob_spawn/human/corpse/raidermelee
 	name = "Raider Melee Corpse"
-	uniform = /obj/item/clothing/under/soviet
+	uniform = /obj/item/clothing/under/jabroni
+	suit = /obj/item/clothing/suit/armor/f13/bmetalarmor
 	shoes = /obj/item/clothing/shoes/jackboots
-	head = /obj/item/clothing/head/bearpelt
-	gloves = /obj/item/clothing/gloves/color/black
-	mask = /obj/item/clothing/mask/gas
+	head = /obj/item/clothing/head/helmet/knight/fluff/metal
 
-
-
-/obj/effect/mob_spawn/human/corpse/russian/ranged
-	outfit = /datum/outfit/russiancorpse/ranged
-
-/datum/outfit/raidercorpse/ranged
+/obj/effect/mob_spawn/human/corpse/raiderranged
 	name = "Raider Ranged Corpse"
-	head = /obj/item/clothing/head/ushanka
+	uniform = /obj/item/clothing/under/jabroni
+	suit = /obj/item/clothing/suit/armor/f13/raider
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/helmet/f13/raider
 
-/obj/effect/mob_spawn/human/corpse/raider/ranged/boss
+/obj/effect/mob_spawn/human/corpse/raiderboss
 	name = "Raider Boss"
-	outfit = /datum/outfit/russiancorpse/officer
-
-/datum/outfit/raidercorpse/boss
-	name = "Raider Boss Corpse"
-	uniform = /obj/item/clothing/under/rank/security/navyblue/russian
-	suit = /obj/item/clothing/suit/security/officer/russian
+	uniform = /obj/item/clothing/under/f13/mercc
+	suit = /obj/item/clothing/suit/armor/f13/combat
 	shoes = /obj/item/clothing/shoes/combat
-	ears = /obj/item/radio/headset
-	head = /obj/item/clothing/head/ushanka
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/helmet/f13
+
+obj/effect/mob_spawn/human/corpse/raiderbossalt
+	name = "Raider Boss Corpse"
+	uniform = /obj/item/clothing/under/f13/mercc
+	suit = /obj/item/clothing/suit/armor/f13/bmetalarmor
+	shoes = /obj/item/clothing/shoes/combat
+	gloves = /obj/item/clothing/gloves/color/black
+	head = /obj/item/clothing/head/helmet/knight/fluff/metal
