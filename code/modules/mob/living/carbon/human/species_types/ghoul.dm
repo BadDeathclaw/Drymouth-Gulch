@@ -6,7 +6,7 @@
 	inherent_traits = list(TRAIT_RADIMMUNE)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
 	armor = -25 // very weak fag 100-25 = 85hp + the weak limbs is a big oof!
-	speedmod = -0.15 //little fast
+	speedmod = 0.5 //little fast
 	burnmod = -1.2 // Leather skinless boys
 	brutemod = 1.2 //weaker fags
 	punchdamagehigh = 0
@@ -21,10 +21,10 @@
 	..()
 	for(var/obj/item/bodypart/b in C.bodyparts)
 		b.max_damage -= 10
-	C.faction |= "pghoul"
+	C.faction |= "ghoul"
 /datum/species/ghoul/on_species_loss(mob/living/carbon/C)
 	..()
-	C.faction -= "pghoul"
+	C.faction -= "ghoul"
 	for(var/obj/item/bodypart/b in C.bodyparts)
 		b.max_damage = initial(b.max_damage)
 
