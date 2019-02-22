@@ -2674,7 +2674,7 @@
 "aiK" = (
 /obj/structure/table,
 /obj/item/assembly/signaler,
-/obj/item/electropack,
+/obj/item/assembly/signaler/electropack,
 /turf/open/floor/plasteel/red/side,
 /area/security/prison)
 "aiL" = (
@@ -29488,7 +29488,7 @@
 /area/science/explab)
 "bzi" = (
 /obj/structure/table,
-/obj/item/electropack,
+/obj/item/assembly/signaler/electropack,
 /obj/item/taperecorder,
 /obj/item/screwdriver,
 /turf/open/floor/plasteel/dark,

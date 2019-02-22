@@ -5,7 +5,20 @@
 	icon_state = "caucasian_m"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
 	var/obj/item/rig/wearing_rig
+	var/has_penis = FALSE
+	var/has_vagina = FALSE
+	var/has_breasts = FALSE
 
+//lewd
+	var/last_partner
+	var/last_orifice
+	var/lastmoan
+	var/sexual_potency =  15
+	var/lust_tolerance = 100
+	var/lust = 0
+	var/multiorgasms = 0
+	var/refactory_period = 0
+//end of lewd
 
 /mob/living/carbon/human/Initialize()
 	verbs += /mob/living/proc/mob_sleep
@@ -28,6 +41,19 @@
 
 	handcrafting = new()
 
+//lewd
+	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
+	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+	if(gender == MALE)
+		has_penis = FALSE
+		has_vagina = TRUE
+		has_breasts = TRUE
+
+	if(gender == FEMALE)
+		has_vagina = FALSE
+		has_breasts = FALSE
+		has_penis = TRUE
+//end of lewd
 	. = ..()
 
 	AddComponent(/datum/component/redirect, list(COMSIG_COMPONENT_CLEAN_ACT), CALLBACK(src, .proc/clean_blood))
@@ -1045,3 +1071,6 @@
 
 /mob/living/carbon/human/species/zombie/krokodil_addict
 	race = /datum/species/krokodil_addict
+
+/mob/living/carbon/human/species/ghoul
+	race = /datum/species/ghoul

@@ -424,3 +424,16 @@
 /obj/item/reagent_containers/glass/beaker/large/bromine
 	name = "bromine beaker"
 	list_reagents = list("bromine" = 50)
+///Grenade Rework
+/obj/item/reagent_containers/glass/beaker/solids
+	name = "Solid Container"
+	desc = "A bottle of glass and metal to the use of making grenades in the war."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "solid"
+	item_state = "solid"
+	materials = list(MAT_GLASS=500)
+	volume = 50
+	amount_per_transfer_from_this = 10
+
+/obj/item/reagent_containers/glass/beaker/solids/empty
+	list_reagents = list()

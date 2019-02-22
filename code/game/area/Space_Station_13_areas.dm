@@ -1407,7 +1407,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/klamat/mine
 	name = "Klamat mine"
-	icon_state = "klamat"
+	icon_state = "klamat_mine"
 	requires_power = TRUE
 
 /area/f13/deepmine

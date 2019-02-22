@@ -159,6 +159,18 @@
 	STR.max_combined_w_class = 28
 	STR.max_items = 28
 
+/obj/item/storage/toolbox/brass/legionbox/PopulateContents()
+	var/pickedcolor = pick("red","yellow","green","blue","pink","orange","cyan","white")
+	new /obj/item/screwdriver/brass(src)
+	new /obj/item/wirecutters/brass(src)
+	new /obj/item/wrench/brass(src)
+	new /obj/item/stack/cable_coil(src,30,pickedcolor)
+	new /obj/item/crowbar/brass(src)
+	new /obj/item/multitool(src)
+	new /obj/item/weldingtool/experimental/brass(src)
+
+/obj/item/storage/toolbox/brass/legionbox
+
 /obj/item/storage/toolbox/brass/prefilled/PopulateContents()
 	new fabricator_type(src)
 	new /obj/item/screwdriver/brass(src)
@@ -166,6 +178,7 @@
 	new /obj/item/wrench/brass(src)
 	new /obj/item/crowbar/brass(src)
 	new /obj/item/weldingtool/experimental/brass(src)
+
 
 /obj/item/storage/toolbox/brass/prefilled/servant
 	slot_flags = ITEM_SLOT_BELT

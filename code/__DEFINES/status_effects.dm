@@ -1,5 +1,6 @@
 
 //These are all the different status effects. Use the paths for each effect in the defines.
+//There's an argument to be made to move defines into the folders that they are relevant to instead of putting them all in one place.
 
 #define STATUS_EFFECT_MULTIPLE 0 //if it allows multiple instances of the effect
 
@@ -35,6 +36,8 @@
 /////////////
 // DEBUFFS //
 /////////////
+
+#define STATUS_EFFECT_PARALYZE /datum/status_effect/incapacitating/paralyze //the affected is paralyzed, and cannot move
 
 #define STATUS_EFFECT_STUN /datum/status_effect/incapacitating/stun //the affected is stunned
 

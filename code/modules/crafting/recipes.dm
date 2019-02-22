@@ -512,8 +512,8 @@
 /datum/crafting_recipe/gold_horn
 	name = "Golden Bike Horn"
 	result = /obj/item/bikehorn/golden
-	time = 20
-	reqs = list(/obj/item/stack/sheet/mineral/bananium = 5,
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/gold = 5,
 				/obj/item/bikehorn)
 	category = CAT_MISC
 
@@ -616,60 +616,6 @@
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_MISC
 
-/datum/crafting_recipe/hudsunsec
-	name = "Security HUDsunglasses"
-	result = /obj/item/clothing/glasses/hud/security/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/security = 1,
-				  /obj/item/clothing/glasses/sunglasses = 1,
-				  /obj/item/stack/cable_coil = 5)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/hudsunsecremoval
-	name = "Security HUD removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/security/sunglasses = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/hudsunmed
-	name = "Medical HUDsunglasses"
-	result = /obj/item/clothing/glasses/hud/health/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/health = 1,
-				  /obj/item/clothing/glasses/sunglasses = 1,
-				  /obj/item/stack/cable_coil = 5)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/hudsunmedremoval
-	name = "Medical HUD removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/hud/health/sunglasses = 1)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/beergoggles
-	name = "Beer Goggles"
-	result = /obj/item/clothing/glasses/sunglasses/reagent
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/science = 1,
-				  /obj/item/clothing/glasses/sunglasses = 1,
-				  /obj/item/stack/cable_coil = 5)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/beergogglesremoval
-	name = "Beer Goggles removal"
-	result = /obj/item/clothing/glasses/sunglasses
-	time = 20
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	reqs = list(/obj/item/clothing/glasses/sunglasses/reagent = 1)
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/jet
 	name = "Jet"
 	result = /obj/item/reagent_containers/pill/patch/jet
@@ -684,37 +630,6 @@
 	reqs = list(/obj/item/clothing/under = 1)
 	time = 20
 	category = CAT_MISC
-
-/datum/crafting_recipe/metalarmor
-	name = "metal armor"
-	result = /obj/item/clothing/suit/armor/f13/bmetalarmor
-	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 120
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/Imetalarmor
-	name = "improved metal armor"
-	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
-	reqs = list(/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/stack/sheet/metal = 4,
-				/obj/item/stack/sheet/plasteel = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 120
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/IImetalarmor
-	name = "upgrading metal armor"
-	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
-	reqs = list(/obj/item/clothing/suit/armor/f13/bmetalarmor = 1,
-				/obj/item/stack/cable_coil = 1,
-				/obj/item/stack/sheet/plasteel = 2)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 120
-	category = CAT_CLOTHING
 
 /datum/crafting_recipe/healpowder
 	name = "Healing powder"
@@ -737,7 +652,7 @@
 
 /datum/crafting_recipe/slavecollar
 	name = "Slave Collar"
-	result = /obj/item/electropack/shockcollar
+	result = /obj/item/assembly/signaler/electropack/shockcollar
 	reqs = list(/obj/item/clothing/neck/petcollar = 1,
 				/obj/item/assembly/signaler = 1,
 				/obj/item/assembly/igniter =1)
@@ -751,3 +666,136 @@
 				/obj/item/reagent_containers/glass/rag = 1)
 	time = 30
 	category = CAT_MISC
+
+//F13
+///ASSEMBLY ITEMS
+/datum/crafting_recipe/mousetrap
+	name = "Mousetrap"
+	result = /obj/item/assembly/mousetrap
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/igniter
+	name = "Igniter"
+	result = /obj/item/assembly/igniter
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/health_sensor
+	name = "Health sensor"
+	result = /obj/item/assembly/health
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/timer
+	name = "Timer"
+	result = /obj/item/assembly/timer
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/voice
+	name = "Voice analyzer"
+	result = /obj/item/assembly/voice
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/signaler
+	name = "Remote signaling device"
+	result = /obj/item/assembly/signaler
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/infrared
+	name = "Infrared emitter"
+	result = /obj/item/assembly/infra
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+
+/datum/crafting_recipe/proximity
+	name = "Proximity sensor"
+	result = /obj/item/assembly/prox_sensor
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
+	time = 10
+	category = CAT_ASSEM
+///Medical
+/datum/crafting_recipe/healthanalyzer
+	name = "Health analyzer"
+	result = /obj/item/healthanalyzer
+	reqs = list(/obj/item/stack/sheet/glass = 1,
+				/obj/item/stack/sheet/metal = 1,
+				/obj/item/assembly/infra = 1,
+				/obj/item/assembly/health)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/beaker
+	name = "Beaker"
+	result = /obj/item/reagent_containers/glass/beaker
+	reqs = list(/obj/item/stack/sheet/glass = 2)
+	tools = list(TOOL_WELDER)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/beaker_large
+	name = "Large beaker"
+	result = /obj/item/reagent_containers/glass/beaker/large
+	reqs = list(/obj/item/stack/sheet/glass = 6)
+	tools = list(TOOL_WELDER)
+	time = 40
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/syringe
+	name = "Syringe"
+	result = /obj/item/reagent_containers/syringe
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/glass = 1)
+	tools = list(TOOL_WIRECUTTER)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/syringegun
+	name = "Syringe gun"
+	result = /obj/item/gun/syringe
+	reqs = list(/obj/item/stack/rods = 20,
+				/obj/item/stack/cable_coil = 15,
+				/obj/item/reagent_containers/syringe = 2,
+				/obj/item/stack/sheet/plastic = 3,
+				/obj/item/assembly/infra = 2,
+				/obj/item/assembly/timer = 2,
+				/obj/item/assembly/igniter = 1,
+				/obj/item/stack/sheet/glass = 15)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/solids
+	name = "Solid beaker"
+	result = /obj/item/reagent_containers/glass/beaker/solids
+	reqs = list(/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WELDER)
+	time = 30
+	category = CAT_MEDICAL

@@ -262,35 +262,34 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 // Cigarette brands.
 
-/obj/item/clothing/mask/cigarette/space_cigarette
-	desc = "A Space Cigarette brand cigarette."
+/obj/item/clothing/mask/cigarette/space_cigarette //space cigs
+	desc = "a Lucky Strikes brand cigarette."
 
-/obj/item/clothing/mask/cigarette/dromedary
-	desc = "A DromedaryCo brand cigarette."
+/obj/item/clothing/mask/cigarette/dromedary //dromedary
+	desc = "A Winfield brand cigarette."
 
-/obj/item/clothing/mask/cigarette/uplift
-	desc = "An Uplift Smooth brand cigarette."
-	list_reagents = list("nicotine" = 7.5, "menthol" = 7.5)
+/obj/item/clothing/mask/cigarette/uplift //uplift
+	desc = "A Kings brand cigarette."
 
-/obj/item/clothing/mask/cigarette/robust
-	desc = "A Robust brand cigarette."
+/obj/item/clothing/mask/cigarette/robust //robust
+	desc = "A Marlboro brand cigarette."
 
-/obj/item/clothing/mask/cigarette/robustgold
-	desc = "A Robust Gold brand cigarette."
-	list_reagents = list("nicotine" = 15, "gold" = 1)
+/obj/item/clothing/mask/cigarette/robustgold //robustgold
+	desc = "A Marlboro Gold brand cigarette."
+	list_reagents = list("nicotine" = 15, "gold" = 3) //tgstation said that having 3 there makes it so a special things comes up so
 
-/obj/item/clothing/mask/cigarette/carp
-	desc = "A Carp Classic brand cigarette."
+/obj/item/clothing/mask/cigarette/carp  //carp
+	desc = "A Viceroy brand cigarette."
 
-/obj/item/clothing/mask/cigarette/syndicate
+/obj/item/clothing/mask/cigarette/syndicate //syndicate
 	desc = "An unknown brand cigarette."
 	list_reagents = list("nicotine" = 15, "omnizine" = 15)
 
-/obj/item/clothing/mask/cigarette/shadyjims
+/obj/item/clothing/mask/cigarette/shadyjims //shadyjims
 	desc = "A Shady Jim's Super Slims cigarette."
 	list_reagents = list("nicotine" = 15, "lipolicide" = 4, "ammonia" = 2, "plantbgone" = 1, "toxin" = 1.5)
 
-/obj/item/clothing/mask/cigarette/xeno
+/obj/item/clothing/mask/cigarette/xeno //xeno
 	desc = "A Xeno Filtered brand cigarette."
 	list_reagents = list ("nicotine" = 20, "regen_jelly" = 15, "krokodil" = 4)
 
@@ -325,7 +324,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	list_reagents = list("space_drugs" = 15, "lipolicide" = 35)
 
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
-	list_reagents = list("mindbreaker" = 35, "lipolicide" = 15)	
+	list_reagents = list("mindbreaker" = 35, "lipolicide" = 15)
 
 /obj/item/cigbutt/roach
 	name = "roach"

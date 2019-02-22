@@ -43,7 +43,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 2,"energy" = 2, "bomb" = 0, "bio" = 75, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/mask/gas/syndicate
-	name = "syndicate mask"
+	name = "chinese infiltrator mask"
 	desc = "A close-fitting tactical mask that can be connected to an air supply."
 	icon_state = "syndicate"
 	strip_delay = 60
@@ -140,7 +140,7 @@
 	resistance_flags = FLAMMABLE
 
 /obj/item/clothing/mask/gas/death_commando
-	name = "Death Commando Mask"
+	name = "death commando mask"
 	icon_state = "death_commando_mask"
 	item_state = "death_commando_mask"
 

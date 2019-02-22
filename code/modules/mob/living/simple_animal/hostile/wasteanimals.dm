@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/cazador
 	name = "cazador"
-	desc = "A mutated insect known for it's fast speed, deadly sting, and being huge bastards."
+	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "cazador"
 	icon_living = "cazador"
@@ -46,7 +46,7 @@
 
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
-	desc = "A mutated insect known for it's fast speed, deadly sting, and being huge bastards. This one's little."
+	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
 	maxHealth = 20
 	health = 20
 	speed = 1
@@ -139,7 +139,7 @@
 
 /mob/living/simple_animal/hostile/radroach
 	name = "radroach"
-	desc = "A large mutated insect that finds it's way everywhere."
+	desc = "A large mutated insect that finds its way everywhere."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "radroach"
 	icon_living = "radroach"
@@ -164,6 +164,37 @@
 	melee_damage_upper = 10
 	attacktext = "stings"
 	speak_emote = list("skitters")
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	faction = list("gecko")
+	gold_core_spawnable = HOSTILE_SPAWN
+	
+/mob/living/simple_animal/hostile/molerat
+	name = "molerat"
+	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "mole_rat"
+	icon_living = "mole_rat"
+	icon_dead = "mole_rat_dead"
+	icon_gib = null
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	speak_chance = 0
+	turns_per_move = 5
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat = 2,
+							/obj/item/stack/sheet/sinew = 1)
+	response_help = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm = "hits"
+	emote_taunt = list("hisses")
+	taunt_chance = 30
+	speed = -1
+	maxHealth = 25
+	health = 25
+	harm_intent_damage = 8
+	obj_damage = 15
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	attacktext = "bites"
+	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
