@@ -41,6 +41,8 @@
 
 	handcrafting = new()
 
+/mob/living/carbon/human/New()
+	..()
 	if(gender == MALE)
 		has_penis = TRUE
 
