@@ -5,10 +5,10 @@
 	icon_state = "caucasian_m"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
 	var/obj/item/rig/wearing_rig
-	var/has_penis = 0
-	var/has_vagina = 0
-	var/has_breasts = 0
-	
+	var/has_penis = FALSE
+	var/has_vagina = FALSE
+	var/has_breasts = FALSE
+
 //lewd
 	var/last_partner
 	var/last_orifice
@@ -41,15 +41,18 @@
 
 	handcrafting = new()
 
-	if(gender == MALE)
-		has_penis = TRUE
-	else if(gender == FEMALE)
-		has_vagina = TRUE
-		has_breasts = TRUE
-
 //lewd
 	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
 	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+	if(gender == MALE)
+		has_penis = FALSE
+		has_vagina = TRUE
+		has_breasts = TRUE
+
+	if(gender == FEMALE)
+		has_vagina = FALSE
+		has_breasts = FALSE
+		has_penis = TRUE
 //end of lewd
 	. = ..()
 
