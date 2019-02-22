@@ -500,6 +500,14 @@
 	build_path = /obj/item/assembly/signaler
 	category = list("initial", "T-Comm")
 
+/datum/design/signaler/advanced
+	name = "Advanced Signaling Device"
+	id = "advanced_signaler"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 400)
+	build_path = /obj/item/assembly/signaler/advanced
+	category = list("initial", "T-Comm")
+
 /datum/design/radio_headset
 	name = "Radio Headset"
 	id = "radio_headset"
@@ -642,7 +650,7 @@
 	id = "electropack"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 10000, MAT_GLASS = 2500)
-	build_path = /obj/item/electropack
+	build_path = /obj/item/assembly/signaler/electropack
 	category = list("hacked", "Tools")
 
 /datum/design/large_welding_tool
@@ -700,7 +708,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
-
+/*
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
 	id = "riot_dart"
@@ -716,7 +724,7 @@
 	materials = list(MAT_METAL = 22000) //Comes with 40 darts
 	build_path = /obj/item/ammo_box/foambox/riot
 	category = list("hacked", "Security")
-
+*/
 /datum/design/a357
 	name = "Speed Loader (.357)"
 	id = "a357"

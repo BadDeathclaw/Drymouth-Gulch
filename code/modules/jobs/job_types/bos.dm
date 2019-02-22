@@ -27,7 +27,7 @@ Main doors: ACCESS_CAPTAIN 20
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK)
+	H.mind.istechnophreak = TRUE
 
 /*
 Elder

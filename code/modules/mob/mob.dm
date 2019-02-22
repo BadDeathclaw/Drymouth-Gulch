@@ -660,9 +660,6 @@
 /mob/proc/IsAdvancedToolUser()//This might need a rename but it should replace the can this mob use things check
 	return 0
 
-/mob/proc/is_super_advanced_tool_user()
-	return 0
-
 /mob/proc/swap_hand()
 	return
 
