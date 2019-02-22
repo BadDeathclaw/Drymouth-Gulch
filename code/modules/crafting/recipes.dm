@@ -652,7 +652,7 @@
 
 /datum/crafting_recipe/slavecollar
 	name = "Slave Collar"
-	result = /obj/item/electropack/shockcollar
+	result = /obj/item/assembly/signaler/electropack/shockcollar
 	reqs = list(/obj/item/clothing/neck/petcollar = 1,
 				/obj/item/assembly/signaler = 1,
 				/obj/item/assembly/igniter =1)
@@ -732,7 +732,7 @@
 	category = CAT_ASSEM
 
 /datum/crafting_recipe/proximity
-	name = "Remote signaling device"
+	name = "Proximity sensor"
 	result = /obj/item/assembly/prox_sensor
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,
@@ -754,7 +754,48 @@
 /datum/crafting_recipe/beaker
 	name = "Beaker"
 	result = /obj/item/reagent_containers/glass/beaker
-	reqs = list(/obj/item/stack/sheet/glass = 1)
+	reqs = list(/obj/item/stack/sheet/glass = 2)
 	tools = list(TOOL_WELDER)
 	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/beaker_large
+	name = "Large beaker"
+	result = /obj/item/reagent_containers/glass/beaker/large
+	reqs = list(/obj/item/stack/sheet/glass = 6)
+	tools = list(TOOL_WELDER)
+	time = 40
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/syringe
+	name = "Syringe"
+	result = /obj/item/reagent_containers/syringe
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/glass = 1)
+	tools = list(TOOL_WIRECUTTER)
+	time = 10
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/syringegun
+	name = "Syringe gun"
+	result = /obj/item/gun/syringe
+	reqs = list(/obj/item/stack/rods = 20,
+				/obj/item/stack/cable_coil = 15,
+				/obj/item/reagent_containers/syringe = 2,
+				/obj/item/stack/sheet/plastic = 3,
+				/obj/item/assembly/infra = 2,
+				/obj/item/assembly/timer = 2,
+				/obj/item/assembly/igniter = 1,
+				/obj/item/stack/sheet/glass = 15)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/solids
+	name = "Solid beaker"
+	result = /obj/item/reagent_containers/glass/beaker/solids
+	reqs = list(/obj/item/stack/sheet/glass = 2,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WELDER)
+	time = 30
 	category = CAT_MEDICAL

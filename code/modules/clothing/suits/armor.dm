@@ -365,7 +365,7 @@
 // salvaged/broken power armor, does not require PA training
 
 /obj/item/clothing/suit/armor/f13/brokenpa
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 3
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -385,7 +385,7 @@
 // power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -399,7 +399,7 @@
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, slot)
 	if (ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if (!H.mind.martial_art && H.mind.martial_art.name != "Power Armor Training" && slot == SLOT_WEAR_SUIT)
+		if (!H.mind.istechnophreak && slot == SLOT_WEAR_SUIT)
 			H << "<span class='warning'>You don't have the proper training to operate the power armor!</span>"
 			return 0
 			..()

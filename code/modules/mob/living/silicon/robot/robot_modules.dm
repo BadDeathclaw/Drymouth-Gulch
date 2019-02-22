@@ -596,6 +596,38 @@
 	can_be_pushed = FALSE
 	hat_offset = 3
 
+//SexBot module begin
+/obj/item/robot_module/fisto_protectron
+	name = "Fisto"
+	basic_modules = list(
+		/obj/item/dildo/cyborg,
+		/obj/item/reagent_containers/spray/sexborg_oil)
+	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
+	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
+	cyborg_base_icon = "protectron"
+	moduleselect_icon = "protectron"
+	can_be_pushed = FALSE
+	hat_offset = 3
+
+/obj/item/robot_module/sexy_handy
+	name = "Hans"
+	basic_modules = list(
+		/obj/item/dildo/cyborg,
+		/obj/item/reagent_containers/spray/sexborg_oil)
+	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
+	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
+	cyborg_base_icon = "pleasure"
+	moduleselect_icon = "pleasure"
+	can_be_pushed = TRUE
+	hat_offset = 3
+
+/obj/item/reagent_containers/spray/sexborg_oil
+	name = "oil spray"
+	list_reagents = list("cooking_oil" = 250)
+
+//module end
+
+
 /datum/robot_energy_storage
 	var/name = "Generic energy storage"
 	var/max_energy = 30000

@@ -1,6 +1,6 @@
 /obj/item/stack/spacecash
-	name = "dollars"
-	desc = "It's one NCR dollar, which isn't even worth a cap these days."
+	name = "Pre-war Money"
+	desc = "Looks old, and has a president's face on it. Might be worth something to the right person."
 	singular_name = "bill"
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "spacecash"
@@ -12,7 +12,7 @@
 	w_class = WEIGHT_CLASS_TINY
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
-	var/value = 0
+	var/value = 1
 
 /obj/item/stack/spacecash/update_icon()
 	switch(amount)
@@ -32,7 +32,7 @@
 			icon_state = "spacecash500"
 		else if(amount >= 1000)
 			icon_state = "spacecash1000"
-	desc = "NCR-issued cash worth $[amount], or about [amount * 0.4] caps."
+	desc = "Pre-war good all american cash worth $[amount]. Well... to the right person at least."
 
 /obj/item/stack/spacecash/random
 	//Used to generate a random stack of dosh
@@ -61,28 +61,28 @@
 /obj/item/stack/spacecash/c10
 	icon_state = "spacecash10"
 	amount = 10
-	desc = "Ten NCR dollars. Worth about 4 caps."
+	desc = "Ten pre-war dollars."
 /obj/item/stack/spacecash/c20
 	icon_state = "spacecash20"
 	amount = 20
-	desc = "Twenty NCR dollars. Worth about 8 caps."
+	desc = "Twenty pre-war dollars."
 /obj/item/stack/spacecash/c50
 	icon_state = "spacecash50"
 	amount = 50
-	desc = "Fifty NCR dollars. Worth about 20 caps."
+	desc = "Fifty pre-war dollars."
 /obj/item/stack/spacecash/c100
 	icon_state = "spacecash100"
 	amount = 100
-	desc = "A hundred NCR dollars. Worth about 40 caps."
+	desc = "A hundred pre-war dollars."
 /obj/item/stack/spacecash/c200
 	icon_state = "spacecash200"
 	amount = 200
-	desc = "Two hundred NCR dollars. Worth about 80 caps."
+	desc = "Two hundred pre-war dollars."
 /obj/item/stack/spacecash/c500
 	icon_state = "spacecash500"
 	amount = 500
-	desc = "Five hundred NCR dollars. Worth about 200 caps."
+	desc = "Five hundred pre-war dollars."
 /obj/item/stack/spacecash/c1000
 	icon_state = "spacecash1000"
 	amount = 1000
-	desc = "A thousand NCR dollars. Worth about 400 caps."
+	desc = "A thousand pre-war dollars. Fat stacks before the bombs dropped."

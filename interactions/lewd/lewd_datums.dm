@@ -32,14 +32,63 @@
 
 /datum/interaction/lewd/titgrope/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
-	if(user.lust < 5)
-		user.lust = 5
 
 /datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.a_intent == INTENT_HELP)
-		user.visible_message("<span class='warning'>\The [user] gently gropes \the [target]'s breasts.</span>")
-	else if(user.a_intent == INTENT_HARM)
-		user.visible_message("<span class='warning'>\The [user] aggressively gropes \the [target]'s breasts.</span>")
+		user.visible_message(
+				pick("<span class='warning'>\The [user] gently gropes \the [target]'s breast.</span>",
+					 "<span class='warning'>\The [user] softly squeezes \the [target]'s breasts.</span>",
+					 "<span class='warning'>\The [user] grips \the [target]'s breasts.</span>",
+					 "<span class='warning'>\The [user] runs a few fingers over \the [target]'s breast.</span>",
+					 "<span class='warning'>\The [user] delicately teases \the [target]'s nipple.</span>",
+					 "<span class='warning'>\The [user] traces a touch across \the [target]'s breast.</span>"))
+	if(user.a_intent == INTENT_HARM)
+		user.visible_message(
+				pick("<span class='warning'>\The [user] aggressively gropes \the [target]'s breast.</span>",
+					 "<span class='warning'>\The [user] grabs \the [target]'s breasts.</span>",
+					 "<span class='warning'>\The [user] tightly squeezes \the [target]'s breasts.</span>",
+					 "<span class='warning'>\The [user] slaps at \the [target]'s breasts.</span>",
+					 "<span class='warning'>\The [user] gropes \the [target]'s breasts roughly.</span>"))
+	if(prob(5 + target.lust))
+		if(target.a_intent == INTENT_HELP)
+			user.visible_message(
+				pick("<span class='warning'>\The [target] shivers in arousal.</span>",
+					 "<span class='warning'>\The [target] moans quietly.</span>",
+					 "<span class='warning'>\The [target] breathes out a soft moan.</span>",
+					 "<span class='warning'>\The [target] gasps.</span>",
+					 "<span class='warning'>\The [target] shudders softly.</span>",
+					 "<span class='warning'>\The [target] trembles as hands run across bare skin.</span>"))
+			if(target.lust < 5)
+				target.lust = 5
+		if(target.a_intent == INTENT_DISARM)
+			if (target.restrained())
+				user.visible_message(
+					pick("<span class='warning'>\The [target] twists playfully against the restraints.</span>",
+						 "<span class='warning'>\The [target] squirms away from [user]'s hand.</span>",
+						 "<span class='warning'>\The [target] slides back from [user]'s roaming hand.</span>",
+						 "<span class='warning'>\The [target] thrusts bare breasts forward into [user]'s hands.</span>"))
+			else
+				user.visible_message(
+					pick("<span class='warning'>\The [target] playfully bats at [user]'s hand.</span>",
+						 "<span class='warning'>\The [target] squirms away from [user]'s hand.</span>",
+						 "<span class='warning'>\The [target] guides [user]'s hand across bare breasts.</span>",
+						 "<span class='warning'>\The [target] teasingly laces a few fingers over [user]'s knuckles.</span>"))
+			if(target.lust < 10)
+				target.lust += 1
+	if(target.a_intent == INTENT_GRAB)
+		user.visible_message(
+				pick("<span class='warning'>\The [target] grips [user]'s wrist tight.</span>",
+				 "<span class='warning'>\The [target] digs nails into [user]'s arm.</span>",
+				 "<span class='warning'>\The [target] grabs [user]'s wrist for a second.</span>"))
+	if(target.a_intent == INTENT_HARM)
+		user.adjustBruteLoss(1)
+		user.visible_message(
+				pick("<span class='warning'>\The [target] pushes [user] roughly away.</span>",
+				 "<span class='warning'>\The [target] digs nails angrily into [user]'s arm.</span>",
+				 "<span class='warning'>\The [target] fiercely struggles against [user].</span>",
+				 "<span class='warning'>\The [target] claws [user]'s forearm, drawing blood.</span>",
+				 "<span class='warning'>\The [target] slaps [user]'s hand away.</span>"))
+	return
 
 /datum/interaction/lewd/oral
 	command = "suckvag"
@@ -50,7 +99,7 @@
 	write_log_target = "was given head by"
 	interaction_sound = null
 	user_not_tired = TRUE
-	require_target_naked = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/oral/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -72,8 +121,8 @@
 	write_log_target = "was fucked by"
 	interaction_sound = null
 	user_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
+	require_user_bottomless = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/fuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -96,7 +145,7 @@
 	require_target_vagina = TRUE
 	interaction_sound = null
 	user_not_tired = TRUE
-	require_target_naked = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/finger/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -109,7 +158,7 @@
 	require_user_hands = TRUE
 	require_target_anus = TRUE
 	user_not_tired = TRUE
-	require_target_naked = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/fingerass/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -122,7 +171,7 @@
 	interaction_sound = null
 	require_target_mouth = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	require_user_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/facefuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -135,7 +184,7 @@
 	require_user_penis = TRUE
 	require_target_mouth = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	require_user_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -148,7 +197,7 @@
 	require_user_hands = TRUE
 	require_target_penis = TRUE
 	target_not_tired = TRUE
-	require_target_naked = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 1
 
 /datum/interaction/lewd/handjob/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -160,8 +209,8 @@
 	interaction_sound = null
 	require_user_penis = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
+	require_user_bottomless = TRUE
+	require_target_topless = TRUE
 	require_target_vagina = TRUE
 	max_distance = 0
 
@@ -176,8 +225,8 @@
 	require_target_penis = TRUE
 	user_not_tired = TRUE
 	target_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
+	require_user_bottomless = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/mount/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -192,8 +241,8 @@
 	require_target_penis = TRUE
 	user_not_tired = TRUE
 	target_not_tired = TRUE
-	require_user_naked = TRUE
-	require_target_naked = TRUE
+	require_user_bottomless = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/mountass/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -206,7 +255,7 @@
 	require_user_mouth = TRUE
 	require_target_anus = TRUE
 	user_not_tired = TRUE
-	require_target_naked = TRUE
+	require_target_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/rimjob/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -219,7 +268,7 @@
 	require_target_mouth = TRUE
 	require_user_anus = TRUE
 	user_not_tired = TRUE
-	require_user_naked = TRUE
+	require_user_bottomless = TRUE
 	max_distance = 0
 
 /datum/interaction/lewd/mountface/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -260,7 +309,7 @@
 	command = "thigh_smother"
 	description = "Smother them."
 	max_distance = 0
-	require_user_naked = TRUE
+	require_user_bottomless = TRUE
 	require_target_mouth = TRUE
 	interaction_sound = null
 	user_not_tired = TRUE
@@ -275,7 +324,7 @@
 	command = "nut_face"
 	description = "Nuts to face."
 	interaction_sound = null
-	require_user_naked = TRUE
+	require_user_bottomless = TRUE
 	require_user_penis = TRUE
 	require_target_mouth = TRUE
 	max_distance = 0

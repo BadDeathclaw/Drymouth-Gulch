@@ -61,6 +61,8 @@
 	//can be overriden by antag_rep.txt config
 	var/antag_rep = 10
 
+	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
+
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
