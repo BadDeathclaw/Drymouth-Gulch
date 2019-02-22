@@ -41,18 +41,18 @@
 
 	handcrafting = new()
 
-/mob/living/carbon/human/New()
-	..()
+//lewd
+	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
+	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
 	if(gender == MALE)
 		has_penis = TRUE
+		has_vagina = FALSE
+		has_breasts = FALSE
 
 	if(gender == FEMALE)
 		has_vagina = TRUE
 		has_breasts = TRUE
-
-//lewd
-	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
-	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+		has_penis = FALSE
 //end of lewd
 	. = ..()
 
