@@ -14,8 +14,10 @@
 	var/user_not_tired
 	var/target_not_tired
 
-	var/require_user_naked
-	var/require_target_naked
+	var/require_user_topless
+	var/require_target_topless
+	var/require_user_bottomless
+	var/require_target_bottomless
 
 	var/require_user_penis
 	var/require_user_anus
@@ -37,9 +39,14 @@
 				to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
 
-		if(require_user_naked && !user.is_nude())
+		if(require_user_bottomless && !user.is_bottomless())
 			if(!silent)
-				to_chat(user, "<span class = 'warning'>Your clothes are in the way.</span>")
+				to_chat(user, "<span class = 'warning'>Your pants are in the way.</span>")
+			return FALSE
+
+		if(require_user_topless && !user.is_topless())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Your top is in the way.</span>")
 			return FALSE
 
 		if(require_user_penis && !user.has_penis())
@@ -72,9 +79,14 @@
 				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
 
-		if(require_target_naked && !target.is_nude())
+		if(require_target_bottomless && !target.is_bottomless())
 			if(!silent)
-				to_chat(user, "<span class = 'warning'>Their clothes are in the way.</span>")
+				to_chat(user, "<span class = 'warning'>Their pants are in the way.</span>")
+			return FALSE
+
+		if(require_target_topless && !target.is_topless())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Their top is in the way.</span>")
 			return FALSE
 
 		if(require_target_penis && !target.has_penis())
@@ -115,10 +127,19 @@
 	var/dat = ..()
 	if(refactory_period)
 		dat += "<br>...are sexually exhausted for the time being."
-	if(is_nude())
-		dat += "<br>...are naked."
+	if(a_intent == INTENT_HELP)
+		dat += "<br>...are acting gentle."
+	else if (a_intent == INTENT_DISARM)
+		dat += "<br>...are acting playful."
+	else if (a_intent == INTENT_GRAB)
+		dat += "<br>...are acting rough."
+	else if(a_intent == INTENT_HARM)
+		dat += "<br>...are fighting anyone who comes near."
+	if(is_topless())
 		if(has_breasts())
 			dat += "<br>...have breasts."
+	if(is_bottomless())
+		dat += "<br>...are naked."
 		if(has_penis())
 			dat += "<br>...have a penis."
 		if(has_vagina())
