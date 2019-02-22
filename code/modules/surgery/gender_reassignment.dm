@@ -49,7 +49,7 @@
 	steps = list(
 		/datum/surgery_step/incise,
 		/datum/surgery_step/clamp_bleeders,
-		/datum/surgery_step/lower_surgery,
+		/datum/surgery_step/castration,
 		/datum/surgery_step/close
 		)
 
