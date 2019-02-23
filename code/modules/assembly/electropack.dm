@@ -164,12 +164,3 @@ Code:
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
-
-/obj/item/assembly/signaler/electropack/shockcollar/attackby(obj/item/W, mob/user, params)
-	if(issignaler(W))
-		var/obj/item/assembly/signaler/signaler2 = W
-		if(signaler2.secured)
-			signaler2.code = code
-			signaler2.set_frequency(frequency)
-			to_chat(user, "You transfer the frequency and code of \the [name] to \the [signaler2.name]")
-	..()
