@@ -11,7 +11,7 @@
 	brutemod = 1.2 //weaker fags
 	punchdamagehigh = 0
 	punchstunthreshold = 6
-	use_skintones = 0
+	use_skintones = 1 // To prevent conflicts with dlam pr
 	sexes = 0 //meh they still have a gender somehow!
 	disliked_food = GROSS
 	liked_food = JUNKFOOD | FRIED | RAW
