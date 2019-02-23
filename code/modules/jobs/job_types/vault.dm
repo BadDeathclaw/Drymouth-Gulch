@@ -21,6 +21,13 @@ here's a tip, go search DEFINES/access.dm
 		return
 	H.mind.istechnophreak = TRUE
 
+
+/datum/outfit/job/vault/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.istechnophreak = TRUE
+
 /*
 Overseer
 */
