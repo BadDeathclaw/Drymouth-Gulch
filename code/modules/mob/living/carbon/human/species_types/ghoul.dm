@@ -11,7 +11,7 @@
 	punchdamagehigh = 0
 	punchstunthreshold = 6
 	use_skintones = 0
-	sexes = 1 //Lets hope this just defines the used sprites, yup it does.
+	sexes = 0 //Lets hope this just defines the used sprites, yup it does.
 	disliked_food = GROSS
 	liked_food = JUNKFOOD | FRIED | RAW
 
