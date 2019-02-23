@@ -12,6 +12,9 @@ here's a tip, go search DEFINES/access.dm
 	department_flag = VAULT
 	exp_type = EXP_TYPE_VAULT
 
+/datum/outfit/job/vault
+	gloves = /obj/item/pda
+
 /datum/outfit/job/vault/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -52,7 +55,6 @@ Overseer
 	implants = list(/obj/item/implant/mindshield)
 
 	id = 			/obj/item/card/id/gold
-	//pda
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
