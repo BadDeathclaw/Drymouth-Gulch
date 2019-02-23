@@ -47,9 +47,6 @@
 
 
 /turf/closed/mineral/attackby(obj/item/I, mob/user, params)
-	if (!user.IsAdvancedToolUser())
-		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
-		return
 
 	if(I.tool_behaviour == TOOL_MINING)
 		var/turf/T = user.loc
