@@ -609,7 +609,7 @@
 /obj/item/clothing/suit/hooded/wintercoat/blue113
 	name = "Blue vault winter coat"
 	icon_state = "coatwinterblue113"
-	item_state = "coatwinterblue113"
+	item_state = "coatwinterblue"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/blue113
 
 /obj/item/clothing/head/hooded/winterhood/blue113
