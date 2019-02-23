@@ -185,6 +185,7 @@ Vexillarius
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/megaphone/cornu=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 
 
@@ -270,7 +271,7 @@ Legionary
 /datum/job/CaesarsLegion/Legionnaire/f13legionary
 	title = "Legionary"
 	flag = F13LEGIONARY
-//	faction = "Station"
+	faction = "Legion"
 	total_positions = 15
 	spawn_positions = 15
 	forbids = "The legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."

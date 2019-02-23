@@ -31,12 +31,12 @@
 	else
 		qdel(what)
 
-/* /obj/machinery/processor/proc/select_recipe(X)
+/obj/machinery/processor/proc/select_recipe(X)
 	for (var/type in subtypesof(/datum/food_processor_process) - /datum/food_processor_process/mob)
 		var/datum/food_processor_process/recipe = new type()
 		if (!istype(X, recipe.input) || !istype(src, recipe.required_machine))
 			continue
-		return recipe */
+		return recipe
 
 /obj/machinery/processor/attackby(obj/item/O, mob/user, params)
 	if(processing)
@@ -138,7 +138,7 @@
 	for (var/mob/M in src)
 		M.forceMove(drop_location())
 
-/* /obj/machinery/processor/slime
+/obj/machinery/processor/slime
 	name = "slime processor"
 	desc = "An industrial grinder with a sticker saying appropriated for science department. Keep hands clear of intake area while operating."
 
@@ -193,4 +193,4 @@
 			var/atom/movable/item = new S.coretype(drop_location())
 			adjust_item_drop_location(item)
 			SSblackbox.record_feedback("tally", "slime_core_harvested", 1, S.colour)
-	..() */
+	..()

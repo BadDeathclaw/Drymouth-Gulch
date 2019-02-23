@@ -42,6 +42,8 @@
 #define MIME			(1<<12)
 #define ASSISTANT		(1<<13)
 
+#define JOB_DISPLAY_ORDER_DEFAULT 0
+
 //F13
 
 #define NCR				(1<<3)

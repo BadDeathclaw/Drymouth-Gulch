@@ -17,6 +17,7 @@
 	force = 5
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
+	item_flags = SLOWS_WHILE_IN_HAND
 
 	var/fire_sound = "gunshot"
 	var/suppressed = null					//whether or not a message is displayed when fired
@@ -73,6 +74,9 @@
 		alight = new /datum/action/item_action/toggle_gunlight(src)
 	build_zooming()
 
+/obj/item/gun/New()
+	. = ..()
+	src.slowdown = (w_class / 3)
 
 /obj/item/gun/CheckParts(list/parts_list)
 	..()
@@ -92,8 +96,10 @@
 
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
-	if(zoomed && user.get_active_held_item() != src)
-		zoom(user, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.
+			azoom.Remove(user)
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
@@ -124,7 +130,10 @@
 				user.visible_message("<span class='danger'>[user] fires [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 
 
-
+//Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
+/obj/item/gun/pickup(mob/living/user)
+	. = ..()
+	weapondraw(src, user)
 
 /obj/item/gun/emp_act(severity)
 	. = ..()
@@ -412,7 +421,7 @@
 		alight.Grant(user)
 
 /obj/item/gun/dropped(mob/user)
-	..()
+	. = ..()
 	if(zoomed)
 		zoom(user,FALSE)
 	if(azoom)
@@ -561,6 +570,12 @@
 	if(zoomed)
 		zoom(user,FALSE)
 	if(azoom)
+		azoom.Remove(user)
+
+/obj/item/binocs/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.get_active_held_item() != src)
+		zoom(user, FALSE) //Sometimes I wonder why the fuck binoculars are here too with a action.
 		azoom.Remove(user)
 
 /datum/action/toggle_binoc_zoom

@@ -2,7 +2,7 @@
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK)
+	H.mind.istechnophreak = TRUE
 
 /*
 Commander

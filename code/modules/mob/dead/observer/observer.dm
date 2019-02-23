@@ -518,9 +518,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/IsAdvancedToolUser()
 	return TRUE
 
-/mob/dead/observer/is_super_advanced_tool_user()
-	return TRUE
-
 /mob/dead/observer/verb/toggle_ghostsee()
 	set name = "Toggle Ghost Vision"
 	set desc = "Toggles your ability to see things only ghosts can see, like other ghosts"
