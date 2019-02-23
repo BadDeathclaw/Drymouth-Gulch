@@ -6,8 +6,8 @@
 	inherent_traits = list(TRAIT_RADIMMUNE)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
 	armor = -25 // very weak fag 100-25 = 85hp + the weak limbs is a big oof!
-	speedmod = 0.5 //little fast
-	burnmod = -1.2 // Leather skinless boys
+	speedmod = -0.5 //little fast
+	burnmod = 0.25 // Leather skinless boys
 	brutemod = 1.2 //weaker fags
 	punchdamagehigh = 0
 	punchstunthreshold = 6
