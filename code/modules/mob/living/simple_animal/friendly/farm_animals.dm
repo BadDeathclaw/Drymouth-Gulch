@@ -428,8 +428,28 @@
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	stop_automated_movement_when_pulled = 1
 	blood_volume = BLOOD_VOLUME_NORMAL
+	
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/Life()
+	. = ..()
+	if(stat == CONSCIOUS)
+		if((prob(3) && has_calf))
+			has_calf++
+		if(has_calf > 10)
+			has_calf = 0
+			visible_message("<span class='alertalien'>[src] gives birth to a calf.</span>")
+			new young_type(get_turf(src))
 
-/mob/living/simple_animal/hostile/retaliate/goat/bighorn
+		if(is_calf)
+			if((prob(3)))
+				is_calf = 0
+				udder = new()
+				if (name == "bighorn lamb") 
+					name = "bighorn"
+				else
+					name = "bighorn"
+				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
 	name = "bighoner lamb"
 	resize = 0.55
 	is_calf = 1
