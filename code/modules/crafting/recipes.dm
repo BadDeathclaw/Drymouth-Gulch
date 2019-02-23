@@ -323,6 +323,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/throwing_spear
+	name = "Throwing Spear"
+	result = /obj/item/throwing_star/spear
+	reqs = list(/obj/item/stack/ore/iron = 1,
+				/obj/item/stack/rods = 3,
+				/obj/item/stack/leather = 1)
+	tools = list(TOOL_WELDER)
+	time = 50
+	category= CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 /datum/crafting_recipe/spooky_camera
 	name = "Camera Obscura"
 	result = /obj/item/camera/spooky
