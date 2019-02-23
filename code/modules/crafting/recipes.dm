@@ -328,7 +328,7 @@
 	result = /obj/item/throwing_star/spear
 	reqs = list(/obj/item/stack/ore/iron = 1,
 				/obj/item/stack/rods = 3,
-				/obj/item/stack/leather = 1)
+				/obj/item/stack/sheet/sinew = 1)
 	tools = list(TOOL_WELDER)
 	time = 50
 	category= CAT_WEAPONRY
