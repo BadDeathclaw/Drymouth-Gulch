@@ -109,7 +109,7 @@ Code:
 
 /obj/item/assembly/signaler/electropack/shockcollar/Initialize()
 	..()
-	frequency = pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459)
+	set_frequency(pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459))
 	code = rand(1,100)
 	name = "[name] #[frequency]/[code]"
 
