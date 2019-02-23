@@ -204,6 +204,16 @@
 	if(visualsOnly)
 		return
 
+	if(H.gender == MALE)
+		H.has_penis = TRUE
+		H.has_vagina = FALSE
+		H.has_breasts = FALSE
+
+	if(H.gender == FEMALE)
+		H.has_vagina = TRUE
+		H.has_breasts = TRUE
+		H.has_penis = FALSE
+
 	var/datum/job/J = SSjob.GetJobType(jobtype)
 	if(!J)
 		J = SSjob.GetJob(H.job)

@@ -109,7 +109,7 @@ Code:
 
 /obj/item/assembly/signaler/electropack/shockcollar/Initialize()
 	..()
-	frequency = pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459)
+	set_frequency(pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459))
 	code = rand(1,100)
 	name = "[name] #[frequency]/[code]"
 
@@ -164,12 +164,3 @@ Code:
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
-
-/obj/item/assembly/signaler/electropack/shockcollar/attackby(obj/item/W, mob/user, params)
-	if(issignaler(W))
-		var/obj/item/assembly/signaler/signaler2 = W
-		if(signaler2.secured)
-			signaler2.code = code
-			signaler2.set_frequency(frequency)
-			to_chat(user, "You transfer the frequency and code of \the [name] to \the [signaler2.name]")
-	..()
