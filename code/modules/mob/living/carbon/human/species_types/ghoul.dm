@@ -12,7 +12,7 @@
 	punchdamagehigh = 0
 	punchstunthreshold = 6
 	use_skintones = 0
-	sexes = 0 
+	sexes = 1 
 	disliked_food = GROSS
 	liked_food = JUNKFOOD | FRIED | RAW
 
