@@ -16,11 +16,6 @@
 	tastes = list("meat" = 1)
 	foodtype = MEAT | RAW
 
-/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw
-	desc = "A chemical soaked slab of deathclaw meat."
-	icon_state = "goliathmeat"
-	list_reagents = list("nutriment" = 3, "cooking_oil" = 2, "bicaridine" = 10, "kelotane" = 10, "antitoxin" = 10, "tricordrazine" = 10)
-
 
 /obj/item/reagent_containers/food/snacks/meat/slab/initialize_slice(obj/item/reagent_containers/food/snacks/meat/rawcutlet/slice, reagents_per_slice)
 	..()
@@ -62,15 +57,6 @@
 		S.name = "[subjectname] meatsteak"
 	else if(subjectjob)
 		S.name = "[subjectjob] meatsteak"
-
-/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul
-	name = "ghoul meat"
-	icon_state = "flymeat"
-	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
-	list_reagents = list("nutriment" = 3, "uranium" = 3, "bad_food" = 2, "FEV_solution" = 1)
-	filling_color = "#FA8072"
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
-	slice_path = null
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/slime
 	icon_state = "slimemeat"
@@ -147,8 +133,61 @@
 	foodtype = RAW | MEAT | TOXIC
 
 
-////////////////////////////////////// OTHER MEATS ////////////////////////////////////////////////////////
+////////////////////////////////////// WASTELAND MEATS ////////////////////////////////////////////////////////
 
+/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw
+	desc = "A chemical soaked slab of deathclaw meat."
+	icon_state = "goliathmeat"
+	list_reagents = list("nutriment" = 3, "cooking_oil" = 2, "bicaridine" = 10, "kelotane" = 10, "antitoxin" = 10, "tricordrazine" = 10)
+
+/obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat
+	name = "radroach meat"
+	desc = "A slab of radroach meat."
+	icon_state = "meat"
+	list_reagents = list("nutriment" = 2, "bad_food" = 3, "vitamin" = 1)
+	tastes = list("insect guts" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/radroach_meat
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/radroach_meat
+	name = "radroach meat"
+	desc = "A slab of radroach meat."
+	icon_state = "meat"
+	list_reagents = list("nutriment" = 3, "vitamin" = 3)
+	tastes = list("cooked insect guts" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat
+	name = "cazador meat"
+	desc = "A slab of cazador meat."
+	icon_state = "meat"
+	list_reagents = list("nutriment" = 2, "carpotoxin" = 5, "vitamin" = 2)
+	tastes = list("insect guts" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
+	name = "cazador meat"
+	desc = "A slab of cazador meat."
+	icon_state = "meat"
+	list_reagents = list("nutriment" = 3, "vitamin" = 3)
+	tastes = list("spicy cooked insect guts" = 1)
+
+/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul
+	name = "ghoul meat"
+	icon_state = "flymeat"
+	desc = "Nothing says tasty like necrotic, radioactive mutant flesh"
+	list_reagents = list("nutriment" = 3, "uranium" = 3, "bad_food" = 2, "FEV_solution" = 1)
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/ghoul
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/ghoul
+	name = "ghoul steak"
+	desc = "Why would you even cook this?"
+	list_reagents = list("nutriment" = 4)
+	bonus_reagents = list("uranium" = 3)
+
+////////////////////////////////////// OTHER MEATS ////////////////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat
 	name = "synthmeat"
@@ -317,12 +356,6 @@
 	trash = null
 	tastes = list("meat" = 1, "rock" = 1)
 	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/meat/steak/ghoul
-	name = "ghoul steak"
-	desc = "Why would you even cook this?"
-	list_reagents = list("nutriment" = 4)
-	bonus_reagents = list("uranium" = 3)
 
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////

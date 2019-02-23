@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/caseless
-	desc = "A caseless bullet casing."
+	desc = "A caseless bullet casing. You get a headache from looking at this."
 	firing_effect_type = null
 	heavy_metal = FALSE
 

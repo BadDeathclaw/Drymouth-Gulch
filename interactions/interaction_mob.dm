@@ -1,16 +1,16 @@
-/mob/proc/has_hands()
+/mob/living/carbon/human/proc/has_hands()
 	return FALSE
 
 /mob/living/carbon/human/has_hands()
 	return TRUE//(can_use_hand("l_hand") || can_use_hand("r_hand"))
 
-/mob/proc/has_mouth()
+/mob/living/carbon/human/proc/has_mouth()
 	return TRUE
 
-/mob/proc/mouth_is_free()
+/mob/living/carbon/human/proc/mouth_is_free()
 	return TRUE
 
-/mob/proc/foot_is_free()
+/mob/living/carbon/human/proc/foot_is_free()
 	return TRUE
 
 ///mob/living/carbon/human/has_mouth()

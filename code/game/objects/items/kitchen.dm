@@ -109,7 +109,7 @@
 	force = 25
 	throwforce = 20
 	materials = list(MAT_METAL=18000)
-	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb = list("cleaved", "slashed", "lacerated", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/kitchen/knife/combat
@@ -119,7 +119,7 @@
 	desc = "A military combat utility survival knife."
 	force = 20
 	throwforce = 20
-	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 	bayonet = TRUE
 
 /obj/item/kitchen/knife/combat/survival
@@ -158,7 +158,7 @@
 	force = 8
 	throwforce = 12//fuck git
 	materials = list()
-	attack_verb = list("shanked", "shivved")
+	attack_verb = list("shanked", "shivved", "pierced", "impaled")
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/kitchen/rollingpin

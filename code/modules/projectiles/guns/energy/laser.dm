@@ -2,7 +2,7 @@
 	name = "laser gun"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 	icon_state = "laser"
-	item_state = "laser"
+	item_state = "laser-rifle9"
 	w_class = WEIGHT_CLASS_BULKY
 	materials = list(MAT_METAL=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
@@ -33,7 +33,7 @@
 	name = "antique laser gun"
 	icon_state = "caplaser"
 	item_state = "caplaser"
-	desc = "This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy. On the item is an image of Space Station 13. The station is exploding."
+	desc = "This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy. It's usually given to high-ranking members within the Brotherhood."
 	force = 10
 	ammo_x_offset = 3
 	selfcharge = 1
@@ -138,7 +138,7 @@
 //Fallout
 
 /obj/item/gun/energy/laser/lasergatling
-	name = "H&K L30 Gatling laser"
+	name = "H&K L30 gatling laser"
 	desc = "Designed specifically for military use, these were in the prototype stage at the beginning of the Great War. Multiple barrels allowed longer firing before overheating."
 	icon_state = "lasergatling"
 	burst_size = 8
@@ -149,7 +149,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 
 /obj/item/gun/energy/laser/aer9
-	name = "AER9 Laser Rifle"
+	name = "AER9 laser rifle"
 	desc = "A sturdy and advanced military grade pre-war service laser rifle"
 	icon_state = "laser"
 	item_state = "laser-rifle9"
@@ -168,15 +168,15 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 
 /obj/item/gun/energy/laser/scatter
-	name = "Tri-beam Laser Rifle"
-	desc = "A modified AER9 equipped with a refraction kit that spreads its bolts."
+	name = "tribeam laser rifle"
+	desc = "A modified AER9 equipped with a refraction kit that spreads its bolts. It is usually only given to high-ranking soldiers within the Brotherhood, due to it's level of technology, as well as its reputation of friendly fire."
 	item_state = "laser-rifle9"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/energy/laser/plasma
-	name ="A3-20 Plasma Rifle"
+	name ="plasma rifle"
 	item_state = "plasma"
 	icon_state = "plasma"
 	desc = "A top of line miniaturized plasma caster built by REPCONN in the wake of the Z43-521P failure. It is supperior to all previous rifles to enter service in the USCC."
@@ -185,7 +185,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/gun/energy/laser/plasma/scatter
-	name = "A3e-20b Multiplas Rifle"
+	name = "multiplas Rifle"
 	item_state = "multiplas"
 	icon_state = "multiplas"
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
@@ -193,7 +193,7 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 
 /obj/item/gun/energy/laser/plasma/pistol
-	name ="MPL-A Plasma Pistol"
+	name ="plasma pistol"
 	item_state = "plasma-pistol"
 	icon_state = "plasma-pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires heavy low penetration plasma clots."
@@ -222,7 +222,7 @@
 	damage = 60
 
 /obj/item/projectile/plasma/pistol
-	damage = 40
+	damage = 35
 	armour_penetration = -18
 
 /obj/item/projectile/plasma/scatter
@@ -255,7 +255,7 @@
 	pellets = 3
 	variance = 14
 	select_name = "scatter"
-	e_cost = 150
+	e_cost = 75
 
 /obj/item/ammo_casing/energy/laser/pistol
 	projectile_type = /obj/item/projectile/beam/laser/pistol

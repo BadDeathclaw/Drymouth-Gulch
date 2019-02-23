@@ -9,10 +9,12 @@ GLOBAL_LIST_INIT(command_positions, list(
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Elder",
+	"Head Scribe",
 	"Paladin",
 	"Knight",
 	"Scribe",
-	"Initiate"
+	"Initiate Knight",
+	"Initiate Scribe"
 ))
 
 GLOBAL_LIST_INIT(den_positions, list(

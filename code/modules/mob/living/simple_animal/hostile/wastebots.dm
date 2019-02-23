@@ -13,6 +13,8 @@
 	speed = 1
 	melee_damage_lower = 56
 	melee_damage_upper = 56
+	stat_attack = UNCONSCIOUS
+	robust_searching = 1
 	attacktext = "slaps"
 	attack_sound = 'sound/weapons/circsawhit.ogg'
 	faction = list("wastebot")
@@ -26,7 +28,7 @@
 
 /mob/living/simple_animal/hostile/handy/gutsy
 	name = "mr. gutsy"
-	desc = "A pre-war combat robot based off the Mr. Handy designed, armed with plasma weaponry and a deadly close-range flamer."
+	desc = "A pre-war combat robot based off the Mr. Handy design, armed with plasma weaponry and a deadly close-range flamer."
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "gib7"
@@ -60,6 +62,8 @@
 	melee_damage_upper = 25
 	rapid = 1
 	ranged = 1
+	retreat_distance = 2
+	minimum_distance = 2
 	attacktext = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'

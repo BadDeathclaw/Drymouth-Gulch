@@ -428,3 +428,9 @@ update_label("John Doe", "Clowny")
 	desc = "Special ID card to allow access to APCs."
 	icon_state = "centcom"
 	access = list(ACCESS_ENGINE_EQUIP)
+
+/obj/item/card/id/dogtag
+	name = "holo dogtag"
+	desc = "An advanced holographic dogtag, that shows the duty of a BoS member."
+	icon_state =	"holodogtag"
+	id_type = "ID tags"

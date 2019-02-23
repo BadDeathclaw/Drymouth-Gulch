@@ -1380,6 +1380,21 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "sunny_dale"
 	requires_power = TRUE
 
+/area/f13/ncr_main
+	name = "NCR Mainbase"
+	icon_state = "ncr_main"
+	requires_power = TRUE
+
+/area/f13/raider_mall
+	name = "Raider Mall"
+	icon_state = "raider_mall"
+	requires_power = TRUE
+
+/area/f13/mountain_bunker
+	name = "Mountain Bunker"
+	icon_state = "mountain_bunker"
+	requires_power = TRUE
+
 /area/f13/prison
 	name = "prison"
 	icon_state = "sunny_dale"
@@ -1392,7 +1407,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/klamat/mine
 	name = "Klamat mine"
-	icon_state = "klamat"
+	icon_state = "klamat_mine"
 	requires_power = TRUE
 
 /area/f13/deepmine

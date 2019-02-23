@@ -134,6 +134,14 @@
 	result = /obj/item/reagent_containers/food/snacks/twobread
 	subcategory = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/tortilla
+	name = "Tortilla"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/corn = 1
+		)
+	result = /obj/item/reagent_containers/food/snacks/tortilla
+	subcategory = CAT_MISCFOOD
+
 /datum/crafting_recipe/food/burrito
 	name ="Burrito"
 	reqs = list(

@@ -59,14 +59,14 @@
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
-/obj/item/melee/transforming/energy/axe
+/obj/item/melee/transforming/energy/axe//balnce suggested by ren
 	name = "energy axe"
 	desc = "An energized battle axe."
 	icon_state = "axe0"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
-	force = 56
-	force_on = 72
+	force = 25
+	force_on = 42
 	throwforce = 25
 	throwforce_on = 30
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -75,8 +75,8 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	w_class_on = WEIGHT_CLASS_HUGE
 	flags_1 = CONDUCT_1
-	armour_penetration = 100
-	attack_verb_off = list("attacked", "chopped", "cleaved", "torn", "cut")
+	armour_penetration = 25
+	attack_verb_off = list("hacked", "chopped", "cleaved", "torn", "hewed")
 	attack_verb_on = list()
 	light_color = "#40ceff"
 

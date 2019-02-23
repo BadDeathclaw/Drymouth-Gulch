@@ -24,7 +24,6 @@
 /obj/structure/closet/secure_closet/medical2
 	name = "anesthetic closet"
 	desc = "Used to knock people out."
-	req_access = list(ACCESS_SURGERY)
 
 /obj/structure/closet/secure_closet/medical2/PopulateContents()
 	..()
@@ -85,7 +84,7 @@
 	..()
 	new /obj/item/assembly/signaler(src)
 	for(var/i in 1 to 3)
-		new /obj/item/electropack(src)
+		new /obj/item/assembly/signaler/electropack(src)
 
 /obj/structure/closet/secure_closet/chemical
 	name = "chemical closet"

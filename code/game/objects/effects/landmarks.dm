@@ -523,6 +523,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Elder"
 	icon_state = "Elder"
 
+/obj/effect/landmark/start/f13/headscribe
+	name = "Head Scribe"
+	icon_state = "Head Scribe"
+
 /obj/effect/landmark/start/f13/paladin
 	name = "Paladin"
 	icon_state = "Paladin"
@@ -535,9 +539,13 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Scribe"
 	icon_state = "Scribe"
 
-/obj/effect/landmark/start/f13/initiate
-	name = "Initiate"
-	icon_state = "Initiate"
+/obj/effect/landmark/start/f13/initiateknight
+	name = "Initiate Knight"
+	icon_state = "Initiate Knight"
+
+/obj/effect/landmark/start/f13/initiatescribe
+	name = "Initiate Scribe"
+	icon_state = "Initiate Scribe"
 
 // Vault
 
