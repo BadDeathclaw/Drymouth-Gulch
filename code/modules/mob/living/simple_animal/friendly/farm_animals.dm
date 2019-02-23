@@ -430,7 +430,6 @@
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0
 	var/young_type = /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
-	var/obj/item/udder/udder = null
 	stop_automated_movement_when_pulled = 1
 	blood_volume = BLOOD_VOLUME_NORMAL
 	
