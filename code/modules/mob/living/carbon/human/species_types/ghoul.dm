@@ -11,7 +11,7 @@
 	punchdamagehigh = 0
 	punchstunthreshold = 6
 	use_skintones = 0
-	sexes = 0 ////meh they still have a gender somehow!
+	sexes = 0 //meh they still have a gender somehow!
 	disliked_food = GROSS
 	liked_food = JUNKFOOD | FRIED | RAW
 
