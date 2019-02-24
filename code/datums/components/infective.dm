@@ -13,7 +13,7 @@
 		expire_time = world.time + expire_in
 		QDEL_IN(src, expire_in)
 	RegisterSignal(parent, COMSIG_MOVABLE_BUCKLE, .proc/try_infect_buckle)
-	RegisterSignal(parent, COMSIG_MOVABLE_COLLIDE, .proc/try_infect_collide)
+	RegisterSignal(parent, COMSIG_MOVABLE_BUMP, .proc/try_infect_Bump)
 	RegisterSignal(parent, COMSIG_MOVABLE_CROSSED, .proc/try_infect_crossed)
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK_ZONE, .proc/try_infect_attack_zone)
 	RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/try_infect_attack)
@@ -35,7 +35,7 @@
 	if(isliving(M))
 		try_infect(M)
 
-/datum/component/infective/proc/try_infect_collide(atom/A)
+/datum/component/infective/proc/try_infect_Bump(atom/A)
 	var/atom/movable/P = parent
 	if(P.throwing)
 		//this will be handled by try_infect_impact_zone()
