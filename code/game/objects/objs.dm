@@ -12,6 +12,7 @@
 	var/obj_integrity	//defaults to max_integrity
 	var/max_integrity = 500
 	var/integrity_failure = 0 //0 if we have no special broken behavior
+	var/super_advanced_technology = FALSE
 
 	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF
 
@@ -29,10 +30,11 @@
 
 	var/renamedByPlayer = FALSE //set when a player uses a pen on a renamable object
 
-	var/super_advanced_technology = FALSE
-
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
+		if("anchored")
+			setAnchored(vval)
+			return TRUE
 		if("obj_flags")
 			if ((obj_flags & DANGEROUS_POSSESSION) && !(vval & DANGEROUS_POSSESSION))
 				return FALSE
@@ -72,6 +74,10 @@
 		STOP_PROCESSING(SSobj, src) // TODO: Have a processing bitflag to reduce on unnecessary loops through the processing lists
 	SStgui.close_uis(src)
 	. = ..()
+
+/obj/proc/setAnchored(anchorvalue)
+	SEND_SIGNAL(src, COMSIG_OBJ_SETANCHORED, anchorvalue)
+	anchored = anchorvalue
 
 /obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)
 	..()
@@ -244,11 +250,14 @@
 		icon_state = unique_reskin[choice]
 		to_chat(M, "[src] is now skinned as '[choice].'")
 
+//F13 edits, used to exist in _machinery.dm.
+//I think the logic here is that the unfasten/fasten is tied to just base /obj/
+
 /obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
 	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
 		to_chat(user, "<span class='warning'>[src] needs to be on the floor to be secured!</span>")
 		return FAILED_UNFASTEN
-	if(!user.mind.istechnophreak && src.super_advanced_technology)
+	if(!user.mind.istechnophreak && src.super_advanced_technology && !isdead(user))
 		to_chat(user, "<span class='warning'>You don't understand the technology well enough to do this!</span>")
 		return FAILED_UNFASTEN
 	return SUCCESSFUL_UNFASTEN
@@ -265,7 +274,7 @@
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
 		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
 			to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [src].</span>")
-			anchored = !anchored
+			setAnchored(!anchored)
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			return SUCCESSFUL_UNFASTEN
 		return FAILED_UNFASTEN
