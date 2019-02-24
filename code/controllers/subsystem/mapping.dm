@@ -90,7 +90,6 @@ SUBSYSTEM_DEF(mapping)
 	// Set up Z-level transitions.
 	setup_map_transitions()
 	generate_station_area_list()
-	QDEL_NULL(loader)
 	initialize_reserved_level()
 	..()
 
