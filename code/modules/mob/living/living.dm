@@ -283,7 +283,7 @@
 	return (health <= HEALTH_THRESHOLD_CRIT && (stat == SOFT_CRIT || stat == UNCONSCIOUS))
 
 /mob/living/proc/InFullCritical()
-	return (health <= HEALTH_THRESHOLD_FULLCRIT && stat == UNCONSCIOUS)
+	return (health <= crit_modifier() && (stat == SOFT_CRIT || stat == UNCONSCIOUS))
 
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
@@ -808,7 +808,7 @@
 	var/stam = getStaminaLoss()
 	if(stam)
 		var/total_health = (health - stam)
-		if(total_health <= HEALTH_THRESHOLD_CRIT && !stat)
+		if(total_health <= crit_modifier() && !stat)
 			to_chat(src, "<span class='notice'>You're too exhausted to keep going...</span>")
 			Knockdown(100)
 			setStaminaLoss(health - 2, FALSE, FALSE)
