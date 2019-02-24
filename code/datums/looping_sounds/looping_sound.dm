@@ -1,14 +1,10 @@
 /*
 	output_atoms	(list of atoms)			The destination(s) for the sounds
-
 	mid_sounds		(list or soundfile)		Since this can be either a list or a single soundfile you can have random sounds. May contain further lists but must contain a soundfile at the end.
 	mid_length		(num)					The length to wait between playing mid_sounds
-
 	start_sound		(soundfile)				Played before starting the mid_sounds loop
 	start_length	(num)					How long to wait before starting the main loop after playing start_sound
-
 	end_sound		(soundfile)				The sound played after the main loop has concluded
-
 	chance			(num)					Chance per loop to play a mid_sound
 	volume			(num)					Sound output volume
 	muted			(bool)					Private. Used to stop the sound loop.
@@ -24,9 +20,10 @@
 	var/end_sound
 	var/chance
 	var/volume = 100
-	var/muted = TRUE
 	var/max_loops
 	var/direct
+
+	var/timerid
 
 /datum/looping_sound/New(list/_output_atoms=list(), start_immediately=FALSE, _direct=FALSE)
 	if(!mid_sounds)
@@ -47,25 +44,27 @@
 /datum/looping_sound/proc/start(atom/add_thing)
 	if(add_thing)
 		output_atoms |= add_thing
-	if(!muted)
+	if(timerid)
 		return
-	muted = FALSE
 	on_start()
 
 /datum/looping_sound/proc/stop(atom/remove_thing)
 	if(remove_thing)
 		output_atoms -= remove_thing
-	if(muted)
+	if(!timerid)
 		return
-	muted = TRUE
+	on_stop()
+	deltimer(timerid)
+	timerid = null
 
-/datum/looping_sound/proc/sound_loop(looped=0)
-	if(muted || (max_loops && looped > max_loops))
-		on_stop(looped)
+/datum/looping_sound/proc/sound_loop(starttime)
+	if(max_loops && world.time >= starttime + mid_length * max_loops)
+		stop()
 		return
 	if(!chance || prob(chance))
-		play(get_sound(looped))
-	addtimer(CALLBACK(src, .proc/sound_loop, ++looped), mid_length)
+		play(get_sound(starttime))
+	if(!timerid)
+		timerid = addtimer(CALLBACK(src, .proc/sound_loop, world.time), mid_length, TIMER_STOPPABLE | TIMER_LOOP)
 
 /datum/looping_sound/proc/play(soundfile)
 	var/list/atoms_cache = output_atoms
@@ -80,7 +79,7 @@
 		else
 			playsound(thing, S, volume)
 
-/datum/looping_sound/proc/get_sound(looped, _mid_sounds)
+/datum/looping_sound/proc/get_sound(starttime, _mid_sounds)
 	if(!_mid_sounds)
 		. = mid_sounds
 	else
@@ -95,6 +94,6 @@
 		start_wait = start_length
 	addtimer(CALLBACK(src, .proc/sound_loop), start_wait)
 
-/datum/looping_sound/proc/on_stop(looped)
+/datum/looping_sound/proc/on_stop()
 	if(end_sound)
 		play(end_sound)
