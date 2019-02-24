@@ -866,6 +866,7 @@
 	.["Hallucinate"] = "?_src_=vars;[HrefToken()];hallucinate=[REF(src)]"
 	.["Give brain trauma"] = "?_src_=vars;[HrefToken()];givetrauma=[REF(src)]"
 	.["Cure brain traumas"] = "?_src_=vars;[HrefToken()];curetraumas=[REF(src)]"
+	.["Give martial arts"] = "?_src_=vars;[HrefToken()];givemartialart=[REF(src)]"
 
 /mob/living/carbon/can_resist()
 	return bodyparts.len > 2 && ..()
