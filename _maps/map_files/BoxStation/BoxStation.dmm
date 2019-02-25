@@ -2216,7 +2216,7 @@
 "aQF" = (/obj/machinery/door/unpowered/wooddoor,/obj/structure/barricade/wooden/crude,/turf/open/floor/plasteel/f13{icon_state = "whitepurplerustychess2"},/area/f13/sunny_dale)
 "aQG" = (/obj/structure/sign/poster/ncr_democracy{pixel_y = 32},/turf/open/floor/plating/f13/outside/road{icon_state = "horizontaloutermain0"},/area/f13/ncr_main)
 "aQH" = (/mob/living/simple_animal/hostile/radscorpion,/turf/open/floor/wood/f13/old,/area/f13/prison)
-"aQI" = (/obj/structure/sign/poster/irradiated_food{step_y = 32},/turf/open/floor/plating/f13/outside/road{icon_state = "horizontaloutermain0"},/area/f13/ncr_main)
+"aQI" = (/obj/structure/sign/poster/irradiated_food{pixel_y = 32},/turf/open/floor/plating/f13/outside/road{icon_state = "horizontaloutermain0"},/area/f13/ncr_main)
 "aQJ" = (/obj/structure/sign/poster/keep_to_myself{pixel_y = 32},/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/ncr_main)
 "aQK" = (/obj/machinery/light/lampost,/turf/open/floor/plating/f13/outside/road{icon_state = "verticalleftborderleft0"},/area/f13/desert)
 "aQL" = (/turf/closed/wall/r_wall/f13superstore{icon_state = "supermart3"},/area/f13/desert)
