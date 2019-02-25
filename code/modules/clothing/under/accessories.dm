@@ -94,9 +94,66 @@
 	item_color = "maidapron"
 	minimize_when_attached = FALSE
 
-//////////
-//Medals//
-//////////
+
+//NCR //
+
+
+/obj/item/clothing/accessory/ncr
+    name = "(O-6) Colonel rank pin"
+    desc = "An officer holding the rank of Colonel should wear these."
+    icon_state = "colonelrank"
+    item_color = "colonelrank"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/CPT
+    name = "(O-3) Captain rank pin"
+    desc = "An officer holding the rank of Captain should wear this."
+    icon_state = "captainrank"
+    item_color = "captainrank"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/LT
+    name = "(O-1) Lieutenant rank pin"
+    desc = "An officer holding the rank of Lieutenant should wear this."
+    icon_state = "lieutenantrank"
+    item_color = "lieutenantrank"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/SSGT
+    name = "(E-6) Staff Sergeant rank pins"
+    desc = "A trooper holding the rank of Staff Sergeant should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/SGT
+    name = "(E-5) Sergeant rank pins"
+    desc = "A trooper holding the rank of Sergeant should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/TPR
+    name = "(E-3) Trooper rank pins"
+    desc = "A trooper should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/REC
+    name = "(E-2) Recruit rank pins"
+    desc = "A recruit should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+
+
+
+
+    //Medals//
+
+
 
 /obj/item/clothing/accessory/medal
 	name = "bronze medal"
@@ -139,7 +196,7 @@
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
 							commended = TRUE
-							desc += "<br>The inscription reads: [input] - [user.real_name]" 
+							desc += "<br>The inscription reads: [input] - [user.real_name]"
 							log_game("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
 							message_admins("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
 
