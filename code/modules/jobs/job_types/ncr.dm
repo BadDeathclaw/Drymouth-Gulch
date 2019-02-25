@@ -38,7 +38,7 @@ Colonel
 Captain
 */
 /datum/job/ncr/f13captain
-	title = "NCR Commanding Officer"
+	title = "NCR Captain"
 	flag = F13CAPTAIN
 	head_announce = list("Security")
 	faction = "NCR"
@@ -54,10 +54,9 @@ Captain
 	outfit = /datum/outfit/job/ncr/f13captain
 
 /datum/outfit/job/ncr/f13captain
-	name = "NCR Commanding Officer"
+	name = "NCR Captain"
 	jobtype = /datum/job/ncr/f13captain
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
-	accessory =       /obj/item/clothing/accessory/ncr/CPT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
 	gloves =		/obj/item/clothing/gloves/combat
@@ -75,7 +74,7 @@ Captain
 Lieutenant
 */
 /datum/job/ncr/f13lieutenant
-	title = "NCR Executive Officer"
+	title = "NCR Lieutenant"
 	flag = F13LIEUTENANT
 	total_positions = 1
 	spawn_positions = 1
@@ -90,10 +89,9 @@ Lieutenant
 	outfit = /datum/outfit/job/ncr/f13lieutenant
 
 /datum/outfit/job/ncr/f13lieutenant
-	name = "NCR Executive Officer"
+	name = "NCR Lieutenant"
 	jobtype = /datum/job/ncr/f13lieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
-	accessory =     /obj/item/clothing/accessory/ncr/LT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
 	gloves =		/obj/item/clothing/gloves/combat
@@ -109,44 +107,8 @@ Lieutenant
 	box = null
 
 /*
-qm Sergeant
+Sergeant
 */
-/datum/job/ncr/f13sergeant
-	title = "NCR Quartermaster Sergeant"
-	flag = F13QMSERGEANT
-	total_positions = 1
-	spawn_positions = 1
-	faction = "NCR"
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
-	description = "You are the direct superior to any and all enlisted troops, you are incharge of the armory, and all the contents inside, make sure they are distributed and taken care of."
-	supervisors = "the lieutenant"
-	selection_color = "#fff5cc"
-	exp_requirements = 800
-
-	outfit = /datum/outfit/job/ncr/f13sergeant
-
-/datum/outfit/job/ncr/f13sergeant
-	name = "NCR Sergeant"
-	jobtype = /datum/job/ncr/f13sergeant
-	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/SSGT
-	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	head = 			/obj/item/clothing/head/f13/ncr
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun
-	backpack_contents = list(
-		/obj/item/storage/box/lethalshot, \
-		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/stack/medical/gauze=1, \
-		/obj/item/storage/bag/money/small/ncrofficers)
-	box = null
-
-//sergeant
-
-
 /datum/job/ncr/f13sergeant
 	title = "NCR Sergeant"
 	flag = F13SERGEANT
@@ -166,7 +128,6 @@ qm Sergeant
 	name = "NCR Sergeant"
 	jobtype = /datum/job/ncr/f13sergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -179,9 +140,6 @@ qm Sergeant
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
-
-
-
 
 /*
 Trooper
@@ -204,7 +162,6 @@ Trooper
 	name = "NCR Trooper"
 	jobtype = /datum/job/ncr/f13trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/TPR
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -239,7 +196,6 @@ Recruit
 	name = "NCR Recruit"
 	jobtype = /datum/job/ncr/f13recruit
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/REC
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
