@@ -111,7 +111,7 @@ Lieutenant
 /*
 qm Sergeant
 */
-/datum/job/ncr/f13sergeant
+/datum/job/ncr/f13qmsergeant
 	title = "NCR Quartermaster Sergeant"
 	flag = F13QMSERGEANT
 	total_positions = 1
