@@ -185,6 +185,7 @@ Vexillarius
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/megaphone/cornu=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
 
 

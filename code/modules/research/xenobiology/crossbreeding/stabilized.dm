@@ -90,10 +90,10 @@ Stabilized extracts:
 
 /obj/item/slimecross/stabilized/green
 	colour = "green"
-
+/*
 /obj/item/slimecross/stabilized/pink
 	colour = "pink"
-
+*/
 /obj/item/slimecross/stabilized/gold
 	colour = "gold"
 	var/mob_type
