@@ -2591,7 +2591,7 @@
 "aYv" = (/obj/machinery/vending/nukacolavendfull,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/sunny_dale)
 "aYw" = (/obj/machinery/light{dir = 8},/obj/structure/closet/cardboard,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/sunny_dale)
 "aYx" = (/obj/structure/table/reinforced,/obj/item/trash/candle,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/sunny_dale)
-"aYy" = (/obj/item/storage/backpack/stachel/flat,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/sunny_dale)
+"aYy" = (/obj/item/storage/backpack/satchel/flat,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/sunny_dale)
 "aYz" = (/obj/effect/decal/roadline{icon_state = "singlevertical"},/turf/open/floor/plating/f13/outside/road{icon_state = "innermiddle"},/area/f13/desert)
 "aYA" = (/mob/living/simple_animal/hostile/ghoul/reaver,/turf/open/floor/plating/f13/outside/road{icon_state = "horizontaloutermain0"},/area/f13/sunny_dale)
 "aYB" = (/obj/machinery/light/small,/turf/open/floor/plating/f13/outside/road{icon_state = "outerbordercorner"; dir = 4},/area/f13/sunny_dale)
