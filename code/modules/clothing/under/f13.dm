@@ -151,6 +151,20 @@
 
 // Generic
 
+/obj/item/clothing/under/f13/chinese
+	name = "chinese uniform"
+	desc = "Apparel of an old-time chinese soldier."
+	icon_state = "chinese_uni"
+	item_state = "chinese_uni"
+	item_color = "chinese_uni"
+
+/obj/item/clothing/under/f13/chinese/belted
+	name = "chinese uniform"
+	desc = "Apparel of an old-time chinese soldier. This one has belts."
+	icon_state = "chinesebelt_uni"
+	item_state = "chinesebelt_uni"
+	item_color = "chinesebelt_uni"
+
 /obj/item/clothing/under/f13/machinist
 	name = "machinist bodysuit"
 	desc = "Apparel of an old-time machinist."

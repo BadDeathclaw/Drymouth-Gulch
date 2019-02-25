@@ -112,6 +112,28 @@
 		earflaps = 1
 		to_chat(user, "<span class='notice'>You lower the ear flaps on the ushanka.</span>")
 
+/obj/item/clothing/head/ushanka/chinese
+	name = "chinese commando hat"
+	desc = "Perfect for winter in anchorage, shi?"
+	icon_state = "ushankadown"
+	item_state = "ushankadown"
+	flags_inv = HIDEEARS|HIDEHAIR
+	var/adjusted = 0
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+
+/obj/item/clothing/head/ushanka/chinese/attack_self(mob/user)
+	if(adjusted)
+		src.icon_state = "ushankaup"
+		src.item_state = "ushankaup"
+		adjusted = 0
+		to_chat(user, "<span class='notice'>You raise the ear flaps on the chinese commando hat.</span>")
+	else
+		src.icon_state = "ushankadown"
+		src.item_state = "ushankadown"
+		adjusted = 1
+		to_chat(user, "<span class='notice'>You lower the ear flaps on the chinese commando hat.</span>")
+
 /*
  * Pumpkin head
  */
