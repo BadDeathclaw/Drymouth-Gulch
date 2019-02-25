@@ -9,8 +9,8 @@
 #define AIMING_BEAM_ANGLE_CHANGE_THRESHOLD 0.1
 
 /obj/item/gun/energy/beam_rifle
-	name = "railgun"
-	desc = "An energy-based anti material marksman rifle that uses highly charged particle beams moving at extreme velocities to decimate whatever is unfortunate enough to be targetted by one. \
+	name = "particle acceleration rifle"
+	desc = "An energy-based anti material marksman rifle that uses highly charged particle beams moving at extreme velocities to decimate whatever is unfortunate enough to be targeted by one. \
 		<span class='boldnotice'>Hold down left click while scoped to aim, when weapon is fully aimed (Tracer goes from red to green as it charges), release to fire. Moving while aiming or \
 		changing where you're pointing at while aiming will delay the aiming process depending on how much you changed.</span>"
 	icon = 'icons/obj/guns/energy.dmi'
@@ -565,10 +565,10 @@
 	if(highlander && istype(gun))
 		QDEL_LIST(gun.current_tracers)
 		for(var/datum/point/p in beam_segments)
-			gun.current_tracers += generate_tracer_between_points(p, beam_segments[p], tracer_type, color, 0)
+			gun.current_tracers += generate_tracer_between_points(p, beam_segments[p], tracer_type, color, 0, hitscan_light_range, hitscan_light_color_override, hitscan_light_intensity)
 	else
 		for(var/datum/point/p in beam_segments)
-			generate_tracer_between_points(p, beam_segments[p], tracer_type, color, duration)
+			generate_tracer_between_points(p, beam_segments[p], tracer_type, color, duration, hitscan_light_range, hitscan_light_color_override, hitscan_light_intensity)
 	if(cleanup)
 		QDEL_LIST(beam_segments)
 		beam_segments = null
@@ -582,6 +582,9 @@
 	nodamage = TRUE
 	damage = 0
 	constant_tracer = TRUE
+	hitscan_light_range = 0
+	hitscan_light_intensity = 0
+	hitscan_light_color_override = "#99ff99"
 
 /obj/item/projectile/beam/beam_rifle/hitscan/aiming_beam/prehit(atom/target)
 	qdel(src)
