@@ -39,6 +39,7 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Lieutenant",
 	"NCR Quartermaster Sergeant",
 	"NCR Sergeant",
+	"NCR Quartermaster Sergeant",
 	"NCR Trooper",
 	"NCR Recruit",
 	"NCR Veteran Ranger",
