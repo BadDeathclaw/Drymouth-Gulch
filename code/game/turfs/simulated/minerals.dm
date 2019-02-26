@@ -179,7 +179,7 @@
 	mineralChance = 6
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 2, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 4, /turf/closed/mineral/titanium = 4,
-		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40,
+		/turf/closed/mineral/silver = 6, /turf/closed/mineral/plasma = 15, /turf/closed/mineral/iron = 40, /turf/closed/mineral/coal = 20,
 		/turf/closed/mineral/gibtonite = 2, /turf/closed/mineral/bscrystal = 1)
 
 
@@ -200,7 +200,7 @@
 /turf/closed/mineral/random/labormineral
 	mineralSpawnChanceList = list(
 		/turf/closed/mineral/uranium = 3, /turf/closed/mineral/diamond = 1, /turf/closed/mineral/gold = 8, /turf/closed/mineral/titanium = 8,
-		/turf/closed/mineral/silver = 20, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 95,
+		/turf/closed/mineral/silver = 20, /turf/closed/mineral/plasma = 30, /turf/closed/mineral/iron = 95, /turf/closed/mineral/coal = 40,
 		/turf/closed/mineral/gibtonite = 2)
 	icon_state = "rock_labor"
 
@@ -217,6 +217,12 @@
 		/turf/closed/mineral/iron/volcanic = 95)
 
 
+
+/turf/closed/mineral/coal
+	mineralType = /obj/item/trash/coal
+	spreadChance = 10
+	spread = 1
+	scan_state = "rock_Coal"
 
 /turf/closed/mineral/iron
 	mineralType = /obj/item/stack/ore/iron
