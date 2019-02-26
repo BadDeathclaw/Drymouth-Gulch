@@ -1,10 +1,10 @@
 
 /obj/machinery/vending/cola
-	name = "\improper Robust Softdrinks"
-	desc = "A softdrink vendor provided by Robust Industries, LLC."
+	name = "\improper Coca-Cola Softdrinks"
+	desc = "A softdrink vendor provided by Coca-Cola."
 	icon_state = "Cola_Machine"
-	product_slogans = "Robust Softdrinks: More robust than a toolbox to the head!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in space."
+	product_slogans = "Coca-Cola: Taste the Feeling."
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in America!"
 	products = list(/obj/item/reagent_containers/food/drinks/soda_cans/cola = 10,
 		            /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb = 10,
@@ -20,7 +20,7 @@
 	refill_canister = /obj/item/vending_refill/cola
 
 /obj/item/vending_refill/cola
-	machine_name = "Robust Softdrinks"
+	machine_name = "Cola Softdrinks"
 	icon_state = "refill_cola"
 	charges = list(30, 4, 1)//of 90 standard, 12 contraband, 1 premium
 	init_charges = list(30, 4, 1)

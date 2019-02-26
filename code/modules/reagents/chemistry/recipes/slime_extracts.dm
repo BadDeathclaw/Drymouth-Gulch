@@ -46,6 +46,7 @@
 	..()
 
 //Green
+/*
 /datum/chemical_reaction/slime/slimemutate
 	name = "Mutation Toxin"
 	id = "slimetoxin"
@@ -69,7 +70,7 @@
 	required_reagents = list("radium" = 1)
 	required_other = 1
 	required_container = /obj/item/slime_extract/green
-
+*/
 //Metal
 /datum/chemical_reaction/slime/slimemetal
 	name = "Slime Metal"
@@ -98,6 +99,8 @@
 	..()
 
 //Gold
+
+/*
 /datum/chemical_reaction/slime/slimemobspawn
 	name = "Slime Crit"
 	id = "m_tele"
@@ -127,6 +130,7 @@
 	T.visible_message("<span class='danger'>The slime extract begins to vibrate violently!</span>")
 	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, 3, "Lesser Gold Slime", HOSTILE_SPAWN, "neutral"), 50)
 
+
 /datum/chemical_reaction/slime/slimemobspawn/friendly
 	name = "Slime Crit Friendly"
 	id = "m_tele5"
@@ -135,6 +139,7 @@
 /datum/chemical_reaction/slime/slimemobspawn/friendly/summon_mobs(datum/reagents/holder, turf/T)
 	T.visible_message("<span class='danger'>The slime extract begins to vibrate adorably!</span>")
 	addtimer(CALLBACK(src, .proc/chemical_mob_spawn, holder, 1, "Friendly Gold Slime", FRIENDLY_SPAWN, "neutral"), 50)
+*/
 
 //Silver
 /datum/chemical_reaction/slime/slimebork
@@ -206,6 +211,7 @@
 	required_other = 1
 
 //Dark Blue
+/*
 /datum/chemical_reaction/slime/slimefreeze
 	name = "Slime Freeze"
 	id = "m_freeze"
@@ -228,7 +234,7 @@
 		var/turf/open/T = get_turf(holder.my_atom)
 		if(istype(T))
 			T.atmos_spawn_air("nitrogen=50;TEMP=2.7")
-
+*/
 /datum/chemical_reaction/slime/slimefireproof
 	name = "Slime Fireproof"
 	id = "m_fireproof"
@@ -456,6 +462,7 @@
 	required_other = 1
 
 //Light Pink
+/* // replacing it later with a lust potion? idk lol
 /datum/chemical_reaction/slime/slimepotion2
 	name = "Slime Potion 2"
 	id = "m_potion2"
@@ -466,7 +473,9 @@
 /datum/chemical_reaction/slime/slimepotion2/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/slime/sentience(get_turf(holder.my_atom))
 	..()
+*/
 
+/*
 //Adamantine
 /datum/chemical_reaction/slime/adamantine
 	name = "Adamantine"
@@ -478,6 +487,8 @@
 /datum/chemical_reaction/slime/adamantine/on_reaction(datum/reagents/holder)
 	new /obj/item/stack/sheet/mineral/adamantine(get_turf(holder.my_atom))
 	..()
+*/
+
 
 //Bluespace
 /datum/chemical_reaction/slime/slimefloor2
@@ -491,7 +502,7 @@
 	new /obj/item/stack/tile/bluespace(get_turf(holder.my_atom), 25)
 	..()
 
-
+/*
 /datum/chemical_reaction/slime/slimecrystal
 	name = "Slime Crystal"
 	id = "m_crystal"
@@ -503,7 +514,7 @@
 	var/obj/item/stack/ore/bluespace_crystal/BC = new (get_turf(holder.my_atom))
 	BC.visible_message("<span class='notice'>The [BC.name] appears out of thin air!</span>")
 	..()
-
+*/
 /datum/chemical_reaction/slime/slimeradio
 	name = "Slime Radio"
 	id = "m_radio"
@@ -646,7 +657,7 @@
 
 /datum/chemical_reaction/slime/slime_transfer/on_reaction(datum/reagents/holder)
 	new /obj/item/slimepotion/transference(get_turf(holder.my_atom))
-	..() */
+	..()
 
 /datum/chemical_reaction/slime/flight_potion
 	name = "Flight Potion"
@@ -657,4 +668,4 @@
 
 /datum/chemical_reaction/slime/flight_potion/on_reaction(datum/reagents/holder)
 	new /obj/item/reagent_containers/glass/bottle/potion/flight(get_turf(holder.my_atom))
-	..()
+	..() */

@@ -573,15 +573,6 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
-/obj/item/clothing/head/helmet/power_armor/f13/mob_can_equip(mob/user, slot)
-	if (ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if (!H.has_trait(TRAIT_TECHNOPHREAK) && slot == SLOT_HEAD)
-			H << "<span class='warning'>You don't have the proper training to operate the power armor!</span>"
-			return 0
-			..()
-	return ..()
-
 /obj/item/clothing/head/helmet/power_armor/t45b
 	name = "Salvaged T-45b helmet"
 	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."

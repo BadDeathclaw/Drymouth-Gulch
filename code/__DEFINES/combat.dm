@@ -19,6 +19,7 @@
 #define SHAME 			(1<<4)
 #define MANUAL_SUICIDE	(1<<5)	//suicide_act will do the actual killing.
 
+#define EFFECT_PARALYZE	"paralyze"
 #define EFFECT_STUN		"stun"
 #define EFFECT_KNOCKDOWN		"knockdown"
 #define EFFECT_UNCONSCIOUS	"unconscious"
@@ -35,6 +36,7 @@
 #define CANUNCONSCIOUS	(1<<2)
 #define CANPUSH			(1<<3)
 #define GODMODE			(1<<4)
+#define CANPARALYZE		(1<<5)
 
 //Health Defines
 #define HEALTH_THRESHOLD_CRIT 0

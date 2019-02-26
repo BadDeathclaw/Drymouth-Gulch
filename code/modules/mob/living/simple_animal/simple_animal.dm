@@ -91,6 +91,10 @@
 
 	var/my_z // I don't want to confuse this with client registered_z
 
+	//Stops the game from crashing
+	var/const/MAX_NPCs = 2500
+	var/global/NPC_count = 0
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
@@ -101,6 +105,10 @@
 		real_name = name
 	if(!loc)
 		stack_trace("Simple animal being instantiated in nullspace")
+	NPC_count += 1
+	if(NPC_count > MAX_NPCs)
+		message_admins("Die, [src]! You don't belong in this [ADMIN_COORDJMP(loc)]! There's [NPC_count] simple_animal in the game.")
+		qdel(src)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src

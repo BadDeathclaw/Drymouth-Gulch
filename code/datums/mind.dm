@@ -50,7 +50,7 @@
 	var/datum/faction/faction 			//associated faction
 	var/datum/changeling/changeling		//changeling holder
 	var/linglink
-	var/datum/martial_art/martial_art
+	var/datum/martial_art/martial_art // Why are there two sets of martial arts? Look into later.
 	var/static/default_martial_art = new/datum/martial_art
 	var/miming = 0 // Mime's vow of silence
 	var/list/antag_datums
@@ -60,7 +60,7 @@
 	var/datum/mind/soulOwner //who owns the soul.  Under normal circumstances, this will point to src
 	var/hasSoul = TRUE // If false, renders the character unable to sell their soul.
 	var/isholy = FALSE //is this person a chaplain or admin role allowed to use bibles
-
+	var/istechnophreak = FALSE // Sets the mind to knowing how to use super advanced technology and the like.
 	var/mob/living/enslaved_to //If this mind's master is another mob (i.e. adamantine golems)
 	var/datum/language_holder/language_holder
 	var/unconvertable = FALSE

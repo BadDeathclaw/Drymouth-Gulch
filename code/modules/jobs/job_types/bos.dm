@@ -23,11 +23,17 @@ Main doors: ACCESS_CAPTAIN 20
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
 
+/datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.istechnophreak = TRUE
+
 /datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK)
+	H.mind.istechnophreak = TRUE
 
 /*
 Elder

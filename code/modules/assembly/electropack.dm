@@ -1,4 +1,4 @@
-/obj/item/electropack
+/obj/item/assembly/signaler/electropack
 	name = "electropack"
 	desc = "Dance my monkeys! DANCE!!!"
 	icon = 'icons/obj/radio.dmi'
@@ -12,23 +12,16 @@
 	materials = list(MAT_METAL=10000, MAT_GLASS=2500)
 	var/on = TRUE
 	var/shock_cooldown = 0
-	var/code = 2
-	var/frequency = FREQ_ELECTROPACK
+	code = 2
+	frequency = FREQ_ELECTROPACK
+	attachable = FALSE
 
-/obj/item/electropack/suicide_act(mob/user)
+/obj/item/assembly/signaler/electropack/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (FIRELOSS)
 
-/obj/item/electropack/Initialize()
-	. = ..()
-	SSradio.add_object(src, frequency, RADIO_SIGNALER)
-
-/obj/item/electropack/Destroy()
-	SSradio.remove_object(src, frequency)
-	return ..()
-
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/electropack/attack_hand(mob/user)
+/obj/item/assembly/signaler/electropack/attack_hand(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.back)
@@ -36,7 +29,7 @@
 			return
 	return ..()
 
-/obj/item/electropack/attackby(obj/item/W, mob/user, params)
+/obj/item/assembly/signaler/electropack/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/clothing/head/helmet))
 		var/obj/item/assembly/shock_kit/A = new /obj/item/assembly/shock_kit( user )
 		A.icon = 'icons/obj/assemblies.dmi'
@@ -58,49 +51,8 @@
 	else
 		return ..()
 
-/obj/item/electropack/Topic(href, href_list)
-	//..()
-	var/mob/living/carbon/C = usr
-	if(usr.stat || usr.restrained() || C.back == src)
-		return
-	if((ishuman(usr) && usr.contents.Find(src)) || usr.contents.Find(master) || (in_range(src, usr) && isturf(loc)))
-		usr.set_machine(src)
-		if(href_list["freq"])
-			SSradio.remove_object(src, frequency)
-			frequency = sanitize_frequency(frequency + text2num(href_list["freq"]))
-			SSradio.add_object(src, frequency, RADIO_SIGNALER)
-		else
-			if(href_list["code"])
-				code += text2num(href_list["code"])
-				code = round(code)
-				code = min(100, code)
-				code = max(1, code)
-			else
-				if(href_list["power"])
-					on = !( on )
-					icon_state = "electropack[on]"
-		if(!( master ))
-			if(ismob(loc))
-				attack_self(loc)
-			else
-				for(var/mob/M in viewers(1, src))
-					if(M.client)
-						attack_self(M)
-		else
-			if(ismob(master.loc))
-				attack_self(master.loc)
-			else
-				for(var/mob/M in viewers(1, master))
-					if(M.client)
-						attack_self(M)
-	else
-		usr << browse(null, "window=radio")
-		return
-	return
-
-/obj/item/electropack/receive_signal(datum/signal/signal)
-	if(!signal || signal.data["code"] != code)
-		return
+/obj/item/assembly/signaler/electropack/receive_signal(datum/signal/signal)
+	..()
 
 	if(isliving(loc) && on)
 		if(shock_cooldown != 0)
@@ -118,11 +70,7 @@
 
 		L.Knockdown(100)
 
-	if(master)
-		master.receive_signal()
-	return
-
-/obj/item/electropack/attack_self(mob/user)
+/obj/item/assembly/signaler/electropack/attack_self(mob/user)
 
 	if(!ishuman(user))
 		return
@@ -145,34 +93,33 @@ Code:
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
+
 //F13 EDIT
-/obj/item/electropack/shockcollar
+/obj/item/assembly/signaler/electropack/shockcollar
 	name = "slave collar"
 	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. Strange.."
 	icon = 'icons/obj/f13misc.dmi'
 	icon_state = "slavecollar_ico"
 	item_state = "slavecollar"
-	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_DENYPOCKET //CEASE THE POCKET SHOCKER MEMES
+	slot_flags = ITEM_SLOT_NECK  //CEASE THE POCKET SHOCKER MEMES | Pocket shocker meme is hilarious. - Nappist
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
 	strip_delay = 60
 	equip_delay_other = 60
-	code = ""
-	frequency = ""
 
-/obj/item/electropack/shockcollar/Initialize()
+/obj/item/assembly/signaler/electropack/shockcollar/Initialize()
 	..()
-	frequency = rand(1441,1489)
+	set_frequency(pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459))
 	code = rand(1,100)
 	name = "[name] #[frequency]/[code]"
 
-/obj/item/electropack/shockcollar/attack_hand(mob/user)
+/obj/item/assembly/signaler/electropack/shockcollar/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK))
 		to_chat(user, "<span class='warning'>The collar is fastened tight! You'll need help taking this off!</span>")
 		return
 	..()
 
-/obj/item/electropack/shockcollar/receive_signal(datum/signal/signal) //this removes the "on" check
+/obj/item/assembly/signaler/electropack/shockcollar/receive_signal(datum/signal/signal) //this removes the "on" check
 	if(!signal || signal.data["code"] != code)
 		return
 
@@ -196,7 +143,7 @@ Code:
 		master.receive_signal()
 	return
 
-/obj/item/electropack/shockcollar/attack_self(mob/user)
+/obj/item/assembly/signaler/electropack/shockcollar/attack_self(mob/user)
 	if(!ishuman(user))
 		return
 
@@ -217,12 +164,3 @@ Code:
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
-
-/obj/item/electropack/shockcollar/attackby(obj/item/W, mob/user, params)
-	if(issignaler(W))
-		var/obj/item/assembly/signaler/signaler2 = W
-		if(signaler2.secured)
-			signaler2.code = code
-			signaler2.set_frequency(frequency)
-			to_chat(user, "You transfer the frequency and code of \the [name] to \the [signaler2.name]")
-	..()

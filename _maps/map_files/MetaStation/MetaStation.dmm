@@ -689,7 +689,7 @@
 /obj/item/clothing/glasses/sunglasses/blindfold,
 /obj/item/clothing/mask/muzzle,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/item/electropack,
+/obj/item/assembly/signaler/electropack,
 /turf/open/floor/plasteel/dark,
 /area/security/execution/education)
 "abX" = (
@@ -71135,7 +71135,7 @@
 /obj/item/stack/sheet/metal{
 	amount = 10
 	},
-/obj/item/electropack,
+/obj/item/assembly/signaler/electropack,
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "daF" = (

@@ -187,7 +187,7 @@
 		return ..()
 
 /obj/item/paper/contract/infernal/proc/attempt_signature(mob/living/carbon/human/user, blood = 0)
-	if(!user.IsAdvancedToolUser() || !user.is_literate())
+	if(!user.is_literate())
 		to_chat(user, "<span class='notice'>You don't know how to read or write.</span>")
 		return 0
 	if(user.mind != target)

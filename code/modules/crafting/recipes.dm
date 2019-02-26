@@ -323,6 +323,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/throwing_spear
+	name = "Throwing Spear"
+	result = /obj/item/throwing_star/spear
+	reqs = list(/obj/item/stack/ore/iron = 1,
+				/obj/item/stack/rods = 3,
+				/obj/item/stack/sheet/sinew = 1)
+	tools = list(TOOL_WELDER)
+	time = 50
+	category= CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 /datum/crafting_recipe/spooky_camera
 	name = "Camera Obscura"
 	result = /obj/item/camera/spooky
@@ -567,6 +578,16 @@
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/headpikelegion
+	name = "Spike Head (Throwing Spear)"
+	time = 65
+	reqs = list(/obj/item/throwing_star/spear = 1,
+				/obj/item/bodypart/head = 1)
+	parts = list(/obj/item/bodypart/head = 1,
+			/obj/item/throwing_star/spear = 1)
+	result = /obj/structure/headpike
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/smallcarton
 	name = "Small Carton"
 	result = /obj/item/reagent_containers/food/drinks/sillycup/smallcarton
@@ -652,7 +673,7 @@
 
 /datum/crafting_recipe/slavecollar
 	name = "Slave Collar"
-	result = /obj/item/electropack/shockcollar
+	result = /obj/item/assembly/signaler/electropack/shockcollar
 	reqs = list(/obj/item/clothing/neck/petcollar = 1,
 				/obj/item/assembly/signaler = 1,
 				/obj/item/assembly/igniter =1)
@@ -732,7 +753,7 @@
 	category = CAT_ASSEM
 
 /datum/crafting_recipe/proximity
-	name = "Remote signaling device"
+	name = "Proximity sensor"
 	result = /obj/item/assembly/prox_sensor
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,

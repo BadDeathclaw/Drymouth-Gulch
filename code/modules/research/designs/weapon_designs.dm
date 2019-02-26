@@ -93,7 +93,7 @@
 	desc = "A seemingly advanced 5.56mm assault rifle."
 	id = "ar"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 20000, MAT_GLASS = 20000, MAT_SILVER = 20000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000, MAT_SILVER = 10000)
 	build_path = /obj/item/gun/ballistic/automatic/ar
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -103,7 +103,7 @@
 	desc = "An advanced semi auto shotgun that takes specialized magazines."
 	id = "shotgun"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 20000, MAT_GLASS = 20000, MAT_SILVER = 20000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000, MAT_SILVER = 10000)
 	build_path = /obj/item/gun/ballistic/automatic/shotgun/bulldog
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -113,7 +113,7 @@
 	desc = "A seemingly advanced SMG, uses special ammo and can be suppressed."
 	id = "smg"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 20000, MAT_GLASS = 20000, MAT_SILVER = 20000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000, MAT_SILVER = 10000)
 	build_path = /obj/item/gun/ballistic/automatic/c20r //NO STAM DAMAGE
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -360,7 +360,7 @@
 	desc = "A 24 round magazine for the advanced SMG"
 	id = "smgmag"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 12000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/magazine/smgm45
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
@@ -370,7 +370,7 @@
 	desc = "A 30 round toploader magazine for the advanced AR."
 	id = "armag"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 12000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/magazine/m556
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
