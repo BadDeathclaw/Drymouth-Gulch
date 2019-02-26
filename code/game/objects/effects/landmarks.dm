@@ -459,10 +459,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
     name = "NCR Quartermaster Sergeant"
     icon_state = "NCR Quartermaster Sergeant"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of ef0250c5... Revert "adds ranks for NCR and an NCR QM"
 /obj/effect/landmark/start/f13/ncrsergeant
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"

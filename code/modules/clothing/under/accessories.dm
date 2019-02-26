@@ -95,14 +95,7 @@
 	minimize_when_attached = FALSE
 
 
-<<<<<<< HEAD
-//ranks
-
-
-=======
->>>>>>> parent of ef0250c5... Revert "adds ranks for NCR and an NCR QM"
-//NCR //
-
+//ranks//
 
 /obj/item/clothing/accessory/ncr
     name = "(O-6) Colonel rank pin"
@@ -155,49 +148,7 @@
 
 
 
-
-
-    //Medals//
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////
-//Medals//
-//////////
-=======
->>>>>>> parent of ef0250c5... Revert "adds ranks for NCR and an NCR QM"
+//medals//
 
 /obj/item/clothing/accessory/medal
 	name = "bronze medal"

@@ -38,7 +38,7 @@ Colonel
 Captain
 */
 /datum/job/ncr/f13captain
-	title = "NCR Commanding Officer"
+	title = "NCR Captain"
 	flag = F13CAPTAIN
 	head_announce = list("Security")
 	faction = "NCR"
@@ -54,7 +54,7 @@ Captain
 	outfit = /datum/outfit/job/ncr/f13captain
 
 /datum/outfit/job/ncr/f13captain
-	name = "NCR Commanding Officer"
+	name = "NCR Lieutenant"
 	jobtype = /datum/job/ncr/f13captain
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =       /obj/item/clothing/accessory/ncr/CPT
@@ -75,7 +75,7 @@ Captain
 Lieutenant
 */
 /datum/job/ncr/f13lieutenant
-	title = "NCR Executive Officer"
+	title = "NCR Lieutenant"
 	flag = F13LIEUTENANT
 	total_positions = 1
 	spawn_positions = 1
@@ -90,7 +90,7 @@ Lieutenant
 	outfit = /datum/outfit/job/ncr/f13lieutenant
 
 /datum/outfit/job/ncr/f13lieutenant
-	name = "NCR Executive Officer"
+	name = "NCR Lieutenant"
 	jobtype = /datum/job/ncr/f13lieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =     /obj/item/clothing/accessory/ncr/LT
