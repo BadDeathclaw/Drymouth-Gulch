@@ -456,8 +456,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "NCR Lieutenant"
 
 /obj/effect/landmark/start/f13/ncrqmsergeant
-    name = "NCR Quartermaster Sergeant"
-    icon_state = "NCR Quartermaster Sergeant"
+    name = "NCR Quartermaster"
+    icon_state = "NCR Quartermaster"
 
 /obj/effect/landmark/start/f13/ncrsergeant
 	name = "NCR Sergeant"
