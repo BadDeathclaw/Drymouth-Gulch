@@ -90,7 +90,7 @@ Centurion
 	supervisors = "Legate"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
-	exp_requirements = 2160
+	exp_requirements = 1900
 
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
