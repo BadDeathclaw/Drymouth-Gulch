@@ -2453,7 +2453,7 @@
 "Vi" = (/obj/structure/rack,/obj/item/circuitboard/machine/plantgenes,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "Vj" = (/obj/structure/grille,/obj/structure/cable,/obj/structure/window/reinforced/fulltile,/turf/open/floor/plating,/area/f13/underground/bos)
 "Vk" = (/obj/machinery/door/airlock/hatch{req_access_txt = "120"},/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
-"Vl" = (/obj/structure/rack,/obj/item/circuitboard/machine/autolathe,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
+"Vl" = (/obj/structure/rack,/obj/item/circuitboard/machine/autolathe/constructionlathe,/turf/open/floor/plasteel/f13/vault_floor/purple/whitepurplefull,/area/f13/underground/bos)
 "Vm" = (/obj/machinery/gibber,/obj/machinery/light{dir = 1},/turf/open/floor/plasteel/cafeteria,/area/centcom/holding)
 "Vn" = (/obj/structure/window/reinforced{dir = 8},/obj/machinery/smartfridge/food,/turf/open/floor/plasteel/f13/vault_floor/green,/area/f13/underground/bos)
 "Vo" = (/obj/structure/reagent_dispensers/watertank/high,/turf/open/floor/grass,/area/f13/underground/bos)
