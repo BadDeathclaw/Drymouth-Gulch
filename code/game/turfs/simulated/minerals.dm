@@ -219,7 +219,7 @@
 
 
 /turf/closed/mineral/coal
-	mineralType = /obj/item/stack/sheets/mineral/coal
+	mineralType = /obj/item/stack/sheets/coal
 	spreadChance = 10
 	spread = 1
 	scan_state = "rock_Coal"
