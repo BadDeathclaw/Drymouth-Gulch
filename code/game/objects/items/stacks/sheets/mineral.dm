@@ -12,6 +12,8 @@ Mineral Sheets
 		- Clown
 		- Titanium
 		- Plastitanium
+		- Coal
+	
 	Others:
 		- Adamantine
 		- Mythril
@@ -138,6 +140,20 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 /obj/item/stack/sheet/mineral/uranium/Initialize(mapload, new_amount, merge = TRUE)
 	recipes = GLOB.uranium_recipes
 	. = ..()
+
+/*
+ * Coal
+ */
+/obj/item/stack/sheet/mineral/coal
+	name = "coal lump"
+	icon_state = "sheet-coal"
+	item_state = "sheet-coal"
+	singular_name = "coal lump"
+	sheettype = "coal"
+	resistance_flags = FLAMMABLE
+	max_integrity = 100
+	materials = list(MAT_COAL=MINERAL_MATERIAL_AMOUNT)
+	grind_results = list("carbon" = 20)  //I'm aware that coal and charcoal are two differents things. Still. The regeant could be changed into charcoal to make it compatible with the black powder recipe.
 
 /*
  * Plasma
