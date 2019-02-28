@@ -182,7 +182,7 @@
 			if((prob(3)))
 				is_calf = 0
 				udder = new()
-				if (name == "brahmin calf") 
+				if (name == "brahmin calf")
 					name = "brahmin"
 				else
 					name = "cow"
@@ -267,7 +267,7 @@
 
 /mob/living/simple_animal/chicken
 	name = "\improper chicken"
-	desc = "Hopefully the eggs are good this season."
+	desc = "One of the two kinds the legion prefers."
 	gender = FEMALE
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	icon_state = "chicken_brown"
@@ -382,7 +382,7 @@
 
 /mob/living/simple_animal/cow/brahmin
 	name = "brahmin"
-	desc = "Brahmin or brahma are mutated cattle with two heads and giant udders.<br>Known for their milk, just don't tip them over."
+	desc = "Brahmin or brahma are mutated cattle with two heads and looking udderly ridiculous.<br>Known for their milk, just don't tip them over."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "brahmin"
 	icon_living = "brahmin"
@@ -397,7 +397,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn
 	name = "big horner"
-	desc = "Mutated bighorn sheep that are often found in mountains. You should start moving away from them If they stare at you"
+	desc = "Mutated bighorn sheep that are often found in mountains, and are known for being foul-tempered even at the best of times."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "bighorner"
 	icon_living = "bighorner"
@@ -432,7 +432,7 @@
 	var/young_type = /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
 	stop_automated_movement_when_pulled = 1
 	blood_volume = BLOOD_VOLUME_NORMAL
-	
+
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS)
 		if(istype(O, /obj/item/reagent_containers/glass))
@@ -469,14 +469,14 @@
 			if((prob(3)))
 				is_calf = 0
 				udder = new()
-				if (name == "bighorn lamb") 
+				if (name == "bighorn lamb")
 					name = "bighorn"
 				else
 					name = "bighorn"
 				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
 		else
 			udder.generateMilk()
-	
+
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
 	name = "bighoner lamb"
 	resize = 0.55

@@ -1,7 +1,7 @@
 //Foxxy
 /mob/living/simple_animal/pet/fox
 	name = "fox"
-	desc = "It's a fox."
+	desc = "Difficult to outfox."
 	icon = 'icons/mob/pets.dmi'
 	icon_state = "fox"
 	icon_living = "fox"
