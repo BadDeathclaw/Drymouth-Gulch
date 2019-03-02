@@ -17,7 +17,7 @@
     health = 140
     harm_intent_damage = 5
     melee_damage_lower = 30
-    melee_damage_upper = 30
+    melee_damage_upper = 56
     attacktext = "punches"
     attack_sound = 'sound/weapons/punch1.ogg'
     a_intent = INTENT_HARM
@@ -34,6 +34,8 @@
     icon_living = "raiderranged"
     loot = list(/obj/effect/mob_spawn/human/corpse/raiderranged, /obj/item/gun/ballistic/shotgun/boltaction)
     ranged = 1
+    maxHealth = 115
+    health = 115
     retreat_distance = 4
     minimum_distance = 6
     projectilesound = 'sound/weapons/gunshot.ogg'
