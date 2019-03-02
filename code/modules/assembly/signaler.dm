@@ -188,9 +188,9 @@
 	if(issignaler(W))
 		var/obj/item/assembly/signaler/signaler2 = W
 		if(secured && signaler2.secured)
-			code = signaler2.code
-			set_frequency(signaler2.frequency)
-			to_chat(user, "You transfer the frequency and code of \the [signaler2.name] to \the [name]")
+			signaler2.code = code
+			signaler2.set_frequency(frequency)
+			to_chat(user, "You transfer the frequency and code of \the [name] to \the [signaler2.name]")
 	..()
 
 /obj/item/assembly/signaler/advanced/attackby(obj/item/W, mob/user, params)
@@ -330,6 +330,7 @@
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
+	resistance_flags = FIRE_PROOF
 	var/anomaly_type = /obj/effect/anomaly
 
 /obj/item/assembly/signaler/anomaly/receive_signal(datum/signal/signal)

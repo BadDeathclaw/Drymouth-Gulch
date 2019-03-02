@@ -1,7 +1,7 @@
 /datum/component/storage/concrete/bluespace/bag_of_holding/handle_item_insertion(obj/item/W, prevent_warning = FALSE, mob/living/user)
 	//BWOINK
 	//DON'T UNCOMMENT THIS AND REMEMBER TO COMMENT THIS OUT IF THIS EVER GETS ANOTHER REBASE -ma44
-	/*
+	/* ???????? This looks kind of shit but ok ma44 - JTGSZ
 	var/atom/A = parent
 	if((istype(W, /obj/item/storage/backpack/holding) || count_by_type(W.GetAllContents(), /obj/item/storage/backpack/holding)))
 		var/safety = alert(user, "Doing this will have extremely dire consequences for the station and its crew. Be sure you know what you're doing.", "Put in [A.name]?", "Abort", "Proceed")
@@ -25,6 +25,8 @@
 					M.visible_message("<span class='danger'>The bluespace collapse crushes the air towards it, pulling [M] towards the ground...</span>")
 					M.Knockdown(5, TRUE, TRUE)		//Overrides stun absorbs.
 			T.TerraformTurf(/turf/open/chasm/magic, /turf/open/chasm/magic)
+		for (var/obj/structure/ladder/unbreakable/binary/ladder in GLOB.ladders)
+			ladder.ActivateAlmonds()
 		message_admins("[ADMIN_LOOKUPFLW(user)] detonated a bag of holding at [ADMIN_VERBOSEJMP(loccheck)].")
 		log_game("[key_name(user)] detonated a bag of holding at [AREACOORD(loccheck)].")
 		qdel(A)

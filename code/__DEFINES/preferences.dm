@@ -75,6 +75,6 @@
 #define EXP_TYPE_WASTELAND		"Wasteland"
 #define EXP_TYPE_ENCLAVE		"Enclave"
 
-
 //Flags in the players table in the db
 #define DB_FLAG_EXEMPT 1
+#define DEFAULT_CYBORG_NAME "Default Cyborg Name"

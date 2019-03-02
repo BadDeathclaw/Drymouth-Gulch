@@ -586,6 +586,7 @@ PTC - Portable Turret Constructor
 	has_ammobar = FALSE
 
 /obj/item/construction/rcd/arcd/afterattack(atom/A, mob/user)
+	. = ..()
 	if(!range_check(A,user))
 		return
 	if(target_check(A,user))
@@ -656,6 +657,7 @@ PTC - Portable Turret Constructor
 
 
 /obj/item/construction/rld/afterattack(atom/A, mob/user)
+	. = ..()
 	if(!range_check(A,user))
 		return
 	var/turf/start = get_turf(src)

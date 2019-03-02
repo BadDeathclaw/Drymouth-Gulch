@@ -30,6 +30,8 @@
 	throw_speed = 2
 	throw_range = 3
 	attack_verb = list("gayed")
+	wine_power = 69
+	wine_flavor = "homosexual"
 
 /obj/item/reagent_containers/food/snacks/grown/rainbow_flower/Initialize()
 	. = ..()

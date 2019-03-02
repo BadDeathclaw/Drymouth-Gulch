@@ -12,7 +12,17 @@ here's a tip, go search DEFINES/access.dm
 	department_flag = VAULT
 	exp_type = EXP_TYPE_VAULT
 
+/datum/outfit/job/vault
+	gloves = /obj/item/pda
+
 /datum/outfit/job/vault/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.istechnophreak = TRUE
+
+
+/datum/outfit/job/vault/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -35,7 +45,7 @@ Overseer
 	supervisors = "Vault-Tec"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1800
+	exp_requirements = 1300
 
 	outfit = /datum/outfit/job/vault/f13overseer
 
@@ -52,7 +62,6 @@ Overseer
 	implants = list(/obj/item/implant/mindshield)
 
 	id = 			/obj/item/card/id/gold
-	//pda
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
@@ -88,7 +97,7 @@ Head of Security
 	supervisors = "the overseer"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1800
+	exp_requirements = 1000
 	exp_type = EXP_TYPE_VAULT
 	exp_type_department = EXP_TYPE_SECURITY
 
@@ -213,7 +222,7 @@ Security Officer
 	description = "You answer directly to the Chief Of Security, acting as the first line of defense against civil unrest and outside intrusion, you enforce the laws created by the Overseer, while proactively seeking out potential threats to the safety of vault residents."
 	supervisors = "the head of security"
 	selection_color = "#ddffdd"
-	exp_requirements = 900
+	exp_requirements = 500
 	exp_type = EXP_TYPE_VAULT
 
 	outfit = /datum/outfit/job/vault/f13security

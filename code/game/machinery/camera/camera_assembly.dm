@@ -13,11 +13,10 @@
 	icon = 'icons/obj/machines/camera.dmi'
 	icon_state = "camera1"
 	max_integrity = 150
-	//	Motion, EMP-Proof, X-Ray
+	//	Motion, EMP-Proof, X-ray
 	var/static/list/possible_upgrades = typecacheof(list(/obj/item/assembly/prox_sensor, /obj/item/stack/sheet/mineral/plasma, /obj/item/analyzer))
 	var/list/upgrades
 	var/state = 1
-	var/c_tag
 
 	/*
 			1 = Wrenched in place
@@ -43,7 +42,7 @@
 			if(istype(W, /obj/item/weldingtool))
 				if(weld(W, user))
 					to_chat(user, "<span class='notice'>You weld the assembly securely into place.</span>")
-					anchored = TRUE
+					setAnchored(TRUE)
 					state = 2
 				return
 		if(2)
@@ -63,7 +62,7 @@
 				if(weld(W, user))
 					to_chat(user, "<span class='notice'>You unweld the assembly from its place.</span>")
 					state = 1
-					anchored = TRUE
+					setAnchored(TRUE)
 				return
 
 	// Upgrades!
@@ -81,7 +80,7 @@
 		return FALSE
 	var/obj/U = locate(/obj) in upgrades
 	if(U)
-		to_chat(user, "<span class='notice'>You unattach an upgrade from the assembly.</span>")
+		to_chat(user, "<span class='notice'>You detach an upgrade from the assembly.</span>")
 		tool.play_tool_sound(src)
 		U.forceMove(drop_location())
 		upgrades -= U
@@ -92,7 +91,7 @@
 		return FALSE
 
 	tool.play_tool_sound(src)
-	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: den,vault,secret ", "Set Network", "")
+	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: Den,Security,Secret ", "Set Network", "Vault")
 	if(!input)
 		to_chat(user, "<span class='warning'>No input found, please hang up and try your call again!</span>")
 		return
@@ -110,11 +109,7 @@
 
 	C.network = tempnetwork
 	var/area/A = get_area(src)
-	var/name_input = stripped_input(user, "What would you like to name this camera? ", "Set Name", "")
-	if(name_input)
-		C.c_tag = name_input
-	else
-		C.c_tag = "[A.name] ([rand(1, 999)])"
+	C.c_tag = "[A.name] ([rand(1, 999)])"
 	return TRUE
 
 /obj/structure/camera_assembly/wirecutter_act(mob/user, obj/item/I)
@@ -131,7 +126,7 @@
 	if(state != 1)
 		return FALSE
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You unattach the assembly from its place.</span>")
+	to_chat(user, "<span class='notice'>You detach the assembly from its place.</span>")
 	new /obj/item/wallframe/camera(drop_location())
 	qdel(src)
 	return TRUE

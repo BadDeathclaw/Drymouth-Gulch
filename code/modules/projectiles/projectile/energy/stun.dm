@@ -14,7 +14,7 @@
 
 /obj/item/projectile/energy/electrode/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if(!ismob(target) || blocked >= 100) //Fully blocked by mob or collided with dense object - burst into sparks!
+	if(!ismob(target) || blocked >= 100) //Fully blocked by mob or Bumpd with dense object - burst into sparks!
 		do_sparks(1, TRUE, src)
 	else if(iscarbon(target))
 		var/mob/living/carbon/C = target

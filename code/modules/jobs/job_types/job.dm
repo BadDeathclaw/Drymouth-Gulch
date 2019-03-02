@@ -92,7 +92,7 @@
 	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
 		if(H.dna.species.id != "human")
 			H.set_species(/datum/species/human)
-			H.rename_self("human", H.client)
+			H.apply_pref_name("human", H.client)
 		purrbation_remove(H, silent=TRUE)
 
 	//Equip the rest of the gear
@@ -203,6 +203,16 @@
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
+
+	if(H.gender == MALE)
+		H.has_penis = TRUE
+		H.has_vagina = FALSE
+		H.has_breasts = FALSE
+
+	if(H.gender == FEMALE)
+		H.has_vagina = TRUE
+		H.has_breasts = TRUE
+		H.has_penis = FALSE
 
 	var/datum/job/J = SSjob.GetJobType(jobtype)
 	if(!J)

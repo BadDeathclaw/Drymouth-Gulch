@@ -660,6 +660,9 @@
 /mob/proc/IsAdvancedToolUser()//This might need a rename but it should replace the can this mob use things check
 	return 0
 
+/mob/proc/is_super_advanced_tool_user()
+	return 0
+
 /mob/proc/swap_hand()
 	return
 
@@ -695,6 +698,16 @@
 		if(istype(S, spell))
 			mob_spell_list -= S
 			qdel(S)
+
+/mob/proc/anti_magic_check(magic = TRUE, holy = FALSE)
+	if(!magic && !holy)
+		return
+	var/list/protection_sources = list()
+	if(SEND_SIGNAL(src, COMSIG_MOB_RECEIVE_MAGIC, magic, holy, protection_sources) & COMPONENT_BLOCK_MAGIC)
+		if(protection_sources.len)
+			return pick(protection_sources)
+		else
+			return src
 
 //You can buckle on mobs if you're next to them since most are dense
 /mob/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
