@@ -148,24 +148,25 @@
 
 /mob/living/simple_animal/cow/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers))
-			udder.milkAnimal(O, user)
+		udder.milkAnimal(O, user)
+		return 1
+	if(istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
 			return 1
-		else if(istype(O, food_type))
-			if(is_calf)
-				visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
-				qdel(O)
-				return 1
-			else if(!has_calf)
-				has_calf = 1
-				visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
-				qdel(O)
-				return 1
-			else
-				visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
-				qdel(O)
-				return 1
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+			return 1
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
+			return 1
 	else
 		return ..()
+
 
 /mob/living/simple_animal/cow/Life()
 	. = ..()
@@ -433,23 +434,24 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
+	if(stat == CONSCIOUS)
+		if(istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
 			udder.milkAnimal(O, user)
 			return 1
-		else if(istype(O, food_type))
-			if(is_calf)
-				visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
-				qdel(O)
-				return 1
-			else if(!has_calf)
-				has_calf = 1
-				visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
-				qdel(O)
-				return 1
-			else
-				visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
-				qdel(O)
-				return 1
+	if(istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
+			return 1
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+			return 1
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
+			return 1
 	else
 		return ..()
 

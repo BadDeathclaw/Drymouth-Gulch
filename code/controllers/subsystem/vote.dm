@@ -281,7 +281,7 @@ SUBSYSTEM_DEF(vote)
 				if(min_restart_time < world.time)
 					initiate_vote("restart",usr.key)
 				else
-					to_chat(user, "<span style='boldannounce'>Restart can only initiate after [DisplayTimeText(min_restart_time)].</span>")
+					to_chat(usr.client, "<span style='boldannounce'>Restart can only initiate after [DisplayTimeText(min_restart_time)].</span>")
 		if("gamemode")
 			if(CONFIG_GET(flag/allow_vote_mode) || usr.client.holder)
 				initiate_vote("gamemode",usr.key)
