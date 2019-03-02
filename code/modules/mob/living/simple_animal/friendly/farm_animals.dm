@@ -147,8 +147,7 @@
 	return ..()
 
 /mob/living/simple_animal/cow/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS)
-		if(istype(O, /obj/item/reagent_containers/glass))
+	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers))
 			udder.milkAnimal(O, user)
 			return 1
 		else if(istype(O, food_type))
@@ -434,8 +433,7 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS)
-		if(istype(O, /obj/item/reagent_containers/glass))
+	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
 			udder.milkAnimal(O, user)
 			return 1
 		else if(istype(O, food_type))
