@@ -16,8 +16,8 @@
     maxHealth = 120
     health = 120
     harm_intent_damage = 5
-    melee_damage_lower = 20
-    melee_damage_upper = 20
+    melee_damage_lower = 30
+    melee_damage_upper = 30
     attacktext = "punches"
     attack_sound = 'sound/weapons/punch1.ogg'
     a_intent = INTENT_HARM
@@ -46,7 +46,7 @@
     maxHealth = 150
     health = 150
     rapid = 1
-    casingtype = /obj/item/ammo_casing/a762
+    casingtype = /obj/item/ammo_casing/c9mm
     loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
