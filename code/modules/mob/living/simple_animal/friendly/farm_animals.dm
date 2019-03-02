@@ -479,12 +479,22 @@
 	name = "bighoner lamb"
 	resize = 0.55
 
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf/Initialize() //calfs should not be a separate critter, they should just be a normal whatever with these vars
+	. = ..()
+	resize = 0.55
+
 /mob/living/simple_animal/cow/calf
 	name = "cow calf"
-	resize = 0.55
 	is_calf = 1
+
+/mob/living/simple_animal/cow/calf/Initialize()
+	. = ..()
+	resize = 0.55
 
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
-	resize = 0.55
 	is_calf = 1
+
+/mob/living/simple_animal/cow/brahmin/calf/Initialize()
+	. = ..()
+	resize = 0.55
