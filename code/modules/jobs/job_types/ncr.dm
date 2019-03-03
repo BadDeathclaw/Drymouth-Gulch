@@ -112,7 +112,7 @@ Lieutenant
 qm Sergeant
 */
 /datum/job/ncr/f13qmsergeant
-	title = "NCR Quartermaster"
+	title = "NCR Quartermaster Sergeant"
 	flag = F13QMSERGEANT
 	total_positions = 1
 	spawn_positions = 1
@@ -124,11 +124,11 @@ qm Sergeant
 	selection_color = "#fff5cc"
 	exp_requirements = 800
 
-	outfit = /datum/outfit/job/ncr/f13qmsergeant
+	outfit = /datum/outfit/job/ncr/f13sergeant
 
-/datum/outfit/job/ncr/f13qmsergeant
-	name = "NCR Quartermaster"
-	jobtype = /datum/job/ncr/f13qmsergeant
+/datum/outfit/job/ncr/f13sergeant
+	name = "NCR Quartermaster Sergeant"
+	jobtype = /datum/job/ncr/f13sergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SSGT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
