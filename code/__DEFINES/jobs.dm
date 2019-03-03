@@ -51,7 +51,6 @@
 #define F13COLONEL		(1<<0)
 #define F13CAPTAIN		(1<<1)
 #define F13LIEUTENANT	(1<<2)
-#define F13QMSERGEANT   (1<<3)
 #define F13SERGEANT		(1<<4)
 #define F13TROOPER		(1<<5)
 #define F13RECRUIT		(1<<6)
