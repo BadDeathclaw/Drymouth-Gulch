@@ -157,7 +157,7 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 #define MAX_SHOE_BLOODINESS			100
 #define BLOODY_FOOTPRINT_BASE_ALPHA	150
 #define BLOOD_GAIN_PER_STEP			50
-#define BLOOD_LOSS_PER_STEP			20
+#define BLOOD_LOSS_PER_STEP			10
 #define BLOOD_LOSS_IN_SPREAD		20
 
 //Bloody shoe blood states
