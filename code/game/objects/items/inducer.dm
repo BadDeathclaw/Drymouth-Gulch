@@ -9,7 +9,7 @@
 	force = 7
 	var/powertransfer = 1000
 	var/opened = FALSE
-	var/cell_type = /obj/item/stock_parts/cell/high
+	var/cell_type = null
 	var/obj/item/stock_parts/cell/cell
 	var/recharging = FALSE
 

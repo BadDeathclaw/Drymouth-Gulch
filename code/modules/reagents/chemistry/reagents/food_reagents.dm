@@ -137,7 +137,7 @@
 	taste_mult = 1.5 // stop sugar drowning out other flavours
 	nutriment_factor = 10 * REAGENTS_METABOLISM
 	metabolization_rate = 2 * REAGENTS_METABOLISM
-	overdose_threshold = 200 // Hyperglycaemic shock
+	overdose_threshold = 20 // Hyperglycaemic shock
 	taste_description = "sweetness"
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
