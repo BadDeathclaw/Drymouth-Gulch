@@ -147,26 +147,23 @@
 	return ..()
 
 /mob/living/simple_animal/cow/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS)
-		if(istype(O, /obj/item/reagent_containers/glass))
-			udder.milkAnimal(O, user)
-			return 1
-		else if(istype(O, food_type))
-			if(is_calf)
-				visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
-				qdel(O)
-				return 1
-			else if(!has_calf)
-				has_calf = 1
-				visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
-				qdel(O)
-				return 1
-			else
-				visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
-				qdel(O)
-				return 1
+	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
+		udder.milkAnimal(O, user)
+		return 1
+	if(stat == CONSCIOUS && istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
 	else
 		return ..()
+
 
 /mob/living/simple_animal/cow/Life()
 	. = ..()
@@ -434,24 +431,20 @@
 	blood_volume = BLOOD_VOLUME_NORMAL
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS)
-		if(istype(O, /obj/item/reagent_containers/glass))
-			udder.milkAnimal(O, user)
-			return 1
-		else if(istype(O, food_type))
-			if(is_calf)
-				visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
-				qdel(O)
-				return 1
-			else if(!has_calf)
-				has_calf = 1
-				visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
-				qdel(O)
-				return 1
-			else
-				visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
-				qdel(O)
-				return 1
+	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
+		udder.milkAnimal(O, user)
+		return 1
+	if(stat == CONSCIOUS && istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
 	else
 		return ..()
 
@@ -481,12 +474,22 @@
 	name = "bighoner lamb"
 	resize = 0.55
 
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf/Initialize() //calfs should not be a separate critter, they should just be a normal whatever with these vars
+	. = ..()
+	resize = 0.55
+
 /mob/living/simple_animal/cow/calf
 	name = "cow calf"
-	resize = 0.55
 	is_calf = 1
+
+/mob/living/simple_animal/cow/calf/Initialize()
+	. = ..()
+	resize = 0.55
 
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
-	resize = 0.55
 	is_calf = 1
+
+/mob/living/simple_animal/cow/brahmin/calf/Initialize()
+	. = ..()
+	resize = 0.55
