@@ -642,8 +642,8 @@
 	has_cover = 0
 	scan_range = 8
 	req_access = list(ACCESS_SYNDICATE)
-	stun_projectile = /obj/item/projectile/bullet/medbullet
-	lethal_projectile = /obj/item/projectile/bullet/medbullet
+	stun_projectile = /obj/item/projectile/bullet/a308
+	lethal_projectile = /obj/item/projectile/bullet/a308
 	lethal_projectile_sound = 'sound/weapons/gunshot.ogg'
 	stun_projectile_sound = 'sound/weapons/gunshot.ogg'
 	icon_state = "syndie_off"
