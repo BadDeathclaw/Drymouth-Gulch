@@ -485,10 +485,10 @@
 
 	loot = list(
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
-				/obj/item/storage/pill_bottle/radx,
+				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/storage/pill_bottle/mentats,
-				/obj/item/storage/pill_bottle/fixer
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
+				/obj/item/storage/pill_bottle/chem_tin/fixer
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland
@@ -499,10 +499,10 @@
 	lootcount = 1
 
 	loot = list(/obj/item/reagent_containers/pill/patch/healingpowder,
-				/obj/item/storage/pill_bottle/radx,
+				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/storage/pill_bottle/mentats,
-				/obj/item/storage/pill_bottle/fixer,
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
+				/obj/item/storage/pill_bottle/chem_tin/fixer,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
 				/obj/item/reagent_containers/medspray/styptic,
 				/obj/item/reagent_containers/medspray/silver_sulf,

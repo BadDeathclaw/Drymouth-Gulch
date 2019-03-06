@@ -343,19 +343,19 @@ Security Officer
 	recalculateChannels()
 
 /obj/item/radio/headset/headset_sec/alt/department/engi
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_eng
 
 /obj/item/radio/headset/headset_sec/alt/department/supply
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_cargo
 
 /obj/item/radio/headset/headset_sec/alt/department/med
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_med
 
 /obj/item/radio/headset/headset_sec/alt/department/sci
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_sci
 
 /*

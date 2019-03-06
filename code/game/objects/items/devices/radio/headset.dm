@@ -219,9 +219,9 @@
 
 /obj/item/radio/headset/headset_vaultsec
 	name = "security radio headset"
-	desc = "This is used by your elite security force.\nTo access the security channel, use :s."
+	desc = "This is used by your elite security force.\nTo access the security channel, use :s. To access the vault channel, use :v."
 	icon_state = "sec_headset"
-	keyslot = new /obj/item/encryptionkey/headset_vault_hos
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 
 /obj/item/radio/headset/headset_vault_hos/alt
 	name = "\proper the head of security's bowman headset"
