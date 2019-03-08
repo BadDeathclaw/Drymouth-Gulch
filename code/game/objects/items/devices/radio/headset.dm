@@ -78,7 +78,7 @@
 
 /obj/item/radio/headset/headset_sec/alt
 	name = "security bowman headset"
-	desc = "This is used by your elite security force. Protects ears from flashbangs.\nTo access the security channel, use :s."
+	desc = "This is used by your elite security force. Protects ears from flashbangs.\nTo access the security channel, use :s. vault channel :v"
 	icon_state = "sec_headset_alt"
 	item_state = "sec_headset_alt"
 
