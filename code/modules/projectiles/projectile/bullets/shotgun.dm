@@ -1,6 +1,7 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 70
+	damage = 50
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
@@ -60,12 +61,12 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 9 //Up to 108 damage point blank
+	damage = 7 //Up to 84 damage point blank
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
 	damage = 1
-	stamina = 10
+	stamina = 7 //Does 84 pointplank and disregards armor reeeee
 
 /obj/item/projectile/bullet/pellet/Range()
 	..()

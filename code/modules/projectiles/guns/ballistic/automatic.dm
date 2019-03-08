@@ -648,56 +648,56 @@
 	name = ".22 bullet casing"
 	desc = "A .22 bullet casing."
 	caliber = ".22"
-	projectile_type = /obj/item/projectile/bullet/supersoftbullet
+	projectile_type = /obj/item/projectile/bullet/c22
 
 //Soft
 /obj/item/ammo_casing/c45
 	name = ".45 bullet casing"
 	desc = "A .45 bullet casing."
 	caliber = ".45"
-	projectile_type = /obj/item/projectile/bullet/softbullet
+	projectile_type = /obj/item/projectile/bullet/c45
 
 /obj/item/ammo_casing/c9mm
 	name = "9mm bullet casing"
 	desc = "A 9mm bullet casing."
 	caliber = "9mm"
-	projectile_type = /obj/item/projectile/bullet/softbullet
+	projectile_type = /obj/item/projectile/bullet/c9mm
 
 /obj/item/ammo_casing/c10mm
 	name = "10mm bullet casing"
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"
-	projectile_type = /obj/item/projectile/bullet/softbullet
+	projectile_type = /obj/item/projectile/bullet/c10mm
 
 //Med
 /obj/item/ammo_casing/m44
 	desc = "A 44 Magnum bullet casing."
 	caliber = "44"
-	projectile_type = /obj/item/projectile/bullet/medbullet
+	projectile_type = /obj/item/projectile/bullet/m44
 
 /obj/item/ammo_casing/c38
 	name = ".38 bullet casing"
 	desc = "A .38 bullet casing."
 	caliber = "38"
-	projectile_type = /obj/item/projectile/bullet/softbullet
+	projectile_type = /obj/item/projectile/bullet/c38
 
 /obj/item/ammo_casing/a556
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"
-	projectile_type = /obj/item/projectile/bullet/medbullet
+	projectile_type = /obj/item/projectile/bullet/a556
 
 /obj/item/ammo_casing/a357
 	name = "357 bullet casing"
 	desc = "A .357 bullet casing."
 	caliber = "357"
-	projectile_type = /obj/item/projectile/bullet/medbullet
+	projectile_type = /obj/item/projectile/bullet/a357
 
 /obj/item/ammo_casing/a762/lp
 	name = "7.62 lowpower bullet casing"
 	desc = "A 7.62 bullet casing."
 	icon_state = "762-casing"
 	caliber = "a762"
-	projectile_type = /obj/item/projectile/bullet/medbullet
+	projectile_type = /obj/item/projectile/bullet/a762
 
 //MedAP
 /obj/item/ammo_casing/a762
@@ -705,60 +705,98 @@
 	desc = "A 7.62 bullet casing."
 	icon_state = "762-casing"
 	caliber = "a762"
-	projectile_type = /obj/item/projectile/bullet/medapbullet
+	projectile_type = /obj/item/projectile/bullet/a762m
+
+/obj/item/ammo_casing/a308
+	name = ".308 bullet casing"
+	desc = "A .308 bullet casing."
+	icon_state = "762-casing"
+	caliber = "a308"
+	projectile_type = /obj/item/projectile/bullet/a308
 
 /obj/item/ammo_casing/caseless/needle
 	name = "A needler round."
 	desc = "A dart for use in needler pistols."
 	caliber = "needle"
-	projectile_type = /obj/item/projectile/bullet/medapbullet/needle
+	projectile_type = /obj/item/projectile/bullet/needle
 
 //HeavySP
 /obj/item/ammo_casing/c4570
 	caliber = "4570"
-	projectile_type = /obj/item/projectile/bullet/heavyspbullet
+	projectile_type = /obj/item/projectile/bullet/c4570
 
 //Heavy
 /obj/item/ammo_casing/a50AE
 	name = ".50AE bullet casing"
 	desc = "A .50AE bullet casing."
 	caliber = ".50"
-	projectile_type = /obj/item/projectile/bullet/heavyspbullet
+	projectile_type = /obj/item/projectile/bullet/a50AE
 
 /obj/item/ammo_casing/c2mm
 	name = "2mm gauss projectile casing"
 	desc = "A 2mm gauss projectile casing."
 	caliber = "2mm"
-	projectile_type = /obj/item/projectile/bullet/heavyspbullet
+	projectile_type = /obj/item/projectile/bullet/c2mm
 
 //Projectiles
-/obj/item/projectile/bullet/supersoftbullet
+/obj/item/projectile/bullet/c45
+	damage = 30
+	armour_penetration = 0
+
+/obj/item/projectile/bullet/c22
+	damage = 15
+	armour_penetration = 0
+
+/obj/item/projectile/bullet/m44
+	damage = 35
+	armour_penetration = 0
+
+/obj/item/projectile/bullet/c9mm
 	damage = 20
-	armour_penetration = -10
+	armour_penetration = 0
 
-/obj/item/projectile/bullet/softbullet
+/obj/item/projectile/bullet/c10mm
 	damage = 25
+	armour_penetration = 0
 
-/obj/item/projectile/bullet/medbullet
-	damage = 34
-	armour_penetration = -9
-
-/obj/item/projectile/bullet/medapbullet
+/obj/item/projectile/bullet/needle
+	name = "needle"
+	icon_state = "cbbolt"
 	damage = 40
 	armour_penetration = 20
 
-/obj/item/projectile/bullet/medapbullet/needle
-	name = "needle"
-	icon_state = "cbbolt"
+/obj/item/projectile/bullet/c38
+	damage = 25
+	armour_penetration = 0
 
-/obj/item/projectile/bullet/heavybullet
-	damage = 60
+/obj/item/projectile/bullet/a762
+	damage = 40
+	armour_penetration = 0
 
-/obj/item/projectile/bullet/heavyspbullet
-	damage = 60
-	armour_penetration = -18
+/obj/item/projectile/bullet/a762m
+	damage = 40
+	armour_penetration = 10
 
-/obj/item/projectile/bullet/heavyapbullet //unused
-	damage = 60
+/obj/item/projectile/bullet/a308
+	damage = 40
 	armour_penetration = 20
 
+/obj/item/projectile/bullet/a556
+	damage = 25
+	armour_penetration = 0
+
+/obj/item/projectile/bullet/c4570
+	damage = 60
+	armour_penetration = -20
+
+/obj/item/projectile/bullet/a357
+	damage = 35
+	armour_penetration = 0
+
+/obj/item/projectile/bullet/a50AE
+	damage = 50
+	armour_penetration = 0
+
+/obj/item/projectile/bullet/c2mm
+	damage = 60
+	armour_penetration = 40
