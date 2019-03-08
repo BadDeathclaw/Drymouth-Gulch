@@ -315,8 +315,8 @@
 
 /obj/item/flashlight/flare/torch
 	name = "torch"
-	desc = "A torch fashioned from some leaves and a log."
-	w_class = WEIGHT_CLASS_BULKY
+	desc = "A handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while unlit."
+	w_class = WEIGHT_CLASS_NORMAL
 	brightness_on = 4
 	icon_state = "torch"
 	item_state = "torch"
@@ -325,6 +325,25 @@
 	light_color = LIGHT_COLOR_ORANGE
 	on_damage = 10
 	slot_flags = null
+
+/obj/item/flashlight/flare/torch/attack_self(mob/user)
+
+	// Usual checks
+	if(!fuel)
+		to_chat(user, "<span class='warning'>[src] is out of fuel!</span>")
+		return
+	if(on)
+		to_chat(user, "<span class='notice'>[src] is already on.</span>")
+		return
+
+	. = ..()
+	// All good, turn it on.
+	if(.)
+		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		force = on_damage
+		damtype = "fire"
+		w_class = WEIGHT_CLASS_BULKY
+		START_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/lantern
 	name = "lantern"

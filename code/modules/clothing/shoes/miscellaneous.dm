@@ -303,6 +303,7 @@
 	item_state = "legionleather"
 	item_color = "cult"
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/legionmetal
 	name = "legion metal boots"
@@ -311,6 +312,7 @@
 	item_state = "legionmetal"
 	item_color = "cult"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/legionlegat
 	name = "legion legate boots"
@@ -319,6 +321,7 @@
 	item_state = "legionlegat"
 	item_color = "cult"
 	armor = list("melee" = 60, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
 	name = "combat boots"
@@ -346,3 +349,4 @@
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	item_color = "cult"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes

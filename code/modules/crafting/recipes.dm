@@ -558,6 +558,21 @@
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/tribal_torch
+	name = "Tribal Torch"
+	result = /obj/item/candle/tribal_torch
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 4)
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/handheld_torch
+	name = "Handheld Torch"
+	result = /obj/item/flashlight/flare/torch
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
+				/obj/item/stack/sheet/cloth = 1)
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
 	time = 65
