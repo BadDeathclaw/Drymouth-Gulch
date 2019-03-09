@@ -59,7 +59,7 @@
 							var/obj/effect/decal/cleanable/blood/footprints/FP = new /obj/effect/decal/cleanable/blood/footprints(T)
 							FP.blood_state = S.blood_state
 							FP.entered_dirs |= dir
-							FP.bloodiness = (S.bloody_shoes[S.blood_state] - BLOOD_LOSS_IN_SPREAD)/5
+							FP.bloodiness = S.bloody_shoes[S.blood_state] - BLOOD_LOSS_IN_SPREAD
 							FP.add_blood_DNA(S.return_blood_DNA())
 							FP.update_icon()
 						update_inv_shoes()
