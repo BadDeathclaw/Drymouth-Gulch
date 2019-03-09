@@ -345,6 +345,7 @@
 	else if(has_emergency_power(LIGHT_EMERGENCY_POWER_USE) && !turned_off())
 		use_power = IDLE_POWER_USE
 		emergency_mode = TRUE
+		START_PROCESSING(SSmachines, src)
 	else
 		use_power = IDLE_POWER_USE
 		set_light(0)
@@ -361,7 +362,11 @@
 
 
 /obj/machinery/light/process()
-	if(has_power() && cell)
+	if (!cell)
+		return PROCESS_KILL
+	if(has_power())
+		if (cell.charge == cell.maxcharge)
+			return PROCESS_KILL
 		cell.charge = min(cell.maxcharge, cell.charge + LIGHT_EMERGENCY_POWER_USE) //Recharge emergency power automatically while not using it
 	if(emergency_mode && !use_emergency_power(LIGHT_EMERGENCY_POWER_USE))
 		update(FALSE) //Disables emergency mode and sets the color to normal
@@ -875,3 +880,33 @@
 	layer = WALL_OBJ_LAYER
 	bulb_colour = "#00FFFF"
 	light_color = "#00FFFF"
+
+//Flickering Ported From Hippiestation. credits to yoyobatty
+/obj/machinery/light/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
+	. = ..()
+	if(. && !QDELETED(src))
+		if(prob(damage_amount * 10))
+			flicker(damage_amount*rand(1,3))
+
+/obj/machinery/light/flicker(var/amount = rand(10, 20))
+	set waitfor = 0
+	if(flickering)
+		return
+	flickering = TRUE
+	if(on && status == LIGHT_OK)
+		visible_message("<span class='warning'>[src] begins flickering!</span>","<span class='italics'>You hear an electrical sparking.</span>")
+		for(var/i = 0; i < amount; i++)
+			if(status != LIGHT_OK)
+				break
+			on = !on
+			if(prob(18) && !on)//only spark when off so it doesn't occur too much
+				do_sparks(1, FALSE, src)
+			else if(prob(40))
+				bulb_colour = LIGHT_COLOR_BROWN
+				playsound(src, pick('sound/effects/sparks1.ogg', 'sound/effects/sparks2.ogg', 'sound/effects/sparks3.ogg', 'sound/effects/sparks4.ogg', 'sound/effects/light_flicker.ogg'), 100, 1)
+			update(FALSE)
+			sleep(rand(1, 5))
+		on = (status == LIGHT_OK)
+		bulb_colour = initial(bulb_colour)
+		update(FALSE)
+	flickering = FALSE

@@ -58,6 +58,7 @@
 	return 1
 
 /obj/item/reagent_containers/food/condiment/afterattack(obj/target, mob/user , proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(istype(target, /obj/structure/reagent_dispensers)) //A dispenser. Transfer FROM it TO us.
@@ -122,7 +123,7 @@
 
 /obj/item/reagent_containers/food/condiment/saltshaker		//Separate from above since it's a small shaker rather then
 	name = "salt shaker"											//	a large one.
-	desc = "Salt. From space oceans, presumably."
+	desc = "No players were harmed in the making of this product."
 	icon_state = "saltshakersmall"
 	possible_transfer_amounts = list(1,20) //for clown turning the lid off
 	amount_per_transfer_from_this = 1
@@ -146,6 +147,7 @@
 	return (TOXLOSS)
 
 /obj/item/reagent_containers/food/condiment/saltshaker/afterattack(obj/target, mob/living/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(isturf(target))
@@ -156,7 +158,6 @@
 		reagents.remove_reagent("sodiumchloride", 2)
 		new/obj/effect/decal/cleanable/salt(target)
 		return
-	..()
 
 /obj/item/reagent_containers/food/condiment/peppermill
 	name = "pepper mill"
@@ -175,7 +176,7 @@
 		icon_state = "peppermillsmall"
 
 /obj/item/reagent_containers/food/condiment/milk
-	name = "space milk"
+	name = "brahmin milk"
 	desc = "It's milk. White and nutritious goodness!"
 	icon_state = "milk"
 	item_state = "carton"
@@ -194,7 +195,7 @@
 
 /obj/item/reagent_containers/food/condiment/soymilk
 	name = "soy milk"
-	desc = "It's soy milk. White and nutritious goodness!"
+	desc = "For boys."
 	icon_state = "soymilk"
 	item_state = "carton"
 	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
@@ -241,6 +242,7 @@
 	return
 
 /obj/item/reagent_containers/food/condiment/pack/afterattack(obj/target, mob/user , proximity)
+	. = ..()
 	if(!proximity)
 		return
 

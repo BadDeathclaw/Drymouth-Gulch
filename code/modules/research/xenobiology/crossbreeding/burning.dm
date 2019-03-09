@@ -298,6 +298,7 @@ Burning extracts:
 	pictures_max = 1
 
 /obj/item/camera/timefreeze/afterattack(atom/target, mob/user, flag)
+	. = ..()
 	if(!on || !pictures_left || !isturf(target.loc))
 		return
 	new /obj/effect/timestop(get_turf(target), 2, 50, list(user))

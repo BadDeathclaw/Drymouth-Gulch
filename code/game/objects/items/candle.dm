@@ -14,8 +14,8 @@
 	var/start_lit = FALSE
 	heat = 1000
 
-/obj/item/candle/New()
-	..()
+/obj/item/candle/Initialize()
+	. = ..()
 	if(start_lit)
 		// No visible message
 		light(show_message = FALSE)
@@ -78,5 +78,36 @@
 /obj/item/candle/infinite
 	infinite = TRUE
 	start_lit = TRUE
+
+//FL13 - Right now this functions basically as a candle. Could change it later, but for now this will do.
+/obj/item/candle/tribal_torch
+	name = "Tribal Torch"
+	desc = "A torch, used to provide light in dark environments."
+	icon = 'icons/obj/candle.dmi'
+	icon_state = "torch_unlit"
+	item_state = "torch"
+	w_class = WEIGHT_CLASS_BULKY
+	light_color = LIGHT_COLOR_FIRE
+	infinite = TRUE
+	heat = 2000
+
+/obj/item/candle/tribal_torch/attackby(obj/item/W, mob/user, params)
+	..()
+	var/msg = W.ignition_effect(src, user)
+	if(msg)
+		light(msg)
+		set_light(5)
+
+/obj/item/candle/tribal_torch/fire_act(exposed_temperature, exposed_volume)
+	if(!src.lit)
+		light() //honk
+		set_light(5)
+	..()
+
+
+/obj/item/candle/tribal_torch/update_icon()
+	icon_state = "torch[lit ? "_lit" : "_unlit"]"
+	item_state = "torch[lit ? "-on" : ""]"
+
 
 #undef CANDLE_LUMINOSITY

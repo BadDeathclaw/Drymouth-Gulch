@@ -558,6 +558,21 @@
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/tribal_torch
+	name = "Tribal Torch"
+	result = /obj/item/candle/tribal_torch
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 4)
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/handheld_torch
+	name = "Handheld Torch"
+	result = /obj/item/flashlight/flare/torch
+	time = 30
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
+				/obj/item/stack/sheet/cloth = 1)
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
 	time = 65
@@ -703,7 +718,8 @@
 	result = /obj/item/assembly/igniter
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/rods = 1)
+				/obj/item/stack/rods = 1,
+				/obj/item/stack/cable_coil = 1)
 	time = 10
 	category = CAT_ASSEM
 
@@ -725,21 +741,13 @@
 	time = 10
 	category = CAT_ASSEM
 
-/datum/crafting_recipe/voice
-	name = "Voice analyzer"
-	result = /obj/item/assembly/voice
-	reqs = list(/obj/item/stack/sheet/glass = 1,
-				/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/rods = 1)
-	time = 10
-	category = CAT_ASSEM
-
 /datum/crafting_recipe/signaler
 	name = "Remote signaling device"
 	result = /obj/item/assembly/signaler
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/rods = 1)
+				/obj/item/stack/rods = 1,
+				/obj/item/stack/cable_coil = 2)
 	time = 10
 	category = CAT_ASSEM
 

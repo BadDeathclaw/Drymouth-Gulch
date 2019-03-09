@@ -45,7 +45,7 @@ Overseer
 	supervisors = "Vault-Tec"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1800
+	exp_requirements = 1300
 
 	outfit = /datum/outfit/job/vault/f13overseer
 
@@ -97,7 +97,7 @@ Head of Security
 	supervisors = "the overseer"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1800
+	exp_requirements = 1000
 	exp_type = EXP_TYPE_VAULT
 	exp_type_department = EXP_TYPE_SECURITY
 
@@ -222,7 +222,7 @@ Security Officer
 	description = "You answer directly to the Chief Of Security, acting as the first line of defense against civil unrest and outside intrusion, you enforce the laws created by the Overseer, while proactively seeking out potential threats to the safety of vault residents."
 	supervisors = "the head of security"
 	selection_color = "#ddffdd"
-	exp_requirements = 900
+	exp_requirements = 500
 	exp_type = EXP_TYPE_VAULT
 
 	outfit = /datum/outfit/job/vault/f13security
@@ -343,19 +343,19 @@ Security Officer
 	recalculateChannels()
 
 /obj/item/radio/headset/headset_sec/alt/department/engi
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_eng
 
 /obj/item/radio/headset/headset_sec/alt/department/supply
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_cargo
 
 /obj/item/radio/headset/headset_sec/alt/department/med
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_med
 
 /obj/item/radio/headset/headset_sec/alt/department/sci
-	keyslot = new /obj/item/encryptionkey/headset_sec
+	keyslot = new /obj/item/encryptionkey/headset_vault_security
 	keyslot2 = new /obj/item/encryptionkey/headset_sci
 
 /*

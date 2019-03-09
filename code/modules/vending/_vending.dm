@@ -155,7 +155,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		if(!start_empty)
 			R.amount = amount
 		R.max_amount = amount
-		R.display_color = pick("red","blue","green")
+		R.display_color = pick("red","#447AB9","green")
 
 		if(hidden)
 			hidden_records += R
@@ -467,7 +467,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 
 /obj/machinery/vending/process()
 	if(stat & (BROKEN|NOPOWER))
-		return
+		return PROCESS_KILL
 	if(!active)
 		return
 
@@ -498,6 +498,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 		if(powered())
 			icon_state = initial(icon_state)
 			stat &= ~NOPOWER
+			START_PROCESSING(SSmachines, src)
 		else
 			icon_state = "[initial(icon_state)]-off"
 			stat |= NOPOWER

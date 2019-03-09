@@ -57,6 +57,7 @@
 	return (TOXLOSS)
 
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
+	. = ..()
 	if(!proximity || !check_allowed_items(target))
 		return
 	if(user.client && ((target in user.client.screen) && !user.is_holding(target)))

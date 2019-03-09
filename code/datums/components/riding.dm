@@ -22,9 +22,9 @@
 /datum/component/riding/Initialize()
 	if(!ismovableatom(parent))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(COMSIG_MOVABLE_BUCKLE, .proc/vehicle_mob_buckle)
-	RegisterSignal(COMSIG_MOVABLE_UNBUCKLE, .proc/vehicle_mob_unbuckle)
-	RegisterSignal(COMSIG_MOVABLE_MOVED, .proc/vehicle_moved)
+	RegisterSignal(parent, COMSIG_MOVABLE_BUCKLE, .proc/vehicle_mob_buckle)
+	RegisterSignal(parent, COMSIG_MOVABLE_UNBUCKLE, .proc/vehicle_mob_unbuckle)
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/vehicle_moved)
 
 /datum/component/riding/proc/vehicle_mob_unbuckle(mob/living/M, force = FALSE)
 	restore_position(M)
@@ -162,12 +162,12 @@
 		if(!Process_Spacemove(direction) || !isturf(AM.loc))
 			return
 		step(AM, direction)
-		
+
 		if((direction & (direction - 1)) && (AM.loc == next))		//moved diagonally
 			last_move_diagonal = TRUE
 		else
 			last_move_diagonal = FALSE
-		
+
 		handle_vehicle_layer()
 		handle_vehicle_offsets()
 	else
@@ -193,7 +193,7 @@
 
 /datum/component/riding/human/Initialize()
 	. = ..()
-	RegisterSignal(COMSIG_HUMAN_MELEE_UNARMED_ATTACK, .proc/on_host_unarmed_melee)
+	RegisterSignal(parent, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, .proc/on_host_unarmed_melee)
 
 /datum/component/riding/human/proc/on_host_unarmed_melee(atom/target)
 	var/mob/living/carbon/human/AM = parent

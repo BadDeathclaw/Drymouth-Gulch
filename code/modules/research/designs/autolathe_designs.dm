@@ -782,11 +782,19 @@
 	category = list("initial", "Security")
 
 /datum/design/a762
-	name = "Stripper Clip (7.62mm)"
+	name = "Stripper Clip (7.62)"
 	id = "a762"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 5000)
 	build_path = /obj/item/ammo_box/a762
+	category = list("initial", "Security")
+
+/datum/design/a308
+	name = "Stripper Clip (.308)"
+	id = "a308"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 7000)
+	build_path = /obj/item/ammo_box/a308
 	category = list("initial", "Security")
 
 /datum/design/doublestacked
