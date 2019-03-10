@@ -2726,7 +2726,7 @@
 "bav" = (/obj/structure/table/reinforced,/obj/item/scalpel,/obj/item/surgical_drapes,/turf/open/floor/plasteel/f13{icon_state = "showroomfloor"},/area/medical/abandoned)
 "baw" = (/turf/open/floor/plasteel/f13{icon_state = "showroomfloor"},/area/medical/abandoned)
 "bax" = (/obj/machinery/door/airlock{icon = 'icons/obj/doors/airlocks/station/medical.dmi'; name = "Vault 223 Surgery"},/turf/open/floor/plasteel/f13{icon_state = "showroomfloor"},/area/medical/abandoned)
-"bay" = (/obj/item/storage/pill_bottle/mentats,/obj/item/storage/pill_bottle/radx,/obj/structure/table/glass,/turf/open/floor/plasteel/f13{icon_state = "showroomfloor"},/area/medical/abandoned)
+"bay" = (/obj/item/storage/pill_bottle/chem_tin/mentats,/obj/item/storage/pill_bottle/chem_tin/radx,/obj/structure/table/glass,/turf/open/floor/plasteel/f13{icon_state = "showroomfloor"},/area/medical/abandoned)
 "baz" = (/obj/structure/dresser,/obj/effect/decal/cleanable/cobweb,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/underground/cave)
 "baA" = (/obj/structure/rack,/obj/effect/spawner/lootdrop/f13/armor/clothes,/turf/open/floor/plasteel/f13{icon_state = "plating"},/area/f13/underground/cave)
 "baB" = (/obj/structure/table/reinforced,/obj/machinery/light{dir = 8; light_color = "#e8eaff"},/obj/item/circular_saw,/obj/item/surgicaldrill,/turf/open/floor/plasteel/f13{icon_state = "showroomfloor"},/area/medical/abandoned)
