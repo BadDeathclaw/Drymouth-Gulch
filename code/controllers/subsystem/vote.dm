@@ -127,14 +127,14 @@ SUBSYSTEM_DEF(vote)
 	if(restart)
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)
-			if(!C.is_afk() && check_rights_for(C, R_SERVER))
+			if(!C.is_afk() && check_rights_for(C, R_BAN))//R_BAN so coders don't hold up the restart anymore, and only trialmins/admins do
 				active_admins = 1
 				break
 		if(!active_admins)
 			SSticker.Reboot("Restart vote successful.", "restart vote")
 		else
 			to_chat(world, "<span style='boldannounce'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
-			message_admins("A restart vote has passed, but there are active admins on with +server, so it has been canceled. If you wish, you may restart the server.")
+			message_admins("A restart vote has passed, but there are active admins on with +ban, so it has been canceled. If you wish, you may restart the server.")
 
 	return .
 
