@@ -38,6 +38,12 @@ GLOBAL_LIST_INIT(human_recipes, list( \
 	singular_name = "deathclaw skin piece"
 	icon_state = "sheet-hide" //ToDo: deathclaw Mat
 
+/obj/item/stack/sheet/animalhide/geckohide
+	name = "gecko skin"
+	desc = "This is gecko hide."
+	singular_name = "gecko skin piece"
+	icon_state = "sheet-gekkonhide"
+
 /obj/item/stack/sheet/animalhide/corgi
 	name = "corgi hide"
 	desc = "The by-product of corgi farming."
