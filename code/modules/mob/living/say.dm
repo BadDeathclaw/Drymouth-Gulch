@@ -166,7 +166,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/succumbed = FALSE
 
 	var/fullcrit = InFullCritical()
-	if((InCritical() && !fullcrit) || message_mode == MODE_WHISPER)
+	if(in_critical || message_mode == MODE_WHISPER)
 		message_range = 1
 		message_mode = MODE_WHISPER
 		log_talk(src,"[key_name(src)] : [message]",LOGWHISPER)

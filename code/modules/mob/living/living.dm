@@ -283,7 +283,7 @@
 	return (health <= HEALTH_THRESHOLD_CRIT && (stat == SOFT_CRIT || stat == UNCONSCIOUS))
 
 /mob/living/proc/InFullCritical()
-	return (health <= crit_modifier() && (stat == SOFT_CRIT || stat == UNCONSCIOUS))
+	return (health <= HEALTH_THRESHOLD_FULLCRIT && stat == UNCONSCIOUS)
 
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
