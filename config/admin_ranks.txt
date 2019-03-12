@@ -45,5 +45,4 @@ Three Dog		= -@ -ADMIN +DJ
 
 Host			= +EVERYTHING *EVERYTHING
 
-Head Coder      = +EVERYTHING
 Coder			= +DEBUG +VAREDIT +SERVER +SPAWN +POLL -AUTOLOGIN
