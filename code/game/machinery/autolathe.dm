@@ -392,7 +392,7 @@
 	desc = "An autolathe that had VAULT-TEK DRM poorly added to it to prevent it from producing weaponry."
 	circuit = /obj/item/circuitboard/machine/autolathe/constructionlathe
 	super_advanced_technology = FALSE
-	resistance_flags = ""
+	resistance_flags = NONE
 
 	list/categories = list(
 							"Tools",
