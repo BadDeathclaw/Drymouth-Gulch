@@ -209,7 +209,7 @@ Recruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
-		/obj/item/ammo_box/a762=3, \
+		/obj/item/ammo_box/a308=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
