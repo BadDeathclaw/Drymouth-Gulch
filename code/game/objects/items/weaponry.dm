@@ -100,7 +100,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	sharpness = IS_BLUNT
 
 /obj/item/claymore/machete/golf
-	name = "golf lub"
+	name = "golf club"
 	desc = "A old rusted 9 iron golf club."
 	icon_state = "golf"
 	item_state = "golf"
