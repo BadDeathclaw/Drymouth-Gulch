@@ -111,14 +111,14 @@
 	name = "gecko"
 	desc = "A large mutated reptile with sharp teeth."
 	icon = 'icons/mob/wastemobs.dmi'
-	icon_state = "gecko"
-	icon_living = "gecko"
-	icon_dead = "gecko_dead"
+	icon_state = "gekkon"
+	icon_living = "gekkon"
+	icon_dead = "gekkon_dead"
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat = 2,
-							/obj/item/stack/sheet/animalhide/lizard = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
+							/obj/item/stack/sheet/animalhide/geckohide = 1)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
@@ -167,7 +167,7 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
-	
+
 /mob/living/simple_animal/hostile/molerat
 	name = "molerat"
 	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."

@@ -129,7 +129,20 @@
 						climbable = FALSE
 
 				update_cut_status()
-
+	else if(istype(W, /obj/item/stack/sheet/mineral/wood))
+		var /obj/item/stack/sheet/mineral/wood/Z = W
+		if(locate(/obj/structure/barricade/wooden/crude) in get_turf(src))
+			to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
+			return
+		if(Z.get_amount() < 4)
+			to_chat(user, "<span class='warning'>You need at least four wooden planks to reinforce this fence!</span>")
+			return
+		else
+			to_chat(user, "<span class='notice'>You start adding [Z] to [src]...</span>")
+			if(do_after(user, 50, target=src))
+				Z.use(4)
+				new /obj/structure/barricade/wooden/crude(get_turf(src))
+				return
 	return TRUE
 
 /obj/structure/fence/proc/update_cut_status()

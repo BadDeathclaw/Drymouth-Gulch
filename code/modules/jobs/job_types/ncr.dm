@@ -57,6 +57,7 @@ Captain
 	name = "NCR Captain"
 	jobtype = /datum/job/ncr/f13captain
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
+	accessory =       /obj/item/clothing/accessory/ncr/CPT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
 	gloves =		/obj/item/clothing/gloves/combat
@@ -92,6 +93,7 @@ Lieutenant
 	name = "NCR Lieutenant"
 	jobtype = /datum/job/ncr/f13lieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
+	accessory =     /obj/item/clothing/accessory/ncr/LT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/beret/ncr
 	gloves =		/obj/item/clothing/gloves/combat
@@ -106,9 +108,9 @@ Lieutenant
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
-/*
-Sergeant
-*/
+//sergeant
+
+
 /datum/job/ncr/f13sergeant
 	title = "NCR Sergeant"
 	flag = F13SERGEANT
@@ -128,6 +130,7 @@ Sergeant
 	name = "NCR Sergeant"
 	jobtype = /datum/job/ncr/f13sergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -140,6 +143,9 @@ Sergeant
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
+
+
+
 
 /*
 Trooper
@@ -162,6 +168,7 @@ Trooper
 	name = "NCR Trooper"
 	jobtype = /datum/job/ncr/f13trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/TPR
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -196,6 +203,7 @@ Recruit
 	name = "NCR Recruit"
 	jobtype = /datum/job/ncr/f13recruit
 	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/REC
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big

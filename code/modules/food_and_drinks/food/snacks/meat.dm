@@ -187,6 +187,22 @@
 	list_reagents = list("nutriment" = 4)
 	bonus_reagents = list("uranium" = 3)
 
+/obj/item/reagent_containers/food/snacks/meat/slab/gecko
+	name = "gecko meat"
+	desc = "Perfect for a Kebab."
+	icon_state = "lizardmeat"
+	list_reagents = list("nutriment" = 2, "vitamin" = 1)
+	filling_color = "#6B8E23"
+	tastes = list("meat" = 4, "scales" = 1)
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/gecko
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/gecko
+	name = "gecko meat"
+	desc = "Perfect for a Kebab."
+	list_reagents = list("nutriment" = 3, "vitamin" = 3)
+	tastes = list("meat" = 4, "scales" = 1)
+
 ////////////////////////////////////// OTHER MEATS ////////////////////////////////////////////////////////
 
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat
