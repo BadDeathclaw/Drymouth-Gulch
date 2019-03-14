@@ -18,3 +18,11 @@
 		var/turf/T = get_turf(src)
 		new ammo_type(T)
 		dropped = TRUE
+
+/obj/item/projectile/bullet/reusable/arrow
+	name = "arrow"
+	icon_state = "arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow
+	range = 15
+	damage = 30
+	damage_type = BRUTE

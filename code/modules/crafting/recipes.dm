@@ -828,3 +828,30 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
+
+///Arrow N Bow Update
+
+/datum/crafting_recipe/arrow
+	name = "Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/mineral/wood = 1)
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/bow
+	name = "Bow"
+	result = /obj/item/gun/ballistic/bow
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/mineral/wood = 2,
+				/obj/item/stack/cable_coil = 15)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/quiver_arrow
+	name = "Arrow Quiver"
+	result = /obj/item/storage/backpack/quiver
+	reqs = list(/obj/item/stack/sheet/animalhide = 5) //Hunters RISE UP! REMEMBER TO HEAT THE LEATHER!
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 120
+	category = CAT_PRIMAL

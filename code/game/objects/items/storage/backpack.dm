@@ -571,3 +571,16 @@
 	new /obj/item/clothing/mask/gas/clown_hat(src)
 	new /obj/item/bikehorn(src)
 	new /obj/item/implanter/sad_trombone(src)
+
+/obj/item/storage/backpack/quiver
+	name = "quiver"
+	desc = "A leather and iron quiver designed to hold arrows."
+	icon_state = "quiver"
+	item_state = "quiver"
+
+/obj/item/storage/backpack/quiver/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_items = 20 //20 ARROWS MY N-
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+
