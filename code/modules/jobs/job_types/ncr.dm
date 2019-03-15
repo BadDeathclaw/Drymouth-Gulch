@@ -55,18 +55,19 @@ Captain
 
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
-	jobtype = /datum/job/ncr/f13captain
-	uniform =  		/obj/item/clothing/under/f13/ncr/officer
-	accessory =       /obj/item/clothing/accessory/ncr/CPT
-	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	head = 			/obj/item/clothing/head/beret/ncr
-	gloves =		/obj/item/clothing/gloves/combat
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/m1911
+	jobtype 	= /datum/job/ncr/f13captain
+	uniform		= /obj/item/clothing/under/f13/ncr/officer
+	accessory 	= /obj/item/clothing/accessory/ncr/CPT
+	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t51b/sierra
+	head 		= /obj/item/clothing/head/beret/ncr
+	gloves 		= /obj/item/clothing/gloves/combat
+	glasses 	= /obj/item/clothing/glasses/sunglasses/big
+	suit_store  = /obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
+		/obj/item/ammo_box/magazine/r20=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/storage/bag/money/small/ncr)
 	box = null
