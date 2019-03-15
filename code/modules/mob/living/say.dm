@@ -166,19 +166,19 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/succumbed = FALSE
 
 	var/fullcrit = InFullCritical()
-	if((in_critical && !fullcrit) || message_mode == MODE_WHISPER)
+	if(in_critical == TRUE || message_mode == MODE_WHISPER)
 		message_range = 1
 		message_mode = MODE_WHISPER
 		log_talk(src,"[key_name(src)] : [message]",LOGWHISPER)
-	else if(fullcrit)
-		var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
-		// If we cut our message short, abruptly end it with a-..
-		var/message_len = length(message)
-		message = copytext(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
-		message = Ellipsis(message, 10, 1)
-		last_words = message
-		message_mode = MODE_WHISPER_CRIT
-		succumbed = TRUE
+		if(fullcrit == TRUE)
+			var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
+			// If we cut our message short, abruptly end it with a-..
+			var/message_len = length(message)
+			message = copytext(message, 1, health_diff) + "[message_len > health_diff ? "-.." : "..."]"
+			message = Ellipsis(message, 10, 1)
+			last_words = message
+			message_mode = MODE_WHISPER_CRIT
+			succumbed = TRUE
 	else
 		log_talk(src,"[name]/[key] : [message]",LOGSAY)
 
