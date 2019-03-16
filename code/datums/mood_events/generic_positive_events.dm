@@ -60,3 +60,8 @@
 /datum/mood_event/family_heirloom
 	description = "<span class='nicegreen'>My family heirloom is safe with me.</span>\n"
 	mood_change = 1
+
+/datum/mood_event/buried_faction_member
+	description = "<span class='nicegreen'>The dead have been given a proper burial</span>\n"
+	mood_change = 2
+	timeout = 3400

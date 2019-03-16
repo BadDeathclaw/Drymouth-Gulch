@@ -7,7 +7,12 @@
 
 	if(!gibbed)
 		emote("deathgasp")
-
+	for(var/mob/H in oview(src, 7))
+		for(var/F in src.faction)
+			if(F in H.faction)
+				// it literally doesn't work if you combine this with above "F in H.faction && F != neutral" don't ask me why
+				if(F != "neutral")
+					SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "saw_faction_die", /datum/mood_event/saw_faction_die)
 	. = ..()
 
 	for(var/T in get_traumas())
