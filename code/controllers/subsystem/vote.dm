@@ -1,6 +1,6 @@
 SUBSYSTEM_DEF(vote)
 	name = "Vote"
-	wait = 10
+	wait = 30
 
 	flags = SS_KEEP_TIMING|SS_NO_INIT
 
@@ -16,7 +16,7 @@ SUBSYSTEM_DEF(vote)
 	var/list/voting = list()
 	var/list/generated_actions = list()
 	var/vote_sound = 'sound/f13/mysterious_stranger.ogg'
-	var/min_restart_time = 30 MINUTES
+	var/min_restart_time = 60 MINUTES
 
 /datum/controller/subsystem/vote/fire()	//called by master_controller
 	if(mode)
@@ -134,6 +134,7 @@ SUBSYSTEM_DEF(vote)
 			SSticker.Reboot("Restart vote successful.", "restart vote")
 		else
 			to_chat(world, "<span style='boldannounce'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
+			SSshuttle.emergency.request()
 			message_admins("A restart vote has passed, but there are active admins on with +ban, so it has been canceled. If you wish, you may restart the server.")
 
 	return .
