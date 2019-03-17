@@ -23,6 +23,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	attacktext = "stings"
+	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("cazador")
@@ -194,6 +195,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attacktext = "bites"
+	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
