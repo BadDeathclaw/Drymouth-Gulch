@@ -1292,6 +1292,34 @@
 	..()
 	. = 1
 
+/datum/reagent/medicine/superstimpak
+	name = "Super Stimpak Fluid"
+	id = "superstimpak"
+	description = "Rapidly heals damage when injected. deals average average toxin damage if injested."
+	color = "#C8A5DC"
+	taste_description = "grossness"
+	metabolization_rate = 3 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+
+/datum/reagent/medicine/superstimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(iscarbon(M) && M.stat != DEAD)
+		if(method in list(INGEST, VAPOR))
+			M.adjustToxLoss(1*reac_volume)
+			if(show_message)
+				to_chat(M, "<span class='warning'>You feel terrible...</span>")
+	..()
+
+/datum/reagent/medicine/superstimpak/on_mob_life(mob/living/carbon/M)
+	M.adjustBruteLoss(-8*REM, 0)
+	M.adjustFireLoss(-8*REM, 0)
+	M.adjustOxyLoss(-6*REM, 0)
+
+/datum/reagent/medicine/superstimpak/overdose_process(mob/living/M)
+	M.adjustToxLoss(5*REM, 0)
+	M.adjustOxyLoss(14*REM, 0)
+	..()
+	. = 1
+
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
 	id = "healing_powder"

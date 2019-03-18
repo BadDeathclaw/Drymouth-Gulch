@@ -685,6 +685,13 @@
 	time = 20
 	category = CAT_DRUGS
 
+/datum/crafting_recipe/superstimpak
+	name = "Super Stimpak"
+	result = /obj/item/reagent_containers/hypospray/medipen/superstimpak
+	reqs = list(/obj/item/stack/sheet/leather = 1, /obj/item/reagent_containers/hypospray/medipen/stimpak, /obj/item/stack/cable_coil = 5, /obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola = 1, /obj/item/reagent_containers/food/snacks/grown/mutfruit)
+	tools = list(/obj/item/lighter, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 40
+	category = CAT_DRUGS
 
 /datum/crafting_recipe/slavecollar
 	name = "Slave Collar"

@@ -1647,6 +1647,7 @@
 #include "code\modules\hydroponics\grown\melon.dm"
 #include "code\modules\hydroponics\grown\misc.dm"
 #include "code\modules\hydroponics\grown\mushrooms.dm"
+#include "code\modules\hydroponics\grown\muttfruit.dm"
 #include "code\modules\hydroponics\grown\nettle.dm"
 #include "code\modules\hydroponics\grown\onion.dm"
 #include "code\modules\hydroponics\grown\pineapple.dm"
