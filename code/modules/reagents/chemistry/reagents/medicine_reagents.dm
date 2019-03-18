@@ -1280,9 +1280,9 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-4*REM, 0)
-	M.adjustFireLoss(-4*REM, 0)
-	M.adjustOxyLoss(-3*REM, 0)
+	M.adjustBruteLoss(-7*REM, 0)
+	M.adjustFireLoss(-7*REM, 0)
+	M.adjustOxyLoss(-6*REM, 0)
 	. = 1
 	..()
 
@@ -1304,15 +1304,15 @@
 /datum/reagent/medicine/superstimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR))
-			M.adjustToxLoss(1*reac_volume)
+			M.adjustToxLoss(2*reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='warning'>You feel terrible...</span>")
 	..()
 
 /datum/reagent/medicine/superstimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-8*REM, 0)
-	M.adjustFireLoss(-8*REM, 0)
-	M.adjustOxyLoss(-6*REM, 0)
+	M.adjustBruteLoss(-14*REM, 0)
+	M.adjustFireLoss(-14*REM, 0)
+	M.adjustOxyLoss(-12*REM, 0)
 
 /datum/reagent/medicine/superstimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(5*REM, 0)
