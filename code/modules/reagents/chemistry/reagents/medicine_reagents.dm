@@ -1280,9 +1280,9 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-7*REM, 0)
-	M.adjustFireLoss(-7*REM, 0)
-	M.adjustOxyLoss(-6*REM, 0)
+	M.adjustBruteLoss(-5*REM, 0)
+	M.adjustFireLoss(-5*REM, 0)
+	M.adjustOxyLoss(-4*REM, 0)
 	. = 1
 	..()
 
@@ -1310,9 +1310,9 @@
 	..()
 
 /datum/reagent/medicine/superstimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-14*REM, 0)
-	M.adjustFireLoss(-14*REM, 0)
-	M.adjustOxyLoss(-12*REM, 0)
+	M.adjustBruteLoss(-10*REM, 0)
+	M.adjustFireLoss(-10*REM, 0)
+	M.adjustOxyLoss(-8*REM, 0)
 
 /datum/reagent/medicine/superstimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(5*REM, 0)
