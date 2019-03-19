@@ -23,27 +23,22 @@
 
 /obj/structure/closet/f13/leigon/scollar/PopulateContents()
 	..()
-	new /obj/item/assembly/signaler/electropack/shockcollar(src)
-	new /obj/item/assembly/signaler/electropack/shockcollar(src)
-	new /obj/item/assembly/signaler/electropack/shockcollar(src)
-	new /obj/item/assembly/signaler/electropack/shockcollar(src)
+	for(var/i in 1 to 4)
+		new /obj/item/assembly/signaler/electropack/shockcollar(src)
+
 
 /obj/structure/closet/f13/leigon/spants
 	name = "closet"
 
 /obj/structure/closet/f13/leigon/spants/PopulateContents()
 	..()
-	new /obj/item/clothing/under/f13/caravan(src)
-	new /obj/item/clothing/under/f13/caravan(src)
-	new /obj/item/clothing/under/f13/caravan(src)
-	new /obj/item/clothing/under/f13/caravan(src)
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/under/f13/caravan(src)
 
 /obj/structure/closet/f13/leigon/ssandals
 	name = "closet"
 
 /obj/structure/closet/f13/leigon/ssandals/PopulateContents()
 	..()
-	new /obj/item/clothing/shoes/sandal(src)
-	new /obj/item/clothing/shoes/sandal(src)
-	new /obj/item/clothing/shoes/sandal(src)
-	new /obj/item/clothing/shoes/sandal(src)
+	for(var/i in 1 to 4)
+		new /obj/item/clothing/shoes/sandal(src)

@@ -65,7 +65,6 @@ Needs whitelist
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=2, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/melee/powerfist=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/r20=2, \
@@ -107,7 +106,6 @@ Centurion
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
@@ -143,7 +141,6 @@ Veteran Decan
 	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
@@ -179,8 +176,6 @@ Vexillarius
 	suit_store = 	/obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/storage/box/lethalshot, \
@@ -220,7 +215,6 @@ Decan
 	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
@@ -255,8 +249,6 @@ Veteran
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/m44=1, \
@@ -292,9 +284,6 @@ Legionary
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/throwing_star/spear, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \

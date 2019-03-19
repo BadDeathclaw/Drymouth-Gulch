@@ -436,6 +436,33 @@
 		L.remove_trait(TRAIT_GOTTAGOREALLYFAST, id)
 	..()
 
+/datum/reagent/medicine/f13stimulant
+	name = "stimulant"
+	id = "f13stimulant"
+	description = "Minor boost to stun resistance."
+	reagent_state = LIQUID
+	color = "#D2FFFA"
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	overdose_threshold = 30
+
+/datum/reagent/medicine/f13stimulant/on_mob_life(mob/living/carbon/M)
+	var/stimmed_message = pick("You feel your heart beating.", "You feel like you need to go an marathon.", "You feel like you can take on the world.")
+	if(prob(5))
+		to_chat(M, "<span class='notice'>[stimmed_message]</span>")
+	if(prob(40))
+		M.AdjustStun(-20, 0)
+		M.AdjustKnockdown(-20, 0)
+		M.AdjustUnconscious(-20, 0)
+		M.adjustStaminaLoss(-2*REM, 0)
+	..()
+
+/datum/reagent/medicine/f13stimulant/overdose_process(mob/living/M)
+	if(prob(33))
+		M.adjustStaminaLoss(2*REM, 0)
+		M.losebreath++
+		. = 1
+	return TRUE
+
 /datum/reagent/drug/turbo/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
 	if(prob(5))
