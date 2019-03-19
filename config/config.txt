@@ -20,7 +20,7 @@ $include antag_rep.txt
  SERVERSQLNAME baddeathclaw
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME Bad Deathclaw
+STATIONNAME Mojave Wasteland
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB
@@ -222,7 +222,7 @@ CHECK_RANDOMIZER
 RULESURL https://www.docdroid.net/Lwrciqr/bad-deathclaw-rules.pdf
 
 ## Github address
-GITHUBURL https://github.com/Digdugxx/TG-Claw
+GITHUBURL https://github.com/BadDeathclaw/TG-Claw
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
@@ -363,7 +363,7 @@ ALLOW_MAP_VOTING 1
 
 ## AUTOADMIN
 ## The default admin rank
-AUTOADMIN_RANK Game Master
+AUTOADMIN_RANK Knight
 
 ## Uncomment to automatically give that admin rank to all players
 #AUTOADMIN
