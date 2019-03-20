@@ -1024,51 +1024,8 @@
 	fan_out_items = TRUE
 
 	loot = list(
-				/obj/item/storage/box/ingredients/american,
-				/obj/item/storage/box/ingredients/carnivore,
-				/obj/item/storage/box/ingredients/delights,
-				/obj/item/storage/box/ingredients/exotic,
-				/obj/item/storage/box/ingredients/fiesta,
-				/obj/item/storage/box/ingredients/fruity,
-				/obj/item/storage/box/ingredients/grains,
-				/obj/item/storage/box/ingredients/italian,
-				/obj/item/storage/box/ingredients/sweets,
-				/obj/item/storage/box/ingredients/vegetarian,
-				/obj/item/storage/box/ingredients/wildcard,
-				/obj/item/storage/box/donkpockets,
-				/obj/item/reagent_containers/food/condiment/flour,
-				/obj/item/reagent_containers/food/condiment/rice,
-				/obj/item/reagent_containers/food/condiment/enzyme,
-				/obj/item/reagent_containers/food/condiment/soymilk,
-				/obj/item/reagent_containers/food/condiment/milk,
-				/obj/item/reagent_containers/food/condiment/saltshaker,
-				/obj/item/reagent_containers/food/condiment/peppermill,
-				/obj/item/reagent_containers/food/condiment/mayonnaise,
-				/obj/item/reagent_containers/food/condiment/soysauce,
-				/obj/item/reagent_containers/food/snacks/beans,
-				/obj/item/reagent_containers/food/snacks/baguette,
-				/obj/item/reagent_containers/food/snacks/bun,
-				/obj/item/reagent_containers/food/snacks/butter,
-				/obj/item/reagent_containers/food/snacks/cheesewedge,
-				/obj/item/reagent_containers/food/snacks/chips,
-				/obj/item/reagent_containers/food/snacks/chocolatebar,
-				/obj/item/reagent_containers/food/snacks/cracker,
-				/obj/item/reagent_containers/food/snacks/icecream,
-				/obj/item/reagent_containers/food/snacks/lollipop,
-				/obj/item/reagent_containers/food/snacks/meat/rawbacon,
-				/obj/item/reagent_containers/food/snacks/meat/slab/human,
-				/obj/item/reagent_containers/food/snacks/meat/slab/pug,
-				/obj/item/reagent_containers/food/snacks/meat/slab/meatproduct,
-				/obj/item/reagent_containers/food/snacks/muffin/berry,
-				/obj/item/reagent_containers/food/snacks/muffin,
-				/obj/item/reagent_containers/food/snacks/no_raisin,
-				/obj/item/reagent_containers/food/snacks/popcorn,
-				/obj/item/reagent_containers/food/snacks/raisincookie,
-				/obj/item/reagent_containers/food/snacks/sosjerky,
-				/obj/item/reagent_containers/food/snacks/sausage,
-				/obj/item/reagent_containers/food/snacks/store/cheesewheel,
 				"" // a chance to spawn nothing
-				)
+				) // scarcity PR - BD
 
 
 /obj/effect/spawner/lootdrop/f13/foodspawner/Initialize(mapload) //on mapload, pick how many shit to spawn
