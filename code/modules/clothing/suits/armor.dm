@@ -382,6 +382,13 @@
 	item_state = "t45bpowerarmor"
 	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/brokenpa/t45b/raider
+	name = "raider power armor"
+	desc = "I LIVE, I DIE, I LIVE AGAIN. WITNESS ME."
+	icon_state = "raiderpowerarmor"
+	item_state = "raiderpowerarmor"
+	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 // power armor
 
 /obj/item/clothing/suit/armor/f13/power_armor

@@ -555,6 +555,15 @@
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
 	flash_protect = 0
 
+/obj/item/clothing/head/helmet/f13/brokenpa/raider
+	name = "raider power helmet"
+	desc = "I LIVE, I DIE, I LIVE AGAIN. WITNESS ME.
+	icon_state = "raiderpowerhelmet"
+	item_state = "raiderpowerhelmet"
+	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
+	flash_protect = 0
+
+
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/power_armor
@@ -574,21 +583,21 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/power_armor/t45b
-	name = "Salvaged T-45b helmet"
+	name = "salvaged T45b power helmet"
 	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
 	armor = list("melee" = 50, "bullet" = 48, "laser" = 25, "energy" = 25, "bomb" = 48, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/power_armor/advanced
-	name = "Advanced power helmet"
+	name = "advanced power helmet"
 	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	armor = list("melee" = 72, "bullet" = 72, "laser" = 48,"energy" = 48, "bomb" = 72, "bio" = 100,"rad" = 100, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/power_armor/advanced/mk2
-	name = "Advanced power helmet MK2"
+	name = "advanced power helmet MK2"
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
