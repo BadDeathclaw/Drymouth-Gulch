@@ -18,9 +18,9 @@
 
 /obj/item/reloading/reloadingpress
 	name = "reloading press"
-	desc = "An Oxford Armory™ universal combination reloading press, complete with a primer synthesizer, automatic powder measuring, and a high tourqe pressing rod."
+	desc = "An Oxford Armoryâ„¢ universal combination reloading press, complete with a primer synthesizer, automatic powder measuring, and a high tourqe pressing rod."
 	attack_verb = list("clonked", "smashed", "chunked", "whacked")
-	icon_state = 'reloadingpress'
+	icon_state = "reloadingpress"
 
 // Dies
 
@@ -28,42 +28,42 @@
 	name = "reloading die"
 	desc = "This probally shouldn't exist, quit admin abusing."
 	attack_verb = list("cracked", "chipped", "smashed", "clocked")
-	icon_state = 'diesmall'
+	icon_state = "diesmall"
 
 /obj/item/reloading/die/ninemilimeter
 	name = "9mm reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
-	icon_state = 'diesmall'
+	icon_state = "diesmall"
 
 /obj/item/reloading/die/tenmilimeter
 	name = "10mm reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
-	icon_state = 'diesmall'
+	icon_state = "diesmall"
 
 /obj/item/reloading/die/threefiftyseven
 	name = "357. reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
-	icon_state = 'diesmall'
+	icon_state = "diesmall"
 
 /obj/item/reloading/die/fortyfour
 	name = "44. reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
-	icon_state = 'diesmall'
+	icon_state = "diesmall"
 
 /obj/item/reloading/die/fortyfive
 	name = "45. reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
-	icon_state = 'diesmall'
+	icon_state = "diesmall"
 
 /obj/item/reloading/die/fivefivesix
 	name = "5.56x45 reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
-	icon_state = 'diemedium'
+	icon_state = "diemedium"
 
 /obj/item/reloading/die/sevensixtwo
 	name = "7.62x51 reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
-	icon_state = 'diemedium'
+	icon_state = "diemedium"
 
 // Bullets (literally just the bullet)
 
@@ -75,37 +75,37 @@
 /obj/item/reloading/bullet/ninemilimeter
 	name = "9mm bullet"
 	desc = "A bullet designed for 9mm cartridges."
-	icon_state = 'smallbullet'
+	icon_state = "smallbullet"
 
 /obj/item/reloading/bullet/tenmilimeter
 	name = "10mm bullet"
 	desc = "A bullet designed for 10mm cartridges."
-	icon_state = 'smallbullet'
+	icon_state = "smallbullet"
 
 /obj/item/reloading/bullet/threefiftyseven
 	name = "357. bullet"
 	desc = "A bullet designed for .357 cartridges."
-	icon_state = 'revolverbullet'
+	icon_state = "revolverbullet"
 
 /obj/item/reloading/bullet/fortyfour
 	name = "44. bullet"
 	desc = "A bullet designed for 44. cartridges."
-	icon_state = 'revolverbullet'
+	icon_state = "revolverbullet"
 
 /obj/item/reloading/bullet/fortyfive
 	name = "45. bullet"
 	desc = "A bullet designed for 45. cartridges."
-	icon_state = 'revolverbullet'
+	icon_state = "revolverbullet"
 
 /obj/item/reloading/bullet/fivefivesix
 	name = "5.56x45 bullet"
 	desc = "A bullet designed for 5.56x45 cartridges."
-	icon_state = 'riflebullet'
+	icon_state = "riflebullet"
 
 /obj/item/reloading/bullet/sevensixtwo
 	name = "7.62x51 bullet"
 	desc = "A bullet designed for 7.62x51 cartridges."
-	icon_state = 'heavyriflebullet'
+	icon_state = "heavyriflebullet"
 
 // Crafting Recipies for bullet dies
 
