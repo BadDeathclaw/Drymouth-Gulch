@@ -15,7 +15,8 @@
 	var/list/subcategories = list(
 						list(	//Weapon subcategories
 							CAT_WEAPON,
-							CAT_AMMO),
+							CAT_AMMO
+							CAT_RELOADING),
 						CAT_NONE, //Robot subcategories
 						CAT_NONE, //Misc subcategories
 						CAT_NONE, //Tribal subcategories
