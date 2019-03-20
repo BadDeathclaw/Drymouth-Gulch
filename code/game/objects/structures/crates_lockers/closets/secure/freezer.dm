@@ -24,15 +24,6 @@
 	desc = "This refrigerator looks quite dusty, is there anything edible still inside?"
 	req_access = list()
 
-/obj/structure/closet/secure_closet/freezer/kitchen/maintenance/PopulateContents()
-	..()
-	for(var/i = 0, i < 5, i++)
-		new /obj/item/reagent_containers/food/condiment/milk(src)
-	for(var/i = 0, i < 5, i++)
-		new /obj/item/reagent_containers/food/condiment/soymilk(src)
-	for(var/i = 0, i < 2, i++)
-		new /obj/item/storage/fancy/egg_box(src)
-
 /obj/structure/closet/secure_closet/freezer/kitchen/mining
 	req_access = list()
 
