@@ -13,9 +13,9 @@
 				CAT_CLOTHING,
 				CAT_DRUGS)
 	var/list/subcategories = list(
-						list(	//Weapon subcategories
+						list(
 							CAT_WEAPON,
-							CAT_AMMO
+							CAT_AMMO,
 							CAT_RELOADING),
 						CAT_NONE, //Robot subcategories
 						CAT_NONE, //Misc subcategories

@@ -13,13 +13,13 @@
 // made by john oxford
 
 // Equipment
+/obj/item/reloading
+	icon = 'icons/obj/reloading.dmi'
 
-/obj/item/reloading/die/reloadingpress
+/obj/item/reloading/reloadingpress
 	name = "reloading press"
 	desc = "An Oxford Armory™ universal combination reloading press, complete with a primer synthesizer, automatic powder measuring, and a high tourqe pressing rod."
-	tool_behaviour = TOOL_RELOADING
 	attack_verb = list("clonked", "smashed", "chunked", "whacked")
-	icon = 'icons/obj/reloading.dmi'
 	icon_state = 'reloadingpress'
 
 // Dies
@@ -28,7 +28,7 @@
 	name = "reloading die"
 	desc = "This probally shouldn't exist, quit admin abusing."
 	attack_verb = list("cracked", "chipped", "smashed", "clocked")
-	icon = 'icons/obj/reloading.dmi'
+	icon_state = 'diesmall'
 
 /obj/item/reloading/die/ninemilimeter
 	name = "9mm reloading die"
@@ -237,7 +237,7 @@
 	name = "9mm cartridge"
 	result = list(/obj/item/ammo_casing/c9mm = 1)
 	reqs = list(/obj/item/reloading/bullet/ninemilimeter= 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
-	tools = list(TOOL_RELOADING)
+	tools = list(/obj/item/reloading/reloadingpress = 1, )
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -246,7 +246,7 @@
 	name = "10mm cartridge"
 	result = list(/obj/item/ammo_casing/c10mm = 1)
 	reqs = list(/obj/item/reloading/bullet/tenmilimeter = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
-	tools = list(TOOL_RELOADING)
+	tools = list(/obj/item/reloading/reloadingpress = 1, )
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -255,7 +255,7 @@
 	name = "357. cartridge"
 	result = list(/obj/item/ammo_casing/a357 = 1)
 	reqs = list(/obj/item/reloading/bullet/threefiftyseven = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
-	tools = list(TOOL_RELOADING)
+	tools = list(/obj/item/reloading/reloadingpress = 1, )
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -264,7 +264,7 @@
 	name = "44. cartridge"
 	result = list(/obj/item/ammo_casing/m44 = 1)
 	reqs = list(/obj/item/reloading/bullet/fortyfour = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
-	tools = list(TOOL_RELOADING)
+	tools = list(/obj/item/reloading/reloadingpress = 1, )
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -273,7 +273,7 @@
 	name = "45. cartridge"
 	result = list(/obj/item/ammo_casing/c45= 1)
 	reqs = list(/obj/item/reloading/bullet/fortyfive = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
-	tools = list(TOOL_RELOADING)
+	tools = list(/obj/item/reloading/reloadingpress = 1, )
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -282,7 +282,7 @@
 	name = "5.56x45 cartridge"
 	result = list(/obj/item/ammo_casing/a556 = 1)
 	reqs = list(/obj/item/reloading/bullet/fivefivesix = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
-	tools = list(TOOL_RELOADING)
+	tools = list(/obj/item/reloading/reloadingpress = 1, )
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -291,7 +291,7 @@
 	name = "7.62x51 cartridge"
 	result = list(/obj/item/ammo_casing/a762 = 1)
 	reqs = list(/obj/item/reloading/bullet/sevensixtwo = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
-	tools = list(TOOL_RELOADING)
+	tools = list(/obj/item/reloading/reloadingpress = 1, )
 	time = 15
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO

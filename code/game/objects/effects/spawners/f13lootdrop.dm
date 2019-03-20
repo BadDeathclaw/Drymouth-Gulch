@@ -629,7 +629,7 @@
 	var/loot2 = list(
 				/obj/item/gun/ballistic/revolver/caravan_shotgun,
 				/obj/item/storage/box/rubbershot/beanbag,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				""
 				)
 
@@ -641,7 +641,7 @@
 
 	var/loot4 = list(
 				/obj/item/gun/ballistic/revolver/zipgun,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				"",
 				""
 				)
@@ -654,7 +654,7 @@
 
 	var/loot6 = list(
 				/obj/item/gun/ballistic/shotgun/remington,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				/obj/item/ammo_box/a308,
 				/obj/item/ammo_box/a308
 				)
@@ -673,7 +673,7 @@
 
 	var/loot9 = list(
 				/obj/item/gun/ballistic/automatic/pistol/m1911,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				/obj/item/ammo_box/magazine/m45,
 				/obj/item/ammo_box/magazine/m45
 				)
@@ -686,7 +686,7 @@
 
 	var/loot11 = list(
 				/obj/item/gun/ballistic/revolver/colt6250,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				/obj/item/ammo_box/c10mm,
 				""
 				)
@@ -707,7 +707,7 @@
 	var/loot2 = list(
 				/obj/item/gun/ballistic/shotgun,
 				/obj/item/storage/box/lethalshot,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				""
 				)
 
@@ -725,7 +725,7 @@
 
 	var/loot5 = list(
 				/obj/item/gun/ballistic/revolver/m29/scoped,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				/obj/item/ammo_box/m44,
 				/obj/item/ammo_box/m44
 				)
@@ -747,7 +747,7 @@
 				/obj/item/gun/ballistic/automatic/mini_uzi,
 				/obj/item/ammo_box/magazine/uzim9mm,
 				/obj/item/ammo_box/magazine/uzim9mm,
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/reloading/reloadingpress,
 				)
 
 	var/loot3 = list(
@@ -765,8 +765,8 @@
 	var/loot5 = list(
 				/obj/item/gun/ballistic/automatic/greasegun,
 				/obj/item/ammo_box/magazine/greasegun,
-				/obj/item/ammo_box/magazine/greasegun
-				/obj/item/reloading/die/reloadingpress,
+				/obj/item/ammo_box/magazine/greasegun,
+				/obj/item/reloading/reloadingpress,
 				)
 
 	var/loot6 = list(
