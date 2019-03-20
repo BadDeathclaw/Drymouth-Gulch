@@ -3,7 +3,7 @@
 	desc = "These seeds grow into mutfruits."
 	icon_state = "seed-mutfruit"
 	species = "mutfruit"
-	plantname = "Mutfruit Plants"
+	plantname = "mutfruit plants"
 	product = /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	lifespan = 30
 	endurance = 20
@@ -19,7 +19,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	seed = /obj/item/seeds/mutfruit
-	name = "Mutfruit"
+	name = "mutfruit"
 	desc = "Mutfruit provides both hydration and sustenance, and provides them at moderately higher levels than other fruits, it gives a small amount of Radiation."
 	icon_state = "mutfruit"
 	filling_color = "#FF6347"

@@ -3,7 +3,7 @@
 	desc = "These seeds grow into an cactus which bears fruit."
 	icon_state = "seed-cactus"
 	species = "cactus"
-	plantname = "Cactus fruits"
+	plantname = "cactus fruits"
 	product = /obj/item/reagent_containers/food/snacks/grown/cactus
 	lifespan = 50
 	endurance = 20
@@ -19,7 +19,7 @@
 
 /obj/item/reagent_containers/food/snacks/grown/cactus
 	seed = /obj/item/seeds/cactus
-	name = "Barrel cactus fruit"
+	name = "barrel cactus fruit"
 	desc = "Barrel cactus fruit are found on barrel cactus; a spherical cacti that can be encountered while wandering the Texas. They usually form in groups, with one large barrel cactus that contains the fruit surrounded by several smaller cacti. Like all other Texas plants, fruit-bearing barrel cacti will eventually grow back after being picked."
 	icon_state = "feracactus"
 	filling_color = "#FF6347"

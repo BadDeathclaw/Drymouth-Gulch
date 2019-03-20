@@ -182,20 +182,19 @@
 		new /obj/item/throwing_star/spear(src)
 
 
-//adminbus version of the spear quiver
 /obj/item/storage/backpack/spearquiver/expanded
-	name = "big spear quiver"
+	name = "heavy spear quiver"
 	desc = "A leather and iron quiver designed to hold throwing spears, it has an increased capicity upgrade to allow up to fourteen spears."
 	icon_state = "spearquiver"
 	item_state = "spearquiver"
 
-/obj/item/storage/backpack/spearquiver/adminbus/ComponentInitialize()
+/obj/item/storage/backpack/spearquiver/expanded/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
 	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear))
 
-/obj/item/storage/backpack/spearquiver/adminbus/PopulateContents()
+/obj/item/storage/backpack/spearquiver/expanded/PopulateContents()
 	for(var/i in 1 to 14)
 		new /obj/item/throwing_star/spear(src)
 

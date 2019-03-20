@@ -18,8 +18,6 @@
 
 /obj/structure/closet/crate/secure/weapon/ncr/magazines/PopulateContents()
 	..()
-	for(var/i in 1 to 8)
-		new /obj/item/ammo_box/magazine/r20(src)
 	for(var/i in 1 to 4)
 		new /obj/item/ammo_box/magazine/m9mm(src)
 	return

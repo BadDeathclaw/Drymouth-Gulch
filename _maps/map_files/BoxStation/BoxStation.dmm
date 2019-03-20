@@ -3681,7 +3681,7 @@
 "bsO" = (/obj/structure/barricade/wooden,/turf/open/floor/plating/f13/outside/road,/area/f13/desert)
 "bsP" = (/obj/structure/spacevine{name = "Mutant Vines"},/turf/closed/wall/r_wall/f13composite{icon_state = "rubblepillar"},/area/f13/desert)
 "bsQ" = (/obj/structure/spacevine{name = "Mutant Vines"},/turf/closed/wall/r_wall/f13composite{icon_state = "rubbleslab"},/area/f13/desert)
-"bsR" = (/obj/structure/rack,/obj/item/gun/ballistic/automatic/marksman/servicerifle,/obj/item/gun/ballistic/automatic/marksman/servicerifle,/obj/item/gun/ballistic/automatic/marksman/servicerifle,/obj/item/gun/ballistic/automatic/marksman/servicerifle,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/ncr_main)
+"bsR" = (/obj/structure/rack,/obj/item/reagent_containers/food/condiment/mayonnaise{name = "anal cream"},/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/ncr_main)
 "bsS" = (/obj/structure/rack,/obj/item/gun/ballistic/automatic/pistol/ninemil,/obj/item/gun/ballistic/automatic/pistol/ninemil,/obj/item/gun/ballistic/automatic/pistol/ninemil,/obj/item/gun/ballistic/automatic/pistol/ninemil,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/ncr_main)
 "bsT" = (/obj/structure/rack,/obj/item/gun/ballistic/shotgun/remington,/obj/item/gun/ballistic/shotgun/remington,/obj/item/gun/ballistic/shotgun/remington,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/ncr_main)
 "bsU" = (/obj/structure/closet/f13/leigon/plants,/obj/item/seeds/wheat,/obj/item/seeds/cotton,/obj/item/seeds/cactus,/turf/open/floor/wood/f13/old,/area/f13/legioncamp)
