@@ -76,7 +76,7 @@ Captain
 	head 		= /obj/item/clothing/head/beret/ncr
 	gloves 		= /obj/item/clothing/gloves/combat
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
-	suit_store  = /obj/item/gun/ballistic/automatic/marksman
+	suit_store  = /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/ammo_box/magazine/r20=2, \
