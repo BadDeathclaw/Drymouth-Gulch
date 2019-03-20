@@ -45,6 +45,11 @@
 	desc = "A small bottle. Contains epinephrine - used to stabilize patients."
 	list_reagents = list("epinephrine" = 30)
 
+/obj/item/reagent_containers/glass/bottle/gunpowder
+	name = "gunpowder bottle"
+	desc = "A small bottle. Contains blackpowder."
+	list_reagents = list("blackpowder" = 30)
+
 /obj/item/reagent_containers/glass/bottle/toxin
 	name = "toxin bottle"
 	desc = "A small bottle of toxins. Do not drink, it is poisonous."
