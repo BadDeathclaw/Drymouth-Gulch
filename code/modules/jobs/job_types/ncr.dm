@@ -33,7 +33,7 @@ Colonel
 	name 		= "NCR Colonel"
 	jobtype 	= /datum/job/ncr/f13colonel
 	uniform		= /obj/item/clothing/under/f13/ncr/officer
-	accessory 	= /obj/item/clothing/accessory/ncr/CPT
+	accessory 	= /obj/item/clothing/accessory/ncr
 	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t51b/sierra
 	head 		= /obj/item/clothing/head/beret/ncr
 	gloves 		= /obj/item/clothing/gloves/combat
