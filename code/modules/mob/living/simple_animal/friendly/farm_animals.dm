@@ -21,8 +21,8 @@
 	attack_same = 1
 	attacktext = "kicks"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	health = 40
-	maxHealth = 40
+	health = 150
+	maxHealth = 150
 	melee_damage_lower = 1
 	melee_damage_upper = 2
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -124,8 +124,8 @@
 	response_harm   = "kicks"
 	attacktext = "kicks"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	health = 50
-	maxHealth = 50
+	health = 100
+	maxHealth = 100
 	var/is_calf = 0
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0
@@ -234,8 +234,8 @@
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
 	attacktext = "kicks"
-	health = 3
-	maxHealth = 3
+	health = 15
+	maxHealth = 15
 	ventcrawler = VENTCRAWLER_ALWAYS
 	var/amount_grown = 0
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
@@ -284,8 +284,8 @@
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
 	attacktext = "kicks"
-	health = 15
-	maxHealth = 15
+	health = 50
+	maxHealth = 50
 	ventcrawler = VENTCRAWLER_ALWAYS
 	var/eggsleft = 0
 	var/eggsFertile = TRUE
