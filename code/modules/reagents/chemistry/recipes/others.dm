@@ -11,12 +11,6 @@
 	results = list("lube" = 4)
 	required_reagents = list("water" = 1, "silicon" = 1, "oxygen" = 1)
 
-/datum/chemical_reaction/spraytan
-	name = "Spray Tan"
-	id = "spraytan"
-	results = list("spraytan" = 2)
-	required_reagents = list("orangejuice" = 1, "oil" = 1)
-
 /datum/chemical_reaction/spraytan2
 	name = "Spray Tan"
 	id = "spraytan"
