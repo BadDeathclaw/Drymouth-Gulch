@@ -746,7 +746,7 @@
 	var/loot2 = list(
 				/obj/item/gun/ballistic/automatic/mini_uzi,
 				/obj/item/ammo_box/magazine/uzim9mm,
-				/obj/item/ammo_box/magazine/uzim9mm
+				/obj/item/ammo_box/magazine/uzim9mm,
 				/obj/item/reloading/die/reloadingpress,
 				)
 
