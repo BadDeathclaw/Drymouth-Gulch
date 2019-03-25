@@ -114,5 +114,5 @@
 
 /obj/structure/closet/cardboard/f13/legion/c4/PopulateContents()
 	for(var/i in 1 to 4)
-		/obj/item/grenade/plastic/c4
+		new /obj/item/grenade/plastic/c4(src)
 	return
