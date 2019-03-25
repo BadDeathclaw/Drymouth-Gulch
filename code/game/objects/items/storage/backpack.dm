@@ -178,13 +178,9 @@
 	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear))
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
-	new /obj/item/throwing_star/spear(src)
-	new /obj/item/throwing_star/spear(src)
-	new /obj/item/throwing_star/spear(src)
-	new /obj/item/throwing_star/spear(src)
-	new /obj/item/throwing_star/spear(src)
-	new /obj/item/throwing_star/spear(src)
-	new /obj/item/throwing_star/spear(src)
+	for(var/i in 1 to 7)
+		new /obj/item/throwing_star/spear(src)
+	return
 
 /*
  * Satchel Types

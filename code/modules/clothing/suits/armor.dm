@@ -499,6 +499,16 @@
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	strip_delay = 60
 
+/obj/item/clothing/suit/armor/f13/combat/raiderboss
+	name = "combat armor"
+	desc = "An modified military grade pre war combat armor."
+	icon_state = "raiderboss_suit"
+	item_state = "raiderboss_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	strip_delay = 60
+
+
 /obj/item/clothing/suit/armor/f13/combat/mk2
 	name = "reinforced combat armor"
 	desc = "A reinforced model based of the pre-war combat armor."

@@ -234,10 +234,11 @@ obj/effect/mob_spawn/human/corpse/raidermelee
 /obj/effect/mob_spawn/human/corpse/raiderboss
     name = "Raider Boss"
     uniform = /obj/item/clothing/under/f13/mercc
-    suit = /obj/item/clothing/suit/armor/f13/combat
+    suit = /obj/item/clothing/suit/armor/f13/combat/raiderboss
     shoes = /obj/item/clothing/shoes/combat
     gloves = /obj/item/clothing/gloves/color/black
-    head = /obj/item/clothing/head/helmet/f13
+    head = /obj/item/clothing/head/helmet/f13/combat/raiderboss
+    r_pocket = /obj/item/ammo_box/magazine/greasegun
     hair_style = "Bald"
     facial_hair_style = "Shaved"
 

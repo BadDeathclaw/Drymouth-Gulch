@@ -45,11 +45,11 @@
     name = "Raider Boss"
     icon_state = "raiderboss"
     icon_living = "raiderboss"
-    maxHealth = 170
-    health = 170
+    maxHealth = 300
+    health = 300
     rapid = 1
     casingtype = /obj/item/ammo_casing/c9mm
-    loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/ammo_box/magazine/greasegun)
+    loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/gun/ballistic/automatic/greasegun)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
     ..()
