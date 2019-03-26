@@ -26,7 +26,7 @@
 	icon_state = "ishell2"
 	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	pellets = 4
-	variance = 35
+	variance = 28
 
 /obj/item/ammo_casing/shotgun/stunslug
 	name = "12 gauge taser slug"
