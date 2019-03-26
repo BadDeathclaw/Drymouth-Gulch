@@ -34,6 +34,15 @@
 			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
 			if(I.use_tool(src, user, 40, volume=40))
 				obj_integrity = CLAMP(obj_integrity + 20, 0, max_integrity)
+	else if(istype(I, /obj/item/stack/ore/glass) && material == SAND)
+		if(obj_integrity < max_integrity)
+			to_chat(user, "<span class='notice'>You begin packing sand into the damaged [src], repairing [src] it...</span>")
+			if(do_after(user, 20, target = src))
+				obj_integrity = CLAMP(obj_integrity + 30, 0, max_integrity)
+				user.visible_message("<span class='notice'>[user] repairs the barricade with some sand.</span>")
+				I.
+		else
+			to_chat(user, "<span class='notice'>The [src] doesn't need to be repaired.</span>")
 	else
 		return ..()
 
@@ -43,11 +52,17 @@
 	else if(istype(mover, /obj/item/projectile))
 		if(!anchored)
 			return 1
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return 1
+		//var/obj/item/projectile/proj = mover
+		//if(proj.firer && Adjacent(proj.firer))
+			//return 1
 		if(prob(proj_pass_rate))
 			return 1
+		/obj/item/restraints/legcuffs/bola/energy/throw_impact(atom/hit_atom)
+		if(iscarbon(hit_atom))
+			var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy/cyborg(get_turf(hit_atom))
+			B.Crossed(hit_atom)
+			qdel(src)
+		..()
 		return 0
 	else
 		return !density
@@ -86,7 +101,7 @@
 	desc = "This space is blocked off by a crude assortment of planks."
 	icon_state = "woodenbarricade-old"
 	drop_amount = 1
-	max_integrity = 50
+	max_integrity = 80
 	proj_pass_rate = 65
 
 /obj/structure/barricade/wooden/crude/snow
