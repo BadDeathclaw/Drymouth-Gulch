@@ -485,10 +485,10 @@
 
 	loot = list(
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
-				/obj/item/storage/pill_bottle/radx,
+				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/storage/pill_bottle/mentats,
-				/obj/item/storage/pill_bottle/fixer
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
+				/obj/item/storage/pill_bottle/chem_tin/fixer
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland
@@ -499,10 +499,10 @@
 	lootcount = 1
 
 	loot = list(/obj/item/reagent_containers/pill/patch/healingpowder,
-				/obj/item/storage/pill_bottle/radx,
+				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/storage/pill_bottle/mentats,
-				/obj/item/storage/pill_bottle/fixer,
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
+				/obj/item/storage/pill_bottle/chem_tin/fixer,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
 				/obj/item/reagent_containers/medspray/styptic,
 				/obj/item/reagent_containers/medspray/silver_sulf,
@@ -652,8 +652,8 @@
 
 	var/loot6 = list(
 				/obj/item/gun/ballistic/shotgun/remington,
-				/obj/item/ammo_box/a762,
-				/obj/item/ammo_box/a762
+				/obj/item/ammo_box/a308,
+				/obj/item/ammo_box/a308
 				)
 
 	var/loot7 = list(
@@ -713,8 +713,8 @@
 
 	var/loot4 = list(
 				/obj/item/gun/ballistic/shotgun/remington/scoped,
-				/obj/item/ammo_box/a762,
-				/obj/item/ammo_box/a762
+				/obj/item/ammo_box/a308,
+				/obj/item/ammo_box/a308
 				)
 
 	var/loot5 = list(
@@ -891,6 +891,7 @@
 	loot = list(
 				/obj/item/ammo_box/c45,
 				/obj/item/ammo_box/a762,
+        /obj/item/ammo_box/a308,
 				/obj/item/ammo_box/c10mm,
 				/obj/item/ammo_box/a556,
 				/obj/item/ammo_box/c38,
@@ -1010,7 +1011,6 @@
 				/obj/item/toy/cards/deck,
 				/obj/item/trash/tray,
 				/obj/item/toy/xmas_cracker,
-				/obj/item/reagent_containers/spray/spraytan,
 				/obj/item/reagent_containers/glass/bowl,
 				/obj/item/reagent_containers/spray/cleaner,
 				/obj/item/reagent_containers/glass/bucket,

@@ -71,16 +71,27 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	resistance_flags = FIRE_PROOF
 
 /obj/item/claymore/machete
-	name = "Machete"
+	name = "machete"
 	desc = "A makeshift machete made of a lawn mower blade."
 	icon_state = "imp_machete"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
-	item_state = "machete"
+	item_state = "salvagedmachete"
 	slot_flags = ITEM_SLOT_BELT
 
+/obj/item/claymore/machete/gladius
+	name = "machete gladius"
+	desc = "A forged steel machete, the blade has been laborously sharpened and the weight has been evenly distributed for maximum killing power. A two headed bull is burned into the wooden handle."
+	icon_state = "machete"
+	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
+	item_state = "machete"
+	slot_flags = ITEM_SLOT_BELT
+	force = 35
+	block_chance = 10
+
 /obj/item/claymore/machete/pipe
-	name = "Pipe"
+	name = "pipe"
 	desc = "A heavy rusted pipe, good for smashing heads. "
 	icon_state = "pipe"
 	item_state = "pipe"
@@ -89,7 +100,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	sharpness = IS_BLUNT
 
 /obj/item/claymore/machete/golf
-	name = "Golf Club"
+	name = "golf club"
 	desc = "A old rusted 9 iron golf club."
 	icon_state = "golf"
 	item_state = "golf"

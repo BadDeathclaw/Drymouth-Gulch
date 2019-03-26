@@ -126,6 +126,12 @@
 	icon_state = "cypherkey"
 	channels = list("Vault" = 1)
 
+/obj/item/encryptionkey/headset_vault_security
+	name = "\proper the Security encryption key"
+	desc = "An encryption key for a radio headset.  Channels are as follows: :v - vault, :s - security"
+	icon_state = "sec_cypherkey"
+	channels = list("Vault" = 1, "Security" = 1)
+
 /obj/item/encryptionkey/headset_overseer
 	name = "\proper the Overseer's encryption key"
 	desc = "An encryption key for a radio headset.  Channels are as follows: :v - vault, :c - command, :s - security, :e - engineering, :m - medical, :n - science."

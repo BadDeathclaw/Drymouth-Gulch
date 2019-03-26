@@ -64,6 +64,7 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	layer = LOW_ITEM_LAYER
 	novariants = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/sandbags
+	w_class = WEIGHT_CLASS_NORMAL
 
 GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	new/datum/stack_recipe("sandbags", /obj/structure/barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1), \
@@ -73,19 +74,19 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	recipes = GLOB.sandbag_recipes
 	. = ..()
 
-/obj/item/emptysandbag
+/obj/item/stack/sheet/emptysandbag
 	name = "empty sandbag"
 	desc = "A bag to be filled with sand."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sandbag"
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/emptysandbag/attackby(obj/item/W, mob/user, params)
+/obj/item/stack/sheet/emptysandbag/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/ore/glass))
 		var/obj/item/stack/ore/glass/G = W
 		to_chat(user, "<span class='notice'>You fill the sandbag.</span>")
 		var/obj/item/stack/sheet/mineral/sandbags/I = new /obj/item/stack/sheet/mineral/sandbags(drop_location())
-		qdel(src)
+		src.use(1)
 		if (Adjacent(user) && !issilicon(user))
 			user.put_in_hands(I)
 		G.use(1)

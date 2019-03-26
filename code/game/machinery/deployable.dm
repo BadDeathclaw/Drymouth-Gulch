@@ -115,7 +115,7 @@
 
 /obj/structure/barricade/sandbags
 	name = "sandbags"
-	desc = "Bags of sand. Self explanatory."
+	desc = "Bags of sand, stacked together to provide decent cover."
 	icon = 'icons/obj/smooth_structures/sandbags.dmi'
 	icon_state = "sandbags"
 	max_integrity = 280
@@ -124,8 +124,17 @@
 	material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
+	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security, /obj/structure/barricade/wooden, /turf/closed/wall/r_wall/f13superstore, /turf/closed/wall/r_wall/f13composite, /turf/closed/wall/f13wood, /turf/closed/wall/r_wall/f13vault, /turf/closed/wall/r_wall/f13vaultrusted, /turf/closed/indestructible/rock)
 
+/obj/structure/barricade/sandbags/attack_hand(mob/user)
+	. = ..()
+	if(.)
+		return
+	to_chat(user, "<span>You begin to take down the sandbags...</span>")
+	if(!has_buckled_mobs() && do_after(user, 80, target = src))
+		new /obj/item/stack/sheet/mineral/sandbags(src.loc)
+		qdel(src)
+		return
 
 /obj/structure/barricade/security
 	name = "security barrier"

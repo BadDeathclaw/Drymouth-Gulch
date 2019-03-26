@@ -405,6 +405,8 @@
 			..()
 	return ..()
 
+
+
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
@@ -418,6 +420,12 @@
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/power_armor/t51b/sierra
+	name = "sierra power armor"
+	desc = "A captured set of T-51b power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
+	icon_state = "sierra"
+	item_state = "sierra"
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
@@ -513,6 +521,14 @@
 	item_state = "brotherhood_armor"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/combat/enclave
+	name = "enclave combat armor"
+	desc = "An old set of pre-war combat armor, painted black."
+	icon_state = "enclave_armor"
+	item_state = "enclave_armor"
+	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "ranger combat armor"
 	desc = "The NCR ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
@@ -568,3 +584,11 @@
     item_state = "headscribe"
     body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
     armor = list("melee" = 15, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/battlecoat
+	name = "battlecoat"
+	desc = "A padded leather coat with gold buttons. For style rather then protection."
+	icon_state = "maxson_battlecoat"
+	item_state = "maxson_battlecoat"
+	body_parts_covered = CHEST
+	armor = list("melee" = 5, "bullet" = 5, "laser" = 10, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)

@@ -20,7 +20,7 @@ $include antag_rep.txt
  SERVERSQLNAME baddeathclaw
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME Bad Deathclaw
+STATIONNAME Mojave Wasteland
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB
@@ -222,7 +222,7 @@ CHECK_RANDOMIZER
 RULESURL https://www.docdroid.net/Lwrciqr/bad-deathclaw-rules.pdf
 
 ## Github address
-GITHUBURL https://github.com/Digdugxx/TG-Claw
+GITHUBURL https://github.com/BadDeathclaw/TG-Claw
 
 ## Round specific stats address
 ## Link to round specific parsed logs; IE statbus. It is appended with the RoundID automatically by ticker/Reboot()
@@ -363,7 +363,7 @@ ALLOW_MAP_VOTING 1
 
 ## AUTOADMIN
 ## The default admin rank
-AUTOADMIN_RANK Game Master
+AUTOADMIN_RANK Knight
 
 ## Uncomment to automatically give that admin rank to all players
 #AUTOADMIN
@@ -382,6 +382,8 @@ AUTOADMIN_RANK Game Master
 #CLIENT_WARN_MESSAGE Byond released 511 as the stable release. You can set the framerate your client runs at, which makes the game feel very different and cool. Shortly after its release we will end up using 511 client features and you will be forced to update.
 CLIENT_ERROR_VERSION 511
 CLIENT_ERROR_MESSAGE Your version of byond is not supported. Please upgrade.
+## The minimum build needed for joining the server, if using 512, a good minimum build would be 1421 as that disables the Middle Mouse Button exploit.
+CLIENT_ERROR_BUILD 1421
 
 ## TOPIC RATE LIMITING
 ## This allows you to limit how many topic calls (clicking on an interface window) the client can do in any given game second and/or game minute.
