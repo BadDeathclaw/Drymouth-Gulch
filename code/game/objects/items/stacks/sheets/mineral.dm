@@ -75,7 +75,8 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	. = ..()
 
 /obj/item/stack/sheet/emptysandbag
-	name = "empty sandbag"
+	name = "empty sandbags"
+	singular_name = "empty sandbag"
 	desc = "A bag to be filled with sand."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sandbag"

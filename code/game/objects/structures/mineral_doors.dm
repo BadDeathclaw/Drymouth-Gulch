@@ -155,6 +155,16 @@
 		if(I.use_tool(src, user, 40, volume=50))
 			to_chat(user, "<span class='notice'>You finish digging.</span>")
 			deconstruct(TRUE)
+	else if(istype(I, /obj/item/weldingtool) && user.a_intent != INTENT_HARM)
+		if(obj_integrity < max_integrity)
+			if(!I.tool_start_check(user, amount=0))
+				return
+
+			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			if(I.use_tool(src, user, 40, volume=40))
+				obj_integrity = CLAMP(obj_integrity + 20, 0, max_integrity)
+		else
+			to_chat(user, "<span class='notice'>[src] doesn't need to be repaired.</span>")
 	else if(istype(I, /obj/item/lock_construct)) /* attempt to add a lock */
 		return add_lock(I, user) /* call add_lock proc, so we can disable for airlocks */
 	else if(istype(I, /obj/item/key))

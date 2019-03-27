@@ -36,11 +36,11 @@
 				obj_integrity = CLAMP(obj_integrity + 20, 0, max_integrity)
 	else if(istype(I, /obj/item/stack/ore/glass) && material == SAND)
 		if(obj_integrity < max_integrity)
-			to_chat(user, "<span class='notice'>You begin packing sand into the damaged [src], repairing [src] it...</span>")
-			if(do_after(user, 20, target = src))
+			to_chat(user, "<span class='notice'>You begin packing sand into the damaged \the [src], repairing them...</span>")
+			if(do_after(user, 30, target = src))
 				obj_integrity = CLAMP(obj_integrity + 30, 0, max_integrity)
-				user.visible_message("<span class='notice'>[user] repairs the barricade with some sand.</span>")
-				I.
+				user.visible_message("<span class='notice'>[user] repairs [src] with some sand.</span>","<span class='notice'>You repair [src] with some sand.</span>")
+				I.use(1)
 		else
 			to_chat(user, "<span class='notice'>The [src] doesn't need to be repaired.</span>")
 	else
@@ -57,12 +57,12 @@
 			//return 1
 		if(prob(proj_pass_rate))
 			return 1
-		/obj/item/restraints/legcuffs/bola/energy/throw_impact(atom/hit_atom)
+		/* /obj/item/restraints/legcuffs/bola/energy/throw_impact(atom/hit_atom)
 		if(iscarbon(hit_atom))
 			var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy/cyborg(get_turf(hit_atom))
 			B.Crossed(hit_atom)
 			qdel(src)
-		..()
+		..() */
 		return 0
 	else
 		return !density
@@ -100,7 +100,7 @@
 	name = "crude plank barricade"
 	desc = "This space is blocked off by a crude assortment of planks."
 	icon_state = "woodenbarricade-old"
-	drop_amount = 1
+	drop_amount = 2
 	max_integrity = 80
 	proj_pass_rate = 65
 
@@ -124,17 +124,21 @@
 	material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security, /obj/structure/barricade/wooden, /turf/closed/wall/r_wall/f13superstore, /turf/closed/wall/r_wall/f13composite, /turf/closed/wall/f13wood, /turf/closed/wall/r_wall/f13vault, /turf/closed/wall/r_wall/f13vaultrusted, /turf/closed/indestructible/rock)
+	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security, /obj/structure/barricade/wooden, /turf/closed/wall/r_wall/f13superstore, /turf/closed/wall/r_wall/f13composite, /turf/closed/wall/f13wood, /turf/closed/wall/r_wall/f13vault, /turf/closed/wall/r_wall/f13vaultrusted, /turf/closed/indestructible/rock, /obj/structure/mineral_door/iron, /obj/structure/mineral_door/sandstone)
+	var/drop_amount = 1
 
 /obj/structure/barricade/sandbags/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
-	to_chat(user, "<span>You begin to take down the sandbags...</span>")
+	user.visible_message("<span class='notice'>[user] starts to down [src]...</span>", "<span class='notice'>You start to take down [src]...</span>")
 	if(!has_buckled_mobs() && do_after(user, 80, target = src))
+		to_chat("<span class='notice'>You take down [src].</span>")
 		new /obj/item/stack/sheet/mineral/sandbags(src.loc)
 		qdel(src)
 		return
+/obj/structure/barricade/sandbags/make_debris()
+	new /obj/item/stack/ore/glass(get_turf(src), drop_amount)
 
 /obj/structure/barricade/security
 	name = "security barrier"
