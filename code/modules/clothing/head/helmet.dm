@@ -557,7 +557,7 @@
 
 /obj/item/clothing/head/helmet/f13/brokenpa/raider
 	name = "raider power helmet"
-	desc = "I LIVE, I DIE, I LIVE AGAIN. WITNESS ME.
+	desc = "I LIVE, I DIE, I LIVE AGAIN. WITNESS ME."
 	icon_state = "raiderpowerhelmet"
 	item_state = "raiderpowerhelmet"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 0)
