@@ -499,7 +499,7 @@
 	display_name = "Electric Weapons"
 	description = "Weapons using electric technology"
 	prereq_ids = list("weaponry", "adv_power", "emp_basic")
-	design_ids = list("ioncarbine")
+	design_ids = list("ioncarbine", "stunrevolver")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -517,7 +517,7 @@
 	display_name = "Beam Weaponry"
 	description = "Various basic beam weapons"
 	prereq_ids = list("adv_weaponry")
-	design_ids = list("laserrifle")
+	design_ids = list("laserrifle", "temp_gun")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -540,7 +540,7 @@
 	design_ids = list("large_Grenade", "pyro_Grenade", "adv_Grenade")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+/*
 /datum/techweb_node/ballistic_weapons
 	id = "ballistic_weapons"
 	display_name = "Ballistic Weaponry"
@@ -549,7 +549,7 @@
 	design_ids = list("armag", "shotgunbuck", "shotgunslug", "shotgunrubber", "shotgunbean" , "smgmag", "smg", "shotgun", "ar", "bulletarmor", "bullethelmet")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-/*
+
 /datum/techweb_node/tech_shell
 	id = "tech_shell"
 	display_name = "Technological Shells"
@@ -558,15 +558,16 @@
 	design_ids = list()
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+	*/
 /datum/techweb_node/gravity_gun
 	id = "gravity_gun"
-	display_name = "One-point Bluespace-gravitational Manipulator"
+	display_name = "One-point Gravitational Manipulator"
 	description = "Fancy wording for gravity gun."
-	prereq_ids = list("adv_weaponry", "adv_bluespace")
-	design_ids = list()
+	prereq_ids = list("adv_weaponry", "future_parts")
+	design_ids = list("gravitygun")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-*/
+
 ////////////////////////mech technology////////////////////////
 /datum/techweb_node/mech
 	id = "mecha"

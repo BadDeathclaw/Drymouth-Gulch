@@ -261,7 +261,7 @@
 	icon_state = "freezegun"
 	desc = "A gun that changes temperatures."
 	ammo_type = list(/obj/item/ammo_casing/energy/temp, /obj/item/ammo_casing/energy/temp/hot)
-	cell_type = "/obj/item/stock_parts/cell/high"
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	pin = null
 
 /obj/item/gun/energy/temperature/security
@@ -293,7 +293,7 @@
 	return
 
 /obj/item/gun/energy/gravity_gun
-	name = "one-point bluespace-gravitational manipulator"
+	name = "one-point gravitational manipulator"
 	desc = "An experimental, multi-mode device that fires bolts of Zero-Point Energy, causing local distortions in gravity."
 	ammo_type = list(/obj/item/ammo_casing/energy/gravity/repulse, /obj/item/ammo_casing/energy/gravity/attract, /obj/item/ammo_casing/energy/gravity/chaos)
 	item_state = "gravity_gun"
