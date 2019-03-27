@@ -1011,7 +1011,6 @@
 				/obj/item/toy/cards/deck,
 				/obj/item/trash/tray,
 				/obj/item/toy/xmas_cracker,
-				/obj/item/reagent_containers/spray/spraytan,
 				/obj/item/reagent_containers/glass/bowl,
 				/obj/item/reagent_containers/spray/cleaner,
 				/obj/item/reagent_containers/glass/bucket,
