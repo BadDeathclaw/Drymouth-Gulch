@@ -73,6 +73,7 @@
 	var/job = null//Living
 
 	var/list/faction = list("neutral") //A list of factions that this mob is currently in, for hostile mob targetting, amongst other things
+	var/list/faction_deaths = list() // A list of people of the same faction that this mob has seen dead, for mood modifiers after seeing enough dead comrades and for removal upon burying
 	var/move_on_shuttle = 1 // Can move on the shuttle.
 
 //The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)

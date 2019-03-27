@@ -711,7 +711,7 @@
 	name = ".308 bullet casing"
 	desc = "A .308 bullet casing."
 	icon_state = "762-casing"
-	caliber = "a308"
+	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/a308
 
 /obj/item/ammo_casing/caseless/needle

@@ -138,7 +138,7 @@
 		use_power(min(1000, amount_inserted / 100))
 	updateUsrDialog()
 
-/obj/machinery/autolathe/Topic(href, href_list)
+/obj/machinery/autolathe/Topic(href, href_list) // Do we need href_list or will LAZY* do this and, furthermore, do we need to merge href_list with LAZY*? Something to ask LetterN.
 	if(..())
 		return
 	if (!busy)
@@ -417,3 +417,8 @@
 	else
 		attack_hand(user)
 		return TRUE
+
+/obj/machinery/autolathe/constructionlathe/can_build(datum/design/D, amount = 1)
+	. = ..()
+	if("Security" in D.category)
+		return FALSE

@@ -144,7 +144,7 @@ Veteran Decan
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -181,7 +181,7 @@ Vexillarius
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -221,7 +221,7 @@ Decan
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -258,7 +258,7 @@ Veteran
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/m44=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \

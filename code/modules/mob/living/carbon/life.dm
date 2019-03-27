@@ -20,6 +20,9 @@
 	if(stat != DEAD)
 		handle_liver()
 
+	if(stat != DEAD)
+		handle_bodycheck()
+
 	if(stat == DEAD)
 		stop_sound_channel(CHANNEL_HEARTBEAT)
 
@@ -594,3 +597,19 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		return
 
 	heart.beating = !status
+
+//SEEING DEAD BODIES OF FACTION MEMBERS - FL13
+
+/mob/living/carbon/proc/handle_bodycheck()
+	for(var/mob/H in oview(src, 7))
+		if(H.stat == DEAD)
+			for(var/F in src.faction)
+				if(F in H.faction)
+					if(F != "neutral") //doesn't work merged with above, fix if you can
+						if(LAZYFIND(src.faction_deaths, H.real_name)) //same here
+							return
+						else
+							LAZYADD(src.faction_deaths, H.real_name)
+							to_chat(src, src.faction_deaths.len)
+							if(LAZYLEN(src.faction_deaths) >= 3)
+								SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "saw_many_unburied_faction", /datum/mood_event/saw_many_unburied_faction)
