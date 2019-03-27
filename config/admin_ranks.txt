@@ -48,8 +48,6 @@ Three Dog		= -@ -ADMIN +DJ
 Scribe 			= +POSSESS +SERVER +REJUV +BUILD +DEBUG +VAREDIT +SOUND +SPAWN +DJ +POLL -AUTOLOGIN
 Head Scribe 		= +@ +RIGHTS -AUTOLOGIN
 
-Head Coder      = +EVERYTHING
-Coder			= +DEBUG +VAREDIT +SERVER +SPAWN +POLL -AUTOLOGIN
 Initiate		= +ADMIN
 Aspirant 		= +@ +BAN +REJUV
 Knight 			= +@ +SPAWN +FUN +VAREDIT +POSSESS +SOUND
