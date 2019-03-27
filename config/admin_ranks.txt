@@ -46,7 +46,7 @@ Lazy Master 	= +EVERYTHING -AUTOLOGIN *EVERYTHING
 Three Dog		= -@ -ADMIN +DJ
 
 Scribe 			= +POSSESS +REJUV +BUILD +SERVER +DEBUG +VAREDIT +SOUND +SPAWN +DJ +POLL -AUTOLOGIN
-Head Scribe 		= +@ +RIGHTS -AUTOLOGIN
+Head Scribe 	= +@ +RIGHTS -AUTOLOGIN
 
 Initiate		= +ADMIN +REJUV
 Aspirant 		= +@ +BAN +REJUV +SPAWN
