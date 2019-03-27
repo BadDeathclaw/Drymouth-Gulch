@@ -17,6 +17,7 @@
 # BEGIN_KEYWORDS
 # +ADMIN = general admin tools, verbs etc
 # +FUN = events, other event-orientated actions. Access to the fun secrets in the secrets panel.
+# +DJ = A tool that functions like +SOUND just with a couple changes and a volume selector.
 # +BAN = the ability to ban, jobban and fullban
 # +STEALTH = the ability to stealthmin (make yourself appear with a fake name to everyone but other admins
 # +POSSESS = the ability to possess objects
@@ -33,6 +34,7 @@
 # +EVERYTHING (or +HOST or +ALL) = Simply gives you everything without having to type every flag
 # END_KEYWORDS
 
+#Previous ranks on archive incase someone shits the proverbial bed. (once everyone has been switched over to the new ranks you're more than welcome to blitz these to reduce bloat)
 Admin Observer	= -AUTOLOGIN
 Moderator		= +ADMIN
 Admin Candidate	= +@
@@ -43,15 +45,13 @@ Game Master		= +EVERYTHING *EVERYTHING
 Lazy Master 	= +EVERYTHING -AUTOLOGIN *EVERYTHING
 Three Dog		= -@ -ADMIN +DJ
 
-Head Coder      = +FUN +STEALTH +POSSESS +REJUV +BUILD +SERVER +DEBUG +VAREDIT +SOUND +SPAWN +RIGHTS +DJ +POLL
-Coder			= +DEBUG +VAREDIT +SERVER +SPAWN +POLL -AUTOLOGIN
+Scribe 			= +SERVER +DEBUG +VAREDIT +SPAWN -AUTOLOGIN
+Head Scribe 	= +@ +POLL -AUTOLOGIN
 
-Initiate		= +ADMIN +BAN +REJUV 
-Aspirant 		= +ADMIN +BAN +REJUV +SPAWN +SOUND
-Knight 			= +ADMIN +BAN +REJUV +STEALTH +FUN +POSSESS +SOUND +SPAWN +VAREDIT
-Paladin			= +ADMIN +BAN +REJUV +STEALTH +FUN +POSSESS +BUILD +SOUND +SPAWN +SERVER +DJ +POLL +VAREDIT
-Head Paladin	= +ADMIN +BAN +REJUV +STEALTH +FUN +POSSESS +BUILD +SOUND +SPAWN +SERVER +RIGHTS +DJ +POLL +VAREDIT
-Scribe 			= +STEALTH +POSSESS +REJUV +BUILD +DEBUG +VAREDIT +SOUND +SPAWN +DJ +POLL -AUTOLOGIN
-Head Scribe 	= +STEALTH +POSSESS +REJUV +BUILD +SERVER +DEBUG +VAREDIT +SOUND +SPAWN +RIGHTS +DJ +POLL -AUTOLOGIN
-Elder			= +EVERYTHING
+Initiate		= +ADMIN
+Aspirant 		= +@ +BAN
+Knight 			= +@ +SPAWN +FUN +VAREDIT
+Paladin			= +@ +STEALTH +POSSESS +BUILD +SOUND +SERVER +DEBUG
+Head Paladin	= +EVERYTHING *EVERYTHING
+Elder			= +EVERYTHING *EVERYTHING
 Host 			= +EVERYTHING *EVERYTHING
