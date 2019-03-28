@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	layer = LOW_ITEM_LAYER
 	novariants = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/sandbags
-	full_w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_NORMAL
 
 GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	new/datum/stack_recipe("sandbags", /obj/structure/barricade/sandbags, 1, time = 25, one_per_turf = 1, on_floor = 1), \
