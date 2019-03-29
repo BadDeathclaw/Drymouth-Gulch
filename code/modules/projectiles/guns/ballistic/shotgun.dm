@@ -306,6 +306,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
+	fire_delay = 4 //but not too much fun
 
 //Colt Rangemaster
 /obj/item/gun/ballistic/shotgun/automatic/hunting
