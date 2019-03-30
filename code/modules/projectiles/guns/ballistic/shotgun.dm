@@ -301,7 +301,7 @@
 	item_state = "sniper"
 	mag_type = /obj/item/ammo_box/magazine/internal/antimateriel
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
-	pump_sound = 'sound/weapons/antimaterielreload.ogg'
+	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
