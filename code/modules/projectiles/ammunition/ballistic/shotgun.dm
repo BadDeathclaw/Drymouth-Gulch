@@ -26,7 +26,7 @@
 	icon_state = "ishell2"
 	projectile_type = /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	pellets = 4
-	variance = 35
+	variance = 28
 
 /obj/item/ammo_casing/shotgun/stunslug
 	name = "12 gauge taser slug"
@@ -60,16 +60,16 @@
 	desc = "A 12 gauge buckshot shell."
 	icon_state = "gshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_buckshot
-	pellets = 12
-	variance = 35
+	pellets = 6
+	variance = 28
 
 /obj/item/ammo_casing/shotgun/rubbershot
 	name = "12 gauge riot control shell"
 	desc = "A shotgun casing filled with densely-packed rubber balls, used to incapacitate crowds from a distance."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
-	pellets = 12
-	variance = 35
+	pellets = 6
+	variance = 28
 
 /obj/item/ammo_casing/shotgun/improvised
 	name = "12 gauge improvised shell"
@@ -77,8 +77,8 @@
 	icon_state = "improvshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
 	materials = list(MAT_METAL=250)
-	pellets = 10
-	variance = 35
+	pellets = 5
+	variance = 28
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "12 gauge ion shell"
@@ -87,7 +87,7 @@
 	icon_state = "ionshell"
 	projectile_type = /obj/item/projectile/ion/weak
 	pellets = 4
-	variance = 35
+	variance = 28
 
 /obj/item/ammo_casing/shotgun/laserslug
 	name = "12 gauge laser slug"

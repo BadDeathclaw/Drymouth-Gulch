@@ -315,9 +315,9 @@
 
 /obj/item/flashlight/flare/torch
 	name = "torch"
-	desc = "A handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while unlit."
+	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
 	w_class = WEIGHT_CLASS_NORMAL
-	brightness_on = 4
+	brightness_on = 5
 	icon_state = "torch"
 	item_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
@@ -343,6 +343,7 @@
 		force = on_damage
 		damtype = "fire"
 		w_class = WEIGHT_CLASS_BULKY
+		desc = "A handheld wooden torch that's slowly burning away."
 		START_PROCESSING(SSobj, src)
 
 /obj/item/flashlight/lantern
