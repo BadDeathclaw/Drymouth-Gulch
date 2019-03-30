@@ -1261,17 +1261,17 @@
 	..()
 	return TRUE
 
-/datum/reagent/medicine/stimpak
+/datum/reagent/medicine/stimpak_a
 	name = "Stimpak Fluid"
-	id = "stimpak"
-	description = "Rapidly heals damage when injected. Deals minor toxin damage if injested."
+	id = "stimpak_a"
+	description = "Rapidly heals damage when injected. Deals minor toxin damage if ingested."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
-	metabolization_rate = 3 * REAGENTS_METABOLISM
+	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
-/datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/stimpak_a/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR))
 			M.adjustToxLoss(0.5*reac_volume)
@@ -1279,16 +1279,52 @@
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
 
-/datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-4*REM, 0)
-	M.adjustFireLoss(-4*REM, 0)
-	M.adjustOxyLoss(-3*REM, 0)
+/datum/reagent/medicine/stimpak_a/on_mob_life(mob/living/carbon/M)
+	M.adjustBruteLoss(-6*REM, 0)
+	M.adjustFireLoss(-6*REM, 0)
+	M.adjustOxyLoss(-6*REM, 0)
+	M.adjustToxLoss(-0.5*REM, 0)
+	M.AdjustStun(-10, 0)
+	M.AdjustKnockdown(-10, 0)
+	M.AdjustUnconscious(-10, 0)
+	M.adjustStaminaLoss(-4*REM, 0)
 	. = 1
 	..()
 
-/datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
+/datum/reagent/medicine/stimpak_a/overdose_process(mob/living/M)
+	M.adjustToxLoss(5*REM, 0)
+	M.adjustOxyLoss(8*REM, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/stimpak_b
+	name = "Stimpak Fluid"
+	id = "stimpak_b"
+	description = "The slowly healing secondary fluid in a stimpak. Deals minor toxin damage if ingested."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	taste_description = "grossness"
+	metabolization_rate = REAGENTS_METABOLISM
+	overdose_threshold = 18
+
+/datum/reagent/medicine/stimpak_b/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(iscarbon(M) && M.stat != DEAD)
+		if(method in list(INGEST, VAPOR))
+			M.adjustToxLoss(0.5*reac_volume)
+			if(show_message)
+				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
+	..()
+
+/datum/reagent/medicine/stimpak_b/on_mob_life(mob/living/carbon/M)
+	M.adjustBruteLoss(-0.7*REM, 0)
+	M.adjustFireLoss(-0.7*REM, 0)
+	M.adjustOxyLoss(-0.7*REM, 0)
+	. = 1
+	..()
+
+/datum/reagent/medicine/stimpak_b/overdose_process(mob/living/M)
 	M.adjustToxLoss(2.5*REM, 0)
-	M.adjustOxyLoss(7*REM, 0)
+	M.adjustOxyLoss(6*REM, 0)
 	..()
 	. = 1
 
@@ -1299,7 +1335,7 @@
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)

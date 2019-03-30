@@ -179,10 +179,10 @@
 	name = "stimpak"
 	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
 	icon_state = "stimpakpen"
-	volume = 10
-	amount_per_transfer_from_this = 10
-	list_reagents = list("stimpak" = 10)
-	
+	volume = 20
+	amount_per_transfer_from_this = 20
+	list_reagents = list("stimpak_a" = 10, "stimpak_b" = 10)
+
 /*
 /obj/item/reagent_containers/hypospray/medipen/psycho
 	name = "Psycho"
