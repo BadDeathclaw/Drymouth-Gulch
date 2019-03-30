@@ -106,8 +106,8 @@
 	materials = list(MAT_METAL = 10000)
 
 /obj/item/ammo_box/a50MG
-	name = "anti-materiel stripper clip (.50MG)"
-	desc = "A .50 MG stripper clip, for when you really need something dead."
+	name = "anti-materiel ammo rack (.50MG)"
+	desc = "A rack of .50 MG ammo, for when you really need something dead."
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a50MG
 	max_ammo = 5
@@ -115,8 +115,8 @@
 	materials = list(MAT_METAL = 14000)
 
 /obj/item/ammo_box/a50MG/incendiary
-	name = "anti-materiel incendiary stripper clip (.50MG)"
-	desc = "A .50 MG stripper clip, for when you really need something dead... and also on fire."
+	name = "anti-materiel incendiary ammo rack (.50MG)"
+	desc = "A rack of .50 MG ammo, for when you really need something dead... and also on fire."
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a50MG/incendiary
 	max_ammo = 5
@@ -124,8 +124,8 @@
 	materials = list(MAT_METAL = 20000)
 
 /obj/item/ammo_box/a50MG/AP
-	name = "anti-materiel stripper clip (.50MG)"
-	desc = "A .50 MG stripper clip, for when you really need (a very big) something dead."
+	name = "anti-materiel ammo rack (.50MG)"
+	desc = "A .rack of .50 MG ammo, for when you really need (a very big) something dead."
 	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a50MG/AP
 	max_ammo = 5

@@ -26,8 +26,8 @@
 	max_ammo = 5
 	multiload = 1
 
-/obj/item/ammo_box/magazine/internal/boltaction/antimateriel
+/obj/item/ammo_box/magazine/internal/antimateriel
 	ammo_type = /obj/item/ammo_casing/a50MG
 	caliber = "a50MG"
 	max_ammo = 4
-	multiload = 1
+	multiload = 0 //one bullet at a time

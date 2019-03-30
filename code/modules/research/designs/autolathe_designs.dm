@@ -806,7 +806,7 @@
 	category = list("initial", "Security")
 
 /datum/design/a50MG
-	name = "Anti-Materiel Stripper Clip (.50MG)"
+	name = "Anti-Materiel Ammo Rack (.50MG)"
 	id = "a50MG"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 14000)
@@ -814,7 +814,7 @@
 	category = list("initial", "Security")
 
 /datum/design/a50MGincendiary
-	name = "Anti-Materiel Incendiary Stripper Clip (.50MG)"
+	name = "Anti-Materiel Incendiary Ammo Rack (.50MG)"
 	id = "a50MGincendiary"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 20000)
@@ -822,7 +822,7 @@
 	category = list("initial", "Security")
 
 /datum/design/a50MGAP
-	name = "Anti-Materiel Armor-Piercing Stripper Clip (.50MG)"
+	name = "Anti-Materiel Armor-Piercing Ammo Rack (.50MG)"
 	id = "a50MGAP"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 16000)
