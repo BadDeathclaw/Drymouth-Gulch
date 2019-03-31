@@ -359,7 +359,7 @@
 			addStaticPower(static_power_used, STATIC_LIGHT)
 		else
 			removeStaticPower(static_power_used, STATIC_LIGHT)
-
+	night_update()
 
 /obj/machinery/light/process()
 	if (!cell)
@@ -830,10 +830,9 @@
 	base_state = "lamppost1"
 	desc = "a post supporting a usually outdoor lamp or lantern."
 	brightness = 8
-	//active_power_usage = 100
+	active_power_usage = 0
 	density = 0
 	layer = WALL_OBJ_LAYER
-	//sun_triger = 1
 	nightshift_allowed = FALSE
 	start_with_cell = FALSE
 	no_emergency = TRUE
