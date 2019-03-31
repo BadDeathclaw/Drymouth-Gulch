@@ -7,7 +7,7 @@
 //	var/parts[] = list() //type paths of items that will be placed in the result
 //	var/category = CAT_NONE //where it shows up in the crafting UI
 //	var/subcategory = CAT_NONE
-//9mm 10mm 357. 44. 45. 5.56 7.62
+//9mm 10mm .357 44. 45. 5.56 7.62
 // in the future, if you want to add more calibers, you'll need to create a bullet, bullet recipie, die, die recipie, and bullet creation recipies.
 // to adjust scarcity levels, change the amount of bullets that you get with one metal sheet from five to a lower number
 // made by john oxford
@@ -41,7 +41,8 @@
 	icon_state = "diesmall"
 
 /obj/item/reloading/die/threefiftyseven
-	name = "357. reloading die"
+	name = "
+	. reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
 	icon_state = "diesmall"
 
@@ -83,7 +84,7 @@
 	icon_state = "smallbullet"
 
 /obj/item/reloading/bullet/threefiftyseven
-	name = "357. bullet"
+	name = ".357 bullet"
 	desc = "A bullet designed for .357 cartridges."
 	icon_state = "revolverbullet"
 
@@ -126,7 +127,7 @@
 	subcategory = CAT_RELOADING
 
 /datum/crafting_recipe/die357
-	name = "357. bullet die"
+	name = ".357 bullet die"
 	result = /obj/item/reloading/die/threefiftyseven
 	reqs = list(/obj/item/stack/sheet/mineral/sandstone = 1)
 	time = 15
@@ -186,7 +187,7 @@
 	subcategory = CAT_RELOADING
 
 /datum/crafting_recipe/threefiftysevenbullet
-	name = "357. bullet"
+	name = ".357 bullet"
 	result = list(/obj/item/reloading/bullet/threefiftyseven = 5)
 	reqs = list(/obj/item/stack/sheet/metal = 1)
 	tools = list(/obj/item/reloading/die/threefiftyseven, TOOL_WELDER)
@@ -252,7 +253,7 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/threefiftyseven
-	name = "357. cartridge"
+	name = ".357 cartridge"
 	result = list(/obj/item/ammo_casing/a357 = 1)
 	reqs = list(/obj/item/reloading/bullet/threefiftyseven = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
 	tools = list(/obj/item/reloading/reloadingpress = 1, )
