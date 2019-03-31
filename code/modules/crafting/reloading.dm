@@ -41,8 +41,7 @@
 	icon_state = "diesmall"
 
 /obj/item/reloading/die/threefiftyseven
-	name = "
-	. reloading die"
+	name = " .357 reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
 	icon_state = "diesmall"
 
