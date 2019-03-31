@@ -805,6 +805,30 @@
 	build_path = /obj/item/ammo_box/a762/doublestacked
 	category = list("initial", "Security")
 
+/datum/design/a50MG
+	name = "Anti-Materiel Ammo Rack (.50MG)"
+	id = "a50MG"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 14000)
+	build_path = /obj/item/ammo_box/a50MG
+	category = list("initial", "Security")
+
+/datum/design/a50MGincendiary
+	name = "Anti-Materiel Incendiary Ammo Rack (.50MG)"
+	id = "a50MGincendiary"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 20000)
+	build_path = /obj/item/ammo_box/a50MG/incendiary
+	category = list("initial", "Security")
+
+/datum/design/a50MGAP
+	name = "Anti-Materiel Armor-Piercing Ammo Rack (.50MG)"
+	id = "a50MGAP"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 16000)
+	build_path = /obj/item/ammo_box/a50MG/AP
+	category = list("initial", "Security")
+
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
 	id = "cleaver"
