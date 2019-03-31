@@ -11,6 +11,7 @@
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
 	weapon_weight = WEAPON_HEAVY
+	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -48,7 +49,7 @@
 		. = 1
 
 /obj/item/gun/ballistic/shotgun/proc/pump(mob/M)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, pump_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
@@ -291,6 +292,24 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
+
+//Anti-Materiel Rifle (NCR)
+/obj/item/gun/ballistic/shotgun/automatic/antimateriel
+	name = "anti-materiel rifle"
+	desc = "A heavy, high-powered sniper rifle chambered in .50 caliber ammunition, custom-made for use by the New California Republic Rangers. Although relatively austere, you're still pretty sure it could take the head off a deathclaw."
+	icon_state = "sniper"
+	item_state = "sniper"
+	mag_type = /obj/item/ammo_box/magazine/internal/antimateriel
+	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
+	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	force = 35
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	recoil = 1 //have fun
+	fire_delay = 10 //but not too much fun
 
 //Colt Rangemaster
 /obj/item/gun/ballistic/shotgun/automatic/hunting

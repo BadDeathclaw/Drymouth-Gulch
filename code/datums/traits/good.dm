@@ -27,7 +27,7 @@
 			mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
 
 /datum/quirk/bigleagues
-	name = "Big Leauges"
+	name = "Big Leagues"
 	desc = "Swing for the fences! You deal additional damage with melee weapons."
 	value = 2
 	mob_trait = TRAIT_BIG_LEAGUES
