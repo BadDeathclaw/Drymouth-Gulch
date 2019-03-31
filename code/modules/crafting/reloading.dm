@@ -46,12 +46,12 @@
 	icon_state = "diesmall"
 
 /obj/item/reloading/die/fortyfour
-	name = "44. reloading die"
+	name = ".44 reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
 	icon_state = "diesmall"
 
 /obj/item/reloading/die/fortyfive
-	name = "45. reloading die"
+	name = ".45 reloading die"
 	desc = "A sandstone reloading die with 5 slots each carved into the shape of a 9mm bullet. You vaguely can make out the letters O and X on the bottom of the brick."
 	icon_state = "diesmall"
 
@@ -88,12 +88,12 @@
 	icon_state = "revolverbullet"
 
 /obj/item/reloading/bullet/fortyfour
-	name = "44. bullet"
+	name = ".44 bullet"
 	desc = "A bullet designed for 44. cartridges."
 	icon_state = "revolverbullet"
 
 /obj/item/reloading/bullet/fortyfive
-	name = "45. bullet"
+	name = ".45 bullet"
 	desc = "A bullet designed for 45. cartridges."
 	icon_state = "revolverbullet"
 
@@ -134,7 +134,7 @@
 	subcategory = CAT_RELOADING
 
 /datum/crafting_recipe/die44
-	name = "44. bullet die"
+	name = ".44 bullet die"
 	result = /obj/item/reloading/die/fortyfour
 	reqs = list(/obj/item/stack/sheet/mineral/sandstone = 1)
 	time = 15
@@ -142,7 +142,7 @@
 	subcategory = CAT_RELOADING
 
 /datum/crafting_recipe/die45
-	name = "45. bullet die"
+	name = ".45 bullet die"
 	result = /obj/item/reloading/die/fortyfive
 	reqs = list(/obj/item/stack/sheet/mineral/sandstone = 1)
 	time = 15
@@ -195,7 +195,7 @@
 	subcategory = CAT_RELOADING
 
 /datum/crafting_recipe/fortyfourbullet
-	name = "44. bullet"
+	name = ".44 bullet"
 	result = list(/obj/item/reloading/bullet/fortyfour = 5)
 	reqs = list(/obj/item/stack/sheet/metal = 1)
 	tools = list(/obj/item/reloading/die/fortyfour, TOOL_WELDER)
@@ -204,7 +204,7 @@
 	subcategory = CAT_RELOADING
 
 /datum/crafting_recipe/fortyfivebullet
-	name = "45. bullet"
+	name = ".45 bullet"
 	result = list(/obj/item/reloading/bullet/fortyfive = 5)
 	reqs = list(/obj/item/stack/sheet/metal = 1)
 	tools = list(/obj/item/reloading/die/fortyfive, TOOL_WELDER)
@@ -261,7 +261,7 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/fortyfour
-	name = "44. cartridge"
+	name = ".44 cartridge"
 	result = list(/obj/item/ammo_casing/m44 = 1)
 	reqs = list(/obj/item/reloading/bullet/fortyfour = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
 	tools = list(/obj/item/reloading/reloadingpress = 1, )
@@ -270,7 +270,7 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/fortyfive
-	name = "45. cartridge"
+	name = ".45 cartridge"
 	result = list(/obj/item/ammo_casing/c45= 1)
 	reqs = list(/obj/item/reloading/bullet/fortyfive = 1, /datum/reagent/blackpowder = 3, /obj/item/stack/sheet/metal = 1 )
 	tools = list(/obj/item/reloading/reloadingpress = 1, )
