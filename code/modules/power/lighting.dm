@@ -224,6 +224,10 @@
 	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 
+	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
+	var/nightshift_start_time = 702000		//7:30 PM, station time
+	var/nightshift_end_time = 270000		//7:30 AM, station time
+
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
 	icon_state = "tube-broken"
@@ -836,9 +840,6 @@
 	nightshift_allowed = FALSE
 	start_with_cell = FALSE
 	no_emergency = TRUE
-	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
-	var/nightshift_start_time = 702000		//7:30 PM, station time
-	var/nightshift_end_time = 270000		//7:30 AM, station time
 
 /obj/machinery/light/proc/night_update() //gah, cant have procs with same name from parent
 	var/time = station_time()
