@@ -257,7 +257,7 @@
 
 /datum/crafting_recipe/beanbag
 	name = "beanbag shotgun box (Legion)"
-	result = /obj/item/storage/box/beanbag
+	result = /obj/item/storage/box/rubbershot/beanbag
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/sheet/cardboard = 1)
 	tools = list(TOOL_SCREWDRIVER,
@@ -287,7 +287,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/9mm
+/datum/crafting_recipe/c9mm
 	name = "9mm ammo box (NCR)"
 	result = /obj/item/ammo_box/c9mm
 	reqs = list(/obj/item/stack/sheet/metal = 10)
@@ -319,7 +319,7 @@
 
 /datum/crafting_recipe/a762lp
 	name = "7.62mm lowpower double stacked stripper clip (NCR)"
-	result = /obj/item/ammo_box/a762lp
+	result = /obj/item/ammo_box/a762/doublestacked
 	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
 				/obj/machinery/ammobench/ncr)

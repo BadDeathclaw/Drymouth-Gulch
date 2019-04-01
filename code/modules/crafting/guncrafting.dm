@@ -14,6 +14,7 @@
 	icon = 'icons/obj/improvised.dmi'
 	icon_state = "riflestock"
 
+
 /obj/machinery/ammobench
 	name = "reloading bench"
 	desc = "You shouldn't be seeing this..."

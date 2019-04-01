@@ -25,6 +25,8 @@
 	var/scan_reagents = 0 //Can the wearer see reagents while it's equipped?
 	var/ispowerarmor
 	var/airtight //For rig suits
+	var/darkness_view = 0
+	var/lighting_alpha
 
 	var/clothing_flags = NONE
 
