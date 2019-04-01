@@ -840,7 +840,7 @@
 	var/nightshift_start_time = 702000		//7:30 PM, station time
 	var/nightshift_end_time = 270000		//7:30 AM, station time
 
-/obj/machinery/light/lampost/proc/night_update() //gah, cant have procs with same name from parent
+/obj/machinery/light/proc/night_update() //gah, cant have procs with same name from parent
 	var/time = station_time()
 	var/night_time = (time < nightshift_end_time) || (time > nightshift_start_time)
 	if(night_time)	//night
