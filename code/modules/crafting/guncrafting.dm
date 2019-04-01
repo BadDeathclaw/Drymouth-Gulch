@@ -25,6 +25,10 @@
 	layer = BELOW_OBJ_LAYER
 	anchored = TRUE
 
+/obj/machinery/ammobench/wrench_act(mob/living/user, obj/item/I)
+	default_unfasten_wrench(user, I, 10)
+	return TRUE
+
 /obj/machinery/ammobench/ncr
 	name = "NCR reloading bench"
 	desc = "A reloading bench used for inefficiently  crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This one can be used to create most NCR rounds."
