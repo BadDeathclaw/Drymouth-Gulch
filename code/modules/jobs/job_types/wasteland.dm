@@ -50,6 +50,13 @@ wasteland
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
+	r_hand = pick(
+		/obj/item/claymore/machete/pipe, \
+		/obj/item/claymore/machete/golf, \
+		/obj/item/switchblade, \
+		/obj/item/kitchen/knife, \
+		/obj/item/kitchen/rollingpin, \
+		/obj/item/oar)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
@@ -64,7 +71,7 @@ wasteland
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/blood/radaway=1, \
-		/obj/item/reagent_containers/food/drinks/flask, \
+		\
 		/obj/item/storage/bag/money/small/wastelander)
 
 
