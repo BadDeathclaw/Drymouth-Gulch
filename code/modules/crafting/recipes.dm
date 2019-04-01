@@ -213,6 +213,130 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/m44
+	name = ".44 Magnum speed loader (Legion)"
+	result = /obj/item/ammo_box/m44
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/legion)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c10mm
+	name = "10mm ammo box (Legion)"
+	result = /obj/item/ammo_box/c10mm
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/legion)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/lethalshot
+	name = "buckshot shotgun box (Legion)"
+	result = /obj/item/storage/box/lethalshot
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/legion)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/slugshot
+	name = "slug shotgun box (Legion)"
+	result = /obj/item/storage/box/slugshot
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/legion)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/beanbag
+	name = "beanbag shotgun box (Legion)"
+	result = /obj/item/storage/box/beanbag
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/legion)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/rubbershot
+	name = "rubbershot shotgun box (Legion)"
+	result = /obj/item/storage/box/rubbershot
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/legion)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a556
+	name = "5.56mm ammo box (NCR)"
+	result = /obj/item/ammo_box/a556
+	reqs = list(/obj/item/stack/sheet/metal = 13)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/ncr)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/9mm
+	name = "9mm ammo box (NCR)"
+	result = /obj/item/ammo_box/c9mm
+	reqs = list(/obj/item/stack/sheet/metal = 10)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/ncr)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c4570
+	name = ".45-70 speed loader (NCR)"
+	result = /obj/item/ammo_box/c4570
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/ncr)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a762
+	name = "7.62mm stripper clip (NCR)"
+	result = /obj/item/ammo_box/a762
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/ncr)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a762lp
+	name = "7.62mm lowpower double stacked stripper clip (NCR)"
+	result = /obj/item/ammo_box/a762lp
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/ncr)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a308
+	name = ".308 stripper clip (NCR)"
+	result = /obj/item/ammo_box/a308
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				/obj/machinery/ammobench/ncr)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/meteorslug
 	name = "Meteorslug Shell"
 	result = /obj/item/ammo_casing/shotgun/meteorslug

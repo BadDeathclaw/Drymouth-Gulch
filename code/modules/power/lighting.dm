@@ -359,7 +359,7 @@
 			addStaticPower(static_power_used, STATIC_LIGHT)
 		else
 			removeStaticPower(static_power_used, STATIC_LIGHT)
-	night_update()
+//	night_update()
 
 /obj/machinery/light/process()
 	if (!cell)
