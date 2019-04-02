@@ -77,7 +77,7 @@ Needs whitelist
 Centurion
 */
 /datum/job/CaesarsLegion/Legionnaire/f13centurion
-	title = "Legion Centurion"
+	title = "Centurion"
 	flag = F13CENTURION
 	faction = "Legion"
 	head_announce = list("Security")
@@ -119,7 +119,7 @@ Centurion
 Veteran Decan
 */
 /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
-	title = "Legion Veteran Decanus"
+	title = "Veteran Decanus"
 	flag = F13VETDECAN
 	faction = "Legion"
 	total_positions = 1
@@ -133,7 +133,7 @@ Veteran Decan
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
-	name = "Legion Veteran Decanus"
+	name = "Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
@@ -154,7 +154,7 @@ Veteran Decan
 Decan
 */
 /datum/job/CaesarsLegion/Legionnaire/f13decan
-	title = "Legion Decanus"
+	title = "Decanus"
 	flag = F13DECAN
 	faction = "Legion"
 	total_positions = 2
@@ -170,7 +170,7 @@ Decan
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
-	name = "Legion Decanus"
+	name = "Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13decan
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
@@ -193,7 +193,7 @@ Decan
 Vexillarius
 */
 /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
-	title = "Legion Vexillarius"
+	title = "Vexillarius"
 	flag = F13VEXILLARIUS
 	faction = "Legion"
 	total_positions = 2
@@ -281,7 +281,7 @@ Legionary
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
-	name = "Legionnaire"
+	name = "Legionary"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
@@ -301,7 +301,7 @@ Legionary
 
 
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
-	title = "Legion Explorer"
+	title = "Explorer"
 	flag = F13EXPLORER
 	faction = "Legion"
 	total_positions = 2
@@ -317,7 +317,7 @@ Legionary
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
-	name = "Legion Explorer"
+	name = "Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/explorer
@@ -333,7 +333,7 @@ Legionary
 	r_pocket = /obj/item/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
-	title = "Legion Scout"
+	title = "Scout"
 	flag = F13SCOUT
 	total_positions = 4
 	spawn_positions = 4
@@ -345,7 +345,7 @@ Legionary
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
-	name = "Legion Scout"
+	name = "Scout"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13scout
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
@@ -362,7 +362,7 @@ Legionary
 	box = null
 
 /datum/job/CaesarsLegion/f13campfollower
-	title = "Legion Camp Follower"
+	title = "Camp Follower"
 	flag = F13CAMPFOLLOWER
 	faction = "Legion"
 	total_positions = 3
