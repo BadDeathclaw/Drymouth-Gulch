@@ -63,7 +63,7 @@ wasteland
 		/obj/item/clothing/under/f13/machinist, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
-	l_pocket = 		/obj/item/reagent_containers/food/drinks/flask
+	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
@@ -71,7 +71,6 @@ wasteland
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/blood/radaway=1, \
-		\
 		/obj/item/storage/bag/money/small/wastelander)
 
 
