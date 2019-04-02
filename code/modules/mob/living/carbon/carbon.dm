@@ -552,6 +552,11 @@
 			see_invisible = min(G.invis_view, see_invisible)
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
+	if(head)
+		var/obj/item/clothing/head/H = head
+		see_in_dark = max(H.darkness_view, see_in_dark)
+		if(!isnull(H.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, H.lighting_alpha)
 	if(dna)
 		for(var/X in dna.mutations)
 			var/datum/mutation/M = X
