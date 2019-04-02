@@ -426,7 +426,7 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
 	build_path = /obj/item/reagent_containers/glass/beaker/solids
-	category = list("initial", "Medical")
+	category = list("initial", "Security")
 
 /datum/design/healthanalyzer
 	name = "Health Analyzer"
