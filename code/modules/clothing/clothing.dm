@@ -27,6 +27,7 @@
 	var/airtight //For rig suits
 	var/darkness_view = 0
 	var/lighting_alpha
+	var/glass_colour_type //colors your vision when worn
 
 	var/clothing_flags = NONE
 

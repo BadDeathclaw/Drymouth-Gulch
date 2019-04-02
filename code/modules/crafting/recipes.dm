@@ -218,7 +218,7 @@
 	result = /obj/item/ammo_box/m44
 	reqs = list(/obj/item/stack/sheet/metal = 4)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/legion)
+				TOOL_LEGION)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -228,7 +228,7 @@
 	result = /obj/item/ammo_box/c10mm
 	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/legion)
+				TOOL_LEGION)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -239,7 +239,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 7,
 				/obj/item/stack/sheet/cardboard = 1)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/legion)
+				TOOL_LEGION)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -250,7 +250,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 7,
 				/obj/item/stack/sheet/cardboard = 1)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/legion)
+				TOOL_LEGION)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -261,7 +261,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 7,
 				/obj/item/stack/sheet/cardboard = 1)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/legion)
+				TOOL_LEGION)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -272,7 +272,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 7,
 				/obj/item/stack/sheet/cardboard = 1)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/legion)
+				TOOL_LEGION)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -282,7 +282,7 @@
 	result = /obj/item/ammo_box/a556
 	reqs = list(/obj/item/stack/sheet/metal = 20)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/ncr)
+				TOOL_NCR)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -292,7 +292,7 @@
 	result = /obj/item/ammo_box/c9mm
 	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/ncr)
+				TOOL_NCR)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -302,7 +302,7 @@
 	result = /obj/item/ammo_box/c4570
 	reqs = list(/obj/item/stack/sheet/metal = 6)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/ncr)
+				TOOL_NCR)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -312,7 +312,7 @@
 	result = /obj/item/ammo_box/a762
 	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/ncr)
+				TOOL_NCR)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -322,7 +322,7 @@
 	result = /obj/item/ammo_box/a762/doublestacked
 	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/ncr)
+				TOOL_NCR)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -332,7 +332,7 @@
 	result = /obj/item/ammo_box/a308
 	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
-				/obj/machinery/ammobench/ncr)
+				TOOL_NCR)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -457,14 +457,6 @@
 	time = 50
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/trashbag
-	name = "Trash Bag"
-	result = /obj/item/storage/bag/trash
-	time = 15
-	reqs = list(/obj/item/stack/sheet/plastic = 3)
-	tools = list(/obj/item/kitchen/rollingpin)
-	category = CAT_MISC
 
 /datum/crafting_recipe/spooky_camera
 	name = "Camera Obscura"
