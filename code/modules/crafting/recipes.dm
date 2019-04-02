@@ -458,6 +458,14 @@
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/trashbag
+	name = "Trash Bag"
+	result = /obj/item/storage/bag/trash
+	time = 15
+	reqs = list(/obj/item/stack/sheet/plastic = 3)
+	tools = list(/obj/item/kitchen/rollingpin)
+	category = CAT_MISC
+
 /datum/crafting_recipe/spooky_camera
 	name = "Camera Obscura"
 	result = /obj/item/camera/spooky
