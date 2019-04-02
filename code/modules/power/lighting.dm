@@ -224,6 +224,10 @@
 	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 
+	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
+	var/nightshift_start_time = 702000		//7:30 PM, station time
+	var/nightshift_end_time = 270000		//7:30 AM, station time
+
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
 	icon_state = "tube-broken"
@@ -359,8 +363,7 @@
 			addStaticPower(static_power_used, STATIC_LIGHT)
 		else
 			removeStaticPower(static_power_used, STATIC_LIGHT)
-//	night_update()
-
+	night_update()
 /obj/machinery/light/process()
 	if (!cell)
 		return PROCESS_KILL
@@ -836,22 +839,23 @@
 	nightshift_allowed = FALSE
 	start_with_cell = FALSE
 	no_emergency = TRUE
-	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
-	var/nightshift_start_time = 702000		//7:30 PM, station time
-	var/nightshift_end_time = 270000		//7:30 AM, station time
 
-/obj/machinery/light/lampost/proc/night_update() //gah, cant have procs with same name from parent
+/obj/machinery/light/proc/night_update() //gah, cant have procs with same name from parent
 	var/time = station_time()
 	var/night_time = (time < nightshift_end_time) || (time > nightshift_start_time)
 	if(night_time)	//night
 		nightshift_active = TRUE
 		on = TRUE
-		update_icon()
+		update(FALSE)
 
 	if(nightshift_active != night_time) //d a y
 		nightshift_active = FALSE
 		on = FALSE
-		update_icon()
+		update(FALSE)
+
+/obj/machinery/light/lampost/process()
+	. = ..()
+	night_update()
 
 //F13 COLORED LIGHTS
 /obj/machinery/light/fo13colored/Pink

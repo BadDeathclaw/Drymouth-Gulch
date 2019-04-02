@@ -214,7 +214,7 @@ Vexillarius
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/trench
+	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
