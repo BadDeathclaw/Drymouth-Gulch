@@ -9,20 +9,18 @@
 	equip_delay_other = 25
 	resistance_flags = NONE
 	materials = list(MAT_GLASS = 250)
+	darkness_view = 2//Base human is 2
 	var/vision_flags = 0
-	var/darkness_view = 2//Base human is 2
 	var/invis_view = SEE_INVISIBLE_LIVING	//admin only for now
 	var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
-	var/lighting_alpha
 	var/list/icon/current = list() //the current hud icons
 	var/vision_correction = 0 //does wearing these glasses correct some of our vision defects?
-	var/glass_colour_type //colors your vision when worn
 
 /obj/item/clothing/glasses/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is stabbing \the [src] into [user.p_their()] eyes! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return BRUTELOSS
 
-/obj/item/clothing/glasses/examine(mob/user)
+/obj/item/clothing/examine(mob/user)
 	..()
 	if(glass_colour_type && ishuman(user))
 		to_chat(user, "<span class='notice'>Alt-click to toggle its colors.</span>")
@@ -72,7 +70,7 @@
 	desc = "An optical meson scanner fitted with an amplified visible light spectrum overlay, providing greater visual clarity in darkness."
 	icon_state = "nvgmeson"
 	item_state = "nvgmeson"
-	darkness_view = 8
+	darkness_view = 128
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
@@ -108,7 +106,7 @@
 	desc = "You can totally see in the dark now!"
 	icon_state = "night"
 	item_state = "glasses"
-	darkness_view = 8
+	darkness_view = 128
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
@@ -385,33 +383,33 @@
 		qdel(src)
 	..()
 
-/obj/item/clothing/glasses/AltClick(mob/user)
+/obj/item/clothing/AltClick(mob/user)
 	if(glass_colour_type && ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.client)
 			if(H.client.prefs)
-				if(src == H.glasses)
+				if((src == H.glasses) || (src == H.head))
 					H.client.prefs.uses_glasses_colour = !H.client.prefs.uses_glasses_colour
 					if(H.client.prefs.uses_glasses_colour)
-						to_chat(H, "You will now see glasses colors.")
+						to_chat(H, "You will now see overlay colors.")
 					else
-						to_chat(H, "You will no longer see glasses colors.")
+						to_chat(H, "You will no longer see overlay colors.")
 					H.update_glasses_color(src, 1)
 	else
 		return ..()
 
-/obj/item/clothing/glasses/proc/change_glass_color(mob/living/carbon/human/H, datum/client_colour/glass_colour/new_color_type)
+/obj/item/clothing/proc/change_glass_color(mob/living/carbon/human/H, datum/client_colour/glass_colour/new_color_type)
 	var/old_colour_type = glass_colour_type
 	if(!new_color_type || ispath(new_color_type)) //the new glass colour type must be null or a path.
 		glass_colour_type = new_color_type
-		if(H && H.glasses == src)
+		if(H && (H.glasses == src || H.head == src))
 			if(old_colour_type)
 				H.remove_client_colour(old_colour_type)
 			if(glass_colour_type)
 				H.update_glasses_color(src, 1)
 
 
-/mob/living/carbon/human/proc/update_glasses_color(obj/item/clothing/glasses/G, glasses_equipped)
+/mob/living/carbon/human/proc/update_glasses_color(obj/item/clothing/G, glasses_equipped)
 	if(client && client.prefs.uses_glasses_colour && glasses_equipped)
 		add_client_colour(G.glass_colour_type)
 	else

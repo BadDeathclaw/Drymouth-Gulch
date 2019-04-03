@@ -8,6 +8,8 @@
 #define TOOL_ANALYZER		"analyzer"
 #define TOOL_MINING			"mining"
 #define TOOL_SHOVEL			"shovel"
+#define TOOL_NCR			"NCR ammo bench"
+#define TOOL_LEGION			"Legion ammo bench"
 
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,

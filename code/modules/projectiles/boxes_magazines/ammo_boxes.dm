@@ -32,7 +32,7 @@
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 6
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 4000)
+	materials = list(MAT_METAL = 8000)
 
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
