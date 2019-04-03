@@ -25,14 +25,14 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
-/obj/item/ammo_box/c4570
+/*/obj/item/ammo_box/c4570
 	name = "speed loader (.45-70)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 6
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 8000)
+	materials = list(MAT_METAL = 8000)*/
 
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
