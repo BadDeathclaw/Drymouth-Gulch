@@ -93,6 +93,7 @@ Class Procs:
 	var/speed_process = FALSE // Process as fast as possible?
 	var/obj/item/circuitboard/circuit // Circuit to be created and inserted when the machinery is created
 	var/interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
+	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
 
 /obj/machinery/Initialize()
 	if(!armor)
