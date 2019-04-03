@@ -893,6 +893,7 @@
 	icon_state = "sledgehammer[wielded]"
 
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
+	name = "bumper sword"
 	icon_state = "bmprsword0"
 	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'

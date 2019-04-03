@@ -707,14 +707,24 @@
 		new /obj/item/ammo_casing/shotgun/beanbag(src)
 
 /obj/item/storage/box/lethalshot
-	name = "box of lethal shotgun shots"
-	desc = "A box full of lethal shots, designed for riot shotguns."
+	name = "box of buckshot shotgun shots"
+	desc = "A box full of lethal buckshot rounds, designed for riot shotguns."
 	icon_state = "lethalshot_box"
 	illustration = null
 
 /obj/item/storage/box/lethalshot/PopulateContents()
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
+
+/obj/item/storage/box/slugshot
+	name = "box of slug shotgun shots"
+	desc = "A box full of slug rounds, designed for riot shotguns."
+	icon_state = "lethalshot_box"
+	illustration = null
+
+/obj/item/storage/box/slugshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun(src)
 
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"

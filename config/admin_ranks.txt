@@ -52,6 +52,7 @@ Initiate		= +ADMIN
 Aspirant 		= +@ +BAN
 Knight 			= +@ +SPAWN +FUN +VAREDIT
 Paladin			= +@ +STEALTH +POSSESS +BUILD +SOUND +SERVER +DEBUG
+Head Coder 		= +EVERYTHING *EVERYTHING
 Head Paladin	= +EVERYTHING *EVERYTHING
 Elder			= +EVERYTHING *EVERYTHING
 Host 			= +EVERYTHING *EVERYTHING

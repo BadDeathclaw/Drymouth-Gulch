@@ -190,7 +190,7 @@ Preacher
 	mask = 			/obj/item/clothing/mask/gas/syndicate
 	r_hand = 		/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/internal/boltaction=2, \
+		/obj/item/ammo_box/a308=2, \
 		/obj/item/reagent_containers/food/drinks/flask=1, \
 		/obj/item/storage/fancy/candle_box, \
 		/obj/item/storage/bag/money/small/settler)

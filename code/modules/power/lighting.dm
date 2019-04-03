@@ -363,7 +363,6 @@
 			addStaticPower(static_power_used, STATIC_LIGHT)
 		else
 			removeStaticPower(static_power_used, STATIC_LIGHT)
-	night_update()
 
 /obj/machinery/light/process()
 	if (!cell)
@@ -847,12 +846,16 @@
 	if(night_time)	//night
 		nightshift_active = TRUE
 		on = TRUE
-		update_icon()
+		update(FALSE)
 
 	if(nightshift_active != night_time) //d a y
 		nightshift_active = FALSE
 		on = FALSE
-		update_icon()
+		update(FALSE)
+
+/obj/machinery/light/lampost/process()
+	. = ..()
+	night_update()
 
 //F13 COLORED LIGHTS
 /obj/machinery/light/fo13colored/Pink

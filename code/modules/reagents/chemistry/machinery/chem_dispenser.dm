@@ -294,8 +294,8 @@
 		update_icon()
 		return
 
-	if(default_deconstruction_crowbar(I))
-		return
+//	if(default_deconstruction_crowbar(I)) //no deconstruction for cell replacement
+//		return
 	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		var/obj/item/reagent_containers/B = I
 		. = 1 //no afterattack

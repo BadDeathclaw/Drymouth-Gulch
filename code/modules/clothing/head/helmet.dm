@@ -476,10 +476,9 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
-/*
-	darkness_view = 8
-	invis_view = SEE_INVISIBLE_MINIMUM
-*/
+	darkness_view = 128
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+	glass_colour_type = /datum/client_colour/glass_colour/red
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	name = "desert ranger combat helmet"
@@ -583,6 +582,8 @@
 	tint = 0
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	darkness_view = 128
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 
 /obj/item/clothing/head/helmet/power_armor/t45b
 	name = "Salvaged T-45b helmet"

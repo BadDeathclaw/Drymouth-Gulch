@@ -77,7 +77,7 @@ Needs whitelist
 Centurion
 */
 /datum/job/CaesarsLegion/Legionnaire/f13centurion
-	title = "Legion Centurion"
+	title = "Centurion"
 	flag = F13CENTURION
 	faction = "Legion"
 	head_announce = list("Security")
@@ -119,7 +119,7 @@ Centurion
 Veteran Decan
 */
 /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
-	title = "Legion Veteran Decanus"
+	title = "Veteran Decanus"
 	flag = F13VETDECAN
 	faction = "Legion"
 	total_positions = 1
@@ -133,7 +133,7 @@ Veteran Decan
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
-	name = "Legion Veteran Decanus"
+	name = "Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
@@ -231,7 +231,7 @@ Decan
 Vexillarius
 */
 /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
-	title = "Legion Vexillarius"
+	title = "Vexillarius"
 	flag = F13VEXILLARIUS
 	faction = "Legion"
 	total_positions = 2
@@ -379,7 +379,7 @@ Legionary
 
 
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
-	title = "Legion Explorer"
+	title = "Explorer"
 	flag = F13EXPLORER
 	faction = "Legion"
 	total_positions = 2
@@ -395,7 +395,7 @@ Legionary
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
-	name = "Legion Explorer"
+	name = "Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
 	suit = 		/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 		/obj/item/clothing/head/helmet/f13/legion/explorer
@@ -411,7 +411,7 @@ Legionary
 	r_pocket = /obj/item/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
-	title = "Legion Scout"
+	title = "Scout"
 	flag = F13SCOUT
 	faction = "Legion"
 	total_positions = 4
@@ -425,7 +425,7 @@ Legionary
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
-	name = "Legion Scout"
+	name = "Scout"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13scout
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
@@ -442,14 +442,14 @@ Legionary
 	box = null
 
 /datum/job/CaesarsLegion/f13campfollower
-	title = "Legion Camp Follower"
+	title = "Camp Follower"
 	flag = F13CAMPFOLLOWER
 	faction = "Legion"
 	total_positions = 3
 	spawn_positions = 3
 	forbids = "The Legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
-	description = "You answer directly to any member of the Legion, working as a Camp Follower for the Centuria, you bear the great honor of supporting Caesar�s Army in its conquest of the Mojave in whatever capacity required from those whom you serve. You perform any tasks required of you, for you know how to serve the Legion well."
+	description = "You answer directly to any member of the Legion, working as a Camp Follower for the Centuria, you bear the great honor of supporting Caesar?s Army in its conquest of the Mojave in whatever capacity required from those whom you serve. You perform any tasks required of you, for you know how to serve the Legion well."
 	supervisors = "the entire legion"
 
 	outfit = /datum/outfit/job/CaesarsLegion/f13campfollower
