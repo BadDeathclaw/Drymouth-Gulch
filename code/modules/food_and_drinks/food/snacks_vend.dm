@@ -61,9 +61,9 @@
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/spacetwinkie
-	name = "space twinkie"
+	name = "Lion Bar"
 	icon_state = "space_twinkie"
-	desc = "Guaranteed to survive longer than you will."
+	desc = "You feel slightly ripped off for buying this."
 	list_reagents = list("sugar" = 4)
 	junkiness = 25
 	filling_color = "#FFD700"

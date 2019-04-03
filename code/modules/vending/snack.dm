@@ -9,7 +9,7 @@
 		            /obj/item/reagent_containers/food/snacks/chips = 6,
 		            /obj/item/reagent_containers/food/snacks/sosjerky = 6,
 		            /obj/item/reagent_containers/food/snacks/no_raisin = 6,
-		            /obj/item/reagent_containers/food/snacks/spacetwinkie = 6,
+		            /obj/item/reagent_containers/food/snacks/lionbar = 6,
 					/obj/item/reagent_containers/food/snacks/cheesiehonkers = 6)
 	contraband = list(/obj/item/reagent_containers/food/snacks/syndicake = 6)
 	refill_canister = /obj/item/vending_refill/snack
