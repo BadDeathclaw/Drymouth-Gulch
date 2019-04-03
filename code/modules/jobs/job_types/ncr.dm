@@ -63,7 +63,7 @@ Captain
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant, coordinating with your staff you must ensure that the objectives of central command are completed to the letter. Working closely with them on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "the colonel"
 	req_admin_notify = 1
-	exp_requirements = 1560
+	exp_requirements = 1800
 
 	outfit = /datum/outfit/job/ncr/f13captain
 
@@ -123,6 +123,44 @@ Lieutenant
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
+	/*
+Medic
+*/
+/datum/job/ncr/f13medic
+	title = "NCR Medical Officer"
+	flag = F13MEDIC
+	faction = "NCR"
+	total_positions = 1
+	spawn_positions = 1
+	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
+	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
+	description = "You are in charge of providing medical support and organization to the NCR throughout the region. You answer directly to the Captain and organize NCR personnel for medical operations as needed."
+	supervisors = "Captain and above"
+	selection_color = "#fff5cc"
+	exp_requirements = 1200
+
+	outfit = /datum/outfit/job/ncr/f13medic
+
+/datum/outfit/job/ncr/f13medic
+	name = "NCR Medical Officer"
+	jobtype = /datum/job/ncr/f13medic
+	uniform =  		/obj/item/clothing/under/f13/ncr/officer
+	accessory =     /obj/item/clothing/accessory/armband/med/ncr
+	suit = 			/obj/item/clothing/suit/toggle/labcoat/cmo
+	head = 			/obj/item/clothing/head/beret/ncr
+	glasses = 		/obj/item/clothing/glasses/hud/health
+	suit_store =    /obj/item/healthanalyzer
+	belt =          /obj/item/storage/belt/medical
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m9mm=1, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/storage/pill_bottle/mining, \
+		/obj/item/storage/firstaid/regular,  \
+		/obj/item/storage/bag/money/small/ncrenlisted,  \
+		)
+	box = null
+
 //sergeant
 
 
@@ -161,6 +199,44 @@ Lieutenant
 
 
 
+/*
+Engineer
+*/
+/datum/job/ncr/f13engineer
+	title = "NCR Engineer"
+	flag = F13ENGINEER
+	faction = "NCR"
+	total_positions = 2
+	spawn_positions = 2
+	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
+	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
+	description = "You are in charge of fortifying and building for NCR strategic locations throughout the region. You answer directly to the Lieutenant and Captain, while also organizing grunts to assist you as needed."
+	supervisors = "Lieutenants and above"
+	selection_color = "#fff5cc"
+	exp_requirements = 600
+
+	outfit = /datum/outfit/job/ncr/f13engineer
+
+/datum/outfit/job/ncr/f13engineer
+	name = "NCR Engineer"
+	jobtype = /datum/job/ncr/f13engineer
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/armband/engine/ncr
+	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	head = 			/obj/item/clothing/head/hardhat/orange
+	glasses = 		/obj/item/clothing/glasses/welding
+	belt =          /obj/item/storage/belt/utility/full/engi
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m9mm=1, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/stack/sheet/metal/ten,  \
+		/obj/item/storage/bag/money/small/ncrenlisted,  \
+		/obj/item/stack/sheet/mineral/wood/twenty,  \
+		/obj/item/storage/box/emptysandbags,  \
+		)
+	box = null
 
 /*
 Trooper
@@ -176,6 +252,7 @@ Trooper
 	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
 	supervisors = "sergeants"
 	selection_color = "#fff5cc"
+	exp_requirements = 180
 
 	outfit = /datum/outfit/job/ncr/f13trooper
 
@@ -204,8 +281,8 @@ Recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
 	faction = "NCR"
-	total_positions = 12
-	spawn_positions = 12
+	total_positions = 10
+	spawn_positions = 10
 	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer to your Sergeant and other Troopers,  following the chain of command, to your commanding officer, the Captain."
@@ -260,7 +337,7 @@ Veteran Ranger
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/antimateriel
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
-		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
+		/obj/item/ammo_box/c4570=2, \
 		/obj/item/ammo_box/a50MG=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \

@@ -458,6 +458,12 @@
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	strip_delay = 60
 
+	/obj/item/clothing/suit/armor/f13/legrecruit/prime
+	name= "legion prime armor"
+	item_state = "legprime"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	
+
 /obj/item/clothing/suit/armor/f13/legrecruit/vet
 	name = "legion veteran armor"
 	item_state = "legveteran"

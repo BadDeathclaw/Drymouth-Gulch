@@ -460,6 +460,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"
 
+/obj/effect/landmark/start/f13/ncrmedic
+	name = "NCR Medical Officer"
+
+/obj/effect/landmark/start/f13/ncrengineer
+	name = "NCR Engineer"
+
 /obj/effect/landmark/start/f13/ncrtrooper
 	name = "NCR Trooper"
 	icon_state = "NCR Trooper"
@@ -487,33 +493,39 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Legate"
 
 /obj/effect/landmark/start/f13/centurion
-	name = "Centurion"
+	name = "Legion Centurion"
 	icon_state = "Centurion"
 
 /obj/effect/landmark/start/f13/vetdecanus
-	name = "Veteran Decanus"
+	name = "Legion Veteran Decanus"
 
 /obj/effect/landmark/start/f13/vexillarius
-	name = "Vexillarius"
+	name = "Legion Vexillarius"
 	icon_state = "Vexillarius"
 
+/obj/effect/landmark/start/f13/primedecanus
+	name = "Legion Prime Decanus"
+
 /obj/effect/landmark/start/f13/decanus
-	name = "Decanus"
+	name = "Legion Recruit Decanus"
 	icon_state = "Decanus"
 
 /obj/effect/landmark/start/f13/veteranlegionnaire
 	name = "Veteran Legionnaire"
 	icon_state = "Veteran Legionnaire"
 
+/obj/effect/landmark/start/f13/primelegionnaire
+	name = "Prime Legionnaire"
+
 /obj/effect/landmark/start/f13/legionary
-	name = "Legionary"
+	name = "Recruit Legionnaire"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/scout
-	name = "Scout"
+	name = "Legion Scout"
 
 /obj/effect/landmark/start/f13/explorer
-	name = "Explorer"
+	name = "Legion Explorer"
 
 /obj/effect/landmark/start/f13/campfollower
 	name = "Camp Follower"

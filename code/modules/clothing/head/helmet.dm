@@ -365,6 +365,12 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
+	name = "legion prime helmet"
+	item_state = "legprime"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+
 /obj/item/clothing/head/helmet/f13/legion/scout
 	name = "legion scout hood"
 	desc = "It's a leather hood worn by legion scouts."
@@ -413,6 +419,11 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+
+/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
+	name = "legion prime decanus helmet"
+	item_state = "legdecanprime"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	name = "legion veteran decanus helmet"
