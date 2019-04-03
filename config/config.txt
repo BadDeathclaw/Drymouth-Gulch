@@ -219,7 +219,7 @@ CHECK_RANDOMIZER
 # WIKIURL https://www.patreon.com/baddeathclaw
 
 ## Rules address
-RULESURL https://www.docdroid.net/Lwrciqr/bad-deathclaw-rules.pdf
+RULESURL https://www.pastebin.com/ETeb6x3D
 
 ## Github address
 GITHUBURL https://github.com/BadDeathclaw/TG-Claw
