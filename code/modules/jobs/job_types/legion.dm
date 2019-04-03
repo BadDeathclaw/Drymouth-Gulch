@@ -267,7 +267,7 @@ Veteran
 Legionary
 */
 /datum/job/CaesarsLegion/Legionnaire/f13legionary
-	title = "Legionnaire"
+	title = "Legionary"
 	flag = F13LEGIONARY
 	faction = "Legion"
 	total_positions = 15
