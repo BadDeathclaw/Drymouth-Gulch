@@ -297,7 +297,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/c4570
+/*/datum/crafting_recipe/c4570
 	name = ".45-70 speed loader (NCR)"
 	result = /obj/item/ammo_box/c4570
 	reqs = list(/obj/item/stack/sheet/metal = 6)
@@ -305,7 +305,7 @@
 				TOOL_NCR)
 	time = 10
 	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+	subcategory = CAT_AMMO*/
 
 /datum/crafting_recipe/a762
 	name = "7.62mm stripper clip (NCR)"
