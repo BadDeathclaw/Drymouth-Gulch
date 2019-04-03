@@ -300,7 +300,7 @@
 /datum/crafting_recipe/c4570
 	name = ".45-70 speed loader (NCR)"
 	result = /obj/item/ammo_box/c4570
-	reqs = list(/obj/item/stack/sheet/metal = 6)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_NCR)
 	time = 10
