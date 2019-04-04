@@ -77,7 +77,7 @@ Needs whitelist
 Centurion
 */
 /datum/job/CaesarsLegion/Legionnaire/f13centurion
-	title = "Centurion"
+	title = "Legion Centurion"
 	flag = F13CENTURION
 	faction = "Legion"
 	head_announce = list("Security")
@@ -119,7 +119,7 @@ Centurion
 Veteran Decan
 */
 /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
-	title = "Veteran Decanus"
+	title = "Legion Veteran Decanus"
 	flag = F13VETDECAN
 	faction = "Legion"
 	total_positions = 1
@@ -133,7 +133,7 @@ Veteran Decan
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
-	name = "Veteran Decanus"
+	name = "Legion Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
@@ -231,7 +231,7 @@ Decan
 Vexillarius
 */
 /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
-	title = "Vexillarius"
+	title = "Legion Vexillarius"
 	flag = F13VEXILLARIUS
 	faction = "Legion"
 	total_positions = 2
@@ -379,7 +379,7 @@ Legionary
 
 
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
-	title = "Explorer"
+	title = "Legion Explorer"
 	flag = F13EXPLORER
 	faction = "Legion"
 	total_positions = 2
@@ -395,7 +395,7 @@ Legionary
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
-	name = "Explorer"
+	name = "Legion Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
 	suit = 		/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 		/obj/item/clothing/head/helmet/f13/legion/explorer
@@ -411,7 +411,7 @@ Legionary
 	r_pocket = /obj/item/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
-	title = "Scout"
+	title = "Legion Scout"
 	flag = F13SCOUT
 	faction = "Legion"
 	total_positions = 4
@@ -425,7 +425,7 @@ Legionary
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
-	name = "Scout"
+	name = "Legion Scout"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13scout
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
