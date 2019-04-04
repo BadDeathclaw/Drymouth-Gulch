@@ -725,6 +725,10 @@
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570
 
+/obj/item/ammo_casing/c4570SP
+	caliber = "4570"
+	projectile_type = /obj/item/projectile/bullet/c4570SP
+
 //Heavy
 /obj/item/ammo_casing/a50AE
 	name = ".50AE bullet casing"
@@ -807,6 +811,10 @@
 /obj/item/projectile/bullet/c4570
 	damage = 60
 	armour_penetration = -20
+
+/obj/item/projectile/bullet/c4570SP
+	damage = 45
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/a357
 	damage = 35
