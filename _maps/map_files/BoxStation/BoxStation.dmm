@@ -15556,6 +15556,7 @@
 /obj/structure/sign/poster/loaded{
 	pixel_y = 30
 	},
+/obj/effect/landmark/start/f13/ncrtrooper,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -15730,6 +15731,7 @@
 /obj/structure/sign/poster/keep_to_myself{
 	pixel_y = 32
 	},
+/obj/effect/landmark/start/f13/ncrrecruit,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -24577,16 +24579,6 @@
 	icon_state = "whitebluechess"
 	},
 /area/f13/ncr_main)
-"bpW" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/obj/effect/landmark/start/f13/ncrtrooper,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
-/area/f13/ncr_main)
 "bpX" = (
 /obj/structure/janitorialcart,
 /obj/item/reagent_containers/glass/bucket,
@@ -24597,25 +24589,6 @@
 /area/f13/ncr_main)
 "bpY" = (
 /obj/effect/landmark/start/f13/ncrtrooper,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
-/area/f13/ncr_main)
-"bpZ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/landmark/start/f13/ncrtrooper,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
-/area/f13/ncr_main)
-"bqa" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/obj/effect/landmark/start/f13/ncrrecruit,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -24799,7 +24772,7 @@
 	icon_state = "bench";
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/ncrtrooper,
+/obj/effect/landmark/start/f13/ncrrecruit,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -24810,7 +24783,7 @@
 	icon_state = "bench";
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/ncrtrooper,
+/obj/effect/landmark/start/f13/ncrrecruit,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -25099,7 +25072,7 @@
 	name = "stool";
 	icon_state = "bench_center"
 	},
-/obj/effect/landmark/start/f13/ncrtrooper,
+/obj/effect/landmark/start/f13/ncrrecruit,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -25169,16 +25142,6 @@
 "brE" = (
 /obj/machinery/door/unpowered/wooddoor,
 /turf/open/floor/plasteel/cafeteria,
-/area/f13/ncr_main)
-"brF" = (
-/obj/effect/landmark/start/f13/ncrrecruit,
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#d8b1b1"
-	},
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
 /area/f13/ncr_main)
 "brG" = (
 /obj/structure/closet,
@@ -31276,6 +31239,7 @@
 "bJu" = (
 /obj/structure/bed,
 /obj/item/bedsheet/brown,
+/obj/effect/landmark/start/f13/ncrtrooper,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -32112,6 +32076,16 @@
 	dir = 2
 	},
 /area/f13/ncr_main)
+"eNU" = (
+/obj/effect/landmark/start/f13/ncrtrooper,
+/turf/open/floor/plasteel/f13{
+	icon_state = "whitepurplerustychess2"
+	},
+/area/f13/ncr_main)
+"eXi" = (
+/obj/effect/landmark/start/f13/dendoc,
+/turf/open/floor/wood/f13/old,
+/area/f13/den)
 "fhG" = (
 /turf/open/floor/wood/f13{
 	icon_state = "housewood3-broken1"
@@ -32474,6 +32448,12 @@
 	dir = 8
 	},
 /area/f13/ncr_main)
+"uPT" = (
+/obj/effect/landmark/start/f13/dendoc,
+/turf/open/floor/wood/f13/old{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/den)
 "vcb" = (
 /obj/structure/target_stake,
 /obj/item/target,
@@ -32499,6 +32479,12 @@
 /obj/item/shield/legion/buckler,
 /turf/open/floor/wood/f13/old,
 /area/f13/legioncamp)
+"vQi" = (
+/obj/effect/landmark/start/f13/ncrheavytroop,
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
+/area/f13/ncr_main)
 "wwp" = (
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plating/f13/outside/desert,
@@ -35653,7 +35639,7 @@ aaK
 boq
 boG
 boG
-boG
+eNU
 boG
 bve
 boq
@@ -36876,8 +36862,8 @@ brR
 brh
 brh
 boq
-bqq
-bqq
+boI
+vQi
 btC
 btW
 boI
@@ -37279,7 +37265,7 @@ bsh
 boI
 boq
 boK
-boI
+vQi
 btD
 boI
 boI
@@ -37662,9 +37648,9 @@ aac
 aac
 boq
 boK
+bpY
 boI
-boI
-boI
+bpY
 boI
 boI
 bpM
@@ -37681,7 +37667,7 @@ bsi
 boI
 bpk
 boI
-boI
+vQi
 bLO
 btX
 boI
@@ -42492,7 +42478,7 @@ aQG
 bpq
 bpq
 boq
-bpW
+bpv
 boI
 bqA
 boI
@@ -42898,7 +42884,7 @@ bpX
 boI
 bqB
 boI
-bqq
+boI
 boI
 bru
 boq
@@ -43298,7 +43284,7 @@ bpq
 boq
 aQJ
 boI
-boI
+bqq
 boI
 bqq
 boI
@@ -43698,11 +43684,11 @@ bpq
 bpq
 bpq
 boq
-bpY
+boI
 boI
 bqA
 boI
-bqq
+boI
 boI
 bru
 boq
@@ -44100,7 +44086,7 @@ bpq
 bpy
 bpD
 boq
-bpZ
+bpw
 boI
 bqB
 bpw
@@ -44904,14 +44890,14 @@ boq
 boI
 boI
 boI
-bqa
-bqq
-bqq
-bqa
+bpv
 boI
-bqq
-bqq
-brF
+boI
+bpv
+boI
+boI
+boI
+btk
 brU
 boq
 ttO
@@ -112307,7 +112293,7 @@ aGD
 aGG
 aHZ
 aGG
-aGG
+eXi
 aJr
 aGq
 aef
@@ -113914,7 +113900,7 @@ aGG
 aGD
 aGG
 aHn
-aGG
+eXi
 aGG
 aKo
 aGq
@@ -115523,7 +115509,7 @@ aGG
 aGG
 aGq
 aIo
-aGT
+uPT
 aGE
 aGq
 aef
