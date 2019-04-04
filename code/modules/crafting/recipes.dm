@@ -298,7 +298,7 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c4570SP
-	name = ".45-70 special speed loader (NCR)"
+	name = ".45 LC speed loader (NCR)"
 	result = /obj/item/ammo_box/c4570SP
 	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,

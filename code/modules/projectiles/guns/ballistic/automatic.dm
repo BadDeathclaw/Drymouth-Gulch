@@ -722,10 +722,14 @@
 
 //HeavySP
 /obj/item/ammo_casing/c4570
+	name = ".45-70 bullet casing"
+	desc = "A .45-70 bullet casing."
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570
 
 /obj/item/ammo_casing/c4570SP
+	name = ".45 LC bullet casing"
+	desc = "A .45 Long Colt bullet casing."
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570SP
 

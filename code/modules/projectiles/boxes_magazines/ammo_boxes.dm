@@ -36,7 +36,7 @@
 
 
 /obj/item/ammo_box/c4570SP
-	name = "speed loader (.45-70 special)"
+	name = "speed loader (.45 LC)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/c4570SP
