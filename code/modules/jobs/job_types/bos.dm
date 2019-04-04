@@ -23,7 +23,7 @@ Main doors: ACCESS_CAPTAIN 20
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
 	technophreak = TRUE
-/*
+
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
@@ -35,7 +35,7 @@ Main doors: ACCESS_CAPTAIN 20
 	if(visualsOnly)
 		return
 	H.mind.istechnophreak = TRUE
-*/
+
 /*
 Elder
 */
