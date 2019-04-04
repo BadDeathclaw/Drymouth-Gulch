@@ -252,14 +252,14 @@ Vexillarius
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/trench
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/storage/box/lethalshot, \
+		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/megaphone/cornu=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
@@ -288,7 +288,7 @@ Veteran
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun
+	suit_store = 	/obj/item/gun/ballistic/shotgun/trench
 	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical=1, \
