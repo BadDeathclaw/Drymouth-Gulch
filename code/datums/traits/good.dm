@@ -33,7 +33,7 @@
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = "<span class='notice'>You feel like swinging for the fences!</span>"
 	lose_text = "<span class='danger'>You feel like bunting.</span>"
-
+/*
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
 	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
@@ -45,7 +45,7 @@
 /datum/quirk/chemwhiz/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
 	mob_tar.mind.ischemwhiz = TRUE
-
+*/
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
 	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
