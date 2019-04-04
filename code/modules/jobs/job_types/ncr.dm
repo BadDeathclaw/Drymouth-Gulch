@@ -260,7 +260,7 @@ Veteran Ranger
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/antimateriel
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
-		/obj/item/ammo_box/magazine/internal/cylinder/rev4570=2, \
+		/obj/item/ammo_box/c4570=2, \
 		/obj/item/ammo_box/a50MG=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
