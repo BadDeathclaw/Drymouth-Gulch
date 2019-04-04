@@ -56,9 +56,10 @@
 #define F13ENGINEER     (1<<5)
 #define F13TROOPER		(1<<6)
 #define F13RECRUIT		(1<<7)
-#define F13VETRANGER	(1<<8)
-#define F13RANGER		(1<<9)
-#define F13RECRANGER	(1<<10)
+#define F13HEAVYTROOP   (1<<8)
+#define F13VETRANGER	(1<<9)
+#define F13RANGER		(1<<10)
+#define F13RECRANGER	(1<<11)
 
 #define LEGION			(1<<4)
 
@@ -88,7 +89,8 @@
 #define DEN				(1<<6)
 
 #define F13SHERIFF		(1<<0)
-#define F13SETTLER		(1<<1)
+#define F13DENDOC       (1<<1)
+#define F13SETTLER		(1<<2)
 
 #define VAULT			(1<<7)
 
