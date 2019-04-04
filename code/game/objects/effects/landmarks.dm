@@ -474,6 +474,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Recruit"
 	icon_state = "NCR Recruit"
 
+/obj/effect/landmark/start/f13/ncrheavytroop
+	name = "NCR Heavy Trooper"
+
 /obj/effect/landmark/start/f13/ncrveteranranger
 	name = "NCR Veteran Ranger"
 	icon_state = "NCR Veteran Ranger"
@@ -599,6 +602,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/settler
 	name = "Settler"
 	icon_state = "Settler"
+
+/obj/effect/landmark/start/f13/dendoc
+	name = "Den Doctor"
 
 // Wasteland
 
