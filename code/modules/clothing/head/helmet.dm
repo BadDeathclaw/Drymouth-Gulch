@@ -369,8 +369,7 @@
 	name = "legion prime helmet"
 	item_state = "legprime"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-
+	
 /obj/item/clothing/head/helmet/f13/legion/scout
 	name = "legion scout hood"
 	desc = "It's a leather hood worn by legion scouts."
@@ -390,7 +389,7 @@
 	desc = "It's a metal legion veteran helmet, looks pretty sturdy."
 	icon_state = "legvet"
 	item_state = "legvet"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -413,7 +412,7 @@
 	desc = "It's leather legion decan helmet."
 	icon_state = "legdecan"
 	item_state = "legdecan"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -430,7 +429,7 @@
 	desc = "It's leather legion veteran decan helmet."
 	icon_state = "legdecanvet"
 	item_state = "legdecanvet"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
