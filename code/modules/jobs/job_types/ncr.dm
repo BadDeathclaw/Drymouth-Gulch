@@ -140,7 +140,7 @@ Medic
 	outfit = /datum/outfit/job/ncr/f13medic
 
 /datum/outfit/job/ncr/f13medic
-	chemwhiz = TRUE 
+	chemwhiz = TRUE
 	name = "NCR Medical Officer"
 	jobtype = /datum/job/ncr/f13medic
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
@@ -367,7 +367,6 @@ Veteran Ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	gloves =		/obj/item/clothing/gloves/fingerless
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/antimateriel
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=2, \
@@ -403,10 +402,10 @@ Ranger
 	gloves =	/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/c4570=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
