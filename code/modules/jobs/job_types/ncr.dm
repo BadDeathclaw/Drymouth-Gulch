@@ -140,6 +140,7 @@ Medic
 	outfit = /datum/outfit/job/ncr/f13medic
 
 /datum/outfit/job/ncr/f13medic
+ 	chemwhiz = TRUE 
 	name = "NCR Medical Officer"
 	jobtype = /datum/job/ncr/f13medic
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
