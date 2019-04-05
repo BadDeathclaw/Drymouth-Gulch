@@ -227,7 +227,7 @@
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
 
 
-/obj/item/gun/energy/attack_self(mob/living/user)
+/obj/item/gun/energy/AltClick(mob/living/user)
 	if(cell)
 		cell.forceMove(drop_location())
 		user.put_in_hands(cell)
@@ -236,6 +236,10 @@
 		to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	else
 		to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
+	return
+
+/obj/item/gun/energy/examine(mob/user)
+	to_chat(user, "<span class='notice'>Alt-click to eject the cell.</span>")
 	return
 
 
