@@ -257,7 +257,7 @@ Veteran Ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	gloves =		/obj/item/clothing/gloves/fingerless
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/antimateriel
+	suit_store = 	/obj/item/gun/ballistic/shotgun/antimateriel
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=2, \
