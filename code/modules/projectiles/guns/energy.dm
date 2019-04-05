@@ -238,11 +238,6 @@
 		to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
 	return
 
-/obj/item/gun/energy/examine(mob/user)
-	to_chat(user, "<span class='notice'>Alt-click to eject the cell.</span>")
-	return
-
-
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	..()
 	if (istype(A, /obj/item/stock_parts/cell/ammo))
