@@ -52,8 +52,8 @@ Settler
 	flag = F13SETTLER
 	department_flag = DEN
 	faction = "Den"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 10
+	spawn_positions = 10
 	supervisors = "the sheriff"
 	selection_color = "#dcba97"
 
@@ -211,8 +211,8 @@ Den Doctor
 	flag = F13DENDOC
 	department_flag = DEN
 	faction = "Den"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	description = "You are in charge of providing medical assistance to the inhabitants of the Den as needed."
 	selection_color = "#dcba97"
 	exp_requirements = 300
