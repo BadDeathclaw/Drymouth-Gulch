@@ -179,6 +179,7 @@
 
 	var/technophreak = FALSE //F13 Technophreak, for super advanced tech (e.g. power armor, R&D)
 	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
+	var/offroad = FALSE //F13 Offroad, for travelling offroad
 
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -208,6 +209,8 @@
 		H.mind.istechnophreak = TRUE
 	if(chemwhiz == TRUE)
 		H.mind.ischemwhiz = TRUE
+	if(offroad == TRUE)
+		H.mind.isoffroad = TRUE
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)

@@ -58,6 +58,7 @@
 	var/isholy = FALSE //is this person a chaplain or admin role allowed to use bibles
 	var/istechnophreak = FALSE // Sets the mind to knowing how to use super advanced technology and the like.
 	var/ischemwhiz = FALSE //The above, but specifically for chemistry machinery
+	var/isoffroad = FALSE //The above, but knowing how to move around in the wastes faster
 	var/mob/living/enslaved_to //If this mind's master is another mob (i.e. adamantine golems)
 	var/datum/language_holder/language_holder
 	var/unconvertable = FALSE

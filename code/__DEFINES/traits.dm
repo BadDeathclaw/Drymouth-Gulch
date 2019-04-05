@@ -68,6 +68,7 @@
 #define TRAIT_IRONFIST			"iron_fist"
 #define	TRAIT_LIFEGIVER			"lifegiver"
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
+#define	TRAIT_OFFROAD			"offroad"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"
