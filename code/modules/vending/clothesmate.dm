@@ -136,7 +136,8 @@
 					/obj/item/clothing/under/f13/lumberjack = 2,
 					/obj/item/clothing/under/f13/machinist = 2,
 					/obj/item/clothing/under/f13/roving = 2,
-					/obj/item/clothing/under/f13/settler = 2,)
+					/obj/item/clothing/under/f13/settler = 2,
+					/obj/item/clothing/shoes/sneakers/black = 5)
 	contraband = list(/obj/item/clothing/under/syndicate/tacticool = 1,
 		            /obj/item/clothing/mask/balaclava = 1,
 		            /obj/item/clothing/head/ushanka = 1,
@@ -188,7 +189,6 @@
 		            /obj/item/clothing/under/blacktango = 1,
 		            /obj/item/clothing/head/sombrero = 1,
 		            /obj/item/clothing/shoes/laceup = 2,
-		            /obj/item/clothing/shoes/sneakers/black = 2,
 		            /obj/item/clothing/shoes/sandal = 1,
 		            /obj/item/storage/belt/fannypack = 1,
 		            /obj/item/storage/belt/fannypack/blue = 1,
