@@ -298,8 +298,13 @@
 
 /obj/item/clothing/mask/bandana/legvet
 	name = "veteran bandana"
-	desc = "A fine prime bandana."
+	desc = "A fine veteran bandana."
 	icon_state = "bandred"
+
+/obj/item/clothing/mask/bandana/legprime
+	name = "prime  bandana"
+	desc = "A fine prime bandana"
+	icon_state = "legdecan"
 
 /obj/item/clothing/mask/mummy
 	name = "mummy mask"
