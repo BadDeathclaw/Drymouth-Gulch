@@ -291,11 +291,11 @@
 				saved_recipes += list(list("recipe_name" = name, "contents" = recipe))
 
 /obj/machinery/chem_dispenser/attackby(obj/item/I, mob/user, params)
-	if(default_unfasten_wrench(user, I))
-		return
-	if(default_deconstruction_screwdriver(user, icon_state, icon_state, I))
-		update_icon()
-		return
+//	if(default_unfasten_wrench(user, I)) //no unwrenching
+//		return
+//	if(default_deconstruction_screwdriver(user, icon_state, icon_state, I))
+//		update_icon()
+//		return
 
 //	if(default_deconstruction_crowbar(I)) //no deconstruction for cell replacement
 //		return
