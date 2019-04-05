@@ -253,7 +253,7 @@ Veteran Ranger
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/ncr/f13vetranger
-	offroad = TRUE
+//	offroad = TRUE
 	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
@@ -288,7 +288,7 @@ Ranger
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/ncr/f13ranger
-	offroad = TRUE
+//	offroad = TRUE
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
@@ -327,7 +327,7 @@ Recon Ranger
 /datum/outfit/job/ncr/f13recranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/ncr/f13recranger
-	offroad = TRUE
+//	offroad = TRUE
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/f13/duster
 	head = 			/obj/item/clothing/head/fluff/cowboy
