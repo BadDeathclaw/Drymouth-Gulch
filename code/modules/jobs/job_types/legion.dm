@@ -64,7 +64,7 @@ Needs whitelist
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=2, \
+		/obj/item/restraints/legcuffs/bola=2, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/melee/powerfist=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
@@ -106,7 +106,7 @@ Centurion
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
@@ -142,7 +142,7 @@ Veteran Decan
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	r_hand = 		/obj/item/twohanded/fireaxe/bmprsword
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
@@ -180,7 +180,7 @@ Prime Decan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/n99
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
@@ -218,7 +218,7 @@ Decan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
@@ -291,7 +291,7 @@ Veteran
 	suit_store = 	/obj/item/gun/ballistic/shotgun/trench
 	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/restraints/handcuffs=1, \
@@ -330,7 +330,7 @@ Prime
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/restraints/handcuffs=1, \
@@ -367,7 +367,7 @@ Legionary
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
@@ -402,7 +402,7 @@ Legionary
 	glasses = null
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
@@ -433,7 +433,7 @@ Legionary
 	glasses = null
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola/tactical=1, \
+		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762=2, \
