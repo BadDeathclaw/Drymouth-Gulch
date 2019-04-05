@@ -32,6 +32,16 @@
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 6
 	multiple_sprites = 1
+	materials = list(MAT_METAL = 8000)
+
+
+/obj/item/ammo_box/c4570SP
+	name = "speed loader (.45 LC)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "4570"
+	ammo_type = /obj/item/ammo_casing/c4570SP
+	max_ammo = 6
+	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
 /obj/item/ammo_box/c9mm

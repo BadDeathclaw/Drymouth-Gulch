@@ -50,13 +50,20 @@ wasteland
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
+	r_hand = pick(
+		/obj/item/claymore/machete/pipe, \
+		/obj/item/claymore/machete/golf, \
+		/obj/item/switchblade, \
+		/obj/item/kitchen/knife, \
+		/obj/item/kitchen/rollingpin, \
+		/obj/item/oar)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
 		/obj/item/clothing/under/f13/machinist, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
-	l_pocket = 		/obj/item/reagent_containers/food/drinks/flask
+	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
@@ -64,7 +71,6 @@ wasteland
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/blood/radaway=1, \
-		/obj/item/reagent_containers/food/drinks/flask, \
 		/obj/item/storage/bag/money/small/wastelander)
 
 
@@ -228,17 +234,13 @@ Pusher
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	suit = /obj/item/clothing/suit/f13/duster
+	suit = /obj/item/clothing/suit/armor/khan
+	uniform = /obj/item/clothing/under/f13/khan
+
+	chemwhiz = TRUE
 
 /datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/merca, \
-		/obj/item/clothing/under/f13/mercc, \
-		/obj/item/clothing/under/f13/caravaneer, \
-		/obj/item/clothing/under/f13/roving, \
-		/obj/item/clothing/under/f13/doctorm, \
-		/obj/item/clothing/under/jabroni)
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)

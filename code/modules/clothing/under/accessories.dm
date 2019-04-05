@@ -118,6 +118,10 @@
     item_color = "lieutenantrank"
     minimize_when_attached = TRUE
 
+/obj/item/clothing/accessory/armband/med/ncr
+	name = "medical armband (O-1 Medical Officer)"
+	desc = "An armband worn by NCR Medical Officers to diplay their rank and specialty. This one is white."
+
 /obj/item/clothing/accessory/ncr/SSGT
     name = "(E-6) Staff Sergeant rank pins"
     desc = "A trooper holding the rank of Staff Sergeant should wear this."
@@ -131,6 +135,10 @@
     icon_state = "ncrenlisted"
     item_color = "ncrenlisted"
     minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/armband/engine/ncr
+    name = "engineering armband (E-5 Engineer)"
+    desc = "An armband worn by NCR Engineers to display their rank and speciality. This one is orange with a reflective strip!"
 
 /obj/item/clothing/accessory/ncr/TPR
     name = "(E-3) Trooper rank pins"

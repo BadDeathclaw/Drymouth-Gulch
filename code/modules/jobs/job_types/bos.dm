@@ -22,6 +22,7 @@ Main doors: ACCESS_CAPTAIN 20
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
+	technophreak = TRUE
 
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -132,6 +133,7 @@ Paladin
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1)
+	chemwhiz = TRUE
 
 
 /*
@@ -185,7 +187,6 @@ Scribe
 	selection_color = "#95a5a6"
 	exp_requirements = 600
 
-
 	outfit = /datum/outfit/job/bos/f13scribe
 
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
@@ -205,6 +206,7 @@ Scribe
 		/obj/item/gun/energy/laser/pistol=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2) //super paks not in yet
 	//PA training not in yet
+	chemwhiz = TRUE
 
 /*
 Initiate Knight
@@ -253,7 +255,6 @@ Initiate Scribe
 	supervisors = "the scribes"
 	selection_color = "#95a5a6"
 
-
 	outfit = /datum/outfit/job/bos/f13initiatescribe
 
 	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
@@ -271,3 +272,4 @@ Initiate Scribe
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1)
+	chemwhiz = TRUE

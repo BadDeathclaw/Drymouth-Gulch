@@ -141,6 +141,9 @@
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
 		return
+	if(!user.mind.ischemwhiz==TRUE)
+		to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
+		return
 	if(!ui)
 		ui = new(user, src, ui_key, "chem_dispenser", name, 550, 550, master_ui, state)
 		if(user.hallucinating())
@@ -294,8 +297,8 @@
 		update_icon()
 		return
 
-	if(default_deconstruction_crowbar(I))
-		return
+//	if(default_deconstruction_crowbar(I)) //no deconstruction for cell replacement
+//		return
 	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		var/obj/item/reagent_containers/B = I
 		. = 1 //no afterattack

@@ -365,6 +365,11 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
+	name = "legion prime helmet"
+	item_state = "legprime"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/head/helmet/f13/legion/scout
 	name = "legion scout hood"
 	desc = "It's a leather hood worn by legion scouts."
@@ -384,7 +389,7 @@
 	desc = "It's a metal legion veteran helmet, looks pretty sturdy."
 	icon_state = "legvet"
 	item_state = "legvet"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -407,19 +412,24 @@
 	desc = "It's leather legion decan helmet."
 	icon_state = "legdecan"
 	item_state = "legdecan"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
+	name = "legion prime decanus helmet"
+	item_state = "legdecanprime"
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
 /obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	name = "legion veteran decanus helmet"
 	desc = "It's leather legion veteran decan helmet."
 	icon_state = "legdecanvet"
 	item_state = "legdecanvet"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -465,10 +475,9 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
-/*
-	darkness_view = 8
-	invis_view = SEE_INVISIBLE_MINIMUM
-*/
+	darkness_view = 128
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+	glass_colour_type = /datum/client_colour/glass_colour/red
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	name = "desert ranger combat helmet"
@@ -572,6 +581,8 @@
 	tint = 0
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	darkness_view = 128
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 
 /obj/item/clothing/head/helmet/power_armor/t45b
 	name = "Salvaged T-45b helmet"

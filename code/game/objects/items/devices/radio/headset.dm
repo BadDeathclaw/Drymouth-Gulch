@@ -212,6 +212,10 @@
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/headset_vault_hos
 
+/obj/item/radio/headset/headset_vault_hos/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
+
 /obj/item/radio/headset/headset_vault
 	name = "\proper vault radio headset"
 	desc = "A vault-tec radio.\nChannels are as follows: :v - vault."
@@ -222,6 +226,10 @@
 	desc = "This is used by your elite security force.\nTo access the security channel, use :s. To access the vault channel, use :v."
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_vault_security
+
+/obj/item/radio/headset/headset_vaultsec/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_vault_hos/alt
 	name = "\proper the head of security's bowman headset"
@@ -235,17 +243,29 @@
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_ncr
 
+/obj/item/radio/headset/headset_ncr/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
+
 /obj/item/radio/headset/headset_bos
 	name = "brotherhood radio headset"
 	desc = "This is used by the brotherhood of steel.\nTo access the BOS channel, use :q."
 	icon_state = "cent_headset"
 	keyslot = new /obj/item/encryptionkey/headset_bos
 
+/obj/item/radio/headset/headset_bos/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
+
 /obj/item/radio/headset/headset_enclave
 	name = "enclave radio headset"
 	desc = "This is used by the enclave.\nTo access the enclave channel, use :z."
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_enclave
+
+/obj/item/radio/headset/headset_enclave/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_den
 	name = "den radio headset"

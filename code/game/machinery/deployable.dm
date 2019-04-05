@@ -52,9 +52,9 @@
 	else if(istype(mover, /obj/item/projectile))
 		if(!anchored)
 			return 1
-		//var/obj/item/projectile/proj = mover
-		//if(proj.firer && Adjacent(proj.firer))
-			//return 1
+		var/obj/item/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return 1
 		if(prob(proj_pass_rate))
 			return 1
 		/* /obj/item/restraints/legcuffs/bola/energy/throw_impact(atom/hit_atom)
