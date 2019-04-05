@@ -520,3 +520,6 @@
 	component_parts += new /obj/item/stack/sheet/glass(null)
 	component_parts += new /obj/item/stock_parts/cell/bluespace(null)
 	RefreshParts()
+
+/obj/machinery/chem_dispenser/ncr //low-capacity NCR dispenser made from surplus parts
+	cell_type = /obj/item/stock_parts/cell/medium

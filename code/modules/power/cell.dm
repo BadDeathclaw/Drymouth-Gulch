@@ -213,6 +213,12 @@
 	name = "pulse pistol power cell"
 	maxcharge = 2000
 
+/obj/item/stock_parts/cell/medium
+	name = "medium-capacity power cell"
+	icon_state = "cell"
+	maxcharge = 3000
+	chargerate = 1500
+
 /obj/item/stock_parts/cell/high
 	name = "high-capacity power cell"
 	icon_state = "hcell"
