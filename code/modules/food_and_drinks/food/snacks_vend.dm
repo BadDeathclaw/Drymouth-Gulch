@@ -13,6 +13,16 @@
 	tastes = list("candy" = 1)
 	foodtype = JUNKFOOD | SUGAR
 
+/obj/item/reagent_containers/food/snacks/candy/hyena
+	name = "hyena candy"
+	desc = "Hyena brand candy, love it or hate it, its all a toxic mess to me."
+	icon_state = "hcandy"
+	trash = /obj/item/trash/candy/hyena
+	list_reagents = list("nutriment" = 1, "sugar" = 2, "toxin" = 1)
+	filling_color = "#8cff00"
+	tastes = list("toxic mess" = 1)
+	foodtype = JUNKFOOD | SUGAR
+
 /obj/item/reagent_containers/food/snacks/sosjerky
 	name = "\improper Scaredy's Private Reserve Beef Jerky"
 	icon_state = "sosjerky"

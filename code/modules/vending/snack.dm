@@ -4,7 +4,7 @@
 	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
 	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my god it's so juicy!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
-	products = list(/obj/item/reagent_containers/food/snacks/candy = 6,
+	products = list(/obj/item/reagent_containers/food/snacks/candy/hyena = 6,
 		            /obj/item/reagent_containers/food/drinks/dry_ramen = 6,
 		            /obj/item/reagent_containers/food/snacks/chips = 6,
 		            /obj/item/reagent_containers/food/snacks/sosjerky = 6,
