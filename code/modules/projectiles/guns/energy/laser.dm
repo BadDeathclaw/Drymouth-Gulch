@@ -222,7 +222,8 @@
 	damage = 60
 
 /obj/item/projectile/plasma/pistol
-	damage = 50
+	damage = 35
+	armour_penetration = -18
 
 /obj/item/projectile/plasma/scatter
 	damage = 25
