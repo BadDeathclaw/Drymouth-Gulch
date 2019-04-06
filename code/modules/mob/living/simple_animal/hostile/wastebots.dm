@@ -39,7 +39,7 @@
 	attack_sound = 'sound/items/welder.ogg'
 	attacktext = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
-	projectiletype = /obj/item/projectile/plasma/scatter
+	projectiletype = /obj/item/projectile/plasma/pistol
 	rapid = 1
 	ranged = 1
 	retreat_distance = 2
