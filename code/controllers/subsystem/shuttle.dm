@@ -141,7 +141,7 @@ SUBSYSTEM_DEF(shuttle)
 		message_admins(msg)
 		log_game("[msg] Alive: [alive], Roundstart: [total], Threshold: [threshold]")
 		emergencyNoRecall = TRUE
-		priority_announce("Sensors indicate region cannot sustain life, an emergency evacuation train has been dispatched - jamming recall signals across all frequencies.",null,null,"Vault-Tec")
+		priority_announce("Catastrophic casualties detected: crisis train protocols activated - jamming recall signals across all frequencies.",null,null,"Vault-Tec")
 		if(emergency.timeLeft(1) > emergencyCallTime * 0.4)
 			emergency.request(null, set_coefficient = 0.4)
 
@@ -229,11 +229,11 @@ SUBSYSTEM_DEF(shuttle)
 	var/area/A = get_area(user)
 
 	log_game("[key_name(user)] has called the shuttle.")
-	deadchat_broadcast("<span class='deadsay'><span class='name'>[user.real_name]</span> has called the train at <span class='name'>[A.name]</span>.</span>", user)
+	deadchat_broadcast("<span class='deadsay'><span class='name'>[user.real_name]</span> has called the shuttle at <span class='name'>[A.name]</span>.</span>", user)
 	if(call_reason)
 		SSblackbox.record_feedback("text", "shuttle_reason", 1, "[call_reason]")
 		log_game("Shuttle call reason: [call_reason]")
-	message_admins("[ADMIN_LOOKUPFLW(user)] has called the train. (<A HREF='?_src_=holder;[HrefToken()];trigger_centcom_recall=1'>TRIGGER CENTCOM RECALL</A>)")
+	message_admins("[ADMIN_LOOKUPFLW(user)] has called the shuttle. (<A HREF='?_src_=holder;[HrefToken()];trigger_centcom_recall=1'>TRIGGER CENTCOM RECALL</A>)")
 
 /datum/controller/subsystem/shuttle/proc/centcom_recall(old_timer, admiral_message)
 	if(emergency.mode != SHUTTLE_CALL || emergency.timer != old_timer)
@@ -265,8 +265,8 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/cancelEvac(mob/user)
 	if(canRecall())
 		emergency.cancel(get_area(user))
-		log_game("[key_name(user)] has recalled the train.")
-		message_admins("[ADMIN_LOOKUPFLW(user)] has recalled the train.")
+		log_game("[key_name(user)] has recalled the shuttle.")
+		message_admins("[ADMIN_LOOKUPFLW(user)] has recalled the shuttle.")
 		deadchat_broadcast("<span class='deadsay'><span class='name'>[user.real_name]</span> has recalled the shuttle from <span class='name'>[get_area_name(user, TRUE)]</span>.</span>", user)
 		return 1
 
@@ -312,8 +312,8 @@ SUBSYSTEM_DEF(shuttle)
 	if(callShuttle)
 		if(EMERGENCY_IDLE_OR_RECALLED)
 			emergency.request(null, set_coefficient = 2.5)
-			log_game("There is no means of calling the train anymore. Shuttle automatically called.")
-			message_admins("All the communications consoles were destroyed and all AIs are inactive. Train called.")
+			log_game("There is no means of calling the shuttle anymore. Shuttle automatically called.")
+			message_admins("All the communications consoles were destroyed and all AIs are inactive. Shuttle called.")
 
 /datum/controller/subsystem/shuttle/proc/registerHostileEnvironment(datum/bad)
 	hostileEnvironments[bad] = TRUE
@@ -357,7 +357,7 @@ SUBSYSTEM_DEF(shuttle)
 		emergency.mode = SHUTTLE_STRANDED
 		emergency.timer = null
 		emergency.sound_played = FALSE
-		priority_announce("Sensors aboard the train indictate the Vault has been compromised. \
+		priority_announce("Hostile environment detected. \
 			Departure has been postponed indefinitely pending \
 			conflict resolution.", null, 'sound/misc/notice1.ogg', "Vault-Tec")
 	if(!emergencyNoEscape && (emergency.mode == SHUTTLE_STRANDED))

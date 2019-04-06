@@ -1,7 +1,7 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
 /client/verb/wiki(query as text)
 	set name = "wiki"
-	set desc = "Opens the Patreon in your browser."
+	set desc = "Type what you want to know about.  This will open the wiki in your web browser. Type nothing to go to the main page."
 	set hidden = 1
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
@@ -11,20 +11,20 @@
 		else if (query != null)
 			src << link(wikiurl)
 	else
-		to_chat(src, "<span class='danger'>The patreon URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='danger'>The wiki URL is not set in the server configuration.</span>")
 	return
 
 /client/verb/forum()
 	set name = "forum"
-	set desc = "Visit the Discord."
+	set desc = "Visit the forum."
 	set hidden = 1
 	var/forumurl = CONFIG_GET(string/forumurl)
 	if(forumurl)
-		if(alert("This will open the Discord in your browser. Are you sure?",,"Yes","No")!="Yes")
+		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")!="Yes")
 			return
 		src << link(forumurl)
 	else
-		to_chat(src, "<span class='danger'>The discord URL is not set in the server configuration.</span>")
+		to_chat(src, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
 	return
 
 /client/verb/rules()
