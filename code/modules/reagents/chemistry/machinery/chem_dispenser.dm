@@ -135,13 +135,13 @@
 		beaker = null
 		cut_overlays()
 
-/obj/machinery/chem_dispenser/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
+/obj/machinery/chem_dispenser/ui_interact(mob/living/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
 											datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui_key, ui, force_open)
 	if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_dispenser/drinks))
 		to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
 		return
-	if(!user.mind.ischemwhiz==TRUE && !istype(src, /obj/machinery/chem_dispenser/drinks))
+	if(!user.mind.ischemwhiz==TRUE && !user.has_trait(TRAIT_CHEMWHIZ) && !istype(src, /obj/machinery/chem_dispenser/drinks))
 		to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
 		return
 	if(!ui)

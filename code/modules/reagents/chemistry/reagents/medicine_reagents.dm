@@ -1445,9 +1445,9 @@
 			M.cure_nearsighted(EYE_DAMAGE)
 			M.blur_eyes(35)
 
-	else if(M.has_trait(TRAIT_NEARSIGHT, EYE_DAMAGE))
+	else if(M.has_trait(TRAIT_NEARSIGHT))
 		to_chat(M, "<span class='warning'>The blackness in your peripheral vision fades.</span>")
-		M.cure_nearsighted(EYE_DAMAGE)
+		M.cure_nearsighted()
 		M.blur_eyes(10)
 	else if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
@@ -1460,13 +1460,13 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/mentat/on_mob_add(mob/M)
+/datum/reagent/medicine/mentat/on_mob_add(mob/M)
 	..()
 	if(isliving(M))
 		var/mob/living/L = M
 		L.add_trait(TRAIT_CHEMWHIZ, id)
 
-/datum/reagent/drug/mentat/on_mob_delete(mob/M)
+/datum/reagent/medicine/mentat/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/L = M
 		L.remove_trait(TRAIT_CHEMWHIZ, id)
