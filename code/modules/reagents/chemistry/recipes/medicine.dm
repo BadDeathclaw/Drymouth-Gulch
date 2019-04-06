@@ -66,7 +66,7 @@
 	name = "Synthflesh"
 	id = "synthflesh"
 	results = list("synthflesh" = 3)
-	required_reagents = list("blood" = 1, "carbon" = 1, "styptic_powder" = 1)
+	required_reagents = list("carbon" = 1, "styptic_powder" = 1, "FEV_solution" = 1)
 
 /datum/chemical_reaction/styptic_powder
 	name = "Styptic Powder"

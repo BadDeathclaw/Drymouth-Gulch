@@ -73,7 +73,7 @@
 	name = "Zombie Powder"
 	id = "zombiepowder"
 	results = list("zombiepowder" = 2)
-	required_reagents = list("carpotoxin" = 5, "morphine" = 5, "copper" = 5)
+	required_reagents = list("carpotoxin" = 5, "morphine" = 5, "copper" = 5, "virusfood" = 1)
 
 /datum/chemical_reaction/mindbreaker
 	name = "Mindbreaker Toxin"

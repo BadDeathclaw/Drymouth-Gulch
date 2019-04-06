@@ -126,7 +126,7 @@
 	name = "Chlorine Trifluoride"
 	id = "clf3"
 	results = list("clf3" = 4)
-	required_reagents = list("chlorine" = 1, "fluorine" = 3)
+	required_reagents = list("chlorine" = 1, "fluorine" = 3, "plasma" = 2)
 	required_temp = 424
 
 /datum/chemical_reaction/clf3/on_reaction(datum/reagents/holder, created_volume)

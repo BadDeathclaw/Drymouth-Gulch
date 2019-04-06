@@ -225,7 +225,9 @@
 	color = "#C8A5DC"
 
 /datum/reagent/medicine/silver_sulfadiazine/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	if(iscarbon(M) && M.stat != DEAD)
+	if(iscarbon(M))
+		if (M.stat == DEAD)
+			show_message = 0
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
@@ -234,7 +236,7 @@
 			M.adjustFireLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
-			M.emote("scream")
+				M.emote("scream")
 	..()
 
 /datum/reagent/medicine/silver_sulfadiazine/on_mob_life(mob/living/M)
@@ -273,7 +275,9 @@
 	color = "#FF9696"
 
 /datum/reagent/medicine/styptic_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	if(iscarbon(M) && M.stat != DEAD)
+	if(iscarbon(M))
+		if (M.stat == DEAD)
+			show_message = 0
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
@@ -282,7 +286,7 @@
 			M.adjustBruteLoss(-reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
-			M.emote("scream")
+				M.emote("scream")
 	..()
 
 /datum/reagent/medicine/styptic_powder/on_mob_life(mob/living/M)
@@ -1427,7 +1431,7 @@
 	color = "#C8A5DC"
 	reagent_state = SOLID
 	overdose_threshold = 30
-	addiction_threshold = 20
+	addiction_threshold = 16
 
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REM, 0)
@@ -1455,6 +1459,18 @@
 		to_chat(M, "<span class='notice'>You feel way more intelligent!</span>")
 	..()
 	. = 1
+
+/datum/reagent/drug/mentat/on_mob_add(mob/M)
+	..()
+	if(isliving(M))
+		var/mob/living/L = M
+		L.add_trait(TRAIT_CHEMWHIZ, id)
+
+/datum/reagent/drug/mentat/on_mob_delete(mob/M)
+	if(isliving(M))
+		var/mob/living/L = M
+		L.remove_trait(TRAIT_CHEMWHIZ, id)
+	..()
 
 /datum/reagent/medicine/mentat/overdose_process(mob/living/M)
 	if(prob(33))
