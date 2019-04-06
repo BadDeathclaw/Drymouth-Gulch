@@ -34,6 +34,16 @@
 	tastes = list("dried meat" = 1)
 	foodtype = JUNKFOOD | MEAT | SUGAR
 
+/obj/item/reagent_containers/food/snacks/hyenajerky
+	name = "\improper Hyena's Private Reserve Beef Jerky"
+	icon_state = "hynjerky"
+	desc = "Beef jerky made from the finest cows two hundred years ago."
+	list_reagents = list("nutriment" = 1, "sodiumchloride" = 5, "toxin" = 2)
+	junkiness = 25
+	filling_color = "#8cff00"
+	tastes = list("dried up vomit" = 1)
+	foodtype = JUNKFOOD | MEAT
+
 /obj/item/reagent_containers/food/snacks/sosjerky/healthy
 	name = "homemade beef jerky"
 	desc = "Homemade beef jerky made from the finest space cows."
