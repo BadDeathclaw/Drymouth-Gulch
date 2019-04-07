@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 /obj/item/stack/sheet/mineral/wood/twenty
     amount = 20
 
-    
+
 /obj/item/stack/sheet/mineral/wood/five
 	amount = 5
 
@@ -319,6 +319,13 @@ GLOBAL_LIST_INIT(cardboard_recipes, list ( \
 	new/datum/stack_recipe("cardborg helmet", /obj/item/clothing/head/cardborg), \
 	new/datum/stack_recipe("pizza box", /obj/item/pizzabox), \
 	new/datum/stack_recipe("folder", /obj/item/folder), \
+	null, \
+	new/datum/stack_recipe("shotgun slugs box", /obj/item/storage/box/slugshot, ), \
+	new/datum/stack_recipe("shotgun buckshot box", /obj/item/storage/box/lethalshot, ), \
+	new/datum/stack_recipe("shotgun rubbershot box", /obj/item/storage/box/rubbershot, ), \
+	new/datum/stack_recipe("shotgun beanbag box", /obj/item/storage/box/beanbag, ), \
+	new/datum/stack_recipe("shotgun tech box", /obj/item/storage/box/techshot, ), \
+	null, \
 	new/datum/stack_recipe("large box", /obj/structure/closet/cardboard, 4), \
 	new/datum/stack_recipe("cardboard cutout", /obj/item/cardboard_cutout, 5), \
 ))
