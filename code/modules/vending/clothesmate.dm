@@ -123,6 +123,12 @@
 	charges = list(38, 4, 4)// of 112 standard, 12 contraband, 10 premium(?)
 	init_charges = list(38, 4, 4)
 
+/obj/item/vending_refill/clothing/bos
+	machine_name = "Civilian ClothesMate"
+	icon_state = "refill_clothes"
+	charges = list(38, 4, 4)// of 112 standard, 12 contraband, 10 premium(?)
+	init_charges = list(40, 112, 5)
+
 /obj/machinery/vending/clothing/bos
 	name = "Civilian ClothesMate"
 	desc = "A vending machine for civilian and waster disguises."
@@ -201,9 +207,3 @@
 		            /obj/item/clothing/under/rank/mailman = 1,
 		            /obj/item/clothing/suit/jacket/leather = 1,
 		            /obj/item/clothing/suit/jacket/leather/overcoat = 1)
-
-/obj/item/vending_refill/clothing/bos
-	machine_name = "Civilian ClothesMate"
-	icon_state = "refill_clothes"
-	charges = list(10,38,4)// of 112 standard, 12 contraband, 10 premium(?)
-	init_charges = list(10,38,4)
