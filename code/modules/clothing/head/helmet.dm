@@ -257,7 +257,7 @@
 	icon_state = "metalhelmet"
 	item_state = "metalhelmet"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	armor = list(melee = 20, bullet = 16, laser = 0,energy = 0, bomb = 16, bio = 0, rad = 0)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 16, "bio" = 0, "rad" = 0)
 
 /obj/item/clothing/head/helmet/knight/fluff/rider
 	name = "rider helmet" //Not raider. Rider.
