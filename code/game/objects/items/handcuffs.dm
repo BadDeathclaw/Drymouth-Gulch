@@ -320,7 +320,7 @@
 	name = "bola"
 	desc = "A restraining device designed to be thrown at the target. Upon connecting with said target, it will wrap around their legs, making it difficult for them to move quickly."
 	icon_state = "bola"
-	breakouttime = 60//easy to apply, easy to break out of
+	breakouttime = 45//easy to apply, easy to break out of
 	gender = NEUTER
 	var/knockdown = 0
 
