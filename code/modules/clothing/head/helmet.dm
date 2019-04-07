@@ -380,14 +380,14 @@
 	desc = "It's a leather hood worn by legion scouts."
 	icon_state = "cult_hoodalt"
 	item_state = "cult_hoodalt"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/explorer
 	name = "legion explorer hood"
 	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted."
 	icon_state = "cult_hoodalt"
 	item_state = "cult_hoodalt"
-	armor = list("melee" = 10, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legveteran
 	name = "legion veteran helmet"
@@ -406,7 +406,7 @@
 	desc = "It's leather legion vexillarius helmet."
 	icon_state = "legvexil"
 	item_state = "legvexil"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 20, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	dynamic_hair_suffix = ""
