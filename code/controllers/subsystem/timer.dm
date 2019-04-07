@@ -212,7 +212,6 @@ SUBSYSTEM_DEF(timer)
 		if(!(qtimer.flags & TIMER_LOOP))
 			qdel(qtimer)
 		else
-			bucket_count++
 			qtimer.spent = 0
 			qtimer.bucketEject()
 			if(qtimer.flags & TIMER_CLIENT_TIME)
@@ -269,7 +268,7 @@ SUBSYSTEM_DEF(timer)
 	var/new_bucket_count
 	var/i = 1
 	for (i in 1 to length(alltimers))
-		var/datum/timedevent/timer = alltimers[1]
+		var/datum/timedevent/timer = alltimers[i]
 		if (!timer)
 			continue
 
