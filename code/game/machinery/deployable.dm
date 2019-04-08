@@ -131,7 +131,7 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message("<span class='notice'>[user] starts to down [src]...</span>", "<span class='notice'>You start to take down [src]...</span>")
+	user.visible_message("<span class='notice'>[user] starts to take down [src]...</span>", "<span class='notice'>You start to take down [src]...</span>")
 	if(!has_buckled_mobs() && do_after(user, 80, target = src))
 		to_chat("<span class='notice'>You take down [src].</span>")
 		new /obj/item/stack/sheet/mineral/sandbags(src.loc)
