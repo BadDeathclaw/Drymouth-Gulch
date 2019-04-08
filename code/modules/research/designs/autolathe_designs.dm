@@ -805,6 +805,14 @@
 	build_path = /obj/item/ammo_box/a762/doublestacked
 	category = list("initial", "Security")
 
+/datum/design/c4570SP
+	name = ".45 LC speed loader (NCR)"
+	id = "c4570SP"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 8000)
+	build_path = /obj/item/ammo_box/c4570SP
+	category = list("initial", "Security")
+
 /datum/design/a50MG
 	name = "Anti-Materiel Ammo Rack (.50MG)"
 	id = "a50MG"
