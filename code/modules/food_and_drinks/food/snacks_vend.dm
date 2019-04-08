@@ -42,6 +42,17 @@
 	tastes = list("salt" = 1, "crisps" = 1)
 	foodtype = JUNKFOOD | FRIED
 
+/obj/item/reagent_containers/food/snacks/oldhotdog
+	name = "moldy hotdog"
+	desc = "Oh god... how long has this been in there?"
+	icon_state = "oldhotdog"
+	junkiness = 20
+	list_reagents = list("nutriment" = 2, "toxin" = 10, "tomatojuice" = 3)
+	tastes = list("old" = 1, "dry" = 1, "crusty" = 1)
+	filling_color = "#FFD700"
+	foodtype = JUNKFOOD
+
+
 /obj/item/reagent_containers/food/snacks/no_raisin
 	name = "4no raisins"
 	icon_state = "4no_raisins"
