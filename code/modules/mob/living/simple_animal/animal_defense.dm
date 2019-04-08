@@ -107,7 +107,7 @@
 /mob/living/simple_animal/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
-	apply_damage(Proj.damage, Proj.damage_type)
+	apply_damage(Proj.damage, Proj.damage_type, Proj.armour_penetration)
 	Proj.on_hit(src)
 	return 0
 
