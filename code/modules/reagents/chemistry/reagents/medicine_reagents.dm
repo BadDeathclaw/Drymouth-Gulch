@@ -227,7 +227,7 @@
 /datum/reagent/medicine/silver_sulfadiazine/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M))
 		if (M.stat == DEAD)
-			show_message = 0
+			show_message = FALSE
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
@@ -277,7 +277,7 @@
 /datum/reagent/medicine/styptic_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M))
 		if (M.stat == DEAD)
-			show_message = 0
+			show_message = FALSE
 		if(method in list(INGEST, VAPOR, INJECT))
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
@@ -384,7 +384,7 @@
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
 	if(iscarbon(M))
 		if (M.stat == DEAD)
-			show_message = 0
+			show_message = FALSE
 		if(method in list(PATCH, TOUCH))
 			M.adjustBruteLoss(-1.25 * reac_volume)
 			M.adjustFireLoss(-1.25 * reac_volume)
@@ -1445,7 +1445,7 @@
 			M.cure_nearsighted(EYE_DAMAGE)
 			M.blur_eyes(35)
 
-	else if(M.has_trait(TRAIT_NEARSIGHT))
+	else if(M.has_trait(TRAIT_NEARSIGHT, EYE_DAMAGE))
 		to_chat(M, "<span class='warning'>The blackness in your peripheral vision fades.</span>")
 		M.cure_nearsighted()
 		M.blur_eyes(10)

@@ -207,7 +207,7 @@
 	if(technophreak==TRUE)
 		H.mind.istechnophreak = TRUE
 	if(chemwhiz == TRUE)
-		H.mind.ischemwhiz = TRUE
+		H.add_trait(TRAIT_CHEMWHIZ)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -245,7 +245,7 @@
 	if(technophreak==TRUE)
 		H.mind.istechnophreak = TRUE
 	if(chemwhiz == TRUE)
-		H.mind.ischemwhiz = TRUE
+		H.add_trait(TRAIT_CHEMWHIZ)
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()
