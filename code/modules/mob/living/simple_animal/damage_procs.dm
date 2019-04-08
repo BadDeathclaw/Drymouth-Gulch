@@ -33,7 +33,7 @@
 	else if(damage_coeff[BRUTE])
 		if(ap > armor[BRUTE])
 			. = adjustHealth(amount * CONFIG_GET(number/damage_multiplier), updating_health, forced)
-		else if(100-armor[BRUTE]+ap)/100 > 0)
+		else if((100-armor[BRUTE]+ap)/100 > 0)
 			. = adjustHealth(((100-armor[BRUTE]+ap)/100) * damage_coeff[BRUTE] * amount * CONFIG_GET(number/damage_multiplier), updating_health, forced)
 		else
 			. = adjustHealth(0, updating_health, forced)
@@ -44,7 +44,7 @@
 	else if(damage_coeff[BURN])
 		if(ap > armor[BURN])
 			. = adjustHealth(amount * CONFIG_GET(number/damage_multiplier), updating_health, forced)
-		else if(100-armor[BURN]+ap)/100 > 0)
+		else if((100-armor[BURN]+ap)/100 > 0)
 			. = adjustHealth(((100-armor[BURN]+ap)/100) * damage_coeff[BURN] * amount * CONFIG_GET(number/damage_multiplier), updating_health, forced)
 		else
 			. = adjustHealth(0, updating_health, forced)
