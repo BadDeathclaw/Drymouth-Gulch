@@ -264,7 +264,7 @@
 /obj/item/clothing/suit/armor/khan
 	name = "khan armored vest"
 	desc = "The symbol of the greatest pushers."
-	icon_state = "khan"
+	icon_state = "armorkit" //we need real sprites for this
 	item_state = "khan"
 
 //Warriors

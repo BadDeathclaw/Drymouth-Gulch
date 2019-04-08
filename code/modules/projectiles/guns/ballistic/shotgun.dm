@@ -294,12 +294,12 @@
 	zoom_out_amt = 13
 
 //Anti-Materiel Rifle (NCR)
-/obj/item/gun/ballistic/shotgun/automatic/antimateriel
+/obj/item/gun/ballistic/shotgun/antimateriel
 	name = "anti-materiel rifle"
 	desc = "A heavy, high-powered sniper rifle chambered in .50 caliber ammunition, custom-made for use by the New California Republic Rangers. Although relatively austere, you're still pretty sure it could take the head off a deathclaw."
 	icon_state = "sniper"
 	item_state = "sniper"
-	mag_type = /obj/item/ammo_box/magazine/internal/antimateriel
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
 	zoomable = TRUE
@@ -309,7 +309,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
-	fire_delay = 10 //but not too much fun
+	fire_delay = 3
 
 //Colt Rangemaster
 /obj/item/gun/ballistic/shotgun/automatic/hunting

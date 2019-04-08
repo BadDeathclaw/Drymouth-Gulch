@@ -227,7 +227,7 @@
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
 
 
-/obj/item/gun/energy/attack_self(mob/living/user)
+/obj/item/gun/energy/AltClick(mob/living/user)
 	if(cell)
 		cell.forceMove(drop_location())
 		user.put_in_hands(cell)
@@ -237,7 +237,6 @@
 	else
 		to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
 	return
-
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	..()
@@ -255,3 +254,7 @@
 				return
 		else if (cell)
 			to_chat(user, "<span class='notice'>There's already a cell in \the [src].</span>")
+
+/obj/item/gun/energy/examine(mob/user)
+	..()
+	to_chat(user, "<span class='notice'>Alt-click to eject the battery.</span>")
