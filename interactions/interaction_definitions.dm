@@ -61,7 +61,7 @@
 	simple_message = "USER gives TARGET the bird!"
 	max_distance = 25
 
-/datum/interaction/lewd/holdhand
+/datum/interaction/holdhand
 	command = "holdhand"
 	description = "Hold their hand."
 	require_user_hands = 1
@@ -69,7 +69,7 @@
 	max_distance = 1
 	needs_physical_contact = 1
 
-/datum/interaction/lewd/asslap
+/datum/interaction/asslap
 	command = "assslap"
 	description = "Slap their ass."
 	simple_message = "USER slaps TARGET right on the ass!"
