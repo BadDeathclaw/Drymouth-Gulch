@@ -646,7 +646,8 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/roundend_smoothskin.ogg'\,
 		'sound/roundend/roundend_tunnel_snakes_rule.ogg'\,
 		'sound/roundend/roundend_real_tunnel_snake.ogg'\,
-		'sound/roundend/roundend_nuclear_backyard.ogg'\
+		'sound/roundend/roundend_nuclear_backyard.ogg'\,
+		'sound/roundend/roundend_patrolling.ogg'\
 		)
 
 	SEND_SOUND(world, sound(round_end_sound))
