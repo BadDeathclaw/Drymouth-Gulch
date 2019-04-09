@@ -642,13 +642,13 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/bangindonk.ogg',
 		'sound/roundend/its_only_game.ogg',
 		'sound/roundend/yeehaw.ogg',
-		'sound/roundend/roundend_jean_baptist.ogg'\,
-		'sound/roundend/roundend_smoothskin.ogg'\,
-		'sound/roundend/roundend_tunnel_snakes_rule.ogg'\,
-		'sound/roundend/roundend_real_tunnel_snake.ogg'\,
-		'sound/roundend/roundend_nuclear_backyard.ogg'\,
+		'sound/roundend/roundend_jean_baptist.ogg',
+		'sound/roundend/roundend_smoothskin.ogg',
+		'sound/roundend/roundend_tunnel_snakes_rule.ogg',
+		'sound/roundend/roundend_real_tunnel_snake.ogg',
+		'sound/roundend/roundend_nuclear_backyard.ogg',
 		'sound/roundend/roundend_patrolling.ogg'\
-	)
+		)
 
 	SEND_SOUND(world, sound(round_end_sound))
 	text2file(login_music, "data/last_round_lobby_music.txt")
