@@ -61,11 +61,21 @@
 	simple_message = "USER gives TARGET the bird!"
 	max_distance = 25
 
-/datum/interaction/holdhand
+/datum/interaction/lewd/holdhand
 	command = "holdhand"
 	description = "Hold their hand."
 	require_user_hands = 1
 	simple_message = "USER holds TARGET's hand. Degenerate."
-	max_distance = 25
+	max_distance = 1
 	needs_physical_contact = 1
-	max_distance = 25
+
+/datum/interaction/lewd/asslap
+	command = "assslap"
+	description = "Slap their ass."
+	simple_message = "USER slaps TARGET right on the ass!"
+	simple_style = "danger"
+	interaction_sound = 'honk/sound/interactions/slap.ogg'
+	max_distance = 1
+	needs_physical_contact = 1
+	write_log_user = "ass-slapped"
+	write_log_target = "was ass-slapped by"
