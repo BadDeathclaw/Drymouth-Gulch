@@ -52,4 +52,14 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	max_ammo = 1
 
+/obj/item/ammo_box/magazine/internal/shot/tube4570
+	name = "4570 internal tube magazine"
+	ammo_type = /obj/item/ammo_casing/c4570
+	caliber = "4570"
+	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/shot/tube44
+	name = ".44 magnum internal tube magazine"
+	ammo_type = /obj/item/ammo_casing/m44
+	caliber = "44"
+	max_ammo = 8
