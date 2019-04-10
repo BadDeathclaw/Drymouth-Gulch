@@ -1,13 +1,14 @@
 GLOBAL_LIST_INIT(command_positions, list(
-	"Elder",
-	"Head Scribe",
-	"Paladin",
-	"Centurion",
-	"NCR Captain",
-	"NCR Veteran Ranger",
-	"Overseer",
-	"Chief of Security",
-	"Sheriff"
+    "Elder",
+    "Head Scribe",
+    "Paladin",
+    "Centurion",
+    "Legion Centurion",
+    "NCR Captain",
+    "NCR Veteran Ranger",
+    "Overseer",
+    "Chief of Security",
+    "Sheriff"
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
