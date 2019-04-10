@@ -275,8 +275,8 @@ window "outputwindow"
 		auto-format = false
 	elem "output"
 		type = OUTPUT
-		pos = 0,0
-		size = 638x455
+		pos = 2,1
+		size = 638x479
 		anchor1 = 0,0
 		anchor2 = 100,100
 		is-default = true
