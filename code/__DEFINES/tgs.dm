@@ -63,6 +63,9 @@
 
 //Call this at the beginning of world/Reboot(reason)
 /world/proc/TgsReboot()
+	//re-enable voting if it was disabled during shuttle call
+	if(!CONFIG_GET(flag/allow_vote_restart))
+		CONFIG_SET(flag/allow_vote_restart, TRUE)
 	return
 
 //DATUM DEFINITIONS
