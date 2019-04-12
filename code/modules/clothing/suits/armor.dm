@@ -385,8 +385,6 @@
 	item_state = "t45bpowerarmor"
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 75, "acid" = 0)
 
-// power armor
-
 /obj/item/clothing/suit/armor/f13/power_armor
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 1
@@ -398,17 +396,11 @@
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-
-/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, slot)
-	if (ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if (!H.mind.istechnophreak && slot == SLOT_WEAR_SUIT)
-			H << "<span class='warning'>You don't have the proper training to operate the power armor!</span>"
-			return 0
-			..()
-	return ..()
-
-
+/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
+	if(user.mind && !user.mind.istechnophreak)
+		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		return
+	else ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"

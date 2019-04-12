@@ -220,7 +220,6 @@ Den Doctor
 	outfit = /datum/outfit/job/den/f13dendoc
 
 /datum/outfit/job/den/f13dendoc
-	chemwhiz = TRUE 
 	name = "Den Doctor"
 	jobtype = /datum/job/den/f13dendoc
 	uniform =  		/obj/item/clothing/under/f13/medic
