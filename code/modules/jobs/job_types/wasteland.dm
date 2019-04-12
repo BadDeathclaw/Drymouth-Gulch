@@ -237,8 +237,6 @@ Pusher
 	suit = /obj/item/clothing/suit/armor/khan
 	uniform = /obj/item/clothing/under/f13/khan
 
-	chemwhiz = TRUE
-
 /datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
 	r_pocket = pick(
