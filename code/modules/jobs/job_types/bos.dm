@@ -22,7 +22,6 @@ Main doors: ACCESS_CAPTAIN 20
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
-	technophreak = TRUE
 
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -133,7 +132,6 @@ Paladin
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
 		/obj/item/kitchen/knife/combat=1)
-	chemwhiz = TRUE
 
 
 /*
@@ -206,7 +204,6 @@ Scribe
 		/obj/item/gun/energy/laser/pistol=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2) //super paks not in yet
 	//PA training not in yet
-	chemwhiz = TRUE
 
 /*
 Initiate Knight
@@ -272,4 +269,3 @@ Initiate Scribe
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1)
-	chemwhiz = TRUE
