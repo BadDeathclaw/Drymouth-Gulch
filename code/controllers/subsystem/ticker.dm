@@ -271,7 +271,7 @@ SUBSYSTEM_DEF(ticker)
 		toggle_ooc(FALSE) // Turn it off
 
 	if(!CONFIG_GET(flag/looc_during_round))
-		toggle_ooc(FALSE)
+		toggle_looc(FALSE)
 
 
 	CHECK_TICK
