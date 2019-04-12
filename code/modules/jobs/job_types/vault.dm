@@ -15,13 +15,6 @@ here's a tip, go search DEFINES/access.dm
 /datum/outfit/job/vault
 	gloves = /obj/item/pda
 
-/datum/outfit/job/vault/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.istechnophreak = TRUE
-
-
 /datum/outfit/job/vault/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)

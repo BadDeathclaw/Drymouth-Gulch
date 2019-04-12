@@ -29,12 +29,6 @@ Main doors: ACCESS_CAPTAIN 20
 		return
 	H.mind.istechnophreak = TRUE
 
-/datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-	H.mind.istechnophreak = TRUE
-
 /*
 Elder
 */

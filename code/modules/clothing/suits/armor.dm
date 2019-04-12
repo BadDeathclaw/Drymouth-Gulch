@@ -396,11 +396,16 @@
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
-	if(user.mind && !user.mind.istechnophreak)
-		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-		return
-	else ..()
+/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/M, mob/equipper, slot)
+	if(!..() || !ishuman(M))
+		return FALSE
+	if(equipper && equipper.mind.istechnophreak)
+		return TRUE
+	var/mob/living/carbon/human/H = M
+	if(H.mind.istechnophreak)
+		return TRUE
+	else
+		return FALSE
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
