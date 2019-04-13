@@ -18,6 +18,8 @@
 
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "straight"
+	barricade = 1
+	proj_pass_rate = 60
 
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
