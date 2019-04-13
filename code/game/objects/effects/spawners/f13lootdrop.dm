@@ -994,6 +994,7 @@
 				/obj/item/storage/box/snappops,
 				/obj/item/bikehorn/rubberducky,
 				/obj/item/stack/packageWrap,
+				/obj/item/dildo,
 				/obj/item/storage/box/matches,
 				/obj/item/reagent_containers/food/snacks/deadmouse,
 				/obj/item/toner,
@@ -1256,4 +1257,4 @@
 	name = "98% chance of deceased rodent"
 	loot = list(
 		/obj/item/reagent_containers/food/snacks/deadmouse = 49,
-		/obj/item/disk/surgery/brainwashing = 1)
+/obj/item/disk/surgery/brainwashing = 1)
