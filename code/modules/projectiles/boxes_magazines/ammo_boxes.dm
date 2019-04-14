@@ -115,6 +115,15 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 10000)
 
+/obj/item/ammo_box/a762/qaudstacked
+	name = "lowpower qaudraple stacked stripper clip (7.62mm)"
+	desc = "A 762 triple stacked lowpower stripper."
+	icon_state = "762aq"
+	ammo_type = /obj/item/ammo_casing/a762/lp
+	max_ammo = 20
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 20000)
+
 /obj/item/ammo_box/a50MG
 	name = "anti-materiel ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead."

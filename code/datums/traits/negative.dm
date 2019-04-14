@@ -12,7 +12,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(NOBLOOD in H.dna.species.species_traits) //can't lose blood if your species doesn't have any
 		return
-	else 
+	else
 		quirk_holder.blood_volume -= 0.275
 
 
@@ -49,12 +49,23 @@
 			heirloom_type = /obj/item/gavelhammer
 		if("Janitor")
 			heirloom_type = /obj/item/mop
-		if("Security Officer")
+		if("Vault-tec Security")
 			heirloom_type = /obj/item/book/manual/wiki/security_space_law
 		if("Scientist")
 			heirloom_type = /obj/item/toy/plush/slimeplushie
 		if("Assistant")
 			heirloom_type = /obj/item/storage/toolbox/mechanical/old/heirloom
+		if("Chief of Security")
+			heirloom_type = /obj/item/book/manual/wiki/security_space_law
+		if("NCR Trooper", "NCR Recruit", "NCR Heavy Trooper")
+			heirloom_type = pick(/obj/item/kitchen/knife/combat,
+			/obj/item/kitchen/knife/combat/survival,
+			/obj/item/toy/cards/deck,
+			/obj/item/lighter)
+		if("NCR Lieutenant")
+			heirloom_type = /obj/item/ammo_box/a762/qaudstacked
+		if("Legion Explorer")
+			heirloom_type = /obj/item/ammo_box/a762/qaudstacked
 	if(!heirloom_type)
 		heirloom_type = pick(
 		/obj/item/toy/cards/deck,
