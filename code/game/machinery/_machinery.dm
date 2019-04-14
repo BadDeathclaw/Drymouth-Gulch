@@ -94,6 +94,8 @@ Class Procs:
 	var/obj/item/circuitboard/circuit // Circuit to be created and inserted when the machinery is created
 	var/interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
 	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
+	var/barricade = 1 //if 1, acts as barricade
+	var/proj_pass_rate = 80 //percentage change for bullets to fly over, if barricade=1
 
 /obj/machinery/Initialize()
 	if(!armor)
@@ -210,6 +212,23 @@ Class Procs:
 			if(!(istype(H) && H.has_dna() && H.dna.check_mutation(TK)))
 				return FALSE
 	return TRUE
+
+/obj/machinery/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
+	if(barricade == 0)
+		return !density
+	else if(density == FALSE)
+		return 1
+	else if(locate(/obj/structure) in get_turf(mover))
+		return 1
+	else if(istype(mover, /obj/item/projectile))
+		var/obj/item/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return 1
+		if(prob(proj_pass_rate))
+			return 1
+		return 0
+	else
+		return !density
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
