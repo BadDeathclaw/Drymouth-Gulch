@@ -3,7 +3,7 @@ BoS access:
 Main doors: ACCESS_CAPTAIN 20
 */
 
-/datum/job/bos //do NOT use this for anything, it's just to store faction datums
+/datum/job/bos //do NOT use this for anything, it's just to store faction datums.
 	department_flag = BOS
 	selection_color = "#95a5a6"
 	exp_type = EXP_TYPE_BROTHERHOOD
