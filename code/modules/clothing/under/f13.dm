@@ -20,8 +20,8 @@
 	random_sensor = FALSE
 
 /obj/item/clothing/under/f13/vault13
-	name = "vault 113 jumpsuit"
-	desc = "A blue jumpsuit with a yellow vault pattern and the number 113 printed on it."
+	name = "vault 13 jumpsuit"
+	desc = "A blue jumpsuit with a yellow vault pattern and the number 13 printed on it."
 	icon_state = "vault13"
 	item_state = "vault13"
 	item_color = "vault13"
