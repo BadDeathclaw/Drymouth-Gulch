@@ -52,7 +52,7 @@
 		acc = "b"
 		note++
 
-	// check octave, C is allowed to go to 9
+	// check octave, C is allowed to go to 9.
 	if(oct < 1 || (note == 3 ? oct > 9 : oct > 8))
 		return
 
