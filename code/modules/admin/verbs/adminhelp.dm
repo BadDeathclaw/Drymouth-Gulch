@@ -153,6 +153,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/initiator_ckey
 	var/initiator_key_name
 	var/heard_by_no_admins = FALSE
+	var/bwoink = FALSE	// if it's a bwoink ; bwoinks aren't sent to discord
 
 	var/list/_interactions	//use AddInteraction() or, preferably, admin_ticket_log()
 
@@ -190,6 +191,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	_interactions = list()
 
 	if(is_bwoink)
+		bwoink = TRUE
 		AddInteraction("<font color='blue'>[key_name_admin(usr)] PM'd [LinkedReplyName()]</font>")
 		message_admins("<font color='blue'>Ticket [TicketHref("#[id]")] created</font>")
 	else
@@ -202,8 +204,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			to_chat(C, "<span class='notice'>No active admins are online, your adminhelp was sent to the admin irc.</span>")
 			heard_by_no_admins = TRUE
 
-    if(!is_bwoink)
-        discordsendmsg("ahelp", "**ADMINHELP: [C.key]: ** \"[msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
+	if(!is_bwoink)
+		discordsendmsg("ahelp", "**ADMINHELP: [C.key]: ** \"[msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
 
 	GLOB.ahelp_tickets.active_tickets += src
 
@@ -326,8 +328,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		var/msg = "Ticket [TicketHref("#[id]")] closed by [key_name]."
 		message_admins(msg)
 		log_admin_private(msg)
-    if(!bwoink && !silent)
-        discordsendmsg("ahelp", "Ticket #[id] closed by [key_name(usr, include_link=0)]")
+	if(!bwoink && !silent)
+		discordsendmsg("ahelp", "Ticket #[id] closed by [key_name(usr, include_link=0)]")
 
 //Mark open ticket as resolved/legitimate, returns ahelp verb
 /datum/admin_help/proc/Resolve(key_name = key_name_admin(usr), silent = FALSE)
@@ -346,8 +348,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		var/msg = "Ticket [TicketHref("#[id]")] resolved by [key_name]"
 		message_admins(msg)
 		log_admin_private(msg)
-    if(!bwoink)
-        discordsendmsg("ahelp", "Ticket #[id] resolved by [key_name(usr, include_link=0)]")
+	if(!bwoink)
+		discordsendmsg("ahelp", "Ticket #[id] resolved by [key_name(usr, include_link=0)]")
 
 //Close and return ahelp verb, use if ticket is incoherent
 /datum/admin_help/proc/Reject(key_name = key_name_admin(usr))
@@ -369,8 +371,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	log_admin_private(msg)
 	AddInteraction("Rejected by [key_name].")
 	Close(silent = TRUE)
-    if(!bwoink)
-        discordsendmsg("ahelp", "Ticket #[id] rejected by [key_name(usr, include_link=0)]")
+	if(!bwoink)
+		discordsendmsg("ahelp", "Ticket #[id] rejected by [key_name(usr, include_link=0)]")
 
 //Resolve ticket with IC Issue message
 /datum/admin_help/proc/ICIssue(key_name = key_name_admin(usr))
@@ -390,8 +392,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	log_admin_private(msg)
 	AddInteraction("Marked as IC issue by [key_name]")
 	Resolve(silent = TRUE)
-    if(!bwoink)
-        discordsendmsg("ahelp", "Ticket #[id] marked as IC by [key_name(usr, include_link=0)]")
+	if(!bwoink)
+		discordsendmsg("ahelp", "Ticket #[id] marked as IC by [key_name(usr, include_link=0)]")
 
 //Show the ticket panel
 /datum/admin_help/proc/TicketPanel()

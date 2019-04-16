@@ -77,26 +77,26 @@
 	SSblackbox.record_feedback("nested tally", "round_end_stats", num_escapees, list("escapees", "total"))
 	SSblackbox.record_feedback("nested tally", "round_end_stats", GLOB.joined_player_list.len, list("players", "total"))
 	SSblackbox.record_feedback("nested tally", "round_end_stats", GLOB.joined_player_list.len - num_survivors, list("players", "dead"))
-    
+	
 	var/discordmsg = ""
-    discordmsg += "\[-------------ROUND END-------------]\n"
-    discordmsg += "Round Number: [GLOB.round_id]\n"
-    discordmsg += "Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]\n"
-    discordmsg += "Players: [GLOB.player_list.len]\n"
-    discordmsg += "Survivors: [num_survivors]\n"
-    discordmsg += "Escapees: [num_escapees]\n"
-    discordmsg += "Integrity: [station_integrity]\n"
-    discordmsg += "Gamemode: [SSticker.mode.name]\n"
-    discordsendmsg("ooc", discordmsg)
-    discordmsg = ""
-    var/list/ded = SSblackbox.first_death
-    if(ded)
-        discordmsg += "First Death: [ded["name"]], [ded["role"]], at [ded["area"]]\n"
-        var/last_words = ded["last_words"] ? "Their last words were: \"[ded["last_words"]]\"\n" : "They had no last words.\n"
-        discordmsg += "[last_words]\n"
-    else
-        discordmsg += "Nobody died!\n"
-    discordmsg += "--------------------------------------\n"
+	discordmsg += "\[-------------ROUND END-------------]\n"
+	discordmsg += "Round Number: [GLOB.round_id]\n"
+	discordmsg += "Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]\n"
+	discordmsg += "Players: [GLOB.player_list.len]\n"
+	discordmsg += "Survivors: [num_survivors]\n"
+	discordmsg += "Escapees: [num_escapees]\n"
+	discordmsg += "Integrity: [station_integrity]\n"
+	discordmsg += "Gamemode: [SSticker.mode.name]\n"
+	discordsendmsg("ooc", discordmsg)
+	discordmsg = ""
+	var/list/ded = SSblackbox.first_death
+	if(ded)
+		discordmsg += "First Death: [ded["name"]], [ded["role"]], at [ded["area"]]\n"
+		var/last_words = ded["last_words"] ? "Their last words were: \"[ded["last_words"]]\"\n" : "They had no last words.\n"
+		discordmsg += "[last_words]\n"
+	else
+		discordmsg += "Nobody died!\n"
+	discordmsg += "--------------------------------------\n"
 	discordsendmsg("ooc", discordmsg)
 	
 	. = list()
