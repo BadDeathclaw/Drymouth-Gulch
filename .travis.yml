@@ -3,6 +3,7 @@ sudo: false
 branches:
   except:
   - ___TGS3TempBranch
+  - ___TGSTempBranch
 env:
     global:
     - BYOND_MAJOR="512"
@@ -41,11 +42,15 @@ matrix:
       addons:
         mariadb: '10.2'
         apt:
+          sources:
+            - ubuntu-toolchain-r-test
           packages:
-            - libc6-i386
             - libstdc++6:i386
             - libssl-dev:i386
             - gcc-multilib
+            - g++-7
+            - g++-7-multilib
+            - libmariadbclient-dev:i386
       cache:
         directories:
           - $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
