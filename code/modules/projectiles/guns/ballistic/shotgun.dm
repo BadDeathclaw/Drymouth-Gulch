@@ -12,6 +12,7 @@
 	var/recentpump = 0 // to prevent spammage
 	weapon_weight = WEAPON_HEAVY
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
+	randomspread = 0
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -262,14 +263,15 @@
 // RIOT SHOTGUN //
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
 	name = "light shotgun"
-	desc = "A light weight shotgun chambered in 12 gauge, designed to be used by paramilitary companies during air raids, but was later absorbed by Vault-tec for use by security in their vaults."
+	desc = "A lightweight shotgun chambered in 12 gauge, designed to be used by paramilitary companies during air raids, but was later absorbed by Vault-tec for use by security in their vaults."
 	icon_state = "riotshotgun"
 	item_state = "shotgunriot"
-	force = 40
+	force = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	distro = 1
 
 //Remington 700
 /obj/item/gun/ballistic/shotgun/remington
@@ -278,9 +280,19 @@
 	icon_state = "308"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
+	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
 
 /obj/item/gun/ballistic/shotgun/remington/scoped
 	name = "scoped hunting rifle"
@@ -288,6 +300,7 @@
 	icon_state = "rifle308_scope"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
+	sawn_desc = "In what is probably the most idiotic and crude modification of a gun you've ever seen, someone has taken this scoped hunting rifle and sawn off the bits that make it well-balanced and accurate."
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	zoomable = TRUE
 	zoom_amt = 10
@@ -305,7 +318,7 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	force = 35
+	force = 25
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
@@ -345,18 +358,30 @@
 
 
 
-//Single Shot
+//Double Barrel Caravan Shotgun
 /obj/item/gun/ballistic/revolver/caravan_shotgun
 	name = "caravan shotgun"
-	desc = "An common over under double barreled shotgun."
+	desc = "An common over-under double barreled shotgun."
 	icon_state = "caravan_shotgun"
 	item_state = "dshotgun1"
 	force = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
+	sawn_desc = "Omar's coming!"
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	distro = 1
 
+/obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
+
+//Single Shot Shotgun
 /obj/item/gun/ballistic/revolver/single_shotgun
 	name = "single shotgun"
 	desc = "A dirt cheap single shot shotgun."
@@ -364,6 +389,17 @@
 	item_state = "singleshot"
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
+	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	distro = 1
+
+/obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
+	..()
+	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
+		sawoff(user)
+	if(istype(A, /obj/item/melee/transforming/energy))
+		var/obj/item/melee/transforming/energy/W = A
+		if(W.active)
+			sawoff(user)
