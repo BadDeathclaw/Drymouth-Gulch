@@ -40,8 +40,8 @@ if [ $BUILD_TOOLS = false ] && [ $BUILD_TESTING = false ]; then
         mv $HOME/MariaDB/include/mariadb $HOME/MariaDB/include/mysql
     fi
 
-    cd artifacts
-    export CXX=g++-7
+    #cd artifacts
+    #export CXX=g++-7
     cmake .. -DMARIA_INCLUDE_DIR=$HOME/MariaDB/include
     make
 fi
