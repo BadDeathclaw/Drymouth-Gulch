@@ -326,6 +326,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		var/msg = "Ticket [TicketHref("#[id]")] closed by [key_name]."
 		message_admins(msg)
 		log_admin_private(msg)
+    if(!bwoink && !silent)
+        discordsendmsg("ahelp", "Ticket #[id] closed by [key_name(usr, include_link=0)]")
 
 //Mark open ticket as resolved/legitimate, returns ahelp verb
 /datum/admin_help/proc/Resolve(key_name = key_name_admin(usr), silent = FALSE)
@@ -344,6 +346,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		var/msg = "Ticket [TicketHref("#[id]")] resolved by [key_name]"
 		message_admins(msg)
 		log_admin_private(msg)
+    if(!bwoink)
+        discordsendmsg("ahelp", "Ticket #[id] resolved by [key_name(usr, include_link=0)]")
 
 //Close and return ahelp verb, use if ticket is incoherent
 /datum/admin_help/proc/Reject(key_name = key_name_admin(usr))
@@ -365,6 +369,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	log_admin_private(msg)
 	AddInteraction("Rejected by [key_name].")
 	Close(silent = TRUE)
+    if(!bwoink)
+        discordsendmsg("ahelp", "Ticket #[id] rejected by [key_name(usr, include_link=0)]")
 
 //Resolve ticket with IC Issue message
 /datum/admin_help/proc/ICIssue(key_name = key_name_admin(usr))
@@ -384,6 +390,8 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	log_admin_private(msg)
 	AddInteraction("Marked as IC issue by [key_name]")
 	Resolve(silent = TRUE)
+    if(!bwoink)
+        discordsendmsg("ahelp", "Ticket #[id] marked as IC by [key_name(usr, include_link=0)]")
 
 //Show the ticket panel
 /datum/admin_help/proc/TicketPanel()
