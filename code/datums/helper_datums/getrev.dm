@@ -16,7 +16,7 @@
 		if(commit)
 			date = rustg_git_commit_date(commit)
 			
-		originmastercommit = rustg_gitrevparse("origin/master")
+		originmastercommit = rustg_git_revparse("origin/master")
 	// goes to DD log and config_error.txt
 	log_world(get_log_message())
 
@@ -81,8 +81,8 @@
 	msg += "Protect Assistant Role From Traitor: [CONFIG_GET(flag/protect_assistant_from_antagonist)]"
 	msg += "Enforce Human Authority: [CONFIG_GET(flag/enforce_human_authority)]"
 	msg += "Allow Latejoin Antagonists: [CONFIG_GET(flag/allow_latejoin_antagonists)]"
-	//msg += "Enforce Continuous Rounds: [length(CONFIG_GET(keyed_list/continuous))] of [config.modes.len] roundtypes"
-	msg += "Allow Midround Antagonists: [length(CONFIG_GET(keyed_list/midround_antag))] of [config.modes.len] roundtypes"
+	msg += "Enforce Continuous Rounds: [length(CONFIG_GET(keyed_flag_list/continuous))] of [config.modes.len] roundtypes"
+	msg += "Allow Midround Antagonists: [length(CONFIG_GET(keyed_flag_list/midround_antag))] of [config.modes.len] roundtypes"
 	
 	if(CONFIG_GET(flag/show_game_type_odds))
 		var/list/probabilities = CONFIG_GET(keyed_number_list/probability)
