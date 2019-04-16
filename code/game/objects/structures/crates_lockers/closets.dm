@@ -6,7 +6,7 @@
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
 	barricade = 1
-	proj_pass_rate = 80
+	proj_pass_rate = 65
 	var/icon_door = null
 	var/icon_door_override = FALSE //override to have open overlay use icon different to its base's
 	var/secure = FALSE //secure locker or not, also used if overriding a non-secure locker with a secure door overlay to add fancy lights

@@ -95,7 +95,7 @@ Class Procs:
 	var/interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
 	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
 	var/barricade = 1 //if 1, acts as barricade
-	var/proj_pass_rate = 80 //percentage change for bullets to fly over, if barricade=1
+	var/proj_pass_rate = 65 //percentage change for bullets to fly over, if barricade=1
 
 /obj/machinery/Initialize()
 	if(!armor)

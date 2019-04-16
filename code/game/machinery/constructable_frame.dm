@@ -5,7 +5,7 @@
 	density = TRUE
 	max_integrity = 250
 	barricade = 1
-	proj_pass_rate = 80
+	proj_pass_rate = 65
 	var/obj/item/circuitboard/machine/circuit = null
 	var/state = 1
 

@@ -9,7 +9,7 @@
 	var/mob/living/structureclimber
 	var/broken = 0 //similar to machinery's stat BROKEN
 	var/barricade = 1 //set to 1 to allow projectiles to always pass over it, default 0 (checks vs density)
-	var/proj_pass_rate = 80 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
+	var/proj_pass_rate = 65 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
 
 /obj/structure/Initialize()
 	if (!armor)

@@ -6,7 +6,7 @@
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
 	barricade = 1
-	proj_pass_rate = 50
+	proj_pass_rate = 40
 	var/state = GIRDER_NORMAL
 	var/can_displace = TRUE //If the girder can be moved around by wrenching it
 	max_integrity = 200
@@ -307,7 +307,7 @@
 	icon_state = "displaced"
 	anchored = FALSE
 	state = GIRDER_DISPLACED
-	proj_pass_rate = 80
+	proj_pass_rate = 65
 	max_integrity = 120
 
 /obj/structure/girder/reinforced

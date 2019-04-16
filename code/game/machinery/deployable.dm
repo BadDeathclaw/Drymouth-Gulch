@@ -14,7 +14,7 @@
 	anchored = TRUE
 	density = TRUE
 	max_integrity = 100
-	proj_pass_rate = 50
+	proj_pass_rate = 35
 	barricade = 1
 	var/material = METAL
 
@@ -81,7 +81,7 @@
 	icon_state = "woodenbarricade-old"
 	drop_amount = 2
 	max_integrity = 80
-	proj_pass_rate = 65
+	proj_pass_rate = 50
 
 /obj/structure/barricade/wooden/crude/snow
 	desc = "This space is blocked off by a crude assortment of planks. It seems to be covered in a layer of snow."
