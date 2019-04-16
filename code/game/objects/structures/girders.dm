@@ -5,7 +5,7 @@
 	anchored = TRUE
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
-	barricade = 1
+	barricade = TRUE
 	proj_pass_rate = 40
 	var/state = GIRDER_NORMAL
 	var/can_displace = TRUE //If the girder can be moved around by wrenching it

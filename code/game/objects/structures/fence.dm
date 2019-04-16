@@ -18,7 +18,7 @@
 
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "straight"
-	barricade = 1
+	barricade = TRUE
 	proj_pass_rate = 40
 
 	var/cuttable = TRUE

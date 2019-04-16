@@ -4,7 +4,7 @@
 	icon_state = "box_0"
 	density = TRUE
 	max_integrity = 250
-	barricade = 1
+	barricade = TRUE
 	proj_pass_rate = 65
 	var/obj/item/circuitboard/machine/circuit = null
 	var/state = 1

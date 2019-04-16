@@ -5,7 +5,7 @@
 	icon_state = "generic"
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
-	barricade = 1
+	barricade = TRUE
 	proj_pass_rate = 65
 	var/icon_door = null
 	var/icon_door_override = FALSE //override to have open overlay use icon different to its base's

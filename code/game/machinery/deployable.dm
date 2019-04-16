@@ -15,7 +15,7 @@
 	density = TRUE
 	max_integrity = 100
 	proj_pass_rate = 35
-	barricade = 1
+	barricade = TRUE
 	var/material = METAL
 
 /obj/structure/barricade/deconstruct(disassembled = TRUE)

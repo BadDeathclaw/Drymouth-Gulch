@@ -29,7 +29,7 @@
 				return 1
 			if(!locatedcrate.opened) //otherwise, if the located crate is closed, allow entering
 				return 1
-	if(barricade == 0)
+	if(barricade == FALSE)
 		return !density
 	else if(density == FALSE)
 		return 1
