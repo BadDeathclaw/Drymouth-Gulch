@@ -102,7 +102,7 @@ var/list/interactions
 	if(get_dist(user, target) > max_distance)
 		user.visible_message("<span class='warning'>They are too far away.</span>")
 		return
-	if(needs_physical_contact && !(user.Adjacent(target) && target.Adjacent(user))
+	if(needs_physical_contact && !(user.Adjacent(target) && target.Adjacent(user)))
 		user.visible_message("<span class='warning'>You cannot get to them.</span>")
 		return
 	if(!evaluate_user(user, silent = FALSE))
