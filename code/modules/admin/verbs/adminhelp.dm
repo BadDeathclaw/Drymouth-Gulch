@@ -202,6 +202,9 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 			to_chat(C, "<span class='notice'>No active admins are online, your adminhelp was sent to the admin irc.</span>")
 			heard_by_no_admins = TRUE
 
+    if(!is_bwoink)
+        discordsendmsg("ahelp", "**ADMINHELP: [C.key]: ** \"[msg]\" [heard_by_no_admins ? "**(NO ADMINS)**" : "" ]")
+
 	GLOB.ahelp_tickets.active_tickets += src
 
 /datum/admin_help/Destroy()
