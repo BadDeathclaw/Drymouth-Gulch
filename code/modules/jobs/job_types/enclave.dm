@@ -2,13 +2,13 @@
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /datum/outfit/job/enclave/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /*
 Commander
