@@ -1025,9 +1025,12 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/ui_interact(mob/user)
 	. = ..()
-	if(!user.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC) && !isdead(user))
-		return to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
-	
+	if(isliving(user))
+		var/mob/living/L = user
+		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC) && !isdead(user))
+			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+			return
+			
 	
 	var/datum/browser/popup = new(user, "rndconsole", name, 900, 600)
 	popup.add_stylesheet("techwebs", 'html/browser/techwebs.css')
