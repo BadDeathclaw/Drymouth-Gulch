@@ -35,7 +35,7 @@ AI
 			qdel(lateJoinCore)
 	var/mob/living/silicon/ai/AI = H
 	AI.apply_pref_name("ai", M.client)			//If this runtimes oh well jobcode is fucked.
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 	//we may have been created after our borg
 	if(SSticker.current_state == GAME_STATE_SETTING_UP)

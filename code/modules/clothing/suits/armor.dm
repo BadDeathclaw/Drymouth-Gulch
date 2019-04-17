@@ -397,7 +397,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
-	if(user.mind && !user.mind.istechnophreak)
+	if(user.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC))
 		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 		return
 	else ..()
