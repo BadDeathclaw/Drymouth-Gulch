@@ -21,12 +21,17 @@
 	var/mob/living/carbon/user/M = src 
 	if(M.get_num_arms() < 1)
 		return TRUE
-	return FALSE
-
-///mob/living/carbon/human/has_mouth()
-//	var/datum/organ/external/head/head = get_organ("head")
-//	return head && !(head.status & ORGAN_DESTROYED)
-
+	return 
+	
+/*	//soon(TM)
+/mob/living/carbon/human/has_mouth()
+	var/obj/item/bodypart/head/head = src.get_bodypart("head") //fresh from guillotine code
+	if(QDELETED(head))	//you're already about to die
+		return FALSE
+	if(head.brute_dam >= 100)
+		return FALSE
+	return TRUE
+*/
 /*
 /atom/movable/attack_hand(mob/living/user)
 	. = ..()

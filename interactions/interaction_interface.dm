@@ -28,12 +28,12 @@
 
 /mob/living/carbon/human/try_interaction(mob/living/carbon/human/partner)
 	//first level checks
-	if(user.stat == DEAD)
+	if(user.stat == DEAD || isdead(user))
 		to_chat(user, "<span class='warning'>You cannot interact while being dead!</span>")
 		return
 
 	if(user.IsUnconscious() || user.stat == UNCONSCIOUS)
-		to_chat(user, "<span class='warning'>You cannot interact while being dead!</span>")
+		to_chat(user, "<span class='warning'>You cannot interact while being unconscious!</span>")
 		return
 
 

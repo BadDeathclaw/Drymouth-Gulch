@@ -8,11 +8,6 @@
 **>using var/ on everything, also TRUE
 ***********************************/
 // Rectum? Damn near killed 'em.
-//GLOBAL LIST REE
-
-GLOBAL_LIST(interactions)
-
-var/list/interactions
 
 /proc/make_interactions(interaction)
 	if(!interactions)

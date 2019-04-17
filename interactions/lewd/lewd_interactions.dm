@@ -74,7 +74,7 @@
 
 /datum/interaction/lewd/evaluate_target(mob/living/carbon/human/user, mob/living/carbon/human/target, silent = TRUE)
 	if(..(user, target, silent))
-		if(target_not_tired && target.refactory_period >= world.time))
+		if(target_not_tired && target.refactory_period >= world.time)
 			if(!silent) //same with this
 				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period - world.time, TRUE)] until you can do that!</span>")
 			return FALSE
