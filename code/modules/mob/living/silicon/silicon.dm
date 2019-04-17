@@ -47,6 +47,7 @@
 	. = ..()
 	GLOB.silicon_mobs += src
 	faction += "silicon"
+	src.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)	//lazy problems require lazy solutions
 	for(var/datum/atom_hud/data/diagnostic/diag_hud in GLOB.huds)
 		diag_hud.add_to_hud(src)
 	diag_hud_set_status()
@@ -67,6 +68,7 @@
 	aicamera = null
 	QDEL_NULL(builtInCamera)
 	GLOB.silicon_mobs -= src
+	src.remove_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 	return ..()
 
 /mob/living/silicon/contents_explosion(severity, target)
