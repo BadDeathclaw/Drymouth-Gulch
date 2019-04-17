@@ -404,9 +404,13 @@ mob/living/carbon/human/proc/get_shoes()
 			if(prob(1) && ishuman(partner))
 				var/mob/living/carbon/human/H = partner
 				H.adjustOxyLoss(5)
-				add_logs(src, partner, "attacked", src) //cmon, it's 1 in 100. how can it spam logs
+				add_logs(src, target, "choked", "his dick")
+				
 		if(partner.a_intent == INTENT_HARM)
-			src.adjustBruteLoss(5)
+			if(ishuman(src))
+				var/mob/living/carbon/human/H = src
+				H.adjustBruteLoss(5)
+				add_logs(target, src, "retaliated")
 			retaliation_message = pick(
 				"bites down hard on \the [partner]'s cock.",
 				"tightens teeth against \the [partner]'s dick until blood flows.",
