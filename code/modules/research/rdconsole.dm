@@ -1027,7 +1027,7 @@ Nothing else in the console has ID requirements.
 	. = ..()
 	if(isliving(user))
 		var/mob/living/L = user
-		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC) && !isdead(user))
+		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC))
 			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
 			return
 			
