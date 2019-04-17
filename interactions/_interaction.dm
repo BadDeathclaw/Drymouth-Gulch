@@ -104,7 +104,7 @@ var/list/interactions
 	if(get_dist(user, target) > max_distance)
 		user.visible_message("<span class='warning'>They are too far away.</span>")
 		return
-	if(needs_physical_contact && !(user.Adjacent(target) && target.Adjacent(user))
+	if(needs_physical_contact && !(user.Adjacent(target) && target.Adjacent(user)))
 		user.visible_message("<span class='warning'>You cannot get to them.</span>")
 		return
 	if(!evaluate_user(user, silent = FALSE))
@@ -134,7 +134,7 @@ var/list/interactions
 		use_message = replacetext(use_message, "TARGET", "\the [target]")
 		user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
 
-/datum/interaction/proc/post_interaction(mob/carbon/user, mob/carbon/target)
+/datum/interaction/proc/post_interaction(mob/living/carbon/user, mob/living/carbon/target)
 	var/delay = 0
 	if(delay >= world.time) //cooldown
 		return
