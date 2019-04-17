@@ -87,5 +87,5 @@ Cyborg
 	return H.Robotize(FALSE, latejoin)
 
 /datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
-	R.add_trait(TRAIT_TECHNOPHREAK, TRAIT)
+	R.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 	R.apply_pref_name("cyborg", M.client)
