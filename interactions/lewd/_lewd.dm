@@ -531,6 +531,22 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
+/mob/living/carbon/human/proc/do_mountass(mob/living/carbon/human/partner)
+	var/message
+
+	if(partner.is_fucking(src, CUM_TARGET_ANUS))
+		message = "[pick("rides \the [partner]'s dick.",
+			"forces [partner]'s cock on their ass")]"
+	else
+		message = "lowers their ass onto \the [partner]'s cock."
+		partner.set_is_fucking(src, CUM_TARGET_ANUS)
+	playsound(loc, "honk/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
+	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
+	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, src)
+	handle_post_sex(NORMAL_LUST, null, partner)
+	partner.dir = get_dir(partner,src)
+	do_fucking_animation(get_dir(src, partner))
+	
 /mob/living/carbon/human/proc/do_tribadism(mob/living/carbon/human/partner)
 	var/message
 
@@ -545,22 +561,6 @@
 	playsound(loc, "honk/sound/interactions/squelch[rand(1, 3)].ogg", 70, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_VAGINA, src)
-	handle_post_sex(NORMAL_LUST, null, partner)
-	partner.dir = get_dir(partner,src)
-	do_fucking_animation(get_dir(src, partner))
-
-/mob/living/carbon/human/proc/do_mountass(mob/living/carbon/human/partner)
-	var/message
-
-	if(partner.is_fucking(src, CUM_TARGET_ANUS))
-		message = "[pick("rides \the [partner]'s dick.",
-			"forces [partner]'s cock on their ass")]"
-	else
-		message = "lowers their ass onto \the [partner]'s cock."
-		partner.set_is_fucking(src, CUM_TARGET_ANUS)
-	playsound(loc, "honk/sound/interactions/bang[rand(1, 3)].ogg", 70, 1, -1)
-	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
-	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_ANUS, src)
 	handle_post_sex(NORMAL_LUST, null, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
