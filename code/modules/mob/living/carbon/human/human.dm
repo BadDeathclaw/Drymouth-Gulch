@@ -9,7 +9,6 @@
 	var/has_vagina = FALSE
 	var/has_breasts = FALSE
 
-	var/refactory_period = 0
 /mob/living/carbon/human/Initialize()
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down

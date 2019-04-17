@@ -98,7 +98,7 @@ var/list/interactions
 	return FALSE
 
 /datum/interaction/proc/do_action(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user == target) //tactical href fix
+	if(user == target) //tactical href fix. How would you fuck this up badly????
 		to_chat(user, "<span class='warning'>You cannot target yourself!</span>")
 		return
 	if(get_dist(user, target) > max_distance)
