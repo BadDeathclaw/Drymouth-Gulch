@@ -245,8 +245,8 @@
 	require_target_bottomless = TRUE
 	max_distance = 0
 
-/datum/interaction/lewd/tribadism/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.do_tribadism(target)
+/datum/interaction/lewd/mountass/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	user.do_mountass(target)
 
 /datum/interaction/lewd/tribadism
 	command = "tribadism"
@@ -258,9 +258,9 @@
 	require_user_bottomless = TRUE
 	require_target_bottomless = TRUE
 	max_distance = 0
-
-/datum/interaction/lewd/mountass/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.do_mountass(target)
+	
+/datum/interaction/lewd/tribadism/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	user.do_tribadism(target)
 
 /datum/interaction/lewd/rimjob
 	command = "rimjob"
