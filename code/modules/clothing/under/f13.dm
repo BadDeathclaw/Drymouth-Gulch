@@ -187,14 +187,14 @@
 	item_color = "mercc"
 
 /obj/item/clothing/under/f13/cowboyb
-	name = "Cowboy outfit"
+	name = "cowboy outfit"
 	desc = "A dirt brown cowboy outfit. Specially usefull for herding brahmins."
 	icon_state = "cowboyb"
 	item_state = "cowboyb"
 	item_color = "cowboyb"
 
 /obj/item/clothing/under/f13/cowboyg
-	name = "Cowboy outfit"
+	name = "cowboy outfit"
 	desc = "A dirt grey cowboy outfit. Specially usefull for herding brahmins."
 	icon_state = "cowboyg"
 	item_state = "cowboyg"
