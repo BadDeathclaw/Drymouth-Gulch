@@ -98,8 +98,8 @@
 	. = ..()
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		zoom(user, FALSE)
-		if(zoomable == TRUE) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.
-			azoom.Remove(user)
+		if(zoomable == TRUE && !user.stat == DEAD) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.
+			azoom.Remove(user)						//user.stat is because if you do this in lobby it runtimes
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
