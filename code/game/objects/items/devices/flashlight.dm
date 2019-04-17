@@ -306,6 +306,7 @@
 	// All good, turn it on.
 	if(.)
 		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		playsound(loc, 'sound/effects/flare_light.ogg', 50, 0)
 		force = on_damage
 		damtype = "fire"
 		START_PROCESSING(SSobj, src)
@@ -335,16 +336,21 @@
 	if(on)
 		to_chat(user, "<span class='notice'>[src] is already on.</span>")
 		return
-
-	. = ..()
 	// All good, turn it on.
-	if(.)
+	else
 		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
 		force = on_damage
 		damtype = "fire"
 		w_class = WEIGHT_CLASS_BULKY
 		desc = "A handheld wooden torch that's slowly burning away."
 		START_PROCESSING(SSobj, src)
+		on = !on
+		update_brightness(user)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.UpdateButtonIcon()
+		return 1
 
 /obj/item/flashlight/lantern
 	name = "lantern"
