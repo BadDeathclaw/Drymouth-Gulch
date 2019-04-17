@@ -27,8 +27,17 @@
 		usr.try_interaction(src)
 
 /mob/living/carbon/human/try_interaction(mob/living/carbon/human/partner)
-	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
+	//first level checks
+	if(user.stat == DEAD)
+		to_chat(user, "<span class='warning'>You cannot interact while being dead!</span>")
+		return
 
+	if(user.IsUnconscious() || user.stat == UNCONSCIOUS)
+		to_chat(user, "<span class='warning'>You cannot interact while being dead!</span>")
+		return
+
+
+	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
 	dat += "You...<br>[list_interaction_attributes()]<hr>"
 	dat += "They...<br>[partner.list_interaction_attributes()]<hr>"
 

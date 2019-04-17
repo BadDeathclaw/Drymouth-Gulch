@@ -13,41 +13,8 @@
 #define NORMAL_LUST 10
 #define LOW_LUST 1
 
-/*--------------------------------------------------
-  -------------------MOB STUFF----------------------
-  --------------------------------------------------
-*/
-//I'm sorry, lewd should not have mob procs such as life() and such in it.
-
-/mob/living/carbon/human/proc/has_penis()
-	return has_penis
-
-/mob/living/carbon/human/proc/has_vagina()
-	return has_vagina
-
-/mob/living/carbon/human/proc/has_breasts()
-	return has_breasts
-
-/mob/living/carbon/human/proc/has_anus()
-	return TRUE
-
-/mob/living/carbon/human/proc/has_hand()
-	if(get_num_arms() < 1)
-		return FALSE
-	return TRUE
-
-/mob/living/carbon/human/proc/is_topless()
-	if((!(wear_suit) || !(wear_suit.body_parts_covered & CHEST)) && (!(w_uniform) || !(w_uniform.body_parts_covered & CHEST)))
-		return TRUE
-
-/mob/living/carbon/human/proc/is_bottomless()
-	if((!(wear_suit) || !(wear_suit.body_parts_covered & GROIN)) && (!(w_uniform) || !(w_uniform.body_parts_covered & GROIN)))
-		return TRUE
-
-/proc/cum_splatter(target) // Like blood_splatter(), but much more questionable on a resume.
+/proc/cum_splatter(target)
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
-	//var/obj/effect/decal/cleanable/cum/C = (get_turf(target))
-	//C.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
 /mob/living/carbon/human/proc/moan()
 	if(!(prob(lust / lust_tolerance * 65)))
@@ -62,7 +29,7 @@
 		src.emote("<font color=purple><B>[src]</B> [pick("mimes a pleasured moan","moans in silence")].</font>")
 	lastmoan = moan
 
-/mob/living/carbon/human/proc/cum(mob/living/carbon/human/partner, target_orifice)
+/mob/living/carbon/proc/cum(mob/living/carbon/partner, target_orifice)
 	var/message
 
 	if(has_penis())
@@ -95,7 +62,7 @@
 				else
 					message = "cums on \the [partner]'s backside."
 			if(CUM_TARGET_HAND)
-				if(partner.has_hand())
+				if(partner.has_hands()) //why are we wasting functions, we already have 'has_hands()'
 					message = "cums in \the [partner]'s hand."
 				else
 					message = "cums on \the [partner]."
@@ -105,18 +72,12 @@
 				else
 					message = "cums on \the [partner]'s chest and neck."
 			if(NUTS_TO_FACE)
-
 				if(partner.has_mouth() && partner.mouth_is_free())
-
 					message = "vigorously ruts their nutsack into \the [partner]'s mouth before shooting their thick, sticky jizz all over their eyes and hair."
-
 			if(THIGH_SMOTHERING)
 				if(src.has_penis())
-
 					message = "keeps \the [partner] locked in their thighs as their cock throbs, dumping its heavy load all over their face."
-
 				else
-
 					message = "reaches their peak, locking their legs around \the [partner]'s head extra hard as they cum straight onto the head stuck between their thighs"
 
 			else
@@ -130,21 +91,21 @@
 		lust -= pick(10, 15, 20, 25)
 
 	if(gender == MALE)
-		playsound(loc, "honk/sound/interactions/final_m[rand(1, 3)].ogg", 90, 1, 0)//, pitch = get_age_pitch())
+		playsound(loc, "honk/sound/interactions/final_m[rand(1, 3)].ogg", 90, 1, 0)
 	else if(gender == FEMALE)
-		playsound(loc, "honk/sound/interactions/final_f[rand(1, 5)].ogg", 70, 1, 0)//, pitch = get_age_pitch())
+		playsound(loc, "honk/sound/interactions/final_f[rand(1, 5)].ogg", 70, 1, 0)
 
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	multiorgasms += 1
 
-	if(multiorgasms == 1)
-		add_logs(partner, src, "came on")
+	//if(multiorgasms == 1)
+	//add_logs(partner, src, "came on")	//i dont want to break loggingshit
 
 	if(multiorgasms > (sexual_potency * 0.34)) //AAAAA, WE DONT WANT NEGATIVES HERE, RE
-		refactory_period = rand(250, 400) - sexual_potency//sex cooldown
+		refactory_period = world.time + rand(250, 400) - sexual_potency //15-20 seconds
 		src.set_drugginess(rand(20, 30))
 	else
-		refactory_period = rand(250, 400) - sexual_potency
+		refactory_period = world.time + rand(250, 400) - sexual_potency
 		src.set_drugginess(rand(5, 10))
 
 /mob/living/carbon/human/cum(mob/living/carbon/human/partner, target_orifice)
