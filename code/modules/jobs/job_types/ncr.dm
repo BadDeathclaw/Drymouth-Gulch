@@ -181,7 +181,7 @@ Medic
 	name = "NCR Sergeant"
 	jobtype = /datum/job/ncr/f13sergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/SGT//huuuh
+	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -219,7 +219,7 @@ Engineer
 	name = "NCR Engineer"
 	jobtype = /datum/job/ncr/f13engineer
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/armband/ncr/SGT
+	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/hardhat/orange
 	glasses = 		/obj/item/clothing/glasses/welding
