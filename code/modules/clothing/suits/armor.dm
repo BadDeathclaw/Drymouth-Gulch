@@ -470,7 +470,7 @@
 	icon_state = "legvexil"
 	item_state = "legvexil"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list("melee" = 50, "bullet" = 35, "laser" = 20, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
 	strip_delay = 60
 
 /obj/item/clothing/suit/armor/f13/legcenturion
@@ -529,6 +529,13 @@
 	item_state = "enclave_armor"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/rangerrecon
+	name = "ranger recon duster"
+	desc = "A thicker than average duster worn by NCR recon rangers out in the field. It's not heavily armored by any means, but is easy to move around in and provides excellent protection from the harsh desert environment."
+	icon_state = "duster_recon"
+	item_state = "duster_recon"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 60, "rad" = 70, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "ranger combat armor"

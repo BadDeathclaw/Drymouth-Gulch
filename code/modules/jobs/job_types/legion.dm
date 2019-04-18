@@ -439,7 +439,6 @@ Legionary
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
-	box = null
 
 /datum/job/CaesarsLegion/f13campfollower
 	title = "Camp Follower"
