@@ -197,6 +197,7 @@ Scribe
 	suit = 			/obj/item/clothing/suit/f13/scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
+	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec=2, \
 		/obj/item/kitchen/knife/combat=1, \
@@ -265,6 +266,7 @@ Initiate Scribe
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
 	belt = 			/obj/item/storage/belt/utility/full/engi
+	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1)
