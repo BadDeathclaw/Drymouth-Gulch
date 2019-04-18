@@ -1,6 +1,6 @@
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	caliber = "shotgun"
 	max_ammo = 4
 	multiload = 0
