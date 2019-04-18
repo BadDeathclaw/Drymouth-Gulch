@@ -8,11 +8,10 @@
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
-/*
+
 /obj/item/projectile/bullet/incendiary/Move()
 	. = ..()
 	var/turf/location = get_turf(src)
 	if(location)
 		new /obj/effect/hotspot(location)
 		location.hotspot_expose(700, 5, 1)
-*/
