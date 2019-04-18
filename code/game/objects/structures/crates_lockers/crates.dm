@@ -33,8 +33,6 @@
 		return !density
 	else if(density == FALSE)
 		return 1
-	else if(locate(/obj/structure) in get_turf(mover))
-		return 1
 	else if(istype(mover, /obj/item/projectile)) //bullets can fly over crates, guaranteed if the shooter is adjacent
 		var/obj/item/projectile/proj = mover
 		if(proj.firer && Adjacent(proj.firer))
