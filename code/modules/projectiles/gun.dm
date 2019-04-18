@@ -220,6 +220,9 @@
 	return
 
 /obj/item/gun/proc/process_burst(mob/living/user, atom/target, message = TRUE, params=null, zone_override = "", sprd = 0, randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0)
+	if(user.IsWeaponDrawDelayed())
+		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+		return FALSE
 	if(!user || !firing_burst)
 		firing_burst = FALSE
 		return FALSE
@@ -260,6 +263,9 @@
 	add_fingerprint(user)
 
 	if(semicd)
+		return
+	if(user.IsWeaponDrawDelayed())
+		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
 		return
 
 	var/sprd = 0
