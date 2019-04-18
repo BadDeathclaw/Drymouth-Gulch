@@ -266,7 +266,7 @@
 	desc = "A lightweight shotgun chambered in 12 gauge, designed to be used by paramilitary companies during air raids, but was later absorbed by Vault-tec for use by security in their vaults."
 	icon_state = "riotshotgun"
 	item_state = "shotgunriot"
-	force = 25
+	force = 40
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	sawn_desc = "Come with me if you want to live."
 	w_class = WEIGHT_CLASS_BULKY
