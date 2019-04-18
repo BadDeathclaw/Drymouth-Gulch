@@ -12,7 +12,12 @@
 
 #define NORMAL_LUST 10
 #define LOW_LUST 1
-
+//def lazycode
+/datum/mood_event/orgasm
+	description = "<font color = #780A53><i><b>I came!</font></i></b>" //funny meme haha
+	mood_change = 3
+	timeout = 1000 
+//undef lazycode
 /proc/cum_splatter(target)
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
 
@@ -97,9 +102,10 @@
 
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	multiorgasms += 1
+	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "orgasm", /datum/mood_event/orgasm)
 
-	//if(multiorgasms == 1)
-	//add_logs(partner, src, "came on")	//i dont want to break loggingshit
+	if(multiorgasms == 1)
+		add_logs(partner, src, "came on")	//i dont want to break loggingshit
 
 	if(multiorgasms > (sexual_potency * 0.34)) //AAAAA, WE DONT WANT NEGATIVES HERE, RE
 		refactory_period = world.time + rand(250, 400) - sexual_potency //15-20 seconds

@@ -93,7 +93,7 @@
 	return FALSE
 
 /datum/interaction/proc/do_action(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user == target) //tactical href fix. How would you fuck this up badly????
+	if(user == target) //tactical href fix.
 		to_chat(user, "<span class='warning'>You cannot target yourself!</span>")
 		return
 	if(get_dist(user, target) > max_distance)
@@ -108,20 +108,12 @@
 		return
 
 	if(write_log_user)
-		user.log_message("[write_log_user] [target]", INDIVIDUAL_ATTACK_LOG)
+		log_emote("[write_log_user] [target]")	//#logbus comming thorugh
 	if(write_log_target)
-		target.log_message("[write_log_target] [user]", INDIVIDUAL_ATTACK_LOG)
+		log_emote("[write_log_target] [user]")
 
 	display_interaction(user, target)
 	post_interaction(user, target)
-
-
-	//if(write_log_user)
-		//add_logs(target, user, "fucked")
-	//user.attack_log += text("\[[time_stamp()]\] <font color='red'>[write_log_user] [target.name] ([target.ckey])</font>")
-	//if(write_log_target)
-		//add_logs(target, user, "fucked2")
-	//target.attack_log += text("\[[time_stamp()]\] <font color='orange'>[write_log_target] [user.name] ([user.ckey])</font>")
 
 /datum/interaction/proc/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(simple_message)
@@ -140,19 +132,6 @@
 		playsound(get_turf(user), interaction_sound, 50, 1, -1)
 	return
 /*
-/atom/movable/attack_hand(mob/living/user)
-	. = ..()
-	if(can_buckle && buckled_mob)
-		if(user_unbuckle_mob(user))
-			return TRUE
-
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
-	. = ..()
-	if(can_buckle && istype(M) && !buckled_mob)
-		if(user_buckle_mob(M, user))
-			return TRUE
-
-
 /atom/movable/attack_hand(mob/living/user)
 	. = ..()
 	if(can_buckle && buckled_mob)

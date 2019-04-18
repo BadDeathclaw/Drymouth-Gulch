@@ -7,7 +7,7 @@
 	throwforce = 0
 	force = 0 //no
 	w_class = WEIGHT_CLASS_SMALL
-	attack_verb = list("slammed", "bashed", "whipped")
+	attack_verb = list("penetrated", "slapped", "inseminated")
 
 	var/hole = CUM_TARGET_VAGINA
 	var/random_color = TRUE

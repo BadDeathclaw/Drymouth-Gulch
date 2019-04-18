@@ -1,3 +1,7 @@
+
+
+
+
 /datum/mood_event/hug
 	description = "<span class='nicegreen'>Hugs are nice.</span>\n"
 	mood_change = 1
