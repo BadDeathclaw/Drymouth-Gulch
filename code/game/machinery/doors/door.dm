@@ -43,7 +43,7 @@
 			to_chat(user, "<span class='notice'>Due to a security threat, its access requirements have been lifted!</span>")
 		else
 			to_chat(user, "<span class='notice'>In the event of a red alert, its access requirements will automatically lift.</span>")
-	if(!poddoor)
+	if(!poddoor && !istype(src, /obj/machinery/door/unpowered/wooddoor))
 		to_chat(user, "<span class='notice'>Its maintenance panel is <b>screwed</b> in place.</span>")
 
 /obj/machinery/door/check_access_list(list/access_list)
