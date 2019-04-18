@@ -1285,7 +1285,6 @@
 	M.adjustOxyLoss(-6*REM, 0)
 	M.AdjustStun(-10, 0)
 	M.AdjustKnockdown(-10, 0)
-	M.AdjustUnconscious(-10, 0)
 	M.adjustStaminaLoss(-4*REM, 0)
 	. = 1
 	..()
