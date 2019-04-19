@@ -19,6 +19,7 @@
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 7,
 				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -28,6 +29,7 @@
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -36,6 +38,7 @@
 	result = /obj/item/katana
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -45,6 +48,7 @@
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/mineral/wood = 1)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -54,6 +58,7 @@
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/mineral/wood = 1)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -64,6 +69,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/mineral/wood = 8,
 				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -74,6 +80,7 @@
 	reqs = list(/obj/item/stack/sheet/metal = 12,
 				/obj/item/stack/sheet/mineral/wood = 6,
 				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -83,6 +90,7 @@
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 16,
 				/obj/item/stack/sheet/cloth = 4)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
@@ -92,5 +100,6 @@
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 4,
 				/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
