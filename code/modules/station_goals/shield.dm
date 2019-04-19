@@ -3,6 +3,7 @@
 // Satellites be actived to generate a shield that will block unorganic matter from passing it.
 /datum/station_goal/station_shield
 	name = "Station Shield"
+	required_crew = 10000 //lazy limit
 	var/coverage_goal = 500
 
 /datum/station_goal/station_shield/get_report()

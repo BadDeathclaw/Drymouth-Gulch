@@ -7,17 +7,15 @@
 **Fuck you, Vic. ERP is back. - TT
 **>using var/ on everything, also TRUE
 ***********************************/
-
-
 // Rectum? Damn near killed 'em.
-var/list/interactions
+
+GLOBAL_LIST(interactions)
 
 /proc/make_interactions(interaction)
-	if(!interactions)
-		interactions = list()
-		for(var/itype in subtypesof(/datum/interaction))
-			var/datum/interaction/I = new itype()
-			interactions[I.command] = I
+	LAZYINITLIST(GLOB.interactions)	//code removed here was basicaly doing lazyinitlist
+	for(var/itype in subtypesof(/datum/interaction))
+		var/datum/interaction/I = new itype()
+		LAZYSET(GLOB.interactions, I.command, I)
 
 /mob/living/carbon/human/proc/list_interaction_attributes()
 	var/dat = ""
@@ -96,15 +94,13 @@ var/list/interactions
 	return FALSE
 
 /datum/interaction/proc/do_action(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if(user == target) //tactical href fix
+	if(user == target) //tactical href fix.
 		to_chat(user, "<span class='warning'>You cannot target yourself!</span>")
 		return
 	if(get_dist(user, target) > max_distance)
-		//user << "<span class='warning'>They are too far away.</span>"
 		user.visible_message("<span class='warning'>They are too far away.</span>")
 		return
 	if(needs_physical_contact && !(user.Adjacent(target) && target.Adjacent(user)))
-		//user << "<span class='warning'>You cannot get to them.</span>"
 		user.visible_message("<span class='warning'>You cannot get to them.</span>")
 		return
 	if(!evaluate_user(user, silent = FALSE))
@@ -113,20 +109,12 @@ var/list/interactions
 		return
 
 	if(write_log_user)
-		user.log_message("[write_log_user] [target]", INDIVIDUAL_ATTACK_LOG)
+		log_emote("[write_log_user] [target]")	//#logbus comming thorugh
 	if(write_log_target)
-		target.log_message("[write_log_target] [user]", INDIVIDUAL_ATTACK_LOG)
+		log_emote("[write_log_target] [user]")
 
 	display_interaction(user, target)
 	post_interaction(user, target)
-
-
-	//if(write_log_user)
-		//add_logs(target, user, "fucked")
-	//user.attack_log += text("\[[time_stamp()]\] <font color='red'>[write_log_user] [target.name] ([target.ckey])</font>")
-	//if(write_log_target)
-		//add_logs(target, user, "fucked2")
-	//target.attack_log += text("\[[time_stamp()]\] <font color='orange'>[write_log_target] [user.name] ([user.ckey])</font>")
 
 /datum/interaction/proc/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(simple_message)
@@ -134,33 +122,13 @@ var/list/interactions
 		use_message = replacetext(use_message, "TARGET", "\the [target]")
 		user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
 
-/datum/interaction/proc/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+/datum/interaction/proc/post_interaction(mob/living/carbon/user, mob/living/carbon/target)
+	var/delay = 0
+	if(delay >= world.time) //cooldown
+		return
+	//start the cooldown even if it fails
+	delay = world.time + 15 // 3/4 second nerf, 20 = 1 second
+
 	if(interaction_sound)
 		playsound(get_turf(user), interaction_sound, 50, 1, -1)
 	return
-/*
-/atom/movable/attack_hand(mob/living/user)
-	. = ..()
-	if(can_buckle && buckled_mob)
-		if(user_unbuckle_mob(user))
-			return TRUE
-
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
-	. = ..()
-	if(can_buckle && istype(M) && !buckled_mob)
-		if(user_buckle_mob(M, user))
-			return TRUE
-
-
-/atom/movable/attack_hand(mob/living/user)
-	. = ..()
-	if(can_buckle && buckled_mob)
-		if(user_unbuckle_mob(user))
-			return TRUE
-
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
-	. = ..()
-	if(can_buckle && istype(M) && !buckled_mob)
-		if(user_buckle_mob(M, user))
-			return TRUE
-*/

@@ -74,9 +74,9 @@
 
 /datum/interaction/lewd/evaluate_target(mob/living/carbon/human/user, mob/living/carbon/human/target, silent = TRUE)
 	if(..(user, target, silent))
-		if(target_not_tired && target.refactory_period)
+		if(target_not_tired && target.refactory_period >= world.time)
 			if(!silent) //same with this
-				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
+				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period - world.time, TRUE)] until you can do that!</span>")
 			return FALSE
 
 		if(require_target_bottomless && !target.is_bottomless())
@@ -112,20 +112,18 @@
 
 /datum/interaction/lewd/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user_refactory_cost)
-		user.refactory_period += user_refactory_cost
+		user.refactory_period += world.time + user_refactory_cost
 	if(target_refactory_cost)
-		target.refactory_period += target_refactory_cost
+		target.refactory_period += world.time + target_refactory_cost
 	return ..()
 
 /datum/interaction/lewd/get_action_link_for(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return "<font color='#FF0000'><b>LEWD:</b></font> [..()]"
-	if(user.stat == DEAD)
-		to_chat(user, "<span class='warning'>You cannot erp as ghost!</span>")
-		return
-
+	//code behind here was retarded, removed it
+	
 /mob/living/carbon/human/list_interaction_attributes()
 	var/dat = ..()
-	if(refactory_period)
+	if(refactory_period >= world.time)
 		dat += "<br>...are sexually exhausted for the time being."
 	if(a_intent == INTENT_HELP)
 		dat += "<br>...are acting gentle."
