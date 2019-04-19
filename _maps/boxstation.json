@@ -1,7 +1,8 @@
 {
     "map_name": "Box Station",
     "map_path": "map_files/BoxStation",
-    "map_file": "BoxStation.dmm",
+	"map_file": ["BoxStation.dmm", "Underground.dmm"],
+	"traits": [{"Linkage": "null"}, {"Space Ruins": false}],
     "shuttles": {
 	    "cargo": "cargo_box",
 	    "ferry": "ferry_fancy",
