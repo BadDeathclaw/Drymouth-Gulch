@@ -1,5 +1,5 @@
 /mob/living/carbon/proc/has_hands()
-	return FALSE
+	return src.get_num_arms()	//mob-level proc
 
 /mob/living/carbon/proc/has_mouth()
 	return TRUE
@@ -16,14 +16,7 @@
 
 /mob/living/carbon/human/foot_is_free()
 	return !shoes
-
-/mob/living/carbon/human/has_hands()
-	var/mob/living/carbon/user/M = src 
-	if(M.get_num_arms() < 1)
-		return TRUE
-	return 
 	
-/*	//soon(TM)
 /mob/living/carbon/human/has_mouth()
 	var/obj/item/bodypart/head/head = src.get_bodypart("head") //fresh from guillotine code
 	if(QDELETED(head))	//you're already about to die
@@ -31,7 +24,7 @@
 	if(head.brute_dam >= 100)
 		return FALSE
 	return TRUE
-*/
+
 /*
 /atom/movable/attack_hand(mob/living/user)
 	. = ..()

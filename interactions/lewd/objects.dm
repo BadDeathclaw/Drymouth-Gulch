@@ -41,7 +41,7 @@
 	base_overlay.appearance_flags = RESET_COLOR
 	add_overlay(base_overlay)
 
-/obj/item/dildo/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	var/message = ""
 
 	if(ishuman(M) && user.zone_selected == BODY_ZONE_PRECISE_GROIN && M.is_bottomless()) //flags!
@@ -57,7 +57,7 @@
 	else
 		return
 	
-/obj/item/dildo/attack_self(mob/living/carbon/user as mob)
+/obj/item/dildo/attack_self(mob/living/carbon/user)
 	if(hole == CUM_TARGET_VAGINA)
 		hole = CUM_TARGET_ANUS
 	else
@@ -71,7 +71,7 @@
 	name = "F.I.S.T.R. Machine"
 	desc = "Fully Integrated Sexual Tension Relief Machine"
 
-/obj/item/dildo/cyborg/attack(mob/living/carbon/M, mob/living/carbon/user)
+/obj/item/dildo/cyborg/attack(mob/living/carbon/human/M, mob/living/carbon/user)
 	var/message = ""
 	if(ishuman(M) && M.is_bottomless()) //dildo shitcode copypasta eh?
 		if(hole == CUM_TARGET_VAGINA && M.has_vagina())

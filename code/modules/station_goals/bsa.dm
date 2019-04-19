@@ -4,6 +4,7 @@
 // Requires high level stock parts
 /datum/station_goal/bluespace_cannon
 	name = "Artillery"
+	required_crew = 10000 //lazy limit
 
 /datum/station_goal/bluespace_cannon/get_report()
 	return {"Our military presence is inadequate in your sector.

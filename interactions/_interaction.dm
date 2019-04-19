@@ -9,13 +9,13 @@
 ***********************************/
 // Rectum? Damn near killed 'em.
 
-var/list/interactions	//make this global list aaaa
+GLOBAL_LIST(interactions)
 
 /proc/make_interactions(interaction)
-	LAZYINITLIST(interactions)	//code removed here was basicaly doing lazyinitlist
+	LAZYINITLIST(GLOB.interactions)	//code removed here was basicaly doing lazyinitlist
 	for(var/itype in subtypesof(/datum/interaction))
 		var/datum/interaction/I = new itype()
-		LAZYSET(interactions, I.command, I)
+		LAZYSET(GLOB.interactions, I.command, I)
 
 /mob/living/carbon/human/proc/list_interaction_attributes()
 	var/dat = ""
@@ -132,16 +132,3 @@ var/list/interactions	//make this global list aaaa
 	if(interaction_sound)
 		playsound(get_turf(user), interaction_sound, 50, 1, -1)
 	return
-/*
-/atom/movable/attack_hand(mob/living/user)
-	. = ..()
-	if(can_buckle && buckled_mob)
-		if(user_unbuckle_mob(user))
-			return TRUE
-
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
-	. = ..()
-	if(can_buckle && istype(M) && !buckled_mob)
-		if(user_buckle_mob(M, user))
-			return TRUE
-*/
