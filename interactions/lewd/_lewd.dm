@@ -16,7 +16,7 @@
 /datum/mood_event/orgasm
 	description = "<font color = #780A53><i><b>I came!</font></i></b>" //funny meme haha
 	mood_change = 3
-	timeout = 1000 
+	timeout = 1000
 //undef lazycode
 /proc/cum_splatter(target)
 	new /obj/effect/decal/cleanable/cum(get_turf(target))
@@ -361,13 +361,13 @@ mob/living/carbon/human/proc/get_shoes()
 	if(is_fucking(partner, THIGH_SMOTHERING))	//why the fuck does this have a fuckton of spaces
 		if(has_vagina())
 			message = pick(list(
-				"presses their weight down onto \the [partner]'s face, blocking their vision completely.", 
+				"presses their weight down onto \the [partner]'s face, blocking their vision completely.",
 				"rides \the [partner]'s face, grinding their wet pussy all over it."
 				))
 		else if(has_penis())
 			message = pick(list(
-				"presses their weight down onto \the [partner]'s face, blocking their vision completely.", 
-				"forces their dick and nutsack into \the [partner]'s face as they're stuck locked in between their thighs.", 
+				"presses their weight down onto \the [partner]'s face, blocking their vision completely.",
+				"forces their dick and nutsack into \the [partner]'s face as they're stuck locked in between their thighs.",
 				"slips their cock into \the [partner]'s helpless mouth, keeping their shaft pressed hard into their face."
 				))
 		else
@@ -375,12 +375,12 @@ mob/living/carbon/human/proc/get_shoes()
 	else
 		if(has_vagina())
 			message = pick(list(
-				"clambers over \the [partner]'s face and pins them down with their thighs, their moist slit rubbing all over \the [partner]'s mouth and nose.", 
+				"clambers over \the [partner]'s face and pins them down with their thighs, their moist slit rubbing all over \the [partner]'s mouth and nose.",
 				"locks their legs around \the [partner]'s head before pulling it into their mound."
 				))
 		else if(has_penis())
 			message = pick(list(
-				"clambers over \the [partner]'s face and pins them down with their thighs, then slowly inching closer and covering their eyes and nose with their leaking erection.", 
+				"clambers over \the [partner]'s face and pins them down with their thighs, then slowly inching closer and covering their eyes and nose with their leaking erection.",
 				"locks their legs around \the [partner]'s head before pulling it into their fat package, smothering them."
 				))
 		else
@@ -401,8 +401,8 @@ mob/living/carbon/human/proc/get_shoes()
 
 	if(is_fucking(partner, CUM_TARGET_THROAT))
 		message = pick(list(
-			"brutally fucks \the [partner]'s throat.", 
-			"chokes \the [partner] on their dick.", 
+			"brutally fucks \the [partner]'s throat.",
+			"chokes \the [partner] on their dick.",
 			"brutally shoves their dick deep into \the [partner]'s mouth."
 			))
 		if(rand(3))
@@ -410,13 +410,13 @@ mob/living/carbon/human/proc/get_shoes()
 			if(prob(1) && ishuman(partner))
 				var/mob/living/carbon/human/H = partner
 				H.adjustOxyLoss(5)
-				add_logs(src, target, "choked", "his dick")
-				
+				add_logs(src, partner, "choked", "his dick")
+
 		if(partner.a_intent == INTENT_HARM)
 			if(ishuman(src))
 				var/mob/living/carbon/human/H = src
 				H.adjustBruteLoss(5)
-				add_logs(target, src, "retaliated")
+				add_logs(partner, src, "retaliated")
 			retaliation_message = pick(
 				"bites down hard on \the [partner]'s cock.",
 				"tightens teeth against \the [partner]'s dick until blood flows.",
@@ -448,7 +448,7 @@ mob/living/carbon/human/proc/get_shoes()
 			"pulls out their saliva-covered nuts from [partner]'s violated mouth and then wipes off the slime onto their face."))
 	else
 		message = pick(list(
-			"wedges a digit into the side of [partner]'s jaw and pries it open before using their other hand to shove their whole nutsack inside!", 
+			"wedges a digit into the side of [partner]'s jaw and pries it open before using their other hand to shove their whole nutsack inside!",
 			"stands with their groin inches away from [partner]'s face, then thrusting their hips forward and smothering [partner]'s whole face with their heavy ballsack."))
 		set_is_fucking(partner , NUTS_TO_FACE)
 
@@ -498,7 +498,7 @@ mob/living/carbon/human/proc/get_shoes()
 
 	if(partner.is_fucking(src, CUM_TARGET_VAGINA))
 		message = pick(list(
-			"rides \the [partner]'s dick.", 
+			"rides \the [partner]'s dick.",
 			"forces [partner]'s cock on their pussy"
 		))
 	else
@@ -517,7 +517,7 @@ mob/living/carbon/human/proc/get_shoes()
 
 	if(partner.is_fucking(src, CUM_TARGET_ANUS))
 		message = pick(list(
-			"rides \the [partner]'s dick.", 
+			"rides \the [partner]'s dick.",
 			"forces [partner]'s cock on their ass"
 			))
 	else
@@ -530,7 +530,7 @@ mob/living/carbon/human/proc/get_shoes()
 	handle_post_sex(NORMAL_LUST, null, partner)
 	partner.dir = get_dir(partner, src)
 	do_fucking_animation(get_dir(src, partner))
-	
+
 /mob/living/carbon/human/proc/do_tribadism(mob/living/carbon/human/partner)
 	var/message
 
@@ -550,8 +550,8 @@ mob/living/carbon/human/proc/get_shoes()
 	do_fucking_animation(get_dir(src, partner))
 
 /mob/living/carbon/human/proc/do_fingering(mob/living/carbon/human/partner)
-	visible_message("<font color=purple><b>\The [src]</b> [pick(list("fingers \the [partner].", 
-		"fingers \the [partner]'s pussy.", 
+	visible_message("<font color=purple><b>\The [src]</b> [pick(list("fingers \the [partner].",
+		"fingers \the [partner]'s pussy.",
 		"fingers \the [partner] hard."))]</font>")
 	playsound(src, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, src)
@@ -559,8 +559,8 @@ mob/living/carbon/human/proc/get_shoes()
 	do_fucking_animation(get_dir(src, partner))
 
 /mob/living/carbon/human/proc/do_fingerass(mob/living/carbon/human/partner)
-	visible_message("<font color=purple><b>\The [src]</b> [pick(list("fingers \the [partner].", 
-		"fingers \the [partner]'s asshole.", 
+	visible_message("<font color=purple><b>\The [src]</b> [pick(list("fingers \the [partner].",
+		"fingers \the [partner]'s asshole.",
 		"fingers \the [partner] hard."))]</font>")
 	playsound(src, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, src)
@@ -579,13 +579,13 @@ mob/living/carbon/human/proc/get_shoes()
 
 	if(partner.is_fucking(src, CUM_TARGET_HAND))
 		message = pick(list(
-			"jerks \the [partner] off.", 
-			"works \the [partner]'s shaft.", 
+			"jerks \the [partner] off.",
+			"works \the [partner]'s shaft.",
 			"wanks \the [partner]'s cock hard."
 			))
 	else
 		message = pick(list(
-			"wraps their hand around \the [partner]'s cock.", 
+			"wraps their hand around \the [partner]'s cock.",
 			"starts playing with \the [partner]'s cock"))
 		partner.set_is_fucking(src, CUM_TARGET_HAND)
 
@@ -600,9 +600,9 @@ mob/living/carbon/human/proc/get_shoes()
 
 	if(is_fucking(partner, CUM_TARGET_BREASTS))
 		message = pick(list(
-			"fucks \the [partner]'s' breasts.", 
-			"grinds their cock between \the [partner]'s boobs.", 
-			"thrusts into \the [partner]'s tits.", 
+			"fucks \the [partner]'s' breasts.",
+			"grinds their cock between \the [partner]'s boobs.",
+			"thrusts into \the [partner]'s tits.",
 			"grabs \the [partner]'s breasts together and presses their dick between them."
 			))
 	else
@@ -620,12 +620,12 @@ mob/living/carbon/human/proc/get_shoes()
 
 	if(is_fucking(partner, GRINDING_FACE_WITH_ANUS))
 		message = pick(list(
-			"grinds their ass into \the [partner]'s face.", 
+			"grinds their ass into \the [partner]'s face.",
 			"shoves their ass into \the [partner]'s face."
 			))
 	else
 		message = pick(list(
-			"grabs the back of \the [partner]'s head and forces it into their asscheeks.", 
+			"grabs the back of \the [partner]'s head and forces it into their asscheeks.",
 			"squats down and plants their ass right on \the [partner]'s face"
 			))
 		set_is_fucking(partner , GRINDING_FACE_WITH_ANUS)

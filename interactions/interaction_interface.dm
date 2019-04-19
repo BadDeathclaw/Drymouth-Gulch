@@ -1,6 +1,6 @@
 					   //MouseDrop_T(atom/dropping, mob/user)
 /mob/living/carbon/human/MouseDrop_T(target as mob, mob/living/carbon/human/user)
-	if(QDELETED(target))		
+	if(QDELETED(target))
 		return
 	//user != src and !usr.restrained() is handeld by 'try_interaction'
 	user.try_interaction(target)
@@ -10,13 +10,17 @@
 	set desc = "Perform an interaction with someone."
 	set category = "IC"
 	set src in view()
-	
+
 	if(QDELETED(src)) //they're about to qdel, let's not innteract them
 		return
 	//user != src and !usr.restrained() is handeld by 'try_interaction'
 	usr.try_interaction(src)
 
 /mob/proc/try_interaction()
+	return
+
+
+/mob/living/carbon/human/try_interaction(mob/living/carbon/human/partner)
 	if(src.stat == DEAD || isdead(src))
 		to_chat(src, "<span class='warning'>You cannot interact while being dead!</span>")
 		src << browse(null, "window=interactions")	//close
@@ -25,7 +29,7 @@
 		to_chat(src, "<span class='warning'>You cannot interact while being unconscious!</span>")
 		src << browse(null, "window=interactions")	//close
 		return
-	if(src == parter)
+	if(src == partner)
 		to_chat(src, "<span class='warning'>You cannot interact with youself!</span>")
 		return
 	if(!src.restrained())
@@ -33,8 +37,6 @@
 		src << browse(null, "window=interactions")	//close
 		return
 
-
-/mob/living/carbon/human/try_interaction(mob/living/carbon/human/partner)
 	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
 	dat += "You...<br>[list_interaction_attributes()]<hr>"
 	dat += "They...<br>[partner.list_interaction_attributes()]<hr>"
@@ -48,5 +50,5 @@
 	var/datum/browser/popup = new(usr, "interactions", "Interactions", 340, 480)
 	popup.set_content(dat)
 	popup.open()
-	
+
 	return ..()

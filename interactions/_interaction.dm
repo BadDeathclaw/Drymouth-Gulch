@@ -9,12 +9,13 @@
 ***********************************/
 // Rectum? Damn near killed 'em.
 
+var/list/interactions	//make this global list aaaa
+
 /proc/make_interactions(interaction)
-	if(!interactions)
-		interactions = list()
-		for(var/itype in subtypesof(/datum/interaction))
-			var/datum/interaction/I = new itype()
-			interactions[I.command] = I
+	LAZYINITLIST(interactions)	//code removed here was basicaly doing lazyinitlist
+	for(var/itype in subtypesof(/datum/interaction))
+		var/datum/interaction/I = new itype()
+		LAZYSET(interactions, I.command, I)
 
 /mob/living/carbon/human/proc/list_interaction_attributes()
 	var/dat = ""
@@ -127,7 +128,7 @@
 		return
 	//start the cooldown even if it fails
 	delay = world.time + 15 // 3/4 second nerf, 20 = 1 second
-	
+
 	if(interaction_sound)
 		playsound(get_turf(user), interaction_sound, 50, 1, -1)
 	return
