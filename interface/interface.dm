@@ -5,11 +5,13 @@
 	set hidden = 1
 	var/wikiurl = CONFIG_GET(string/wikiurl)
 	if(wikiurl)
-		if(query)
-			var/output = wikiurl + "/index.php?title=Special%3ASearch&profile=default&search=" + query
-			src << link(output)
-		else if (query != null)
-			src << link(wikiurl)
+		//if(query)
+		//	var/output = wikiurl + "/index.php?title=Special%3ASearch&profile=default&search=" + query
+		//	src << link(output)
+		//else if (query != null)
+		if(alert("This will open the Patreon in your browser. Are you sure?",,"Yes","No")!="Yes")
+			return
+		src << link(wikiurl)
 	else
 		to_chat(src, "<span class='danger'>The patreon URL is not set in the server configuration.</span>")
 	return
