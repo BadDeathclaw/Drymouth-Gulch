@@ -1,7 +1,7 @@
 //Experimental cloner; clones a body regardless of the owner's status, letting a ghost control it instead
 /obj/machinery/clonepod/experimental
 	name = "experimental cloning pod"
-	desc = "An ancient cloning pod. It seems to be an early prototype of the experimental cloners used in Nanotrasen Stations."
+	desc = "A miraculous piece of Pre-War tech that seems to be able to return life to the dead. Whether or not it works as intended is something else entirely."
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_0"
 	req_access = null
