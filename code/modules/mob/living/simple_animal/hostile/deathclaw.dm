@@ -48,14 +48,6 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
 
-/mob/living/simple_animal/hostile/deathclaw/child
-	name = "young deathclaw"
-	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one's just a baby- how cute! And deadly!"
-	health = 250
-	melee_damage_lower = 36
-	melee_damage_upper = 36
-	speed = -1
-
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
