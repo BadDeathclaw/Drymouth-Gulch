@@ -22,12 +22,12 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "hits"
-	maxHealth = 600
-	health = 600
+	maxHealth = 500
+	health = 500
 	obj_damage = 60
-	armour_penetration = 20
-	melee_damage_lower = 72
-	melee_damage_upper = 72
+	armour_penetration = 30
+	melee_damage_lower = 56
+	melee_damage_upper = 56
 	attacktext = "claws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	friendly = "hugs"
@@ -40,10 +40,10 @@
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
-	health = 850
-	melee_damage_lower = 96
-	melee_damage_upper = 96
-	armour_penetration = 40
+	health = 750
+	melee_damage_lower = 72
+	melee_damage_upper = 72
+	armour_penetration = 30
 	color = rgb(95,104,94)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
