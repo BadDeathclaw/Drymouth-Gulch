@@ -33,15 +33,6 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
 
-/datum/crafting_recipe/katana
-	name = "Katana"
-	result = /obj/item/katana
-	time = 100
-	reqs = list(/obj/item/stack/sheet/metal = 6)
-	tools = list(TOOL_WELDER, TOOL_FORGE)
-	category = CAT_PRIMAL
-	subcategory = CAT_FORGE
-
 /datum/crafting_recipe/forgeglaive
 	name = "Improvised Metal Glaive"
 	result = /obj/item/twohanded/spear
