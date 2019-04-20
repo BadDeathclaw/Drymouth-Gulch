@@ -11,7 +11,7 @@
 	var/start_tank_volume = 1000 //In units, how much the dispenser starts with
 	var/max_tank_volume = 1000 //In units, how much the dispenser can hold in total
 	var/reagent_id = "water" //The ID of the reagent that the dispenser uses
-	var/empty_icon = ""
+	var/empty_icon = FALSE
 
 /obj/structure/reagent_dispensers/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
@@ -21,11 +21,16 @@
 
 /obj/structure/reagent_dispensers/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
-		if(!list(reagents) && empty_icon)
-			src.icon_state = src.empty_icon
+		if(src.reagents.total_volume < 1 && empty_icon)
+			icon_state = empty_icon
 			light_power = 0
+		light_power = 10
 		return 0 //so we can refill them via their afterattack.
 	else
+		if(src.reagents.total_volume < 1 && empty_icon)
+			icon_state = empty_icon
+			light_power = 0
+		light_power = 10
 		return ..()
 
 /obj/structure/reagent_dispensers/Initialize()

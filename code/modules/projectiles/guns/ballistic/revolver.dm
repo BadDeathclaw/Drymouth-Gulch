@@ -447,7 +447,7 @@
 		to_chat(user, "<span class='notice'>You begin to shorten the barrel and stock of [src]...</span>")
 		if(do_after(user, 30, target = src))
 			new /obj/item/gun/ballistic/revolver/zipgun(get_turf(src))
-			to_chat(user, "<span class='notice'>You shorten [src]...</span>")
+			to_chat(user, "<span class='notice'>You shorten [src].</span>")
 			qdel(src)
 	if(istype(A, /obj/item/melee/transforming/energy))
 		var/obj/item/melee/transforming/energy/W = A
