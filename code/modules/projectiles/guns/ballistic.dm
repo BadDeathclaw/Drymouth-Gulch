@@ -205,6 +205,7 @@
 		if(src.distro)
 			src.distro = 15
 		w_class = WEIGHT_CLASS_NORMAL // Fits in a backpack or on a belt now, very robust!
+		weapon_weight = WEAPON_MEDIUM
 		item_state = "gun"
 		slot_flags &= ~ITEM_SLOT_BACK	// You can't sling it on your back anymore
 		slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
