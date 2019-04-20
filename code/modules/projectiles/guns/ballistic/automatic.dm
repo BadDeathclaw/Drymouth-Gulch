@@ -460,7 +460,8 @@
 	item_state = "fnfal"
 	suppressed = 1
 	zoomable = TRUE
-	zoom_amt = 7
+	zoom_amt = 10
+	zoom_out_amt = 13
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	weapon_weight = WEAPON_HEAVY
 

@@ -47,6 +47,10 @@
 
 #define STATUS_EFFECT_SLEEPING /datum/status_effect/incapacitating/sleeping //the affected is asleep
 
+#define STATUS_EFFECT_WEAPON_DRAW_DELAYED /datum/status_effect/incapacitating/weapon_draw_delayed //The affected can't fire a weapon
+
+#define STATUS_EFFECT_THROW_DELAYED /datum/status_effect/incapacitating/throw_delayed //The affected can't throw something
+
 #define STATUS_EFFECT_BELLIGERENT /datum/status_effect/belligerent //forces the affected to walk, doing damage if they try to run
 
 #define STATUS_EFFECT_GEISTRACKER /datum/status_effect/geis_tracker //if you're using geis, this tracks that and keeps you from using scripture

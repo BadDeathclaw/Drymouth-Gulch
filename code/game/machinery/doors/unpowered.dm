@@ -37,3 +37,12 @@
 		if("closing")
 			playsound(src,'sound/machines/door_close.ogg',40,1)
 			flick("roomc1", src)
+
+/obj/machinery/door/unpowered/wooddoor/attackby(obj/item/I, mob/living/user, params)
+	add_fingerprint(user)
+	if(istype(I, /obj/item/screwdriver) && density == FALSE)
+		to_chat(user, "<span class='notice'>You begin to take apart the [name].</span>")
+		if(do_after(user, 60, target = src))
+			var/turf/T = get_turf(src)
+			new /obj/item/stack/sheet/mineral/wood(T, 10)
+			qdel(src)
