@@ -92,6 +92,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 				var/obj/item/bodypart/BP = X
 				if(BP.status == BODYPART_ROBOTIC)
 					to_chat(user, "<span class='warning'>[src.deity_name] refuses to heal this metallic taint!</span>")
+					blessing = 0
 					return 0
 
 			var/heal_amt = 2
