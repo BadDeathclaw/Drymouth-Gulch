@@ -40,6 +40,7 @@
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
+	maxhealth = 750
 	health = 750
 	melee_damage_lower = 72
 	melee_damage_upper = 72
