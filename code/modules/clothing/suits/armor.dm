@@ -449,17 +449,7 @@
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legion
-	name = "legion armor"
-	desc = "Basic legion armor."
-	icon_state = "legrecruit"
-	item_state = "legrecruit"
-	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
-	strip_delay = 60
-	allowed = list(/obj/item/gun, /obj/item/claymore/machete)
-
-/obj/item/clothing/suit/armor/f13/legion/legrecruit
+/obj/item/clothing/suit/armor/f13/legrecruit
 	name = "legion recruit armor"
 	desc = "Legion recruit armor is a common light armor, supplied to recruit legionaries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
 	icon_state = "legrecruit"
@@ -468,18 +458,18 @@
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 	strip_delay = 60
 
-/obj/item/clothing/suit/armor/f13/legion/legrecruit/prime
+/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	name = "legion prime armor"
 	desc = "It's a legion prime armor, supplied to recruits who have survived several skirmishes, and are more worthy of sturdier equipment."
 	item_state = "legprime"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legion/legrecruit/vet
+/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	name = "legion veteran armor"
 	item_state = "legveteran"
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legion/legvexil
+/obj/item/clothing/suit/armor/f13/legvexil
 	name = "legion vexillarius armor"
 	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
 	icon_state = "legvexil"
@@ -488,7 +478,7 @@
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
 	strip_delay = 60
 
-/obj/item/clothing/suit/armor/f13/legion/legcenturion
+/obj/item/clothing/suit/armor/f13/legcenturion
 	name = "legion centurion armor"
 	desc = "The Legion centurion armor is by far the strongest suit of armor available to Caesar's Legion. The armor is composed from other pieces of armor taken from that of the wearer's defeated opponents in combat."
 	icon_state = "legcenturion"
@@ -497,7 +487,7 @@
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 0, "fire" = 80, "acid" = 0)
 	strip_delay = 60
 
-/obj/item/clothing/suit/armor/f13/legion/leglegat
+/obj/item/clothing/suit/armor/f13/leglegat
 	name = "legion legate armor"
 	desc = "The armor appears to be a full suit of heavy gauge steel and offers full body protection. It also has a cloak in excellent condition, but the armor itself bears numerous battle scars and the helmet is missing half of the left horn. The Legate's suit appears originally crafted, in contrast to other Legion armor which consists of repurposed pre-War sports equipment."
 	icon_state = "leglegat"

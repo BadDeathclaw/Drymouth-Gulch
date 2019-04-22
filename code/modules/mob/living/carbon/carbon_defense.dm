@@ -247,8 +247,7 @@
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
 	if(on_fire)
-		M.visible_message("<span class='notice'>[M] pushes [src] over and helps [p_them()] roll on the ground, trying to put out the fire!</span>", "<span class='notice'>You push [src] over onto the ground, helping [p_them()] roll!</span>")
-		src.resist_fire()
+		to_chat(M, "<span class='warning'>You can't put [p_them()] out with just your bare hands!</span>")
 		return
 
 	if(health >= 0 && !(has_trait(TRAIT_FAKEDEATH)))

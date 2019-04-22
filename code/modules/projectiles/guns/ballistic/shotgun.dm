@@ -399,9 +399,7 @@
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
 		sawoff(user)
-		w_class = WEIGHT_CLASS_SMALL
 	if(istype(A, /obj/item/melee/transforming/energy))
 		var/obj/item/melee/transforming/energy/W = A
 		if(W.active)
 			sawoff(user)
-			w_class = WEIGHT_CLASS_SMALL

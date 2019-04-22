@@ -8,34 +8,24 @@
 	container_type = DRAINABLE | AMOUNT_VISIBLE
 	pressure_resistance = 2*ONE_ATMOSPHERE
 	max_integrity = 300
-	var/start_tank_volume = 1000 //In units, how much the dispenser starts with
-	var/max_tank_volume = 1000 //In units, how much the dispenser can hold in total
+	var/tank_volume = 1000 //In units, how much the dispenser can hold
 	var/reagent_id = "water" //The ID of the reagent that the dispenser uses
-	var/empty_icon = FALSE
 
 /obj/structure/reagent_dispensers/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir)
 	. = ..()
 	if(. && obj_integrity > 0)
-		if(max_tank_volume && (damage_flag == "bullet" || damage_flag == "laser"))
+		if(tank_volume && (damage_flag == "bullet" || damage_flag == "laser"))
 			boom()
 
 /obj/structure/reagent_dispensers/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
-		if(src.reagents.total_volume < 1 && empty_icon)
-			icon_state = empty_icon
-			light_power = 0
-		light_power = 10
 		return 0 //so we can refill them via their afterattack.
 	else
-		if(src.reagents.total_volume < 1 && empty_icon)
-			icon_state = empty_icon
-			light_power = 0
-		light_power = 10
 		return ..()
 
 /obj/structure/reagent_dispensers/Initialize()
-	create_reagents(max_tank_volume)
-	reagents.add_reagent(reagent_id, start_tank_volume)
+	create_reagents(tank_volume)
+	reagents.add_reagent(reagent_id, tank_volume)
 	. = ..()
 
 /obj/structure/reagent_dispensers/proc/boom()
@@ -59,14 +49,14 @@
 	name = "high-capacity water tank"
 	desc = "A highly pressurized water tank made to hold gargantuan amounts of water."
 	icon_state = "water_high" //I was gonna clean my room...
-	max_tank_volume = 100000
+	tank_volume = 100000
 
 /obj/structure/reagent_dispensers/foamtank
 	name = "firefoam tank"
 	desc = "A tank full of foaming things."
 	icon_state = "foam"
 	reagent_id = "firefighting_foam"
-	max_tank_volume = 500
+	tank_volume = 500
 
 /obj/structure/reagent_dispensers/fueltank
 	name = "fuel tank"
@@ -152,7 +142,7 @@
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "water_cooler"
 	anchored = TRUE
-	max_tank_volume = 500
+	tank_volume = 500
 	var/paper_cups = 25 //Paper cups left from the cooler
 
 /obj/structure/reagent_dispensers/water_cooler/examine(mob/user)
@@ -203,43 +193,3 @@
 	icon_state = "vat"
 	anchored = TRUE
 	reagent_id = "cooking_oil"
-
-/obj/structure/reagent_dispensers/vat
-	name = "metal vat"
-	desc = "A huge metal vat with a nozzle on the front."
-	icon_state = "vat"
-	anchored = TRUE
-	start_tank_volume = 0
-	max_tank_volume = 10000
-
-/obj/structure/reagent_dispensers/vat/open_empty
-	icon_state = "vat_open_empty"
-
-/obj/structure/reagent_dispensers/vat/fev_open
-	name = "metal vat of FEV"
-	desc = "A huge metal vat with a nozzle on the front. It's filled with a sickeningly green liquid."
-	icon_state = "vat_fev_open"
-	reagent_id = "FEV_solution"
-	start_tank_volume = 100
-	empty_icon = "vat_fev_open_empty"
-	light_color = "#2eda58"
-	light_power = 0.8
-	light_range = 2.5
-
-/obj/structure/reagent_dispensers/vat/fev_bubbling
-	name = "metal vat of FEV"
-	desc = "A huge metal vat with a nozzle on the front. It's filled with a bubbling green liquid."
-	icon_state = "vat_fev_bubbling"
-	reagent_id = "FEV_solution"
-	start_tank_volume = 100
-	empty_icon = "vat_fev_open_empty"
-	light_color = "#2eda58"
-	light_power = 0.8
-	light_range = 2.5
-
-/obj/structure/reagent_dispensers/vat/fev_closed
-	name = "metal vat"
-	desc = "A huge metal vat with a nozzle on the front."
-	icon_state = "vat_fev_closed"
-	reagent_id = "FEV_solution"
-	start_tank_volume = 100

@@ -6,7 +6,6 @@
 	var/static/lock_uid = 1
 	var/locked = FALSE
 	var/prying = FALSE //if somebody is trying to pry us off
-	materials = list(MAT_METAL=2000)
 
 /obj/item/lock_construct/Initialize() // Same system machines use for UID. Could probably add a global UID for everything if you wanted and use it for shenanigans, or simpler loading.
 	..()
@@ -64,7 +63,6 @@
 	icon = 'icons/obj/key.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	var/lock_data = ""
-	materials = list(MAT_METAL=2000)
 
 /obj/item/key/Initialize()
 	..()

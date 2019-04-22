@@ -137,7 +137,7 @@
 			to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
 			return
 		if(Z.get_amount() < 3)
-			to_chat(user, "<span class='warning'>You need at three wooden planks to reinforce this fence!</span>")
+			to_chat(user, "<span class='warning'>You need at three four wooden planks to reinforce this fence!</span>")
 			return
 		else
 			to_chat(user, "<span class='notice'>You start adding [Z] to [src]...</span>")

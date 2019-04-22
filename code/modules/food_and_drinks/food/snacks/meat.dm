@@ -138,7 +138,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/deathclaw
 	desc = "A chemical soaked slab of deathclaw meat."
 	icon_state = "goliathmeat"
-	list_reagents = list("nutriment" = 3, "cooking_oil" = 2, "bicaridine" = 10, "salglu_solution" = 10, "antitoxin" = 10, "tricordrazine" = 10)
+	list_reagents = list("nutriment" = 3, "cooking_oil" = 2, "bicaridine" = 10, "kelotane" = 10, "antitoxin" = 10, "tricordrazine" = 10)
 
 /obj/item/reagent_containers/food/snacks/meat/slab/radroach_meat
 	name = "radroach meat"
@@ -335,6 +335,7 @@
 	icon_state = "meatsteak"
 	list_reagents = list("nutriment" = 5)
 	bonus_reagents = list("nutriment" = 2, "vitamin" = 1)
+	trash = /obj/item/trash/plate
 	filling_color = "#B22222"
 	foodtype = MEAT
 	tastes = list("meat" = 1)

@@ -56,7 +56,6 @@
 		obj_flags &= ~IN_USE
 		user.pixel_y = 0
 		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
-		user.nutrition -= 20 // Exercise and lose some weight!
 		icon_state = "fitnesslifter"
 		to_chat(user, finishmessage)
 		user.apply_status_effect(STATUS_EFFECT_EXERCISED)
@@ -105,7 +104,6 @@
 		obj_flags &= ~IN_USE
 		animate(user, pixel_y = 0, time = 3)
 		var/finishmessage = pick("You feel stronger!","You feel like you can take on the world!","You feel robust!","You feel indestructible!")
-		user.nutrition -= 20 // Exercise and lose some weight!
 		icon_state = "fitnessweight"
 		cut_overlay(swole_overlay)
 		to_chat(user, "[finishmessage]")

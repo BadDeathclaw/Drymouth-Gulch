@@ -298,7 +298,7 @@ Recruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
-		/obj/item/ammo_box/a308=3, \
+		/obj/item/ammo_box/a762=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -443,7 +443,7 @@ Recon Ranger
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/m29=1, \
-		/obj/item/ammo_box/a308=2, \
+		/obj/item/ammo_box/a762=2, \
 		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
