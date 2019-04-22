@@ -59,7 +59,7 @@ Needs whitelist
 	name = "Legate"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legate
 	shoes = 		/obj/item/clothing/shoes/legionlegat
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/leglegat
+	suit = 			/obj/item/clothing/suit/armor/f13/leglegat
 	head = 			/obj/item/clothing/head/helmet/f13/legion/leglegat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman
@@ -98,7 +98,7 @@ Centurion
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Legion Centurion"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legcenturion
+	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
 	r_hand =		/obj/item/melee/powerfist
@@ -135,7 +135,7 @@ Veteran Decan
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 	name = "Legion Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legrecruit/vet
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -174,7 +174,7 @@ Prime Decan
 	name = "Legion Prime Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primedecan
 	shoes = 		/obj/item/clothing/shoes/legionleather
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legrecruit/prime
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -212,7 +212,7 @@ Decan
 	name = "Legion Recruit Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13decan
 	shoes = 		/obj/item/clothing/shoes/legionleather
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legrecruit
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -249,7 +249,7 @@ Vexillarius
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
 	name = "Legion Vexillarius"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legvexil
+	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
@@ -284,7 +284,7 @@ Veteran
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 	name = "Veteran Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetlegion
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legrecruit/vet
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -324,7 +324,7 @@ Prime
 	name = "Prime Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primelegion
 	shoes =         /obj/item/clothing/shoes/legionleather
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legrecruit/prime
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
 	mask =			/obj/item/clothing/mask/bandana/legprime
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -362,7 +362,7 @@ Legionary
 	name = "Recruit Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
 	shoes = 		/obj/item/clothing/shoes/legionleather
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legrecruit
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -397,7 +397,7 @@ Legionary
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
-	suit = 		/obj/item/clothing/suit/armor/f13/legion/legrecruit/vet
+	suit = 		/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 		/obj/item/clothing/head/helmet/f13/legion/explorer
 	glasses = null
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting
@@ -428,7 +428,7 @@ Legionary
 	name = "Legion Scout"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13scout
 	shoes = 		/obj/item/clothing/shoes/legionleather
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/legrecruit
+	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/scout
 	glasses = null
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped

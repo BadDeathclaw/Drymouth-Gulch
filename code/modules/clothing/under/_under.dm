@@ -16,16 +16,6 @@
 	var/mutable_appearance/accessory_overlay
 	var/mutantrace_variation = NO_MUTANTRACE_VARIATION //Are there special sprites for specific situations? Don't use this unless you need to.
 
-/obj/item/clothing/under/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/wirecutters) || I.is_sharp())
-		var/obj/item/stack/sheet/cloth/C = new (get_turf(src), 3)
-		transfer_fingerprints_to(C)
-		C.add_fingerprint(user)
-		qdel(src)
-		to_chat(user, "<span class='notice'>You cut [src] up with [I].</span>")
-	else
-		return ..()
-
 /obj/item/clothing/under/worn_overlays(isinhands = FALSE)
 	. = list()
 	if(!isinhands)

@@ -425,8 +425,6 @@
 	item_state = "gun"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT
 
 /obj/item/gun/ballistic/revolver/pipe_rifle
 	name = "pipe rifle"
@@ -438,19 +436,3 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
-/obj/item/gun/ballistic/revolver/pipe_rifle/attackby(obj/item/A, mob/user, params)
-	..()
-	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
-		if(blow_up(user))
-			user.visible_message("<span class='danger'>\The [src] goes off!</span>", "<span class='danger'>\The [src] goes off in your face!</span>")
-			return
-		to_chat(user, "<span class='notice'>You begin to shorten the barrel and stock of [src]...</span>")
-		if(do_after(user, 30, target = src))
-			new /obj/item/gun/ballistic/revolver/zipgun(get_turf(src))
-			to_chat(user, "<span class='notice'>You shorten [src].</span>")
-			qdel(src)
-	if(istype(A, /obj/item/melee/transforming/energy))
-		var/obj/item/melee/transforming/energy/W = A
-		if(W.active)
-			new /obj/item/gun/ballistic/revolver/zipgun(get_turf(src))
-			qdel(src)
