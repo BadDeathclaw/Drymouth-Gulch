@@ -227,6 +227,8 @@
 			return
 	else
 		if(cooldown <= world.time)
+			if(target.getStaminaLoss() > 120)
+				return
 			if(ishuman(target))
 				var/mob/living/carbon/human/H = target
 				if (H.check_shields(src, 0, "[user]'s [name]", MELEE_ATTACK))
@@ -237,13 +239,13 @@
 			target.adjustStaminaLoss(30)
 			add_logs(user, target, "attacked", src)
 			src.add_fingerprint(user)
-			/* target.visible_message("<span class ='danger'>[user] hits [target] with [src]!</span>", \
-				"<span class ='userdanger'>[user] hits [target] with [src]!</span>") */
+			target.visible_message("<span class ='danger'>[user] hits [target] with [src]!</span>", \
+				"<span class ='userdanger'>[user] hits [target] with [src]!</span>")
 			if(!iscarbon(user))
 				target.LAssailant = null
 			else
 				target.LAssailant = user
-			cooldown = world.time + 5
+			cooldown = world.time + 10
 
 /obj/item/melee/classic_baton/telescopic
 	name = "telescopic baton"
