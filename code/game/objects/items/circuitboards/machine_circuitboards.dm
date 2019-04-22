@@ -45,7 +45,7 @@
 		/obj/item/stack/sheet/glass = 1)
 
 /obj/item/circuitboard/machine/clonepod/experimental
-	name = "Experimental Clone Pod (Machine Board)"
+	name = "Clone Pod (Machine Board)"
 	build_path = /obj/machinery/clonepod/experimental
 
 /obj/item/circuitboard/machine/abductor
