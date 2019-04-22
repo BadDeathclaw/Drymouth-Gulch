@@ -44,10 +44,11 @@
 
 
 /obj/item/bodypart/chest/dismember()
-	return FALSE
+	var/mob/living/carbon/C = owner
+	if(C.stat != DEAD)
+		return FALSE
 	if(!owner)
 		return FALSE
-	var/mob/living/carbon/C = owner
 	if(!dismemberable)
 		return FALSE
 	if(C.has_trait(TRAIT_NODISMEMBER))
