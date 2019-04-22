@@ -122,4 +122,7 @@
 		var/throwtarget = get_edge_target_turf(src, get_dir(src, get_step_away(L, src)))
 		L.throw_at(throwtarget, 3)
 
+
 	charging = FALSE
+	charging = FALSE
+
