@@ -107,6 +107,14 @@
 	item_state = "ranger"
 	item_color = "ranger"
 
+/obj/item/clothing/under/f13/vetranger
+	name = "veteran ranger outfit"
+	desc = "Simple rustic clothes for any big iron packin' ranger."
+	icon_state = "vetranger"
+	item_state = "vetranger"
+	item_color = "vetranger"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
 /obj/item/clothing/under/f13/sheriff
 	name = "sheriff outfit"
 	desc = "The symbol of law and civilization, a black vest over a well starched white shirt."
