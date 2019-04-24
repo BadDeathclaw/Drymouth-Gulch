@@ -143,7 +143,7 @@ Medic
 	name = "NCR Medical Officer"
 	jobtype = /datum/job/ncr/f13medic
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
-	accessory =     /obj/item/clothing/accessory/armband/med/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/LT
 	suit = 			/obj/item/clothing/suit/toggle/labcoat/cmo
 	head = 			/obj/item/clothing/head/beret/ncr
 	glasses = 		/obj/item/clothing/glasses/hud/health
@@ -219,7 +219,7 @@ Engineer
 	name = "NCR Engineer"
 	jobtype = /datum/job/ncr/f13engineer
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/armband/engine/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/hardhat/orange
 	glasses = 		/obj/item/clothing/glasses/welding
@@ -437,8 +437,8 @@ Recon Ranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/ncr/f13recranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
-	suit = 			/obj/item/clothing/suit/f13/duster
-	head = 			/obj/item/clothing/head/fluff/cowboy
+	suit = 			/obj/item/clothing/suit/armor/f13/rangerrecon
+	head = 			/obj/item/clothing/head/f13/ranger
 	gloves =		/obj/item/clothing/gloves/botanic_leather
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
