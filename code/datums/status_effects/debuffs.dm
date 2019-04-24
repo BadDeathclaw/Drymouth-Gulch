@@ -37,6 +37,14 @@
 	if(owner.getStaminaLoss())
 		owner.adjustStaminaLoss(-0.3) //reduce stamina loss by 0.3 per tick, 6 per 2 seconds
 
+//WEAPON DRAW DELAYED
+/datum/status_effect/incapacitating/weapon_draw_delayed
+	id = "weapon_draw_delayed"
+
+//THROW DELAYED
+/datum/status_effect/incapacitating/throw_delayed
+	id = "throw_delayed"
+
 
 //UNCONSCIOUS
 /datum/status_effect/incapacitating/unconscious

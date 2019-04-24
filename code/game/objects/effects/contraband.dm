@@ -408,6 +408,26 @@
 	desc = "A poster advertising a movie about some masked men."
 	icon_state = "poster44"
 
+/obj/structure/sign/poster/contraband/pinup_ride
+	name = "Pin-up - Sweet Ride"
+	desc = "A pin-up of a woman riding a rocket while holding two toy guns."
+	icon_state = "poster52"
+
+/obj/structure/sign/poster/contraband/pinup_couch
+	name = "Pin-up - Lounging"
+	desc = "A pin-up of a woman in revealing lingerie sprawled across a couch."
+	icon_state = "poster53"
+
+/obj/structure/sign/poster/contraband/pinup_bed
+	name = "Pin-up - Bed Time"
+	desc = "A pin-up of a woman holding a book while laying on a large pillow."
+	icon_state = "poster54"
+
+/obj/structure/sign/poster/contraband/pinup_pink
+	name = "Pin-up - Just Peachy"
+	desc = "A pin-up of a woman with bright pink clothing and a small crown in a suggestive pose."
+	icon_state = "poster55"
+
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
 	poster_item_desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
@@ -618,6 +638,16 @@
 	name = "pre-war poster"
 	desc = "Only YOU can stop CORPORATE ESPIONAGE."
 	icon_state = "poster46"
+
+/obj/structure/sign/poster/protectron
+	name = "protectron advertisement poster"
+	desc = "A poster advertising the latest RobCo Mk.2 Protectron. Now with laser-targeted laser fire!"
+	icon_state = "poster50"
+
+/obj/structure/sign/poster/vault_tec
+	name = "vault-tec poster"
+	desc = "A poster advertising the Vault-Tec Corporation. Vault-Tec: Revolutionizing safety for an uncertain future!"
+	icon_state = "poster51"
 
 
 #undef PLACE_SPEED

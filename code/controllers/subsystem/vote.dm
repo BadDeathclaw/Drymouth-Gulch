@@ -131,8 +131,7 @@ SUBSYSTEM_DEF(vote)
 				active_admins = 1
 				break
 		if(!active_admins)
-			SSshuttle.emergency.request()
-			//SSticker.Reboot("Restart vote successful.", "restart vote")
+			SSticker.Reboot("Restart vote successful.", "restart vote")
 		else
 			to_chat(world, "<span style='boldannounce'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
 			message_admins("A restart vote has passed, but there are active admins on with +ban, so it has been canceled. If you wish, you may restart the server.")
@@ -281,7 +280,6 @@ SUBSYSTEM_DEF(vote)
 			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
 				if(min_restart_time < world.time)
 					initiate_vote("restart",usr.key)
-					CONFIG_SET(flag/allow_vote_restart, FALSE)
 				else
 					to_chat(usr.client, "<span style='boldannounce'>Restart can only initiate after [DisplayTimeText(min_restart_time)].</span>")
 		if("gamemode")
