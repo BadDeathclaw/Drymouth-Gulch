@@ -1,7 +1,25 @@
-					   //MouseDrop_T(atom/dropping, mob/user)
-/mob/living/carbon/human/MouseDrop_T(target as mob, mob/living/carbon/human/user)
-	//user != src and !usr.restrained() is handeld by 'try_interaction'
-	user.try_interaction(target)
+/mob/proc/try_interaction()
+	return
+
+/*
+/mob/living/carbon/human/MouseDrop(var/mob/living/carbon/human/dropped_on, mob/living/carbon/human/user as mob)
+	if(src != dropped_on && !src.restrained())
+		try_interaction(dropped_on)
+		return
+	return ..()
+*/
+
+/mob/living/carbon/human/MouseDrop_T(mob/M as mob, mob/living/carbon/human/user as mob)
+	if(M == src || src == usr || M != usr)
+		return
+	if(usr.restrained())
+		return
+
+	user.try_interaction(src)
+
+/mob/living/silicon/MouseDrop_T(mob/M as mob, mob/user as mob)
+	if(M == src || src == usr || M != usr)		return
+	if(usr.restrained())		return
 
 /mob/living/carbon/human/verb/interact_with()
 	set name = "Interact With"
@@ -9,39 +27,24 @@
 	set category = "IC"
 	set src in view()
 
-	if(QDELETED(src)) //they're about to qdel, let's not innteract them
-		return
-	//user != src and !usr.restrained() is handeld by 'try_interaction'
-	usr.try_interaction(src)
-
-/mob/proc/try_interaction()
-	return
-
+	if(usr != src && !usr.restrained())
+		usr.try_interaction(src)
 
 /mob/living/carbon/human/try_interaction(mob/living/carbon/human/partner)
-	if(src.stat == DEAD || isdead(src))
-		to_chat(src, "<span class='warning'>You cannot interact while being dead!</span>")
-		src << browse(null, "window=interactions")	//close
-		return
-	if(src.IsUnconscious() || src.stat == UNCONSCIOUS)
-		to_chat(src, "<span class='warning'>You cannot interact while being unconscious!</span>")
-		src << browse(null, "window=interactions")	//close
-		return
-	if(src == partner)
-		to_chat(src, "<span class='warning'>You cannot interact with youself!</span>")
-		return
-	if(!src.restrained())
-		to_chat(src, "<span class='warning'>You are currently restrained!!</span>")
-		src << browse(null, "window=interactions")	//close
-		return
-
 	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
+
 	dat += "You...<br>[list_interaction_attributes()]<hr>"
 	dat += "They...<br>[partner.list_interaction_attributes()]<hr>"
 
+/mob/living/carbon/human/try_interaction(mob/living/silicon/partner)
+	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
+
+	dat += "You...<br>[list_interaction_attributes()]<hr>"
+	dat += "They...<br>[]<hr>"
+
 	make_interactions()
-	for(var/interaction_key in GLOB.interactions)
-		var/datum/interaction/I = GLOB.interactions[interaction_key]
+	for(var/interaction_key in interactions)
+		var/datum/interaction/I = interactions[interaction_key]
 		if(I.evaluate_user(src) && I.evaluate_target(src, partner))
 			dat += I.get_action_link_for(src, partner)
 
@@ -49,4 +52,33 @@
 	popup.set_content(dat)
 	popup.open()
 
-	return ..()
+/mob/living/silicon/try_interaction(mob/living/carbon/human/partner)
+
+	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
+
+	dat += "You...<br>[]<hr>"
+	dat += "They...<br>[partner.list_interaction_attributes()]<hr>"
+
+	make_interactions()
+	for(var/interaction_key in interactions)
+		var/datum/interaction/I = interactions[interaction_key]
+		if(I.evaluate_user(src) && I.evaluate_target(src, partner))
+			dat += I.get_action_link_for(src, partner)
+
+	var/datum/browser/popup = new(usr, "interactions", "Interactions", 340, 480)
+	popup.set_content(dat)
+	popup.open()
+
+/*
+/atom/movable/attack_hand(mob/living/user)
+	. = ..()
+	if(can_buckle && buckled_mob)
+		if(user_unbuckle_mob(user))
+			return 1
+
+/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
+	. = ..()
+	if(can_buckle && istype(M) && !buckled_mob)
+		if(user_buckle_mob(M, user))
+			return 1
+*/

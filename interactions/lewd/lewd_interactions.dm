@@ -74,9 +74,9 @@
 
 /datum/interaction/lewd/evaluate_target(mob/living/carbon/human/user, mob/living/carbon/human/target, silent = TRUE)
 	if(..(user, target, silent))
-		if(target_not_tired && target.refactory_period >= world.time)
+		if(target_not_tired && target.refactory_period)
 			if(!silent) //same with this
-				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period - world.time, TRUE)] until you can do that!</span>")
+				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
 
 		if(require_target_bottomless && !target.is_bottomless())
@@ -112,18 +112,20 @@
 
 /datum/interaction/lewd/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user_refactory_cost)
-		user.refactory_period += world.time + user_refactory_cost
+		user.refactory_period += user_refactory_cost
 	if(target_refactory_cost)
-		target.refactory_period += world.time + target_refactory_cost
+		target.refactory_period += target_refactory_cost
 	return ..()
 
 /datum/interaction/lewd/get_action_link_for(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return "<font color='#FF0000'><b>LEWD:</b></font> [..()]"
-	//code behind here was retarded, removed it
-	
+	if(user.stat == DEAD)
+		to_chat(user, "<span class='warning'>You cannot erp as ghost!</span>")
+		return
+
 /mob/living/carbon/human/list_interaction_attributes()
 	var/dat = ..()
-	if(refactory_period >= world.time)
+	if(refactory_period)
 		dat += "<br>...are sexually exhausted for the time being."
 	if(a_intent == INTENT_HELP)
 		dat += "<br>...are acting gentle."
@@ -147,3 +149,25 @@
 	else
 		dat += "<br>...are clothed."
 	return dat
+//mob/living/silicon/proc/list_interaction_attributes()
+//	var/dat = ..()
+//	if(refactory_period)
+//		dat += "<br>...are sexually exhausted for the time being."
+//	if(a_intent == INTENT_HELP)
+//		dat += "<br>...are acting gentle."
+//	else if (a_intent == INTENT_DISARM)
+//		dat += "<br>...are acting playful."
+//	else if (a_intent == INTENT_GRAB)
+//		dat += "<br>...are acting rough."
+//	else if(a_intent == INTENT_HARM)
+//		dat += "<br>...are fighting anyone who comes near."
+//		if(has_breasts())
+//			dat += "<br>...have breasts."
+//		if(has_penis())
+//			dat += "<br>...have a penis."
+//		if(has_vagina())
+//			dat += "<br>...have a vagina."
+//		if(has_anus())
+//			dat += "<br>...have an anus."
+//	return dat
+//**^Can't figure this shit out, staying for someone else to figure it out or for me to wrap my mind around it - Moose/Bob^**//
