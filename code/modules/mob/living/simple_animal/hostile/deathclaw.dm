@@ -56,7 +56,7 @@
 		visible_message("<span class='danger'>\The [src] growls, enraged!</span>")
 		sleep(3)
 		Charge()
-	if(prob(50) || Proj.damage > 26)
+	if(prob(85) || Proj.damage > 26) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want deathclaws to be
 		return ..()
 	else
 		visible_message("<span class='danger'>\The [Proj] bounces off \the [src]'s thick hide!</span>")
