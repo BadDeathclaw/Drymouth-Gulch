@@ -113,7 +113,6 @@
 	icon_state = "vetranger"
 	item_state = "vetranger"
 	item_color = "vetranger"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/under/f13/sheriff
 	name = "sheriff outfit"
