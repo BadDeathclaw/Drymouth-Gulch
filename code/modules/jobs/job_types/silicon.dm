@@ -35,8 +35,7 @@ AI
 			qdel(lateJoinCore)
 	var/mob/living/silicon/ai/AI = H
 	AI.apply_pref_name("ai", M.client)			//If this runtimes oh well jobcode is fucked.
-
-	AI.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	H.mind.istechnophreak = TRUE
 
 	//we may have been created after our borg
 	if(SSticker.current_state == GAME_STATE_SETTING_UP)
@@ -87,5 +86,4 @@ Cyborg
 	return H.Robotize(FALSE, latejoin)
 
 /datum/job/cyborg/after_spawn(mob/living/silicon/robot/R, mob/M)
-	R.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 	R.apply_pref_name("cyborg", M.client)

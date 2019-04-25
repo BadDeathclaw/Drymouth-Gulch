@@ -17,7 +17,7 @@
 	max_integrity = 200
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 50)
 	var/sheetType = /obj/item/stack/sheet/metal
-	var/sheetAmount = 10
+	var/sheetAmount = 7
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/closeSound = 'sound/effects/stonedoor_openclose.ogg'
 	var/obj/item/lock_construct/Lock = null
@@ -169,10 +169,6 @@
 		return add_lock(I, user) /* call add_lock proc, so we can disable for airlocks */
 	else if(istype(I, /obj/item/key))
 		return check_key(I, user)
-	else if(istype(I, /obj/item/screwdriver) && state == 1)
-		to_chat(user, "<span class='notice'>You begin to take apart the [name].</span>")
-		if(do_after(user, 60, target = src))
-			deconstruct(TRUE)
 	else if(user.a_intent != INTENT_HARM)
 		return attack_hand(user)
 	else

@@ -8,8 +8,6 @@
 	var/climbable = FALSE
 	var/mob/living/structureclimber
 	var/broken = 0 //similar to machinery's stat BROKEN
-	var/barricade = TRUE //set to true to allow projectiles to always pass over it, default false (checks vs density)
-	var/proj_pass_rate = 65 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
 
 /obj/structure/Initialize()
 	if (!armor)
@@ -110,18 +108,3 @@
 		if(0 to 25)
 			if(!broken)
 				return  "<span class='warning'>It's falling apart!</span>"
-
-/obj/structure/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
-	if(barricade == FALSE)
-		return !density
-	else if(density == FALSE)
-		return 1
-	else if(istype(mover, /obj/item/projectile))
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return 1
-		if(prob(proj_pass_rate))
-			return 1
-		return 0
-	else
-		return !density

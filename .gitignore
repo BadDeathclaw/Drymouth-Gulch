@@ -9,7 +9,6 @@
 #Ignore some sensitive configs.
 /config/dbconfig.txt
 /config/admins.txt
-/config/comms.txt #shh
 
 #Ignore compiled files and other files generated during compilation.
 *.mdme

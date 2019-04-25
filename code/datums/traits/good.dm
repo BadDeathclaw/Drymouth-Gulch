@@ -41,6 +41,10 @@
 	mob_trait = TRAIT_CHEMWHIZ
 	gain_text = "<span class='notice'>The mysteries of chemistry are revealed to you.</span>"
 	lose_text = "<span class='danger'>You forget how the periodic table works.</span>"
+
+/datum/quirk/chemwhiz/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.mind.ischemwhiz = TRUE
 */
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"

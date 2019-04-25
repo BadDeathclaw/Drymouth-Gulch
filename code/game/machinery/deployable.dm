@@ -14,8 +14,7 @@
 	anchored = TRUE
 	density = TRUE
 	max_integrity = 100
-	proj_pass_rate = 35
-	barricade = TRUE
+	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
 	var/material = METAL
 
 /obj/structure/barricade/deconstruct(disassembled = TRUE)
@@ -46,6 +45,28 @@
 			to_chat(user, "<span class='notice'>The [src] doesn't need to be repaired.</span>")
 	else
 		return ..()
+
+/obj/structure/barricade/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
+	if(locate(/obj/structure/barricade) in get_turf(mover))
+		return 1
+	else if(istype(mover, /obj/item/projectile))
+		if(!anchored)
+			return 1
+		var/obj/item/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return 1
+		if(prob(proj_pass_rate))
+			return 1
+		/* /obj/item/restraints/legcuffs/bola/energy/throw_impact(atom/hit_atom)
+		if(iscarbon(hit_atom))
+			var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy/cyborg(get_turf(hit_atom))
+			B.Crossed(hit_atom)
+			qdel(src)
+		..() */
+		return 0
+	else
+		return !density
+
 
 
 /////BARRICADE TYPES///////
@@ -81,7 +102,7 @@
 	icon_state = "woodenbarricade-old"
 	drop_amount = 2
 	max_integrity = 80
-	proj_pass_rate = 50
+	proj_pass_rate = 65
 
 /obj/structure/barricade/wooden/crude/snow
 	desc = "This space is blocked off by a crude assortment of planks. It seems to be covered in a layer of snow."
@@ -110,7 +131,7 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message("<span class='notice'>[user] starts to take down [src]...</span>", "<span class='notice'>You start to take down [src]...</span>")
+	user.visible_message("<span class='notice'>[user] starts to down [src]...</span>", "<span class='notice'>You start to take down [src]...</span>")
 	if(!has_buckled_mobs() && do_after(user, 80, target = src))
 		to_chat("<span class='notice'>You take down [src].</span>")
 		new /obj/item/stack/sheet/mineral/sandbags(src.loc)

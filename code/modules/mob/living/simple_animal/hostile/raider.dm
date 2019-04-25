@@ -49,7 +49,7 @@
     health = 170
     rapid = 1
     casingtype = /obj/item/ammo_casing/c9mm
-    loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/gun/ballistic/automatic/greasegun)
+    loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/ammo_box/magazine/greasegun)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
     ..()

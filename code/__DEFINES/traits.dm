@@ -67,9 +67,7 @@
 #define TRAIT_BIG_LEAGUES		"big_leagues"
 #define TRAIT_IRONFIST			"iron_fist"
 #define	TRAIT_LIFEGIVER			"lifegiver"
-
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
-#define TRAIT_TECHNOPHREAK		"technophreak"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

@@ -526,7 +526,7 @@
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding ammunition."
+	desc = "A bandolier for holding shotgun ammunition."
 	icon_state = "bandolier"
 	item_state = "bandolier"
 
@@ -536,7 +536,7 @@
 	STR.max_items = 18
 	STR.display_numerical_stacking = TRUE
 	STR.can_hold = typecacheof(list(
-		/obj/item/ammo_casing
+		/obj/item/ammo_casing/shotgun
 		))
 
 /obj/item/storage/belt/holster

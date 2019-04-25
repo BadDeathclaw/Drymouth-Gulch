@@ -12,7 +12,6 @@
 	var/move_to_delay = 3 //delay for the automated movement.
 	var/list/friends = list()
 	var/list/emote_taunt = list()
-	var/emote_taunt_sound = FALSE // Does it have a sound associated with the emote? Defaults to false.
 	var/taunt_chance = 0
 
 	var/ranged_message = "fires" //Fluff text for ranged mobs
@@ -289,8 +288,6 @@
 	if(target && emote_taunt.len && prob(taunt_chance))
 		emote("me", 1, "[pick(emote_taunt)] at [target].")
 		taunt_chance = max(taunt_chance-7,2)
-		if(emote_taunt_sound)
-			playsound(loc, emote_taunt_sound, 50, 0)
 
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()

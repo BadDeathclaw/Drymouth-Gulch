@@ -476,10 +476,7 @@
 
 	loot = list(
 				/obj/item/gun/medbeam,
-				/obj/item/defibrillator/compact/combat/loaded,
-				/obj/item/reagent_containers/hypospray/combat,
-				/obj/item/clothing/glasses/hud/health/night,
-				/obj/item/disk/surgery/revival
+				/obj/item/defibrillator/loaded
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds  //no drugs, didn't add

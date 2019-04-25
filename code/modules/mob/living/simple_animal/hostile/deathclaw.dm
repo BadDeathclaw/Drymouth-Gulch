@@ -14,7 +14,7 @@
 	emote_taunt = list("stares ferociously", "stomps")
 	speak_chance = 10
 	taunt_chance = 25
-	speed = 0
+	speed = 1
 	see_in_dark = 8
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
@@ -22,10 +22,9 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "hits"
-	maxHealth = 500
-	health = 500
+	maxHealth = 420
+	health = 420
 	obj_damage = 60
-	armour_penetration = 30
 	melee_damage_lower = 56
 	melee_damage_upper = 56
 	attacktext = "claws"
@@ -35,18 +34,16 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 5
 	gold_core_spawnable = HOSTILE_SPAWN
-	var/charging = FALSE
 
 /mob/living/simple_animal/hostile/deathclaw/mother
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
-	maxHealth = 750
-	health = 750
+	health = 600
 	melee_damage_lower = 72
 	melee_damage_upper = 72
-	armour_penetration = 30
 	color = rgb(95,104,94)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
+<<<<<<< HEAD
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
 
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
@@ -126,3 +123,6 @@
 	charging = FALSE
 	charging = FALSE
 
+=======
+							/obj/item/stack/sheet/animalhide/deathclaw = 3)
+>>>>>>> parent of f6c03358... e

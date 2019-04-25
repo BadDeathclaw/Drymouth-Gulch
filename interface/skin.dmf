@@ -265,7 +265,7 @@ window "outputwindow"
 	elem "browseroutput"
 		type = BROWSER
 		pos = 0,0
-		size = 640x480
+		size = 638x455
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #747a70
@@ -276,7 +276,7 @@ window "outputwindow"
 	elem "output"
 		type = OUTPUT
 		pos = 2,1
-		size = 640x480
+		size = 638x479
 		anchor1 = 0,0
 		anchor2 = 100,100
 		is-default = true

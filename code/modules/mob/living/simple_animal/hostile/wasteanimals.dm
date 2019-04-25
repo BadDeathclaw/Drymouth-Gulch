@@ -14,7 +14,6 @@
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
 	emote_taunt = list("buzzes")
-	emote_taunt_sound = 'sound/creatures/cazador_buzz.ogg'
 	taunt_chance = 30
 	speed = 0
 	maxHealth = 40
@@ -89,7 +88,6 @@
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
 	emote_taunt = list("snips")
-	emote_taunt_sound = 'sound/creatures/radscorpion_snip.ogg'
 	taunt_chance = 30
 	speed = 1
 	maxHealth = 150
@@ -99,7 +97,6 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	attacktext = "stings"
-	attack_sound = 'sound/creatures/radscorpion_attack.ogg'
 	speak_emote = list("hisses")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("radscorpion")
@@ -157,8 +154,7 @@
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
-	emote_taunt = list("chitters")
-	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
+	emote_taunt = list("clicks")
 	taunt_chance = 30
 	speed = 1
 	maxHealth = 20
@@ -168,7 +164,6 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attacktext = "stings"
-	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")

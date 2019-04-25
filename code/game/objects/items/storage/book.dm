@@ -38,7 +38,6 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	var/mob/affecting = null
 	var/deity_name = "Christ"
 	force_string = "holy"
-	var/blessing = 0
 
 /obj/item/storage/book/bible/Initialize()
 	. = ..()
@@ -84,35 +83,25 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 		usr << browse(null, "window=editicon")
 
 /obj/item/storage/book/bible/proc/bless(mob/living/carbon/human/H, mob/living/user)
-	if(blessing == 0)
-		to_chat(user, "<span class='notice'>You begin to invoke your deity for a blessing...</span>")
-		blessing = 1
-		if(do_after(user, 100, target = H))
-			for(var/X in H.bodyparts)
-				var/obj/item/bodypart/BP = X
-				if(BP.status == BODYPART_ROBOTIC)
-					to_chat(user, "<span class='warning'>[src.deity_name] refuses to heal this metallic taint!</span>")
-					blessing = 0
-					return 0
+	for(var/X in H.bodyparts)
+		var/obj/item/bodypart/BP = X
+		if(BP.status == BODYPART_ROBOTIC)
+			to_chat(user, "<span class='warning'>[src.deity_name] refuses to heal this metallic taint!</span>")
+			return 0
 
-			var/heal_amt = 2
-			var/list/hurt_limbs = H.get_damaged_bodyparts(1, 1)
+	var/heal_amt = 10
+	var/list/hurt_limbs = H.get_damaged_bodyparts(1, 1)
 
-			if(hurt_limbs.len)
-				for(var/X in hurt_limbs)
-					var/obj/item/bodypart/affecting = X
-					if(affecting.heal_damage(heal_amt, heal_amt))
-						H.update_damage_overlays()
-			H.visible_message("<span class='notice'>[user] heals [H] with the power of [deity_name]!</span>")
-			to_chat(H, "<span class='boldnotice'>May the power of [deity_name] compel you to be healed!</span>")
-			playsound(src.loc, "punch", 25, 1, -1)
-			SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
-			blessing = 0
-		else
-			blessing = 0
-	else
-		to_chat(user, "<span class='notice'>You're already blessing someone!</span>")
-
+	if(hurt_limbs.len)
+		for(var/X in hurt_limbs)
+			var/obj/item/bodypart/affecting = X
+			if(affecting.heal_damage(heal_amt, heal_amt))
+				H.update_damage_overlays()
+		H.visible_message("<span class='notice'>[user] heals [H] with the power of [deity_name]!</span>")
+		to_chat(H, "<span class='boldnotice'>May the power of [deity_name] compel you to be healed!</span>")
+		playsound(src.loc, "punch", 25, 1, -1)
+		SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "blessing", /datum/mood_event/blessing)
+	return 1
 
 /obj/item/storage/book/bible/attack(mob/living/M, mob/living/carbon/human/user, heal_mode = TRUE)
 
@@ -126,19 +115,30 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 	if(user.mind && (user.mind.isholy))
 		chaplain = 1
 
+	if(!chaplain)
+		to_chat(user, "<span class='danger'>The book sizzles in your hands.</span>")
+		user.take_bodypart_damage(0,10)
+		return
+
 	if (!heal_mode)
 		return ..()
 
 	var/smack = 1
 
 	if (M.stat != DEAD)
-		if(user == M)
-			to_chat(user, "<span class='warning'>You can't bless yourself!</span>")
+		if(chaplain && user == M)
+			to_chat(user, "<span class='warning'>You can't heal yourself!</span>")
 			return
-		if(ishuman(M) && chaplain == 1 && bless(M, user))
-			smack = 0
 
-		if(smack && chaplain == 0)
+		if(ishuman(M) && prob(60) && bless(M, user))
+			smack = 0
+		else if(iscarbon(M))
+			var/mob/living/carbon/C = M
+			if(!istype(C.head, /obj/item/clothing/head/helmet))
+				C.adjustBrainLoss(5, 60)
+				to_chat(C, "<span class='danger'>You feel dumber.</span>")
+
+		if(smack)
 			M.visible_message("<span class='danger'>[user] beats [M] over the head with [src]!</span>", \
 					"<span class='userdanger'>[user] beats [M] over the head with [src]!</span>")
 			playsound(src.loc, "punch", 25, 1, -1)
@@ -163,7 +163,7 @@ GLOBAL_LIST_INIT(bibleitemstates, list("bible", "koran", "scrapbook", "bible",  
 			var/water2holy = A.reagents.get_reagent_amount("water")
 			A.reagents.del_reagent("water")
 			A.reagents.add_reagent("holywater",water2holy)
-		if(A.reagents && A.reagents.has_reagent("unholywater")) // yeah, yeah, copy pasted code - sue me
+		if(A.reagents && A.reagents.has_reagent("unholywater")) // yeah yeah, copy pasted code - sue me
 			to_chat(user, "<span class='notice'>You purify [A].</span>")
 			var/unholy2clean = A.reagents.get_reagent_amount("unholywater")
 			A.reagents.del_reagent("unholywater")

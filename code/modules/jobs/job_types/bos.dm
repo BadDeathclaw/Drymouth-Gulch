@@ -3,7 +3,7 @@ BoS access:
 Main doors: ACCESS_CAPTAIN 20
 */
 
-/datum/job/bos //do NOT use this for anything, it's just to store faction datums.
+/datum/job/bos //do NOT use this for anything, it's just to store faction datums
 	department_flag = BOS
 	selection_color = "#95a5a6"
 	exp_type = EXP_TYPE_BROTHERHOOD
@@ -27,13 +27,13 @@ Main doors: ACCESS_CAPTAIN 20
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	H.mind.istechnophreak = TRUE
 
 /datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
+	H.mind.istechnophreak = TRUE
 
 /*
 Elder
@@ -196,8 +196,8 @@ Scribe
 	shoes = 		/obj/item/clothing/shoes/combat
 	suit = 			/obj/item/clothing/suit/f13/scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	id = 			/obj/item/card/id/dogtag
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
+	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec=2, \
 		/obj/item/kitchen/knife/combat=1, \
@@ -223,8 +223,8 @@ Initiate Knight
 
 	outfit = /datum/outfit/job/bos/f13initiateknight
 
-	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
-	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
+	access = list(ACCESS_BOS)
+	minimal_access = list(ACCESS_BOS)
 
 /datum/outfit/job/bos/f13initiateknight
 	name = "Initiate Knight"
@@ -254,8 +254,8 @@ Initiate Scribe
 
 	outfit = /datum/outfit/job/bos/f13initiatescribe
 
-	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
-	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
+	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
+	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
 
 /datum/outfit/job/bos/f13initiatescribe
 	name = "Initiate Scribe"
@@ -266,7 +266,6 @@ Initiate Scribe
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1)
