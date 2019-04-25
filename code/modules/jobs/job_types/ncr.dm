@@ -362,12 +362,10 @@ Veteran Ranger
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/ncr/f13vetranger
-	uniform =  		/obj/item/clothing/under/f13/vetranger
+	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
-	belt =			/obj/item/storage/belt/military/ncr
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
-	gloves =		/obj/item/clothing/gloves/color/black
-	shoes =			/obj/item/clothing/shoes/laceup
+	gloves =		/obj/item/clothing/gloves/fingerless
 	suit_store = 	/obj/item/gun/ballistic/shotgun/antimateriel
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
