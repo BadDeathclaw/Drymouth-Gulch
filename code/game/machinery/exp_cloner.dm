@@ -1,6 +1,6 @@
 //Experimental cloner; clones a body regardless of the owner's status, letting a ghost control it instead
 /obj/machinery/clonepod/experimental
-	name = "experimental cloning pod"
+	name = "cloning pod"
 	desc = "A miraculous piece of Pre-War tech that seems to be able to return life to the dead. Whether or not it works as intended is something else entirely."
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_0"
@@ -9,7 +9,7 @@
 	internal_radio = FALSE
 
 //Start growing a human clone in the pod!
-/obj/machinery/clonepod/experimental/growclone(clonename, ui, se, datum/species/mrace, list/features, factions)
+/obj/machinery/clonepod/experimental/growclone(ckey, clonename, ui, se, datum/species/mrace, list/features, factions)
 	if(panel_open)
 		return FALSE
 	if(mess || attempting)
@@ -292,6 +292,6 @@
 		temp = "<font class='bad'>Cloning cycle already in progress.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 	else
-		pod.growclone(mob_occupant.real_name, dna.uni_identity, dna.struc_enzymes, clone_species, dna.features, mob_occupant.faction)
+		pod.growclone(null, mob_occupant.real_name, dna.uni_identity, dna.struc_enzymes, clone_species, dna.features, mob_occupant.faction)
 		temp = "[mob_occupant.real_name] => <font class='good'>Cloning data sent to pod.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)

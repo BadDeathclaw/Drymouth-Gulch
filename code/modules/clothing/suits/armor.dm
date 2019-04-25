@@ -47,7 +47,7 @@
 	icon_state = "hos"
 	item_state = "greatcoat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 20, "energy" = 20, "bomb" = 45, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	strip_delay = 80
@@ -403,8 +403,8 @@
 		var/mob/living/L = M
 		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC))//living proc
 			to_chat(M, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-			
-		
+
+
 	else ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
