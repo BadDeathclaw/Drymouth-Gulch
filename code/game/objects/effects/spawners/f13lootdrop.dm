@@ -6,6 +6,8 @@
    -----------to spawn", it is fine(tm)-------------
  */
 
+//Stop using lootspawners in dungeons improperly. If you put guns in a dungeon, people will want to use them, which will result in them shooting people. You'll have to put in nests or something to constantly give people stuff to shoot at. - Nappist
+
 /obj/effect/spawner/lootdrop/f13
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
@@ -1020,7 +1022,16 @@
 				/obj/item/poster/random_contraband
 				)
 
-/obj/effect/spawner/lootdrop/f13/foodspawner //TIER 5 FOOD
+/obj/effect/spawner/lootdrop/f13/seedspawner
+	name = "seed spawner"
+	lootdoubles = TRUE
+	fan_out_items = TRUE
+	lootcount = 4
+
+/obj/effect/spawner/lootdrop/f13/seedspawner/Initialize(mapload)
+	loot = pick(typesof(/obj/item/seeds/) - /obj/item/seeds)
+
+/obj/effect/spawner/lootdrop/f13/foodspawner
 	name = "food spawner"
 	lootdoubles = TRUE
 	fan_out_items = TRUE
