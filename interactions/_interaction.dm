@@ -164,3 +164,12 @@ var/list/interactions
 		if(user_buckle_mob(M, user))
 			return TRUE
 */
+
+/mob/living/silicon/silicon/proc/list_interaction_attributes()
+	has_penis = TRUE
+	has_vagina = TRUE
+	has_breasts = TRUE
+	has_anus = TRUE
+	return
+
+/mob/partner/proc/list_interaction_attributes()
