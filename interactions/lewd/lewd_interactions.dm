@@ -149,3 +149,25 @@
 	else
 		dat += "<br>...are clothed."
 	return dat
+//mob/living/silicon/proc/list_interaction_attributes()
+//	var/dat = ..()
+//	if(refactory_period)
+//		dat += "<br>...are sexually exhausted for the time being."
+//	if(a_intent == INTENT_HELP)
+//		dat += "<br>...are acting gentle."
+//	else if (a_intent == INTENT_DISARM)
+//		dat += "<br>...are acting playful."
+//	else if (a_intent == INTENT_GRAB)
+//		dat += "<br>...are acting rough."
+//	else if(a_intent == INTENT_HARM)
+//		dat += "<br>...are fighting anyone who comes near."
+//		if(has_breasts())
+//			dat += "<br>...have breasts."
+//		if(has_penis())
+//			dat += "<br>...have a penis."
+//		if(has_vagina())
+//			dat += "<br>...have a vagina."
+//		if(has_anus())
+//			dat += "<br>...have an anus."
+//	return dat
+//**^Can't figure this shit out, staying for someone else to figure it out or for me to wrap my mind around it - Moose/Bob^**//

@@ -248,20 +248,6 @@
 /datum/interaction/lewd/mountass/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.do_mountass(target)
 
-/datum/interaction/lewd/tribadism
-	command = "tribadism"
-	description = "Grind your pussy against theirs."
-	interaction_sound = null
-	require_target_vagina = TRUE
-	require_user_vagina = TRUE
-	user_not_tired = TRUE
-	require_user_bottomless = TRUE
-	require_target_bottomless = TRUE
-	max_distance = 0
-	
-/datum/interaction/lewd/tribadism/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.do_tribadism(target)
-
 /datum/interaction/lewd/rimjob
 	command = "rimjob"
 	description = "Lick their ass."

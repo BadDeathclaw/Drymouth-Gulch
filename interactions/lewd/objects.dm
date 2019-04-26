@@ -5,7 +5,7 @@
 	icon_state = "dildo_map"
 	item_state = "dildo"
 	throwforce = 0
-	force = 5
+	force = 0
 	w_class = WEIGHT_CLASS_SMALL
 	attack_verb = list("slammed", "bashed", "whipped")
 
