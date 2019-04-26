@@ -600,7 +600,12 @@
 /obj/item/robot_module/fisto_protectron
 	name = "Fisto"
 	basic_modules = list(
+		/obj/item/crowbar/cyborg,
+		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/melee/chainofcommand,
+		/obj/item/assembly/flash/cyborg,
 		/obj/item/dildo/cyborg,
+		/obj/item/soap/nanotrasen,
 		/obj/item/reagent_containers/spray/sexborg_oil)
 	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
 	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
@@ -612,7 +617,12 @@
 /obj/item/robot_module/sexy_handy
 	name = "Hans"
 	basic_modules = list(
+		/obj/item/crowbar/cyborg,
+		/obj/item/restraints/handcuffs/cable/zipties,
+		/obj/item/melee/chainofcommand,
+		/obj/item/assembly/flash/cyborg,
 		/obj/item/dildo/cyborg,
+		/obj/item/soap/nanotrasen,
 		/obj/item/reagent_containers/spray/sexborg_oil)
 	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
 	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
