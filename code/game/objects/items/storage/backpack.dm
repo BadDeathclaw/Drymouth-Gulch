@@ -21,16 +21,6 @@
 	resistance_flags = NONE
 	max_integrity = 300
 
-/obj/item/storage/ranger
-	name = "ranger pack"
-	desc = "A high-grade pre-war military backpack, adopted by NCR Veteran Rangers following the Ranger Unification Treaty."
-	icon_state = "rangerpack"
-	item_state = "rangerpack"
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
-	resistance_flags = NONE
-	max_integrity = 300
-
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)

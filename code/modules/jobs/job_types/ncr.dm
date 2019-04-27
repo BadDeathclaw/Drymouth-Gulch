@@ -363,7 +363,6 @@ Veteran Ranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/ncr/f13vetranger
 	uniform =  		/obj/item/clothing/under/f13/vetranger
-	back =			/obj/item/storage/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	belt =			/obj/item/storage/belt/military/ncr
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
