@@ -165,11 +165,16 @@ var/list/interactions
 			return TRUE
 */
 
-/mob/living/silicon/silicon/proc/list_interaction_attributes()
-	has_penis = TRUE
-	has_vagina = TRUE
-	has_breasts = TRUE
-	has_anus = TRUE
-	return
+//mob/living/silicon/silicon/proc/list_interaction_attributes()
+//	has_penis = TRUE
+//	has_vagina = TRUE
+//	has_breasts = TRUE
+//	has_anus = TRUE
+//	return
 
-/mob/partner/proc/list_interaction_attributes()
+//mob/partner/proc/list_interaction_attributes()
+
+//I'm a terrible coder, tried to add body parts to the borgs so
+//they could use the interaction menu but I failed terribly.
+//Feel free to try and fix it.
+//Love, Moose/Bob.
