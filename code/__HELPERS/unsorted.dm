@@ -1619,3 +1619,37 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return -1
 	else
 		return 0
+
+//Macro for creating a list and populating it with a type. Requires hierarchies to be organized. Missing the logic for restrictions.
+proc/childtypesof()
+	var/types[] = list()
+	. = list()
+	for(var/type in args)
+		types += typesof(type) - type
+		for(var/t in types)
+			types -= typesof(t) - t
+		. += types
+
+#define islist(x) istype(x, /list)
+
+//In which we let it just generate new instances.
+proc/newchildtypesof()
+	var/prevtypes[]
+	. = list()
+	for(var/a in args)
+		if(islist(a))
+			if(length(prevtypes))
+				for(var/t in prevtypes)
+					. += new t(arglist(a))
+				prevtypes = list()
+		else
+			if(length(prevtypes))
+				for(var/t in prevtypes)
+					. += new t
+			if(ispath(a))
+				prevtypes = childtypesof(a)
+			else
+				prevtypes = list()
+	if(length(prevtypes))
+		for(var/t in prevtypes)
+			. += new t

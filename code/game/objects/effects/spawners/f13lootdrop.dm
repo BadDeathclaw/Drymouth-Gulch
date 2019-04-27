@@ -12,14 +12,6 @@
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
 
-/*
-unfinished
-	/proc/populate(num, items, restrictions)
-		if(num > 0)
-			num -= 1
-			pick(typesof(items), restrictions)
-*/
-
 /obj/effect/spawner/lootdrop/f13/discomeme
 	name = "dancemachine or piano"
 	lootcount = 1
@@ -1036,12 +1028,9 @@ unfinished
 	fan_out_items = TRUE
 	lootcount = 4
 
-/*
-//unfinished
-/obj/effect/spawner/lootdrop/f13/seedspawner/Initialize(mapload)
-	.. ()
-	loot = populate(4, /obj/item/seeds, -/obj/item/seeds, -/obj/item/seeds/gatfruit)
-*/
+/obj/effect/spawner/lootdrop/f13/seedspawner/Initialize(mapload) // This will spawn gatfruit sometimes.
+	loot = childtypesof(/obj/item/seeds)
+	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/foodspawner
 	name = "food spawner"
