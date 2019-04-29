@@ -13,7 +13,7 @@
 
 /obj/item/clothing/gloves/rifleman
 	name = "rifleman's gloves"
-	desc = "A pair of rifleman's gloves. The thumb and finger have been removed to not impair the wearer's shooting ability, and a piece of plating has been affixed to the back."
+	desc = "A pair of rifleman's gloves. The thumb and finger have been removed to not impair the wearer's shooting ability."
 	icon_state = "rifleman"
 	item_state = "rifleman"
 	item_color = null	//So they don't wash.
@@ -22,7 +22,6 @@
 	equip_delay_other = 20
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
-	armor = list("melee" = 16, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/botanic_leather
 	name = "botanist's leather gloves"
