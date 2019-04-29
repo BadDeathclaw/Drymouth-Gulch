@@ -222,7 +222,7 @@ CHECK_RANDOMIZER
 # WIKIURL https://www.patreon.com/baddeathclaw
 
 ## Rules address
-RULESURL https://pastebin.com/ETeb6x3D
+RULESURL  https://discord.gg/BbsYDrR
 
 
 ## Github address
