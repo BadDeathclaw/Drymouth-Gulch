@@ -40,9 +40,9 @@
 	else if(istype(W, /obj/item/wrench))
 		switch(fisto_setting)
 			if(1)
-				fisto_setting = 1.5
-			if(2)
 				fisto_setting = 2
+			if(2)
+				fisto_setting = 3
 			if(3)
 				fisto_setting = 1
 		W.play_tool_sound(src)
