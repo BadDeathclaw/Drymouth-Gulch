@@ -438,9 +438,9 @@ Recon Ranger
 	jobtype = /datum/job/ncr/f13recranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/rangerrecon
+	belt =			/obj/item/storage/belt/military/reconbandolier
 	head = 			/obj/item/clothing/head/f13/ranger
-	gloves =		/obj/item/clothing/gloves/botanic_leather
-	shoes = 		/obj/item/clothing/shoes/workboots
+	shoes = 		/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
