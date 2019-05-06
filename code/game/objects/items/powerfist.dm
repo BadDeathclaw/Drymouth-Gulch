@@ -8,7 +8,7 @@
 	flags_1 = CONDUCT_1
 	attack_verb = list("whacked", "fisted", "power-punched")
 	force = 33
-	throwforce = 10
+	throwforce = 11
 	throw_range = 7
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BELT
