@@ -34,22 +34,22 @@
 
 /* Items with ADMINPRIVATE prefixed are stripped from public logs. */
 /proc/log_admin(text)
-	GLOB.admin_log.Add(text)
+	GLOB.admin_log.Add("[time_stamp()] [text]")
 	if (CONFIG_GET(flag/log_admin))
-		WRITE_LOG(GLOB.world_game_log, "ADMIN: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMIN: [text]")
 
 /proc/log_admin_private(text)
-	GLOB.admin_log.Add(text)
+	GLOB.admin_log.Add("[time_stamp()] [text]")
 	if (CONFIG_GET(flag/log_admin))
-		WRITE_LOG(GLOB.world_game_log, "ADMINPRIVATE: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMINPRIVATE: [text]")
 
 /proc/log_adminsay(text)
 	if (CONFIG_GET(flag/log_adminchat))
-		WRITE_LOG(GLOB.world_game_log, "ADMINPRIVATE: ASAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMINPRIVATE: ASAY: [text]")
 
 /proc/log_dsay(text)
 	if (CONFIG_GET(flag/log_adminchat))
-		WRITE_LOG(GLOB.world_game_log, "ADMIN: DSAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMIN: DSAY: [text]")
 
 
 /* All other items are public. */
