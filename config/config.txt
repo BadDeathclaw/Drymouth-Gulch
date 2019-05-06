@@ -216,13 +216,13 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-# FORUMURL https://discord.gg/BbsYDrR
+# FORUMURL https://discord.gg/ppWGX2j
 
 ## Wiki address
 # WIKIURL https://www.patreon.com/baddeathclaw
 
 ## Rules address
-RULESURL https://pastebin.com/ETeb6x3D
+RULESURL https://discord.gg/ppWGX2j
 
 
 ## Github address

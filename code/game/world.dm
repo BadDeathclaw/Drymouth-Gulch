@@ -250,7 +250,7 @@ GLOBAL_PROTECT(security_mode)
 			features += "vote"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>\[ENG] Bad Deathclaw</b> - Unofficial Fallout 13<br>"
+	s += "<b>\[ENG] Bad Deathclaw</b> - 18+ Unofficial Fallout 13<br>"
 	s += "<br>"
 	s += "Medium RP \[https://discord.gg/pY33Q8c]<br>"
 	s += "Hosted by degenerates"
