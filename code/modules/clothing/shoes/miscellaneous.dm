@@ -115,6 +115,17 @@
 	equip_delay_other = 40
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
+/obj/item/clothing/shoes/laced
+	name = "laced boots"
+	desc = "A pair of laced, heavy-duty boots, adopted by NCR veteran rangers following the Ranger Unification Treaty."
+	icon_state = "laced"
+	item_state = "laced"
+	strip_delay = 50
+	equip_delay_other = 50
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
 /obj/item/clothing/shoes/workboots/mining
 	name = "mining boots"
 	desc = "Steel-toed mining boots for mining in hazardous environments. Very good at keeping toes uncrushed."

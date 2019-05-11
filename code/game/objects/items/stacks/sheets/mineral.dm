@@ -59,8 +59,9 @@ GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 
 /obj/item/stack/sheet/mineral/sandbags
 	name = "sandbags"
-	icon_state = "sandbags"
 	singular_name = "sandbag"
+	desc = "Bags filled with sand that can be stacked together to provide decent cover."
+	icon_state = "sandbags"
 	layer = LOW_ITEM_LAYER
 	novariants = TRUE
 	merge_type = /obj/item/stack/sheet/mineral/sandbags
@@ -75,10 +76,13 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	. = ..()
 
 /obj/item/stack/sheet/emptysandbag
-	name = "empty sandbag"
+	name = "empty sandbags"
+	singular_name = "empty sandbag"
 	desc = "A bag to be filled with sand."
-	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sandbag"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	layer = LOW_ITEM_LAYER
+	novariants = TRUE
 	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/stack/sheet/emptysandbag/attackby(obj/item/W, mob/user, params)

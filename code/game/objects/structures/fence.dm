@@ -18,6 +18,8 @@
 
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "straight"
+	barricade = TRUE
+	proj_pass_rate = 40
 
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
@@ -120,7 +122,7 @@
 			if(current_stage == hole_size)
 				switch(++hole_size)
 					if(MEDIUM_HOLE)
-						visible_message("<span class='notice'>\The [user] cuts into \the [src] some more.</span>")
+						visible_message("<span class='notice'>\The [user] cuts a decent-sized hole into \the [src].</span>")
 						to_chat(user, "<span class='info'>You could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger.</span>")
 						climbable = TRUE
 					if(LARGE_HOLE)
@@ -134,14 +136,15 @@
 		if(locate(/obj/structure/barricade/wooden/crude) in get_turf(src))
 			to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
 			return
-		if(Z.get_amount() < 4)
-			to_chat(user, "<span class='warning'>You need at least four wooden planks to reinforce this fence!</span>")
+		if(Z.get_amount() < 3)
+			to_chat(user, "<span class='warning'>You need at three four wooden planks to reinforce this fence!</span>")
 			return
 		else
 			to_chat(user, "<span class='notice'>You start adding [Z] to [src]...</span>")
 			if(do_after(user, 50, target=src))
-				Z.use(4)
+				Z.use(3)
 				new /obj/structure/barricade/wooden/crude(get_turf(src))
+				user.visible_message("<span class='notice'>[user] reinforces the fence with some planks</span>", "<span class='notice'>You reinforce the fence with some planks.</span>")
 				return
 	return TRUE
 

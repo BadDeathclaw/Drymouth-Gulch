@@ -11,7 +11,7 @@ Sheriff
 	spawn_positions = 1
 	supervisors = "no one"
 	selection_color = "#d7b088"
-	exp_requirements = 60
+	exp_requirements = 480
 	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13sheriff
@@ -31,7 +31,7 @@ Sheriff
 	suit = 			/obj/item/clothing/suit/det_suit
 	head = 			/obj/item/clothing/head/fluff/cowboy
 	glasses =		/obj/item/clothing/glasses/sunglasses
-	l_hand = 		/obj/item/gun/ballistic/shotgun
+	l_hand = 		/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(/obj/item/storage/box/deputy_badges=1)
 
@@ -52,8 +52,8 @@ Settler
 	flag = F13SETTLER
 	department_flag = DEN
 	faction = "Den"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 10
+	spawn_positions = 10
 	supervisors = "the sheriff"
 	selection_color = "#dcba97"
 
@@ -190,7 +190,7 @@ Preacher
 	mask = 			/obj/item/clothing/mask/gas/syndicate
 	r_hand = 		/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/internal/boltaction=2, \
+		/obj/item/ammo_box/a308=2, \
 		/obj/item/reagent_containers/food/drinks/flask=1, \
 		/obj/item/storage/fancy/candle_box, \
 		/obj/item/storage/bag/money/small/settler)
@@ -200,3 +200,38 @@ Preacher
 	r_pocket = pick(
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
+
+
+/*
+Den Doctor
+*/
+
+/datum/job/den/f13dendoc
+	title = "Den Doctor"
+	flag = F13DENDOC
+	department_flag = DEN
+	faction = "Den"
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are in charge of providing medical assistance to the inhabitants of the Den as needed."
+	selection_color = "#dcba97"
+	exp_requirements = 300
+
+	outfit = /datum/outfit/job/den/f13dendoc
+
+/datum/outfit/job/den/f13dendoc
+	name = "Den Doctor"
+	jobtype = /datum/job/den/f13dendoc
+	uniform =  		/obj/item/clothing/under/f13/medic
+	ears = 			/obj/item/radio/headset/headset_den
+	suit = 			/obj/item/clothing/suit/toggle/labcoat
+	backpack = 		/obj/item/storage/backpack/satchel/explorer
+	satchel =       /obj/item/storage/backpack/satchel/explorer
+	shoes =         /obj/item/clothing/shoes/sneakers/white
+	id = null
+	l_pocket =      /obj/item/storage/bag/money/small/settler
+	backpack_contents = list(
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/storage/firstaid/regular,  \
+		)
+	box = null

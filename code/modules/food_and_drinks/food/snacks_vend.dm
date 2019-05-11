@@ -13,6 +13,16 @@
 	tastes = list("candy" = 1)
 	foodtype = JUNKFOOD | SUGAR
 
+/obj/item/reagent_containers/food/snacks/candy/hyena
+	name = "hyena candy"
+	desc = "Hyena brand candy, love it or hate it, its all a toxic mess to me."
+	icon_state = "hcandy"
+	trash = /obj/item/trash/candy/hyena
+	list_reagents = list("nutriment" = 1, "sugar" = 2, "toxin" = 1)
+	filling_color = "#8cff00"
+	tastes = list("toxic mess" = 1)
+	foodtype = JUNKFOOD | SUGAR
+
 /obj/item/reagent_containers/food/snacks/sosjerky
 	name = "\improper Scaredy's Private Reserve Beef Jerky"
 	icon_state = "sosjerky"
@@ -23,6 +33,16 @@
 	filling_color = "#8B0000"
 	tastes = list("dried meat" = 1)
 	foodtype = JUNKFOOD | MEAT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/hyenajerky
+	name = "\improper Hyena's Private Reserve Beef Jerky"
+	icon_state = "hynjerky"
+	desc = "Beef jerky made from the finest cows two hundred years ago."
+	list_reagents = list("nutriment" = 1, "sodiumchloride" = 5, "toxin" = 2)
+	junkiness = 25
+	filling_color = "#8cff00"
+	tastes = list("dried up vomit" = 1)
+	foodtype = JUNKFOOD | MEAT
 
 /obj/item/reagent_containers/food/snacks/sosjerky/healthy
 	name = "homemade beef jerky"

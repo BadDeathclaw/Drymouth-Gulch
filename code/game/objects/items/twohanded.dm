@@ -455,7 +455,7 @@
 	icon_state = "spearglass0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	name = "Improvised Metal Glaive"
+	name = "improvised metal glaive"
 	desc = "A improvised metal glaive that can be wielded."
 	force = 10
 	w_class = WEIGHT_CLASS_BULKY
@@ -676,7 +676,7 @@
 //GREY TIDE
 /obj/item/twohanded/spear/grey_tide
 	icon_state = "spearglass0"
-	name = "\improper Metal Spear"
+	name = "\improper metal spear"
 	desc = "A improvised metal spear."
 	force_unwielded = 20
 	force_wielded = 25
@@ -783,7 +783,7 @@
 	icon_state = "hfrequency0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	name = "vibro sword"
+	name = "high frequency blade"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
 	force_unwielded = 20
 	force_wielded = 40
@@ -893,7 +893,9 @@
 	icon_state = "sledgehammer[wielded]"
 
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
+	name = "bumper sword"
 	icon_state = "bmprsword0"
+	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 

@@ -107,6 +107,13 @@
 	item_state = "ranger"
 	item_color = "ranger"
 
+/obj/item/clothing/under/f13/vetranger
+	name = "veteran ranger outfit"
+	desc = "Simple rustic clothes for any big iron packin' ranger."
+	icon_state = "vetranger"
+	item_state = "vetranger"
+	item_color = "vetranger"
+
 /obj/item/clothing/under/f13/sheriff
 	name = "sheriff outfit"
 	desc = "The symbol of law and civilization, a black vest over a well starched white shirt."
@@ -187,14 +194,14 @@
 	item_color = "mercc"
 
 /obj/item/clothing/under/f13/cowboyb
-	name = "Cowboy outfit"
+	name = "cowboy outfit"
 	desc = "A dirt brown cowboy outfit. Specially usefull for herding brahmins."
 	icon_state = "cowboyb"
 	item_state = "cowboyb"
 	item_color = "cowboyb"
 
 /obj/item/clothing/under/f13/cowboyg
-	name = "Cowboy outfit"
+	name = "cowboy outfit"
 	desc = "A dirt grey cowboy outfit. Specially usefull for herding brahmins."
 	icon_state = "cowboyg"
 	item_state = "cowboyg"
@@ -264,7 +271,7 @@
 /obj/item/clothing/suit/armor/khan
 	name = "khan armored vest"
 	desc = "The symbol of the greatest pushers."
-	icon_state = "khan"
+	icon_state = "armorkit" //we need real sprites for this
 	item_state = "khan"
 
 //Warriors

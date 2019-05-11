@@ -237,6 +237,11 @@
 			M.emote("scream")
 	..()
 
+/datum/reagent/medicine/silver_sulfadiazine/on_mob_life(mob/living/M)
+	M.adjustFireLoss(-2*REM, 0)
+	..()
+	. = 0.5
+
 /datum/reagent/medicine/oxandrolone
 	name = "Oxandrolone"
 	id = "oxandrolone"
@@ -248,7 +253,7 @@
 
 /datum/reagent/medicine/oxandrolone/on_mob_life(mob/living/carbon/M)
 	if(M.getFireLoss() > 50)
-		M.adjustFireLoss(-2*REM, 0)
+		M.adjustFireLoss(-4*REM, 0) //Twice as effective as silver sulfadiazine for severe burns, Very situational medicine
 	else
 		M.adjustFireLoss(-0.5*REM, 0) //But only a quarter as effective for more minor ones
 	..()
@@ -279,6 +284,11 @@
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
 			M.emote("scream")
 	..()
+
+/datum/reagent/medicine/styptic_powder/on_mob_life(mob/living/M)
+	M.adjustBruteLoss(-2*REM, 0)
+	..()
+	. = 0.5
 
 /datum/reagent/medicine/salglu_solution
 	name = "Saline-Glucose Solution"
@@ -480,7 +490,7 @@
 
 /datum/reagent/medicine/sal_acid/on_mob_life(mob/living/carbon/M)
 	if(M.getBruteLoss() > 50)
-		M.adjustBruteLoss(-2*REM, 0) //Twice as effective as styptic powder for severe bruising
+		M.adjustBruteLoss(-4*REM, 0) //Twice as effective as styptic powder for severe bruising, Very situational medicine
 	else
 		M.adjustBruteLoss(-0.5*REM, 0) //But only a quarter as effective for more minor ones
 	..()
@@ -703,7 +713,7 @@
 /datum/reagent/medicine/atropine
 	name = "Atropine"
 	id = "atropine"
-	description = "If a patient is in critical condition, slowly heals all damage types as well as regulating oxygen in the body. Excellent for stabilizing wounded patients."
+	description = "If a patient is in critical condition, rapidly heals all damage types as well as regulating oxygen in the body. Excellent for stabilizing wounded patients."
 	reagent_state = LIQUID
 	color = "#000000"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
@@ -711,9 +721,9 @@
 
 /datum/reagent/medicine/atropine/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)
-		M.adjustToxLoss(-1*REM, 0)
-		M.adjustBruteLoss(-1*REM, 0)
-		M.adjustFireLoss(-1*REM, 0)
+		M.adjustToxLoss(-2*REM, 0)
+		M.adjustBruteLoss(-2*REM, 0)
+		M.adjustFireLoss(-2*REM, 0)
 		M.adjustOxyLoss(-5*REM, 0)
 		. = 1
 	M.losebreath = 0
@@ -909,7 +919,7 @@
 	overdose_threshold = 30
 
 /datum/reagent/medicine/bicaridine/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.5*REM, 0)
+	M.adjustBruteLoss(-1*REM, 0)
 	..()
 	. = 1
 
@@ -945,7 +955,7 @@
 	overdose_threshold = 30
 
 /datum/reagent/medicine/kelotane/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-0.5*REM, 0)
+	M.adjustFireLoss(-1*REM, 0)
 	..()
 	. = 1
 
@@ -997,8 +1007,8 @@
 	taste_description = "grossness"
 
 /datum/reagent/medicine/tricordrazine/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-0.5*REM, 0)
-	M.adjustFireLoss(-0.5*REM, 0)
+	M.adjustBruteLoss(-1*REM, 0)
+	M.adjustFireLoss(-1*REM, 0)
 	M.adjustOxyLoss(-1*REM, 0)
 	M.adjustToxLoss(-1*REM, 0)
 	..()
@@ -1254,11 +1264,11 @@
 /datum/reagent/medicine/stimpak
 	name = "Stimpak Fluid"
 	id = "stimpak"
-	description = "Rapidly heals damage when injected. Deals minor toxin damage if injested."
+	description = "Rapidly heals damage when injected. Deals minor toxin damage if ingested."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
-	metabolization_rate = 3 * REAGENTS_METABOLISM
+	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -1270,15 +1280,18 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-4*REM, 0)
-	M.adjustFireLoss(-4*REM, 0)
-	M.adjustOxyLoss(-3*REM, 0)
+	M.adjustBruteLoss(-6*REM, 0)
+	M.adjustFireLoss(-6*REM, 0)
+	M.adjustOxyLoss(-6*REM, 0)
+	M.AdjustStun(-10, 0)
+	M.AdjustKnockdown(-10, 0)
+	M.adjustStaminaLoss(-4*REM, 0)
 	. = 1
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(2.5*REM, 0)
-	M.adjustOxyLoss(7*REM, 0)
+	M.adjustToxLoss(5*REM, 0)
+	M.adjustOxyLoss(8*REM, 0)
 	..()
 	. = 1
 
@@ -1289,7 +1302,7 @@
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.35 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)

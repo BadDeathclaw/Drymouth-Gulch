@@ -460,7 +460,8 @@
 	item_state = "fnfal"
 	suppressed = 1
 	zoomable = TRUE
-	zoom_amt = 7
+	zoom_amt = 10
+	zoom_out_amt = 13
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	weapon_weight = WEAPON_HEAVY
 
@@ -482,7 +483,7 @@
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	name = "R81 service rifle"
-	desc = "A 5.56x45 semi-automatic service rifle manufcatured by the NCR and issued to all combat personnel."
+	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
@@ -711,7 +712,7 @@
 	name = ".308 bullet casing"
 	desc = "A .308 bullet casing."
 	icon_state = "762-casing"
-	caliber = "a308"
+	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/a308
 
 /obj/item/ammo_casing/caseless/needle
@@ -722,8 +723,16 @@
 
 //HeavySP
 /obj/item/ammo_casing/c4570
+	name = ".45-70 bullet casing"
+	desc = "A .45-70 bullet casing."
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570
+
+/obj/item/ammo_casing/c4570SP
+	name = ".45 LC bullet casing"
+	desc = "A .45 Long Colt bullet casing."
+	caliber = "4570"
+	projectile_type = /obj/item/projectile/bullet/c4570SP
 
 //Heavy
 /obj/item/ammo_casing/a50AE
@@ -737,6 +746,25 @@
 	desc = "A 2mm gauss projectile casing."
 	caliber = "2mm"
 	projectile_type = /obj/item/projectile/bullet/c2mm
+
+/obj/item/ammo_casing/a50MG
+	name = ".50MG bullet casing"
+	desc = "A .50MG bullet casing."
+	caliber = "a50MG"
+	icon_state = ".50"
+	projectile_type = /obj/item/projectile/bullet/a50MG
+
+/obj/item/ammo_casing/a50MG/incendiary
+	name = ".50 MG incendiary bullet casing"
+	desc = "A .50 MG incendiary bullet casing."
+	caliber = "a50MG"
+	projectile_type = /obj/item/projectile/bullet/a50MG/incendiary
+
+/obj/item/ammo_casing/a50MG/AP
+	name = ".50 MG AP bullet casing"
+	desc = "A .50 MG armor-piercing bullet casing."
+	caliber = "a50MG"
+	projectile_type = /obj/item/projectile/bullet/a50MG/AP
 
 //Projectiles
 /obj/item/projectile/bullet/c45
@@ -789,6 +817,10 @@
 	damage = 60
 	armour_penetration = -20
 
+/obj/item/projectile/bullet/c4570SP
+	damage = 45
+	armour_penetration = 20
+
 /obj/item/projectile/bullet/a357
 	damage = 35
 	armour_penetration = 0
@@ -796,6 +828,26 @@
 /obj/item/projectile/bullet/a50AE
 	damage = 50
 	armour_penetration = 0
+
+/obj/item/projectile/bullet/a50MG
+	damage = 50
+	armour_penetration = 20
+
+/obj/item/projectile/bullet/a50MG/incendiary
+	damage = 30
+	armour_penetration = 0
+	var/fire_stacks = 4
+
+/obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
+/obj/item/projectile/bullet/a50MG/AP
+	damage = 35
+	armour_penetration = 65 //will punch through anything short of Enclave power armor
 
 /obj/item/projectile/bullet/c2mm
 	damage = 60

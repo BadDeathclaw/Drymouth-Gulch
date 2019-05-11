@@ -32,6 +32,16 @@
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 6
 	multiple_sprites = 1
+	materials = list(MAT_METAL = 8000)
+
+
+/obj/item/ammo_box/c4570SP
+	name = "speed loader (.45 LC)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "4570"
+	ammo_type = /obj/item/ammo_casing/c4570SP
+	max_ammo = 6
+	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
 /obj/item/ammo_box/c9mm
@@ -104,6 +114,33 @@
 	max_ammo = 10
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 10000)
+
+/obj/item/ammo_box/a50MG
+	name = "anti-materiel ammo rack (.50MG)"
+	desc = "A rack of .50 MG ammo, for when you really need something dead."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/a50MG
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 14000)
+
+/obj/item/ammo_box/a50MG/incendiary
+	name = "anti-materiel incendiary ammo rack (.50MG)"
+	desc = "A rack of .50 MG ammo, for when you really need something dead... and also on fire."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/a50MG/incendiary
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 20000)
+
+/obj/item/ammo_box/a50MG/AP
+	name = "anti-materiel ammo rack (.50MG)"
+	desc = "A .rack of .50 MG ammo, for when you really need (a very big) something dead."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/a50MG/AP
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 18000)
 
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"

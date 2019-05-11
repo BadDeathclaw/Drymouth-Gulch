@@ -707,8 +707,8 @@
 		new /obj/item/ammo_casing/shotgun/beanbag(src)
 
 /obj/item/storage/box/lethalshot
-	name = "box of lethal shotgun shots"
-	desc = "A box full of lethal shots, designed for riot shotguns."
+	name = "box of buckshot shotgun shots"
+	desc = "A box full of lethal buckshot rounds, designed for riot shotguns."
 	icon_state = "lethalshot_box"
 	illustration = null
 
@@ -716,11 +716,57 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
 
+/obj/item/storage/box/slugshot
+	name = "box of slug shotgun shots"
+	desc = "A box full of slug rounds, designed for riot shotguns."
+	icon_state = "slugshot_box"
+	illustration = null
+
+/obj/item/storage/box/slugshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun(src)
+
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells."
-	icon_state = "rubbershot_box"
+	icon_state = "beanbag_box"
 	illustration = null
+
+/obj/item/storage/box/techshot
+	name = "box of tech shells"
+	desc = "A box full of tech shells."
+	icon_state = "tech_box"
+	illustration = null
+
+/obj/item/storage/box/techshot/PopulateContents()
+	switch (pickweight(list("ion" = 20, "laser" = 20, "pulse" = 20, "meteor" = 20, "incendiary" = 20, "chem" = 20, "wildcard" = 20)))
+		if ("meteor")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/meteorslug(src)
+
+		if ("incendiary")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/incendiary(src)
+
+		if ("pulse")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/pulseslug(src)
+
+		if ("laser")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/laserslug(src)
+
+		if ("ion")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/ion(src)
+
+		if ("chem")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/dart(src)
+
+		if ("wildcard")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/techshell(src)
 
 /obj/item/storage/box/beanbag/PopulateContents()
 	for(var/i in 1 to 6)

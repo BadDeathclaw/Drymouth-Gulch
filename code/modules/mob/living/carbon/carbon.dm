@@ -142,6 +142,10 @@
 	return
 
 /mob/living/carbon/throw_item(atom/target)
+	var/obj/item/I = src.get_active_held_item()
+	if(src.IsThrowDelayed())
+		to_chat(src, "<span class='notice'>You're not ready to throw [I] yet!</span>")
+		return
 	throw_mode_off()
 	if(!target || !isturf(loc))
 		return
@@ -149,7 +153,6 @@
 		return
 
 	var/atom/movable/thrown_thing
-	var/obj/item/I = src.get_active_held_item()
 
 	if(!I)
 		if(pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
@@ -552,6 +555,11 @@
 			see_invisible = min(G.invis_view, see_invisible)
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
+	if(head)
+		var/obj/item/clothing/head/H = head
+		see_in_dark = max(H.darkness_view, see_in_dark)
+		if(!isnull(H.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, H.lighting_alpha)
 	if(dna)
 		for(var/X in dna.mutations)
 			var/datum/mutation/M = X

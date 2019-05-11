@@ -121,3 +121,21 @@
 /datum/mood_event/surgery
 	description = "<span class='boldwarning'>HE'S CUTTING ME OPEN!!</span>\n"
 	mood_change = -8
+
+/datum/mood_event/saw_faction_die
+	description = "<span class='boldwarning'>I saw a comrade die right in front of me</span>\n"
+	mood_change = -4
+	timeout = 3400
+
+/datum/mood_event/saw_many_unburied_faction
+	description = "<span class='boldwarning'>I've seen so many of my comrades lying dead on the ground... they deserve a proper burial.</span>\n"
+	mood_change = -2
+	timeout = 3400
+
+/datum/mood_event/saw_many_unburied_faction/add_effects()
+	var/mob/living/carbon/human/H = owner
+	if(!H.faction_deaths.len)	//tempfix
+		mood_change = -2
+		return
+	mood_change = -2*(H.faction_deaths.len)
+	

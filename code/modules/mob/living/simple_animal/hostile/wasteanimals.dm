@@ -14,6 +14,7 @@
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
 	emote_taunt = list("buzzes")
+	emote_taunt_sound = 'sound/creatures/cazador_buzz.ogg'
 	taunt_chance = 30
 	speed = 0
 	maxHealth = 40
@@ -23,6 +24,7 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 20
 	attacktext = "stings"
+	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("cazador")
@@ -87,6 +89,7 @@
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
 	emote_taunt = list("snips")
+	emote_taunt_sound = 'sound/creatures/radscorpion_snip.ogg'
 	taunt_chance = 30
 	speed = 1
 	maxHealth = 150
@@ -96,6 +99,7 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 35
 	attacktext = "stings"
+	attack_sound = 'sound/creatures/radscorpion_attack.ogg'
 	speak_emote = list("hisses")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("radscorpion")
@@ -111,14 +115,14 @@
 	name = "gecko"
 	desc = "A large mutated reptile with sharp teeth."
 	icon = 'icons/mob/wastemobs.dmi'
-	icon_state = "gecko"
-	icon_living = "gecko"
-	icon_dead = "gecko_dead"
+	icon_state = "gekkon"
+	icon_living = "gekkon"
+	icon_dead = "gekkon_dead"
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat = 2,
-							/obj/item/stack/sheet/animalhide/lizard = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
+							/obj/item/stack/sheet/animalhide/geckohide = 1)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
@@ -153,7 +157,8 @@
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
-	emote_taunt = list("clicks")
+	emote_taunt = list("chitters")
+	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
 	maxHealth = 20
@@ -163,11 +168,12 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attacktext = "stings"
+	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
-	
+
 /mob/living/simple_animal/hostile/molerat
 	name = "molerat"
 	desc = "A large mutated rat-mole hybrid that finds its way everywhere. Common in caves and underground areas."
@@ -194,6 +200,7 @@
 	melee_damage_lower = 10
 	melee_damage_upper = 10
 	attacktext = "bites"
+	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")

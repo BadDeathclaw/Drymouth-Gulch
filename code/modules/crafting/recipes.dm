@@ -213,6 +213,130 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/m44
+	name = ".44 Magnum speed loader (Legion)"
+	result = /obj/item/ammo_box/m44
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_LEGION)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c10mm
+	name = "10mm ammo box (Legion)"
+	result = /obj/item/ammo_box/c10mm
+	reqs = list(/obj/item/stack/sheet/metal = 10)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_LEGION)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/lethalshot
+	name = "buckshot shotgun box (Legion)"
+	result = /obj/item/storage/box/lethalshot
+	reqs = list(/obj/item/stack/sheet/metal = 7,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_LEGION)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/slugshot
+	name = "slug shotgun box (Legion)"
+	result = /obj/item/storage/box/slugshot
+	reqs = list(/obj/item/stack/sheet/metal = 7,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_LEGION)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/beanbag
+	name = "beanbag shotgun box (Legion)"
+	result = /obj/item/storage/box/rubbershot/beanbag
+	reqs = list(/obj/item/stack/sheet/metal = 7,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_LEGION)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/rubbershot
+	name = "rubbershot shotgun box (Legion)"
+	result = /obj/item/storage/box/rubbershot
+	reqs = list(/obj/item/stack/sheet/metal = 7,
+				/obj/item/stack/sheet/cardboard = 1)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_LEGION)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a556
+	name = "5.56mm ammo box (NCR)"
+	result = /obj/item/ammo_box/a556
+	reqs = list(/obj/item/stack/sheet/metal = 20)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_NCR)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c9mm
+	name = "9mm ammo box (NCR)"
+	result = /obj/item/ammo_box/c9mm
+	reqs = list(/obj/item/stack/sheet/metal = 15)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_NCR)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c4570SP
+	name = ".45 LC speed loader (NCR)"
+	result = /obj/item/ammo_box/c4570SP
+	reqs = list(/obj/item/stack/sheet/metal = 8)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_NCR)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a762
+	name = "7.62mm stripper clip (NCR)"
+	result = /obj/item/ammo_box/a762
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_NCR)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a762lp
+	name = "7.62mm lowpower double stacked stripper clip (NCR)"
+	result = /obj/item/ammo_box/a762/doublestacked
+	reqs = list(/obj/item/stack/sheet/metal = 10)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_NCR)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a308
+	name = ".308 stripper clip (NCR)"
+	result = /obj/item/ammo_box/a308
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_NCR)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/meteorslug
 	name = "Meteorslug Shell"
 	result = /obj/item/ammo_casing/shotgun/meteorslug
@@ -470,6 +594,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 6)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonetalisman
 	name = "Bone Talisman"
@@ -478,6 +603,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonecodpiece
 	name = "Skull Codpiece"
@@ -486,6 +612,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bracers
 	name = "Bone Bracers"
@@ -494,6 +621,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/skullhelm
 	name = "Skull Helmet"
@@ -501,6 +629,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/goliathcloak
 	name = "Goliath Cloak"
@@ -510,6 +639,7 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/goliath_hide = 2) //it takes 4 goliaths to make 1 cloak if the plates are skinned
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/drakecloak
 	name = "Ash Drake Armour"
@@ -519,6 +649,7 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/ashdrake = 5)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/gold_horn
 	name = "Golden Bike Horn"
@@ -534,6 +665,7 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonespear
 	name = "Bone Spear"
@@ -542,6 +674,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/boneaxe
 	name = "Bone Axe"
@@ -550,6 +683,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				 /obj/item/stack/sheet/sinew = 3)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
@@ -557,6 +691,7 @@
 	reqs = list(/obj/item/grown/log = 5)
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/tribal_torch
 	name = "Tribal Torch"
@@ -564,6 +699,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 4)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/handheld_torch
 	name = "Handheld Torch"
@@ -572,6 +708,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
 				/obj/item/stack/sheet/cloth = 1)
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
@@ -582,6 +719,7 @@
 			/obj/item/twohanded/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
@@ -592,6 +730,7 @@
 			/obj/item/twohanded/bonespear = 1)
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/headpikelegion
 	name = "Spike Head (Throwing Spear)"
@@ -602,6 +741,7 @@
 			/obj/item/throwing_star/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/smallcarton
 	name = "Small Carton"

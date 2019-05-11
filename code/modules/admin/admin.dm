@@ -1,11 +1,11 @@
 
 ////////////////////////////////
 /proc/message_admins(msg)
-	msg = "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
+	msg = "<span class=\"admin\"><span class=\"prefix\">[time_stamp()] ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
 	to_chat(GLOB.admins, msg)
 
 /proc/relay_msg_admins(msg)
-	msg = "<span class=\"admin\"><span class=\"prefix\">RELAY:</span> <span class=\"message\">[msg]</span></span>"
+	msg = "<span class=\"admin\"><span class=\"prefix\">[time_stamp()] RELAY:</span> <span class=\"message\">[msg]</span></span>"
 	to_chat(GLOB.admins, msg)
 
 
