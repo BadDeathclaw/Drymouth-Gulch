@@ -506,7 +506,7 @@
 			cyborg_base_icon = "kent"
 			special_light_key = "medical"
 			hat_offset = 3
-		if("Tophat")
+		if("Tophat (Handy)")
 			cyborg_base_icon = "tophat"
 			special_light_key = null
 			hat_offset = INFINITY //He is already wearing a hat
