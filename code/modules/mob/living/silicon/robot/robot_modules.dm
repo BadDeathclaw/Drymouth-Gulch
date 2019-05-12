@@ -492,7 +492,7 @@
 
 /obj/item/robot_module/butler/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Waitress", "Butler", "Tophat Handy", "Kent", "Bro")
+	var/borg_icon = input(R, "Select an icon!", "Robot Icon", null) as null|anything in list("Waitress", "Butler", "Tophat", "Kent", "Bro")
 	if(!borg_icon)
 		return FALSE
 	switch(borg_icon)
@@ -506,7 +506,7 @@
 			cyborg_base_icon = "kent"
 			special_light_key = "medical"
 			hat_offset = 3
-		if("Tophat Handy")
+		if("Tophat")
 			cyborg_base_icon = "tophat"
 			special_light_key = null
 			hat_offset = INFINITY //He is already wearing a hat
