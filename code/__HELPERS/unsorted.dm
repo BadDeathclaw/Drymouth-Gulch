@@ -1630,8 +1630,6 @@ proc/childtypesof()
 			types -= typesof(t) - t
 		. += types
 
-#define islist(x) istype(x, /list)
-
 //In which we let it just generate new instances.
 proc/newchildtypesof()
 	var/prevtypes[]
