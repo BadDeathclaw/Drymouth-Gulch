@@ -11,18 +11,18 @@
 	layer = HIGH_TURF_LAYER
 	var/turf/open/floor/plating/f13/outside/desert/parent
 
-obj/dugpit/New(lnk)
+/obj/dugpit/New(lnk)
 	..()
 	parent = lnk
 
 /obj/dugpit/container_resist(mob/living/user)
 	//try to unbury self
-	to_chat(user, "<span class='danger'>You start digging from inside, trying to unbury self!</span>")
+	to_chat(user, "<span class='danger'>You start digging from inside, trying to unbury yourself!</span>")
 	if(do_after(user, (50), target = src))
 		if (prob(25))
 			to_chat(user, "<span class='danger'>You have managed to move some of the ground!</span>")
 			parent.unburylevel++
-			if (parent.unburylevel>=NUMBURYTIMES)
+			if(parent.unburylevel >= NUMBURYTIMES)
 				to_chat(user, "<span class='danger'>You have undug yourself!</span>")
 				parent.gets_dug(null)
 		else
@@ -40,9 +40,7 @@ obj/dugpit/New(lnk)
 
 
 	if(usr)
-
 		add_fingerprint(usr)
-
 		if(!istype(W, /obj/item/gun/energy/kinetic_accelerator) && !istype(W, /obj/item/stack/ore/glass ) )
 			if (storedindex>=NUMCONTENT)
 				to_chat(usr, "<span class='notice'>The pit is filled with items to the limit!</span>")
@@ -142,21 +140,14 @@ obj/dugpit/New(lnk)
 					gravecoffin = curcoffin
 					break
 			playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1)
-			if (gravebody!=null)
+			if(gravebody!=null)
 				user.show_message("<span class='notice'>You start covering the body in the hole with dirt...</span>", 1)
-				if (do_after(user, (50 * digging_speed), target=gravebody))
+				if(do_after(user, (50 * digging_speed), target=gravebody))
 					if(istype(src, /turf/open/floor/plating/f13/outside/desert))
 						finishBury(user)
 						finishBody()
-				for(var/mob/H in oview(src, 7))
-					for(var/F in gravebody.faction)
-						if(F in H.faction)
-							if(F != "neutral") // I don't know why but this won't fit in the above if statement
-								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "buried_faction_member", /datum/mood_event/buried_faction_member)
-								LAZYREMOVE(H.faction_deaths, gravebody.real_name)
-								if(LAZYLEN(H.faction_deaths) < 3)
-									SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "saw_many_unburied_faction")
-			else if (gravecoffin != null)
+
+			else if(gravecoffin != null)
 				user.show_message("<span class='notice'>You start burying the coffin...</span>", 1)
 				if (do_after(user, (50 * digging_speed), target=gravebody))
 					if(istype(src, /turf/open/floor/plating/f13/outside/desert))
