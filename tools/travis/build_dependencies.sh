@@ -19,5 +19,5 @@ if [ $BUILD_TOOLS = false ] && [ $BUILD_TESTING = false ]; then
 
     mkdir -p ~/.byond/bin
     ln -s $PWD/target/release/librust_g.so ~/.byond/bin/rust_g
-	//no bsql yet
+	#no bsql yet
 fi
