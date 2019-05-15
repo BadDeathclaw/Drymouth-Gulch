@@ -132,9 +132,9 @@
 	mood_change = -2
 	timeout = 3400
 
-/datum/mood_event/saw_many_unburied_faction/add_effects()
+/datum/mood_event/saw_many_unburied_faction/add_effects() //*scream
 	var/mob/living/carbon/human/H = owner
-	if(!H.faction_deaths.len)	//tempfix
+	if(!H.faction_deaths || !H.faction_deaths.len)	//tempfix
 		mood_change = -2
 		return
 	mood_change = -2*(H.faction_deaths.len)
