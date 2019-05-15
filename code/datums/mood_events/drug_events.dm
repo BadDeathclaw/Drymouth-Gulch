@@ -12,7 +12,7 @@
 	timeout = 3000
 
 /datum/mood_event/drugs/overdose/add_effects(drug_name)
-	description = "<span class='warning'>I think that dose was too high</span>\n"
+	description = "<span class='warning'>I feel saturated, that was too much</span>\n"
 
 /datum/mood_event/drugs/withdrawal_light
 	mood_change = -2
