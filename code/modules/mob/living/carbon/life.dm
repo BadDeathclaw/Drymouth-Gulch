@@ -602,7 +602,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 /mob/living/carbon/proc/handle_bodycheck()
 	for(var/mob/H in oview(src, 7))
-		if(H.stat != DEAD || !istype(H)) //fuck off
+		if(H.stat != DEAD) //fuck off
 			return 
 		for(var/F in faction)
 			if(F in H.faction)
