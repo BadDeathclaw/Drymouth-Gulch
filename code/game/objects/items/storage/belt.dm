@@ -337,6 +337,12 @@
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 
+/obj/item/storage/belt/military/reconbandolier
+	name = "recon ranger bandolier"
+	desc = "A belt with many pockets, now at an angle."
+	icon_state = "reconbandolier"
+	item_state = "reconbandolier"
+
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
