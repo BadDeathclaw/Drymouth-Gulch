@@ -56,3 +56,11 @@
 	desc = "A powder used to heal physical wounds derived from ground broc flowers and xander roots, commonly used by tribals."
 	list_reagents = list("healing_powder" = 10)
 	icon_state = "bandaid_healingpowder"
+
+/obj/item/reagent_containers/pill/patch/healpoultice
+	name = "Healing poultice"
+	desc = "A concoction of broc flower, cave fungus, agrave fruit and xander root."
+	list_reagents = list("healing_poultice" = 18)
+	icon = 'icons/obj/syringe.dmi'
+	item_state = "bandaid"
+	icon_state = "bandaid_healingpowder"

@@ -183,6 +183,13 @@
 	amount_per_transfer_from_this = 16
 	list_reagents = list("stimpak" = 10, "tricordrazine" = 6)
 
+/obj/item/reagent_containers/hypospray/medipen/stimpak/super
+	name = "super stimpak"
+	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
+	icon_state = "superstim_15"
+	amount_per_transfer_from_this = 10
+	list_reagents = list("super_stimpak" = 10)
+
 /*
 /obj/item/reagent_containers/hypospray/medipen/psycho
 	name = "Psycho"
