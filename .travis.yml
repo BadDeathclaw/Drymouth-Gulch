@@ -1,5 +1,5 @@
 language: generic
-sudo: false
+sudo: true
 branches:
   except:
   - ___TGS3TempBranch
