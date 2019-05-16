@@ -18,7 +18,7 @@ if [ "$BUILD_TOOLS" = false ]; then
     	exit 1
 	fi;
 	if grep 'pixel_[xy] = 0' _maps/**/*.dmm;	then
-    	echo "pixel_x/pixel_y = 0 variables in maps, please review to ensure they are not dirty varedits."
+    	echo "pixel_x/pixel_y = 0 variables detected in maps, please review to ensure they are not dirty varedits."
 	fi;
 	if grep -P '\td[1-2] =' _maps/**/*.dmm;	then
     	echo "d1/d2 cable variables detected in maps, please remove them."
@@ -69,11 +69,12 @@ if [ "$BUILD_TOOLS" = false ]; then
 			mv mariadb_client-2.0.0-linux/libmariadb.so $HOME/libmariadb/libmariadb.so
 			rm -rf mariadb_client-2.0.0-linux.tgz mariadb_client-2.0.0-linux
 		fi
-		
+	
 		cd travis_test
     	ln -s $HOME/libmariadb/libmariadb.so libmariadb.so
 		DreamDaemon tgstation.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
 		cd ..
 		cat travis_test/data/logs/travis/clean_run.lk
+
 	fi;
 fi;
