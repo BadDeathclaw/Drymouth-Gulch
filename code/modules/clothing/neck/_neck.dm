@@ -201,3 +201,83 @@
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
 	item_color = "bling"
+
+
+/obj/item/clothing/neck/necklace/mercncr
+	name = "NCR affilation vest"
+	desc = "True and honest fan for the bear. Shows Alignment to the NCR. Equips Neck Slot."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "mercncr"
+	item_color = "mercncr"
+
+/obj/item/clothing/neck/necklace/merclegion
+	name = "Mark of Caesar"
+	desc = "His eyes are upon you. Shows Alignment to the Legion. Equips Neck Slot."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "merclegion"
+	item_color = "merclegion"
+
+///////////
+//MERC VEST RECOLOUR//
+///////////
+
+/obj/item/clothing/neck/mercplain //Default white color, same functionality as beanies.
+	name = "white vest"
+	icon_state = "mercplain"
+	desc = "A vest that goes over your armor, color coded for your convienence!"
+	item_color = "white"
+	dog_fashion = /datum/dog_fashion/head
+
+/obj/item/clothing/neck/mercplain/black
+	name = "black vest"
+	icon_state = "mercplain"
+	item_color = "black"
+	color = "#4A4A4B"
+
+/obj/item/clothing/neck/mercplain/pink
+	name = "pink vest"
+	icon_state = "mercplain"
+	item_color = "pink"
+	color = "#F699CD" //Pink
+
+/obj/item/clothing/neck/mercplain/red
+	name = "red vest"
+	icon_state = "mercplain"
+	item_color = "red"
+	color = "#D91414" //Red
+
+/obj/item/clothing/neck/mercplain/green
+	name = "green vest"
+	icon_state = "mercplain"
+	item_color = "green"
+	color = "#5C9E54" //Green
+
+/obj/item/clothing/neck/mercplain/darkblue
+	name = "dark blue vest"
+	icon_state = "mercplain"
+	item_color = "blue"
+	color = "#1E85BC" //Blue
+
+/obj/item/clothing/neck/mercplain/purple
+	name = "purple vest"
+	icon_state = "mercplain"
+	item_color = "purple"
+	color = "#9557C5" //Purple
+
+/obj/item/clothing/neck/mercplain/yellow
+	name = "yellow vest"
+	icon_state = "mercplain"
+	item_color = "yellow"
+	color = "#E0C14F" //Yellow
+
+/obj/item/clothing/neck/mercplain/orange
+	name = "orange vest"
+	icon_state = "mercplain"
+	item_color = "orange"
+	color = "#C67A4B" //Orange
+
+/obj/item/clothing/neck/mercplain/cyan
+	name = "cyan vest"
+	icon_state = "mercplain"
+	item_color = "cyan"
+	color = "#54A3CE" //Cyan
