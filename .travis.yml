@@ -24,7 +24,6 @@ matrix:
       addons:
         apt:
           packages:
-            - libc6-i386
             - libstdc++6:i386
       cache:
         directories:
@@ -47,10 +46,10 @@ matrix:
             - libmariadbclient-dev:i386
       cache:
         directories:
-          - $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
-          - $HOME/libmariadb
-          - $HOME/.rustup
           - $HOME/.cargo
+          - $HOME/BYOND
+          - $HOME/MariaDB
+          - $HOME/.rustup
 
 install:
   - tools/travis/install_build_tools.sh
@@ -68,4 +67,3 @@ script:
   - tools/travis/build_tools.sh || travis_terminate 1
   - tools/travis/build_dependencies.sh || travis_terminate 1
   - tools/travis/build_byond.sh
-
