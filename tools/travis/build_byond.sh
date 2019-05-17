@@ -74,7 +74,7 @@ if [ "$BUILD_TOOLS" = false ]; then
     	#ln -s $HOME/libmariadb/libmariadb.so libmariadb.so
 		DreamDaemon tgstation.dmb -close -trusted -verbose -params "test-run&log-directory=travis"
 		#cd ..
-		cat data/logs/travis/clean_run.lk #travis_test/
+		#cat data/logs/travis/clean_run.lk #travis_test/
 
 	fi;
 fi;
