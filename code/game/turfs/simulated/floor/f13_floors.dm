@@ -42,7 +42,7 @@
 
 #define GRASS_SPONTANEOUS 		2
 #define GRASS_WEIGHT 			4
-#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/wasteplant/broc = 7, /obj/structure/wasteplant/feracactus = 5, /obj/structure/wasteplant/mutfruit = 5, /obj/structure/wasteplant/xander = 5, /obj/structure/flora/tree/joshua = 2, /obj/structure/flora/tree/cactus = 1, /obj/structure/flora/tree/wasteland = 1)
+#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/broc = 7, /obj/structure/flora/wasteplant/feracactus = 5, /obj/structure/flora/wasteplant/mutfruit = 5, /obj/structure/flora/wasteplant/xander = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
 #define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
 
 /turf/open/floor/plating/f13/outside/desert

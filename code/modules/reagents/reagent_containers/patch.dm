@@ -61,6 +61,4 @@
 	name = "Healing poultice"
 	desc = "A concoction of broc flower, cave fungus, agrave fruit and xander root."
 	list_reagents = list("healing_poultice" = 18)
-	icon = 'icons/obj/syringe.dmi'
-	item_state = "bandaid"
 	icon_state = "bandaid_healingpowder"

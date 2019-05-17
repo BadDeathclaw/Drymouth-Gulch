@@ -88,16 +88,18 @@
 /obj/structure/flora/tree/joshua
 	name = "joshua tree"
 	desc = "A tree named by mormons, who said it's branches mimiced the biblical Joshua, raising his hands in prayer."
+	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "joshua_1"
 
 /obj/structure/flora/tree/joshua/Initialize()
 	..()
 	pixel_x = 0
-	icon_state = "joshua[rand(1,4)]"
+	icon_state = "joshua_[rand(1,4)]"
 
 /obj/structure/flora/tree/cactus
 	name = "cactus"
 	desc = "It's a giant cowboy hat! It's waving hello! It wants you to hug it!"
+	icon = 'icons/obj/flora/deadtrees.dmi'
 	icon_state = "cactus"
 
 /obj/structure/flora/tree/palm

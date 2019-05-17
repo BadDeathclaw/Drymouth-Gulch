@@ -2,6 +2,9 @@
 	name = "pack of feracactus seeds"
 	desc = "These seeds grow into feracactus."
 	icon_state = "seed-feracactus"
+	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
+	icon_grow = "feracactus-grow"
+	icon_dead = "feracactus-dead"
 	species = "feracactus"
 	plantname = "Feracactus"
 	product = /obj/item/reagent_containers/food/snacks/grown/feracactus
@@ -11,13 +14,13 @@
 	production = 2
 	yield = 6
 	potency = 20
-	growthstages = 3
+	growthstages = 2
 
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus
 	seed = /obj/item/seeds/feracactus
 	name = "Barrel cactus fruit"
-	desc = "Barrel cactus fruit are found on barrel cactus; a spherical cacti that can be encountered while wandering the Texas. They usually form in groups, with one large barrel cactus that contains the fruit surrounded by several smaller cacti. Like all other Texas plants, fruit-bearing barrel cacti will eventually grow back after being picked."
+	desc = "Barrel cactus fruit are found on barrel cactus; a spherical cacti that can be encountered while wandering the Mojave. They usually form in groups, with one large barrel cactus that contains the fruit surrounded by several smaller cacti. Like all other Mojave plants, fruit-bearing barrel cacti will eventually grow back after being picked."
 	icon_state = "feracactus"
 	filling_color = "#FF6347"
 

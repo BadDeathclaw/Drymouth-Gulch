@@ -1295,6 +1295,20 @@
 	..()
 	. = 1
 
+datum/reagent/medicine/super_stimpak
+	name = "super stim chemicals"
+	id = "super_stimpak"
+	description = "Chemicals found in pre-war stimpaks."
+	reagent_state = LIQUID
+	color = "#e50d0d"
+
+datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+	M.adjustBruteLoss(-3*REM)
+	M.adjustFireLoss(-3*REM)
+	M.adjustOxyLoss(-3*REM)
+	..()
+	return
+
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
 	id = "healing_powder"
@@ -1317,6 +1331,20 @@
 	M.adjustOxyLoss(4*REM, 0)
 	..()
 	. = 1
+
+/datum/reagent/medicine/healing_poultice
+	name = "healing poultice"
+	id = "healing_poultice"
+	description = "Restores limb condition and heals rapidly."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	metabolization_rate = 1.25 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
+	M.adjustFireLoss(-4*REM)
+	M.adjustBruteLoss(-4*REM)
+	M.adjustToxLoss(-0.5*REM)
+	..()
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"

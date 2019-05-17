@@ -4,6 +4,9 @@
 	icon_state = "seed-mutfruit"
 	species = "mutfruit"
 	plantname = "Mutfruit"
+	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
+	icon_grow = "mutfruit-grow"
+	icon_dead = "mutfruit-dead"
 	product = /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	lifespan = 30
 	endurance = 20
@@ -11,7 +14,7 @@
 	production = 2
 	yield = 6
 	potency = 20
-	growthstages = 3
+	growthstages = 4
 
 /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	seed = /obj/item/seeds/mutfruit
