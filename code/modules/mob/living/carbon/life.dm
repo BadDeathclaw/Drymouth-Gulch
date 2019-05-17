@@ -608,7 +608,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			if(F in H.faction)
 				continue
 			if(F == "neutral" || LAZYFIND(faction_deaths, H.real_name)) //same here
-				return
+				continue
 			else
 				LAZYADD(faction_deaths, H.real_name)
 				//to_chat(src, faction_deaths.len) //???? what the fuck?
