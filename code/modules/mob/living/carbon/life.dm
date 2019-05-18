@@ -601,7 +601,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 //SEEING DEAD BODIES OF FACTION MEMBERS - FL13
 
 /mob/living/carbon/proc/handle_bodycheck()
-	for(var/mob/living/L in oview(src, 7))
+	for(var/mob/living/H in oview(src, 7))
 		if(H.stat != DEAD) //contine fucking arround
 			continue
 		for(var/F in faction)
