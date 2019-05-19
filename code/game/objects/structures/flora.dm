@@ -93,7 +93,6 @@
 
 /obj/structure/flora/tree/joshua/Initialize()
 	..()
-	pixel_x = 0
 	icon_state = "joshua_[rand(1,4)]"
 
 /obj/structure/flora/tree/cactus

@@ -4,22 +4,22 @@
 	icon = 'icons/obj/flora/plants.dmi'
 	anchored = 1
 	density = 0
-	var/has_plod = 1
+	var/has_plod = TRUE
 	var/obj/item/reagent_containers/food/snacks/grown/produce = null
 
 /obj/structure/flora/wasteplant/attack_hand(mob/user)
 	if(has_plod)
 		user.put_in_hands(new produce)
 		user << "<span class='notice'>You take [produce] from [src].</span>"
-		has_plod = !has_plod
+		has_plod = FALSE
 		regrow()
 	update_icon()
 
 /obj/structure/flora/wasteplant/proc/regrow()
 	if(!has_plod)
-		spawn(5000)
-			has_plod = !has_plod
-			update_icon()
+		sleep(5000)
+		has_plod = TRUE
+		update_icon()
 
 /obj/structure/flora/wasteplant/update_icon()
 	if(has_plod)
