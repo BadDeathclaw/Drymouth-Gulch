@@ -5,7 +5,7 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	var/atom/target
 	var/ranged = 0
-	var/rapid = 0
+	var/rapid = 0 //shoots 3 projectiles if 1, and 6 projectiles if 2
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
@@ -338,6 +338,10 @@
 		addtimer(cb, 1)
 		addtimer(cb, 4)
 		addtimer(cb, 6)
+		if(rapid == 2)
+			addtimer(cb, 8)
+			addtimer(cb, 10)
+			addtimer(cb, 12)
 	else
 		Shoot(A)
 	ranged_cooldown = world.time + ranged_cooldown_time
