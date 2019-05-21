@@ -117,6 +117,11 @@
 	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewood1"
 
+	New()
+		..()
+		if(icon_state == "housewood1")
+			icon_state = "housewood[rand(1,3)]"
+
 /turf/open/floor/wood/f13/carpet
 	icon = 'icons/turf/fo13floorsmisc2.dmi'
 	icon_state="carpet"
@@ -216,8 +221,7 @@
 	icon_state = "housewood_stage_bottom_right"
 
 
-#define SHROOM_SPAWN	10
-#define SHROOM_WEIGHT	10
+#define SHROOM_SPAWN	1
 /turf/open/floor/plating/f13/inside/mountain
 	name = "mountain"
 	desc = "Damp cave flooring."
@@ -235,26 +239,10 @@
 		plantShrooms()
 
 /turf/open/floor/plating/f13/inside/mountain/proc/plantShrooms()
-	var/Weight = 0
-
-	//spontaneously spawn fungus
 	if(prob(SHROOM_SPAWN))
 		turfPlant = new /obj/structure/flora/wasteplant/fungus(src)
 		. = TRUE //in case we ever need this to return if we spawned
 		return.
-
-	//loop through neighbouring cave turfs, if they have shrooms, then increase weight
-	for(var/turf/open/floor/plating/f13/inside/mountain/T in RANGE_TURFS(3, src))
-		if(T.turfPlant)
-			Weight += SHROOM_WEIGHT
-
-	//use weight to try to spawn shrooms
-	if(prob(Weight))
-
-		//If surrounded on 5+ sides, pick from lush
-		turfPlant = new /obj/structure/flora/wasteplant/fungus(src)
-		. = TRUE
-
 
 /turf/open/floor/plasteel/f13/vault_floor
 	name = "vault floor"
