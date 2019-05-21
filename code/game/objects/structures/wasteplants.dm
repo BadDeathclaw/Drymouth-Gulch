@@ -1,7 +1,7 @@
 /obj/structure/flora/wasteplant
 	name = "wasteland plant"
 	desc = "It's a wasteland plant."
-	icon = 'icons/obj/flora/plants.dmi'
+	icon = 'icons/obj/flora/wastelandflora.dmi'
 	anchored = 1
 	density = 0
 	var/has_plod = TRUE
@@ -12,6 +12,7 @@
 		user.put_in_hands(new produce)
 		user << "<span class='notice'>You take [produce] from [src].</span>"
 		has_plod = FALSE
+		update_icon() //Won't update due to proc otherwise
 		regrow()
 	update_icon()
 

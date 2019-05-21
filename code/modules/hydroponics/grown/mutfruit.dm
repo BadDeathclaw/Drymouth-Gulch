@@ -10,11 +10,10 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	lifespan = 30
 	endurance = 20
-	maturation = 8
-	production = 2
-	yield = 6
-	potency = 20
-	growthstages = 4
+	yield = 3
+	growthstages = 3
+	production = 5
+	maturation = 5
 
 /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	seed = /obj/item/seeds/mutfruit

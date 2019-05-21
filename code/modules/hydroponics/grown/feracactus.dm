@@ -8,13 +8,12 @@
 	species = "feracactus"
 	plantname = "Feracactus"
 	product = /obj/item/reagent_containers/food/snacks/grown/feracactus
-	lifespan = 50
+	lifespan = 60
 	endurance = 20
-	maturation = 8
-	production = 2
-	yield = 6
-	potency = 20
-	growthstages = 2
+	yield = 1
+	growthstages = 3
+	production = 20
+	maturation = 20
 
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus
