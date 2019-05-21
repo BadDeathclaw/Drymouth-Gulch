@@ -41,7 +41,7 @@
 
 
 /obj/structure/flora/wasteplant/feracactus
-	name = "Ferocactus"
+	name = "Feracactus"
 	icon_state = "cactus"
 	produce = /obj/item/reagent_containers/food/snacks/grown/feracactus
 
