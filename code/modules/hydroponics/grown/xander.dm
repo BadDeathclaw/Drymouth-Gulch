@@ -7,11 +7,10 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/xander
 	lifespan = 25
 	endurance = 10
-	maturation = 8
-	production = 3
-	yield = 6
-	potency = 20
+	yield = 3 //6 //Where did you get 6 from???
 	growthstages = 3
+	production = 1
+	maturation = 1
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "potato-grow"
 	icon_dead = "potato-dead"

@@ -40,7 +40,7 @@
 
 #define GRASS_SPONTANEOUS 		2
 #define GRASS_WEIGHT 			4
-#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/tree/wasteland = 1)
+#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/broc = 7, /obj/structure/flora/wasteplant/feracactus = 5, /obj/structure/flora/wasteplant/mutfruit = 5, /obj/structure/flora/wasteplant/xander = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
 #define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
 
 /turf/open/floor/plating/f13/outside/desert
@@ -210,16 +210,45 @@
 /turf/open/floor/wood/f13/stage_br
 	icon_state = "housewood_stage_bottom_right"
 
+
+#define SHROOM_SPAWN	10
+#define SHROOM_WEIGHT	10
 /turf/open/floor/plating/f13/inside/mountain
 	name = "mountain"
 	desc = "Damp cave flooring."
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "mountain0"
+	var/obj/structure/flora/turfPlant = null
 
-/turf/open/floor/plating/f13/inside/mountain/New()
-	..()
+/turf/open/floor/plating/f13/inside/mountain/Initialize()
+	. = ..()
 	icon_state = "mountain[rand(0,10)]"
+	//If no fences, machines, etc. try to plant mushrooms
+	if(!(\
+			(locate(/obj/structure) in src) || \
+			(locate(/obj/machinery) in src) ))
+		plantShrooms()
 
+/turf/open/floor/plating/f13/inside/mountain/proc/plantShrooms()
+	var/Weight = 0
+
+	//spontaneously spawn fungus
+	if(prob(SHROOM_SPAWN))
+		turfPlant = new /obj/structure/flora/wasteplant/fungus(src)
+		. = TRUE //in case we ever need this to return if we spawned
+		return.
+
+	//loop through neighbouring cave turfs, if they have shrooms, then increase weight
+	for(var/turf/open/floor/plating/f13/inside/mountain/T in RANGE_TURFS(3, src))
+		if(T.turfPlant)
+			Weight += SHROOM_WEIGHT
+
+	//use weight to try to spawn shrooms
+	if(prob(Weight))
+
+		//If surrounded on 5+ sides, pick from lush
+		turfPlant = new /obj/structure/flora/wasteplant/fungus(src)
+		. = TRUE
 
 
 /turf/open/floor/plasteel/f13/vault_floor
