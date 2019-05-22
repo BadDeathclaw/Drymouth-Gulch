@@ -2,7 +2,6 @@
 
 /obj/item/clothing/suit/armor/f13
 	icon = 'icons/fallout/clothing/suits.dmi'
-	self_weight = 7.5
 
 /obj/item/clothing/suit/armor/f13/cyberpunk
 	name = "armored trenchcoat"
@@ -12,11 +11,9 @@
 	flags = THICKMATERIAL
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	armor = list(melee = 50, bullet = 10, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0, fire = 30, acid = 30)
-	allowed = list(/obj/item/weapon/pen,/obj/item/weapon/paper,/obj/item/weapon/stamp,/obj/item/weapon/reagent_containers/food/drinks/flask,/obj/item/weapon/melee,/obj/item/weapon/storage/box/matches,/obj/item/weapon/lighter,/obj/item/clothing/mask/cigarette,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/device/flashlight,/obj/item/weapon/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/device/flashlight,/obj/item/weapon/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 	resistance_flags = UNACIDABLE
-	put_on_delay = 10
 	strip_delay = 30
-	self_weight = 5
 
 /obj/item/clothing/suit/armor/f13/doom
 	name = "green chestplate"
@@ -26,20 +23,8 @@
 	body_parts_covered = CHEST
 	armor = list(melee = 60, bullet = 40, laser = 40, energy = 40, bomb = 50, bio = 100, rad = 100, fire = 100, acid = 100)
 	resistance_flags = UNACIDABLE
-	put_on_delay = 30
 	strip_delay = 10
-	self_weight = 10
 
-/obj/item/clothing/suit/armor/f13/kit
-	name = "makeshift armor kit"
-	desc = "A bunch of armor parts that can be worn over the clothing to get the most basic protection against the dangers of wasteland.<br>This armor is unable to reflect laser beams and probably won't shield the wearer from a random bullet, but it's better than no any armor at all."
-	icon_state = "armorkit"
-	item_state = "armorkit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 20, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	put_on_delay = 30
-	strip_delay = 30
-	self_weight = 2
 
 /obj/item/clothing/suit/armor/f13/punk
 	name = "armor kit"
@@ -48,21 +33,7 @@
 	item_state = "punkit" //Pun kit
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 30, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 20, rad = 20, fire = 50, acid = 50)
-	put_on_delay = 30
 	strip_delay = 30
-	self_weight = 2
-
-/obj/item/clothing/suit/armor/f13/chestplate
-	name = "metal chestplate"
-	desc = "When equipped, the owner takes significantly less damage from attacks to the chest.<br>It's heavy and uncomfortable, though."
-	icon_state = "metal_chestplate"
-	item_state = "metal_chestplate"
-	body_parts_covered = CHEST
-	armor = list(melee = 40, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
-	put_on_delay = 30
-	strip_delay = 10
-	resistance_flags = FIRE_PROOF
-	self_weight = 5
 
 /obj/item/clothing/suit/armor/f13/tribal
 	name = "tribal armor"
@@ -72,9 +43,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 30, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 40
 	strip_delay = 40
-	self_weight = 3
 
 /obj/item/clothing/suit/armor/f13/slam
 	name = "slammer raider armor"
@@ -84,33 +53,8 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
 	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 20
 	strip_delay = 40
-	self_weight = 4
 
-/obj/item/clothing/suit/armor/f13/supafly
-	name = "supa-fly raider armor"
-	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
-	icon_state = "supafly"
-	item_state = "supafly"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 55, bullet = 5, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
-	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 20
-	strip_delay = 40
-	self_weight = 3
-
-/obj/item/clothing/suit/armor/f13/yankee
-	name = "yankee raider armor"
-	desc = "A set of armor made from football player protective wear. Together we play."
-	icon_state = "yankee"
-	item_state = "yankee"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 50, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
-	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 40
-	strip_delay = 40
-	self_weight = 5
 
 /obj/item/clothing/suit/armor/f13/leatherarmor
 	name = "leather armor"
@@ -120,9 +64,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 40, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
 	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 40
 	strip_delay = 40
-	self_weight = 5
 
 /obj/item/clothing/suit/armor/f13/metalarmor
 	name = "metal armor"
@@ -132,10 +74,8 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 40, bullet = 30, laser = 20, energy = 20, bomb = 30, bio = 0, rad = 0, fire = 10, acid = 0)
 	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 60
 	strip_delay = 60
 	resistance_flags = FIRE_PROOF
-	self_weight = 10
 
 /obj/item/clothing/suit/armor/f13/bmetalarmor
 	name = "black metal armor"
@@ -145,55 +85,8 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 50, bullet = 40, laser = 30, energy = 30, bomb = 40, bio = 0, rad = 0, fire = 20, acid = 0)
 	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 60
 	strip_delay = 60
 	resistance_flags = FIRE_PROOF
-	self_weight = 15
-
-/obj/item/clothing/suit/armor/f13/legrecruit
-	name = "recruit armor"
-	desc = "Legion recruit armor is common light armor, supplied to recruit legionaries and to recruit decanus units.<br>Like most of the Caesar's Legion armor, it is made of repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
-	icon_state = "legrecruit"
-	item_state = "legrecruit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list(melee = 30, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 10)
-	put_on_delay = 60
-	strip_delay = 60
-	self_weight = 5
-
-/obj/item/clothing/suit/armor/f13/legvexil
-	name = "vexillarius armor"
-	desc = "The armor appears to be based on a suit of Caesar's Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the emblem of the Legion worn on the back."
-	icon_state = "legvexil"
-	item_state = "legvexil"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list(melee = 40, bullet = 30, laser = 10, energy = 10, bomb = 30, bio = 0, rad = 0, fire = 10, acid = 20)
-	put_on_delay = 60
-	strip_delay = 60
-	self_weight = 5
-
-/obj/item/clothing/suit/armor/f13/legcenturion
-	name = "centurion armor"
-	desc = "The Legion centurion armor is by far the strongest suit of armor available to Caesar's Legion soldiers.<br>The armor is composed from various pieces of armor taken from that of the wearer's defeated opponents in combat."
-	icon_state = "legcenturion"
-	item_state = "legcenturion"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 50, bullet = 30, laser = 20, energy = 20, bomb = 30, bio = 0, rad = 30, fire = 30, acid = 30)
-	put_on_delay = 60
-	strip_delay = 60
-	self_weight = 10
-
-/obj/item/clothing/suit/armor/f13/leglegate
-	name = "legate armor"
-	desc = "The armor appears to be a full suit of heavy-gauge steel and offers full body protection.<br>The armor itself bears numerous battle scars.<br>The Legate's suit appears originally crafted, in contrast to other Legion armor which consists of repurposed pre-War sports equipment."
-	icon_state = "leglegate"
-	item_state = "leglegate"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 60, bullet = 40, laser = 30, energy = 30, bomb = 40, bio = 0, rad = 40, fire = 40, acid = 40)
-	put_on_delay = 60
-	strip_delay = 60
-	resistance_flags = FIRE_PROOF
-	self_weight = 15
 
 /obj/item/clothing/suit/armor/f13/combat_mk1
 	name = "reinforced combat armor mark I"
@@ -202,10 +95,8 @@
 	item_state = "combat_mk1"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
 	armor = list(melee = 55, bullet = 55, laser = 15, energy = 15, bomb = 30, bio = 0, rad = 0, fire = 10, acid = 40)
-	put_on_delay = 60
 	strip_delay = 60
 	resistance_flags = FIRE_PROOF
-	self_weight = 10
 
 /obj/item/clothing/suit/armor/f13/combat_mk2
 	name = "reinforced combat armor mark II"
@@ -214,10 +105,8 @@
 	item_state = "combat_mk2"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
 	armor = list(melee = 75, bullet = 70, laser = 25, energy = 25, bomb = 40, bio = 0, rad = 0, fire = 30, acid = 40)
-	put_on_delay = 60
 	strip_delay = 60
 	resistance_flags = FIRE_PROOF
-	self_weight = 5
 
 /obj/item/clothing/suit/armor/f13/ncr
 	name = "trooper armor"
@@ -226,10 +115,8 @@
 	item_state = "ncr_armor1"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 30, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 10, fire = 10, acid = 10)
-	put_on_delay = 50
 	strip_delay = 50
 	resistance_flags = FIRE_PROOF
-	self_weight = 5
 
 /obj/item/clothing/suit/armor/f13/ncr/soldier
 	name = "standard issue trooper armor"
@@ -292,7 +179,7 @@
 	strip_delay = 40
 	resistance_flags = FIRE_PROOF
 	self_weight = 7
-
+/*
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "veteran ranger trenchcoat"
 	desc = "An armored leather trenchcoat - the traditional uniform of the Desert Rangers."
@@ -304,14 +191,13 @@
 	strip_delay = 20
 	self_weight = 2
 	allowed = list(/obj/item/weapon/gun/ballistic/revolver)
-
+*/
 /obj/item/clothing/suit/armor/f13/rangercombat/old
 	name = "worn veteran ranger combat armor"
 	desc = "A unique armor, that has been in countless battles and caused much bloodshed."
 	icon_state = "oldranger"
 	item_state = "oldranger"
 	armor = list(melee = 40, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 0, rad = 40, fire = 20, acid = 20)
-	self_weight = 2
 
 /obj/item/clothing/suit/armor/f13/battlecoat //Maxson's battlecoat from Fallout 4
 	name = "battlecoat"
@@ -320,22 +206,17 @@
 	item_state = "battlecoat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 50, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 0, rad = 50, fire = 30, acid = 30)
-	put_on_delay = 20
 	strip_delay = 30
-	self_weight = 2
-	allowed = list(/obj/item/weapon/gun/ballistic/revolver)
+	allowed = list(/obj/item/weapon)
 
 /obj/item/clothing/suit/armor/f13/power_armor
 	w_class = WEIGHT_CLASS_HUGE
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	flags = STOPSPRESSUREDMAGE
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	put_on_delay = 100
 	strip_delay = 200
 	resistance_flags = FIRE_PROOF | UNACIDABLE
-	self_weight = 35
 	obj_integrity = 20000
 	max_integrity = 20000
 
@@ -364,7 +245,6 @@
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	armor = list(melee = 65, bullet = 65, laser = 40, energy = 15, bomb = 60, bio = 100, rad = 100, fire = 100, acid = 100)
-	self_weight = 30
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
@@ -372,7 +252,6 @@
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
 	armor = list(melee = 65, bullet = 65, laser = 50, energy = 20, bomb = 70, bio = 100, rad = 100, fire = 100, acid = 100)
-	self_weight = 20
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60
 	name = "T-60 power armor"
@@ -380,7 +259,6 @@
 	icon_state = "t60powerarmor"
 	item_state = "t60powerarmor"
 	armor = list(melee = 70, bullet = 65, laser = 55, energy = 40, bomb = 80, bio = 100, rad = 100, fire = 100, acid = 100)
-	self_weight = 25
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor mark I"
@@ -388,7 +266,6 @@
 	icon_state = "advanced"
 	item_state = "advanced"
 	armor = list(melee = 50, bullet = 50, laser = 60, energy = 40, bomb = 50, bio = 100, rad = 100, fire = 100, acid = 100)
-	self_weight = 15
 
 /obj/item/clothing/suit/armor/f13/power_armor/tesla
 	name = "tesla power armor"
@@ -396,7 +273,6 @@
 	icon_state = "tesla"
 	item_state = "tesla"
 	armor = list(melee = 30, bullet = 30, laser = 80, energy = 80, bomb = 30, bio = 100, rad = 100, fire = 100, acid = 100)
-	self_weight = 10
 
 /obj/item/clothing/suit/armor/f13/power_armor/superadvanced
 	name = "advanced power armor mark II"
@@ -404,7 +280,6 @@
 	icon_state = "superadvanced"
 	item_state = "superadvanced"
 	armor = list(melee = 55, bullet = 60, laser = 60, energy = 50, bomb = 60, bio = 100, rad = 100, fire = 100, acid = 100)
-	self_weight = 10
 
 /obj/item/clothing/suit/armor/f13/power_armor/shocktrooper
 	name = "shocktrooper power armor"
@@ -412,7 +287,6 @@
 	icon_state = "shocktrooper"
 	item_state = "shocktrooper"
 	armor = list(melee = 60, bullet = 60, laser = 60, energy = 60, bomb = 70, bio = 100, rad = 100, fire = 100, acid = 100)
-	self_weight = 10
 
 /obj/item/clothing/suit/armor/f13/power_armor/badmin
 	name = "advanced power armor Mk III"
@@ -420,7 +294,6 @@
 	icon_state = "badmin"
 	item_state = "badmin"
 	armor = list(melee = 90, bullet = 80, laser = 80, energy = 80, bomb = 80, bio = 100, rad = 100, fire = 50, acid = 100) //Burn baby, burn!
-	self_weight = 1
 
 //Knights of the Apocalypse
 
@@ -429,8 +302,6 @@
 	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
 	icon_state = "knight_green"
 	item_state = "knight_green"
-	self_weight = 40
-
 /obj/item/clothing/suit/armor/riot/knight/yellow
 	icon_state = "knight_yellow"
 	item_state = "knight_yellow"

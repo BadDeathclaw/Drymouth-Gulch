@@ -2,7 +2,6 @@
 
 /obj/item/clothing/gloves/f13
 	icon = 'icons/fallout/clothing/gloves.dmi'
-	self_weight = 0.1
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
 
 /obj/item/clothing/gloves/f13/baseball
@@ -13,7 +12,6 @@
 	item_color = null
 	transfer_prints = TRUE
 	strip_delay = 20
-	put_on_delay = 40
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
@@ -25,7 +23,6 @@
 	item_color = null
 	transfer_prints = TRUE
 	strip_delay = 20
-	put_on_delay = 40
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -39,7 +36,6 @@
 	item_color = null
 	transfer_prints = TRUE
 	strip_delay = 20
-	put_on_delay = 40
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -53,7 +49,6 @@
 	item_color = null
 	transfer_prints = TRUE
 	strip_delay = 20
-	put_on_delay = 40
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -67,7 +62,6 @@
 	item_color = null
 	transfer_prints = TRUE
 	strip_delay = 20
-	put_on_delay = 40
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
@@ -81,7 +75,6 @@
 	item_color = null
 	transfer_prints = TRUE
 	strip_delay = 20
-	put_on_delay = 40
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS

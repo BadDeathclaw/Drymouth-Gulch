@@ -2,8 +2,6 @@
 
 /obj/item/clothing/mask/bandana/f13
 	icon = 'icons/fallout/clothing/masks.dmi'
-	self_weight = 0.1
-	cloth_count = 1
 
 /obj/item/clothing/mask/bandana/f13/legrecruit
 	name = "recruit bandana"

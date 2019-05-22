@@ -32,7 +32,6 @@
 /obj/item/weapon/storage/fancy/krotchy_box
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "krotchybox1"
-	icon_type = "krotchy"
 	name = "krotchy doll box"
 	storage_slots = 1
 	can_hold = list(/obj/item/weapon/krotchy)

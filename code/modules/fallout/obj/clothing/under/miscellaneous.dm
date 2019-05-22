@@ -2,7 +2,6 @@
 
 /obj/item/clothing/under/f13
 	icon = 'icons/fallout/clothing/uniforms.dmi'
-	self_weight = 2
 
 /obj/item/clothing/under/f13/navy
 	name = "navy jumpsuit"
@@ -10,7 +9,6 @@
 	icon_state = "navy"
 	item_state = "bl_suit"
 	item_color = "navy"
-	cloth_count = 3
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -21,7 +19,6 @@
 	icon_state = "navyofficer"
 	item_state = "bl_suit"
 	item_color = "navyofficer"
-	cloth_count = 4
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -33,7 +30,6 @@
 	item_state = "lb_suit"
 	item_color = "machinist"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/lumberjack
 	name = "lumberjack outfit"
@@ -42,7 +38,6 @@
 	item_state = "r_suit"
 	item_color = "lumberjack"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/police
 	name = "pre-War police uniform"
@@ -53,7 +48,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/cowboyt //Originally cowboy and mafia stuff by Nienhaus
 	name = "dusty prospector outfit"
@@ -97,7 +91,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 1
-	self_weight = 3
 
 /obj/item/clothing/under/f13/dbdu
 	name = "DBDU"
@@ -108,7 +101,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 1
-	self_weight = 3
 
 /obj/item/clothing/under/f13/shiny //Firefly, yay!
 	name = "shiny outfit"
@@ -117,7 +109,6 @@
 	item_state = "owl"
 	item_color = "shiny"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/batter //I guess we're going OFF limits.
 	name = "worn baseball uniform"
@@ -126,7 +117,6 @@
 	item_state = "w_suit"
 	item_color = "batter"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/bennys //Benny's suit from Fallout: New Vegas. But Benny was just a kid back in 2255, so it's just a fancy suit for you.
 	name = "fancy suit"
@@ -135,7 +125,6 @@
 	item_state = "white_suit"
 	item_color = "benny"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/relaxedwear
 	name = "pre-War male relaxedwear"
@@ -144,7 +133,6 @@
 	item_state = "g_suit"
 	item_color = "relaxedwear_m"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/spring
 	name = "pre-War male spring outfit"
@@ -153,7 +141,6 @@
 	item_state = "brownjsuit"
 	item_color = "spring_m"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/formal
 	name = "pre-War male formal wear"
@@ -164,8 +151,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/bodyguard
 	name = "bodyguard outfit"
@@ -176,8 +161,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 4
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/rag
 	name = "torn rags"
@@ -186,7 +169,6 @@
 	item_state = "lgloves"
 	item_color = "rag"
 	can_adjust = 0
-	cloth_count = 2
 
 /obj/item/clothing/under/f13/tribal
 	name = "male tribal outfit"
@@ -211,7 +193,6 @@
 	item_state = "brownjsuit"
 	item_color = "settler"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/brahmin //Male version
 	name = "male brahmin-skin outfit"
@@ -237,7 +218,6 @@
 	item_state = "brownjsuit"
 	item_color = "doctor_m"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/female/doctor //Female version
 	name = "female doctor fatigues"
@@ -247,7 +227,6 @@
 	item_color = "doctor_f"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/mercadv //Male version
 	name = "male merc adventurer outfit"
@@ -258,8 +237,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/female/mercadv //Female version
 	name = "female merc adventurer outfit"
@@ -271,8 +248,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
-	cloth_count = 5
+
 
 /obj/item/clothing/under/f13/merccharm //Male version
 	name = "male merc charmer outfit"
@@ -283,8 +259,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/female/merccharm //Female version
 	name = "female merc charmer outfit"
@@ -296,8 +270,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/mechanic
 	name = "worn blue jumpsuit"
@@ -306,7 +278,6 @@
 	item_state = "syndicate-blue"
 	item_color = "mechanic"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/petrochico
 	name = "worn green jumpsuit"
@@ -315,7 +286,6 @@
 	item_state = "centcom"
 	item_color = "petrochico"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outift"
@@ -324,7 +294,6 @@
 	item_state = "syndicate-blue"
 	item_color = "caravaneer"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/trader
 	name = "roving trader outfit "
@@ -333,7 +302,6 @@
 	item_state = "bl_suit"
 	item_color = "trader"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/merchant
 	name = "merchant outfit "
@@ -342,7 +310,6 @@
 	item_state = "brownjsuit"
 	item_color = "merchant"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/worn
 	name = "worn outfit "
@@ -351,7 +318,6 @@
 	item_state = "brownjsuit"
 	item_color = "worn"
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
@@ -360,7 +326,6 @@
 	item_state = "b_suit"
 	item_color = "vault"
 	can_adjust = 1
-	cloth_count = 5
 
 /obj/item/clothing/under/f13/vault/v13 //The Legend is here.
 	name = "Vault 13 jumpsuit"
@@ -392,8 +357,6 @@
 	icon_state = "followers"
 	item_state = "bar_suit"
 	item_color = "followers"
-	cloth_count = 5
-	allowed = list(/obj/item/weapon/scalpel, /obj/item/weapon/surgical_drapes, /obj/item/weapon/cautery, /obj/item/weapon/hemostat, /obj/item/weapon/retractor)
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/combat
@@ -415,7 +378,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 0, bio = 10, rad = 10, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
 
 /obj/item/clothing/under/f13/ncr_officer
 	name = "officer uniform"
@@ -423,11 +385,9 @@
 	icon_state = "ncr_o"
 	item_state = "lb_suit"
 	item_color = "ncr_o"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
 
 /obj/item/clothing/under/f13/ncr
 	name = "overcoat"
@@ -457,7 +417,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-	self_weight = 3
 
 /obj/item/clothing/under/f13/recon
 	name = "recon armor"
@@ -471,7 +430,6 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	can_adjust = 0
-	self_weight = 5
 
 //Fluff
 
@@ -501,7 +459,6 @@
 	icon_state = "psychturtle"
 	item_state = "b_suit"
 	item_color = "psychturtle"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -522,7 +479,6 @@
 	icon_state = "gentlesuit"
 	item_state = "gy_suit"
 	item_color = "gentlesuit"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 5, bio = 5, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -533,7 +489,6 @@
 	icon_state = "dispatch"
 	item_state = "lb_suit"
 	item_color = "dispatch"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -544,7 +499,6 @@
 	icon_state = "detectivealt"
 	item_state = "bl_suit"
 	item_color = "detectivealt"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list(melee = 20, bullet = 20, laser = -10, energy = -10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 1
@@ -555,7 +509,6 @@
 	icon_state = "rdalt"
 	item_state = "lb_suit"
 	item_color = "rdalt"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 20, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -566,7 +519,6 @@
 	icon_state = "hopalt"
 	item_state = "b_suit"
 	item_color = "hopalt"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = -10, bullet = 0, laser = 20, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -577,7 +529,6 @@
 	icon_state = "roboticsalt"
 	item_state = "jensensuit"
 	item_color = "roboticsalt"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 1
@@ -588,7 +539,6 @@
 	icon_state = "barmanalt"
 	item_state = "bl_suit"
 	item_color = "barmanalt"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 0, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
@@ -599,7 +549,6 @@
 	icon_state = "manager"
 	item_state = "bar_suit"
 	item_color = "manager"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 5, bullet = -20, laser = 0, energy = 0, bomb = 0, bio = 5, rad = 0, fire = 0, acid = 0)
 	can_adjust = 1
@@ -619,7 +568,6 @@
 	desc = "The insignia on this uniform tells you that this uniform belongs to some sort of officer."
 	icon_state = "spaceship_officer"
 	item_color = "spaceship_officer"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 5, bio = 5, rad = 10, fire = 0, acid = 0)
 
@@ -628,7 +576,6 @@
 	desc = "The insignia on this uniform tells you that this uniform belongs to some sort of captain."
 	icon_state = "spaceship_captain"
 	item_color = "spaceship_captain"
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 0, acid = 0)
 
@@ -636,7 +583,6 @@
 
 /obj/item/clothing/under/female
 	icon = 'icons/fallout/clothing/uniforms.dmi'
-	self_weight = 2
 
 /obj/item/clothing/under/female/nursesuit
 	desc = "A jumpsuit commonly worn by nursing staff in the medical department."
@@ -645,7 +591,6 @@
 	item_state = "w_suit"
 	item_color = "nursesuit"
 	permeability_coefficient = 0.50
-	cloth_count = 5
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0, fire = 0, acid = 0)
 	fitted = NO_FEMALE_UNIFORM
 	can_adjust = 0
@@ -658,7 +603,6 @@
 	item_color = "bride_orange"
 	can_adjust = 0
 	fitted = FEMALE_UNIFORM_TOP
-	cloth_count = 5
 	body_parts_covered = CHEST|GROIN|LEGS
 	flags_inv = HIDESHOES //IT DOESN'T HIDE SHOES! Someone. Pls. Help.
 
@@ -707,7 +651,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = 0
-	cloth_count = 9
 
 /obj/item/clothing/under/female/blackskirt
 	name = "black skirt"
@@ -718,8 +661,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = 0
-	cloth_count = 5
-
 /obj/item/clothing/under/female/blackskirt/blueskirt
 	name = "blue skirt"
 	desc = "A blue, casual skirt."
@@ -750,7 +691,6 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = 0
-	cloth_count = 5
 
 /obj/item/clothing/under/female/schoolgirl/red
 	name = "red schoolgirl uniform"
