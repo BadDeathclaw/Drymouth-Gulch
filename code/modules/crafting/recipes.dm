@@ -828,7 +828,7 @@
 /datum/crafting_recipe/stimsyringe
 	name = "Recycled Stimpak"
 	result = /obj/item/reagent_containers/syringe
-	reqs = list(obj/item/reagent_containers/hypospray/medipen/stimpak = 1,)
+	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1)
 	time = 20
 	category = CAT_MEDICAL
 
