@@ -98,7 +98,8 @@ Paladin
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
 
 
 /*Head Scribe
@@ -131,7 +132,8 @@ Paladin
 	suit_store =	/obj/item/gun/energy/laser/pistol
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1)
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 
 /*
@@ -166,7 +168,8 @@ Knight
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
 
 
 /*
@@ -234,9 +237,8 @@ Initiate Knight
 	suit_store =	/obj/item/gun/energy/laser/aer9
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
-		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/energy/laser/pistol=1)
-
+		/obj/item/gun/energy/laser/pistol=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)
 /*
 Initiate Scribe
 */
@@ -269,4 +271,5 @@ Initiate Scribe
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1)
+		/obj/item/gun/energy/laser/pistol=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)

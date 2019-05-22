@@ -35,6 +35,14 @@
 /turf/open/floor/plating/f13/MakeDry()
 	return
 
+/turf/open/floor/plating/f13/outside
+	name = "What the fuck mappers? why is this here"
+	desc = "If found, scream at the github repo about this"
+	icon_state = "wasteland1"
+	icon = 'icons/turf/f13desert.dmi'
+	light_range = 3
+	light_power = 0.75
+
 /* Outside turfs get global lighting */
 /turf/open/floor/plating/f13/outside/Initialize()
 	. = ..()
@@ -54,10 +62,10 @@
 	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
 	var/obj/structure/flora/turfPlant = null
 	slowdown = 2
-	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
+	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 2
-	var/storedindex = 0 //amount of stored items
-	var/mob/living/gravebody //is there a body in the pit?
+	var/storedindex = 0			//amount of stored items
+	var/mob/living/gravebody	//is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
 	var/pitcontents = list()
 	var/obj/dugpit/mypit
@@ -67,9 +75,7 @@
 	. = ..()
 	icon_state = "wasteland[rand(1,31)]"
 	//If no fences, machines (soil patches are machines), etc. try to plant grass
-	if(!(\
-			(locate(/obj/structure) in src) || \
-			(locate(/obj/machinery) in src) ))
+	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 		plantGrass()
 
 //Pass PlantForce for admin stuff I guess?
@@ -82,7 +88,7 @@
 		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST) //Create a new grass object at this location, and assign var
 		turfPlant = new randPlant(src)
 		. = TRUE //in case we ever need this to return if we spawned
-		return.
+		return .
 
 	//loop through neighbouring desert turfs, if they have grass, then increase weight
 	for(var/turf/open/floor/plating/f13/outside/desert/T in RANGE_TURFS(3, src))
@@ -99,7 +105,6 @@
 			randPlant = pickweight(DESOLATE_PLANT_SPAWN_LIST)
 		turfPlant = new randPlant(src)
 		. = TRUE
-
 
 //Make sure we delete the plant if we ever change turfs
 /turf/open/floor/plating/f13/outside/desert/ChangeTurf()
@@ -130,7 +135,7 @@
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
 
-/turf/open/floor/wood/f13/old/ruinedcornerendbr
+/turf/open/floor/wood/f13/old/ruinedcornerendbr	//WHAT THE FUCK IS THIS
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
 	icon = 'icons/turf/f13floorsmisc.dmi'
