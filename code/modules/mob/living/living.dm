@@ -1,3 +1,18 @@
+//lewd
+/mob/living
+	var/has_penis = FALSE
+	var/has_vagina = FALSE
+	var/has_breasts = FALSE
+	var/last_partner
+	var/last_orifice
+	var/lastmoan
+	var/sexual_potency =  15
+	var/lust_tolerance = 100
+	var/lust = 0
+	var/multiorgasms = 0
+	var/refactory_period = 0
+//end of lewd
+
 /mob/living/Initialize()
 	. = ..()
 	if(unique_name)
@@ -7,6 +22,20 @@
 	medhud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+
+	//lewd
+	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
+	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+	if(gender == MALE)
+		has_penis = TRUE
+		has_vagina = FALSE
+		has_breasts = FALSE
+
+	if(gender == FEMALE)
+		has_vagina = TRUE
+		has_breasts = TRUE
+		has_penis = FALSE
+	//end of lewd
 
 
 /mob/living/prepare_huds()
