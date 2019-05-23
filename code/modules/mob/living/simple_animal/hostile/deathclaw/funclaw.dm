@@ -16,10 +16,10 @@
 		return
 
 	if(get_dist(src, M) > 0)
-		src.a_intent = INTENT_GRAB
-		src.grab_state = GRAB_NECK
+		a_intent = INTENT_GRAB
+		grab_state = GRAB_NECK
 
-		src.start_pulling(M, 1)
+		start_pulling(M, 1)
 		M.grabbedby(src)
 		M.drop_all_held_items()
 		M.stop_pulling()
@@ -36,9 +36,9 @@
 			pound_cooldown = world.time + 50
 
 		pound(M)
-		sleep(rand(1, 3)0)
+		sleep(rand(1, 3) + 0)
 		pound(M)
-		sleep(rand(1, 3)0)
+		sleep(rand(1, 3) + 0)
 		pound(M)
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(var/mob/living/M)
@@ -61,21 +61,21 @@
 				return
 			if(tearSlot(M, SLOT_W_UNIFORM))
 				return
-			src.do_anal(M)
+			do_anal(M)
 
 		if(CUM_TARGET_VAGINA)
 			if(tearSlot(M, SLOT_WEAR_SUIT))
 				return
 			if(tearSlot(M, SLOT_W_UNIFORM))
 				return
-			src.do_vaginal(M)
+			do_vaginal(M)
 
 		if(CUM_TARGET_THROAT)
 			if(tearSlot(M, SLOT_HEAD))
 				return
 			if(tearSlot(M, SLOT_WEAR_MASK))
 				return
-			src.do_throatfuck(M)
+			do_throatfuck(M)
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/cum(mob/living/M)
 
@@ -112,7 +112,6 @@
 	playsound(loc, "honk/sound/interactions/clawcum[rand(1, 2)].ogg", 70, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
 	shake_camera(M, 3, 1)
-	stop_pulling()
 	set_is_fucking(null ,null)
 
 	refactory_period = 5
