@@ -36,9 +36,9 @@
 			pound_cooldown = world.time + 70
 
 		pound(M)
-		sleep(rand(1, 3) + 0)
+		sleep(rand(10, 30))
 		pound(M)
-		sleep(rand(1, 3) + 0)
+		sleep(rand(10, 30))
 		pound(M)
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
