@@ -123,7 +123,7 @@
 	visible_message("<span class='danger'>\The [src]</b> slaps \the [M] right on the ass!</span>", \
 			"<span class='userdanger'>\The [src]</b> slaps \the [M] right on the ass!</span>", null, COMBAT_MESSAGE_RANGE)
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/tearSlot(var/mob/living/M, slot)
+/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/tearSlot(mob/living/M, slot)
 	var/obj/item/W = M.get_item_by_slot(slot)
 	if(W)
 		M.dropItemToGround(W)
