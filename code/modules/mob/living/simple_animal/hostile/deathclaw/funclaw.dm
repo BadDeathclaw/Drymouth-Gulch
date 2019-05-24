@@ -33,7 +33,7 @@
 			chosen_hole = null
 			while (chosen_hole == null)
 				pickNewHole(M)
-			pound_cooldown = world.time + 50
+			pound_cooldown = world.time + 70
 
 		pound(M)
 		sleep(rand(1, 3) + 0)
