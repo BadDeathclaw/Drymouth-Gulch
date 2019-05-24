@@ -1,5 +1,5 @@
 //Fallout 13 caves and mining system, classics of SS13 circa 2012
-
+/*
 /**********************Mineral deposits**************************/
 
 var/global/list/rockTurfEdgeCache
@@ -572,3 +572,4 @@ turf/closed/mineral/proc/randomizerock(mineraltype)
 	baseturf = /turf/open/floor/plating/asteroid/basalt/lava_land_surface
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	defer_change = 1
+*/

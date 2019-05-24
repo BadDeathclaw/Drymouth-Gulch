@@ -25,7 +25,6 @@
 	mob_size = MOB_SIZE_LARGE
 	attacktext = "hits"
 	attack_sound = "punch"
-	self_weight = 250
 
 /mob/living/simple_animal/hostile/supermutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -48,8 +47,8 @@
 	response_help  = "touches"
 	response_disarm = "pushes"
 	response_harm   = "punches"
-	attack_sound = 'sound/misc/gameover.ogg'
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
+//	attack_sound = 'sound/misc/gameover.ogg'
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/bearsteak = 3)
 
 /mob/living/simple_animal/pet/dog/mutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'

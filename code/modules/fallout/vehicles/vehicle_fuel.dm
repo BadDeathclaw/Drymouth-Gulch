@@ -7,16 +7,16 @@
 
 	var/fuel = 600
 	var/max_fuel = 600
-	var/obj/item/weapon/reagent_containers/fuel_tank/fuel_holder
+	var/obj/item/reagent_containers/fuel_tank/fuel_holder
 	var/idle_wasting = 0.5
 	var/move_wasting = 0.1
-
+/*
 /obj/vehicle/fuel/New()
 	..()
 	fuel_holder = new(max_fuel, fuel)
 
 /obj/vehicle/fuel/attackby(obj/item/weapon/W, mob/user, params) //Refueling
-	if(istype(W, /obj/item/weapon/reagent_containers))
+	if(istype(W, /obj/item/reagent_containers))
 		fuel_holder.attackby(W, user, params)
 		return 1
 	return ..()
@@ -79,21 +79,21 @@
 				to_chat(user, "<span class='warning'>Fuel meter shows 25% ! It's almost out of fuel!</span>")
 			else
 				to_chat(user, "<span class='danger'>Fuel meter shows 0% ! There is no fuel left!</span>")
+*/
 
 
-
-/obj/item/weapon/reagent_containers/fuel_tank
+/obj/item/reagent_containers/fuel_tank
 	name = "fuel tank"
 	container_type = OPENCONTAINER
 	amount_per_transfer_from_this = 25
 	var/inside = 1
 
-/obj/item/weapon/reagent_containers/fuel_tank/New(var/volume, var/fuel)
+/obj/item/reagent_containers/fuel_tank/New(var/volume, var/fuel)
 	src.volume = volume
 	list_reagents = list("welding_fuel" = fuel)
 	..()
 
-/obj/item/weapon/reagent_containers/fuel_tank/attackby(obj/item/weapon/W, mob/user, params)
+/obj/item/reagent_containers/fuel_tank/attackby(obj/item/weapon/W, mob/user, params)
 	if(W.is_open_container() && W.reagents)
 		if(inside)
 			if(!W.reagents.total_volume)

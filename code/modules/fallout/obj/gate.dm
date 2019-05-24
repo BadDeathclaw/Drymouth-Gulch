@@ -6,7 +6,7 @@
 	id = 333
 	bound_width = 96
 	var/list/opacity_objects = list() //FUCK BYOND
-
+/*
 /obj/machinery/door/poddoor/gate/New()
 	..()
 	var/go/S = new (locate(x+1,y,z))
@@ -35,4 +35,4 @@
 /obj/machinery/door/poddoor/gate/close()
 	..()
 	for(var/go/S in opacity_objects)
-		S.set_opacity(1)
+		S.set_opacity(1)*/

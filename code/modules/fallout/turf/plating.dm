@@ -7,7 +7,7 @@
 	intact = 0
 	broken_states = list("housebase1-broken", "housebase2-broken", "housebase3-broken", "housebase4-broken")
 	burnt_states = list("housebase")
-	step_sounds = list("human" = "woodfootsteps")
+//	step_sounds = list("human" = "woodfootsteps")
 
 /turf/open/floor/plating/wooden/make_plating()
 	return src

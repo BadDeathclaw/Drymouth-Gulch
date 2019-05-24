@@ -9,7 +9,7 @@
 	layer = 5
 	icon = 'icons/fallout/machines/64x64.dmi'
 	resistance_flags = INDESTRUCTIBLE
-
+/*
 /obj/structure/billboard/New()
 	..()
 
@@ -18,7 +18,7 @@
 	S.anchored = 1
 	S.icon = null
 	S.verbs.Cut()
-
+*/
 /obj/structure/billboard/ritas
 	name = "Rita's Cafe billboard"
 	desc = "A defaced pre-War ad for Rita's Cafe.<br>The wasteland has taken its toll on the board."

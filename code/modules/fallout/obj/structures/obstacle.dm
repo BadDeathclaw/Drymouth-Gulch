@@ -15,9 +15,9 @@
 	density = 1
 	obj_integrity = 100
 	max_integrity = 100
-	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
-	var/material = METAL
-
+//	var/proj_pass_rate = 50 //How many projectiles will pass the cover. Lower means stronger cover
+//	var/material = METAL
+/*
 /obj/structure/barricade/deconstruct(disassembled = TRUE)
 	if(!(flags & NODECONSTRUCT))
 		make_debris()
@@ -54,7 +54,7 @@
 		return 0
 	else
 		return !density
-
+*/
 
 
 /////BARRICADE TYPES///////
@@ -67,7 +67,7 @@
 	material = WOOD
 
 /obj/structure/barricade/wooden/attackby(obj/item/weapon/I, mob/living/user, params)
-	if(istype(I, /obj/item/stack/sheet/mineral/wood) && (isfloorturf(loc) || isgroundturf(loc)))
+	if(istype(I, /obj/item/stack/sheet/mineral/wood) && (isfloorturf(loc) || isplatingturf(loc)))
 		var/obj/item/stack/sheet/mineral/wood/W = I
 		if(W.amount >= 3)
 			to_chat(user, "<span class='notice'>You begin building wall.</span>")
@@ -111,7 +111,7 @@
 	climbable = TRUE
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/barricade/sandbags, /turf/closed/wall, /turf/closed/wall/r_wall, /obj/structure/falsewall, /obj/structure/falsewall/reinforced, /turf/closed/wall/rust, /turf/closed/wall/r_wall/rust, /obj/structure/barricade/security)
-
+/*
 /obj/structure/barricade/security
 	name = "police barrier"
 	desc = "A deployable barrier. Provides good cover in fire fights."
@@ -184,7 +184,7 @@
 
 /obj/item/weapon/grenade/barrier/ui_action_click(mob/user)
 	toggle_mode(user)
-
+*/
 
 #undef SINGLE
 #undef VERTICAL

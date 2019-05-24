@@ -47,10 +47,10 @@
 	fulltile = 1
 	smooth = 0
 	level = 3
-
+/*
 /obj/structure/window/fulltile/attackby(obj/item/I, mob/user, params)
 	if(!istype(I, /obj/item/stack/sheet/mineral/wood))
 		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
 			P.attackby(I, user, params)
 			return
-		..()
+		..()*/

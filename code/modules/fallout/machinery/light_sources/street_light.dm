@@ -8,13 +8,13 @@
 	active_power_usage = 100
 	density = 1
 	appearance_flags = 0
-	flags = NODECONSTRUCT
+//	flags = NODECONSTRUCT
 	layer = 8
 	pixel_x = 8
 	desc = "Obviously, it's a raised source of light on the edge of a road or walkway.<br>Have you satisfied your curiosity?"
 	light_type = null
 	light_color = LIGHT_COLOR_YELLOW
-
+/*
 /obj/machinery/light/street/initialize()
 	if(dir == 1)
 		pixel_x = -40
@@ -27,6 +27,7 @@
 		seton(1)
 	else if(full >= 300 && on)
 		seton(0)
+*/
 /////////CLOSE YOUR EYES NOW!
 /obj/machinery/light/street/attackby()
 	return 0

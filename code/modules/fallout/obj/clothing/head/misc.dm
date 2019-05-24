@@ -2,7 +2,6 @@
 
 /obj/item/clothing/head/f13
 	icon = 'icons/fallout/clothing/hats.dmi'
-	self_weight = 1
 
 /obj/item/clothing/head/f13/police
 	name = "pre-War police cap"
@@ -10,7 +9,6 @@
 	icon_state = "retropolice"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
-	cloth_count = 1
 
 /obj/item/clothing/head/f13/safari //Referencing the Jebediah from Mad Max 3 1985
 	name = "pith helmet"
@@ -19,7 +17,6 @@
 	item_state = "dethat"
 	flags_inv = HIDEHAIR
 	armor = list(melee = 40, bullet = 10, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 30, acid = 0)
-	cloth_count = 1
 
 /obj/item/clothing/head/f13/chinese_soldier
 	name = "chinese side cap"
@@ -27,7 +24,6 @@
 	icon_state = "chinese_s"
 	item_state = "secsoft"
 	flags_inv = HIDEHAIR
-	cloth_count = 1
 
 /obj/item/clothing/head/f13/chinese_officer
 	name = "chinese side cap"
@@ -35,7 +31,6 @@
 	icon_state = "chinese_o"
 	item_state = "secsoft"
 	flags_inv = HIDEHAIR
-	cloth_count = 1
 
 /obj/item/clothing/head/f13/chinese_commander
 	name = "chinese peaked cap"
@@ -43,7 +38,6 @@
 	icon_state = "chinese_c"
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
-	cloth_count = 1
 
 /obj/item/clothing/head/f13/stormchaser
 	name = "stormchaser hat"
@@ -58,7 +52,6 @@
 	icon_state = "headscarf"
 	item_state = "dethat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	cloth_count = 2
 
 /obj/item/clothing/head/f13/pot
 	name = "metal cooking pot"
@@ -149,7 +142,6 @@
 	item_state = "fedora"
 	flags_inv = HIDEHAIR
 	armor = list(melee = 30, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
-	self_weight = 1
 
 /obj/item/clothing/head/f13/trilby
 	name = "feather trilby"
@@ -168,7 +160,6 @@
 
 /obj/item/clothing/head/welding/f13
 	icon = 'icons/fallout/clothing/hats.dmi'
-	self_weight = 2
 
 /obj/item/clothing/head/welding/f13/fire
 	name = "cremator welding helmet"

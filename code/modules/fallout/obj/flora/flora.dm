@@ -1,5 +1,5 @@
 //Fallout 13 general flora directory
-
+/*
 /obj/structure/flora/grass/wasteland
 	icon = 'icons/fallout/flora/flora.dmi'
 	desc = "You see nothing out of the ordinary."
@@ -42,7 +42,7 @@
 	if(cut)
 		icon = 'icons/fallout/flora/trees.dmi'
 		icon_state = "tree_stump"
-
+*/
 /obj/structure/flora/tree/tall
 	name = "dead tree"
 	desc = "A rather tall tree that has been dead for a long time.<br>Interestingly it is still standing, as a reminder of its green past."
@@ -55,7 +55,7 @@
 /obj/structure/flora/tree/tall/New()
 	icon_state = "tree_[rand(1,3)]"
 	..()
-
+/*
 /obj/structure/flora/tree/tall/attackby(obj/item/weapon/W, mob/user, params)
 	..()
 	if(cut)
@@ -69,4 +69,4 @@
 	icon_state = "cactus"
 	density = 1
 	pixel_x = -16
-	layer = FLY_LAYER
+	layer = FLY_LAYER*/

@@ -61,11 +61,11 @@
 	..()
 	icon_state = "resistor_[rand(1,3)]"
 
-/obj/item/crafting/switch
+/obj/item/crafting/switch_crafting //look, "switch" is a built in proc and we can't use it in the path by itself
 	name = "switch"
 	desc = "A common switch, used to light up the flashlight or activate a bomb timer." //Why i code it?
 	icon_state = "switch_1"
-/obj/item/crafting/switch/New()
+/obj/item/crafting/switch_crafting_crafting/New()
 	..()
 	icon_state = "switch_[rand(1,3)]"
 

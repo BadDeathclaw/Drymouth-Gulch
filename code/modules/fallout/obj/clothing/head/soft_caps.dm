@@ -2,7 +2,6 @@
 
 /obj/item/clothing/head/soft/f13
 	icon = 'icons/fallout/clothing/hats.dmi'
-	self_weight = 0.5
 
 /obj/item/clothing/head/soft/f13/baseball
 	name = "baseball cap"
@@ -10,7 +9,6 @@
 	icon_state = "baseball"
 	item_color = "baseball"
 	flags_inv = HIDEHAIR
-	cloth_count = 1
 
 /obj/item/clothing/head/soft/f13/enclave
 	name = "officer hat"
@@ -18,7 +16,6 @@
 	icon_state = "enclave"
 	item_color = "enclave"
 	flags_inv = HIDEHAIR
-	cloth_count = 1
 
 /obj/item/clothing/head/soft/f13/utility
 	name = "grey utility cover"
@@ -41,4 +38,3 @@
 	name = "tan utility cover"
 	icon_state = "utility_t"
 	item_color = "utility_t"
-	cloth_count = 1

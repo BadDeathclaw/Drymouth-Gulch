@@ -8,11 +8,11 @@
 	anchored = 1
 	layer = 2.1
 	light_color = LIGHT_COLOR_GREEN
-	light_power = 0.5
-	light_range = 3
-	rad_heavy_range = 1
-	rad_light_range = 4
-	rad_severity = 10
+//	light_power = 0.5
+//	light_range = 3
+//	rad_heavy_range = 1
+//	rad_light_range = 4
+//	rad_severity = 10
 
 /obj/effect/decal/cleanable/waste/New()
 	..()

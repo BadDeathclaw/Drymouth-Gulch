@@ -17,7 +17,7 @@
 	desc = "A square piece of metal standing on four metal legs. It can not move."
 	icon = 'icons/fallout/objects/structures/tables.dmi'
 	icon_state = "table"
-	density = 1
+/*	density = 1
 	anchored = 1
 	layer = TABLE_LAYER
 	climbable = TRUE
@@ -281,13 +281,14 @@
 
 /obj/structure/table/wood/poker/narsie_act()
 	new /obj/structure/table/wood(src.loc)
-
+*/
 //A table that'd be built by players, since their constructions would be... less impressive than their prewar counterparts.
 
 /obj/structure/table/wood/settler
 	desc = "A wooden table constructed by a carpentering amateur from various planks.<br>It's the work of wasteland settler."
 	icon_state = "settlertable"
-	icontype = "settlertable"
+	icon = 'icons/fallout/objects/structures/tables.dmi'
+//	icontype = "settlertable"
 	obj_integrity = 50
 	max_integrity = 50
 	canSmoothWith = list(/obj/structure/table/wood/settler)
@@ -297,8 +298,8 @@
 	desc = "A standard metal table frame covered with an amazingly fancy, patterned cloth."
 	icon = 'icons/obj/smooth_structures/fancy_table.dmi'
 	icon_state = "fancy_table"
-	icontype = "fancy_table"
-	smooth = SMOOTH_TRUE
+//	icontype = "fancy_table"
+//	smooth = SMOOTH_TRUE
 	frame = /obj/structure/table_frame
 	framestack = /obj/item/stack/rods
 	buildstack = /obj/item/stack/tile/carpet
@@ -307,7 +308,7 @@
 /obj/structure/table/wood/fancy/New()
 	icon = 'icons/obj/smooth_structures/fancy_table.dmi' //so that the tables place correctly in the map editor
 	..()
-
+/*
 /*
  * Reinforced tables
  */
@@ -506,7 +507,7 @@
 		transfer_fingerprints_to(newparts)
 	qdel(src)
 
-
+/*
 /*
  * Rack Parts
  */
@@ -536,3 +537,5 @@
 			</span>", "<span class='notice'>You assemble \a [R].</span>")
 		R.add_fingerprint(user)
 		qdel(src)
+*/
+*/

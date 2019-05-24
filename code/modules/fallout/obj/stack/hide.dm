@@ -6,7 +6,6 @@
 	singular_name = "gecko skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-geckohide"
-	origin_tech = null
 
 /obj/item/stack/sheet/animalhide/molerat
 	name = "molerat skin"
@@ -14,7 +13,6 @@
 	singular_name = "molerat skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-molerat"
-	origin_tech = null
 
 /obj/item/stack/sheet/animalhide/deathclaw
 	name = "deathclaw skin"
@@ -22,7 +20,6 @@
 	singular_name = "deathclaw skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-deathclaw"
-	origin_tech = null
 
 /obj/item/stack/sheet/animalhide/wolf
 	name = "dog skin"
@@ -30,4 +27,3 @@
 	singular_name = "dog skin piece"
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-skin"
-	origin_tech = null

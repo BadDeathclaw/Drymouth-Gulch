@@ -18,7 +18,7 @@
 
 /obj/structure/closet/bus/New()
 	..()
-	var/go/S = new (locate(x-3,y,z))
+	var/atom/movable/S = new (locate(x-3,y,z))
 	S.density = 1
 	S.anchored = 1
 	S.icon = null
@@ -61,14 +61,14 @@
 			I = image(icon,src,"bus_open",ABOVE_MOB_LAYER)
 			add_overlay(I)
 
-/obj/structure/closet/bus/CheckExit(go/O as mob|obj, target)
+/obj/structure/closet/bus/CheckExit(atom/movable/O as mob|obj, target)
 	. = ..()
 	if(!.)
 		return 0
 	if(get_dir(O.loc, target) == NORTH)
 		return 0
 
-/obj/structure/closet/bus/CanPass(go/mover, turf/target, height=0)
+/obj/structure/closet/bus/CanPass(atom/movable/mover, turf/target, height=0)
 	. = ..()
 	if(!.)
 		return 0

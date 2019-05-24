@@ -35,22 +35,21 @@
 		if(W.use(1))
 			user.visible_message("[user] has added fuel to [src].", "<span class='notice'>You have added fuel to [src].</span>")
 			fuel += 60
-	else if(fired && istype(P, /obj/item/weapon/reagent_containers/food/snacks))
+	else if(fired && istype(P, /obj/item/reagent_containers/food/snacks))
 		if(!ishuman(user))
 			return
 		var/mob/living/carbon/human/H = user
-		var/obj/item/weapon/reagent_containers/food/snacks/F = P
+		var/obj/item/reagent_containers/food/snacks/F = P
 		to_chat(user, "You start cooking a [F.name]")
 		if(do_after(user, 20, target = src))
 			if(F.cooked_type)
-				H.drop_item()
-				var/obj/item/weapon/reagent_containers/food/snacks/S = new F.cooked_type ()
+				H.dropItemToGround()
+				var/obj/item/reagent_containers/food/snacks/S = new F.cooked_type ()
 				H.put_in_active_hand(S)
 				F.initialize_cooked_food(S, 0.8)
-				feedback_add_details("food_made","[F.type]")
 			else
-				H.drop_item()
-				var/obj/item/weapon/reagent_containers/food/snacks/S = new /obj/item/weapon/reagent_containers/food/snacks/badrecipe()
+				H.dropItemToGround()
+				var/obj/item/reagent_containers/food/snacks/S = new /obj/item/reagent_containers/food/snacks/badrecipe()
 				H.put_in_active_hand(S)
 			qdel(F)
 	else

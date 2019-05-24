@@ -44,5 +44,4 @@
 	item_color = "green"
 	resistance_flags = UNACIDABLE
 	body_parts_covered = LEGS
-	self_weight = 3
 	armor = list(melee = 60, bullet = 40, laser = 40, energy = 40, bomb = 50, bio = 100, rad = 100, fire = 100, acid = 100)

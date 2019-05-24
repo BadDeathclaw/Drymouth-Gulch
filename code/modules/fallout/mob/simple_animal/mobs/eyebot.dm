@@ -19,18 +19,18 @@
 	robust_searching = 1
 	maxHealth = 70
 	health = 70
-	self_weight = 50
+//	self_weight = 50
 	healable = 0
 
 	faction = list("hostile", "enclave")
 
 	ambient_sound = 'sound/f13npc/eyebot_loop.ogg'
 
-	sound_speak_chance = 5
-	sound_speak = list('sound/machines/buzz-sigh.ogg','sound/misc/interference.ogg')
+//	sound_speak_chance = 5
+//	sound_speak = list('sound/machines/buzz-sigh.ogg','sound/misc/interference.ogg')
 
-	aggro_sound_chance = 50
-	aggro_sound = 'sound/misc/interference.ogg'
+//	aggro_sound_chance = 50
+//	aggro_sound = 'sound/misc/interference.ogg'
 
 	death_sound = 'sound/f13npc/robot_death.ogg'
 
@@ -47,7 +47,7 @@
 	status_flags = CANPUSH
 	vision_range = 12
 	aggro_vision_range = 10
-	idle_vision_range = 7
+//	idle_vision_range = 7
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/resonator_fire.ogg'

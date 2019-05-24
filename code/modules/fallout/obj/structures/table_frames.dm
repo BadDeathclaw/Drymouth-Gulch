@@ -14,7 +14,7 @@
 	desc = "Four metal legs with four framing rods for a table. You could easily pass through this."
 	icon = 'icons/fallout/objects/structures/tables.dmi'
 	icon_state = "table_frame"
-	density = 0
+/*	density = 0
 	anchored = 0
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	obj_integrity = 100
@@ -93,7 +93,7 @@
 /*
  * Wooden Frames
  */
-
+*/
 /obj/structure/table_frame/wood
 	name = "wooden table frame"
 	desc = "Four wooden legs with four framing wooden rods for a wooden table. You could easily pass through this."
@@ -101,7 +101,7 @@
 	framestack = /obj/item/stack/sheet/mineral/wood
 	framestackamount = 2
 	resistance_flags = FLAMMABLE
-
+/*
 /obj/structure/table_frame/wood/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = I
@@ -161,3 +161,4 @@
 		color = "#960000"
 		animate(src, color = previouscolor, time = 8)
 		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+*/

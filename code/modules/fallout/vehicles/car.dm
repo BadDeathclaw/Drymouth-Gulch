@@ -15,7 +15,7 @@
 
 	dir = pick("1","2","4","5","6","8","9","10")
 
-	var/go/S = new (locate(x+1,y,z))
+	var/atom/movable/S = new (locate(x+1,y,z))
 	S.density = 1
 	S.anchored = 1
 	S.icon = null

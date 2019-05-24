@@ -1,4 +1,4 @@
-/obj/item/weapon/storage/trash_stack
+/obj/item/storage/trash_stack
 	name       = "pile of garbage"
 	desc       = "a pile of garbage. Smells as good, as it looks, though it may contain something useful. Or may not"
 	icon       = 'icons/fallout/objects/crafting.dmi'
@@ -7,9 +7,9 @@
 	density    = 0
 
 	//rustle_jimmies       = FALSE
-	w_class              = WEIGHT_CLASS_GIGANTIC
-	max_w_class          = WEIGHT_CLASS_GIGANTIC
-	max_combined_w_class = 30
+//	w_class              = WEIGHT_CLASS_GIGANTIC
+//	max_w_class          = WEIGHT_CLASS_GIGANTIC
+//	max_combined_w_class = 30
 
 	var/spawn_delay = "3000-7000" //or num
 	var/spawn_next  = 0
@@ -18,7 +18,7 @@
 /obj/item/weapon/storage/trash_stack/New()
 	. = ..()
 	icon_state = "Junk_[rand(1,12)]"
-
+/*
 /obj/item/weapon/storage/trash_stack/MouseDrop(atom/over_object)
 	if(world.time >= spawn_next)
 		spawn_trash()
@@ -107,3 +107,4 @@
 		var/I = new itemtype(src)
 		back += I
 	return back
+*/

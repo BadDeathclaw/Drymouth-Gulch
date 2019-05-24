@@ -2,8 +2,8 @@
 	name = "mineral wall"
 	desc = "This shouldn't exist"
 	icon_state = ""
-	var/last_event = 0
-	var/active = null
+//	var/last_event = 0
+//	var/active = null
 	canSmoothWith = null
 	smooth = SMOOTH_TRUE
 
@@ -37,7 +37,7 @@
 	slicing_duration = 200   //diamond wall takes twice as much time to slice
 	explosion_block = 3
 	canSmoothWith = list(/turf/closed/wall/mineral/diamond, /obj/structure/falsewall/diamond)
-
+/*
 /turf/closed/wall/mineral/diamond/thermitemelt(mob/user)
 	return
 
@@ -128,7 +128,7 @@
 		PlasmaBurn(500)
 	..()
 
-
+*/
 /turf/closed/wall/mineral/wood
 	name = "wooden wall"
 	desc = "A wall made by a wasteland dweller."
@@ -155,7 +155,7 @@
 /turf/closed/wall/mineral/wood/proc/relativewall()
 	var/junction = 0
 
-	for(var/cdir in cardinal)
+	for(var/cdir in GLOB.cardinals)
 		var/turf/T = get_step(src,cdir)
 		if(istype(T, /turf/closed/wall/mineral/wood))
 			junction |= cdir
@@ -201,7 +201,7 @@
 	slicing_duration = 200   //alien wall takes twice as much time to slice
 	explosion_block = 3
 	canSmoothWith = list(/turf/closed/wall/mineral/abductor, /obj/structure/falsewall/abductor)
-
+/*
 /turf/closed/wall/mineral/titanium //has to use this path due to how building walls works
 	name = "wall"
 	desc = "A lightweight titanium wall used in shuttles."
@@ -276,3 +276,4 @@
 /turf/closed/wall/mineral/plastitanium/copyTurf(turf/T)
 	. = ..()
 	T.transform = transform
+*/

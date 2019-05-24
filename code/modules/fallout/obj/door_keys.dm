@@ -64,14 +64,14 @@
 	icon       = 'icons/fallout/objects/keys.dmi'
 	icon_state = "keychain_0"
 	density    = 0
-	storage_slots = 4
-	can_hold = list(/obj/item/door_key)
-	rustle_jimmies = FALSE
+//	storage_slots = 4
+//	can_hold = list(/obj/item/door_key)
+//	rustle_jimmies = FALSE
 
 	w_class              = WEIGHT_CLASS_TINY
-	max_w_class          = WEIGHT_CLASS_TINY
+//	max_w_class          = WEIGHT_CLASS_TINY
 	slot_flags = SLOT_BELT
-	max_combined_w_class = 4
+//	max_combined_w_class = 4
 
 /obj/item/weapon/storage/keys_set/update_icon()
 	icon_state = "keychain_[contents.len]"
@@ -92,7 +92,7 @@
 	layer = 100
 	var/open = FALSE
 	var/id = null
-
+/*
 /obj/item/lock/New(location)
 	..()
 	layer = OBJ_LAYER
@@ -101,7 +101,7 @@
 		var/obj/structure/simple_door/D = locate(/obj/structure/simple_door) in loc
 		if(istype(D) && D.can_hold_padlock)
 			D.attach_padlock(src, TRUE)
-
+*/
 /obj/item/lock/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/weapon/storage/keys_set))
 		var/obj/item/weapon/storage/keys_set/S = W

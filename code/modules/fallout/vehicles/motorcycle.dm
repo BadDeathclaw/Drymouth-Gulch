@@ -12,15 +12,15 @@
 	max_integrity = 400
 	armor = list(melee = 50, bullet = 40, laser = 30, energy = 30, bomb = 0, bio = 0, rad = 0, fire = 30, acid = 40)
 	var/image/cover = null
-	var/datum_type = /datum/riding/motorcycle
-	self_weight = 500
-	engine_on_sound = 'sound/f13machines/bike_start.ogg'
-	engine_loop_sound = 'sound/f13machines/bike_loop.ogg'
-
+//	var/datum_type = /datum/riding/motorcycle
+//	self_weight = 500
+//	engine_on_sound = 'sound/f13machines/bike_start.ogg'
+//	engine_loop_sound = 'sound/f13machines/bike_loop.ogg'
+/*
 /obj/vehicle/fuel/motorcycle/buckle_mob()
 	. = ..()
 	riding_datum = new datum_type()
-
+*/
 /obj/vehicle/fuel/motorcycle/relaymove(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -55,7 +55,7 @@
 	name = "rusty motorcycle"
 	desc = "A very old, weathered motorcycle.<br>Somehow the engine is still intact."
 	icon_state = "bike_rust_med"
-	datum_type = /datum/riding/motorcycle/slow
+//	datum_type = /datum/riding/motorcycle/slow
 
 /obj/vehicle/fuel/motorcycle/green
 	name = "green motorcycle"
@@ -71,20 +71,20 @@
 	name = "scrambler motorbike"
 	desc = "Scrambler is an old term for a dirt bike with a powerful engine that raced on dirt tracks with low jumps.<br>Something tells you it's better not to mess around with its owner."
 	icon_state = "bike_scrambler"
-	datum_type = /datum/riding/motorcycle/fast
+//	datum_type = /datum/riding/motorcycle/fast
 
 //Motorcycle riding datum
 
 /datum/riding/motorcycle/fast
-	vehicle_move_delay = 0.7
+//	vehicle_move_delay = 0.7
 
 /datum/riding/motorcycle/slow
-	vehicle_move_delay = 1.2
+//	vehicle_move_delay = 1.2
 
 /datum/riding/motorcycle
-	keytype = /obj/item/key/motorcycle
-	vehicle_move_delay = 1
-
+//	keytype = /obj/item/key/motorcycle
+//	vehicle_move_delay = 1
+/*
 /datum/riding/motorcycle/handle_vehicle_layer()
 	return
 
@@ -106,3 +106,4 @@
 				if(WEST)
 					buckled_mob.pixel_x = 2
 					buckled_mob.pixel_y = 5
+*/

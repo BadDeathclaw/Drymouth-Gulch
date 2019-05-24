@@ -16,7 +16,7 @@
 	anchored = 1
 	layer = CLOSED_DOOR_LAYER
 	explosion_block = 0.5
-	var/can_hold_padlock = FALSE
+/*	var/can_hold_padlock = FALSE
 	var/obj/item/lock/padlock
 	var/door_type = "house"
 	var/opaque = 1
@@ -226,145 +226,145 @@
 	return !density
 
 // Fallout 13 general doors directory
-
+*/
 /obj/structure/simple_door/house
 	icon_state = "house"
-	door_type = "house"
-	can_disasemble = 1
-	can_hold_padlock = TRUE
+//	door_type = "house"
+//	can_disasemble = 1
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/interior
 	icon_state = "interior"
-	door_type = "interior"
-	can_disasemble = 1
-	can_hold_padlock = TRUE
+//	door_type = "interior"
+//	can_disasemble = 1
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/room
 	icon_state = "room"
-	door_type = "room"
-	can_disasemble = 1
-	can_hold_padlock = TRUE
+//	door_type = "room"
+//	can_disasemble = 1
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/dirtyglass
 	desc = "A glass is dirty, you can't see a thing behind it."
 	icon_state = "dirtyglass"
-	door_type = "dirtyglass"
-	can_hold_padlock = TRUE
+//	door_type = "dirtyglass"
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/fakeglass
 	name = "damaged wooden door"
 	desc = "It still somehow opens and closes."
 	icon_state = "fakeglass"
-	door_type = "fakeglass"
-	can_hold_padlock = TRUE
+//	door_type = "fakeglass"
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/brokenglass
 	name = "shattered door"
 	desc = "It still opens and closes."
 	icon_state = "brokenglass"
-	door_type = "brokenglass"
-	opaque = 0
-	can_hold_padlock = TRUE
+//	door_type = "brokenglass"
+//	opaque = 0
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/glass
 	desc = "A glass is quite clean, someone took care of this door."
 	icon_state = "glass"
-	door_type = "glass"
-	opaque = 0
-	can_hold_padlock = TRUE
+//	door_type = "glass"
+//	opaque = 0
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/wood
 	icon_state = "wood"
-	door_type = "wood"
-	can_disasemble = 1
-	can_hold_padlock = TRUE
+//	door_type = "wood"
+//	can_disasemble = 1
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/metal
 	name = "metal door"
-	material_type = /obj/item/stack/sheet/metal
-	open_sound = "sound/f13machines/doorstore_open.ogg"
-	close_sound = "sound/f13machines/doorstore_close.ogg"
+//	material_type = /obj/item/stack/sheet/metal
+//	open_sound = "sound/f13machines/doorstore_open.ogg"
+//	close_sound = "sound/f13machines/doorstore_close.ogg"
 	explosion_block = 2
 
 /obj/structure/simple_door/metal/dirtystore
 	desc = "A metal door with dirty glass, you can't see a thing behind it."
 	icon_state = "dirtystore"
-	door_type = "dirtystore"
-	can_hold_padlock = TRUE
+//	door_type = "dirtystore"
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/metal/store
 	icon_state = "store"
-	door_type = "store"
-	opaque = 0
-	can_disasemble = 1
-	can_hold_padlock = TRUE
+//	door_type = "store"
+//	opaque = 0
+//	can_disasemble = 1
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/metal/barred
 	name = "barred door"
 	desc = "Bars. No matter which side we're on, aren't we always behind them?"
 	icon_state = "barred"
-	door_type = "barred"
-	open_sound = "sound/f13machines/doorchainlink_open.ogg"
-	close_sound = "sound/f13machines/doorchainlink_close.ogg"
-	opaque = 0
-	can_hold_padlock = TRUE
+//	door_type = "barred"
+//	open_sound = "sound/f13machines/doorchainlink_open.ogg"
+//	close_sound = "sound/f13machines/doorchainlink_close.ogg"
+//	opaque = 0
+//	can_hold_padlock = TRUE
 
 /obj/structure/simple_door/metal/ventilation
 	name = "ventilation system"
 	desc = "As you take a closer look, you notice a handle at the bottom of ventilation system access hatch."
 	icon_state = "ventilation"
-	door_type = "ventilation"
-	open_sound = "sound/f13machines/doorhidden_open.ogg"
-	close_sound = "sound/f13machines/doorhidden_close.ogg"
-	hard_open = 0
-	opening_time = 25
-	closing_time = 20
+//	door_type = "ventilation"
+//	open_sound = "sound/f13machines/doorhidden_open.ogg"
+//	close_sound = "sound/f13machines/doorhidden_close.ogg"
+//	hard_open = 0
+//	opening_time = 25
+//	closing_time = 20
 
 /obj/structure/simple_door/metal/vault
 	name = "vault wall"
 	desc = "A sturdy and cold metal wall."
 	icon = 'icons/fallout/turfs/walls/vault.dmi'
 	icon_state = "vaultfwall"
-	door_type = "vaultfwall"
-	open_sound = "sound/f13items/flashlight_on.ogg"
-	close_sound = "sound/f13items/flashlight_off.ogg"
+//	door_type = "vaultfwall"
+//	open_sound = "sound/f13items/flashlight_on.ogg"
+//	close_sound = "sound/f13items/flashlight_off.ogg"
 
 /obj/structure/simple_door/metal/vaultreinforced
 	name = "vault reinforced wall"
 	desc = "A wall built to withstand an atomic explosion."
 	icon = 'icons/fallout/turfs/walls/vault_reinforced.dmi'
 	icon_state = "vaultfrwall"
-	door_type = "vaultfrwall"
-	open_sound = "sound/f13items/flashlight_on.ogg"
-	close_sound = "sound/f13items/flashlight_off.ogg"
+//	door_type = "vaultfrwall"
+//	open_sound = "sound/f13items/flashlight_on.ogg"
+//	close_sound = "sound/f13items/flashlight_off.ogg"
 
 /obj/structure/simple_door/blast
 	name = "blast door"
 	desc = "A blast door, alternatively referred to as a shielded door or safety door, is a type of door designed to be especially reliable and durable."
 	icon_state = "blastdoor"
-	door_type = "blastdoor"
-	material_type = /obj/item/stack/sheet/plasteel
-	open_sound = "sound/f13machines/doorblast_open.ogg"
-	close_sound = "sound/f13machines/doorblast_close.ogg"
+//	door_type = "blastdoor"
+//	material_type = /obj/item/stack/sheet/plasteel
+//	open_sound = "sound/f13machines/doorblast_open.ogg"
+//	close_sound = "sound/f13machines/doorblast_close.ogg"
 	explosion_block = 10
-	hard_open = 0
-	opening_time = 30
-	closing_time = 20
+//	hard_open = 0
+//	opening_time = 30
+//	closing_time = 20
 
 /obj/structure/simple_door/bunker
 	name = "airlock"
 	desc = "An olive green painted airlock.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
 	icon_state = "bunker"
-	door_type = "bunker"
-	material_type = /obj/item/stack/sheet/metal
-	open_sound = "sound/f13machines/doorairlock_open.ogg"
-	close_sound = "sound/f13machines/doorairlock_close.ogg"
+//	door_type = "bunker"
+//	material_type = /obj/item/stack/sheet/metal
+//	open_sound = "sound/f13machines/doorairlock_open.ogg"
+//	close_sound = "sound/f13machines/doorairlock_close.ogg"
 	explosion_block = 5
-	hard_open = 0
+//	hard_open = 0
 
 /obj/structure/simple_door/bunker/glass
 	desc = "An olive green painted airlock, with semi-transparent glass window.<br>The door mechanism itself is a complex mix of an electic engine and hydraulic motion.<br>This particular door looks like a pre-War military tech."
 	icon_state = "bunkerglass"
-	door_type = "bunkerglass"
+//	door_type = "bunkerglass"
 	explosion_block = 4 //A glass window in it, reduces the resistance, am I right?
-	opaque = 0
+//	opaque = 0

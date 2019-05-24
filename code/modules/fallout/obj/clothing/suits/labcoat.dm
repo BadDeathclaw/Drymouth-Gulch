@@ -2,7 +2,6 @@
 
 /obj/item/clothing/suit/toggle/labcoat/f13
 	icon = 'icons/fallout/clothing/suits.dmi'
-	self_weight = 2
 
 /obj/item/clothing/suit/toggle/labcoat/f13/emergency
 	name = "first responder jacket"
@@ -25,7 +24,7 @@
 	item_state = "owl"
 	body_parts_covered = CHEST
 	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/weapon/fancy/cigarettes,/obj/item/device/flashlight,/obj/item/weapon/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/khan
 	name = "Great Khan jacket"
@@ -34,7 +33,7 @@
 	item_state = "jensencoat"
 	body_parts_covered = CHEST
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/weapon/fancy/cigarettes,/obj/item/device/flashlight,/obj/item/weapon/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/weapon,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
 
 /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	name = "followers lab coat"
@@ -43,4 +42,4 @@
 	item_state = "labcoat"
 	body_parts_covered = CHEST
 	armor = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 10, rad = 10, fire = 10, acid = 10)
-	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/weapon/stamp,/obj/item/weapon/reagent_containers/food/drinks/flask,/obj/item/weapon/melee,/obj/item/weapon/storage/box/matches,/obj/item/weapon/lighter,/obj/item/clothing/mask/cigarette,/obj/item/weapon/storage/fancy/cigarettes,/obj/item/device/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/weapon/scalpel,/obj/item/weapon/surgical_drapes,/obj/item/weapon/cautery,/obj/item/weapon/hemostat,/obj/item/weapon/retractor,/obj/item/weapon/storage/pill_bottle/dice,/obj/item/weapon/dice)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)

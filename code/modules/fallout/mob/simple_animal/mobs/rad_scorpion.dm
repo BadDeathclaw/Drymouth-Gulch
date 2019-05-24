@@ -10,21 +10,20 @@
 	icon_gib = "radscorpion_g"
 	turns_per_move = 5
 	see_in_dark = 10
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/weapon/reagent_containers/food/snacks/spiderleg = 8)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
 	response_help  = "touches"
 	response_disarm = "hits"
 	response_harm   = "kicks"
 	maxHealth = 80
 	health = 80
-	self_weight = 120
 
 	faction = list("hostile", "scorpion")
 
-	sound_speak_chance = 5
-	sound_speak = list('sound/f13npc/scorpion_charge1.ogg','sound/f13npc/scorpion_charge2.ogg','sound/f13npc/scorpion_charge3.ogg')
+//	sound_speak_chance = 5
+//	sound_speak = list('sound/f13npc/scorpion_charge1.ogg','sound/f13npc/scorpion_charge2.ogg','sound/f13npc/scorpion_charge3.ogg')
 
-	aggro_sound_chance = 50
-	aggro_sound = 'sound/f13npc/scorpion_alert.ogg'
+//	aggro_sound_chance = 50
+//	aggro_sound = 'sound/f13npc/scorpion_alert.ogg'
 
 	death_sound = 'sound/f13npc/scorpion_death.ogg'
 
@@ -37,7 +36,7 @@
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 10
 	aggro_vision_range = 8
-	idle_vision_range = 7
+//	idle_vision_range = 7
 
 /mob/living/simple_animal/hostile/rad_scorpion/black
 	name = "giant rad scorpion"

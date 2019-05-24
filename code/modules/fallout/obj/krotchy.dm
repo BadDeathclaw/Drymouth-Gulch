@@ -33,6 +33,16 @@
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "krotchybox1"
 	name = "krotchy doll box"
-	storage_slots = 1
-	can_hold = list(/obj/item/weapon/krotchy)
-	spawn_type = /obj/item/weapon/krotchy
+
+/obj/item/weapon/storage/fancy/krotchy_box/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.can_hold = typecacheof(list(/obj/item/weapon/krotchy))
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 14
+	STR.max_items = 1
+
+/obj/item/storage/fancy/krotchy_box/PopulateContents()
+	GET_COMPONENT(STR, /datum/component/storage)
+	for(var/i = 1 to STR.max_items)
+		new /obj/item/weapon/krotchy(src)

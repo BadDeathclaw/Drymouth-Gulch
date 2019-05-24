@@ -7,7 +7,7 @@
 	icon_state = "single"
 	tank_volume = 500
 	reagent_id = "stablemutationtoxin"
-	self_weight = 200
+//	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/dangerous
 	name = "waste barrel"
@@ -15,10 +15,10 @@
 	icon_state = "dangerous"
 	tank_volume = 500
 	reagent_id = "radium"
-	rad_heavy_range = 1
-	rad_light_range = 4
-	rad_severity = 10
-	self_weight = 200
+//	rad_heavy_range = 1
+//	rad_light_range = 4
+//	rad_severity = 10
+//	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/dangerous/New()
 	..()
@@ -36,7 +36,7 @@
 	icon_state = "explosive"
 	tank_volume = 500
 	reagent_id = "welding_fuel"
-	self_weight = 200
+//	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/explosive/boom()
 	explosion(get_turf(src), 0, 1, tank_volume/200, flame_range = tank_volume/200)
@@ -61,7 +61,7 @@
 	icon_state = "one_b"
 	tank_volume = 500
 	reagent_id = "water"
-	self_weight = 200
+//	self_weight = 200
 
 /obj/structure/reagent_dispensers/barrel/two
 	name = "two old barrels"
@@ -70,7 +70,7 @@
 	tank_volume = 1000
 	reagent_id = "lube"
 	anchored = 1
-	self_weight = 400
+//	self_weight = 400
 
 /obj/structure/reagent_dispensers/barrel/three
 	name = "three old barrels"
@@ -79,13 +79,13 @@
 	tank_volume = 1500
 	reagent_id = "water"
 	anchored = 1
-	self_weight = 600
+//	self_weight = 600
 
 /obj/structure/reagent_dispensers/barrel/four
 	name = "four old barrels"
 	desc = "Ancient containers with something inside of them. Or are they empty? Actually, that's a lot of barrels standing in a single spot..."
 	icon_state = "four_b"
 	tank_volume = 800
-	reagent_id = "mutagen"
+	reagent_id = "FEV_solution"
 	anchored = 1
-	self_weight = 60
+//	self_weight = 60

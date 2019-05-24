@@ -8,7 +8,6 @@
 	obj_integrity = 50
 	max_integrity = 50
 	density = 1
-	self_weight = 10
 
 /obj/structure/tires/half
 	name = "half tire"
