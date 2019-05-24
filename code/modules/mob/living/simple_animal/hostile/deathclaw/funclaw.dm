@@ -11,7 +11,7 @@
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
 	var/mob/living/M = target
-	if(!istype(M, /mob/living/carbon/human) || M.health > 60)
+	if(!ishuman(M) || M.health > 60)
 		..()
 		return
 
