@@ -33,12 +33,12 @@
 			chosen_hole = null
 			while (chosen_hole == null)
 				pickNewHole(M)
-			pound_cooldown = world.time + 70
+			pound_cooldown = world.time + 100
 
 		pound(M)
-		sleep(rand(10, 30))
+		sleep(rand(1, 3))
 		pound(M)
-		sleep(rand(10, 30))
+		sleep(rand(1, 3))
 		pound(M)
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
