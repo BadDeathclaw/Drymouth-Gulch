@@ -5,7 +5,7 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	var/atom/target
 	var/ranged = 0
-	var/rapid = 0 //shoots 3 projectiles if 1, and 6 projectiles if 2
+	var/extra_projectiles = 0 //how many projectiles above 1?
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
@@ -332,18 +332,9 @@
 	if(CheckFriendlyFire(A))
 		return
 	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
-
-	if(rapid)
-		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
-		addtimer(cb, 1)
-		addtimer(cb, 4)
-		addtimer(cb, 6)
-		if(rapid == 2)
-			addtimer(cb, 8)
-			addtimer(cb, 10)
-			addtimer(cb, 12)
-	else
-		Shoot(A)
+	Shoot(A)
+	for(var/i in 1 to extra_projectiles)
+		addtimer(CALLBACK(src, .proc/Shoot, A), i * 2)
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 

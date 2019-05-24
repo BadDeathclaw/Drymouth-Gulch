@@ -44,8 +44,8 @@
 	attacktext = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/plasma/scatter
-	rapid = 1
-	ranged = 1
+	extra_projectiles = 2
+	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
 
@@ -60,12 +60,11 @@
 	icon_dead = "protectron_dead"
 	health = 160
 	maxHealth = 160
-	healable = 0
 	speed = 4
 	melee_damage_lower = 45
 	melee_damage_upper = 45
-	rapid = 1
-	ranged = 1
+	extra_projectiles = 2
+	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
 	attacktext = "slaps"
@@ -73,7 +72,7 @@
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
 	faction = list("wastebot")
-	check_friendly_fire = 1
+	check_friendly_fire = TRUE
 
 /mob/living/simple_animal/hostile/handy/sentrybot
 	name = "sentry bot"
@@ -83,75 +82,55 @@
 	icon_dead = "sentrybot"
 	health = 360
 	maxHealth = 360
-	healable = 0
-	speed = 1
 	melee_damage_lower = 85
 	melee_damage_upper = 85
-	rapid = 2 //6 projectiles. oof.
-	ranged_cooldown_time = 15 //brrrrrrrrrrrrt
-	ranged = 1
-	retreat_distance = 0
+	extra_projectiles = 5 //6 projectiles
+	ranged_cooldown_time = 12 //brrrrrrrrrrrrt
+	ranged = TRUE
 	minimum_distance = 0
+	del_on_death = FALSE
 	attacktext = "pulverizes"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol/weak
 	faction = list("wastebot")
-	check_friendly_fire = 1
+	check_friendly_fire = TRUE
 
 /obj/item/projectile/beam/laser/pistol/weak
 	damage = 10 //quantity over quality
 
 /mob/living/simple_animal/hostile/handy/sentrybot/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
+		CRASH("[src] sentrybot invoked bullet_act() without a projectile")
 		return
-	if(prob(10))
+	if(prob(10) && health > 1)
 		visible_message("<span class='danger'>\The [src] releases a defensive flashbang!</span>")
-		sleep(3)
 		var/flashbang_turf = get_turf(src)
 		if(!flashbang_turf)
 			return
-		for(var/mob/living/M in get_hearers_in_view(4, flashbang_turf))
-			bang(get_turf(M), M)
+		var/obj/item/grenade/flashbang/sentry/S = new /obj/item/grenade/flashbang/sentry(flashbang_turf)
+		S.preprime(user = null)
 	if(prob(75) || Proj.damage > 26) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want sentrybots to be
 		return ..()
 	else
 		visible_message("<span class='danger'>\The [Proj] bounces off \the [src]'s armor plating!</span>")
-		return 0
+		return FALSE
 
-/mob/living/simple_animal/hostile/handy/sentrybot/proc/bang(turf/T , mob/living/M)
-	if(M.stat == DEAD)	//They're dead!
-		return
-	M.show_message("<span class='warning'>BANG</span>", 2)
-	playsound(loc, 'sound/weapons/flashbang.ogg', 100, 1)
-	var/distance = max(0,get_dist(get_turf(src),T))
+/mob/living/simple_animal/hostile/handy/sentrybot/proc/do_death_beep()
+	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
+	visible_message("<span class='warning'>You hear an ominous beep coming from [src]!</span>", "<span class='warning'>You hear an ominous beep!</span>")
 
-//Flash
-	if(M.flash_act(affect_silicon = 1))
-		M.Knockdown(max(200/max(1,distance), 60))
-//Bang
-	if(!distance || loc == M || loc == M.loc)
-		M.Knockdown(200)
-		M.soundbang_act(1, 200, 10, 15)
-
-	else
-		M.soundbang_act(1, max(200/max(1,distance), 60), rand(0, 5))
-
-/mob/living/simple_animal/hostile/handy/sentrybot/Destroy()
-	do_sparks(3, TRUE, src)
-	visible_message("<span class='danger'>\The [src] begins to beep ominously!</span>")
-	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
-	sleep(10)
-	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
-	sleep(10)
-	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
-	sleep(10)
-	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
-	sleep(10)
+/mob/living/simple_animal/hostile/handy/sentrybot/proc/self_destruct()
 	explosion(src,2,4,8,8)
+	qdel(src)
+
+/mob/living/simple_animal/hostile/handy/sentrybot/death()
+	do_sparks(3, TRUE, src)
+	for(var/i in 1 to 3)
+		addtimer(CALLBACK(src, .proc/do_death_beep), i * 1 SECONDS)
+	addtimer(CALLBACK(src, .proc/self_destruct), 4 SECONDS)
 	return ..()
 
 /mob/living/simple_animal/hostile/handy/sentrybot/Aggro()
-    ..()
-    summon_backup(15)
-    say("Alert: hostiles detected. Engaging.")
+	. = ..()
+	summon_backup(15)

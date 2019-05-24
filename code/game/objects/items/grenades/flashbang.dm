@@ -4,13 +4,14 @@
 	item_state = "flashbang"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
+	var/range = 7
 
 /obj/item/grenade/flashbang/prime()
 	update_mob()
 	var/flashbang_turf = get_turf(src)
 	if(!flashbang_turf)
 		return
-	for(var/mob/living/M in get_hearers_in_view(7, flashbang_turf))
+	for(var/mob/living/M in get_hearers_in_view(range, flashbang_turf))
 		bang(get_turf(M), M)
 	qdel(src)
 
@@ -31,3 +32,10 @@
 
 	else
 		M.soundbang_act(1, max(200/max(1,distance), 60), rand(0, 5))
+
+/obj/item/grenade/flashbang/sentry
+	name = "defensive flashbang" //for sentrybots
+	desc = "Why are you staring at this?!"
+	range = 4
+	det_time = 10 //1 second
+	alert_admins = 0 //doesn't ping admins when detonated, since it's sentrybot-only
