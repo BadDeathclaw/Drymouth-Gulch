@@ -51,7 +51,7 @@
 		if(2)
 			chosen_hole = CUM_TARGET_THROAT
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pound(var/mob/living/M)
+/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pound(mob/living/M)
 	if(refactory_period > 0)
 		return
 
