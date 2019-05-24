@@ -41,7 +41,7 @@
 		sleep(rand(1, 3) + 0)
 		pound(M)
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(var/mob/living/M)
+/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
 	switch(rand(2))
 		if(0)
 			chosen_hole = CUM_TARGET_ANUS
