@@ -1,7 +1,7 @@
 //Fallout 13 main windows directory
 
 /obj/structure/window/fulltile/ruins
-	icon = 'icons/fallout/objects/structures/windows.dmi'
+	icon = 'icons/obj/wood_window.dmi'
 	icon_state = "ruinswindow"
 	dir = 5
 	max_integrity = 20
@@ -14,7 +14,7 @@
 	max_integrity = 1
 
 /obj/structure/window/fulltile/house
-	icon = 'icons/fallout/objects/structures/windows.dmi'
+	icon = 'icons/obj/wood_window.dmi'
 	icon_state = "housewindow"
 	dir = 5
 	max_integrity = 40
@@ -27,7 +27,7 @@
 	max_integrity = 1
 
 /obj/structure/window/fulltile/wood
-	icon = 'icons/fallout/objects/structures/windows.dmi'
+	icon = 'icons/obj/wood_window.dmi'
 	icon_state = "woodwindow"
 	dir = 5
 	max_integrity = 50
@@ -40,7 +40,7 @@
 	max_integrity = 1
 
 /obj/structure/window/fulltile/store
-	icon = 'icons/fallout/objects/structures/windows.dmi'
+	icon = 'icons/obj/wood_window.dmi'
 	icon_state = "storewindowhorizontal"
 	dir = 5
 	max_integrity = 100
