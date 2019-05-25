@@ -605,12 +605,11 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		if(H.stat != DEAD) //contine fucking arround
 			continue
 		for(var/F in faction)
-			if(F in H.faction)
+			if(!(F in H.faction))
 				continue
 			if(F == "neutral" || LAZYFIND(faction_deaths, H.real_name)) //same here
 				continue
 			else
 				LAZYADD(faction_deaths, H.real_name)
-				//to_chat(src, faction_deaths.len) //???? what the fuck?
 				if(LAZYLEN(faction_deaths) >= 3)
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "saw_many_unburied_faction", /datum/mood_event/saw_many_unburied_faction)
