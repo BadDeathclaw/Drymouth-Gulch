@@ -41,7 +41,7 @@
 	base_overlay.appearance_flags = RESET_COLOR
 	add_overlay(base_overlay)
 
-/obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+/obj/item/dildo/attack(mob/living/M, mob/living/user)
 	var/message = ""
 	if(istype(M, /mob/living/carbon/human) && user.zone_selected == "groin" && M.is_bottomless())
 		if(hole == CUM_TARGET_VAGINA && M.has_vagina())
@@ -55,7 +55,7 @@
 	else
 		return ..()
 
-/obj/item/dildo/attack_self(mob/living/carbon/human/user as mob)
+/obj/item/dildo/attack_self(mob/living/user as mob)
 	if(hole == CUM_TARGET_VAGINA)
 		hole = CUM_TARGET_ANUS
 	else
@@ -118,9 +118,9 @@
 	name = "F.I.S.T.R. Machine"
 	desc = "Fully Integrated Sexual Tension Relief Machine"
 
-/obj/item/dildo/cyborg/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
+/obj/item/dildo/cyborg/attack(mob/living/M, mob/living/user)
 	var/message = ""
-	if(istype(M, /mob/living/carbon/human) && M.is_bottomless())
+	if(istype(M, /mob/living) && M.is_bottomless())
 		if(hole == CUM_TARGET_VAGINA && M.has_vagina())
 			message = (user == M) ? pick("fucks their own pussy with \the [src]","shoves the [src] into their pussy", "jams the [src] into their pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
 		else if(hole == CUM_TARGET_ANUS && M.has_anus())

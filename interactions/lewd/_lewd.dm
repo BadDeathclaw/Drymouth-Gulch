@@ -19,29 +19,37 @@
 */
 //I'm sorry, lewd should not have mob procs such as life() and such in it.
 
-/mob/living/carbon/human/proc/has_penis()
+/mob/living/proc/has_penis()
 	return has_penis
 
-/mob/living/carbon/human/proc/has_vagina()
+/mob/living/proc/has_vagina()
 	return has_vagina
 
-/mob/living/carbon/human/proc/has_breasts()
+/mob/living/proc/has_breasts()
 	return has_breasts
 
-/mob/living/carbon/human/proc/has_anus()
+/mob/living/proc/has_anus()
 	return TRUE
 
-/mob/living/carbon/human/proc/has_hand()
+/mob/living/proc/has_hand()
 	if(get_num_arms() < 1)
 		return FALSE
 	return TRUE
 
-/mob/living/carbon/human/proc/is_topless()
-	if((!(wear_suit) || !(wear_suit.body_parts_covered & CHEST)) && (!(w_uniform) || !(w_uniform.body_parts_covered & CHEST)))
+/mob/living/proc/is_topless()
+	if(istype(src, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = src
+		if((!(H.wear_suit) || !(H.wear_suit.body_parts_covered & CHEST)) && (!(H.w_uniform) || !(H.w_uniform.body_parts_covered & CHEST)))
+			return TRUE
+	else
 		return TRUE
 
-/mob/living/carbon/human/proc/is_bottomless()
-	if((!(wear_suit) || !(wear_suit.body_parts_covered & GROIN)) && (!(w_uniform) || !(w_uniform.body_parts_covered & GROIN)))
+/mob/living/proc/is_bottomless()
+	if(istype(src, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = src
+		if((!(H.wear_suit) || !(H.wear_suit.body_parts_covered & GROIN)) && (!(H.w_uniform) || !(H.w_uniform.body_parts_covered & GROIN)))
+			return TRUE
+	else
 		return TRUE
 
 /proc/cum_splatter(target) // Like blood_splatter(), but much more questionable on a resume.
@@ -49,7 +57,7 @@
 	//var/obj/effect/decal/cleanable/cum/C = (get_turf(target))
 	//C.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
-/mob/living/carbon/human/proc/moan()
+/mob/living/proc/moan()
 	if(!(prob(lust / lust_tolerance * 65)))
 		return
 	var/moan = rand(1, 7)
@@ -62,7 +70,7 @@
 		src.emote("<font color=purple><B>[src]</B> [pick("mimes a pleasured moan","moans in silence")].</font>")
 	lastmoan = moan
 
-/mob/living/carbon/human/proc/cum(mob/living/carbon/human/partner, target_orifice)
+/mob/living/proc/cum(mob/living/partner, target_orifice)
 	var/message
 
 	if(has_penis())
@@ -147,21 +155,21 @@
 		refactory_period = rand(250, 400) - sexual_potency
 		src.set_drugginess(rand(5, 10))
 
-/mob/living/carbon/human/cum(mob/living/carbon/human/partner, target_orifice)
+/mob/living/cum(mob/living/partner, target_orifice)
 	if(multiorgasms < sexual_potency)
 		cum_splatter((gender == MALE && partner) ? partner : src)
 	. = ..()
 
-/mob/living/carbon/human/proc/is_fucking(mob/living/carbon/human/partner, orifice)
+/mob/living/proc/is_fucking(mob/living/partner, orifice)
 	if(partner == last_partner && orifice == last_orifice)
 		return TRUE
 	return FALSE
 
-/mob/living/carbon/human/proc/set_is_fucking(mob/living/carbon/human/partner, orifice)
+/mob/living/proc/set_is_fucking(mob/living/partner, orifice)
 	last_partner = partner
 	last_orifice = orifice
 
-/mob/living/carbon/human/proc/do_fucking_animation(fuckdir) // Today I wrote 'var/fuckdir' with a straight face. Not a milestone I ever expected to pass. dont worry, we dont use heretic proc/name(var/dir)
+/mob/living/proc/do_fucking_animation(fuckdir) // Today I wrote 'var/fuckdir' with a straight face. Not a milestone I ever expected to pass. dont worry, we dont use heretic proc/name(var/dir)
 	if(!fuckdir)
 		return
 
@@ -195,14 +203,14 @@
   --------------------------------------------------
  */
 
-/mob/living/carbon/human/proc/do_oral(mob/living/carbon/human/partner)
+/mob/living/proc/do_oral(mob/living/partner)
 	var/message
 	var/lust_increase = NORMAL_LUST
 
 	if(partner.is_fucking(src, CUM_TARGET_MOUTH))
 		if(prob(partner.sexual_potency))
-			if(istype(src, /mob/living/carbon/human)) // Argh.
-				var/mob/living/carbon/human/H = src
+			if(istype(src, /mob/living)) // Argh.
+				var/mob/living/H = src
 				H.adjustOxyLoss(3)
 			message = "goes in deep on \the [partner]."
 			lust_increase += 5
@@ -273,7 +281,7 @@
 	do_fucking_animation(get_dir(src, partner))
 	lust_increase = NORMAL_LUST //RESET IT REE
 
-/mob/living/carbon/human/proc/do_facefuck(mob/living/carbon/human/partner)
+/mob/living/proc/do_facefuck(mob/living/partner)
 	var/message
 	var/retaliation_message = FALSE
 
@@ -290,10 +298,10 @@
 			if(partner.a_intent == INTENT_HARM)
 				src.adjustBruteLoss(5)
 				retaliation_message = pick(
-					"bites furiously at \the [partner]'s legs.",
-					"tightens teeth against \the [partner]'s pussy.",
+					"bites furiously at \the [src]'s legs.",
+					"tightens teeth against \the [src]'s pussy.",
 					"looks deeply displeased to be there.",
-					"struggles to escape from between \the [partner]'s thighs.",
+					"struggles to escape from between \the [src]'s thighs.",
 				)
 		else if(has_penis())
 			message = pick(
@@ -307,17 +315,17 @@
 			if(partner.a_intent == INTENT_HARM)
 				src.adjustBruteLoss(5)
 				retaliation_message = pick(
-					"bites down hard on \the [partner]'s cock.",
-					"tightens teeth against \the [partner]'s dick until blood flows.",
-					"stares up from between \the [partner]'s knees, blood on their teeth.",
-					"struggles to escape from between \the [partner]'s legs.",
+					"bites down hard on \the [src]'s cock.",
+					"tightens teeth against \the [src]'s dick until blood flows.",
+					"stares up from between \the [src]'s knees, blood on their teeth.",
+					"struggles to escape from between \the [src]'s legs.",
 				)
 				if(prob(5)) // dick crit
 					src.adjustBruteLoss(20)
 					retaliation_message = pick(
-						"tightens teeth onto \the [partner]'s cock, messily tearing it away!",
-						"bites down on \the [partner]'s cock and doesn't let go until it rips off!",
-						"bites \the [partner]'s cock off completely in the struggle!",
+						"tightens teeth onto \the [src]'s cock, messily tearing it away!",
+						"bites down on \the [src]'s cock and doesn't let go until it rips off!",
+						"bites \the [src]'s cock off completely in the struggle!",
 					)
 					src.has_penis = FALSE
 		else
@@ -332,10 +340,10 @@
 			if(partner.a_intent == INTENT_HARM)
 				src.adjustBruteLoss(5)
 				retaliation_message = pick(
-					"bites down hard on \the [partner]'s leg.",
-					"tightens teeth between \the [partner]'s legs.",
-					"stares up from between \the [partner]'s knees, blood on their teeth.",
-					"struggles to escape from between \the [partner]'s legs.",
+					"bites down hard on \the [src]'s leg.",
+					"tightens teeth between \the [src]'s legs.",
+					"stares up from between \the [src]'s knees, blood on their teeth.",
+					"struggles to escape from between \the [src]'s legs.",
 				)
 	else
 		if(has_vagina())
@@ -357,7 +365,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/thigh_smother(mob/living/carbon/human/partner)
+/mob/living/proc/thigh_smother(mob/living/partner)
 
 	var/message
 	var/lust_increase = 1
@@ -422,7 +430,7 @@
 
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_throatfuck(mob/living/carbon/human/partner)
+/mob/living/proc/do_throatfuck(mob/living/partner)
 	var/message
 	var/retaliation_message = FALSE
 
@@ -433,17 +441,17 @@
 			"brutally shoves their dick deep into \the [partner]'s mouth.")]"
 		if(rand(3))
 			partner.emote("chokes on \The [src]")
-			if(prob(1) && istype(partner, /mob/living/carbon/human))
-				var/mob/living/carbon/human/H = partner
+			if(prob(1) && istype(partner, /mob/living))
+				var/mob/living/H = partner
 				H.adjustOxyLoss(5)
 				add_logs(src, partner, "attacked", src) //cmon, it's 1 in 100. how can it spam logs
 		if(partner.a_intent == INTENT_HARM)
 			src.adjustBruteLoss(5)
 			retaliation_message = pick(
-				"bites down hard on \the [partner]'s cock.",
-				"tightens teeth against \the [partner]'s dick until blood flows.",
-				"stares up from between \the [partner]'s knees, blood on their teeth.",
-				"struggles to escape from between \the [partner]'s legs.",
+				"bites down hard on \the [src]'s cock.",
+				"tightens teeth against \the [src]'s dick until blood flows.",
+				"stares up from between \the [src]'s knees, blood on their teeth.",
+				"struggles to escape from between \the [src]'s legs.",
 			)
 	else if(is_fucking(partner, CUM_TARGET_MOUTH))
 		message = "thrusts deeper into \the [partner]'s mouth and down their throat."
@@ -459,7 +467,7 @@
 	handle_post_sex(NORMAL_LUST, CUM_TARGET_THROAT, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
-/mob/living/carbon/human/proc/nut_face(var/mob/living/carbon/human/partner)
+/mob/living/proc/nut_face(var/mob/living/partner)
 
 	var/message
 
@@ -481,7 +489,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_anal(mob/living/carbon/human/partner)
+/mob/living/proc/do_anal(mob/living/partner)
 	var/message
 
 	if(is_fucking(partner, CUM_TARGET_ANUS))
@@ -497,7 +505,7 @@
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_vaginal(mob/living/carbon/human/partner)
+/mob/living/proc/do_vaginal(mob/living/partner)
 	var/message
 
 	if(is_fucking(partner, CUM_TARGET_VAGINA))
@@ -515,7 +523,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_mount(mob/living/carbon/human/partner)
+/mob/living/proc/do_mount(mob/living/partner)
 	var/message
 
 	if(partner.is_fucking(src, CUM_TARGET_VAGINA))
@@ -531,7 +539,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_mountass(mob/living/carbon/human/partner)
+/mob/living/proc/do_mountass(mob/living/partner)
 	var/message
 
 	if(partner.is_fucking(src, CUM_TARGET_ANUS))
@@ -546,8 +554,8 @@
 	handle_post_sex(NORMAL_LUST, null, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
-	
-/mob/living/carbon/human/proc/do_tribadism(mob/living/carbon/human/partner)
+
+/mob/living/proc/do_tribadism(mob/living/partner)
 	var/message
 
 	if(partner.is_fucking(src, CUM_TARGET_VAGINA))
@@ -565,7 +573,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_fingering(mob/living/carbon/human/partner)
+/mob/living/proc/do_fingering(mob/living/partner)
 	visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].",
 		"fingers \the [partner]'s pussy.",
 		"fingers \the [partner] hard.")]</font>")
@@ -574,7 +582,7 @@
 	partner.dir = get_dir(partner, src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_fingerass(mob/living/carbon/human/partner)
+/mob/living/proc/do_fingerass(mob/living/partner)
 	visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].",
 		"fingers \the [partner]'s asshole.",
 		"fingers \the [partner] hard.")]</font>")
@@ -583,14 +591,14 @@
 	partner.dir = get_dir(partner, src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_rimjob(mob/living/carbon/human/partner)
+/mob/living/proc/do_rimjob(mob/living/partner)
 	visible_message("<font color=purple><b>\The [src]</b> licks \the [partner]'s asshole.</font>")
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, src)
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_handjob(mob/living/carbon/human/partner)
+/mob/living/proc/do_handjob(mob/living/partner)
 	var/message
 
 	if(partner.is_fucking(src, CUM_TARGET_HAND))
@@ -608,7 +616,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_breastfuck(mob/living/carbon/human/partner)
+/mob/living/proc/do_breastfuck(mob/living/partner)
 	var/message
 
 	if(is_fucking(partner, CUM_TARGET_BREASTS))
@@ -627,7 +635,7 @@
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_mountface(mob/living/carbon/human/partner)
+/mob/living/proc/do_mountface(mob/living/partner)
 	var/message
 
 	if(is_fucking(partner, GRINDING_FACE_WITH_ANUS))
@@ -645,7 +653,7 @@
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/do_lickfeet(mob/living/carbon/human/partner)
+/mob/living/proc/do_lickfeet(mob/living/partner)
 	var/message
 
 	if(partner.get_item_by_slot(SLOT_SHOES) != null)
@@ -660,7 +668,7 @@
 	do_fucking_animation(get_dir(src, partner))
 
 /*Grinding YOUR feet in TARGET's face*/
-/mob/living/carbon/human/proc/do_grindface(mob/living/carbon/human/partner)
+/mob/living/proc/do_grindface(mob/living/partner)
 	var/message
 
 	if(is_fucking(partner, GRINDING_FACE_WITH_FEET))
@@ -702,7 +710,7 @@
 	do_fucking_animation(get_dir(src, partner))
 
 	/*Grinding YOUR feet in TARGET's mouth*/
-/mob/living/carbon/human/proc/do_grindmouth(mob/living/carbon/human/partner)
+/mob/living/proc/do_grindmouth(mob/living/partner)
 	var/message
 
 	if(is_fucking(partner, GRINDING_MOUTH_WITH_FEET))
@@ -741,14 +749,14 @@
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
 
-/mob/living/carbon/human/proc/get_shoes()
+/mob/living/proc/get_shoes()
 	var/obj/A = get_item_by_slot(SLOT_SHOES)
 	if(findtext (A.name,"the"))
 		return copytext(A.name, 3, (lentext(A.name)) + 1)
 	else
 		return A.name
 
-/mob/living/carbon/human/proc/handle_post_sex(amount, orifice, mob/living/carbon/human/partner)
+/mob/living/proc/handle_post_sex(amount, orifice, mob/living/partner)
 	sleep(5)
 
 	if(stat != CONSCIOUS)
