@@ -2,7 +2,7 @@ obj/item
 	var/list/components
 
 	attackby(obj/item/W, mob/user, params)
-		if(istype(components) && istype(W, /obj/item/weapon/screwdriver))
+		if(istype(components) && istype(W, /obj/item/screwdriver))
 			if(alert(user, "You want to disassemble [src]?",,"Yes","No") == "Yes")
 				if(do_after(user, 40*W.toolspeed, 1, target = src))
 					for(var/comp in components)
