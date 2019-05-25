@@ -1,7 +1,7 @@
 //Fallout 13 trash items directory
 
 /obj/item/trash/f13
-	icon = 'icons/fallout/objects/janitor.dmi'
+	icon = 'icons/fallout/trash.dmi'
 	icon_state = "null"
 
 /obj/item/trash/f13/bubblegum
