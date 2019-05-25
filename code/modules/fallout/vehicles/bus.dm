@@ -83,7 +83,7 @@
 
 /obj/structure/bus_door
 	name = "broken bus door"
-	icon = 'icons/fallout/objects/structures/trash.dmi'
+	icon = 'icons/fallout/trash.dmi'
 	icon_state = "bus_door"
 	anchored = 1
 	density = 0

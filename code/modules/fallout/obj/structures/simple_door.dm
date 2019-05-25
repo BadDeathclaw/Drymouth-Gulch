@@ -9,7 +9,7 @@
 /obj/structure/simple_door
 	name = "wooden door"
 	desc = "It opens and closes - nothing out of the ordinary."
-	icon = 'icons/fallout/objects/structures/doors.dmi'
+	icon = 'icons/obj/doors/wasteland_doors.dmi'
 	icon_state = "house"
 	opacity = 1
 	density = 1

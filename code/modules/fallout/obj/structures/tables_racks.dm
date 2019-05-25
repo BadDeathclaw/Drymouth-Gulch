@@ -15,7 +15,7 @@
 /obj/structure/table
 	name = "table"
 	desc = "A square piece of metal standing on four metal legs. It can not move."
-	icon = 'icons/fallout/objects/structures/tables.dmi'
+	icon = 'icons/obj/structures.dmi'
 	icon_state = "table"
 /*	density = 1
 	anchored = 1
@@ -287,7 +287,7 @@
 /obj/structure/table/wood/settler
 	desc = "A wooden table constructed by a carpentering amateur from various planks.<br>It's the work of wasteland settler."
 	icon_state = "settlertable"
-	icon = 'icons/fallout/objects/structures/tables.dmi'
+	icon = 'icons/obj/structures.dmi'
 //	icontype = "settlertable"
 	obj_integrity = 50
 	max_integrity = 50
