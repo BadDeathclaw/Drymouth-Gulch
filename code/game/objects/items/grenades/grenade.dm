@@ -17,7 +17,7 @@
 	var/det_time = 50
 	var/display_timer = 1
 	var/clumsy_check = GRENADE_CLUMSY_FUMBLE
-	var/alert_admins = 1
+	var/alert_admins = TRUE
 
 /obj/item/grenade/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] primes [src], then eats it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
