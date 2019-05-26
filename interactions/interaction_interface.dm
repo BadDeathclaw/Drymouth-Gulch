@@ -14,6 +14,8 @@
 		return
 	if(usr.restrained())
 		return
+	if(!ishuman(src))
+		return
 
 	user.try_interaction(src)
 
@@ -23,7 +25,7 @@
 	set category = "IC"
 	set src in view()
 
-	if(usr != src && !usr.restrained())
+	if(usr != src && !usr.restrained() && ishuman(src))
 		usr.try_interaction(src)
 
 /mob/living/try_interaction(mob/living/partner)
