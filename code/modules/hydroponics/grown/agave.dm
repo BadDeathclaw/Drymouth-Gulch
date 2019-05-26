@@ -1,7 +1,7 @@
 /obj/item/seeds/agave
 	name = "pack of agave seeds"
 	desc = "These seeds grow into agave."
-	icon = 'icons/fallout/objects/seeds.dmi'
+	icon = 'icons/obj/hydroponics/seeds.dmi'
 	icon_state = "seed-agave"
 	species = "agave"
 	plantname = "Agave"
@@ -23,4 +23,4 @@
 	name = "agave"
 	desc = "Strange grass. Looks safe."
 	icon_state = "agave"
-	icon = 'icons/fallout/objects/food&drinks/grown.dmi'
+	icon = 'icons/obj/hydroponics/harvest.dmi'

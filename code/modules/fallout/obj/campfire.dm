@@ -13,7 +13,7 @@
 	var/burned = 0
 	desc = "A warm, bright, and hopeful fire source - when it's burning, of course."
 
-	icon = 'icons/fallout/objects/structures/campfire.dmi'
+	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "campfire20"
 
 /obj/structure/campfire/Destroy()
