@@ -815,16 +815,6 @@
 	time = 20
 	category = CAT_DRUGS
 
-/datum/crafting_recipe/healpoultice
-	name = "Healing poultice"
-	result = /obj/item/reagent_containers/pill/patch/healpoultice
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
-				/obj/item/reagent_containers/food/snacks/grown/feracactus = 1,
-				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
-	time = 40
-	category = CAT_DRUGS
-
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
@@ -835,17 +825,13 @@
 	time = 20
 	category = CAT_DRUGS
 
-/datum/crafting_recipe/superstimpak
-	name = "Super Stimpak"
-	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
-	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-				/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola = 1,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1)
-	tools = list(/obj/item/lighter, /obj/item/screwdriver, /obj/item/wirecutters)
-	time = 90
-	category = CAT_DRUGS
+/datum/crafting_recipe/stimsyringe
+	name = "Recycled Stimpak"
+	result = /obj/item/reagent_containers/syringe
+	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1)
+	time = 20
+	category = CAT_MEDICAL
+
 
 /datum/crafting_recipe/slavecollar
 	name = "Slave Collar"
