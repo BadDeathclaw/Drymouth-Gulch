@@ -64,7 +64,7 @@
 /obj/item/reagent_containers/food/snacks/f13
 	name = "ERROR"
 	desc = "Badmins spawn shit!"
-	icon = 'icons/fallout/objects/food&drinks/food.dmi'
+	icon = 'icons/obj/food/food.dmi'
 
 /obj/item/reagent_containers/food/snacks/f13/bubblegum
 	name = "Bubblegum"

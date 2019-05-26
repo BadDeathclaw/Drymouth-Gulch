@@ -1591,6 +1591,7 @@
 #include "code\modules\fallout\obj\food_and_drinks\food.dm"
 #include "code\modules\fallout\obj\spawners\lootdrops.dm"
 #include "code\modules\fallout\obj\spawners\mob_spawner.dm"
+#include "code\modules\fallout\obj\stack\grass.dm"
 #include "code\modules\fallout\obj\stack\hide.dm"
 #include "code\modules\fallout\obj\structures\barrel.dm"
 #include "code\modules\fallout\obj\structures\billboard.dm"
