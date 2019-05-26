@@ -1554,7 +1554,6 @@
 #include "code\modules\fallout\areas\area.dm"
 #include "code\modules\fallout\machinery\chalkboard.dm"
 #include "code\modules\fallout\machinery\light_sources\bar.dm"
-#include "code\modules\fallout\machinery\light_sources\street_light.dm"
 #include "code\modules\fallout\misc\overlays.dm"
 #include "code\modules\fallout\misc\sound_system\sound_system.dm"
 #include "code\modules\fallout\misc\subsystems\ambient.dm"
