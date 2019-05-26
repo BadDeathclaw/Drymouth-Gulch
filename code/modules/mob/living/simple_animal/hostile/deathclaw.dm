@@ -15,7 +15,7 @@
 	emote_taunt = list("stares ferociously", "stomps")
 	speak_chance = 10
 	taunt_chance = 25
-	speed = 0
+	speed = -1
 	see_in_dark = 8
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
@@ -23,8 +23,8 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "hits"
-	maxHealth = 500
-	health = 500
+	maxHealth = 5000
+	health = 5000
 	obj_damage = 60
 	armour_penetration = 30
 	melee_damage_lower = 56
