@@ -3,7 +3,7 @@
 /obj/structure/reagent_dispensers/barrel
 	name = "barrel"
 	desc = "A metal container with something in it.<br>By the looks of it, it was manufactured recently."
-	icon = 'icons/fallout/objects/structures/trash.dmi'
+	icon = 'icons/fallout/trash.dmi'
 	icon_state = "single"
 	tank_volume = 500
 	reagent_id = "stablemutationtoxin"
