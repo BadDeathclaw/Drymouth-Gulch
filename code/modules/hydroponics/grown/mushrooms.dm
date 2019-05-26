@@ -405,7 +405,7 @@
 /obj/item/seeds/shroom
 	name = "pack of shroom seeds"
 	desc = "These seeds grow into shrooms."
-	icon = 'icons/fallout/objects/seeds.dmi'
+	icon = 'icons/obj/hydroponics/seeds.dmi'
 	icon_state = "mycelium-shroom"
 	species = "shroom"
 	plantname = "Shrooms"
@@ -428,13 +428,13 @@
 	name = "shroom"
 	desc = "An edible mushroom which has the ability to decrease radiation levels."
 	icon_state = "shroom"
-	icon = 'icons/fallout/objects/food&drinks/grown.dmi'
+	icon = 'icons/obj/hydroponics/harvest.dmi'
 	filling_color = "#FF6347"
 
 /obj/item/seeds/glow
 	name = "pack of glowing fungus seeds"
 	desc = "These seeds grow into glowing fungus."
-	icon = 'icons/fallout/objects/seeds.dmi'
+	icon = 'icons/obj/hydroponics/seeds.dmi'
 	icon_state = "mycelium-glow"
 	species = "glow"
 	plantname = "Glowing Fungus"
@@ -457,5 +457,5 @@
 	name = "shroom"
 	desc = "An edible mushroom which has the ability to decrease radiation levels."
 	icon_state = "shroom"
-	icon = 'icons/fallout/objects/food&drinks/grown.dmi'
+	icon = 'icons/obj/hydroponics/harvest.dmi'
 	filling_color = "#FF6347"
