@@ -23,4 +23,4 @@
 	name = "agave"
 	desc = "Strange grass. Looks safe."
 	icon_state = "agave"
-	icon = 'icons/fallout/objects/food&drinks/grown.dmi'
+	icon = 'icons/obj/hydroponics/harvest.dmi'
