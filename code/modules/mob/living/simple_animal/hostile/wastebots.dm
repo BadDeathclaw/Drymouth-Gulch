@@ -102,7 +102,6 @@
 /mob/living/simple_animal/hostile/handy/sentrybot/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		CRASH("[src] sentrybot invoked bullet_act() without a projectile")
-		return
 	if(prob(10) && health > 1)
 		visible_message("<span class='danger'>\The [src] releases a defensive flashbang!</span>")
 		var/flashbang_turf = get_turf(src)
