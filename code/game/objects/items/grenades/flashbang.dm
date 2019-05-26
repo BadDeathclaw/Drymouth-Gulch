@@ -38,4 +38,4 @@
 	desc = "Why are you staring at this?!"
 	range = 4
 	det_time = 10 //1 second
-	alert_admins = 0 //doesn't ping admins when detonated, since it's sentrybot-only
+	alert_admins = FALSE //doesn't ping admins when detonated, since it's sentrybot-only
