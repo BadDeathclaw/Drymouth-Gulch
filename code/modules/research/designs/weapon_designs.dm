@@ -305,7 +305,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 
-/datum/design/mfc
+/datum/design/ec
 	name = "Energy Cell"
 	id = "ec"
 	build_type = PROTOLATHE
