@@ -62,7 +62,7 @@
 /obj/structure/barricade/wooden
 	name = "wooden barricade"
 	desc = "This space is blocked off by a wooden barricade."
-	icon = 'icons/fallout/objects/structures/fences.dmi'
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "woodenbarricade"
 	material = WOOD
 
@@ -91,7 +91,7 @@
 /obj/structure/barricade/bars //FighterX2500 is this you?
 	name = "metal bars"
 	desc = "Old, corroded metal bars. Ain't got a file on you, right?" //Description by Mr.Fagetti
-	icon = 'icons/fallout/objects/structures/fences.dmi'
+	icon = 'icons/obj/fence.dmi'
 	icon_state = "bars"
 	obj_integrity = 400
 	max_integrity = 400
