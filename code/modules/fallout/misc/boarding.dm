@@ -19,7 +19,7 @@
 	usr << "<span class='notice'>There are [planks] boards left.</span>"
 
 /obj/structure/barricade/wooden/planks/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/weapon/crowbar))
+	if(istype(I, /obj/item/crowbar))
 		visible_message("<span class='danger'>[user] begins to pry off a board...</span>")
 		if(do_after(user, 25, target = src))
 			visible_message("<span class='danger'>[user] pries off a board!</span>")
@@ -43,6 +43,6 @@
 	if(obj_integrity <= 0)
 		qdel(src)
 
-/obj/structure/barricade/wooden/planks/pregame/initialize() //Place these in the map maker to have a bit of randomization with boarded up windows/doors
+/obj/structure/barricade/wooden/planks/pregame/Initialize() //Place these in the map maker to have a bit of randomization with boarded up windows/doors
 	planks = rand(1,maxplanks)
 	..()

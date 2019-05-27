@@ -40,7 +40,7 @@
 		img.alpha = (i * alpha_inc) - 1
 		damage_overlays[i] = img
 
-/turf/closed/wall/attackby(obj/item/weapon/W, mob/user, params)
+/turf/closed/wall/attackby(obj/item/W, mob/user, params)
 	. = ..()
 	if(!.)
 		user.do_attack_animation(src)

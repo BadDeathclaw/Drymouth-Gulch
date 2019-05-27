@@ -1,6 +1,6 @@
 //Fallout 13 general fuel directory - Gas! Petrol! Guzzolene!
 
-/obj/vehicle/fuel
+/obj/vehicle/ridden/fuel
 	name = "vehicle"
 	desc = "Something went wrong! Badmins spawned shit!"
 	icon_state = ""
@@ -10,23 +10,23 @@
 	var/obj/item/reagent_containers/fuel_tank/fuel_holder
 	var/idle_wasting = 0.5
 	var/move_wasting = 0.1
-/*
-/obj/vehicle/fuel/New()
+
+/obj/vehicle/ridden/fuel/New()
 	..()
 	fuel_holder = new(max_fuel, fuel)
 
-/obj/vehicle/fuel/attackby(obj/item/weapon/W, mob/user, params) //Refueling
+/obj/vehicle/ridden/fuel/attackby(obj/item/weapon/W, mob/user, params) //Refueling
 	if(istype(W, /obj/item/reagent_containers))
 		fuel_holder.attackby(W, user, params)
 		return 1
 	return ..()
 
-/obj/vehicle/fuel/Move(NewLoc,Dir=0,step_x=0,step_y=0)
+/obj/vehicle/ridden/fuel/Move(NewLoc,Dir=0,step_x=0,step_y=0)
 	. = ..()
 	if(engine_on && move_wasting)
 		fuel_holder.reagents.remove_reagent("welding_fuel",move_wasting)
 
-/obj/vehicle/fuel/process() //If process begining you can sure that engine is on
+/obj/vehicle/ridden/fuel/process() //If process begining you can sure that engine is on
 	var/fuel_wasting
 
 	fuel_wasting += idle_wasting
@@ -46,25 +46,25 @@
 	if(fuel_holder.reagents.get_reagent_amount("welding_fuel") < 1)
 		StopEngine()
 
-/obj/vehicle/fuel/start_engine()
+/obj/vehicle/ridden/fuel/start_engine()
 	if(fuel_holder.reagents.get_reagent_amount("welding_fuel") < 1)
 		to_chat(usr, "<span class='warning'>[src] has run out of fuel!</span>")
 		return
 	..()
 	START_PROCESSING(SSobj, src)
 
-/obj/vehicle/fuel/stop_engine()
+/obj/vehicle/ridden/fuel/stop_engine()
 	..()
 	STOP_PROCESSING(SSobj, src)
 
-/obj/vehicle/fuel/verb/ToogleFuelTank()
+/obj/vehicle/ridden/fuel/verb/ToogleFuelTank()
 	set name = "Toogle Fuel Tank"
 	set category = "Object"
 	set src in view(1)
 	fuel_holder.inside = !fuel_holder.inside
 	to_chat(usr, "<span class='notice'>You changed transfer type.</span>")
 
-/obj/vehicle/fuel/examine(mob/user)
+/obj/vehicle/ridden/fuel/examine(mob/user)
 	..()
 	if(fuel_holder)
 		var/fuel_percent = fuel_holder.reagents.total_volume / fuel_holder.reagents.maximum_volume * 100
@@ -79,7 +79,7 @@
 				to_chat(user, "<span class='warning'>Fuel meter shows 25% ! It's almost out of fuel!</span>")
 			else
 				to_chat(user, "<span class='danger'>Fuel meter shows 0% ! There is no fuel left!</span>")
-*/
+
 
 
 /obj/item/reagent_containers/fuel_tank

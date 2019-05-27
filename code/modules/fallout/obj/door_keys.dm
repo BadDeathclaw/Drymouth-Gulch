@@ -58,25 +58,24 @@
 	goto CYCLE
 	return null
 
-/obj/item/weapon/storage/keys_set
+/obj/item/storage/keys_set
 	name       = "key chain"
 	desc       = "Put your keys here and make using doors comfortable!"
 	icon       = 'icons/fallout/objects/keys.dmi'
 	icon_state = "keychain_0"
-	density    = 0
-//	storage_slots = 4
-//	can_hold = list(/obj/item/door_key)
-//	rustle_jimmies = FALSE
-
-	w_class              = WEIGHT_CLASS_TINY
-//	max_w_class          = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_TINY
 	slot_flags = SLOT_BELT
-//	max_combined_w_class = 4
 
-/obj/item/weapon/storage/keys_set/update_icon()
+/obj/item/storage/keys_set/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.can_hold = list(/obj/item/door_key)
+	STR.max_combined_w_class = 35
+
+/obj/item/storage/keys_set/update_icon()
 	icon_state = "keychain_[contents.len]"
 
-/obj/item/weapon/storage/keys_set/proc/get_key_with_id(id)
+/obj/item/storage/keys_set/proc/get_key_with_id(id)
 	for(var/obj/item/door_key/K in contents)
 		if(K.id == id)
 			return K
@@ -92,7 +91,7 @@
 	layer = 100
 	var/open = FALSE
 	var/id = null
-/*
+
 /obj/item/lock/New(location)
 	..()
 	layer = OBJ_LAYER
@@ -101,10 +100,10 @@
 		var/obj/structure/simple_door/D = locate(/obj/structure/simple_door) in loc
 		if(istype(D) && D.can_hold_padlock)
 			D.attach_padlock(src, TRUE)
-*/
+
 /obj/item/lock/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/weapon/storage/keys_set))
-		var/obj/item/weapon/storage/keys_set/S = W
+	if(istype(W, /obj/item/storage/keys_set))
+		var/obj/item/storage/keys_set/S = W
 		var/obj/item/door_key/K = S.get_key_with_id(id)
 		if(istype(K))
 			W = K
