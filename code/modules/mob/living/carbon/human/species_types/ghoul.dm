@@ -9,7 +9,6 @@
 	armor = -25 // very weak fag 100-25 = 85hp + the weak limbs is a big oof!
 	burnmod = 0.25 // Leather skinless boys
 	brutemod = 1.2 //weaker fags
-	punchdamagehigh = 0
 	punchstunthreshold = 6
 	use_skintones = 0
 	sexes = 1
