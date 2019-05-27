@@ -2,14 +2,14 @@
 #define CUM_TARGET_VAGINA "vagina"
 #define CUM_TARGET_ANUS "anus"
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw
-	name = "Funclaw"
+/mob/living/simple_animal/hostile/deathclaw/bad_deathclaw
+	name = "Bad Deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one seems to have a strange look in its eyes.."
 	var/pound_cooldown = 0
 	var/chosen_hole
 
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
+/mob/living/simple_animal/hostile/deathclaw/bad_deathclaw/AttackingTarget()
 	var/mob/living/M = target
 	if(!ishuman(M) || M.health > 60)
 		..()
@@ -41,7 +41,7 @@
 		sleep(rand(1, 3))
 		pound(M)
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
+/mob/living/simple_animal/hostile/deathclaw/bad_deathclaw/proc/pickNewHole(mob/living/M)
 	switch(rand(2))
 		if(0)
 			chosen_hole = CUM_TARGET_ANUS
@@ -51,7 +51,7 @@
 		if(2)
 			chosen_hole = CUM_TARGET_THROAT
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pound(mob/living/M)
+/mob/living/simple_animal/hostile/deathclaw/bad_deathclaw/proc/pound(mob/living/M)
 	if(refactory_period > 0)
 		return
 
@@ -77,7 +77,7 @@
 				return
 			do_throatfuck(M)
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/cum(mob/living/M)
+/mob/living/simple_animal/hostile/deathclaw/bad_deathclaw/cum(mob/living/M)
 
 	if(refactory_period > 0)
 		return
@@ -123,7 +123,7 @@
 	visible_message("<span class='danger'>\The [src]</b> slaps \the [M] right on the ass!</span>", \
 			"<span class='userdanger'>\The [src]</b> slaps \the [M] right on the ass!</span>", null, COMBAT_MESSAGE_RANGE)
 
-/mob/living/simple_animal/hostile/deathclaw/funclaw/proc/tearSlot(mob/living/M, slot)
+/mob/living/simple_animal/hostile/deathclaw/bad_deathclaw/proc/tearSlot(mob/living/M, slot)
 	var/obj/item/W = M.get_item_by_slot(slot)
 	if(W)
 		M.dropItemToGround(W)
