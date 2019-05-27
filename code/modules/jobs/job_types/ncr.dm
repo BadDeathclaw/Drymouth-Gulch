@@ -398,11 +398,12 @@ Ranger
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/ncr/f13ranger
-	uniform =  		/obj/item/clothing/under/f13/ranger
+	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
+	belt =			/obj/item/storage/belt/military/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
-	gloves =	/obj/item/clothing/gloves/fingerless
-	shoes = 		/obj/item/clothing/shoes/workboots
+	gloves =		/obj/item/clothing/gloves/color/black
+	shoes =			/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	backpack_contents = list(
