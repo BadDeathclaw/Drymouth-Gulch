@@ -769,7 +769,7 @@
 
 //Projectiles
 /obj/item/projectile/bullet/c45
-	damage = 30
+	damage = 25
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c22
