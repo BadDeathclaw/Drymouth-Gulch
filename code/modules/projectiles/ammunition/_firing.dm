@@ -1,8 +1,8 @@
-/obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread)
+/obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, extra_damage, extra_penetration)
 	distro += variance
 	for (var/i = max(1, pellets), i > 0, i--)
 		var/targloc = get_turf(target)
-		ready_proj(target, user, quiet, zone_override)
+		ready_proj(target, user, quiet, zone_override, extra_damage, extra_penetration)
 		if(distro) //We have to spread a pixel-precision bullet. throw_proj was called before so angles should exist by now...
 			if(randomspread)
 				spread = round((rand() - 0.5) * distro)
@@ -20,7 +20,7 @@
 	update_icon()
 	return 1
 
-/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "")
+/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", extra_damage = 0, extra_penetration = 0)
 	if (!BB)
 		return
 	BB.original = target
@@ -30,7 +30,8 @@
 	else
 		BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
-
+	BB.damage += extra_damage
+	BB.armour_penetration += extra_penetration
 	if(reagents && BB.reagents)
 		reagents.trans_to(BB, reagents.total_volume) //For chemical darts/bullets
 		qdel(reagents)
