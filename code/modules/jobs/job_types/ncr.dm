@@ -359,6 +359,11 @@ Veteran Ranger
 
 	outfit = /datum/outfit/job/ncr/f13vetranger
 
+
+/datum/job/ncr/f13vetranger/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/ncr/f13vetranger
@@ -394,6 +399,11 @@ Ranger
 	exp_requirements = 720
 
 	outfit = /datum/outfit/job/ncr/f13ranger
+
+
+/datum/job/ncr/f13ranger/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"
@@ -432,6 +442,11 @@ Recon Ranger
 	exp_requirements = 420
 
 	outfit = /datum/outfit/job/ncr/f13recranger
+
+
+/datum/job/ncr/f13recranger/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/ncr/f13recranger
 	name = "NCR Recon Ranger"
