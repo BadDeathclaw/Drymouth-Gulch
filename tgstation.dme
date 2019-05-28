@@ -2144,6 +2144,7 @@
 #include "code\modules\mob\living\simple_animal\hostile\wumborian_fugu.dm"
 #include "code\modules\mob\living\simple_animal\hostile\bosses\boss.dm"
 #include "code\modules\mob\living\simple_animal\hostile\bosses\paperwizard.dm"
+#include "code\modules\mob\living\simple_animal\hostile\deathclaw\funclaw.dm"
 #include "code\modules\mob\living\simple_animal\hostile\gorilla\emotes.dm"
 #include "code\modules\mob\living\simple_animal\hostile\gorilla\gorilla.dm"
 #include "code\modules\mob\living\simple_animal\hostile\gorilla\visuals_icons.dm"
