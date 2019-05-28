@@ -14,6 +14,7 @@
 
 // BEGIN_INCLUDE
 #include "placeholders.dm"
+#include "_maps\_basemap.dm"
 #include "_maps\pahrump.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
@@ -761,6 +762,7 @@
 #include "code\game\objects\items\documents.dm"
 #include "code\game\objects\items\eightball.dm"
 #include "code\game\objects\items\extinguisher.dm"
+#include "code\game\objects\items\fallout13misc.dm"
 #include "code\game\objects\items\flamethrower.dm"
 #include "code\game\objects\items\gift.dm"
 #include "code\game\objects\items\granters.dm"
@@ -1557,8 +1559,6 @@
 #include "code\modules\fallout\machinery\light_sources\bar.dm"
 #include "code\modules\fallout\misc\boarding.dm"
 #include "code\modules\fallout\misc\overlays.dm"
-#include "code\modules\fallout\misc\sound_system\sound_system.dm"
-#include "code\modules\fallout\misc\subsystems\ambient.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\eyebot.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\rad_scorpion.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\supermutant.dm"
@@ -1579,7 +1579,6 @@
 #include "code\modules\fallout\obj\clothing\head\helmet.dm"
 #include "code\modules\fallout\obj\clothing\head\misc.dm"
 #include "code\modules\fallout\obj\clothing\head\soft_caps.dm"
-#include "code\modules\fallout\obj\clothing\masks\miscellaneous.dm"
 #include "code\modules\fallout\obj\clothing\shoes\shoes.dm"
 #include "code\modules\fallout\obj\clothing\suits\armor.dm"
 #include "code\modules\fallout\obj\clothing\suits\labcoat.dm"

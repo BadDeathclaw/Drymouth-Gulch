@@ -16,13 +16,6 @@
 	icon = 'icons/fallout/clothing/glasses.dmi'
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
 
-/obj/item/clothing/glasses/sunglasses/f13/legion
-	name = "military goggles"
-	desc = "Flash-resistant goggles commonly worn by Caesar's Legion soldiers."
-	icon_state = "legion"
-	item_state = "legion"
-	flash_protect = 2
-	tint = 0
 
 //Fallout 13 thermals
 

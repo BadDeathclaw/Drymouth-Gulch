@@ -32,23 +32,23 @@
 	..()
 
 /mob/living/simple_animal/pet/dog/mutant    //This is a supermutant, totally not a dog, and he is friendly
-	name = "Brah Min"
-	desc = "A huge and ugly mutant humanoid with a showel full of brahmin feces.<br>He behaves totally insane and it seems he can speak only English language.<br>He's all concerned only about his (probably not much so) brahmins."
+	name = "Brah-Min"
+	desc = "A large, docile supermutant. Adopted by Kebab-town as a sort of watch dog for their brahmin herd."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_brahmin_s"
 	icon_dead = "hulk_brahmin_s"
 	maxHealth = 300
 	health = 300
-	speak_chance = 30
-	speak = list("Hey you! These are my brahmins!", "And I say, HEY-YEY-AAEYAAA-EYAEYAA! HEY-YEY-AAEYAAA-EYAEYAA! I SAID HEY, what's going on?", "What do you want from my brahmins?!", "Me gonna clean brahmin poop again now!", "I love brahmins, brahmins are good, just poop much!", "Do not speak to my brahmins ever again, you hear?!", "Bad raiders come to steal my brahmins - I crush their heads with my brahmin poop shovel!", "Do not come to my brahmins! Do not touch my brahmins! Do not look at my brahmins!", "I'm watching you, and my brahmins watch too!", "Brahmins say moo, and I'm saying - hey, get your ugly face out of my way!")
+	speak_chance = 7 //30 //Oh my god he never shuts up.
+	mob_size = MOB_SIZE_LARGE
+	speak = list("Hey! These my brahmins!", "And I say, HEY-YEY-AAEYAAA-EYAEYAA! HEY-YEY-AAEYAAA-EYAEYAA! I SAID HEY, what's going on?", "What do you want from my brahmins?!", "Me gonna clean brahmin poop again now!", "I love brahmins, brahmins are good, just poop much!", "Do not speak to my brahmins ever again, you hear?!", "Bad raiders come to steal my brahmins - I crush with shovel!", "Do not come to my brahmins! Do not touch my brahmins! Do not look at my brahmins!", "I'm watching you, and my brahmins watch too!", "Brahmins say moo, and I'm saying - hey, get your ugly face out of my way!", "I... I remember, before the fire... THERE WERE NO BRAHMINS!", "No! No wind brahmin here! Wind brahmin lie!")
 	speak_emote = list("shouts", "yells")
-	emote_hear = list("looks around", "takes a combat position", "is counting brahmins","yawns")
-	emote_see = list("raises his brahmin poop shovel", "sticks his shovel into a large pile of brahmin feces", "shovels some brahmin feces away", "waves his brahmin poop shovel above his head angrily")
+	emote_hear = list("yawns", "mumbles","sighs")
+	emote_see = list("raises his shovel", "shovels some dirt away", "waves his shovel above his head angrily")
 	response_help  = "touches"
 	response_disarm = "pushes"
 	response_harm   = "punches"
-//	attack_sound = 'sound/misc/gameover.ogg'
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/bearsteak = 3)
+//	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
 
 /mob/living/simple_animal/pet/dog/mutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'

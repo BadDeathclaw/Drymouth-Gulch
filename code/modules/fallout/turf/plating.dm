@@ -16,4 +16,4 @@
 	name = "metal floor"
 	icon_state = "tunneldirty"
 	icon = 'icons/fallout/turfs/ground.dmi'
-	baseturfs = /turf/open/indestructible/ground/mountain
+	baseturfs = /turf/open/indestructible/ground/inside/mountain

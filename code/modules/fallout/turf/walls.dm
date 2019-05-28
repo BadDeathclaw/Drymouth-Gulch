@@ -20,7 +20,7 @@
 	smooth = SMOOTH_OLD
 	//	disasemblable = 0
 	girder_type = 0
-	baseturfs = /turf/open/ruins
+	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
 

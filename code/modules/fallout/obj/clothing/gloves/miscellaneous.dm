@@ -54,19 +54,6 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
-/obj/item/clothing/gloves/f13/legionlegate
-	name = "legate gloves"
-	desc = "Large metal gloves commonly worn by the Legate, a ranked officer of Caesar's Legion."
-	icon_state = "legionlegate"
-	item_state = "legionlegate"
-	item_color = null
-	transfer_prints = TRUE
-	strip_delay = 20
-	cold_protection = HANDS
-	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
-	heat_protection = HANDS
-	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
-
 /obj/item/clothing/gloves/f13/doom
 	name = "strange gloves"
 	desc = "These gloves look like a part of some sort of space suit, or maybe exquisite armor, but you can't tell for sure."

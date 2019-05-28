@@ -287,7 +287,7 @@
 /obj/structure/table/wood/settler
 	desc = "A wooden table constructed by a carpentering amateur from various planks.<br>It's the work of wasteland settler."
 	icon_state = "settlertable"
-	icon = 'icons/obj/structures.dmi'
+	icon = 'icons/obj/smooth_structures/wood_table_settler.dmi'
 	icon_type_smooth = "settlertable"
 	obj_integrity = 50
 	max_integrity = 50

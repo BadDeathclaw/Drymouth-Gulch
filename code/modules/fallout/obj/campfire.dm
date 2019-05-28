@@ -14,14 +14,14 @@
 	desc = "A warm, bright, and hopeful fire source - when it's burning, of course."
 
 	icon = 'icons/obj/hydroponics/equipment.dmi'
-	icon_state = "campfire20"
+	icon_state = "campfire"
 
 /obj/structure/campfire/Destroy()
 	SSobj.processing.Remove(src)
 	..()
 
 /obj/structure/campfire/attackby(obj/item/P, mob/user, params)
-	if(burned)
+	if(burned && !density) //No need to make a new var when all the existing campfires are either dense and removable or not dense and not removable
 		to_chat(user, "You remove some campfire ashes.")
 		qdel(src)
 		return
@@ -83,12 +83,12 @@
 
 /obj/structure/campfire/proc/fire(mob/living/user)
 
-	BeginAmbient('sound/effects/comfyfire.ogg', 20, 12)
+//	BeginAmbient('sound/effects/comfyfire.ogg', 20, 12)
 
 	playsound(src, 'sound/items/welder.ogg', 25, 1, -3)
 	START_PROCESSING(SSobj, src)
 	fired = 1
-	desc = "A burning campfire... A warm, bright, and hopeful fire source.<br><b>It's hot!</b>"
+//	desc = "A burning campfire... A warm, bright, and hopeful fire source.<br><b>It's hot!</b>"
 	if(user)
 		user.visible_message("[user] has lit a [src].", "<span class='notice'>You have lit a [src].</span>")
 	update_icon()
@@ -109,21 +109,21 @@
 
 /obj/structure/campfire/update_icon()
 	if(fired)
-		icon_state = "campfire21"
+		icon_state = "[initial(icon_state)]-lit"
 		overlays = list(image(icon,icon_state = "campfire_o"))
 	else
-		icon_state = "campfire20"
+		icon_state = initial(icon_state)
 		overlays.Cut()
 	..()
 
 /obj/structure/campfire/extinguish()
 	name = "burned campfire"
 	desc = "It has burned to ashes..."
-	icon_state = "campfire20"
+	icon_state = initial(icon_state)
 	fired = 0
 	burned = 1
 	set_light(0)
-	StopAmbient()
+//	StopAmbient()
 	STOP_PROCESSING(SSobj, src)
 	update_icon()
 
@@ -131,3 +131,15 @@
 	fired = 1
 	icon_state = "campfire21"
 	fuel = 999999999
+
+/obj/structure/campfire/barrel
+	name = "steel drum firepit"
+	desc = "A campfire made out of an old steel drum. You're not going to fall into the fire, but you feel like a hobo using it. Which you are."
+	icon_state = "drumfire"
+	density = 1
+
+/obj/structure/campfire/stove
+	name = "pot belly stove"
+	desc = "A warm stove, for cooking food, or keeping warm in the winter. It's really old fashioned, but works wonders when there's no electricity."
+	density = 1
+	icon_state = "stove"

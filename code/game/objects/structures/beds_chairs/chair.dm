@@ -2,7 +2,7 @@
 	name = "chair"
 	desc = "You sit in this. Either by will or force."
 	icon = 'icons/obj/chairs.dmi'
-	icon_state = "chair"
+	icon_state = "wooden_chair_settler"
 	anchored = TRUE
 	can_buckle = 1
 	buckle_lying = 0 //you sit in a chair, not lay

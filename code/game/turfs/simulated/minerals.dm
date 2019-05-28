@@ -25,12 +25,12 @@
 	var/defer_change = 0
 
 /turf/closed/mineral/Initialize()
-//	if (!canSmoothWith)
-//		canSmoothWith = list(/turf/closed/mineral, /turf/closed/indestructible)
-//	var/matrix/M = new
-//	M.Translate(-4, -4)
-//	transform = M
-//	icon = smooth_icon
+	if (!canSmoothWith)
+		canSmoothWith = list(/turf/closed/mineral, /turf/closed/indestructible)
+	var/matrix/M = new
+	M.Translate(-4, -4)
+	transform = M
+	icon = smooth_icon
 	. = ..()
 	if (mineralType && mineralAmt && spread && spreadChance)
 		for(var/dir in GLOB.cardinals)

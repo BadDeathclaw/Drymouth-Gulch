@@ -4,7 +4,7 @@
 	var/stepsound = TRUE
 
 /obj/item/clothing/shoes/f13
-	icon = 'icons/fallout/clothing/shoes.dmi'
+//	icon = 'icons/fallout/clothing/shoes.dmi'
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/f13/rag

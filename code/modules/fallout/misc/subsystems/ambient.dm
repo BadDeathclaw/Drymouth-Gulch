@@ -32,7 +32,7 @@ SUBSYSTEM_DEF(ambient)
 		var/atom/thing = currentrun[currentrun.len]
 		currentrun.len--
 		if(thing)
-			thing.RefreshAmbient()
+//			thing.RefreshAmbient()
 		else
 			SSambient.processing -= thing
 		if (MC_TICK_CHECK)

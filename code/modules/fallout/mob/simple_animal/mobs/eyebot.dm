@@ -24,7 +24,7 @@
 
 	faction = list("hostile", "enclave")
 
-	ambient_sound = 'sound/f13npc/eyebot_loop.ogg'
+//	ambient_sound = 'sound/f13npc/eyebot_loop.ogg'
 
 //	sound_speak_chance = 5
 //	sound_speak = list('sound/machines/buzz-sigh.ogg','sound/misc/interference.ogg')
