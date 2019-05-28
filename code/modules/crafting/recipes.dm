@@ -342,7 +342,7 @@
 	result = /obj/item/ammo_box/a50MG/explosive
 	reqs = list(/obj/item/stack/sheet/metal = 20,
 				/datum/reagent/blackpowder = 50,
-				/obj/item/stack/tile/plasteel = 5)
+				/obj/item/stack/sheet/plasteel = 5)
 	tools = list(TOOL_SCREWDRIVER, TOOL_NCR)
 	time = 5
 	category = CAT_WEAPONRY
