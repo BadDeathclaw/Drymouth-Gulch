@@ -337,6 +337,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/a50ex
+	name = ".50 MG explosive rack (NCR)"
+	result = /obj/item/ammo_box/a50MG/explosive
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/datum/reagent/blackpowder = 50,
+				/obj/item/stack/tile/plasteel = 5)
+	tools = list(TOOL_SCREWDRIVER, TOOL_NCR)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/meteorslug
 	name = "Meteorslug Shell"
@@ -348,19 +358,6 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
-
-/datum/crafting_recipe/50explosive
-	name = "5 explosive .50 MG rounds. More then enough to kill anything that moves."
-	result = /obj/item/ammo_box/a50MG/explosive
-	reqs = list(/obj/item/stack/sheet/metal = 20,
-				/datum/reagent/blackpowder = 50,
-				/obj/item/stack/tile/plasteel = 5)
-	tools = list(TOOL_SCREWDRIVER, TOOL_NCR)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
 
 /datum/crafting_recipe/pulseslug
 	name = "Pulse Slug Shell"
