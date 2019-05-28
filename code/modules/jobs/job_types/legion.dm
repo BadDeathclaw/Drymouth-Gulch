@@ -55,6 +55,11 @@ Needs whitelist
 	access = list()
 	minimal_access = list()
 
+
+/datum/job/CaesarsLegion/Legionnaire/f13legate/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 	name = "Legate"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legate
@@ -71,7 +76,6 @@ Needs whitelist
 		/obj/item/ammo_box/magazine/r20=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legion)
-
 
 /*
 Centurion
@@ -92,8 +96,12 @@ Centurion
 	req_admin_notify = 1
 	exp_requirements = 1920
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13centurion/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Legion Centurion"
@@ -132,6 +140,11 @@ Veteran Decan
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 
+
+/datum/job/CaesarsLegion/Legionnaire/f13vetdecan/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 	name = "Legion Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
@@ -167,8 +180,8 @@ Prime Decan
 
 	exp_requirements = 1320
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13primedecan
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primedecan
 	name = "Legion Prime Decanus"
@@ -243,8 +256,12 @@ Vexillarius
 
 	exp_requirements = 840
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13vexillarius/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
 	name = "Legion Vexillarius"
@@ -280,6 +297,11 @@ Veteran
 	exp_requirements = 720
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13vetlegion/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 	name = "Veteran Legionnaire"
@@ -391,8 +413,12 @@ Legionary
 
 	exp_requirements = 600
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13explorer/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
@@ -423,6 +449,11 @@ Legionary
 	exp_requirements = 300
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13scout/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 	name = "Legion Scout"
