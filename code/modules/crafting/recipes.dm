@@ -337,6 +337,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/a50ex
+	name = ".50 MG explosive rack (NCR)"
+	result = /obj/item/ammo_box/a50MG/explosive
+	reqs = list(/obj/item/stack/sheet/metal = 20,
+				/datum/reagent/blackpowder = 50,
+				/obj/item/stack/sheet/plasteel = 5)
+	tools = list(TOOL_SCREWDRIVER, TOOL_NCR)
+	time = 5
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/meteorslug
 	name = "Meteorslug Shell"
 	result = /obj/item/ammo_casing/shotgun/meteorslug
@@ -999,3 +1010,6 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
+
+
+
