@@ -142,6 +142,15 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 18000)
 
+/obj/item/ammo_box/a50MG/explosive
+	name = "anti-materiel explosive ammo rack (.50MG)"
+	desc = "5 rounds of explosive .50 MG. More then enough to kill anything that moves."
+	icon_state = "50ex"
+	ammo_type = /obj/item/ammo_casing/a50MG/explosive
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 20000)
+
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"
 	icon_state = "10mmbox"
