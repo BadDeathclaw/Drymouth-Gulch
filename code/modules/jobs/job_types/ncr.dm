@@ -398,7 +398,7 @@ Ranger
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/ncr/f13ranger
-	uniform =  		/obj/item/clothing/under/f13/cowboyb
+	uniform =  		/obj/item/clothing/under/f13/patrolranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	belt =			/obj/item/storage/belt/military/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
