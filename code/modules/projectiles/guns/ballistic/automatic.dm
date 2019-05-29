@@ -671,6 +671,13 @@
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/c10mm
 
+/obj/item/ammo_casing/c10mm/explosive
+	name = "10mm explosive bullet casing."
+	desc = "A 10mm bullet casing. This one explodes when shot."
+	caliber = "10mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm/explosive
+
+
 //Med
 /obj/item/ammo_casing/m44
 	desc = "A 44 Magnum bullet casing."
@@ -797,6 +804,14 @@
 	damage = 25
 	armour_penetration = 0
 
+/obj/item/projectile/bullet/c10mm/explosive
+	damage = 10
+	armour_penetration = 0
+
+/obj/item/projectile/bullet/c10mm/explosive/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, 0, 0, 1, 1)
+
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "cbbolt"
@@ -860,12 +875,12 @@
 	armour_penetration = 65 //will punch through anything short of Enclave power armor
 
 /obj/item/projectile/bullet/a50MG/explosive
-	damage = 50
-	armour_penetration = 20
+	damage = 20
+	armour_penetration = 5
 
 /obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
-	explosion(target, 0, 2, 2, 2)
+	explosion(target, 0, 1, 2, 2)
 
 
 /obj/item/projectile/bullet/c2mm
