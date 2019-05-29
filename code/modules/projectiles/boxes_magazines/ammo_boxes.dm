@@ -58,13 +58,6 @@
 	max_ammo = 20
 	materials = list(MAT_METAL = 10000)
 
-/obj/item/ammo_box/c10mm/explosive
-	name = "10mm explosive box"
-	icon_state = "10mmboxex"
-	ammo_type = /obj/item/ammo_casing/c10mm/explosive
-	max_ammo = 20
-	materials = list(MAT_METAL = 10000)
-
 /obj/item/ammo_box/a556
 	name = "ammo box (5.56)"
 	icon_state = "556box"
