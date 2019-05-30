@@ -45,7 +45,7 @@
 	if(operating)
 		return
 	if(!broken && dirty<100)
-		if(default_deconstruction_screwdriver(user, "[initial(icon_state)]-o", "[initial(icon_state)]", O))
+		if(default_deconstruction_screwdriver(user, "mw-o", "mw", O))
 			return
 		if(default_unfasten_wrench(user, O))
 			return
@@ -75,7 +75,7 @@
 					"[user] fixes the microwave.", \
 					"<span class='notice'>You fix the microwave.</span>" \
 				)
-				src.icon_state = "[initial(icon_state)]"
+				src.icon_state = "mw"
 				src.broken = 0 // Fix it!
 				src.dirty = 0 // just to be sure
 				src.container_type = OPENCONTAINER
@@ -94,7 +94,7 @@
 			)
 			src.dirty = 0 // It's clean!
 			src.broken = 0 // just to be sure
-			src.icon_state = "[initial(icon_state)]"
+			src.icon_state = "mw"
 			src.container_type = OPENCONTAINER
 			src.updateUsrDialog()
 			return 1 // Disables the after-attack so we don't spray the floor/user.
@@ -260,12 +260,12 @@
 	visible_message("The microwave turns on.", "<span class='italics'>You hear a microwave humming.</span>")
 	soundloop.start()
 	operating = TRUE
-	icon_state = "[initial(icon_state)]1"
+	icon_state = "mw1"
 	updateUsrDialog()
 
 /obj/machinery/microwave/proc/abort()
 	operating = FALSE // Turn it off again aferwards
-	icon_state = "[initial(icon_state)]"
+	icon_state = "mw"
 	updateUsrDialog()
 	soundloop.stop()
 
@@ -280,12 +280,12 @@
 
 /obj/machinery/microwave/proc/muck_start()
 	playsound(src.loc, 'sound/effects/splat.ogg', 50, 1) // Play a splat sound
-	icon_state = "[initial(icon_state)]bloody1" // Make it look dirty!!
+	icon_state = "mwbloody1" // Make it look dirty!!
 
 /obj/machinery/microwave/proc/muck_finish()
 	visible_message("<span class='warning'>The microwave gets covered in muck!</span>")
 	dirty = 100 // Make it dirty so it can't be used util cleaned
-	icon_state = "[initial(icon_state)]bloody" // Make it look dirty too
+	icon_state = "mwbloody" // Make it look dirty too
 	operating = FALSE // Turn it off again aferwards
 	updateUsrDialog()
 	for(var/obj/item/reagent_containers/food/snacks/S in src)
@@ -298,7 +298,7 @@
 	var/datum/effect_system/spark_spread/s = new
 	s.set_up(2, 1, src)
 	s.start()
-	icon_state = "[initial(icon_state)]b" // Make it look all busted up and shit
+	icon_state = "mwb" // Make it look all busted up and shit
 	visible_message("<span class='warning'>The microwave breaks!</span>") //Let them know they're stupid
 	broken = 2 // Make it broken so it can't be used util fixed
 	flags_1 = null //So you can't add condiments
@@ -322,13 +322,3 @@
 		if ("dispose")
 			dispose()
 	updateUsrDialog()
-
-
-/obj/machinery/microwave/stove
-	name = "stove"
-	desc = "A nice white stove for cooking."
-	icon_state = "stove"
-
-/obj/machinery/microwave/stove/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/screwdriver))
-		return

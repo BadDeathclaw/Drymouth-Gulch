@@ -282,15 +282,3 @@
 	name = "snowman"
 	desc = "Several lumps of snow put together to form a snowman."
 	icon_state = "snowman"
-
-
-//Wood
-
-/obj/structure/statue/wood
-	obj_integrity = 150
-	material_drop_type = /obj/item/stack/sheet/mineral/wood
-
-/obj/structure/statue/wood/headstonewood
-	name = "Cross"
-	desc = "A headstone"
-	icon_state = "groovewood"

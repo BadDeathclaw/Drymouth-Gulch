@@ -83,10 +83,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/all_quirks = list()
 	var/list/character_quirks = list()
 
-	var/music_volume = 1
-	var/sounds_volume = 1
-	var/ambient_volume = 1
-
 		//Jobs, uses bitflags
 	var/job_civilian_high = 0
 	var/job_civilian_med = 0

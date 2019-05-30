@@ -21,7 +21,6 @@
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 2
 	var/bolts = TRUE
-	var/obj/item/decontool = /obj/item/wrench
 
 /obj/structure/bed/examine(mob/user)
 	..()
@@ -38,7 +37,7 @@
 	return attack_hand(user)
 
 /obj/structure/bed/attackby(obj/item/W, mob/user, params)
-	if(istype(W, decontool) && !(flags_1&NODECONSTRUCT_1))
+	if(istype(W, /obj/item/wrench) && !(flags_1&NODECONSTRUCT_1))
 		W.play_tool_sound(src)
 		deconstruct(TRUE)
 	else
@@ -206,15 +205,11 @@
 	desc = "This looks similar to contraptions from Earth. Could aliens be stealing our technology?"
 	icon_state = "abed"
 
-/obj/structure/bed/mattress
-	name = "mattress"
+/obj/structure/bed/matress
+	name = "matress"
 	desc = "This is used to lie in, sleep in or strap on."
 	icon_state = "mattress0"
-	buildstacktype = /obj/item/stack/sheet/cloth
-	buildstackamount = 3
-	decontool = /obj/item/wirecutters
 
-/obj/structure/bed/mattress/pregame/New()
+/obj/structure/bed/matress/New()
 	..()
 	icon_state = "mattress[rand(1,6)]"
-

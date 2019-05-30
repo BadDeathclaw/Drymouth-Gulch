@@ -4,7 +4,7 @@
 	department_flag = LEGION
 	selection_color = "#ffeeee"
 	exp_type = EXP_TYPE_LEGION
-	faction = "Legion"
+
 /datum/outfit/job/CaesarsLegion
 	id = null
 	ears = null
