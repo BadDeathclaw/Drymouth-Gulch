@@ -476,11 +476,14 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		toggle_ai(AI_Z_OFF)
 		return
 
+	/* An attempt at reducing hostile mob idle lag by ultilizing ListTargetsLazy exclusively
 	var/cheap_search = isturf(T) && !is_station_level(T.z)
 	if (cheap_search)
 		tlist = ListTargetsLazy(T.z)
 	else
 		tlist = ListTargets()
+	*/
+	tlist = ListTargetsLazy(T.z)
 
 	if(AIStatus == AI_IDLE && FindTarget(tlist, 1))
 		if(cheap_search) //Try again with full effort
