@@ -1,5 +1,6 @@
 /datum/job/ncr //do NOT use this for anything, it's just to store faction datums
 	department_flag = NCR
+	faction = "NCR"
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_NCR
 	access = list(ACCESS_SECURITY)

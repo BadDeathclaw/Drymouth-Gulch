@@ -315,3 +315,38 @@
 	icon_state = "scarecrow_sack"
 	item_state = "scarecrow_sack"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+
+
+//Masks
+/obj/item/clothing/mask/facewrap
+	name = "desert facewrap"
+	desc = "An NCR issued facewrap used to protect the wearer from the harsh desert elements."
+	icon_state = "facewrap"
+	item_state = "facewrap"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/clothing/mask/facewrap/blue
+	name = "blue facewrap"
+	desc = "An thick facewrap used to protect the wearer from the harsh wasteland elements."
+	icon_state = "blue_facewrap"
+	item_state = "blue_facewrap"
+
+/obj/item/clothing/mask/facewrap/red
+	name = "red facewrap"
+	desc = "An thick facewrap used to protect the wearer from the harsh desert elements."
+	icon_state = "red_facewrap"
+	item_state = "red_facewrap"
+
+/obj/item/clothing/mask/facewrap/black
+	name = "black facewrap"
+	desc = "An thick facewrap used to protect the wearer from the harsh desert elements."
+	icon_state = "black_facewrap"
+	item_state = "black_facewrap"
+
+
+
+
+
