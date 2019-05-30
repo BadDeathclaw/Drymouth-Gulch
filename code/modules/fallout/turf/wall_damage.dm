@@ -45,7 +45,7 @@
 	if(!.)
 		user.do_attack_animation(src)
 		if(W.force > hardness/3)
-			take_damage(W.force/4)
+			take_damage(W.force/10)
 			playsound(src, 'sound/effects/bang.ogg', 50, 1)
 		else
 			to_chat(user, text("<span class='notice'>You smash the wall with [W].</span>"))

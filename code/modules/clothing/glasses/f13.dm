@@ -1,7 +1,6 @@
 //Fallout 13 goggles directory
 
 /obj/item/clothing/glasses/f13
-	icon = 'icons/fallout/clothing/glasses.dmi'
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
 
 /obj/item/clothing/glasses/f13/biker
@@ -53,7 +52,6 @@
 //Augmented eye
 
 /obj/item/clothing/glasses/hud/health/f13
-	icon = 'icons/fallout/clothing/glasses.dmi'
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
 
 /obj/item/clothing/glasses/hud/health/f13/eye

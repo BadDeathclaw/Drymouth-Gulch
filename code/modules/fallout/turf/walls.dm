@@ -92,6 +92,7 @@
 	hardness = 80
 	smooth = SMOOTH_OLD
 	//	disasemblable = 0
+	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall)
@@ -105,6 +106,7 @@
 	hardness = 90
 	explosion_block = 2
 	smooth = SMOOTH_OLD
+	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	//	disasemblable = 0
 	girder_type = 0
 	sheet_type = null

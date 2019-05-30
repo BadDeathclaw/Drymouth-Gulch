@@ -1,10 +1,9 @@
 //Fallout 13 shoes directory
-
+/*
 /obj/item/clothing/shoes
 	var/stepsound = TRUE
-
+*/
 /obj/item/clothing/shoes/f13
-//	icon = 'icons/fallout/clothing/shoes.dmi'
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/f13/rag
@@ -64,7 +63,7 @@
 /obj/item/clothing/shoes/f13/military/light //I'm a ninja!
 	name = "advanced combat boots"
 	desc = "High speed, no-drag combat boots designed for use by U.S. special forces before the Great War.<br>The soles are made of aerated rubber to silence the movement of the wearer."
-	stepsound = FALSE
+//	stepsound = FALSE
 	clothing_flags = NOSLIP
 
 /obj/item/clothing/shoes/f13/military/diesel

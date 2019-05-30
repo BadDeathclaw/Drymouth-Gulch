@@ -1,7 +1,4 @@
-//Fallout 13 gloves directory
-
 /obj/item/clothing/gloves/f13
-	icon = 'icons/fallout/clothing/gloves.dmi'
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
 
 /obj/item/clothing/gloves/f13/baseball

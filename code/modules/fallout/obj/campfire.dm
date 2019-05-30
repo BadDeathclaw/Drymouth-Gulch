@@ -142,4 +142,4 @@
 	name = "pot belly stove"
 	desc = "A warm stove, for cooking food, or keeping warm in the winter. It's really old fashioned, but works wonders when there's no electricity."
 	density = 1
-	icon_state = "stove"
+	icon_state = "potbelly"
