@@ -18,34 +18,26 @@
 	to_chat(user, "<span class='notice'>It's currently outputting products [outputdir] and taking ingredients from the [inputdir].</span>")
 
 /obj/machinery/autocrafter/proc/ingredientcheck()
-
-	main_loop:
-		for(var/A in currentrecipe.reqs)
-			var/needed_amount = currentrecipe.reqs[A]
-			for(var/B in contents)
-				if(ispath(B, A))
-					if(contents[B] >= currentrecipe.reqs[A])
-						continue main_loop
-					else
-						needed_amount -= contents[B]
-						if(needed_amount <= 0)
-							continue main_loop
-						else
-							continue
+	for(var/atom/required in currentrecipe.reqs)
+		var/amountrequired = currentrecipe.reqs[1]
+		for(var/obj in contents)
+			if(ispath(obj, required))
+				amountrequired -= 1
+		if(amountrequired > 0)
 			return FALSE
 	return TRUE
 
 /obj/machinery/autocrafter/process()
-	if(ingredientcheck())
-		new currentrecipe.result(get_step(src, outputdir))
-	else
+	if(!ingredientcheck())
 		playsound(src, "sparks", 75, 1, -1)
+	else
+		//for(var/consume in contents)
+
+		new currentrecipe.result(get_step(src, outputdir))
 
 
-/obj/machinery/autocrafter/Bumped(atom/movable/input)
+/obj/machinery/autocrafter/Bumped(atom/input)
 	if(get_dir(loc, input.loc) == inputdir)
-		for(var/require in currentrecipe.reqs)
-			if(ispath(input, require))
+		for(var/ingredients in currentrecipe.reqs)
+			if(ispath(input, ingredients))
 				contents += input
-				break
-	..()
