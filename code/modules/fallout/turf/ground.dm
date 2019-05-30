@@ -45,10 +45,6 @@
 /turf/open/indestructible/ground/can_have_cabling()
 	return 1
 
-var/global/list/desertTurfEdgeCache
-
-
-
 //////////////////////////////////////////////////////////////////////
 
 /turf/open/indestructible/ground/outside
