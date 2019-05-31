@@ -20,8 +20,8 @@
 	random_sensor = FALSE
 
 /obj/item/clothing/under/f13/vault13
-	name = "vault 13 jumpsuit"
-	desc = "A blue jumpsuit with a yellow vault pattern and the number 13 printed on it."
+	name = "vault 113 jumpsuit"
+	desc = "A blue jumpsuit with a yellow vault pattern and the number 113 printed on it."
 	icon_state = "vault13"
 	item_state = "vault13"
 	item_color = "vault13"
@@ -138,12 +138,51 @@
 
 //Brotherhood of Steel
 
+
 /obj/item/clothing/under/f13/recon
 	name = "recon bodysuit"
 	desc = "A vacuum-sealed asbestos jumpsuit covering the entire body."
 	icon_state = "recon"
 	item_state = "recon"
 	item_color = "recon"
+
+
+
+/obj/item/clothing/under/f13/fatigues/
+	desc = "Variety is the Spice of LIFE!"
+
+/obj/item/clothing/under/f13/fatigues/random/Initialize()
+	..()
+	var/obj/item/clothing/under/f13/fatigues/C = pick(subtypesof(/obj/item/clothing/under/f13/fatigues/) - /obj/item/clothing/under/f13/fatigues/random)
+	if(ishuman(loc))
+		var/mob/living/carbon/human/H = loc
+		H.equip_to_slot_or_del(new C(H), SLOT_W_UNIFORM) //or else you end up with naked assistants running around everywhere...
+	else
+		new C(loc)
+	return INITIALIZE_HINT_QDEL
+
+/obj/item/clothing/under/f13/fatigues/red
+	name = "red fatigues"
+	desc = "A white woolen fatigue."
+	icon_state = "fatiguesred"
+	item_state = "fatiguesred"
+	item_color = "fatiguesred"
+
+/obj/item/clothing/under/f13/fatigues/blue
+	name = "blue fatigues"
+	desc = "A blue woolen fatigue."
+	icon_state = "fatiguesblue"
+	item_state = "fatiguesblue"
+	item_color = "fatiguesblue"
+
+/obj/item/clothing/under/f13/fatigues/white
+	name = "white fatigues"
+	desc = "A white woolen fatigue."
+	icon_state = "fatigueswhite"
+	item_state = "fatigueswhite"
+	item_color = "fatigueswhite"
+
+
 
 
 //Legion

@@ -80,6 +80,30 @@
 	transfer_prints = FALSE
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/gloves/longmedical
+	name = "Long medical gloves"
+	desc = "Turn your head and cough for me."
+	icon_state = "longmedical"
+	item_state = "longmedical"
+	siemens_coefficient = 0.3
+	permeability_coefficient = 0.01
+	transfer_prints = TRUE
+	resistance_flags = NONE
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/gloves/fatiguesgloves
+	name = "fatigues gloves"
+	desc = "Very Cool!"
+	icon_state = "fatiguesgloves"
+	item_state = "fatiguesgloves"
+	item_color = null	//So they don't wash.
+	transfer_prints = TRUE
+	strip_delay = 40
+	equip_delay_other = 20
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+
+
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
 	desc = "For when you're expecting to get slapped on the wrist. Offers modest protection to your arms."

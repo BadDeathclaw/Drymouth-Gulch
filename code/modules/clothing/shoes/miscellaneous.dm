@@ -361,3 +361,16 @@
 	item_state = "legionmetal"
 	item_color = "cult"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+
+/obj/item/clothing/shoes/fatiguesshoes
+	name = "Fatigues boots"
+	desc = "Comfy and ergonomic!"
+	icon_state = "fatiguesshoes"
+	item_state = "fatiguesshoes"
+	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
+	strip_delay = 70
+	resistance_flags = NONE
+	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
