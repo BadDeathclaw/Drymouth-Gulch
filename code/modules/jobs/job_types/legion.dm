@@ -161,7 +161,7 @@ Veteran Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762/doublestacked=3, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/storage/bag/money/small/legofficer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -199,7 +199,7 @@ Prime Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/storage/bag/money/small/legofficer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -237,7 +237,7 @@ Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/storage/bag/money/small/legofficer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
