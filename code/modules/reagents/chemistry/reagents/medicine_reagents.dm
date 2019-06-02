@@ -1463,6 +1463,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	
 /datum/reagent/medicine/medx/legion
 addiction_threshold = 50
+id = "medx_legion"
 
 /datum/reagent/medicine/mentat
 	name = "Mentat Powder"
