@@ -179,9 +179,9 @@
 	name = "stimpak"
 	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
 	icon_state = "stimpakpen"
-	volume = 16
-	amount_per_transfer_from_this = 16
-	list_reagents = list("stimpak" = 10, "tricordrazine" = 6)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list("stimpak" = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	name = "super stimpak"
