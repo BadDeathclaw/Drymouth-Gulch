@@ -271,7 +271,6 @@ Vexillarius
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
@@ -280,6 +279,7 @@ Vexillarius
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/megaphone/cornu=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
+	r_pocket = /obj/item/restraints/handcuffs
 
 /*
 Veteran
@@ -355,12 +355,12 @@ Prime
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
+	r_pocket = /obj/item/restraints/handcuffs
 
 
 /*
