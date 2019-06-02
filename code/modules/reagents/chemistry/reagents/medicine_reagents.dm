@@ -1268,7 +1268,7 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
-	metabolization_rate = 5 * REAGENTS_METABOLISM
+	metabolization_rate = .5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -1280,9 +1280,10 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-6*REM, 0)
-	M.adjustFireLoss(-6*REM, 0)
-	M.adjustOxyLoss(-6*REM, 0)
+	M.adjustBruteLoss(-5*REM, 0)
+	M.adjustFireLoss(-5*REM, 0)
+	M.adjustOxyLoss(-2*REM, 0)
+	M.adjustToxLoss(-2*REM, 0)
 	M.AdjustStun(-10, 0)
 	M.AdjustKnockdown(-10, 0)
 	M.adjustStaminaLoss(-4*REM, 0)
@@ -1301,11 +1302,17 @@ datum/reagent/medicine/super_stimpak
 	description = "Chemicals found in pre-war stimpaks."
 	reagent_state = LIQUID
 	color = "#e50d0d"
+	metabolization_rate = .5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
-	M.adjustBruteLoss(-3*REM)
-	M.adjustFireLoss(-3*REM)
-	M.adjustOxyLoss(-3*REM)
+	M.adjustBruteLoss(-8*REM)
+	M.adjustFireLoss(-8*REM)
+	M.adjustOxyLoss(-4*REM)
+	M.adjustToxLoss(-4*REM, 0)
+	M.AdjustStun(-15, 0)
+	M.AdjustKnockdown(-15, 0)
+	M.adjustStaminaLoss(-6*REM, 0)
 	..()
 	return
 
@@ -1316,12 +1323,13 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.35 * REAGENTS_METABOLISM
+	metabolization_rate = 0.3 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-3*REM)
-	M.adjustBruteLoss(-3*REM)
+	M.adjustFireLoss(-4*REM)
+	M.adjustBruteLoss(-4*REM)
+	M.adjustToxLoss(-1*REM)
 	M.hallucination = max(M.hallucination, 5)
 	. = 1
 	..()
@@ -1338,12 +1346,14 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	description = "Restores limb condition and heals rapidly."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
-	metabolization_rate = 1.25 * REAGENTS_METABOLISM
+	metabolization_rate = .2 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-4*REM)
-	M.adjustBruteLoss(-4*REM)
-	M.adjustToxLoss(-0.5*REM)
+	M.adjustFireLoss(-5*REM)
+	M.adjustBruteLoss(-5*REM)
+	M.adjustToxLoss(-2*REM)
+	M.adjustOxyLoss(-4*REM)
+	M.hallucination = max(M.hallucination, 5)
 	..()
 
 /datum/reagent/medicine/radx
@@ -1450,6 +1460,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Dizzy(5)
 		M.Jitter(5)
 	..()
+	
+/datum/reagent/medicine/medx/legion
+addiction_threshold = 50
 
 /datum/reagent/medicine/mentat
 	name = "Mentat Powder"
