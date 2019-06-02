@@ -161,7 +161,7 @@ Veteran Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762/doublestacked=3, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -199,7 +199,7 @@ Prime Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -237,7 +237,7 @@ Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -279,7 +279,7 @@ Vexillarius
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/megaphone/cornu=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legenlisted)
 
 /*
 Veteran
@@ -321,7 +321,7 @@ Veteran
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
+		/obj/item/storage/bag/money/small/legenlisted)
 
 
 /*
@@ -360,7 +360,7 @@ Prime
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
+		/obj/item/storage/bag/money/small/legenlisted)
 
 
 /*
@@ -396,8 +396,7 @@ Legionary
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
+		/obj/item/flashlight/flare/torch=1)
 
 
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
@@ -433,7 +432,7 @@ Legionary
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
+		/obj/item/storage/bag/money/small/legenlisted)
 	r_pocket = /obj/item/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
@@ -469,7 +468,7 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
+		/obj/item/storage/bag/money/small/legenlisted)
 
 /datum/job/CaesarsLegion/f13campfollower
 	title = "Camp Follower"
