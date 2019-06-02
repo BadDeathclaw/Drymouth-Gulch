@@ -428,7 +428,7 @@ Legionary
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
