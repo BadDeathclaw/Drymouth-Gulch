@@ -1268,7 +1268,7 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
-	metabolization_rate = .5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -1302,7 +1302,7 @@ datum/reagent/medicine/super_stimpak
 	description = "Chemicals found in pre-war stimpaks."
 	reagent_state = LIQUID
 	color = "#e50d0d"
-	metabolization_rate = .5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
@@ -1346,7 +1346,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	description = "Restores limb condition and heals rapidly."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
-	metabolization_rate = .2 * REAGENTS_METABOLISM
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 
 /datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
 	M.adjustFireLoss(-5*REM)
@@ -1461,9 +1461,77 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Jitter(5)
 	..()
 	
-/datum/reagent/medicine/medx/legion
-addiction_threshold = 50
-id = "medx_legion"
+/datum/reagent/medicine/legionmedx
+	name = "Legion Med-X"
+	id = "legion_medx"
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
+	reagent_state = LIQUID
+	color = "#6D6374"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 10
+	addiction_threshold = 50
+
+/datum/reagent/medicine/medx/on_mob_add(mob/M)
+	..()
+	if(isliving(M))
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_HEALTHY
+		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+
+/datum/reagent/medicine/medx/on_mob_delete(mob/M)
+	if(isliving(M))
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_NONE
+		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+	..()
+
+/datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
+	M.AdjustStun(-30, 0)
+	M.AdjustKnockdown(-30, 0)
+	M.AdjustUnconscious(-30, 0)
+	M.adjustStaminaLoss(-5, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/medx/overdose_process(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(2)
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		. = 1
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+
+/datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		. = 1
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
 
 /datum/reagent/medicine/mentat
 	name = "Mentat Powder"
