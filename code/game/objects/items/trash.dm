@@ -13,11 +13,7 @@
 
 /obj/item/trash/candy
 	name = "candy"
-	icon_state = "candy"
-
-/obj/item/trash/candy/hyena
-	name = "hyena candy"
-	icon_state = "hcandy"
+	icon_state= "candy"
 
 /obj/item/trash/cheesie
 	name = "cheesie honkers"
