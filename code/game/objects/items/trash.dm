@@ -15,10 +15,6 @@
 	name = "candy"
 	icon_state = "candy"
 
-/obj/item/trash/candy/hyena
-	name = "hyena candy"
-	icon_state = "hcandy"
-
 /obj/item/trash/cheesie
 	name = "cheesie honkers"
 	icon_state = "cheesie_honkers"
