@@ -413,11 +413,11 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan
-	name = "legion decanus helmet"
-	desc = "It's leather legion decan helmet."
+	name = "legion recruit decanus helmet"
+	desc = "It's leather legion recruit decan helmet."
 	icon_state = "legdecan"
 	item_state = "legdecan"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
