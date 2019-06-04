@@ -438,7 +438,7 @@ Recon Ranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/ncr/f13recranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
-	suit = 			/obj/item/clothing/suit/armor/f13/rangerrecon
+	suit = 			/obj/item/clothing/suit/toggle/armor/f13/rangerrecon
 	belt =			/obj/item/storage/belt/military/reconbandolier
 	head = 			/obj/item/clothing/head/f13/ranger
 	shoes = 		/obj/item/clothing/shoes/laced
