@@ -515,7 +515,7 @@
 	. = 0
 	if(isopenturf(loc) && !is_flying())
 		var/turf/open/T = loc
-		. += T.slowdown
+		. += ( has_trait(TRAIT_HARD_YARDS) ? T.slowdown * 0.5 : T.slowdown )
 	var/static/datum/config_entry/number/run_delay/config_run_delay
 	var/static/datum/config_entry/number/walk_delay/config_walk_delay
 	if(isnull(config_run_delay))
