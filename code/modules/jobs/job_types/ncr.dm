@@ -70,6 +70,7 @@ Captain
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
 	jobtype 	= /datum/job/ncr/f13captain
+	id 			= /obj/item/card/id/ncrcaptain
 	uniform		= /obj/item/clothing/under/f13/ncr/officer
 	accessory 	= /obj/item/clothing/accessory/ncr/CPT
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -105,6 +106,7 @@ Lieutenant
 /datum/outfit/job/ncr/f13lieutenant
 	name		= "NCR Lieutenant"
 	jobtype		= /datum/job/ncr/f13lieutenant
+	id			= /obj/item/card/id/ncrlieutenant
 	uniform		= /obj/item/clothing/under/f13/ncr/officer
 	accessory	= /obj/item/clothing/accessory/ncr/LT
 	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -142,6 +144,7 @@ Medic
 /datum/outfit/job/ncr/f13medic
 	name = "NCR Medical Officer"
 	jobtype = /datum/job/ncr/f13medic
+	id		= /obj/item/card/id/ncrlieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =     /obj/item/clothing/accessory/ncr/LT
 	suit = 			/obj/item/clothing/suit/toggle/labcoat/cmo
@@ -180,6 +183,7 @@ Medic
 /datum/outfit/job/ncr/f13sergeant
 	name = "NCR Sergeant"
 	jobtype = /datum/job/ncr/f13sergeant
+	id = 			/obj/item/card/id/ncrsergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -219,6 +223,7 @@ Engineer
 	name = "NCR Engineer"
 	jobtype = /datum/job/ncr/f13engineer
 	uniform =  		/obj/item/clothing/under/f13/ncr
+	id = 			/obj/item/card/id/ncrsergeant
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/hardhat/orange
@@ -257,6 +262,7 @@ Trooper
 /datum/outfit/job/ncr/f13trooper
 	name = "NCR Trooper"
 	jobtype = /datum/job/ncr/f13trooper
+	id = 			/obj/item/card/id/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/TPR
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
@@ -291,6 +297,7 @@ Recruit
 /datum/outfit/job/ncr/f13recruit
 	name = "NCR Recruit"
 	jobtype = /datum/job/ncr/f13recruit
+	id = 			/obj/item/card/id/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/REC
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
@@ -326,6 +333,7 @@ Heavy Trooper
 /datum/outfit/job/ncr/f13heavytroop
 	name = "NCR Heavy Trooper"
 	jobtype = /datum/job/ncr/f13heavytroop
+	id = 			/obj/item/card/id/ncrsergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/t45b
@@ -359,9 +367,15 @@ Veteran Ranger
 
 	outfit = /datum/outfit/job/ncr/f13vetranger
 
+
+/datum/job/ncr/f13vetranger/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/ncr/f13vetranger
+	id = 			/obj/item/card/id/ncrranger
 	uniform =  		/obj/item/clothing/under/f13/vetranger
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
 	belt =			/obj/item/storage/belt/military/ncr
@@ -395,9 +409,15 @@ Ranger
 
 	outfit = /datum/outfit/job/ncr/f13ranger
 
+
+/datum/job/ncr/f13ranger/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/ncr/f13ranger
+	id = 			/obj/item/card/id/ncrranger
 	uniform =  		/obj/item/clothing/under/f13/patrolranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	belt =			/obj/item/storage/belt/military/ncr
@@ -405,11 +425,9 @@ Ranger
 	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/m29=1, \
-		/obj/item/ammo_box/c4570=2, \
-		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
+		/obj/item/ammo_box/a762/doublestacked = 3, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -434,9 +452,15 @@ Recon Ranger
 
 	outfit = /datum/outfit/job/ncr/f13recranger
 
+
+/datum/job/ncr/f13recranger/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/ncr/f13recranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/ncr/f13recranger
+	id = 			/obj/item/card/id/ncrranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/toggle/armor/f13/rangerrecon
 	belt =			/obj/item/storage/belt/military/reconbandolier
@@ -445,9 +469,7 @@ Recon Ranger
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
-		/obj/item/gun/ballistic/revolver/m29=1, \
-		/obj/item/ammo_box/a762=2, \
-		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
+		/obj/item/ammo_box/a308 = 4, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
