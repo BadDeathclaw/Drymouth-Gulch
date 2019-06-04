@@ -402,7 +402,7 @@ Ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
 	belt =			/obj/item/storage/belt/military/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
-	gloves =		/obj/item/clothing/gloves/color/black
+	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
