@@ -93,7 +93,8 @@
 			user.transferItemToLoc(AC, src, TRUE)
 			num_loaded++
 	if(istype(A, /obj/item/ammo_box/tube))
-		num_loaded = 1
+		if(stored_ammo > 0)
+			num_loaded = 1
 
 	if(num_loaded)
 		if(!silent)
