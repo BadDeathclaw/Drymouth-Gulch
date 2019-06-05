@@ -64,7 +64,6 @@
 	result = /obj/item/reagent_containers/food/snacks/store/bread/creamcheese
 	subcategory = CAT_BREAD
 
-/*
 /datum/crafting_recipe/food/mimanabread
 	name = "Mimana bread"
 	reqs = list(
@@ -75,7 +74,6 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/store/bread/mimana
 	subcategory = CAT_BREAD
-*/
 
 /datum/crafting_recipe/food/butteredtoast
 	name = "Buttered Toast"

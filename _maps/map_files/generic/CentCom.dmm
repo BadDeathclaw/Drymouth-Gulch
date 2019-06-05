@@ -2243,7 +2243,7 @@
 "aXc" = (/obj/machinery/light{dir = 8; light_color = "#e8eaff"},/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/underground/cave)
 "aXd" = (/obj/structure/flora/ausbushes/fernybush,/obj/structure/flora/ausbushes/fullgrass,/obj/structure/flora/ausbushes/palebush,/obj/structure/window/reinforced/fulltile,/turf/open/floor/grass,/area/centcom/holding)
 "aXe" = (/obj/machinery/vending/autodrobe{req_access_txt = "0"},/turf/open/floor/wood,/area/centcom/holding)
-"aXf" = (/obj/effect/landmark/poster_spawner/prewar,/turf/closed/wall/r_wall/rust,/area/f13/underground/cave)
+"aXf" = (/obj/structure/sign/poster/corporate_espionage,/turf/closed/wall/r_wall/rust,/area/f13/underground/cave)
 "aXg" = (/obj/structure/dresser,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/underground/cave)
 "aXh" = (/obj/structure/chair/f13chair2{icon_state = "f13chair2"; dir = 8},/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/underground/cave)
 "aXi" = (/obj/machinery/door/airlock,/turf/open/floor/plasteel/f13{icon_state = "floorgrime"},/area/f13/underground/cave)

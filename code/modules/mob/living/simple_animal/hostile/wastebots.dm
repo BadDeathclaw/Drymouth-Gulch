@@ -80,10 +80,10 @@
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
 	icon_dead = "sentrybot"
-	health = 360
-	maxHealth = 360
-	melee_damage_lower = 85
-	melee_damage_upper = 85
+	health = 280
+	maxHealth = 280
+	melee_damage_lower = 48
+	melee_damage_upper = 72
 	extra_projectiles = 5 //6 projectiles
 	ranged_cooldown_time = 12 //brrrrrrrrrrrrt
 	ranged = TRUE
@@ -120,7 +120,7 @@
 	visible_message("<span class='warning'>You hear an ominous beep coming from [src]!</span>", "<span class='warning'>You hear an ominous beep!</span>")
 
 /mob/living/simple_animal/hostile/handy/sentrybot/proc/self_destruct()
-	explosion(src,2,4,8,8)
+	explosion(src,1,2,4,4)
 	qdel(src)
 
 /mob/living/simple_animal/hostile/handy/sentrybot/death()

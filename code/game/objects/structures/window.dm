@@ -751,7 +751,7 @@
 
 /obj/structure/window/fulltile/wood_window
 	icon = 'icons/obj/wood_window.dmi'
-	icon_state = "housewindow"
+	icon_state = "window"
 	density = TRUE
 	smooth = SMOOTH_FALSE
 	level = 3

@@ -83,10 +83,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/all_quirks = list()
 	var/list/character_quirks = list()
 
-	var/music_volume = 1
-	var/sounds_volume = 1
-	var/ambient_volume = 1
-
 		//Jobs, uses bitflags
 	var/job_civilian_high = 0
 	var/job_civilian_med = 0
@@ -1128,6 +1124,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			var/quirk_cost = initial(T.value) * -1
 			var/lock_reason = "This trait is unavailable."
 			var/quirk_conflict = FALSE
+			if(initial(T.locked))
+				quirk_conflict = TRUE
 			for(var/_V in all_quirks)
 				if(_V == quirk_name)
 					has_quirk = TRUE

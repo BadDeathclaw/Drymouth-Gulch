@@ -205,7 +205,7 @@
 				return 1
 	return 0
 
-/turf/closed/wall/r_wall/update_icon()
+/turf/closed/wall/r_wall/proc/update_icon()
 	if(d_state != INTACT)
 		smooth = SMOOTH_FALSE
 		clear_smooth_overlays()
