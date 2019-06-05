@@ -1269,7 +1269,7 @@
 	color = "#C8A5DC"
 	taste_description = "grossness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 20
+	overdose_threshold = 30
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -1347,6 +1347,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	overdose_threshold = 20
 
 /datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
 	M.adjustFireLoss(-5*REM)
@@ -1462,30 +1463,30 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	
 /datum/reagent/medicine/legionmedx
-	name = "Legion Med-X"
+	name = "natural painkiller"
 	id = "legion_medx"
 	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 10
+	overdose_threshold = 20
 	addiction_threshold = 50
 
-/datum/reagent/medicine/medx/on_mob_add(mob/M)
+/datum/reagent/medicine/legionmedx/on_mob_add(mob/M)
 	..()
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_HEALTHY
 		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
 
-/datum/reagent/medicine/medx/on_mob_delete(mob/M)
+/datum/reagent/medicine/legionmedx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_NONE
 		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
 	..()
 
-/datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-30, 0)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)
@@ -1493,20 +1494,20 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = 1
 
-/datum/reagent/medicine/medx/overdose_process(mob/living/M)
+/datum/reagent/medicine/legionmedx/overdose_process(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.Dizzy(2)
 		M.Jitter(2)
 	..()
 
-/datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
+/datum/reagent/medicine/legionmedx/addiction_act_stage1(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.Jitter(2)
 	..()
 
-/datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
+/datum/reagent/medicine/legionmedx/addiction_act_stage2(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(1*REM, 0)
@@ -1515,7 +1516,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Jitter(3)
 	..()
 
-/datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
+/datum/reagent/medicine/legionmedx/addiction_act_stage3(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(2*REM, 0)
@@ -1524,7 +1525,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Jitter(4)
 	..()
 
-/datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
+/datum/reagent/medicine/legionmedx/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(3*REM, 0)
