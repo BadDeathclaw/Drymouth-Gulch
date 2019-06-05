@@ -57,12 +57,6 @@
 	list_reagents = list("healing_powder" = 10)
 	icon_state = "bandaid_healingpowder"
 
-/obj/item/reagent_containers/pill/patch/doctorsbag
-	name = "Doctor's Bag"
-	desc = "A bag containing various drugs, patches, and a dose of hydra to bring you right back up from the brink of death."
-	list_reagents = list("healing_powder" = 20, "silver_sulfadiazine" = 10, "styptic_powder" = 10)
-	icon_state = "bandaid_doctorsbag"
-
 /obj/item/reagent_containers/pill/patch/healpoultice
 	name = "Healing poultice"
 	desc = "A concoction of broc flower, cave fungus, agrave fruit and xander root."
