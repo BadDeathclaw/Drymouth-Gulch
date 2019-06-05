@@ -4,7 +4,7 @@
 	department_flag = LEGION
 	selection_color = "#ffeeee"
 	exp_type = EXP_TYPE_LEGION
-	faction = "Legion"
+
 /datum/outfit/job/CaesarsLegion
 	id = null
 	ears = null
@@ -55,6 +55,11 @@ Needs whitelist
 	access = list()
 	minimal_access = list()
 
+
+/datum/job/CaesarsLegion/Legionnaire/f13legate/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legate
 	name = "Legate"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legate
@@ -71,7 +76,6 @@ Needs whitelist
 		/obj/item/ammo_box/magazine/r20=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legion)
-
 
 /*
 Centurion
@@ -92,12 +96,17 @@ Centurion
 	req_admin_notify = 1
 	exp_requirements = 1920
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13centurion/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Legion Centurion"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
+	id =			/obj/item/card/id/legcenturion
 	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
@@ -132,9 +141,15 @@ Veteran Decan
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 
+
+/datum/job/CaesarsLegion/Legionnaire/f13vetdecan/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 	name = "Legion Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
+	id = 			/obj/item/card/id/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	mask =			/obj/item/clothing/mask/bandana/legdecan
@@ -148,7 +163,7 @@ Veteran Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762/doublestacked=3, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -167,12 +182,13 @@ Prime Decan
 
 	exp_requirements = 1320
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13primedecan
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primedecan
 	name = "Legion Prime Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primedecan
+	id = 			/obj/item/card/id/legprime
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
@@ -186,7 +202,7 @@ Prime Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -211,6 +227,7 @@ Decan
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
 	name = "Legion Recruit Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13decan
+	id = 			/obj/item/card/id/legrecruit
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
@@ -224,7 +241,7 @@ Decan
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legofficers)
 
 
 /*
@@ -243,18 +260,22 @@ Vexillarius
 
 	exp_requirements = 840
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13vexillarius/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
 	name = "Legion Vexillarius"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
+	id = 			/obj/item/card/id/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/restraints/handcuffs=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
@@ -262,7 +283,8 @@ Vexillarius
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/megaphone/cornu=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_officer)
+		/obj/item/storage/bag/money/small/legenlisted)
+	r_pocket = /obj/item/restraints/handcuffs
 
 /*
 Veteran
@@ -281,9 +303,15 @@ Veteran
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 
+
+/datum/job/CaesarsLegion/Legionnaire/f13vetlegion/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 	name = "Veteran Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetlegion
+	id = 			/obj/item/card/id/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
@@ -299,7 +327,7 @@ Veteran
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
+		/obj/item/storage/bag/money/small/legenlisted)
 
 
 /*
@@ -323,6 +351,7 @@ Prime
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
 	name = "Prime Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primelegion
+	id = 			/obj/item/card/id/legprime
 	shoes =         /obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
@@ -333,12 +362,12 @@ Prime
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
+		/obj/item/storage/bag/money/small/legenlisted)
+	r_pocket = /obj/item/restraints/handcuffs
 
 
 /*
@@ -361,6 +390,7 @@ Legionary
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 	name = "Recruit Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
+	id = 			/obj/item/card/id/legrecruit
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
@@ -374,8 +404,7 @@ Legionary
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
+		/obj/item/flashlight/flare/torch=1)
 
 
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
@@ -391,23 +420,28 @@ Legionary
 
 	exp_requirements = 600
 
-
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
+
+
+/datum/job/CaesarsLegion/Legionnaire/f13explorer/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
+	id = 		/obj/item/card/id/legveteran
 	suit = 		/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 		/obj/item/clothing/head/helmet/f13/legion/explorer
 	glasses = null
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/claymore/machete=1, \
+		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_veteran)
+		/obj/item/storage/bag/money/small/legenlisted)
 	r_pocket = /obj/item/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
@@ -424,9 +458,15 @@ Legionary
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 
+
+/datum/job/CaesarsLegion/Legionnaire/f13scout/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 	name = "Legion Scout"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13scout
+	id = 			/obj/item/card/id/legrecruit
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/scout
@@ -438,7 +478,7 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/flashlight/flare/torch=1, \
-		/obj/item/stack/f13Cash/random/denarius/legionpay_basic)
+		/obj/item/storage/bag/money/small/legenlisted)
 
 /datum/job/CaesarsLegion/f13campfollower
 	title = "Camp Follower"

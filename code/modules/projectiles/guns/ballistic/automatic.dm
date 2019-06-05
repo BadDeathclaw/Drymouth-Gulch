@@ -752,12 +752,13 @@
 	name = ".50MG bullet casing"
 	desc = "A .50MG bullet casing."
 	caliber = "a50MG"
-	icon_state = ".50"
+	icon_state = "50mg2"
 	projectile_type = /obj/item/projectile/bullet/a50MG
 
 /obj/item/ammo_casing/a50MG/incendiary
 	name = ".50 MG incendiary bullet casing"
 	desc = "A .50 MG incendiary bullet casing."
+	icon_state = "50in2"
 	caliber = "a50MG"
 	projectile_type = /obj/item/projectile/bullet/a50MG/incendiary
 
@@ -765,11 +766,19 @@
 	name = ".50 MG AP bullet casing"
 	desc = "A .50 MG armor-piercing bullet casing."
 	caliber = "a50MG"
+	icon_state = "50ap2"
 	projectile_type = /obj/item/projectile/bullet/a50MG/AP
+
+/obj/item/ammo_casing/a50MG/explosive
+	name = ".50 MG explosive bullet casing"
+	desc = "Comes in 5 bullet racks...more then enough to kill anything that moves.."
+	caliber = "a50MG"
+	icon_state = "50ex2"
+	projectile_type = /obj/item/projectile/bullet/a50MG/explosive
 
 //Projectiles
 /obj/item/projectile/bullet/c45
-	damage = 30
+	damage = 25
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c22
@@ -777,7 +786,7 @@
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/m44
-	damage = 35
+	damage = 30
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c9mm
@@ -849,6 +858,15 @@
 /obj/item/projectile/bullet/a50MG/AP
 	damage = 35
 	armour_penetration = 65 //will punch through anything short of Enclave power armor
+
+/obj/item/projectile/bullet/a50MG/explosive
+	damage = 50
+	armour_penetration = 20
+
+/obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, 0, 2, 2, 2)
+
 
 /obj/item/projectile/bullet/c2mm
 	damage = 60
