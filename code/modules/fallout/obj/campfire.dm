@@ -38,20 +38,12 @@
 	else if(fired && istype(P, /obj/item/reagent_containers/food/snacks))
 		if(!ishuman(user))
 			return
-		var/mob/living/carbon/human/H = user
-		var/obj/item/reagent_containers/food/snacks/F = P
-		to_chat(user, "You start cooking a [F.name]")
-		if(do_after(user, 20, target = src))
+		if(istype(P, /obj/item/reagent_containers/food/snacks))
+			var/obj/item/reagent_containers/food/snacks/F = P
 			if(F.cooked_type)
-				H.dropItemToGround()
-				var/obj/item/reagent_containers/food/snacks/S = new F.cooked_type ()
-				H.put_in_active_hand(S)
-				F.initialize_cooked_food(S, 0.8)
-			else
-				H.dropItemToGround()
-				var/obj/item/reagent_containers/food/snacks/S = new /obj/item/reagent_containers/food/snacks/badrecipe()
-				H.put_in_active_hand(S)
-			qdel(F)
+				to_chat(user, "You start cooking a [F.name].")
+				if(do_after(user, 20, target = src))
+					F.microwave_act()
 	else
 		. = ..()
 		if(fired)

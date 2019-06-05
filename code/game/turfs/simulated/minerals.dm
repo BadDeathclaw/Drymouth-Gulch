@@ -7,7 +7,7 @@
 	var/smooth_icon = 'icons/turf/walls/f13rock.dmi'
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = null
-	baseturfs = /turf/open/floor/plating/f13/inside/mountain
+	baseturfs = /turf/open/indestructible/ground/inside/mountain
 	initial_gas_mix = "TEMP=2.7"
 	opacity = 1
 	density = TRUE
@@ -15,7 +15,7 @@
 	layer = EDGED_TURF_LAYER
 	temperature = TCMB
 	var/environment_type = "asteroid"
-	var/turf/open/floor/plating/f13/inside/mountain/turf_type = /turf/open/floor/plating/f13/inside/mountain
+	var/turf/open/indestructible/ground/inside/mountain/turf_type = /turf/open/indestructible/ground/inside/mountain
 	var/mineralType = null
 	var/mineralAmt = 3
 	var/spread = 0 //will the seam spread?

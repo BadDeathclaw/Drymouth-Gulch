@@ -216,5 +216,5 @@
 
 /obj/structure/bed/mattress/pregame/New()
 	..()
-	icon_state = "mattress[rand(1,6)]"
+	icon_state = "mattress[rand(0,6)]"
 

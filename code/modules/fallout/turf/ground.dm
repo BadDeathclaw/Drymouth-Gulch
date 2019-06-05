@@ -69,6 +69,14 @@
 	/obj/item/seeds/feracactus, /obj/item/seeds/corn,/obj/item/seeds/shroom, /obj/item/seeds/agave)
 	slowdown = 0.1
 	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
+	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
+	var/pit_sand = 2
+	var/storedindex = 0			//amount of stored items
+	var/mob/living/gravebody	//is there a body in the pit?
+	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
+	var/pitcontents = list()
+	var/obj/dugpit/mypit
+	var/unburylevel = 0
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	..()
