@@ -83,6 +83,10 @@
 	turf_type = /turf/open/floor/wood
 	resistance_flags = FLAMMABLE
 
+/obj/item/stack/tile/wood/old
+	name = "old wood floor tile"
+	desc = "Some planks of wood taken from an old house."
+	turf_type = /turf/open/floor/wood/f13
 //Basalt
 /obj/item/stack/tile/basalt
 	name = "basalt tile"

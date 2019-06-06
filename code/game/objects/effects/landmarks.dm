@@ -558,10 +558,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/initiateknight
 	name = "Initiate Knight"
 	icon_state = "Initiate Knight"
+	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/initiatescribe
 	name = "Initiate Scribe"
 	icon_state = "Initiate Scribe"
+	icon_state = "Scribe"
 
 // Vault
 
