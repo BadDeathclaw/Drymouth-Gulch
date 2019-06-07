@@ -112,6 +112,9 @@
 		turfPlant = new randPlant(src)
 		. = TRUE
 
+/turf/open/indestructible/ground/outside/desert/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
+
 //Make sure we delete the plant if we ever change turfs
 /turf/open/indestructible/ground/outside/desert/ChangeTurf()
 	if(turfPlant)
@@ -125,6 +128,9 @@
 	/obj/item/seeds/potato, /obj/item/seeds/carrot, /obj/item/seeds/pumpkin, /obj/item/seeds/corn, /obj/item/seeds/agave)
 	slowdown = 0.2
 	flags_1 = CAN_HAVE_NATURE
+
+/turf/open/indestructible/ground/outside/dirt/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
+	return
 
 /turf/open/indestructible/ground/outside/road
 	name = "\proper road"

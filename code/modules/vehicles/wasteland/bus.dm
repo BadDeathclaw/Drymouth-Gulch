@@ -44,6 +44,11 @@
 	S.icon = null
 	S.verbs.Cut()
 
+/obj/structure/closet/bus/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/wrench))
+		return
+	..()
+
 /obj/structure/closet/bus/can_close(mob/living/user)
 	if(broken)
 		return 0
