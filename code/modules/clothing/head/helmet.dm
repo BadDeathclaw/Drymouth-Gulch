@@ -458,7 +458,7 @@
 	desc = "It's metal legion legat helmet."
 	icon_state = "leglegat"
 	item_state = "leglegat"
-	armor = list("melee" = 60, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 60, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 60, "fire" = 80, "acid" = 0)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
 	strip_delay = 50
@@ -473,7 +473,7 @@
 	desc = "An old combat helmet, out of use around the time of the war."
 	icon_state = "ranger"
 	item_state = "ranger"
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	strip_delay = 50
@@ -490,14 +490,14 @@
 	desc = "An U.S Marine Corps helmet, used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-	armor = list("melee" = 70, "bullet" = 35, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 65, "bullet" = 55, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
 	name = "elite riot gear helmet"
 	desc = "An old combat helmet seen in the divide, repurposed for higher ranking Rangers."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
-	armor = list("melee" = 70, "bullet" = 35, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 70, "bullet" = 60, "laser" = 40, "energy" = 55, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 
 //Metal masks
 /obj/item/clothing/head/helmet/f13/metalmask
