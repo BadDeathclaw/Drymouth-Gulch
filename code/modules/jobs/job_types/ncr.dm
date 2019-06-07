@@ -418,12 +418,11 @@ Ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/ncr/f13ranger
 	id = 			/obj/item/card/id/ncrranger
-	uniform =  		/obj/item/clothing/under/f13/patrolranger
+	uniform =  		/obj/item/clothing/under/f13/ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
-	belt =			/obj/item/storage/belt/military/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
-	gloves =		/obj/item/clothing/gloves/patrol
-	shoes =			/obj/item/clothing/shoes/laced
+	gloves =	/obj/item/clothing/gloves/fingerless
+	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
@@ -462,7 +461,7 @@ Recon Ranger
 	jobtype = /datum/job/ncr/f13recranger
 	id = 			/obj/item/card/id/ncrranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
-	suit = 			/obj/item/clothing/suit/toggle/armor/f13/rangerrecon
+	suit = 			/obj/item/clothing/suit/armor/f13/rangerrecon
 	belt =			/obj/item/storage/belt/military/reconbandolier
 	head = 			/obj/item/clothing/head/f13/ranger
 	shoes = 		/obj/item/clothing/shoes/laced

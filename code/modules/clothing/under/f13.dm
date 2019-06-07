@@ -107,13 +107,6 @@
 	item_state = "ranger"
 	item_color = "ranger"
 
-/obj/item/clothing/under/f13/patrolranger
-	name = "patrol ranger underclothes"
-	desc = "A pair of brown slacks and a breathable shirt, meant to be worn under N.C.R. patrol ranger armour."
-	icon_state = "patrolranger"
-	item_state = "patrolranger"
-	item_color = "patrolranger"
-
 /obj/item/clothing/under/f13/vetranger
 	name = "veteran ranger outfit"
 	desc = "Simple rustic clothes for any big iron packin' ranger."

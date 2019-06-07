@@ -10,10 +10,10 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/feracactus
 	lifespan = 60
 	endurance = 20
-	yield = 2
+	yield = 1
 	growthstages = 3
-	production = 5
-	maturation = 5
+	production = 20
+	maturation = 20
 
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus

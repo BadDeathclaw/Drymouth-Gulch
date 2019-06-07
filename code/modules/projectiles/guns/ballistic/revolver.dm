@@ -384,15 +384,6 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/gun/ballistic/revolver/m29/sadokist
-	name = "Wise's Warmaker"
-	desc = "A pre-war 4 inch barrel Colt Anaconda. It has a high quality blued finish, and parkerized wooden grips. Engraved on the grip is the word Wise."
-	item_state = "wise44"
-	icon_state = "wise"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
-	fire_sound = 'sound/f13weapons/sequoia.ogg'
-	w_class = WEIGHT_CLASS_NORMAL
-
 /obj/item/gun/ballistic/revolver/needler
 	name = "needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
