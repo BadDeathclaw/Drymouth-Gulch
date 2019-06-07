@@ -346,7 +346,7 @@
 	icon_state = "legionlegat"
 	item_state = "legionlegat"
 	item_color = "cult"
-	armor = list("melee" = 60, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 35, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
