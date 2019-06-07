@@ -216,6 +216,51 @@ update_label("John Doe", "Clowny")
 	id_type = "Badge"
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"
+	
+/obj/item/card/id/ncrtrooper
+	name = "trooper's tags"
+	desc = "A dog tag proving enlistment."
+	icon_state = "ncrdogtagrecruit"
+
+/obj/item/card/id/ncrsergeant
+	name = "sergeant's tags"
+	desc = "A chevron decorated dog tag showing NCO-ship."
+	icon_state = "ncrdogtagsergeant"
+
+/obj/item/card/id/ncrlieutenant
+	name = "lieutenant's tags"
+	desc = "A silver bar dog tag that denotes a member of the NCR military with a lieutenant commission."
+	icon_state = "ncrdogtagofficer"
+	
+/obj/item/card/id/ncrcaptain
+	name = "captain's tags"
+	desc = "A dog tag that demands respect from all those subordinate to it. This one belongs to an NCR captain."
+	icon_state = "ncrdogtagcaptain"
+
+/obj/item/card/id/ncrranger
+	name = "ranger tags"
+	desc = "A dog tag that invokes fear in those who see it, belongs to a man with a big iron on his hip."
+	icon_state = "ncrdogtagranger"
+	
+/obj/item/card/id/legrecruit
+	name = "recruit medallion"
+	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to a recruit."
+	icon_state = "legionmedallionrecruit"
+	
+/obj/item/card/id/legprime
+	name = "prime medallion"
+	desc = "A marked silver disc stamped with the Legion's Bull insignia. Belongs to a prime."
+	icon_state = "legionmedallionprime"
+	
+/obj/item/card/id/legveteran
+	name = "veteran medallion"
+	desc = "A heavily marked silver disc stamped with the Legion's Bull insignia. Belongs to a veteran, and reeks of iron."
+	icon_state = "legionmedallionveteran"
+	
+/obj/item/card/id/legcenturion
+	name = "centurion medallion"
+	desc = "A golden disc awarded to the most fierce men in the whole legion. If you are close enough to read the insignia you won't be alive much longer."
+	icon_state = "legionmedallioncent"
 
 /obj/item/card/id/syndicate
 	name = "agent card"

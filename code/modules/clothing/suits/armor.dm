@@ -576,7 +576,7 @@
 	desc = "A standard issue NCR protective vest."
 	icon_state = "ncr_vest"
 	item_state = "ncr_vest"
-	body_parts_covered = CHEST
+	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 60
 
