@@ -11,7 +11,7 @@
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
 	belt = 			/obj/item/storage/belt/military/assault
-	shoes = 		/obj/item/clothing/shoes/jackboots
+	shoes = 		/obj/item/clothing/shoes/ncr
 
 /*
 Colonel
