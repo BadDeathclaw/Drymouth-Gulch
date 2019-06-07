@@ -6,11 +6,6 @@
 	var/postdig_icon
 	var/list/archdrops
 	var/wet
-	var/list/broken_states
-	var/list/burnt_states
-	var/broken = 0
-	var/burnt = 0
-	var/list/icons
 
 /turf/open/ComponentInitialize()
 	. = ..()
