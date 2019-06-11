@@ -31,12 +31,15 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define CAN_BE_DIRTY_1				(1<<2)      // If a turf can be made dirty at roundstart. This is also used in areas.
 #define NO_LAVA_GEN_1				(1<<6) 		//Blocks lava rivers being generated on the turf
 #define NO_RUINS_1					(1<<10) 	//Blocks ruins spawning on the turf
+#define CAN_HAVE_NATURE				(1<<16)
+#define ADJACENCIES_OVERLAY			(1<<17)
 
 // flags_2, because we ran out of bits
 
 
 #define GLOBAL_LIGHT_TURF_2         (1<<0)     //Sets any light emitted by this turf to GLOBAL_LIGHTING, isn't affected by other GLOBAL_LIGHTING lights
 #define BLOCK_RADIO_2               (1<<1)     //Check if turf is blocking radio signals (because underground, or something) - encyption keys override
+
 
 /*
 	These defines are used specifically with the atom/pass_flags bitmask
