@@ -15,21 +15,17 @@
 	icon_state = "riflestock"
 
 
-/obj/machinery/ammobench
+/obj/machinery/autolathe/ammobench
 	name = "universal reloading bench"
 	desc = "A reloading bench used for inefficiently  crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This one can be used to craft most NCR and Legion rounds."
-	icon = 'icons/obj/recycling.dmi' //placeholder
-	icon_state = "grinder-b1" //placeholder
 	resistance_flags = INDESTRUCTIBLE
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
 	anchored = TRUE
-	machine_tool_behaviour = list(TOOL_LEGION, TOOL_NCR)
-
-/obj/machinery/ammobench/wrench_act(mob/living/user, obj/item/I)
-	default_unfasten_wrench(user, I, 10)
-	return TRUE
-
+//	machine_tool_behaviour = list(TOOL_LEGION, TOOL_NCR)
+	categories = list("Security")
+	super_advanced_technology = FALSE
+/*
 /obj/machinery/ammobench/ncr
 	name = "NCR reloading bench"
 	desc = "A reloading bench used for inefficiently  crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This one can be used to create most NCR rounds."
@@ -42,4 +38,4 @@
 	desc = "A reloading bench used for inefficiently crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This one can be used to create most Legion rounds."
 	icon = 'icons/obj/recycling.dmi' //placeholder
 	icon_state = "grinder-b1" //placeholder
-	machine_tool_behaviour = TOOL_NCR
+	machine_tool_behaviour = TOOL_NCR*/
