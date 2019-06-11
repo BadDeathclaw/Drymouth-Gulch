@@ -62,6 +62,15 @@
 	if(!C.client)
 		return FALSE
 
+	switch(alert(C, "Are you sure you want to play as this clone?", "Play as defective clone", "Yes", "No", "Jump to it instead"))
+		if("Yes")
+			//Just continue.
+		if("Jump to it instead")
+			C.forceMove(loc)
+			return FALSE
+		else //A "No" or another type of cancel.
+			return FALSE
+
 	var/mob/living/carbon/human/H = locate() in contents
 
 	if(QDELETED(H))
