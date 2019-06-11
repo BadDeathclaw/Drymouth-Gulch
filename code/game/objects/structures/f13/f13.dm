@@ -1,5 +1,4 @@
-/* this can be put in now
-/obj/structure/f13/woodwindow
+/*/obj/structure/f13/woodwindow
 	name = "wodden window"
 	desc = "A flimsy frame with some glass panes, nothing's getting through that, nope."
 	icon = 'icons/obj/wood_window.dmi'

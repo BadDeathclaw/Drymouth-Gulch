@@ -121,7 +121,7 @@
 
 // Chair types
 /obj/structure/chair/wood
-	icon_state = "wooden_chair_settler"
+	icon_state = "wooden_chair"
 	name = "wooden chair"
 	desc = "Old is never too old to not be in fashion."
 	resistance_flags = FLAMMABLE
@@ -139,20 +139,6 @@
 /obj/structure/chair/wood/wings
 	icon_state = "wooden_chair_wings"
 	item_chair = /obj/item/chair/wood/wings
-
-/obj/structure/chair/wood/modern
-	icon_state = "wooden_chair_new"
-	desc = "This chair is good as new.<br>Old is never too old to not be in fashion."
-
-/obj/structure/chair/wood/worn
-	icon_state = "wooden_chair_old"
-	desc = "The furnish has faded and it's not so shiny anymore.<br>Still a good chair though."
-
-/obj/structure/chair/wood/fancy
-	icon_state = "wooden_chair_fancy"
-	name = "fancy wooden chair"
-	desc = "An elegant chair made of luxurious wood."
-
 
 /obj/structure/chair/comfy
 	name = "comfy chair"

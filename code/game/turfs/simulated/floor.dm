@@ -11,7 +11,12 @@
 	thermal_conductivity = 0.040
 	heat_capacity = 10000
 	intact = 1
+	var/broken = 0
+	var/burnt = 0
 	var/floor_tile = null //tile that this floor drops
+	var/list/broken_states
+	var/list/burnt_states
+	var/list/icons
 	icon_state = ""
 
 /turf/open/floor/Initialize(mapload)
@@ -94,7 +99,7 @@
 /turf/open/floor/blob_act(obj/structure/blob/B)
 	return
 
-/turf/open/proc/update_icon()
+/turf/open/floor/proc/update_icon()
 	if(!..())
 		return 0
 	update_visuals()
