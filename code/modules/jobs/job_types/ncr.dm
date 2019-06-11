@@ -211,6 +211,7 @@ Quartermaster
 	total_positions = 1
 	spawn_positions = 1
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
+	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are in charge of requisitions and organizing the armory for the NCR camp. You answer directly to the Lieutenant and Captain, while also organizing grunts to assist you as needed."
 	supervisors = "Lieutenants and above"
 	selection_color = "fff5cc"
