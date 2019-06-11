@@ -530,3 +530,13 @@
 	var/pressure = environment.return_pressure()
 	if(pressure <= LAVALAND_EQUIPMENT_EFFECT_PRESSURE)
 		. = TRUE
+
+
+proc/has_density(var/atom)
+	var/turf/T = get_turf(atom)
+	if(T.density)
+		return 1
+	for(var/atom/A in T)
+		if(A.density)
+			return 1
+	return 0
