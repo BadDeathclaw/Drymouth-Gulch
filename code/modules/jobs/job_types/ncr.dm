@@ -202,6 +202,42 @@ Medic
 
 
 /*
+Quartermaster
+*/
+/datum/job/ncr/f13quartermaster
+	title = "NCR Quartermaster"
+	flag = F13QUARTERMASTER
+	faction= "NCR"
+	total_positions = 1
+	spawn_positions = 1
+	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
+	description = "You are in charge of requisitions and organizing the armory for the NCR camp. You answer directly to the Lieutenant and Captain, while also organizing grunts to assist you as needed."
+	supervisors = "Lieutenants and above"
+	selection_color = "fff5cc"
+	exp_requirements = 1200
+
+	outfit = /datum/outfit/job/ncr/f13quartermaster
+
+/datum/outfit/job/ncr/f13quartermaster
+	name = "NCR Quartermaster"
+	jobtype = /datum/job/ncr/f13quartermaster
+	id = 			/obj/item/card/id/ncrquartermaster
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/ssgt
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	head = 			/obj/item/clothing/head/f13/ncr
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	suit_store  = /obj/item/gun/ballistic/automatic/marksman
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/r20=3, \
+		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,  \
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/melee/classic_baton/telescopic=1, \
+		/obj/item/storage/bag/money/small/ncrofficers)
+	box = null
+
+/*
 Engineer
 */
 /datum/job/ncr/f13engineer

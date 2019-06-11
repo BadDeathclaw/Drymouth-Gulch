@@ -122,7 +122,7 @@
 	name = "medical armband (O-1 Medical Officer)"
 	desc = "An armband worn by NCR Medical Officers to diplay their rank and specialty. This one is white."
 
-/obj/item/clothing/accessory/ncr/SSGT
+/obj/item/clothing/accessory/ncr/ssgt
     name = "(E-6) Staff Sergeant rank pins"
     desc = "A trooper holding the rank of Staff Sergeant should wear this."
     icon_state = "ncrenlisted"
