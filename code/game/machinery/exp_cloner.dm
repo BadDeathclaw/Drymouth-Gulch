@@ -75,8 +75,11 @@
 	H.key = C.key
 
 
-/obj/machinery/clonepod/experimental/proc/finish_cloning(mob/dead/observer/C)
+/obj/machinery/clonepod/experimental/proc/finish_cloning()
 	var/mob/living/carbon/human/H = locate() in contents
+
+	if(!H)
+		return FALSE
 
 	if(grab_ghost_when == CLONER_FRESH_CLONE)
 		H.grab_ghost()
