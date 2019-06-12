@@ -315,6 +315,17 @@
 
 //Mutant Band
 
+//Remnants
+
+/obj/item/clothing/under/f13/enclave_officer
+	name = "Remnant Officer Uniform"
+	desc = "A standard Enclave officer uniform.<br>The outer layer is made of a sturdy material designed to withstand the harsh conditions of the wasteland."
+	icon_state = "enclave_o"
+	item_state = "bl_suit"
+	item_color = "enclave_o"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 0, bio = 10, rad = 10, fire = 0, acid = 0)
+	can_adjust = 0
 
 //Masks
 /obj/item/clothing/mask/facewrap
