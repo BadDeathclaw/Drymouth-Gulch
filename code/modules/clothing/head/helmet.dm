@@ -269,6 +269,14 @@
 /obj/item/clothing/head/helmet/riot/vaultsec
 	name = "security helmet"
 	desc = "A standard issue vault security helmet, pretty robust."
+	
+//Remnants
+/obj/item/clothing/head/donor/enclave
+	name = "Remnant Cap"
+	desc = "A resistant, black forage cap issued to Enclave soldiers."
+	icon_state = "enclave_cap"
+	item_state = "enclave_cap"
+	armor = list("melee" = 10, "bullet" = 15, "laser" = 20, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
 //Raider
 /obj/item/clothing/head/helmet/f13/raider
