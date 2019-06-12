@@ -29,12 +29,12 @@
 		fire(user)
 	else if(istype(P, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = P
-		if(fuel > 400)
+		if(fuel > 3000)
 			to_chat(user, "You can't add more fuel - wait untill some of it burns away!")
 			return
 		if(W.use(1))
 			user.visible_message("[user] has added fuel to [src].", "<span class='notice'>You have added fuel to [src].</span>")
-			fuel += 60
+			fuel += 300
 	else if(fired && istype(P, /obj/item/reagent_containers/food/snacks))
 		if(!ishuman(user))
 			return
@@ -62,9 +62,9 @@
 		return
 	burn_process()
 	fuel--
-	if(fuel > 200)
+	if(fuel > 1500)
 		set_light(8)
-	else if(fuel > 100)
+	else if(fuel > 300)
 		set_light(3)
 	else
 		set_light(1)

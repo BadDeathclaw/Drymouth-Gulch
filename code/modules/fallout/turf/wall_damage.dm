@@ -4,8 +4,11 @@
 	var/damage = 0
 	var/damage_overlay = 0
 	var/global/damage_overlays[16]
+	var/breakable = 0
 
 /turf/closed/wall/proc/take_damage(dam)
+	if(!breakable)
+		return
 	if(dam)
 		damage = max(0, damage + dam)
 		update_icon()
