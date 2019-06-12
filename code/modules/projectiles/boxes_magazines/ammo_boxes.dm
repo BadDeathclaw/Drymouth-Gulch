@@ -49,7 +49,7 @@
 	desc = "Designed to quickly reload repeaters."
 	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/m44
-	max_ammo = 9
+	max_ammo = 8
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
@@ -65,7 +65,7 @@
 /obj/item/ammo_box/tube/c4570
 	name = "speed loader tube (.45-70)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "4570tube"
+	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 8
 	multiple_sprites = 1
@@ -74,9 +74,9 @@
 /obj/item/ammo_box/tube/c4570SP
 	name = "speed loader (.45 LC)"
 	desc = "Designed to quickly reload revolvers."
-	icon_state = "45lctube"
+	icon_state = "357tube"
 	ammo_type = /obj/item/ammo_casing/c4570SP
-	max_ammo = 12
+	max_ammo = 10
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
