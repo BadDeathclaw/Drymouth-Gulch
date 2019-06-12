@@ -332,3 +332,4 @@
 /obj/machinery/microwave/stove/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/screwdriver))
 		return
+	..()

@@ -730,15 +730,6 @@
 
 //Fluff
 
-/obj/item/clothing/under/f13/cyberpunk
-	name = "cyberpunk suit"
-	desc = "You never asked for anything that stylish."
-	icon_state = "jensen"
-	item_state = "jensensuit"
-	item_color = "jensen"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
-	can_adjust = 0
 
 /obj/item/clothing/under/f13/agent47
 	name = "mysterious suit"
@@ -780,16 +771,6 @@
 	armor = list(melee = 5, bullet = 5, laser = 5, energy = 5, bomb = 5, bio = 5, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
 
-/obj/item/clothing/under/f13/dispatch
-	name = "dispatcher's uniform"
-	desc = "A dress shirt and khakis with a security patch sewn on."
-	icon_state = "dispatch"
-	item_state = "lb_suit"
-	item_color = "dispatch"
-	body_parts_covered = CHEST|GROIN|LEGS
-	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
-	can_adjust = 0
-
 /obj/item/clothing/under/f13/detectivealt
 	name = "fancy detective suit"
 	desc = "An immaculate white dress shirt, paired with a pair of fancy black dress pants, a red tie, and a charcoal vest."
@@ -799,16 +780,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list(melee = 20, bullet = 20, laser = -10, energy = -10, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
 	can_adjust = 1
-
-/obj/item/clothing/under/f13/rdalt
-	name = "head researcher uniform"
-	desc = "A suit and slacks stained with hard work and dedication to science. Perhaps other things as well, but mostly hard work and dedication."
-	icon_state = "rdalt"
-	item_state = "lb_suit"
-	item_color = "rdalt"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 20, rad = 0, fire = 0, acid = 0)
-	can_adjust = 0
 
 /obj/item/clothing/under/f13/hopalt
 	name = "head of personnel's suit"
@@ -839,16 +810,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list(melee = 0, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0, fire = 0, acid = 0)
 	can_adjust = 0
-
-/obj/item/clothing/under/f13/manager
-	name = "manager suit"
-	desc = "A good choice for an average corporate manager."
-	icon_state = "manager"
-	item_state = "bar_suit"
-	item_color = "manager"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 5, bullet = -20, laser = 0, energy = 0, bomb = 0, bio = 5, rad = 0, fire = 0, acid = 0)
-	can_adjust = 1
 
 /obj/item/clothing/under/f13/spaceship
 	name = "crewman uniform"

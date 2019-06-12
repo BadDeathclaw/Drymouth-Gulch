@@ -133,6 +133,7 @@
 	name = "cartrige reloader"
 	desc = "This device allows to hand-load your own gun rounds using certain raw materials."
 	icon_state = "reloader"
+	tool_behaviour = TOOL_RELOADER
 
 /obj/item/crafting/igniter
 	name = "igniter"

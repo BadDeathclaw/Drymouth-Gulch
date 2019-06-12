@@ -102,15 +102,15 @@
 /obj/structure/campfire/update_icon()
 	if(fired)
 		icon_state = "[initial(icon_state)]-lit"
-		overlays = list(image(icon,icon_state = "campfire_o"))
+//		overlays = list(image(icon,icon_state = "campfire_o"))
 	else
 		icon_state = initial(icon_state)
-		overlays.Cut()
+//		overlays.Cut()
 	..()
 
 /obj/structure/campfire/extinguish()
-	name = "burned campfire"
-	desc = "It has burned to ashes..."
+//	name = "burned campfire"
+//	desc = "It has burned to ashes..."
 	icon_state = initial(icon_state)
 	fired = 0
 	burned = 1
