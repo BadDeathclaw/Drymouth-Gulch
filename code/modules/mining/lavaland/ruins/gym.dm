@@ -18,12 +18,6 @@
 		var/mob/living/L = user
 		L.apply_status_effect(STATUS_EFFECT_EXERCISED)
 
-/obj/structure/punching_bag/dummy
-	name = "straw target"
-	desc = "A training dummy made of straw, for training."
-	icon_state = "target_dummy"
-
-
 /obj/structure/stacklifter
 	name = "Weight Machine"
 	desc = "Just looking at this thing makes you feel tired."
