@@ -47,12 +47,48 @@
 	H.add_trait(TRAIT_MUTE, "cloning")
 	H.add_trait(TRAIT_NOBREATH, "cloning")
 	H.add_trait(TRAIT_NOCRITDAMAGE, "cloning")
+	H.faction |= factions
 	H.Unconscious(80)
 
-	var/list/candidates = pollCandidatesForMob("Do you want to play as [clonename]'s defective clone?", null, null, null, 100, H)
-	if(LAZYLEN(candidates))
-		var/mob/dead/observer/C = pick(candidates)
-		H.key = C.key
+	RegisterSignal(src, COMSIG_NOTIFY_JOIN, .proc/join_as_defective_clone)
+	notify_ghosts("[clonename] is available to play as a defective clone.", source = src, action = NOTIFY_JOIN, flashwindow = FALSE)
+
+	addtimer(CALLBACK(src, .proc/finish_cloning), 30 SECONDS)
+
+	return TRUE
+
+
+/obj/machinery/clonepod/experimental/proc/join_as_defective_clone(mob/dead/observer/C)
+	if(!C.client)
+		return FALSE
+
+	switch(alert(C, "Are you sure you want to play as this clone?", "Play as defective clone", "Yes", "No", "Jump to it instead"))
+		if("Yes")
+			//Just continue.
+		if("Jump to it instead")
+			C.forceMove(loc)
+			return FALSE
+		else //A "No" or another type of cancel.
+			return FALSE
+
+	var/mob/living/carbon/human/H = locate() in contents
+
+	if(QDELETED(H))
+		to_chat(C, "<span class='warning'>Something bad happened with the clone.</span>")
+		return FALSE
+
+	if(H.key)
+		to_chat(C, "<span class='warning'>The clone seems to have been already taken.</span>")
+		return FALSE
+
+	H.key = C.key
+
+
+/obj/machinery/clonepod/experimental/proc/finish_cloning()
+	var/mob/living/carbon/human/H = locate() in contents
+
+	if(!H)
+		return FALSE
 
 	if(grab_ghost_when == CLONER_FRESH_CLONE)
 		H.grab_ghost()
@@ -63,13 +99,12 @@
 		to_chat(H.get_ghost(TRUE), "<span class='notice'>Your body is beginning to regenerate in a cloning pod. You will become conscious when it is complete.</span>")
 
 	if(H)
-		H.faction |= factions
-
 		H.set_cloned_appearance()
 
 		H.suiciding = FALSE
+
+	UnregisterSignal(src, COMSIG_NOTIFY_JOIN)
 	attempting = FALSE
-	return TRUE
 
 
 //Prototype cloning console, much more rudimental and lacks modern functions such as saving records, autocloning, or safety checks.

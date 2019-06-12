@@ -313,7 +313,6 @@
 	icon_state = "legionleather"
 	item_state = "legionleather"
 	item_color = "cult"
-	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/legionmetal
@@ -322,7 +321,6 @@
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	item_color = "cult"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/legionlegat
@@ -331,7 +329,6 @@
 	icon_state = "legionlegat"
 	item_state = "legionlegat"
 	item_color = "cult"
-	armor = list("melee" = 60, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
@@ -341,7 +338,6 @@
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 70, "acid" = 50)
 	strip_delay = 70
 	resistance_flags = NONE
 	permeability_coefficient = 0.05 //Thick soles, and covers the ankle
@@ -351,12 +347,10 @@
 	name = "\improper SWAT boots"
 	desc = "High speed, no drag combat boots."
 	permeability_coefficient = 0.01
-	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 30, "rad" = 30, "fire" = 90, "acid" = 50)
 
 /obj/item/clothing/shoes/combat/plate
 	name = "plated combat boots"
 	desc = "A pair of boots with armored plates on them"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	item_color = "cult"
