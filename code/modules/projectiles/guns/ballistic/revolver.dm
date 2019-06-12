@@ -100,7 +100,7 @@
 						"Blued Steel" = "detective_blued",
 						"Stainless Steel" = "detective_stainless",
 						"Gold Trim" = "detective_gold",
-						"The Peacemaker" = "detective_peacemaker"
+						"The Peacemaker" = "detective_peacemaker",
 						"Leopard Spots" = "detective_leopard",
 						"The Peacemaker" = "detective_peacemaker",
 						"Black Panther" = "detective_panther"
@@ -390,7 +390,7 @@
 	zoom_amt = 10
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_NORMAL
-	
+
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 Magnum revolver"
 	desc = "A relatively primitive .357 magnum revolver. Due to it's usage of a loading gate, it can only load one round a time."
