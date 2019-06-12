@@ -20,3 +20,4 @@
 	/obj/item/restraints/handcuffs,
 	/obj/item/flashlight,
 	/obj/item/grenade)
+	
