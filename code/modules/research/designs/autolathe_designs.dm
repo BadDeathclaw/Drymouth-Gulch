@@ -724,7 +724,7 @@
 	materials = list(MAT_METAL = 22000) //Comes with 40 darts
 	build_path = /obj/item/ammo_box/foambox/riot
 	category = list("hacked", "Security")
-*/
+
 /datum/design/a357
 	name = "Speed Loader (.357)"
 	id = "a357"
@@ -732,6 +732,7 @@
 	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/a357
 	category = list("initial", "Security")
+*/
 
 /datum/design/c10mm
 	name = "Ammo Box (10mm)"
@@ -811,6 +812,38 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 8000)
 	build_path = /obj/item/ammo_box/c4570SP
+	category = list("initial", "Security")
+
+/datum/design/c4570SPtube
+	name = "Speed loader tube (.45 LC)"
+	id = "45tube"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 7000)
+	build_path = /obj/item/ammo_box/tube/c4570SP
+	category = list("initial", "Security")
+
+/datum/design/c4570tube
+	name = "Speed loader tube (.45-70)"
+	id = "4570tube"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 12000)
+	build_path = /obj/item/ammo_box/tube/c4570
+	category = list("initial", "Security")
+
+/datum/design/m44tube
+	name = "Speed loader tube (.44)"
+	id = "44tube"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 6000)
+	build_path = /obj/item/ammo_box/tube/m44
+	category = list("initial", "Security")
+
+/datum/design/a357tube
+	name = "Speed loader tube (.357)"
+	id = "357tube"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 7000)
+	build_path = /obj/item/ammo_box/tube/a357
 	category = list("initial", "Security")
 
 /datum/design/a50MG
