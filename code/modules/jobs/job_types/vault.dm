@@ -442,4 +442,4 @@ Station Engineer
 	..()
 	if(SSmapping.config.map_name == "Pahrump")
 		total_positions = 0
-		spawn_positions = 0
+		spawn_positions = 0 

@@ -2,7 +2,7 @@
 
 /obj/machinery/light/sign
 	name = "bar sign"
-	icon_state = "blue0"
+	icon_state = "blue"
 	base_state = "blue"
 	icon = 'icons/fallout/machines/64x32.dmi'
 	fitting = "sign"
@@ -18,7 +18,7 @@
 
 /obj/machinery/light/kebab
 	name = "Kebabtown sign"
-	icon_state = "Kebab0"
+	icon_state = "Kebab"
 	base_state = "Kebab"
 	icon = 'icons/fallout/objects/structures/kebabtown.dmi'
 	fitting = "sign"
@@ -34,7 +34,7 @@
 
 /obj/machinery/light/kebab_sign
 	name = "Kebabtown"
-	icon_state = "kebab_sign0"
+	icon_state = "kebab_sign"
 	base_state = "kebab_sign"
 	icon = 'icons/fallout/objects/structures/kebabtown.dmi'
 	fitting = "sign"
