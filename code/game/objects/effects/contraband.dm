@@ -614,40 +614,56 @@
 	desc = "This informational poster teaches the viewer what carbon dioxide is."
 	icon_state = "poster35_legit"
 
-/obj/structure/sign/poster/keep_to_myself
+/obj/structure/sign/poster/ncr/keep_to_myself
 	name = "NCR poster"
 	desc = "What I know, I keep to myself."
 	icon_state = "poster45"
 
-/obj/structure/sign/poster/ncr_democracy
+/obj/structure/sign/poster/ncr/democracy
 	name = "NCR poster"
 	desc = "NCR Trooper, you bring DEMOCRACY to this LAND."
 	icon_state = "poster47"
 
-/obj/structure/sign/poster/irradiated_food
+/obj/structure/sign/poster/ncr/irradiated_food
 	name = "NCR poster"
 	desc = "DON'T eat IRRADIATED food, the NCR needs you STRONG!"
 	icon_state = "poster48"
 
-/obj/structure/sign/poster/loaded
+/obj/structure/sign/poster/ncr/loaded
 	name = "NCR poster"
 	desc = "LOADED? Your next pickup could also be LOADED with disease."
 	icon_state = "poster49"
 
-/obj/structure/sign/poster/corporate_espionage
+/obj/structure/sign/poster/prewar/corporate_espionage
 	name = "pre-war poster"
 	desc = "Only YOU can stop CORPORATE ESPIONAGE."
 	icon_state = "poster46"
 
-/obj/structure/sign/poster/protectron
+/obj/structure/sign/poster/prewar/protectron
 	name = "protectron advertisement poster"
 	desc = "A poster advertising the latest RobCo Mk.2 Protectron. Now with laser-targeted laser fire!"
 	icon_state = "poster50"
 
-/obj/structure/sign/poster/vault_tec
+/obj/structure/sign/poster/prewar/vault_tec
 	name = "vault-tec poster"
 	desc = "A poster advertising the Vault-Tec Corporation. Vault-Tec: Revolutionizing safety for an uncertain future!"
 	icon_state = "poster51"
 
 
 #undef PLACE_SPEED
+
+/obj/effect/landmark/poster_spawner
+	icon = 'icons/obj/contraband.dmi'
+	var/list/posters = list()
+
+/obj/effect/landmark/poster_spawner/Initialize()
+	..()
+	var/obj/structure/sign/poster/P = pick(posters)
+	new P()
+	qdel()
+
+/obj/effect/landmark/poster_spawner/ncr
+	posters = list(/obj/structure/sign/poster/ncr/keep_to_myself, /obj/structure/sign/poster/ncr/democracy, /obj/structure/sign/poster/ncr/irradiated_food, /obj/structure/sign/poster/ncr/loaded)
+
+/obj/effect/landmark/poster_spawner/prewar
+	posters = list(/obj/structure/sign/poster/prewar/corporate_espionage, /obj/structure/sign/poster/prewar/protectron, /obj/structure/sign/poster/prewar/vault_tec)
