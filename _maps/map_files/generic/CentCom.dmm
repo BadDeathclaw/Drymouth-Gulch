@@ -1495,7 +1495,7 @@
 "aCP" = (/obj/structure/table/reinforced,/obj/machinery/recharger,/turf/open/floor/plasteel/vault{dir = 8},/area/centcom/evac)
 "aCQ" = (/turf/open/floor/plasteel/vault{dir = 5},/area/centcom/evac)
 "aCR" = (/obj/machinery/computer/security{dir = 8},/obj/machinery/newscaster{pixel_x = 32},/turf/open/floor/plasteel/vault{dir = 8},/area/centcom/evac)
-"aCS" = (/obj/structure/fence/door,/turf/open/floor/plasteel/f13/vault_floor{icon_state = "floorgrime"},/area/f13/underground/enclave_base)
+"aCS" = (/obj/structure/simple_door/metal/fence,/turf/open/floor/plasteel/f13/vault_floor{icon_state = "floorgrime"},/area/f13/underground/enclave_base)
 "aCT" = (/obj/machinery/vr_sleeper{dir = 4},/turf/open/floor/wood,/area/centcom/holding)
 "aCV" = (/obj/structure/chair/stool,/turf/open/floor/wood,/area/centcom/holding)
 "aCW" = (/obj/structure/table/reinforced,/turf/open/floor/plasteel/f13/vault_floor{icon_state = "floorgrime"},/area/f13/underground/enclave_base)

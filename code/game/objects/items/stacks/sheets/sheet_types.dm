@@ -82,7 +82,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("extinguisher cabinet frame", /obj/item/wallframe/extinguisher_cabinet, 2), \
 	new/datum/stack_recipe("button frame", /obj/item/wallframe/button, 1), \
 	null, \
-	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 10, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("iron door", /obj/structure/simple_door/metal/store, 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("lock", /obj/item/lock, 1), \
 	new/datum/stack_recipe("key", /obj/item/door_key, 1), \
 	null, \
@@ -187,7 +187,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden chair", /obj/structure/chair/wood/, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("winged wooden chair", /obj/structure/chair/wood/wings, 3, time = 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
-	new/datum/stack_recipe("wooden door", /obj/structure/mineral_door/wood, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden door", /obj/structure/simple_door/wood, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("coffin", /obj/structure/closet/crate/coffin, 5, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("drying rack", /obj/machinery/smartfridge/drying_rack, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \

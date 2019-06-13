@@ -241,6 +241,15 @@
 	environment = 21
 	grow_chance = 25
 
+/area/f13/trainstation
+	name = "Tunnel"
+	icon_state = "tunnel"
+//	ambience_area =  list('sound/f13ambience/cave.ogg')
+//	ambientmusic = list('sound/f13music/fo2_tunnels.ogg','sound/f13music/fo2_caves.ogg','sound/f13music/fo2_vats.ogg','sound/misc/null.ogg')
+	ambientsounds = list('sound/f13ambience/ambigen_9.ogg','sound/f13ambience/ambigen_12.ogg','sound/f13ambience/ambigen_15.ogg','sound/f13ambience/ambigen_16.ogg','sound/f13effects/steam_short.ogg','sound/f13effects/steam_long.ogg')
+	environment = 21
+	grow_chance = 25
+
 /area/f13/sewer
 	name = "Sewer"
 	icon_state = "sewer"
