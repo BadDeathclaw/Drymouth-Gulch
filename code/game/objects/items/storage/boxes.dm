@@ -17,7 +17,6 @@
  *		Replacement light boxes.
  *		Action Figure Boxes
  *		Various paper bags.
- *		Boxes of various seeds
  *
  *		For syndicate call-ins see uplink_kits.dm
  */
@@ -1076,47 +1075,3 @@
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
-
-
-//Seed Boxes, for loot drops
-/obj/item/storage/box/seeds
-	name = "box of seeds"
-	desc = "A box from a pre-war gardening store, filled to the brim with seeds."
-	icon_state = "seedbox"
-	illustration = "fruit"
-	var/list/banned = list(/obj/item/seeds/ambrosia/deus, /obj/item/seeds/ambrosia/gaia, /obj/item/seeds/angel, /obj/item/seeds/apple/gold,
-	/obj/item/seeds/berry/death, /obj/item/seeds/berry/glow, /obj/item/seeds/berry/poison, /obj/item/seeds/cabbage, /obj/item/seeds/cannabis/death,
-	/obj/item/seeds/cannabis/rainbow, /obj/item/seeds/cannabis/ultimate, /obj/item/seeds/cannabis/white, /obj/item/seeds/cherry/bomb,
-	/obj/item/seeds/chili/ice, /obj/item/seeds/corn/snapcorn, /obj/item/seeds/eggplant/eggy, /obj/item/seeds/firelemon, /obj/item/seeds/glowshroom,
-	/obj/item/seeds/glowshroom/glowcap, /obj/item/seeds/glowshroom/shadowshroom,/obj/item/seeds/grass/carpet, /obj/item/seeds/kudzu, /obj/item/seeds/lavaland,
-	/obj/item/seeds/nettle, /obj/item/seeds/nettle/death, /obj/item/seeds/plump/walkingmushroom, /obj/item/seeds/pumpkin/blumpkin, /obj/item/seeds/random,
-	/obj/item/seeds/replicapod, /obj/item/seeds/sample, /obj/item/seeds/soya/koi, /obj/item/seeds/starthistle, /obj/item/seeds/tomato/blood,
-	/obj/item/seeds/tomato/killer, /obj/item/seeds/tower/steel, /obj/item/seeds/watermelon/holy, /obj/item/seeds/wheat/meat)//No gatfruit/killer tomatoes/etc for you, stalker
-
-/*
-/obj/item/storage/box/ingredients/wildcard/PopulateContents()
-	for(var/i in 1 to 7)
-		var/randomFood = pick()
-		new randomFood(src)
-*/
-
-//Grains for gains
-
-//Fruits
-
-//Flowers
-
-//Veggies
-
-//Sweets
-
-//Mushrooms
-
-//420 Blaze it
-/obj/item/storage/box/seeds/weed
-	name = "box of cannabis seeds"
-	desc = "Duuude... it's like, a box of, seeds man..."
-
-/obj/item/storage/box/seeds/weed/PopulateContents()
-	for(var/i in 1 to 7)
-		new /obj/item/seeds/cannabis(src)

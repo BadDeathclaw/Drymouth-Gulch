@@ -149,12 +149,8 @@
 	name = "dense rock"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
 	icon = 'icons/turf/mining.dmi'
-	icon_state = "rock_highchance"
-	smooth = SMOOTH_TRUE
-
-/turf/closed/indestructible/fakeglass/Initialize()
 	icon_state = "rock"
-	..()
+	smooth = SMOOTH_TRUE
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
