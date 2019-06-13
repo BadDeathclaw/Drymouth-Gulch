@@ -7,8 +7,6 @@
 	var/breakable = 0
 
 /turf/closed/wall/proc/take_damage(dam)
-	if(!breakable)
-		return
 	if(dam)
 		damage = max(0, damage + dam)
 		update_icon()
@@ -47,7 +45,7 @@
 	. = ..()
 	if(!.)
 		user.do_attack_animation(src)
-		if(W.force > hardness/3)
+		if(W.force > hardness/3 && !breakable)
 			take_damage(W.force/10)
 			playsound(src, 'sound/effects/bang.ogg', 50, 1)
 		else
