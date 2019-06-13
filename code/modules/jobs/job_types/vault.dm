@@ -436,3 +436,10 @@ Station Engineer
 		uniform = /obj/item/clothing/under/f13/vault13
 		ears = /obj/item/radio/headset/headset_vault
 		shoes = /obj/item/clothing/shoes/jackboots
+
+
+/datum/job/vault/New()
+	..()
+	if(SSmapping.config.map_name == "Pahrump")
+		total_positions = 0
+		spawn_positions = 0 
