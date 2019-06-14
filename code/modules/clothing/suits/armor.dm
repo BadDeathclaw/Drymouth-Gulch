@@ -1,6 +1,6 @@
 /obj/item/clothing/suit/armor
 	allowed = null
-	body_parts_covered = CHEST
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	cold_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN
@@ -126,7 +126,7 @@
 	icon_state = "bonearmor"
 	item_state = "bonearmor"
 	blood_overlay_type = "armor"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /obj/item/clothing/suit/armor/bulletproof
@@ -274,7 +274,7 @@
 	desc = "A set of polished plates formed together to form a reflective chestplate specially effective agaisnt energy weaponry."
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
 	slowdown = 0.5
 	strip_delay = 10
@@ -316,7 +316,7 @@
 	desc = "A set of armor made from football player protective wear. Together we play."
 	icon_state = "yankee"
 	item_state = "yankee"
-	body_parts_covered = CHEST|GROIN|LEGS
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 60, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	strip_delay = 40
 
@@ -454,7 +454,7 @@
 	desc = "Legion recruit armor is a common light armor, supplied to recruit legionaries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola)
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 	strip_delay = 60
@@ -476,7 +476,7 @@
 	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
 	icon_state = "legvexil"
 	item_state = "legvexil"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola)
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
 	strip_delay = 60
@@ -539,21 +539,13 @@
 	item_state = "enclave_armor"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/rangerrecon
-	name = "ranger recon duster"
-	desc = "A thicker than average duster worn by NCR recon rangers out in the field. It's not heavily armored by any means, but is easy to move around in and provides excellent protection from the harsh desert environment."
-	icon_state = "duster_recon"
-	item_state = "duster_recon"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 60, "rad" = 70, "fire" = 90, "acid" = 0)
-
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "ranger combat armor"
 	desc = "The NCR ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
 	icon_state = "ranger"
 	item_state = "ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 	strip_delay = 60
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert
@@ -562,21 +554,21 @@
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("melee" = 70, "bullet" = 35, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 65, "bullet" = 55, "laser" = 35, "energy" = 55, "bomb" = 48, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
 	name = "elite riot gear"
 	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
-	armor = list("melee" = 70, "bullet" = 35, "laser" = 35, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 70, "bullet" = 60, "laser" = 40, "energy" = 60, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR vest"
 	desc = "A standard issue NCR protective vest."
 	icon_state = "ncr_vest"
 	item_state = "ncr_vest"
-	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 60
 
@@ -610,3 +602,26 @@
 	item_state = "maxson_battlecoat"
 	body_parts_covered = CHEST
 	armor = list("melee" = 5, "bullet" = 5, "laser" = 10, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/suit/toggle/armor
+	allowed = null
+	body_parts_covered = CHEST
+	cold_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	heat_protection = CHEST|GROIN
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 60
+	equip_delay_other = 40
+	max_integrity = 250
+	resistance_flags = NONE
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	allowed = list(/obj/item/gun)
+	togglename = "collar"
+
+/obj/item/clothing/suit/toggle/armor/f13/rangerrecon
+	name = "ranger recon duster"
+	desc = "A thicker than average duster worn by NCR recon rangers out in the field. It's not heavily armored by any means, but is easy to move around in and provides excellent protection from the harsh desert environment."
+	icon_state = "duster_recon"
+	item_state = "duster_recon"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 60, "rad" = 70, "fire" = 90, "acid" = 0)

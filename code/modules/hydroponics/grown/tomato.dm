@@ -11,7 +11,7 @@
 	icon_grow = "tomato-grow"
 	icon_dead = "tomato-dead"
 	genes = list(/datum/plant_gene/trait/squash, /datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/tomato/blue, /obj/item/seeds/tomato/blood, /obj/item/seeds/tomato/killer)
+	mutatelist = list(/obj/item/seeds/tomato/blood, /obj/item/seeds/tomato/killer) // /obj/item/seeds/tomato/blue
 	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/tomato
@@ -49,7 +49,7 @@
 	foodtype = FRUIT | GROSS
 	grind_results = list("ketchup" = 0, "blood" = 0)
 	distill_reagent = "bloodymary"
-
+/*
 // Blue Tomato
 /obj/item/seeds/tomato/blue
 	name = "pack of blue-tomato seeds"
@@ -95,7 +95,7 @@
 	icon_state = "bluespacetomato"
 	distill_reagent = null
 	wine_power = 80
-
+*/
 // Killer Tomato
 /obj/item/seeds/tomato/killer
 	name = "pack of killer-tomato seeds"

@@ -5,7 +5,7 @@
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
 
-		#include "map_files\BoxStation\BoxStation.dmm"
+		#include "map_files\Pahrump\Pahrump.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"

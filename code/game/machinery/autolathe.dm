@@ -393,8 +393,7 @@
 	circuit = /obj/item/circuitboard/machine/autolathe/constructionlathe
 	super_advanced_technology = FALSE
 	resistance_flags = NONE
-
-	list/categories = list(
+	categories = list(
 							"Tools",
 							"Electronics",
 							"Construction",

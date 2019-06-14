@@ -561,6 +561,8 @@ so as to remain in compliance with the most up-to-date laws."
 				G.forceMove(T)
 		if(NOTIFY_ORBIT)
 			G.ManualFollow(target)
+		if(NOTIFY_JOIN)
+			SEND_SIGNAL(target, COMSIG_NOTIFY_JOIN, G)
 
 //OBJECT-BASED
 
