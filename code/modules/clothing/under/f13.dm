@@ -734,7 +734,7 @@
 	item_color = "recon"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HEAD
 	flags_inv = HIDEHAIR
-	armor = list(melee = 30, bullet = 30, laser = 30, energy = 30, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
+	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	can_adjust = 0
