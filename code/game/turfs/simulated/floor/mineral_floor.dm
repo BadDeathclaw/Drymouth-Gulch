@@ -49,7 +49,13 @@
 	if(exposed_temperature > 300)
 		PlasmaBurn(exposed_temperature)
 
+//SANDSTONE
 
+/turf/open/floor/mineral/sandstone
+	name = "sandstone floor"
+	icon_state = "sandstone"
+	floor_tile = /obj/item/stack/tile/mineral/sandstone
+	icons = list("sandstone", "sandstone_dam")
 //GOLD
 
 /turf/open/floor/mineral/gold
