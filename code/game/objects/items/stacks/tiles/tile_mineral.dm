@@ -78,3 +78,12 @@
 	turf_type = /turf/open/floor/mineral/plastitanium
 	mineralType = "plastitanium"
 	materials = list(MAT_TITANIUM=250, MAT_PLASMA=250)
+
+/obj/item/stack/tile/mineral/sandstone
+	name = "sandstone tile"
+	singular_name = "sandstone floor tile"
+	desc = "A tile made out of sandstone."
+	icon_state = "tile_sandstone"
+	turf_type = /turf/open/floor/mineral/sandstone
+	mineralType = "sandstone"
+	materials = list(MAT_SANDSTONE=500)
