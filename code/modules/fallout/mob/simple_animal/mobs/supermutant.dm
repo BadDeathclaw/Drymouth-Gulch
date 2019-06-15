@@ -20,8 +20,8 @@
 	health = 300
 	force_threshold = 15
 	faction = list("hostile", "supermutant")
-	melee_damage_lower = 10
-	melee_damage_upper = 30
+	melee_damage_lower = 40
+	melee_damage_upper = 56
 	mob_size = MOB_SIZE_LARGE
 	attacktext = "hits"
 	attack_sound = "punch"
