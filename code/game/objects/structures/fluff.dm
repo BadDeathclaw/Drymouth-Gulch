@@ -167,3 +167,9 @@
 	desc = "A crudely-made sign with the words 'fok of' written in some sort of red paint."
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "fokof"
+
+/obj/structure/fluff/rails
+	name = "rails"
+	desc = "Rails, for a pre-war train. Don't stand on these."
+	icon = 'icons/obj/rails.dmi'
+	icon_state = "rails"
