@@ -290,13 +290,13 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(throwing)
 		throwing.finalize(FALSE)
 	if(loc == user)
-		if(!allow_attack_hand_drop(user) || !user.dropItemToGround(src))
+		if(!allow_attack_hand_drop(user) || !user.temporarilyRemoveItemFromInventory(src))
 			return
 
 	pickup(user)
 	add_fingerprint(user)
 	if(!user.put_in_active_hand(src))
-		dropped(user)
+		user.dropItemToGround(src)
 
 /obj/item/proc/allow_attack_hand_drop(mob/user)
 	return TRUE
@@ -312,13 +312,13 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(throwing)
 		throwing.finalize(FALSE)
 	if(loc == user)
-		if(!user.dropItemToGround(src))
+		if(!user.temporarilyRemoveItemFromInventory(src))
 			return
 
 	pickup(user)
 	add_fingerprint(user)
 	if(!user.put_in_active_hand(src))
-		dropped(user)
+		user.dropItemToGround(src)
 
 /obj/item/attack_alien(mob/user)
 	var/mob/living/carbon/alien/A = user
@@ -346,6 +346,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 // afterattack() and attack() prototypes moved to _onclick/item_attack.dm for consistency
 
 /obj/item/proc/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	SEND_SIGNAL(src, COMSIG_ITEM_HIT_REACT, args)
 	if(prob(final_block_chance))
 		owner.visible_message("<span class='danger'>[owner] blocks [attack_text] with [src]!</span>")
 		return 1
@@ -578,8 +579,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 /obj/item/proc/get_dismemberment_chance(obj/item/bodypart/affecting)
 	if(affecting.can_dismember(src))
-		if((sharpness || damtype == BURN) && w_class >= 3)
-			. = force*(w_class-1)
+		if((sharpness || damtype == BURN) && w_class >= WEIGHT_CLASS_NORMAL && force >= 10)
+			. = force * (affecting.get_damage() / affecting.max_damage)
 
 /obj/item/proc/get_dismember_sound()
 	if(damtype == BURN)
@@ -786,3 +787,14 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if (item_flags & NODROP)
 		return
 	return ..()
+
+/obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
+	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
+	user.SetWeaponDrawDelay(max((4 * G.weapon_weight + 1),(user.AmountWeaponDrawDelay()))) 
+	// TODO: Define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
+	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
+
+/obj/item/throwing_star/proc/throwingweapondraw(obj/item/throwing_star/T, mob/living/user)
+	user.visible_message("<span class='danger'>[user] grabs \a [T]!</span>")
+	user.SetThrowDelay(6)
+	user.log_message("[user] pulled a [T]", INDIVIDUAL_ATTACK_LOG)

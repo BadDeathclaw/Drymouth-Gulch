@@ -224,6 +224,10 @@
 	var/bulb_emergency_pow_mul = 0.75	// the multiplier for determining the light's power in emergency mode
 	var/bulb_emergency_pow_min = 0.5	// the minimum value for the light's power in emergency mode
 
+	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
+	var/nightshift_start_time = 702000		//7:30 PM, station time
+	var/nightshift_end_time = 270000		//7:30 AM, station time
+
 /obj/machinery/light/broken
 	status = LIGHT_BROKEN
 	icon_state = "tube-broken"
@@ -345,6 +349,7 @@
 	else if(has_emergency_power(LIGHT_EMERGENCY_POWER_USE) && !turned_off())
 		use_power = IDLE_POWER_USE
 		emergency_mode = TRUE
+		START_PROCESSING(SSmachines, src)
 	else
 		use_power = IDLE_POWER_USE
 		set_light(0)
@@ -359,9 +364,12 @@
 		else
 			removeStaticPower(static_power_used, STATIC_LIGHT)
 
-
 /obj/machinery/light/process()
-	if(has_power() && cell)
+	if (!cell)
+		return PROCESS_KILL
+	if(has_power())
+		if (cell.charge == cell.maxcharge)
+			return PROCESS_KILL
 		cell.charge = min(cell.maxcharge, cell.charge + LIGHT_EMERGENCY_POWER_USE) //Recharge emergency power automatically while not using it
 	if(emergency_mode && !use_emergency_power(LIGHT_EMERGENCY_POWER_USE))
 		update(FALSE) //Disables emergency mode and sets the color to normal
@@ -825,29 +833,29 @@
 	base_state = "lamppost1"
 	desc = "a post supporting a usually outdoor lamp or lantern."
 	brightness = 8
-	//active_power_usage = 100
+	active_power_usage = 0
 	density = 0
 	layer = WALL_OBJ_LAYER
-	//sun_triger = 1
 	nightshift_allowed = FALSE
 	start_with_cell = FALSE
 	no_emergency = TRUE
-	var/nightshift_active = FALSE	//CUSTOM NIGHTSHIFT
-	var/nightshift_start_time = 702000		//7:30 PM, station time
-	var/nightshift_end_time = 270000		//7:30 AM, station time
 
-/obj/machinery/light/lampost/proc/night_update() //gah, cant have procs with same name from parent
+/obj/machinery/light/proc/night_update() //gah, cant have procs with same name from parent
 	var/time = station_time()
 	var/night_time = (time < nightshift_end_time) || (time > nightshift_start_time)
 	if(night_time)	//night
 		nightshift_active = TRUE
 		on = TRUE
-		update_icon()
+		update(FALSE)
 
 	if(nightshift_active != night_time) //d a y
 		nightshift_active = FALSE
 		on = FALSE
-		update_icon()
+		update(FALSE)
+
+/obj/machinery/light/lampost/process()
+	. = ..()
+	night_update()
 
 //F13 COLORED LIGHTS
 /obj/machinery/light/fo13colored/Pink
@@ -875,3 +883,33 @@
 	layer = WALL_OBJ_LAYER
 	bulb_colour = "#00FFFF"
 	light_color = "#00FFFF"
+
+//Flickering Ported From Hippiestation. credits to yoyobatty
+/obj/machinery/light/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
+	. = ..()
+	if(. && !QDELETED(src))
+		if(prob(damage_amount * 10))
+			flicker(damage_amount*rand(1,3))
+
+/obj/machinery/light/flicker(var/amount = rand(10, 20))
+	set waitfor = 0
+	if(flickering)
+		return
+	flickering = TRUE
+	if(on && status == LIGHT_OK)
+		visible_message("<span class='warning'>[src] begins flickering!</span>","<span class='italics'>You hear an electrical sparking.</span>")
+		for(var/i = 0; i < amount; i++)
+			if(status != LIGHT_OK)
+				break
+			on = !on
+			if(prob(18) && !on)//only spark when off so it doesn't occur too much
+				do_sparks(1, FALSE, src)
+			else if(prob(40))
+				bulb_colour = LIGHT_COLOR_BROWN
+				playsound(src, pick('sound/effects/sparks1.ogg', 'sound/effects/sparks2.ogg', 'sound/effects/sparks3.ogg', 'sound/effects/sparks4.ogg', 'sound/effects/light_flicker.ogg'), 100, 1)
+			update(FALSE)
+			sleep(rand(1, 5))
+		on = (status == LIGHT_OK)
+		bulb_colour = initial(bulb_colour)
+		update(FALSE)
+	flickering = FALSE

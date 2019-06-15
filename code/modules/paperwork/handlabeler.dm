@@ -36,6 +36,7 @@
 	return OXYLOSS
 
 /obj/item/hand_labeler/afterattack(atom/A, mob/user,proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(!mode)	//if it's off, give up.
@@ -61,9 +62,6 @@
 
 
 /obj/item/hand_labeler/attack_self(mob/user)
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to use [src]!</span>")
-		return
 	mode = !mode
 	icon_state = "labeler[mode]"
 	if(mode)
@@ -89,7 +87,7 @@
 	name = "cyborg-hand labeler"
 
 /obj/item/hand_labeler/borg/afterattack(atom/A, mob/user, proximity)
-	..(A, user, proximity)
+	. = ..(A, user, proximity)
 	if(!iscyborg(user))
 		return
 

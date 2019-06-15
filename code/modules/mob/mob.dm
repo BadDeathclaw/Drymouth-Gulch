@@ -407,9 +407,9 @@
 		var/deathtime = world.time - src.timeofdeath //How long dead for in deciseconds -- src can either be the corpse or ghost
 		/* check if the respawn cooldown has expired, and check for admin override if not */
 		if(deathtime < RESPAWN_TIMER)
-			to_chat(src, "You've been dead for [deathtime / 10] seconds. You must be dead for at least three minutes to respawn.")
+			to_chat(src, "You've been dead for [deathtime / 10] seconds. You must be dead for at least [RESPAWN_TIMER / 600] minutes to respawn.")
 			if(is_admin) /* if player is an admin, and cancels the override, return */
-				if(alert("Normal players must wait at least 3 minutes to respawn! Continue?","Warning", "Respawn", "Cancel") == "Cancel")
+				if(alert("Normal players must wait at least [RESPAWN_TIMER / 600] minutes to respawn! Continue?","Warning", "Respawn", "Cancel") == "Cancel")
 					return
 				else /* admin chose to override, so log it rather than returning */
 					log_game("[key_name(usr)] used abandon mob while bypassing the regular death cooldown VIA admin prompt.")
@@ -660,6 +660,9 @@
 /mob/proc/IsAdvancedToolUser()//This might need a rename but it should replace the can this mob use things check
 	return 0
 
+/mob/proc/is_super_advanced_tool_user()
+	return 0
+
 /mob/proc/swap_hand()
 	return
 
@@ -695,6 +698,16 @@
 		if(istype(S, spell))
 			mob_spell_list -= S
 			qdel(S)
+
+/mob/proc/anti_magic_check(magic = TRUE, holy = FALSE)
+	if(!magic && !holy)
+		return
+	var/list/protection_sources = list()
+	if(SEND_SIGNAL(src, COMSIG_MOB_RECEIVE_MAGIC, magic, holy, protection_sources) & COMPONENT_BLOCK_MAGIC)
+		if(protection_sources.len)
+			return pick(protection_sources)
+		else
+			return src
 
 //You can buckle on mobs if you're next to them since most are dense
 /mob/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)

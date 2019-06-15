@@ -420,6 +420,14 @@
 	build_path = /obj/item/reagent_containers/glass/beaker/large
 	category = list("initial", "Medical")
 
+/datum/design/solids
+	name = "Solid Beaker"
+	id = "solids"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 500, MAT_GLASS = 500)
+	build_path = /obj/item/reagent_containers/glass/beaker/solids
+	category = list("initial", "Security")
+
 /datum/design/healthanalyzer
 	name = "Health Analyzer"
 	id = "healthanalyzer"
@@ -490,6 +498,14 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 400, MAT_GLASS = 120)
 	build_path = /obj/item/assembly/signaler
+	category = list("initial", "T-Comm")
+
+/datum/design/signaler/advanced
+	name = "Advanced Signaling Device"
+	id = "advanced_signaler"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 1000, MAT_GLASS = 400)
+	build_path = /obj/item/assembly/signaler/advanced
 	category = list("initial", "T-Comm")
 
 /datum/design/radio_headset
@@ -634,7 +650,7 @@
 	id = "electropack"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 10000, MAT_GLASS = 2500)
-	build_path = /obj/item/electropack
+	build_path = /obj/item/assembly/signaler/electropack
 	category = list("hacked", "Tools")
 
 /datum/design/large_welding_tool
@@ -676,7 +692,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/buckshot
 	category = list("hacked", "Security")
-
+/*
 /datum/design/shotgun_dart
 	name = "Shotgun Dart"
 	id = "shotgun_dart"
@@ -684,6 +700,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/dart
 	category = list("hacked", "Security")
+*/
 
 /datum/design/incendiary_slug
 	name = "Incendiary Slug"
@@ -692,7 +709,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
-
+/*
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
 	id = "riot_dart"
@@ -708,7 +725,7 @@
 	materials = list(MAT_METAL = 22000) //Comes with 40 darts
 	build_path = /obj/item/ammo_box/foambox/riot
 	category = list("hacked", "Security")
-
+*/
 /datum/design/a357
 	name = "Speed Loader (.357)"
 	id = "a357"
@@ -766,11 +783,19 @@
 	category = list("initial", "Security")
 
 /datum/design/a762
-	name = "Stripper Clip (7.62mm)"
+	name = "Stripper Clip (7.62)"
 	id = "a762"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 5000)
 	build_path = /obj/item/ammo_box/a762
+	category = list("initial", "Security")
+
+/datum/design/a308
+	name = "Stripper Clip (.308)"
+	id = "a308"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 7000)
+	build_path = /obj/item/ammo_box/a308
 	category = list("initial", "Security")
 
 /datum/design/doublestacked
@@ -779,6 +804,38 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 10000)
 	build_path = /obj/item/ammo_box/a762/doublestacked
+	category = list("initial", "Security")
+
+/datum/design/c4570SP
+	name = ".45 LC speed loader (NCR)"
+	id = "c4570SP"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 8000)
+	build_path = /obj/item/ammo_box/c4570SP
+	category = list("initial", "Security")
+
+/datum/design/a50MG
+	name = "Anti-Materiel Ammo Rack (.50MG)"
+	id = "a50MG"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 14000)
+	build_path = /obj/item/ammo_box/a50MG
+	category = list("initial", "Security")
+
+/datum/design/a50MGincendiary
+	name = "Anti-Materiel Incendiary Ammo Rack (.50MG)"
+	id = "a50MGincendiary"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 20000)
+	build_path = /obj/item/ammo_box/a50MG/incendiary
+	category = list("initial", "Security")
+
+/datum/design/a50MGAP
+	name = "Anti-Materiel Armor-Piercing Ammo Rack (.50MG)"
+	id = "a50MGAP"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 16000)
+	build_path = /obj/item/ammo_box/a50MG/AP
 	category = list("initial", "Security")
 
 /datum/design/cleaver

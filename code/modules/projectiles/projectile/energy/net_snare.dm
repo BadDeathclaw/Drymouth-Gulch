@@ -64,7 +64,7 @@
 	range = 4
 
 /obj/item/projectile/energy/trap/on_hit(atom/target, blocked = FALSE)
-	if(!ismob(target) || blocked >= 100) //Fully blocked by mob or collided with dense object - drop a trap
+	if(!ismob(target) || blocked >= 100) //Fully blocked by mob or Bumpd with dense object - drop a trap
 		new/obj/item/restraints/legcuffs/beartrap/energy(get_turf(loc))
 	else if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy(get_turf(target))

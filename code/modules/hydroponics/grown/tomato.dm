@@ -11,7 +11,7 @@
 	icon_grow = "tomato-grow"
 	icon_dead = "tomato-dead"
 	genes = list(/datum/plant_gene/trait/squash, /datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/tomato/blue, /obj/item/seeds/tomato/blood, /obj/item/seeds/tomato/killer)
+	mutatelist = list(/obj/item/seeds/tomato/blood, /obj/item/seeds/tomato/killer) // /obj/item/seeds/tomato/blue
 	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.1)
 
 /obj/item/reagent_containers/food/snacks/grown/tomato
@@ -25,6 +25,7 @@
 	foodtype = FRUIT
 	grind_results = list("ketchup" = 0)
 	juice_results = list("tomatojuice" = 0)
+	distill_reagent = "enzyme"
 
 // Blood Tomato
 /obj/item/seeds/tomato/blood
@@ -47,8 +48,8 @@
 	filling_color = "#FF0000"
 	foodtype = FRUIT | GROSS
 	grind_results = list("ketchup" = 0, "blood" = 0)
-
-
+	distill_reagent = "bloodymary"
+/*
 // Blue Tomato
 /obj/item/seeds/tomato/blue
 	name = "pack of blue-tomato seeds"
@@ -71,7 +72,7 @@
 	icon_state = "bluetomato"
 	splat_type = /obj/effect/decal/cleanable/oil
 	filling_color = "#0000FF"
-
+	distill_reagent = "laughter"
 
 // Bluespace Tomato
 /obj/item/seeds/tomato/blue/bluespace
@@ -92,8 +93,9 @@
 	name = "bluespace tomato"
 	desc = "So lubricated, you might slip through space-time."
 	icon_state = "bluespacetomato"
-
-
+	distill_reagent = null
+	wine_power = 80
+*/
 // Killer Tomato
 /obj/item/seeds/tomato/killer
 	name = "pack of killer-tomato seeds"
@@ -118,6 +120,7 @@
 	icon_state = "killertomato"
 	var/awakening = 0
 	filling_color = "#FF0000"
+	distill_reagent = "demonsblood"
 
 /obj/item/reagent_containers/food/snacks/grown/tomato/killer/attack(mob/M, mob/user, def_zone)
 	if(awakening)

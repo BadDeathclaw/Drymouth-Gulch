@@ -14,13 +14,13 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/fire
 
 /obj/item/ammo_box/magazine/m10mm/hp
-	name = "pistol magazine (10mm HP)"
+	name = "pistol magazine (10mm hollowpoint)"
 	icon_state = "9x19pH"
 	desc= "A gun magazine. Loaded with hollow-point rounds, extremely effective against unarmored targets, but nearly useless against protective clothing."
 	ammo_type = /obj/item/ammo_casing/c10mm/hp
 
 /obj/item/ammo_box/magazine/m10mm/ap
-	name = "pistol magazine (10mm AP)"
+	name = "pistol magazine (10mm armor piercing)"
 	icon_state = "9x19pA"
 	desc= "A gun magazine. Loaded with rounds which penetrate armour, but are less effective against normal targets."
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
@@ -34,7 +34,10 @@
 
 /obj/item/ammo_box/magazine/m45/update_icon()
 	..()
-	icon_state = "45-[ammo_count() ? "8" : "0"]"
+	if (ammo_count() >= 8)
+		icon_state = "45-8"
+	else
+		icon_state = "45-[ammo_count()]"
 
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "pistol magazine (9mm)"

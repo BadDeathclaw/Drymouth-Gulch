@@ -1,13 +1,10 @@
-//location of the rust-g library
-#define RUST_G "rust_g"
-
 //wrapper macros for easier grepping
 #define DIRECT_OUTPUT(A, B) A << B
 #define SEND_IMAGE(target, image) DIRECT_OUTPUT(target, image)
 #define SEND_SOUND(target, sound) DIRECT_OUTPUT(target, sound)
 #define SEND_TEXT(target, text) DIRECT_OUTPUT(target, text)
 #define WRITE_FILE(file, text) DIRECT_OUTPUT(file, text)
-#define WRITE_LOG(log, text) call(RUST_G, "log_write")(log, text)
+#define WRITE_LOG(log, text) rustg_log_write(log, text)
 
 //print a warning message to world.log
 #define WARNING(MSG) warning("[MSG] in [__FILE__] at line [__LINE__] src: [src] usr: [usr].")
@@ -37,22 +34,22 @@
 
 /* Items with ADMINPRIVATE prefixed are stripped from public logs. */
 /proc/log_admin(text)
-	GLOB.admin_log.Add(text)
+	GLOB.admin_log.Add("[time_stamp()] [text]")
 	if (CONFIG_GET(flag/log_admin))
-		WRITE_LOG(GLOB.world_game_log, "ADMIN: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMIN: [text]")
 
 /proc/log_admin_private(text)
-	GLOB.admin_log.Add(text)
+	GLOB.admin_log.Add("[time_stamp()] [text]")
 	if (CONFIG_GET(flag/log_admin))
-		WRITE_LOG(GLOB.world_game_log, "ADMINPRIVATE: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMINPRIVATE: [text]")
 
 /proc/log_adminsay(text)
 	if (CONFIG_GET(flag/log_adminchat))
-		WRITE_LOG(GLOB.world_game_log, "ADMINPRIVATE: ASAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMINPRIVATE: ASAY: [text]")
 
 /proc/log_dsay(text)
 	if (CONFIG_GET(flag/log_adminchat))
-		WRITE_LOG(GLOB.world_game_log, "ADMIN: DSAY: [text]")
+		WRITE_LOG(GLOB.world_game_log, "[time_stamp()] ADMIN: DSAY: [text]")
 
 
 /* All other items are public. */
@@ -156,7 +153,7 @@
 
 /* Close open log handles. This should be called as late as possible, and no logging should hapen after. */
 /proc/shutdown_logging()
-	call(RUST_G, "log_close_all")()
+	rustg_log_close_all()
 
 
 /* Helper procs for building detailed log lines */
@@ -176,6 +173,3 @@
 		return "[A.loc] [COORD(T)] ([A.loc.type])"
 	else if(A.loc)
 		return "[A.loc] (0, 0, 0) ([A.loc.type])"
-
-//this is only used here (for now)
-#undef RUST_G

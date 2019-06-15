@@ -9,7 +9,7 @@
 	icon_state = "pit"
 	mouse_opacity = 0
 	layer = HIGH_TURF_LAYER
-	var/turf/open/floor/plating/f13/outside/desert/parent
+	var/turf/open/indestructible/ground/outside/desert/parent
 
 obj/dugpit/New(lnk)
 	..()
@@ -34,7 +34,7 @@ obj/dugpit/New(lnk)
 	return GM
 
 
-/turf/open/floor/plating/f13/outside/desert/proc/handle_item_insertion(obj/item/W, mob/usr)
+/turf/open/indestructible/ground/outside/desert/proc/handle_item_insertion(obj/item/W, mob/usr)
 	if(!istype(W))
 		return
 
@@ -79,7 +79,7 @@ obj/dugpit/New(lnk)
 				qdel(W)
 
 
-/turf/open/floor/plating/f13/outside/desert/attack_hand(mob/living/carbon/human/M)
+/turf/open/indestructible/ground/outside/desert/attack_hand(mob/living/carbon/human/M)
 	if (dug)
 		if (storedindex==0)
 			M.show_message("<span class='notice'>There is nothing in the pit!</span>", 1)
@@ -90,19 +90,27 @@ obj/dugpit/New(lnk)
 			I.loc = M.loc
 			pitcontents-=I
 
-/turf/open/floor/plating/f13/outside/desert/proc/finishBury(mob/user)
+/turf/open/indestructible/ground/outside/desert/proc/finishBury(mob/user)
 	user.show_message("<span class='notice'>You cover the hole with dirt.</span>", 1)
 	dug = 0
-	mypit.invisibility = 101
+	if((storedindex >= 4) || ((gravebody || gravecoffin) != null))
+		mypit.icon_state = "mound"
+		update_icon()
+	else if (2 < storedindex < 4)
+		mypit.icon_state = "mound_medium"
+		update_icon()
+	else if (storedindex <= 2)
+		mypit.icon_state = "mound_small"
+		update_icon()
 
-/turf/open/floor/plating/f13/outside/desert/proc/finishBody()
+/turf/open/indestructible/ground/outside/desert/proc/finishBody()
 	gravebody.loc = mypit
 	unburylevel = 0
 
-/turf/open/floor/plating/f13/outside/desert/proc/finishCoffin()
+/turf/open/indestructible/ground/outside/desert/proc/finishCoffin()
 	gravecoffin.loc = mypit
 
-/turf/open/floor/plating/f13/outside/desert/attackby(obj/item/W, mob/user, params)
+/turf/open/indestructible/ground/outside/desert/attackby(obj/item/W, mob/user, params)
 
 	if(!W || !user)
 		return 0
@@ -137,19 +145,27 @@ obj/dugpit/New(lnk)
 			if (gravebody!=null)
 				user.show_message("<span class='notice'>You start covering the body in the hole with dirt...</span>", 1)
 				if (do_after(user, (50 * digging_speed), target=gravebody))
-					if(istype(src, /turf/open/floor/plating/f13/outside/desert))
+					if(istype(src, /turf/open/indestructible/ground/outside/desert))
 						finishBury(user)
 						finishBody()
+				for(var/mob/H in oview(src, 7))
+					for(var/F in gravebody.faction)
+						if(F in H.faction)
+							if(F != "neutral") // I don't know why but this won't fit in the above if statement
+								SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "buried_faction_member", /datum/mood_event/buried_faction_member)
+								LAZYREMOVE(H.faction_deaths, gravebody.real_name)
+								if(LAZYLEN(H.faction_deaths) < 3)
+									SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "saw_many_unburied_faction")
 			else if (gravecoffin != null)
 				user.show_message("<span class='notice'>You start burying the coffin...</span>", 1)
 				if (do_after(user, (50 * digging_speed), target=gravebody))
-					if(istype(src, /turf/open/floor/plating/f13/outside/desert))
+					if(istype(src, /turf/open/indestructible/ground/outside/desert))
 						finishBury(user)
 						finishCoffin()
 			else
 				user.show_message("<span class='notice'>You start covering the hole with dirt...</span>", 1)
 				if(do_after(user, (50 * digging_speed), target = src))
-					if(istype(src, /turf/open/floor/plating/f13/outside/desert))
+					if(istype(src, /turf/open/indestructible/ground/outside/desert))
 						finishBury(user)
 
 
@@ -157,7 +173,7 @@ obj/dugpit/New(lnk)
 			user.show_message("<span class='notice'>You start digging...</span>", 1)
 			playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1) //FUCK YO RUSTLE I GOT'S THE DIGS SOUND HERE
 			if(do_after(user, (50 * digging_speed), target = src))
-				if(istype(src, /turf/open/floor/plating/f13/outside/desert))
+				if(istype(src, /turf/open/indestructible/ground/outside/desert))
 					user.show_message("<span class='notice'>You dig a hole.</span>", 1)
 					gets_dug(user)
 					new /obj/item/stack/ore/glass(src)
@@ -186,13 +202,16 @@ obj/dugpit/New(lnk)
 
 			return FALSE
 
-/turf/open/floor/plating/f13/outside/desert/proc/gets_dug(mob/user)
+
+/turf/open/indestructible/ground/outside/desert/proc/gets_dug(mob/user)
 	if(dug)
 		return
 	for (var/obj/item/I in pitcontents)
 		I.loc = user.loc
 	if (mypit==null)
 		mypit = new/obj/dugpit(src)
+	mypit.icon_state = "pit"
+	mypit.update_icon()
 	mypit.invisibility = 0
 	storedindex = 0
 	pitcontents = list()

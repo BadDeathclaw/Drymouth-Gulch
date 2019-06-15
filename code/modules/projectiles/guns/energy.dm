@@ -73,7 +73,7 @@
 		update_icon()
 
 /obj/item/gun/energy/attack_self(mob/living/user as mob)
-	if(ammo_type.len > 1)
+	if(LAZYLEN(ammo_type) > 1) //fuck off runtime errors
 		select_fire(user)
 		update_icon()
 
@@ -130,6 +130,8 @@
 	return
 
 /obj/item/gun/energy/update_icon(force_update)
+	if(QDELETED(src))
+		return
 	..()
 	if(!automatic_charge_overlays)
 		return
@@ -225,7 +227,7 @@
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
 
 
-/obj/item/gun/energy/attack_self(mob/living/user)
+/obj/item/gun/energy/AltClick(mob/living/user)
 	if(cell)
 		cell.forceMove(drop_location())
 		user.put_in_hands(cell)
@@ -234,9 +236,7 @@
 		to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
 	else
 		to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
-	update_icon()
 	return
-
 
 /obj/item/gun/energy/attackby(obj/item/A, mob/user, params)
 	..()
@@ -254,3 +254,7 @@
 				return
 		else if (cell)
 			to_chat(user, "<span class='notice'>There's already a cell in \the [src].</span>")
+
+/obj/item/gun/energy/examine(mob/user)
+	..()
+	to_chat(user, "<span class='notice'>Alt-click to eject the battery.</span>")

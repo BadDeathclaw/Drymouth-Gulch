@@ -53,12 +53,12 @@
 	var/shot_delay = 15		//ticks until next shot (1.5 ?)
 
 
-	var/check_records = 1	//checks if it can use the security records
-	var/criminals = 1		//checks if it can shoot people on arrest
-	var/auth_weapons = 0	//checks if it can shoot people that have a weapon they aren't authorized to have
-	var/stun_all = 0		//if this is active, the turret shoots everything that isn't security or head of staff
-	var/check_anomalies = 0	//checks if it can shoot at unidentified lifeforms (ie xenos)
-	var/shoot_unloyal = 0	//checks if it can shoot people that aren't loyalty implantd
+	var/check_records = TRUE	//checks if it can use the security records
+	var/criminals = TRUE		//checks if it can shoot people on arrest
+	var/auth_weapons = FALSE	//checks if it can shoot people that have a weapon they aren't authorized to have
+	var/stun_all = FALSE		//if this is active, the turret shoots everything that isn't security or head of staff
+	var/check_anomalies = TRUE	//checks if it can shoot at unidentified lifeforms (ie xenos)
+	var/shoot_unloyal = FALSE	//checks if it can shoot people that aren't loyalty implantd
 
 	var/attacked = 0		//if set to 1, the turret gets pissed off and shoots at people nearby (unless they have sec access!)
 
@@ -77,7 +77,7 @@
 	var/datum/action/turret_toggle/toggle_action
 	var/mob/remote_controller
 
-	var/shootnonfaction = 0 //If it shoots at people that don't have the same faction
+	var/shootnonfaction = TRUE //If it shoots at people that don't have the same faction
 
 /obj/machinery/porta_turret/Initialize()
 	. = ..()
@@ -263,7 +263,7 @@
 
 		//This code handles moving the turret around. After all, it's a portable turret!
 		if(!anchored && !isinspace())
-			anchored = TRUE
+			setAnchored(TRUE)
 			invisibility = INVISIBILITY_MAXIMUM
 			update_icon()
 			to_chat(user, "<span class='notice'>You secure the exterior bolts on the turret.</span>")
@@ -271,7 +271,7 @@
 				cover = new /obj/machinery/porta_turret_cover(loc) //create a new turret. While this is handled in process(), this is to workaround a bug where the turret becomes invisible for a split second
 				cover.parent_turret = src //make the cover's parent src
 		else if(anchored)
-			anchored = FALSE
+			setAnchored(FALSE)
 			to_chat(user, "<span class='notice'>You unsecure the exterior bolts on the turret.</span>")
 			power_change()
 			invisibility = 0
@@ -561,10 +561,6 @@
 	A.fire()
 	return A
 
-/obj/machinery/porta_turret/shuttleRotate(rotation)
-	if(wall_turret_direction)
-		wall_turret_direction = turn(wall_turret_direction,rotation)
-
 /obj/machinery/porta_turret/proc/setState(on, mode)
 	if(controllock)
 		return
@@ -646,8 +642,8 @@
 	has_cover = 0
 	scan_range = 8
 	req_access = list(ACCESS_SYNDICATE)
-	stun_projectile = /obj/item/projectile/bullet/medbullet
-	lethal_projectile = /obj/item/projectile/bullet/medbullet
+	stun_projectile = /obj/item/projectile/bullet/a308
+	lethal_projectile = /obj/item/projectile/bullet/a308
 	lethal_projectile_sound = 'sound/weapons/gunshot.ogg'
 	stun_projectile_sound = 'sound/weapons/gunshot.ogg'
 	icon_state = "syndie_off"

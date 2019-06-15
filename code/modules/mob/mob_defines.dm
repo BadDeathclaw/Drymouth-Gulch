@@ -7,6 +7,7 @@
 	hud_possible = list(ANTAG_HUD)
 	pressure_resistance = 8
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
+	throwforce = 10
 	var/lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
 	var/datum/mind/mind
 	var/list/datum/action/actions = list()
@@ -72,6 +73,7 @@
 	var/job = null//Living
 
 	var/list/faction = list("neutral") //A list of factions that this mob is currently in, for hostile mob targetting, amongst other things
+	var/list/faction_deaths = list() // A list of people of the same faction that this mob has seen dead, for mood modifiers after seeing enough dead comrades and for removal upon burying
 	var/move_on_shuttle = 1 // Can move on the shuttle.
 
 //The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
@@ -82,7 +84,7 @@
 	var/list/mob_spell_list = list() //construct spells and mime spells. Spells that do not transfer from one mob to another and can not be lost in mindswap.
 
 
-	var/status_flags = CANSTUN|CANKNOCKDOWN|CANUNCONSCIOUS|CANPUSH	//bitflags defining which status effects can be inflicted (replaces canknockdown, canstun, etc)
+	var/status_flags = CANPARALYZE|CANSTUN|CANKNOCKDOWN|CANUNCONSCIOUS|CANPUSH	//bitflags defining which status effects can be inflicted (replaces canknockdown, canstun, etc)
 
 	var/digitalcamo = 0 // Can they be tracked by the AI?
 	var/digitalinvis = 0 //Are they ivisible to the AI?

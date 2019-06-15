@@ -271,7 +271,7 @@ SUBSYSTEM_DEF(ticker)
 		toggle_ooc(FALSE) // Turn it off
 
 	if(!CONFIG_GET(flag/looc_during_round))
-		toggle_ooc(FALSE)
+		toggle_looc(FALSE)
 
 
 	CHECK_TICK
@@ -374,8 +374,8 @@ SUBSYSTEM_DEF(ticker)
 				captainless=0
 			if(player.mind.assigned_role != player.mind.special_role)
 				SSjob.EquipRank(N, player.mind.assigned_role, 0)
-			if(CONFIG_GET(flag/roundstart_traits))
-				SSquirks.AssignQuirks(player, N.client, TRUE)
+			if(CONFIG_GET(flag/roundstart_traits) && ishuman(N.new_character))
+				SSquirks.AssignQuirks(N.new_character, N.client, TRUE)
 		CHECK_TICK
 	if(captainless)
 		for(var/mob/dead/new_player/N in GLOB.player_list)
@@ -639,12 +639,15 @@ SUBSYSTEM_DEF(ticker)
 	if(!round_end_sound)
 		round_end_sound = pick(\
 		'sound/roundend/newroundsexy.ogg',
-		'sound/roundend/apcdestroyed.ogg',
 		'sound/roundend/bangindonk.ogg',
-		'sound/roundend/leavingtg.ogg',
 		'sound/roundend/its_only_game.ogg',
 		'sound/roundend/yeehaw.ogg',
-		'sound/roundend/disappointed.ogg'\
+		'sound/roundend/roundend_jean_baptist.ogg',
+		'sound/roundend/roundend_smoothskin.ogg',
+		'sound/roundend/roundend_tunnel_snakes_rule.ogg',
+		'sound/roundend/roundend_real_tunnel_snake.ogg',
+		'sound/roundend/roundend_nuclear_backyard.ogg',
+		'sound/roundend/roundend_patrolling.ogg'\
 		)
 
 	SEND_SOUND(world, sound(round_end_sound))

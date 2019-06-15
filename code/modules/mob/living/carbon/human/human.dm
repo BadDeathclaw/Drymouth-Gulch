@@ -6,7 +6,6 @@
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
 	var/obj/item/rig/wearing_rig
 
-
 /mob/living/carbon/human/Initialize()
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
@@ -658,7 +657,7 @@
 		var/they_breathe = !C.has_trait(TRAIT_NOBREATH)
 		var/they_lung = C.getorganslot(ORGAN_SLOT_LUNGS)
 
-		if(C.health > HEALTH_THRESHOLD_CRIT)
+		if(C.health > C.crit_modifier())
 			return
 
 		src.visible_message("[src] performs CPR on [C.name]!", "<span class='notice'>You perform CPR on [C.name].</span>")
@@ -793,6 +792,8 @@
 						hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[BP.body_zone][icon_num]"))
 				for(var/t in get_missing_limbs()) //Missing limbs
 					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]6"))
+				for(var/t in get_disabled_limbs()) //Disabled limbs
+					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]7"))
 			else
 				hud_used.healthdoll.icon_state = "healthdoll_DEAD"
 
@@ -834,7 +835,7 @@
 		return 1
 	..()
 
-/mob/living/carbon/human/Collide(atom/A)
+/mob/living/carbon/human/Bump(atom/A)
 	..()
 	var/crashdir = get_dir(src, A)
 	var/obj/item/flightpack/FP = get_flightpack()
@@ -1045,3 +1046,6 @@
 
 /mob/living/carbon/human/species/zombie/krokodil_addict
 	race = /datum/species/krokodil_addict
+
+/mob/living/carbon/human/species/ghoul
+	race = /datum/species/ghoul

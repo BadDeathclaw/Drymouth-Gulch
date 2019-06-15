@@ -827,7 +827,7 @@
 //THE HELMET SHOULD NOT EXIST AS A STANDALONE ITEM
 //IT'S MEANT TO BE ACTIVATED AND APPEAR VIA THE BASE SUIT
 
-/obj/item/clothing/head/helmet/space/hardsuit/powerarmor
+/*/obj/item/clothing/head/helmet/space/hardsuit/powerarmor
 	name = "default power armor helmet"
 	desc = "Default power armor helmet, this should DEFINITELY not exist at all sadly."
 	clothing_flags = THICKMATERIAL //It better stop syringes
@@ -917,6 +917,9 @@
 			if(!offline)
 				togglepower()
 				return
+		else
+			if(offline) //It's offline and could use up power in the cell, turn it on and continue with the rest of the stuff
+				togglepower()
 		if(cell.charge == 1000)
 			var/mob/living/carbon/human/M = loc
 			to_chat(M, "<span class='warning'>WARNING: LOW BATTERYY CHARGE! [1000 / (energydrain / 2)] SECONDS LEFT OF OPERATION UNTIL SHUTDOWN!</span>")
@@ -950,8 +953,10 @@
 			to_chat(user, "Your hands are currently occupied and you can't take out the powercell!")
 			return
 		else
-			to_chat(user,"You take the powercell out of the power armor, turning off the powerarmor.")
+			to_chat(user,"You take the powercell out of the power armor, turning off the power armor.")
 			cell = null //Power cell no longer in the dang armor
+			if(!offline)
+				togglepower()
 			return
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/attackby(obj/item/I, mob/user)
@@ -974,7 +979,7 @@
 			cell = cell2
 			to_chat(user, "You insert a cell into the [name].")
 
-/obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/living/carbon/human/user, slot)
+/obj/item/clothing/suit/space/hardsuit/powerarmor/mob_can_equip(mob/living/carbon/human/user, mob/living/carbon/human/equipper, slot, disable_warning = 1)
 	if(src == user.wear_suit) //Suit is already equipped; stops message spam
 		return TRUE
 	if (ishuman(user))
@@ -983,18 +988,17 @@
 			to_chat(H, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 			return FALSE
 		else
-			to_chat(H, "<span class='notice'>You start to put on the [src.name]...</span>")
 			if(slot == SLOT_WEAR_SUIT) //Anywhere else can be instantly moved
+				to_chat(H, "<span class='notice'>You start to put on the [src.name]...</span>")
 				if(do_after(user, putondelay, target = src))
 					user.equip_to_slot(src, SLOT_WEAR_SUIT) //say it with me; hardcored slots
 					to_chat(H, "<span class='notice'>You put on the [src.name]! Ready to rock and roll.</span>")
-					return FALSE //Already equipped the armor; don't want the armor being equipped to another slot
+					return TRUE //Already equipped the armor; don't want the armor being equipped to another slot and returns silently
 				else
-					return FALSE
+					return FALSE //Moved while equiping
 			if(slot == SLOT_HANDS) //Putting into hands work, anywhere else besides armor slot won't work
 				return TRUE
-			return FALSE
-	return FALSE
+	return
 
 //Absorb the damage
 /obj/item/clothing/suit/space/hardsuit/powerarmor/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
@@ -1018,10 +1022,11 @@
 			armor.health_buffer -= damage
 			if(armor.health_buffer <= 0)
 				to_chat(owner, "<span class='danger'> Your [src] seems to shut off, it will no longer deflect projectiles until you repair it with a welder!</span>")
+			return TRUE
 		else //No more health absorb, do stuff regulary
-			..()
+			return FALSE
 	else //No power to the suit, do stuff regulary
-		..()
+		return FALSE
 
 /obj/item/clothing/suit/space/hardsuit/powerarmor/examine(mob/user)
 	..()
@@ -1126,3 +1131,4 @@
 	armor = list("melee" = 68, "bullet" = 62, "laser" = 39, "energy" = 39, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/powerarmor/t51b
 	health_buffer = 100
+	*/

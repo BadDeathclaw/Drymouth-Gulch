@@ -21,6 +21,10 @@
 	if(needs_update_stat || issilicon(owner)) //silicons need stat updates in addition to normal canmove updates
 		owner.update_stat()
 
+//PARALYSIS
+/datum/status_effect/incapacitating/paralyze
+	id = "paralyze"
+
 //STUN
 /datum/status_effect/incapacitating/stun
 	id = "stun"
@@ -32,6 +36,14 @@
 /datum/status_effect/incapacitating/knockdown/tick()
 	if(owner.getStaminaLoss())
 		owner.adjustStaminaLoss(-0.3) //reduce stamina loss by 0.3 per tick, 6 per 2 seconds
+
+//WEAPON DRAW DELAYED
+/datum/status_effect/incapacitating/weapon_draw_delayed
+	id = "weapon_draw_delayed"
+
+//THROW DELAYED
+/datum/status_effect/incapacitating/throw_delayed
+	id = "throw_delayed"
 
 
 //UNCONSCIOUS
@@ -72,7 +84,7 @@
 	if(prob(20))
 		if(carbon_owner)
 			carbon_owner.handle_dreams()
-		if(prob(10) && owner.health > HEALTH_THRESHOLD_CRIT)
+		if(prob(10) && owner.health > owner.crit_modifier())
 			owner.emote("snore")
 
 /obj/screen/alert/status_effect/asleep
@@ -124,7 +136,7 @@
 		qdel(src)
 
 /datum/status_effect/belligerent/proc/do_movement_toggle(force_damage)
-	var/number_legs = owner.get_num_legs()
+	var/number_legs = owner.get_num_legs(FALSE)
 	if(iscarbon(owner) && !is_servant_of_ratvar(owner) && !owner.anti_magic_check() && number_legs)
 		if(force_damage || owner.m_intent != MOVE_INTENT_WALK)
 			if(GLOB.ratvar_awakens)

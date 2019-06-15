@@ -7,11 +7,10 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/broc
 	lifespan = 25
 	endurance = 10
-	maturation = 8
-	production = 6
-	yield = 6
-	potency = 20
+	yield = 4
 	growthstages = 3
+	production = 4
+	maturation = 4
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	//mutatelist = list(/obj/item/seeds/geraniumseed, /obj/item/seeds/lilyseed)
 
@@ -22,6 +21,7 @@
 	icon_state = "broc"
 	//slot_flags = SLOT_HEAD
 	filling_color = "#FF6347"
+	wine_power = 20
 
 
 /obj/item/reagent_containers/food/snacks/grown/broc/add_juice()

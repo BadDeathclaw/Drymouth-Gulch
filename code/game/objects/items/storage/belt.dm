@@ -337,6 +337,12 @@
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 
+/obj/item/storage/belt/military/reconbandolier
+	name = "recon ranger bandolier"
+	desc = "A belt with many pockets, now at an angle."
+	icon_state = "reconbandolier"
+	item_state = "reconbandolier"
+
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
@@ -526,7 +532,7 @@
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding shotgun ammunition."
+	desc = "A bandolier for holding ammunition."
 	icon_state = "bandolier"
 	item_state = "bandolier"
 
@@ -536,7 +542,7 @@
 	STR.max_items = 18
 	STR.display_numerical_stacking = TRUE
 	STR.can_hold = typecacheof(list(
-		/obj/item/ammo_casing/shotgun
+		/obj/item/ammo_casing
 		))
 
 /obj/item/storage/belt/holster
@@ -567,6 +573,7 @@
 	desc = "A dorky fannypack for keeping small items in."
 	icon_state = "fannypack_leather"
 	item_state = "fannypack_leather"
+	item_color = "fannypackleather"
 
 /obj/item/storage/belt/fannypack/ComponentInitialize()
 	. = ..()
@@ -578,53 +585,63 @@
 	name = "black fannypack"
 	icon_state = "fannypack_black"
 	item_state = "fannypack_black"
+	item_color = "black"
 
 /obj/item/storage/belt/fannypack/red
 	name = "red fannypack"
 	icon_state = "fannypack_red"
 	item_state = "fannypack_red"
+	item_color = "red"
 
 /obj/item/storage/belt/fannypack/purple
 	name = "purple fannypack"
 	icon_state = "fannypack_purple"
 	item_state = "fannypack_purple"
+	item_color = "purple"
 
 /obj/item/storage/belt/fannypack/blue
 	name = "blue fannypack"
 	icon_state = "fannypack_blue"
 	item_state = "fannypack_blue"
+	item_color = "blue"
 
 /obj/item/storage/belt/fannypack/orange
 	name = "orange fannypack"
 	icon_state = "fannypack_orange"
 	item_state = "fannypack_orange"
+	item_color = "orange"
 
 /obj/item/storage/belt/fannypack/white
 	name = "white fannypack"
 	icon_state = "fannypack_white"
 	item_state = "fannypack_white"
+	item_color = "white"
 
 /obj/item/storage/belt/fannypack/green
 	name = "green fannypack"
 	icon_state = "fannypack_green"
 	item_state = "fannypack_green"
+	item_color = "green"
 
 /obj/item/storage/belt/fannypack/pink
 	name = "pink fannypack"
 	icon_state = "fannypack_pink"
 	item_state = "fannypack_pink"
+	item_color = "pink"
 
 /obj/item/storage/belt/fannypack/cyan
 	name = "cyan fannypack"
 	icon_state = "fannypack_cyan"
 	item_state = "fannypack_cyan"
+	item_color = "cyan"
 
 /obj/item/storage/belt/fannypack/yellow
 	name = "yellow fannypack"
 	icon_state = "fannypack_yellow"
 	item_state = "fannypack_yellow"
+	item_color = "yellow"
 
-/obj/item/storage/belt/sabre
+/obj/item/storage/belt/sabre //f13 comment perhaps this can be retooled later for the legion
 	name = "sabre sheath"
 	desc = "An ornate sheath designed to hold an officer's blade."
 	icon_state = "sheath"

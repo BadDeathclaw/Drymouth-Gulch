@@ -2,7 +2,7 @@
 	name = "mushroom"
 	bitesize_mod = 2
 	foodtype = VEGETABLES
-
+	wine_power = 40
 
 // Reishi
 /obj/item/seeds/reishi
@@ -56,7 +56,6 @@
 	icon_state = "amanita"
 	filling_color = "#FF0000"
 
-
 // Destroying Angel
 /obj/item/seeds/angel
 	name = "pack of destroying angel mycelium"
@@ -83,7 +82,7 @@
 	desc = "<I>Amanita Virosa</I>: Deadly poisonous basidiomycete fungus filled with alpha amatoxins."
 	icon_state = "angel"
 	filling_color = "#C0C0C0"
-
+	wine_power = 60
 
 // Liberty Cap
 /obj/item/seeds/liberty
@@ -108,7 +107,7 @@
 	desc = "<I>Psilocybe Semilanceata</I>: Liberate yourself!"
 	icon_state = "libertycap"
 	filling_color = "#DAA520"
-
+	wine_power = 80
 
 // Plump Helmet
 /obj/item/seeds/plump
@@ -134,7 +133,7 @@
 	desc = "<I>Plumus Hellmus</I>: Plump, soft and s-so inviting~"
 	icon_state = "plumphelmet"
 	filling_color = "#9370DB"
-
+	distill_reagent = "manlydorf"
 
 // Walking Mushroom
 /obj/item/seeds/plump/walkingmushroom
@@ -159,6 +158,7 @@
 	desc = "<I>Plumus Locomotus</I>: The beginning of the great walk."
 	icon_state = "walkingmushroom"
 	filling_color = "#9370DB"
+	can_distill = FALSE
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/walkingmushroom/attack_self(mob/user)
 	if(isspaceturf(user.loc))
@@ -228,6 +228,7 @@
 	icon_state = "glowshroom"
 	filling_color = "#00FA9A"
 	var/effect_path = /obj/structure/glowshroom
+	wine_power = 50
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/attack_self(mob/user)
 	if(isspaceturf(user.loc))
@@ -258,8 +259,8 @@
 	desc = "This mycelium -powers- into mushrooms!"
 	icon_state = "mycelium-glowcap"
 	species = "glowcap"
-	icon_grow = "glowshroom-grow"
 	icon_dead = "glowshroom-dead"
+	icon_grow = "glowshroom-grow"
 	plantname = "Glowcaps"
 	product = /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/glowcap
 	genes = list(/datum/plant_gene/trait/glow/red, /datum/plant_gene/trait/cell_charge, /datum/plant_gene/trait/plant_type/fungal_metabolism)
@@ -299,6 +300,7 @@
 	icon_state = "shadowshroom"
 	effect_path = /obj/structure/glowshroom/shadowshroom
 	tastes = list("shadow" = 1, "mushroom" = 1)
+	wine_power = 60
 
 /obj/item/reagent_containers/food/snacks/grown/mushroom/glowshroom/shadowshroom/attack_self(mob/user)
 	. = ..()
@@ -368,3 +370,92 @@
 	product = /obj/item/reagent_containers/food/snacks/grown/ash_flora/mushroom_stem
 	genes = list(/datum/plant_gene/trait/plant_type/fungal_metabolism, /datum/plant_gene/trait/glow)
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
+
+
+//Fallout mushrooms
+
+/obj/item/seeds/fungus
+	name = "pack of shroom seeds"
+	desc = "These seeds grow into shroom mushrooms."
+	icon_state = "seed-fungus"
+	species = "fungus"
+	plantname = "Fungus"
+	product = /obj/item/reagent_containers/food/snacks/grown/fungus
+	lifespan = 50
+	endurance = 10
+	maturation = 8
+	production = 3
+	yield = 6
+	potency = 20
+	growthstages = 3
+
+/obj/item/reagent_containers/food/snacks/grown/fungus
+	seed = /obj/item/seeds/fungus
+	name = "shrooms"
+	desc = "Cave fungus is an edible mushroom which has the ability to decrease radioation."
+	icon_state = "fungus"
+	filling_color = "#FF6347"
+
+/obj/item/reagent_containers/food/snacks/grown/fungus/add_juice()
+	if(..())
+		reagents.add_reagent("nutriment", 1 + round((seed.potency / 20), 1))
+		reagents.add_reagent("charcoal", 1 + round((seed.potency / 20), 1))
+		bitesize = 1 + round(reagents.total_volume / 3, 1)
+
+/obj/item/seeds/shroom
+	name = "pack of shroom seeds"
+	desc = "These seeds grow into shrooms."
+	icon = 'icons/obj/hydroponics/seeds.dmi'
+	icon_state = "mycelium-shroom"
+	species = "shroom"
+	plantname = "Shrooms"
+	product = /obj/item/reagent_containers/food/snacks/grown/shroom
+	lifespan = 50
+	endurance = 10
+	yield = 5
+	growthstages = 3
+	production = 20
+	maturation = 20
+	growing_icon = 'icons/fallout/flora/flora.dmi'
+	icon_grow = "shroom-grow"
+	icon_dead = "shroom-dead"
+	icon_harvest = "shroom-harvest"
+	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	reagents_add = list("charcoal" = 0.04, "nutriment" = 0.1, "radium" = 0.05)
+
+/obj/item/reagent_containers/food/snacks/grown/shroom
+	seed = /obj/item/seeds/shroom
+	name = "shroom"
+	desc = "An edible mushroom which has the ability to decrease radiation levels."
+	icon_state = "shroom"
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	filling_color = "#FF6347"
+
+/obj/item/seeds/glow
+	name = "pack of glowing fungus seeds"
+	desc = "These seeds grow into glowing fungus."
+	icon = 'icons/obj/hydroponics/seeds.dmi'
+	icon_state = "mycelium-glow"
+	species = "glow"
+	plantname = "Glowing Fungus"
+	product = /obj/item/reagent_containers/food/snacks/grown/glow
+	lifespan = 60
+	endurance = 10
+	yield = 5
+	growthstages = 3
+	production = 20
+	maturation = 20
+	growing_icon = 'icons/fallout/flora/flora.dmi'
+	icon_grow = "glow-grow"
+	icon_dead = "glow-dead"
+	icon_harvest = "glow-harvest"
+	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow)
+	reagents_add = list("space_drugs" = 0.04, "mindbreaker" = 0.1, "mutagen" = 0.01, "radium" = 0.05)
+
+/obj/item/reagent_containers/food/snacks/grown/glow
+	seed = /obj/item/seeds/glow
+	name = "shroom"
+	desc = "An edible mushroom which has the ability to decrease radiation levels."
+	icon_state = "shroom"
+	icon = 'icons/obj/hydroponics/harvest.dmi'
+	filling_color = "#FF6347"

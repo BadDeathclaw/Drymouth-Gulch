@@ -27,7 +27,7 @@
 		new /datum/data/mining_equipment("Lazarus Injector",			/obj/item/lazarus_injector,											1000),
 		new /datum/data/mining_equipment("Silver Pickaxe",				/obj/item/pickaxe/silver,											1000),
 		new /datum/data/mining_equipment("Mining Conscription Kit",		/obj/item/storage/backpack/duffelbag/mining_conscript,				1000),
-		new /datum/data/mining_equipment("Mining Hardsuit",				/obj/item/clothing/suit/space/hardsuit/mining,						2000),
+//		new /datum/data/mining_equipment("Mining Hardsuit",				/obj/item/clothing/suit/space/hardsuit/mining,						2000),
 		new /datum/data/mining_equipment("Diamond Pickaxe",				/obj/item/pickaxe/diamond,											2000),
 		new /datum/data/mining_equipment("Super Resonator",				/obj/item/resonator/upgraded,										2500),
 		new /datum/data/mining_equipment("Jump Boots",					/obj/item/clothing/shoes/bhop,										2500),
@@ -244,6 +244,7 @@
 	icon_state = "data"
 
 /obj/item/card/mining_access_card/afterattack(atom/movable/AM, mob/user, proximity)
+	. = ..()
 	if(istype(AM, /obj/item/card/id) && proximity)
 		var/obj/item/card/id/I = AM
 		I.access |=	ACCESS_MINING
@@ -252,7 +253,6 @@
 		I.access |= ACCESS_CARGO
 		to_chat(user, "You upgrade [I] with mining access.")
 		qdel(src)
-	..()
 
 /obj/item/storage/backpack/duffelbag/mining_conscript
 	name = "mining conscription kit"

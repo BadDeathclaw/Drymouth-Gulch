@@ -8,7 +8,7 @@
 	. = ..()
 	AddComponent(/datum/component/rad_insulation, RAD_MEDIUM_INSULATION)
 
-/turf/closed/ChangeTurf()
+/turf/closed/AfterChange()
 	. = ..()
 	SSair.high_pressure_delta -= src
 
@@ -149,8 +149,12 @@
 	name = "dense rock"
 	desc = "An extremely densely-packed rock, most mining tools or explosives would never get through this."
 	icon = 'icons/turf/mining.dmi'
-	icon_state = "rock"
+	icon_state = "rock_highchance"
 	smooth = SMOOTH_TRUE
+
+/turf/closed/indestructible/fakeglass/Initialize()
+	icon_state = "rock"
+	..()
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
@@ -207,3 +211,9 @@
 	desc = "A wall made out of a strange metal. The squares on it pulse in a predictable pattern."
 	icon = 'icons/turf/walls/hierophant_wall.dmi'
 	icon_state = "wall"
+
+/turf/closed/indestructible/vaultdoor
+	name = "vault wall"
+	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to give away around the door."
+	icon = 'icons/turf/walls/f13vault_reinforced_wall.dmi'
+	icon_state = "vaultwall"

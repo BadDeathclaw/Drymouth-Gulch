@@ -5,6 +5,7 @@
 	var/desc = "This is a test quirk."
 	var/value = 0
 	var/human_only = TRUE
+	var/locked = FALSE
 	var/gain_text
 	var/lose_text
 	var/medical_record_text //This text will appear on medical records for the trait. Not yet implemented

@@ -202,10 +202,15 @@
 		user.visible_message("[user] shortens \the [src]!", "<span class='notice'>You shorten \the [src].</span>")
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
-		w_class = WEIGHT_CLASS_NORMAL
+		if(src.distro)
+			src.distro = 15
+		w_class = WEIGHT_CLASS_NORMAL // Fits in a backpack or on a belt now, very robust!
 		item_state = "gun"
-		slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
+		slot_flags &= ~ITEM_SLOT_BACK	// You can't sling it on your back anymore
 		slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+		recoil = max(0.75, src.recoil) // Stocks exist for a reason!
+		force = min(10, src.force) // Less heft, less bashing power
+		spread += 40 //Not as accurate either!
 		sawn_off = TRUE
 		update_icon()
 		return 1
@@ -221,7 +226,7 @@
 
 /obj/item/suppressor
 	name = "suppressor"
-	desc = "A universal syndicate small-arms suppressor for maximum espionage."
+	desc = "A milled titanium suppressor with an adaptive mounting bracket allowing it to be mounted on any weapon."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "suppressor"
 	w_class = WEIGHT_CLASS_TINY
@@ -230,6 +235,6 @@
 
 /obj/item/suppressor/specialoffer
 	name = "cheap suppressor"
-	desc = "A foreign knock-off suppressor, it feels flimsy, cheap, and brittle. Still fits all weapons."
+	desc = "A thin aluminium suppressor with an adaptive mounting bracket allowing it to be mounted on any weapon. You hear something rattling inside it."
 	icon = 'icons/obj/guns/projectile.dmi'
 	icon_state = "suppressor"

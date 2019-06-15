@@ -156,8 +156,8 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 //Bloody shoes/footprints
 #define MAX_SHOE_BLOODINESS			100
 #define BLOODY_FOOTPRINT_BASE_ALPHA	150
-#define BLOOD_GAIN_PER_STEP			100
-#define BLOOD_LOSS_PER_STEP			5
+#define BLOOD_GAIN_PER_STEP			50
+#define BLOOD_LOSS_PER_STEP			10
 #define BLOOD_LOSS_IN_SPREAD		20
 
 //Bloody shoe blood states
@@ -439,6 +439,8 @@ GLOBAL_LIST_INIT(pda_styles, list(MONO, VT, ORBITRON, SHARE))
 #define OVERRIDE_LOG_DIRECTORY_PARAMETER "log-directory"
 //Prevent the master controller from starting automatically, overrides TEST_RUN_PARAMETER
 #define NO_INIT_PARAMETER "no-init"
+//Force the config directory to be something other than "config"
+#define OVERRIDE_CONFIG_DIRECTORY_PARAMETER "config-directory"
 
 #define EGG_LAYING_MESSAGES list("lays an egg.","squats down and croons.","begins making a huge racket.","begins clucking raucously.")
 
@@ -455,3 +457,4 @@ GLOBAL_LIST_INIT(pda_styles, list(MONO, VT, ORBITRON, SHARE))
 #define UNLOCKED 1
 #define LOCKED 2
 
+#define SPAWNER_SEED rand(1, 10)

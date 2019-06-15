@@ -21,7 +21,7 @@ GLOBAL_PROTECT(security_mode)
 
 	GLOB.revdata = new
 
-	config.Load()
+	config.Load(params[OVERRIDE_CONFIG_DIRECTORY_PARAMETER])
 
 	//SetupLogs depends on the RoundID, so lets check
 	//DB schema and set RoundID if we can
@@ -113,6 +113,11 @@ GLOBAL_PROTECT(security_mode)
 
 	if(GLOB.round_id)
 		log_game("Round ID: [GLOB.round_id]")
+		
+	// This was printed early in startup to the world log and config_error.log,
+	// but those are both private, so let's put the commit info in the runtime
+	// log which is ultimately public.
+	log_runtime(GLOB.revdata.get_log_message())
 
 /world/proc/CheckSecurityMode()
 	//try to write to data
@@ -245,7 +250,7 @@ GLOBAL_PROTECT(security_mode)
 			features += "vote"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>\[ENG] Bad Deathclaw</b> - Unofficial Fallout 13<br>"
+	s += "<b>\[ENG] Bad Deathclaw</b> - 18+ Unofficial Fallout 13<br>"
 	s += "<br>"
 	s += "Medium RP \[https://discord.gg/pY33Q8c]<br>"
 	s += "Hosted by degenerates"

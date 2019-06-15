@@ -77,6 +77,28 @@
 	SSblackbox.record_feedback("nested tally", "round_end_stats", num_escapees, list("escapees", "total"))
 	SSblackbox.record_feedback("nested tally", "round_end_stats", GLOB.joined_player_list.len, list("players", "total"))
 	SSblackbox.record_feedback("nested tally", "round_end_stats", GLOB.joined_player_list.len - num_survivors, list("players", "dead"))
+	
+	var/discordmsg = ""
+	discordmsg += "\[-------------ROUND END-------------]\n"
+	discordmsg += "Round Number: [GLOB.round_id]\n"
+	discordmsg += "Duration: [DisplayTimeText(world.time - SSticker.round_start_time)]\n"
+	discordmsg += "Players: [GLOB.player_list.len]\n"
+	discordmsg += "Survivors: [num_survivors]\n"
+	discordmsg += "Escapees: [num_escapees]\n"
+	discordmsg += "Integrity: [station_integrity]\n"
+	discordmsg += "Gamemode: [SSticker.mode.name]\n"
+	discordsendmsg("ooc", discordmsg)
+	discordmsg = ""
+	var/list/ded = SSblackbox.first_death
+	if(ded)
+		discordmsg += "First Death: [ded["name"]], [ded["role"]], at [ded["area"]]\n"
+		var/last_words = ded["last_words"] ? "Their last words were: \"[ded["last_words"]]\"\n" : "They had no last words.\n"
+		discordmsg += "[last_words]\n"
+	else
+		discordmsg += "Nobody died!\n"
+	discordmsg += "--------------------------------------\n"
+	discordsendmsg("ooc", discordmsg)
+	
 	. = list()
 	.[POPCOUNT_SURVIVORS] = num_survivors
 	.[POPCOUNT_ESCAPEES] = num_escapees
@@ -203,21 +225,20 @@
 	//Print a list of antagonists to the server log
 	var/list/total_antagonists = list()
 	//Look into all mobs in world, dead or alive
-	for(var/datum/mind/Mind in minds)
-		var/temprole = Mind.special_role
-		if(temprole)							//if they are an antagonist of some sort.
-			if(temprole in total_antagonists)	//If the role exists already, add the name to it
-				total_antagonists[temprole] += ", [Mind.name]([Mind.key])"
-			else
-				total_antagonists.Add(temprole) //If the role doesnt exist in the list, create it and add the mob
-				total_antagonists[temprole] += ": [Mind.name]([Mind.key])"
+	for(var/datum/antagonist/A in GLOB.antagonists)
+		if(!A.owner)
+			continue
+		if(!(A.name in total_antagonists))
+			total_antagonists[A.name] = list()
+		total_antagonists[A.name] += "[key_name(A.owner)]"
 
 	CHECK_TICK
 
 	//Now print them all into the log!
 	log_game("Antagonists at round end were...")
-	for(var/i in total_antagonists)
-		log_game("[i]s[total_antagonists[i]].")
+	for(var/antag_name in total_antagonists)
+		var/list/L = total_antagonists[antag_name]
+		log_game("[antag_name]s :[L.Join(", ")].")
 
 	CHECK_TICK
 	SSdbcore.SetRoundEnd()

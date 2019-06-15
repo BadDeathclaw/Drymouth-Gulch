@@ -21,6 +21,8 @@
 
 #define isfloorturf(A) (istype(A, /turf/open/floor))
 
+#define isgroundturf(A) (istype(A, /turf/open/indestructible/ground))
+
 #define isclosedturf(A) (istype(A, /turf/closed))
 
 #define isindestructiblewall(A) (istype(A, /turf/closed/indestructible))
@@ -57,6 +59,8 @@
 #define isluminescent(A) (is_species(A, /datum/species/jelly/luminescent))
 #define iszombie(A) (is_species(A, /datum/species/zombie))
 #define ishumanbasic(A) (is_species(A, /datum/species/human))
+//f13 edit
+#define isghoul(A) (is_species(A, /datum/species/ghoul))
 
 //why arent catpeople a subspecies
 #define iscatperson(A) (ishumanbasic(A) && ( A.dna.features["ears"] == "Cat" || A.dna.features["tail_human"] == "Cat") )
@@ -149,6 +153,10 @@
 #define ismecha(A) (istype(A, /obj/mecha))
 
 #define is_cleanable(A) (istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/rune)) //if something is cleanable
+//F13 EDIT
+#define iskey(A) istype(A, /obj/item/key)
+
+#define islock(A) istype(A, /obj/item/lock_construct)
 
 #define isorgan(A) (istype(A, /obj/item/organ))
 

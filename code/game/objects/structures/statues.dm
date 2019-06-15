@@ -13,7 +13,6 @@
 
 /obj/structure/statue/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, /datum.proc/AddComponent, /datum/component/beauty, 1250), 0)
 
 /obj/structure/statue/attackby(obj/item/W, mob/living/user, params)
 	add_fingerprint(user)
@@ -77,7 +76,7 @@
 	radiate()
 	return ..()
 
-/obj/structure/statue/uranium/CollidedWith(atom/movable/AM)
+/obj/structure/statue/uranium/Bumped(atom/movable/AM)
 	radiate()
 	..()
 
@@ -232,7 +231,7 @@
 	name = "statue of a clown"
 	icon_state = "clown"
 
-/obj/structure/statue/bananium/CollidedWith(atom/movable/AM)
+/obj/structure/statue/bananium/Bumped(atom/movable/AM)
 	honk()
 	..()
 
@@ -283,3 +282,15 @@
 	name = "snowman"
 	desc = "Several lumps of snow put together to form a snowman."
 	icon_state = "snowman"
+
+
+//Wood
+
+/obj/structure/statue/wood
+	obj_integrity = 150
+	material_drop_type = /obj/item/stack/sheet/mineral/wood
+
+/obj/structure/statue/wood/headstonewood
+	name = "Cross"
+	desc = "A headstone"
+	icon_state = "groovewood"

@@ -67,7 +67,7 @@
 		to_chat(user, "<span class='warning'>You need your other hand to be empty!</span>")
 		return
 	if(user.get_num_arms() < 2)
-		to_chat(user, "<span class='warning'>You don't have enough hands.</span>")
+		to_chat(user, "<span class='warning'>Your hands appear to be fucked up.</span>")
 		return
 	wielded = 1
 	if(force_wielded)
@@ -219,7 +219,7 @@
 	icon_state = "fireaxe0"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
-	name = "fire axe"
+	name = "fireaxe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	force = 5
 	throwforce = 15
@@ -247,6 +247,7 @@
 	return (BRUTELOSS)
 
 /obj/item/twohanded/fireaxe/afterattack(atom/A, mob/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(wielded) //destroys windows and grilles in one hit
@@ -454,7 +455,7 @@
 	icon_state = "spearglass0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	name = "Improvised Metal Glaive"
+	name = "improvised metal glaive"
 	desc = "A improvised metal glaive that can be wielded."
 	force = 10
 	w_class = WEIGHT_CLASS_BULKY
@@ -505,6 +506,7 @@
 		icon_state = "spearglass[wielded]"
 
 /obj/item/twohanded/spear/afterattack(atom/movable/AM, mob/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(isopenturf(AM)) //So you can actually melee with it
@@ -674,7 +676,7 @@
 //GREY TIDE
 /obj/item/twohanded/spear/grey_tide
 	icon_state = "spearglass0"
-	name = "\improper Metal Spear"
+	name = "\improper metal spear"
 	desc = "A improvised metal spear."
 	force_unwielded = 20
 	force_wielded = 25
@@ -683,7 +685,7 @@
 	attack_verb = list("gored")
 
 /obj/item/twohanded/spear/grey_tide/afterattack(atom/movable/AM, mob/living/user, proximity)
-	..()
+	. = ..()
 	if(!proximity)
 		return
 	user.faction |= "greytide([REF(user)])"
@@ -764,6 +766,7 @@
 	..()
 
 /obj/item/twohanded/pitchfork/demonic/ascended/afterattack(atom/target, mob/user, proximity)
+	. = ..()
 	if(!proximity || !wielded)
 		return
 	if(iswallturf(target))
@@ -773,7 +776,6 @@
 		W.break_wall()
 		W.ScrapeAway()
 		return
-	..()
 
 //HF blade
 
@@ -781,7 +783,7 @@
 	icon_state = "hfrequency0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	name = "vibro sword"
+	name = "high frequency blade"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
 	force_unwielded = 20
 	force_wielded = 40
@@ -891,7 +893,9 @@
 	icon_state = "sledgehammer[wielded]"
 
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
+	name = "bumper sword"
 	icon_state = "bmprsword0"
+	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 

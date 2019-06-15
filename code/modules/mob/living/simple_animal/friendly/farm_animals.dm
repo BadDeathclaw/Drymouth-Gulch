@@ -126,30 +126,66 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 50
 	maxHealth = 50
+	var/is_calf = 0
+	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
+	var/has_calf = 0
+	var/young_type = /mob/living/simple_animal/cow/calf
 	var/obj/item/udder/udder = null
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
+	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/cow/Initialize()
-	udder = new()
+	if(!is_calf)
+		udder = new()
 	. = ..()
 
 /mob/living/simple_animal/cow/Destroy()
-	qdel(udder)
-	udder = null
+	if(udder)
+		qdel(udder)
+		udder = null
 	return ..()
 
 /mob/living/simple_animal/cow/attackby(obj/item/O, mob/user, params)
-	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass))
+	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
 		udder.milkAnimal(O, user)
 		return 1
+	if(stat == CONSCIOUS && istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
 	else
 		return ..()
+
 
 /mob/living/simple_animal/cow/Life()
 	. = ..()
 	if(stat == CONSCIOUS)
-		udder.generateMilk()
+		if((prob(3) && has_calf))
+			has_calf++
+		if(has_calf > 10)
+			has_calf = 0
+			visible_message("<span class='alertalien'>[src] gives birth to a calf.</span>")
+			new young_type(get_turf(src))
+
+		if(is_calf)
+			if((prob(3)))
+				is_calf = 0
+				udder = new()
+				if (name == "brahmin calf")
+					name = "brahmin"
+				else
+					name = "cow"
+				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
+		else
+			udder.generateMilk()
 
 /mob/living/simple_animal/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
@@ -205,6 +241,7 @@
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	gold_core_spawnable = FRIENDLY_SPAWN
+	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/chick/Initialize()
 	. = ..()
@@ -227,7 +264,7 @@
 
 /mob/living/simple_animal/chicken
 	name = "\improper chicken"
-	desc = "Hopefully the eggs are good this season."
+	desc = "One of the two kinds the legion prefers."
 	gender = FEMALE
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	icon_state = "chicken_brown"
@@ -261,6 +298,7 @@
 	var/list/validColors = list("brown","black","white")
 	gold_core_spawnable = FRIENDLY_SPAWN
 	var/static/chicken_count = 0
+	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/chicken/Initialize()
 	. = ..()
@@ -325,7 +363,7 @@
 	. = ..()
 
 /obj/item/udder/proc/generateMilk()
-	if(prob(5))
+	if(prob(10))
 		reagents.add_reagent("milk", rand(5, 10))
 
 /obj/item/udder/proc/milkAnimal(obj/O, mob/user)
@@ -337,18 +375,121 @@
 	if(transfered)
 		user.visible_message("[user] milks [src] using \the [O].", "<span class='notice'>You milk [src] using \the [O].</span>")
 	else
-		to_chat(user, "<span class='danger'>The udder is dry. Wait a bit longer...</span>")
+		to_chat(user, "<span class='danger'>The udder is dry. Wait a bit longer.</span>")
 
 /mob/living/simple_animal/cow/brahmin
 	name = "brahmin"
-	desc = "Brahmin or brahma are mutated cattle with two heads and giant udders.<br>Known for their milk, just don't tip them over."
+	desc = "Brahmin or brahma are mutated cattle with two heads and looking udderly ridiculous.<br>Known for their milk, just don't tip them over."
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "brahmin"
 	icon_living = "brahmin"
 	icon_dead = "brahmin_dead"
 	icon_gib = "brahmin_gib"
-	speak = list("Moo?","Moo!","MOOOOOO","Heeey brooo!","Heeey yooou!")
+	speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
+	young_type = /mob/living/simple_animal/cow/brahmin/calf
 	emote_hear = list("brays.")
-	speak_chance = 1
+	speak_chance = 0.4
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6,
 							/obj/item/stack/sheet/animalhide/brahmin = 3)
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn
+	name = "big horner"
+	desc = "Mutated bighorn sheep that are often found in mountains, and are known for being foul-tempered even at the best of times."
+	icon = 'icons/mob/wastemobs.dmi'
+	icon_state = "bighorner"
+	icon_living = "bighorner"
+	icon_dead = "bighorner_dead"
+	icon_gib = "bighorner_gib"
+	speak = list("EHEHEHEHEH","eh?")
+	speak_emote = list("brays")
+	emote_hear = list("brays.")
+	emote_see = list("shakes its head.", "stamps a foot.", "glares around.", "grunts.")
+	speak_chance = 1
+	turns_per_move = 5
+	see_in_dark = 6
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6,
+							/obj/item/stack/sheet/sinew = 3,
+							/obj/item/stack/sheet/bone = 4)
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "kicks"
+	faction = list("neutral")
+	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
+	attack_same = 1
+	attacktext = "rams"
+	attack_sound = 'sound/weapons/punch1.ogg'
+	health = 80
+	maxHealth = 80
+	melee_damage_lower = 25
+	melee_damage_upper = 20
+	environment_smash = ENVIRONMENT_SMASH_NONE
+	var/is_calf = 0
+	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
+	var/has_calf = 0
+	var/young_type = /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
+	stop_automated_movement_when_pulled = 1
+	blood_volume = BLOOD_VOLUME_NORMAL
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
+	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
+		udder.milkAnimal(O, user)
+		return 1
+	if(stat == CONSCIOUS && istype(O, food_type))
+		if(is_calf)
+			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			qdel(O)
+		if(!has_calf && !is_calf)
+			has_calf = 1
+			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			qdel(O)
+		else
+			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			qdel(O)
+	else
+		return ..()
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/Life()
+	. = ..()
+	if(stat == CONSCIOUS)
+		if((prob(3) && has_calf))
+			has_calf++
+		if(has_calf > 10)
+			has_calf = 0
+			visible_message("<span class='alertalien'>[src] gives birth to a calf.</span>")
+			new young_type(get_turf(src))
+
+		if(is_calf)
+			if((prob(3)))
+				is_calf = 0
+				udder = new()
+				if (name == "bighorn lamb")
+					name = "bighorn"
+				else
+					name = "bighorn"
+				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
+		else
+			udder.generateMilk()
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
+	name = "bighoner lamb"
+	resize = 0.55
+
+/mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf/Initialize() //calfs should not be a separate critter, they should just be a normal whatever with these vars
+	. = ..()
+	resize = 0.55
+
+/mob/living/simple_animal/cow/calf
+	name = "cow calf"
+	is_calf = 1
+
+/mob/living/simple_animal/cow/calf/Initialize()
+	. = ..()
+	resize = 0.55
+
+/mob/living/simple_animal/cow/brahmin/calf
+	name = "brahmin calf"
+	is_calf = 1
+
+/mob/living/simple_animal/cow/brahmin/calf/Initialize()
+	. = ..()
+	resize = 0.55

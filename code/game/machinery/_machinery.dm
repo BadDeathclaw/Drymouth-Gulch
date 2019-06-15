@@ -3,7 +3,6 @@ Overview:
    Used to create objects that need a per step proc call.  Default definition of 'Initialize()'
    stores a reference to src machine in global 'machines list'.  Default definition
    of 'Destroy' removes reference to src machine in global 'machines list'.
-
 Class Variables:
    use_power (num)
       current state of auto power use.
@@ -11,23 +10,18 @@ Class Variables:
          NO_POWER_USE -- no auto power use
          IDLE_POWER_USE -- machine is using power at its idle power level
          ACTIVE_POWER_USE -- machine is using power at its active power level
-
    active_power_usage (num)
       Value for the amount of power to use when in active power mode
-
    idle_power_usage (num)
       Value for the amount of power to use when in idle power mode
-
    power_channel (num)
       What channel to draw from when drawing power for power mode
       Possible Values:
          EQUIP:0 -- Equipment Channel
          LIGHT:2 -- Lighting Channel
          ENVIRON:3 -- Environment Channel
-
    component_parts (list)
       A list of component parts of machine used by frame based machines.
-
    stat (bitflag)
       Machine status bit flags.
       Possible bit flags:
@@ -35,51 +29,37 @@ Class Variables:
          NOPOWER -- No power is being supplied to machine.
          MAINT -- machine is currently under going maintenance.
          EMPED -- temporary broken by EMP pulse
-
 Class Procs:
    Initialize()                     'game/machinery/machine.dm'
-
    Destroy()                   'game/machinery/machine.dm'
-
    auto_use_power()            'game/machinery/machine.dm'
       This proc determines how power mode power is deducted by the machine.
       'auto_use_power()' is called by the 'master_controller' game_controller every
       tick.
-
       Return Value:
          return:1 -- if object is powered
          return:0 -- if object is not powered.
-
       Default definition uses 'use_power', 'power_channel', 'active_power_usage',
       'idle_power_usage', 'powered()', and 'use_power()' implement behavior.
-
    powered(chan = EQUIP)         'modules/power/power.dm'
       Checks to see if area that contains the object has power available for power
       channel given in 'chan'.
-
    use_power(amount, chan=EQUIP)   'modules/power/power.dm'
       Deducts 'amount' from the power channel 'chan' of the area that contains the object.
-
    power_change()               'modules/power/power.dm'
       Called by the area that contains the object when ever that area under goes a
       power state change (area runs out of power, or area channel is turned off).
-
    RefreshParts()               'game/machinery/machine.dm'
       Called to refresh the variables in the machine that are contributed to by parts
       contained in the component_parts list. (example: glass and material amounts for
       the autolathe)
-
       Default definition does nothing.
-
    process()                  'game/machinery/machine.dm'
       Called by the 'machinery subsystem' once per machinery tick for each machine that is listed in its 'machines' list.
-
    process_atmos()
       Called by the 'air subsystem' once per atmos tick for each machine that is listed in its 'atmos_machines' list.
-
    is_operational()
 		Returns 0 if the machine is unpowered, broken or undergoing maintenance, something else if not
-
 	Compiled by Aygar
 */
 
@@ -112,8 +92,10 @@ Class Procs:
 	var/atom/movable/occupant = null
 	var/speed_process = FALSE // Process as fast as possible?
 	var/obj/item/circuitboard/circuit // Circuit to be created and inserted when the machinery is created
-
 	var/interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
+	var/machine_tool_behaviour = NONE //can it be used as a tool in crafting?
+	var/barricade = TRUE //if true, acts as barricade
+	var/proj_pass_rate = 65 //percentage change for bullets to fly over, if barricade=1
 
 /obj/machinery/Initialize()
 	if(!armor)
@@ -218,11 +200,33 @@ Class Procs:
 	if(panel_open && !(interaction_flags_machine & INTERACT_MACHINE_OPEN))
 		if(!silicon || !(interaction_flags_machine & INTERACT_MACHINE_OPEN_SILICON))
 			return FALSE
-	if(!silicon && (interaction_flags_machine & INTERACT_MACHINE_REQUIRES_SILICON))
-		return FALSE
-	else if(silicon && !(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON))
-		return FALSE
+
+	if(silicon)
+		if(!(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON))
+			return FALSE
+	else
+		if(interaction_flags_machine & INTERACT_MACHINE_REQUIRES_SILICON)
+			return FALSE
+		if(!Adjacent(user))
+			var/mob/living/carbon/H = user
+			if(!(istype(H) && H.has_dna() && H.dna.check_mutation(TK)))
+				return FALSE
 	return TRUE
+
+/obj/machinery/CanPass(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
+	if(barricade == FALSE)
+		return !density
+	else if(density == FALSE)
+		return 1
+	else if(istype(mover, /obj/item/projectile))
+		var/obj/item/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return 1
+		if(prob(proj_pass_rate))
+			return 1
+		return 0
+	else
+		return !density
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -311,7 +315,7 @@ Class Procs:
 /obj/machinery/proc/spawn_frame(disassembled)
 	var/obj/structure/frame/machine/M = new /obj/structure/frame/machine(loc)
 	. = M
-	M.anchored = anchored
+	M.setAnchored(anchored)
 	if(!disassembled)
 		M.obj_integrity = M.max_integrity * 0.5 //the frame is already half broken
 	transfer_fingerprints_to(M)
@@ -354,37 +358,6 @@ Class Procs:
 		return 1
 	return 0
 
-/obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
-	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
-		to_chat(user, "<span class='warning'>[src] needs to be on the floor to be secured!</span>")
-		return FAILED_UNFASTEN
-	return SUCCESSFUL_UNFASTEN
-
-/obj/proc/default_unfasten_wrench(mob/user, obj/item/I, time = 20) //try to unwrench an object in a WONDERFUL DYNAMIC WAY
-	if(!(flags_1 & NODECONSTRUCT_1) && I.tool_behaviour == TOOL_WRENCH)
-		var/can_be_unfasten = can_be_unfasten_wrench(user)
-		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
-			return can_be_unfasten
-		if(time)
-			to_chat(user, "<span class='notice'>You begin [anchored ? "un" : ""]securing [src]...</span>")
-		I.play_tool_sound(src, 50)
-		var/prev_anchored = anchored
-		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
-		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
-			to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [src].</span>")
-			anchored = !anchored
-			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
-			return SUCCESSFUL_UNFASTEN
-		return FAILED_UNFASTEN
-	return CANT_UNFASTEN
-
-/obj/proc/unfasten_wrench_check(prev_anchored, mob/user) //for the do_after, this checks if unfastening conditions are still valid
-	if(anchored != prev_anchored)
-		return FALSE
-	if(can_be_unfasten_wrench(user, TRUE) != SUCCESSFUL_UNFASTEN) //if we aren't explicitly successful, cancel the fuck out
-		return FALSE
-	return TRUE
-
 /obj/machinery/proc/exchange_parts(mob/user, obj/item/storage/part_replacer/W)
 	if(!istype(W))
 		return FALSE
@@ -419,7 +392,7 @@ Class Procs:
 									B.moveToNullspace()
 							SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
 							component_parts -= A
-							to_chat(user, "<span class='notice'>[A.name] replaced with [B.name].</span>")
+							to_chat(user, "<span class='notice'>[capitalize(A.name)] replaced with [B.name].</span>")
 							shouldplaysound = 1 //Only play the sound when parts are actually replaced!
 							break
 			RefreshParts()

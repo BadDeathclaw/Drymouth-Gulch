@@ -1347,7 +1347,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = FALSE
 
 /area/f13/underground
-	flags_2 = BLOCK_RADIO_2
+	flags_2 = NONE //BLOCK_RADIO_2
 
 /area/f13/underground/bos
 	name = "BoS"
@@ -1367,6 +1367,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13/desert
 	name = "Desert"
 	icon_state = "desert"
+	requires_power = FALSE
 	poweralm = FALSE
 	power_environ = FALSE
 	power_equip = FALSE
@@ -1407,7 +1408,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/klamat/mine
 	name = "Klamat mine"
-	icon_state = "klamat"
+	icon_state = "klamat_mine"
 	requires_power = TRUE
 
 /area/f13/deepmine

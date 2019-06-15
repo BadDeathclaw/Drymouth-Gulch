@@ -142,6 +142,10 @@
 	return
 
 /mob/living/carbon/throw_item(atom/target)
+	var/obj/item/I = src.get_active_held_item()
+	if(src.IsThrowDelayed())
+		to_chat(src, "<span class='notice'>You're not ready to throw [I] yet!</span>")
+		return
 	throw_mode_off()
 	if(!target || !isturf(loc))
 		return
@@ -149,7 +153,6 @@
 		return
 
 	var/atom/movable/thrown_thing
-	var/obj/item/I = src.get_active_held_item()
 
 	if(!I)
 		if(pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
@@ -506,9 +509,9 @@
 	var/total_stamina = 0
 	for(var/X in bodyparts)	//hardcoded to streamline things a bit
 		var/obj/item/bodypart/BP = X
-		total_brute	+= BP.brute_dam
-		total_burn	+= BP.burn_dam
-		total_stamina += BP.stamina_dam
+		total_brute	+= (BP.brute_dam * BP.body_damage_coeff)
+		total_burn	+= (BP.burn_dam * BP.body_damage_coeff)
+		total_stamina += (BP.stamina_dam * BP.body_damage_coeff)
 	health = maxHealth - getOxyLoss() - getToxLoss() - getCloneLoss() - total_burn - total_brute
 	staminaloss = total_stamina
 	update_stat()
@@ -552,6 +555,11 @@
 			see_invisible = min(G.invis_view, see_invisible)
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
+	if(head)
+		var/obj/item/clothing/head/H = head
+		see_in_dark = max(H.darkness_view, see_in_dark)
+		if(!isnull(H.lighting_alpha))
+			lighting_alpha = min(lighting_alpha, H.lighting_alpha)
 	if(dna)
 		for(var/X in dna.mutations)
 			var/datum/mutation/M = X
@@ -599,7 +607,7 @@
 	if(!client)
 		return
 
-	if(health <= HEALTH_THRESHOLD_CRIT)
+	if(health <= crit_modifier())
 		var/severity = 0
 		switch(health)
 			if(-20 to -10)
@@ -728,7 +736,7 @@
 			stat = UNCONSCIOUS
 			blind_eyes(1)
 		else
-			if(health <= HEALTH_THRESHOLD_CRIT && !has_trait(TRAIT_NOSOFTCRIT))
+			if(health <= crit_modifier() && !has_trait(TRAIT_NOSOFTCRIT))
 				stat = SOFT_CRIT
 			else
 				stat = CONSCIOUS
@@ -866,6 +874,7 @@
 	.["Hallucinate"] = "?_src_=vars;[HrefToken()];hallucinate=[REF(src)]"
 	.["Give brain trauma"] = "?_src_=vars;[HrefToken()];givetrauma=[REF(src)]"
 	.["Cure brain traumas"] = "?_src_=vars;[HrefToken()];curetraumas=[REF(src)]"
+	.["Give martial arts"] = "?_src_=vars;[HrefToken()];givemartialart=[REF(src)]"
 
 /mob/living/carbon/can_resist()
 	return bodyparts.len > 2 && ..()

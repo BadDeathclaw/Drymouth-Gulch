@@ -26,6 +26,7 @@
 	filling_color = "#FF6347"
 	bitesize_mod = 3
 	foodtype = VEGETABLES | GROSS
+	distill_reagent = "vermouth"
 
 // Lily
 /obj/item/seeds/poppy/lily
@@ -89,7 +90,7 @@
 	slot_flags = ITEM_SLOT_HEAD
 	filling_color = "#E6E6FA"
 	bitesize_mod = 3
-
+	distill_reagent = "vermouth"
 
 // Sunflower
 /obj/item/seeds/sunflower
@@ -152,6 +153,7 @@
 	slot_flags = ITEM_SLOT_HEAD
 	filling_color = "#E6E6FA"
 	bitesize_mod = 2
+	distill_reagent = "absinthe" //It's made from flowers.
 
 // Novaflower
 /obj/item/seeds/sunflower/novaflower
@@ -199,6 +201,7 @@
 			log_game("[key_name(user)] set [key_name(M)] on fire with [src] at [AREACOORD(user)]")
 
 /obj/item/grown/novaflower/afterattack(atom/A as mob|obj, mob/user,proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(force > 0)

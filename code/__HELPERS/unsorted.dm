@@ -186,16 +186,17 @@ Turf and target are separate in case you want to teleport some distance from a t
 	return 1
 
 //Generalised helper proc for letting mobs rename themselves. Used to be clname() and ainame()
-/mob/proc/rename_self(role, client/C)
+/mob/proc/apply_pref_name(role, client/C)
 	if(!C)
 		C = client
 	var/oldname = real_name
 	var/newname
 	var/loop = 1
 	var/safety = 0
+	var/banned = jobban_isbanned(src, "appearance")
 
 	while(loop && safety < 5)
-		if(C && C.prefs.custom_names[role] && !safety)
+		if(C && C.prefs.custom_names[role] && !safety && !banned)
 			newname = C.prefs.custom_names[role]
 		else
 			switch(role)
@@ -210,7 +211,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 				if("deity")
 					newname = pick(GLOB.clown_names|GLOB.ai_names|GLOB.mime_names) //pick any old name
 				else
-					return
+					return FALSE
 
 		for(var/mob/living/M in GLOB.player_list)
 			if(M == src)
@@ -224,7 +225,8 @@ Turf and target are separate in case you want to teleport some distance from a t
 
 	if(newname)
 		fully_replace_character_name(oldname,newname)
-
+		return TRUE
+	return FALSE
 
 //Picks a string of symbols to display as the law number for hacked or ion laws
 /proc/ionnum()
@@ -375,6 +377,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/client/C
 	var/key
 	var/ckey
+	var/fallback_name
 
 	if(!whom)
 		return "*null*"
@@ -394,6 +397,16 @@ Turf and target are separate in case you want to teleport some distance from a t
 		C = GLOB.directory[ckey]
 		if(C)
 			M = C.mob
+	else if(istype(whom,/datum/mind))
+		var/datum/mind/mind = whom
+		key = mind.key
+		ckey = ckey(key)
+		if(mind.current)
+			M = mind.current
+			if(M.client)
+				C = M.client
+		else
+			fallback_name = mind.name
 	else
 		return "*invalid*"
 
@@ -419,11 +432,14 @@ Turf and target are separate in case you want to teleport some distance from a t
 	else
 		. += "*no key*"
 
-	if(include_name && M)
-		if(M.real_name)
-			. += "/([M.real_name])"
-		else if(M.name)
-			. += "/([M.name])"
+	if(include_name)
+		if(M)
+			if(M.real_name)
+				. += "/([M.real_name])"
+			else if(M.name)
+				. += "/([M.name])"
+		else if(fallback_name)
+			. += "/([fallback_name])"
 
 	return .
 
@@ -1595,3 +1611,43 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 	for(var/i in L)
 		if(condition.Invoke(i))
 			. |= i
+
+/proc/num2sign(numeric)
+	if(numeric > 0)
+		return 1
+	else if(numeric < 0)
+		return -1
+	else
+		return 0
+
+//Macro for creating a list and populating it with a type. Requires hierarchies to be organized. Missing the logic for restrictions.
+proc/childtypesof()
+	var/types[] = list()
+	. = list()
+	for(var/type in args)
+		types += typesof(type) - type
+		for(var/t in types)
+			types -= typesof(t) - t
+		. += types
+
+//In which we let it just generate new instances.
+proc/newchildtypesof()
+	var/prevtypes[]
+	. = list()
+	for(var/a in args)
+		if(islist(a))
+			if(length(prevtypes))
+				for(var/t in prevtypes)
+					. += new t(arglist(a))
+				prevtypes = list()
+		else
+			if(length(prevtypes))
+				for(var/t in prevtypes)
+					. += new t
+			if(ispath(a))
+				prevtypes = childtypesof(a)
+			else
+				prevtypes = list()
+	if(length(prevtypes))
+		for(var/t in prevtypes)
+			. += new t

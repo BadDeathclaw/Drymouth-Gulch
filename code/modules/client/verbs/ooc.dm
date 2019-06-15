@@ -70,6 +70,10 @@
 					to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>OOC:</span> <EM>[holder.fakekey ? holder.fakekey : key]:</EM> <span class='message'>[msg]</span></span></font>")
 			else if(!(key in C.prefs.ignoring))
 				to_chat(C, "<font color='[GLOB.normal_ooc_colour]'><span class='ooc'><span class='prefix'>OOC:</span> <EM>[keyname]:</EM> <span class='message'>[msg]</span></span></font>")
+	if(holder && holder.fakekey)
+		discordsendmsg("ooc", "**[holder.fakekey]:** [msg]")
+	else
+		discordsendmsg("ooc", "**[key]:** [msg]")
 
 /proc/toggle_ooc(toggle = null)
 	if(toggle != null) //if we're specifically en/disabling ooc

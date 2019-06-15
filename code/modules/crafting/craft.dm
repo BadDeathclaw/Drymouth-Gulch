@@ -7,6 +7,8 @@
 				CAT_ROBOT,
 				CAT_MISC,
 				CAT_PRIMAL,
+				CAT_MEDICAL,
+				CAT_ASSEM,
 				CAT_FOOD,
 				CAT_CLOTHING,
 				CAT_DRUGS)
@@ -16,7 +18,11 @@
 							CAT_AMMO),
 						CAT_NONE, //Robot subcategories
 						CAT_NONE, //Misc subcategories
-						CAT_NONE, //Tribal subcategories
+						list(
+							CAT_TRIBAL,
+							CAT_FORGE), //Tribal subcategories
+						CAT_NONE,//Medical subcategories
+						CAT_NONE, //Assemblies subcategories
 						list(	//Food subcategories
 							CAT_BREAD,
 							CAT_BURGER,
@@ -31,8 +37,8 @@
 							CAT_SANDWICH,
 							CAT_SOUP,
 							CAT_SPAGHETTI),
-                        CAT_CLOTHING,
-                        CAT_NONE) //Clothing subcategories
+                        CAT_CLOTHING, //Clothing subcategories
+                        CAT_NONE)
 
 	var/datum/action/innate/crafting/button
 	var/display_craftable_only = FALSE
@@ -109,6 +115,14 @@
 				if(RC.is_drainable())
 					for(var/datum/reagent/A in RC.reagents.reagent_list)
 						.["other"][A.type] += A.volume
+			.["other"][I.type] += 1
+	for(var/obj/machinery/I in get_environment(user))
+		if(I.flags_1 & HOLOGRAM_1)
+			continue
+		else if(I.machine_tool_behaviour)
+			.["tool_behaviour"] += I.machine_tool_behaviour
+			.["other"][I.type] += 1
+		else
 			.["other"][I.type] += 1
 
 /datum/personal_crafting/proc/check_tools(mob/user, datum/crafting_recipe/R, list/contents)

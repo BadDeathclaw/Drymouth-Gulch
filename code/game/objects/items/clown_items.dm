@@ -29,7 +29,7 @@
 
 /obj/item/soap/Initialize()
 	. = ..()
-	AddComponent(/datum/component/slippery, 80)
+	AddComponent(/datum/component/slippery, 3 SECONDS)
 
 /obj/item/soap/nanotrasen
 	desc = "A Nanotrasen brand bar of soap. Smells of plasma."
@@ -57,6 +57,7 @@
 	return (TOXLOSS)
 
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
+	. = ..()
 	if(!proximity || !check_allowed_items(target))
 		return
 	if(user.client && ((target in user.client.screen) && !user.is_holding(target)))

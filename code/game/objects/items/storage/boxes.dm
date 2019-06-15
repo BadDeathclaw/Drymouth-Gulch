@@ -17,6 +17,7 @@
  *		Replacement light boxes.
  *		Action Figure Boxes
  *		Various paper bags.
+ *		Boxes of various seeds
  *
  *		For syndicate call-ins see uplink_kits.dm
  */
@@ -707,8 +708,8 @@
 		new /obj/item/ammo_casing/shotgun/beanbag(src)
 
 /obj/item/storage/box/lethalshot
-	name = "box of lethal shotgun shots"
-	desc = "A box full of lethal shots, designed for riot shotguns."
+	name = "box of buckshot shotgun shots"
+	desc = "A box full of lethal buckshot rounds, designed for riot shotguns."
 	icon_state = "lethalshot_box"
 	illustration = null
 
@@ -716,11 +717,57 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
 
+/obj/item/storage/box/slugshot
+	name = "box of slug shotgun shots"
+	desc = "A box full of slug rounds, designed for riot shotguns."
+	icon_state = "slugshot_box"
+	illustration = null
+
+/obj/item/storage/box/slugshot/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/ammo_casing/shotgun(src)
+
 /obj/item/storage/box/beanbag
 	name = "box of beanbags"
 	desc = "A box full of beanbag shells."
-	icon_state = "rubbershot_box"
+	icon_state = "beanbag_box"
 	illustration = null
+
+/obj/item/storage/box/techshot
+	name = "box of tech shells"
+	desc = "A box full of tech shells."
+	icon_state = "tech_box"
+	illustration = null
+
+/obj/item/storage/box/techshot/PopulateContents()
+	switch (pickweight(list("ion" = 20, "laser" = 20, "pulse" = 20, "meteor" = 20, "incendiary" = 20, "chem" = 20, "wildcard" = 20)))
+		if ("meteor")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/meteorslug(src)
+
+		if ("incendiary")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/incendiary(src)
+
+		if ("pulse")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/pulseslug(src)
+
+		if ("laser")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/laserslug(src)
+
+		if ("ion")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/ion(src)
+
+		if ("chem")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/dart(src)
+
+		if ("wildcard")
+			for(var/i in 1 to 6)
+				new /obj/item/ammo_casing/shotgun/techshell(src)
 
 /obj/item/storage/box/beanbag/PopulateContents()
 	for(var/i in 1 to 6)
@@ -951,7 +998,7 @@
 
 /obj/item/storage/box/emptysandbags/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/emptysandbag(src)
+		new /obj/item/stack/sheet/emptysandbag(src)
 
 /obj/item/storage/box/rndboards
 	name = "\proper the liberator's legacy"
@@ -1029,3 +1076,47 @@
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
 	new /obj/item/stock_parts/matter_bin/bluespace(src)
+
+
+//Seed Boxes, for loot drops
+/obj/item/storage/box/seeds
+	name = "box of seeds"
+	desc = "A box from a pre-war gardening store, filled to the brim with seeds."
+	icon_state = "seedbox"
+	illustration = "fruit"
+	var/list/banned = list(/obj/item/seeds/ambrosia/deus, /obj/item/seeds/ambrosia/gaia, /obj/item/seeds/angel, /obj/item/seeds/apple/gold,
+	/obj/item/seeds/berry/death, /obj/item/seeds/berry/glow, /obj/item/seeds/berry/poison, /obj/item/seeds/cabbage, /obj/item/seeds/cannabis/death,
+	/obj/item/seeds/cannabis/rainbow, /obj/item/seeds/cannabis/ultimate, /obj/item/seeds/cannabis/white, /obj/item/seeds/cherry/bomb,
+	/obj/item/seeds/chili/ice, /obj/item/seeds/corn/snapcorn, /obj/item/seeds/eggplant/eggy, /obj/item/seeds/firelemon, /obj/item/seeds/glowshroom,
+	/obj/item/seeds/glowshroom/glowcap, /obj/item/seeds/glowshroom/shadowshroom,/obj/item/seeds/grass/carpet, /obj/item/seeds/kudzu, /obj/item/seeds/lavaland,
+	/obj/item/seeds/nettle, /obj/item/seeds/nettle/death, /obj/item/seeds/plump/walkingmushroom, /obj/item/seeds/pumpkin/blumpkin, /obj/item/seeds/random,
+	/obj/item/seeds/replicapod, /obj/item/seeds/sample, /obj/item/seeds/soya/koi, /obj/item/seeds/starthistle, /obj/item/seeds/tomato/blood,
+	/obj/item/seeds/tomato/killer, /obj/item/seeds/tower/steel, /obj/item/seeds/watermelon/holy, /obj/item/seeds/wheat/meat)//No gatfruit/killer tomatoes/etc for you, stalker
+
+/*
+/obj/item/storage/box/ingredients/wildcard/PopulateContents()
+	for(var/i in 1 to 7)
+		var/randomFood = pick()
+		new randomFood(src)
+*/
+
+//Grains for gains
+
+//Fruits
+
+//Flowers
+
+//Veggies
+
+//Sweets
+
+//Mushrooms
+
+//420 Blaze it
+/obj/item/storage/box/seeds/weed
+	name = "box of cannabis seeds"
+	desc = "Duuude... it's like, a box of, seeds man..."
+
+/obj/item/storage/box/seeds/weed/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/seeds/cannabis(src)

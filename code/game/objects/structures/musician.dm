@@ -52,7 +52,7 @@
 		acc = "b"
 		note++
 
-	// check octave, C is allowed to go to 9
+	// check octave, C is allowed to go to 9.
 	if(oct < 1 || (note == 3 ? oct > 9 : oct > 8))
 		return
 
@@ -369,10 +369,6 @@
 /obj/structure/piano/ui_interact(mob/user)
 	if(!user || !anchored)
 		return
-
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
-		return 1
 	user.set_machine(src)
 	song.interact(user)
 

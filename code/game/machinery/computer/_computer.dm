@@ -9,6 +9,8 @@
 	max_integrity = 200
 	integrity_failure = 100
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 40, "acid" = 20)
+	barricade = TRUE
+	proj_pass_rate = 65
 	var/brightness_on = 2
 	var/icon_keyboard = "generic_key"
 	var/icon_screen = "generic"
@@ -111,7 +113,7 @@
 			var/obj/structure/frame/computer/A = new /obj/structure/frame/computer(src.loc)
 			A.dir = dir
 			A.circuit = circuit
-			A.anchored = TRUE
+			A.setAnchored(TRUE)
 			if(stat & BROKEN)
 				if(user)
 					to_chat(user, "<span class='notice'>The broken glass falls out.</span>")

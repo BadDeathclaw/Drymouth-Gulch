@@ -6,6 +6,11 @@
 	var/postdig_icon
 	var/list/archdrops
 	var/wet
+	var/list/broken_states
+	var/list/burnt_states
+	var/broken = 0
+	var/burnt = 0
+	var/list/icons
 
 /turf/open/ComponentInitialize()
 	. = ..()
@@ -234,14 +239,6 @@
 		else if(lube&SLIDE_ICE)
 			new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 1), 1, FALSE)	//spinning would be bad for ice, fucks up the next dir
 		return 1
-
-/turf/open/copyTurf(turf/T)
-	. = ..()
-	if(. && isopenturf(T))
-		GET_COMPONENT(slip, /datum/component/wet_floor)
-		if(slip)
-			var/datum/component/wet_floor/WF = T.AddComponent(/datum/component/wet_floor)
-			WF.InheritComponent(slip)
 
 /turf/open/proc/MakeSlippery(wet_setting = TURF_WET_WATER, min_wet_time = 0, wet_time_to_add = 0, max_wet_time = MAXIMUM_WET_TIME, permanent)
 	AddComponent(/datum/component/wet_floor, wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)

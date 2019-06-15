@@ -298,7 +298,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 						if(CHANNEL.is_admin_channel)
 							dat+="<B><FONT style='BACKGROUND-COLOR: LightGreen '><A href='?src=[REF(src)];show_channel=[REF(CHANNEL)]'>[CHANNEL.channel_name]</A></FONT></B><BR>"
 						else
-							dat+="<B><A href='?src=[REF(src)];show_channel=[REF(CHANNEL)]'>[CHANNEL.channel_name]</A> [(CHANNEL.censored) ? ("<FONT COLOR='red'>***</FONT>") : ()]<BR></B>"
+							dat+="<B><A href='?src=[REF(src)];show_channel=[REF(CHANNEL)]'>[CHANNEL.channel_name]</A> [(CHANNEL.censored) ? ("<FONT COLOR='red'>***</FONT>") : ""]<BR></B>"
 				dat+="<BR><HR><A href='?src=[REF(src)];refresh=1'>Refresh</A>"
 				dat+="<BR><A href='?src=[REF(src)];setScreen=[0]'>Back</A>"
 			if(2)
@@ -403,7 +403,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 					dat+="<I>No feed channels found active...</I><BR>"
 				else
 					for(var/datum/newscaster/feed_channel/CHANNEL in GLOB.news_network.network_channels)
-						dat+="<A href='?src=[REF(src)];pick_censor_channel=[REF(CHANNEL)]'>[CHANNEL.channel_name]</A> [(CHANNEL.censored) ? ("<FONT COLOR='red'>***</FONT>") : ()]<BR>"
+						dat+="<A href='?src=[REF(src)];pick_censor_channel=[REF(CHANNEL)]'>[CHANNEL.channel_name]</A> [(CHANNEL.censored) ? ("<FONT COLOR='red'>***</FONT>") : ""]<BR>"
 				dat+="<BR><A href='?src=[REF(src)];setScreen=[0]'>Cancel</A>"
 			if(11)
 				dat+="<B>Nanotrasen D-Notice Handler</B><HR>"
@@ -414,7 +414,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 					dat+="<I>No feed channels found active...</I><BR>"
 				else
 					for(var/datum/newscaster/feed_channel/CHANNEL in GLOB.news_network.network_channels)
-						dat+="<A href='?src=[REF(src)];pick_d_notice=[REF(CHANNEL)]'>[CHANNEL.channel_name]</A> [(CHANNEL.censored) ? ("<FONT COLOR='red'>***</FONT>") : ()]<BR>"
+						dat+="<A href='?src=[REF(src)];pick_d_notice=[REF(CHANNEL)]'>[CHANNEL.channel_name]</A> [(CHANNEL.censored) ? ("<FONT COLOR='red'>***</FONT>") : ""]<BR>"
 				dat+="<BR><A href='?src=[REF(src)];setScreen=[0]'>Back</A>"
 			if(12)
 				dat+="<B>[viewing_channel.channel_name]: </B><FONT SIZE=1>\[ created by: <FONT COLOR='maroon'>[viewing_channel.returnAuthor(-1)]</FONT> \]</FONT><BR>"
@@ -703,9 +703,10 @@ GLOBAL_LIST_EMPTY(allCasters)
 		else if(href_list["del_comment"])
 			var/datum/newscaster/feed_comment/FC = locate(href_list["del_comment"])
 			var/datum/newscaster/feed_message/FM = locate(href_list["del_comment_msg"])
-			FM.comments -= FC
-			qdel(FC)
-			updateUsrDialog()
+			if(istype(FC) && istype(FM))
+				FM.comments -= FC
+				qdel(FC)
+				updateUsrDialog()
 		else if(href_list["lock_comment"])
 			var/datum/newscaster/feed_message/FM = locate(href_list["lock_comment"])
 			FM.locked ^= 1
@@ -874,7 +875,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 		say("Breaking news from [channel]!")
 		alert = TRUE
 		update_icon()
-		addtimer(CALLBACK(src,.proc/remove_alert),alert_delay,TIMER_OVERRIDE)
+		addtimer(CALLBACK(src,.proc/remove_alert),alert_delay,TIMER_UNIQUE|TIMER_OVERRIDE)
 		playsound(loc, 'sound/machines/twobeep.ogg', 75, 1)
 	else
 		say("Attention! Wanted issue distributed!")

@@ -187,8 +187,7 @@
 	debris += new /obj/item/shard
 
 /obj/structure/table/glass/Destroy()
-	for(var/i in debris)
-		qdel(i)
+	QDEL_LIST(debris)
 	. = ..()
 
 /obj/structure/table/glass/Crossed(atom/movable/AM)
@@ -558,3 +557,17 @@
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE
+
+
+///////////////////////
+//A table that'd be built by players, since their constructions would be... less impressive than their prewar counterparts.
+
+/obj/structure/table/wood/settler
+	desc = "A wooden table constructed by a carpentering amateur from various planks.<br>It's the work of wasteland settler."
+	icon_state = "settlertable"
+	icon = 'icons/obj/smooth_structures/wood_table_settler.dmi'
+	icon_type_smooth = "settlertable"
+	obj_integrity = 50
+	max_integrity = 50
+	canSmoothWith = list(/obj/structure/table/wood/settler)
+

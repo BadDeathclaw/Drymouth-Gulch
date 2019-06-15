@@ -1,6 +1,7 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
-	damage = 70
+	damage = 50
+	armour_penetration = 20
 
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
@@ -60,12 +61,12 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
-	damage = 9 //Up to 108 damage point blank
+	damage = 14 //Up to 108 damage point blank
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
-	damage = 1
-	stamina = 10
+	damage = 2
+	stamina = 14
 
 /obj/item/projectile/bullet/pellet/Range()
 	..()
@@ -78,7 +79,7 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised
 	tile_dropoff = 0.55		//Come on it does 6 damage don't be like that.
-	damage = 6
+	damage = 12
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()

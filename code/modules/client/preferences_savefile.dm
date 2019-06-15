@@ -50,7 +50,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(current_version < 20)
 		pda_color = "#808000"
 
-
 /datum/preferences/proc/load_path(ckey,filename="preferences.sav")
 	if(!ckey)
 		return
@@ -243,16 +242,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	else
 		S["feature_human_tail"]				>> features["tail_human"]
 		S["feature_human_ears"]				>> features["ears"]
-	S["human_name"]         >> custom_names["human"]
-	S["clown_name"]			>> custom_names["clown"]
-	S["mime_name"]			>> custom_names["mime"]
-	S["ai_name"]			>> custom_names["ai"]
-	S["cyborg_name"]		>> custom_names["cyborg"]
-	S["religion_name"]		>> custom_names["religion"]
-	S["deity_name"]			>> custom_names["deity"]
+
+	//Custom names
+	for(var/custom_name_id in GLOB.preferences_custom_names)
+		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
+		S[savefile_slot_name] >> custom_names[custom_name_id]
+
 	S["prefered_security_department"] >> prefered_security_department
 
-	//Jobs
+//Jobs - Whoever put this together was a bastard - Nappist
+//SS13 roles
 	S["joblessrole"]		>> joblessrole
 	S["job_civilian_high"]	>> job_civilian_high
 	S["job_civilian_med"]	>> job_civilian_med
@@ -264,6 +263,36 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["job_engsec_med"]		>> job_engsec_med
 	S["job_engsec_low"]		>> job_engsec_low
 
+//Fallout13 roles
+	S["job_ncr_high"]		>> job_ncr_high
+	S["job_ncr_med"]		>> job_ncr_med
+	S["job_ncr_low"]		>> job_ncr_low
+
+	S["job_legion_high"]	>> job_legion_high
+	S["job_legion_med"]		>> job_legion_med
+	S["job_legion_low"]		>> job_legion_low
+
+	S["job_bos_high"]		>> job_bos_high
+	S["job_bos_med"]		>> job_bos_med
+	S["job_bos_low"]		>> job_bos_low
+
+	S["job_den_high"]		>> job_den_high
+	S["job_den_med"]		>> job_den_med
+	S["job_den_low"]		>> job_den_low
+
+	S["job_vault_high"]		>> job_vault_high
+	S["job_vault_med"]		>> job_vault_med
+	S["job_vault_low"]		>> job_vault_low
+
+	S["job_wasteland_high"]		>> job_wasteland_high
+	S["job_wasteland_med"]		>> job_wasteland_med
+	S["job_wasteland_low"]		>> job_wasteland_low
+
+	S["job_enclave_high"]		>> job_enclave_high
+	S["job_enclave_med"]		>> job_enclave_med
+	S["job_enclave_low"]		>> job_enclave_low
+
+
 	//Quirks
 	S["all_quirks"]			>> all_quirks
 	S["positive_quirks"]	>> positive_quirks
@@ -274,16 +303,23 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
 
-	//Sanitize
-	metadata		= sanitize_text(metadata, initial(metadata))
-	real_name		= reject_bad_name(real_name)
-	if(!features["mcolor"] || features["mcolor"] == "#000")
-		features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+	//Sanitize this probably all needs to be reduced to a few lists with [job]_[faction]_[high | med | low] and inline  or something but I don't have the energy, so have some spaghetti - Nappist
+	real_name = reject_bad_name(real_name)
+	gender = sanitize_gender(gender)
 	if(!real_name)
 		real_name = random_unique_name(gender)
+
+	for(var/custom_name_id in GLOB.preferences_custom_names)
+		var/namedata = GLOB.preferences_custom_names[custom_name_id]
+		custom_names[custom_name_id] = reject_bad_name(custom_names[custom_name_id],namedata["allow_numbers"])
+		if(!custom_names[custom_name_id])
+			custom_names[custom_name_id] = get_default_name(custom_name_id)
+
+	if(!features["mcolor"] || features["mcolor"] == "#000")
+		features["mcolor"] = pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F")
+
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	be_random_body	= sanitize_integer(be_random_body, 0, 1, initial(be_random_body))
-	gender			= sanitize_gender(gender)
 	if(gender == MALE)
 		hair_style			= sanitize_inlist(hair_style, GLOB.hair_styles_male_list)
 		facial_hair_style			= sanitize_inlist(facial_hair_style, GLOB.facial_hair_styles_male_list)
@@ -324,6 +360,35 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	job_engsec_high = sanitize_integer(job_engsec_high, 0, 65535, initial(job_engsec_high))
 	job_engsec_med = sanitize_integer(job_engsec_med, 0, 65535, initial(job_engsec_med))
 	job_engsec_low = sanitize_integer(job_engsec_low, 0, 65535, initial(job_engsec_low))
+//F13 jobs
+
+	job_ncr_high = sanitize_integer(job_ncr_high, 0, 65535, initial(job_ncr_high))
+	job_ncr_med = sanitize_integer(job_ncr_med, 0, 65535, initial(job_ncr_med))
+	job_ncr_low = sanitize_integer(job_ncr_low, 0, 65535, initial(job_ncr_low))
+
+	job_legion_high = sanitize_integer(job_legion_high, 0, 65535, initial(job_legion_high))
+	job_legion_med = sanitize_integer(job_legion_med, 0, 65535, initial(job_legion_med))
+	job_legion_low = sanitize_integer(job_legion_low, 0, 65535, initial(job_legion_low))
+
+	job_bos_high = sanitize_integer(job_bos_high, 0, 65535, initial(job_bos_high))
+	job_bos_med = sanitize_integer(job_bos_med, 0, 65535, initial(job_bos_med))
+	job_bos_low = sanitize_integer(job_bos_low, 0, 65535, initial(job_bos_low))
+
+	job_den_high = sanitize_integer(job_den_high, 0, 65535, initial(job_den_high))
+	job_den_med = sanitize_integer(job_den_med, 0, 65535, initial(job_den_med))
+	job_den_low = sanitize_integer(job_den_low, 0, 65535, initial(job_den_low))
+
+	job_vault_high = sanitize_integer(job_vault_high, 0, 65535, initial(job_vault_high))
+	job_vault_med = sanitize_integer(job_vault_med, 0, 65535, initial(job_vault_med))
+	job_vault_low = sanitize_integer(job_vault_low, 0, 65535, initial(job_vault_low))
+
+	job_wasteland_high = sanitize_integer(job_wasteland_high, 0, 65535, initial(job_wasteland_high))
+	job_wasteland_med = sanitize_integer(job_wasteland_med, 0, 65535, initial(job_wasteland_med))
+	job_wasteland_low = sanitize_integer(job_wasteland_low, 0, 65535, initial(job_wasteland_low))
+
+	job_enclave_high = sanitize_integer(job_enclave_high, 0, 65535, initial(job_enclave_high))
+	job_enclave_med = sanitize_integer(job_enclave_med, 0, 65535, initial(job_enclave_med))
+	job_enclave_low = sanitize_integer(job_enclave_low, 0, 65535, initial(job_enclave_low))
 
 	all_quirks = SANITIZE_LIST(all_quirks)
 	positive_quirks = SANITIZE_LIST(positive_quirks)
@@ -372,26 +437,55 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_lizard_body_markings"]	, features["body_markings"])
 	WRITE_FILE(S["feature_lizard_legs"]			, features["legs"])
 	WRITE_FILE(S["feature_moth_wings"]			, features["moth_wings"])
-	WRITE_FILE(S["human_name"]			, custom_names["human"])
-	WRITE_FILE(S["clown_name"]			, custom_names["clown"])
-	WRITE_FILE(S["mime_name"]			, custom_names["mime"])
-	WRITE_FILE(S["ai_name"]			, custom_names["ai"])
-	WRITE_FILE(S["cyborg_name"]		, custom_names["cyborg"])
-	WRITE_FILE(S["religion_name"]		, custom_names["religion"])
-	WRITE_FILE(S["deity_name"]			, custom_names["deity"])
+
+	//Custom names
+	for(var/custom_name_id in GLOB.preferences_custom_names)
+		var/savefile_slot_name = custom_name_id + "_name" //TODO remove this
+		WRITE_FILE(S[savefile_slot_name],custom_names[custom_name_id])
+
 	WRITE_FILE(S["prefered_security_department"] , prefered_security_department)
 
 	//Jobs
-	WRITE_FILE(S["joblessrole"]		, joblessrole)
+	WRITE_FILE(S["joblessrole"]			, joblessrole)
 	WRITE_FILE(S["job_civilian_high"]	, job_civilian_high)
 	WRITE_FILE(S["job_civilian_med"]	, job_civilian_med)
 	WRITE_FILE(S["job_civilian_low"]	, job_civilian_low)
-	WRITE_FILE(S["job_medsci_high"]	, job_medsci_high)
+	WRITE_FILE(S["job_medsci_high"]		, job_medsci_high)
 	WRITE_FILE(S["job_medsci_med"]		, job_medsci_med)
 	WRITE_FILE(S["job_medsci_low"]		, job_medsci_low)
-	WRITE_FILE(S["job_engsec_high"]	, job_engsec_high)
+	WRITE_FILE(S["job_engsec_high"]		, job_engsec_high)
 	WRITE_FILE(S["job_engsec_med"]		, job_engsec_med)
 	WRITE_FILE(S["job_engsec_low"]		, job_engsec_low)
+
+	//Fallout 13
+	WRITE_FILE(S["job_ncr_high"]		, job_ncr_high)
+	WRITE_FILE(S["job_ncr_med"]			, job_ncr_med)
+	WRITE_FILE(S["job_ncr_low"]			, job_ncr_low)
+
+	WRITE_FILE(S["job_legion_high"]		, job_legion_high)
+	WRITE_FILE(S["job_legion_med"]		, job_legion_med)
+	WRITE_FILE(S["job_legion_low"]		, job_legion_low)
+
+	WRITE_FILE(S["job_bos_high"]		, job_bos_high)
+	WRITE_FILE(S["job_bos_med"]			, job_bos_med)
+	WRITE_FILE(S["job_bos_low"]			, job_bos_low)
+
+	WRITE_FILE(S["job_den_high"]		, job_den_high)
+	WRITE_FILE(S["job_den_med"]			, job_den_med)
+	WRITE_FILE(S["job_den_low"]			, job_den_low)
+
+	WRITE_FILE(S["job_vault_high"]		, job_vault_high)
+	WRITE_FILE(S["job_vault_med"]		, job_vault_med)
+	WRITE_FILE(S["job_vault_low"]		, job_vault_low)
+
+	WRITE_FILE(S["job_wasteland_high"]	, job_wasteland_high)
+	WRITE_FILE(S["job_wasteland_med"]	, job_wasteland_med)
+	WRITE_FILE(S["job_wasteland_low"]	, job_wasteland_low)
+
+	WRITE_FILE(S["job_enclave_high"]	, job_enclave_high)
+	WRITE_FILE(S["job_enclave_med"]		, job_enclave_med)
+	WRITE_FILE(S["job_enclave_low"]		, job_enclave_low)
+
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)

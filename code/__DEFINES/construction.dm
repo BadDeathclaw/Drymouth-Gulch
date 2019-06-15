@@ -28,10 +28,6 @@
 #define AIRLOCK_ASSEMBLY_NEEDS_ELECTRONICS 1
 #define AIRLOCK_ASSEMBLY_NEEDS_SCREWDRIVER 2
 
-//plastic flaps construction states
-#define PLASTIC_FLAPS_NORMAL 0
-#define PLASTIC_FLAPS_DETACHED 1
-
 //default_unfasten_wrench() return defines
 #define CANT_UNFASTEN 0
 #define FAILED_UNFASTEN 1
@@ -91,6 +87,10 @@
 #define CAT_ROBOT	"Robots"
 #define CAT_MISC	"Misc"
 #define CAT_PRIMAL  "Tribal"
+#define CAT_TRIBAL  "Tribal"
+#define CAT_FORGE   "Forge"
+#define CAT_MEDICAL	"Medical"
+#define CAT_ASSEM  	"Assemblies"
 #define CAT_CLOTHING	"Clothing"
 #define CAT_FOOD	"Foods"
 #define CAT_BREAD	"Breads"

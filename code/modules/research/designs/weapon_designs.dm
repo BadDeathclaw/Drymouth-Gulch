@@ -118,17 +118,17 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/*
+
 /datum/design/stunrevolver
 	name = "Tesla Revolver"
 	desc = "A high-tech revolver that fires internal, reusable shock cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
 	id = "stunrevolver"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000, MAT_SILVER = 10000)
+	materials = list(MAT_METAL = 10000, MAT_GLASS = 10000, MAT_SILVER = 10000, MAT_URANIUM = 5000)
 	build_path = /obj/item/gun/energy/tesla_revolver
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
+/*
 /datum/design/nuclear_gun
 	name = "Advanced Energy Gun"
 	desc = "An energy gun with an experimental miniaturized reactor."
@@ -179,7 +179,7 @@
 	build_path = /obj/item/gun/syringe/rapidsyringe
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL		//uwu
-/*
+
 /datum/design/temp_gun
 	name = "Temperature Gun"
 	desc = "A gun that shoots temperature bullet energythings to change temperature."//Change it if you want
@@ -189,7 +189,7 @@
 	build_path = /obj/item/gun/energy/temperature
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-*/
+
 /datum/design/flora_gun
 	name = "Floral Somatoray"
 	desc = "A tool that discharges controlled radiation which induces mutation in plant cells. Harmless to other organic life."
@@ -252,12 +252,12 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/laserrifle
-	name = "Laser Rifle"
-	desc = "A laser pistol."
+	name = "AER9 Laser Rifle"
+	desc = "An AER9 laser rifle."
 	id = "laserrifle"
 	build_type = PROTOLATHE
 	materials = list(MAT_GOLD = 5000, MAT_URANIUM = 4000, MAT_METAL = 5000, MAT_TITANIUM = 2000)
-	build_path = /obj/item/gun/energy/laser
+	build_path = /obj/item/gun/energy/laser/aer9
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -303,6 +303,17 @@
 	build_path =/obj/item/stock_parts/cell/ammo/mfc
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+
+/datum/design/ec
+	name = "Energy Cell"
+	id = "ec"
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000)
+	build_path =/obj/item/stock_parts/cell/ammo/ec
+	category = list("Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 
 /datum/design/ecp
 	name = "Electron Charge Pack"
@@ -441,17 +452,17 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/*
+
 /datum/design/gravitygun
-	name = "One-point Bluespace-gravitational Manipulator"
-	desc = "A multi-mode device that blasts one-point bluespace-gravitational bolts that locally distort gravity."
+	name = "One-point Gravitational Manipulator"
+	desc = "A multi-mode device that blasts one-point gravitational bolts that locally distort gravity."
 	id = "gravitygun"
 	build_type = PROTOLATHE
-	materials = list(MAT_SILVER = 8000, MAT_URANIUM = 8000, MAT_GLASS = 12000, MAT_METAL = 12000, MAT_DIAMOND = 3000, MAT_BLUESPACE = 3000)
+	materials = list(MAT_SILVER = 8000, MAT_URANIUM = 8000, MAT_GLASS = 12000, MAT_METAL = 12000, MAT_DIAMOND = 4000)
 	build_path = /obj/item/gun/energy/gravity_gun
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
+/*
 /datum/design/largecrossbow
 	name = "Energy Crossbow"
 	desc = "A reverse-engineered energy crossbow favored by syndicate infiltration teams and carp hunters."

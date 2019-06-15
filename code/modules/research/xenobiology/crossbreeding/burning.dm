@@ -137,7 +137,7 @@ Burning extracts:
 			O.desc += " It smells strange..."
 	user.visible_message("<span class='danger'>[src] produces a few pieces of food!</span>")
 	..()
-
+/*
 /obj/item/slimecross/burning/bluespace
 	colour = "bluespace"
 
@@ -149,7 +149,8 @@ Burning extracts:
 			new /obj/effect/particle_effect/sparks(get_turf(L))
 			playsound(get_turf(L), "sparks", 50, 1)
 	..()
-
+*/
+/*
 /obj/item/slimecross/burning/sepia
 	colour = "sepia"
 
@@ -157,7 +158,7 @@ Burning extracts:
 	user.visible_message("<span class='notice'>[src] shapes itself into a camera!</span>")
 	new /obj/item/camera/timefreeze(get_turf(user))
 	..()
-
+*/
 /obj/item/slimecross/burning/cerulean
 	colour = "cerulean"
 
@@ -289,7 +290,7 @@ Burning extracts:
 	..()
 
 //Misc. things added
-
+/*
 /obj/item/camera/timefreeze
 	name = "sepia-tinted camera"
 	desc = "They say a picture is like a moment stopped in time."
@@ -297,6 +298,7 @@ Burning extracts:
 	pictures_max = 1
 
 /obj/item/camera/timefreeze/afterattack(atom/target, mob/user, flag)
+	. = ..()
 	if(!on || !pictures_left || !isturf(target.loc))
 		return
 	new /obj/effect/timestop(get_turf(target), 2, 50, list(user))
@@ -309,6 +311,7 @@ Burning extracts:
 		text += "!"
 	to_chat(user,"<span class='notice'>[text]</span>")
 	qdel(src)
+*/
 
 /obj/item/slimepotion/extract_cloner
 	name = "extract cloning potion"

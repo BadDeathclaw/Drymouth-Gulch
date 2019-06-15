@@ -6,6 +6,8 @@
    -----------to spawn", it is fine(tm)-------------
  */
 
+//Stop using lootspawners in dungeons improperly. If you put guns in a dungeon, people will want to use them, which will result in them shooting people. You'll have to put in nests or something to constantly give people stuff to shoot at. - Nappist
+
 /obj/effect/spawner/lootdrop/f13
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
@@ -384,44 +386,51 @@
 				""
 				)
 
-	var/loot8 = list(
+/*	var/loot8 = list(
 				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45b,
 				""
-				)
+				)*/
 /obj/effect/spawner/lootdrop/f13/armor/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7)
 	. = ..()
 
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5 //TIER 5 ARMOR
 	name = "tier 5 armor"
-	lootcount = 1
+	lootcount = 2
 	var/loot1 = list(
-				/obj/item/clothing/suit/space/hardsuit/powerarmor/advanced
+				/obj/item/clothing/suit/armor/f13/power_armor/advanced,
+				/obj/item/clothing/head/helmet/power_armor/advanced
 				)
 
 	var/loot2 = list(
-				/obj/item/clothing/suit/space/hardsuit/powerarmor/advanced/mk2
+				/obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2,
+				/obj/item/clothing/head/helmet/power_armor/advanced/mk2
 				)
 
 	var/loot3 = list(
-				/obj/item/clothing/suit/space/hardsuit/powerarmor/tesla
+				/obj/item/clothing/suit/armor/f13/power_armor/tesla,
+				/obj/item/clothing/head/helmet/power_armor/tesla
 				)
 
 	var/loot4 = list(
-				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
+				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
+				/obj/item/clothing/head/helmet/power_armor/t45d
 				)
 
 	var/loot5 = list(
-				/obj/item/clothing/suit/space/hardsuit/powerarmor/t51b
+				/obj/item/clothing/suit/armor/f13/power_armor/t51b,
+				/obj/item/clothing/head/helmet/power_armor/t51b
 				)
 
 	var/loot6 = list(
-				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
+				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
+				/obj/item/clothing/head/helmet/power_armor/t45d
 				)
 
 	var/loot7 = list(
-				/obj/item/clothing/suit/space/hardsuit/powerarmor/t45d
+				/obj/item/clothing/suit/armor/f13/power_armor/t45d,
+				/obj/item/clothing/head/helmet/power_armor/t45d
 				)
 
 /obj/effect/spawner/lootdrop/f13/armor/tier5/Initialize(mapload) //on mapload, pick what shit to spawn
@@ -469,7 +478,10 @@
 
 	loot = list(
 				/obj/item/gun/medbeam,
-				/obj/item/defibrillator/loaded
+				/obj/item/defibrillator/compact/combat/loaded,
+				/obj/item/reagent_containers/hypospray/combat,
+				/obj/item/clothing/glasses/hud/health/night,
+				/obj/item/disk/surgery/revival
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds  //no drugs, didn't add
@@ -478,10 +490,10 @@
 
 	loot = list(
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
-				/obj/item/storage/pill_bottle/radx,
+				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/storage/pill_bottle/mentats,
-				/obj/item/storage/pill_bottle/fixer
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
+				/obj/item/storage/pill_bottle/chem_tin/fixer
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/wasteland
@@ -492,14 +504,13 @@
 	lootcount = 1
 
 	loot = list(/obj/item/reagent_containers/pill/patch/healingpowder,
-				/obj/item/storage/pill_bottle/radx,
+				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
-				/obj/item/storage/pill_bottle/mentats,
-				/obj/item/storage/pill_bottle/fixer,
+				/obj/item/storage/pill_bottle/chem_tin/mentats,
+				/obj/item/storage/pill_bottle/chem_tin/fixer,
 				/obj/item/reagent_containers/hypospray/medipen/stimpak,
 				/obj/item/reagent_containers/medspray/styptic,
 				/obj/item/reagent_containers/medspray/silver_sulf,
-				/obj/item/reagent_containers/medspray/synthflesh,
 				/obj/item/reagent_containers/medspray/sterilizine
 				)
 
@@ -646,8 +657,8 @@
 
 	var/loot6 = list(
 				/obj/item/gun/ballistic/shotgun/remington,
-				/obj/item/ammo_box/a762,
-				/obj/item/ammo_box/a762
+				/obj/item/ammo_box/a308,
+				/obj/item/ammo_box/a308
 				)
 
 	var/loot7 = list(
@@ -707,8 +718,8 @@
 
 	var/loot4 = list(
 				/obj/item/gun/ballistic/shotgun/remington/scoped,
-				/obj/item/ammo_box/a762,
-				/obj/item/ammo_box/a762
+				/obj/item/ammo_box/a308,
+				/obj/item/ammo_box/a308
 				)
 
 	var/loot5 = list(
@@ -885,6 +896,7 @@
 	loot = list(
 				/obj/item/ammo_box/c45,
 				/obj/item/ammo_box/a762,
+        /obj/item/ammo_box/a308,
 				/obj/item/ammo_box/c10mm,
 				/obj/item/ammo_box/a556,
 				/obj/item/ammo_box/c38,
@@ -957,10 +969,11 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners //TIER 4 GARBAGE
 	name = "garbage spawner"
 	lootcount = 2
+	fan_out_items = TRUE
 
 	loot = list(
 				/obj/item/broken_bottle,
-				/obj/item/poster/wanted,
+				/obj/item/poster/random_official,
 				/obj/item/multitool,
 				/obj/item/cigbutt/cigarbutt,
 				/obj/item/trash/sosjerky,
@@ -988,6 +1001,7 @@
 				/obj/item/stack/packageWrap,
 				/obj/item/dildo,
 				/obj/item/storage/box/matches,
+				/obj/item/reagent_containers/food/snacks/deadmouse,
 				/obj/item/toner,
 				/obj/item/tank/internals/oxygen,
 				/obj/item/storage/box/papersack,
@@ -1002,15 +1016,26 @@
 				/obj/item/toy/cards/deck,
 				/obj/item/trash/tray,
 				/obj/item/toy/xmas_cracker,
-				/obj/item/reagent_containers/spray/spraytan,
 				/obj/item/reagent_containers/glass/bowl,
 				/obj/item/reagent_containers/spray/cleaner,
-				/obj/item/reagent_containers/glass/bucket
+				/obj/item/reagent_containers/glass/bucket,
+				/obj/item/poster/random_contraband
 				)
 
-/obj/effect/spawner/lootdrop/f13/foodspawner //TIER 5 FOOD
+/obj/effect/spawner/lootdrop/f13/seedspawner
+	name = "seed spawner"
+	lootdoubles = TRUE
+	fan_out_items = TRUE
+	lootcount = 4
+
+/obj/effect/spawner/lootdrop/f13/seedspawner/Initialize(mapload) // This will spawn gatfruit sometimes.
+	loot = childtypesof(/obj/item/seeds)
+	. = ..()
+
+/obj/effect/spawner/lootdrop/f13/foodspawner
 	name = "food spawner"
 	lootdoubles = TRUE
+	fan_out_items = TRUE
 
 	loot = list(
 				/obj/item/storage/box/ingredients/american,
@@ -1061,7 +1086,42 @@
 
 
 /obj/effect/spawner/lootdrop/f13/foodspawner/Initialize(mapload) //on mapload, pick how many shit to spawn
-	lootcount = pick(2, 3)
+	lootcount = pick(1, 2)
+	. = ..()
+
+/obj/effect/spawner/lootdrop/f13/alcoholspawner //TIER 7 ALCOHOL
+	name = "alcoholspawner"
+	lootdoubles = TRUE
+	fan_out_items = TRUE
+
+	loot = list(
+				/obj/item/reagent_containers/food/drinks/beer,
+				/obj/item/reagent_containers/food/drinks/ale,
+				/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko,
+				/obj/item/reagent_containers/food/drinks/bottle/gin,
+				/obj/item/reagent_containers/food/drinks/bottle/hcider,
+				/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+				/obj/item/reagent_containers/food/drinks/bottle/vodka,
+				/obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
+				/obj/item/reagent_containers/food/drinks/bottle/tequila,
+				/obj/item/reagent_containers/food/drinks/bottle/patron,
+				/obj/item/reagent_containers/food/drinks/bottle/rum,
+				/obj/item/reagent_containers/food/drinks/bottle/vermouth,
+				/obj/item/reagent_containers/food/drinks/bottle/kahlua,
+				/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
+				/obj/item/reagent_containers/food/drinks/bottle/cognac,
+				/obj/item/reagent_containers/food/drinks/bottle/wine,
+				/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+				/obj/item/reagent_containers/food/drinks/bottle/absinthe/premium,
+				/obj/item/reagent_containers/food/drinks/bottle/lizardwine,
+				/obj/item/reagent_containers/food/drinks/bottle/hcider,
+				/obj/item/reagent_containers/food/drinks/bottle/grappa,
+				/obj/item/reagent_containers/food/drinks/bottle/sake,
+				/obj/item/reagent_containers/food/drinks/bottle/fernet
+				)
+
+/obj/effect/spawner/lootdrop/f13/alcoholspawner/Initialize(mapload) //on mapload, pick how many shit to spawn
+	lootcount = pick(1, 2)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/resourcespawner //now include R N G (TM) (higher number means it has a bigger spawn chance)
@@ -1207,3 +1267,9 @@
 			/obj/item/stack/f13Cash/random/ncr/med = 25,
 			/obj/item/stack/f13Cash/random/bottle_cap/med = 5,
 			)
+
+/obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk
+	name = "98% chance of deceased rodent"
+	loot = list(
+		/obj/item/reagent_containers/food/snacks/deadmouse = 49,
+/obj/item/disk/surgery/brainwashing = 1)

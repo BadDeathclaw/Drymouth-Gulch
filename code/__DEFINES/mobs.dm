@@ -138,14 +138,6 @@
 #define SANITY_CRAZY 25
 #define SANITY_INSANE 0
 
-//Beauty levels of areas for carbons
-#define BEAUTY_LEVEL_HORRID -100
-#define BEAUTY_LEVEL_BAD -66
-#define BEAUTY_LEVEL_MEH -33
-#define BEAUTY_LEVEL_DECENT 33
-#define BEAUTY_LEVEL_GOOD 66
-#define BEAUTY_LEVEL_GREAT 100
-
 //Nutrition levels for humans
 #define NUTRITION_LEVEL_FAT 600
 #define NUTRITION_LEVEL_FULL 550
@@ -265,4 +257,4 @@
 #define AI_VOX // Comment out if you don't want VOX to be enabled and have players download the voice sounds.
 
 //Respawn timer
-#define RESPAWN_TIMER 3600 // in deciseconds, the time to wait before allowing respawn. 3 minutes = 3 * 60 (seconds in minute) * 10 (seconds to deciseconds)
+#define RESPAWN_TIMER 6000 // in deciseconds, the time to wait before allowing respawn. 10 minutes = 10 * 60 (seconds in minute) * 10 (seconds to deciseconds)
