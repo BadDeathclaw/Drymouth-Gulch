@@ -47,6 +47,6 @@
 	icon_gib = "gib"
 	maxHealth = 150
 	health = 150
-	melee_damage_lower = 10
-	melee_damage_upper = 30
+	melee_damage_lower = 30
+	melee_damage_upper = 46
 	move_to_delay = 4
