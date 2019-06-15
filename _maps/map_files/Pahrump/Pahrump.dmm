@@ -5028,7 +5028,7 @@
 "bSJ" = (/turf/closed/wall/f13/supermart,/area/f13/wasteland)
 "bSK" = (/obj/machinery/light/small{dir = 1},/turf/open/floor/f13{tag = "icon-floorrusty"; icon_state = "floorrusty"},/area/f13/wasteland)
 "bSL" = (/turf/open/floor/f13{tag = "icon-floorrusty"; icon_state = "floorrusty"},/area/f13/wasteland)
-"bSM" = (/obj/structure/simple_door/room,/turf/open/space/basic,/area/f13/wasteland)
+"bSM" = (/obj/structure/simple_door/room,/turf/closed/wall/f13/supermart,/area/f13/wasteland)
 "bSN" = (/obj/structure/window/fulltile/house{icon_state = "housewindowvertical"},/turf/closed/wall/f13/supermart,/area/f13/wasteland)
 "bSO" = (/obj/structure/table,/obj/item/paper_bin,/turf/open/floor/f13{tag = "icon-floorrusty"; icon_state = "floorrusty"},/area/f13/wasteland)
 "bSP" = (/obj/structure/chair{tag = "icon-chair (WEST)"; icon_state = "chair"; dir = 8},/turf/open/floor/f13{tag = "icon-floorrusty"; icon_state = "floorrusty"},/area/f13/wasteland)
