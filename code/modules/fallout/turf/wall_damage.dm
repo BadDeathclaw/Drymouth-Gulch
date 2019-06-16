@@ -4,7 +4,7 @@
 	var/damage = 0
 	var/damage_overlay = 0
 	var/global/damage_overlays[16]
-	var/breakable = 0
+	var/unbreakable = 1
 
 /turf/closed/wall/proc/take_damage(dam)
 	if(dam)
@@ -45,7 +45,7 @@
 	. = ..()
 	if(!.)
 		user.do_attack_animation(src)
-		if(W.force > hardness/3 && !breakable)
+		if(W.force > hardness/3 && unbreakable)
 			take_damage(W.force/10)
 			playsound(src, 'sound/effects/bang.ogg', 50, 1)
 		else

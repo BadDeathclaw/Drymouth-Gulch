@@ -39,7 +39,7 @@
 	sheet_amount = 2
 	girder_type = 0
 	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
-	breakable = 1
+	unbreakable = 0
 
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
@@ -50,7 +50,7 @@
 	hardness = 50
 	var/broken = 0
 	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/broken, /turf/closed/wall)
-	breakable = 1
+	unbreakable = 0
 
 /turf/closed/wall/f13/wood/house/broken
 	broken = 1
@@ -84,7 +84,7 @@
 	hardness = 10
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
-	breakable = 1
+	unbreakable = 0
 
 /turf/closed/wall/f13/store
 	name = "store wall"
