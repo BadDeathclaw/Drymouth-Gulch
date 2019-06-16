@@ -350,7 +350,7 @@
 	name = "Scoped trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "scopedtrailcarbine"
-	item_state = "trailcarbine"
+	item_state = "scopedtrailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
@@ -375,7 +375,7 @@
 	name = "Scoped cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of brooding veterans and cigarettes."
 	icon_state = "scopedcowboyrepeater"
-	item_state = "cowboyrepeater"
+	item_state = "scopedcowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
@@ -399,7 +399,7 @@
 	name = "Scoped brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
 	icon_state = "scopedbrushgun"
-	item_state = "brushgun"
+	item_state = "scopedbrushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	zoomable = TRUE
