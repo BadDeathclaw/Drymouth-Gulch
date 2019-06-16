@@ -60,14 +60,7 @@
 	..()
 
 /mob/living/carbon/monkey/movement_delay()
-	if(reagents)
-		if(reagents.has_reagent("morphine"))
-			return -1
-
-		if(reagents.has_reagent("nuka_cola"))
-			return -1
-
-	. = ..()
+	. = 1
 	var/health_deficiency = (100 - health)
 	if(health_deficiency >= 45)
 		. += (health_deficiency / 25)
