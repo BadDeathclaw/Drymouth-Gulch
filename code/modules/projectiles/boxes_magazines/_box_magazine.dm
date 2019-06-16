@@ -92,6 +92,11 @@
 		if(give_round(AC, replace_spent))
 			user.transferItemToLoc(AC, src, TRUE)
 			num_loaded++
+	if(istype(A, /obj/item/ammo_box/tube))
+		var/obj/item/ammo_box/tube/AC = A
+		if(give_round(AC, replace_spent))
+			user.transferItemToLoc(AC, src, TRUE)
+			num_loaded++
 
 	if(num_loaded)
 		if(!silent)
