@@ -20,7 +20,18 @@
 	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
+	
+/datum/crafting_recipe/IED
+	name = "IED"
+	result = /obj/item/grenade/iedcasing
+	reqs = list(/datum/reagent/fuel = 50,
+				/obj/item/stack/cable_coil = 1,
+				/obj/item/assembly/igniter = 1,
+				/obj/item/reagent_containers/food/drinks/soda_cans = 1)
+	parts = list(/obj/item/reagent_containers/food/drinks/soda_cans = 1)
+	time = 15
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/molotov
 	name = "Molotov"
@@ -469,6 +480,16 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
+	
+/datum/crafting_recipe/goliathcloak
+	name = "Goliath Cloak"
+	result = /obj/item/clothing/suit/hooded/cloak/goliath
+	time = 50
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/animalhide/goliath_hide = 2) //it takes 4 goliaths to make 1 cloak if the plates are skinned
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/smallcarton
 	name = "Small Carton"
@@ -504,6 +525,15 @@
 		        /obj/item/stack/sheet/mineral/wood = 20,
 		        /obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
+	category = CAT_MISC
+	
+/datum/crafting_recipe/spooky_camera
+	name = "Camera Obscura"
+	result = /obj/item/camera/spooky
+	time = 15
+	reqs = list(/obj/item/camera = 1,
+				/datum/reagent/water/holywater = 10)
+	parts = list(/obj/item/camera = 1)
 	category = CAT_MISC
 
 /datum/crafting_recipe/jet
