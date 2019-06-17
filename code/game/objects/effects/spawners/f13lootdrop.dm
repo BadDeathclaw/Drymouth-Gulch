@@ -437,16 +437,6 @@
 	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7)
 	. = ..()
 
-/obj/effect/spawner/lootdrop/f13/armor/random
-    name = "random armor loot"
-    lootcount = 1
-
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/armor/tier1 = 75,
-            /obj/effect/spawner/lootdrop/f13/armor/tier2 = 23,
-            /obj/effect/spawner/lootdrop/f13/armor/tier3 = 2,
-            )
-
 /* ------------------------------------------------
    ---------------MEDICAL SPAWNERS-----------------
    ------------------------------------------------ */
@@ -624,17 +614,6 @@
 				/obj/item/melee/powerfist,
 				/obj/item/melee/transforming/energy/axe
 				)
-
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random
-    name = "random melee loot"
-    lootcount = 1
-
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1 = 40,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2 = 30,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 = 20,
-            /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4 = 10,
-            )
 
 /* ------------------------------------------------
    -------------GUN WEAPON SPAWNERS----------------
@@ -890,16 +869,6 @@
 				/obj/item/gun/ballistic/automatic/bozar
 				)
 
-/obj/effect/spawner/lootdrop/f13/weapon/gun/random
-    name = "random gun loot"
-    lootcount = 1
-
-    loot = list(
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier1 = 75,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 = 24,
-            /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 = 1,
-            )
-
 /* ------------------------------------------------
    ------------WEAPON AMMO SPAWNERS----------------
    ------------------------------------------------ */
@@ -991,7 +960,6 @@
 				/obj/item/ammo_box/magazine/d12g,
 				/obj/item/ammo_box/magazine/m2mm
 				)
-
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2, 3, 4)
