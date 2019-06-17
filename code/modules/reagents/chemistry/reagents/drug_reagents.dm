@@ -506,8 +506,6 @@
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>FUCKING KILL!</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
-	if (prob(30))
-		owner.say("[prob(50) ? ";" : ""][pick("YOU'RE DEAD!", "I'M FUCKING INVINCIBLE!", "FUCK YOU!", "FUCKING KILL!")]")
 	if(prob(20))
 		to_chat(M, "<span class='notice'>[high_message]</span>")
 	M.AdjustStun(-20, 0)
