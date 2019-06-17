@@ -126,7 +126,7 @@
 			return
 		to_chat(user, "<span class='notice'>You start adding [W] to [src]...</span>")
 		if(do_after(user, 20, target = src) && W.use(1))
-			make_new_table(/obj/structure/table/wood)
+			make_new_table(/obj/structure/table/wood/settler)
 		return
 	else if(istype(I, /obj/item/stack/tile/carpet))
 		var/obj/item/stack/tile/carpet/C = I
