@@ -1,4 +1,4 @@
-#define CUM_TARGET_THROAT "throat"
+/* #define CUM_TARGET_THROAT "throat"
 #define CUM_TARGET_VAGINA "vagina"
 #define CUM_TARGET_ANUS "anus"
 
@@ -132,3 +132,4 @@
 				"<span class='userdanger'>\The [src]</b> tears off \the [M]'s clothes!</span>", null, COMBAT_MESSAGE_RANGE)
 		return TRUE
 	return FALSE
+*/

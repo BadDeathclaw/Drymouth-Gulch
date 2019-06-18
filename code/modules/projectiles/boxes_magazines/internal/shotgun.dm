@@ -63,3 +63,9 @@
 	ammo_type = /obj/item/ammo_casing/m44
 	caliber = "44"
 	max_ammo = 8
+
+/obj/item/ammo_box/magazine/internal/shot/tube357
+	name = ".357 magnum internal tube magazine"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = "357"
+	max_ammo = 7

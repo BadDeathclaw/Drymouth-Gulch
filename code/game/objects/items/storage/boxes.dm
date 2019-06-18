@@ -402,7 +402,7 @@
 
 /obj/item/storage/box/deputy_badges/PopulateContents()
 	for(var/i in 1 to 3)
-		new /obj/item/card/id/deputy(src)
+		new /obj/item/card/id/dogtag/deputy(src)
 
 //Some spare PDAs in a box
 /obj/item/storage/box/PDAs

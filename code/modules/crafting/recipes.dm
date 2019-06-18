@@ -33,17 +33,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/lance
-	name = "Explosive Lance (Grenade)"
-	result = /obj/item/twohanded/spear
-	reqs = list(/obj/item/twohanded/spear = 1,
-				/obj/item/grenade = 1)
-	parts = list(/obj/item/twohanded/spear = 1,
-				/obj/item/grenade = 1)
-	time = 15
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/strobeshield
 	name = "Strobe Shield"
 	result = /obj/item/assembly/flash/shield
@@ -60,16 +49,6 @@
 	reqs = list(/obj/item/reagent_containers/glass/rag = 1,
 				/obj/item/reagent_containers/food/drinks/bottle = 1)
 	parts = list(/obj/item/reagent_containers/food/drinks/bottle = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/stunprod
-	name = "Stunprod"
-	result = /obj/item/melee/baton/cattleprod
-	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
-				/obj/item/stack/rods = 1,
-				/obj/item/assembly/igniter = 1)
 	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
@@ -138,17 +117,6 @@
 	time = 60
 	category = CAT_ROBOT
 
-/datum/crafting_recipe/secbot
-	name = "Secbot"
-	result = /mob/living/simple_animal/bot/secbot
-	reqs = list(/obj/item/assembly/signaler = 1,
-				/obj/item/clothing/head/helmet/sec = 1,
-				/obj/item/melee/baton = 1,
-				/obj/item/assembly/prox_sensor = 1,
-				/obj/item/bodypart/r_arm/robot = 1)
-	tools = list(TOOL_WELDER)
-	time = 60
-	category = CAT_ROBOT
 
 /datum/crafting_recipe/cleanbot
 	name = "Cleanbot"
@@ -189,16 +157,6 @@
 	time = 40
 	category = CAT_ROBOT
 
-/datum/crafting_recipe/improvised_pneumatic_cannon //Pretty easy to obtain but
-	name = "Pneumatic Cannon"
-	result = /obj/item/pneumatic_cannon/ghetto
-	tools = list(TOOL_WELDER, TOOL_WRENCH)
-	reqs = list(/obj/item/stack/sheet/metal = 4,
-				/obj/item/stack/packageWrap = 8,
-				/obj/item/pipe = 2)
-	time = 300
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/flamethrower
 	name = "Flamethrower"
@@ -423,17 +381,6 @@
 				/obj/item/stack/packageWrap = 5)
 	tools = list(TOOL_SCREWDRIVER)
 	time = 100
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/chainsaw
-	name = "Chainsaw"
-	result = /obj/item/twohanded/required/chainsaw
-	reqs = list(/obj/item/circular_saw = 1,
-				/obj/item/stack/cable_coil = 3,
-				/obj/item/stack/sheet/plasteel = 5)
-	tools = list(TOOL_WELDER)
-	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
@@ -974,21 +921,6 @@
 				/obj/item/stack/sheet/glass = 1)
 	tools = list(TOOL_WIRECUTTER)
 	time = 10
-	category = CAT_MEDICAL
-
-/datum/crafting_recipe/syringegun
-	name = "Syringe gun"
-	result = /obj/item/gun/syringe
-	reqs = list(/obj/item/stack/rods = 20,
-				/obj/item/stack/cable_coil = 15,
-				/obj/item/reagent_containers/syringe = 2,
-				/obj/item/stack/sheet/plastic = 3,
-				/obj/item/assembly/infra = 2,
-				/obj/item/assembly/timer = 2,
-				/obj/item/assembly/igniter = 1,
-				/obj/item/stack/sheet/glass = 15)
-	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
-	time = 120
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/solids
