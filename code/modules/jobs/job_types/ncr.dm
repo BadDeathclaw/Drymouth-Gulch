@@ -193,7 +193,8 @@ Medic
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/gun/ballistic/automatic/pistol/m1911, \
+		/obj/item/ammo_box/magazine/m45=2, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/storage/bag/money/small/ncrofficers)
@@ -231,8 +232,8 @@ Engineer
 	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
+		/obj/item/ammo_box/magazine/internal/cylinder/rev38=2, \
+		/obj/item/gun/ballistic/revolver/detective, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/stack/sheet/metal/ten,  \
