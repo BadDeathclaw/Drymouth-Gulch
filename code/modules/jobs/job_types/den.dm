@@ -20,7 +20,7 @@ Sheriff
 	name = "Sheriff"
 	jobtype = /datum/job/den/f13sheriff
 
-	id = /obj/item/card/id/sheriff
+	id = /obj/item/card/id/dogtag/sheriff
 	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
