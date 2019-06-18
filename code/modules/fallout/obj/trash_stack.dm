@@ -96,8 +96,7 @@
 		/obj/item/taperecorder/empty, /obj/item/radio/off,
 		/obj/item/light/tube, /obj/item/light/bulb,
 		/obj/item/reagent_containers/syringe, /obj/item/restraints/handcuffs,
-		/obj/item/ammo_casing/shotgun, /obj/item/ammo_casing/shotgun/buckshot,
-		/obj/item/ammo_casing/shotgun/incendiary,
+		/obj/item/ammo_casing/shotgun/buckshot,
 		/obj/item/kitchen/knife/butcher, /obj/item/geiger_counter,
 		/obj/item/ammo_box/magazine/m10mm_adv, /obj/item/ammo_box/magazine/m10mm_auto,
 		/obj/item/crafting/lunchbox, /obj/item/gun/ballistic/automatic/pistol/ninemil
