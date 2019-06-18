@@ -67,6 +67,7 @@
 #define	TRAIT_DRUNK_HEALING		"drunk_healing"
 #define TRAIT_BIG_LEAGUES		"big_leagues"
 #define TRAIT_IRONFIST			"iron_fist"
+#define TRAIT_PSYCHO			"psycho"
 #define	TRAIT_LIFEGIVER			"lifegiver"
 
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
