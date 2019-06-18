@@ -232,7 +232,7 @@ Engineer
 	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/internal/cylinder/rev38=2, \
+		/obj/item/ammo_box/c38=2, \
 		/obj/item/gun/ballistic/revolver/detective, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
