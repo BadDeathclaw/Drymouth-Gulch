@@ -9,14 +9,16 @@
 	if(!msg)
 		return
 
-	log_talk(mob,"[time_stamp()] [key_name(src)] : [msg]",LOGASAY)
+	log_adminsay(mob,"[time_stamp()] [key_name(src)] : [msg]",LOGASAY)
 	msg = keywords_lookup(msg)
 	if(check_rights(R_ADMIN,0))
 		msg = "<span class='adminobserver'><span class='prefix'>[time_stamp()] ADMIN:</span> <EM>[key_name(usr, 1)]</EM> [ADMIN_FLW(mob)]: <span class='message'>[msg]</span></span>"
 		to_chat(GLOB.admins, msg)
+		log_admin_private(msg)
 	else
 		msg = "<span class='adminobserver'><span class='prefix'>[time_stamp()] ADMIN:</span> <EM>[key_name(usr, 1)]</EM> [ADMIN_FLW(mob)]: <span class='message'>[msg]</span></span>"
 		to_chat(GLOB.admins, msg)
+		log_admin_private(msg)
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Asay") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
