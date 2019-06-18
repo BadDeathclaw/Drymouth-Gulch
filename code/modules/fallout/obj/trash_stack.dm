@@ -111,7 +111,7 @@
 		/obj/item/storage/pill_bottle/chem_tin/mentats, /obj/item/storage/pill_bottle/chem_tin/fixer,
 		/obj/item/storage/pill_bottle/chem_tin/radx, /obj/item/reagent_containers/food/drinks/bottle/orangejuice,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice, /obj/item/reagent_containers/food/drinks/bottle/cognac,
-		/obj/item/reagent_containers/food/drinks/bottle/whiskey, )
+		/obj/item/reagent_containers/food/drinks/bottle/whiskey, /obj/item/reagent_containers/hypospray/medipen/psycho)
 		var/I = new itemtype(src)
 		back += I
 	return back
