@@ -109,7 +109,7 @@
 		/obj/item/ammo_box/c9mm, /obj/item/ammo_box/c10mm,
 		/obj/item/ammo_box/a556, /obj/item/ammo_box/c45,
 		/obj/item/storage/pill_bottle/chem_tin/mentats, /obj/item/storage/pill_bottle/chem_tin/fixer,
-		/obj/item/storage/pill_bottle/chem_tin/radx, /obj/item/reagent_containers/food/drinks/bottle/orangejuice,
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice, /obj/item/reagent_containers/food/drinks/bottle/cognac,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey, /obj/item/reagent_containers/hypospray/medipen/psycho)
 		var/I = new itemtype(src)
