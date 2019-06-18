@@ -109,9 +109,15 @@
 		/obj/item/ammo_box/c9mm, /obj/item/ammo_box/c10mm,
 		/obj/item/ammo_box/a556, /obj/item/ammo_box/c45,
 		/obj/item/storage/pill_bottle/chem_tin/mentats, /obj/item/storage/pill_bottle/chem_tin/fixer,
-		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/pill_bottle/chem_tin/radx
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice, /obj/item/reagent_containers/food/drinks/bottle/cognac,
-		/obj/item/reagent_containers/food/drinks/bottle/whiskey, /obj/item/reagent_containers/hypospray/medipen/psycho)
+		/obj/item/reagent_containers/food/drinks/bottle/whiskey, /obj/item/reagent_containers/hypospray/medipen/psycho,
+		/obj/item/clothing/glasses/sunglasses/big, /obj/item/clothing/glasses/sunglasses,
+		/obj/item/clothing/glasses/material/mining, /obj/item/clothing/glasses/eyepatch,
+		/obj/item/clothing/head/helmet/knight/fluff/rider, /obj/item/clothing/shoes/f13/cowboy,
+		/obj/item/clothing/shoes/f13/explorer, /obj/item/clothing/shoes/f13/military/diesel,
+		/obj/item/clothing/shoes/f13/military/female/diesel, /obj/item/clothing/gloves/f13/leather,
+		/obj/item/clothing/gloves/f13/military, /obj/item/clothing/gloves/f13/ncr)
 		var/I = new itemtype(src)
 		back += I
 	return back
