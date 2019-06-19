@@ -169,14 +169,14 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 20000)
 
-/obj/item/ammo_box/a50MG/AP
+/*/obj/item/ammo_box/a50MG/AP
 	name = "anti-materiel armor piercing ammo rack (.50MG)"
 	desc = "A .rack of .50 MG ammo, for when you really need (a very big) something dead."
 	icon_state = "50ap"
 	ammo_type = /obj/item/ammo_casing/a50MG/AP
 	max_ammo = 5
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 18000)
+	materials = list(MAT_METAL = 18000)*/
 
 /obj/item/ammo_box/a50MG/explosive
 	name = "anti-materiel explosive ammo rack (.50MG)"
