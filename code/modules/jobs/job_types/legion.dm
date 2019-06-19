@@ -106,7 +106,7 @@ Centurion
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Legion Centurion"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
-	id =			/obj/item/card/id/legcenturion
+	id =			/obj/item/card/id/dogtag/legcenturion
 	suit = 			/obj/item/clothing/suit/armor/f13/legcenturion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
@@ -149,7 +149,7 @@ Veteran Decan
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 	name = "Legion Veteran Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetdecan
-	id = 			/obj/item/card/id/legveteran
+	id = 			/obj/item/card/id/dogtag/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	mask =			/obj/item/clothing/mask/bandana/legdecan
@@ -188,7 +188,7 @@ Prime Decan
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primedecan
 	name = "Legion Prime Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primedecan
-	id = 			/obj/item/card/id/legprime
+	id = 			/obj/item/card/id/dogtag/legprime
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
@@ -227,7 +227,7 @@ Decan
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
 	name = "Legion Recruit Decanus"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13decan
-	id = 			/obj/item/card/id/legrecruit
+	id = 			/obj/item/card/id/dogtag/legrecruit
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
@@ -270,7 +270,7 @@ Vexillarius
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
 	name = "Legion Vexillarius"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vexillarius
-	id = 			/obj/item/card/id/legveteran
+	id = 			/obj/item/card/id/dogtag/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -311,7 +311,7 @@ Veteran
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 	name = "Veteran Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetlegion
-	id = 			/obj/item/card/id/legveteran
+	id = 			/obj/item/card/id/dogtag/legveteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
@@ -351,7 +351,7 @@ Prime
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
 	name = "Prime Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primelegion
-	id = 			/obj/item/card/id/legprime
+	id = 			/obj/item/card/id/dogtag/legprime
 	shoes =         /obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
@@ -390,7 +390,7 @@ Legionary
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 	name = "Recruit Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legionary
-	id = 			/obj/item/card/id/legrecruit
+	id = 			/obj/item/card/id/dogtag/legrecruit
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
@@ -430,7 +430,7 @@ Legionary
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13explorer
-	id = 		/obj/item/card/id/legveteran
+	id = 		/obj/item/card/id/dogtag/legveteran
 	suit = 		/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
@@ -468,7 +468,7 @@ Legionary
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 	name = "Legion Scout"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13scout
-	id = 			/obj/item/card/id/legrecruit
+	id = 			/obj/item/card/id/dogtag/legrecruit
 	shoes = 		/obj/item/clothing/shoes/legionleather
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
