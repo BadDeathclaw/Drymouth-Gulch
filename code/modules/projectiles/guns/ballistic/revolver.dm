@@ -362,7 +362,7 @@
 //Fallout 13
 
 /obj/item/gun/ballistic/revolver/m29
-	name = "\improper .44 magnum revolver"
+	name = "\improper .44 Magnum revolver"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
 	item_state = "model29"
 	icon_state = "m29"
@@ -378,7 +378,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/m29/scoped
-	name = "\improper Scoped .44 magnum revolver"
+	name = "\improper .44 Magnum revolver"
 	icon_state = "scoped_m29"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? Now with a scope!"
 	zoomable = TRUE
@@ -435,7 +435,7 @@
 	fire_delay = 4
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
-	name = "Magnum Research BFR"
+	name = "Hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
 	zoomable = TRUE
