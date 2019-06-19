@@ -47,6 +47,11 @@ var/list/interactions
 	var/needs_physical_contact
 
 /datum/interaction/proc/evaluate_user(mob/living/user, silent = TRUE)
+	if(user.refactory_period)
+		if(!silent) //bye spam
+			to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
+		return FALSE
+
 	if(require_user_mouth)
 		if(!user.has_mouth())
 			if(!silent)
@@ -119,7 +124,7 @@ var/list/interactions
 
 	display_interaction(user, target)
 	post_interaction(user, target)
-
+	user.refactory_period = 5
 
 	//if(write_log_user)
 		//add_logs(target, user, "fucked")
