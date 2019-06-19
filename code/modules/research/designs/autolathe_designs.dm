@@ -836,6 +836,7 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 7000)
 	build_path = /obj/item/ammo_box/tube/a357
+	category = list("initial", "Security")
 
 /datum/design/a50MG
 	name = "Anti-Materiel Ammo Rack (.50MG)"
