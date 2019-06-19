@@ -116,7 +116,8 @@
 		/obj/item/clothing/head/helmet/knight/fluff/rider, /obj/item/clothing/shoes/f13/cowboy,
 		/obj/item/clothing/shoes/f13/explorer, /obj/item/clothing/shoes/f13/military/diesel,
 		/obj/item/clothing/shoes/f13/military/female/diesel, /obj/item/clothing/gloves/f13/leather,
-		/obj/item/clothing/gloves/f13/military, /obj/item/clothing/gloves/f13/ncr)
+		/obj/item/clothing/gloves/f13/military, /obj/item/clothing/gloves/f13/ncr,
+		/obj/item/gun/ballistic/shotgun/boltaction)
 		var/I = new itemtype(src)
 		back += I
 	return back
