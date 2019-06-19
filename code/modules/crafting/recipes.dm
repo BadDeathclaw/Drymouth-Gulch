@@ -331,82 +331,102 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/meteorslug
-	name = "Meteorslug Shell"
-	result = /obj/item/ammo_casing/shotgun/meteorslug
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/rcd_ammo = 1,
-				/obj/item/stock_parts/manipulator = 2)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/m44/makeshift
+	name = "Makeshift .44 Magnum speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/pulseslug
-	name = "Pulse Slug Shell"
-	result = /obj/item/ammo_casing/shotgun/pulseslug
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/capacitor/adv = 2,
-				/obj/item/stock_parts/micro_laser/ultra = 1)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/c10mm/makeshift
+	name = "Makeshift 10mm ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 12)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/dragonsbreath
-	name = "Dragonsbreath Shell"
-	result = /obj/item/ammo_casing/shotgun/dragonsbreath
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1, /datum/reagent/phosphorus = 5)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/lethalshot/makeshift
+	name = "Makeshift buckshot shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/frag12
-	name = "FRAG-12 Shell"
-	result = /obj/item/ammo_casing/shotgun/frag12
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/datum/reagent/glycerol = 5,
-				/datum/reagent/toxin/acid = 5,
-				/datum/reagent/toxin/acid/fluacid = 5)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/slugshot/makeshift
+	name = "Makeshift slug shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/ionslug
-	name = "Ion Scatter Shell"
-	result = /obj/item/ammo_casing/shotgun/ion
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/micro_laser/ultra = 1,
-				/obj/item/stock_parts/subspace/crystal = 1)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/beanbag/makeshift
+	name = "Makeshift beanbag shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/improvisedslug
-	name = "Improvised Shotgun Shell"
-	result = /obj/item/ammo_casing/shotgun/improvised
-	reqs = list(/obj/item/grenade/chem_grenade = 1,
-				/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/cable_coil = 1,
-				/datum/reagent/fuel = 10)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/rubbershot/makeshift
+	name = "Makeshift rubbershot shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/laserslug
-	name = "Laser Slug Shell"
-	result = /obj/item/ammo_casing/shotgun/laserslug
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/capacitor/adv = 1,
-				/obj/item/stock_parts/micro_laser/high = 1)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/a556/makeshift
+	name = "Makeshift 5.56mm ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 14)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/c9mm/makeshift
+	name = "Makeshift 9mm ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 12)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a762/makeshift
+	name = "Makeshift 7.62mm stripper clip"
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a762lp/makeshift
+	name = "Makeshift 7.62mm lowpower double stacked stripper clip"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a308/makeshift
+	name = "Makeshift .308 stripper clip"
+	reqs = list(/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a357/makeshift
+	name = "Makeshift .357 Magnum speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/c38/makeshift
+	name = "Makeshift .38 speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/m44tube/makeshift
+	name = "Makeshift .44 Magnum tube"
+	reqs = list(/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a357tube/makeshift
+	name = "Makeshift .357 Magnum tube"
+	result = /obj/item/ammo_box/tube/a357
+	reqs = list(/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/c45/makeshift
+	name = "Makeshift .45 ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 12)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
 /datum/crafting_recipe/ishotgun
 	name = "Improvised Shotgun"
