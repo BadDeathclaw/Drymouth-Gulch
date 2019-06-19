@@ -22,13 +22,13 @@
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
 	anchored = TRUE
-	machine_tool_behaviour = list(TOOL_LEGION, TOOL_NCR)
+//	machine_tool_behaviour = list(TOOL_LEGION, TOOL_NCR)
 	categories = list("Security")
 	super_advanced_technology = FALSE
-
+/*
 /obj/machinery/ammobench
 	name = "universal reloading bench"
-	desc = "A reloading bench used for inefficiently  crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This one can be used to craft most NCR and Legion rounds."
+	desc = "A reloading bench used for crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This can be used to craft most ammunition."
 	icon = 'icons/obj/recycling.dmi' //placeholder
 	icon_state = "grinder-b1" //placeholder
 	resistance_flags = INDESTRUCTIBLE

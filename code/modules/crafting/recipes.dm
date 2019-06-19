@@ -234,7 +234,7 @@
 /datum/crafting_recipe/a556
 	name = "5.56mm ammo box"
 	result = /obj/item/ammo_box/a556
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
