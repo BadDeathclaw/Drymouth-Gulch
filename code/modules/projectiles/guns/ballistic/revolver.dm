@@ -362,7 +362,7 @@
 //Fallout 13
 
 /obj/item/gun/ballistic/revolver/m29
-	name = "\improper S&W Model 29"
+	name = "\improper .44 magnum revolver"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
 	item_state = "model29"
 	icon_state = "m29"
@@ -378,13 +378,23 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/m29/scoped
-	name = "\improper Scoped S&W Model 29"
+	name = "\improper Scoped .44 magnum revolver"
 	icon_state = "scoped_m29"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? Now with a scope!"
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_NORMAL
+	
+/obj/item/gun/ballistic/revolver/colt357
+	name = "\improper .357 Magnum revolver"
+	desc = "A relatively primitive .357 magnum revolver. Due to it's usage of a loading gate, it can only load one round a time."
+	item_state = "colt357"
+	icon_state = "colt357"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 5
+	
 
 /obj/item/gun/ballistic/revolver/m29/sadokist
 	name = "Wise's Warmaker"
