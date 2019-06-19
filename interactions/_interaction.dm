@@ -124,7 +124,7 @@ var/list/interactions
 
 	display_interaction(user, target)
 	post_interaction(user, target)
-	user.refactory_period = 10
+	user.refactory_period = 5
 
 	//if(write_log_user)
 		//add_logs(target, user, "fucked")
