@@ -354,7 +354,7 @@
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
-	mag_type = /obj/item/ammo_box/tube/a357
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
@@ -367,7 +367,7 @@
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of brooding veterans and cigarettes."
 	icon_state = "scopedcowboyrepeater"
 	item_state = "scopedcowboyrepeater"
-	mag_type = /obj/item/ammo_box/tube/a357
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	zoomable = TRUE
