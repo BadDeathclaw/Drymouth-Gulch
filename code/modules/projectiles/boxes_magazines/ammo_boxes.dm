@@ -35,14 +35,14 @@
 	materials = list(MAT_METAL = 8000)
 
 
-/obj/item/ammo_box/c4570SP
+/*/obj/item/ammo_box/c4570SP
 	name = "speed loader (.45 LC)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/c4570SP
 	max_ammo = 6
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 4000)
+	materials = list(MAT_METAL = 4000)*/
 
 /obj/item/ammo_box/tube/m44
 	name = "speed loader tube (.44)"
@@ -71,14 +71,14 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 12000)
 
-/obj/item/ammo_box/tube/c4570SP
+/*/obj/item/ammo_box/tube/c4570SP
 	name = "speed loader tube (.45 LC)"
 	desc = "Designed to quickly reload repeaters."
 	icon_state = "357tube"
 	ammo_type = /obj/item/ammo_casing/c4570SP
 	max_ammo = 10
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 7000)
+	materials = list(MAT_METAL = 7000)*/
 
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
