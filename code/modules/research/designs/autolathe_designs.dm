@@ -725,14 +725,14 @@
 	materials = list(MAT_METAL = 22000) //Comes with 40 darts
 	build_path = /obj/item/ammo_box/foambox/riot
 	category = list("hacked", "Security")
-*/
-/datum/design/a357
+
+/*/datum/design/a357
 	name = "Speed Loader (.357)"
 	id = "a357"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/a357
-	category = list("initial", "Security")
+	category = list("initial", "Security")*/
 
 /datum/design/c10mm
 	name = "Ammo Box (10mm)"
@@ -806,13 +806,36 @@
 	build_path = /obj/item/ammo_box/a762/doublestacked
 	category = list("initial", "Security")
 
-/datum/design/c4570SP
+/datum/design/c4570
 	name = "45-70 speed loader (NCR)"
 	id = "c4570"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 8000)
 	build_path = /obj/item/ammo_box/c4570
 	category = list("initial", "Security")
+	
+/datum/design/c4570tube
+	name = "Speed loader tube (.45-70)"
+	id = "4570tube"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 12000)
+	build_path = /obj/item/ammo_box/tube/c4570
+	category = list("initial", "Security")
+
+/datum/design/m44tube
+	name = "Speed loader tube (.44)"
+	id = "44tube"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 6000)
+	build_path = /obj/item/ammo_box/tube/m44
+	category = list("initial", "Security")
+
+/datum/design/a357tube
+	name = "Speed loader tube (.357)"
+	id = "357tube"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 7000)
+	build_path = /obj/item/ammo_box/tube/a357
 
 /datum/design/a50MG
 	name = "Anti-Materiel Ammo Rack (.50MG)"
