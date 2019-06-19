@@ -316,6 +316,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 3
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	name = "Trail carbine"
@@ -327,6 +328,9 @@
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 1
+	extra_damage = 10
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
 	name = "Scoped trail carbine"
@@ -341,24 +345,29 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 3
+	extra_damage = 15
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	name = "Cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
+	mag_type = /obj/item/ammo_box/tube/a357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 3
+	extra_damage = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
 	name = "Scoped cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of brooding veterans and cigarettes."
 	icon_state = "scopedcowboyrepeater"
 	item_state = "scopedcowboyrepeater"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
+	mag_type = /obj/item/ammo_box/tube/a357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	zoomable = TRUE
@@ -366,6 +375,9 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 4
+	extra_damage = 10
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	name = "Brush gun"
@@ -376,6 +388,10 @@
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 2
+	extra_damage = 10
+	extra_penetration = 10
+
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
 	name = "Scoped brush gun"
@@ -389,6 +405,9 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 3
+	extra_damage = 15
+	extra_penetration = 10
 
 
 

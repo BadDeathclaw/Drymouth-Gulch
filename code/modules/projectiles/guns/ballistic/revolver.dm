@@ -95,15 +95,8 @@
 	unique_reskin = list("Default" = "detective",
 						"Leopard Spots" = "detective_leopard",
 						"Black Panther" = "detective_panther",
-						"Fitz Special" = "detective_fitz",
-						"Police Positive Special" = "detective_police",
-						"Blued Steel" = "detective_blued",
-						"Stainless Steel" = "detective_stainless",
 						"Gold Trim" = "detective_gold",
-						"The Peacemaker" = "detective_peacemaker",
-						"Leopard Spots" = "detective_leopard",
-						"The Peacemaker" = "detective_peacemaker",
-						"Black Panther" = "detective_panther"
+						"The Peacemaker" = "detective_peacemaker"
 						)
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
@@ -369,13 +362,15 @@
 //Fallout 13
 
 /obj/item/gun/ballistic/revolver/m29
-	name = "\improper .44 Magnum revolver"
+	name = "\improper S&W Model 29"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
 	item_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 3
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/m29/alt
 	item_state = "44magnum"
@@ -383,20 +378,12 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/m29/scoped
-	name = "\improper .44 magnum revolver"
+	name = "\improper Scoped S&W Model 29"
 	icon_state = "scoped_m29"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? Now with a scope!"
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/gun/ballistic/revolver/colt357
-	name = "\improper .357 Magnum revolver"
-	desc = "A relatively primitive .357 magnum revolver. Due to it's usage of a loading gate, it can only load one round a time."
-	item_state = "colt357"
-	icon_state = "colt357"
-	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/m29/sadokist
@@ -423,6 +410,9 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 3
+	extra_damage = 10
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/sequoia
 	name = "Ranger Sequoia"
@@ -432,9 +422,10 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 4
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
-	name = "Hunting revolver"
+	name = "Magnum Research BFR"
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
 	zoomable = TRUE
@@ -449,6 +440,7 @@
 	item_state = "gun"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
+	extra_damage = 20
 
 /obj/item/gun/ballistic/revolver/pipe_rifle
 	name = "pipe rifle"
@@ -459,4 +451,5 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	extra_damage = 30
 
