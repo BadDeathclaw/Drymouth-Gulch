@@ -172,9 +172,9 @@
 	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/m44
-	name = ".44 Magnum speed loader (Legion)"
+	name = ".44 Magnum speed loader"
 	result = /obj/item/ammo_box/m44
-	reqs = list(/obj/item/stack/sheet/metal = 4)
+	reqs = list(/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -182,9 +182,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c10mm
-	name = "10mm ammo box (Legion)"
+	name = "10mm ammo box"
 	result = /obj/item/ammo_box/c10mm
-	reqs = list(/obj/item/stack/sheet/metal = 10)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -192,10 +192,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/lethalshot
-	name = "buckshot shotgun box (Legion)"
+	name = "buckshot shotgun box"
 	result = /obj/item/storage/box/lethalshot
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -203,10 +202,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/slugshot
-	name = "slug shotgun box (Legion)"
+	name = "slug shotgun box"
 	result = /obj/item/storage/box/slugshot
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -214,10 +212,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/beanbag
-	name = "beanbag shotgun box (Legion)"
+	name = "beanbag shotgun box"
 	result = /obj/item/storage/box/rubbershot/beanbag
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -225,10 +222,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/rubbershot
-	name = "rubbershot shotgun box (Legion)"
+	name = "rubbershot shotgun box"
 	result = /obj/item/storage/box/rubbershot
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -236,9 +232,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a556
-	name = "5.56mm ammo box (NCR)"
+	name = "5.56mm ammo box"
 	result = /obj/item/ammo_box/a556
-	reqs = list(/obj/item/stack/sheet/metal = 20)
+	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -246,18 +242,8 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c9mm
-	name = "9mm ammo box (NCR)"
+	name = "9mm ammo box"
 	result = /obj/item/ammo_box/c9mm
-	reqs = list(/obj/item/stack/sheet/metal = 15)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/c4570SP
-	name = ".45 LC speed loader (NCR)"
-	result = /obj/item/ammo_box/c4570SP
 	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
@@ -266,9 +252,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a762
-	name = "7.62mm stripper clip (NCR)"
+	name = "7.62mm stripper clip"
 	result = /obj/item/ammo_box/a762
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -276,9 +262,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a762lp
-	name = "7.62mm lowpower double stacked stripper clip (NCR)"
+	name = "7.62mm lowpower double stacked stripper clip"
 	result = /obj/item/ammo_box/a762/doublestacked
-	reqs = list(/obj/item/stack/sheet/metal = 10)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -286,9 +272,59 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a308
-	name = ".308 stripper clip (NCR)"
+	name = ".308 stripper clip"
 	result = /obj/item/ammo_box/a308
-	reqs = list(/obj/item/stack/sheet/metal = 7)
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a357
+	name = ".357 Magnum speed loader"
+	result = /obj/item/ammo_box/a357
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c38
+	name = ".38 speed loader"
+	result = /obj/item/ammo_box/c38
+	reqs = list(/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/m44tube
+	name = ".44 Magnum tube"
+	result = /obj/item/ammo_box/tube/m44
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a357tube
+	name = ".357 Magnum tube"
+	result = /obj/item/ammo_box/tube/a357
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c45
+	name = ".45 ammo box"
+	result = /obj/item/ammo_box/c45
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
