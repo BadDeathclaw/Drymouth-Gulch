@@ -269,7 +269,7 @@
 /obj/item/clothing/head/helmet/riot/vaultsec
 	name = "security helmet"
 	desc = "A standard issue vault security helmet, pretty robust."
-	
+
 //Remnants
 /obj/item/clothing/head/donor/enclave
 	name = "Remnant Cap"
@@ -393,9 +393,13 @@
 /obj/item/clothing/head/helmet/f13/legion/explorer
 	name = "legion explorer hood"
 	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted."
-	icon_state = "cult_hoodalt"
-	item_state = "cult_hoodalt"
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
+	icon_state = "legexplorer"
+	item_state = "legexplorer"
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+	strip_delay = 50
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/f13/legion/legveteran
 	name = "legion veteran helmet"
@@ -603,7 +607,7 @@
 	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
-	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 75, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 75, "acid" = 0)
 
 /obj/item/clothing/head/helmet/power_armor/advanced
 	name = "Advanced power helmet"
