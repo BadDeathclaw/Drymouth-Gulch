@@ -700,7 +700,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/dart
 	category = list("hacked", "Security")
-*/
+
 
 /datum/design/incendiary_slug
 	name = "Incendiary Slug"
@@ -709,7 +709,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
-/*
+*/
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
 	id = "riot_dart"
