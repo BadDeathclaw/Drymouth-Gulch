@@ -46,7 +46,7 @@
 
 /obj/item/ammo_box/tube/m44
 	name = "speed loader tube (.44)"
-	desc = "Designed to quickly reload repeaters."
+	desc = "Designed to quickly reload repeaters or revolvers."
 	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/m44
 	max_ammo = 8
@@ -55,7 +55,7 @@
 
 /obj/item/ammo_box/tube/a357
 	name = "speed loader tube (.357)"
-	desc = "Designed to quickly reload repeaters."
+	desc = "Designed to quickly reload repeaters or revolvers."
 	icon_state = "357tube"
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 10
@@ -64,7 +64,7 @@
 
 /obj/item/ammo_box/tube/c4570
 	name = "speed loader tube (.45-70)"
-	desc = "Designed to quickly reload repeaters."
+	desc = "Designed to quickly reload repeaters or revolvers."
 	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 8
@@ -73,7 +73,7 @@
 
 /obj/item/ammo_box/tube/c4570SP
 	name = "speed loader tube (.45 LC)"
-	desc = "Designed to quickly reload repeaters."
+	desc = "Designed to quickly reload repeaters or revolvers."
 	icon_state = "357tube"
 	ammo_type = /obj/item/ammo_casing/c4570SP
 	max_ammo = 10
