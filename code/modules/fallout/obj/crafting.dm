@@ -130,10 +130,10 @@
 	icon_state = "abraxo"
 
 /obj/item/crafting/reloader
-	name = "cartrige reloader"
-	desc = "This device allows to hand-load your own gun rounds using certain raw materials."
+	name = "makeshift reloader"
+	desc = "This device allows you to hand-craft your own gun rounds using certain raw materials."
 	icon_state = "reloader"
-	tool_behaviour = TOOL_RELOADER
+	tool_behaviour = TOOL_MSRELOADER
 
 /obj/item/crafting/igniter
 	name = "igniter"
