@@ -111,7 +111,6 @@ Centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legcenturion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
 	r_hand =		/obj/item/melee/powerfist
-	l_hand =		/obj/item/tank/internals/oxygen
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
