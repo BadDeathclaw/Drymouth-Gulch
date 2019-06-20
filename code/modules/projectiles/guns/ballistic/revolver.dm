@@ -89,7 +89,7 @@
 	name = "\improper .38 Special"
 	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
