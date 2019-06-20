@@ -441,7 +441,7 @@
 	burst_size = 3
 	fire_delay = 3
 	extra_penetration = 15
-	can_suppress = FALSE //we dont have sprites therefore cease.
+	can_suppress = FALSE //we dont have sprites therefore cease
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "R91 assault rifle"
@@ -503,7 +503,7 @@
 
 /obj/item/gun/ballistic/automatic/minigun
 	name = "M134 Minigun"
-	desc = "The M134 is a 7.62×51mm, six-barrel rotary machine gun with a rate of fire between 2,000 and 6,000 rounds per minute."
+	desc = "The M134 is a 7.62Ã—51mm, six-barrel rotary machine gun with a rate of fire between 2,000 and 6,000 rounds per minute."
 	icon_state = "arg"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
