@@ -194,13 +194,13 @@ Prime Decan
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/n99
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/m10mm_adv=2, \
+		/obj/item/ammo_box/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 
@@ -233,13 +233,13 @@ Decan
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
+	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/n99
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/m44=2, \
+		/obj/item/ammo_box/magazine/m10mm_adv=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 

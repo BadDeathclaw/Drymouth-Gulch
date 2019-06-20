@@ -339,13 +339,8 @@
 				/obj/item/clothing/head/helmet/f13/combat/mk2
 				)
 
-	var/loot5 = list(
-				/obj/item/clothing/suit/armor/f13/rangercombat,
-				/obj/item/clothing/head/helmet/f13/ncr/rangercombat
-				)
-
 /obj/effect/spawner/lootdrop/f13/armor/tier3/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5)
+	loot = pick(loot1, loot2, loot3, loot4)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/armor/tier4 //TIER 4 ARMOR
