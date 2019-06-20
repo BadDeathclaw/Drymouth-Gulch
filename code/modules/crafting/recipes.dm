@@ -218,16 +218,6 @@
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-	
-/datum/crafting_recipe/a357
-	name = ".357 Magnum speed loader"
-	result = /obj/item/ammo_box/a357
-	reqs = list(/obj/item/stack/sheet/metal = 3)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c38
 	name = ".38 speed loader"
@@ -332,12 +322,6 @@
 /datum/crafting_recipe/a308/makeshift
 	name = "Makeshift .308 stripper clip"
 	reqs = list(/obj/item/stack/sheet/metal = 6)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_MSRELOADER)
-
-/datum/crafting_recipe/a357/makeshift
-	name = "Makeshift .357 Magnum speed loader"
-	reqs = list(/obj/item/stack/sheet/metal = 4)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 
