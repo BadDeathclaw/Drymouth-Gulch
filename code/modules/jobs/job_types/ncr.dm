@@ -432,7 +432,7 @@ Ranger
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/m44=2, \
+		/obj/item/ammo_box/tube/m44=3, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -474,7 +474,7 @@ Recon Ranger
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/a357=2, \
+		/obj/item/ammo_box/tube/a357=3, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
