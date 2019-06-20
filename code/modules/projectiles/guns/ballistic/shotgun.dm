@@ -359,7 +359,7 @@
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 5
+	fire_delay = 7
 	extra_damage = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
@@ -375,7 +375,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 6
+	fire_delay = 8
 	extra_damage = 10
 	extra_penetration = 10
 
@@ -405,7 +405,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
+	fire_delay = 9
 	extra_damage = 15
 	extra_penetration = 10
 
