@@ -691,7 +691,7 @@
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 				/obj/item/stack/sheet/leather = 1,
 				/obj/item/stack/cable_coil = 5,
-				/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola = 1,
+				/obj/item/reagent_containers/food/drinks/bottle/nukacola = 1,
  				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1)
 	tools = list(/obj/item/lighter, /obj/item/screwdriver, /obj/item/wirecutters)
 	time = 90
