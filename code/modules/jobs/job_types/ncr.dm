@@ -82,6 +82,7 @@ Captain
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
+		/obj/item/binocs=1, \
 		/obj/item/storage/bag/money/small/ncr)
 	box = null
 
@@ -121,6 +122,7 @@ Lieutenant
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/ammo_box/magazine/m9mm=2, \
+		/obj/item/binocs=1, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
