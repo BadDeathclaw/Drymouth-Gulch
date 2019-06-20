@@ -439,9 +439,9 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	burst_size = 3
+	fire_delay = 3
 	extra_penetration = 15
-	can_suppress = FALSE //we dont have sprites therefore ceasse.
- 	fire_delay = 3
+	can_suppress = FALSE //we dont have sprites therefore cease.
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "R91 assault rifle"
