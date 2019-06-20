@@ -115,11 +115,12 @@ Lieutenant
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store 	= /obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/ammo_box/a762/doublestacked=3, \
+		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
@@ -153,7 +154,7 @@ Medic
 	suit_store =    /obj/item/healthanalyzer
 	belt =          /obj/item/storage/belt/medical
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm=1, \
+		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/storage/pill_bottle/mining, \
@@ -196,6 +197,7 @@ Medic
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
+		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
@@ -231,7 +233,7 @@ Engineer
 	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm=1, \
+		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -271,7 +273,7 @@ Trooper
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/r20=3, \
+		/obj/item/ammo_box/magazine/r20=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -306,7 +308,7 @@ Recruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
-		/obj/item/ammo_box/a762=3, \
+		/obj/item/ammo_box/a762=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -426,9 +428,9 @@ Ranger
 	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	backpack_contents = list(
-		/obj/item/ammo_box/a762/doublestacked = 3, \
+		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -468,9 +470,9 @@ Recon Ranger
 	head = 			/obj/item/clothing/head/f13/ranger
 	shoes = 		/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/a308 = 4, \
+		/obj/item/ammo_box/tube/a357=2, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
