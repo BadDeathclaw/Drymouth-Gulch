@@ -228,6 +228,7 @@ Engineer
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/hardhat/orange
 	glasses = 		/obj/item/clothing/glasses/welding
+	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=1, \

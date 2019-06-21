@@ -20,7 +20,7 @@
 	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
+	
 /datum/crafting_recipe/IED
 	name = "IED"
 	result = /obj/item/grenade/iedcasing
@@ -30,16 +30,6 @@
 				/obj/item/reagent_containers/food/drinks/soda_cans = 1)
 	parts = list(/obj/item/reagent_containers/food/drinks/soda_cans = 1)
 	time = 15
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/strobeshield
-	name = "Strobe Shield"
-	result = /obj/item/assembly/flash/shield
-	reqs = list(/obj/item/wallframe/flasher = 1,
-				/obj/item/assembly/flash/handheld = 1,
-				/obj/item/shield/riot = 1)
-	time = 40
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
@@ -53,17 +43,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/teleprod
-	name = "Teleprod"
-	result = /obj/item/melee/baton/cattleprod/teleprod
-	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
-				/obj/item/stack/rods = 1,
-				/obj/item/assembly/igniter = 1,
-				/obj/item/stack/ore/bluespace_crystal = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/bola
 	name = "Bola"
 	result = /obj/item/restraints/legcuffs/bola
@@ -71,33 +50,6 @@
 				/obj/item/stack/sheet/metal = 6)
 	time = 20//15 faster than crafting them by hand!
 	category= CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/tailclub
-	name = "Tail Club"
-	result = /obj/item/tailclub
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-	            /obj/item/stack/sheet/metal = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/tailwhip
-	name = "Liz O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip
-	reqs = list(/obj/item/organ/tail/lizard = 1,
-	            /obj/item/stack/cable_coil = 1)
-	time = 40
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/catwhip
-	name = "Cat O' Nine Tails"
-	result = /obj/item/melee/chainofcommand/tailwhip/kitty
-	reqs = list(/obj/item/organ/tail/cat = 1,
-	            /obj/item/stack/cable_coil = 1)
-	time = 40
-	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/ed209
@@ -157,24 +109,10 @@
 	time = 40
 	category = CAT_ROBOT
 
-
-/datum/crafting_recipe/flamethrower
-	name = "Flamethrower"
-	result = /obj/item/flamethrower
-	reqs = list(/obj/item/weldingtool = 1,
-				/obj/item/assembly/igniter = 1,
-				/obj/item/stack/rods = 1)
-	parts = list(/obj/item/assembly/igniter = 1,
-				/obj/item/weldingtool = 1)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/m44
-	name = ".44 Magnum speed loader (Legion)"
+	name = ".44 Magnum speed loader"
 	result = /obj/item/ammo_box/m44
-	reqs = list(/obj/item/stack/sheet/metal = 4)
+	reqs = list(/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -182,9 +120,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c10mm
-	name = "10mm ammo box (Legion)"
+	name = "10mm ammo box"
 	result = /obj/item/ammo_box/c10mm
-	reqs = list(/obj/item/stack/sheet/metal = 10)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -192,10 +130,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/lethalshot
-	name = "buckshot shotgun box (Legion)"
+	name = "buckshot shotgun box"
 	result = /obj/item/storage/box/lethalshot
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -203,10 +140,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/slugshot
-	name = "slug shotgun box (Legion)"
+	name = "slug shotgun box"
 	result = /obj/item/storage/box/slugshot
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -214,10 +150,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/beanbag
-	name = "beanbag shotgun box (Legion)"
+	name = "beanbag shotgun box"
 	result = /obj/item/storage/box/rubbershot/beanbag
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -225,10 +160,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/rubbershot
-	name = "rubbershot shotgun box (Legion)"
+	name = "rubbershot shotgun box"
 	result = /obj/item/storage/box/rubbershot
-	reqs = list(/obj/item/stack/sheet/metal = 7,
-				/obj/item/stack/sheet/cardboard = 1)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -236,9 +170,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a556
-	name = "5.56mm ammo box (NCR)"
+	name = "5.56mm ammo box"
 	result = /obj/item/ammo_box/a556
-	reqs = list(/obj/item/stack/sheet/metal = 20)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -246,18 +180,8 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c9mm
-	name = "9mm ammo box (NCR)"
+	name = "9mm ammo box"
 	result = /obj/item/ammo_box/c9mm
-	reqs = list(/obj/item/stack/sheet/metal = 15)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/c4570SP
-	name = ".45 LC speed loader (NCR)"
-	result = /obj/item/ammo_box/c4570SP
 	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
@@ -266,9 +190,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a762
-	name = "7.62mm stripper clip (NCR)"
+	name = "7.62mm stripper clip"
 	result = /obj/item/ammo_box/a762
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -276,9 +200,9 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a762lp
-	name = "7.62mm lowpower double stacked stripper clip (NCR)"
+	name = "7.62mm lowpower double stacked stripper clip"
 	result = /obj/item/ammo_box/a762/doublestacked
-	reqs = list(/obj/item/stack/sheet/metal = 10)
+	reqs = list(/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -286,91 +210,145 @@
 	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/a308
-	name = ".308 stripper clip (NCR)"
+	name = ".308 stripper clip"
 	result = /obj/item/ammo_box/a308
-	reqs = list(/obj/item/stack/sheet/metal = 7)
+	reqs = list(/obj/item/stack/sheet/metal = 4)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/meteorslug
-	name = "Meteorslug Shell"
-	result = /obj/item/ammo_casing/shotgun/meteorslug
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/rcd_ammo = 1,
-				/obj/item/stock_parts/manipulator = 2)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
+/datum/crafting_recipe/c38
+	name = ".38 speed loader"
+	result = /obj/item/ammo_box/c38
+	reqs = list(/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/pulseslug
-	name = "Pulse Slug Shell"
-	result = /obj/item/ammo_casing/shotgun/pulseslug
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/capacitor/adv = 2,
-				/obj/item/stock_parts/micro_laser/ultra = 1)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
+/datum/crafting_recipe/m44tube
+	name = ".44 Magnum tube"
+	result = /obj/item/ammo_box/tube/m44
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/dragonsbreath
-	name = "Dragonsbreath Shell"
-	result = /obj/item/ammo_casing/shotgun/dragonsbreath
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1, /datum/reagent/phosphorus = 5)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
+/datum/crafting_recipe/a357tube
+	name = ".357 Magnum tube"
+	result = /obj/item/ammo_box/tube/a357
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/frag12
-	name = "FRAG-12 Shell"
-	result = /obj/item/ammo_casing/shotgun/frag12
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/datum/reagent/glycerol = 5,
-				/datum/reagent/toxin/acid = 5,
-				/datum/reagent/toxin/acid/fluacid = 5)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
+/datum/crafting_recipe/c45
+	name = ".45 ammo box"
+	result = /obj/item/ammo_box/c45
+	reqs = list(/obj/item/stack/sheet/metal = 8)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/ionslug
-	name = "Ion Scatter Shell"
-	result = /obj/item/ammo_casing/shotgun/ion
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/micro_laser/ultra = 1,
-				/obj/item/stock_parts/subspace/crystal = 1)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/m44/makeshift
+	name = "Makeshift .44 Magnum speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/improvisedslug
-	name = "Improvised Shotgun Shell"
-	result = /obj/item/ammo_casing/shotgun/improvised
-	reqs = list(/obj/item/grenade/chem_grenade = 1,
-				/obj/item/stack/sheet/metal = 1,
-				/obj/item/stack/cable_coil = 1,
-				/datum/reagent/fuel = 10)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/c10mm/makeshift
+	name = "Makeshift 10mm ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 12)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/laserslug
-	name = "Laser Slug Shell"
-	result = /obj/item/ammo_casing/shotgun/laserslug
-	reqs = list(/obj/item/ammo_casing/shotgun/techshell = 1,
-				/obj/item/stock_parts/capacitor/adv = 1,
-				/obj/item/stock_parts/micro_laser/high = 1)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
+/datum/crafting_recipe/lethalshot/makeshift
+	name = "Makeshift buckshot shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/slugshot/makeshift
+	name = "Makeshift slug shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/beanbag/makeshift
+	name = "Makeshift beanbag shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/rubbershot/makeshift
+	name = "Makeshift rubbershot shotgun box"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a556/makeshift
+	name = "Makeshift 5.56mm ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 14)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/c9mm/makeshift
+	name = "Makeshift 9mm ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 12)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a762/makeshift
+	name = "Makeshift 7.62mm stripper clip"
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a762lp/makeshift
+	name = "Makeshift 7.62mm lowpower double stacked stripper clip"
+	reqs = list(/obj/item/stack/sheet/metal = 7)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a308/makeshift
+	name = "Makeshift .308 stripper clip"
+	reqs = list(/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/c38/makeshift
+	name = "Makeshift .38 speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/m44tube/makeshift
+	name = "Makeshift .44 Magnum tube"
+	reqs = list(/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a357tube/makeshift
+	name = "Makeshift .357 Magnum tube"
+	result = /obj/item/ammo_box/tube/a357
+	reqs = list(/obj/item/stack/sheet/metal = 6)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/c45/makeshift
+	name = "Makeshift .45 ammo box"
+	reqs = list(/obj/item/stack/sheet/metal = 12)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
 /datum/crafting_recipe/ishotgun
 	name = "Improvised Shotgun"
@@ -404,29 +382,6 @@
 	time = 50
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/spooky_camera
-	name = "Camera Obscura"
-	result = /obj/item/camera/spooky
-	time = 15
-	reqs = list(/obj/item/camera = 1,
-				/datum/reagent/water/holywater = 10)
-	parts = list(/obj/item/camera = 1)
-	category = CAT_MISC
-
-/datum/crafting_recipe/lizardhat
-	name = "Lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/organ/tail/lizard = 1)
-	category = CAT_MISC
-
-/datum/crafting_recipe/lizardhat_alternate
-	name = "Lizard Cloche Hat"
-	result = /obj/item/clothing/head/lizard
-	time = 10
-	reqs = list(/obj/item/stack/sheet/animalhide/lizard = 1)
-	category = CAT_MISC
 
 /datum/crafting_recipe/kittyears
 	name = "Kitty Ears"
@@ -485,12 +440,6 @@
 	result = /obj/item/paper_bin/bundlenatural
 	category = CAT_MISC
 
-/datum/crafting_recipe/toysword
-	name = "Toy Sword"
-	reqs = list(/obj/item/light/bulb = 1, /obj/item/stack/cable_coil = 1, /obj/item/stack/sheet/plastic = 4)
-	result = /obj/item/toy/sword
-	category = CAT_MISC
-
 /datum/crafting_recipe/blackcarpet
 	name = "Black Carpet"
 	reqs = list(/obj/item/stack/tile/carpet = 50, /obj/item/toy/crayon/black = 1)
@@ -501,12 +450,6 @@
 	name = "Shower Curtains"
 	reqs = 	list(/obj/item/stack/sheet/cloth = 2, /obj/item/stack/sheet/plastic = 2, /obj/item/stack/rods = 1)
 	result = /obj/structure/curtain
-	category = CAT_MISC
-
-/datum/crafting_recipe/extendohand
-	name = "Extendo-Hand"
-	reqs = list(/obj/item/bodypart/r_arm/robot = 1, /obj/item/clothing/gloves/boxing = 1)
-	result = /obj/item/extendohand
 	category = CAT_MISC
 
 /datum/crafting_recipe/chemical_payload
@@ -578,34 +521,6 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
-/datum/crafting_recipe/goliathcloak
-	name = "Goliath Cloak"
-	result = /obj/item/clothing/suit/hooded/cloak/goliath
-	time = 50
-	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/goliath_hide = 2) //it takes 4 goliaths to make 1 cloak if the plates are skinned
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
-
-/datum/crafting_recipe/drakecloak
-	name = "Ash Drake Armour"
-	result = /obj/item/clothing/suit/hooded/cloak/drake
-	time = 60
-	reqs = list(/obj/item/stack/sheet/bone = 10,
-				/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/ashdrake = 5)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
-
-/datum/crafting_recipe/gold_horn
-	name = "Golden Bike Horn"
-	result = /obj/item/bikehorn/golden
-	time = 30
-	reqs = list(/obj/item/stack/sheet/mineral/gold = 5,
-				/obj/item/bikehorn)
-	category = CAT_MISC
-
 /datum/crafting_recipe/bonedagger
 	name = "Bone Dagger"
 	result = /obj/item/kitchen/knife/combat/bone
@@ -629,14 +544,6 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				 /obj/item/stack/sheet/sinew = 3)
-	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
-
-/datum/crafting_recipe/bonfire
-	name = "Bonfire"
-	time = 60
-	reqs = list(/obj/item/grown/log = 5)
-	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
@@ -689,6 +596,16 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
+	
+/datum/crafting_recipe/goliathcloak
+	name = "Goliath Cloak"
+	result = /obj/item/clothing/suit/hooded/cloak/goliath
+	time = 50
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/sinew = 2,
+				/obj/item/stack/sheet/animalhide/goliath_hide = 2) //it takes 4 goliaths to make 1 cloak if the plates are skinned
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/smallcarton
 	name = "Small Carton"
@@ -716,19 +633,6 @@
 	reqs = list(/obj/item/stack/sheet/metal = 15)
 	category = CAT_MISC
 
-/datum/crafting_recipe/mummy
-	name = "Mummification Bandages (Mask)"
-	result = /obj/item/clothing/mask/mummy
-	time = 10
-	tools = list(/obj/item/nullrod/egyptian)
-	reqs = list(/obj/item/stack/sheet/cloth = 2)
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/mummy/body
-	name = "Mummification Bandages (Body)"
-	result = /obj/item/clothing/under/mummy
-	reqs = list(/obj/item/stack/sheet/cloth = 5)
-
 /datum/crafting_recipe/guillotine
 	name = "Guillotine"
 	result = /obj/structure/guillotine
@@ -737,6 +641,15 @@
 		        /obj/item/stack/sheet/mineral/wood = 20,
 		        /obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
+	category = CAT_MISC
+	
+/datum/crafting_recipe/spooky_camera
+	name = "Camera Obscura"
+	result = /obj/item/camera/spooky
+	time = 15
+	reqs = list(/obj/item/camera = 1,
+				/datum/reagent/water/holywater = 10)
+	parts = list(/obj/item/camera = 1)
 	category = CAT_MISC
 
 /datum/crafting_recipe/jet

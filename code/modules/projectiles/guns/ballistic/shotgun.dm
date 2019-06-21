@@ -13,6 +13,7 @@
 	weapon_weight = WEAPON_HEAVY
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	randomspread = 0
+	fire_delay = 0
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -101,29 +102,9 @@
 	can_bayonet = TRUE
 	knife_x_offset = 27
 	knife_y_offset = 13
+	fire_delay = 5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-
-/obj/item/gun/ballistic/shotgun/boltaction/pump(mob/M)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
-	if(bolt_open)
-		pump_reload(M)
-	else
-		pump_unload(M)
-	bolt_open = !bolt_open
-	update_icon()	//I.E. fix the desc
-	return 1
-
-/obj/item/gun/ballistic/shotgun/boltaction/attackby(obj/item/A, mob/user, params)
-	if(!bolt_open)
-		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
-		return
-	. = ..()
-
-/obj/item/gun/ballistic/shotgun/boltaction/examine(mob/user)
-	..()
-	to_chat(user, "The bolt is [bolt_open ? "open" : "closed"].")
-
 
 /obj/item/gun/ballistic/shotgun/boltaction/enchanted
 	name = "enchanted bolt action rifle"
@@ -302,6 +283,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
 	sawn_desc = "In what is probably the most idiotic and crude modification of a gun you've ever seen, someone has taken this scoped hunting rifle and sawn off the bits that make it well-balanced and accurate."
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 3
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
