@@ -137,7 +137,7 @@ Medic
 	spawn_positions = 1
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
-	description = "You are in charge of providing medical support and organization to the NCR throughout the region. You answer directly to the Captain and organize NCR personnel for medical operations as needed."
+	description = "You are in charge of providing medical support to the NCR throughout the region. You are a non-combat role and should not be using your authority for anything outside of medical purposes. You answer to the Captain and should defer to the Lieutenant on military matters."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
 	exp_requirements = 1200
