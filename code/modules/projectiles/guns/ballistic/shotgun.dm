@@ -13,7 +13,7 @@
 	weapon_weight = WEAPON_HEAVY
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	randomspread = 0
-	fire_delay = 0
+	fire_delay = 2
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
