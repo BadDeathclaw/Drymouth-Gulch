@@ -34,7 +34,7 @@
 	icon_type_smooth = "wood"
 	hardness = 60
 	smooth = SMOOTH_OLD
-	//	disasemblable = 0
+	unbreakable = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
@@ -97,7 +97,6 @@
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/store, /turf/closed/wall)
-	unbreakable = 0
 
 /turf/closed/wall/f13/supermart
 	name = "supermart wall"
@@ -113,7 +112,6 @@
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall)
-	unbreakable = 0
 
 /turf/closed/wall/f13/tunnel
 	name = "utility tunnel wall"
@@ -127,7 +125,6 @@
 	girder_type = 0
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/tunnel, /turf/closed/wall)
-	unbreakable = 0
 
 /turf/closed/wall/f13/vault
 	name = "vault wall"
@@ -139,7 +136,6 @@
 	explosion_block = 5
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
-	unbreakable = 0
 
 /turf/closed/wall/r_wall/f13
 	name = "glitch"
