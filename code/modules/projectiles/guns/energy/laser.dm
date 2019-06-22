@@ -142,7 +142,7 @@
 	desc = "Designed specifically for military use, these were in the prototype stage at the beginning of the Great War. Multiple barrels allowed longer firing before overheating."
 	icon_state = "lasergatling"
 	burst_size = 8
-	fire_delay = 0
+	fire_delay = 2
 	spread = 12
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
@@ -153,6 +153,7 @@
 	desc = "A sturdy and advanced military grade pre-war service laser rifle"
 	icon_state = "laser"
 	item_state = "laser-rifle9"
+	fire_delay = 3
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	w_class = WEIGHT_CLASS_BULKY
@@ -163,7 +164,7 @@
 	icon_state = "AEP7"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	fire_delay = 0
+	fire_delay = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 
@@ -171,6 +172,7 @@
 	name = "tribeam laser rifle"
 	desc = "A modified AER9 equipped with a refraction kit that spreads its bolts. It is usually only given to high-ranking soldiers within the Brotherhood, due to it's level of technology, as well as its reputation of friendly fire."
 	item_state = "laser-rifle9"
+	fire_delay = 3
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	w_class = WEIGHT_CLASS_BULKY
@@ -179,6 +181,7 @@
 	name ="plasma rifle"
 	item_state = "plasma"
 	icon_state = "plasma"
+	fire_delay = 3
 	desc = "A top of line miniaturized plasma caster built by REPCONN in the wake of the Z43-521P failure. It is supperior to all previous rifles to enter service in the USCC."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -188,6 +191,7 @@
 	name = "multiplas Rifle"
 	item_state = "multiplas"
 	icon_state = "multiplas"
+	fire_delay = 3
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -219,10 +223,10 @@
 /obj/item/projectile/plasma
 	name = "plasma clot"
 	icon_state = "plasma_clot"
-	damage = 60
+	damage = 50
 
 /obj/item/projectile/plasma/pistol
-	damage = 50
+	damage = 45
 
 /obj/item/projectile/plasma/scatter
 	damage = 25

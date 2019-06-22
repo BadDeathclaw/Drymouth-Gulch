@@ -45,9 +45,10 @@
 	. = ..()
 	if(!.)
 		user.do_attack_animation(src)
-		if(W.force > hardness/3 && unbreakable)
+		if(W.force > hardness/3 && !unbreakable)
 			take_damage(W.force/10)
+			to_chat(user, text("<span class='warning'>You smash the wall with [W].</span>"))
 			playsound(src, 'sound/effects/bang.ogg', 50, 1)
 		else
-			to_chat(user, text("<span class='notice'>You smash the wall with [W].</span>"))
+			to_chat(user, text("<span class='notice'>You hit the wall with [W] to no effect.</span>"))
 			playsound(src, 'sound/weapons/Genhit.ogg', 25, 1)

@@ -4,3 +4,10 @@
 	..()
 	MAP_JOB_CHECK
 
+MAP_REMOVE_JOB(f13overseer)
+MAP_REMOVE_JOB(f13hos)
+MAP_REMOVE_JOB(f13doctor)
+MAP_REMOVE_JOB(f13vaultscientist)
+MAP_REMOVE_JOB(f13officer)
+MAP_REMOVE_JOB(f13vaultengineer)
+MAP_REMOVE_JOB(f13vaultDweller)

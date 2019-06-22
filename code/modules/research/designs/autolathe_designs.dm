@@ -700,7 +700,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/dart
 	category = list("hacked", "Security")
-*/
+
 
 /datum/design/incendiary_slug
 	name = "Incendiary Slug"
@@ -709,7 +709,7 @@
 	materials = list(MAT_METAL = 1000)
 	build_path = /obj/item/ammo_casing/shotgun/incendiary
 	category = list("hacked", "Security")
-/*
+*/
 /datum/design/riot_dart
 	name = "Foam Riot Dart"
 	id = "riot_dart"
@@ -726,14 +726,13 @@
 	build_path = /obj/item/ammo_box/foambox/riot
 	category = list("hacked", "Security")
 
-/datum/design/a357
+/*/datum/design/a357
 	name = "Speed Loader (.357)"
 	id = "a357"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/ammo_box/a357
-	category = list("initial", "Security")
-*/
+	category = list("initial", "Security")*/
 
 /datum/design/c10mm
 	name = "Ammo Box (10mm)"
@@ -807,22 +806,14 @@
 	build_path = /obj/item/ammo_box/a762/doublestacked
 	category = list("initial", "Security")
 
-/datum/design/c4570SP
-	name = ".45 LC speed loader (NCR)"
-	id = "c4570SP"
+/datum/design/c4570
+	name = "45-70 speed loader (NCR)"
+	id = "c4570"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 8000)
-	build_path = /obj/item/ammo_box/c4570SP
+	build_path = /obj/item/ammo_box/c4570
 	category = list("initial", "Security")
-
-/datum/design/c4570SPtube
-	name = "Speed loader tube (.45 LC)"
-	id = "45tube"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 7000)
-	build_path = /obj/item/ammo_box/tube/c4570SP
-	category = list("initial", "Security")
-
+	
 /datum/design/c4570tube
 	name = "Speed loader tube (.45-70)"
 	id = "4570tube"
@@ -863,13 +854,13 @@
 	build_path = /obj/item/ammo_box/a50MG/incendiary
 	category = list("initial", "Security")
 
-/datum/design/a50MGAP
+/*/datum/design/a50MGAP
 	name = "Anti-Materiel Armor-Piercing Ammo Rack (.50MG)"
 	id = "a50MGAP"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 16000)
 	build_path = /obj/item/ammo_box/a50MG/AP
-	category = list("initial", "Security")
+	category = list("initial", "Security")*/
 
 /datum/design/cleaver
 	name = "Butcher's Cleaver"
