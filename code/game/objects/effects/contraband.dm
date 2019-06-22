@@ -428,6 +428,26 @@
 	desc = "A pin-up of a woman with bright pink clothing and a small crown in a suggestive pose."
 	icon_state = "poster55"
 
+/obj/structure/sign/poster/contraband/pinup_funk
+	name = "Pin-up - Funk"
+	desc = "A pin-up of an attractive woman, with the word 'funk' written over her. On second thought, that might not be 'funk'..."
+	icon_state = "poster56"
+we
+/obj/structure/sign/poster/contraband/pinup_topless
+	name = "Pin-up - Topless Times"
+	desc = "A pin-up of a woman without a shirt, freed from the restraints of clothing."
+	icon_state = "poster57"
+
+/obj/structure/sign/poster/contraband/pinup_shower
+	name = "Pin-up - Take a Shower"
+	desc = "A pin-up of a woman peeking out from behind a curtain, it looks like she's inviting you in with her."
+	icon_state = "poster58"
+
+/obj/structure/sign/poster/contraband/pinup_vixen
+	name = "Pin-up - Space Vixen"
+	desc = "A pin-up of a woman in a space suit that's definately NOT spaceproof."
+	icon_state = "poster59"
+
 /obj/structure/sign/poster/official
 	poster_item_name = "motivational poster"
 	poster_item_desc = "An official Nanotrasen-issued poster to foster a compliant and obedient workforce. It comes with state-of-the-art adhesive backing, for easy pinning to any vertical surface."
@@ -659,7 +679,8 @@
 /obj/effect/landmark/poster_spawner/Initialize()
 	..()
 	var/obj/structure/sign/poster/P = pick(posters)
-	new P()
+	world << "[P]"
+	new P(loc)
 	qdel()
 
 /obj/effect/landmark/poster_spawner/ncr
@@ -667,3 +688,9 @@
 
 /obj/effect/landmark/poster_spawner/prewar
 	posters = list(/obj/structure/sign/poster/prewar/corporate_espionage, /obj/structure/sign/poster/prewar/protectron, /obj/structure/sign/poster/prewar/vault_tec)
+
+/obj/effect/landmark/poster_spawner/pinup
+	posters = list(/obj/structure/sign/poster/contraband/pinup_ride, /obj/structure/sign/poster/contraband/pinup_couch,
+		/obj/structure/sign/poster/contraband/pinup_bed, /obj/structure/sign/poster/contraband/pinup_pink,
+		/obj/structure/sign/poster/contraband/pinup_funk, /obj/structure/sign/poster/contraband/pinup_topless,
+		/obj/structure/sign/poster/contraband/pinup_shower, /obj/structure/sign/poster/contraband/pinup_vixen)

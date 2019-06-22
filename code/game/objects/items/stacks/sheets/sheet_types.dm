@@ -85,6 +85,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("iron door", /obj/structure/simple_door/metal/store, 10, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("lock", /obj/item/lock, 1), \
 	new/datum/stack_recipe("key", /obj/item/door_key, 1), \
+	new/datum/stack_recipe("key chain", /obj/item/storage/keys_set, 1), \
 	null, \
 	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE), \
 ))
