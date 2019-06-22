@@ -119,6 +119,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/a357
+	name = ".357 Magnum speed strip"
+	result = /obj/item/ammo_box/a357
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/c10mm
 	name = "10mm ammo box"
 	result = /obj/item/ammo_box/c10mm
@@ -261,6 +271,12 @@
 
 /datum/crafting_recipe/m44/makeshift
 	name = "Makeshift .44 Magnum speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a357/makeshift
+	name = "Makeshift .357 Magnum speed strip"
 	reqs = list(/obj/item/stack/sheet/metal = 4)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)

@@ -1,9 +1,9 @@
 /obj/item/ammo_box/a357
-	name = "speed loader (.357)"
+	name = "speed strip (.357)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "357"
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 7
+	max_ammo = 6
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
@@ -56,9 +56,9 @@
 /obj/item/ammo_box/tube/a357
 	name = "speed loader tube (.357)"
 	desc = "Designed to quickly reload repeaters."
-	icon_state = "357tube"
+	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 10
+	max_ammo = 7
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 7000)
 
@@ -67,16 +67,16 @@
 	desc = "Designed to quickly reload repeaters."
 	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/c4570
-	max_ammo = 8
+	max_ammo = 6
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 12000)
 
 /obj/item/ammo_box/tube/c4570SP
 	name = "speed loader tube (.45 LC)"
-	desc = "Designed to quickly reload repeaters."
-	icon_state = "357tube"
+	desc = "Designed to quickly reload repeaters or revolvers."
+	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/c4570SP
-	max_ammo = 10
+	max_ammo = 6
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 7000)
 
