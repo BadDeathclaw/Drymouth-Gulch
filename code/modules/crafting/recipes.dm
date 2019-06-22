@@ -246,11 +246,68 @@
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 
+/datum/crafting_recipe/c4570/makeshift
+	name = "Makeshift 45-70 speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 8)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/c4570tube/makeshift
+	name = "Makeshift 45-70 tube"
+	reqs = list(/obj/item/stack/sheet/metal = 8)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/50mg/makeshift
+	name = "Makeshift .50MG ammo rack"
+	reqs = list(/obj/item/stack/sheet/metal = 10)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 
 /datum/crafting_recipe/m44
 	name = ".44 Magnum speed loader"
 	result = /obj/item/ammo_box/m44
 	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a357
+	name = ".357 Magnum speed strip"
+	result = /obj/item/ammo_box/a357
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c4570
+	name = "45-70 speed loader"
+	result = /obj/item/ammo_box/c4570
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c4570tube
+	name = "45-70 tube"
+	result = /obj/item/ammo_box/tube/c4570
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/50mg
+	name = ".50MG ammo rack"
+	result = /obj/item/ammo_box/a50MG
+	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
