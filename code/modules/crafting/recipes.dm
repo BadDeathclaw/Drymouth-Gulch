@@ -4,6 +4,7 @@
 	var/reqs[] = list() //type paths of items consumed associated with how many are needed
 	var/result //type path of item resulting from this craft
 	var/tools[] = list() //type paths of items needed but not consumed
+	var/traits[] = list() //type paths of traits needed, hopefully
 	var/time = 30 //time in deciseconds
 	var/parts[] = list() //type paths of items that will be placed in the result
 	var/chem_catalysts[] = list() //like tools but for reagents
@@ -69,7 +70,6 @@
 	time = 60
 	category = CAT_ROBOT
 
-
 /datum/crafting_recipe/cleanbot
 	name = "Cleanbot"
 	result = /mob/living/simple_animal/bot/cleanbot
@@ -108,126 +108,6 @@
 				/obj/item/bikehorn/ = 1)
 	time = 40
 	category = CAT_ROBOT
-
-/datum/crafting_recipe/m44
-	name = ".44 Magnum speed loader"
-	result = /obj/item/ammo_box/m44
-	reqs = list(/obj/item/stack/sheet/metal = 3)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a357
-	name = ".357 Magnum speed strip"
-	result = /obj/item/ammo_box/a357
-	reqs = list(/obj/item/stack/sheet/metal = 3)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/c10mm
-	name = "10mm ammo box"
-	result = /obj/item/ammo_box/c10mm
-	reqs = list(/obj/item/stack/sheet/metal = 8)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/lethalshot
-	name = "buckshot shotgun box"
-	result = /obj/item/storage/box/lethalshot
-	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/slugshot
-	name = "slug shotgun box"
-	result = /obj/item/storage/box/slugshot
-	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/beanbag
-	name = "beanbag shotgun box"
-	result = /obj/item/storage/box/rubbershot/beanbag
-	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/rubbershot
-	name = "rubbershot shotgun box"
-	result = /obj/item/storage/box/rubbershot
-	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a556
-	name = "5.56mm ammo box"
-	result = /obj/item/ammo_box/a556
-	reqs = list(/obj/item/stack/sheet/metal = 10)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/c9mm
-	name = "9mm ammo box"
-	result = /obj/item/ammo_box/c9mm
-	reqs = list(/obj/item/stack/sheet/metal = 8)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a762
-	name = "7.62mm stripper clip"
-	result = /obj/item/ammo_box/a762
-	reqs = list(/obj/item/stack/sheet/metal = 3)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a762lp
-	name = "7.62mm lowpower double stacked stripper clip"
-	result = /obj/item/ammo_box/a762/doublestacked
-	reqs = list(/obj/item/stack/sheet/metal = 5)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a308
-	name = ".308 stripper clip"
-	result = /obj/item/ammo_box/a308
-	reqs = list(/obj/item/stack/sheet/metal = 4)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/c38
 	name = ".38 speed loader"
@@ -366,17 +246,116 @@
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/ishotgun
-	name = "Improvised Shotgun"
-	result = /obj/item/gun/ballistic/revolver/doublebarrel/improvised
-	reqs = list(/obj/item/weaponcrafting/receiver = 1,
-				/obj/item/pipe = 1,
-				/obj/item/weaponcrafting/stock = 1,
-				/obj/item/stack/packageWrap = 5)
-	tools = list(TOOL_SCREWDRIVER)
-	time = 100
+
+/datum/crafting_recipe/m44
+	name = ".44 Magnum speed loader"
+	result = /obj/item/ammo_box/m44
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
 	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c10mm
+	name = "10mm ammo box"
+	result = /obj/item/ammo_box/c10mm
+	reqs = list(/obj/item/stack/sheet/metal = 8)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/lethalshot
+	name = "buckshot shotgun box"
+	result = /obj/item/storage/box/lethalshot
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/slugshot
+	name = "slug shotgun box"
+	result = /obj/item/storage/box/slugshot
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/beanbag
+	name = "beanbag shotgun box"
+	result = /obj/item/storage/box/rubbershot/beanbag
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/rubbershot
+	name = "rubbershot shotgun box"
+	result = /obj/item/storage/box/rubbershot
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a556
+	name = "5.56mm ammo box"
+	result = /obj/item/ammo_box/a556
+	reqs = list(/obj/item/stack/sheet/metal = 10)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/c9mm
+	name = "9mm ammo box"
+	result = /obj/item/ammo_box/c9mm
+	reqs = list(/obj/item/stack/sheet/metal = 8)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a762
+	name = "7.62mm stripper clip"
+	result = /obj/item/ammo_box/a762
+	reqs = list(/obj/item/stack/sheet/metal = 3)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a762lp
+	name = "7.62mm lowpower double stacked stripper clip"
+	result = /obj/item/ammo_box/a762/doublestacked
+	reqs = list(/obj/item/stack/sheet/metal = 5)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/a308
+	name = ".308 stripper clip"
+	result = /obj/item/ammo_box/a308
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
 
 /datum/crafting_recipe/spear
 	name = "Spear"
@@ -718,7 +697,7 @@
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 				/obj/item/stack/sheet/leather = 1,
 				/obj/item/stack/cable_coil = 5,
-				/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola = 1,
+				/obj/item/reagent_containers/food/drinks/bottle/nukacola = 1,
  				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1)
 	tools = list(/obj/item/lighter, /obj/item/screwdriver, /obj/item/wirecutters)
 	time = 90

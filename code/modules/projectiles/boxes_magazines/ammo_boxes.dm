@@ -35,14 +35,14 @@
 	materials = list(MAT_METAL = 8000)
 
 
-/obj/item/ammo_box/c4570SP
+/*/obj/item/ammo_box/c4570SP
 	name = "speed loader (.45 LC)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "4570"
 	ammo_type = /obj/item/ammo_casing/c4570SP
 	max_ammo = 6
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 4000)
+	materials = list(MAT_METAL = 4000)*/
 
 /obj/item/ammo_box/tube/m44
 	name = "speed loader tube (.44)"
@@ -71,14 +71,14 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 12000)
 
-/obj/item/ammo_box/tube/c4570SP
+/*/obj/item/ammo_box/tube/c4570SP
 	name = "speed loader tube (.45 LC)"
 	desc = "Designed to quickly reload repeaters or revolvers."
 	icon_state = "44tube"
 	ammo_type = /obj/item/ammo_casing/c4570SP
 	max_ammo = 6
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 7000)
+	materials = list(MAT_METAL = 7000)*/
 
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
@@ -169,14 +169,14 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 20000)
 
-/obj/item/ammo_box/a50MG/AP
+/*/obj/item/ammo_box/a50MG/AP
 	name = "anti-materiel armor piercing ammo rack (.50MG)"
 	desc = "A .rack of .50 MG ammo, for when you really need (a very big) something dead."
 	icon_state = "50ap"
 	ammo_type = /obj/item/ammo_casing/a50MG/AP
 	max_ammo = 5
 	multiple_sprites = 1
-	materials = list(MAT_METAL = 18000)
+	materials = list(MAT_METAL = 18000)*/
 
 /obj/item/ammo_box/a50MG/explosive
 	name = "anti-materiel explosive ammo rack (.50MG)"
