@@ -258,8 +258,8 @@
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 
-/datum/crafting_recipe/50mg/makeshift
-	name = "Makeshift .50MG ammo rack"
+/datum/crafting_recipe/a50mg/makeshift
+	name = "Makeshift 50MG ammo rack"
 	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
@@ -304,8 +304,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/50mg
-	name = ".50MG ammo rack"
+/datum/crafting_recipe/a50mg
+	name = "50MG ammo rack"
 	result = /obj/item/ammo_box/a50MG
 	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
