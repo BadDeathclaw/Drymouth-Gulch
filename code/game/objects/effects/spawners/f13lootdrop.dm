@@ -755,8 +755,8 @@
 				)
 
 	var/loot8 = list(/obj/item/gun/ballistic/revolver/colt357,
-				/obj/item/ammo_box/tube/a357,
-				/obj/item/ammo_box/tube/a357
+				/obj/item/ammo_box/a357,
+				/obj/item/ammo_box/a357
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
@@ -949,7 +949,8 @@
 				/obj/item/storage/box/lethalshot,
 				/obj/item/storage/box/rubbershot,
 				/obj/item/storage/box/rubbershot/beanbag,
-				/obj/item/ammo_box/c38
+				/obj/item/ammo_box/c38,
+				/obj/item/ammo_box/magazine/m10mm_adv
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2
@@ -966,7 +967,8 @@
 				/obj/item/ammo_box/c9mm,
 				/obj/item/ammo_box/m44,
 				/obj/item/ammo_box/c45,
-				/obj/item/ammo_box/tube/a357
+				/obj/item/ammo_box/tube/a357,
+				/obj/item/ammo_box/a357
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2/Initialize(mapload) //on mapload, pick how many shit to spawn
