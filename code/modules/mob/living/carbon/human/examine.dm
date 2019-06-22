@@ -304,7 +304,6 @@
 			if(perpname)
 				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 				if(R)
-					msg += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]<br>"
 					msg += "<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a> "
 					msg += "<a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a><br>"
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))

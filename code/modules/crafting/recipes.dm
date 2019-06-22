@@ -108,7 +108,7 @@
 				/obj/item/bikehorn/ = 1)
 	time = 40
 	category = CAT_ROBOT
-	
+
 /datum/crafting_recipe/c38
 	name = ".38 speed loader"
 	result = /obj/item/ammo_box/c38
@@ -151,6 +151,12 @@
 
 /datum/crafting_recipe/m44/makeshift
 	name = "Makeshift .44 Magnum speed loader"
+	reqs = list(/obj/item/stack/sheet/metal = 4)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+
+/datum/crafting_recipe/a357/makeshift
+	name = "Makeshift .357 Magnum speed strip"
 	reqs = list(/obj/item/stack/sheet/metal = 4)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)

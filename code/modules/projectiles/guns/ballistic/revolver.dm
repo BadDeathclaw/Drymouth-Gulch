@@ -388,7 +388,7 @@
 	
 /obj/item/gun/ballistic/revolver/colt357
 	name = "\improper .357 Magnum revolver"
-	desc = "A relatively primitive .357 magnum revolver. Due to it's usage of a loading gate, it can only load one round a time."
+	desc = "A relatively primitive .357 magnum revolver."
 	item_state = "colt357"
 	icon_state = "colt357"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
