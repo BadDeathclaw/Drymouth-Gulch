@@ -146,8 +146,8 @@ Medical Doctor
 	department_head = list("Overseer")
 	department_flag = VAULT
 	faction = "Vault"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
 	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations."
 	description = "You answer directly to the Overseer, administering medical aid to your fellow vault dwellers, you also work around the clock to produce the vital medicines and compounds needed to keep your department running. "
@@ -184,8 +184,8 @@ Scientist
 	department_head = list("Overseer")
 	department_flag = VAULT
 	faction = "Vault"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
 	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations."
 	description = "You answer directly to the Overseer, conducting vital research for the denizens of the vault, you spend your days pouring over pre-war blueprints in the hopes of revitalizing the sciences of the old world. "
@@ -218,8 +218,8 @@ Security Officer
 	department_head = list("Chief of Security")
 	department_flag = VAULT
 	faction = "Vault"
-	total_positions = 2 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 2 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	total_positions = 4 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	spawn_positions = 4 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
 	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations."
 	description = "You answer directly to the Chief Of Security, acting as the first line of defense against civil unrest and outside intrusion, you enforce the laws created by the Overseer, while proactively seeking out potential threats to the safety of vault residents."
@@ -370,8 +370,8 @@ Station Engineer
 	department_head = list("Overseer")
 	department_flag = VAULT
 	faction = "Vault"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
 	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations."
 	description = "You answer directly to the Overseer, tasked with the maintenance of the vaults defenses and machinery, while also overseeing the smooth operation of its generators and electrical systems."
@@ -444,5 +444,5 @@ Station Engineer
 /datum/job/vault/New()
 	..()
 	if(SSmapping.config.map_name == "Pahrump")
-		total_positions = 22
-		spawn_positions = 22
+		total_positions = 23
+		spawn_positions = 23
