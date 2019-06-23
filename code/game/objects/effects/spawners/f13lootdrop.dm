@@ -887,24 +887,18 @@
 				)
 
 	var/loot9 = list(
-				/obj/item/gun/ballistic/automatic/m72,
-				/obj/item/ammo_box/magazine/m2mm,
-				/obj/item/ammo_box/magazine/m2mm
-				)
-
-	var/loot10 = list(
 				 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush,
 				 /obj/item/ammo_box/tube/c4570,
 				 /obj/item/ammo_box/tube/c4570
 				 )
 
-	var/loot11 = list(/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped,
+	var/loot10 = list(/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped,
 				 /obj/item/ammo_box/tube/c4570,
 				 /obj/item/ammo_box/tube/c4570
 				 )
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 //TIER 5 GUN
