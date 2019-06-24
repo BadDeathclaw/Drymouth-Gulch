@@ -65,7 +65,6 @@ Overseer
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/vest/warden
-	head = 			/obj/item/clothing/head/beret/sec/navywarden
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat
 	ears = 			/obj/item/radio/headset/headset_overseer
