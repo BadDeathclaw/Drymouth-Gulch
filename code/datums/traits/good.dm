@@ -133,7 +133,7 @@
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "You can conceal yourself in danger. Ctrl-shift-click a closed locker to jump into it, as long as you have access."
-	value = 2
+	value = 1
 	mob_trait = TRAIT_SKITTISH
 
 /datum/quirk/spiritual
