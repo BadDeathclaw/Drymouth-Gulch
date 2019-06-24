@@ -156,11 +156,10 @@
 //////FL13 weapons traits!
 ///DO NOT USE IMPLANTS.
 ///Grenades
-/*
 /datum/quirk/grenadesloot
 	name = "Party Favor"
 	desc = "Who knows what's inside."
-	value = 1
+	value = 3
 	var/obj/item/heirloom ///SPAGETH CODE DON'T LEAVE TO REMOVE THE NAME.
 	var/where
 
@@ -189,7 +188,6 @@
 	if(where == "in your backpack")
 		var/mob/living/carbon/human/H = quirk_holder
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H) //GOD BLESS SPAGETHY CODE!
-*/
 ///TO DO: TEST IT WITH BOXES LIKE MEDKITS/NORMALS BOXES.
 ///ADD MORE EQUIPMENT TRAITS REEEE
 ///IMPROVE MY ENGLISH
