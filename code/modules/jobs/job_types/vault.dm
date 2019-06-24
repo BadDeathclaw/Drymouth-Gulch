@@ -405,8 +405,8 @@ Station Engineer
 	flag = ASSISTANT
 	department_flag = VAULT
 	faction = "Vault"
-	total_positions = 7
-	spawn_positions = 7
+	total_positions = 3
+	spawn_positions = 3
 	forbids = "The vault forbids: Harming other Vault Dwellers. Dereliction of duty. Leaving the Vault unless there is no other choice."
 	enforces = "The vault expects: Obeying the Overseer. Adherence to VaultTec Corporate Regulations."
 	description = "You answer directly to the Overseer, being assigned to fulfill whatever menial tasks are required. You lack an assignment, but may be given one the Overseer if required or requested. You should otherwise busy yourself with assisting personnel with tasks around the Vault."
@@ -443,5 +443,5 @@ Station Engineer
 /datum/job/vault/New()
 	..()
 	if(SSmapping.config.map_name == "Pahrump")
-		total_positions = 22
-		spawn_positions = 22
+		total_positions = 18
+		spawn_positions = 18
