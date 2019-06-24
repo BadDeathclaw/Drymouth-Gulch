@@ -1000,7 +1000,6 @@
 				/obj/item/ammo_box/magazine/d12g,
 				/obj/item/ammo_box/magazine/m50,
 				/obj/item/ammo_box/magazine/r20,
-				/obj/item/ammo_box/magazine/m2mm,
 				/obj/item/ammo_box/a40mm,
 				/obj/item/ammo_box/c4570,
 				/obj/item/ammo_box/tube/c4570
@@ -1019,8 +1018,7 @@
 				/obj/item/ammo_box/magazine/mm195x129/hollow,
 				/obj/item/ammo_box/magazine/sniper_rounds,
 				/obj/item/ammo_box/magazine/sniper_rounds/penetrator,
-				/obj/item/ammo_box/magazine/d12g,
-				/obj/item/ammo_box/magazine/m2mm
+				/obj/item/ammo_box/magazine/d12g
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier5/Initialize(mapload) //on mapload, pick how many shit to spawn
@@ -1143,7 +1141,6 @@
 				/obj/item/reagent_containers/food/snacks/sosjerky,
 				/obj/item/reagent_containers/food/snacks/sausage,
 				/obj/item/reagent_containers/food/snacks/store/cheesewheel,
-				"" // a chance to spawn nothing
 				)
 
 
