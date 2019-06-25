@@ -124,96 +124,112 @@
 	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/a357/makeshift
 	name = "Makeshift .357 Magnum ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/c10mm/makeshift
 	name = "Makeshift 10mm ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/lethalshot/makeshift
 	name = "Makeshift buckshot shotgun box"
 	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/slugshot/makeshift
 	name = "Makeshift slug shotgun box"
 	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/beanbag/makeshift
 	name = "Makeshift beanbag shotgun box"
 	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/rubbershot/makeshift
 	name = "Makeshift rubbershot shotgun box"
 	reqs = list(/obj/item/stack/sheet/metal = 7)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/a556/makeshift
 	name = "Makeshift 5.56mm ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/c9mm/makeshift
 	name = "Makeshift 9mm ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 9)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/c38/makeshift
 	name = "Makeshift 38 ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 9)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/a762/makeshift
 	name = "Makeshift 7.62mm ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/a762lp/makeshift
 	name = "Makeshift 7.62mm lowpower ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 14)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/a308/makeshift
 	name = "Makeshift .308 ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 14)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/c45/makeshift
 	name = "Makeshift .45 ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/c4570/makeshift
 	name = "Makeshift 45-70 ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 14)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/a50mg/makeshift
 	name = "Makeshift 50MG ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 16)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
+	time = 30
 
 /datum/crafting_recipe/m44
 	name = ".44 Magnum ammo box"
