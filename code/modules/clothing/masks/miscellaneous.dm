@@ -34,6 +34,26 @@
 /obj/item/clothing/mask/surgical/attack_self(mob/user)
 	adjustmask(user)
 
+//NCR Facewrap
+
+/obj/item/clothing/mask/ncr_facewrap
+	name = "Facewrap"
+	desc = "A facewrap commonly employed by NCR troops in the Mojave."
+	icon_state = "ncr_facewrap"
+	item_state = "ncr_facewrap"
+	w_class = WEIGHT_CLASS_TINY
+	flags_inv = HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.01
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
+	adjustmask(user)
+
 /obj/item/clothing/mask/fakemoustache
 	name = "fake moustache"
 	desc = "Warning: moustache is fake."
