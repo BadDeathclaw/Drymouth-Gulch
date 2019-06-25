@@ -952,15 +952,14 @@
 	lootdoubles = TRUE
 
 	loot = list(
-				/obj/item/ammo_box/c45,
+				/obj/item/ammo_box/magazine/m45,
 				/obj/item/ammo_box/a762,
         		/obj/item/ammo_box/a308,
-				/obj/item/ammo_box/c10mm,
-				/obj/item/ammo_box/a556,
+				/obj/item/ammo_box/magazine/m10mm_adv,
+				/obj/item/ammo_box/magazine/r20,
 				/obj/item/ammo_box/c38,
-				/obj/item/ammo_box/c9mm,
+				/obj/item/ammo_box/magazine/m9mm,
 				/obj/item/ammo_box/m44,
-				/obj/item/ammo_box/c45,
 				/obj/item/ammo_box/tube/a357,
 				/obj/item/ammo_box/a357
 				)
