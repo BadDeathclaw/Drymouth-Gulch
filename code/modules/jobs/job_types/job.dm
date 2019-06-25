@@ -1,247 +1,136 @@
-/datum/job
-	//The name of the job
-	var/title = "NOPE"
 
-	//Job access. The use of minimal_access or access is determined by a config setting: config.jobs_have_minimal_access
-	var/list/minimal_access = list()		//Useful for servers which prefer to only have access given to the places a job absolutely needs (Larger server population)
-	var/list/access = list()				//Useful for servers which either have fewer players, so each person needs to fill more than one role, or servers which like to give more access, so players can't hide forever in their super secure departments (I'm looking at you, chemistry!)
+#define ENGSEC			(1<<0)
 
-	//Determines who can demote this position
-	var/department_head = list()
-
-	//Tells the given channels that the given mob is the new department head. See communications.dm for valid channels.
-	var/list/head_announce = null
-
-	//Bitflags for the job
-	var/flag = 0
-	var/department_flag = 0
-
-	//Players will be allowed to spawn in as jobs that are set to "Station"
-	var/faction = "None"
-
-	//How many players can be this job
-	var/total_positions = 0
-
-	//How many players can spawn in as this job
-	var/spawn_positions = 0
-
-	//How many players have this job
-	var/current_positions = 0
-
-	//Supervisors, who this person answers to directly
-	var/supervisors = ""
-
-	//Description, short text about the job
-	var/description = ""
-
-	//Against the faction rules, for imporant things that you SHOULDNT do.
-	var/forbids = ""
-
-	//For things that faction Enforces.
-	var/enforces = ""
-
-	//Sellection screen color
-	var/selection_color = "#ffffff"
+#define CAPTAIN			(1<<0)
+#define HOS				(1<<1)
+#define WARDEN			(1<<2)
+#define DETECTIVE		(1<<3)
+#define OFFICER			(1<<4)
+#define CHIEF			(1<<5)
+#define ENGINEER		(1<<6)
+#define ATMOSTECH		(1<<7)
+#define ROBOTICIST		(1<<8)
+#define AI_JF			(1<<9)
+#define CYBORG			(1<<10)
 
 
-	//If this is set to 1, a text is printed to the player when jobs are assigned, telling him that he should let admins know that he has to disconnect.
-	var/req_admin_notify
+#define MEDSCI			(1<<1)
 
-	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
-	var/minimal_player_age = 6 // Sets minimum default account age to six days to prevent angry people from account-spamming.
-
-	var/outfit = null
-
-	var/exp_requirements = 0
-
-	var/exp_type = ""
-	var/exp_type_department = ""
-
-	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
-	//can be overriden by antag_rep.txt config
-	var/antag_rep = 10
-
-	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
-
-//Only override this proc
-//H is usually a human unless an /equip override transformed it
-/datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
-	//do actions on H but send messages to M as the key may not have been transferred_yet
-
-/datum/job/proc/announce(mob/living/carbon/human/H)
-	if(head_announce)
-		announce_head(H, head_announce)
-
-/datum/job/proc/override_latejoin_spawn(mob/living/carbon/human/H)		//Return TRUE to force latejoining to not automatically place the person in latejoin shuttle/whatever.
-	return FALSE
-
-//Used for a special check of whether to allow a client to latejoin as this job.
-/datum/job/proc/special_check_latejoin(client/C)
-	return TRUE
-
-/datum/job/proc/GetAntagRep()
-	. = CONFIG_GET(keyed_number_list/antag_rep)[lowertext(title)]
-	if(. == null)
-		return antag_rep
-
-//Don't override this unless the job transforms into a non-human (Silicons do this for example)
-/datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE)
-	if(!H)
-		return FALSE
-
-	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
-		if(H.dna.species.id != "human")
-			H.set_species(/datum/species/human)
-			H.apply_pref_name("human", H.client)
-		purrbation_remove(H, silent=TRUE)
-	// F13 EDIT: GHOULS CANNOT BE LEGION
-	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
-		if(H.dna.species.id == "ghoul")
-			H.set_species(/datum/species/human)
-			H.apply_pref_name("human", H.client)
-
-	//Equip the rest of the gear
-	H.dna.species.before_equip_job(src, H, visualsOnly)
-
-	if(outfit)
-		H.equipOutfit(outfit, visualsOnly)
-
-	H.dna.species.after_equip_job(src, H, visualsOnly)
-
-	if(!visualsOnly && announce)
-		announce(H)
-
-	//TGCLAW Change: Adds faction according to the job datum and is sanity checked because of nightmares from before -ma44
-	if(faction)
-		if(islist(faction))
-			H.faction |= faction
-		else
-			H.faction += faction
-
-/datum/job/proc/get_access()
-	if(!config)	//Needed for robots.
-		return src.minimal_access.Copy()
-
-	. = list()
-
-	if(CONFIG_GET(flag/jobs_have_minimal_access))
-		. = src.minimal_access.Copy()
-	else
-		. = src.access.Copy()
-
-	if(CONFIG_GET(flag/everyone_has_maint_access)) //Config has global maint access set
-		. |= list(ACCESS_MAINT_TUNNELS)
-
-/datum/job/proc/announce_head(var/mob/living/carbon/human/H, var/channels) //tells the given channel that the given mob is the new department head. See communications.dm for valid channels.
-	if(H && GLOB.announcement_systems.len)
-		//timer because these should come after the captain announcement
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/addtimer, CALLBACK(pick(GLOB.announcement_systems), /obj/machinery/announcement_system/proc/announce, "NEWHEAD", H.real_name, H.job, channels), 1))
-
-//If the configuration option is set to require players to be logged as old enough to play certain jobs, then this proc checks that they are, otherwise it just returns 1
-/datum/job/proc/player_old_enough(client/C)
-	if(available_in_days(C) == 0)
-		return TRUE	//Available in 0 days = available right now = player is old enough to play.
-	return FALSE
+#define RD_JF			(1<<0)
+#define SCIENTIST		(1<<1)
+#define CHEMIST			(1<<2)
+#define CMO_JF			(1<<3)
+#define DOCTOR			(1<<4)
+#define GENETICIST		(1<<5)
+#define VIROLOGIST		(1<<6)
 
 
-/datum/job/proc/available_in_days(client/C)
-	if(!C)
-		return 0
-	if(!CONFIG_GET(flag/use_age_restriction_for_jobs))
-		return 0
-	if(!isnum(C.player_age))
-		return 0 //This is only a number if the db connection is established, otherwise it is text: "Requires database", meaning these restrictions cannot be enforced
-	if(!isnum(minimal_player_age))
-		return 0
+#define CIVILIAN		(1<<2)
 
-	return max(0, minimal_player_age - C.player_age)
+#define HOP				(1<<0)
+#define BARTENDER		(1<<1)
+#define BOTANIST		(1<<2)
+#define COOK			(1<<3)
+#define JANITOR			(1<<4)
+#define CURATOR			(1<<5)
+#define QUARTERMASTER	(1<<6)
+#define CARGOTECH		(1<<7)
+#define MINER			(1<<8)
+#define LAWYER			(1<<9)
+#define CHAPLAIN		(1<<10)
+#define CLOWN			(1<<11)
+#define MIME			(1<<12)
+#define ASSISTANT		(1<<13)
 
-/datum/job/proc/config_check()
-	return TRUE
+#define JOB_DISPLAY_ORDER_DEFAULT 0
 
-/datum/job/proc/map_check()
-	return TRUE
+//F13
+
+#define NCR				(1<<3)
+
+#define F13COLONEL		(1<<0)
+#define F13CAPTAIN		(1<<1)
+#define F13LIEUTENANT   (1<<2)
+#define F13MEDIC 	    (1<<3)
+#define F13SERGEANT		(1<<4)
+#define F13ENGINEER     (1<<5)
+#define F13CORPORAL		(1<<6)
+#define F13TROOPER		(1<<7)
+#define F13RECRUIT		(1<<8)
+#define F13HEAVYTROOP   (1<<9)
+#define F13VETRANGER	(1<<10)
+#define F13RANGER		(1<<11)
+#define F13RECRANGER	(1<<12)
+
+#define LEGION			(1<<4)
+
+#define F13LEGATE		(1<<0)
+#define F13CENTURION	(1<<1)
+#define F13VETDECAN		(1<<2)
+#define F13PRIMEDECAN   (1<<3)
+#define F13DECAN        (1<<4)
+#define F13VEXILLARIUS	(1<<5)
+#define F13VETLEGION	(1<<6)
+#define F13PRIMELEGION  (1<<7)
+#define F13LEGIONARY	(1<<8)
+#define F13EXPLORER		(1<<9)
+#define F13SCOUT		(1<<10)
+#define F13CAMPFOLLOWER	(1<<11)
+
+#define BOS				(1<<5)
+
+#define F13ELDER		(1<<0)
+#define F13PALADIN		(1<<1)
+#define F13HEADSCRIBE	(1<<2)
+#define F13KNIGHT		(1<<3)
+#define F13SCRIBE		(1<<4)
+#define F13INITIATEKNIGHT	(1<<5)
+#define F13INITIATESCRIBE	(1<<6)
+
+#define DEN				(1<<6)
+
+#define F13SHERIFF		(1<<0)
+#define F13DENDOC       (1<<1)
+#define F13SETTLER		(1<<2)
+#define F13FARMER		(1<<3)
+#define F13PROSPECTOR	(1<<4)
+#define F13DEPUTY		(1<<5)
+#define F13MAYOR		(1<<6)
 
 
-/datum/outfit/job
-	name = "Standard Gear"
+#define VAULT			(1<<7)
 
-	var/jobtype = null
+#define F13OVERSEER		(1<<0)
+#define F13HOS			(1<<1)
+#define F13DOCTOR		(1<<2)
+#define F13VAULTSCIENTIST	(1<<3)
+#define F13OFFICER		(1<<4)
+#define F13VAULTENGINEER	(1<<5)
+#define F13DWELLER		(1<<6)
+#define F13AI			(1<<7)
+#define F13CYBORG		(1<<8)
 
-	uniform = /obj/item/clothing/under/color/grey
-	id = /obj/item/card/id
-	ears = /obj/item/radio/headset
-	belt = /obj/item/pda
-	back = /obj/item/storage/backpack
-	shoes = /obj/item/clothing/shoes/sneakers/black
+#define WASTELAND		(1<<8)
 
-	var/backpack = /obj/item/storage/backpack
-	var/satchel  = /obj/item/storage/backpack/satchel
-	var/duffelbag = /obj/item/storage/backpack/duffelbag
-	var/box = /obj/item/storage/box/survival
+#define F13CULTLEADER	(1<<0)
+#define F13WASTELANDER	(1<<1)
+#define F13RAIDER		(1<<2)
+#define F13PUSHER		(1<<3)
+#define F13PREACHER		(1<<4)
+#define F13PUNRAIDER	(1<<5)
 
-	var/pda_slot = SLOT_BELT
+#define ENCLAVE			(1<<9)
 
-/datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	switch(H.backbag)
-		if(GBACKPACK)
-			back = /obj/item/storage/backpack //Grey backpack
-		if(GSATCHEL)
-			back = /obj/item/storage/backpack/satchel //Grey satchel
-		if(GDUFFELBAG)
-			back = /obj/item/storage/backpack/duffelbag //Grey Duffel bag
-		if(LSATCHEL)
-			back = /obj/item/storage/backpack/satchel/leather //Leather Satchel
-		if(DSATCHEL)
-			back = satchel //Department satchel
-		if(DDUFFELBAG)
-			back = duffelbag //Department duffel bag
-		else
-			back = backpack //Department backpack
+#define F13USCOMMANDER	(1<<0)
+#define F13USMEDIC		(1<<1)
+#define F13USPRIVATE	(1<<2)
+#define F13USSCIENTIST	(1<<3)
+#define F13USENGINEER	(1<<4)
+#define F13USCOLONIST	(1<<5)
 
-	if(box)
-		if(!backpack_contents)
-			backpack_contents = list()
-		backpack_contents.Insert(1, box) // Box always takes a first slot in backpack
-		backpack_contents[box] = 1
-
-/datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	if(H.gender == MALE)
-		H.has_penis = TRUE
-		H.has_vagina = FALSE
-		H.has_breasts = FALSE
-
-	if(H.gender == FEMALE)
-		H.has_vagina = TRUE
-		H.has_breasts = TRUE
-		H.has_penis = FALSE
-
-	var/datum/job/J = SSjob.GetJobType(jobtype)
-	if(!J)
-		J = SSjob.GetJob(H.job)
-
-	var/obj/item/card/id/C = H.wear_id
-	if(istype(C))
-		C.access = J.get_access()
-		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
-		C.registered_name = H.real_name
-		C.assignment = J.title
-		C.update_label()
-		H.sec_hud_set_ID()
-
-	var/obj/item/pda/PDA = H.get_item_by_slot(pda_slot)
-	if(istype(PDA))
-		PDA.owner = H.real_name
-		PDA.ownjob = J.title
-		PDA.update_label()
-
-/datum/outfit/job/get_chameleon_disguise_info()
-	var/list/types = ..()
-	types -= /obj/item/storage/backpack //otherwise this will override the actual backpacks
-	types += backpack
-	types += satchel
-	types += duffelbag
-	return types
+#define JOB_AVAILABLE 0
+#define JOB_UNAVAILABLE_GENERIC 1
+#define JOB_UNAVAILABLE_BANNED 2
+#define JOB_UNAVAILABLE_PLAYTIME 3
+#define JOB_UNAVAILABLE_ACCOUNTAGE 4
+#define JOB_UNAVAILABLE_SLOTFULL 5
