@@ -443,5 +443,5 @@ Station Engineer
 /datum/job/vault/New()
 	..()
 	if(SSmapping.config.map_name == "Pahrump")
-		total_positions = 22
-		spawn_positions = 22
+		total_positions = 0
+		spawn_positions = 0
