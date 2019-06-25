@@ -1140,6 +1140,7 @@
 				/obj/item/reagent_containers/food/snacks/sosjerky,
 				/obj/item/reagent_containers/food/snacks/sausage,
 				/obj/item/reagent_containers/food/snacks/store/cheesewheel,
+				"" // a chance to spawn nothing
 				)
 
 
