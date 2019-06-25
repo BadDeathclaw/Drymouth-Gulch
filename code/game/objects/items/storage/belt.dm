@@ -348,6 +348,17 @@
 	GET_COMPONENT(STR, /datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/storage/belt/military/NCR_Bandolier
+	name = "NCR Bandolier"
+	desc = "A standard issue magazine bandolier"
+	icon_state = "ncr_bandolier"
+	item_state = "ncr_bandolier"
+
+/obj/item/storage/belt/military/NCR_Bandolier/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_items = 6
+
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
 
