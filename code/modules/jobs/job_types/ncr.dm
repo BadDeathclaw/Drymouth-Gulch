@@ -82,7 +82,6 @@ Captain
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/binocs=1, \
 		/obj/item/storage/bag/money/small/ncr)
 	box = null
 
@@ -116,13 +115,11 @@ Lieutenant
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store 	= /obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/a762/doublestacked=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/ammo_box/magazine/m9mm=2, \
-		/obj/item/binocs=1, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
@@ -137,7 +134,7 @@ Medic
 	spawn_positions = 1
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
-	description = "You are in charge of providing medical support to the NCR throughout the region. You are a non-combat role and should not be using your authority for anything outside of medical purposes. You answer to the Captain and should defer to Sergeants or higher on military matters."
+	description = "You are in charge of providing medical support and organization to the NCR throughout the region. You answer directly to the Captain and organize NCR personnel for medical operations as needed."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
 	exp_requirements = 1200
@@ -156,7 +153,7 @@ Medic
 	suit_store =    /obj/item/healthanalyzer
 	belt =          /obj/item/storage/belt/medical
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm=2, \
+		/obj/item/ammo_box/magazine/m9mm=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/storage/pill_bottle/mining, \
@@ -199,7 +196,6 @@ Medic
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 	box = null
 
@@ -235,7 +231,7 @@ Engineer
 	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm=2, \
+		/obj/item/ammo_box/magazine/m9mm=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -245,6 +241,43 @@ Engineer
 		/obj/item/storage/box/emptysandbags,  \
 		)
 	box = null
+
+/*
+Corporal
+*/
+/datum/job/ncr/f13corporal
+	title = "NCR Corporal"
+	flag = F13CORPORAL
+	faction = "NCR"
+	total_positions = 0
+	spawn_positions = 0
+	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
+	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
+	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
+	supervisors = "Sergeants and above"
+	selection_color = "#fff5cc"
+	exp_requirements = 180
+
+	outfit = /datum/outfit/job/ncr/f13corporal
+
+/datum/outfit/job/ncr/f13corporal
+	name = "NCR Corporal"
+	jobtype = /datum/job/ncr/f13corporal
+	id = 			/obj/item/card/id/dogtag/ncrtrooper
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/TPR
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
+	head = 			/obj/item/clothing/head/f13/ncr
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/r20=3, \
+		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/storage/bag/money/small/ncrenlisted)
+	box = null
+
 
 /*
 Trooper
@@ -275,7 +308,7 @@ Trooper
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/ammo_box/magazine/r20=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -310,7 +343,7 @@ Recruit
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
-		/obj/item/ammo_box/a762=2, \
+		/obj/item/ammo_box/a762=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -342,7 +375,7 @@ Heavy Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/t45b
-	head = 			/obj/item/clothing/head/helmet/power_armor/t45b
+	head = 			/obj/item/clothing/head/helmet/f13/brokenpa/t45b
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	shoes =         /obj/item/clothing/shoes/combat/swat
 	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
@@ -430,9 +463,9 @@ Ranger
 	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/m44=3, \
+		/obj/item/ammo_box/a762/doublestacked = 3, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -472,9 +505,9 @@ Recon Ranger
 	head = 			/obj/item/clothing/head/f13/ranger
 	shoes = 		/obj/item/clothing/shoes/laced
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
+	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/a357=3, \
+		/obj/item/ammo_box/a308 = 4, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
