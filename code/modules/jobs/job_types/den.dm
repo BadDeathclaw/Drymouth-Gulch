@@ -11,6 +11,8 @@ Mayor
 	spawn_positions = 1
 	supervisors = "the people of the town"
 	selection_color = "#dcba97"
+	exp_requirements = 720
+	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13mayor
 
@@ -44,7 +46,7 @@ Sheriff
 	spawn_positions = 1
 	supervisors = "the mayor"
 	selection_color = "#d7b088"
-	exp_requirements = 480
+	exp_requirements = 720
 	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13sheriff
@@ -67,7 +69,8 @@ Sheriff
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(
 		/obj/item/storage/box/deputy_badges=1, \
-		/obj/item/ammo_box/tube/a357=2)
+		/obj/item/ammo_box/tube/a357=2, \
+		/obj/item/ammo_box/m44=2)
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/m29
 
@@ -209,6 +212,8 @@ Deputy
 	spawn_positions = 1
 	supervisors = "the mayor, the sheriff"
 	selection_color = "#dcba97"
+	exp_requirements = 360
+	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13deputy
 
