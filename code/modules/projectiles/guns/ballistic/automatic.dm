@@ -812,8 +812,8 @@
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "cbbolt"
-	damage = 40
-	armour_penetration = 20
+	damage = 30
+	armour_penetration = 30
 
 /obj/item/projectile/bullet/c38
 	damage = 25
