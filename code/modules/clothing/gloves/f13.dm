@@ -38,7 +38,7 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
-/obj/item/clothing/gloves/f13/ncr_gloves
+/obj/item/clothing/gloves/f13/ncr
 	name = "Infantry Gloves"
 	desc = "Large leather gloves commonly worn by NCR Enlistedmen."
 	icon_state = "ncr_gloves"
