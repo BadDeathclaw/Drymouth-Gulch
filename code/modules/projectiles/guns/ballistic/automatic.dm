@@ -600,7 +600,7 @@
 //Fallout 13
 //Magazines
 /obj/item/ammo_box/magazine/r20
-	name = "5.56 Magazine (5.56mm)"
+	name = ".556 Magazine (5.56mm)"
 	icon_state = "r20"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
