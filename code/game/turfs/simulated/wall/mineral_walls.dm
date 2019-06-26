@@ -122,7 +122,7 @@
 		PlasmaBurn(500)
 	..()
 
-
+/*
 /turf/closed/wall/mineral/wood
 	name = "wooden wall"
 	desc = "A wall with wooden plating. Stiff."
@@ -142,7 +142,7 @@
 			dismantle_wall(FALSE,FALSE)
 			return
 	return ..()
-
+*/
 /*
 /turf/closed/wall/mineral/wood/nonmetal
 	desc = "A solidly wooden wall. It's a bit weaker than a wall made with metal."
@@ -305,3 +305,49 @@
 /turf/closed/wall/mineral/plastitanium/copyTurf(turf/T)
 	. = ..()
 	T.transform = transform
+
+
+/turf/closed/wall/mineral/wood
+	name = "wooden wall"
+	desc = "A wall made by a wasteland dweller."
+	icon = 'icons/fallout/turfs/walls/wood_crafted.dmi'
+	icon_state = "wood"
+	sheet_type = /obj/item/stack/sheet/mineral/wood
+	hardness = 70
+	explosion_block = 0
+	smooth = SMOOTH_FALSE
+	//canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood)
+
+/turf/closed/wall/mineral/wood/New()
+	..()
+	for(var/turf/closed/wall/mineral/wood/W in range(src,1))
+		W.relativewall()
+	..()
+
+/turf/closed/wall/mineral/wood/Del()
+	for(var/turf/closed/wall/mineral/wood/W in range(src,1))
+		W.relativewall()
+	..()
+
+//Bringing back an old version of wall smoothing code because this has a bit of a special icon.
+/turf/closed/wall/mineral/wood/proc/relativewall()
+	var/junction = 0
+
+	for(var/cdir in GLOB.cardinals)
+		var/turf/T = get_step(src,cdir)
+		if(istype(T, /turf/closed/wall/mineral/wood))
+			junction |= cdir
+			continue
+		for(var/atom/A in T)
+			if(istype(A, /obj/structure/window/fulltile))
+				junction |= cdir
+				break
+
+
+	switch(junction)
+		if(3)
+			icon_state = "wood1"
+		if(12)
+			icon_state = "wood2"
+		else
+			icon_state = "wood"

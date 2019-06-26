@@ -878,7 +878,7 @@
 /obj/item/twohanded/sledgehammer
 	name = "sledgehammer"
 	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
-	icon = 'icons/obj/items_and_weapons.dmi'
+	icon = 'icons/obj/weapons.dmi'
 	icon_state = "sledgehammer0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
@@ -891,6 +891,16 @@
 
 /obj/item/twohanded/sledgehammer/update_icon()
 	icon_state = "sledgehammer[wielded]"
+
+/obj/item/twohanded/sledgehammer/super
+	name = "super sledge"
+	desc = "A high-tech sledgehammer manufactured of high-strength, ultra-light, ultra-dense materials and also includes a kinetic energy storage device to increase knockback"
+	icon_state = "supersledge0"
+	force_unwielded = 24
+	force_wielded = 72
+
+/obj/item/twohanded/sledgehammer/update_icon()
+	icon_state = "supersledge[wielded]"
 
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
 	name = "bumper sword"
