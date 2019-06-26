@@ -247,6 +247,44 @@ Engineer
 	box = null
 
 /*
+Corporal
+*/
+/datum/job/ncr/f13corporal
+	title = "NCR Corporal"
+	flag = F13CORPORAL
+	faction = "NCR"
+	total_positions = 0
+	spawn_positions = 0
+	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
+	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
+	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
+	supervisors = "Sergeants and above"
+	selection_color = "#fff5cc"
+	exp_requirements = 180
+
+	outfit = /datum/outfit/job/ncr/f13corporal
+
+/datum/outfit/job/ncr/f13corporal
+	name = "NCR Corporal"
+	jobtype = /datum/job/ncr/f13corporal
+	id = 			/obj/item/card/id/dogtag/ncrtrooper
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/TPR
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
+	head = 			/obj/item/clothing/head/f13/ncr
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/r20=3, \
+		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/storage/bag/money/small/ncrenlisted)
+	box = null
+
+
+
+/*
 Trooper
 */
 /datum/job/ncr/f13trooper
@@ -342,7 +380,7 @@ Heavy Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/t45b
-	head = 			/obj/item/clothing/head/helmet/f13/brokenpa/t45b
+	head = 			/obj/item/clothing/head/helmet/power_armor/t45b
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	shoes =         /obj/item/clothing/shoes/combat/swat
 	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
