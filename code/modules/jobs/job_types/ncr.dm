@@ -394,7 +394,7 @@ Heavy Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/t45b
-	belt =			/obj/item/storage/belt/military/assault/ncr
+	belt =			/obj/item/storage/belt/military/assault
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45b
 	gloves =        /obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
