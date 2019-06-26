@@ -325,15 +325,15 @@
 	icon_state = "explorer2"
 	item_state = "explorer2"
 
-/obj/item/storage/belt/military/legion/
+/obj/item/storage/belt/military/assault/legion
 	name = "legionnaire marching belt"
 	desc = "A belt capable of holding the necessities of a legionnaire."
 	icon_state = "legion_belt"
 	item_state = "legion_belt"
 
-/obj/item/storage/belt/military/ncr
+/obj/item/storage/belt/military/assault/ncr
 	name = "NCR duty belt"
-	desc = "A standard issue robust duty belt for all NCR troopers."
+	desc = "A standard issue robust duty belt for the NCR."
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 
@@ -350,14 +350,14 @@
 
 /obj/item/storage/belt/military/NCR_Bandolier
 	name = "NCR Bandolier"
-	desc = "A standard issue magazine bandolier"
+	desc = "A standard issue NCR bandolier."
 	icon_state = "ncr_bandolier"
 	item_state = "ncr_bandolier"
 
 /obj/item/storage/belt/military/NCR_Bandolier/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_items = 6
+	STR.max_items = 7
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -437,7 +437,7 @@
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_items = 6
+	STR.max_items = 7
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"

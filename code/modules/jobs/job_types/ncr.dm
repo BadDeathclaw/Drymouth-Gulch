@@ -10,8 +10,8 @@
 	jobtype = /datum/job/ncr/
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_ncr
-	belt = 			/obj/item/storage/belt/military/assault
-	shoes = 		/obj/item/clothing/shoes/jackboots
+	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
+	gloves =        /obj/item/clothing/gloves/f13/ncr
 
 /*
 Colonel
@@ -36,7 +36,7 @@ Colonel
 	accessory 	= /obj/item/clothing/accessory/ncr
 	suit 		= /obj/item/clothing/suit/armor/f13/power_armor/t51b/sierra
 	head 		= /obj/item/clothing/head/beret/ncr
-	gloves 		= /obj/item/clothing/gloves/combat
+	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store  = /obj/item/gun/ballistic/automatic/marksman
 	backpack_contents = list(
@@ -73,9 +73,9 @@ Captain
 	id 			= /obj/item/card/id/dogtag/ncrcaptain
 	uniform		= /obj/item/clothing/under/f13/ncr/officer
 	accessory 	= /obj/item/clothing/accessory/ncr/CPT
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/captain
 	head 		= /obj/item/clothing/head/beret/ncr
-	gloves 		= /obj/item/clothing/gloves/combat
+	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m50=3, \
@@ -83,7 +83,8 @@ Captain
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/binocs=1, \
-		/obj/item/storage/bag/money/small/ncr)
+		/obj/item/storage/bag/money/small/ncr, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 /*
@@ -110,9 +111,9 @@ Lieutenant
 	id			= /obj/item/card/id/dogtag/ncrlieutenant
 	uniform		= /obj/item/clothing/under/f13/ncr/officer
 	accessory	= /obj/item/clothing/accessory/ncr/LT
-	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	suit 		= /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	head 		= /obj/item/clothing/head/beret/ncr
-	gloves 		= /obj/item/clothing/gloves/combat
+	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store 	= /obj/item/gun/ballistic/shotgun/automatic/hunting
 	backpack_contents = list(
@@ -123,7 +124,8 @@ Lieutenant
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/binocs=1, \
-		/obj/item/storage/bag/money/small/ncrofficers)
+		/obj/item/storage/bag/money/small/ncrofficers, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 	/*
@@ -150,9 +152,10 @@ Medic
 	id		= /obj/item/card/id/dogtag/ncrlieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =     /obj/item/clothing/accessory/ncr/LT
-	suit = 			/obj/item/clothing/suit/toggle/labcoat/cmo
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
 	head = 			/obj/item/clothing/head/beret/ncr
 	glasses = 		/obj/item/clothing/glasses/hud/health
+	gloves = null
 	suit_store =    /obj/item/healthanalyzer
 	belt =          /obj/item/storage/belt/medical
 	backpack_contents = list(
@@ -190,9 +193,10 @@ Medic
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	belt =          /obj/item/storage/belt/military/assault/ncr
 	suit_store = 	/obj/item/gun/ballistic/shotgun
+	head =          /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -200,9 +204,9 @@ Medic
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/ammo_box/magazine/m9mm=2, \
-		/obj/item/storage/bag/money/small/ncrofficers)
+		/obj/item/storage/bag/money/small/ncrofficers, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
-
 
 
 /*
@@ -247,6 +251,48 @@ Engineer
 	box = null
 
 /*
+Corporal
+*/
+/datum/job/ncr/f13corporal
+	title = "NCR Corporal"
+	flag = F13CORPORAL
+	faction = "NCR"
+	total_positions = 4
+	spawn_positions = 4
+	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
+	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
+	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
+	supervisors = "Sergeants and above"
+	selection_color = "#fff5cc"
+	exp_requirements = 480
+
+	outfit = /datum/outfit/job/ncr/f13corporal
+
+/datum/outfit/job/ncr/f13corporal
+	name = "NCR Corporal"
+	jobtype = /datum/job/ncr/f13corporal
+	id = 			/obj/item/card/id/dogtag/ncrtrooper
+	uniform =  		/obj/item/clothing/under/f13/ncr
+	accessory =     /obj/item/clothing/accessory/ncr/CPL
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	head = 			/obj/item/clothing/head/f13/ncr/goggles
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	belt =          /obj/item/storage/belt/military/NCR_Bandolier
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/stack/medical/gauze=1, \
+		/obj/item/storage/bag/money/small/ncrenlisted, \
+		/obj/item/clothing/mask/ncr_facewrap)
+	box = null
+
+
+
+
+
+/*
 Trooper
 */
 /datum/job/ncr/f13trooper
@@ -257,8 +303,8 @@ Trooper
 	spawn_positions = 8
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
-	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
-	supervisors = "Sergeants and above"
+	description =  "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
+	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
 	exp_requirements = 180
 
@@ -270,8 +316,10 @@ Trooper
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/TPR
+	ears = null
+	head = 			/obj/item/clothing/head/f13/ncr/goggles
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
-	head = 			/obj/item/clothing/head/f13/ncr
+	belt =          /obj/item/storage/belt/military/NCR_Bandolier
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
@@ -279,7 +327,8 @@ Trooper
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/storage/bag/money/small/ncrenlisted)
+		/obj/item/storage/bag/money/small/ncrenlisted, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 /*
@@ -293,8 +342,8 @@ Recruit
 	spawn_positions = 10
 	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
-	description = "You answer to your Sergeant and other Troopers,  following the chain of command, to your commanding officer, the Captain."
-	supervisors = "Sergeants and above"
+	description = "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
+	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
 
 	outfit = /datum/outfit/job/ncr/f13recruit
@@ -305,10 +354,13 @@ Recruit
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/REC
+	ears = null
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
+	gloves = null
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
+	belt =          /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -342,7 +394,9 @@ Heavy Trooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/t45b
+	belt =			/obj/item/storage/belt/military/assault
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45b
+	gloves =        /obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	shoes =         /obj/item/clothing/shoes/combat/swat
 	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
@@ -383,7 +437,7 @@ Veteran Ranger
 	id = 			/obj/item/card/id/dogtag/ncrranger
 	uniform =  		/obj/item/clothing/under/f13/vetranger
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
-	belt =			/obj/item/storage/belt/military/ncr
+	belt =			/obj/item/storage/belt/military/assault/ncr
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/laced
@@ -425,7 +479,7 @@ Ranger
 	id = 			/obj/item/card/id/dogtag/ncrranger
 	uniform =  		/obj/item/clothing/under/f13/patrolranger
 	suit = 			/obj/item/clothing/suit/armor/f13/combat/ncr
-	belt =			/obj/item/storage/belt/military/ncr
+	belt =			/obj/item/storage/belt/military/assault/ncr
 	head = 			/obj/item/clothing/head/f13/ranger
 	gloves =		/obj/item/clothing/gloves/patrol
 	shoes =			/obj/item/clothing/shoes/laced
@@ -453,7 +507,7 @@ Recon Ranger
 	description = "You answer directly to the Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Recon Ranger, you perform reconnaissance, seize or destroy assets and capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
-	exp_requirements = 420
+	exp_requirements = 480
 
 	outfit = /datum/outfit/job/ncr/f13recranger
 
@@ -471,6 +525,7 @@ Recon Ranger
 	belt =			/obj/item/storage/belt/military/reconbandolier
 	head = 			/obj/item/clothing/head/f13/ranger
 	shoes = 		/obj/item/clothing/shoes/laced
+	gloves = null
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
 	backpack_contents = list(
