@@ -572,6 +572,53 @@
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 60
 
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_infantry_vest
+	name = "NCR Infantry Vest"
+	desc = "A standard issue NCR Infantry vest."
+	icon_state = "ncr_infantry_vest"
+	item_state = "ncr_infantry_vest"
+	strip_delay = 60
+	
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_mantle_vest
+	name = "NCR Mantle Vest"
+	desc = "A standard issue NCR Infantry vest with a mantle on the shoulder."
+	icon_state = "ncr_standard_mantle"
+	item_state = "ncr_standard_mantle"
+	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_reinforced_vest
+	name = "NCR Reinforced Vest"
+	desc = "A standard issue NCR Infantry vest reinforced with a groinpad."
+	icon_state = "ncr_reinforced_vest"
+	item_state = "ncr_reinforced_vest"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	strip_delay = 60
+	
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_reinforced_mantle_vest
+	name = "NCR Reinforced Vest"
+	desc = "A standard issue NCR Infantry vest reinforced with a groinpad and a mantle."
+	icon_state = "ncr_reinforced_mantle"
+	item_state = "ncr_reinforced_mantle"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_labcoat
+	name = "Medical Officer's Labcoat"
+	desc = "A labcoat typically issued to NCR Medical Officers."
+	icon_state = "ncr_labcoat"
+	item_state = "ncr_labcoat"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	strip_delay = 60
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/scalpel,/obj/item/surgical_drapes,/obj/item/cautery,/obj/item/hemostat,/obj/item/retractor,/obj/item/storage/pill_bottle/dice,/obj/item/dice)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/ncr_captain_armmour
+	name = "NCR Captain's Armour"
+	desc = "A heavily reinforced set of NCR infantry armour, with a large mantle attached to it."
+	icon_state = "ncr_captain_armour"
+	item_state = "ncr_captain_armour"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	strip_delay = 60
+
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	name = "NCR mantle vest"
 	desc = "An NCR protective vest with a hide mantle over one shoulder. Commonly issued to NCOs and COs as well."
