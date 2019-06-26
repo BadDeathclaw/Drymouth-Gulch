@@ -83,7 +83,8 @@ Captain
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/binocs=1, \
-		/obj/item/storage/bag/money/small/ncr)
+		/obj/item/storage/bag/money/small/ncr, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 /*
@@ -123,7 +124,8 @@ Lieutenant
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/binocs=1, \
-		/obj/item/storage/bag/money/small/ncrofficers)
+		/obj/item/storage/bag/money/small/ncrofficers, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 	/*
@@ -202,7 +204,8 @@ Medic
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/ammo_box/magazine/m9mm=2, \
-		/obj/item/storage/bag/money/small/ncrofficers)
+		/obj/item/storage/bag/money/small/ncrofficers, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 
@@ -281,7 +284,8 @@ Corporal
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/storage/bag/money/small/ncrenlisted)
+		/obj/item/storage/bag/money/small/ncrenlisted, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 
@@ -323,7 +327,8 @@ Trooper
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/storage/bag/money/small/ncrenlisted)
+		/obj/item/storage/bag/money/small/ncrenlisted, \
+		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
 /*

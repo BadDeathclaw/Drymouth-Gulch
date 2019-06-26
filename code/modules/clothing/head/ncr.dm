@@ -15,14 +15,13 @@
 	alt_toggle_message = "You push the goggles up onto the "
 	can_toggle = 1
 	flags_inv = HIDEEARS
-	strip_delay = 50
 	actions_types = list(/datum/action/item_action/toggle)
 	toggle_cooldown = 0
 	flags_cover = HEADCOVERSEYES
 	visor_flags_cover = HEADCOVERSEYES
 	dog_fashion = null
 
-/obj/item/clothing/head/helmet/attack_self(mob/user)
+/obj/item/clothing/head/f13/ncr/goggles/attack_self(mob/user)
 	if(can_toggle && !user.incapacitated())
 		if(world.time > cooldown + toggle_cooldown)
 			cooldown = world.time
