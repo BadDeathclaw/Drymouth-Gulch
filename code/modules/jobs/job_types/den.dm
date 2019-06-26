@@ -223,7 +223,7 @@ Deputy
 	jobtype = /datum/job/den/f13deputy
 
 	ears = 			/obj/item/radio/headset/headset_den
-	id = null
+	id =            /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler

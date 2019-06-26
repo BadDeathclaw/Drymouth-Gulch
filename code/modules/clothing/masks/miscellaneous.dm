@@ -44,8 +44,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
-	visor_flags_inv = HIDEFACE
-	visor_flags_cover = MASKCOVERSMOUTH
 	gas_transfer_coefficient = 0.9
 	permeability_coefficient = 0.01
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
