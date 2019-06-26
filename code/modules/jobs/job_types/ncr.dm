@@ -39,6 +39,8 @@ Colonel
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store  = /obj/item/gun/ballistic/automatic/marksman
+	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
+	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
 		/obj/item/ammo_box/magazine/r20=2, \
@@ -77,6 +79,8 @@ Captain
 	head 		= /obj/item/clothing/head/beret/ncr
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
+	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
+	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m50=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -116,6 +120,8 @@ Lieutenant
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
 	suit_store 	= /obj/item/gun/ballistic/shotgun/automatic/hunting
+	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
+	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/a762/doublestacked=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -158,6 +164,7 @@ Medic
 	gloves = null
 	suit_store =    /obj/item/healthanalyzer
 	belt =          /obj/item/storage/belt/medical
+	shoes       =   /obj/item/clothing/shoes/f13/military/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -197,6 +204,8 @@ Medic
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	suit_store = 	/obj/item/gun/ballistic/shotgun
 	head =          /obj/item/clothing/head/f13/ncr
+	shoes       =   /obj/item/clothing/shoes/f13/military/ncr_officer
+	gloves      =   /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot, \
 		/obj/item/kitchen/knife/combat/survival=1, \
@@ -238,6 +247,7 @@ Engineer
 	glasses = 		/obj/item/clothing/glasses/welding
 	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
+	shoes       =   /obj/item/clothing/shoes/f13/military/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
@@ -360,7 +370,7 @@ Recruit
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
-	belt =          /obj/item/storage/belt/military/NCR_Bandolier
+	belt =          /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
 		/obj/item/ammo_box/a762=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
