@@ -80,11 +80,18 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 7000)*/
 
+/obj/item/ammo_box/box38
+	name = "ammo box (.38)"
+	icon_state = "38box"
+	ammo_type = /obj/item/ammo_casing/c38
+	max_ammo = 20
+	materials = list(MAT_METAL = 15000)
+
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
 	icon_state = "9mmbox"
 	ammo_type = /obj/item/ammo_casing/c9mm
-	max_ammo = 30
+	max_ammo = 20
 	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/c10mm
@@ -98,7 +105,7 @@
 	name = "ammo box (5.56)"
 	icon_state = "556box"
 	ammo_type = /obj/item/ammo_casing/a556
-	max_ammo = 40
+	max_ammo = 30
 	materials = list(MAT_METAL = 20000)
 
 /obj/item/ammo_box/c45
@@ -112,28 +119,28 @@
 	name = "ammo box (.357)"
 	icon_state = "357box"
 	ammo_type = /obj/item/ammo_casing/a357
-	max_ammo = 30
+	max_ammo = 20
 	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/m44box
 	name = "ammo box (.44)"
 	icon_state = "44box"
 	ammo_type = /obj/item/ammo_casing/m44
-	max_ammo = 30
+	max_ammo = 20
 	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/a308box
 	name = "ammo box (.308)"
 	icon_state = "308box"
 	ammo_type = /obj/item/ammo_casing/a308
-	max_ammo = 30
+	max_ammo = 20
 	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/a762box
-	name = "ammo box (7.62"
+	name = "ammo box (7.62)"
 	icon_state = "762box"
 	ammo_type = /obj/item/ammo_casing/a762
-	max_ammo = 30
+	max_ammo = 20
 	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/a762lpbox
@@ -147,14 +154,14 @@
 	name = "ammo box (.45-70)"
 	icon_state = "4570box"
 	ammo_type = /obj/item/ammo_casing/c4570
-	max_ammo = 30
+	max_ammo = 20
 	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/a50MGbox
 	name = "ammo box (.50 MG)"
 	icon_state = "50box"
 	ammo_type = /obj/item/ammo_casing/a50MG
-	max_ammo = 30
+	max_ammo = 20
 	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/a40mm
