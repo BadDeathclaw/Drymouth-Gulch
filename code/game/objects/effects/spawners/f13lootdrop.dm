@@ -331,7 +331,7 @@
 
 	var/loot3 = list(
 				/obj/item/clothing/suit/armor/f13/brokenpa/t45b,
-				/obj/item/clothing/head/helmet/f13/brokenpa/t45b
+				/obj/item/clothing/head/helmet/power_armor/t45b
 				)
 
 	var/loot4 = list(
@@ -438,8 +438,8 @@
 
     loot = list(
             /obj/effect/spawner/lootdrop/f13/armor/tier1 = 75,
-            /obj/effect/spawner/lootdrop/f13/armor/tier2 = 23,
-            /obj/effect/spawner/lootdrop/f13/armor/tier3 = 2,
+            /obj/effect/spawner/lootdrop/f13/armor/tier2 = 24,
+            /obj/effect/spawner/lootdrop/f13/armor/tier3 = 1,
             )
 
 /* ------------------------------------------------

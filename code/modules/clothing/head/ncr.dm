@@ -6,7 +6,7 @@
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	strip_delay = 50
 
-/obj/item/clothing/head/helmet/ncr/ncr_goggles_helmet
+/obj/item/clothing/head/f13/ncr/goggles
 	name = "Goggled NCR Helmet"
 	desc = "A standard issue NCR Infantry helmet, with a pair of goggles attached to it."
 	icon_state = "ncr_goggles_helmet"
