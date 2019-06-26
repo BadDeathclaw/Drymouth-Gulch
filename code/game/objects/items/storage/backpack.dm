@@ -166,16 +166,16 @@
 	item_state = "viropack"
 
 /obj/item/storage/backpack/spearquiver
-	name = "sturdy quiver"
-	desc = "A leather and iron quiver designed to hold throwing spears and bolas."
+	name = "spear quiver"
+	desc = "A leather and iron quiver designed to hold throwing spears."
 	icon_state = "spearquiver"
 	item_state = "spearquiver"
 
 /obj/item/storage/backpack/spearquiver/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_items = 12
-	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola))
+	STR.max_items = 7
+	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear))
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
 	new /obj/item/throwing_star/spear(src)
