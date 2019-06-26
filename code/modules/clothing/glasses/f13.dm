@@ -9,6 +9,12 @@
 	icon_state = "biker"
 	item_state = "biker"
 
+/obj/item/clothing/glasses/legiongoggles
+	name = "Legion goggles"
+	desc = "Standard issue goggles for Caesar's Legion."
+	icon_state = "legion"
+	item_state = "legion"
+
 //Fallout 13 sunglasses
 
 /obj/item/clothing/glasses/sunglasses/f13
