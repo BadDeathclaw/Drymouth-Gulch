@@ -140,6 +140,13 @@
     name = "engineering armband (E-5 Engineer)"
     desc = "An armband worn by NCR Engineers to display their rank and speciality. This one is orange with a reflective strip!"
 
+/obj/item/clothing/accessory/ncr/CPL
+    name = "(E-4) Corporal rank pins"
+    desc = "A Corporal should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
 /obj/item/clothing/accessory/ncr/TPR
     name = "(E-3) Trooper rank pins"
     desc = "A trooper should wear this."

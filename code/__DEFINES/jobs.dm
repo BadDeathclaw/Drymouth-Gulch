@@ -97,7 +97,6 @@
 #define F13DEPUTY		(1<<5)
 #define F13MAYOR		(1<<6)
 
-
 #define VAULT			(1<<7)
 
 #define F13OVERSEER		(1<<0)

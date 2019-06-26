@@ -64,9 +64,7 @@ Overseer
 	id = 			/obj/item/card/id/gold
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/vest/warden
 	glasses = 		/obj/item/clothing/glasses/sunglasses
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat
 	ears = 			/obj/item/radio/headset/headset_overseer
 	shoes = 		/obj/item/clothing/shoes/sneakers/brown
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -444,4 +442,4 @@ Station Engineer
 	..()
 	if(SSmapping.config.map_name == "Pahrump")
 		total_positions = 0
-		spawn_positions = 0
+		spawn_positions = 0 
