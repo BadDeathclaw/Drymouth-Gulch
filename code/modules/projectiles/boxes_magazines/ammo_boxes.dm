@@ -176,6 +176,13 @@
 	materials = list(MAT_METAL = 15000)
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/ammo_box/a50aebox
+	name = "ammo box (.50 AE)"
+	icon = "50aebox"
+	ammo_type = /obj/item/ammo_casing/a50AE
+	max_ammo = 30
+	materials = list(MAT_METAL = 15000
+
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"
 	icon_state = "40mm"
