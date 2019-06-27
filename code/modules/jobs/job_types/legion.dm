@@ -11,7 +11,7 @@
 	box = null
 
 /datum/outfit/job/CaesarsLegion/Legionnaire
-	belt = /obj/item/storage/belt/military/legion
+	belt = /obj/item/storage/belt/military/assault/legion
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	uniform = 		/obj/item/clothing/under/f13/legskirt
 	shoes = 		/obj/item/clothing/shoes/legionmetal
@@ -314,7 +314,7 @@ Veteran
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	r_hand = 		/obj/item/twohanded/fireaxe
 	backpack_contents = list(
@@ -355,7 +355,7 @@ Prime
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit/prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
 	mask =			/obj/item/clothing/mask/bandana/legprime
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	suit_store = 	/obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
@@ -394,7 +394,7 @@ Legionary
 	suit = 			/obj/item/clothing/suit/armor/f13/legrecruit
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \

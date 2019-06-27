@@ -83,12 +83,19 @@
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
-
+	
 /obj/item/clothing/shoes/f13/military/ncr
-	name = "trooper boots"
-	desc = "A pair of tan leather boots with footcloths commonly worn by NCR servicemen."
-	icon_state = "ncr"
+	name = "NCR Boots"
+	desc = "A pair of standard issue NCR brown boots, with a puttee."
+	icon_state = "ncr_boots"
 	item_state = "ncr"
+	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
+
+/obj/item/clothing/shoes/f13/military/ncr_officer
+	name = "NCR Officer Boots"
+	desc = "A pair of brown leather boots, issued to NCR Officers."
+	icon_state = "ncr_officer_boots"
+	item_state = "explorer"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
 /obj/item/clothing/shoes/f13/military/legionleather

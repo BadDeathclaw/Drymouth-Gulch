@@ -65,9 +65,10 @@ wasteland
 		/obj/item/clothing/under/f13/roving)
 	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
+	belt = 			/obj/item/kitchen/knife/combat/survival
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
-		/obj/item/reagent_containers/pill/radx=2, \
+		/obj/item/reagent_containers/pill/radx=1, \
 		/obj/item/storage/bag/money/small/wastelander)
 
 

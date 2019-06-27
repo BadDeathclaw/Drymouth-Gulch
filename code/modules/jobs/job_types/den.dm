@@ -21,7 +21,7 @@ Mayor
 	jobtype = /datum/job/den/f13mayor
 
 	ears = 			/obj/item/radio/headset/headset_den
-	id = null
+	id =            /obj/item/card/id/gold/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
@@ -56,6 +56,7 @@ Sheriff
 	jobtype = /datum/job/den/f13sheriff
 
 	id = /obj/item/card/id/dogtag/sheriff
+	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
@@ -89,7 +90,7 @@ Settler
 	faction = "Den"
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "the mayor, the sheriff"
+	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -114,7 +115,7 @@ Settler
 		/obj/item/clothing/under/f13/machinist, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
-		
+
 /*
 Farmer
 */
@@ -147,7 +148,7 @@ Farmer
 		/obj/item/hatchet=1,
 		/obj/item/shovel/spade=1)
 	shoes = 		/obj/item/clothing/shoes/workboots
-	
+
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -157,8 +158,8 @@ Farmer
 		/obj/item/clothing/under/f13/machinist, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
-		
-		
+
+
 /*
 Prospector
 */
@@ -222,7 +223,7 @@ Deputy
 	jobtype = /datum/job/den/f13deputy
 
 	ears = 			/obj/item/radio/headset/headset_den
-	id = null
+	id =            /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
