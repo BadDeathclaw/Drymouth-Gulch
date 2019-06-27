@@ -71,7 +71,8 @@ Sheriff
 	backpack_contents = list(
 		/obj/item/storage/box/deputy_badges=1, \
 		/obj/item/ammo_box/tube/a357=2, \
-		/obj/item/ammo_box/m44=2)
+		/obj/item/ammo_box/m44=2, \
+		/obj/item/restraints/handcuffs=1)
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/m29
 
