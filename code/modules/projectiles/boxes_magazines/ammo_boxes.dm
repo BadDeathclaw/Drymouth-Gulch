@@ -181,7 +181,7 @@
 	icon = "50aebox"
 	ammo_type = /obj/item/ammo_casing/a50AE
 	max_ammo = 30
-	materials = list(MAT_METAL = 15000
+	materials = list(MAT_METAL = 15000)
 
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"
