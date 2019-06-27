@@ -88,8 +88,8 @@ Settler
 	flag = F13SETTLER
 	department_flag = DEN
 	faction = "Den"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 6
+	spawn_positions = 6
 	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 
@@ -125,8 +125,8 @@ Farmer
 	flag = F13FARMER
 	department_flag = DEN
 	faction = "Den"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the mayor, the sheriff"
 	selection_color = "#dcba97"
 
@@ -169,8 +169,8 @@ Prospector
 	flag = F13PROSPECTOR
 	department_flag = DEN
 	faction = "Den"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the mayor, the sheriff"
 	selection_color = "#dcba97"
 
@@ -209,8 +209,8 @@ Deputy
 	flag = F13DEPUTY
 	department_flag = DEN
 	faction = "Den"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the mayor, the sheriff"
 	selection_color = "#dcba97"
 	exp_requirements = 360
