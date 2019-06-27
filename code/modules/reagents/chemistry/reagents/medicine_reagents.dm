@@ -1264,11 +1264,11 @@
 /datum/reagent/medicine/stimpak
 	name = "Stimpak Fluid"
 	id = "stimpak"
-	description = "Rapidly heals damage when injected. Deals minor toxin damage if injested."
+	description = "Rapidly heals damage when injected. Deals minor toxin damage if ingested."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
-	metabolization_rate = 3 * REAGENTS_METABOLISM
+	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
@@ -1280,17 +1280,34 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-4*REM, 0)
-	M.adjustFireLoss(-4*REM, 0)
-	M.adjustOxyLoss(-3*REM, 0)
+	M.adjustBruteLoss(-6*REM, 0)
+	M.adjustFireLoss(-6*REM, 0)
+	M.adjustOxyLoss(-6*REM, 0)
+	M.AdjustStun(-10, 0)
+	M.AdjustKnockdown(-10, 0)
+	M.adjustStaminaLoss(-4*REM, 0)
 	. = 1
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(2.5*REM, 0)
-	M.adjustOxyLoss(7*REM, 0)
+	M.adjustToxLoss(5*REM, 0)
+	M.adjustOxyLoss(8*REM, 0)
 	..()
 	. = 1
+
+datum/reagent/medicine/super_stimpak
+	name = "super stim chemicals"
+	id = "super_stimpak"
+	description = "Chemicals found in pre-war stimpaks."
+	reagent_state = LIQUID
+	color = "#e50d0d"
+
+datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+	M.adjustBruteLoss(-3*REM)
+	M.adjustFireLoss(-3*REM)
+	M.adjustOxyLoss(-3*REM)
+	..()
+	return
 
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
@@ -1299,7 +1316,7 @@
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.35 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
@@ -1314,6 +1331,20 @@
 	M.adjustOxyLoss(4*REM, 0)
 	..()
 	. = 1
+
+/datum/reagent/medicine/healing_poultice
+	name = "healing poultice"
+	id = "healing_poultice"
+	description = "Restores limb condition and heals rapidly."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	metabolization_rate = 1.25 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
+	M.adjustFireLoss(-4*REM)
+	M.adjustBruteLoss(-4*REM)
+	M.adjustToxLoss(-0.5*REM)
+	..()
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"

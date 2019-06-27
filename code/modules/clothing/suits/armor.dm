@@ -47,7 +47,7 @@
 	icon_state = "hos"
 	item_state = "greatcoat"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 20, "energy" = 20, "bomb" = 45, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 90)
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	strip_delay = 80
@@ -396,10 +396,15 @@
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/user, slot)
-	if(user.mind && !user.mind.istechnophreak)
-		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-		return
+/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/M, slot)
+	if(!..() || !ishuman(M))
+		return FALSE
+	if(isliving(M))
+		var/mob/living/L = M
+		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC))//living proc
+			to_chat(M, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+
+
 	else ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
@@ -470,7 +475,7 @@
 	icon_state = "legvexil"
 	item_state = "legvexil"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list("melee" = 50, "bullet" = 35, "laser" = 20, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
 	strip_delay = 60
 
 /obj/item/clothing/suit/armor/f13/legcenturion
@@ -529,6 +534,13 @@
 	item_state = "enclave_armor"
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/rangerrecon
+	name = "ranger recon duster"
+	desc = "A thicker than average duster worn by NCR recon rangers out in the field. It's not heavily armored by any means, but is easy to move around in and provides excellent protection from the harsh desert environment."
+	icon_state = "duster_recon"
+	item_state = "duster_recon"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 60, "rad" = 70, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "ranger combat armor"

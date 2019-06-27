@@ -94,6 +94,11 @@
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
 		purrbation_remove(H, silent=TRUE)
+	// F13 EDIT: GHOULS CANNOT BE LEGION
+	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
+		if(H.dna.species.id == "ghoul")
+			H.set_species(/datum/species/human)
+			H.apply_pref_name("human", H.client)
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)

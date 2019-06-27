@@ -5,13 +5,14 @@
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES //Bitflags. Set to ENVIRONMENT_SMASH_STRUCTURES to break closets,tables,racks, etc; ENVIRONMENT_SMASH_WALLS for walls; ENVIRONMENT_SMASH_RWALLS for rwalls
 	var/atom/target
 	var/ranged = 0
-	var/rapid = 0
+	var/extra_projectiles = 0 //how many projectiles above 1?
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
 	var/move_to_delay = 3 //delay for the automated movement.
 	var/list/friends = list()
 	var/list/emote_taunt = list()
+	var/emote_taunt_sound = FALSE // Does it have a sound associated with the emote? Defaults to false.
 	var/taunt_chance = 0
 
 	var/ranged_message = "fires" //Fluff text for ranged mobs
@@ -288,6 +289,8 @@
 	if(target && emote_taunt.len && prob(taunt_chance))
 		emote("me", 1, "[pick(emote_taunt)] at [target].")
 		taunt_chance = max(taunt_chance-7,2)
+		if(emote_taunt_sound)
+			playsound(loc, emote_taunt_sound, 50, 0)
 
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()
@@ -329,14 +332,9 @@
 	if(CheckFriendlyFire(A))
 		return
 	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
-
-	if(rapid)
-		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
-		addtimer(cb, 1)
-		addtimer(cb, 4)
-		addtimer(cb, 6)
-	else
-		Shoot(A)
+	Shoot(A)
+	for(var/i in 1 to extra_projectiles)
+		addtimer(CALLBACK(src, .proc/Shoot, A), i * 2)
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 
