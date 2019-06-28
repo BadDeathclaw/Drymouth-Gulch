@@ -863,6 +863,15 @@
 	if(istype(C) && C.stat == CONSCIOUS)
 		return TRUE
 	return FALSE
+	
+/mob/living/carbon/human/proc/is_shove_knockdown_blocked() //If you want to add more things that block shove knockdown, extend this
+	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, back, gloves, shoes, belt, s_store, glasses, ears, wear_id) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
+	for(var/bp in body_parts)
+		if(istype(bp, /obj/item/clothing))
+			var/obj/item/clothing/C = bp
+			if(C.blocks_shove_knockdown)
+				return TRUE
+	return FALSE
 
 /mob/living/carbon/human/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	if(!force)//humans are only meant to be ridden through piggybacking and special cases

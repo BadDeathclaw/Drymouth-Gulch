@@ -377,6 +377,7 @@
 	clothing_flags = THICKMATERIAL
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	blocks_shove_knockdown = TRUE
 
 /obj/item/clothing/suit/armor/f13/brokenpa/t45b
 	name = "salvaged T-45b power armor"
@@ -395,6 +396,7 @@
 	clothing_flags = THICKMATERIAL
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	blocks_shove_knockdown = TRUE
 
 /obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/M, slot)
 	if(!..() || !ishuman(M))
@@ -490,6 +492,7 @@
 	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola)
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 0, "fire" = 80, "acid" = 0)
 	strip_delay = 60
+	blocks_shove_knockdown = TRUE
 
 /obj/item/clothing/suit/armor/f13/leglegat
 	name = "legion legate armor"
@@ -547,6 +550,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 	strip_delay = 60
+	blocks_shove_knockdown = TRUE
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	name = "desert ranger combat armor"
@@ -607,6 +611,7 @@
 	icon_state = "ncr_captain_armour"
 	item_state = "ncr_captain_armour"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	blocks_shove_knockdown = TRUE
 
 /obj/item/clothing/suit/armor/f13/ghostechoe
 	name = "tattered peace coat"

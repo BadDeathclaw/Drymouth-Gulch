@@ -23,6 +23,7 @@
 	var/obj/item/flashlight/F = null
 	var/can_flashlight = 0
 	var/scan_reagents = 0 //Can the wearer see reagents while it's equipped?
+	var/blocks_shove_knockdown = FALSE
 	var/ispowerarmor
 	var/airtight //For rig suits
 	var/darkness_view = 0
