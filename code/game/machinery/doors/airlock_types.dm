@@ -190,11 +190,11 @@
 	name = "diamond airlock"
 	icon = 'icons/obj/doors/airlocks/station/diamond.dmi'
 	assemblytype = /obj/structure/door_assembly/door_assembly_diamond
-	normal_integrity = 500
+	normal_integrity = 1000
 	explosion_block = 2
 
 /obj/machinery/door/airlock/diamond/glass
-	normal_integrity = 450
+	normal_integrity = 950
 	opacity = 0
 	glass = TRUE
 
