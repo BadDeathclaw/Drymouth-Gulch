@@ -179,6 +179,8 @@
 /datum/config_entry/string/githuburl
 	config_entry_value = "https://www.github.com/tgstation/-tg-station"
 
+/datum/config_entry/flag/using_discord
+
 /datum/config_entry/string/roundstatsurl
 
 /datum/config_entry/string/gamelogurl

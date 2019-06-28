@@ -1,18 +1,16 @@
 /datum/species/ghoul
 	name = "Ghoul"
 	id = "ghoul"
+	say_mod = "rasps"
 	limbs_id = "ghoul"
 	species_traits = list(HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_RADIMMUNE)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
-	armor = -25 // very weak fag 100-25 = 85hp + the weak limbs is a big oof!
-	speedmod = 0.5 //little slow
 	burnmod = 0.25 // Leather skinless boys
-	brutemod = 1.2 //weaker fags
-	punchdamagehigh = 0
+	brutemod = 1.25 //weaker fags
 	punchstunthreshold = 6
 	use_skintones = 0
-	sexes = 1 
+	sexes = 1
 	disliked_food = GROSS
 	liked_food = JUNKFOOD | FRIED | RAW
 

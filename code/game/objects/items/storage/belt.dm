@@ -337,6 +337,12 @@
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 
+/obj/item/storage/belt/military/reconbandolier
+	name = "recon ranger bandolier"
+	desc = "A belt with many pockets, now at an angle."
+	icon_state = "reconbandolier"
+	item_state = "reconbandolier"
+
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
@@ -526,7 +532,7 @@
 
 /obj/item/storage/belt/bandolier
 	name = "bandolier"
-	desc = "A bandolier for holding shotgun ammunition."
+	desc = "A bandolier for holding ammunition."
 	icon_state = "bandolier"
 	item_state = "bandolier"
 
@@ -536,7 +542,7 @@
 	STR.max_items = 18
 	STR.display_numerical_stacking = TRUE
 	STR.can_hold = typecacheof(list(
-		/obj/item/ammo_casing/shotgun
+		/obj/item/ammo_casing
 		))
 
 /obj/item/storage/belt/holster
