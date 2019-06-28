@@ -32,7 +32,7 @@ GLOBAL_LIST_EMPTY(all_ground_turfs) //A list of all the ground turfs that exist;
 	desc = "If found, scream at the github repo about this"
 	icon_state = "wasteland1"
 	icon = 'icons/turf/f13desert.dmi'
-	light_range = 1.4 //1.4? why? MINIMUM_USEFUL_LIGHT_RANGE that's why
+	light_range = 3
 	light_power = 0.75 //Day time light power
 
 /* Outside turfs get global lighting */

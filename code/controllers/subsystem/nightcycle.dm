@@ -4,6 +4,7 @@
 	4:45 PM 	- 	60300
 	9:45 PM 	- 	78300
 	10:30 PM 	- 	81000 */
+
 #define CYCLE_SUNRISE 	216000
 #define CYCLE_MORNING 	243000
 #define CYCLE_DAYTIME 	423000
@@ -23,8 +24,7 @@ SUBSYSTEM_DEF(nightcycle)
 	var/list/currentrun = list() //To run through all of this when first made
 
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
-	updateLight()
-	if(!resumed)
+	if(resumed)
 		if(nextBracket())
 			currentrun = GLOB.all_ground_turfs.Copy()
 			doshift()
@@ -35,7 +35,7 @@ SUBSYSTEM_DEF(nightcycle)
 	while(currentrun.len)
 		var/turf/T = currentrun[currentrun.len]
 		currentrun.len--
-		T.set_light(1.4, sunPower, sunColour) //1.4? why? MINIMUM_USEFUL_LIGHT_RANGE that's why
+		T.set_light(3, sunPower, sunColour)
 		if(MC_TICK_CHECK)
 			break
 
