@@ -34,10 +34,7 @@
 
 /obj/item/ammo_box/magazine/m45/update_icon()
 	..()
-	if (ammo_count() >= 8)
-		icon_state = "45-8"
-	else
-		icon_state = "45-[ammo_count()]"
+	icon_state = "45-[ammo_count() ? "8" : "0"]"
 
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "pistol magazine (9mm)"

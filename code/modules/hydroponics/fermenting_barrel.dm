@@ -75,4 +75,3 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 30)
 	time = 50
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL

@@ -142,10 +142,6 @@
 	return
 
 /mob/living/carbon/throw_item(atom/target)
-	var/obj/item/I = src.get_active_held_item()
-	if(src.IsThrowDelayed())
-		to_chat(src, "<span class='notice'>You're not ready to throw [I] yet!</span>")
-		return
 	throw_mode_off()
 	if(!target || !isturf(loc))
 		return
@@ -153,6 +149,7 @@
 		return
 
 	var/atom/movable/thrown_thing
+	var/obj/item/I = src.get_active_held_item()
 
 	if(!I)
 		if(pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)

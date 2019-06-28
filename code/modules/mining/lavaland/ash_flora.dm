@@ -231,7 +231,6 @@
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
 	time = 30
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad
 	desc = "Very ashy."

@@ -57,7 +57,6 @@
 #define isluminescent(A) (is_species(A, /datum/species/jelly/luminescent))
 #define iszombie(A) (is_species(A, /datum/species/zombie))
 #define ishumanbasic(A) (is_species(A, /datum/species/human))
-//f13 edit
 #define isghoul(A) (is_species(A, /datum/species/ghoul))
 
 //why arent catpeople a subspecies
@@ -151,10 +150,6 @@
 #define ismecha(A) (istype(A, /obj/mecha))
 
 #define is_cleanable(A) (istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/rune)) //if something is cleanable
-//F13 EDIT
-#define iskey(A) istype(A, /obj/item/key)
-
-#define islock(A) istype(A, /obj/item/lock_construct)
 
 #define isorgan(A) (istype(A, /obj/item/organ))
 

@@ -1,10 +1,10 @@
 #define maxCoinIcon 6
-#define CASH_CAP 1
+#define CAP 1
 
 /* exchange rates X * CAP*/
-#define CASH_AUR 100 /* 100 caps to 1 AUR */
-#define CASH_DEN 4 /* 4 caps to 1 DEN */
-#define CASH_NCR 0.4 /* $100 to 40 caps */
+#define AUR 100 /* 100 caps to 1 AUR */
+#define DEN 4 /* 4 caps to 1 DEN */
+#define NCR 0.4 /* $100 to 40 caps */
 
 /* value of coins to spawn, use as-is for caps */
 /* LOW_MIN / AUR = amount in AUR */
@@ -35,7 +35,7 @@
 	full_w_class = WEIGHT_CLASS_TINY
 	resistance_flags = FLAMMABLE
 	var/flavor_desc = ""
-	var/value = CASH_CAP
+	var/value = CAP
 
 /obj/item/stack/f13Cash/Initialize()
 	. = ..()
@@ -96,16 +96,16 @@
 	qdel(src)
 
 /obj/item/stack/f13Cash/random/bottle_cap/low
-	min_qty = LOW_MIN / CASH_CAP
-	max_qty = LOW_MAX / CASH_CAP
+	min_qty = LOW_MIN / CAP
+	max_qty = LOW_MAX / CAP
 
 /obj/item/stack/f13Cash/random/bottle_cap/med
-	min_qty = MED_MIN / CASH_CAP
-	max_qty = MED_MAX / CASH_CAP
+	min_qty = MED_MIN / CAP
+	max_qty = MED_MAX / CAP
 
 /obj/item/stack/f13Cash/random/bottle_cap/high
-	min_qty = HIGH_MIN / CASH_CAP
-	max_qty = HIGH_MAX / CASH_CAP
+	min_qty = HIGH_MIN / CAP
+	max_qty = HIGH_MAX / CAP
 
 /obj/item/stack/f13Cash/denarius
 	name = "Denarius"
@@ -116,7 +116,7 @@
 	flavor_desc =	"The inscriptions are in Latin,\n\
 		'Caesar Dictator' on the front and\n\
 		'Magnum Chasma' on the back."
-	value = CASH_DEN * CASH_CAP
+	value = DEN * CAP
 
 /obj/item/stack/f13Cash/random/denarius/Initialize()
 	var/obj/item/stack/f13Cash/denarius/R = new
@@ -126,16 +126,16 @@
 	qdel(src)
 
 /obj/item/stack/f13Cash/random/denarius/low
-	min_qty = LOW_MIN / CASH_DEN
-	max_qty = LOW_MAX / CASH_DEN
+	min_qty = LOW_MIN / DEN
+	max_qty = LOW_MAX / DEN
 
 /obj/item/stack/f13Cash/random/denarius/med
-	min_qty = MED_MIN / CASH_DEN
-	max_qty = MED_MAX / CASH_DEN
+	min_qty = MED_MIN / DEN
+	max_qty = MED_MAX / DEN
 
 /obj/item/stack/f13Cash/random/denarius/high
-	min_qty = HIGH_MIN / CASH_DEN
-	max_qty = HIGH_MAX / CASH_DEN
+	min_qty = HIGH_MIN / DEN
+	max_qty = HIGH_MAX / DEN
 
 /obj/item/stack/f13Cash/random/denarius/legionpay_basic
 	min_qty = 1
@@ -158,7 +158,7 @@
 	flavor_desc = 	"The inscriptions are in Latin,\n\
 					'Aeternit Imperi' on the front and\n\
 					'Pax Per Bellum' on the back."
-	value = CASH_AUR * CASH_CAP
+	value = AUR * CAP
 
 /obj/item/stack/f13Cash/random/aureus/Initialize()
 	var/obj/item/stack/f13Cash/aureus/R = new
@@ -184,7 +184,7 @@
 	singular_name = "NCR Dollar"  /* same for denarius, we can pretend the legion can't latin properly */
 	icon = 'icons/obj/economy.dmi'
 	icon_state = "ncr" /* 10 points to whoever writes flavour text for each bill */
-	value = CASH_NCR * CASH_CAP
+	value = NCR * CAP
 
 /obj/item/stack/f13Cash/ncr/update_icon()
 	switch(amount)
@@ -211,16 +211,16 @@
 	qdel(src)
 
 /obj/item/stack/f13Cash/random/ncr/low
-	min_qty = LOW_MIN / CASH_NCR
-	max_qty = LOW_MAX / CASH_NCR
+	min_qty = LOW_MIN / NCR
+	max_qty = LOW_MAX / NCR
 
 /obj/item/stack/f13Cash/random/ncr/med
-	min_qty = MED_MIN / CASH_NCR
-	max_qty = MED_MAX / CASH_NCR
+	min_qty = MED_MIN / NCR
+	max_qty = MED_MAX / NCR
 
 /obj/item/stack/f13Cash/random/ncr/high
-	min_qty = HIGH_MIN / CASH_NCR
-	max_qty = HIGH_MAX / CASH_NCR
+	min_qty = HIGH_MIN / NCR
+	max_qty = HIGH_MAX / NCR
 
 /obj/item/stack/f13Cash/random/ncr/ncrpay_basic
 	min_qty = 10
@@ -235,10 +235,10 @@
 	max_qty = 400
 
 #undef maxCoinIcon
-#undef CASH_CAP
-#undef CASH_AUR
-#undef CASH_DEN
-#undef CASH_NCR
+#undef CAP
+#undef AUR
+#undef DEN
+#undef NCR
 #undef LOW_MIN
 #undef LOW_MAX
 #undef MED_MIN

@@ -259,5 +259,3 @@
 	results = list("stimpak" = 2)
 	required_reagents = list("blood" = 2, "spaceacillin" = 3)
 	required_temp = 300
-
-

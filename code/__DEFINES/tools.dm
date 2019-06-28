@@ -10,7 +10,6 @@
 #define TOOL_SHOVEL			"shovel"
 #define TOOL_NCR			"NCR ammo bench"
 #define TOOL_LEGION			"Legion ammo bench"
-#define TOOL_FORGE			"forge"
 
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,

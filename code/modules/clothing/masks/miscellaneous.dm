@@ -68,7 +68,7 @@
 	icon_state = "joy"
 
 /obj/item/clothing/mask/joy/joyful
-	desc = "Express your happiness or hide your sorrows with this laughing face with crying tears of joy cutout. It seems happier than usual."
+	item_flags = NODROP
 
 /obj/item/clothing/mask/joy/joyful/equipped(mob/user, slot)
 	var/mob/living/carbon/C = user
@@ -78,7 +78,7 @@
 
 /obj/item/clothing/mask/pig
 	name = "pig mask"
-	desc = "It's a very stylish pig mask which seems to have a voice modulator built into it."
+	desc = "A rubber pig mask."
 	icon_state = "pig"
 	item_state = "pig"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -97,12 +97,13 @@
 
 /obj/item/clothing/mask/spig //needs to be different otherwise you could turn the speedmodification off and on
 	name = "Pig face"
-	desc = "It's a very stylish pig mask which seems to have a voice modulator built into it."
+	desc = "It looks like a mask, but closer inspection reveals it's melded onto this persons face!" //It's only ever going to be attached to your face.
 	icon_state = "pig"
 	item_state = "pig"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/spig/speechModification(message)
 	if(voicechange)
@@ -132,6 +133,7 @@
 	return message
 
 /obj/item/clothing/mask/frog/cursed
+	item_flags = NODROP //reee!!
 
 /obj/item/clothing/mask/frog/cursed/attack_self(mob/user)
 	return //no voicebox to alter.
@@ -145,13 +147,14 @@
 
 /obj/item/clothing/mask/cowmask
 	name = "Cowface"
-	desc = "It's a very stylish cow mask which seems to have a voice modulator built into it."
+	desc = "It looks like a mask, but closer inspection reveals it's melded onto this persons face!"
 	icon = 'icons/mob/mask.dmi'
 	icon_state = "cowmask"
 	item_state = "cowmask"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/cowmask/speechModification(message)
 	if(voicechange)
@@ -166,6 +169,7 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEYES|HIDEEARS
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
+	item_flags = NODROP
 
 /obj/item/clothing/mask/horsehead/speechModification(message)
 	if(voicechange)

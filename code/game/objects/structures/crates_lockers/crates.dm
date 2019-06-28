@@ -29,19 +29,7 @@
 				return 1
 			if(!locatedcrate.opened) //otherwise, if the located crate is closed, allow entering
 				return 1
-	if(barricade == FALSE)
-		return !density
-	else if(density == FALSE)
-		return 1
-	else if(istype(mover, /obj/item/projectile)) //bullets can fly over crates, guaranteed if the shooter is adjacent
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return 1
-		if(prob(proj_pass_rate))
-			return 1
-		return 0
-	else
-		return !density
+	return !density
 
 /obj/structure/closet/crate/update_icon()
 	icon_state = "[initial(icon_state)][opened ? "open" : ""]"
@@ -81,7 +69,7 @@
 	desc = "It's a burial receptacle for the dearly departed."
 	icon_state = "coffin"
 	resistance_flags = FLAMMABLE
-	max_integrity = 70
+	max_integrity = 70 
 	material_drop = /obj/item/stack/sheet/mineral/wood
 	material_drop_amount = 5
 

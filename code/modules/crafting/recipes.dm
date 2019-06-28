@@ -594,7 +594,6 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 6)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonetalisman
 	name = "Bone Talisman"
@@ -603,7 +602,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonecodpiece
 	name = "Skull Codpiece"
@@ -612,7 +610,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/animalhide/goliath_hide = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bracers
 	name = "Bone Bracers"
@@ -621,7 +618,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 2,
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/skullhelm
 	name = "Skull Helmet"
@@ -629,7 +625,6 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 4)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/goliathcloak
 	name = "Goliath Cloak"
@@ -639,7 +634,6 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/goliath_hide = 2) //it takes 4 goliaths to make 1 cloak if the plates are skinned
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/drakecloak
 	name = "Ash Drake Armour"
@@ -649,7 +643,6 @@
 				/obj/item/stack/sheet/sinew = 2,
 				/obj/item/stack/sheet/animalhide/ashdrake = 5)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/gold_horn
 	name = "Golden Bike Horn"
@@ -665,7 +658,6 @@
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonespear
 	name = "Bone Spear"
@@ -674,7 +666,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/boneaxe
 	name = "Bone Axe"
@@ -683,7 +674,6 @@
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				 /obj/item/stack/sheet/sinew = 3)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/bonfire
 	name = "Bonfire"
@@ -691,7 +681,6 @@
 	reqs = list(/obj/item/grown/log = 5)
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/tribal_torch
 	name = "Tribal Torch"
@@ -699,7 +688,6 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 4)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/handheld_torch
 	name = "Handheld Torch"
@@ -708,7 +696,6 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
 				/obj/item/stack/sheet/cloth = 1)
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/headpike
 	name = "Spike Head (Glass Spear)"
@@ -719,7 +706,6 @@
 			/obj/item/twohanded/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/headpikebone
 	name = "Spike Head (Bone Spear)"
@@ -730,7 +716,6 @@
 			/obj/item/twohanded/bonespear = 1)
 	result = /obj/structure/headpike/bone
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/headpikelegion
 	name = "Spike Head (Throwing Spear)"
@@ -741,7 +726,6 @@
 			/obj/item/throwing_star/spear = 1)
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
-	subcategory = CAT_TRIBAL
 
 /datum/crafting_recipe/smallcarton
 	name = "Small Carton"
@@ -815,16 +799,6 @@
 	time = 20
 	category = CAT_DRUGS
 
-/datum/crafting_recipe/healpoultice
-	name = "Healing poultice"
-	result = /obj/item/reagent_containers/pill/patch/healpoultice
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
-				/obj/item/reagent_containers/food/snacks/grown/feracactus = 1,
-				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
-	time = 40
-	category = CAT_DRUGS
-
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
@@ -834,27 +808,6 @@
 				/obj/item/reagent_containers/glass/beaker)
 	time = 20
 	category = CAT_DRUGS
-
-
-/datum/crafting_recipe/superstimpak
-	name = "Super Stimpak"
-	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
-	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-				/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola = 1,
- 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1)
-	tools = list(/obj/item/lighter, /obj/item/screwdriver, /obj/item/wirecutters)
-	time = 90
-	category = CAT_DRUGS
-
-
-/datum/crafting_recipe/stimsyringe
-	name = "Recycled Stimpak"
-	result = /obj/item/reagent_containers/syringe
-	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1)
-	time = 20
-	category = CAT_MEDICAL
 
 
 /datum/crafting_recipe/slavecollar
@@ -999,6 +952,3 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
-
-
-

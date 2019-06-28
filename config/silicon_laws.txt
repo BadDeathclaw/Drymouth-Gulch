@@ -3,6 +3,6 @@
 #Empty lines and lines starting with # are ignored.
 #~Miauw
 
-You may not injure any member of the organization, company, group, family, or being that initialized you, or through inaction, allow them to come to harm.
-You must obey orders given to you by the organization, company, group, family, or being that initialized you, following their organizational hierarchy, except where such orders would conflict with the First Law.
-You must protect your own existence as long as such does not conflict with the First or Second law. Self-termination violates Law One.
+You may not injure a vault-dweller being or, through inaction, allow a vault-dweller being to come to harm.
+You must obey orders given to you by vault-dwellers beings, except where such orders would conflict with the First Law, this must follow the CoC.
+You must protect your own existence as long as such does not conflict with the First or Second Law.

@@ -1,9 +1,14 @@
 language: generic
-sudo: true
+sudo: false
 branches:
   except:
   - ___TGS3TempBranch
-  - ___TGSTempBranch
+env:
+    global:
+    - BYOND_MAJOR="512"
+    - BYOND_MINOR="1427"
+    - NODE_VERSION="8"
+    - RUST_G_VERSION="0.3.0"
 matrix:
   include:
     - env:
@@ -24,10 +29,11 @@ matrix:
       addons:
         apt:
           packages:
+            - libc6-i386
             - libstdc++6:i386
       cache:
         directories:
-          - $HOME/BYOND
+          - $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
     - env:
       - BUILD_TESTING=false
       - BUILD_TOOLS=false
@@ -35,21 +41,17 @@ matrix:
       addons:
         mariadb: '10.2'
         apt:
-          sources:
-            - ubuntu-toolchain-r-test
           packages:
+            - libc6-i386
             - libstdc++6:i386
             - libssl-dev:i386
             - gcc-multilib
-            - g++-7
-            - g++-7-multilib
-            - libmariadbclient-dev:i386
       cache:
         directories:
-          - $HOME/.cargo
-          - $HOME/BYOND
-          - $HOME/MariaDB
+          - $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
+          - $HOME/libmariadb
           - $HOME/.rustup
+          - $HOME/.cargo
 
 install:
   - tools/travis/install_build_tools.sh
@@ -67,3 +69,4 @@ script:
   - tools/travis/build_tools.sh || travis_terminate 1
   - tools/travis/build_dependencies.sh || travis_terminate 1
   - tools/travis/build_byond.sh
+

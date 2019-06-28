@@ -109,7 +109,7 @@
 
 /mob/living/simple_animal/hostile/syndicate/ranged
 	ranged = 1
-	extra_projectiles = 2
+	rapid = 1
 	retreat_distance = 5
 	minimum_distance = 5
 	icon_state = "syndicateranged"

@@ -110,7 +110,7 @@
 		if (do_after(user, 20, target=src))
 			qdel(src)
 			new /obj/structure/destructible/tribal_torch(get_turf(user))
-			light_color = LIGHT_COLOR_ORANGE
+				light_color = LIGHT_COLOR_ORANGE
 			user.visible_message("<span class='notice'>[user] plants \the [src] firmly in the ground.</span>", "<span class='notice'>You plant \the [src] firmly in the ground.</span>")
 			return
 	else if(lit)

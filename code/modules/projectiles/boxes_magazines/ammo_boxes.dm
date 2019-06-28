@@ -118,7 +118,7 @@
 /obj/item/ammo_box/a50MG
 	name = "anti-materiel ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead."
-	icon_state = "50mg"
+	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a50MG
 	max_ammo = 5
 	multiple_sprites = 1
@@ -127,29 +127,20 @@
 /obj/item/ammo_box/a50MG/incendiary
 	name = "anti-materiel incendiary ammo rack (.50MG)"
 	desc = "A rack of .50 MG ammo, for when you really need something dead... and also on fire."
-	icon_state = "50in"
+	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a50MG/incendiary
 	max_ammo = 5
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 20000)
 
 /obj/item/ammo_box/a50MG/AP
-	name = "anti-materiel armor piercing ammo rack (.50MG)"
+	name = "anti-materiel ammo rack (.50MG)"
 	desc = "A .rack of .50 MG ammo, for when you really need (a very big) something dead."
-	icon_state = "50ap"
+	icon_state = "762"
 	ammo_type = /obj/item/ammo_casing/a50MG/AP
 	max_ammo = 5
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 18000)
-
-/obj/item/ammo_box/a50MG/explosive
-	name = "anti-materiel explosive ammo rack (.50MG)"
-	desc = "5 rounds of explosive .50 MG. More then enough to kill anything that moves."
-	icon_state = "50ex"
-	ammo_type = /obj/item/ammo_casing/a50MG/explosive
-	max_ammo = 5
-	multiple_sprites = 1
-	materials = list(MAT_METAL = 20000)
 
 /obj/item/ammo_box/n762
 	name = "ammo box (7.62x38mmR)"

@@ -385,7 +385,6 @@
 	container_type = NONE
 	spillable = FALSE
 	isGlass = FALSE
-	var/bottle = FALSE
 
 /obj/item/reagent_containers/food/drinks/soda_cans/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is trying to eat \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -406,11 +405,7 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack_self(mob/user)
 	if(!is_drainable())
-		if(bottle == TRUE)
-			to_chat(user, "You pop open \the [src] and the bottle cap falls to the ground.")
-			new /obj/item/stack/f13Cash(user.loc)
-		else
-			to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
+		to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
 		container_type = OPENCONTAINER
 		playsound(src, "can_open", 50, 1)
 		spillable = TRUE
@@ -510,7 +505,6 @@
 	icon_state = "nukacola"
 	list_reagents = list("cola" = 20, "nuka_cola" = 1, "radium" = 1)
 	foodtype = SUGAR
-	bottle = TRUE
 
 /obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola/radioactive
 	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state.<br>The bottle is slightly glowing."

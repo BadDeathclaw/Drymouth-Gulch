@@ -191,7 +191,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Cloning Pod."
 	id = "clonepod"
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	build_path = /obj/item/circuitboard/machine/clonepod/experimental
+	build_path = /obj/item/circuitboard/machine/clonepod
 	category = list("Medical Machinery")
 
 /datum/design/board/clonescanner

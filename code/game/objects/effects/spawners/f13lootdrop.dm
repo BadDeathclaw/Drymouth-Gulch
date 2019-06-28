@@ -6,8 +6,6 @@
    -----------to spawn", it is fine(tm)-------------
  */
 
-//Stop using lootspawners in dungeons improperly. If you put guns in a dungeon, people will want to use them, which will result in them shooting people. You'll have to put in nests or something to constantly give people stuff to shoot at. - Nappist
-
 /obj/effect/spawner/lootdrop/f13
 	name = "f13 spawners - DO NOT USE THIS"
 	lootdoubles = FALSE	//making sure it will /not/ double
@@ -478,10 +476,7 @@
 
 	loot = list(
 				/obj/item/gun/medbeam,
-				/obj/item/defibrillator/compact/combat/loaded,
-				/obj/item/reagent_containers/hypospray/combat,
-				/obj/item/clothing/glasses/hud/health/night,
-				/obj/item/disk/surgery/revival
+				/obj/item/defibrillator/loaded
 				)
 
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds  //no drugs, didn't add
@@ -1022,17 +1017,7 @@
 				/obj/item/poster/random_contraband
 				)
 
-/obj/effect/spawner/lootdrop/f13/seedspawner
-	name = "seed spawner"
-	lootdoubles = TRUE
-	fan_out_items = TRUE
-	lootcount = 4
-
-/obj/effect/spawner/lootdrop/f13/seedspawner/Initialize(mapload) // This will spawn gatfruit sometimes.
-	loot = childtypesof(/obj/item/seeds)
-	. = ..()
-
-/obj/effect/spawner/lootdrop/f13/foodspawner
+/obj/effect/spawner/lootdrop/f13/foodspawner //TIER 5 FOOD
 	name = "food spawner"
 	lootdoubles = TRUE
 	fan_out_items = TRUE

@@ -5,9 +5,8 @@
 	anchored = TRUE
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
-	barricade = TRUE
-	proj_pass_rate = 40
 	var/state = GIRDER_NORMAL
+	var/girderpasschance = 20 // percentage chance that a projectile passes through the girder.
 	var/can_displace = TRUE //If the girder can be moved around by wrenching it
 	max_integrity = 200
 
@@ -279,6 +278,15 @@
 			qdel(src)
 		return TRUE
 
+/obj/structure/girder/CanPass(atom/movable/mover, turf/target)
+	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
+		return prob(girderpasschance)
+	else
+		if(istype(mover, /obj/item/projectile))
+			return prob(girderpasschance)
+		else
+			return 0
+
 /obj/structure/girder/CanAStarPass(ID, dir, caller)
 	. = !density
 	if(ismovableatom(caller))
@@ -307,14 +315,14 @@
 	icon_state = "displaced"
 	anchored = FALSE
 	state = GIRDER_DISPLACED
-	proj_pass_rate = 65
+	girderpasschance = 25
 	max_integrity = 120
 
 /obj/structure/girder/reinforced
 	name = "reinforced girder"
 	icon_state = "reinforced"
 	state = GIRDER_REINF
-	proj_pass_rate = 20
+	girderpasschance = 0
 	max_integrity = 350
 
 

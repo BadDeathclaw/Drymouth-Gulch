@@ -44,7 +44,6 @@
 
 
 /obj/item/bodypart/chest/dismember()
-	return FALSE
 	if(!owner)
 		return FALSE
 	var/mob/living/carbon/C = owner

@@ -18,9 +18,7 @@
 							CAT_AMMO),
 						CAT_NONE, //Robot subcategories
 						CAT_NONE, //Misc subcategories
-						list(
-							CAT_TRIBAL,
-							CAT_FORGE), //Tribal subcategories
+						CAT_NONE, //Tribal subcategories
 						CAT_NONE,//Medical subcategories
 						CAT_NONE, //Assemblies subcategories
 						list(	//Food subcategories

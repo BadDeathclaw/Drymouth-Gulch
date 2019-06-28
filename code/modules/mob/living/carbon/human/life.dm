@@ -38,7 +38,10 @@
 	name = get_visible_name()
 
 	dna.species.spec_life(src) // for mutantraces
-
+//lewd
+	if(refactory_period)
+		refactory_period--
+//end of lewd
 	if(stat != DEAD)
 		return 1
 

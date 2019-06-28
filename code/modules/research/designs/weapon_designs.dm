@@ -252,12 +252,12 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/laserrifle
-	name = "AER9 Laser Rifle"
-	desc = "An AER9 laser rifle."
+	name = "Laser Rifle"
+	desc = "A laser rifle."
 	id = "laserrifle"
 	build_type = PROTOLATHE
 	materials = list(MAT_GOLD = 5000, MAT_URANIUM = 4000, MAT_METAL = 5000, MAT_TITANIUM = 2000)
-	build_path = /obj/item/gun/energy/laser/aer9
+	build_path = /obj/item/gun/energy/laser
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -303,17 +303,6 @@
 	build_path =/obj/item/stock_parts/cell/ammo/mfc
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
-
-/datum/design/ec
-	name = "Energy Cell"
-	id = "ec"
-	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 1000)
-	build_path =/obj/item/stock_parts/cell/ammo/ec
-	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-
 
 /datum/design/ecp
 	name = "Electron Charge Pack"

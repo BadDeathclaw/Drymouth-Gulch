@@ -333,10 +333,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 60, "embedded_fall_chance" = 20)
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/throwing_star/pickup(mob/living/user)
-	. = ..()
-	throwingweapondraw(src, user)
-
 /obj/item/switchblade
 	name = "switchblade"
 	icon_state = "switchblade"

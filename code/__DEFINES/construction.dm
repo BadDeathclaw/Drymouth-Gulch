@@ -87,8 +87,6 @@
 #define CAT_ROBOT	"Robots"
 #define CAT_MISC	"Misc"
 #define CAT_PRIMAL  "Tribal"
-#define CAT_TRIBAL  "Tribal"
-#define CAT_FORGE   "Forge"
 #define CAT_MEDICAL	"Medical"
 #define CAT_ASSEM  	"Assemblies"
 #define CAT_CLOTHING	"Clothing"

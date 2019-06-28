@@ -143,7 +143,7 @@ Medic
 	name = "NCR Medical Officer"
 	jobtype = /datum/job/ncr/f13medic
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
-	accessory =     /obj/item/clothing/accessory/ncr/LT
+	accessory =     /obj/item/clothing/accessory/armband/med/ncr
 	suit = 			/obj/item/clothing/suit/toggle/labcoat/cmo
 	head = 			/obj/item/clothing/head/beret/ncr
 	glasses = 		/obj/item/clothing/glasses/hud/health
@@ -219,7 +219,7 @@ Engineer
 	name = "NCR Engineer"
 	jobtype = /datum/job/ncr/f13engineer
 	uniform =  		/obj/item/clothing/under/f13/ncr
-	accessory =     /obj/item/clothing/accessory/ncr/SGT
+	accessory =     /obj/item/clothing/accessory/armband/engine/ncr
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = 			/obj/item/clothing/head/hardhat/orange
 	glasses = 		/obj/item/clothing/glasses/welding
@@ -359,20 +359,13 @@ Veteran Ranger
 
 	outfit = /datum/outfit/job/ncr/f13vetranger
 
-
-/datum/job/ncr/f13vetranger/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
-
 /datum/outfit/job/ncr/f13vetranger
 	name = "NCR Veteran Ranger"
 	jobtype = /datum/job/ncr/f13vetranger
-	uniform =  		/obj/item/clothing/under/f13/vetranger
+	uniform =  		/obj/item/clothing/under/f13/cowboyb
 	suit = 			/obj/item/clothing/suit/armor/f13/rangercombat
-	belt =			/obj/item/storage/belt/military/ncr
 	head = 			/obj/item/clothing/head/helmet/f13/ncr/rangercombat
-	gloves =		/obj/item/clothing/gloves/rifleman
-	shoes =			/obj/item/clothing/shoes/laced
+	gloves =		/obj/item/clothing/gloves/fingerless
 	suit_store = 	/obj/item/gun/ballistic/shotgun/antimateriel
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
@@ -400,11 +393,6 @@ Ranger
 
 	outfit = /datum/outfit/job/ncr/f13ranger
 
-
-/datum/job/ncr/f13ranger/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
-
 /datum/outfit/job/ncr/f13ranger
 	name = "NCR Ranger"
 	jobtype = /datum/job/ncr/f13ranger
@@ -414,9 +402,11 @@ Ranger
 	gloves =	/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	backpack_contents = list(
-		/obj/item/ammo_box/a762/doublestacked = 3, \
+		/obj/item/gun/ballistic/revolver/m29=1, \
+		/obj/item/ammo_box/c4570=2, \
+		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -441,23 +431,20 @@ Recon Ranger
 
 	outfit = /datum/outfit/job/ncr/f13recranger
 
-
-/datum/job/ncr/f13recranger/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
-
-
 /datum/outfit/job/ncr/f13recranger
 	name = "NCR Recon Ranger"
 	jobtype = /datum/job/ncr/f13recranger
 	uniform =  		/obj/item/clothing/under/f13/ranger
-	suit = 			/obj/item/clothing/suit/armor/f13/rangerrecon
-	belt =			/obj/item/storage/belt/military/reconbandolier
-	head = 			/obj/item/clothing/head/f13/ranger
-	shoes = 		/obj/item/clothing/shoes/laced
+	suit = 			/obj/item/clothing/suit/f13/duster
+	head = 			/obj/item/clothing/head/fluff/cowboy
+	gloves =		/obj/item/clothing/gloves/botanic_leather
+	shoes = 		/obj/item/clothing/shoes/workboots
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/a308 = 4, \
+		/obj/item/gun/ballistic/revolver/m29=1, \
+		/obj/item/ammo_box/a762=2, \
+		/obj/item/ammo_box/magazine/internal/cylinder/rev44=1, \
 		/obj/item/restraints/handcuffs=1, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \

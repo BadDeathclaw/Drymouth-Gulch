@@ -2,7 +2,7 @@
 ////////////Medical Tools////////////////
 /////////////////////////////////////////
 
- /datum/design/medbeam
+/datum/design/medbeam
 	name = "Medbeam Gun"
 	desc = "DONT CROSS THE DAMM BEAMS!"
 	id = "medbeam"
@@ -13,7 +13,7 @@
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
- /datum/design/autosurgeon
+/datum/design/autosurgeon
 	name = "Autosurgeon"
 	desc = "Automatically implants things inside of it."
 	id = "autosurgeon"
@@ -23,7 +23,6 @@
 	build_path = /obj/item/autosurgeon
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 
 /datum/design/mmi
 	name = "Man-Machine Interface"
