@@ -224,13 +224,6 @@
 				TOOL_MSRELOADER)
 	time = 30
 
-/datum/crafting_recipe/a50aebox/makeshift
-	name = "Makeshift 50 AE ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 14)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_MSRELOADER)
-	time = 30
-
 /datum/crafting_recipe/a50mg/makeshift
 	name = "Makeshift 50MG ammo box"
 	reqs = list(/obj/item/stack/sheet/metal = 16)
@@ -261,16 +254,6 @@
 /datum/crafting_recipe/c4570
 	name = "45-70 ammo box"
 	result = /obj/item/ammo_box/c4570box
-	reqs = list(/obj/item/stack/sheet/metal = 10)
-	tools = list(TOOL_SCREWDRIVER,
-				TOOL_RELOADER)
-	time = 10
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a50aebox
-	name = "50 AE ammo box"
-	result = /obj/item/ammo_box/a50AEbox
 	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
@@ -738,10 +721,10 @@
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 				/obj/item/stack/sheet/leather = 1,
 				/obj/item/stack/cable_coil = 5,
-				/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola = 1,
+				/obj/item/reagent_containers/food/drinks/bottle/nukacola = 1,
  				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1)
 	tools = list(/obj/item/lighter, /obj/item/screwdriver, /obj/item/wirecutters)
-	time = 60
+	time = 90
 	category = CAT_DRUGS
 
 
