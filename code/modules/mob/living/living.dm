@@ -639,6 +639,9 @@
 	return name
 
 /mob/living/update_gravity(has_gravity,override = 0)
+
+	//BAD DEATHCLAW CHANGE: ALL THE MOBS GOT GRAVITY NO MATTER WHAT, NO NEED TO PUT GRAV GENS EVERYWHERE
+	/*
 	if(!SSticker.HasRoundStarted())
 		return
 	if(has_gravity)
@@ -653,6 +656,7 @@
 		throw_alert("gravity", /obj/screen/alert/weightless)
 	if(!override && !is_flying())
 		float(!has_gravity)
+	*/
 
 /mob/living/float(on)
 	if(throwing)
