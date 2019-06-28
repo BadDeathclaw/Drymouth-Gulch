@@ -131,7 +131,7 @@
 	display_name = "Futuristic Parts"
 	description = "The pinnacle of machine parts."
 	prereq_ids = list("adv_power", "high_efficiency", "alientech")
-	design_ids = list("femto_mani", "triphasic_scanning", "quadratic_capacitor")
+	design_ids = list("femto_mani", "triphasic_scanning", "quadratic_capacitor","bluespace_matter_bin")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -502,7 +502,7 @@
 	design_ids = list("ioncarbine", "stunrevolver")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+/*
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"
 	display_name = "Medical Weaponry"
@@ -511,6 +511,7 @@
 	design_ids = list("rapidsyringe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+*/
 
 /datum/techweb_node/beam_weapons
 	id = "beam_weapons"
@@ -782,7 +783,7 @@
 	display_name = "Advanced Tool Technology"
 	description = "Things used by the really advanced people."
 	prereq_ids = list("biotech","engineering")
-	design_ids = list("industrcd", "circuitmaker", "turretmaker")
+	design_ids = list("turretmaker")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 20000
 
