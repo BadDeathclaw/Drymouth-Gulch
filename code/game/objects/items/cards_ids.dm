@@ -195,6 +195,10 @@ update_label("John Doe", "Clowny")
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
+/obj/item/card/id/gold/mayor
+	name = "Mayor's identification card"
+	desc = "A golden identification card reserved for the Mayor of Kebob."
+
 /obj/item/card/id/syndicate
 	name = "agent card"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
@@ -436,7 +440,7 @@ update_label("John Doe", "Clowny")
 
 /obj/item/card/id/dogtag/sheriff
 	name = "sheriff's badge"
-	desc = "A golden badge which shows power and might."
+	desc = "A golden Sheriff's badge."
 	id_type = "Badge"
 	icon_state = "sheriff"
 	item_state = "badge-sheriff"
