@@ -179,9 +179,9 @@
 	name = "stimpak"
 	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
 	icon_state = "stimpakpen"
-	volume = 16
-	amount_per_transfer_from_this = 16
-	list_reagents = list("stimpak" = 10, "tricordrazine" = 6)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list("stimpak" = 10)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	name = "super stimpak"
@@ -190,7 +190,6 @@
 	amount_per_transfer_from_this = 10
 	list_reagents = list("super_stimpak" = 10)
 
-/*
 /obj/item/reagent_containers/hypospray/medipen/psycho
 	name = "Psycho"
 	desc = "Contains Psycho, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
@@ -198,4 +197,4 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list("psycho" = 10)
-*/
+/

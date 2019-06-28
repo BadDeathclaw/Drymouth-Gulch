@@ -78,7 +78,7 @@
 	value = 1
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
-
+/*
 /datum/quirk/hard_yards
 	name = "Hard Yards"
 	desc = "You've put them in, now reap the rewards."
@@ -87,7 +87,7 @@
 	mob_trait = TRAIT_HARD_YARDS
 	gain_text = "<span class='notice'>Rain or shine, nothing slows you down.</span>"
 	lose_text = "<span class='danger'>You walk with a less sure gait, the ground seeming less firm somehow.</span>"
-
+*/
 /datum/quirk/lifegiver
 	name = "Lifegiver"
 	desc = "You embody wellness! Instantly gain +15 maximum Health"
@@ -133,7 +133,7 @@
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "You can conceal yourself in danger. Ctrl-shift-click a closed locker to jump into it, as long as you have access."
-	value = 2
+	value = 1
 	mob_trait = TRAIT_SKITTISH
 
 /datum/quirk/spiritual
@@ -159,7 +159,7 @@
 /datum/quirk/grenadesloot
 	name = "Party Favor"
 	desc = "Who knows what's inside."
-	value = 1
+	value = 3
 	var/obj/item/heirloom ///SPAGETH CODE DON'T LEAVE TO REMOVE THE NAME.
 	var/where
 
@@ -188,7 +188,6 @@
 	if(where == "in your backpack")
 		var/mob/living/carbon/human/H = quirk_holder
 		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H) //GOD BLESS SPAGETHY CODE!
-
 ///TO DO: TEST IT WITH BOXES LIKE MEDKITS/NORMALS BOXES.
 ///ADD MORE EQUIPMENT TRAITS REEEE
 ///IMPROVE MY ENGLISH

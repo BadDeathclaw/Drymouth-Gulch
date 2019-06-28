@@ -1,0 +1,9 @@
+{
+    "map_name": "Pahrump",
+    "map_path": "map_files/Pahrump",
+    "map_file": "Pahrump.dmm",
+    "shuttles": {
+	   	"emergency": "emergency_box",
+	    "ferry": "ferry_fancy"
+    }
+}

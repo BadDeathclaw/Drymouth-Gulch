@@ -254,9 +254,21 @@
 		if(TRUE)
 			density = FALSE
 			icon_state = "door_opened"
-
+			
 /obj/structure/fence/door/proc/can_open(mob/user)
 	return TRUE
+
+/obj/structure/simple_door/metal/fence
+	name = "fence gate"
+	desc = "A gate for a fence."
+	icon_state = "fence"
+	door_type = "fence"
+	open_sound = "sound/f13machines/doorchainlink_open.ogg"
+	close_sound = "sound/f13machines/doorchainlink_close.ogg"
+	opaque = 0
+	can_hold_padlock = TRUE
+	icon = 'icons/obj/fence.dmi'
+
 
 #undef CUT_TIME
 #undef CLIMB_TIME

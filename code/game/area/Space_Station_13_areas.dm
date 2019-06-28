@@ -1347,7 +1347,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = FALSE
 
 /area/f13/underground
-	flags_2 = BLOCK_RADIO_2
+	flags_2 = NONE //BLOCK_RADIO_2
 
 /area/f13/underground/bos
 	name = "BoS"

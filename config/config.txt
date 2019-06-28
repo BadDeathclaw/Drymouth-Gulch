@@ -351,12 +351,12 @@ ANNOUNCE_ADMIN_LOGOUT
 ANNOUNCE_ADMIN_LOGIN
 
 ## Map rotation
-## You should edit maps.txt to match your configuration when you enable this.
-#MAPROTATION
+## You should edit maps.txt to match your configuration when you enable this.#
+MAPROTATION
 
 ## Map voting
 ## Allows players to vote for their preffered map
-## When it's set to zero, the map will be randomly picked each round
+## When it's set to zero, the map will be randomly picked each round#
 ALLOW_MAP_VOTING 1
 
 ## Map rotate chance delta

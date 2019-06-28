@@ -466,6 +466,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/ncrengineer
 	name = "NCR Engineer"
 
+/obj/effect/landmark/start/f13/ncrcorporal
+	name = "NCR Corporal"
+
 /obj/effect/landmark/start/f13/ncrtrooper
 	name = "NCR Trooper"
 	icon_state = "NCR Trooper"
@@ -558,10 +561,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/initiateknight
 	name = "Initiate Knight"
 	icon_state = "Initiate Knight"
+	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/initiatescribe
 	name = "Initiate Scribe"
 	icon_state = "Initiate Scribe"
+	icon_state = "Scribe"
 
 // Vault
 
@@ -595,9 +600,21 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 // Den
 
+/obj/effect/landmark/start/f13/mayor
+	name = "Mayor"
+
 /obj/effect/landmark/start/f13/sheriff
 	name = "Sheriff"
 	icon_state = "Sheriff"
+
+/obj/effect/landmark/start/f13/deputy
+	name = "Deputy"
+
+/obj/effect/landmark/start/f13/farmer
+	name = "Farmer"
+
+/obj/effect/landmark/start/f13/prospector
+	name = "Prospector"
 
 /obj/effect/landmark/start/f13/settler
 	name = "Settler"
