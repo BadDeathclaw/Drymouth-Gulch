@@ -24,7 +24,7 @@ SUBSYSTEM_DEF(nightcycle)
 	var/list/currentrun = list() //To run through all of this when first made
 
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
-	if(resumed)
+	if(!resumed)
 		if(nextBracket())
 			currentrun = GLOB.all_ground_turfs.Copy()
 			doshift()
