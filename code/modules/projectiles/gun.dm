@@ -429,7 +429,8 @@
 	. = ..()
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		zoom(user, FALSE)
-		azoom.Remove(user) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.						//user.stat is because if you do this in lobby it runtimes
+		if(zoomable == TRUE)
+			azoom.Remove(user)
 	
 /obj/item/gun/dropped(mob/user)
 	. = ..()
