@@ -729,7 +729,9 @@
 	if(!user.put_in_hands(I))
 		to_chat(user, "<span class='notice'>You fumble for [I] and it falls on the floor.</span>")
 		return
-	user.visible_message("<span class='warning'>[user] draws [I] from [parent]!</span>", "<span class='notice'>You draw [I] from [parent].</span>")
+	user.visible_message("<span class='warning'>[user] draws [I] from [parent]!</span>", "<span class='warning'>You draw [I] from [parent].</span>")
+	if(I.is_sharp())
+		playsound(user.loc, 'sound/effects/knife_draw.ogg', 50, 0)
 
 /datum/component/storage/proc/gather_mode_switch(mob/user)
 	collection_mode = (collection_mode+1)%3

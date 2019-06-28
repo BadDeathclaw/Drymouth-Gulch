@@ -56,6 +56,16 @@
 /mob/proc/IsStun() //non-living mobs shouldn't be stunned
 	return FALSE
 
+/////////////////////////////////// FIRE DELAY ////////////////////////////////////
+
+/mob/proc/IsWeaponDrawDelayed() //non-living mobs shouldn't be stunned
+	return FALSE
+
+/////////////////////////////////// THROW DELAY ////////////////////////////////////
+
+/mob/proc/IsThrowDelayed() //non-living mobs shouldn't be stunned
+	return FALSE
+
 /////////////////////////////////// KNOCKDOWN ////////////////////////////////////
 
 /mob/proc/IsKnockdown() //non-living mobs shouldn't be knocked down

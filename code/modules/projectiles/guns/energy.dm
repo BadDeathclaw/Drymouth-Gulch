@@ -73,7 +73,7 @@
 		update_icon()
 
 /obj/item/gun/energy/attack_self(mob/living/user as mob)
-	if(ammo_type.len > 1)
+	if(LAZYLEN(ammo_type) > 1) //fuck off runtime errors
 		select_fire(user)
 		update_icon()
 
