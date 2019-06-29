@@ -7,6 +7,7 @@
 	slot_flags = SLOT_BELT
 	var/id = null
 	var/static/list/used_ids = list()
+	var/transfer_prints = FALSE
 
 /obj/item/door_key/New()
 	..()
