@@ -6,8 +6,6 @@
 	species_traits = list(HAIR,FACEHAIR)
 	inherent_traits = list(TRAIT_RADIMMUNE)
 	inherent_biotypes = list(MOB_INORGANIC, MOB_HUMANOID)
-	burnmod = 0.40 // Leather skinless boys
-	brutemod = 1.10 //weaker fags
 	punchstunthreshold = 9
 	use_skintones = 0
 	sexes = 1

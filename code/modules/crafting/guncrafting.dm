@@ -38,10 +38,10 @@
 	machine_tool_behaviour = TOOL_RELOADER
 
 /obj/machinery/ammobench/makeshift
-	name = "makeshift reloading press"
-	desc = "A makeshift reloading press capable of producing ammunition rather inefficiently."
-	icon = 'icons/obj/machines/mining_machines.dmi' //placeholder
-	icon_state = "unloader-corner" //placeholder
+	name = "makeshift reloading bench"
+	desc = "A makeshift reloading bench capable of producing ammunition rather inefficiently."
+	icon = 'icons/obj/machines/reloadingbench.dmi'
+	icon_state = "reloading_bench"
 	resistance_flags = INDESTRUCTIBLE
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
