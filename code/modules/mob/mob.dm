@@ -34,6 +34,8 @@
 		AA.onNewMob(src)
 	nutrition = rand(NUTRITION_LEVEL_START_MIN, NUTRITION_LEVEL_START_MAX)
 	. = ..()
+	update_config_movespeed()
+	update_movespeed(TRUE)
 
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"

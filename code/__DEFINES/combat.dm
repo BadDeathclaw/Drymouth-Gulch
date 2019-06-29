@@ -106,11 +106,11 @@
 #define SHOVE_KNOCKDOWN_COLLATERAL 0
 #define SHOVE_CHAIN_PARALYZE 40
 //Shove slowdown
-#define SHOVE_SLOWDOWN_LENGTH 30
-#define SHOVE_SLOWDOWN_STRENGTH 0.85 //multiplier
+#define SHOVE_SLOWDOWN_LENGTH 100
+#define SHOVE_SLOWDOWN_STRENGTH 0.75 //multiplier
 //Shove disarming item list
 GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
-	/obj/item/gun)))
+	/obj/item)))
 
 //Combat object defines
 

@@ -40,6 +40,11 @@
 	var/lying_prev = 0
 	var/canmove = 1
 
+	//MOVEMENT SPEED
+	var/list/movespeed_modification				//Lazy list, see mob_movespeed.dm
+	var/cached_multiplicative_slowdown
+	/////////////////
+
 	var/name_archive //For admin things like possession
 
 	var/bodytemperature = BODYTEMP_NORMAL	//310.15K / 98.6F

@@ -144,8 +144,13 @@
 /mob/living/proc/add_trait(trait, source)
 	if(!status_traits[trait])
 		status_traits[trait] = list(source)
+		on_add_trait(trait, source)
 	else
 		status_traits[trait] |= list(source)
+
+/mob/living/proc/on_add_trait(trait, source)
+	if(trait == TRAIT_IGNORESLOWDOWN)
+		update_movespeed(FALSE)
 
 /mob/living/proc/add_quirk(quirk, spawn_effects) //separate proc due to the way these ones are handled
 	if(has_trait(quirk))
@@ -166,6 +171,7 @@
 
 	if(!sources) // No defined source cures the trait entirely.
 		status_traits -= trait
+		on_remove_trait(trait, sources, force)
 		return
 
 	if(!islist(sources))
@@ -180,6 +186,11 @@
 
 	if(!LAZYLEN(status_traits[trait]))
 		status_traits -= trait
+	on_remove_trait(trait, sources, force)
+
+/mob/living/proc/on_remove_trait(trait, list/sources, force)
+	if(trait == TRAIT_IGNORESLOWDOWN)
+		update_movespeed(FALSE)
 
 /mob/living/proc/remove_quirk(quirk)
 	var/datum/quirk/T = roundstart_quirks[quirk]

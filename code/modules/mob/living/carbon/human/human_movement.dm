@@ -1,3 +1,12 @@
+/mob/living/carbon/human/get_movespeed_modifiers()
+	var/list/considering = ..()
+	. = considering
+	if(has_trait(TRAIT_IGNORESLOWDOWN))
+		for(var/id in .)
+			var/list/data = .[id]
+			if(data[MOVESPEED_DATA_INDEX_FLAGS] & IGNORE_NOSLOW)
+				.[id] = data
+
 /mob/living/carbon/human/movement_delay()
 	. = 1
 	var/static/config_human_delay
