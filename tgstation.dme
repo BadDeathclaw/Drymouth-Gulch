@@ -2746,7 +2746,7 @@
 #include "code\modules\vending\youtool.dm"
 #include "code\modules\VR\vr_human.dm"
 #include "code\modules\VR\vr_sleeper.dm"
-#include "code\modules\Wasteland\Wasteland Flora\hay.dm"
+#include "code\modules\Wasteland\Wasteland Flora\hay_crafts.dm"
 #include "code\modules\Wasteland\Wasteland Flora\wastelandPlants.dm"
 #include "code\modules\zombie\items.dm"
 #include "code\modules\zombie\organs.dm"

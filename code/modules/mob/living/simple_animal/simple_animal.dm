@@ -244,6 +244,8 @@
 
 
 /mob/living/simple_animal/handle_environment(datum/gas_mixture/environment)
+	//BAD DEATHCLAW CHANGE: Simple animals will no longer process atmos based damage
+	/*
 	var/atom/A = src.loc
 	if(isturf(A))
 		var/areatemp = get_temperature(environment)
@@ -256,6 +258,7 @@
 		adjustHealth(unsuitable_atmos_damage)
 
 	handle_temperature_damage()
+	*/
 
 /mob/living/simple_animal/proc/handle_temperature_damage()
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
