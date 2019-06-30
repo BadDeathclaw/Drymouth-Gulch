@@ -96,6 +96,7 @@
 #define F13PROSPECTOR	(1<<4)
 #define F13DEPUTY		(1<<5)
 #define F13MAYOR		(1<<6)
+#define F13PREACHER		(1<<7)
 
 #define VAULT			(1<<7)
 
@@ -115,8 +116,7 @@
 #define F13WASTELANDER	(1<<1)
 #define F13RAIDER		(1<<2)
 #define F13PUSHER		(1<<3)
-#define F13PREACHER		(1<<4)
-#define F13PUNRAIDER	(1<<5)
+#define F13PUNRAIDER	(1<<4)
 
 #define ENCLAVE			(1<<9)
 
