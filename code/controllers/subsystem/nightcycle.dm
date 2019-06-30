@@ -4,7 +4,6 @@
 	4:45 PM 	- 	60300
 	9:45 PM 	- 	78300
 	10:30 PM 	- 	81000 */
-
 #define CYCLE_SUNRISE 	216000
 #define CYCLE_MORNING 	243000
 #define CYCLE_DAYTIME 	423000
@@ -21,23 +20,19 @@ SUBSYSTEM_DEF(nightcycle)
 	var/currentTime
 	var/sunColour
 	var/sunPower
-	var/list/currentrun = list() //To run through all of this when first made
+	var/sunRange
+	var/currentColumn
+	var/working = 3
+	var/doColumns //number of columns to do at a time
 
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
-	if(!resumed)
-		if(nextBracket())
-			currentrun = GLOB.all_ground_turfs.Copy()
-			doshift()
-	else
-		doshift()
+	if (working)
+		doWork()
+		return
+	if (nextBracket())
+		working = 1
+		currentColumn = 1
 
-/datum/controller/subsystem/nightcycle/proc/doshift()
-	while(currentrun.len)
-		var/turf/T = currentrun[currentrun.len]
-		currentrun.len--
-		T.set_light(3, sunPower, sunColour)
-		if(MC_TICK_CHECK)
-			break
 
 /datum/controller/subsystem/nightcycle/proc/nextBracket()
 	var/Time = station_time()
@@ -62,6 +57,21 @@ SUBSYSTEM_DEF(nightcycle)
 		updateLight(currentTime)
 		. = TRUE
 
+/datum/controller/subsystem/nightcycle/proc/doWork()
+	var/list/currentTurfs = list()
+	var/x = min(currentColumn + doColumns, world.maxx)
+
+	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
+		currentTurfs += block(locate(currentColumn,1,z), locate(x,world.maxy,z))
+	for(var/turf/open/indestructible/ground/outside/T in currentTurfs)
+		spawn(5)
+			T.set_light(T.light_range, sunPower, sunColour)
+	currentColumn = x + 1
+	if (currentColumn > world.maxx)
+		currentColumn = 1
+		working = 0
+		return
+
 /datum/controller/subsystem/nightcycle/proc/updateLight(newTime)
 	switch (newTime)
 		if ("SUNRISE")
@@ -82,6 +92,8 @@ SUBSYSTEM_DEF(nightcycle)
 		if("NIGHTTIME")
 			sunColour = "#00111a"
 			sunPower = 0.15
+
+
 
 #undef CYCLE_SUNRISE
 #undef CYCLE_MORNING
