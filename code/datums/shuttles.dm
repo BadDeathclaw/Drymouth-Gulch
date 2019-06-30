@@ -478,3 +478,10 @@
 /datum/map_template/shuttle/bos/elevator
 	suffix = "elevator"
 	name = "BOS Elevator"
+
+
+/datum/map_template/shuttle/emergency/pahrump
+	suffix = "pahrump"
+	name = "Pahrump train"
+	credit_cost = 2000
+	description = "A train to return the occupants back to New California."

@@ -139,7 +139,7 @@
 		if (istype(E, /datum/stack_recipe))
 			var/datum/stack_recipe/R = E
 			var/max_multiplier = round(get_amount() / R.req_amount)
-			var/title as text
+			var/title
 			var/can_build = 1
 			can_build = can_build && (max_multiplier>0)
 
@@ -246,7 +246,7 @@
 		to_chat(usr, "<span class='warning'>There is another [R.title] here!</span>")
 		return FALSE
 	if(R.on_floor)
-		if(!isfloorturf(T))
+		if(!isfloorturf(T) && !isgroundturf(T))
 			to_chat(usr, "<span class='warning'>\The [R.title] must be constructed on the floor!</span>")
 			return FALSE
 		for(var/obj/AM in T)

@@ -86,6 +86,13 @@
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
 	desc = "Cracks rocks with sonic blasts, and doubles as a demolition power tool for smashing walls."
 
+/obj/item/pickaxe/rust
+	name = "rusty pickaxe"
+	desc = "This pickaxe has seen better days."
+	icon_state = "pickaxe_rust"
+	force = 12
+	toolspeed = 1.3
+
 /obj/item/shovel
 	name = "shovel"
 	desc = "A large tool for digging and moving dirt."

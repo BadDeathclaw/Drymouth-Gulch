@@ -34,6 +34,24 @@
 /obj/item/clothing/mask/surgical/attack_self(mob/user)
 	adjustmask(user)
 
+//NCR Facewrap
+
+/obj/item/clothing/mask/ncr_facewrap
+	name = "Facewrap"
+	desc = "A facewrap commonly employed by NCR troops in the Mojave."
+	icon_state = "ncr_facewrap"
+	item_state = "ncr_facewrap"
+	w_class = WEIGHT_CLASS_TINY
+	flags_inv = HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.01
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	actions_types = list(/datum/action/item_action/adjust)
+
+/obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
+	adjustmask(user)
+
 /obj/item/clothing/mask/fakemoustache
 	name = "fake moustache"
 	desc = "Warning: moustache is fake."
@@ -68,7 +86,7 @@
 	icon_state = "joy"
 
 /obj/item/clothing/mask/joy/joyful
-	item_flags = NODROP
+	desc = "Express your happiness or hide your sorrows with this laughing face with crying tears of joy cutout. It seems happier than usual."
 
 /obj/item/clothing/mask/joy/joyful/equipped(mob/user, slot)
 	var/mob/living/carbon/C = user
@@ -78,7 +96,7 @@
 
 /obj/item/clothing/mask/pig
 	name = "pig mask"
-	desc = "A rubber pig mask."
+	desc = "It's a very stylish pig mask which seems to have a voice modulator built into it."
 	icon_state = "pig"
 	item_state = "pig"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
@@ -97,13 +115,12 @@
 
 /obj/item/clothing/mask/spig //needs to be different otherwise you could turn the speedmodification off and on
 	name = "Pig face"
-	desc = "It looks like a mask, but closer inspection reveals it's melded onto this persons face!" //It's only ever going to be attached to your face.
+	desc = "It's a very stylish pig mask which seems to have a voice modulator built into it."
 	icon_state = "pig"
 	item_state = "pig"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
-	item_flags = NODROP
 
 /obj/item/clothing/mask/spig/speechModification(message)
 	if(voicechange)
@@ -133,7 +150,6 @@
 	return message
 
 /obj/item/clothing/mask/frog/cursed
-	item_flags = NODROP //reee!!
 
 /obj/item/clothing/mask/frog/cursed/attack_self(mob/user)
 	return //no voicebox to alter.
@@ -147,14 +163,13 @@
 
 /obj/item/clothing/mask/cowmask
 	name = "Cowface"
-	desc = "It looks like a mask, but closer inspection reveals it's melded onto this persons face!"
+	desc = "It's a very stylish cow mask which seems to have a voice modulator built into it."
 	icon = 'icons/mob/mask.dmi'
 	icon_state = "cowmask"
 	item_state = "cowmask"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
-	item_flags = NODROP
 
 /obj/item/clothing/mask/cowmask/speechModification(message)
 	if(voicechange)
@@ -169,7 +184,6 @@
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEYES|HIDEEARS
 	w_class = WEIGHT_CLASS_SMALL
 	var/voicechange = 1
-	item_flags = NODROP
 
 /obj/item/clothing/mask/horsehead/speechModification(message)
 	if(voicechange)

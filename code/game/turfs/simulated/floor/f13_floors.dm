@@ -35,6 +35,14 @@
 /turf/open/floor/plating/f13/MakeDry()
 	return
 
+/turf/open/floor/plating/f13/outside
+	name = "What the fuck mappers? why is this here"
+	desc = "If found, scream at the github repo about this"
+	icon_state = "wasteland1"
+	icon = 'icons/turf/f13desert.dmi'
+	light_range = 3
+	light_power = 0.75
+
 /* Outside turfs get global lighting */
 /turf/open/floor/plating/f13/outside/Initialize()
 	. = ..()
@@ -42,7 +50,7 @@
 
 #define GRASS_SPONTANEOUS 		2
 #define GRASS_WEIGHT 			4
-#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/tree/wasteland = 1)
+#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/broc = 7, /obj/structure/flora/wasteplant/feracactus = 5, /obj/structure/flora/wasteplant/mutfruit = 5, /obj/structure/flora/wasteplant/xander = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
 #define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
 
 /turf/open/floor/plating/f13/outside/desert
@@ -54,10 +62,10 @@
 	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
 	var/obj/structure/flora/turfPlant = null
 	slowdown = 2
-	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
+	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 2
-	var/storedindex = 0 //amount of stored items
-	var/mob/living/gravebody //is there a body in the pit?
+	var/storedindex = 0			//amount of stored items
+	var/mob/living/gravebody	//is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
 	var/pitcontents = list()
 	var/obj/dugpit/mypit
@@ -67,9 +75,7 @@
 	. = ..()
 	icon_state = "wasteland[rand(1,31)]"
 	//If no fences, machines (soil patches are machines), etc. try to plant grass
-	if(!(\
-			(locate(/obj/structure) in src) || \
-			(locate(/obj/machinery) in src) ))
+	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 		plantGrass()
 
 //Pass PlantForce for admin stuff I guess?
@@ -82,7 +88,7 @@
 		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST) //Create a new grass object at this location, and assign var
 		turfPlant = new randPlant(src)
 		. = TRUE //in case we ever need this to return if we spawned
-		return.
+		return .
 
 	//loop through neighbouring desert turfs, if they have grass, then increase weight
 	for(var/turf/open/floor/plating/f13/outside/desert/T in RANGE_TURFS(3, src))
@@ -100,7 +106,6 @@
 		turfPlant = new randPlant(src)
 		. = TRUE
 
-
 //Make sure we delete the plant if we ever change turfs
 /turf/open/floor/plating/f13/outside/desert/ChangeTurf()
 	if(turfPlant)
@@ -117,6 +122,11 @@
 	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewood1"
 
+	New()
+		..()
+		if(icon_state == "housewood1")
+			icon_state = "housewood[rand(1,3)]"
+
 /turf/open/floor/wood/f13/carpet
 	icon = 'icons/turf/fo13floorsmisc2.dmi'
 	icon_state="carpet"
@@ -125,7 +135,7 @@
 	name = "wood planks"
 	desc = "Rotting wooden flooring."
 
-/turf/open/floor/wood/f13/old/ruinedcornerendbr
+/turf/open/floor/wood/f13/old/ruinedcornerendbr	//WHAT THE FUCK IS THIS
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
 	icon = 'icons/turf/f13floorsmisc.dmi'
@@ -215,17 +225,29 @@
 /turf/open/floor/wood/f13/stage_br
 	icon_state = "housewood_stage_bottom_right"
 
+
+#define SHROOM_SPAWN	1
 /turf/open/floor/plating/f13/inside/mountain
 	name = "mountain"
 	desc = "Damp cave flooring."
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "mountain0"
+	var/obj/structure/flora/turfPlant = null
 
-/turf/open/floor/plating/f13/inside/mountain/New()
-	..()
+/turf/open/floor/plating/f13/inside/mountain/Initialize()
+	. = ..()
 	icon_state = "mountain[rand(0,10)]"
+	//If no fences, machines, etc. try to plant mushrooms
+	if(!(\
+			(locate(/obj/structure) in src) || \
+			(locate(/obj/machinery) in src) ))
+		plantShrooms()
 
-
+/turf/open/floor/plating/f13/inside/mountain/proc/plantShrooms()
+	if(prob(SHROOM_SPAWN))
+		turfPlant = new /obj/structure/flora/wasteplant/fungus(src)
+		. = TRUE //in case we ever need this to return if we spawned
+		return.
 
 /turf/open/floor/plasteel/f13/vault_floor
 	name = "vault floor"

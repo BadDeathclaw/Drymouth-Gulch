@@ -3,7 +3,7 @@ BoS access:
 Main doors: ACCESS_CAPTAIN 20
 */
 
-/datum/job/bos //do NOT use this for anything, it's just to store faction datums
+/datum/job/bos //do NOT use this for anything, it's just to store faction datums.
 	department_flag = BOS
 	selection_color = "#95a5a6"
 	exp_type = EXP_TYPE_BROTHERHOOD
@@ -22,19 +22,18 @@ Main doors: ACCESS_CAPTAIN 20
 	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
-	technophreak = TRUE
 
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /*
 Elder
@@ -99,7 +98,8 @@ Paladin
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
 
 
 /*Head Scribe
@@ -132,8 +132,8 @@ Paladin
 	suit_store =	/obj/item/gun/energy/laser/pistol
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1)
-	chemwhiz = TRUE
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 
 /*
@@ -168,7 +168,8 @@ Knight
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
 
 
 /*
@@ -198,15 +199,14 @@ Scribe
 	shoes = 		/obj/item/clothing/shoes/combat
 	suit = 			/obj/item/clothing/suit/f13/scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
+	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec=2, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/energy/laser/pistol=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2) //super paks not in yet
 	//PA training not in yet
-	chemwhiz = TRUE
 
 /*
 Initiate Knight
@@ -226,8 +226,8 @@ Initiate Knight
 
 	outfit = /datum/outfit/job/bos/f13initiateknight
 
-	access = list(ACCESS_BOS)
-	minimal_access = list(ACCESS_BOS)
+	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
+	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 
 /datum/outfit/job/bos/f13initiateknight
 	name = "Initiate Knight"
@@ -237,9 +237,8 @@ Initiate Knight
 	suit_store =	/obj/item/gun/energy/laser/aer9
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
-		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/energy/laser/pistol=1)
-
+		/obj/item/gun/energy/laser/pistol=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)
 /*
 Initiate Scribe
 */
@@ -257,8 +256,8 @@ Initiate Scribe
 
 	outfit = /datum/outfit/job/bos/f13initiatescribe
 
-	access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
-	minimal_access = list(ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS)
+	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
+	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR)
 
 /datum/outfit/job/bos/f13initiatescribe
 	name = "Initiate Scribe"
@@ -269,7 +268,8 @@ Initiate Scribe
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
 	belt = 			/obj/item/storage/belt/utility/full/engi
+	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1)
-	chemwhiz = TRUE
+		/obj/item/gun/energy/laser/pistol=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)

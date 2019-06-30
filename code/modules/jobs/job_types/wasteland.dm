@@ -64,13 +64,11 @@ wasteland
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
 	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
-	r_pocket = pick(
-		/obj/item/flashlight/flare/torch, \
-		/obj/item/flashlight/flare)
+	r_pocket = /obj/item/flashlight/flare
 	belt = 			/obj/item/kitchen/knife/combat/survival
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
-		/obj/item/reagent_containers/blood/radaway=1, \
+		/obj/item/reagent_containers/pill/radx=1, \
 		/obj/item/storage/bag/money/small/wastelander)
 
 
@@ -188,9 +186,7 @@ Raider
 		/obj/item/clothing/head/lobsterhat,\
 		/obj/item/clothing/head/cueball,\
 		/obj/item/clothing/head/fedora)
-	r_pocket = pick(
-		/obj/item/flashlight/flare/torch, \
-		/obj/item/flashlight/flare)
+	r_pocket = /obj/item/flashlight/flare
 	shoes = 			/obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=2, \
@@ -236,8 +232,6 @@ Pusher
 
 	suit = /obj/item/clothing/suit/armor/khan
 	uniform = /obj/item/clothing/under/f13/khan
-
-	chemwhiz = TRUE
 
 /datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()

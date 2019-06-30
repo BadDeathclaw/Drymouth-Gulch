@@ -94,6 +94,11 @@
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
 		purrbation_remove(H, silent=TRUE)
+	// F13 EDIT: GHOULS CANNOT BE LEGION
+	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
+		if(H.dna.species.id == "ghoul")
+			H.set_species(/datum/species/human)
+			H.apply_pref_name("human", H.client)
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
@@ -177,10 +182,6 @@
 
 	var/pda_slot = SLOT_BELT
 
-	var/technophreak = FALSE //F13 Technophreak, for super advanced tech (e.g. power armor, R&D)
-	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
-
-
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	switch(H.backbag)
 		if(GBACKPACK)
@@ -203,11 +204,6 @@
 			backpack_contents = list()
 		backpack_contents.Insert(1, box) // Box always takes a first slot in backpack
 		backpack_contents[box] = 1
-
-	if(technophreak==TRUE)
-		H.mind.istechnophreak = TRUE
-	if(chemwhiz == TRUE)
-		H.mind.ischemwhiz = TRUE
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -241,11 +237,6 @@
 		PDA.owner = H.real_name
 		PDA.ownjob = J.title
 		PDA.update_label()
-
-	if(technophreak==TRUE)
-		H.mind.istechnophreak = TRUE
-	if(chemwhiz == TRUE)
-		H.mind.ischemwhiz = TRUE
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()

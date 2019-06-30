@@ -195,27 +195,9 @@ update_label("John Doe", "Clowny")
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 
-/obj/item/card/id/deputy
-	name = "deputy's badge"
-	desc = "A silver badge which shows honour and dedication."
-	id_type = "Badge"
-	assignment = "Deputy"
-	icon_state = "deputy"
-	item_state = "badge-deputy"
-
-/obj/item/card/id/deputy/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/card/id/sheriff))
-		registered_name = stripped_input(user, "Who do you want to designate as your deputy?", , "", MAX_NAME_LEN)
-		to_chat(user, "You scribble the [registered_name] for the name on the badge.")
-		update_label()
-	return ..()
-
-/obj/item/card/id/sheriff
-	name = "sheriff's badge"
-	desc = "A golden badge which shows power and might."
-	id_type = "Badge"
-	icon_state = "sheriff"
-	item_state = "badge-sheriff"
+/obj/item/card/id/gold/mayor
+	name = "Mayor's identification card"
+	desc = "A golden identification card reserved for the Mayor of Kebob."
 
 /obj/item/card/id/syndicate
 	name = "agent card"
@@ -430,8 +412,80 @@ update_label("John Doe", "Clowny")
 	icon_state = "centcom"
 	access = list(ACCESS_ENGINE_EQUIP)
 
+
+////////Dogtag types/////////
+//All one subtype for making item path pretty/easily telling what ID cards are dogtags, for gravemarkers
+
 /obj/item/card/id/dogtag
 	name = "holo dogtag"
 	desc = "An advanced holographic dogtag, that shows the duty of a BoS member."
-	icon_state =	"holodogtag"
+	icon_state = "holodogtag"
 	id_type = "ID tags"
+
+
+/obj/item/card/id/dogtag/deputy
+	name = "deputy's badge"
+	desc = "A silver badge which shows honour and dedication."
+	id_type = "Badge"
+	assignment = "Deputy"
+	icon_state = "deputy"
+	item_state = "badge-deputy"
+
+/obj/item/card/id/dogtag/deputy/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/card/id/dogtag/sheriff))
+		registered_name = stripped_input(user, "Who do you want to designate as your deputy?", , "", MAX_NAME_LEN)
+		to_chat(user, "You scribble the [registered_name] for the name on the badge.")
+		update_label()
+	return ..()
+
+/obj/item/card/id/dogtag/sheriff
+	name = "sheriff's badge"
+	desc = "A golden Sheriff's badge."
+	id_type = "Badge"
+	icon_state = "sheriff"
+	item_state = "badge-sheriff"
+
+/obj/item/card/id/dogtag/ncrtrooper
+	name = "trooper's tags"
+	desc = "A dog tag proving enlistment."
+	icon_state = "ncrdogtagrecruit"
+
+/obj/item/card/id/dogtag/ncrsergeant
+	name = "sergeant's tags"
+	desc = "A chevron decorated dog tag showing NCO-ship."
+	icon_state = "ncrdogtagsergeant"
+
+/obj/item/card/id/dogtag/ncrlieutenant
+	name = "lieutenant's tags"
+	desc = "A silver bar dog tag that denotes a member of the NCR military with a lieutenant commission."
+	icon_state = "ncrdogtagofficer"
+
+/obj/item/card/id/dogtag/ncrcaptain
+	name = "captain's tags"
+	desc = "A dog tag that demands respect from all those subordinate to it. This one belongs to an NCR captain."
+	icon_state = "ncrdogtagcaptain"
+
+/obj/item/card/id/dogtag/ncrranger
+	name = "ranger tags"
+	desc = "A dog tag that invokes fear in those who see it, belongs to a man with a big iron on his hip."
+	icon_state = "ncrdogtagranger"
+
+/obj/item/card/id/dogtag/legrecruit
+	name = "recruit medallion"
+	desc = "A silver disc stamped with the Legion's Bull insignia. Belongs to a recruit."
+	icon_state = "legionmedallionrecruit"
+
+/obj/item/card/id/dogtag/legprime
+	name = "prime medallion"
+	desc = "A marked silver disc stamped with the Legion's Bull insignia. Belongs to a prime."
+	icon_state = "legionmedallionprime"
+
+/obj/item/card/id/dogtag/legveteran
+	name = "veteran medallion"
+	desc = "A heavily marked silver disc stamped with the Legion's Bull insignia. Belongs to a veteran, and reeks of iron."
+	icon_state = "legionmedallionveteran"
+
+/obj/item/card/id/dogtag/legcenturion
+	name = "centurion medallion"
+	desc = "A golden disc awarded to the most fierce men in the whole legion. If you are close enough to read the insignia you won't be alive much longer."
+	icon_state = "legionmedallioncent"

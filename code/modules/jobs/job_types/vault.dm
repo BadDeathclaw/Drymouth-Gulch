@@ -19,14 +19,14 @@ here's a tip, go search DEFINES/access.dm
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 
 /datum/outfit/job/vault/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /*
 Overseer
@@ -159,7 +159,6 @@ Medical Doctor
 /datum/outfit/job/vault/f13doctor
 	name = "Medical Doctor"
 	jobtype = /datum/job/vault/f13doctor
-	chemwhiz = TRUE
 
 	//pda
 	uniform = 		/obj/item/clothing/under/f13/vault13
@@ -198,7 +197,6 @@ Scientist
 /datum/outfit/job/vault/f13vaultscientist
 	name = "Scientist"
 	jobtype = /datum/job/vault/f13vaultscientist
-	chemwhiz = TRUE
 
 	//pda
 	uniform = 		/obj/item/clothing/under/f13/vault13
@@ -438,3 +436,10 @@ Station Engineer
 		uniform = /obj/item/clothing/under/f13/vault13
 		ears = /obj/item/radio/headset/headset_vault
 		shoes = /obj/item/clothing/shoes/jackboots
+
+
+/datum/job/vault/New()
+	..()
+	if(SSmapping.config.map_name == "Pahrump")
+		total_positions = 0
+		spawn_positions = 0 

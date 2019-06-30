@@ -36,6 +36,9 @@
 	var/weapon_weight = WEAPON_LIGHT
 	var/spread = 0						//Spread induced by the gun itself.
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
+	var/distro = 0						//Affects distance between shotgun pellets, ignore unless you're altering shotguns
+	var/extra_damage = 0				//Number to add to individual bullets.
+	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -94,12 +97,6 @@
 	else
 		to_chat(user, "It doesn't have a firing pin installed, and won't fire.")
 
-/obj/item/gun/equipped(mob/living/user, slot)
-	. = ..()
-	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
-		zoom(user, FALSE)
-		if(zoomable == TRUE) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.
-			azoom.Remove(user)
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
@@ -219,6 +216,9 @@
 	return
 
 /obj/item/gun/proc/process_burst(mob/living/user, atom/target, message = TRUE, params=null, zone_override = "", sprd = 0, randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0)
+	if(user.IsWeaponDrawDelayed())
+		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+		return FALSE
 	if(!user || !firing_burst)
 		firing_burst = FALSE
 		return FALSE
@@ -236,7 +236,7 @@
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread))
 
-		if(!chambered.fire_casing(target, user, params, ,suppressed, zone_override, sprd))
+		if(!chambered.fire_casing(target, user, params, distro,suppressed, zone_override, sprd, extra_damage, extra_penetration))
 			shoot_with_empty_chamber(user)
 			firing_burst = FALSE
 			return FALSE
@@ -260,6 +260,9 @@
 
 	if(semicd)
 		return
+	if(user.IsWeaponDrawDelayed())
+		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+		return
 
 	var/sprd = 0
 	var/randomized_gun_spread = 0
@@ -281,7 +284,7 @@
 					to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd))
+			if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, extra_damage, extra_penetration))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -420,7 +423,15 @@
 		azoom.Grant(user)
 	if(alight)
 		alight.Grant(user)
-
+	
+		
+/obj/item/gun/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE)
+			azoom.Remove(user)
+	
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	if(zoomed)
@@ -429,7 +440,7 @@
 		azoom.Remove(user)
 	if(alight)
 		alight.Remove(user)
-
+	
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params)
 	if(!ishuman(user) || !ishuman(target))
 		return

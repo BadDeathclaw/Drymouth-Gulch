@@ -2,13 +2,13 @@
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /datum/outfit/job/enclave/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.mind.istechnophreak = TRUE
+	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /*
 Commander
@@ -57,8 +57,6 @@ Medic
 /datum/outfit/job/enclave/f13usmedic
 	name = "US Medic"
 	jobtype = /datum/job/enclave/f13usmedic
-	chemwhiz = TRUE
-
 	id = /obj/item/card/id/gold
 	uniform =  /obj/item/clothing/under/rank/captain
 

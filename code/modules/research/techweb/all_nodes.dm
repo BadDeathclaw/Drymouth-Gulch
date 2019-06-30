@@ -27,7 +27,7 @@
 	display_name = "Advanced Biotechnology"
 	description = "Advanced Biotechnology"
 	prereq_ids = list("biotech")
-	design_ids = list("piercesyringe", "smoke_machine", "limbgrower", "defibrillator", "meta_beaker", "medbeam", "virusmaker")
+	design_ids = list("piercesyringe", "smoke_machine", "limbgrower", "defibrillator", "meta_beaker", "virusmaker")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
 
@@ -131,7 +131,7 @@
 	display_name = "Futuristic Parts"
 	description = "The pinnacle of machine parts."
 	prereq_ids = list("adv_power", "high_efficiency", "alientech")
-	design_ids = list("femto_mani", "triphasic_scanning", "quadratic_capacitor")
+	design_ids = list("femto_mani", "triphasic_scanning", "quadratic_capacitor","bluespace_matter_bin")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 5000
 
@@ -481,7 +481,7 @@
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new to weaponize just about everything now."
 	prereq_ids = list("engineering")
-	design_ids = list("pin_testing", "pin", "tele_shield", "pin_auth", "mfc", "laserpistol")
+	design_ids = list("pin_testing", "pin", "tele_shield", "pin_auth", "mfc", "ec", "laserpistol")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -502,7 +502,7 @@
 	design_ids = list("ioncarbine", "stunrevolver")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+/*
 /datum/techweb_node/medical_weapons
 	id = "medical_weapons"
 	display_name = "Medical Weaponry"
@@ -511,6 +511,7 @@
 	design_ids = list("rapidsyringe")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+*/
 
 /datum/techweb_node/beam_weapons
 	id = "beam_weapons"
@@ -782,7 +783,7 @@
 	display_name = "Advanced Tool Technology"
 	description = "Things used by the really advanced people."
 	prereq_ids = list("biotech","engineering")
-	design_ids = list("industrcd", "circuitmaker", "turretmaker")
+	design_ids = list("turretmaker")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
 	export_price = 20000
 
@@ -791,7 +792,7 @@
 	display_name = "Advanced Biological Tools"
 	description = "Advanced biological tools."
 	prereq_ids = list("alientech", "adv_biotech")
-	design_ids = list("alien_scalpel", "alien_hemostat", "alien_retractor", "alien_saw", "alien_drill", "alien_cautery", "autosurgeon")
+	design_ids = list("alien_scalpel", "alien_hemostat", "alien_retractor", "alien_saw", "alien_drill", "alien_cautery")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 20000
 

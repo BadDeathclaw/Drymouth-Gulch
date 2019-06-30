@@ -25,11 +25,14 @@
 			ex_age = "middle-aged"
 		if(65 to INFINITY) //Respect your immortal elders.
 			ex_age = "elderly"
-
-	var/msg = "<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>, \an [ex_age] [gender == MALE ? "man" : "woman"]!\n"
-
-	var/list/obscured = check_obscured_slots()
+	var/fuckbyond = ""
+	if(gender == MALE)
+		fuckbyond = "man"
+	else
+		fuckbyond = "woman"
 	var/skipface = (wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE))
+	var/msg = "<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>[skipface ? "!\n" : ", \an [ex_age] [fuckbyond]!\n"]" //a whole lotta shitcode
+	var/list/obscured = check_obscured_slots()
 
 	//uniform
 	if(w_uniform && !(SLOT_W_UNIFORM in obscured))
@@ -301,7 +304,6 @@
 			if(perpname)
 				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 				if(R)
-					msg += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]<br>"
 					msg += "<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a> "
 					msg += "<a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a><br>"
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))

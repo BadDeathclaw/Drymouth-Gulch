@@ -371,7 +371,7 @@
 	item_state = "moistnugget"
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
-	fire_delay = 30
+	fire_delay = 10
 	burst_size = 1
 	can_unsuppress = TRUE
 	can_suppress = TRUE
@@ -413,6 +413,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/tommygun
 	name = "\improper Thompson SMG"
@@ -438,7 +439,9 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	burst_size = 3
- 	//fire_delay = 1
+	fire_delay = 3
+	extra_penetration = 15
+	can_suppress = FALSE //we dont have sprites therefore cease
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "R91 assault rifle"
@@ -449,7 +452,8 @@
 	mag_type = /obj/item/ammo_box/magazine/r20
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
-	fire_delay = 1
+	fire_delay = 3
+	extra_penetration = 20
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
@@ -459,8 +463,11 @@
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	suppressed = 1
+	fire_delay = 1
+	extra_penetration = 10
 	zoomable = TRUE
-	zoom_amt = 7
+	zoom_amt = 10
+	zoom_out_amt = 13
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	weapon_weight = WEAPON_HEAVY
 
@@ -473,7 +480,8 @@
 	mag_type = /obj/item/ammo_box/magazine/r20
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = 0
-	fire_delay = 2
+	fire_delay = 8
+	extra_damage = 20
 	burst_size = 1
 	zoomable = TRUE
 	zoom_amt = 10
@@ -486,13 +494,16 @@
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	fire_delay = 3
+	extra_damage = 5
+	extra_penetration = 5
 	mag_type = /obj/item/ammo_box/magazine/r20
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/minigun
 	name = "M134 Minigun"
-	desc = "The M134 is a 7.62×51mm, six-barrel rotary machine gun with a rate of fire between 2,000 and 6,000 rounds per minute."
+	desc = "The M134 is a 7.62Ã—51mm, six-barrel rotary machine gun with a rate of fire between 2,000 and 6,000 rounds per minute."
 	icon_state = "arg"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
@@ -534,6 +545,7 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 2
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"
@@ -543,7 +555,9 @@
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/r20
 	burst_size = 3
-	fire_delay = 2
+	fire_delay = 3
+	extra_damage = 15
+	extra_penetration = 15
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
@@ -561,7 +575,7 @@
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
 	can_suppress = 0
 	burst_size = 1//Setting it to 0 is dumb. Just set it to one.
-	fire_delay = 3
+	fire_delay = 10
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -586,7 +600,7 @@
 //Fallout 13
 //Magazines
 /obj/item/ammo_box/magazine/r20
-	name = ".556 Magazine (5.56mm)"
+	name = "5.56 Magazine (5.56mm)"
 	icon_state = "r20"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
@@ -727,11 +741,11 @@
 	caliber = "4570"
 	projectile_type = /obj/item/projectile/bullet/c4570
 
-/obj/item/ammo_casing/c4570SP
+/*/obj/item/ammo_casing/c4570SP
 	name = ".45 LC bullet casing"
 	desc = "A .45 Long Colt bullet casing."
 	caliber = "4570"
-	projectile_type = /obj/item/projectile/bullet/c4570SP
+	projectile_type = /obj/item/projectile/bullet/c4570SP*/
 
 //Heavy
 /obj/item/ammo_casing/a50AE
@@ -750,24 +764,33 @@
 	name = ".50MG bullet casing"
 	desc = "A .50MG bullet casing."
 	caliber = "a50MG"
-	icon_state = ".50"
+	icon_state = "50mg2"
 	projectile_type = /obj/item/projectile/bullet/a50MG
 
 /obj/item/ammo_casing/a50MG/incendiary
 	name = ".50 MG incendiary bullet casing"
 	desc = "A .50 MG incendiary bullet casing."
+	icon_state = "50in2"
 	caliber = "a50MG"
 	projectile_type = /obj/item/projectile/bullet/a50MG/incendiary
 
-/obj/item/ammo_casing/a50MG/AP
+/*/obj/item/ammo_casing/a50MG/AP
 	name = ".50 MG AP bullet casing"
 	desc = "A .50 MG armor-piercing bullet casing."
 	caliber = "a50MG"
-	projectile_type = /obj/item/projectile/bullet/a50MG/AP
+	icon_state = "50ap2"
+	projectile_type = /obj/item/projectile/bullet/a50MG/AP*/
+
+/obj/item/ammo_casing/a50MG/explosive
+	name = ".50 MG explosive bullet casing"
+	desc = "Comes in 5 bullet racks...more then enough to kill anything that moves.."
+	caliber = "a50MG"
+	icon_state = "50ex2"
+	projectile_type = /obj/item/projectile/bullet/a50MG/explosive
 
 //Projectiles
 /obj/item/projectile/bullet/c45
-	damage = 30
+	damage = 25
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c22
@@ -775,7 +798,7 @@
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/m44
-	damage = 35
+	damage = 30
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c9mm
@@ -783,14 +806,14 @@
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c10mm
-	damage = 25
+	damage = 20
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/needle
 	name = "needle"
 	icon_state = "cbbolt"
-	damage = 40
-	armour_penetration = 20
+	damage = 30
+	armour_penetration = 30
 
 /obj/item/projectile/bullet/c38
 	damage = 25
@@ -809,19 +832,19 @@
 	armour_penetration = 20
 
 /obj/item/projectile/bullet/a556
-	damage = 25
+	damage = 20
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c4570
-	damage = 60
-	armour_penetration = -20
-
-/obj/item/projectile/bullet/c4570SP
 	damage = 45
-	armour_penetration = 20
+	armour_penetration = 0
+
+/*/obj/item/projectile/bullet/c4570SP
+	damage = 45
+	armour_penetration = 20*/
 
 /obj/item/projectile/bullet/a357
-	damage = 35
+	damage = 30
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/a50AE
@@ -829,7 +852,7 @@
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/a50MG
-	damage = 50
+	damage = 60
 	armour_penetration = 20
 
 /obj/item/projectile/bullet/a50MG/incendiary
@@ -844,9 +867,19 @@
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/obj/item/projectile/bullet/a50MG/AP
+/*
+	/obj/item/projectile/bullet/a50MG/AP
 	damage = 35
-	armour_penetration = 65 //will punch through anything short of Enclave power armor
+	armour_penetration = 65 will punch through anything short of Enclave power armor*/
+
+/obj/item/projectile/bullet/a50MG/explosive
+	damage = 50
+	armour_penetration = 20
+
+/obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, 0, 2, 2, 2)
+
 
 /obj/item/projectile/bullet/c2mm
 	damage = 60

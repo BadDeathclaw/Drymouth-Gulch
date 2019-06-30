@@ -1264,12 +1264,12 @@
 /datum/reagent/medicine/stimpak
 	name = "Stimpak Fluid"
 	id = "stimpak"
-	description = "Rapidly heals damage when injected. Deals minor toxin damage if injested."
+	description = "Rapidly heals damage when injected. Deals minor toxin damage if ingested."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	taste_description = "grossness"
-	metabolization_rate = 3 * REAGENTS_METABOLISM
-	overdose_threshold = 20
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 30
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -1280,17 +1280,41 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-4*REM, 0)
-	M.adjustFireLoss(-4*REM, 0)
-	M.adjustOxyLoss(-3*REM, 0)
+	M.adjustBruteLoss(-5*REM, 0)
+	M.adjustFireLoss(-5*REM, 0)
+	M.adjustOxyLoss(-2*REM, 0)
+	M.adjustToxLoss(-2*REM, 0)
+	M.AdjustStun(-10, 0)
+	M.AdjustKnockdown(-10, 0)
+	M.adjustStaminaLoss(-4*REM, 0)
 	. = 1
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(2.5*REM, 0)
-	M.adjustOxyLoss(7*REM, 0)
+	M.adjustToxLoss(5*REM, 0)
+	M.adjustOxyLoss(8*REM, 0)
 	..()
 	. = 1
+
+datum/reagent/medicine/super_stimpak
+	name = "super stim chemicals"
+	id = "super_stimpak"
+	description = "Chemicals found in pre-war stimpaks."
+	reagent_state = LIQUID
+	color = "#e50d0d"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+
+datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+	M.adjustBruteLoss(-8*REM)
+	M.adjustFireLoss(-8*REM)
+	M.adjustOxyLoss(-4*REM)
+	M.adjustToxLoss(-4*REM, 0)
+	M.AdjustStun(-15, 0)
+	M.AdjustKnockdown(-15, 0)
+	M.adjustStaminaLoss(-6*REM, 0)
+	..()
+	return
 
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
@@ -1299,12 +1323,13 @@
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.3 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-3*REM)
-	M.adjustBruteLoss(-3*REM)
+	M.adjustFireLoss(-4*REM)
+	M.adjustBruteLoss(-4*REM)
+	M.adjustToxLoss(-1*REM)
 	M.hallucination = max(M.hallucination, 5)
 	. = 1
 	..()
@@ -1314,6 +1339,23 @@
 	M.adjustOxyLoss(4*REM, 0)
 	..()
 	. = 1
+
+/datum/reagent/medicine/healing_poultice
+	name = "healing poultice"
+	id = "healing_poultice"
+	description = "Restores limb condition and heals rapidly."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+	metabolization_rate = 0.2 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+
+/datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
+	M.adjustFireLoss(-5*REM)
+	M.adjustBruteLoss(-5*REM)
+	M.adjustToxLoss(-2*REM)
+	M.adjustOxyLoss(-4*REM)
+	M.hallucination = max(M.hallucination, 5)
+	..()
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"
@@ -1412,6 +1454,78 @@
 	..()
 
 /datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(3*REM, 0)
+		. = 1
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+	
+/datum/reagent/medicine/legionmedx
+	name = "natural painkiller"
+	id = "legion_medx"
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
+	reagent_state = LIQUID
+	color = "#6D6374"
+	metabolization_rate = 0.7 * REAGENTS_METABOLISM
+	overdose_threshold = 14
+	addiction_threshold = 50
+
+/datum/reagent/medicine/legionmedx/on_mob_add(mob/M)
+	..()
+	if(isliving(M))
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_HEALTHY
+		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+
+/datum/reagent/medicine/legionmedx/on_mob_delete(mob/M)
+	if(isliving(M))
+		var/mob/living/carbon/L = M
+		L.hal_screwyhud = SCREWYHUD_NONE
+		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+	..()
+
+/datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
+	M.AdjustStun(-20, 0)
+	M.AdjustKnockdown(-20, 0)
+	M.AdjustUnconscious(-20, 0)
+	M.adjustStaminaLoss(-3, 0)
+	..()
+	. = 1
+
+/datum/reagent/medicine/legionmedx/overdose_process(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Dizzy(2)
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/legionmedx/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.Jitter(2)
+	..()
+
+/datum/reagent/medicine/legionmedx/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(1*REM, 0)
+		. = 1
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+
+/datum/reagent/medicine/legionmedx/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		M.drop_all_held_items()
+		M.adjustToxLoss(2*REM, 0)
+		. = 1
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+
+/datum/reagent/medicine/legionmedx/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(3*REM, 0)

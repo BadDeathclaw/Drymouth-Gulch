@@ -1,3 +1,18 @@
+//lewd
+/mob/living
+	var/has_penis = FALSE
+	var/has_vagina = FALSE
+	var/has_breasts = FALSE
+	var/last_partner
+	var/last_orifice
+	var/lastmoan
+	var/sexual_potency =  15
+	var/lust_tolerance = 100
+	var/lust = 0
+	var/multiorgasms = 0
+	var/refactory_period = 0
+//end of lewd
+
 /mob/living/Initialize()
 	. = ..()
 	if(unique_name)
@@ -7,6 +22,20 @@
 	medhud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+
+	//lewd
+	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
+	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+	if(gender == MALE)
+		has_penis = TRUE
+		has_vagina = FALSE
+		has_breasts = FALSE
+
+	if(gender == FEMALE)
+		has_vagina = TRUE
+		has_breasts = TRUE
+		has_penis = FALSE
+	//end of lewd
 
 
 /mob/living/prepare_huds()
@@ -486,7 +515,7 @@
 	. = 0
 	if(isopenturf(loc) && !is_flying())
 		var/turf/open/T = loc
-		. += T.slowdown
+		. += ( has_trait(TRAIT_HARD_YARDS) ? T.slowdown * 0.5 : T.slowdown )
 	var/static/datum/config_entry/number/run_delay/config_run_delay
 	var/static/datum/config_entry/number/walk_delay/config_walk_delay
 	if(isnull(config_run_delay))
@@ -639,6 +668,9 @@
 	return name
 
 /mob/living/update_gravity(has_gravity,override = 0)
+
+	//BAD DEATHCLAW CHANGE: ALL THE MOBS GOT GRAVITY NO MATTER WHAT, NO NEED TO PUT GRAV GENS EVERYWHERE
+	/*
 	if(!SSticker.HasRoundStarted())
 		return
 	if(has_gravity)
@@ -653,6 +685,7 @@
 		throw_alert("gravity", /obj/screen/alert/weightless)
 	if(!override && !is_flying())
 		float(!has_gravity)
+	*/
 
 /mob/living/float(on)
 	if(throwing)

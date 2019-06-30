@@ -99,14 +99,46 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	force = 20
 	sharpness = IS_BLUNT
 
+/obj/item/claymore/machete/pipe/tireiron
+	name = "tire iron"
+	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
+	icon_state = "tire"
+	item_state = "tire"
+	force = 25
+
+
 /obj/item/claymore/machete/golf
-	name = "golf club"
-	desc = "A old rusted 9 iron golf club."
-	icon_state = "golf"
-	item_state = "golf"
+	name = "9 iron"
+	desc = "This old and quite heavy 9 iron is bent and battered after many years of use by anyone who found it good enough to break bones and crash skulls."
+	icon_state = "golf9"
+	item_state = "golf9"
 	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
 	force = 25
 	sharpness = IS_BLUNT
+
+/obj/item/claymore/machete/golf/teniron
+	name = "10 iron"
+	desc = "This old and quite deadly 10 iron is bent and battered after many years of use by anyone who found it good enough to break bones and crash skulls."
+	icon_state = "golf10"
+	item_state = "golf10"
+	force = 30
+
+/obj/item/claymore/machete/pipe/pan
+	name = "frying pan"
+	desc = "An ancient cast iron frying pan.<br>It's heavy, but fairly useful if you need to keep the mutants away, and don't have a better weapon around."
+	icon_state = "pan"
+	item_state = "pan"
+	hitsound = 'sound/f13weapons/pan.ogg'
+	slot_flags = SLOT_BELT
+	force = 15 //Just try to swing a frying pan
+	throw_speed = 1
+	throw_range = 2
+	throwforce = 10
+	w_class = 2
+
+/obj/item/claymore/machete/pipe/pan/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] keeps hitting \himself with the [src.name]! It looks like \he's trying to commit suicide.</span>")
+	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/claymore/Initialize()
 	. = ..()
@@ -321,6 +353,10 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	materials = list(MAT_METAL=500, MAT_GLASS=500)
 	resistance_flags = FIRE_PROOF
 
+/obj/item/throwing_star/pickup(mob/living/user)
+	. = ..()
+	throwingweapondraw(src, user)
+
 /obj/item/throwing_star/spear
 	name = "throwing spear"
 	desc = "An heavy hefty ancient weapon used to this day, due to its ease of lodging itself into its victim's body parts."
@@ -332,6 +368,21 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	throwforce = 35
 	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 60, "embedded_fall_chance" = 20)
 	w_class = WEIGHT_CLASS_NORMAL
+
+
+/obj/item/throwing_star/spear/harpoon
+	name = "harpoon"
+	desc = "A rusty spear-like instrument previously used in fishing, whaling and sealing - now used for robbing, raiding and manhunting."
+	icon_state = "harpoon"
+	force = 15
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = SLOT_BACK
+	throwforce = 20
+	throw_speed = 4
+	armour_penetration = 5
+	materials = list(MAT_METAL=1150, MAT_WOOD=2075)
+	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
+
 
 /obj/item/switchblade
 	name = "switchblade"

@@ -182,8 +182,14 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list("stimpak" = 10)
-	
-/*
+
+/obj/item/reagent_containers/hypospray/medipen/stimpak/super
+	name = "super stimpak"
+	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
+	icon_state = "superstimpakpen"
+	amount_per_transfer_from_this = 10
+	list_reagents = list("super_stimpak" = 10)
+
 /obj/item/reagent_containers/hypospray/medipen/psycho
 	name = "Psycho"
 	desc = "Contains Psycho, a drug that makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
@@ -191,4 +197,4 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list("psycho" = 10)
-*/
+/
