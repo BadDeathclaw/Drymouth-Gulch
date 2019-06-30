@@ -1,5 +1,3 @@
-GLOBAL_LIST_EMPTY(all_ground_turfs) //A list of all the ground turfs that exist; used in nightcycle subsystem for turning day to night to day
-
 /* Fallout stuff*/
 /* Also, a terrain class or something needs to be used as the common parent  for asteroid and outside */
 /* lazy Saturday coding */
@@ -43,17 +41,12 @@ GLOBAL_LIST_EMPTY(all_ground_turfs) //A list of all the ground turfs that exist;
 	icon_state = "wasteland1"
 	icon = 'icons/turf/f13desert.dmi'
 	light_range = 3
-	light_power = 0.75 //Day time light power
+	light_power = 0.75
 
 /* Outside turfs get global lighting */
 /turf/open/floor/plating/f13/outside/Initialize()
 	. = ..()
 	flags_2 |= GLOBAL_LIGHT_TURF_2
-	GLOB.all_ground_turfs += src
-
-/turf/open/floor/plating/f13/outside/Destroy()
-	GLOB.all_ground_turfs -= src
-	. = ..()
 
 #define GRASS_SPONTANEOUS 		2
 #define GRASS_WEIGHT 			4
