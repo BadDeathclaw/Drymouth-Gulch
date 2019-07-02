@@ -1468,8 +1468,8 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
 	reagent_state = LIQUID
 	color = "#6D6374"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 20
+	metabolization_rate = 0.7 * REAGENTS_METABOLISM
+	overdose_threshold = 14
 	addiction_threshold = 50
 
 /datum/reagent/medicine/legionmedx/on_mob_add(mob/M)
@@ -1487,10 +1487,10 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 
 /datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
-	M.AdjustStun(-30, 0)
-	M.AdjustKnockdown(-30, 0)
-	M.AdjustUnconscious(-30, 0)
-	M.adjustStaminaLoss(-5, 0)
+	M.AdjustStun(-20, 0)
+	M.AdjustKnockdown(-20, 0)
+	M.AdjustUnconscious(-20, 0)
+	M.adjustStaminaLoss(-3, 0)
 	..()
 	. = 1
 
