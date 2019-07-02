@@ -413,6 +413,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
+	extra_damage = 20
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/tommygun
@@ -428,6 +429,7 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 1
+	extra_damage = 25
 
 /obj/item/gun/ballistic/automatic/smg10mm
 	name = "10mm submachine gun"
@@ -440,6 +442,7 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	burst_size = 3
 	fire_delay = 3
+	extra_damage = 20
 	extra_penetration = 15
 	can_suppress = FALSE //we dont have sprites therefore cease
 
@@ -453,6 +456,7 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
 	fire_delay = 3
+	extra_damage = 20
 	extra_penetration = 20
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -464,6 +468,7 @@
 	item_state = "fnfal"
 	suppressed = 1
 	fire_delay = 1
+	extra_damage = 20
 	extra_penetration = 10
 	zoomable = TRUE
 	zoom_amt = 10
@@ -481,7 +486,7 @@
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = 0
 	fire_delay = 8
-	extra_damage = 20
+	extra_damage = 40
 	burst_size = 1
 	zoomable = TRUE
 	zoom_amt = 10
@@ -495,7 +500,7 @@
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	fire_delay = 3
-	extra_damage = 5
+	extra_damage = 25
 	extra_penetration = 5
 	mag_type = /obj/item/ammo_box/magazine/r20
 	zoomable = FALSE
@@ -545,6 +550,7 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 2
+	extra_damage = 20
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/bozar
@@ -554,9 +560,9 @@
 	item_state = "sniper"
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/r20
-	burst_size = 3
+	burst_size = 2
 	fire_delay = 3
-	extra_damage = 15
+	extra_damage = 35
 	extra_penetration = 15
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -790,7 +796,7 @@
 
 //Projectiles
 /obj/item/projectile/bullet/c45
-	damage = 25
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c22
@@ -798,15 +804,15 @@
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/m44
-	damage = 30
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c9mm
-	damage = 20
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c10mm
-	damage = 20
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/needle
@@ -816,27 +822,27 @@
 	armour_penetration = 30
 
 /obj/item/projectile/bullet/c38
-	damage = 25
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/a762
-	damage = 40
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/a762m
-	damage = 40
+	damage = 0
 	armour_penetration = 10
 
 /obj/item/projectile/bullet/a308
-	damage = 40
+	damage = 0
 	armour_penetration = 20
 
 /obj/item/projectile/bullet/a556
-	damage = 20
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/c4570
-	damage = 45
+	damage = 0
 	armour_penetration = 0
 
 /*/obj/item/projectile/bullet/c4570SP
@@ -844,20 +850,20 @@
 	armour_penetration = 20*/
 
 /obj/item/projectile/bullet/a357
-	damage = 30
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/a50AE
-	damage = 50
+	damage = 0
 	armour_penetration = 0
 
 /obj/item/projectile/bullet/a50MG
-	damage = 60
-	armour_penetration = 20
+	damage = 0
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/a50MG/incendiary
-	damage = 30
-	armour_penetration = 0
+	damage = -30
+	armour_penetration = -20
 	var/fire_stacks = 4
 
 /obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
@@ -873,8 +879,8 @@
 	armour_penetration = 65 will punch through anything short of Enclave power armor*/
 
 /obj/item/projectile/bullet/a50MG/explosive
-	damage = 50
-	armour_penetration = 20
+	damage = -10
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
