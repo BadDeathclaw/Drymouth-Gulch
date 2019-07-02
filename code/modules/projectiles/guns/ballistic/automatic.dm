@@ -452,7 +452,7 @@
 	mag_type = /obj/item/ammo_box/magazine/r20
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
-	fire_delay = 4
+	fire_delay = 3
 	extra_penetration = 20
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
