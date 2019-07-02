@@ -147,7 +147,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	w_class = WEIGHT_CLASS_HUGE
-	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/energy/laser/aer9
 	name = "AER9 laser rifle"
@@ -158,7 +157,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/energy/laser/pistol
 	name = "AEP7 laser pistol"
@@ -178,7 +176,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/energy/laser/plasma
 	name ="plasma rifle"
@@ -189,7 +186,6 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/energy/laser/plasma/scatter
 	name = "multiplas Rifle"
@@ -199,7 +195,6 @@
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/energy/laser/plasma/pistol
 	name ="plasma pistol"
@@ -215,7 +210,7 @@
 /obj/item/projectile/beam/laser/lasgun
 	name = "laser beam"
 	damage = 30
-	armour_penetration = -9
+	armour_penetration = 5
 
 /obj/item/projectile/beam/laser/pistol
 	name = "laser beam"
