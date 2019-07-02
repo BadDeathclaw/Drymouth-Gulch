@@ -26,7 +26,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = FALSE
 	fire_delay = 3
-	extra_damage = 5
+	extra_damage = 30
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "desert eagle"
@@ -36,6 +36,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m50
 	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
+	extra_damage = 50
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/update_icon()
 	..()
@@ -90,7 +91,7 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 2
-	extra_damage = 5
+	extra_damage = 25
 	extra_penetration = 5
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
@@ -100,4 +101,4 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 2
-	extra_damage = 5
+	extra_damage = 25
