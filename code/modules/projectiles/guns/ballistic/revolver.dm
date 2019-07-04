@@ -90,6 +90,7 @@
 	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
 	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
@@ -370,6 +371,7 @@
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 3
+	extra_damage = 30
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/m29/alt
@@ -394,6 +396,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 5
+	extra_damage = 30
 	
 
 /obj/item/gun/ballistic/revolver/m29/sadokist
@@ -421,7 +424,7 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 3
-	extra_damage = 10
+	extra_damage = 30
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/sequoia
@@ -433,6 +436,7 @@
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 4
+	extra_damage = 45
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
 	name = "Hunting revolver"
@@ -450,7 +454,7 @@
 	item_state = "gun"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	extra_damage = 20
+	extra_damage = 40
 
 /obj/item/gun/ballistic/revolver/pipe_rifle
 	name = "pipe rifle"
@@ -461,5 +465,5 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	extra_damage = 30
+	extra_damage = 50
 

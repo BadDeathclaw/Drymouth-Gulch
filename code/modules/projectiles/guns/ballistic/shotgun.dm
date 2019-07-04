@@ -103,6 +103,7 @@
 	knife_x_offset = 27
 	knife_y_offset = 13
 	fire_delay = 5
+	extra_damage = 40
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
@@ -265,6 +266,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	extra_damage = 40
 
 /obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
 	..()
@@ -305,6 +307,8 @@
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
 	fire_delay = 6
+	extra_damage = 60
+	extra_penetration = 20
 
 //Colt Rangemaster
 /obj/item/gun/ballistic/shotgun/automatic/hunting
@@ -317,6 +321,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 3
+	extra_damage = 40
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	name = "Trail carbine"
@@ -329,7 +334,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
-	extra_damage = 10
+	extra_damage = 40
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
@@ -346,7 +351,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 7
-	extra_damage = 15
+	extra_damage = 45
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
@@ -359,8 +364,8 @@
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
-	extra_damage = 10
+	fire_delay = 6
+	extra_damage = 40
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
 	name = "Scoped cowboy repeater"
@@ -375,8 +380,8 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 8
-	extra_damage = 10
+	fire_delay = 7
+	extra_damage = 40
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
@@ -389,8 +394,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 5
-	extra_damage = 10
-	extra_penetration = 10
+	extra_damage = 45
+	extra_penetration = 15
 
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
@@ -406,8 +411,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 9
-	extra_damage = 15
-	extra_penetration = 10
+	extra_damage = 50
+	extra_penetration = 15
 
 
 

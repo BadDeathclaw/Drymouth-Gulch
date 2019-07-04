@@ -208,14 +208,15 @@
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires heavy low penetration plasma clots."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol)
 	w_class = WEIGHT_CLASS_NORMAL
+	weapon_weight = WEAPON_LIGHT
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 
 
 //projectiles
 /obj/item/projectile/beam/laser/lasgun
 	name = "laser beam"
-	damage = 30
-	armour_penetration = -9
+	damage = 35
+	armour_penetration = 0
 
 /obj/item/projectile/beam/laser/pistol
 	name = "laser beam"
