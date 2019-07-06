@@ -2,7 +2,7 @@
 
 /obj/item/projectile/bullet/c45
 	name = ".45 bullet"
-	damage = 20
+	damage = 0
 
 /obj/item/projectile/bullet/c45_nostamina
 	name = ".45 bullet"
@@ -16,7 +16,7 @@
 
 /obj/item/projectile/bullet/c46x30mm_ap
 	name = "4.6x30mm armor-piercing bullet"
-	damage = 15
+	damage = 0
 	armour_penetration = 40
 
 /obj/item/projectile/bullet/incendiary/c46x30mm
