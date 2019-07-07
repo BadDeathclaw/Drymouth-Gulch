@@ -1483,6 +1483,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "cave"
 	outdoors = TRUE
 
+/area/f13/ungerground/cave
+name= "ERP"
+icon_state = "nuke_storage"
+
+
 /*
 
 ### This file contains a list of all the areas in your station. Format is as follows:
