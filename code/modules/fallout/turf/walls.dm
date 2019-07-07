@@ -188,7 +188,7 @@
 		return
 	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the Mojave", "Confirm", "Cancel") != "Confirm")
 		return
-	log_admin("[key_name(user)] as [user] has despawned [departing_mob == user ? "themselves" : departing_mob] at [AREACOORD(src)].")
+	log_admin("[key_name(user)] as [user] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)].")
 	departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the Mojave.</span>")
 	departing_mob.despawn()
 
