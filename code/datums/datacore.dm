@@ -281,3 +281,22 @@
 	if(C)
 		P = C.prefs
 	return get_flat_human_icon(null, J, P, DUMMY_HUMAN_SLOT_MANIFEST, show_directions)
+
+
+/datum/datacore/proc/get_record_by_name(username)
+	for(var/i in general)
+		var/datum/data/record/to_check = i
+		if(username != to_check.fields["name"])
+			continue
+		return to_check
+
+
+/datum/datacore/proc/remove_record_by_name(username)
+	for(var/datacore_list in list(general, medical, security, locked))
+		for(var/j in datacore_list)
+			var/datum/data/record/to_remove = j
+			if(username != to_remove.fields["name"])
+				continue
+			datacore_list -= to_remove
+			qdel(to_remove)
+			break
