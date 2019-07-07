@@ -1487,7 +1487,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13/underground/enclave_base
 	name = "ERP BASE"
 	icon_state = "enclave_base"
-
+    requires_power = FALSE
 
 /*
 
