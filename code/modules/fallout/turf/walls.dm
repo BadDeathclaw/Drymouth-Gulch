@@ -173,6 +173,26 @@
 	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Digital simulation ends here.</font>"
 	icon_state = "matrix"
 
+/turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
+	. = ..()
+	if(!isliving(user) || user.incapacitated())
+		return //No ghosts or incapacitated folk allowed to do this.
+	if(!ishuman(dropping))
+		return //Only humans have job slots to be freed.
+	var/mob/living/carbon/human/departing_mob = dropping
+	if(departing_mob.stat == DEAD)
+		to_chat(user, "<span class='warning'>This one kicked the bucket. Won't be traveling anywhere.</span>")
+		return
+	if(departing_mob != user && departing_mob.client)
+		to_chat(user, "<span class='warning'>This one retains their free will. It's their choice if they want to depart or not.</span>")
+		return
+	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the Mojave", "Confirm", "Cancel") != "Confirm")
+		return
+	log_admin("[key_name(user)] as [user] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)].")
+	departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the Mojave.</span>")
+	departing_mob.despawn()
+
+
 /turf/closed/indestructible/f13/obsidian //Just like that one game studio that worked on the original game, or that block in Minecraft!
 	name = "obsidian"
 	desc = "No matter what you do with this rock, there's not even a scratch left on its surface.<br><font color='#7e0707'>You shall not pass!!!</font>"
