@@ -125,12 +125,12 @@
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
 
 /obj/item/book/granter/trait/trekking
-	name = "Trekker's Guide to the Wasteland"
-	desc = "An extensive guide about trekking through the wastes. Written by Allesandra Hall."
+	name = "Ranger's Guide to the Wasteland"
+	desc = "An extensive guide about trekking through the wastes. Written by Allesandra Hall, former NCR Ranger."
 	oneuse = TRUE
 	granted_trait = TRAIT_HARD_YARDS
 	traitname = "trekking"
-	remarks = list("It never hurts to take the road less travelled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...")
+	remarks = list("It never hurts to take the road less travelled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
 
 /obj/item/book/granter/action/drink_fling
 	granted_action = /datum/action/innate/drink_fling
