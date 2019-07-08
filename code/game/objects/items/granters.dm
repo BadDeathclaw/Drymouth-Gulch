@@ -22,10 +22,37 @@
 /obj/item/book/granter/proc/onlearned(mob/user)
 	used = TRUE
 
+/obj/item/book/granter/proc/already_known(mob/user)
+	return FALSE
+
+/obj/item/book/granter/proc/on_reading_start(mob/user)
+	to_chat(user, "<span class='notice'>You start reading [name]...</span>")
+
+/obj/item/book/granter/proc/on_reading_stopped(mob/user)
+	to_chat(user, "<span class='notice'>You stop reading...</span>")
+
+/obj/item/book/granter/proc/on_reading_finished(mob/user)
+	to_chat(user, "<span class='notice'>You finish reading [name]!</span>")
+
 /obj/item/book/granter/attack_self(mob/user)
-	if(reading == TRUE)
+	if(reading)
 		to_chat(user, "<span class='warning'>You're already reading this!</span>")
 		return FALSE
+	if(already_known(user))
+		return FALSE
+	if(used && oneuse)
+		recoil(user)
+	else
+		on_reading_start(user)
+		reading = TRUE
+		for(var/i=1, i<=pages_to_mastery, i++)
+			if(!turn_page(user))
+				on_reading_stopped()
+				reading = FALSE
+				return
+		if(do_after(user,50, user))
+			on_reading_finished(user)
+		reading = FALSE
 	return TRUE
 
 ///ACTION BUTTONS///
@@ -61,6 +88,49 @@
 			to_chat(user, "<span class='notice'>You feel like you've got a good handle on [actionname]!</span>")
 			G.Grant(user)
 		reading = FALSE
+
+//TRAIT GRANTERS///
+/obj/item/book/granter/trait
+	var/granted_trait
+	var/traitname = "catching bugs"
+
+/obj/item/book/granter/trait/already_known(mob/living/user)
+	if(!granted_trait)
+		return TRUE
+	if(user.has_trait(granted_trait))
+		to_chat(user, "<span class='notice'>You already know all about [traitname].</span>")
+		return TRUE
+	return FALSE
+
+/obj/item/book/granter/trait/on_reading_start(mob/living/user)
+	to_chat(user, "<span class='notice'>You start reading about [traitname]...</span>")
+
+/obj/item/book/granter/trait/on_reading_finished(mob/living/user)
+	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [traitname]!</span>")
+	user.add_trait(granted_trait, TRAIT_GENERIC)
+	onlearned(user)
+
+/obj/item/book/granter/trait/onlearned(mob/living/user)
+	..()
+	if(oneuse)
+		user.visible_message("<span class='caution'>[src]'s is useless to you now. You throw the book away.</span>")
+		qdel(src)
+
+/obj/item/book/granter/trait/chemistry
+	name = "Chemistry for Wastelanders"
+	desc = "A useful book on chemistry. Written by Sarah Prescott."
+	oneuse = TRUE
+	granted_trait = TRAIT_CHEMWHIZ
+	traitname = "chemistry"
+	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
+
+/obj/item/book/granter/trait/trekking
+	name = "Ranger's Guide to the Wasteland"
+	desc = "An extensive guide about trekking through the wastes. Written by Allesandra Hall, former NCR Ranger."
+	oneuse = TRUE
+	granted_trait = TRAIT_HARD_YARDS
+	traitname = "trekking"
+	remarks = list("It never hurts to take the road less travelled...", "Proper movement is key to your survival...", "Whether during combat or for simple travel, the desert can be your friend...", "Without proper knowledge, it can be hard to traverse the desert on foot...", "A Ranger is always prepared...")
 
 /obj/item/book/granter/action/drink_fling
 	granted_action = /datum/action/innate/drink_fling

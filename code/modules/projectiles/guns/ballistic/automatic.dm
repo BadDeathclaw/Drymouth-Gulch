@@ -506,6 +506,27 @@
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
+	name = "Varmint Rifle"
+	desc = "A low powered 5.56, easy to use rifle."
+	icon_state = "varmint_rifle"
+	item_state = "varmintrifle"
+	fire_delay = 6
+	extra_damage = 30
+	mag_type = /obj/item/ammo_box/magazine/r10
+
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
+	name = "Ratslayer"
+	desc = "A modified Varmint Rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
+	icon_state = "rat_slayer"
+	item_state = "ratslayer"
+	extra_damage = 35
+	extra_penetration = 10
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
 /obj/item/gun/ballistic/automatic/minigun
 	name = "M134 Minigun"
 	desc = "The M134 is a 7.62Ã—51mm, six-barrel rotary machine gun with a rate of fire between 2,000 and 6,000 rounds per minute."
@@ -611,6 +632,14 @@
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
 	max_ammo = 20
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/r10
+	name = "Varmint Rifle Magazine (5.56mm)"
+	icon_state = "r10"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 10
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_auto

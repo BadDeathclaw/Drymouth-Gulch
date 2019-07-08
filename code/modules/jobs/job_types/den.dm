@@ -361,8 +361,8 @@ Den Doctor
 	flag = F13DENDOC
 	department_flag = DEN
 	faction = "Den"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	description = "You are in charge of providing medical assistance to the inhabitants of the Den as needed."
 	selection_color = "#dcba97"
 	exp_requirements = 300
@@ -372,6 +372,7 @@ Den Doctor
 /datum/outfit/job/den/f13dendoc
 	name = "Den Doctor"
 	jobtype = /datum/job/den/f13dendoc
+	chemwhiz = TRUE
 	uniform =  		/obj/item/clothing/under/f13/medic
 	ears = 			/obj/item/radio/headset/headset_den
 	suit = 			/obj/item/clothing/suit/toggle/labcoat
