@@ -128,6 +128,7 @@ Paladin
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
 	jobtype = /datum/job/bos/f13headscribe
+	chemwhiz = TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
 	suit_store =	/obj/item/gun/energy/laser/pistol
 	belt = 			/obj/item/storage/belt/utility/full/engi
@@ -196,6 +197,7 @@ Scribe
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"
 	jobtype = /datum/job/bos/f13scribe
+	chemwhiz = TRUE
 	shoes = 		/obj/item/clothing/shoes/combat
 	suit = 			/obj/item/clothing/suit/f13/scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi

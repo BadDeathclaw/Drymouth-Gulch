@@ -155,6 +155,7 @@ Medic
 /datum/outfit/job/ncr/f13medic
 	name = "NCR Medical Officer"
 	jobtype = /datum/job/ncr/f13medic
+	chemwhiz = TRUE
 	id		= /obj/item/card/id/dogtag/ncrlieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =     /obj/item/clothing/accessory/ncr/LT
@@ -172,7 +173,7 @@ Medic
 		/obj/item/storage/pill_bottle/mining, \
 		/obj/item/storage/firstaid/regular,  \
 		/obj/item/storage/bag/money/small/ncrofficers,  \
-		)
+		/obj/item/book/granter/trait/chemistry)
 	box = null
 
 //sergeant
@@ -350,7 +351,7 @@ Recruit
 	faction = "NCR"
 	total_positions = 10
 	spawn_positions = 10
-	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
+	forbids = "The NCR forbids: Drugs (except for med-X) Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
@@ -397,13 +398,17 @@ Heavy Trooper
 
 	outfit = /datum/outfit/job/ncr/f13heavytroop
 
+/datum/job/ncr/f13heavytroop/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/ncr/f13heavytroop
 	name = "NCR Heavy Trooper"
 	jobtype = /datum/job/ncr/f13heavytroop
 	id = 			/obj/item/card/id/dogtag/ncrsergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
-	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/t45b
+	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/ncr
 	belt =			/obj/item/storage/belt/military/assault
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45b
 	gloves =        /obj/item/clothing/gloves/combat

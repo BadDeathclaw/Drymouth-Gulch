@@ -706,30 +706,29 @@
 /datum/crafting_recipe/healpowder
 	name = "Healing powder"
 	result = /obj/item/reagent_containers/pill/patch/healingpowder
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 1)
-	time = 20
-	category = CAT_DRUGS
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 2)
+	time = 50
+	category = CAT_MEDICAL
 
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
 	result = /obj/item/reagent_containers/pill/patch/healpoultice
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
 				/obj/item/reagent_containers/food/snacks/grown/feracactus = 1,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
-	time = 40
-	category = CAT_DRUGS
+	time = 80
+	category = CAT_MEDICAL
 
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
-	reqs = list(/obj/item/reagent_containers/pill/patch/healingpowder = 1,
-				/obj/item/reagent_containers/syringe = 1,)
-	tools = list(/obj/item/lighter,
-				/obj/item/reagent_containers/glass/beaker)
-	time = 20
-	category = CAT_DRUGS
+	reqs = list(/datum/reagent/blood = 10,
+				/obj/item/crafting/turpentine = 1, 
+				/obj/item/reagent_containers/syringe = 1)
+	time = 50
+	category = CAT_MEDICAL
 
 
 /datum/crafting_recipe/superstimpak
@@ -737,12 +736,10 @@
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 				/obj/item/stack/sheet/leather = 1,
-				/obj/item/stack/cable_coil = 5,
-				/obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola = 1,
- 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1)
-	tools = list(/obj/item/lighter, /obj/item/screwdriver, /obj/item/wirecutters)
-	time = 60
-	category = CAT_DRUGS
+				/obj/item/crafting/turpentine = 1,
+				/datum/reagent/blood = 5)
+	time = 80
+	category = CAT_MEDICAL
 
 
 /datum/crafting_recipe/stimsyringe
@@ -769,6 +766,14 @@
 				/obj/item/reagent_containers/glass/rag = 1)
 	time = 30
 	category = CAT_MISC
+
+/datum/crafting_recipe/whip
+	name = "Leather whip"
+	result = /obj/item/melee/curator_whip
+	reqs = list(/obj/item/stack/sheet/leather = 3)
+	time = 40
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
 
 //F13
 ///ASSEMBLY ITEMS

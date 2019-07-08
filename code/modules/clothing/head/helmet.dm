@@ -117,10 +117,10 @@
 
 /obj/item/clothing/head/helmet/swat
 	name = "\improper SWAT helmet"
-	desc = "An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."
+	desc = "A robust and strong SWAT helmet, particularly good at defending against melee weapons."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
-	armor = list("melee" = 50, "bullet" = 39, "laser" = 25,"energy" = 25, "bomb" = 39, "bio" = 90, "rad" = 20, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 25,"energy" = 25, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 55, "acid" = 55)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -533,7 +533,7 @@
 	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Provides the high energy weapons resistance."
 	icon_state = "tesla_helmet"
 	item_state = "tesla_helmet"
-	armor = list("melee" = 60, "bullet" = 20, "laser" = 60, "energy" = 60, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 55, "energy" = 55, "bomb" = 35, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	var/hit_reflect_chance = 70
 	strip_delay = 10
 
@@ -600,10 +600,10 @@
 
 /obj/item/clothing/head/helmet/power_armor/t45b
 	name = "Salvaged T-45b helmet"
-	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."
+	desc = "It's a salvaged power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
-	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 75, "acid" = 0)
+	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/head/helmet/power_armor/advanced
 	name = "Advanced power helmet"
