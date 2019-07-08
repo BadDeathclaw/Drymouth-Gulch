@@ -764,7 +764,7 @@
 	name = "Leather whip"
 	result = /obj/item/melee/curator_whip
 	reqs = list(/obj/item/stack/sheet/leather = 3)
-	time = 40
+	time = 60
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
