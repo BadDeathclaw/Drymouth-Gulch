@@ -897,6 +897,7 @@
 
 
 /mob/living/carbon/human/proc/despawn()
+	ghostize()
 	var/datum/job/job_to_free = SSjob.GetJob(job)
 	job_to_free?.current_positions--
 	GLOB.data_core.remove_record_by_name(real_name)
