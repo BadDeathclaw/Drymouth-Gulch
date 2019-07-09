@@ -188,9 +188,23 @@
 		return
 	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the Mojave", "Confirm", "Cancel") != "Confirm")
 		return
-	if(user.incapacitated() || QDELETED(departing_mob) || departing_mob.stat == DEAD || departing_mob.client || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
+	if(user.incapacitated() || QDELETED(departing_mob) || departing_mob.stat == DEAD || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
-	log_admin("[key_name(user)] as [user] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)].")
+	if(departing_mob.logout_time && departing_mob.logout_time + 5 MINUTES > world.time)
+		to_chat(user, "<span class='warning'>This mind has only recently departed. Better give it some more time before taking such a drastic measure.</span>")
+		return
+	var/dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
+	if(!length(departing_mob.contents))
+		dat += " none."
+	else
+		var/atom/movable/content = departing_mob.contents[1]
+		dat += " [content.name]"
+		for(var/i in 2 to length(departing_mob.contents))
+			content = departing_mob.contents[i]
+			dat += ", [content.name]"
+		dat += "."
+	message_admins(dat)
+	log_admin(dat)
 	departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the Mojave.</span>")
 	departing_mob.despawn()
 
