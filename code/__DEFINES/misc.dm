@@ -458,3 +458,5 @@ GLOBAL_LIST_INIT(pda_styles, list(MONO, VT, ORBITRON, SHARE))
 #define LOCKED 2
 
 #define SPAWNER_SEED rand(1, 10)
+
+#define span(class, text) ("<span class='[class]'>[text]</span>")

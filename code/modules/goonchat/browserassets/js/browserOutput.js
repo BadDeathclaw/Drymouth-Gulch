@@ -30,7 +30,7 @@ var opts = {
 	'scrollSnapTolerance': 10, //If within x pixels of bottom
 	'clickTolerance': 10, //Keep focus if outside x pixels of mousedown position on mouseup
 	'imageRetryDelay': 50, //how long between attempts to reload images (in ms)
-	'imageRetryLimit': 50, //how many attempts should we make? 
+	'imageRetryLimit': 50, //how many attempts should we make?
 	'popups': 0, //Amount of popups opened ever
 	'wasd': false, //Is the user in wasd mode?
 	'priorChatHeight': 0, //Thing for height-resizing detection
@@ -42,15 +42,6 @@ var opts = {
 	'highlightTerms': [],
 	'highlightLimit': 5,
 	'highlightColor': '#FFFF00', //The color of the highlighted message
-	'pingDisabled': false, //Has the user disabled the ping counter
-
-	//Ping display
-	'lastPang': 0, //Timestamp of the last response from the server.
-	'pangLimit': 35000,
-	'pingTime': 0, //Timestamp of when ping sent
-	'pongTime': 0, //Timestamp of when ping received
-	'noResponse': false, //Tracks the state of the previous ping request
-	'noResponseCount': 0, //How many failed pings?
 
 	//Clicks
 	'mouseDownX': null,
@@ -65,7 +56,7 @@ var opts = {
 	'volumeUpdateDelay': 5000, //Time from when the volume updates to data being sent to the server
 	'volumeUpdating': false, //True if volume update function set to fire
 	'updatedVolume': 0, //The volume level that is sent to the server
-	
+
 	'defaultMusicVolume': 25,
 
 	'messageCombining': true,
@@ -420,24 +411,6 @@ function handleClientData(ckey, ip, compid) {
 //Or, y'know, whenever really
 function ehjaxCallback(data) {
 	opts.lastPang = Date.now();
-	if (data == 'softPang') {
-		return;
-	} else if (data == 'pang') {
-		opts.pingCounter = 0; //reset
-		opts.pingTime = Date.now();
-		runByond('?_src_=chat&proc=ping');
-
-	} else if (data == 'pong') {
-		if (opts.pingDisabled) {return;}
-		opts.pongTime = Date.now();
-		var pingDuration = Math.ceil((opts.pongTime - opts.pingTime) / 2);
-		$('#pingMs').text(pingDuration+'ms');
-		pingDuration = Math.min(pingDuration, 255);
-		var red = pingDuration;
-		var green = 255 - pingDuration;
-		var blue = 0;
-		var hex = rgbToHex(red, green, blue);
-		$('#pingDot').css('color', '#'+hex);
 
 	} else if (data == 'roundrestart') {
 		opts.restarting = true;
@@ -579,20 +552,6 @@ $(function() {
 	$subAudio = $('#subAudio');
 	$selectedSub = $subOptions;
 
-	//Hey look it's a controller loop!
-	setInterval(function() {
-		if (opts.lastPang + opts.pangLimit < Date.now() && !opts.restarting) { //Every pingLimit
-				if (!opts.noResponse) { //Only actually append a message if the previous ping didn't also fail (to prevent spam)
-					opts.noResponse = true;
-					opts.noResponseCount++;
-					internalOutput('<div class="connectionClosed internal" data-count="'+opts.noResponseCount+'">You are either AFK, experiencing lag or the connection has closed.</div>', 'internal');
-				}
-		} else if (opts.noResponse) { //Previous ping attempt failed ohno
-				$('.connectionClosed[data-count="'+opts.noResponseCount+'"]:not(.restored)').addClass('restored').text('Your connection has been restored (probably)!');
-				opts.noResponse = false;
-		}
-	}, 2000); //2 seconds
-
 
 	/*****************************************
 	*
@@ -616,13 +575,6 @@ $(function() {
 	if (savedConfig.slineHeight) {
 		$("body").css('line-height', savedConfig.slineHeight);
 		internalOutput('<span class="internal boldnshit">Loaded line height setting of: '+savedConfig.slineHeight+'</span>', 'internal');
-	}
-	if (savedConfig.spingDisabled) {
-		if (savedConfig.spingDisabled == 'true') {
-			opts.pingDisabled = true;
-			$('#ping').hide();
-		}
-		internalOutput('<span class="internal boldnshit">Loaded ping display of: '+(opts.pingDisabled ? 'hidden' : 'visible')+'</span>', 'internal');
 	}
 	if (savedConfig.shighlightTerms) {
 		var savedTerms = $.parseJSON(savedConfig.shighlightTerms);
@@ -653,7 +605,7 @@ $(function() {
 	else{
 		$('#adminMusic').prop('volume', opts.defaultMusicVolume / 100);
 	}
-	
+
 	if (savedConfig.smessagecombining) {
 		if (savedConfig.smessagecombining == 'false') {
 			opts.messageCombining = false;
@@ -880,17 +832,6 @@ $(function() {
 		internalOutput('<span class="internal boldnshit">Line height set to '+lineheightvar+'</span>', 'internal');
 	});
 
-	$('#togglePing').click(function(e) {
-		if (opts.pingDisabled) {
-			$('#ping').slideDown('fast');
-			opts.pingDisabled = false;
-		} else {
-			$('#ping').slideUp('fast');
-			opts.pingDisabled = true;
-		}
-		setCookie('pingdisabled', (opts.pingDisabled ? 'true' : 'false'), 365);
-	});
-
 	$('#saveLog').click(function(e) {
 		// Requires IE 10+ to issue download commands. Just opening a popup
 		// window will cause Ctrl+S to save a blank page, ignoring innerHTML.
@@ -979,7 +920,7 @@ $(function() {
 		$messages.empty();
 		opts.messageCount = 0;
 	});
-	
+
 	$('#musicVolumeSpan').hover(function() {
 		$('#musicVolumeText').addClass('hidden');
 		$('#musicVolume').removeClass('hidden');
@@ -1006,9 +947,9 @@ $(function() {
 	});
 
 	$('img.icon').error(iconError);
-	
-	
-		
+
+
+
 
 	/*****************************************
 	*
