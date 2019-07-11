@@ -1,3 +1,7 @@
+/*--------------------------------------------------
+  -------------------HAHAHA I DONT HAVE A GIRLFRIEND HAHAHAHA (FUCKEN KILL ME)----------------------
+  --------------------------------------------------
+*/
 #define CUM_TARGET_MOUTH "mouth"
 #define CUM_TARGET_THROAT "throat"
 #define CUM_TARGET_VAGINA "vagina"
@@ -366,12 +370,12 @@
 
 		if(has_vagina())
 			message = pick(list(
-				"presses their weight down onto \the [partner]'s face, blocking their vision completely.", 
+				"presses their weight down onto \the [partner]'s face, blocking their vision completely.",
 				"rides \the [partner]'s face, grinding their wet pussy all over it."))
 
 		else if(has_penis())
-			message = pick(list("presses their weight down onto \the [partner]'s face, blocking their vision completely.", 
-				"forces their dick and nutsack into \the [partner]'s face as they're stuck locked in between their thighs.", 
+			message = pick(list("presses their weight down onto \the [partner]'s face, blocking their vision completely.",
+				"forces their dick and nutsack into \the [partner]'s face as they're stuck locked in between their thighs.",
 				"slips their cock into \the [partner]'s helpless mouth, keeping their shaft pressed hard into their face."))
 
 		else
@@ -381,12 +385,12 @@
 
 		if(has_vagina())
 			message = pick(list(
-				"clambers over \the [partner]'s face and pins them down with their thighs, their moist slit rubbing all over \the [partner]'s mouth and nose.", 
+				"clambers over \the [partner]'s face and pins them down with their thighs, their moist slit rubbing all over \the [partner]'s mouth and nose.",
 				"locks their legs around \the [partner]'s head before pulling it into their mound."))
 
 		else if(has_penis())
 			message = pick(list(
-				"clambers over \the [partner]'s face and pins them down with their thighs, then slowly inching closer and covering their eyes and nose with their leaking erection.", 
+				"clambers over \the [partner]'s face and pins them down with their thighs, then slowly inching closer and covering their eyes and nose with their leaking erection.",
 				"locks their legs around \the [partner]'s head before pulling it into their fat package, smothering them."))
 
 		else
@@ -428,8 +432,8 @@
 
 	if(is_fucking(partner, CUM_TARGET_THROAT))
 		message = "[pick(
-			"brutally fucks \the [partner]'s throat.", 
-			"chokes \the [partner] on their dick.", 
+			"brutally fucks \the [partner]'s throat.",
+			"chokes \the [partner] on their dick.",
 			"brutally shoves their dick deep into \the [partner]'s mouth.")]"
 		if(rand(3))
 			partner.emote("chokes on \The [src]")
@@ -467,9 +471,9 @@
 
 	if(is_fucking(partner, NUTS_TO_FACE))
 		message = pick(list(
-			"grabs the back of [partner]'s head and pulls it into their crotch.", 
-			"jams their nutsack right into [partner]'s face.", 
-			"roughly grinds their fat nutsack into [partner]'s mouth.", 
+			"grabs the back of [partner]'s head and pulls it into their crotch.",
+			"jams their nutsack right into [partner]'s face.",
+			"roughly grinds their fat nutsack into [partner]'s mouth.",
 			"pulls out their saliva-covered nuts from [partner]'s violated mouth and then wipes off the slime onto their face."))
 	else
 		message = pick(list("wedges a digit into the side of [partner]'s jaw and pries it open before using their other hand to shove their whole nutsack inside!", "stands with their groin inches away from [partner]'s face, then thrusting their hips forward and smothering [partner]'s whole face with their heavy ballsack."))
@@ -519,7 +523,7 @@
 	var/message
 
 	if(partner.is_fucking(src, CUM_TARGET_VAGINA))
-		message = "[pick("rides \the [partner]'s dick.", 
+		message = "[pick("rides \the [partner]'s dick.",
 			"forces [partner]'s cock on their pussy")]"
 	else
 		message = "slides their pussy onto \the [partner]'s cock."
@@ -535,7 +539,7 @@
 	var/message
 
 	if(partner.is_fucking(src, CUM_TARGET_ANUS))
-		message = "[pick("rides \the [partner]'s dick.", 
+		message = "[pick("rides \the [partner]'s dick.",
 			"forces [partner]'s cock on their ass")]"
 	else
 		message = "lowers their ass onto \the [partner]'s cock."
@@ -548,8 +552,8 @@
 	do_fucking_animation(get_dir(src, partner))
 
 /mob/living/carbon/human/proc/do_fingering(mob/living/carbon/human/partner)
-	visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].", 
-		"fingers \the [partner]'s pussy.", 
+	visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].",
+		"fingers \the [partner]'s pussy.",
 		"fingers \the [partner] hard.")]</font>")
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, src)
@@ -557,8 +561,8 @@
 	do_fucking_animation(get_dir(src, partner))
 
 /mob/living/carbon/human/proc/do_fingerass(mob/living/carbon/human/partner)
-	visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].", 
-		"fingers \the [partner]'s asshole.", 
+	visible_message("<font color=purple><b>\The [src]</b> [pick("fingers \the [partner].",
+		"fingers \the [partner]'s asshole.",
 		"fingers \the [partner] hard.")]</font>")
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	partner.handle_post_sex(NORMAL_LUST, null, src)
@@ -576,11 +580,11 @@
 	var/message
 
 	if(partner.is_fucking(src, CUM_TARGET_HAND))
-		message = "[pick("jerks \the [partner] off.", 
-			"works \the [partner]'s shaft.", 
+		message = "[pick("jerks \the [partner] off.",
+			"works \the [partner]'s shaft.",
 			"wanks \the [partner]'s cock hard.")]"
 	else
-		message = "[pick("wraps their hand around \the [partner]'s cock.", 
+		message = "[pick("wraps their hand around \the [partner]'s cock.",
 			"starts playing with \the [partner]'s cock")]"
 		partner.set_is_fucking(src, CUM_TARGET_HAND)
 
@@ -594,9 +598,9 @@
 	var/message
 
 	if(is_fucking(partner, CUM_TARGET_BREASTS))
-		message = "[pick("fucks \the [partner]'s' breasts.", 
-			"grinds their cock between \the [partner]'s boobs.", 
-			"thrusts into \the [partner]'s tits.", 
+		message = "[pick("fucks \the [partner]'s' breasts.",
+			"grinds their cock between \the [partner]'s boobs.",
+			"thrusts into \the [partner]'s tits.",
 			"grabs \the [partner]'s breasts together and presses their dick between them.")]"
 	else
 		message = "pushes \the [partner]'s breasts together and presses their dick between them."
@@ -613,11 +617,11 @@
 	var/message
 
 	if(is_fucking(partner, GRINDING_FACE_WITH_ANUS))
-		message = "[pick("grinds their ass into \the [partner]'s face.", 
+		message = "[pick("grinds their ass into \the [partner]'s face.",
 			"shoves their ass into \the [partner]'s face.")]"
 	else
 		message = "[pick(
-			"grabs the back of \the [partner]'s head and forces it into their asscheeks.", 
+			"grabs the back of \the [partner]'s head and forces it into their asscheeks.",
 			"squats down and plants their ass right on \the [partner]'s face")]"
 		set_is_fucking(partner , GRINDING_FACE_WITH_ANUS)
 
@@ -647,32 +651,32 @@
 
 	if(is_fucking(partner, GRINDING_FACE_WITH_FEET))
 		if(src.get_item_by_slot(SLOT_SHOES) != null)
-			message = "[pick(list("grinds their [get_shoes()] into [partner]'s face.", 
-				"presses their footwear down hard on [partner]'s face.", 
+			message = "[pick(list("grinds their [get_shoes()] into [partner]'s face.",
+				"presses their footwear down hard on [partner]'s face.",
 				"rubs off the dirt from their [get_shoes()] onto [partner]'s face."))]</span>"
 		else
-			message = "[pick(list("grinds their bare feet into [partner]'s face.", 
-				"deviously covers [partner]'s mouth and nose with their bare feet.", 
+			message = "[pick(list("grinds their bare feet into [partner]'s face.",
+				"deviously covers [partner]'s mouth and nose with their bare feet.",
 				"runs the soles of their bare feet against [partner]'s lips."))]</span>"
 
 	else if(is_fucking(partner, GRINDING_MOUTH_WITH_FEET))
 		if(src.get_item_by_slot(SLOT_SHOES) != null)
-			message = "[pick(list("pulls their [get_shoes()] out of [partner]'s mouth and puts them on their face.", 
+			message = "[pick(list("pulls their [get_shoes()] out of [partner]'s mouth and puts them on their face.",
 				"slowly retracts their [get_shoes()] from [partner]'s mouth, putting them on their face instead."))]</span>"
 		else
-			message = "[pick(list("pulls their bare feet out of [partner]'s mouth and rests them on their face instead.", 
+			message = "[pick(list("pulls their bare feet out of [partner]'s mouth and rests them on their face instead.",
 				"retracts their bare feet from [partner]'s mouth and grinds them into their face instead."))]</span>"
 
 		set_is_fucking(partner , GRINDING_FACE_WITH_FEET)
 
 	else
 		if(src.get_item_by_slot(SLOT_SHOES) != null)
-			message = "[pick(list("plants their [get_shoes()] ontop of [partner]'s face.", 
-				"rests their [get_shoes()] on [partner]'s face and presses down hard.", 
+			message = "[pick(list("plants their [get_shoes()] ontop of [partner]'s face.",
+				"rests their [get_shoes()] on [partner]'s face and presses down hard.",
 				"harshly places their [get_shoes()] atop [partner]'s face."))]</span>"
 		else
-			message = "[pick(list("plants their bare feet ontop of [partner]'s face.", 
-				"rests their feet on [partner]'s face, smothering them.", 
+			message = "[pick(list("plants their bare feet ontop of [partner]'s face.",
+				"rests their feet on [partner]'s face, smothering them.",
 				"positions their bare feet atop [partner]'s face."))]</span>"
 
 		set_is_fucking(partner , GRINDING_FACE_WITH_FEET)
@@ -689,31 +693,31 @@
 
 	if(is_fucking(partner, GRINDING_MOUTH_WITH_FEET))
 		if(src.get_item_by_slot(SLOT_SHOES) != null)
-			message = "[pick(list("roughly shoves their [get_shoes()] deeper into [partner]'s mouth.", 
-				"harshly forces another inch of their [get_shoes()] into [partner]'s mouth.", 
+			message = "[pick(list("roughly shoves their [get_shoes()] deeper into [partner]'s mouth.",
+				"harshly forces another inch of their [get_shoes()] into [partner]'s mouth.",
 				"presses their weight down, their [get_shoes()] prying deeper into [partner]'s mouth."))]</span>"
 		else
-			message = "[pick(list("wiggles their toes deep inside [partner]'s mouth.", 
+			message = "[pick(list("wiggles their toes deep inside [partner]'s mouth.",
 				"crams their barefeet down deeper into [partner]'s mouth, making them gag.",
 				"roughly grinds their feet on [partner]'s tongue."))]</span>"
 
 	else if(is_fucking(partner, GRINDING_FACE_WITH_FEET))
 		if(src.get_item_by_slot(SLOT_SHOES) != null)
-			message = "[pick(list("decides to force their [get_shoes()] deep into [partner]'s mouth.", 
+			message = "[pick(list("decides to force their [get_shoes()] deep into [partner]'s mouth.",
 				"pressed the tip of their [get_shoes()] against [partner]'s lips and shoves inwards."))]</span>"
 		else
-			message = "[pick(list("pries open [partner]'s mouth with their toes and shoves their bare foot in.", 
+			message = "[pick(list("pries open [partner]'s mouth with their toes and shoves their bare foot in.",
 				"presses down their foot even harder, cramming their foot into [partner]'s mouth."))]</span>"
 
 		set_is_fucking(partner , GRINDING_MOUTH_WITH_FEET)
 
 	else
 		if(src.get_item_by_slot(SLOT_SHOES) != null)
-			message = "[pick(list("readies themselves and in one swift motion, shoves their [get_shoes()] into [partner]'s mouth.", 
+			message = "[pick(list("readies themselves and in one swift motion, shoves their [get_shoes()] into [partner]'s mouth.",
 				"grinds the tip of their [get_shoes()] against [partner]'s mouth before pushing themselves in."))]</span>"
 		else
-			message = "[pick(list("rubs their dirty bare feet across [partner]'s face before prying them into their muzzle.", 
-				"forces their barefeet into [partner]'s mouth.", 
+			message = "[pick(list("rubs their dirty bare feet across [partner]'s face before prying them into their muzzle.",
+				"forces their barefeet into [partner]'s mouth.",
 				"covers [partner]'s mouth and nose with their foot until they gasp for breath, then shoves both feet inside before they can react."))]</span>"
 		set_is_fucking(partner , GRINDING_MOUTH_WITH_FEET)
 
