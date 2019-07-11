@@ -517,7 +517,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	righthand_file = 'icons/mob/inhands/weapons/chainsaw_righthand.dmi'
 	item_flags = NODROP | ABSTRACT | DROPDEL
 	w_class = WEIGHT_CLASS_HUGE
-	force = 72 // makes it equal with a two handed chainsaw. it going on your arm has no bearing on it still being a chainsaw
+	force = 56
 	throwforce = 0
 	throw_range = 0
 	throw_speed = 0
