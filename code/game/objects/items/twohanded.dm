@@ -461,7 +461,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	force_unwielded = 20
-	force_wielded = 25
+	force_wielded = 56
 	throwforce = 20
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
@@ -561,6 +561,7 @@
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	slot_flags = ITEM_SLOT_BACK
 	force = 10
 	var/force_on = 72
 	w_class = WEIGHT_CLASS_HUGE
@@ -897,10 +898,10 @@
 	icon_state = "bmprsword0"
 	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi
+	slot_flags = ITEM_SLOT_BACK'
 
 /obj/item/twohanded/fireaxe/bmprsword/update_icon()
 	name = "bumper sword"
 	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	icon_state = "bmprsword[wielded]"
-
