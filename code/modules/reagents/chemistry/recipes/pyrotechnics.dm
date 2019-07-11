@@ -95,7 +95,7 @@
 	mix_message = "<span class='boldannounce'>Sparks start flying around the black powder!</span>"
 
 /datum/chemical_reaction/reagent_explosion/blackpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
-	addtimer(CALLBACK(src, /datum/chemical/reagent_explosion/.proc/on_reaction, holder, created_volume), rand(50, 100))
+	addtimer(CALLBACK(src, /datum/chemical_reaction/reagent_explosion/.proc/on_reaction, holder, created_volume), rand(50, 100))
 	..()
 
 /datum/chemical_reaction/thermite
