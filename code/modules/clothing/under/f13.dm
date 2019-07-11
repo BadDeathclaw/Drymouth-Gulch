@@ -34,14 +34,14 @@
 //NCR
 
 /obj/item/clothing/under/f13/ncr
-	name = "ncr fatigues"
+	name = "NCR fatigues"
 	desc = "A set of standard issue New California Republic trooper fatigues."
 	icon_state = "ncr_uniform"
 	item_state = "ncr_uniform"
 	item_color = "ncr_uniform"
 
 /obj/item/clothing/under/f13/ncr/officer
-	name = "officer fatigues"
+	name = "NCR officer fatigues"
 	desc = "A set of NCR officer fatigues"
 
 /obj/item/clothing/under/f13/caravaneer
@@ -105,8 +105,8 @@
 	item_color = "ranger"
 
 /obj/item/clothing/under/f13/patrolranger
-	name = "patrol ranger underclothes"
-	desc = "A pair of brown slacks and a breathable shirt, meant to be worn under N.C.R. patrol ranger armour."
+	name = "patrol ranger outfit"
+	desc = "A pair of brown slacks and a breathable shirt, meant to be worn under NCR patrol ranger armour."
 	icon_state = "patrolranger"
 	item_state = "patrolranger"
 	item_color = "patrolranger"
@@ -315,7 +315,7 @@
 //Remnants
 
 /obj/item/clothing/under/f13/enclave_officer
-	name = "Remnant Officer Uniform"
+	name = "enclave officer uniform"
 	desc = "A standard Enclave officer uniform.<br>The outer layer is made of a sturdy material designed to withstand the harsh conditions of the wasteland."
 	icon_state = "enclave_o"
 	item_state = "bl_suit"
@@ -408,7 +408,7 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/bdu //WalterJe military standarts.
-	name = "BDU"
+	name = "battle dress uniform"
 	desc = "A standard military Battle Dress Uniform."
 	icon_state = "bdu"
 	item_state = "xenos_suit"
@@ -418,7 +418,7 @@
 	can_adjust = 1
 
 /obj/item/clothing/under/f13/dbdu
-	name = "DBDU"
+	name = "desert battle dress uniform"
 	desc = "A military Desert Battle Dress Uniform."
 	icon_state = "dbdu"
 	item_state = "brownjsuit"
@@ -452,7 +452,7 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/relaxedwear
-	name = "pre-War male relaxedwear"
+	name = "pre-war male relaxedwear"
 	desc = "A dirty long-sleeve blue shirt with a greenish brown sweater-vest and slacks."
 	icon_state = "relaxedwear_m"
 	item_state = "g_suit"
@@ -460,7 +460,7 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/spring
-	name = "pre-War male spring outfit"
+	name = "pre-war male spring outfit"
 	desc = "A dirty long-sleeve beige shirt with a red sweater-vest and brown trousers."
 	icon_state = "spring_m"
 	item_state = "brownjsuit"
@@ -468,7 +468,7 @@
 	can_adjust = 0
 
 /obj/item/clothing/under/f13/formal
-	name = "pre-War male formal wear"
+	name = "pre-war male formal wear"
 	desc = "A black jacket with an old white shirt and dirty dark purple trousers.<br>Traditionally worn by the richest of the post-War world."
 	icon_state = "formal_m"
 	item_state = "judge"

@@ -21,7 +21,7 @@
 	var/safety = TRUE
 
 /obj/item/clothing/mask/gas/sechailer/swat
-	name = "\improper SWAT mask"
+	name = "tactical gasmask"
 	desc = "A close-fitting tactical mask with an especially aggressive Compli-o-nator 3000."
 	actions_types = list(/datum/action/item_action/halt)
 	icon_state = "swat"
