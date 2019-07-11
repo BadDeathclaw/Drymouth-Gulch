@@ -142,6 +142,10 @@ obj/dugpit/New(lnk)
 					gravecoffin = curcoffin
 					break
 			playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1)
+			if(!(gravebody in loc)) // prevents burying yourself while not on the tile
+				gravebody = null
+			if(!gravecoffin in loc) // just sanity checking
+				gravecoffin = null
 			if (gravebody!=null)
 				user.show_message("<span class='notice'>You start covering the body in the hole with dirt...</span>", 1)
 				if (do_after(user, (50 * digging_speed), target=gravebody))
