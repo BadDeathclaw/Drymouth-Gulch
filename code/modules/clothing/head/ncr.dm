@@ -7,7 +7,7 @@
 	strip_delay = 50
 
 /obj/item/clothing/head/f13/ncr/goggles
-	name = "Goggled NCR Helmet"
+	name = "NCR storm helmet"
 	desc = "A standard issue NCR Infantry helmet, with a pair of goggles attached to it."
 	icon_state = "ncr_goggles_helmet"
 	item_state = "ncr_goggles_helmet"
