@@ -898,8 +898,8 @@
 	icon_state = "bmprsword0"
 	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi
-	slot_flags = ITEM_SLOT_BACK'
+	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
 
 /obj/item/twohanded/fireaxe/bmprsword/update_icon()
 	name = "bumper sword"
