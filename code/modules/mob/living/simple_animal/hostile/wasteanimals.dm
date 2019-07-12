@@ -15,6 +15,8 @@
 	response_harm = "hits"
 	emote_taunt = list("buzzes")
 	emote_taunt_sound = 'sound/creatures/cazador_buzz.ogg'
+	stat_attack = UNCONSCIOUS
+	robust_searching = 1
 	taunt_chance = 30
 	speed = 0
 	maxHealth = 40

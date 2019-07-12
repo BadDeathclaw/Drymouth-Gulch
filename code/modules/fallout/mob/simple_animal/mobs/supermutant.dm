@@ -11,7 +11,9 @@
 	speak = list("GRRRRRR!", "ARGH!", "NNNNNGH!", "HMPH!", "ARRRRR!")
 	speak_emote = list("shouts", "yells")
 	move_to_delay = 5
-	environment_smash = 2
+	stat_attack = UNCONSCIOUS
+	robust_searching = 1
+	environment_smash = ENVIRONMENT_SMASH_RWALLS
 	turns_per_move = 5
 	response_help = "touches"
 	response_disarm = "tries to perform a kung fu move, then suddenly remembers that it's actually"
@@ -20,11 +22,18 @@
 	health = 300
 	force_threshold = 15
 	faction = list("hostile", "supermutant")
-	melee_damage_lower = 40
-	melee_damage_upper = 56
+	melee_damage_lower = 55
+	melee_damage_upper = 75
 	mob_size = MOB_SIZE_LARGE
-	attacktext = "hits"
+	anchored = TRUE //unpullable
+	attacktext = "smashes"
 	attack_sound = "punch"
+
+if(prob(85) || Proj.damage > 26)
+		return ..()
+	else
+		visible_message("<span class='danger'>\The [Proj] is deflected harmlessly by \the [src]'s thick skin!</span>")
+		return 0
 
 /mob/living/simple_animal/hostile/supermutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'

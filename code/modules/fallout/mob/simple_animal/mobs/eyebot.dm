@@ -45,11 +45,11 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	status_flags = CANPUSH
-	vision_range = 12
-	aggro_vision_range = 10
+	vision_range = 16
+	aggro_vision_range = 16
 //	idle_vision_range = 7
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam
+	projectiletype = /obj/item/projectile/beam/laser/lasgun
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 
 /mob/living/simple_animal/hostile/eyebot/New()
