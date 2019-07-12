@@ -29,11 +29,14 @@
 	attacktext = "smashes"
 	attack_sound = "punch"
 
-if(prob(85) || Proj.damage > 26)
+/mob/living/simple_animal/hostile/supermutant/bullet_act(obj/item/projectile/Proj)
+	if(!Proj)
+		return
+	if(prob(85) || Proj.damage > 26)
 		return ..()
 	else
 		visible_message("<span class='danger'>\The [Proj] is deflected harmlessly by \the [src]'s thick skin!</span>")
-		return 0
+		return FALSE
 
 /mob/living/simple_animal/hostile/supermutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
