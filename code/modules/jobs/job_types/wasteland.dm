@@ -119,29 +119,7 @@ Raider
 		/obj/item/clothing/under/f13/doctorm, \
 		/obj/item/clothing/under/roman)
 	suit = pick(
-		/obj/item/clothing/suit/fluff/cowboybvest,\
-		/obj/item/clothing/suit/fluff/cowboygvest,\
-		/obj/item/clothing/suit/fluff/battlecruiser,\
-		/obj/item/clothing/suit/fluff/vest,\
-		/obj/item/clothing/suit/armor/fluff/chestplate,\
-		/obj/item/clothing/suit/f13/veteran,\
-		/obj/item/clothing/suit/f13/duster,\
-		/obj/item/clothing/suit/f13/autumn,\
-		/obj/item/clothing/suit/poncho,\
-		/obj/item/clothing/suit/poncho/green,\
-		/obj/item/clothing/suit/poncho/red,\
-		/obj/item/clothing/suit/det_suit/grey,\
-		/obj/item/clothing/suit/det_suit,\
-		/obj/item/clothing/suit/chickensuit,\
-		/obj/item/clothing/suit/bomb_suit,\
-		/obj/item/clothing/suit/bio_suit/security,\
-		/obj/item/clothing/suit/apron/chef,\
-		/obj/item/clothing/suit/apron/overalls,\
-		/obj/item/clothing/suit/toggle/labcoat/mad,\
-		/obj/item/clothing/suit/pirate,\
-		/obj/item/clothing/suit/armor/f13/kit/terrible,\
-		/obj/item/clothing/suit/armor/f13/leatherarmor/terrible, \
-		/obj/item/clothing/suit/armor/f13/bmetalarmor/terrible, \
+		/obj/item/clothing/suit/armor/f13/raider,\
 		/obj/item/clothing/suit/armor/f13/raider/yankee, \
 		/obj/item/clothing/suit/armor/f13/raider/sadist, \
 		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
@@ -158,34 +136,11 @@ Raider
 			/obj/item/clothing/mask/rat/raven,\
 			/obj/item/clothing/mask/rat/jackal)
 	head = pick(
-		/obj/item/clothing/head/papersack, \
 		/obj/item/clothing/head/helmet/f13/raider,\
 		/obj/item/clothing/head/helmet/f13/eyebot,\
-		/obj/item/clothing/head/helmet/f13/brokenpa/t45d,\
-		/obj/item/clothing/head/chicken,\
-		/obj/item/clothing/head/hardhat,\
-		/obj/item/clothing/head/santa,\
-		/obj/item/clothing/head/helmet/roman,\
-		/obj/item/clothing/head/helmet/gladiator,\
-		/obj/item/clothing/head/festive,\
-		/obj/item/clothing/head/canada,\
-		/obj/item/clothing/head/bio_hood/security,\
-		/obj/item/clothing/head/bandana,\
-		/obj/item/clothing/head/welding,\
-		/obj/item/clothing/head/sombrero,\
-		/obj/item/clothing/head/sombrero/green,\
-		/obj/item/clothing/head/collectable,\
-		/obj/item/clothing/head/rice_hat,\
-		/obj/item/clothing/head/jester,\
-		/obj/item/clothing/head/cone,\
 		/obj/item/clothing/head/helmet/f13/raider/arclight,\
 		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
-		/obj/item/clothing/head/helmet/f13/raider/yankee,\
-		/obj/item/clothing/head/hooded/carp_hood,\
-		/obj/item/clothing/head/jester/alt,\
-		/obj/item/clothing/head/lobsterhat,\
-		/obj/item/clothing/head/cueball,\
-		/obj/item/clothing/head/fedora)
+		/obj/item/clothing/head/helmet/f13/raider/yankee,\)
 	r_pocket = /obj/item/flashlight/flare
 	shoes = 			/obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
@@ -195,6 +150,10 @@ Raider
 		/obj/item/storage/bag/money/small/raider=1)
 
 	suit_store = pick(
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/shotgun/remington, \
+		/obj/item/gun/ballistic/revolver/zipgun, \
+		/obj/item/gun/ballistic/revolver/pipe_rifle, \
 		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
 		/obj/item/gun/ballistic/revolver/single_shotgun)
 
