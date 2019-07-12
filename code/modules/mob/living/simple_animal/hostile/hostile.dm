@@ -371,7 +371,7 @@
 		if(CanSmashTurfs(T))
 			T.attack_animal(src)
 		for(var/obj/O in T)
-			if(O.density && environment_smash >= ENVIRONMENT_SMASH_STRUCTURES && !O.IsObscured())
+			if(!QDELETED(O) && O.density && environment_smash >= ENVIRONMENT_SMASH_STRUCTURES && !O.IsObscured() )
 				O.attack_animal(src)
 				return
 
