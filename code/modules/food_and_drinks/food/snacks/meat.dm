@@ -151,7 +151,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/steak/radroach_meat
 	name = "radroach meat"
-	desc = "A juicy steak of radroach meat.Ew"
+	desc = "A juicy radroach steak, ew."
 	icon_state = "mothmeat"
 	list_reagents = list("nutriment" = 3, "vitamin" = 3)
 	tastes = list("cooked insect guts" = 1)
@@ -167,7 +167,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/steak/radscorpion_meat
 	name = "radscorpion steak"
-	desc = "A radscorpion steak.A dish for seasoned wastelanders."
+	desc = "A radscorpion steak. A dish for seasoned wastelanders."
 	icon_state = "mothmeat"
 	list_reagents = list("nutriment" = 3, "vitamin" = 3)
 	tastes = list("cooked insect guts" = 1)
@@ -183,7 +183,7 @@
 
 /obj/item/reagent_containers/food/snacks/meat/steak/cazador_meat
 	name = "cazador steak"
-	desc = "A steak of cazador meat. If the poison did't finish the job, this might... or not"
+	desc = "A steak of cazador meat. If the poison did't finish the job, this might do... or not"
 	icon_state = "mothmeat"
 	list_reagents = list("nutriment" = 3, "vitamin" = 3)
 	tastes = list("spicy cooked insect guts" = 1)
