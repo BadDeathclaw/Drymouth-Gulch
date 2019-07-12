@@ -701,8 +701,10 @@
 	set waitfor = 0
 	var/turf/T = get_turf(src.loc)
 	break_light_tube()	// break it first to give a warning
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/explosion, T, 0, 0, 2, 2), 2)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 3)
+	sleep(2)
+	explosion(T, 0, 0, 2, 2)
+	sleep(1)
+	qdel(src)
 
 // the light item
 // can be tube or bulb subtypes

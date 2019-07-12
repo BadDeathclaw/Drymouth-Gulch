@@ -73,6 +73,9 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 		if("debug")
 			data = debug(arglist(params))
 
+		if("ping")
+			data = ping(arglist(params))
+
 		if("analyzeClientData")
 			data = analyzeClientData(arglist(params))
 
@@ -162,6 +165,10 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 
 	cookieSent = TRUE
 
+//Called by js client every 60 seconds
+/datum/chatOutput/proc/ping()
+	return "pong"
+
 //Called by js client on js error
 /datum/chatOutput/proc/debug(error)
 	log_world("\[[time2text(world.realtime, "YYYY-MM-DD hh:mm:ss")]\] Client: [(src.owner.key ? src.owner.key : src.owner)] triggered JS error: [error]")
@@ -210,7 +217,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 			var/datum/mind/M = I
 			if(M.current && M.current.client)
 				C = M.current.client
-
+			
 
 		if (!C)
 			continue
