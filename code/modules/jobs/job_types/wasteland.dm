@@ -125,17 +125,19 @@ Raider
 		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
 	if(prob(10))
 		mask = pick(
-			/obj/item/clothing/mask/joy,\
-			/obj/item/clothing/mask/pig,\
-			/obj/item/clothing/mask/frog,\
-			/obj/item/clothing/mask/rat,\
-			/obj/item/clothing/mask/rat/fox,\
-			/obj/item/clothing/mask/rat/bee,\
+			/obj/item/clothing/mask/bandana/red,\
+			/obj/item/clothing/mask/bandana/blue,\
+			/obj/item/clothing/mask/bandana/green,\
+			/obj/item/clothing/mask/bandana/gold,\
+			/obj/item/clothing/mask/bandana/black,\
+			/obj/item/clothing/mask/bandana/skull,\
 			/obj/item/clothing/mask/rat/bear,\
 			/obj/item/clothing/mask/rat/bat,\
 			/obj/item/clothing/mask/rat/raven,\
 			/obj/item/clothing/mask/rat/jackal)
 	head = pick(
+		/obj/item/clothing/head/sombrero,\
+		/obj/item/clothing/head/sombrero/green,\
 		/obj/item/clothing/head/helmet/f13/raider,\
 		/obj/item/clothing/head/helmet/f13/eyebot,\
 		/obj/item/clothing/head/helmet/f13/raider/arclight,\
