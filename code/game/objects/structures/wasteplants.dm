@@ -13,11 +13,12 @@
 		user << "<span class='notice'>You take [produce] from [src].</span>"
 		has_plod = FALSE
 		update_icon() //Won't update due to proc otherwise
-		addtimer(CALLBACK(src, .proc/regrow))
+		regrow()
 	update_icon()
 
 /obj/structure/flora/wasteplant/proc/regrow()
 	if(!has_plod)
+		sleep(5000)
 		has_plod = TRUE
 		update_icon()
 
