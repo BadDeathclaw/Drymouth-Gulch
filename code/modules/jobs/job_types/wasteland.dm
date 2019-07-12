@@ -152,7 +152,7 @@ Raider
 		/obj/item/clothing/head/helmet/f13/eyebot,\
 		/obj/item/clothing/head/helmet/f13/raider/arclight,\
 		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
-		/obj/item/clothing/head/helmet/f13/raider/yankee,\)
+		/obj/item/clothing/head/helmet/f13/raider/yankee)
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
