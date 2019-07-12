@@ -15,7 +15,7 @@
 	var/productivity = 0
 	var/max_items = 40
 	var/datum/techweb/stored_research
-	var/list/show_categories = list("Food", "Botany Chemicals", "Organic Materials", "Accessories")
+	var/list/show_categories = list("Food", "Botany Chemicals", "Organic Materials", "Accessories", "Misc")
 	var/list/timesFiveCategories = list("Food", "Botany Chemicals")
 
 /obj/machinery/biogenerator/Initialize()
@@ -304,6 +304,8 @@
 
 	else if(href_list["create"])
 		var/amount = (text2num(href_list["amount"]))
+		//Can't be outside these (if you change this keep a sane limit)
+		amount = CLAMP(amount, 1, 10)
 		var/datum/design/D = locate(href_list["create"])
 		create_product(D, amount)
 		updateUsrDialog()

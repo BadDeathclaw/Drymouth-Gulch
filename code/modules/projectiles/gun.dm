@@ -97,12 +97,6 @@
 	else
 		to_chat(user, "It doesn't have a firing pin installed, and won't fire.")
 
-/obj/item/gun/equipped(mob/living/user, slot)
-	. = ..()
-	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
-		zoom(user, FALSE)
-		if(zoomable == TRUE && !user.stat == DEAD) //I'm retarded, make sure theres a check to see whether a gun is zoomable before you remove the action.
-			azoom.Remove(user)						//user.stat is because if you do this in lobby it runtimes
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
@@ -429,7 +423,15 @@
 		azoom.Grant(user)
 	if(alight)
 		alight.Grant(user)
-
+	
+		
+/obj/item/gun/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE)
+			azoom.Remove(user)
+	
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	if(zoomed)
@@ -438,7 +440,7 @@
 		azoom.Remove(user)
 	if(alight)
 		alight.Remove(user)
-
+	
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params)
 	if(!ishuman(user) || !ishuman(target))
 		return

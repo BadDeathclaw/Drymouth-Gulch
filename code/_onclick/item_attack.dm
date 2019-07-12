@@ -64,6 +64,9 @@
 	if (force >= 5 && user.has_trait(TRAIT_BIG_LEAGUES))
 		force = force + 5
 
+	if (force >= 8 && user.has_trait(TRAIT_PSYCHO))
+		force = force + 8
+
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
 	else if(hitsound)
@@ -81,6 +84,8 @@
 	if (force >= 5 && user.has_trait(TRAIT_BIG_LEAGUES))
 		force = force - 5
 
+	if (force >= 8 && user.has_trait(TRAIT_PSYCHO))
+		force = force - 8
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)

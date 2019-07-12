@@ -89,7 +89,8 @@
 	name = "\improper .38 Special"
 	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
@@ -362,13 +363,16 @@
 //Fallout 13
 
 /obj/item/gun/ballistic/revolver/m29
-	name = "\improper S&W Model 29"
+	name = "\improper .44 Magnum revolver"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
 	item_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 3
+	extra_damage = 30
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/m29/alt
 	item_state = "44magnum"
@@ -376,13 +380,24 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/m29/scoped
-	name = "\improper Scoped S&W Model 29"
+	name = "\improper .44 Magnum revolver"
 	icon_state = "scoped_m29"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? Now with a scope!"
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_NORMAL
+	
+/obj/item/gun/ballistic/revolver/colt357
+	name = "\improper .357 Magnum revolver"
+	desc = "A relatively primitive .357 magnum revolver."
+	item_state = "colt357"
+	icon_state = "colt357"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
+	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 5
+	extra_damage = 30
+	
 
 /obj/item/gun/ballistic/revolver/m29/sadokist
 	name = "Wise's Warmaker"
@@ -408,6 +423,9 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 3
+	extra_damage = 30
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/sequoia
 	name = "Ranger Sequoia"
@@ -417,9 +435,11 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 4
+	extra_damage = 45
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
-	name = "Magnum Research BFR"
+	name = "Hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
 	zoomable = TRUE
@@ -434,6 +454,7 @@
 	item_state = "gun"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
+	extra_damage = 40
 
 /obj/item/gun/ballistic/revolver/pipe_rifle
 	name = "pipe rifle"
@@ -444,4 +465,5 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	extra_damage = 50
 

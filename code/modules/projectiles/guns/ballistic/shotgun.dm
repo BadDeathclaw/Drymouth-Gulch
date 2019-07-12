@@ -13,6 +13,7 @@
 	weapon_weight = WEAPON_HEAVY
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	randomspread = 0
+	fire_delay = 2
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -101,29 +102,10 @@
 	can_bayonet = TRUE
 	knife_x_offset = 27
 	knife_y_offset = 13
+	fire_delay = 5
+	extra_damage = 40
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-
-/obj/item/gun/ballistic/shotgun/boltaction/pump(mob/M)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
-	if(bolt_open)
-		pump_reload(M)
-	else
-		pump_unload(M)
-	bolt_open = !bolt_open
-	update_icon()	//I.E. fix the desc
-	return 1
-
-/obj/item/gun/ballistic/shotgun/boltaction/attackby(obj/item/A, mob/user, params)
-	if(!bolt_open)
-		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
-		return
-	. = ..()
-
-/obj/item/gun/ballistic/shotgun/boltaction/examine(mob/user)
-	..()
-	to_chat(user, "The bolt is [bolt_open ? "open" : "closed"].")
-
 
 /obj/item/gun/ballistic/shotgun/boltaction/enchanted
 	name = "enchanted bolt action rifle"
@@ -284,6 +266,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	extra_damage = 40
 
 /obj/item/gun/ballistic/shotgun/remington/attackby(obj/item/A, mob/user, params)
 	..()
@@ -302,6 +285,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
 	sawn_desc = "In what is probably the most idiotic and crude modification of a gun you've ever seen, someone has taken this scoped hunting rifle and sawn off the bits that make it well-balanced and accurate."
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 3
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -322,7 +306,9 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	recoil = 1 //have fun
-	fire_delay = 3
+	fire_delay = 6
+	extra_damage = 60
+	extra_penetration = 20
 
 //Colt Rangemaster
 /obj/item/gun/ballistic/shotgun/automatic/hunting
@@ -334,27 +320,99 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 3
+	extra_damage = 40
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	name = "Trail carbine"
+	desc = "A lever action rifle chambered in .44 Magnum."
+	icon_state = "trailcarbine"
+	item_state = "trailcarbine"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 4
+	extra_damage = 40
+	extra_penetration = 10
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
+	name = "Scoped trail carbine"
+	desc = "A lever action rifle chambered in .44 Magnum."
+	icon_state = "scopedtrailcarbine"
+	item_state = "scopedtrailcarbine"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 7
+	extra_damage = 45
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
-	name = "cowboy repeater"
-	desc = "A lever action rifle chambered in .44 Magnum. Smells vaguely of whiskey and cigarettes."
+	name = "Cowboy repeater"
+	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
-	item_state = "fnfal"
-	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
+	item_state = "cowboyrepeater"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 6
+	extra_damage = 40
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
+	name = "Scoped cowboy repeater"
+	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of brooding veterans and cigarettes."
+	icon_state = "scopedcowboyrepeater"
+	item_state = "scopedcowboyrepeater"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
+	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
+	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 7
+	extra_damage = 40
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
-	name = "brush gun"
+	name = "Brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
 	icon_state = "brushgun"
-	item_state = "fnfal"
+	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 5
+	extra_damage = 45
+	extra_penetration = 15
+
+
+/obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
+	name = "Scoped brush gun"
+	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
+	icon_state = "scopedbrushgun"
+	item_state = "scopedbrushgun"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 9
+	extra_damage = 50
+	extra_penetration = 15
 
 
 

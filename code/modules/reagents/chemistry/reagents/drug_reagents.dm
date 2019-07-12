@@ -493,50 +493,56 @@
 		M.emote(pick("twitch","drool","moan"))
 	..()
 	. = 1
-/* Psycho commented out until I can figure out how to add bonus melee damage in the new codebase.
+/
 /datum/reagent/drug/psycho
 	name = "Psycho Fluid"
 	id = "psycho"
 	description = "Makes the user hit harder and shrug off slight stuns, but causes slight brain damage and carries a risk of addiction."
 	reagent_state = LIQUID
 	color = "#FF0000"
-	overdose_threshold = 30
+	overdose_threshold = 20
 	addiction_threshold = 15
+	metabolization_rate = 0.3 * REAGENTS_METABOLISM
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>FUCKING KILL!</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
-	if(prob(5))
-		M << "<span class='notice'>[high_message]</span>"
-	M.AdjustParalysis(-0.5)
-	M.AdjustStunned(-0.5)
-	M.AdjustWeakened(-0.5)
-	M.adjustStaminaLoss(-1)
-	M.adjustBrainLoss(0.25)
-	M.hallucination += 5
+	if(prob(20))
+		to_chat(M, "<span class='notice'>[high_message]</span>")
+	M.AdjustStun(-20, 0)
+	M.AdjustKnockdown(-20, 0)
+	M.AdjustUnconscious(-20, 0)
+	M.adjustStaminaLoss(-3, 0)
+	M.Jitter(2)
+	M.adjustBrainLoss(rand(1,0))
 	..()
-	return
+	. = 1
+
+/datum/reagent/drug/psycho/on_mob_add(mob/living/L)
+	..()
+	L.add_trait(TRAIT_PSYCHO, id)
+
+/datum/reagent/drug/psycho/on_mob_delete(mob/living/L)
+	L.remove_trait(TRAIT_PSYCHO, id)
+	..()
 
 /datum/reagent/drug/psycho/overdose_process(mob/living/M)
 	M.hallucination += 20
 	if(M.canmove && !istype(M.loc, /atom/movable))
 		for(var/i = 0, i < 8, i++)
-			step(M, pick(cardinal))
+			step(M, pick(GLOB.cardinals))
 	if(prob(20))
-		M.emote(pick("twitch","drool","laugh"))
-	if(prob(33))
-		var/obj/item/I = M.get_active_hand()
-		if(I)
-			M.drop_item()
-	M.adjustBrainLoss(10)
+		M.emote(pick("twitch","scream","laugh"))
+	M.adjustBrainLoss(2)
 	..()
 	return
+	. = 1
 
 /datum/reagent/drug/psycho/addiction_act_stage1(mob/living/M)
 	M.hallucination += 10
 	M.Jitter(5)
 	M.adjustBrainLoss(1)
 	if(prob(20))
-		M.emote(pick("twitch","drool","laugh"))
+		M.emote(pick("twitch","scream","laugh"))
 	..()
 	return
 /datum/reagent/drug/psycho/addiction_act_stage2(mob/living/M)
@@ -545,32 +551,32 @@
 	M.Dizzy(10)
 	M.adjustBrainLoss(1)
 	if(prob(30))
-		M.emote(pick("twitch","drool","laugh"))
+		M.emote(pick("twitch","scream","laugh"))
 	..()
 	return
 /datum/reagent/drug/psycho/addiction_act_stage3(mob/living/M)
 	M.hallucination += 30
 	if(M.canmove && !istype(M.loc, /atom/movable))
 		for(var/i = 0, i < 2, i++)
-			step(M, pick(cardinal))
+			step(M, pick(GLOB.cardinals))
 	M.Jitter(15)
 	M.Dizzy(15)
-	M.adjustBrainLoss(2)
+	M.adjustBrainLoss(10)
 	if(prob(40))
-		M.emote(pick("twitch","drool","laugh"))
+		M.emote(pick("twitch","scream","laugh"))
 	..()
 	return
 /datum/reagent/drug/psycho/addiction_act_stage4(mob/living/carbon/human/M)
 	M.hallucination += 40
 	if(M.canmove && !istype(M.loc, /atom/movable))
 		for(var/i = 0, i < 4, i++)
-			step(M, pick(cardinal))
+			step(M, pick(GLOB.cardinals))
 	M.Jitter(50)
 	M.Dizzy(50)
 	M.adjustToxLoss(5)
-	M.adjustBrainLoss(5)
+	M.adjustBrainLoss(15)
 	if(prob(50))
-		M.emote(pick("twitch","drool","laugh"))
+		M.emote(pick("twitch","scream","laugh"))
 	..()
 	return
-*/
+/

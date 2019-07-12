@@ -182,6 +182,8 @@
 
 	var/pda_slot = SLOT_BELT
 
+	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
+
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	switch(H.backbag)
 		if(GBACKPACK)
@@ -204,6 +206,9 @@
 			backpack_contents = list()
 		backpack_contents.Insert(1, box) // Box always takes a first slot in backpack
 		backpack_contents[box] = 1
+
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -237,6 +242,9 @@
 		PDA.owner = H.real_name
 		PDA.ownjob = J.title
 		PDA.update_label()
+
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()

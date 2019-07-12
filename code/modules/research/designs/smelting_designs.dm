@@ -16,7 +16,7 @@
 	materials = list(MAT_TITANIUM = MINERAL_MATERIAL_AMOUNT, MAT_PLASMA = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/mineral/plastitanium
 	category = list("initial")
-
+/*
 /datum/design/plaglass_alloy
 	name = "Plasma + Glass alloy"
 	id = "plasmaglass"
@@ -32,6 +32,7 @@
 	materials = list(MAT_PLASMA = MINERAL_MATERIAL_AMOUNT * 0.5, MAT_METAL = MINERAL_MATERIAL_AMOUNT * 0.5,  MAT_GLASS = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plasmarglass
 	category = list("initial")
+*/
 
 /datum/design/titaniumglass_alloy
 	name = "Titanium + Glass alloy"
@@ -41,6 +42,7 @@
 	build_path = /obj/item/stack/sheet/titaniumglass
 	category = list("initial")
 
+
 /datum/design/plastitaniumglass_alloy
 	name = "Plasma + Titanium + Glass alloy"
 	id = "plastitaniumglass"
@@ -48,6 +50,7 @@
 	materials = list(MAT_PLASMA = MINERAL_MATERIAL_AMOUNT * 0.5, MAT_TITANIUM = MINERAL_MATERIAL_AMOUNT * 0.5, MAT_GLASS = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plastitaniumglass
 	category = list("initial")
+
 
 /datum/design/alienalloy
 	name = "Alien Alloy"
