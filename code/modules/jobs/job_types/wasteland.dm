@@ -54,15 +54,19 @@ wasteland
 		/obj/item/claymore/machete/pipe, \
 		/obj/item/claymore/machete/golf, \
 		/obj/item/switchblade, \
-		/obj/item/kitchen/knife, \
-		/obj/item/kitchen/rollingpin, \
-		/obj/item/oar)
+		/obj/item/kitchen/knife)
 	uniform = pick(
 		/obj/item/clothing/under/f13/settler, \
 		/obj/item/clothing/under/f13/brahminm, \
 		/obj/item/clothing/under/f13/machinist, \
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
+	suit = pick(
+		/obj/item/clothing/suit/armor/f13/kit, \
+		/obj/item/clothing/suit/armor, \
+		/obj/item/clothing/suit/f13/veteran, \
+		/obj/item/clothing/suit/toggle/labcoat/f13/wanderer, \
+		/obj/item/clothing/suit/armor/f13/leatherarmor)
 	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
 	belt = 			/obj/item/kitchen/knife/combat/survival
@@ -70,6 +74,11 @@ wasteland
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/pill/radx=1, \
 		/obj/item/storage/bag/money/small/wastelander)
+	suit_store = pick(
+	/obj/item/gun/ballistic/revolver/detective, \
+	/obj/item/gun/ballistic/shotgun/remington, \
+	/obj/item/gun/ballistic/revolver/zipgun, \
+	/obj/item/gun/ballistic/revolver/pipe_rifle)
 
 
 
