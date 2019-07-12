@@ -150,7 +150,7 @@
 	slice_path = null
 
 /obj/item/reagent_containers/food/snacks/meat/steak/radroach_meat
-	name = "radroach meat"
+	name = "radroach steak"
 	desc = "A juicy radroach steak, ew."
 	icon_state = "mothmeat"
 	list_reagents = list("nutriment" = 3, "vitamin" = 3)
