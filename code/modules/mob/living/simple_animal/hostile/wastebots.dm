@@ -7,6 +7,7 @@
 	icon_dead = "gib7"
 	gender = NEUTER
 	mob_biotypes = list(MOB_ROBOTIC)
+	anchored = TRUE //unpullable
 	health = 160
 	maxHealth = 160
 	healable = 0
@@ -48,6 +49,7 @@
 	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
+	check_friendly_fire = TRUE
 
 /mob/living/simple_animal/hostile/handy/gutsy/AttackingTarget()
 	. = ..()
@@ -87,7 +89,7 @@
 	extra_projectiles = 5 //6 projectiles
 	ranged_cooldown_time = 12 //brrrrrrrrrrrrt
 	ranged = TRUE
-	minimum_distance = 0
+	minimum_distance = 2
 	del_on_death = FALSE
 	attacktext = "pulverizes"
 	attack_sound = 'sound/weapons/punch1.ogg'
@@ -97,7 +99,7 @@
 	check_friendly_fire = TRUE
 
 /obj/item/projectile/beam/laser/pistol/weak
-	damage = 10 //quantity over quality
+	damage = 15 //quantity over quality
 
 /mob/living/simple_animal/hostile/handy/sentrybot/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)

@@ -9,6 +9,7 @@
 	gender = MALE
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	stat_attack = UNCONSCIOUS
+	robust_searching = 1
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
