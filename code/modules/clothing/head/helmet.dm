@@ -425,7 +425,7 @@
 	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers."
 	icon_state = "legdecan"
 	item_state = "legdecan"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -436,7 +436,7 @@
 	name = "legion prime decanus helmet"
 	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has a few small white feathers woven inside of it aswell."
 	item_state = "legdecanprime"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	name = "legion veteran decanus helmet"
