@@ -344,6 +344,15 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 
+/obj/item/clothing/head/helmet/f13/combat/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/f13/combat/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
 /obj/item/clothing/head/helmet/f13/combat/mk2
 	name = "reinforced combat helmet"
 	desc = "An reinforced combat helmet based off the original pre-war model."
@@ -517,6 +526,16 @@
 	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	strip_delay = 80
+
+/obj/item/clothing/head/helmet/f13/metalmask/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/helmet/f13/metalmask/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
 
 /obj/item/clothing/head/helmet/f13/metalmask/mk2
 	name = "reflective metal mask"
