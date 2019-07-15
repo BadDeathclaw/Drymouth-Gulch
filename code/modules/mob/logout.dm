@@ -3,7 +3,7 @@
 	SStgui.on_logout(src)
 	unset_machine()
 	GLOB.player_list -= src
-
+	logout_time = world.time
 	..()
 
 	if(loc)
