@@ -129,6 +129,19 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	icon_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
 
+/obj/item/stack/ore/coal
+	name = "coal lump"
+	icon_state = "Coal Lump"
+	item_state = "Coal Lump"
+	singular_name = "coal lump"
+	points = 15
+	materials = list(MAT_PLASTIC=MINERAL_MATERIAL_AMOUNT)
+	refined_type = /obj/item/stack/sheet/plastic
+
+/obj/item/stack/ore/coal/welder_act(mob/living/user, obj/item/I)
+	to_chat(user, "<span class='warning'>You can't hit a high enough temperature to smelt [src] properly!</span>")
+	return TRUE
+
 /obj/item/stack/ore/plasma
 	name = "plasma ore"
 	icon_state = "Plasma ore"
