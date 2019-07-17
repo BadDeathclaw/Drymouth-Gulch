@@ -72,10 +72,10 @@
 	return
 
 /obj/item/trash/coal
-	name = "lump of coal"
+	name = "High density coal"
 	icon = 'icons/obj/mining.dmi'
-	icon_state = "slag"
-	desc = "Someone's gotten on the naughty list."
+	icon_state = "Coal Lump"
+	desc = "A remarkable pure lump of coal. Wonder what happens if you throw it into a fire...
 	grind_results = list("carbon" = 20)
 
 /obj/item/trash/coal/burn()
