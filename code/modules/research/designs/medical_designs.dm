@@ -52,7 +52,7 @@
 	desc = "A bluespace beaker, powered by experimental bluespace technology and Element Cuban combined with the Compound Pete. Can hold up to 300 units."
 	id = "bluespacebeaker"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 3000, MAT_PLASMA = 3000, MAT_DIAMOND = 250, MAT_BLUESPACE = 250)
+	materials = list(MAT_GLASS = 3000, MAT_PLASTIC = 3000, MAT_DIAMOND = 250, MAT_BLUESPACE = 250)
 	build_path = /obj/item/reagent_containers/glass/beaker/bluespace
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -90,7 +90,7 @@
 	desc = "An advanced syringe that can hold 60 units of chemicals"
 	id = "bluespacesyringe"
 	build_type = PROTOLATHE
-	materials = list(MAT_GLASS = 2000, MAT_PLASMA = 1000, MAT_DIAMOND = 1000, MAT_BLUESPACE = 500)
+	materials = list(MAT_GLASS = 2000, MAT_PLASTIC = 1000, MAT_DIAMOND = 1000, MAT_BLUESPACE = 500)
 	build_path = /obj/item/reagent_containers/syringe/bluespace
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
@@ -130,20 +130,22 @@
 	desc = "A bluespace body bag, powered by experimental bluespace technology. It can hold loads of bodies and the largest of creatures."
 	id = "bluespacebodybag"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 3000, MAT_PLASMA = 2000, MAT_DIAMOND = 500, MAT_BLUESPACE = 500)
+	materials = list(MAT_METAL = 3000, MAT_PLASTIC = 2000, MAT_DIAMOND = 500, MAT_BLUESPACE = 500)
 	build_path = /obj/item/bodybag/bluespace
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/plasmarefiller
-	name = "Plasma-Man Jumpsuit Refill"
-	desc = "A refill pack for the auto-extinguisher on Plasma-man suits."
-	id = "plasmarefiller" //Why did this have no plasmatech
-	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 4000, MAT_PLASMA = 1000)
-	build_path = /obj/item/extinguisher_refill
-	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_ALL
+
+
+//datum/design/plasmarefiller (Plasmamen don't exist in fallout)
+	//name = "Plasma-Man Jumpsuit Refill"
+	//desc = "A refill pack for the auto-extinguisher on Plasma-man suits."
+	//id = "plasmarefiller" //Why did this have no plasmatech
+	//build_type = PROTOLATHE
+	//materials = list(MAT_METAL = 4000, MAT_PLASMA = 1000)
+	//build_path = /obj/item/extinguisher_refill
+	//category = list("Medical Designs")
+	//departmental_flags = DEPARTMENTAL_FLAG_ALL
 
 /datum/design/defibrillator
 	name = "Defibrillator"
@@ -170,7 +172,7 @@
 	id = "alien_scalpel"
 	build_path = /obj/item/scalpel/alien
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASMA = 500, MAT_TITANIUM = 1500)
+	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASTIC = 500, MAT_TITANIUM = 1500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -180,7 +182,7 @@
 	id = "alien_hemostat"
 	build_path = /obj/item/hemostat/alien
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASMA = 500, MAT_TITANIUM = 1500)
+	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASTIC = 500, MAT_TITANIUM = 1500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -190,7 +192,7 @@
 	id = "alien_retractor"
 	build_path = /obj/item/retractor/alien
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASMA = 500, MAT_TITANIUM = 1500)
+	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASTIC = 500, MAT_TITANIUM = 1500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -200,7 +202,7 @@
 	id = "alien_saw"
 	build_path = /obj/item/circular_saw/alien
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_SILVER = 2500, MAT_PLASMA = 1000, MAT_TITANIUM = 1500)
+	materials = list(MAT_METAL = 10000, MAT_SILVER = 2500, MAT_PLASTIC = 1000, MAT_TITANIUM = 1500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -210,7 +212,7 @@
 	id = "alien_drill"
 	build_path = /obj/item/surgicaldrill/alien
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 10000, MAT_SILVER = 2500, MAT_PLASMA = 1000, MAT_TITANIUM = 1500)
+	materials = list(MAT_METAL = 10000, MAT_SILVER = 2500, MAT_PLASTIC = 1000, MAT_TITANIUM = 1500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -220,7 +222,7 @@
 	id = "alien_cautery"
 	build_path = /obj/item/cautery/alien
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASMA = 500, MAT_TITANIUM = 1500)
+	materials = list(MAT_METAL = 2000, MAT_SILVER = 1500, MAT_PLASTIC = 500, MAT_TITANIUM = 1500)
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
@@ -311,7 +313,7 @@
 	id = "ci-xray"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASMA = 1000, MAT_URANIUM = 1000, MAT_DIAMOND = 1000, MAT_BLUESPACE = 1000)
+	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASTIC = 1000, MAT_URANIUM = 1000, MAT_DIAMOND = 1000, MAT_BLUESPACE = 1000)
 	build_path = /obj/item/organ/eyes/robotic/xray
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
@@ -322,7 +324,7 @@
 	id = "ci-thermals"
 	build_type = PROTOLATHE | MECHFAB
 	construction_time = 60
-	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASMA = 1000, MAT_DIAMOND = 2000)
+	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 600, MAT_GOLD = 600, MAT_PLASTIC = 1000, MAT_DIAMOND = 2000)
 	build_path = /obj/item/organ/eyes/robotic/thermals
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL

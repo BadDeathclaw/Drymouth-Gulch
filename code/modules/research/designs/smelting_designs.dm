@@ -1,19 +1,19 @@
 ///////SMELTABLE ALLOYS///////
 
 /datum/design/plasteel_alloy
-	name = "Plasma + Iron alloy"
+	name = "Plastic + Iron alloy"
 	id = "plasteel"
 	build_type = SMELTER
-	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT, MAT_PLASMA = MINERAL_MATERIAL_AMOUNT)
+	materials = list(MAT_METAL = MINERAL_MATERIAL_AMOUNT, MAT_PLASTIC = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plasteel
 	category = list("initial")
 
 
 /datum/design/plastitanium_alloy
-	name = "Plasma + Titanium alloy"
+	name = "Plastic + Titanium alloy"
 	id = "plastitanium"
 	build_type = SMELTER
-	materials = list(MAT_TITANIUM = MINERAL_MATERIAL_AMOUNT, MAT_PLASMA = MINERAL_MATERIAL_AMOUNT)
+	materials = list(MAT_TITANIUM = MINERAL_MATERIAL_AMOUNT, MAT_PLASTIC = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/mineral/plastitanium
 	category = list("initial")
 /*
@@ -44,10 +44,10 @@
 
 
 /datum/design/plastitaniumglass_alloy
-	name = "Plasma + Titanium + Glass alloy"
+	name = "Plastic + Titanium + Glass alloy"
 	id = "plastitaniumglass"
 	build_type = SMELTER
-	materials = list(MAT_PLASMA = MINERAL_MATERIAL_AMOUNT * 0.5, MAT_TITANIUM = MINERAL_MATERIAL_AMOUNT * 0.5, MAT_GLASS = MINERAL_MATERIAL_AMOUNT)
+	materials = list(MAT_PLASTIC = MINERAL_MATERIAL_AMOUNT * 0.5, MAT_TITANIUM = MINERAL_MATERIAL_AMOUNT * 0.5, MAT_GLASS = MINERAL_MATERIAL_AMOUNT)
 	build_path = /obj/item/stack/sheet/plastitaniumglass
 	category = list("initial")
 

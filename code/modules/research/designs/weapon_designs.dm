@@ -216,7 +216,7 @@
 	desc = "An advanced grenade that is able to self ignite its mixture."
 	id = "pyro_Grenade"
 	build_type = PROTOLATHE
-	materials = list(MAT_METAL = 2000, MAT_PLASMA = 500)
+	materials = list(MAT_METAL = 2000, MAT_TITANIUM = 500)
 	build_path = /obj/item/grenade/chem_grenade/pyro
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL

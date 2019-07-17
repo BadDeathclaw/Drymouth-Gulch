@@ -253,7 +253,7 @@
 	id = "mech_rcd"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/rcd
-	materials = list(MAT_METAL=30000,MAT_GOLD=20000,MAT_PLASMA=25000,MAT_SILVER=20000)
+	materials = list(MAT_METAL=30000,MAT_GOLD=20000,MAT_PLASTIC=25000,MAT_SILVER=20000)
 	construction_time = 1200
 	category = list("Exosuit Equipment")
 
@@ -328,12 +328,12 @@
 	category = list("Exosuit Equipment")
 
 /datum/design/mech_plasma_cutter
-	name = "Exosuit Module Design (217-D Heavy Plasma Cutter)"
+	name = "Exosuit Module Design (217-D Heavy Kinectic Cutter)"
 	desc = "A device that shoots resonant plasma bursts at extreme velocity. The blasts are capable of crushing rock and demolishing solid obstacles."
 	id = "mech_plasma_cutter"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma
-	materials = list(MAT_METAL = 8000, MAT_GLASS = 1000, MAT_PLASMA = 2000)
+	materials = list(MAT_METAL = 8000, MAT_GLASS = 1000, MAT_PLASTIC = 2000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
@@ -382,7 +382,7 @@
 	desc = "Equipment for medical exosuits. A mounted medical nanite projector which will treat patients with a focused beam."
 	id = "mech_medi_beam"
 	build_type = MECHFAB
-	materials = list(MAT_METAL = 15000, MAT_GLASS = 8000, MAT_PLASMA = 3000, MAT_GOLD = 8000, MAT_DIAMOND = 2000)
+	materials = list(MAT_METAL = 15000, MAT_GLASS = 8000, MAT_PLASTIC = 3000, MAT_GOLD = 8000, MAT_DIAMOND = 2000)
 	construction_time = 250
 	build_path = /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
 	category = list("Exosuit Equipment")

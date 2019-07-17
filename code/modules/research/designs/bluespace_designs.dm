@@ -29,7 +29,7 @@
 	desc = "A small blue crystal with mystical properties."
 	id = "bluespace_crystal"
 	build_type = PROTOLATHE
-	materials = list(MAT_DIAMOND = 1500, MAT_PLASMA = 1500)
+	materials = list(MAT_DIAMOND = 1500, MAT_PLASTIC = 1500)
 	build_path = /obj/item/stack/ore/bluespace_crystal/artificial
 	category = list("Bluespace Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE

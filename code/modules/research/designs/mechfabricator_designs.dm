@@ -417,7 +417,7 @@
 	id = "phazon_torso"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_torso
-	materials = list(MAT_METAL=35000,MAT_GLASS=10000,MAT_PLASMA=20000)
+	materials = list(MAT_METAL=35000,MAT_GLASS=10000,MAT_PLASTIC=20000)
 	construction_time = 300
 	category = list("Phazon")
 
@@ -426,7 +426,7 @@
 	id = "phazon_head"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_head
-	materials = list(MAT_METAL=15000,MAT_GLASS=5000,MAT_PLASMA=10000)
+	materials = list(MAT_METAL=15000,MAT_GLASS=5000,MAT_PLASTIC=10000)
 	construction_time = 200
 	category = list("Phazon")
 
@@ -435,7 +435,7 @@
 	id = "phazon_left_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_left_arm
-	materials = list(MAT_METAL=20000,MAT_PLASMA=10000)
+	materials = list(MAT_METAL=20000,MAT_PLASTIC=10000)
 	construction_time = 200
 	category = list("Phazon")
 
@@ -444,7 +444,7 @@
 	id = "phazon_right_arm"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_right_arm
-	materials = list(MAT_METAL=20000,MAT_PLASMA=10000)
+	materials = list(MAT_METAL=20000,MAT_PLASTIC=10000)
 	construction_time = 200
 	category = list("Phazon")
 
@@ -453,7 +453,7 @@
 	id = "phazon_left_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_left_leg
-	materials = list(MAT_METAL=20000,MAT_PLASMA=10000)
+	materials = list(MAT_METAL=20000,MAT_PLASTIC=10000)
 	construction_time = 200
 	category = list("Phazon")
 
@@ -462,7 +462,7 @@
 	id = "phazon_right_leg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_right_leg
-	materials = list(MAT_METAL=20000,MAT_PLASMA=10000)
+	materials = list(MAT_METAL=20000,MAT_PLASTIC=10000)
 	construction_time = 200
 	category = list("Phazon")
 
@@ -471,7 +471,7 @@
 	id = "phazon_armor"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/part/phazon_armor
-	materials = list(MAT_METAL=25000,MAT_PLASMA=20000,MAT_TITANIUM=20000)
+	materials = list(MAT_METAL=25000,MAT_PLASTIC=20000,MAT_TITANIUM=20000)
 	construction_time = 300
 	category = list("Phazon")
 
@@ -602,7 +602,7 @@
 	id = "borg_upgrade_thrusters"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/thrusters
-	materials = list(MAT_METAL=10000, MAT_PLASMA=5000, MAT_URANIUM = 6000)
+	materials = list(MAT_METAL=10000, MAT_PLASTIC=5000, MAT_URANIUM = 6000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
@@ -638,7 +638,7 @@
 	id = "borg_upgrade_lavaproof"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/lavaproof
-	materials = list(MAT_METAL = 10000, MAT_PLASMA = 4000, MAT_TITANIUM = 5000)
+	materials = list(MAT_METAL = 10000, MAT_PLASTIC = 4000, MAT_TITANIUM = 5000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
@@ -665,7 +665,7 @@
 	id = "borg_upgrade_expandedsynthesiser"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/hypospray/expanded
-	materials = list(MAT_METAL=15000, MAT_GLASS=15000, MAT_PLASMA=5000)
+	materials = list(MAT_METAL=15000, MAT_GLASS=15000, MAT_PLASTIC=5000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
@@ -674,7 +674,7 @@
 	id = "borg_upgrade_highstrengthsynthesiser"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/hypospray/high_strength
-	materials = list(MAT_METAL=15000, MAT_GLASS=15000, MAT_PLASMA=10000, MAT_URANIUM=5000)
+	materials = list(MAT_METAL=15000, MAT_GLASS=15000, MAT_PLASTIC=10000, MAT_URANIUM=5000)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 
@@ -701,7 +701,7 @@
 	id = "borg_upgrade_trashofholding"
 	build_type = MECHFAB
 	build_path = /obj/item/borg/upgrade/tboh
-	materials = list(MAT_METAL=10000, MAT_GOLD=1500, MAT_URANIUM=250, MAT_PLASMA=1500)
+	materials = list(MAT_METAL=10000, MAT_GOLD=1500, MAT_URANIUM=250, MAT_PLASTIC=1500)
 	construction_time = 120
 	category = list("Cyborg Upgrade Modules")
 

@@ -15,7 +15,7 @@
 	id = "flightpack"
 	build_type = PROTOLATHE
 	build_path = /obj/item/flightpack
-	materials = list(MAT_METAL=16000, MAT_GLASS = 8000, MAT_DIAMOND = 4000, MAT_GOLD = 12000, MAT_SILVER = 12000, MAT_URANIUM = 20000, MAT_PLASMA = 16000, MAT_TITANIUM = 16000)	//This expensive enough for you?
+	materials = list(MAT_METAL=16000, MAT_GLASS = 8000, MAT_DIAMOND = 4000, MAT_GOLD = 12000, MAT_SILVER = 12000, MAT_URANIUM = 20000, MAT_PLASTIC = 16000, MAT_TITANIUM = 16000)	//This expensive enough for you?
 	construction_time = 250
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
@@ -26,7 +26,7 @@
 	id = "flightshoes"
 	build_type = PROTOLATHE
 	build_path = /obj/item/clothing/shoes/flightshoes
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000, MAT_GOLD = 1500, MAT_SILVER = 1500, MAT_PLASMA = 2000, MAT_TITANIUM = 2000)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000, MAT_GOLD = 1500, MAT_SILVER = 1500, MAT_PLASTIC = 2000, MAT_TITANIUM = 2000)
 	construction_time = 100
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
@@ -37,7 +37,7 @@
 	id = "industrcd"
 	build_type = PROTOLATHE
 	build_path = /obj/item/construction/rcd/combat
-	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000, MAT_GOLD = 750, MAT_SILVER = 750, MAT_PLASMA = 750, MAT_TITANIUM = 750)
+	materials = list(MAT_METAL = 5000, MAT_GLASS = 5000, MAT_GOLD = 750, MAT_SILVER = 750, MAT_PLASTIC = 750, MAT_TITANIUM = 750)
 	construction_time = 100
 	category = list("Misc")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
