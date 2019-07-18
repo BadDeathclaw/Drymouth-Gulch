@@ -414,7 +414,7 @@
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
 	extra_damage = 20
-	extra_penetration = 10
+	extra_penetration = 5
 
 /obj/item/gun/ballistic/automatic/tommygun
 	name = "\improper Thompson SMG"
@@ -443,7 +443,7 @@
 	burst_size = 3
 	fire_delay = 3
 	extra_damage = 20
-	extra_penetration = 15
+	extra_penetration = 10
 	can_suppress = FALSE //we dont have sprites therefore cease
 
 /obj/item/gun/ballistic/automatic/assault_rifle
@@ -572,7 +572,7 @@
 	burst_size = 3
 	fire_delay = 2
 	extra_damage = 20
-	extra_penetration = 10
+	extra_penetration = 5
 
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"

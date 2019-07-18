@@ -63,7 +63,6 @@ wasteland
 		/obj/item/clothing/under/f13/roving)
 	suit = pick(
 		/obj/item/clothing/suit/armor/f13/kit, \
-		/obj/item/clothing/suit/armor, \
 		/obj/item/clothing/suit/f13/veteran, \
 		/obj/item/clothing/suit/toggle/labcoat/f13/wanderer, \
 		/obj/item/clothing/suit/armor/f13/leatherarmor)

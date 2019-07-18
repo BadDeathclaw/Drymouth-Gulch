@@ -460,9 +460,9 @@
 	force = 10
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	force_unwielded = 20
-	force_wielded = 25
-	throwforce = 20
+	force_unwielded = 25
+	force_wielded = 40
+	throwforce = 25
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	armour_penetration = 0
@@ -842,12 +842,11 @@
 	force = 11
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	force_unwielded = 11
-	force_wielded = 20					//I have no idea how to balance
-	throwforce = 22
+	force_unwielded = 20
+	force_wielded = 30
+	throwforce = 20
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
-	armour_penetration = 15				//Enhanced armor piercing
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	sharpness = IS_SHARP
@@ -865,8 +864,8 @@
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	force_unwielded = 10
-	force_wielded = 25
-	throwforce = 20
+	force_wielded = 35
+	throwforce = 15
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = IS_BLUNT
