@@ -639,7 +639,7 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/deathclaw = 2) 
+				/obj/item/stack/sheet/animalhide/deathclaw = 4) 
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
