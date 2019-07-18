@@ -461,7 +461,7 @@ Veteran Ranger
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=2, \
 		/obj/item/ammo_box/a50MG=2, \
-		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 
@@ -503,7 +503,7 @@ Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44=3, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted)
 	r_pocket = /obj/item/binocs
@@ -546,7 +546,7 @@ Recon Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/a357=3, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
