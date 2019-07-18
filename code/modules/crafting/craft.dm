@@ -37,8 +37,10 @@
 							CAT_SANDWICH,
 							CAT_SOUP,
 							CAT_SPAGHETTI),
-                        CAT_CLOTHING, //Clothing subcategories
-                        CAT_NONE)
+						list(	//Clothing subcategories
+							CAT_CLOTHING,
+							CAT_WASTELAND),
+						CAT_NONE)
 
 	var/datum/action/innate/crafting/button
 	var/display_craftable_only = FALSE
