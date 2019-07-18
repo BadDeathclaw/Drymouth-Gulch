@@ -269,6 +269,15 @@
 	slowdown = 0.5
 	strip_delay = 10
 
+/obj/item/clothing/suit/armor/fluff/chestplate/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armor/fluff/chestplate/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
 /obj/item/clothing/suit/armor/fluff/chestplate/mk2
 	name = "reflective metal chestplate"
 	desc = "A set of polished plates formed together to form a reflective chestplate specially effective agaisnt energy weaponry."
@@ -518,6 +527,15 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 30, "energy" = 60, "bomb" = 25, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 0)
 	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/combat/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armor/f13/combat/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/combat/mk2
 	name = "reinforced combat armor"

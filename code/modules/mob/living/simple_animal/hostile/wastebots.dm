@@ -89,6 +89,7 @@
 	extra_projectiles = 5 //6 projectiles
 	ranged_cooldown_time = 12 //brrrrrrrrrrrrt
 	ranged = TRUE
+	retreat_distance = 2
 	minimum_distance = 2
 	del_on_death = FALSE
 	attacktext = "pulverizes"
