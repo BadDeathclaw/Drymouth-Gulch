@@ -634,7 +634,7 @@
 	subcategory = CAT_TRIBAL
 	
 /datum/crafting_recipe/goliathcloak
-	name = "Deathclaw Skin Cloak"
+	name = "deathclaw cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/goliath
 	time = 50
 	reqs = list(/obj/item/stack/sheet/leather = 2,
