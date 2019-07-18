@@ -57,19 +57,19 @@
 	icon_state = "hopcloak"
 
 /obj/item/clothing/suit/hooded/cloak/goliath
-	name = "goliath cloak"
+	name = "deathclaw cloak"
 	icon_state = "goliath_cloak"
-	desc = "A staunch, practical cape made out of numerous monster materials, it is coveted amongst exiles & hermits."
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/twohanded/bonespear, /obj/item/organ/regenerative_core/legion, /obj/item/kitchen/knife/combat/bone, /obj/item/kitchen/knife/combat/survival)
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
+	desc = "A staunch, practical cloak made out of sinew and skin from the fearsome deathclaw."
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/twohanded/bonespear, /obj/item/gun)
+	armor = list("melee" = 45, "bullet" = 35, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
-	name = "goliath cloak hood"
+	name = "deathclaw cloak hood"
 	icon_state = "golhood"
 	desc = "A protective & concealing hood."
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
+	armor = list("melee" = 45, "bullet" = 35, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 60)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 
 /obj/item/clothing/suit/hooded/cloak/drake
