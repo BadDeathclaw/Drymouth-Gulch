@@ -156,7 +156,7 @@
 /datum/chemical_reaction/strange_reagent
 	name = "Strange Reagent"
 	id = "strange_reagent"
-	results = list("strange_reagent" = 3)
+	results = list("strange_reagent" = 0)
 	required_reagents = list("omnizine" = 1, "holywater" = 1, "FEV_solution" = 1)
 
 /datum/chemical_reaction/mannitol
