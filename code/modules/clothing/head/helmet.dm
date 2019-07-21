@@ -330,9 +330,6 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 
-/obj/item/clothing/head/helmet/f13/combat
-	name = "combat helmet"
-	desc = "
 @@ -269,10 +269,10 @@
 /obj/item/clothing/head/helmet/riot/vaultsec
 	name = "security helmet"
