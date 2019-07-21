@@ -9,6 +9,9 @@
 #define GRINDING_MOUTH_WITH_FEET "mouthfeet"
 #define THIGH_SMOTHERING "thigh_smother"
 #define NUTS_TO_FACE "nut_face"
+#define PUNCH_BALLS "punchballs"
+#define HIT_DICK "hitdick"
+#define KICK_GENITALS "kickgenitals"
 
 #define NORMAL_LUST 10
 #define LOW_LUST 1
