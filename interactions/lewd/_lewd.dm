@@ -9,9 +9,6 @@
 #define GRINDING_MOUTH_WITH_FEET "mouthfeet"
 #define THIGH_SMOTHERING "thigh_smother"
 #define NUTS_TO_FACE "nut_face"
-#define PUNCH_BALLS "punchballs"
-#define HIT_DICK "hitdick"
-#define KICK_GENITALS "kickgenitals"
 
 #define NORMAL_LUST 10
 #define LOW_LUST 1
@@ -676,24 +673,6 @@
 		message = "licks \the [partner]'s \ [partner.get_item_by_slot(SLOT_SHOES)]."
 	else
 		message = "licks \the [partner]'s feet."
-
-	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
-	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
-	handle_post_sex(LOW_LUST, null, src)
-	partner.dir = get_dir(src, partner)
-	do_fucking_animation(get_dir(src, partner))
-
-//CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT//
-/mob/living/proc/do_punchballs(mob/living/partner)
-	var/message
-
-	if(partner.is_fucking(src, CUM_TARGET_HAND))
-		if(partner.has_penis())
-			message = pick(
-				"punches \the [partner]'s balls.",
-				"slaps \the [partner]'s balls.",
-				"flicks \the [partner]'s balls.",
-				"hits \the [partner]'s balls.")
 
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
