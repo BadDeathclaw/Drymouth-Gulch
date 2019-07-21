@@ -399,36 +399,3 @@
 
 /datum/interaction/lewd/nuts/display_interaction(var/mob/living/user, var/mob/living/target)
 	user.nut_face(target)
-
-//CBT CBT CBT CBT CBT CBT!!
-
-/datum/interaction/lewd/punchballs/display_interaction(var/mob/living/user, var/mob/living/target)
-	command = "punch_balls"
-	description = "Punch their balls."
-	interaction_sound = null
-	require_target_bottomless = TRUE
-	require_user_hands = TRUE
-	max_distance = 1
-	write_log_user = "punches their balls."
-	write_log_target = "was punched in the balls."
-
-/datum/interaction/lewd/hitdick/display_interaction(var/mob/living/user, var/mob/living/target)
-	command = "hit_dick"
-	description = "Hit their dick."
-	require_target_penis = TRUE
-	interaction_sound = null
-	require_target_bottomless = TRUE
-	require_user_hands = TRUE
-	max_distance = 1
-	write_log_user = "hits their dick."
-	write_log_target = "was hit in the dick."
-
-/datum/interaction/lewd/kickgenitals/display_interaction(var/mob/living/user, var/mob/living/target)
-	command = "kick_genitals"
-	description = "Kick their genitals."
-	require_target_penis = TRUE
-	interaction_sound = null
-	require_target_bottomless = TRUE
-	max_distance = 1
-	write_log_user = "kicks their genitals."
-	write_log_target = "was kicked in the genitals."
