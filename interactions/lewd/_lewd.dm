@@ -9,6 +9,9 @@
 #define GRINDING_MOUTH_WITH_FEET "mouthfeet"
 #define THIGH_SMOTHERING "thigh_smother"
 #define NUTS_TO_FACE "nut_face"
+#define PUNCH_BALLS "punchballs"
+#define HIT_DICK "hitdick"
+#define KICK_GENITALS "kickgenitals"
 
 #define NORMAL_LUST 10
 #define LOW_LUST 1
@@ -125,7 +128,7 @@
 
 				else
 
-					message = "reaches their peak, locking their legs around \the [partner]'s head extra hard as they cum straight onto the head stuck between their thighs"
+					message = "reaches their peak, locking their legs around \the [partner]'s head extra hard as they cum straight onto the head stuck between their thighs!"
 
 			else
 				message = "cums on the floor!"
@@ -221,9 +224,9 @@
 					"runs their tongue up the shape of \the [partner]'s pussy.",
 					"traces \the [partner]'s slit with their tongue.",
 					"darts the tip of their tongue around \the [partner]'s clit.",
-					"laps slowly at \the [partner].",
+					"laps slowly at \the [partner]'s slit'.",
 					"kisses \the [partner]'s delicate folds.",
-					"tastes \the [partner].",
+					"tastes \the [partner]'s slit'.",
 				)
 			else if(partner.has_penis())
 				message = pick(
@@ -409,7 +412,7 @@
 
 	playsound(loc, "honk/sound/interactions/[file].ogg", 70, 1, -1)
 
-	visible_message("<b>\The [src]</b> [message]")
+	visible_message("<b><font color=purple>\The [src]</b> [message]</font>")
 
 	handle_post_sex(lust_increase, THIGH_SMOTHERING, partner)
 
@@ -443,22 +446,23 @@
 			partner.emote("chokes on \The [src]")
 			if(prob(1) && istype(partner, /mob/living))
 				var/mob/living/H = partner
-				H.adjustOxyLoss(5)
+				H.adjustOxyLoss(15)
 				add_logs(src, partner, "attacked", src) //cmon, it's 1 in 100. how can it spam logs
-		if(partner.a_intent == INTENT_HARM)
-			src.adjustBruteLoss(5)
-			retaliation_message = pick(
-				"bites down hard on \the [src]'s cock.",
-				"tightens teeth against \the [src]'s dick until blood flows.",
-				"stares up from between \the [src]'s knees, blood on their teeth.",
-				"struggles to escape from between \the [src]'s legs.",
-			)
+
 	else if(is_fucking(partner, CUM_TARGET_MOUTH))
 		message = "thrusts deeper into \the [partner]'s mouth and down their throat."
 
 	else
 		message = "forces their dick deep down \the [partner]'s throat"
 		set_is_fucking(partner , CUM_TARGET_THROAT)
+
+		if(partner.a_intent == INTENT_HARM)
+			src.adjustBruteLoss(5)
+			retaliation_message = pick(list(
+				"bites down hard on \the [src]'s cock.",
+				"tightens teeth against \the [src]'s dick until blood flows.",
+				"stares up from between \the [src]'s knees, blood on their teeth.",
+				"struggles to escape from between \the [src]'s legs.",))
 
 	playsound(loc, "honk/sound/interactions/oral[rand(1, 2)].ogg", 70, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
@@ -483,8 +487,10 @@
 		message = pick(list("wedges a digit into the side of [partner]'s jaw and pries it open before using their other hand to shove their whole nutsack inside!", "stands with their groin inches away from [partner]'s face, then thrusting their hips forward and smothering [partner]'s whole face with their heavy ballsack."))
 		set_is_fucking(partner , NUTS_TO_FACE)
 
-	playsound(loc, "honk/sound/interactions/nuts[rand(1, 4)].ogg", 70, 1, -1)
-	visible_message("<b>\The [src]</b> [message]")
+	var nutt = pick(list("squelch1", "squelch2", "oral1"))
+
+	playsound(loc, "honk/sound/interactions/[nutt].ogg", 70, 1, -1)
+	visible_message("<b><font color=purple>\The [src]</b> [message]</font>")
 	handle_post_sex(lust_increase, CUM_TARGET_MOUTH, partner)
 	partner.dir = get_dir(partner,src)
 	do_fucking_animation(get_dir(src, partner))
@@ -637,6 +643,7 @@
 
 /mob/living/proc/do_mountface(mob/living/partner)
 	var/message
+	var/retaliation_message = FALSE
 
 	if(is_fucking(partner, GRINDING_FACE_WITH_ANUS))
 		message = "[pick("grinds their ass into \the [partner]'s face.",
@@ -646,9 +653,18 @@
 			"grabs the back of \the [partner]'s head and forces it into their asscheeks.",
 			"squats down and plants their ass right on \the [partner]'s face")]"
 		set_is_fucking(partner , GRINDING_FACE_WITH_ANUS)
+	if(partner.a_intent == INTENT_HARM)
+		src.adjustBruteLoss(5)
+		retaliation_message = pick(
+			"bites furiously at \the [src]'s legs.",
+			"tightens teeth against \the [src]'s ass.",
+			"bites \the [src]'s ass!",
+			"draws blood from \the [src]'s ass.")
 
 	playsound(loc, "honk/sound/interactions/squelch[rand(1, 3)].ogg", 70, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
+	if(retaliation_message)
+		visible_message("<font color=red><b>\The [partner]</b> [retaliation_message]</font>")
 	handle_post_sex(LOW_LUST, null, src)
 	partner.dir = get_dir(src, partner)
 	do_fucking_animation(get_dir(src, partner))
@@ -660,6 +676,24 @@
 		message = "licks \the [partner]'s \ [partner.get_item_by_slot(SLOT_SHOES)]."
 	else
 		message = "licks \the [partner]'s feet."
+
+	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
+	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")
+	handle_post_sex(LOW_LUST, null, src)
+	partner.dir = get_dir(src, partner)
+	do_fucking_animation(get_dir(src, partner))
+
+//CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT CBT//
+/mob/living/proc/do_punchballs(mob/living/partner)
+	var/message
+
+	if(partner.is_fucking(src, CUM_TARGET_HAND))
+		if(partner.has_penis())
+			message = pick(
+				"punches \the [partner]'s balls.",
+				"slaps \the [partner]'s balls.",
+				"flicks \the [partner]'s balls.",
+				"hits \the [partner]'s balls.")
 
 	playsound(loc, "honk/sound/interactions/champ_fingering.ogg", 50, 1, -1)
 	visible_message("<font color=purple><b>\The [src]</b> [message]</font>")

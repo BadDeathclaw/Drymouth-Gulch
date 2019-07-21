@@ -42,13 +42,28 @@
 					 "<span class='warning'>\The [user] runs a few fingers over \the [target]'s breast.</span>",
 					 "<span class='warning'>\The [user] delicately teases \the [target]'s nipple.</span>",
 					 "<span class='warning'>\The [user] traces a touch across \the [target]'s breast.</span>"))
+	if(user.a_intent == INTENT_DISARM)
+		user.visible_message(
+				pick("<span class='warning'>\The [user] gently gropes \the [target]'s breast.</span>",
+					 	"<span class='warning'>\The [user] softly squeezes \the [target]'s breasts.</span>",
+					 	"<span class='warning'>\The [user] grips \the [target]'s breasts.</span>",
+					 	"<span class='warning'>\The [user] runs a few fingers over \the [target]'s breast.</span>",
+					 	"<span class='warning'>\The [user] delicately teases \the [target]'s nipple.</span>",
+					 	"<span class='warning'>\The [user] traces a touch across \the [target]'s breast.</span>"))
+	if(user.a_intent == INTENT_GRAB)
+		user.visible_message(
+				pick("<span class='warning'>\The [user] playfully gropes \the [target]'s breast.</span>",
+						"<span class='warning'>\The [user] playfully moves \the [target]'s breasts around.</span>",
+						"<span class='warning'>\The [user] jiggles \the [target]'s breasts.</span>",
+						"<span class='warning'>\The [user] teases playfully at \the [target]'s nipple.</span>",
+						"<span class='warning'>\The [user] traces a touch across \the [target]'s breast.</span>"))
 	if(user.a_intent == INTENT_HARM)
 		user.visible_message(
 				pick("<span class='warning'>\The [user] aggressively gropes \the [target]'s breast.</span>",
-					 "<span class='warning'>\The [user] grabs \the [target]'s breasts.</span>",
-					 "<span class='warning'>\The [user] tightly squeezes \the [target]'s breasts.</span>",
-					 "<span class='warning'>\The [user] slaps at \the [target]'s breasts.</span>",
-					 "<span class='warning'>\The [user] gropes \the [target]'s breasts roughly.</span>"))
+						"<span class='warning'>\The [user] grabs \the [target]'s breasts.</span>",
+						"<span class='warning'>\The [user] tightly squeezes \the [target]'s breasts.</span>",
+						"<span class='warning'>\The [user] slaps at \the [target]'s breasts.</span>",
+						"<span class='warning'>\The [user] gropes \the [target]'s breasts roughly.</span>"))
 	if(prob(5 + target.lust))
 		if(target.a_intent == INTENT_HELP)
 			user.visible_message(
@@ -88,6 +103,43 @@
 				 "<span class='warning'>\The [target] fiercely struggles against [user].</span>",
 				 "<span class='warning'>\The [target] claws [user]'s forearm, drawing blood.</span>",
 				 "<span class='warning'>\The [target] slaps [user]'s hand away.</span>"))
+	return
+
+/datum/interaction/lewd/assgrope
+	command = "assgrope"
+	description = "Grope their ass."
+	write_log_user = "groped"
+	write_log_target = "was groped by"
+	interaction_sound = null
+	max_distance = 1
+
+/datum/interaction/lewd/assgrope/post_interaction(mob/living/user, mob/living/target)
+		. = ..()
+
+/datum/interaction/lewd/assgrope/display_interaction(mob/living/user, mob/living/target)
+	if(user.a_intent == INTENT_HELP)
+		user.visible_message(
+				pick("<span class='warning'>\The [user] gently gropes \the [target]'s ass.</span>",
+					 "<span class='warning'>\The [user] softly squeezes \the [target]'s ass.</span>",
+						"<span class='warning'>\The [user] grips \the [target]'s ass.</span>",
+					 "<span class='warning'>\The [user] fondles \the [target]'s ass.</span>"))
+	if(user.a_intent == INTENT_DISARM)
+		user.visible_message(
+			pick("<span class='warning'>\The [user] gently gropes \the [target]'s ass.</span>",
+					"<span class='warning'>\The [user] softly squeezes \the [target]'s ass.</span>",
+					"<span class='warning'>\The [user] grips \the [target]'s ass.</span>",
+					"<span class='warning'>\The [user] fondles \the [target]'s ass.</span>"))
+	if(user.a_intent == INTENT_GRAB)
+		user.visible_message(
+			pick("<span class='warning'>\The [user] playfully gropes \the [target]'s ass.</span>",
+					"<span class='warning'>\The [user] jigggles \the [target]'s ass a little.</span>",
+					"<span class='warning'>\The [user] squeezes \the [target]'s ass.</span>",
+					"<span class='warning'>\The [user] plays with \the [target]'s ass.</span>"))
+	if(user.a_intent == INTENT_HARM)
+		user.visible_message(
+				pick("<span class='warning'>\The [user] aggressively grabs \the [target]'s ass.</span>",
+						"<span class='warning'>\The [user] tightly squeezes \the [target]'s ass.</span>",
+					 "<span class='warning'>\The [user] roughly rubs \the [target]'s ass.</span>"))
 	return
 
 /datum/interaction/lewd/oral
@@ -347,3 +399,36 @@
 
 /datum/interaction/lewd/nuts/display_interaction(var/mob/living/user, var/mob/living/target)
 	user.nut_face(target)
+
+//CBT CBT CBT CBT CBT CBT!!
+
+/datum/interaction/lewd/punchballs/display_interaction(var/mob/living/user, var/mob/living/target)
+	command = "punch_balls"
+	description = "Punch their balls."
+	interaction_sound = null
+	require_target_bottomless = TRUE
+	require_user_hands = TRUE
+	max_distance = 1
+	write_log_user = "punches their balls."
+	write_log_target = "was punched in the balls."
+
+/datum/interaction/lewd/hitdick/display_interaction(var/mob/living/user, var/mob/living/target)
+	command = "hit_dick"
+	description = "Hit their dick."
+	require_target_penis = TRUE
+	interaction_sound = null
+	require_target_bottomless = TRUE
+	require_user_hands = TRUE
+	max_distance = 1
+	write_log_user = "hits their dick."
+	write_log_target = "was hit in the dick."
+
+/datum/interaction/lewd/kickgenitals/display_interaction(var/mob/living/user, var/mob/living/target)
+	command = "kick_genitals"
+	description = "Kick their genitals."
+	require_target_penis = TRUE
+	interaction_sound = null
+	require_target_bottomless = TRUE
+	max_distance = 1
+	write_log_user = "kicks their genitals."
+	write_log_target = "was kicked in the genitals."
