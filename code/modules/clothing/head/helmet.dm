@@ -330,21 +330,6 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 
-@@ -269,10 +269,10 @@
-/obj/item/clothing/head/helmet/riot/vaultsec
-	name = "security helmet"
-	desc = "A standard issue vault security helmet, pretty robust."
-
-
-//Remnants
-/obj/item/clothing/head/donor/enclave
-	name = "Remnant Cap"
-	name = "enclave forage cap"
-	desc = "A resistant, black forage cap issued to Enclave soldiers."
-	icon_state = "enclave_cap"
-	item_state = "enclave_cap"
-@@ -332,7 +332,7 @@
-
 /obj/item/clothing/head/helmet/f13/combat
 	name = "combat helmet"
 	desc = "An old military grade pre-war combat helmet."
