@@ -1313,8 +1313,14 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.AdjustStun(-15, 0)
 	M.AdjustKnockdown(-15, 0)
 	M.adjustStaminaLoss(-6*REM, 0)
+	. = 1
 	..()
-	return
+
+/datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
+	M.adjustToxLoss(10*REM, 0)
+	M.adjustOxyLoss(12*REM, 0)
+	..()
+	. = 1
 
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
@@ -1461,7 +1467,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Dizzy(5)
 		M.Jitter(5)
 	..()
-	
+
 /datum/reagent/medicine/legionmedx
 	name = "natural painkiller"
 	id = "legion_medx"
