@@ -8,7 +8,7 @@
 	display_name = "Basic Research Technology"
 	description = "NT default research technologies."
 	design_ids = list("basic_matter_bin", "basic_cell", "basic_scanning", "basic_capacitor", "basic_micro_laser", "micro_mani",
-	"destructive_analyzer", "circuit_imprinter", "experimentor", "rdconsole", "design_disk", "tech_disk", "rdserver", "rdservercontrol", "mechfab",
+	"destructive_analyzer", "circuit_imprinter", "experimentor", "rdconsole", "design_disk", "tech_disk", "rdserver", "rdservercontrol",
 	"space_heater", "xlarge_beaker", "sec_rshot", "sec_bshot", "sec_slug", "sec_Islug", "sec_dart", "sec_38")			//Default research tech, prevents bricking
 
 
@@ -191,7 +191,8 @@
 	design_ids = list("mmi")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
-
+	
+/*
 /datum/techweb_node/posibrain
 	id = "posibrain"
 	display_name = "Positronic Brain"
@@ -248,6 +249,7 @@
 	"default_module", "borg_ai_control", "mecha_tracking_ai_control", "aiupload", "intellicard")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
+*/
 
 /////////////////////////EMP tech/////////////////////////
 /datum/techweb_node/emp_basic //EMP tech for some reason
@@ -388,7 +390,7 @@
 	id = "cyber_organs"
 	display_name = "Cybernetic Organs"
 	description = "We have the technology to rebuild him."
-	prereq_ids = list("adv_biotech", "cyborg")
+	prereq_ids = list("adv_biotech")
 	design_ids = list("cybernetic_liver", "cybernetic_liver_u", "cybernetic_lungs")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
@@ -397,7 +399,7 @@
 	id = "cyber_implants"
 	display_name = "Cybernetic Implants"
 	description = "Electronic implants that improve humans."
-	prereq_ids = list("adv_biotech", "cyborg", "adv_datatheory")
+	prereq_ids = list("adv_biotech", "adv_datatheory")
 	design_ids = list("ci-nutriment", "ci-breather", "ci-gloweyes", "ci-welding", "ci-medhud", "ci-sechud")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	export_price = 5000
