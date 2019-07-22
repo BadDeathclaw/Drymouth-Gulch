@@ -180,9 +180,6 @@
 	if(!ishuman(dropping))
 		return //Only humans have job slots to be freed.
 	var/mob/living/carbon/human/departing_mob = dropping
-	if(departing_mob.stat == DEAD)
-		to_chat(user, "<span class='warning'>This one kicked the bucket. Won't be traveling anywhere.</span>")
-		return
 	if(departing_mob != user && departing_mob.client)
 		to_chat(user, "<span class='warning'>This one retains their free will. It's their choice if they want to depart or not.</span>")
 		return
@@ -205,7 +202,7 @@
 		dat += "."
 	message_admins(dat)
 	log_admin(dat)
-	departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the Mojave.</span>")
+	departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the Mojave Wasteland.</span>")
 	departing_mob.despawn()
 
 
