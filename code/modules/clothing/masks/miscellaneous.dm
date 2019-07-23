@@ -37,7 +37,7 @@
 //NCR Facewrap
 
 /obj/item/clothing/mask/ncr_facewrap
-	name = "Facewrap"
+	name = "desert facewrap"
 	desc = "A facewrap commonly employed by NCR troops in the Mojave."
 	icon_state = "ncr_facewrap"
 	item_state = "ncr_facewrap"
@@ -316,7 +316,7 @@
 	icon_state = "bandred"
 
 /obj/item/clothing/mask/bandana/legprime
-	name = "prime  bandana"
+	name = "prime bandana"
 	desc = "A fine prime bandana"
 	icon_state = "legdecan"
 
