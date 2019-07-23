@@ -122,33 +122,33 @@
 
 
 /datum/chemical_reaction/healitemconflict2
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Water"
+	id = "water"
+	results = list("water" = 1)
 	required_reagents = list("stimpak"= 1, "super_stimpak" = 1)
 
 /datum/chemical_reaction/healitemconflict3
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Water"
+	id = "water"
+	results = list("water" = 1)
 	required_reagents = list("stimpak"= 1, "healing_poultice" = 1)
 
 /datum/chemical_reaction/healitemconflict4
-	name = "Anacea"	
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Water"	
+	id = "water"
+	results = list("water" = 1)
 	required_reagents = list("healing_powder"= 1, "healing_poultice" = 1)
 
 /datum/chemical_reaction/healitemconflict5
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Water"
+	id = "water"
+	results = list("water" = 1)
 	required_reagents = list("healing_powder"= 1, "super_stimpak" = 1)
 
 /datum/chemical_reaction/healitemconflict6
-	name = "Anacea"	
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Water"	
+	id = "water"
+	results = list("water" = 1)
 	required_reagents = list("healing_poultice"= 1, "super_stimpak" = 1)
 
 
