@@ -252,6 +252,18 @@
 	name = "Research Monitor (Computer Board)"
 	build_path = /obj/machinery/computer/security/research
 
+/obj/item/circuitboard/computer/kebab
+	name = "Kebab Monitor (Computer Board)"
+	build_path = /obj/machinery/computer/security/kebab
+
+/obj/item/circuitboard/computer/ncr
+	name = "Republic Monitor (Computer Board)"
+	build_path = /obj/machinery/computer/security/ncr
+
+/obj/item/circuitboard/computer/bos
+	name = "Brotherhood Monitor (Computer Board)"
+	build_path = /obj/machinery/computer/security/bos
+
 /obj/item/circuitboard/computer/comm_monitor
 	name = "Telecommunications Monitor (Computer Board)"
 	build_path = /obj/machinery/computer/telecomms/monitor

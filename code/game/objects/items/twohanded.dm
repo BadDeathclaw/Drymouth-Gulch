@@ -561,6 +561,7 @@
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	slot_flags = ITEM_SLOT_BACK
 	force = 10
 	var/force_on = 72
 	w_class = WEIGHT_CLASS_HUGE
@@ -897,9 +898,9 @@
 	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
 
 /obj/item/twohanded/fireaxe/bmprsword/update_icon()
 	name = "bumper sword"
 	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	icon_state = "bmprsword[wielded]"
-

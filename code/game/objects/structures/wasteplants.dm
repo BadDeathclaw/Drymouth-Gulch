@@ -28,32 +28,32 @@
 	else
 		icon_state = "[initial(icon_state)]_no"
 
-/obj/structure/flora/wasteplant/broc
+/obj/structure/flora/wasteplant/wild_broc
 	name = "Broc Flower"
-	icon_state = "broc"
+	icon_state = "wild_broc"
 	produce = /obj/item/reagent_containers/food/snacks/grown/broc
 
 
-/obj/structure/flora/wasteplant/xander
+/obj/structure/flora/wasteplant/wild_xander
 	name = "Xander Root"
-	icon_state = "xander"
+	icon_state = "wild_xander"
 	produce = /obj/item/reagent_containers/food/snacks/grown/xander
 
 
-/obj/structure/flora/wasteplant/feracactus
+/obj/structure/flora/wasteplant/wild_feracactus
 	name = "Feracactus"
-	icon_state = "cactus"
+	icon_state = "wild_feracactus"
 	produce = /obj/item/reagent_containers/food/snacks/grown/feracactus
 
 
-/obj/structure/flora/wasteplant/mutfruit
+/obj/structure/flora/wasteplant/wild_mutfruit
 	name = "Mutfruit"
 
-	icon_state = "mutfruit"
+	icon_state = "wild_mutfruit"
 	produce = /obj/item/reagent_containers/food/snacks/grown/mutfruit
 
 
-/obj/structure/flora/wasteplant/fungus
+/obj/structure/flora/wasteplant/wild_fungus
 	name = "Cave fungus"
-	icon_state = "fungus"
+	icon_state = "wild_fungus"
 	produce = /obj/item/reagent_containers/food/snacks/grown/fungus

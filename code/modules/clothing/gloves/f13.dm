@@ -26,12 +26,12 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/leather/ncr_officer
-	name = "NCR Officer gloves"
+	name = "NCR officer gloves"
 	desc = "Strong leather gloves issued to NCR officers."
 
 /obj/item/clothing/gloves/f13/military
 	name = "military gloves"
-	desc = "A pair of sturdy, black leather gloves.<br>Destined to strangle foes, break necks, and pull the trigger."
+	desc = "Tight fitting black leather gloves with mesh along the finger tips and padding along the palm. The craftsmanship indicates it was made for a officer."
 	icon_state = "military"
 	item_state = "military"
 	item_color = null
@@ -43,7 +43,7 @@
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 
 /obj/item/clothing/gloves/f13/ncr
-	name = "NCR Gloves"
+	name = "NCR patrol gloves"
 	desc = "Large leather gloves commonly worn by NCR personnel."
 	icon_state = "ncr_gloves"
 	item_state = "ncr_gloves"

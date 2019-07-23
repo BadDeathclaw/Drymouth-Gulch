@@ -5,13 +5,14 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "feracactus-grow"
 	icon_dead = "feracactus-dead"
+	icon_harvest = "feracactus-harvest"
 	species = "feracactus"
 	plantname = "Feracactus"
 	product = /obj/item/reagent_containers/food/snacks/grown/feracactus
 	lifespan = 60
 	endurance = 20
 	yield = 2
-	growthstages = 3
+	growthstages = 2
 	production = 5
 	maturation = 5
 
