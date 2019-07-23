@@ -115,9 +115,9 @@
 	required_reagents = list("radium" = 1, "mutetoxin" = 1, "nothing" = 1)
 
 /datum/chemical_reaction/healitemconflict1
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Water"
+	id = "water"
+	results = list("water" = 1)
 	required_reagents = list("stimpak"= 1, "healing_powder" = 1)
 
 
