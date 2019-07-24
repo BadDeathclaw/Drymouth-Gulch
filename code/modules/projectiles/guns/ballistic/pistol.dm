@@ -102,3 +102,4 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 2
 	extra_damage = 25
+	can_suppress = FALSE
