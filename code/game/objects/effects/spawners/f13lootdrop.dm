@@ -720,8 +720,13 @@
 				""
 				)
 
+	var/loot12 = list(
+				/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint,
+				/obj/item/ammo_box/magazine/r10,
+				/obj/item/ammo_box/magazine/r10)
+
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2 //TIER 2 GUN
@@ -778,8 +783,13 @@
 				/obj/item/ammo_box/magazine/r20
 				)
 
+	var/loot10 = list(
+				/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer,
+				/obj/item/ammo_box/magazine/r10,
+				/obj/item/ammo_box/magazine/r10)
+
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 //TIER 3 GUN
@@ -975,7 +985,8 @@
 				/obj/item/storage/box/rubbershot,
 				/obj/item/storage/box/rubbershot/beanbag,
 				/obj/item/ammo_box/c38,
-				/obj/item/ammo_box/magazine/m10mm_adv
+				/obj/item/ammo_box/magazine/m10mm_adv,
+				/obj/item/ammo_box/magazine/r10
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2
@@ -992,7 +1003,8 @@
 				/obj/item/ammo_box/magazine/m9mm,
 				/obj/item/ammo_box/m44,
 				/obj/item/ammo_box/tube/a357,
-				/obj/item/ammo_box/a357
+				/obj/item/ammo_box/a357,
+				/obj/item/ammo_box/magazine/r10
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2/Initialize(mapload) //on mapload, pick how many shit to spawn
@@ -1028,7 +1040,6 @@
 				/obj/item/ammo_box/magazine/d12g,
 				/obj/item/ammo_box/magazine/m50,
 				/obj/item/ammo_box/magazine/r20,
-				/obj/item/ammo_box/a40mm,
 				/obj/item/ammo_box/c4570,
 				/obj/item/ammo_box/tube/c4570,
 				/obj/item/ammo_box/a50MG,

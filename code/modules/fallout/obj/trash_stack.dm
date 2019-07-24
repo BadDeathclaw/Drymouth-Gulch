@@ -56,7 +56,7 @@
 		/obj/item/crafting/turpentine, /obj/item/crafting/abraxo, /obj/item/crafting/reloader,
 		/obj/item/crafting/igniter, /obj/item/crafting/timer, /obj/item/crafting/sensor,
 		/obj/item/gun/ballistic/automatic/pistol/n99,
-		/obj/item/ammo_box/magazine/m10mm, /obj/item/stock_parts/cell, /obj/item/pipe,
+		/obj/item/ammo_box/magazine/m10mm_adv, /obj/item/stock_parts/cell, /obj/item/pipe,
 		/obj/item/reagent_containers/food/snacks/f13/bubblegum,
 		/obj/item/reagent_containers/food/snacks/f13/bubblegum/large,
 		/obj/item/reagent_containers/food/snacks/f13/cram,

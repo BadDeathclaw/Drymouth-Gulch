@@ -764,8 +764,8 @@
 	description = "A toxin that quickly purges medicines and metabolizes very slowly."
 	reagent_state = LIQUID
 	color = "#3C5133"
-	metabolization_rate = 0.08 * REAGENTS_METABOLISM
-	toxpwr = 0.15
+	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+	toxpwr = 0
 
 /datum/reagent/toxin/anacea/on_mob_life(mob/living/carbon/M)
 	var/remove_amt = 5
