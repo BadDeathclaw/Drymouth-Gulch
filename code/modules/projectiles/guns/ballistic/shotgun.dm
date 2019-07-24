@@ -350,9 +350,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
-	extra_damage = 45
-	extra_penetration = 10
+	fire_delay = 6
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	name = "Cowboy repeater"
@@ -380,9 +378,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
-	extra_damage = 40
-	extra_penetration = 10
+	fire_delay = 8
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	name = "Brush gun"
@@ -410,7 +406,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 6
+	fire_delay = 7
 	extra_damage = 50
 	extra_penetration = 15
 

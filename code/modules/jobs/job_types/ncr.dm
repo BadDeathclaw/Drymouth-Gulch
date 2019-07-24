@@ -370,10 +370,10 @@ Recruit
 	gloves = null
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		null
-	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/a762=2, \
+		/obj/item/ammo_box/magazine/r10=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
