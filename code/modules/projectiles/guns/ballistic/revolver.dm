@@ -86,7 +86,7 @@
 	to_chat(user, "[get_ammo(0,0)] of those are live rounds.")
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "38. revolver"
+	name = ".38 revolver"
 	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
 	w_class = WEIGHT_CLASS_SMALL
