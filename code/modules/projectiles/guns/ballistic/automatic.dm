@@ -657,7 +657,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_adv
-	name = "10mm pistol doublestack magazine (10mm)"
+	name = "10mm pistol magazine (10mm)"
 	icon_state = "10mmadv"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
@@ -665,7 +665,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m9mm
-	name = "9mm doublestack magazine (9mm)"
+	name = "9mm pistol magazine (9mm)"
 	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -673,7 +673,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/greasegun
-	name = "9mm SMG Magazine (9mm)"
+	name = "9mm submachine gun magazine (9mm)"
 	icon_state = "grease"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -681,7 +681,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/d12g
-	name = "shotgun magazine (12g slugs)"
+	name = "shotgun drum magazine (12g slugs)"
 	desc = "A 12g drum magazine."
 	icon_state = "riotmag"
 	ammo_type = /obj/item/ammo_casing/shotgun
