@@ -519,10 +519,16 @@
 
 /datum/reagent/drug/psycho/on_mob_add(mob/living/L)
 	..()
-	L.add_trait(TRAIT_PSYCHO, id)
+	L.add_trait(TRAIT_SLEEPIMMUNE, id)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		rage = new()
+		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/reagent/drug/psycho/on_mob_delete(mob/living/L)
-	L.remove_trait(TRAIT_PSYCHO, id)
+	L.remove_trait(TRAIT_SLEEPIMMUNE, id)
+	if(rage)
+		QDEL_NULL(rage)
 	..()
 
 /datum/reagent/drug/psycho/overdose_process(mob/living/M)
