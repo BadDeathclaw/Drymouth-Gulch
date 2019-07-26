@@ -19,7 +19,7 @@ var/list/interactions
 			var/datum/interaction/I = new itype()
 			interactions[I.command] = I
 
-/mob/living/proc/list_interaction_attributes()
+/mob/living/carbon/human/proc/list_interaction_attributes()
 	var/dat = ""
 	if(has_hands())
 		dat += "...have hands."

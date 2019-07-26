@@ -331,7 +331,7 @@
 	write_log_target = "was smothered by"
 
 
-/datum/interaction/lewd/thighs/display_interaction(var/mob/living/user, var/mob/living/target)
+/datum/interaction/lewd/thighs/display_interaction(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target)
     user.thigh_smother(target)
 
 /datum/interaction/lewd/nuts
@@ -345,5 +345,5 @@
 	write_log_user = "make-them-suck-their-nuts"
 	write_log_target = "was made to suck nuts by"
 
-/datum/interaction/lewd/nuts/display_interaction(var/mob/living/user, var/mob/living/target)
+/datum/interaction/lewd/nuts/display_interaction(var/mob/living/carbon/human/user, var/mob/living/carbon/human/target)
 	user.nut_face(target)
