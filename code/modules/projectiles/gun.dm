@@ -79,7 +79,7 @@
 
 /obj/item/gun/New()
 	. = ..()
-	src.slowdown = (w_class / 3)
+	src.slowdown = (w_class / 5)
 
 /obj/item/gun/CheckParts(list/parts_list)
 	..()
