@@ -2,14 +2,14 @@
 	return
 
 /*
-/mob/living/carbon/human/MouseDrop(var/mob/living/carbon/human/dropped_on, mob/living/user as mob)
+/mob/living/carbon/human/MouseDrop(var/mob/living/carbon/human/dropped_on, mob/living/carbon/human/user as mob)
 	if(src != dropped_on && !src.restrained())
 		try_interaction(dropped_on)
 		return
 	return ..()
 */
 
-/mob/living/carbon/human/MouseDrop_T(mob/M as mob, mob/living/user as mob)
+/mob/living/carbon/human/MouseDrop_T(mob/M as mob, mob/living/carbon/human/user as mob)
 	if(M == src || src == usr || M != usr)
 		return
 	if(usr.restrained())
@@ -28,7 +28,7 @@
 	if(usr != src && !usr.restrained() && ishuman(src))
 		usr.try_interaction(src)
 
-/mob/living/carbon/human/try_interaction(mob/living/partner)
+/mob/living/carbon/human/try_interaction(mob/living/carbon/human/partner)
 	var/dat = "<B><HR><FONT size=3>Interacting with \the [partner]...</FONT></B><HR>"
 
 	dat += "You...<br>[list_interaction_attributes()]<hr>"
@@ -45,13 +45,13 @@
 	popup.open()
 
 /*
-/atom/movable/attack_hand(mob/living/user)
+/atom/movable/attack_hand(mob/living/carbon/human/user)
 	. = ..()
 	if(can_buckle && buckled_mob)
 		if(user_unbuckle_mob(user))
 			return 1
 
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
+/atom/movable/MouseDrop_T(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	. = ..()
 	if(can_buckle && istype(M) && !buckled_mob)
 		if(user_buckle_mob(M, user))
