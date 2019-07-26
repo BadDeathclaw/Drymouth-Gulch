@@ -710,7 +710,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 2)
 	time = 50
 	category = CAT_MEDICAL
-
+/*
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
 	result = /obj/item/reagent_containers/pill/patch/healpoultice
@@ -720,6 +720,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
 	time = 80
 	category = CAT_MEDICAL
+*/
 
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
