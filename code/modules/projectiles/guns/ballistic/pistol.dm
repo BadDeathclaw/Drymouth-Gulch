@@ -84,7 +84,7 @@
 		user.dropItemToGround(src)
 
 /obj/item/gun/ballistic/automatic/pistol/n99
-	name = "N99 pistol"
+	name = "10mm pistol"
 	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv

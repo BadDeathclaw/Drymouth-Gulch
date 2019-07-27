@@ -334,7 +334,7 @@
 /obj/item/gun/ballistic/automatic/sniper_rifle
 	name = "anti materiel rifle"
 	desc = "A long ranged weapon that does significant damage. No, you can't quickscope."
-	icon_state = "sniper"
+	icon_state = "sniper-mag"
 	item_state = "sniper"
 	recoil = 2
 	weapon_weight = WEAPON_HEAVY
@@ -451,7 +451,7 @@
 	force = 15
 
 /obj/item/gun/ballistic/automatic/assault_rifle
-	name = "R91 assault rifle"
+	name = "assault rifle"
 	desc = "A standard R91 combat rifle, out of use around the time of the Great War."
 	icon_state = "assault_rifle"
 	item_state = "fnfal"
@@ -466,7 +466,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
-	name = "R91 infiltrator"
+	name = "infiltrator"
 	desc = "A customized R91 assault rifle, with a scope, integrated suppressor, cut down stock and polymer furniture."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
@@ -482,7 +482,7 @@
 	force = 15
 
 /obj/item/gun/ballistic/automatic/marksman
-	name = "R94 marksman carbine"
+	name = "marksman carbine"
 	desc = "A R94 marksman carbine, chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This one isn't a select fire variant."
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
@@ -499,7 +499,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle
-	name = "R81 service rifle"
+	name = "service rifle"
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
@@ -512,7 +512,7 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
-	name = "Varmint Rifle"
+	name = "varmint rifle"
 	desc = "A low powered 5.56, easy to use rifle."
 	icon_state = "varmint_rifle"
 	item_state = "varmintrifle"
@@ -521,7 +521,7 @@
 	mag_type = /obj/item/ammo_box/magazine/r10
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
-	name = "Ratslayer"
+	name = "ratslayer"
 	desc = "A modified Varmint Rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
 	icon_state = "rat_slayer"
 	item_state = "ratslayer"
@@ -641,7 +641,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/r10
-	name = "Varmint Rifle Magazine (5.56mm)"
+	name = "small 5.56 magazine (5.56mm)"
 	icon_state = "r10"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
@@ -649,7 +649,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_auto
-	name = "Advanced SMG Magazine (10mm)"
+	name = "10mm submachine gun magazine (10mm)"
 	icon_state = "smg10mm"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
@@ -657,7 +657,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_adv
-	name = "Advanced 10mm Pistol Magazine (10mm)"
+	name = "10mm pistol magazine (10mm)"
 	icon_state = "10mmadv"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
@@ -665,7 +665,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m9mm
-	name = "9mm Pistol Magazine (9mm)"
+	name = "9mm pistol magazine (9mm)"
 	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -673,7 +673,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/greasegun
-	name = "9mm SMG Magazine (9mm)"
+	name = "9mm submachine gun magazine (9mm)"
 	icon_state = "grease"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -681,7 +681,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/d12g
-	name = "shotgun magazine (12g slugs)"
+	name = "shotgun drum magazine (12g slugs)"
 	desc = "A 12g drum magazine."
 	icon_state = "riotmag"
 	ammo_type = /obj/item/ammo_casing/shotgun
