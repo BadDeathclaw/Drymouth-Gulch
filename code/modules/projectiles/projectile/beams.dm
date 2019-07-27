@@ -1,7 +1,7 @@
 /obj/item/projectile/beam
 	name = "laser"
 	icon_state = "laser"
-	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE
+	pass_flags = PASSTABLE
 	damage = 34
 	light_range = 2
 	damage_type = BURN

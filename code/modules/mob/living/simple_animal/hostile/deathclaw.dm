@@ -9,13 +9,15 @@
 	gender = MALE
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	stat_attack = UNCONSCIOUS
+	robust_searching = 1
+	anchored = 1
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
 	emote_taunt = list("stares ferociously", "stomps")
 	speak_chance = 10
 	taunt_chance = 25
-	speed = 0
+	speed = -1
 	see_in_dark = 8
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,

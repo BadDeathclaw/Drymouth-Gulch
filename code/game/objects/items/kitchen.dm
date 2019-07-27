@@ -117,8 +117,8 @@
 	icon_state = "buckknife"
 	item_state = "knife"
 	desc = "A military combat utility survival knife."
-	force = 20
-	throwforce = 20
+	force = 30
+	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 	bayonet = TRUE
 
@@ -127,8 +127,7 @@
 	icon_state = "survivalknife"
 	item_state = "knife"
 	desc = "A hunting grade survival knife."
-	force = 20
-	throwforce = 20
+	force = 25
 	bayonet = TRUE
 
 /obj/item/kitchen/knife/combat/bone

@@ -107,3 +107,4 @@
 	var/datum/click_intercept
 
 	var/timeofdeath = 0 /* moved here from mob/living for player respawn */
+	var/logout_time = 0 //for despawn and general logging

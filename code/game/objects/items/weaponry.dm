@@ -81,7 +81,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/claymore/machete/gladius
 	name = "machete gladius"
-	desc = "A forged steel machete, the blade has been laborously sharpened and the weight has been evenly distributed for maximum killing power. A two headed bull is burned into the wooden handle."
+	desc = "A forged steel machete, the blade has been laborously sharpened and the weight has been evenly distributed for maximum killing power. An image of a bull is burned into the wooden handle."
 	icon_state = "machete"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
@@ -96,7 +96,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	icon_state = "pipe"
 	item_state = "pipe"
 	attack_verb = list("mashed", "bashed", "piped", "hit", "bludgeoned", "whacked", "bonked")
-	force = 20
+	force = 25
 	sharpness = IS_BLUNT
 
 /obj/item/claymore/machete/pipe/tireiron
@@ -104,7 +104,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	desc = "A rusty old tire iron, normally used for loosening nuts from car tires.<br>Though it has a short reach, it has decent damage and a fast swing."
 	icon_state = "tire"
 	item_state = "tire"
-	force = 25
 
 
 /obj/item/claymore/machete/golf
@@ -406,9 +405,9 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	extended = !extended
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, 1)
 	if(extended)
-		force = 20
+		force = 25
 		w_class = WEIGHT_CLASS_NORMAL
-		throwforce = 23
+		throwforce = 25
 		icon_state = "switchblade_ext"
 		attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 		hitsound = 'sound/weapons/bladeslice.ogg'

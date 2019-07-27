@@ -7,6 +7,7 @@
 	burst_size = 3
 	fire_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+	force = 20
 
 /obj/item/gun/ballistic/automatic/proto
 	name = "compact submachine gun"
@@ -348,6 +349,7 @@
 	zoom_out_amt = 13
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
+	force = 25
 
 
 /obj/item/gun/ballistic/automatic/sniper_rifle/update_icon()
@@ -414,7 +416,8 @@
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
 	extra_damage = 20
-	extra_penetration = 10
+	extra_penetration = 5
+	force = 15
 
 /obj/item/gun/ballistic/automatic/tommygun
 	name = "\improper Thompson SMG"
@@ -443,8 +446,9 @@
 	burst_size = 3
 	fire_delay = 3
 	extra_damage = 20
-	extra_penetration = 15
+	extra_penetration = 10
 	can_suppress = FALSE //we dont have sprites therefore cease
+	force = 15
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "R91 assault rifle"
@@ -475,6 +479,7 @@
 	zoom_out_amt = 13
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	weapon_weight = WEAPON_HEAVY
+	force = 15
 
 /obj/item/gun/ballistic/automatic/marksman
 	name = "R94 marksman carbine"
@@ -572,7 +577,8 @@
 	burst_size = 3
 	fire_delay = 2
 	extra_damage = 20
-	extra_penetration = 10
+	extra_penetration = 5
+	force = 15
 
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"

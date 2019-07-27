@@ -1,6 +1,6 @@
 /obj/item/wallframe/camera
 	name = "camera assembly"
-	desc = "The basic construction for Nanotrasen-Always-Watching-You cameras."
+	desc = "The basic construction for Vault-tec cameras."
 	icon = 'icons/obj/machines/camera.dmi'
 	icon_state = "cameracase"
 	materials = list(MAT_METAL=400, MAT_GLASS=250)
@@ -9,7 +9,7 @@
 
 /obj/structure/camera_assembly
 	name = "camera assembly"
-	desc = "The basic construction for Nanotrasen-Always-Watching-You cameras."
+	desc = "The basic construction for Vault-tec cameras."
 	icon = 'icons/obj/machines/camera.dmi'
 	icon_state = "camera1"
 	max_integrity = 150
@@ -91,7 +91,7 @@
 		return FALSE
 
 	tool.play_tool_sound(src)
-	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: Den,Security,Secret ", "Set Network", "Vault")
+	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: vault,kebab,NCR,BoS ", "Set Network", "insert")
 	if(!input)
 		to_chat(user, "<span class='warning'>No input found, please hang up and try your call again!</span>")
 		return

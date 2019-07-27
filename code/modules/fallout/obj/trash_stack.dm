@@ -56,7 +56,7 @@
 		/obj/item/crafting/turpentine, /obj/item/crafting/abraxo, /obj/item/crafting/reloader,
 		/obj/item/crafting/igniter, /obj/item/crafting/timer, /obj/item/crafting/sensor,
 		/obj/item/gun/ballistic/automatic/pistol/n99,
-		/obj/item/ammo_box/magazine/m10mm, /obj/item/stock_parts/cell, /obj/item/pipe,
+		/obj/item/ammo_box/magazine/m10mm_adv, /obj/item/stock_parts/cell, /obj/item/pipe,
 		/obj/item/reagent_containers/food/snacks/f13/bubblegum,
 		/obj/item/reagent_containers/food/snacks/f13/bubblegum/large,
 		/obj/item/reagent_containers/food/snacks/f13/cram,
@@ -117,7 +117,9 @@
 		/obj/item/clothing/shoes/f13/explorer, /obj/item/clothing/shoes/f13/military/diesel,
 		/obj/item/clothing/shoes/f13/military/female/diesel, /obj/item/clothing/gloves/f13/leather,
 		/obj/item/clothing/gloves/f13/military, /obj/item/clothing/gloves/f13/ncr,
-		/obj/item/gun/ballistic/shotgun/boltaction)
+		/obj/item/gun/ballistic/shotgun/boltaction, /obj/item/toy/crayon/spraycan, /obj/item/stock_parts/capacitor/adv,
+		/obj/item/stock_parts/scanning_module/adv, /obj/item/stock_parts/manipulator/nano, /obj/item/stock_parts/micro_laser/high,
+		/obj/item/stock_parts/matter_bin/adv, /obj/item/stock_parts/manipulator/pico, /obj/item/stock_parts/matter_bin/super)
 		var/I = new itemtype(src)
 		back += I
 	return back

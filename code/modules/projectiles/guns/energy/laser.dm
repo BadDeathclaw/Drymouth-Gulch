@@ -162,7 +162,7 @@
 
 /obj/item/gun/energy/laser/pistol
 	name = "AEP7 laser pistol"
-	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
+	desc = "A basic energy-based laser gun that fires concentrated beams of light."
 	icon_state = "AEP7"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -209,7 +209,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol)
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
-	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
 
 
 //projectiles

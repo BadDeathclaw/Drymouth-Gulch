@@ -4,7 +4,7 @@
 	icon_state = "Itaca"
 	item_state = "huntingshotgun"
 	w_class = WEIGHT_CLASS_BULKY
-	force = 25
+	force = 20
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
@@ -350,9 +350,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
-	extra_damage = 45
-	extra_penetration = 10
+	fire_delay = 6
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	name = "Cowboy repeater"
@@ -380,9 +378,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
-	extra_damage = 40
-	extra_penetration = 10
+	fire_delay = 8
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	name = "Brush gun"
@@ -394,7 +390,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 5
-	extra_damage = 45
+	extra_damage = 50
 	extra_penetration = 15
 
 
@@ -410,7 +406,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 9
+	fire_delay = 7
 	extra_damage = 50
 	extra_penetration = 15
 
@@ -422,7 +418,7 @@
 	desc = "An common over-under double barreled shotgun."
 	icon_state = "caravan_shotgun"
 	item_state = "dshotgun1"
-	force = 25
+	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	sawn_desc = "Omar's coming!"
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -445,7 +441,7 @@
 	desc = "A dirt cheap single shot shotgun."
 	icon_state = "single_shotgun"
 	item_state = "singleshot"
-	force = 15
+	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	sawn_desc = "At this point, you're basically holding an individual shotgun shell as it goes off."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
