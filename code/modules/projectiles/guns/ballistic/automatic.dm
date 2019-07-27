@@ -516,7 +516,7 @@
 	desc = "A low powered 5.56, easy to use rifle."
 	icon_state = "varmint_rifle"
 	item_state = "varmintrifle"
-	fire_delay = 6
+	fire_delay = 8
 	extra_damage = 30
 	mag_type = /obj/item/ammo_box/magazine/r10
 
