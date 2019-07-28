@@ -1,43 +1,43 @@
-/mob/living/proc/has_hands()
+/mob/living/carbon/human/proc/has_hands()
 	return FALSE
 
-/mob/living/has_hands()
+/mob/living/carbon/human/has_hands()
 	return TRUE//(can_use_hand("l_hand") || can_use_hand("r_hand"))
 
-/mob/living/proc/has_mouth()
+/mob/living/carbon/human/proc/has_mouth()
 	return TRUE
 
-/mob/living/proc/mouth_is_free()
+/mob/living/carbon/human/proc/mouth_is_free()
 	return TRUE
 
-/mob/living/proc/foot_is_free()
+/mob/living/carbon/human/proc/foot_is_free()
 	return TRUE
 
-///mob/living/has_mouth()
+///mob/living/carbon/human/has_mouth()
 //	var/datum/organ/external/head/head = get_organ("head")
 //	return head && !(head.status & ORGAN_DESTROYED)
 
-/mob/living/mouth_is_free()
+/mob/living/carbon/human/mouth_is_free()
 	if(istype(src, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = src
 		return !H.wear_mask
 	else
 		return TRUE
 
-/mob/living/foot_is_free()
+/mob/living/carbon/human/foot_is_free()
 	if(istype(src, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = src
 		return !H.shoes
 	else
 		return TRUE
 
-///atom/movable/attack_hand(mob/living/user)
+///atom/movable/attack_hand(mob/living/carbon/human/user)
 //	. = ..()
 //	if(can_buckle && buckled_mob)
 //		if(user_unbuckle_mob(user))
 //			return 1
 /*
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
+/atom/movable/MouseDrop_T(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	. = ..()
 	if(can_buckle && istype(M) && !buckled_mob)
 		if(user_buckle_mob(M, user))

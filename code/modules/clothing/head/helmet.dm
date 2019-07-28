@@ -390,7 +390,8 @@
 /obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
 	name = "legion prime helmet"
 	desc = "A helmet belonging to a legion prime, it looks sturdier than a normal legion recruit helmet."
-	item_state = "legprime"
+	item_state = "legprim"
+	icon_state = "legprim"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/scout
@@ -445,7 +446,8 @@
 /obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
 	name = "legion prime decanus helmet"
 	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has a few small white feathers woven inside of it aswell."
-	item_state = "legdecanprime"
+	item_state = "legdecanprim"
+	icon_state = "legdecanprim"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan/vet
