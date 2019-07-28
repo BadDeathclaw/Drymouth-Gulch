@@ -1641,6 +1641,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("hear_radio")
 					toggles ^= SOUND_RADIO
 
+				if("verb_consent")
+					toggles ^= VERB_CONSENT
+
 				if("lobby_music")
 					toggles ^= SOUND_LOBBY
 					if((toggles & SOUND_LOBBY) && user.client)
