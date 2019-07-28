@@ -112,6 +112,7 @@ Centurion
 	r_hand =		/obj/item/melee/powerfist
 	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
@@ -153,6 +154,7 @@ Veteran Decan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	r_hand = 		/obj/item/twohanded/fireaxe/bmprsword
+	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
@@ -192,6 +194,7 @@ Prime Decan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
+	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
@@ -231,6 +234,7 @@ Decan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	suit_store = 	/obj/item/gun/ballistic/automatic/pistol/n99
+	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
@@ -313,11 +317,11 @@ Veteran
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	r_hand = 		/obj/item/twohanded/fireaxe
+	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/ammo_box/tube/a357=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
@@ -391,12 +395,12 @@ Legionary
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
+	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/restraints/handcuffs=1, \
 		/obj/item/claymore/machete=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1)

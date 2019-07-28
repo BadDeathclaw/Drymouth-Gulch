@@ -5,7 +5,7 @@
 
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
-	damage = 5
+	damage = 0
 	stamina = 80
 
 /obj/item/projectile/bullet/incendiary/shotgun
@@ -65,7 +65,7 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
-	damage = 2
+	damage = 0
 	stamina = 14
 
 /obj/item/projectile/bullet/pellet/Range()

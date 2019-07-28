@@ -900,7 +900,12 @@
 	var/datum/job/job_to_free = SSjob.GetJob(job)
 	job_to_free?.current_positions--
 	GLOB.data_core.remove_record_by_name(real_name)
-	log_game("[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]")
+	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
+	for(var/i in contents)
+		var/atom/movable/content = i
+		dat += " [content.type]"
+	log_game(dat)
+	ghostize()
 	qdel(src)
 
 

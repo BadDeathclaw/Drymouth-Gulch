@@ -116,7 +116,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	armor = list("melee" = 60, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
+	armor = list("melee" = 60, "bullet" = 35, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 80)
 	strip_delay = 80
 	equip_delay_other = 60
 
@@ -269,6 +269,15 @@
 	slowdown = 0.5
 	strip_delay = 10
 
+/obj/item/clothing/suit/armor/fluff/chestplate/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armor/fluff/chestplate/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
 /obj/item/clothing/suit/armor/fluff/chestplate/mk2
 	name = "reflective metal chestplate"
 	desc = "A set of polished plates formed together to form a reflective chestplate specially effective agaisnt energy weaponry."
@@ -379,7 +388,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/armor/f13/brokenpa/t45b
-	name = "salvaged power armor"
+	name = "salvaged T-45b power armor"
 	desc = "It's a set of T-45b power armor with a custom air conditioning module and stripped out servomotors."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
@@ -387,7 +396,7 @@
 
 /obj/item/clothing/suit/armor/f13/brokenpa/ncr
 	name = "salvaged NCR power armor"
-	desc = "A standard set of salvaged power armor marked by the NCR, issued to their Heavy Troopers."
+	desc = "It's a set of T-45b power armor with a air conditioning module installed, it however lacks servomotors to enhance the users strength. This one has brown paint trimmed along the edge and a two headed bear painted onto the chestplate."
 	icon_state = "ncrpowerarmor"
 	item_state = "ncrpowerarmor"
 	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
@@ -435,6 +444,7 @@
 	desc = "A captured set of T-51b power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
 	icon_state = "sierra"
 	item_state = "sierra"
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 70, "energy" = 70, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "advanced power armor"
@@ -519,6 +529,15 @@
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 30, "energy" = 60, "bomb" = 25, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 0)
 	strip_delay = 60
 
+/obj/item/clothing/suit/armor/f13/combat/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/suit/armor/f13/combat/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
+
 /obj/item/clothing/suit/armor/f13/combat/mk2
 	name = "reinforced combat armor"
 	desc = "A reinforced model based of the pre-war combat armor."
@@ -571,46 +590,46 @@
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 40, "energy" = 60, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor
-	name = "NCR Infantry vest"
+	name = "NCR patrol vest"
 	desc = "A standard issue NCR Infantry vest."
 	icon_state = "ncr_infantry_vest"
 	item_state = "ncr_infantry_vest"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 60
-	
+
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	name = "NCR Mantle Vest"
+	name = "NCR mantle vest"
 	desc = "A standard issue NCR Infantry vest with a mantle on the shoulder."
 	icon_state = "ncr_standard_mantle"
 	item_state = "ncr_standard_mantle"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	name = "NCR Reinforced Vest"
+	name = "NCR reinforced patrol vest"
 	desc = "A standard issue NCR Infantry vest reinforced with a groinpad."
 	icon_state = "ncr_reinforced_vest"
 	item_state = "ncr_reinforced_vest"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
-	
+
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
-	name = "NCR Reinforced Mantle Vest"
+	name = "NCR reinforced mantle vest"
 	desc = "A standard issue NCR Infantry vest reinforced with a groinpad and a mantle."
 	icon_state = "ncr_reinforced_mantle"
 	item_state = "ncr_reinforced_mantle"
 	armor = list("melee" = 55, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
-	name = "NCR Medical Officer's Labcoat"
-	desc = "A labcoat typically issued to NCR Medical Officers."
+	name = "NCR medical labcoat"
+	desc = "A labcoat typically issued to NCR Medical Officers. It's a standard white labcoat with the Medical Officer's name stitched into the breast and a two headed bear sewn into the shoulder."
 	icon_state = "ncr_labcoat"
 	item_state = "ncr_labcoat"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 10, "energy" = 10, "bomb" = 0, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 	allowed = list(/obj/item/analyzer, /obj/item/stack/medical, /obj/item/dnainjector, /obj/item/reagent_containers/dropper, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/hypospray, /obj/item/healthanalyzer, /obj/item/flashlight/pen, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/pill, /obj/item/storage/pill_bottle, /obj/item/paper, /obj/item/melee/classic_baton/telescopic, /obj/item/soap, /obj/item/sensor_device, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/captain
-	name = "NCR Captain's Armour"
-	desc = "A heavily reinforced set of NCR infantry armour, with a large mantle attached to it."
+	name = "NCR reinforced officer vest"
+	desc = "A heavily reinforced set of NCR mantle armour, the armor has been heavily patched and given ceramic inserts in vital areas to protect the wearer. The design indicates it belongs to a high ranking NCR officer."
 	icon_state = "ncr_captain_armour"
 	item_state = "ncr_captain_armour"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)

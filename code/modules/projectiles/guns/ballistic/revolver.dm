@@ -86,7 +86,7 @@
 	to_chat(user, "[get_ammo(0,0)] of those are live rounds.")
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "\improper .38 Special"
+	name = ".38 revolver"
 	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
 	w_class = WEIGHT_CLASS_SMALL
@@ -363,7 +363,7 @@
 //Fallout 13
 
 /obj/item/gun/ballistic/revolver/m29
-	name = "\improper .44 Magnum revolver"
+	name = "\improper .44 magnum revolver"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
 	item_state = "model29"
 	icon_state = "m29"
@@ -380,16 +380,16 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/m29/scoped
-	name = "\improper .44 Magnum revolver"
+	name = "\improper .44 magnum revolver"
 	icon_state = "scoped_m29"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? Now with a scope!"
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_NORMAL
-	
+
 /obj/item/gun/ballistic/revolver/colt357
-	name = "\improper .357 Magnum revolver"
+	name = "\improper .357 magnum revolver"
 	desc = "A relatively primitive .357 magnum revolver."
 	item_state = "colt357"
 	icon_state = "colt357"
@@ -397,7 +397,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	fire_delay = 5
 	extra_damage = 30
-	
+
 
 /obj/item/gun/ballistic/revolver/m29/sadokist
 	name = "Wise's Warmaker"
@@ -428,7 +428,7 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/sequoia
-	name = "Ranger Sequoia"
+	name = "ranger sequoia"
 	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
 	icon_state = "sequoia"
 	item_state = "sequoia"
@@ -439,7 +439,7 @@
 	extra_damage = 45
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
-	name = "Hunting revolver"
+	name = "hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
 	zoomable = TRUE

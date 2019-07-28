@@ -92,6 +92,7 @@
 #define CAT_MEDICAL	"Medical"
 #define CAT_ASSEM  	"Assemblies"
 #define CAT_CLOTHING	"Clothing"
+#define CAT_WASTELAND	"Wasteland Clothing"
 #define CAT_FOOD	"Foods"
 #define CAT_BREAD	"Breads"
 #define CAT_BURGER	"Burgers"

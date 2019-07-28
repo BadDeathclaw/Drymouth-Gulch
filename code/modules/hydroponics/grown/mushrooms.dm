@@ -381,13 +381,17 @@
 	species = "fungus"
 	plantname = "Fungus"
 	product = /obj/item/reagent_containers/food/snacks/grown/fungus
+	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
+	icon_grow = "cave_fungus-grow"
+	icon_dead = "cave_fungus-dead"
+	icon_harvest = "cave_fungus-harvest"
 	lifespan = 50
 	endurance = 10
 	maturation = 8
 	production = 3
 	yield = 6
 	potency = 20
-	growthstages = 3
+	growthstages = 2
 
 /obj/item/reagent_containers/food/snacks/grown/fungus
 	seed = /obj/item/seeds/fungus
