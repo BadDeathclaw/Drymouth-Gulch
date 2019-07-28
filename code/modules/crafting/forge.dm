@@ -62,23 +62,3 @@
 	tools = list(TOOL_WELDER, TOOL_FORGE)
 	category = CAT_PRIMAL
 	subcategory = CAT_FORGE
-
-/datum/crafting_recipe/fireaxe
-	name = "Fire Axe"
-	result = /obj/item/twohanded/fireaxe
-	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 10,
-				/obj/item/stack/sheet/mineral/wood = 10)
-	tools = list(TOOL_WELDER, TOOL_FORGE)
-	category = CAT_PRIMAL
-	subcategory = CAT_FORGE
-
-/datum/crafting_recipe/bumpersword
-	name = "Bumper Sword"
-	result = /obj/item/twohanded/fireaxe/bmprsword
-	time = 80
-	reqs = list(/obj/item/stack/sheet/metal = 16,
-				/obj/item/stack/sheet/cloth = 4)
-	tools = list(TOOL_WELDER, TOOL_FORGE)
-	category = CAT_PRIMAL
-	subcategory = CAT_FORGE
