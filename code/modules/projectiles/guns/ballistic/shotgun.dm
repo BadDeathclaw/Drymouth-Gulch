@@ -92,7 +92,7 @@
 ///////////////////////
 
 /obj/item/gun/ballistic/shotgun/boltaction
-	name = "\improper Mosin Nagant"
+	name = "mosin nagant"
 	desc = "This piece of junk looks like something that could have been used 700 years ago. It feels slightly moist."
 	icon_state = "moistnugget"
 	item_state = "moistnugget"
@@ -244,7 +244,7 @@
 
 // RIOT SHOTGUN //
 /obj/item/gun/ballistic/shotgun/riot //for spawn in the armory
-	name = "light shotgun"
+	name = "riot shotgun"
 	desc = "A lightweight shotgun chambered in 12 gauge, designed to be used by paramilitary companies during air raids, but was later absorbed by Vault-tec for use by security in their vaults."
 	icon_state = "riotshotgun"
 	item_state = "shotgunriot"
@@ -294,7 +294,7 @@
 /obj/item/gun/ballistic/shotgun/antimateriel
 	name = "anti-materiel rifle"
 	desc = "A heavy, high-powered sniper rifle chambered in .50 caliber ammunition, custom-made for use by the New California Republic Rangers. Although relatively austere, you're still pretty sure it could take the head off a deathclaw."
-	icon_state = "sniper"
+	icon_state = "sniper-mag"
 	item_state = "sniper"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/antimateriel
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
@@ -324,7 +324,7 @@
 	extra_damage = 40
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
-	name = "Trail carbine"
+	name = "trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
 	item_state = "trailcarbine"
@@ -338,7 +338,7 @@
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
-	name = "Scoped trail carbine"
+	name = "scoped trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "scopedtrailcarbine"
 	item_state = "scopedtrailcarbine"
@@ -353,7 +353,7 @@
 	fire_delay = 6
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
-	name = "Cowboy repeater"
+	name = "cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
@@ -366,7 +366,7 @@
 	extra_damage = 40
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy/scoped
-	name = "Scoped cowboy repeater"
+	name = "scoped cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of brooding veterans and cigarettes."
 	icon_state = "scopedcowboyrepeater"
 	item_state = "scopedcowboyrepeater"
@@ -381,7 +381,7 @@
 	fire_delay = 8
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush
-	name = "Brush gun"
+	name = "brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
 	icon_state = "brushgun"
 	item_state = "brushgun"
@@ -395,7 +395,7 @@
 
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
-	name = "Scoped brush gun"
+	name = "scoped brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
 	icon_state = "scopedbrushgun"
 	item_state = "scopedbrushgun"
