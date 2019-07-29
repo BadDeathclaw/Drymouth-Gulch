@@ -57,3 +57,9 @@
 	name = "Cave fungus"
 	icon_state = "wild_fungus"
 	produce = /obj/item/reagent_containers/food/snacks/grown/fungus
+
+
+/obj/structure/flora/wasteplant/wild_agave
+	name = "Wild agave"
+	icon_state = "wild_agave"
+	produce = /obj/item/reagent_containers/food/snacks/grown/agave
