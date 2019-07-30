@@ -42,7 +42,7 @@
 
 		if(require_ooc_consent)
 			if(user.client && user.client.prefs)
-				if(user.client.prefs.toggles & !VERB_CONSENT)
+				if(user.client.prefs.wasteland_toggles & !VERB_CONSENT)
 					to_chat(user, "<span class = 'warning'>You can only use ERP verbs if you turn on the Allow Lewd Verbs preference.</span>")
 					return FALSE
 
