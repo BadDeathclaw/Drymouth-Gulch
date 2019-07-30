@@ -1,30 +1,30 @@
-/mob/living/carbon/human/proc/has_hands()
+/mob/living/proc/has_hands()
 	return FALSE
 
-/mob/living/carbon/human/has_hands()
+/mob/living/has_hands()
 	return TRUE//(can_use_hand("l_hand") || can_use_hand("r_hand"))
 
-/mob/living/carbon/human/proc/has_mouth()
+/mob/living/proc/has_mouth()
 	return TRUE
 
-/mob/living/carbon/human/proc/mouth_is_free()
+/mob/living/proc/mouth_is_free()
 	return TRUE
 
-/mob/living/carbon/human/proc/foot_is_free()
+/mob/living/proc/foot_is_free()
 	return TRUE
 
 ///mob/living/carbon/human/has_mouth()
 //	var/datum/organ/external/head/head = get_organ("head")
 //	return head && !(head.status & ORGAN_DESTROYED)
 
-/mob/living/carbon/human/mouth_is_free()
+/mob/living/mouth_is_free()
 	if(istype(src, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = src
 		return !H.wear_mask
 	else
 		return TRUE
 
-/mob/living/carbon/human/foot_is_free()
+/mob/living/foot_is_free()
 	if(istype(src, /mob/living/carbon/human))
 		var/mob/living/carbon/human/H = src
 		return !H.shoes

@@ -272,14 +272,17 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, verb_consent)()
 	set category = "Preferences"
 	set desc = "Allow Lewd Verbs"
 
-	if (usr.client.mob && user.client.mob.user_not_tired && user.client.mob.refactory_period)
-		to_chat(usr, "You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] to change your consent setting.")
-		return C.prefs.toggles & VERB_CONSENT
-
+	if (usr && isliving(usr))
+		var/mob/living/L = usr
+		if(L.refactory_period)
+			to_chat(usr, "You need to wait [DisplayTimeText(L.refactory_period * 10, TRUE)] to change your consent setting.")
+			return
+	
 	usr.client.prefs.toggles ^= VERB_CONSENT
 	usr.client.prefs.save_preferences()
 	to_chat(usr, "You [(usr.client.prefs.toggles & VERB_CONSENT) ? "consent" : "do not consent"] to the use of lewd verbs on your character.")
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Allow Lewd Verbs", "[usr.client.prefs.toggles & VERB_CONSENT ? "Yes" : "No"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
 /datum/verbs/menu/Settings/verb_consent/Get_checked(client/C)
 	return C.prefs.toggles & VERB_CONSENT
 

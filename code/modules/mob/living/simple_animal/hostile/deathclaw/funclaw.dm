@@ -1,4 +1,4 @@
- #define CUM_TARGET_THROAT "throat"
+#define CUM_TARGET_THROAT "throat"
 #define CUM_TARGET_VAGINA "vagina"
 #define CUM_TARGET_ANUS "anus"
 
