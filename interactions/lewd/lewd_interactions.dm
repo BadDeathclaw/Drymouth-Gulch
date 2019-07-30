@@ -88,7 +88,7 @@
 
 		if(require_ooc_consent)
 			if(target.client && target.client.prefs)
-				if(target.client.prefs.toggles & !VERB_CONSENT)
+				if(target.client.prefs.wasteland_toggles & !VERB_CONSENT)
 					to_chat(user, "<span class = 'warning'>You can only use this on players that have the Allow Lewd Verbs preference.</span>")
 					return FALSE
 

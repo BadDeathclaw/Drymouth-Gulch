@@ -126,7 +126,7 @@
 			msg += "[t_He] has a strange masculine quality to [t_him].\n"
 
 	if(client && client.prefs)
-		if(client.prefs.toggles & VERB_CONSENT)
+		if(client.prefs.wasteland_toggles & VERB_CONSENT)
 			msg += "[t_His] player has allowed lewd verbs.\n"
 		else
 			msg += "[t_His] player has not allowed lewd verbs.\n"
