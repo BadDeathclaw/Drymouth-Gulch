@@ -40,6 +40,12 @@
 				to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
 
+		if(require_ooc_consent)
+			if(target.client && target.client.prefs)
+				if(target.client.prefs.toggles & !VERB_CONSENT)
+					to_chat(user, "<span class = 'warning'>You can only use ERP verbs if you turn on the Allow Lewd Verbs preference.</span>")
+					return FALSE
+
 		if(require_user_bottomless && !user.is_bottomless())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>Your pants are in the way.</span>")
