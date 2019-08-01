@@ -4,7 +4,7 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m10mm
-	can_suppress = TRUE
+	can_suppress = FALSE
 	burst_size = 1
 	fire_delay = 0
 	actions_types = list()
@@ -93,6 +93,7 @@
 	fire_delay = 2
 	extra_damage = 25
 	extra_penetration = 5
+	can_suppress = TRUE
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil
 	name = "9mm pistol"
