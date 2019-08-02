@@ -88,7 +88,7 @@
 	target.visible_message("<span class='warning'>[user] starts forcing [src] onto [target]'s head!</span>", \
 	"<span class='userdanger'>[target] starts forcing [src] onto your head!</span>", "<i>You hear clanking.</i>")
 	to_chat(user, "<span class='danger'>You start forcing [src] onto [target]'s head...</span>")
-	if(!do_after(user, 30, target = target) || target.get_item_by_slot(SLOT_HEAD))
+	if(!do_after(user, 50, target = target) || target.get_item_by_slot(SLOT_HEAD))
 		return
 	target.visible_message("<span class='warning'>[user] forces and locks [src] onto [target]'s head!</span>", \
 	"<span class='userdanger'>[target] locks [src] onto your head!</span>", "<i>You hear a click, and then a timer ticking down.</i>")
@@ -96,7 +96,7 @@
 	user.dropItemToGround(src)
 	target.equip_to_slot_if_possible(src, SLOT_HEAD)
 	arm()
-	notify_ghosts("[user] put a reverse bear trap on [target]!", source = src, action = NOTIFY_ORBIT, ghost_sound = 'sound/machines/beep.ogg')
+	notify_ghosts("[user] put a reverse bear trap on [target]!", source = src, action = NOTIFY_ORBIT, ghost_sound = 'sound/machines/beep.ogg', notify_volume = 75)
 
 /obj/item/reverse_bear_trap/proc/snap()
 	reset()
