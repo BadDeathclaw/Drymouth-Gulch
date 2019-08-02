@@ -503,6 +503,8 @@
 	overdose_threshold = 20
 	addiction_threshold = 15
 	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
+
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>FUCKING KILL!</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
