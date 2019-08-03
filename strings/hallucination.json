@@ -159,7 +159,7 @@
 
 	"location": [
 		"the desert near @pick(sublocation)",
-		"the Den",
+		"Kebab",
 		"the mall",
 		"the market",
 		"the NCR base",
@@ -171,9 +171,9 @@
 		"the vault",
 		"the highway",
 		"inside @pick(sublocation)",
-		"Den hospital",
+		"Kebab hospital",
 		"brothel",
-		"Den bar",
+		"Kebab bar",
 		"the Legion base",
 		"a vault",
 		"the boxing ring",
@@ -190,7 +190,7 @@
 		"Klamat",
 		"the outpost",
 		"NCR base",
-		"the Den",
+		"Kebab",
 		"the power plant",
 		"the prison",
 		"the Legion tunnel",
@@ -200,11 +200,11 @@
 		"the hospital",
 		"the diner",
 		"the chapel",
-		"the Den bar",
+		"the Kebab bar",
 		"the Enclave base",
 		"the vault",
 		"the highway",
-		"the Den crossroads"
+		"the Kebab crossroads"
 	],
 
 	"advice": [
