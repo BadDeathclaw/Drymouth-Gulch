@@ -2,7 +2,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/alarmed = 0
 	var/select = 1
-	can_suppress = TRUE
+	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	burst_size = 3
 	fire_delay = 2
@@ -341,8 +341,8 @@
 	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
 	fire_delay = 40
 	burst_size = 1
-	can_unsuppress = TRUE
-	can_suppress = TRUE
+	can_unsuppress = FALSE
+	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -375,8 +375,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
 	fire_delay = 10
 	burst_size = 1
-	can_unsuppress = TRUE
-	can_suppress = TRUE
+	can_unsuppress = FALSE
+	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
@@ -431,7 +431,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 1
+	fire_delay = 2
 	extra_damage = 25
 
 /obj/item/gun/ballistic/automatic/smg10mm
@@ -471,7 +471,7 @@
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	suppressed = 1
-	fire_delay = 1
+	fire_delay = 3
 	extra_damage = 20
 	extra_penetration = 10
 	zoomable = TRUE
@@ -489,9 +489,10 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/r20
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
-	can_suppress = 0
-	fire_delay = 8
+	can_suppress = FALSE
+	fire_delay = 6
 	extra_damage = 40
+	extra_penetration = 5
 	burst_size = 1
 	zoomable = TRUE
 	zoom_amt = 10
@@ -573,7 +574,7 @@
 	item_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
-	can_suppress = 0
+	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
 	extra_damage = 20
@@ -606,7 +607,7 @@
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
-	can_suppress = 0
+	can_suppress = FALSE
 	burst_size = 1//Setting it to 0 is dumb. Just set it to one.
 	fire_delay = 10
 	zoomable = TRUE
@@ -623,7 +624,7 @@
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	can_suppress = 0
+	can_suppress = FALSE
 	burst_size = 5
 	fire_delay = 0.3
 	w_class = WEIGHT_CLASS_BULKY

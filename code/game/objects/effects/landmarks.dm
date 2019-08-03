@@ -621,7 +621,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Settler"
 
 /obj/effect/landmark/start/f13/dendoc
-	name = "Den Doctor"
+	name = "Kebab Doctor"
 
 // Wasteland
 

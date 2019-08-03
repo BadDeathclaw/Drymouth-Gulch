@@ -74,8 +74,8 @@
 	icon_state = "ritas4"
 
 /obj/structure/sign/bilboards/den
-	name = "Den sign"
-	desc =  "A sprayed metal sheet that says \"The Den \"."
+	name = "Kebab sign"
+	desc =  "A sprayed metal sheet that says \"Kebab \"."
 	icon_state = "den"
 
 /obj/structure/sign/bilboards/klamat

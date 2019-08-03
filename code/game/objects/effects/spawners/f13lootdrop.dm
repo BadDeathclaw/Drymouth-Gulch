@@ -916,19 +916,13 @@
 				 )
 
 	var/loot12 = list(
-				/obj/item/gun/ballistic/automatic/smg10mm,
-				/obj/item/ammo_box/magazine/m10mm_auto,
-				/obj/item/ammo_box/magazine/m10mm_auto
-				)
-
-	var/loot13 = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting,
 				/obj/item/ammo_box/a762/doublestacked,
 				/obj/item/ammo_box/a762/doublestacked
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier4/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12, loot13)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier5 //TIER 5 GUN
@@ -1018,14 +1012,13 @@
 	loot = list(
 				/obj/item/storage/box/lethalshot,
 				/obj/item/ammo_box/magazine/uzim9mm,
-				/obj/item/ammo_box/magazine/m45,
-				/obj/item/ammo_box/m44,
 				/obj/item/ammo_box/magazine/m10mm_adv,
 				/obj/item/ammo_box/magazine/greasegun,
 				/obj/item/ammo_box/needle,
 				/obj/item/ammo_box/magazine/tommygunm45,
-				/obj/item/ammo_box/magazine/m9mm,
-				/obj/item/ammo_box/tube/m44
+				/obj/item/ammo_box/tube/m44,
+				/obj/item/ammo_box/magazine/m10mm_auto,
+				/obj/item/stock_parts/cell/ammo/ec
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3/Initialize(mapload) //on mapload, pick how many shit to spawn
@@ -1043,8 +1036,8 @@
 				/obj/item/ammo_box/c4570,
 				/obj/item/ammo_box/tube/c4570,
 				/obj/item/ammo_box/a50MG,
-				/obj/item/ammo_box/magazine/m10mm_auto,
-				/obj/item/ammo_box/a762/doublestacked
+				/obj/item/ammo_box/a762/doublestacked,
+				/obj/item/stock_parts/cell/ammo/mfc
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4/Initialize(mapload) //on mapload, pick how many shit to spawn
