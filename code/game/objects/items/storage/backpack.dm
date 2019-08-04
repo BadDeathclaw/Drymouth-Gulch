@@ -124,7 +124,7 @@
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
-	desc = "It's a special backpack made exclusively for Nanotrasen officers."
+	desc = "It's a special backpack made exclusively for officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 
