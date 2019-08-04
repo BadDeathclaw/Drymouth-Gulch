@@ -269,7 +269,7 @@
 
 /obj/item/radio/headset/headset_den
 	name = "kebab radio headset"
-	desc = "This is used by the den.\nTo access the den channel, use :f."
+	desc = "This is used by the kebab town.\nTo access the kebab channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_den
 

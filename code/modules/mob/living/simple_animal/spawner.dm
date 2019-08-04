@@ -21,7 +21,7 @@
 	maxbodytemp = 350
 	layer = BELOW_MOB_LAYER
 	sentience_type = SENTIENCE_BOSS
-
+	del_on_death = TRUE
 
 /mob/living/simple_animal/hostile/spawner/Destroy()
 	for(var/mob/living/simple_animal/L in spawned_mobs)
@@ -124,8 +124,6 @@
 	spawn_time = 150
 	mob_types = list(/mob/living/simple_animal/hostile/radroach)
 	faction = list("gecko")
-
-/mob/living/simple_animal/hostile/spawner/radroach
 
 /mob/living/simple_animal/hostile/spawner/mining
 	name = "monster den"

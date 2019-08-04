@@ -70,7 +70,7 @@
 /obj/item/storage/keys_set/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.can_hold = list(/obj/item/door_key)
+	STR.can_hold = typecacheof(list(/obj/item/door_key))
 	STR.max_combined_w_class = 35
 
 /obj/item/storage/keys_set/update_icon()

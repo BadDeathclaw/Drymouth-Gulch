@@ -6,7 +6,7 @@ Mayor
 	title = "Mayor"
 	flag = F13MAYOR
 	department_flag = DEN
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the people of the town"
@@ -41,7 +41,7 @@ Sheriff
 	flag = F13SHERIFF
 	department_flag = DEN
 	head_announce = list("Security")
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the mayor"
@@ -91,7 +91,7 @@ Settler
 	title = "Settler"
 	flag = F13SETTLER
 	department_flag = DEN
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the sheriff and the mayor"
@@ -128,10 +128,10 @@ Farmer
 	title = "Farmer"
 	flag = F13FARMER
 	department_flag = DEN
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the mayor, the sheriff"
+	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -172,10 +172,10 @@ Prospector
 	title = "Prospector"
 	flag = F13PROSPECTOR
 	department_flag = DEN
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the mayor, the sheriff"
+	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13prospector
@@ -212,10 +212,10 @@ Deputy
 	title = "Deputy"
 	flag = F13DEPUTY
 	department_flag = DEN
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the mayor, the sheriff"
+	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 	exp_requirements = 360
 	exp_type = EXP_TYPE_DEN
@@ -252,7 +252,7 @@ Preacher
 	department_head = list("Captain")
 	department_flag = DEN
 	head_announce = list("Security")
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Your Master(s)."
@@ -356,24 +356,25 @@ Preacher
 		/obj/item/storage/bag/money/small/settler)
 
 /*
-Den Doctor
+Kebab Doctor
 */
 
 /datum/job/den/f13dendoc
-	title = "Den Doctor"
+	title = "Kebab Doctor"
 	flag = F13DENDOC
 	department_flag = DEN
-	faction = "Den"
+	faction = "Kebab"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are in charge of providing medical assistance to the inhabitants of the Den as needed."
+	description = "You are in charge of providing medical assistance to the inhabitants of the Kebab as needed."
+	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
 	outfit = /datum/outfit/job/den/f13dendoc
 
 /datum/outfit/job/den/f13dendoc
-	name = "Den Doctor"
+	name = "Kebab Doctor"
 	jobtype = /datum/job/den/f13dendoc
 	chemwhiz = TRUE
 	uniform =  		/obj/item/clothing/under/f13/medic
