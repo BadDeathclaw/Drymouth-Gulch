@@ -551,7 +551,9 @@
 		chambered = null
 		update_icon()
 
-/obj/item/binocs
+
+/* TODO: Make a twohanded component to handle basic wield/unwield capability, idk */
+/obj/item/twohanded/binocs
 	name = "binoculars"
 	desc = "Lets you see trouble coming - or get into it - from a distance."
 	icon = 'icons/obj/clothing/glasses.dmi'
@@ -572,30 +574,41 @@
 	var/zoom_out_amt = 13
 	var/datum/action/toggle_binoc_zoom/azoom
 
-/obj/item/binocs/pickup(mob/user)
+/obj/item/twohanded/binocs/wield(mob/user)
 	..()
+	if(wielded)
+		addZoom(user)
+	
+
+/obj/item/twohanded/binocs/dropped(mob/user)
+	..()
+	removeZoom(user)
+
+/obj/item/twohanded/binocs/unwield(mob/user, show_message)
+	..()
+	removeZoom(user)
+
+/obj/item/twohanded/binocs/proc/addZoom(mob/user)
 	if(azoom)
 		azoom.Grant(user)
 
-/obj/item/binocs/dropped(mob/user)
-	..()
+/obj/item/twohanded/binocs/proc/removeZoom(mob/user)
 	if(zoomed)
 		zoom(user,FALSE)
 	if(azoom)
 		azoom.Remove(user)
 
-/obj/item/binocs/equipped(mob/living/user, slot)
+/obj/item/twohanded/binocs/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.get_active_held_item() != src)
-		zoom(user, FALSE) //Sometimes I wonder why the fuck binoculars are here too with a action.
-		azoom.Remove(user)
+		removeZoom(user)
 
 /datum/action/toggle_binoc_zoom
 	name = "Use Binoculars"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "binoc_zoom"
-	var/obj/item/binocs/B = null
+	var/obj/item/twohanded/binocs/B = null
 
 /datum/action/toggle_binoc_zoom/Trigger()
 	B.zoom(owner)
@@ -609,7 +622,7 @@
 	B.zoom(L, FALSE)
 	..()
 
-/obj/item/binocs/proc/zoom(mob/living/user, forced_zoom)
+/obj/item/twohanded/binocs/proc/zoom(mob/living/user, forced_zoom)
 	if(!user || !user.client)
 		return
 
@@ -619,7 +632,7 @@
 		if(TRUE)
 			zoomed = TRUE
 		else
-			zoomed = !zoomed
+			zoomed = !zoomed /* WHAT!??? */
 
 	if(zoomed)
 		var/_x = 0
@@ -643,11 +656,11 @@
 		user.client.pixel_y = 0
 	return zoomed
 
-/obj/item/binocs/Initialize()
+/obj/item/twohanded/binocs/Initialize()
 	. = ..()
 	build_zooming()
 
-/obj/item/binocs/proc/build_zooming()
+/obj/item/twohanded/binocs/proc/build_zooming()
 	if(azoom)
 		return
 
