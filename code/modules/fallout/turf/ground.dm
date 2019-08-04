@@ -48,8 +48,8 @@
 //////////////////////////////////////////////////////////////////////
 
 /turf/open/indestructible/ground/outside
-	light_range = 3
-	light_power = 0.75
+	var/turf_light_range = 3
+	var/turf_light_power = 0.75
 
 /turf/open/indestructible/ground/outside/Initialize()
 	. = ..()
