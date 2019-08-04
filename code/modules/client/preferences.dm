@@ -38,7 +38,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/toggles = TOGGLES_DEFAULT
 	var/db_flags
 	var/chat_toggles = TOGGLES_DEFAULT_CHAT
-	var/wasteland_toggles = TOGGLES_WASTELAND
+	var/wasteland_toggles = TOGGLES_DEFAULT_WASTELAND
 	var/ghost_form = "ghost"
 	var/ghost_orbit = GHOST_ORBIT_CIRCLE
 	var/ghost_accs = GHOST_ACCS_DEFAULT_OPTION
@@ -1640,10 +1640,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					toggles ^= SOUND_MIDI
 
 				if("hear_radio")
-					toggles ^= SOUND_RADIO
+					wasteland_toggles ^= SOUND_RADIO
 
 				if("verb_consent")
-					toggles ^= VERB_CONSENT
+					wasteland_toggles ^= VERB_CONSENT
 
 				if("lobby_music")
 					toggles ^= SOUND_LOBBY
