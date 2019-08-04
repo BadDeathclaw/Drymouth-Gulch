@@ -6,6 +6,7 @@
 	simple_style = "danger"
 	interaction_sound = 'honk/sound/interactions/slap.ogg'
 	needs_physical_contact = TRUE
+	require_ooc_consent = TRUE
 	max_distance = 1
 
 	write_log_user = "ass-slapped"
@@ -32,12 +33,18 @@
 	var/user_refactory_cost
 	var/target_refactory_cost
 
-/datum/interaction/lewd/evaluate_user(mob/living/user, silent = TRUE)
+/datum/interaction/lewd/evaluate_user(mob/living/carbon/human/user, silent = TRUE)
 	if(..(user, silent))
 		if(user_not_tired && user.refactory_period)
 			if(!silent) //bye spam
 				to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
+
+		if(require_ooc_consent)
+			if(user.client && user.client.prefs)
+				if(user.client.prefs.wasteland_toggles & !VERB_CONSENT)
+					to_chat(user, "<span class = 'warning'>You can only use ERP verbs if you turn on the Allow Lewd Verbs preference.</span>")
+					return FALSE
 
 		if(require_user_bottomless && !user.is_bottomless())
 			if(!silent)
@@ -72,11 +79,22 @@
 		return TRUE
 	return FALSE
 
-/datum/interaction/lewd/evaluate_target(mob/living/user, mob/living/target, silent = TRUE)
+/datum/interaction/lewd/evaluate_target(mob/living/carbon/human/user, mob/living/carbon/human/target, silent = TRUE)
 	if(..(user, target, silent))
 		if(target_not_tired && target.refactory_period)
 			if(!silent) //same with this
 				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
+			return FALSE
+
+		if(require_ooc_consent)
+			if(target.client && target.client.prefs)
+				if(target.client.prefs.wasteland_toggles & !VERB_CONSENT)
+					to_chat(user, "<span class = 'warning'>You can only use this on players that have the Allow Lewd Verbs preference.</span>")
+					return FALSE
+
+		if(require_target_bottomless && !target.is_bottomless())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Their pants are in the way.</span>")
 			return FALSE
 
 		if(require_target_bottomless && !target.is_bottomless())
@@ -110,14 +128,14 @@
 		return TRUE
 	return FALSE
 
-/datum/interaction/lewd/post_interaction(mob/living/user, mob/living/target)
+/datum/interaction/lewd/post_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user_refactory_cost)
 		user.refactory_period += user_refactory_cost
 	if(target_refactory_cost)
 		target.refactory_period += target_refactory_cost
 	return ..()
 
-/datum/interaction/lewd/get_action_link_for(mob/living/user, mob/living/target)
+/datum/interaction/lewd/get_action_link_for(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	return "<font color='#FF0000'><b>LEWD:</b></font> [..()]"
 	if(user.stat == DEAD)
 		to_chat(user, "<span class='warning'>You cannot erp as ghost!</span>")

@@ -1284,13 +1284,12 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-5*REM, 0)
-	M.adjustFireLoss(-5*REM, 0)
-	M.adjustOxyLoss(-2*REM, 0)
-	M.adjustToxLoss(-2*REM, 0)
-	M.AdjustStun(-10, 0)
-	M.AdjustKnockdown(-10, 0)
-	M.adjustStaminaLoss(-4*REM, 0)
+	M.adjustBruteLoss(-4*REM, 0)
+	M.adjustFireLoss(-4*REM, 0)
+	M.adjustToxLoss(-1*REM, 0)
+	M.AdjustStun(-5, 0)
+	M.AdjustKnockdown(-5, 0)
+	M.adjustStaminaLoss(-2*REM, 0)
 	. = 1
 	..()
 
@@ -1310,15 +1309,21 @@ datum/reagent/medicine/super_stimpak
 	overdose_threshold = 20
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
-	M.adjustBruteLoss(-8*REM)
-	M.adjustFireLoss(-8*REM)
-	M.adjustOxyLoss(-4*REM)
-	M.adjustToxLoss(-4*REM, 0)
-	M.AdjustStun(-15, 0)
-	M.AdjustKnockdown(-15, 0)
-	M.adjustStaminaLoss(-6*REM, 0)
+	M.adjustBruteLoss(-6*REM)
+	M.adjustFireLoss(-6*REM)
+	M.adjustOxyLoss(-2*REM)
+	M.adjustToxLoss(-2*REM, 0)
+	M.AdjustStun(-10, 0)
+	M.AdjustKnockdown(-10, 0)
+	M.adjustStaminaLoss(-4*REM, 0)
+	. = 1
 	..()
-	return
+
+/datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
+	M.adjustToxLoss(10*REM, 0)
+	M.adjustOxyLoss(12*REM, 0)
+	..()
+	. = 1
 
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
@@ -1331,9 +1336,8 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	overdose_threshold = 30
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
-	M.adjustFireLoss(-4*REM)
-	M.adjustBruteLoss(-4*REM)
-	M.adjustToxLoss(-1*REM)
+	M.adjustFireLoss(-3*REM)
+	M.adjustBruteLoss(-3*REM)
 	M.hallucination = max(M.hallucination, 5)
 	. = 1
 	..()
@@ -1354,10 +1358,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	overdose_threshold = 20
 
 /datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-5*REM)
-	M.adjustBruteLoss(-5*REM)
-	M.adjustToxLoss(-2*REM)
-	M.adjustOxyLoss(-4*REM)
+	M.adjustFireLoss(-4*REM)
+	M.adjustBruteLoss(-4*REM)
+	M.adjustOxyLoss(-2*REM)
 	M.hallucination = max(M.hallucination, 5)
 	..()
 
@@ -1465,7 +1468,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.Dizzy(5)
 		M.Jitter(5)
 	..()
-	
+
 /datum/reagent/medicine/legionmedx
 	name = "natural painkiller"
 	id = "legion_medx"

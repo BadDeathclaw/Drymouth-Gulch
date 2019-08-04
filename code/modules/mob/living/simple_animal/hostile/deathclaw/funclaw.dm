@@ -1,13 +1,12 @@
-/* #define CUM_TARGET_THROAT "throat"
+#define CUM_TARGET_THROAT "throat"
 #define CUM_TARGET_VAGINA "vagina"
 #define CUM_TARGET_ANUS "anus"
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw
-	name = "Funclaw"
+	name = "Deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one seems to have a strange look in its eyes.."
 	var/pound_cooldown = 0
 	var/chosen_hole
-
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/AttackingTarget()
 	var/mob/living/M = target
@@ -25,6 +24,10 @@
 		M.stop_pulling()
 
 	else if(get_dist(src, M) == 0)
+		if(M.client && M.client.prefs)
+			if(M.client.prefs.toggles & !VERB_CONSENT)
+				..()
+				return
 		if(refactory_period > 0)
 			..()
 			return
@@ -33,13 +36,15 @@
 			chosen_hole = null
 			while (chosen_hole == null)
 				pickNewHole(M)
-			pound_cooldown = world.time + 100
+			pound_cooldown = world.time + 2000
 
-		pound(M)
-		sleep(rand(1, 3))
-		pound(M)
-		sleep(rand(1, 3))
-		pound(M)
+		if(M.client && M.client.prefs)
+			if(M.client.prefs.wasteland_toggles & VERB_CONSENT)
+				pound(M)
+				sleep(rand(1, 3))
+				pound(M)
+				sleep(rand(1, 3))
+				pound(M)
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
 	switch(rand(2))
@@ -132,4 +137,4 @@
 				"<span class='userdanger'>\The [src]</b> tears off \the [M]'s clothes!</span>", null, COMBAT_MESSAGE_RANGE)
 		return TRUE
 	return FALSE
-*/
+

@@ -9,7 +9,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	//doohickeys for savefiles
 	var/path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 7 // lucky number
+	var/max_save_slots = 12 // lucky number
 
 	//non-preference stuff
 	var/muted = 0
@@ -38,6 +38,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/toggles = TOGGLES_DEFAULT
 	var/db_flags
 	var/chat_toggles = TOGGLES_DEFAULT_CHAT
+	var/wasteland_toggles = TOGGLES_WASTELAND
 	var/ghost_form = "ghost"
 	var/ghost_orbit = GHOST_ORBIT_CIRCLE
 	var/ghost_accs = GHOST_ACCS_DEFAULT_OPTION
@@ -163,7 +164,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			load_path(C.ckey)
 			unlock_content = C.IsByondMember()
 			if(unlock_content)
-				max_save_slots = 8
+				max_save_slots = 13
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
@@ -593,9 +594,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
-			dat += "<b>Play Mojave Radio:</b> <a href='?_src_=prefs;preference=hear_radio'>[(toggles & SOUND_RADIO) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Play Mojave Radio:</b> <a href='?_src_=prefs;preference=hear_radio'>[(wasteland_toggles & SOUND_RADIO) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>See Pull Requests:</b> <a href='?_src_=prefs;preference=pull_requests'>[(chat_toggles & CHAT_PULLR) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Allow Lewd Verbs:</b> <a href='?_src_=prefs;preference=verb_consent'>[(wasteland_toggles & VERB_CONSENT) ? "Yes":"No"]</a><br>"
+
 			dat += "<br>"
 
 
@@ -1638,6 +1641,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("hear_radio")
 					toggles ^= SOUND_RADIO
+
+				if("verb_consent")
+					toggles ^= VERB_CONSENT
 
 				if("lobby_music")
 					toggles ^= SOUND_LOBBY

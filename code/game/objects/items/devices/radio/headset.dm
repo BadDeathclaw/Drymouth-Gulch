@@ -238,7 +238,7 @@
 	item_state = "com_headset_alt"
 
 /obj/item/radio/headset/headset_ncr
-	name = "ncr radio headset"
+	name = "NCR radio headset"
 	desc = "This is used by the new california republic.\nTo access the NCR channel, use :w."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_ncr
@@ -268,8 +268,8 @@
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_den
-	name = "den radio headset"
-	desc = "This is used by the den.\nTo access the den channel, use :f."
+	name = "kebab radio headset"
+	desc = "This is used by the kebab town.\nTo access the kebab channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_den
 
