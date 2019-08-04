@@ -441,7 +441,7 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
-	r_pocket = /obj/item/binocs
+	r_pocket = /obj/item/twohanded/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
 	title = "Legion Scout"
