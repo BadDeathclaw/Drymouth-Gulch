@@ -132,16 +132,22 @@
 
 				update_cut_status()
 	else if(istype(W, /obj/item/stack/sheet/mineral/wood))
-		var /obj/item/stack/sheet/mineral/wood/Z = W
+		var/obj/item/stack/sheet/mineral/wood/Z = W
 		if(locate(/obj/structure/barricade/wooden/crude) in get_turf(src))
 			to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
 			return
 		if(Z.get_amount() < 3)
-			to_chat(user, "<span class='warning'>You need at three four wooden planks to reinforce this fence!</span>")
+			to_chat(user, "<span class='warning'>You need atleast 3 wooden planks to reinforce this fence!</span>")
 			return
 		else
 			to_chat(user, "<span class='notice'>You start adding [Z] to [src]...</span>")
 			if(do_after(user, 50, target=src))
+				if(locate(/obj/structure/barricade/wooden/crude) in get_turf(src))
+					to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
+					return
+				if(Z.get_amount() < 3)
+					to_chat(user, "<span class='warning'>You need atleast 3 wooden planks to reinforce this fence!</span>")
+					return
 				Z.use(3)
 				new /obj/structure/barricade/wooden/crude(get_turf(src))
 				user.visible_message("<span class='notice'>[user] reinforces the fence with some planks</span>", "<span class='notice'>You reinforce the fence with some planks.</span>")

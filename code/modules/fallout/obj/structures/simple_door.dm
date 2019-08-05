@@ -38,10 +38,14 @@
 	return
 
 /obj/structure/simple_door/Destroy()
+	if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
+		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
+			qdel(P)
+			visible_message("<span class='warning'>[P] collapses under its own weight!</span>")
 	if(padlock)
 		padlock.forceMove(get_turf(src))
 		padlock = null
-	..()
+	return ..()
 
 /obj/structure/simple_door/proc/attach_padlock(var/obj/item/lock/P, force = FALSE)
 	if(!force && (!can_hold_padlock || !P || !P.open || !P.id))
