@@ -8,6 +8,7 @@
 
 	var/obj/item/card/id/front_id = null
 	var/list/combined_access
+	var/list/special_ids = list("holodogtag", "deputy", "sheriff", "ncrdogtagrecruit", "ncrdogtagsergeant", "ncrdogtagofficer", "ncrdogtagcaptain", "ncrdogtagranger", "legionmedallionrecruit", "legionmedallionprime", "legionmedallionveteran", "legionmedallioncent")
 
 /obj/item/storage/wallet/ComponentInitialize()
 	. = ..()
@@ -59,7 +60,10 @@
 /obj/item/storage/wallet/update_icon()
 	var/new_state = "wallet"
 	if(front_id)
-		new_state = "wallet_[front_id.icon_state]"
+		if(front_id.icon_state in special_ids)
+			new_state = "wallet"
+		else
+			new_state = "wallet_[front_id.icon_state]"
 	if(new_state != icon_state)		//avoid so many icon state changes.
 		icon_state = new_state
 
