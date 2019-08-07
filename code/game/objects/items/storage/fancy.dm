@@ -125,8 +125,8 @@
 //CIG PACK//
 ////////////
 /obj/item/storage/fancy/cigarettes
-	name = "\improper Space Cigarettes packet"
-	desc = "The most popular brand of cigarettes, sponsors of the Space Olympics."
+	name = "\improper Lucky Strikes packet"
+	desc = "The most popular brand of cigarettes, sponsors of the Olympics."
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig"
 	item_state = "cigpacket"
@@ -200,74 +200,74 @@
 		to_chat(user, "<span class='notice'>There are no [icon_type]s left in the pack.</span>")
 
 /obj/item/storage/fancy/cigarettes/dromedaryco
-	name = "\improper DromedaryCo packet"
-	desc = "A packet of six imported DromedaryCo cancer sticks. A label on the packaging reads, \"Wouldn't a slow death make a change?\""
+	name = "\improper Winfield Packet"
+	desc = "A packet of six pre-war imported Winfield Australian cigarettes. A label on the packaging reads, \"...anyhow, have a Winfield\""
 	icon_state = "dromedary"
 	spawn_type = /obj/item/clothing/mask/cigarette/dromedary
 
 /obj/item/storage/fancy/cigarettes/cigpack_uplift
-	name = "\improper Uplift Smooth packet"
-	desc = "Your favorite brand, now menthol flavored."
+	name = "\improper Kings packet"
+	desc = "Only a king could afford the treatment after smoking these."
 	icon_state = "uplift"
 	spawn_type = /obj/item/clothing/mask/cigarette/uplift
 
 /obj/item/storage/fancy/cigarettes/cigpack_robust
-	name = "\improper Robust packet"
-	desc = "Smoked by the robust."
+	name = "\improper Marlboro packet"
+	desc = "Smoked by the best."
 	icon_state = "robust"
 	spawn_type = /obj/item/clothing/mask/cigarette/robust
 
 /obj/item/storage/fancy/cigarettes/cigpack_robustgold
-	name = "\improper Robust Gold packet"
-	desc = "Smoked by the truly robust."
+	name = "\improper Marlboro Gold packet"
+	desc = "Smoked by the very best."
 	icon_state = "robustg"
 	spawn_type = /obj/item/clothing/mask/cigarette/robustgold
 
 /obj/item/storage/fancy/cigarettes/cigpack_carp
-	name = "\improper Carp Classic packet"
-	desc = "Since 2313."
+	name = "\improper Viceroy packet."
+	desc = "Since 1913."
 	icon_state = "carp"
 	spawn_type = /obj/item/clothing/mask/cigarette/carp
 
-/obj/item/storage/fancy/cigarettes/cigpack_syndicate
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate //not in vending machines at time of writing 14/02/19
 	name = "cigarette packet"
 	desc = "An obscure brand of cigarettes."
 	icon_state = "syndie"
 	spawn_type = /obj/item/clothing/mask/cigarette/syndicate
 
 /obj/item/storage/fancy/cigarettes/cigpack_midori
-	name = "\improper Midori Tabako packet"
-	desc = "You can't understand the runes, but the packet smells funny."
+	name = "\improper Sakura packet"
+	desc = "You can't understand the letters, but the packet smells funny."
 	icon_state = "midori"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/nicotine
 
-/obj/item/storage/fancy/cigarettes/cigpack_shadyjims
+/obj/item/storage/fancy/cigarettes/cigpack_shadyjims //same as syndi
 	name = "\improper Shady Jim's Super Slims packet"
 	desc = "Is your weight slowing you down? Having trouble running away from gravitational singularities? Can't stop stuffing your mouth? Smoke Shady Jim's Super Slims and watch all that fat burn away. Guaranteed results!"
 	icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/shadyjims
 
-/obj/item/storage/fancy/cigarettes/cigpack_xeno
+/obj/item/storage/fancy/cigarettes/cigpack_xeno //same as syndi
 	name = "\improper Xeno Filtered packet"
 	desc = "Loaded with 100% pure slime. And also nicotine."
 	icon_state = "slime"
 	spawn_type = /obj/item/clothing/mask/cigarette/xeno
 
-/obj/item/storage/fancy/cigarettes/cigpack_cannabis
+/obj/item/storage/fancy/cigarettes/cigpack_cannabis //same as syndi
 	name = "\improper Freak Brothers' Special packet"
 	desc = "A label on the packaging reads, \"Endorsed by Phineas, Freddy and Franklin.\""
 	icon_state = "midori"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/cannabis
 
-/obj/item/storage/fancy/cigarettes/cigpack_mindbreaker
+/obj/item/storage/fancy/cigarettes/cigpack_mindbreaker //same as syndi
 	name = "\improper Leary's Delight packet"
 	desc = "Banned in over 36 galaxies."
 	icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 
-/obj/item/storage/fancy/rollingpapers
+/obj/item/storage/fancy/rollingpapers //this IS in vending machines need coins
 	name = "rolling paper pack"
-	desc = "A pack of Nanotrasen brand rolling papers."
+	desc = "A pack of rolling papers."
 	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "cig_paper_pack"
@@ -289,7 +289,7 @@
 //CIGAR BOX//
 /////////////
 
-/obj/item/storage/fancy/cigarettes/cigars
+/obj/item/storage/fancy/cigarettes/cigars //in machine, need coin
 	name = "\improper premium cigar case"
 	desc = "A case of premium cigars. Very expensive."
 	icon = 'icons/obj/cigarettes.dmi'
@@ -318,13 +318,13 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-/obj/item/storage/fancy/cigarettes/cigars/cohiba
+/obj/item/storage/fancy/cigarettes/cigars/cohiba //this IS in vending machines, need coin
 	name = "\improper cohiba robusto cigar case"
 	desc = "A case of imported Cohiba cigars, renowned for their strong flavor."
 	icon_state = "cohibacase"
 	spawn_type = /obj/item/clothing/mask/cigarette/cigar/cohiba
 
-/obj/item/storage/fancy/cigarettes/cigars/havana
+/obj/item/storage/fancy/cigarettes/cigars/havana //this IS in vending machines, need coin
 	name = "\improper premium havanian cigar case"
 	desc = "A case of classy Havanian cigars."
 	icon_state = "cohibacase"

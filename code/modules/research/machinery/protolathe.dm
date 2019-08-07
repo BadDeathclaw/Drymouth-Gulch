@@ -7,7 +7,6 @@
 	categories = list(
 								"Power Designs",
 								"Medical Designs",
-								"Bluespace Designs",
 								"Stock Parts",
 								"Equipment",
 								"Mining Designs",

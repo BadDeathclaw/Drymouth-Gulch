@@ -9,6 +9,7 @@
 	products = list(/obj/item/clothing/head/that = 2,
 		            /obj/item/clothing/head/fedora = 1,
 		            /obj/item/clothing/glasses/monocle = 1,
+		            /obj/item/clothing/suit/hooded/wintercoat/blue = 1,
 		            /obj/item/clothing/suit/jacket = 2,
 		            /obj/item/clothing/suit/jacket/puffer/vest = 2,
 		            /obj/item/clothing/suit/jacket/puffer = 2,
@@ -70,7 +71,7 @@
 		            /obj/item/clothing/suit/poncho = 1,
 		            /obj/item/clothing/suit/ianshirt = 1,
 		            /obj/item/clothing/shoes/laceup = 2,
-		            /obj/item/clothing/shoes/sneakers/black = 4,
+		            /obj/item/clothing/shoes/sneakers/black = 2,
 		            /obj/item/clothing/shoes/sandal = 1,
 		            /obj/item/clothing/gloves/fingerless = 2,
 		            /obj/item/clothing/glasses/orange = 1,
@@ -121,3 +122,32 @@
 	icon_state = "refill_clothes"
 	charges = list(38, 4, 4)// of 112 standard, 12 contraband, 10 premium(?)
 	init_charges = list(38, 4, 4)
+
+/obj/item/vending_refill/clothing/bos
+	machine_name = "Civilian ClothesMate"
+	icon_state = "refill_clothes"
+	charges = list(38, 4, 4)// of 112 standard, 12 contraband, 10 premium(?)
+	init_charges = list(40, 112, 5)
+
+/obj/machinery/vending/clothing/bos
+	name = "Civilian ClothesMate"
+	desc = "A vending machine for civilian and waster disguises."
+	products = list(/obj/item/clothing/suit/poncho = 5,
+					/obj/item/clothing/under/f13/brahminf = 2,
+					/obj/item/clothing/under/f13/brahminm = 2,
+					/obj/item/clothing/under/f13/caravan = 2,
+					/obj/item/clothing/under/f13/caravaneer = 2,
+					/obj/item/clothing/under/f13/cowboyb = 2,
+					/obj/item/clothing/under/f13/cowboyg = 2,
+					/obj/item/clothing/under/f13/lumberjack = 2,
+					/obj/item/clothing/under/f13/machinist = 2,
+					/obj/item/clothing/under/f13/roving = 2,
+					/obj/item/clothing/under/f13/settler = 2,
+					/obj/item/clothing/shoes/sneakers/black = 5)
+	contraband = list(/obj/item/clothing/under/syndicate/tacticool = 1)
+	
+	premium = list(/obj/item/clothing/under/suit_jacket/checkered = 1,
+		            /obj/item/clothing/head/mailman = 1,
+		            /obj/item/clothing/under/rank/mailman = 1,
+		            /obj/item/clothing/suit/jacket/leather = 1,
+		            /obj/item/clothing/suit/jacket/leather/overcoat = 1)

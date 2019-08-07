@@ -1,3 +1,18 @@
+//lewd
+/mob/living
+	var/has_penis = FALSE
+	var/has_vagina = FALSE
+	var/has_breasts = FALSE
+	var/last_partner
+	var/last_orifice
+	var/lastmoan
+	var/sexual_potency =  15
+	var/lust_tolerance = 100
+	var/lust = 0
+	var/multiorgasms = 0
+	var/refactory_period = 0
+//end of lewd
+
 /mob/living/Initialize()
 	. = ..()
 	if(unique_name)
@@ -7,6 +22,20 @@
 	medhud.add_to_hud(src)
 	faction += "[REF(src)]"
 	GLOB.mob_living_list += src
+
+	//lewd
+	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
+	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
+	if(gender == MALE)
+		has_penis = TRUE
+		has_vagina = FALSE
+		has_breasts = FALSE
+
+	if(gender == FEMALE)
+		has_vagina = TRUE
+		has_breasts = TRUE
+		has_penis = FALSE
+	//end of lewd
 
 
 /mob/living/prepare_huds()
@@ -38,31 +67,31 @@
 /mob/living/proc/OpenCraftingMenu()
 	return
 
-//Generic Collide(). Override MobCollide() and ObjCollide() instead of this.
-/mob/living/Collide(atom/A)
+//Generic Bump(). Override MobBump() and ObjBump() instead of this.
+/mob/living/Bump(atom/A)
 	if(..()) //we are thrown onto something
 		return
 	if (buckled || now_pushing)
 		return
 	if(ismob(A))
 		var/mob/M = A
-		if(MobCollide(M))
+		if(MobBump(M))
 			return
 	if(isobj(A))
 		var/obj/O = A
-		if(ObjCollide(O))
+		if(ObjBump(O))
 			return
 	if(ismovableatom(A))
 		var/atom/movable/AM = A
 		if(PushAM(AM))
 			return
 
-/mob/living/CollidedWith(atom/movable/AM)
+/mob/living/Bumped(atom/movable/AM)
 	..()
 	last_bumped = world.time
 
 //Called when we bump onto a mob
-/mob/living/proc/MobCollide(mob/M)
+/mob/living/proc/MobBump(mob/M)
 	//Even if we don't push/swap places, we "touched" them, so spread fire
 	spreadFire(M)
 
@@ -151,7 +180,7 @@
 				return 1
 
 //Called when we bump onto an obj
-/mob/living/proc/ObjCollide(obj/O)
+/mob/living/proc/ObjBump(obj/O)
 	return
 
 //Called when we want to push an atom/movable
@@ -276,14 +305,16 @@
 		death()
 
 /mob/living/incapacitated(ignore_restraints, ignore_grab)
-	if(stat || IsUnconscious() || IsStun() || IsKnockdown() || (!ignore_restraints && restrained(ignore_grab)))
+	if(stat || IsUnconscious() || IsStun() || IsParalyze() || IsKnockdown() || (!ignore_restraints && restrained(ignore_grab)))
 		return TRUE
 
 /mob/living/proc/InCritical()
-	return (health <= HEALTH_THRESHOLD_CRIT && (stat == SOFT_CRIT || stat == UNCONSCIOUS))
+	if(health <= HEALTH_THRESHOLD_CRIT)
+		return TRUE
 
 /mob/living/proc/InFullCritical()
-	return (health <= HEALTH_THRESHOLD_FULLCRIT && stat == UNCONSCIOUS)
+	if(health <= HEALTH_THRESHOLD_FULLCRIT && stat == UNCONSCIOUS)
+		return TRUE
 
 //This proc is used for mobs which are affected by pressure to calculate the amount of pressure that actually
 //affects them once clothing is factored in. ~Errorage
@@ -484,7 +515,7 @@
 	. = 0
 	if(isopenturf(loc) && !is_flying())
 		var/turf/open/T = loc
-		. += T.slowdown
+		. += ( has_trait(TRAIT_HARD_YARDS) ? T.slowdown * 0.5 : T.slowdown )
 	var/static/datum/config_entry/number/run_delay/config_run_delay
 	var/static/datum/config_entry/number/walk_delay/config_walk_delay
 	if(isnull(config_run_delay))
@@ -637,6 +668,9 @@
 	return name
 
 /mob/living/update_gravity(has_gravity,override = 0)
+
+	//BAD DEATHCLAW CHANGE: ALL THE MOBS GOT GRAVITY NO MATTER WHAT, NO NEED TO PUT GRAV GENS EVERYWHERE
+	/*
 	if(!SSticker.HasRoundStarted())
 		return
 	if(has_gravity)
@@ -651,6 +685,7 @@
 		throw_alert("gravity", /obj/screen/alert/weightless)
 	if(!override && !is_flying())
 		float(!has_gravity)
+	*/
 
 /mob/living/float(on)
 	if(throwing)
@@ -808,10 +843,9 @@
 	var/stam = getStaminaLoss()
 	if(stam)
 		var/total_health = (health - stam)
-		if(total_health <= HEALTH_THRESHOLD_CRIT && !stat)
+		if(total_health <= crit_modifier() && !stat && !IsKnockdown())
 			to_chat(src, "<span class='notice'>You're too exhausted to keep going...</span>")
 			Knockdown(100)
-			setStaminaLoss(health - 2, FALSE, FALSE)
 			update_health_hud()
 
 /mob/living/carbon/alien/update_stamina()
@@ -880,6 +914,13 @@
 
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 
+/mob/living/anti_magic_check(magic = TRUE, holy = FALSE)
+	. = ..()
+	if(.)
+		return
+	if((magic && has_trait(TRAIT_ANTIMAGIC)) || (holy && has_trait(TRAIT_HOLY)))
+		return src
+
 /mob/living/proc/fakefireextinguish()
 	return
 
@@ -918,7 +959,7 @@
 		ExtinguishMob()
 
 //Share fire evenly between the two mobs
-//Called in MobCollide() and Crossed()
+//Called in MobBump() and Crossed()
 /mob/living/proc/spreadFire(mob/living/L)
 	if(!istype(L))
 		return
@@ -981,7 +1022,7 @@
 			fall()
 		else if(ko || move_and_fall || (!has_legs && !ignore_legs) || chokehold)
 			fall(forced = 1)
-	canmove = !(ko || resting || IsStun() || IsFrozen() || chokehold || buckled || (!has_legs && !ignore_legs && !has_arms))
+	canmove = !(ko || resting || IsStun() || IsFrozen() || IsParalyze() || chokehold || buckled || (!has_legs && !ignore_legs && !has_arms))
 	density = !lying
 	if(lying)
 		if(layer == initial(layer)) //to avoid special cases like hiding larvas.
@@ -1111,6 +1152,9 @@
 
 /mob/living/vv_edit_var(var_name, var_value)
 	switch(var_name)
+		if ("maxHealth")
+			if (!isnum(var_value) || var_value <= 0)
+				return FALSE
 		if("stat")
 			if((stat == DEAD) && (var_value < DEAD))//Bringing the dead back to life
 				GLOB.dead_mob_list -= src

@@ -44,7 +44,7 @@
 	desc = "Blueprints of the station. There is a \"Classified\" stamp and several coffee stains on it."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "blueprints"
-	fluffnotice = "Property of Nanotrasen. For heads of staff only. Store in high-secure storage."
+	fluffnotice = "Property of Vault-Tec. For heads of staff only. Store in high-secure storage."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/list/image/showing = list()
 	var/client/viewing
@@ -112,8 +112,7 @@
 
 /obj/item/areaeditor/blueprints/proc/get_images(turf/T, viewsize)
 	. = list()
-	for(var/tt in RANGE_TURFS(viewsize, T))
-		var/turf/TT = tt
+	for(var/turf/TT in range(viewsize, T))
 		if(TT.blueprint_data)
 			. += TT.blueprint_data
 
@@ -227,4 +226,4 @@
 	desc = "A digital copy of the station blueprints stored in your memory."
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "blueprints"
-	fluffnotice = "Intellectual Property of Nanotrasen. For use in engineering cyborgs only. Wipe from memory upon departure from the station."
+	fluffnotice = "Intellectual Property of Vault-Tec. For use in engineering cyborgs only. Wipe from memory upon departure from the station."

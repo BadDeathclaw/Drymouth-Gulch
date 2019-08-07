@@ -16,6 +16,7 @@ SUBSYSTEM_DEF(vote)
 	var/list/voting = list()
 	var/list/generated_actions = list()
 	var/vote_sound = 'sound/f13/mysterious_stranger.ogg'
+	var/min_restart_time = 30 MINUTES
 
 /datum/controller/subsystem/vote/fire()	//called by master_controller
 	if(mode)
@@ -126,14 +127,14 @@ SUBSYSTEM_DEF(vote)
 	if(restart)
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)
-			if(!C.is_afk() && check_rights_for(C, R_SERVER))
+			if(!C.is_afk() && check_rights_for(C, R_BAN))//R_BAN so coders don't hold up the restart anymore, and only trialmins/admins do
 				active_admins = 1
 				break
 		if(!active_admins)
 			SSticker.Reboot("Restart vote successful.", "restart vote")
 		else
 			to_chat(world, "<span style='boldannounce'>Notice:Restart vote will not restart the server automatically because there are active admins on.</span>")
-			message_admins("A restart vote has passed, but there are active admins on with +server, so it has been canceled. If you wish, you may restart the server.")
+			message_admins("A restart vote has passed, but there are active admins on with +ban, so it has been canceled. If you wish, you may restart the server.")
 
 	return .
 
@@ -277,7 +278,10 @@ SUBSYSTEM_DEF(vote)
 				CONFIG_SET(flag/allow_vote_mode, !CONFIG_GET(flag/allow_vote_mode))
 		if("restart")
 			if(CONFIG_GET(flag/allow_vote_restart) || usr.client.holder)
-				initiate_vote("restart",usr.key)
+				if(min_restart_time < world.time)
+					initiate_vote("restart",usr.key)
+				else
+					to_chat(usr.client, "<span style='boldannounce'>Restart can only initiate after [DisplayTimeText(min_restart_time)].</span>")
 		if("gamemode")
 			if(CONFIG_GET(flag/allow_vote_mode) || usr.client.holder)
 				initiate_vote("gamemode",usr.key)

@@ -64,6 +64,9 @@
 	if (force >= 5 && user.has_trait(TRAIT_BIG_LEAGUES))
 		force = force + 5
 
+	if (force >= 8 && user.has_trait(TRAIT_PSYCHO))
+		force = force + 8
+
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
 	else if(hitsound)
@@ -81,6 +84,8 @@
 	if (force >= 5 && user.has_trait(TRAIT_BIG_LEAGUES))
 		force = force - 5
 
+	if (force >= 8 && user.has_trait(TRAIT_PSYCHO))
+		force = force - 8
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
@@ -123,7 +128,7 @@
 // Proximity_flag is 1 if this afterattack was called on something adjacent, in your square, or on your person.
 // Click parameters is the params string from byond Click() code, see that documentation.
 /obj/item/proc/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
-	return
+	SEND_SIGNAL(src, COMSIG_ITEM_AFTERATTACK, target, user, proximity_flag, click_parameters)
 
 
 /obj/item/proc/get_clamped_volume()

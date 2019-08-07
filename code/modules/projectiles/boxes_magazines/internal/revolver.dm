@@ -21,6 +21,12 @@
 	caliber = "44"
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/rev357
+	name = "357 magnum cylinder"
+	ammo_type = /obj/item/ammo_casing/a357
+	caliber = "357"
+	max_ammo = 6
+
 /obj/item/ammo_box/magazine/internal/cylinder/rev6250
 	name = "6250 10mm cylinder"
 	ammo_type = /obj/item/ammo_casing/c10mm
@@ -44,3 +50,9 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	caliber = "38"
 	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
+	name = "improvised internal magazine"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 1

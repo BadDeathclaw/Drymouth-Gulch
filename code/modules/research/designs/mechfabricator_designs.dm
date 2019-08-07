@@ -778,3 +778,5 @@
 	construction_time = 100
 	build_path = /obj/item/assembly/flash/handheld
 	category = list("Misc")
+
+/datum/design/generic

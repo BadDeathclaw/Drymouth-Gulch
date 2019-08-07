@@ -3,7 +3,7 @@
 #define MINEDRONE_ATTACK 2
 
 /mob/living/simple_animal/hostile/mining_drone
-	name = "nanotrasen minebot"
+	name = "minebot"
 	desc = "The instructions printed on the side read: This is a small robot used to support miners, can be set to search and collect loose ore, or to help fend off wildlife."
 	gender = NEUTER
 	icon = 'icons/mob/aibots.dmi'
@@ -270,6 +270,7 @@
 	icon = 'icons/obj/module.dmi'
 
 /obj/item/mine_bot_upgrade/afterattack(mob/living/simple_animal/hostile/mining_drone/M, mob/user, proximity)
+	. = ..()
 	if(!istype(M) || !proximity)
 		return
 	upgrade_bot(M, user)

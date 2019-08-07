@@ -1,34 +1,55 @@
-
 GLOBAL_LIST_INIT(command_positions, list(
-	"Elder",
-	"Centurion",
-	"NCR Captain",
-	"Overseer",
-	"Sheriff"
+    "Elder",
+    "Head Scribe",
+    "Paladin",
+    "Centurion",
+    "Legion Centurion",
+    "NCR Captain",
+    "NCR Veteran Ranger",
+    "Overseer",
+    "Chief of Security",
+    "Sheriff",
+    "Mayor"
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Elder",
+	"Head Scribe",
 	"Paladin",
 	"Knight",
 	"Scribe",
-	"Initiate"
+	"Initiate Knight",
+	"Initiate Scribe"
 ))
 
 GLOBAL_LIST_INIT(den_positions, list(
+	"Mayor",
 	"Sheriff",
-	"Settler"
+	"Kebab Doctor",
+	"Settler",
+	"Deputy",
+	"Farmer",
+	"Prospector"
 ))
 
 GLOBAL_LIST_INIT(legion_positions, list(
+	"Legion Centurion",
+	"Legion Veteran Decanus",
+	"Veteran Legionnaire",
+	"Legion Prime Decanus",
+	"Prime Legionnaire",
+	"Legion Recruit Decanus",
+	"Recruit Legionnaire",
+	"Legion Vexillarius",
+	"Legion Explorer",
+	"Legion Scout",
 	"Centurion",
 	"Veteran Decanus",
-	"Vexillarius",
 	"Decanus",
+	"Legionary",
+	"Vexillarius",
 	"Explorer",
 	"Scout",
-	"Veteran Legionnaire",
-	"Legionary",
 	"Camp Follower"
 ))
 
@@ -36,6 +57,10 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Captain",
 	"NCR Lieutenant",
 	"NCR Sergeant",
+	"NCR Medical Officer",
+	"NCR Engineer",
+	"NCR Heavy Trooper",
+	"NCR Corporal",
 	"NCR Trooper",
 	"NCR Recruit",
 	"NCR Veteran Ranger",
@@ -54,10 +79,10 @@ GLOBAL_LIST_INIT(vault_positions, list(
 ))
 
 GLOBAL_LIST_INIT(wasteland_positions, list(
-	"Wastelander",
 	"Raider",
 	"Pusher",
-	"Preacher"
+	"Preacher",
+	"Wastelander"
 ))
 GLOBAL_LIST_INIT(security_positions, list(
 	"Chief of Security",

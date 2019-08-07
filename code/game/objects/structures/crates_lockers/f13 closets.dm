@@ -23,10 +23,10 @@
 
 /obj/structure/closet/f13/leigon/scollar/PopulateContents()
 	..()
-	new /obj/item/electropack/shockcollar(src)
-	new /obj/item/electropack/shockcollar(src)
-	new /obj/item/electropack/shockcollar(src)
-	new /obj/item/electropack/shockcollar(src)
+	new /obj/item/assembly/signaler/electropack/shockcollar(src)
+	new /obj/item/assembly/signaler/electropack/shockcollar(src)
+	new /obj/item/assembly/signaler/electropack/shockcollar(src)
+	new /obj/item/assembly/signaler/electropack/shockcollar(src)
 
 /obj/structure/closet/f13/leigon/spants
 	name = "closet"

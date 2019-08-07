@@ -57,7 +57,7 @@
 
 /obj/item/clothing/under/rank/prisoner
 	name = "prison jumpsuit"
-	desc = "It's standardised Nanotrasen prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "It's standardised prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
 	icon_state = "prisoner"
 	item_state = "o_suit"
 	item_color = "prisoner"
@@ -85,6 +85,8 @@
 	icon_state = "sexyclown"
 	item_state = "sexyclown"
 	item_color = "sexyclown"
+	body_parts_covered = CHEST|GROIN|LEGS
+	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/jabroni
@@ -156,6 +158,7 @@
 	name = "owl uniform"
 	desc = "A soft brown jumpsuit made of synthetic feathers and strong conviction."
 	icon_state = "owl"
+	item_state = "owl"
 	item_color = "owl"
 	can_adjust = FALSE
 
@@ -163,6 +166,7 @@
 	name = "griffon uniform"
 	desc = "A soft brown jumpsuit with a white feather collar made of synthetic feathers and a lust for mayhem."
 	icon_state = "griffin"
+	item_state = "griffin"
 	item_color = "griffin"
 	can_adjust = FALSE
 
@@ -177,7 +181,7 @@
 	name = "captain's suit"
 	desc = "A green suit and yellow necktie. Exemplifies authority."
 	icon_state = "green_suit"
-	item_state = "dg_suit"
+	item_state = "green_suit"
 	item_color = "green_suit"
 	can_adjust = FALSE
 
@@ -290,7 +294,7 @@
 	desc = "A blue, casual skirt."
 	icon_state = "blueskirt"
 	item_color = "blueskirt"
-	item_state = "b_suit"
+	item_state = "blueskirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
@@ -300,7 +304,7 @@
 	desc = "A red, casual skirt."
 	icon_state = "redskirt"
 	item_color = "redskirt"
-	item_state = "r_suit"
+	item_state = "redskirt"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
@@ -331,18 +335,27 @@
 	icon_state = "schoolgirlred"
 	item_state = "schoolgirlred"
 	item_color = "schoolgirlred"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
 
 /obj/item/clothing/under/schoolgirl/green
 	name = "green schoolgirl uniform"
 	icon_state = "schoolgirlgreen"
 	item_state = "schoolgirlgreen"
 	item_color = "schoolgirlgreen"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
 
 /obj/item/clothing/under/schoolgirl/orange
 	name = "orange schoolgirl uniform"
 	icon_state = "schoolgirlorange"
 	item_state = "schoolgirlorange"
 	item_color = "schoolgirlorange"
+	body_parts_covered = CHEST|GROIN|ARMS
+	fitted = FEMALE_UNIFORM_TOP
+	can_adjust = FALSE
 
 /obj/item/clothing/under/overalls
 	name = "laborer's overalls"
@@ -480,7 +493,7 @@
 	name = "sailor dress"
 	desc = "Formal wear for a leading lady."
 	icon_state = "sailor_dress"
-	item_state = "sailordress"
+	item_state = "sailor_dress"
 	item_color = "sailor_dress"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
@@ -565,8 +578,8 @@
 	icon_state = "bsing"
 	item_state = "bsing"
 	item_color = "bsing"
+	fitted = NO_FEMALE_UNIFORM
 	alternate_worn_layer = ABOVE_SHOES_LAYER
-	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
 /obj/item/clothing/under/plaid_skirt/green
@@ -583,6 +596,7 @@
 	name = "jester suit"
 	desc = "A jolly dress, well suited to entertain your master, nuncle."
 	icon_state = "jester"
+	item_state = "jester"
 	item_color = "jester"
 	can_adjust = FALSE
 
@@ -607,6 +621,7 @@
 	name = "villain suit"
 	desc = "A change of wardrobe is necessary if you ever want to catch a real superhero."
 	icon_state = "villain"
+	item_state = "villain"
 	item_color = "villain"
 	can_adjust = FALSE
 
@@ -614,7 +629,7 @@
 	name = "sailor suit"
 	desc = "Skipper's in the wardroom drinkin gin'."
 	icon_state = "sailor"
-	item_state = "b_suit"
+	item_state = "sailor"
 	item_color = "sailor"
 	can_adjust = FALSE
 

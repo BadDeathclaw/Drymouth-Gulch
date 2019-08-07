@@ -42,45 +42,61 @@
 #define MIME			(1<<12)
 #define ASSISTANT		(1<<13)
 
+#define JOB_DISPLAY_ORDER_DEFAULT 0
+
 //F13
 
 #define NCR				(1<<3)
 
 #define F13COLONEL		(1<<0)
 #define F13CAPTAIN		(1<<1)
-#define F13LIEUTENANT	(1<<2)
-#define F13SERGEANT		(1<<3)
-#define F13TROOPER		(1<<4)
-#define F13RECRUIT		(1<<5)
-#define F13VETRANGER	(1<<6)
-#define F13RANGER		(1<<7)
-#define F13RECRANGER	(1<<8)
+#define F13LIEUTENANT   (1<<2)
+#define F13MEDIC 	    (1<<3)
+#define F13SERGEANT		(1<<4)
+#define F13ENGINEER     (1<<5)
+#define F13CORPORAL		(1<<6)
+#define F13TROOPER		(1<<7)
+#define F13RECRUIT		(1<<8)
+#define F13HEAVYTROOP   (1<<9)
+#define F13VETRANGER	(1<<10)
+#define F13RANGER		(1<<11)
+#define F13RECRANGER	(1<<12)
 
 #define LEGION			(1<<4)
 
 #define F13LEGATE		(1<<0)
 #define F13CENTURION	(1<<1)
 #define F13VETDECAN		(1<<2)
-#define F13VEXILLARIUS	(1<<3)
-#define F13DECAN		(1<<4)
-#define F13VETLEGION	(1<<5)
-#define F13LEGIONARY	(1<<6)
-#define F13EXPLORER		(1<<7)
-#define F13SCOUT		(1<<8)
-#define F13CAMPFOLLOWER	(1<<9)
+#define F13PRIMEDECAN   (1<<3)
+#define F13DECAN        (1<<4)
+#define F13VEXILLARIUS	(1<<5)
+#define F13VETLEGION	(1<<6)
+#define F13PRIMELEGION  (1<<7)
+#define F13LEGIONARY	(1<<8)
+#define F13EXPLORER		(1<<9)
+#define F13SCOUT		(1<<10)
+#define F13CAMPFOLLOWER	(1<<11)
 
 #define BOS				(1<<5)
 
 #define F13ELDER		(1<<0)
 #define F13PALADIN		(1<<1)
-#define F13KNIGHT		(1<<2)
-#define F13SCRIBE		(1<<3)
-#define F13INITIATE		(1<<4)
+#define F13HEADSCRIBE	(1<<2)
+#define F13KNIGHT		(1<<3)
+#define F13SCRIBE		(1<<4)
+#define F13INITIATEKNIGHT	(1<<5)
+#define F13INITIATESCRIBE	(1<<6)
 
 #define DEN				(1<<6)
 
 #define F13SHERIFF		(1<<0)
-#define F13SETTLER		(1<<1)
+#define F13DENDOC       (1<<1)
+#define F13SETTLER		(1<<2)
+#define F13FARMER		(1<<3)
+#define F13PROSPECTOR	(1<<4)
+#define F13DEPUTY		(1<<5)
+#define F13MAYOR		(1<<6)
+#define F13PREACHER		(1<<7)
 
 #define VAULT			(1<<7)
 
@@ -100,8 +116,7 @@
 #define F13WASTELANDER	(1<<1)
 #define F13RAIDER		(1<<2)
 #define F13PUSHER		(1<<3)
-#define F13PREACHER		(1<<4)
-#define F13PUNRAIDER	(1<<5)
+#define F13PUNRAIDER	(1<<4)
 
 #define ENCLAVE			(1<<9)
 

@@ -5,6 +5,8 @@
 	icon_state = "generic"
 	density = TRUE
 	layer = BELOW_OBJ_LAYER
+	barricade = TRUE
+	proj_pass_rate = 65
 	var/icon_door = null
 	var/icon_door_override = FALSE //override to have open overlay use icon different to its base's
 	var/secure = FALSE //secure locker or not, also used if overriding a non-secure locker with a secure door overlay to add fancy lights
@@ -84,11 +86,6 @@
 		to_chat(user, "<span class='notice'>The parts are <b>welded</b> together.</span>")
 	else if(secure && !opened)
 		to_chat(user, "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"].</span>")
-
-/obj/structure/closet/CanPass(atom/movable/mover, turf/target)
-	if(wall_mounted)
-		return TRUE
-	return !density
 
 /obj/structure/closet/proc/can_open(mob/living/user)
 	if(welded || locked)
@@ -257,7 +254,7 @@
 	else if(istype(W, /obj/item/wrench) && anchorable)
 		if(isinspace() && !anchored)
 			return
-		anchored = !anchored
+		setAnchored(!anchored)
 		W.play_tool_sound(src, 75)
 		user.visible_message("<span class='notice'>[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \
 						"<span class='notice'>You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground.</span>", \

@@ -90,7 +90,16 @@
 	/obj/item/clothing/head/wizard,
 	/obj/item/clothing/head/nursehat,
 	/obj/item/clothing/head/sombrero,
-	/obj/item/clothing/head/helmet/chaplain/witchunter_hat)
+	/obj/item/clothing/head/helmet/chaplain/witchunter_hat,
+	/obj/item/clothing/head/soft/, //All baseball caps
+	/obj/item/clothing/head/that, //top hat
+	/obj/item/clothing/head/collectable/tophat, //Not sure where this one is found, but it looks the same so might as well include
+	/obj/item/clothing/mask/bandana/, //All bandanas (which only work in hat mode)
+	/obj/item/clothing/head/fedora,
+	/obj/item/clothing/head/beanie/, //All beanies
+	/obj/item/clothing/ears/headphones,
+	/obj/item/clothing/head/helmet/skull,
+	/obj/item/clothing/head/crown/fancy)
 
 	can_buckle = TRUE
 	buckle_lying = FALSE
@@ -208,7 +217,9 @@
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
 	"Janitor" = /obj/item/robot_module/janitor, \
-	"Service" = /obj/item/robot_module/butler)
+	"Service" = /obj/item/robot_module/butler, \
+	"Handy Fisto" = /obj/item/robot_module/sexy_handy, \
+	"Fisto" = /obj/item/robot_module/fisto_protectron)
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper
 	if(!CONFIG_GET(flag/disable_secborg))
@@ -228,7 +239,8 @@
 	if(custom_name)
 		changed_name = custom_name
 	if(changed_name == "" && client)
-		changed_name = client.prefs.custom_names["cyborg"]
+		apply_pref_name(src, client)
+		return //built in camera handled in proc
 	if(!changed_name)
 		changed_name = get_standard_name()
 
@@ -789,6 +801,12 @@
 
 /mob/living/silicon/robot/modules/janitor
 	set_module = /obj/item/robot_module/janitor
+
+/mob/living/silicon/robot/modules/sexyhandy
+	set_module = /obj/item/robot_module/sexy_handy
+
+/mob/living/silicon/robot/modules/fistobot
+	set_module = /obj/item/robot_module/fisto_protectron
 
 /mob/living/silicon/robot/modules/syndicate
 	icon_state = "synd_sec"

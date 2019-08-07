@@ -121,7 +121,44 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return 0
 	return 1
 
+/*
+ * Call back proc that should be checked in all paths where a client can send messages
+ *
+ * Handles checking for duplicate messages and people sending messages too fast
+ *
+ * The first checks are if you're sending too fast, this is defined as sending
+ * SPAM_TRIGGER_AUTOMUTE messages in 
+ * 5 seconds, this will start supressing your messages,
+ * if you send 2* that limit, you also get muted
+ *
+ * The second checks for the same duplicate message too many times and mutes
+ * you for it
+ */
+
 /client/proc/handle_spam_prevention(message, mute_type)
+
+	//Increment message count
+	total_message_count += 1
+
+	//store the total to act on even after a reset
+	var/cache = total_message_count
+
+	if(total_count_reset <= world.time)
+		total_message_count = 0
+		total_count_reset = world.time + (5 SECONDS)
+
+	//If they're really going crazy, mute them
+	if(cache >= SPAM_TRIGGER_AUTOMUTE * 2)
+		total_message_count = 0
+		total_count_reset = 0
+		cmd_admin_mute(src, mute_type, 1)	
+		return 1
+
+	//Otherwise just supress the message
+	else if(cache >= SPAM_TRIGGER_AUTOMUTE)
+		return 1
+
+		
 	if(CONFIG_GET(flag/automute_on) && !holder && last_message == message)
 		src.last_message_count++
 		if(src.last_message_count >= SPAM_TRIGGER_AUTOMUTE)
@@ -274,12 +311,13 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	connection_timeofday = world.timeofday
 	winset(src, null, "command=\".configure graphics-hwmode on\"")
 	var/cev = CONFIG_GET(number/client_error_version)
+	var/ceb = CONFIG_GET(number/client_error_build)
 	var/cwv = CONFIG_GET(number/client_warn_version)
-	if (byond_version < cev)		//Out of date client.
+	if (byond_version < cev || byond_build < ceb)		//Out of date client.
 		to_chat(src, "<span class='danger'><b>Your version of BYOND is too old:</b></span>")
 		to_chat(src, CONFIG_GET(string/client_error_message))
-		to_chat(src, "Your version: [byond_version]")
-		to_chat(src, "Required version: [cev] or later")
+		to_chat(src, "Your version: [byond_version].[byond_build]")
+		to_chat(src, "Required version: [cev].[ceb] or later")
 		to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
 		if (connecting_admin)
 			to_chat(src, "Because you are an admin, you are being allowed to walk past this limitation, But it is still STRONGLY suggested you upgrade")
@@ -668,8 +706,14 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 /client/Click(atom/object, atom/location, control, params)
 	var/ab = FALSE
 	var/list/L = params2list(params)
+
+	var/dragged = L["drag"]
+	if(dragged && !L[dragged])
+		return
+
 	if (object && object == middragatom && L["left"])
 		ab = max(0, 5 SECONDS-(world.time-middragtime)*0.1)
+
 	var/mcl = CONFIG_GET(number/minute_click_limit)
 	if (!holder && mcl)
 		var/minute = round(world.time, 600)
@@ -689,7 +733,6 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 					log_game("[key_name(src)] is using the middle click aimbot exploit")
 					message_admins("[ADMIN_LOOKUPFLW(src)] [ADMIN_KICK(usr)] is using the middle click aimbot exploit</span>")
 					add_system_note("aimbot", "Is using the middle click aimbot exploit")
-
 				log_game("[key_name(src)] Has hit the per-minute click limit of [mcl] clicks in a given game minute")
 				message_admins("[ADMIN_LOOKUPFLW(src)] [ADMIN_KICK(usr)] Has hit the per-minute click limit of [mcl] clicks in a given game minute")
 			to_chat(src, "<span class='danger'>[msg]</span>")

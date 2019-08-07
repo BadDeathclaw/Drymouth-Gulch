@@ -204,6 +204,10 @@
 	desc = "Your classic, non-racist poncho."
 	icon_state = "classicponcho"
 	item_state = "classicponcho"
+	body_parts_covered = CHEST
+	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
+
 
 /obj/item/clothing/suit/poncho/green
 	name = "green poncho"
@@ -595,6 +599,26 @@
 	icon_state = "clockwork_cuirass_old"
 	armor = list("melee" = 5, "bullet" = 0, "laser" = -5, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
 
+/obj/item/clothing/suit/hooded/wintercoat/blue
+    name = "blue winter coat"
+    icon_state = "coatwinterblue"
+    item_state = "coatwinterblue"
+    armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
+    allowed = list(/obj/item/flashlight, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/t_scanner, /obj/item/construction/rcd, /obj/item/pipe_dispenser, /obj/item/toy, /obj/item/storage/fancy/cigarettes, /obj/item/lighter)
+    hoodtype = /obj/item/clothing/head/hooded/winterhood/blue
+
+/obj/item/clothing/head/hooded/winterhood/blue
+    icon_state = "winterhood_blue"
+
+/obj/item/clothing/suit/hooded/wintercoat/blue113
+	name = "Blue vault winter coat"
+	icon_state = "coatwinterblue113"
+	item_state = "coatwinterblue"
+	hoodtype = /obj/item/clothing/head/hooded/winterhood/blue113
+
+/obj/item/clothing/head/hooded/winterhood/blue113
+	icon_state = "winterhood_blue113"
+
 
 //Fallout 13
 /obj/item/clothing/suit/fluff
@@ -673,22 +697,33 @@
 	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed = list(/obj/item/gun)
 
+
+/obj/item/clothing/suit/f13/scribe
+	name = "Brotherhood Scribe's robe"
+	desc = "A red cloth robe worn by the Brotherhood of Steel Scribes."
+	icon_state = "scribe"
+	item_state = "scribe"
+	body_parts_covered = CHEST|ARMS|LEGS
+	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	allowed = list(/obj/item/gun)
+
 /obj/item/clothing/suit/f13/elder //Robes are made of finest cloth, so you won't be able to put sharp objects but pens in.
 	name = "Brotherhood Elder's robe"
 	desc = "A blue cloth robe with some scarlet red parts, traditionally worn by the Brotherhood of Steel Elder."
 	icon_state = "elder"
-	item_state = "suit-command"
+	item_state = "elder"
 	body_parts_covered = CHEST|ARMS|LEGS
-	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 15, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed = list(/obj/item/gun)
 
-/obj/item/clothing/suit/f13/scribe
-	name = "Brotherhood Scribe's robe"
-	desc = "A blue cloth robe worn by the Brotherhood of Steel Scribes."
-	icon_state = "scribe"
-	item_state = "suit-command"
-	body_parts_covered = CHEST|ARMS|LEGS
-	armor = list("melee" = 10, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	allowed = list(/obj/item/gun)
-
+/obj/item/clothing/suit/ghost_sheet
+	name = "ghost sheet"
+	desc = "The hands float by themselves, so it's extra spooky."
+	icon_state = "ghost_sheet"
+	item_state = "ghost_sheet"
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 

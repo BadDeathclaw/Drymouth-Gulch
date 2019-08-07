@@ -124,7 +124,7 @@
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
-	desc = "It's a special backpack made exclusively for Nanotrasen officers."
+	desc = "It's a special backpack made exclusively for officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 
@@ -166,16 +166,16 @@
 	item_state = "viropack"
 
 /obj/item/storage/backpack/spearquiver
-	name = "spear quiver"
-	desc = "A leather and iron quiver designed to hold throwing spears."
+	name = "sturdy quiver"
+	desc = "A leather and iron quiver designed to hold throwing spears and bolas."
 	icon_state = "spearquiver"
 	item_state = "spearquiver"
 
 /obj/item/storage/backpack/spearquiver/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_items = 7
-	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear))
+	STR.max_items = 12
+	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola))
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
 	new /obj/item/throwing_star/spear(src)
@@ -272,7 +272,7 @@
 	level = 1
 	component_type = /datum/component/storage/concrete/secret_satchel
 
-/obj/item/storage/backpack/stachel/flat/Initialize()
+/obj/item/storage/backpack/satchel/flat/Initialize()
 	. = ..()
 	SSpersistence.new_secret_satchels += src
 

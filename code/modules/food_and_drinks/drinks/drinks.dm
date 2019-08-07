@@ -56,10 +56,11 @@
 	return 1
 
 /obj/item/reagent_containers/food/drinks/afterattack(obj/target, mob/user , proximity)
+	. = ..()
 	if(!proximity)
 		return
 
-	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
+	if(target.is_refillable() && is_drainable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!reagents.total_volume)
 			to_chat(user, "<span class='warning'>[src] is empty.</span>")
 			return
@@ -92,8 +93,6 @@
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this)
 		to_chat(user, "<span class='notice'>You fill [src] with [trans] units of the contents of [target].</span>")
-
-	else
 
 /obj/item/reagent_containers/food/drinks/attackby(obj/item/I, mob/user, params)
 	var/hotness = I.is_hot()
@@ -360,12 +359,14 @@
 /obj/item/reagent_containers/food/drinks/flask/gold
 	name = "captain's flask"
 	desc = "A gold flask belonging to the captain."
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = "flask_gold"
 	materials = list(MAT_GOLD=500)
 
 /obj/item/reagent_containers/food/drinks/flask/det
 	name = "detective's flask"
 	desc = "The detective's only true friend."
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = "detflask"
 	list_reagents = list("whiskey" = 30)
 
@@ -386,6 +387,7 @@
 	container_type = NONE
 	spillable = FALSE
 	isGlass = FALSE
+	var/bottle = FALSE
 
 /obj/item/reagent_containers/food/drinks/soda_cans/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] is trying to eat \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -406,7 +408,11 @@
 
 /obj/item/reagent_containers/food/drinks/soda_cans/attack_self(mob/user)
 	if(!is_drainable())
-		to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
+		if(bottle == TRUE)
+			to_chat(user, "You pop open \the [src] and the bottle cap falls to the ground.")
+			new /obj/item/stack/f13Cash(user.loc)
+		else
+			to_chat(user, "You pull back the tab of \the [src] with a satisfying pop.") //Ahhhhhhhh
 		container_type = OPENCONTAINER
 		playsound(src, "can_open", 50, 1)
 		spillable = TRUE
@@ -414,15 +420,15 @@
 	return ..()
 
 /obj/item/reagent_containers/food/drinks/soda_cans/cola
-	name = "Space Cola"
-	desc = "Cola. in space."
+	name = "Coca-Cola"
+	desc = "The best around."
 	icon_state = "cola"
 	list_reagents = list("cola" = 30)
 	foodtype = SUGAR
 
 /obj/item/reagent_containers/food/drinks/soda_cans/tonic
-	name = "T-Borg's tonic water"
-	desc = "Quinine tastes funny, but at least it'll keep that Space Malaria away."
+	name = "T-Bills's tonic water"
+	desc = "Quinine tastes funny, but at least it'll keep that Malaria away."
 	icon_state = "tonic"
 	list_reagents = list("tonic" = 50)
 	foodtype = ALCOHOL
@@ -459,21 +465,21 @@
 	foodtype = SUGAR | FRUIT | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind
-	name = "Space Mountain Wind"
-	desc = "Blows right through you like a space wind."
+	name = "Mountain Wind"
+	desc = "Blows right through you like wind."
 	icon_state = "space_mountain_wind"
 	list_reagents = list("spacemountainwind" = 30)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko
 	name = "Thirteen Loko"
-	desc = "The CMO has advised crew members that consumption of Thirteen Loko may result in seizures, blindness, drunkenness, or even death. Please Drink Responsibly."
+	desc = "The WHO advised the population that consumption of Thirteen Loko may result in seizures, blindness, drunkenness, or even death. Please Drink Responsibly."
 	icon_state = "thirteen_loko"
 	list_reagents = list("thirteenloko" = 30)
 	foodtype = SUGAR | JUNKFOOD
 
 /obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb
-	name = "Dr. Gibb"
+	name = "Dr. Pepper"
 	desc = "A delicious mixture of 42 different flavors."
 	icon_state = "dr_gibb"
 	list_reagents = list("dr_gibb" = 30)
@@ -506,6 +512,7 @@
 	icon_state = "nukacola"
 	list_reagents = list("cola" = 20, "nuka_cola" = 1, "radium" = 1)
 	foodtype = SUGAR
+	bottle = TRUE
 
 /obj/item/reagent_containers/food/drinks/soda_cans/f13nukacola/radioactive
 	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state.<br>The bottle is slightly glowing."

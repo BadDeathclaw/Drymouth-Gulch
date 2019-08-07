@@ -12,7 +12,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/poison/snake
         name = "snake"
-        desc = "A slithery snake. These legless reptiles are the bane of mice and adventurers alike."
+        desc = "There's a snake in my boot!"
         icon_state = "snake"
         icon_living = "snake"
         icon_dead = "snake_dead"

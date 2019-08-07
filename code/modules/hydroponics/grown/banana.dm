@@ -11,7 +11,7 @@
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_dead = "banana-dead"
 	genes = list(/datum/plant_gene/trait/slip, /datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/banana/mime, /obj/item/seeds/banana/bluespace)
+//	mutatelist = list(/obj/item/seeds/banana/mime, /obj/item/seeds/banana/bluespace)
 	reagents_add = list("banana" = 0.1, "potassium" = 0.1, "vitamin" = 0.04, "nutriment" = 0.02)
 
 /obj/item/reagent_containers/food/snacks/grown/banana
@@ -25,6 +25,7 @@
 	bitesize = 5
 	foodtype = FRUIT
 	juice_results = list("banana" = 0)
+	distill_reagent = "bananahonk"
 
 /obj/item/reagent_containers/food/snacks/grown/banana/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] is aiming [src] at [user.p_them()]self! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -58,7 +59,7 @@
 	playsound(loc, 'sound/misc/slip.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
-
+/*
 // Mimana - invisible sprites are totally a feature!
 /obj/item/seeds/banana/mime
 	name = "pack of mimana seeds"
@@ -79,6 +80,7 @@
 	icon_state = "mimana"
 	trash = /obj/item/grown/bananapeel/mimanapeel
 	filling_color = "#FFFFEE"
+	distill_reagent = "silencer"
 
 /obj/item/grown/bananapeel/mimanapeel
 	seed = /obj/item/seeds/banana/mime
@@ -109,13 +111,15 @@
 	trash = /obj/item/grown/bananapeel/bluespace
 	filling_color = "#0000FF"
 	tastes = list("banana" = 1)
+	wine_power = 60
+	wine_flavor = "slippery hypercubes"
 
 /obj/item/grown/bananapeel/bluespace
 	seed = /obj/item/seeds/banana/bluespace
 	name = "bluespace banana peel"
 	desc = "A peel from a bluespace banana."
 	icon_state = "banana_peel_blue"
-
+*/
 // Other
 /obj/item/grown/bananapeel/specialpeel     //used by /obj/item/clothing/shoes/clown_shoes/banana_shoes
 	name = "synthesized banana peel"

@@ -2,6 +2,9 @@
 	var/gc_destroyed //Time when this object was destroyed.
 	var/list/active_timers  //for SStimer
 	var/list/datum_components //for /datum/components
+	var/list/comp_lookup //it used to be for looking up components which had registered a signal but now anything can register
+	var/list/list/datum/callback/signal_procs
+	var/signal_enabled = FALSE
 	var/datum_flags = NONE
 	var/datum/weakref/weak_reference
 
@@ -19,6 +22,7 @@
 // Return the appropriate QDEL_HINT; in most cases this is QDEL_HINT_QUEUE.
 /datum/proc/Destroy(force=FALSE, ...)
 	tag = null
+	datum_flags &= ~DF_USE_TAG //In case something tries to REF us
 	weak_reference = null	//ensure prompt GCing of weakref.
 
 	var/list/timers = active_timers
@@ -28,6 +32,9 @@
 		if (timer.spent)
 			continue
 		qdel(timer)
+
+	//BEGIN: ECS SHIT
+	signal_enabled = FALSE
 
 	var/list/dc = datum_components
 	if(dc)
@@ -40,6 +47,23 @@
 			var/datum/component/C = all_components
 			qdel(C, FALSE, TRUE)
 		dc.Cut()
+
+	var/list/lookup = comp_lookup
+	if(lookup)
+		for(var/sig in lookup)
+			var/list/comps = lookup[sig]
+			if(length(comps))
+				for(var/i in comps)
+					var/datum/component/comp = i
+					comp.UnregisterSignal(src, sig)
+			else
+				var/datum/component/comp = comps
+				comp.UnregisterSignal(src, sig)
+		comp_lookup = lookup = null
+
+	for(var/target in signal_procs)
+		UnregisterSignal(target, signal_procs[target])
+	//END: ECS SHIT
 
 	return QDEL_HINT_QUEUE
 

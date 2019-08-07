@@ -85,6 +85,37 @@
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
 
+/obj/structure/flora/tree/joshua
+	name = "joshua tree"
+	desc = "A tree named by mormons, who said it's branches mimiced the biblical Joshua, raising his hands in prayer."
+	icon = 'icons/obj/flora/deadtrees.dmi'
+	log_amount = 4
+	icon_state = "joshua_1"
+
+/obj/structure/flora/tree/joshua/Initialize()
+	..()
+	icon_state = "joshua_[rand(1,4)]"
+
+/obj/structure/flora/tree/cactus
+	name = "cactus"
+	desc = "It's a giant cowboy hat! It's waving hello! It wants you to hug it!"
+	icon = 'icons/obj/flora/deadtrees.dmi'
+	icon_state = "cactus"
+	log_amount = 3
+
+/obj/structure/flora/tree/tall
+	name = "dead tree"
+	desc = "A rather tall tree that has been dead for a long time.<br>Interestingly it is still standing, as a reminder of its green past."
+	icon = 'icons/fallout/flora/talltrees.dmi'
+	icon_state = "tree_1"
+	log_amount = 7
+	obj_integrity = 350
+	max_integrity = 350
+
+/obj/structure/flora/tree/tall/New()
+	icon_state = "tree_[rand(1,3)]"
+	..()
+
 /obj/structure/flora/tree/palm
 	icon = 'icons/misc/beach2.dmi'
 	desc = "A tree straight from the tropics."
@@ -293,10 +324,6 @@
 	throwforce = 13
 	throw_speed = 2
 	throw_range = 4
-
-/obj/item/twohanded/required/kirbyplants/Initialize()
-	. = ..()
-	addtimer(CALLBACK(src, /datum.proc/AddComponent, /datum/component/beauty, 750), 0)
 
 /obj/item/twohanded/required/kirbyplants/equipped(mob/living/user)
 	var/image/I = image(icon = 'icons/obj/flora/plants.dmi' , icon_state = src.icon_state, loc = user)

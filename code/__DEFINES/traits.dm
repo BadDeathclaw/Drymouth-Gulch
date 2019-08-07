@@ -14,10 +14,12 @@
 #define TRAIT_IGNORESLOWDOWN	"ignoreslow"
 #define TRAIT_GOTTAGOFAST		"fast"
 #define TRAIT_GOTTAGOREALLYFAST	"2fast"
+#define TRAIT_LEGIONBOIS		"SpeedyLegionBois"
 #define TRAIT_FAKEDEATH			"fakedeath"
 #define TRAIT_DISFIGURED		"disfigured"
 #define TRAIT_XENO_HOST			"xeno_host"	//Tracks whether we're gonna be a baby alien's mummy.
 #define TRAIT_STUNIMMUNE		"stun_immunity"
+#define TRAIT_PARALYZEIMMUNE	"paralyze_immunity"
 #define TRAIT_SLEEPIMMUNE		"sleep_immunity"
 #define TRAIT_PUSHIMMUNE		"push_immunity"
 #define TRAIT_SHOCKIMMUNE		"shock_immunity"
@@ -42,13 +44,13 @@
 #define TRAIT_HOLY				"holy"
 #define TRAIT_DEPRESSION		"depression"
 #define TRAIT_JOLLY				"jolly"
+#define TRAIT_HARD_YARDS        "hard_yards"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
 #define TRAIT_NOSLIPALL			"noslip_all"
 #define TRAIT_NODEATH			"nodeath"
 #define TRAIT_NOHARDCRIT		"nohardcrit"
 #define TRAIT_NOSOFTCRIT		"nosoftcrit"
-
 
 #define TRAIT_ALCOHOL_TOLERANCE	"alcohol_tolerance"
 #define TRAIT_AGEUSIA			"ageusia"
@@ -65,7 +67,11 @@
 #define	TRAIT_DRUNK_HEALING		"drunk_healing"
 #define TRAIT_BIG_LEAGUES		"big_leagues"
 #define TRAIT_IRONFIST			"iron_fist"
+#define TRAIT_PSYCHO			"psycho"
 #define	TRAIT_LIFEGIVER			"lifegiver"
+
+#define	TRAIT_CHEMWHIZ			"chemwhiz"
+#define TRAIT_TECHNOPHREAK		"technophreak"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

@@ -52,10 +52,6 @@
 		if((user.has_trait(TRAIT_CLUMSY) || user.has_trait(TRAIT_DUMB)) && prob(50))	//too dumb to use flashlight properly
 			return ..()	//just hit them in the head
 
-		if(!user.IsAdvancedToolUser())
-			to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
-			return
-
 		if(!M.get_bodypart(BODY_ZONE_HEAD))
 			to_chat(user, "<span class='warning'>[M] doesn't have a head!</span>")
 			return
@@ -168,6 +164,7 @@
 	var/holo_cooldown = 0
 
 /obj/item/flashlight/pen/afterattack(atom/target, mob/user, proximity_flag)
+	. = ..()
 	if(!proximity_flag)
 		if(holo_cooldown > world.time)
 			to_chat(user, "<span class='warning'>[src] is not ready yet!</span>")
@@ -177,7 +174,6 @@
 			new /obj/effect/temp_visual/medical_holosign(T,user) //produce a holographic glow
 			holo_cooldown = world.time + 100
 			return
-	..()
 
 /obj/effect/temp_visual/medical_holosign
 	name = "medical holosign"
@@ -246,7 +242,7 @@
 
 /obj/item/flashlight/flare
 	name = "flare"
-	desc = "A red Nanotrasen issued flare. There are instructions on the side, it reads 'pull cord, make light'."
+	desc = "A standard red flare. There are instructions on the side, it reads 'pull cord, make light'."
 	w_class = WEIGHT_CLASS_SMALL
 	brightness_on = 7 // Pretty bright.
 	icon_state = "flare"
@@ -310,6 +306,7 @@
 	// All good, turn it on.
 	if(.)
 		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		playsound(loc, 'sound/effects/flare_light.ogg', 50, 0)
 		force = on_damage
 		damtype = "fire"
 		START_PROCESSING(SSobj, src)
@@ -319,9 +316,9 @@
 
 /obj/item/flashlight/flare/torch
 	name = "torch"
-	desc = "A torch fashioned from some leaves and a log."
-	w_class = WEIGHT_CLASS_BULKY
-	brightness_on = 4
+	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
+	w_class = WEIGHT_CLASS_NORMAL
+	brightness_on = 5
 	icon_state = "torch"
 	item_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
@@ -329,6 +326,31 @@
 	light_color = LIGHT_COLOR_ORANGE
 	on_damage = 10
 	slot_flags = null
+
+/obj/item/flashlight/flare/torch/attack_self(mob/user)
+
+	// Usual checks
+	if(!fuel)
+		to_chat(user, "<span class='warning'>[src] is out of fuel!</span>")
+		return
+	if(on)
+		to_chat(user, "<span class='notice'>[src] is already on.</span>")
+		return
+	// All good, turn it on.
+	else
+		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
+		force = on_damage
+		damtype = "fire"
+		w_class = WEIGHT_CLASS_BULKY
+		desc = "A handheld wooden torch that's slowly burning away."
+		START_PROCESSING(SSobj, src)
+		on = !on
+		update_brightness(user)
+		for(var/X in actions)
+			var/datum/action/A = X
+			A.UpdateButtonIcon()
+		return 1
 
 /obj/item/flashlight/lantern
 	name = "lantern"
@@ -380,6 +402,7 @@
 	return
 
 /obj/item/flashlight/emp/afterattack(atom/movable/A, mob/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 
@@ -535,6 +558,6 @@
 	desc = "This shouldn't exist outside of someone's head, how are you seeing this?"
 	brightness_on = 15
 	flashlight_power = 1
-	flags_1 = CONDUCT_1 
+	flags_1 = CONDUCT_1
 	item_flags = DROPDEL
 	actions_types = list()

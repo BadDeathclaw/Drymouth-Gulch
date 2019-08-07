@@ -3,14 +3,14 @@
 // Requires high amount of power
 // Requires high level stock parts
 /datum/station_goal/bluespace_cannon
-	name = "Bluespace Artillery"
+	name = "Artillery"
 
 /datum/station_goal/bluespace_cannon/get_report()
 	return {"Our military presence is inadequate in your sector.
-	 We need you to construct BSA-[rand(1,99)] Artillery position aboard your station.
+	 We need you to construct an artillery position within your region.
 
-	 Base parts are available for shipping via cargo.
-	 -Nanotrasen Naval Command"}
+	 Base parts are available for shipping via air drop.
+	 -Enclave 14th Fire Support Regiment"}
 
 /datum/station_goal/bluespace_cannon/on_report()
 	//Unlock BSA parts
@@ -35,7 +35,7 @@
 	return TRUE
 
 /obj/machinery/bsa/back
-	name = "Bluespace Artillery Generator"
+	name = "Artillery Generator"
 	desc = "Generates cannon pulse. Needs to be linked with a fusor."
 	icon_state = "power_box"
 
@@ -49,7 +49,7 @@
 	return TRUE
 
 /obj/machinery/bsa/front
-	name = "Bluespace Artillery Bore"
+	name = "Artillery Bore"
 	desc = "Do not stand in front of cannon during operation. Needs to be linked with a fusor."
 	icon_state = "emitter_center"
 
@@ -63,8 +63,8 @@
 	return TRUE
 
 /obj/machinery/bsa/middle
-	name = "Bluespace Artillery Fusor"
-	desc = "Contents classified by Nanotrasen Naval Command. Needs to be linked with the other BSA parts using multitool."
+	name = "Artillery Fusor"
+	desc = "Contents classified by Naval Command. Needs to be linked with the other artillery parts using multitool."
 	icon_state = "fuel_chamber"
 	var/obj/machinery/bsa/back/back
 	var/obj/machinery/bsa/front/front
@@ -122,8 +122,8 @@
 
 
 /obj/machinery/bsa/full
-	name = "Bluespace Artillery"
-	desc = "Long range bluespace artillery."
+	name = "Artillery"
+	desc = "Long range artillery."
 	icon = 'icons/obj/lavaland/cannon.dmi'
 	icon_state = "orbital_cannon1"
 	var/static/mutable_appearance/top_layer
@@ -209,7 +209,7 @@
 	return
 
 /obj/machinery/computer/bsa_control
-	name = "bluespace artillery control"
+	name = "artillery control computer"
 	var/obj/machinery/bsa/full/cannon
 	var/notice
 	var/target
@@ -291,7 +291,7 @@
 
 	var/obj/machinery/bsa/middle/centerpiece = locate() in range(7)
 	if(!centerpiece)
-		notice = "No BSA parts detected nearby."
+		notice = "No artillery parts detected nearby."
 		return null
 	notice = centerpiece.check_completion()
 	if(notice)

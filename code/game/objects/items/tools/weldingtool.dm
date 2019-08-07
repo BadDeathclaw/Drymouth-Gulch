@@ -1,7 +1,7 @@
 #define WELDER_FUEL_BURN_INTERVAL 13
 /obj/item/weldingtool
 	name = "welding tool"
-	desc = "A standard edition welder provided by Nanotrasen."
+	desc = "A standard edition welder."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "welder"
 	item_state = "welder"
@@ -120,6 +120,7 @@
 
 
 /obj/item/weldingtool/afterattack(atom/O, mob/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(!status && O.is_refillable())

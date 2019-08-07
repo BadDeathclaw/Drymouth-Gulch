@@ -18,6 +18,8 @@
 
 	icon = 'icons/obj/fence.dmi'
 	icon_state = "straight"
+	barricade = TRUE
+	proj_pass_rate = 40
 
 	var/cuttable = TRUE
 	var/hole_size= NO_HOLE
@@ -40,6 +42,34 @@
 /obj/structure/fence/end
 	icon_state = "end"
 	cuttable = FALSE
+
+/obj/structure/fence/handrail_end
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail_end"
+	cuttable = FALSE
+
+/obj/structure/fence/handrail_corner
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail_corner"
+	cuttable = FALSE
+	climbable = TRUE
+
+/obj/structure/fence/handrail
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail"
+	cuttable= FALSE
+	climbable = TRUE
+
+/obj/structure/fence/handrail_end/non_dense
+	name = "handrail"
+	desc = "A waist high handrail, perhaps you could climb over it."
+	icon_state = "y_handrail_end"
+	cuttable = FALSE
+	density = FALSE
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fence/corner
 	icon_state = "corner"
@@ -92,7 +122,7 @@
 			if(current_stage == hole_size)
 				switch(++hole_size)
 					if(MEDIUM_HOLE)
-						visible_message("<span class='notice'>\The [user] cuts into \the [src] some more.</span>")
+						visible_message("<span class='notice'>\The [user] cuts a decent-sized hole into \the [src].</span>")
 						to_chat(user, "<span class='info'>You could probably fit yourself through that hole now. Although climbing through would be much faster if you made it even bigger.</span>")
 						climbable = TRUE
 					if(LARGE_HOLE)
@@ -101,7 +131,21 @@
 						climbable = FALSE
 
 				update_cut_status()
-
+	else if(istype(W, /obj/item/stack/sheet/mineral/wood))
+		var /obj/item/stack/sheet/mineral/wood/Z = W
+		if(locate(/obj/structure/barricade/wooden/crude) in get_turf(src))
+			to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
+			return
+		if(Z.get_amount() < 3)
+			to_chat(user, "<span class='warning'>You need at three four wooden planks to reinforce this fence!</span>")
+			return
+		else
+			to_chat(user, "<span class='notice'>You start adding [Z] to [src]...</span>")
+			if(do_after(user, 50, target=src))
+				Z.use(3)
+				new /obj/structure/barricade/wooden/crude(get_turf(src))
+				user.visible_message("<span class='notice'>[user] reinforces the fence with some planks</span>", "<span class='notice'>You reinforce the fence with some planks.</span>")
+				return
 	return TRUE
 
 /obj/structure/fence/proc/update_cut_status()
@@ -210,9 +254,21 @@
 		if(TRUE)
 			density = FALSE
 			icon_state = "door_opened"
-
+			
 /obj/structure/fence/door/proc/can_open(mob/user)
 	return TRUE
+
+/obj/structure/simple_door/metal/fence
+	name = "fence gate"
+	desc = "A gate for a fence."
+	icon_state = "fence"
+	door_type = "fence"
+	open_sound = "sound/f13machines/doorchainlink_open.ogg"
+	close_sound = "sound/f13machines/doorchainlink_close.ogg"
+	opaque = 0
+	can_hold_padlock = TRUE
+	icon = 'icons/obj/fence.dmi'
+
 
 #undef CUT_TIME
 #undef CLIMB_TIME

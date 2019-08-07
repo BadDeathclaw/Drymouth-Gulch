@@ -21,7 +21,7 @@
 	blood_DNA = new_blood_DNA
 	fibers = new_fibers
 	check_blood()
-	RegisterSignal(COMSIG_COMPONENT_CLEAN_ACT, .proc/clean_act)
+	RegisterSignal(parent, COMSIG_COMPONENT_CLEAN_ACT, .proc/clean_act)
 
 /datum/component/forensics/proc/wipe_fingerprints()
 	fingerprints = null
@@ -66,7 +66,7 @@
 		if(H.gloves) //Check if the gloves (if any) hide fingerprints
 			var/obj/item/clothing/gloves/G = H.gloves
 			if(G.transfer_prints)
-				ignoregloves = TRUE
+				ignoregloves = 1
 			if(!ignoregloves)
 				H.gloves.add_fingerprint(H, TRUE) //ignoregloves = 1 to avoid infinite loop.
 				return

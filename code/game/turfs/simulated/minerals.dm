@@ -4,10 +4,10 @@
 	name = "rock"
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
-	var/smooth_icon = 'icons/turf/smoothrocks.dmi'
+	var/smooth_icon = 'icons/turf/walls/f13rock.dmi'
 	smooth = SMOOTH_MORE|SMOOTH_BORDER
 	canSmoothWith = null
-	baseturfs = /turf/open/floor/plating/f13/inside/mountain
+	baseturfs = /turf/open/indestructible/ground/inside/mountain
 	initial_gas_mix = "TEMP=2.7"
 	opacity = 1
 	density = TRUE
@@ -15,7 +15,7 @@
 	layer = EDGED_TURF_LAYER
 	temperature = TCMB
 	var/environment_type = "asteroid"
-	var/turf/open/floor/plating/f13/inside/mountain/turf_type = /turf/open/floor/plating/f13/inside/mountain
+	var/turf/open/indestructible/ground/inside/mountain/turf_type = /turf/open/indestructible/ground/inside/mountain
 	var/mineralType = null
 	var/mineralAmt = 3
 	var/spread = 0 //will the seam spread?
@@ -27,8 +27,9 @@
 /turf/closed/mineral/Initialize()
 	if (!canSmoothWith)
 		canSmoothWith = list(/turf/closed/mineral, /turf/closed/indestructible)
-	pixel_y = -4
-	pixel_x = -4
+	var/matrix/M = new
+	M.Translate(-4, -4)
+	transform = M
 	icon = smooth_icon
 	. = ..()
 	if (mineralType && mineralAmt && spread && spreadChance)
@@ -47,9 +48,6 @@
 
 
 /turf/closed/mineral/attackby(obj/item/I, mob/user, params)
-	if (!user.IsAdvancedToolUser())
-		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
-		return
 
 	if(I.tool_behaviour == TOOL_MINING)
 		var/turf/T = user.loc
@@ -94,7 +92,7 @@
 		to_chat(M, "<span class='notice'>You tunnel into the rock.</span>")
 		gets_drilled(M)
 
-/turf/closed/mineral/CollidedWith(atom/movable/AM)
+/turf/closed/mineral/Bumped(atom/movable/AM)
 	..()
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM

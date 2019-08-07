@@ -134,6 +134,11 @@
 				SSticker.queued_players += usr
 				to_chat(usr, "<span class='notice'>You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len].</span>")
 			return
+
+		if(GLOB.data_core.get_record_by_name(client.prefs.real_name))
+			alert(src, "This character name is already in use. Choose another.")
+			return
+
 		LateChoices()
 
 	if(href_list["manifest"])
@@ -249,7 +254,7 @@
 		ready = PLAYER_NOT_READY
 		return FALSE
 
-	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to play this round!","Player Setup","Yes","No")
+	var/this_is_like_playing_right = alert(src,"Are you sure you wish to observe? You will not be able to respawn for [RESPAWN_TIMER / 600] minutes!","Player Setup","Yes","No")
 
 	if(QDELETED(src) || !src.client || this_is_like_playing_right != "Yes")
 		ready = PLAYER_NOT_READY

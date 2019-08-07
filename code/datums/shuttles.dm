@@ -35,6 +35,16 @@
 			continue
 		place.baseturfs.Insert(3, /turf/baseturf_skipover/shuttle)
 
+		for(var/obj/structure/closet/closet in place)
+			if(closet.anchorable)
+				closet.anchored = TRUE
+
+		for(var/obj/structure/table/table in place)
+			table.AddComponent(/datum/component/magnetic_catch)
+
+		for(var/obj/structure/rack/rack in place)
+			rack.AddComponent(/datum/component/magnetic_catch)
+
 //Whatever special stuff you want
 /datum/map_template/shuttle/proc/on_bought()
 	return
@@ -468,3 +478,10 @@
 /datum/map_template/shuttle/bos/elevator
 	suffix = "elevator"
 	name = "BOS Elevator"
+
+
+/datum/map_template/shuttle/emergency/pahrump
+	suffix = "pahrump"
+	name = "Pahrump train"
+	credit_cost = 2000
+	description = "A train to return the occupants back to New California."

@@ -1,9 +1,9 @@
 /obj/item/ammo_casing/caseless
-	desc = "A caseless bullet casing."
+	desc = "A caseless bullet casing. You get a headache from looking at this."
 	firing_effect_type = null
 	heavy_metal = FALSE
 
-/obj/item/ammo_casing/caseless/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread)
+/obj/item/ammo_casing/caseless/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_mod, penetration_mod)
 	if (..()) //successfully firing
 		moveToNullspace()
 		return 1

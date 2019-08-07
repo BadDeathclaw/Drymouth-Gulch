@@ -43,7 +43,7 @@
 			to_chat(user, "<span class='notice'>Due to a security threat, its access requirements have been lifted!</span>")
 		else
 			to_chat(user, "<span class='notice'>In the event of a red alert, its access requirements will automatically lift.</span>")
-	if(!poddoor)
+	if(!poddoor && !istype(src, /obj/machinery/door/unpowered/wooddoor))
 		to_chat(user, "<span class='notice'>Its maintenance panel is <b>screwed</b> in place.</span>")
 
 /obj/machinery/door/check_access_list(list/access_list)
@@ -82,7 +82,7 @@
 		qdel(Lock)
 	return ..()
 
-/obj/machinery/door/CollidedWith(atom/movable/AM)
+/obj/machinery/door/Bumped(atom/movable/AM)
 	if(operating || (obj_flags & EMAGGED))
 		return
 	if(ismob(AM))
@@ -195,6 +195,12 @@
 	if(user.a_intent != INTENT_HARM && (istype(I, /obj/item/crowbar) || istype(I, /obj/item/twohanded/fireaxe)))
 		try_to_crowbar(I, user)
 		return TRUE
+	else if(istype(src, /obj/machinery/door/unpowered) && istype(I, /obj/item/screwdriver) && density == FALSE)
+		to_chat(user, "<span class='notice'>You begin to take apart the [name].</span>")
+		if(do_after(user, 60, target = src))
+			var/turf/T = get_turf(src)
+			new /obj/item/stack/sheet/mineral/wood(T, 10)
+			qdel(src)
 	else if(istype(I, /obj/item/weldingtool))
 		try_to_weld(I, user)
 		return TRUE

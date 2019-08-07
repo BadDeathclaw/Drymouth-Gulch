@@ -5,15 +5,15 @@
 	icon_state = ""
 	density = TRUE
 	anchored = FALSE
+	CanAtmosPass = ATMOS_PASS_DENSITY
 	max_integrity = 100
 	var/oreAmount = 5
 	var/material_drop_type = /obj/item/stack/sheet/metal
-	CanAtmosPass = ATMOS_PASS_DENSITY
+
 
 
 /obj/structure/statue/Initialize()
 	. = ..()
-	addtimer(CALLBACK(src, /datum.proc/AddComponent, /datum/component/beauty, 1250), 0)
 
 /obj/structure/statue/attackby(obj/item/W, mob/living/user, params)
 	add_fingerprint(user)
@@ -77,7 +77,7 @@
 	radiate()
 	return ..()
 
-/obj/structure/statue/uranium/CollidedWith(atom/movable/AM)
+/obj/structure/statue/uranium/Bumped(atom/movable/AM)
 	radiate()
 	..()
 
@@ -232,7 +232,7 @@
 	name = "statue of a clown"
 	icon_state = "clown"
 
-/obj/structure/statue/bananium/CollidedWith(atom/movable/AM)
+/obj/structure/statue/bananium/Bumped(atom/movable/AM)
 	honk()
 	..()
 
@@ -273,6 +273,16 @@
 	icon = 'icons/obj/statuelarge.dmi'
 	icon_state = "venus"
 
+/obj/structure/statue/sandstone/gravestone
+	name = "gravestone"
+	desc = "A stone grave marker, the name of the person buried here has long been lost to time."
+	icon = 'icons/obj/graveyard.dmi'
+	icon_state = "stone-1"
+
+/obj/structure/statue/sandstone/gravestone/New()
+	..()
+	icon_state = "stone-[pick(1,2)]"
+
 /////////////////////snow/////////////////////////////////////////
 
 /obj/structure/statue/snow
@@ -283,3 +293,84 @@
 	name = "snowman"
 	desc = "Several lumps of snow put together to form a snowman."
 	icon_state = "snowman"
+
+
+//Wood
+
+/obj/structure/statue/wood
+	obj_integrity = 150
+	material_drop_type = /obj/item/stack/sheet/mineral/wood
+
+/obj/structure/statue/wood/headstonewood
+	name = "gravemarker"
+	desc = "A wooden gravemarker, used to mark a burial site."
+	icon = 'icons/obj/graveyard.dmi'
+	icon_state = "wooden"
+	density = 0
+	anchored = 1
+	oreAmount = 2
+	var/obj/item/clothing/head/Helmet = null
+	var/obj/item/card/id/dogtag/Dogtags = null
+
+/obj/structure/statue/wood/headstonewood/examine(mob/user)
+	..()
+	if(Helmet)
+		to_chat(user, "<span class='notice'>It has [Helmet] on it.</span>")
+	if(Dogtags)
+		to_chat(user, "<span class='notice'>It has [Dogtags] on it.</span>")
+
+/obj/structure/statue/wood/headstonewood/Destroy()
+	if(Helmet)
+		Helmet.forceMove(src.loc)
+	if(Dogtags)
+		Dogtags.forceMove(src.loc)
+	return ..()
+
+/obj/structure/statue/wood/headstonewood/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/clothing/head))
+		if(Helmet)
+			to_chat(user, "<span class='notice'>There's already a hat on the marker.</span>")
+			return
+		W.forceMove(src)
+		Helmet = W
+		update_icon()
+		user.visible_message("[user] puts the [Helmet] on the grave marker.", "You put the [Helmet] on the grave marker.")
+		return
+	if(istype(W, /obj/item/card/id/dogtag))
+		if(Dogtags)
+			to_chat(user, "<span class='notice'>There's already some dogtags on the marker.</span>")
+			return
+		W.forceMove(src)
+		Dogtags = W
+		update_icon()
+		user.visible_message("[user] puts the [Dogtags] on the grave marker.", "You put the [Dogtags] on the grave marker.")
+		return
+	..()
+
+/obj/structure/statue/wood/headstonewood/attack_hand(mob/user)
+	if(Helmet)
+		user.put_in_hands(Helmet)
+		user.visible_message("[user] removes the [Helmet] from the grave marker.", "You remove the [Helmet] from the grave marker.")
+		Helmet = null
+		update_icon()
+		return
+	if(Dogtags)
+		user.put_in_hands(Dogtags)
+		user.visible_message("[user] removes the [Dogtags] from the grave marker.", "You remove the [Dogtags] from the grave marker.")
+		Dogtags = null
+		update_icon()
+		return
+	..()
+
+/obj/structure/statue/wood/headstonewood/update_icon()
+	name = initial(name)
+	overlays.Cut()
+	if(Dogtags)
+		var/icon/O = new('icons/mob/mob.dmi', icon_state = "[Dogtags.icon_state]")
+		O.Shift(SOUTH, 6)
+		overlays += O
+		name = "[initial(name)] ([Dogtags.registered_name])"
+	if(Helmet)
+		var/icon/O = new('icons/mob/head.dmi', icon_state = "[Helmet.icon_state]")
+		O.Shift(SOUTH, 6)
+		overlays += O

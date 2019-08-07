@@ -1,7 +1,7 @@
 //Experimental cloner; clones a body regardless of the owner's status, letting a ghost control it instead
 /obj/machinery/clonepod/experimental
-	name = "experimental cloning pod"
-	desc = "An ancient cloning pod. It seems to be an early prototype of the experimental cloners used in Nanotrasen Stations."
+	name = "cloning pod"
+	desc = "A miraculous piece of Pre-War tech that seems to be able to return life to the dead. Whether or not it works as intended is something else entirely."
 	icon = 'icons/obj/machines/cloning.dmi'
 	icon_state = "pod_0"
 	req_access = null
@@ -9,7 +9,7 @@
 	internal_radio = FALSE
 
 //Start growing a human clone in the pod!
-/obj/machinery/clonepod/experimental/growclone(clonename, ui, se, datum/species/mrace, list/features, factions)
+/obj/machinery/clonepod/experimental/growclone(ckey, clonename, ui, se, datum/species/mrace, list/features, factions)
 	if(panel_open)
 		return FALSE
 	if(mess || attempting)
@@ -47,12 +47,48 @@
 	H.add_trait(TRAIT_MUTE, "cloning")
 	H.add_trait(TRAIT_NOBREATH, "cloning")
 	H.add_trait(TRAIT_NOCRITDAMAGE, "cloning")
+	H.faction |= factions
 	H.Unconscious(80)
 
-	var/list/candidates = pollCandidatesForMob("Do you want to play as [clonename]'s defective clone?", null, null, null, 100, H)
-	if(LAZYLEN(candidates))
-		var/mob/dead/observer/C = pick(candidates)
-		H.key = C.key
+	RegisterSignal(src, COMSIG_NOTIFY_JOIN, .proc/join_as_defective_clone)
+	notify_ghosts("[clonename] is available to play as a defective clone.", source = src, action = NOTIFY_JOIN, flashwindow = FALSE)
+
+	addtimer(CALLBACK(src, .proc/finish_cloning), 30 SECONDS)
+
+	return TRUE
+
+
+/obj/machinery/clonepod/experimental/proc/join_as_defective_clone(mob/dead/observer/C)
+	if(!C.client)
+		return FALSE
+
+	switch(alert(C, "Are you sure you want to play as this clone?", "Play as defective clone", "Yes", "No", "Jump to it instead"))
+		if("Yes")
+			//Just continue.
+		if("Jump to it instead")
+			C.forceMove(loc)
+			return FALSE
+		else //A "No" or another type of cancel.
+			return FALSE
+
+	var/mob/living/carbon/human/H = locate() in contents
+
+	if(QDELETED(H))
+		to_chat(C, "<span class='warning'>Something bad happened with the clone.</span>")
+		return FALSE
+
+	if(H.key)
+		to_chat(C, "<span class='warning'>The clone seems to have been already taken.</span>")
+		return FALSE
+
+	H.key = C.key
+
+
+/obj/machinery/clonepod/experimental/proc/finish_cloning()
+	var/mob/living/carbon/human/H = locate() in contents
+
+	if(!H)
+		return FALSE
 
 	if(grab_ghost_when == CLONER_FRESH_CLONE)
 		H.grab_ghost()
@@ -63,13 +99,12 @@
 		to_chat(H.get_ghost(TRUE), "<span class='notice'>Your body is beginning to regenerate in a cloning pod. You will become conscious when it is complete.</span>")
 
 	if(H)
-		H.faction |= factions
-
 		H.set_cloned_appearance()
 
 		H.suiciding = FALSE
+
+	UnregisterSignal(src, COMSIG_NOTIFY_JOIN)
 	attempting = FALSE
-	return TRUE
 
 
 //Prototype cloning console, much more rudimental and lacks modern functions such as saving records, autocloning, or safety checks.
@@ -292,6 +327,6 @@
 		temp = "<font class='bad'>Cloning cycle already in progress.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 	else
-		pod.growclone(mob_occupant.real_name, dna.uni_identity, dna.struc_enzymes, clone_species, dna.features, mob_occupant.faction)
+		pod.growclone(null, mob_occupant.real_name, dna.uni_identity, dna.struc_enzymes, clone_species, dna.features, mob_occupant.faction)
 		temp = "[mob_occupant.real_name] => <font class='good'>Cloning data sent to pod.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)

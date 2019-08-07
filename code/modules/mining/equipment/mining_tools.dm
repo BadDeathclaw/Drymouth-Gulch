@@ -55,7 +55,7 @@
 	icon_state = "handdrill"
 	item_state = "jackhammer"
 	slot_flags = ITEM_SLOT_BELT
-	toolspeed = 0.6 //available from roundstart, faster than a pickaxe.
+	toolspeed = 0.5 //available from roundstart, faster than a pickaxe.
 	usesound = 'sound/weapons/drill.ogg'
 	hitsound = 'sound/weapons/drill.ogg'
 	desc = "An electric mining drill for the especially scrawny."
@@ -85,6 +85,13 @@
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 	hitsound = 'sound/weapons/sonic_jackhammer.ogg'
 	desc = "Cracks rocks with sonic blasts, and doubles as a demolition power tool for smashing walls."
+
+/obj/item/pickaxe/rust
+	name = "rusty pickaxe"
+	desc = "This pickaxe has seen better days."
+	icon_state = "pickaxe_rust"
+	force = 12
+	toolspeed = 1.3
 
 /obj/item/shovel
 	name = "shovel"

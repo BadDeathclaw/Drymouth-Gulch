@@ -199,7 +199,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, /proc/cmp_subsystem_display)
 	// Set world options.
-	world.fps = CONFIG_GET(number/fps)
+	world.fps = FLOOR(CONFIG_GET(number/fps), 20)
 	var/initialized_tod = REALTIMEOFDAY
 
 	world.TgsInitializationComplete()

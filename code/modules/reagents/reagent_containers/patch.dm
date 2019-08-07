@@ -9,9 +9,7 @@
 	apply_type = PATCH
 	apply_method = "apply"
 	self_delay = 30		// three seconds
-
-/obj/item/reagent_containers/pill/patch/afterattack(obj/target, mob/user , proximity)
-	return // thanks inheritance again
+	dissolvable = FALSE
 
 /obj/item/reagent_containers/pill/patch/attack(mob/living/L, mob/user)
 	if(ishuman(L))
@@ -58,3 +56,9 @@
 	desc = "A powder used to heal physical wounds derived from ground broc flowers and xander roots, commonly used by tribals."
 	list_reagents = list("healing_powder" = 10)
 	icon_state = "bandaid_healingpowder"
+
+/obj/item/reagent_containers/pill/patch/healpoultice
+	name = "Healing poultice"
+	desc = "A concoction of broc flower, cave fungus, agrave fruit and xander root."
+	list_reagents = list("healing_poultice" = 10, "legion_medx" = 10)
+	icon_state = "bandaid_healingpoultice"

@@ -6,6 +6,8 @@
 	icon_living = "feralghoul"
 	icon_dead = "feralghoul_dead"
 	mob_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	stat_attack = UNCONSCIOUS
+	robust_searching = 1
 	turns_per_move = 5
 	speak_emote = list("growls")
 	emote_see = list("screeches")
@@ -25,7 +27,8 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("ghoul")
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
-							/obj/item/stack/sheet/animalhide/human = 1)
+							/obj/item/stack/sheet/animalhide/human = 1,
+							/obj/item/stack/sheet/bone = 1)
 
 /mob/living/simple_animal/hostile/ghoul/reaver
 	name = "feral ghoul reaver"

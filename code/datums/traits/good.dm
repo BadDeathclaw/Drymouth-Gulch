@@ -21,18 +21,27 @@
 		mood.mood_modifier = 0.8
 
 /datum/quirk/apathetic/remove()
-	GET_COMPONENT_FROM(mood, /datum/component/mood, quirk_holder)
-	if(mood)
-		mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
+	if(quirk_holder)
+		GET_COMPONENT_FROM(mood, /datum/component/mood, quirk_holder)
+		if(mood)
+			mood.mood_modifier = 1 //Change this once/if species get their own mood modifiers.
 
 /datum/quirk/bigleagues
-	name = "Big Leauges"
+	name = "Big Leagues"
 	desc = "Swing for the fences! You deal additional damage with melee weapons."
 	value = 2
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = "<span class='notice'>You feel like swinging for the fences!</span>"
 	lose_text = "<span class='danger'>You feel like bunting.</span>"
-
+/*
+/datum/quirk/chemwhiz
+	name = "Chem Whiz"
+	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
+	value = 2
+	mob_trait = TRAIT_CHEMWHIZ
+	gain_text = "<span class='notice'>The mysteries of chemistry are revealed to you.</span>"
+	lose_text = "<span class='danger'>You forget how the periodic table works.</span>"
+*/
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
 	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
@@ -69,6 +78,15 @@
 	value = 1
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
+
+/datum/quirk/hard_yards
+	name = "Hard Yards"
+	desc = "You've put them in, now reap the rewards."
+	value = 3
+	locked = TRUE
+	mob_trait = TRAIT_HARD_YARDS
+	gain_text = "<span class='notice'>Rain or shine, nothing slows you down.</span>"
+	lose_text = "<span class='danger'>You walk with a less sure gait, the ground seeming less firm somehow.</span>"
 
 /datum/quirk/lifegiver
 	name = "Lifegiver"
@@ -115,7 +133,7 @@
 /datum/quirk/skittish
 	name = "Skittish"
 	desc = "You can conceal yourself in danger. Ctrl-shift-click a closed locker to jump into it, as long as you have access."
-	value = 2
+	value = 1
 	mob_trait = TRAIT_SKITTISH
 
 /datum/quirk/spiritual
@@ -133,3 +151,43 @@
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = "<span class='notice'>You feel HONGRY.</span>"
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
+
+///////////////////
+//////FL13 weapons traits!
+///DO NOT USE IMPLANTS.
+///Grenades
+/datum/quirk/grenadesloot
+	name = "Party Favor"
+	desc = "Who knows what's inside."
+	value = 3
+	var/obj/item/heirloom ///SPAGETH CODE DON'T LEAVE TO REMOVE THE NAME.
+	var/where
+
+/datum/quirk/grenadesloot/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/heirloom_type  ///DONT CHANGE HERILOOM STUFF FOR SOME REASON DONT WORK IF YOU REMOVE IT AAAAA.
+	switch(quirk_holder.mind.assigned_role)
+		if("Elder", "Centurion", "Sheriff", "NCR Captain", "Overseer")
+			heirloom_type = pick(/obj/item/grenade/flashbang, 200 ; /obj/item/grenade/smokebomb, 200 ; /obj/item/grenade/plastic)
+		else
+			heirloom_type = pick(
+				300 ; /obj/item/grenade/smokebomb,
+				200 ; /obj/item/grenade/empgrenade,
+				200 ; /obj/item/grenade/flashbang,
+				/obj/item/grenade/plastic)
+	heirloom = new heirloom_type(get_turf(quirk_holder)) //IF YOU CHANGE THIS FOR SOME REASON WILL NOT WORK.
+	var/list/slots = list(
+		"in your left pocket" = SLOT_L_STORE, //SPAWNS IN THE POCKETS
+		"in your right pocket" = SLOT_R_STORE,
+		"in your backpack" = SLOT_IN_BACKPACK	//SPAWNS IN THE BACKPACK
+
+	)
+	where = H.equip_in_one_of_slots(heirloom, slots, FALSE) || "at your feet"
+
+/datum/quirk/grenadesloot/post_add()
+	if(where == "in your backpack")
+		var/mob/living/carbon/human/H = quirk_holder
+		SEND_SIGNAL(H.back, COMSIG_TRY_STORAGE_SHOW, H) //GOD BLESS SPAGETHY CODE!
+///TO DO: TEST IT WITH BOXES LIKE MEDKITS/NORMALS BOXES.
+///ADD MORE EQUIPMENT TRAITS REEEE
+///IMPROVE MY ENGLISH

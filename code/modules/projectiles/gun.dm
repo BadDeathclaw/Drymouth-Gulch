@@ -17,6 +17,7 @@
 	force = 5
 	item_flags = NEEDS_PERMIT
 	attack_verb = list("struck", "hit", "bashed")
+	item_flags = SLOWS_WHILE_IN_HAND
 
 	var/fire_sound = "gunshot"
 	var/suppressed = null					//whether or not a message is displayed when fired
@@ -35,6 +36,9 @@
 	var/weapon_weight = WEAPON_LIGHT
 	var/spread = 0						//Spread induced by the gun itself.
 	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
+	var/distro = 0						//Affects distance between shotgun pellets, ignore unless you're altering shotguns
+	var/extra_damage = 0				//Number to add to individual bullets.
+	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -73,6 +77,9 @@
 		alight = new /datum/action/item_action/toggle_gunlight(src)
 	build_zooming()
 
+/obj/item/gun/New()
+	. = ..()
+	src.slowdown = (w_class / 5)
 
 /obj/item/gun/CheckParts(list/parts_list)
 	..()
@@ -90,10 +97,6 @@
 	else
 		to_chat(user, "It doesn't have a firing pin installed, and won't fire.")
 
-/obj/item/gun/equipped(mob/living/user, slot)
-	. = ..()
-	if(zoomed && user.get_active_held_item() != src)
-		zoom(user, FALSE) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber()
@@ -124,7 +127,10 @@
 				user.visible_message("<span class='danger'>[user] fires [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 
 
-
+//Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
+/obj/item/gun/pickup(mob/living/user)
+	. = ..()
+	weapondraw(src, user)
 
 /obj/item/gun/emp_act(severity)
 	. = ..()
@@ -133,6 +139,7 @@
 			O.emp_act(severity)
 
 /obj/item/gun/afterattack(atom/target, mob/living/user, flag, params)
+	. = ..()
 	if(firing_burst)
 		return
 	if(flag) //It's adjacent, is the user, or is on the user's person
@@ -209,6 +216,9 @@
 	return
 
 /obj/item/gun/proc/process_burst(mob/living/user, atom/target, message = TRUE, params=null, zone_override = "", sprd = 0, randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0)
+	if(user.IsWeaponDrawDelayed())
+		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+		return FALSE
 	if(!user || !firing_burst)
 		firing_burst = FALSE
 		return FALSE
@@ -226,7 +236,7 @@
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread))
 
-		if(!chambered.fire_casing(target, user, params, ,suppressed, zone_override, sprd))
+		if(!chambered.fire_casing(target, user, params, distro,suppressed, zone_override, sprd, extra_damage, extra_penetration))
 			shoot_with_empty_chamber(user)
 			firing_burst = FALSE
 			return FALSE
@@ -250,6 +260,9 @@
 
 	if(semicd)
 		return
+	if(user.IsWeaponDrawDelayed())
+		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+		return
 
 	var/sprd = 0
 	var/randomized_gun_spread = 0
@@ -271,7 +284,7 @@
 					to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd))
+			if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, extra_damage, extra_penetration))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -410,16 +423,24 @@
 		azoom.Grant(user)
 	if(alight)
 		alight.Grant(user)
-
+	
+		
+/obj/item/gun/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		zoom(user, FALSE)
+		if(zoomable == TRUE)
+			azoom.Remove(user)
+	
 /obj/item/gun/dropped(mob/user)
-	..()
+	. = ..()
 	if(zoomed)
 		zoom(user,FALSE)
 	if(azoom)
 		azoom.Remove(user)
 	if(alight)
 		alight.Remove(user)
-
+	
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params)
 	if(!ishuman(user) || !ishuman(target))
 		return
@@ -530,7 +551,9 @@
 		chambered = null
 		update_icon()
 
-/obj/item/binocs
+
+/* TODO: Make a twohanded component to handle basic wield/unwield capability, idk */
+/obj/item/twohanded/binocs
 	name = "binoculars"
 	desc = "Lets you see trouble coming - or get into it - from a distance."
 	icon = 'icons/obj/clothing/glasses.dmi'
@@ -551,24 +574,41 @@
 	var/zoom_out_amt = 13
 	var/datum/action/toggle_binoc_zoom/azoom
 
-/obj/item/binocs/pickup(mob/user)
+/obj/item/twohanded/binocs/wield(mob/user)
 	..()
+	if(wielded)
+		addZoom(user)
+	
+
+/obj/item/twohanded/binocs/dropped(mob/user)
+	..()
+	removeZoom(user)
+
+/obj/item/twohanded/binocs/unwield(mob/user, show_message)
+	..()
+	removeZoom(user)
+
+/obj/item/twohanded/binocs/proc/addZoom(mob/user)
 	if(azoom)
 		azoom.Grant(user)
 
-/obj/item/binocs/dropped(mob/user)
-	..()
+/obj/item/twohanded/binocs/proc/removeZoom(mob/user)
 	if(zoomed)
 		zoom(user,FALSE)
 	if(azoom)
 		azoom.Remove(user)
+
+/obj/item/twohanded/binocs/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.get_active_held_item() != src)
+		removeZoom(user)
 
 /datum/action/toggle_binoc_zoom
 	name = "Use Binoculars"
 	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "binoc_zoom"
-	var/obj/item/binocs/B = null
+	var/obj/item/twohanded/binocs/B = null
 
 /datum/action/toggle_binoc_zoom/Trigger()
 	B.zoom(owner)
@@ -582,7 +622,7 @@
 	B.zoom(L, FALSE)
 	..()
 
-/obj/item/binocs/proc/zoom(mob/living/user, forced_zoom)
+/obj/item/twohanded/binocs/proc/zoom(mob/living/user, forced_zoom)
 	if(!user || !user.client)
 		return
 
@@ -592,7 +632,7 @@
 		if(TRUE)
 			zoomed = TRUE
 		else
-			zoomed = !zoomed
+			zoomed = !zoomed /* WHAT!??? */
 
 	if(zoomed)
 		var/_x = 0
@@ -616,11 +656,11 @@
 		user.client.pixel_y = 0
 	return zoomed
 
-/obj/item/binocs/Initialize()
+/obj/item/twohanded/binocs/Initialize()
 	. = ..()
 	build_zooming()
 
-/obj/item/binocs/proc/build_zooming()
+/obj/item/twohanded/binocs/proc/build_zooming()
 	if(azoom)
 		return
 

@@ -14,6 +14,10 @@
 	var/jobbancache = null //Used to cache this client's jobbans to save on DB queries
 	var/last_message	= "" //Contains the last message sent by this client - used to protect against copy-paste spamming.
 	var/last_message_count = 0 //contins a number of how many times a message identical to last_message was sent.
+	///How many messages sent in the last 10 seconds
+	var/total_message_count = 0
+	///Next tick to reset the total message counter
+	var/total_count_reset = 0
 	var/ircreplyamount = 0
 
 		/////////
@@ -48,6 +52,10 @@
 	preload_rsc = PRELOAD_RSC
 
 	var/obj/screen/click_catcher/void
+
+	//These two vars are used to make a special mouse cursor, with a unique icon for clicking
+	var/mouse_up_icon = null
+	var/mouse_down_icon = null
 
 	var/ip_intel = "Disabled"
 

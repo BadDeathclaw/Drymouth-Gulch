@@ -2,7 +2,6 @@
 /obj
 	var/crit_fail = FALSE
 	animate_movement = 2
-	var/throwforce = 0
 	var/obj_flags = CAN_BE_HIT
 	var/set_obj_flags // ONLY FOR MAPPING: Sets flags from a string list, handled in Initialize. Usage: set_obj_flags = "EMAGGED;!CAN_BE_HIT" to set EMAGGED and clear CAN_BE_HIT.
 
@@ -13,6 +12,7 @@
 	var/obj_integrity	//defaults to max_integrity
 	var/max_integrity = 500
 	var/integrity_failure = 0 //0 if we have no special broken behavior
+	var/super_advanced_technology = FALSE
 
 	var/resistance_flags = NONE // INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ON_FIRE | UNACIDABLE | ACID_PROOF
 
@@ -32,6 +32,9 @@
 
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
+		if("anchored")
+			setAnchored(vval)
+			return TRUE
 		if("obj_flags")
 			if ((obj_flags & DANGEROUS_POSSESSION) && !(vval & DANGEROUS_POSSESSION))
 				return FALSE
@@ -71,6 +74,10 @@
 		STOP_PROCESSING(SSobj, src) // TODO: Have a processing bitflag to reduce on unnecessary loops through the processing lists
 	SStgui.close_uis(src)
 	. = ..()
+
+/obj/proc/setAnchored(anchorvalue)
+	SEND_SIGNAL(src, COMSIG_OBJ_SETANCHORED, anchorvalue)
+	anchored = anchorvalue
 
 /obj/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback)
 	..()
@@ -112,16 +119,16 @@
 
 /obj/proc/updateUsrDialog()
 	if((obj_flags & IN_USE) && !(obj_flags & USES_TGUI))
-		var/is_in_use = 0
+		var/is_in_use = FALSE
 		var/list/nearby = viewers(1, src)
 		for(var/mob/M in nearby)
 			if ((M.client && M.machine == src))
-				is_in_use = 1
-				ui_interact(usr)
+				is_in_use = TRUE
+				ui_interact(M)
 		if(isAI(usr) || iscyborg(usr) || IsAdminGhost(usr))
 			if (!(usr in nearby))
 				if (usr.client && usr.machine==src) // && M.machine == src is omitted because if we triggered this by using the dialog, it doesn't matter if our machine changed in between triggering it and this - the dialog is probably still supposed to refresh.
-					is_in_use = 1
+					is_in_use = TRUE
 					ui_interact(usr)
 
 		// check for TK users
@@ -131,7 +138,7 @@
 			if(!(usr in nearby))
 				if(usr.client && usr.machine==src)
 					if(H.dna.check_mutation(TK))
-						is_in_use = 1
+						is_in_use = TRUE
 						ui_interact(usr)
 		if (is_in_use)
 			obj_flags |= IN_USE
@@ -242,3 +249,43 @@
 		current_skin = choice
 		icon_state = unique_reskin[choice]
 		to_chat(M, "[src] is now skinned as '[choice].'")
+
+//F13 edits, used to exist in _machinery.dm.
+//I think the logic here is that the unfasten/fasten is tied to just base /obj/
+
+/obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
+	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
+		to_chat(user, "<span class='warning'>[src] needs to be on the floor to be secured!</span>")
+		return FAILED_UNFASTEN
+	if(isliving(user))
+		var/mob/living/L = user	//has_trait is a living proc
+		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC) && src.super_advanced_technology && !isdead(user))
+			to_chat(user, "<span class='warning'>You don't understand the technology well enough to do this!</span>")
+			return FAILED_UNFASTEN
+
+	return SUCCESSFUL_UNFASTEN
+
+/obj/proc/default_unfasten_wrench(mob/user, obj/item/I, time = 20) //try to unwrench an object in a WONDERFUL DYNAMIC WAY
+	if(!(flags_1 & NODECONSTRUCT_1) && I.tool_behaviour == TOOL_WRENCH)
+		var/can_be_unfasten = can_be_unfasten_wrench(user)
+		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
+			return can_be_unfasten
+		if(time)
+			to_chat(user, "<span class='notice'>You begin [anchored ? "un" : ""]securing [src]...</span>")
+		I.play_tool_sound(src, 50)
+		var/prev_anchored = anchored
+		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
+		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
+			to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [src].</span>")
+			setAnchored(!anchored)
+			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
+			return SUCCESSFUL_UNFASTEN
+		return FAILED_UNFASTEN
+	return CANT_UNFASTEN
+
+/obj/proc/unfasten_wrench_check(prev_anchored, mob/user) //for the do_after, this checks if unfastening conditions are still valid
+	if(anchored != prev_anchored)
+		return FALSE
+	if(can_be_unfasten_wrench(user, TRUE) != SUCCESSFUL_UNFASTEN) //if we aren't explicitly successful, cancel the fuck out
+		return FALSE
+	return TRUE

@@ -28,10 +28,10 @@
 		pixel_y -= 8
 	U.add_overlay(src)
 
-	if (islist(U.armor)) 										// This proc can run before /obj/Initialize has run for U and src,
+	if (islist(U.armor) || isnull(U.armor)) 										// This proc can run before /obj/Initialize has run for U and src,
 		U.armor = getArmor(arglist(U.armor))	// we have to check that the armor list has been transformed into a datum before we try to call a proc on it
 																					// This is safe to do as /obj/Initialize only handles setting up the datum if actually needed.
-	if (islist(armor))
+	if (islist(armor) || isnull(armor))
 		armor = getArmor(arglist(armor))
 
 	U.armor = U.armor.attachArmor(armor)
@@ -94,9 +94,76 @@
 	item_color = "maidapron"
 	minimize_when_attached = FALSE
 
-//////////
-//Medals//
-//////////
+
+//ranks//
+
+/obj/item/clothing/accessory/ncr
+    name = "(O-6) Colonel rank pin"
+    desc = "An officer holding the rank of Colonel should wear these."
+    icon_state = "colonelrank"
+    item_color = "colonelrank"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/CPT
+    name = "(O-3) Captain rank pin"
+    desc = "An officer holding the rank of Captain should wear this."
+    icon_state = "captainrank"
+    item_color = "captainrank"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/LT
+    name = "(O-1) Lieutenant rank pin"
+    desc = "An officer holding the rank of Lieutenant should wear this."
+    icon_state = "lieutenantrank"
+    item_color = "lieutenantrank"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/armband/med/ncr
+	name = "medical armband (O-1 Medical Officer)"
+	desc = "An armband worn by NCR Medical Officers to diplay their rank and specialty. This one is white."
+
+/obj/item/clothing/accessory/ncr/SSGT
+    name = "(E-6) Staff Sergeant rank pins"
+    desc = "A trooper holding the rank of Staff Sergeant should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/SGT
+    name = "(E-5) Sergeant rank pins"
+    desc = "A trooper holding the rank of Sergeant should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/armband/engine/ncr
+    name = "engineering armband (E-5 Engineer)"
+    desc = "An armband worn by NCR Engineers to display their rank and speciality. This one is orange with a reflective strip!"
+
+/obj/item/clothing/accessory/ncr/CPL
+    name = "(E-4) Corporal rank pins"
+    desc = "A Corporal should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/TPR
+    name = "(E-3) Trooper rank pins"
+    desc = "A trooper should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+/obj/item/clothing/accessory/ncr/REC
+    name = "(E-2) Recruit rank pins"
+    desc = "A recruit should wear this."
+    icon_state = "ncrenlisted"
+    item_color = "ncrenlisted"
+    minimize_when_attached = TRUE
+
+
+
+//medals//
 
 /obj/item/clothing/accessory/medal
 	name = "bronze medal"
@@ -127,7 +194,7 @@
 									 "<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
 			var/input
 			if(!commended && user != M)
-				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
+				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Vault-Tec.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
@@ -139,7 +206,7 @@
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
 							commended = TRUE
-							desc += "<br>The inscription reads: [input] - [user.real_name]" 
+							desc += "<br>The inscription reads: [input] - [user.real_name]"
 							log_game("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
 							message_admins("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
 
@@ -150,7 +217,7 @@
 
 /obj/item/clothing/accessory/medal/conduct
 	name = "distinguished conduct medal"
-	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given by Nanotrasen. It is often awarded by a captain to a member of his crew."
+	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given by Vault-Tec. It is often awarded by a captain to a member of his crew."
 
 /obj/item/clothing/accessory/medal/bronze_heart
 	name = "bronze heart medal"
@@ -181,7 +248,7 @@
 
 /obj/item/clothing/accessory/medal/silver/security
 	name = "robust security award"
-	desc = "An award for distinguished combat and sacrifice in defence of Nanotrasen's commercial interests. Often awarded to security staff."
+	desc = "An award for distinguished combat and sacrifice in defence of Vault-Tec's commercial interests. Often awarded to security staff."
 
 /obj/item/clothing/accessory/medal/gold
 	name = "gold medal"
@@ -193,7 +260,7 @@
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of captaincy"
-	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to Nanotrasen, and their undisputable authority over their crew."
+	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain, and their undisputable authority over their crew."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/accessory/medal/gold/heroism

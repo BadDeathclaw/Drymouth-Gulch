@@ -455,9 +455,19 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
+
 /obj/effect/landmark/start/f13/ncrsergeant
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"
+
+/obj/effect/landmark/start/f13/ncrmedic
+	name = "NCR Medical Officer"
+
+/obj/effect/landmark/start/f13/ncrengineer
+	name = "NCR Engineer"
+
+/obj/effect/landmark/start/f13/ncrcorporal
+	name = "NCR Corporal"
 
 /obj/effect/landmark/start/f13/ncrtrooper
 	name = "NCR Trooper"
@@ -466,6 +476,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/ncrrecruit
 	name = "NCR Recruit"
 	icon_state = "NCR Recruit"
+
+/obj/effect/landmark/start/f13/ncrheavytroop
+	name = "NCR Heavy Trooper"
 
 /obj/effect/landmark/start/f13/ncrveteranranger
 	name = "NCR Veteran Ranger"
@@ -486,33 +499,39 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Legate"
 
 /obj/effect/landmark/start/f13/centurion
-	name = "Centurion"
+	name = "Legion Centurion"
 	icon_state = "Centurion"
 
 /obj/effect/landmark/start/f13/vetdecanus
-	name = "Veteran Decanus"
+	name = "Legion Veteran Decanus"
 
 /obj/effect/landmark/start/f13/vexillarius
-	name = "Vexillarius"
+	name = "Legion Vexillarius"
 	icon_state = "Vexillarius"
 
+/obj/effect/landmark/start/f13/primedecanus
+	name = "Legion Prime Decanus"
+
 /obj/effect/landmark/start/f13/decanus
-	name = "Decanus"
+	name = "Legion Recruit Decanus"
 	icon_state = "Decanus"
 
 /obj/effect/landmark/start/f13/veteranlegionnaire
 	name = "Veteran Legionnaire"
 	icon_state = "Veteran Legionnaire"
 
+/obj/effect/landmark/start/f13/primelegionnaire
+	name = "Prime Legionnaire"
+
 /obj/effect/landmark/start/f13/legionary
-	name = "Legionary"
+	name = "Recruit Legionnaire"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/scout
-	name = "Scout"
+	name = "Legion Scout"
 
 /obj/effect/landmark/start/f13/explorer
-	name = "Explorer"
+	name = "Legion Explorer"
 
 /obj/effect/landmark/start/f13/campfollower
 	name = "Camp Follower"
@@ -522,6 +541,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/elder
 	name = "Elder"
 	icon_state = "Elder"
+
+/obj/effect/landmark/start/f13/headscribe
+	name = "Head Scribe"
+	icon_state = "Head Scribe"
 
 /obj/effect/landmark/start/f13/paladin
 	name = "Paladin"
@@ -535,9 +558,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Scribe"
 	icon_state = "Scribe"
 
-/obj/effect/landmark/start/f13/initiate
-	name = "Initiate"
-	icon_state = "Initiate"
+/obj/effect/landmark/start/f13/initiateknight
+	name = "Initiate Knight"
+	icon_state = "Initiate Knight"
+	icon_state = "Knight"
+
+/obj/effect/landmark/start/f13/initiatescribe
+	name = "Initiate Scribe"
+	icon_state = "Initiate Scribe"
+	icon_state = "Scribe"
 
 // Vault
 
@@ -571,13 +600,28 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 // Den
 
+/obj/effect/landmark/start/f13/mayor
+	name = "Mayor"
+
 /obj/effect/landmark/start/f13/sheriff
 	name = "Sheriff"
 	icon_state = "Sheriff"
 
+/obj/effect/landmark/start/f13/deputy
+	name = "Deputy"
+
+/obj/effect/landmark/start/f13/farmer
+	name = "Farmer"
+
+/obj/effect/landmark/start/f13/prospector
+	name = "Prospector"
+
 /obj/effect/landmark/start/f13/settler
 	name = "Settler"
 	icon_state = "Settler"
+
+/obj/effect/landmark/start/f13/dendoc
+	name = "Kebab Doctor"
 
 // Wasteland
 

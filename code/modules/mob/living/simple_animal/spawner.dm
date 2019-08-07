@@ -21,7 +21,7 @@
 	maxbodytemp = 350
 	layer = BELOW_MOB_LAYER
 	sentience_type = SENTIENCE_BOSS
-
+	del_on_death = TRUE
 
 /mob/living/simple_animal/hostile/spawner/Destroy()
 	for(var/mob/living/simple_animal/L in spawned_mobs)
@@ -72,6 +72,58 @@
 	spawn_text = "climbs out of"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	faction = list("skeleton")
+
+/mob/living/simple_animal/hostile/spawner/ghoul
+	name = "ghoul pit"
+	desc = "A pit full of feral ghouls, and some still seem to be moving"
+	icon_state = "hole"
+	icon_living = "hole"
+	icon = 'icons/mob/nest.dmi'
+	health = 1000
+	maxHealth = 1000
+	max_mobs = 5
+	spawn_time = 150
+	mob_types = list(/mob/living/simple_animal/hostile/ghoul, /mob/living/simple_animal/hostile/ghoul/reaver, /mob/living/simple_animal/hostile/ghoul/glowing)
+	faction = list("ghoul")
+
+/mob/living/simple_animal/hostile/spawner/deathclaw
+	name = "death claw nest"
+	desc = "A nest full of deathclaws, some are coming out."
+	icon_state = "hole"
+	icon_living ="hole"
+	icon = 'icons/mob/nest.dmi'
+	health = 1000
+	maxHealth = 1000
+	max_mobs = 5
+	spawn_time = 150
+	mob_types = list(/mob/living/simple_animal/hostile/deathclaw, /mob/living/simple_animal/hostile/deathclaw/mother)
+	faction = list("deathclaw")
+
+/mob/living/simple_animal/hostile/spawner/scorpion
+	name = "rad scorpion nest"
+	desc = "A nest full of rad scorpions, some are coming out."
+	icon_state = "hole"
+	icon_living = "hole"
+	icon = 'icons/mob/nest.dmi'
+	health = 1000
+	maxHealth = 1000
+	max_mobs = 5
+	spawn_time = 150
+	mob_types = list(/mob/living/simple_animal/hostile/radscorpion)
+	faction = list("radscorpion")
+
+/mob/living/simple_animal/hostile/spawner/radroach
+	name = "radroach nest"
+	desc = "Ewww, its full of cockroaches"
+	icon_state = "hole"
+	icon_living = "hole"
+	icon = 'icons/mob/nest.dmi'
+	health = 1000
+	maxHealth = 1000
+	max_mobs = 8
+	spawn_time = 150
+	mob_types = list(/mob/living/simple_animal/hostile/radroach)
+	faction = list("gecko")
 
 /mob/living/simple_animal/hostile/spawner/mining
 	name = "monster den"

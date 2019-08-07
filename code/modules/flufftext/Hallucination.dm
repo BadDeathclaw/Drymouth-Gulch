@@ -625,7 +625,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	qdel(src)
 
 /obj/effect/hallucination/fake_door_lock
-	layer = CLOSED_DOOR_LAYER + 1 //for Collide priority
+	layer = CLOSED_DOOR_LAYER + 1 //for Bump priority
 	var/image/bolt_light
 	var/obj/machinery/door/airlock/airlock
 
@@ -884,8 +884,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			target.playsound_local(target, 'sound/effects/explosion_distant.ogg', 50, FALSE, pressure_affected = FALSE)
 		if("shuttle_dock")
 			to_chat(target, "<h1 class='alert'>Priority Announcement</h1>")
-			to_chat(target, "<br><br><span class='alert'>The Emergency Shuttle has docked with the station. You have 3 minutes to board the Emergency Shuttle.</span><br><br>")
-			SEND_SOUND(target, 'sound/ai/shuttledock.ogg')
+			to_chat(target, "<br><br><span class='alert'>The train has arrived to the station. You have 3 minutes to board the train.</span><br><br>")
+			SEND_SOUND(target, 'sound/f13/quest.ogg')
 		if("malf_ai") //AI is doomsdaying!
 			to_chat(target, "<h1 class='alert'>Anomaly Alert</h1>")
 			to_chat(target, "<br><br><span class='alert'>Hostile runtimes detected in all station systems, please deactivate your AI to prevent possible damage to its morality core.</span><br><br>")

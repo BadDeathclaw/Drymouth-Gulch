@@ -10,6 +10,7 @@ Prismatic extracts:
 	var/paintcolor = "#FFFFFF"
 
 /obj/item/slimecross/prismatic/afterattack(turf/target, mob/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(!istype(target) || isspaceturf(target))

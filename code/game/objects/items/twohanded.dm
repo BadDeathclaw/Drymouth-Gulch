@@ -67,7 +67,7 @@
 		to_chat(user, "<span class='warning'>You need your other hand to be empty!</span>")
 		return
 	if(user.get_num_arms() < 2)
-		to_chat(user, "<span class='warning'>You don't have enough hands.</span>")
+		to_chat(user, "<span class='warning'>Your hands appear to be fucked up.</span>")
 		return
 	wielded = 1
 	if(force_wielded)
@@ -219,7 +219,7 @@
 	icon_state = "fireaxe0"
 	lefthand_file = 'icons/mob/inhands/weapons/axes_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
-	name = "fire axe"
+	name = "fireaxe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	force = 5
 	throwforce = 15
@@ -227,7 +227,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	force_unwielded = 10
 	force_wielded = 56
-	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
+	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
 	max_integrity = 200
@@ -247,6 +247,7 @@
 	return (BRUTELOSS)
 
 /obj/item/twohanded/fireaxe/afterattack(atom/A, mob/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(wielded) //destroys windows and grilles in one hit
@@ -454,20 +455,20 @@
 	icon_state = "spearglass0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
-	name = "Improvised Metal Glaive"
+	name = "improvised metal glaive"
 	desc = "A improvised metal glaive that can be wielded."
 	force = 10
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	force_unwielded = 20
-	force_wielded = 25
-	throwforce = 20
+	force_unwielded = 25
+	force_wielded = 40
+	throwforce = 25
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	armour_penetration = 0
 	materials = list(MAT_METAL=1150, MAT_GLASS=2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
+	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
 	sharpness = IS_SHARP
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
@@ -505,6 +506,7 @@
 		icon_state = "spearglass[wielded]"
 
 /obj/item/twohanded/spear/afterattack(atom/movable/AM, mob/user, proximity)
+	. = ..()
 	if(!proximity)
 		return
 	if(isopenturf(AM)) //So you can actually melee with it
@@ -559,6 +561,7 @@
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
+	slot_flags = ITEM_SLOT_BACK
 	force = 10
 	var/force_on = 72
 	w_class = WEIGHT_CLASS_HUGE
@@ -566,7 +569,7 @@
 	throw_speed = 2
 	throw_range = 4
 	materials = list(MAT_METAL=13000)
-	attack_verb = list("burned", "welded", "cut", "melted", "splashed")
+	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
 	hitsound = "swing_hit"
 	actions_types = list(/datum/action/item_action/toggle_lance)
 	var/on = FALSE
@@ -612,7 +615,7 @@
 	throw_speed = 2
 	throw_range = 4
 	materials = list(MAT_METAL=13000)
-	attack_verb = list("sawed", "torn", "cut", "chopped", "diced")
+	attack_verb = list("sawn", "torn", "carved", "chopped", "ripped")
 	hitsound = "swing_hit"
 	sharpness = IS_SHARP
 	actions_types = list(/datum/action/item_action/startchainsaw)
@@ -674,7 +677,7 @@
 //GREY TIDE
 /obj/item/twohanded/spear/grey_tide
 	icon_state = "spearglass0"
-	name = "\improper Metal Spear"
+	name = "\improper metal spear"
 	desc = "A improvised metal spear."
 	force_unwielded = 20
 	force_wielded = 25
@@ -683,7 +686,7 @@
 	attack_verb = list("gored")
 
 /obj/item/twohanded/spear/grey_tide/afterattack(atom/movable/AM, mob/living/user, proximity)
-	..()
+	. = ..()
 	if(!proximity)
 		return
 	user.faction |= "greytide([REF(user)])"
@@ -708,7 +711,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	force_unwielded = 7
 	force_wielded = 15
-	attack_verb = list("attacked", "impaled", "pierced")
+	attack_verb = list("attacked", "impaled", "pierced", "perforated")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	sharpness = IS_SHARP
 	max_integrity = 200
@@ -764,6 +767,7 @@
 	..()
 
 /obj/item/twohanded/pitchfork/demonic/ascended/afterattack(atom/target, mob/user, proximity)
+	. = ..()
 	if(!proximity || !wielded)
 		return
 	if(iswallturf(target))
@@ -773,7 +777,6 @@
 		W.break_wall()
 		W.ScrapeAway()
 		return
-	..()
 
 //HF blade
 
@@ -781,7 +784,7 @@
 	icon_state = "hfrequency0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
-	name = "vibro sword"
+	name = "high frequency blade"
 	desc = "A potent weapon capable of cutting through nearly anything. Wielding it in two hands will allow you to deflect gunfire."
 	force_unwielded = 20
 	force_wielded = 40
@@ -790,7 +793,7 @@
 	throwforce = 20
 	throw_speed = 4
 	sharpness = IS_SHARP
-	attack_verb = list("cut", "sliced", "diced")
+	attack_verb = list("cut", "sliced", "diced", "dissected")
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -840,12 +843,11 @@
 	force = 11
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	force_unwielded = 11
-	force_wielded = 20					//I have no idea how to balance
-	throwforce = 22
+	force_unwielded = 20
+	force_wielded = 30
+	throwforce = 20
 	throw_speed = 4
 	embedding = list("embedded_impact_pain_multiplier" = 3)
-	armour_penetration = 15				//Enhanced armor piercing
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	sharpness = IS_SHARP
@@ -863,35 +865,42 @@
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
 	force_unwielded = 10
-	force_wielded = 25
-	throwforce = 20
-	attack_verb = list("beat", "smacked")
-	w_class = WEIGHT_CLASS_HUGE
+	force_wielded = 35
+	throwforce = 15
+	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
+	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = IS_BLUNT
 
 /obj/item/twohanded/baseball/update_icon()  //Currently only here to fuck with the on-mob icons.
 	icon_state = "baseball[wielded]"
 	return
 
-/obj/item/twohanded/fireaxe/sledgehammer
+/obj/item/twohanded/sledgehammer
 	name = "sledgehammer"
 	desc = "A heavy sledgehammer that lost most of its use besides caving in heads."
+	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "sledgehammer0"
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	force_unwielded = 20
 	force_wielded = 56
+	throwforce = 20
+	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
+	w_class = WEIGHT_CLASS_BULKY
 	sharpness = IS_BLUNT
 
-/obj/item/twohanded/fireaxe/sledgehammer/update_icon()
+/obj/item/twohanded/sledgehammer/update_icon()
 	icon_state = "sledgehammer[wielded]"
 
 /obj/item/twohanded/fireaxe/bmprsword  // DEM AXES MAN, marker -Agouri
+	name = "bumper sword"
 	icon_state = "bmprsword0"
+	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	lefthand_file = 'icons/mob/inhands/weapons/polearms_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/polearms_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
 
 /obj/item/twohanded/fireaxe/bmprsword/update_icon()
 	name = "bumper sword"
 	desc = "A heavy makeshift sword fashioned out of a car bumper."
 	icon_state = "bmprsword[wielded]"
-

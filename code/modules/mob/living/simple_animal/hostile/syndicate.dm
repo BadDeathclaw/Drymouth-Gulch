@@ -16,7 +16,7 @@
 
 /mob/living/simple_animal/hostile/syndicate
 	name = "Syndicate Operative"
-	desc = "Death to Nanotrasen."
+	desc = "Death to Vault-Tec."
 	icon = 'icons/mob/simple_human.dmi'
 	icon_state = "syndicate"
 	icon_living = "syndicate"
@@ -109,7 +109,7 @@
 
 /mob/living/simple_animal/hostile/syndicate/ranged
 	ranged = 1
-	rapid = 1
+	extra_projectiles = 2
 	retreat_distance = 5
 	minimum_distance = 5
 	icon_state = "syndicateranged"

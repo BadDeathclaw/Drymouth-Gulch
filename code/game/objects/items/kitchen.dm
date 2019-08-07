@@ -59,7 +59,7 @@
 /obj/item/kitchen/knife
 	name = "kitchen knife"
 	icon_state = "knife"
-	desc = "A general purpose Chef's Knife made by SpaceCook Incorporated. Guaranteed to stay sharp for years to come."
+	desc = "A general purpose Chef's Knife made by VaultCook Incorporated. Guaranteed to stay sharp for knife guys for years to come."
 	flags_1 = CONDUCT_1
 	force = 10
 	w_class = WEIGHT_CLASS_SMALL
@@ -109,7 +109,7 @@
 	force = 25
 	throwforce = 20
 	materials = list(MAT_METAL=18000)
-	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	attack_verb = list("cleaved", "slashed", "lacerated", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/kitchen/knife/combat
@@ -117,9 +117,9 @@
 	icon_state = "buckknife"
 	item_state = "knife"
 	desc = "A military combat utility survival knife."
-	force = 20
-	throwforce = 20
-	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
+	force = 30
+	throwforce = 25
+	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
 	bayonet = TRUE
 
 /obj/item/kitchen/knife/combat/survival
@@ -127,8 +127,7 @@
 	icon_state = "survivalknife"
 	item_state = "knife"
 	desc = "A hunting grade survival knife."
-	force = 20
-	throwforce = 20
+	force = 25
 	bayonet = TRUE
 
 /obj/item/kitchen/knife/combat/bone
@@ -158,7 +157,7 @@
 	force = 8
 	throwforce = 12//fuck git
 	materials = list()
-	attack_verb = list("shanked", "shivved")
+	attack_verb = list("shanked", "shivved", "pierced", "impaled")
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/kitchen/rollingpin

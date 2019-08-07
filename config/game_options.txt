@@ -16,9 +16,6 @@ REVIVAL_BRAIN_LIFE -1
 
 ## RENAMING ###
 
-## Uncomment to allow cyborgs to rename themselves at roundstart.  Has no effect on roboticists renaming cyborgs the normal way.
-RENAME_CYBORG
-
 ## OOC DURING ROUND ###
 ## Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
 OOC_DURING_ROUND
@@ -267,7 +264,7 @@ EVENTS_MIN_PLAYERS_MUL 1
 
 ## Secborg ###
 ## Uncomment to prevent the security cyborg module from being chosen
-#DISABLE_SECBORG
+DISABLE_SECBORG
 
 ## Peacekeeper Borg ###
 ## Uncomment to prevent the peacekeeper cyborg module from being chosen
@@ -408,6 +405,7 @@ SILICON_MAX_LAW_AMOUNT 12
 
 ## You probably want humans on your space station, but technically speaking you can turn them off without any ill effect
 ROUNDSTART_RACES human
+ROUNDSTART_RACES ghoul
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 #ROUNDSTART_RACES lizard

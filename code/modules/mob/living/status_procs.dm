@@ -1,7 +1,8 @@
 //Here are the procs used to modify status effects of a mob.
-//The effects include: stun, knockdown, unconscious, sleeping, resting, jitteriness, dizziness,
+//The effects include: paralyze, stun, knockdown, unconscious, sleeping, resting, jitteriness, dizziness,
 // eye damage, eye_blind, eye_blurry, druggy, TRAIT_BLIND trait, and TRAIT_NEARSIGHT trait.
-
+//This copy-paste code is awful, you realize most of this should be shoved into /mob/ right? I hate you. - Nappist
+//TODO: optimize
 
 ////////////////////////////// STUN ////////////////////////////////////
 
@@ -270,3 +271,87 @@
 	add_trait(TRAIT_FAKEDEATH, source)
 	tod = station_time_timestamp()
 	update_stat()
+
+////////////////////////////// WEAPON DRAW DELAY ////////////////////////////////////
+
+/mob/living/IsWeaponDrawDelayed() //Check if we're delayed from firing a weapon
+	return has_status_effect(STATUS_EFFECT_WEAPON_DRAW_DELAYED)
+
+/mob/living/proc/AmountWeaponDrawDelay() //Check how many deciseconds remain in our fire delay
+	var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
+	if(F)
+		return F.duration - world.time
+	return 0
+
+/mob/living/proc/WeaponDrawDelay(amount, updating = TRUE) //Can't go below remaining duration
+	if(status_flags)
+		var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
+		if(F)
+			F.duration = max(world.time + amount, F.duration)
+		else if(amount > 0)
+			F = apply_status_effect(STATUS_EFFECT_WEAPON_DRAW_DELAYED, amount, updating)
+		return F
+
+/mob/living/proc/SetWeaponDrawDelay(amount, updating = TRUE) //Sets remaining duration
+	if(status_flags)
+		var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
+		if(amount <= 0)
+			if(F)
+				qdel(F)
+		else
+			if(F)
+				F.duration = world.time + amount
+			else
+				F = apply_status_effect(STATUS_EFFECT_WEAPON_DRAW_DELAYED, amount, updating)
+		return F
+
+/mob/living/proc/AdjustWeaponDrawDelay(amount, updating = TRUE) //Adds to remaining duration
+	if(status_flags)
+		var/datum/status_effect/incapacitating/weapon_draw_delayed/F = IsWeaponDrawDelayed()
+		if(F)
+			F.duration += amount
+		else if(amount > 0)
+			F = apply_status_effect(STATUS_EFFECT_WEAPON_DRAW_DELAYED, amount, updating)
+		return F
+
+////////////////////////////// THROW DELAY ////////////////////////////////////
+
+/mob/living/IsThrowDelayed() //Check if we're delayed from throwing anything
+	return has_status_effect(STATUS_EFFECT_THROW_DELAYED)
+
+/mob/living/proc/AmountThrowDelay() //Check how many deciseconds remain in our fire delay
+	var/datum/status_effect/incapacitating/throw_delayed/T = IsThrowDelayed()
+	if(T)
+		return T.duration - world.time
+	return 0
+
+/mob/living/proc/ThrowDelay(amount, updating = TRUE) //Can't go below remaining duration
+	if(status_flags)
+		var/datum/status_effect/incapacitating/throw_delayed/T = IsThrowDelayed()
+		if(T)
+			T.duration = max(world.time + amount, T.duration)
+		else if(amount > 0)
+			T = apply_status_effect(STATUS_EFFECT_THROW_DELAYED, amount, updating)
+		return T
+
+/mob/living/proc/SetThrowDelay(amount, updating = TRUE) //Sets remaining duration
+	if(status_flags)
+		var/datum/status_effect/incapacitating/throw_delayed/T = IsThrowDelayed()
+		if(amount <= 0)
+			if(T)
+				qdel(T)
+		else
+			if(T)
+				T.duration = world.time + amount
+			else
+				T = apply_status_effect(STATUS_EFFECT_THROW_DELAYED, amount, updating)
+		return T
+
+/mob/living/proc/AdjustThrowDelay(amount, updating = TRUE) //Adds to remaining duration
+	if(status_flags)
+		var/datum/status_effect/incapacitating/throw_delayed/T = IsThrowDelayed()
+		if(T)
+			T.duration += amount
+		else if(amount > 0)
+			T = apply_status_effect(STATUS_EFFECT_THROW_DELAYED, amount, updating)
+		return T

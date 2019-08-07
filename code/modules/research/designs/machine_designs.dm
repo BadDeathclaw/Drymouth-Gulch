@@ -191,7 +191,7 @@
 	desc = "Allows for the construction of circuit boards used to build a Cloning Pod."
 	id = "clonepod"
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	build_path = /obj/item/circuitboard/machine/clonepod
+	build_path = /obj/item/circuitboard/machine/clonepod/experimental
 	category = list("Medical Machinery")
 
 /datum/design/board/clonescanner
@@ -370,11 +370,11 @@
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ALL
 
-/datum/design/board/autolathe
-	name = "Machine Design (Autolathe Board)"
-	desc = "The circuit board for an autolathe."
-	id = "autolathe"
-	build_path = /obj/item/circuitboard/machine/autolathe
+/datum/design/board/autolathe/constructionlathe
+	name = "Machine Design (Construction Lathe Board)"
+	desc = "The circuit board for a constructionlathe."
+	id = "constructionlathe"
+	build_path = /obj/item/circuitboard/machine/autolathe/constructionlathe
 	category = list ("Misc. Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_ALL		//Lets be honest here half the maps have public ones.
 

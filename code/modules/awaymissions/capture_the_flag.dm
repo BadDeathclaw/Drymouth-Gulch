@@ -125,8 +125,12 @@
 
 /proc/toggle_all_ctf(mob/user)
 	var/ctf_enabled = FALSE
+	var/area/A
 	for(var/obj/machinery/capture_the_flag/CTF in GLOB.machines)
 		ctf_enabled = CTF.toggle_ctf()
+		A = get_area(CTF)
+	for(var/obj/machinery/power/emitter/E in A)
+		E.active = ctf_enabled
 	message_admins("[key_name_admin(user)] has [ctf_enabled? "enabled" : "disabled"] CTF!")
 	notify_ghosts("CTF has been [ctf_enabled? "enabled" : "disabled"]!",'sound/effects/ghost2.ogg')
 
@@ -606,10 +610,10 @@
 /obj/effect/ctf/ammo/Crossed(atom/movable/AM)
 	reload(AM)
 
-/obj/effect/ctf/ammo/Collide(atom/movable/AM)
+/obj/effect/ctf/ammo/Bump(atom/movable/AM)
 	reload(AM)
 
-/obj/effect/ctf/ammo/CollidedWith(atom/movable/AM)
+/obj/effect/ctf/ammo/Bumped(atom/movable/AM)
 	reload(AM)
 
 /obj/effect/ctf/ammo/proc/reload(mob/living/M)

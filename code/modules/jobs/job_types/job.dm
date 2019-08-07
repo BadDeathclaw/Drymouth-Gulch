@@ -31,6 +31,15 @@
 	//Supervisors, who this person answers to directly
 	var/supervisors = ""
 
+	//Description, short text about the job
+	var/description = ""
+
+	//Against the faction rules, for imporant things that you SHOULDNT do.
+	var/forbids = ""
+
+	//For things that faction Enforces.
+	var/enforces = ""
+
 	//Sellection screen color
 	var/selection_color = "#ffffff"
 
@@ -39,7 +48,7 @@
 	var/req_admin_notify
 
 	//If you have the use_age_restriction_for_jobs config option enabled and the database set up, this option will add a requirement for players to be at least minimal_player_age days old. (meaning they first signed in at least that many days before.)
-	var/minimal_player_age = 0
+	var/minimal_player_age = 6 // Sets minimum default account age to six days to prevent angry people from account-spamming.
 
 	var/outfit = null
 
@@ -51,6 +60,8 @@
 	//The amount of good boy points playing this role will earn you towards a higher chance to roll antagonist next round
 	//can be overriden by antag_rep.txt config
 	var/antag_rep = 10
+
+	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
@@ -81,8 +92,13 @@
 	if(CONFIG_GET(flag/enforce_human_authority) && (title in GLOB.command_positions))
 		if(H.dna.species.id != "human")
 			H.set_species(/datum/species/human)
-			H.rename_self("human", H.client)
+			H.apply_pref_name("human", H.client)
 		purrbation_remove(H, silent=TRUE)
+	// F13 EDIT: GHOULS CANNOT BE LEGION
+	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
+		if(H.dna.species.id == "ghoul")
+			H.set_species(/datum/species/human)
+			H.apply_pref_name("human", H.client)
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
@@ -166,6 +182,8 @@
 
 	var/pda_slot = SLOT_BELT
 
+	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
+
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	switch(H.backbag)
 		if(GBACKPACK)
@@ -189,9 +207,22 @@
 		backpack_contents.Insert(1, box) // Box always takes a first slot in backpack
 		backpack_contents[box] = 1
 
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
+
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
+
+	if(H.gender == MALE)
+		H.has_penis = TRUE
+		H.has_vagina = FALSE
+		H.has_breasts = FALSE
+
+	if(H.gender == FEMALE)
+		H.has_vagina = TRUE
+		H.has_breasts = TRUE
+		H.has_penis = FALSE
 
 	var/datum/job/J = SSjob.GetJobType(jobtype)
 	if(!J)
@@ -199,10 +230,12 @@
 
 	var/obj/item/card/id/C = H.wear_id
 	if(istype(C))
-		C.access = J.get_access()
+		if(J)
+			C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		C.assignment = J.title
+		if(J)
+			C.assignment = J.title
 		C.update_label()
 		H.sec_hud_set_ID()
 
@@ -211,6 +244,9 @@
 		PDA.owner = H.real_name
 		PDA.ownjob = J.title
 		PDA.update_label()
+
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()
