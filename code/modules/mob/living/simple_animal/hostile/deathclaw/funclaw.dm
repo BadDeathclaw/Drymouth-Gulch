@@ -1,6 +1,6 @@
-#define CUM_TARGET_THROAT "throat"
-#define CUM_TARGET_VAGINA "vagina"
-#define CUM_TARGET_ANUS "anus"
+#define CUM_TARGET_THROAT_FUNCLAW "throat"
+#define CUM_TARGET_VAGINA_FUNCLAW "vagina"
+#define CUM_TARGET_ANUS_FUNCLAW "anus"
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw
 	name = "Deathclaw"
@@ -49,33 +49,33 @@
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
 	switch(rand(2))
 		if(0)
-			chosen_hole = CUM_TARGET_ANUS
+			chosen_hole = CUM_TARGET_ANUS_FUNCLAW
 		if(1)
 			if(M.has_vagina())
-				chosen_hole = CUM_TARGET_VAGINA
+				chosen_hole = CUM_TARGET_VAGINA_FUNCLAW
 		if(2)
-			chosen_hole = CUM_TARGET_THROAT
+			chosen_hole = CUM_TARGET_THROAT_FUNCLAW
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pound(mob/living/M)
 	if(refactory_period > 0)
 		return
 
 	switch(chosen_hole)
-		if(CUM_TARGET_ANUS)
+		if(CUM_TARGET_ANUS_FUNCLAW)
 			if(tearSlot(M, SLOT_WEAR_SUIT))
 				return
 			if(tearSlot(M, SLOT_W_UNIFORM))
 				return
 			do_anal(M)
 
-		if(CUM_TARGET_VAGINA)
+		if(CUM_TARGET_VAGINA_FUNCLAW)
 			if(tearSlot(M, SLOT_WEAR_SUIT))
 				return
 			if(tearSlot(M, SLOT_W_UNIFORM))
 				return
 			do_vaginal(M)
 
-		if(CUM_TARGET_THROAT)
+		if(CUM_TARGET_THROAT_FUNCLAW)
 			if(tearSlot(M, SLOT_HEAD))
 				return
 			if(tearSlot(M, SLOT_WEAR_MASK))
@@ -93,19 +93,19 @@
 		chosen_hole = null
 
 	switch(chosen_hole)
-		if(CUM_TARGET_THROAT)
+		if(CUM_TARGET_THROAT_FUNCLAW)
 			if(M.has_mouth() && M.mouth_is_free())
 				message = "shoves their fat reptillian cock deep down \the [M]'s throat and cums."
 				M.reagents.add_reagent("cum", rand(9,15))
 			else
 				message = "cums on \the [M]'s face."
-		if(CUM_TARGET_VAGINA)
+		if(CUM_TARGET_VAGINA_FUNCLAW)
 			if(M.is_bottomless() && M.has_vagina())
 				message = "rams its meaty cock into \the [M]'s pussy and fills it with sperm."
 				M.reagents.add_reagent("cum", rand(8,12))
 			else
 				message = "cums on \the [M]'s belly."
-		if(CUM_TARGET_ANUS)
+		if(CUM_TARGET_ANUS_FUNCLAW)
 			if(M.is_bottomless() && M.has_anus())
 				message = "hilts its knot into \the [M]'s ass and floods it with Deathclaw jizz."
 				M.reagents.add_reagent("cum", rand(8,12))
