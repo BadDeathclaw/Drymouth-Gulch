@@ -24,10 +24,6 @@
 		M.stop_pulling()
 
 	else if(get_dist(src, M) == 0)
-		if(M.client && M.client.prefs)
-			if(M.client.prefs.toggles & !VERB_CONSENT)
-				..()
-				return
 		if(refactory_period > 0)
 			..()
 			return
@@ -45,6 +41,8 @@
 				pound(M)
 				sleep(rand(1, 3))
 				pound(M)
+			else
+				..()
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/proc/pickNewHole(mob/living/M)
 	switch(rand(2))
