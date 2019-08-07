@@ -84,9 +84,6 @@
 	else
 		return ..()
 
-/obj/structure/barricade/wooden/make_debris()
-	new /obj/item/stack/sheet/mineral/wood(get_turf(src), 3)
-
 /obj/structure/barricade/wooden/strong
 	name = "strong wooden barricade"
 	desc = "This space is blocked off by a strong wooden barricade."
