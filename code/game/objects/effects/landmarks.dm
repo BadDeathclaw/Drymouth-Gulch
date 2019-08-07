@@ -598,7 +598,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Vault Dweller"
 	icon_state = "Vault Dweller"
 
-// Den
+// Kebab
 
 /obj/effect/landmark/start/f13/mayor
 	name = "Mayor"
@@ -621,7 +621,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Settler"
 
 /obj/effect/landmark/start/f13/dendoc
-	name = "Kebab Doctor"
+	name = "Doctor"
 
 // Wasteland
 
