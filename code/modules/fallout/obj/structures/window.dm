@@ -78,15 +78,8 @@
 				return
 	else if(!istype(W, /obj/item/stack/sheet/mineral/wood))
 		if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
-			for(var/obj/structure/barricade/wooden/planks/P in src.loc)
+			for(var/obj/structure/barricade/wooden/planks/P in loc)
 				P.attackby(W, user, params)
-				return 1
+				return TRUE
 		else
 			return ..()
-
-/obj/structure/window/fulltile/Destroy()	
-	if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
-		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
-			qdel(P)
-			visible_message("<span class='warning'>[P] collapses under its own weight!</span>")
-	return ..()

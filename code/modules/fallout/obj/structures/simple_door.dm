@@ -38,10 +38,6 @@
 	return
 
 /obj/structure/simple_door/Destroy()
-	if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
-		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
-			qdel(P)
-			visible_message("<span class='warning'>[P] collapses under its own weight!</span>")
 	if(padlock)
 		padlock.forceMove(get_turf(src))
 		padlock = null
@@ -112,9 +108,9 @@
 
 /obj/structure/simple_door/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(I, /obj/item/stack/sheet/mineral/wood))
-		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
+		for(var/obj/structure/barricade/wooden/planks/P in loc)
 			P.attackby(I, user, params)
-			return 1
+			return TRUE
 	if(istype(I, /obj/item/screwdriver) && can_disasemble && do_after(user, 5, target = src))
 		if(padlock)
 			to_chat(user, "<span class='warning'>Remove padlock before door dissasembling.</span>")
