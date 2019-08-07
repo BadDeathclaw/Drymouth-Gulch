@@ -93,7 +93,7 @@
 	icon_state = "joshua_1"
 
 /obj/structure/flora/tree/joshua/Initialize()
-	..()
+	. = ..()
 	icon_state = "joshua_[rand(1,4)]"
 
 /obj/structure/flora/tree/cactus

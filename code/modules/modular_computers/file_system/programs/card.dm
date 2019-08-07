@@ -155,11 +155,11 @@
 						else
 							computer.visible_message("<span class='notice'>\The [computer] prints out paper.</span>")
 				else
-					var/contents = {"<h4>Crew Manifest</h4>
+					var/contents = {"<h4>Wasteland Census</h4>
 									<br>
 									[GLOB.data_core ? GLOB.data_core.get_manifest(0) : ""]
 									"}
-					if(!printer.print_text(contents,text("crew manifest ([])", station_time_timestamp())))
+					if(!printer.print_text(contents,text("Wasteland Census ([])", station_time_timestamp())))
 						to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
 						return
 					else
