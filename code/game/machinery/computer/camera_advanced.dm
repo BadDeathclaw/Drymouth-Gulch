@@ -1,6 +1,6 @@
 /obj/machinery/computer/camera_advanced
 	name = "advanced camera console"
-	desc = "Used to access the various cameras on the station."
+	desc = "Used to access the various cameras in the Wasteland."
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	var/list/z_lock = list() // Lock use to these z levels
@@ -271,9 +271,9 @@
 //Used by servants of Ratvar! They let you beam to the station.
 /obj/machinery/computer/camera_advanced/ratvar
 	name = "ratvarian camera observer"
-	desc = "A console used to snoop on the station's goings-on. A jet of steam occasionally whooshes out from slats on its sides."
+	desc = "A console used to snoop on the Wastelands's goings-on. A jet of steam occasionally whooshes out from slats on its sides."
 	use_power = FALSE
-	networks = list("ss13", "minisat") //:eye:
+	networks = list("vault", "kebab", "ncr", "bos") //:eye:
 	var/datum/action/innate/servant_warp/warp_action = new
 
 /obj/machinery/computer/camera_advanced/ratvar/Initialize()
