@@ -508,6 +508,7 @@
 	fire_delay = 3
 	extra_damage = 25
 	extra_penetration = 5
+	muzzle_speed_multiplier = 0.8
 	mag_type = /obj/item/ammo_box/magazine/r20
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
@@ -598,6 +599,7 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
+	muzzle_speed_multiplier = 0.3
 
 /obj/item/gun/ballistic/automatic/m72
 	name = "M72 gauss rifle"

@@ -106,6 +106,7 @@
 	extra_damage = 40
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	muzzle_speed_multiplier = 0.8
 
 /obj/item/gun/ballistic/shotgun/boltaction/enchanted
 	name = "enchanted bolt action rifle"
@@ -309,6 +310,7 @@
 	fire_delay = 6
 	extra_damage = 60
 	extra_penetration = 20
+	muzzle_speed_multiplier = 0.3
 
 //Colt Rangemaster
 /obj/item/gun/ballistic/shotgun/automatic/hunting
@@ -322,6 +324,7 @@
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 3
 	extra_damage = 40
+	muzzle_speed_multiplier = 0.8
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	name = "trail carbine"
@@ -336,6 +339,7 @@
 	fire_delay = 4
 	extra_damage = 40
 	extra_penetration = 10
+	muzzle_speed_multiplier = 0.6
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped
 	name = "scoped trail carbine"
@@ -392,6 +396,7 @@
 	fire_delay = 5
 	extra_damage = 50
 	extra_penetration = 15
+	muzzle_speed_multiplier = 0.6
 
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
