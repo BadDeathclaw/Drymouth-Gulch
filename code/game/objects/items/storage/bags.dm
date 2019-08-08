@@ -209,19 +209,6 @@
 	for(var/obj/item/O in contents)
 		seedify(O, 1)
 
-///////
-
-/obj/item/storage/bag/plants/forager
-	name = "foraging pack"
-	icon_state = "foragebag"
-	desc = "A heavy-duty leather pack with lots of pockets for carrying herbs and flowers."
-
-/obj/item/storage/bag/plants/forager/ComponentInitialize()
-	. = ..()
-	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_combined_w_class = 20
-	STR.max_items = 20
-
 // -----------------------------
 //        Sheet Snatcher
 // -----------------------------
