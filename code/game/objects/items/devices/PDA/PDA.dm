@@ -12,8 +12,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 #define PDA_SPAM_DELAY		    2 MINUTES
 
 /obj/item/pda
-	name = "\improper PDA"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
+	name = "\improper Pip-Boy 3000"
+	desc = "The RobCo Pip-Boy (Personal Information Processor) is an electronic device. Functionality is determined by a preprogrammed ROM cartridge."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
 	item_state = "Pip-boy"
@@ -60,7 +60,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/lock_code = "" // Lockcode to unlock uplink
 	var/honkamt = 0 //How many honks left when infected with honk.exe
 	var/mimeamt = 0 //How many silence left when infected with mime.exe
-	var/note = "Congratulations, your station has chosen the Thinktronic 5230 Personal Data Assistant!" //Current note in the notepad function
+	var/note = "Congratulations, your Vault has chosen the Pip-Boy 3000 Personal Data Assistant" //Current note in the notepad function
 	var/notehtml = ""
 	var/notescanned = FALSE // True if what is in the notekeeper was from a paper.
 	var/detonatable = TRUE // Can the PDA be blown up?
