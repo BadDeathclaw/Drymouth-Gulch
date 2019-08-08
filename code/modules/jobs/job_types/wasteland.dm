@@ -210,7 +210,9 @@ Pusher
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/jet=3, \
-		/obj/item/reagent_containers/syringe/medx=2)
+		/obj/item/reagent_containers/syringe/medx=2,\
+		/obj/item/reagent_containers/food/snacks/grown/cannabis=1,\
+		/obj/item/gun/ballistic/automatic/pistol/n99)
 
 /*
 Punished Raider
