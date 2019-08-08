@@ -150,7 +150,7 @@
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
 			even = !even
 	if(den.len > 0)
-		dat += "<tr><th colspan=3>Den</th></tr>"
+		dat += "<tr><th colspan=3>Kebab</th></tr>"
 		for(var/name in den)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[den[name]]</td></tr>"
 			even = !even

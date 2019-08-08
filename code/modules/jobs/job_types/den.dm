@@ -356,17 +356,17 @@ Preacher
 		/obj/item/storage/bag/money/small/settler)
 
 /*
-Kebab Doctor
+Doctor
 */
 
 /datum/job/den/f13dendoc
-	title = "Kebab Doctor"
+	title = "Doctor"
 	flag = F13DENDOC
 	department_flag = DEN
 	faction = "Kebab"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are in charge of providing medical assistance to the inhabitants of the Kebab as needed."
+	description = "You are in charge of providing medical assistance to the inhabitants of the town as needed."
 	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 	exp_requirements = 300
@@ -374,7 +374,7 @@ Kebab Doctor
 	outfit = /datum/outfit/job/den/f13dendoc
 
 /datum/outfit/job/den/f13dendoc
-	name = "Kebab Doctor"
+	name = "Doctor"
 	jobtype = /datum/job/den/f13dendoc
 	chemwhiz = TRUE
 	uniform =  		/obj/item/clothing/under/f13/medic
