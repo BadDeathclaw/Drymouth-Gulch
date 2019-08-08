@@ -260,7 +260,7 @@
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
-	desc = "An exclusive satchel for Nanotrasen officers."
+	desc = "An exclusive satchel for Vault-Tec officers."
 	icon_state = "satchel-cap"
 	item_state = "captainpack"
 
@@ -425,7 +425,7 @@
 	STR.silent = TRUE
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman
-	desc = "A large duffel bag for holding extra things. There is a Nanotrasen logo on the back."
+	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel-syndieammo"
 	item_state = "duffel-syndieammo"
 
