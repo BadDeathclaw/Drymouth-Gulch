@@ -381,7 +381,7 @@
 	var/mob/living/mob_occupant = occupant
 	if(mob_occupant)
 		connected_message("Critical Error!")
-		SPEAK("Critical error! Please contact a Thinktronic Systems \
+		SPEAK("Critical error! Please contact a RobCo Industries \
 			technician, as your warranty may be affected.")
 		mess = TRUE
 		maim_clone(mob_occupant)	//Remove every bit that's grown back so far to drop later, also destroys bits that haven't grown yet
@@ -492,7 +492,7 @@
 	A load/save dialog will become available in each profile if a disk is inserted.</p><br>
 	<i>A good diskette is a great way to counter aforementioned genetic drift!</i><br>
 	<br>
-	<font size=1>This technology produced under license from Thinktronic Systems, LTD.</font>"}
+	<font size=1>This technology produced under license from RobCo Industries</font>"}
 
 #undef CLONE_INITIAL_DAMAGE
 #undef SPEAK

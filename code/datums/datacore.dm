@@ -140,7 +140,7 @@
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(command.len > 0)
-		dat += "<tr><th colspan=3>Command</th></tr>"
+		dat += "<tr><th colspan=3>Leaders</th></tr>"
 		for(var/name in command)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[command[name]]</td></tr>"
 			even = !even
