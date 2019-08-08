@@ -24,6 +24,8 @@ GLOBAL_LIST_INIT(LIGHTING_CORNER_DIAGONAL, list(NORTHEAST, SOUTHEAST, SOUTHWEST,
 	var/cache_g  = LIGHTING_SOFT_THRESHOLD
 	var/cache_b  = LIGHTING_SOFT_THRESHOLD
 	var/cache_mx = 0
+	
+	var/list/globAffect = list() /* if we are affected by a global light, so the sunlight_overlay can compensate */
 
 /datum/lighting_corner/New(var/turf/new_turf, var/diagonal)
 	. = ..()

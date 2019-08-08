@@ -40,11 +40,11 @@
 
 //type and all subtypes should always call Initialize in New()
 #define INITIALIZE_IMMEDIATE(X) ##X/New(loc, ...){\
-    ..();\
+	..();\
     if(!(flags_1 & INITIALIZED_1)) {\
-        args[1] = TRUE;\
-        SSatoms.InitAtom(src, args);\
-    }\
+		args[1] = TRUE;\
+		SSatoms.InitAtom(src, args);\
+	}\
 }
 
 // Subsystem init_order, from highest priority to lowest priority
@@ -77,7 +77,8 @@
 #define INIT_ORDER_XKEYSCORE -10
 #define INIT_ORDER_STICKY_BAN -10
 #define INIT_ORDER_LIGHTING -20
-#define INIT_ORDER_SHUTTLE -21
+#define INIT_ORDER_SUNLIGHT	-21
+#define INIT_ORDER_SHUTTLE -22
 #define INIT_ORDER_SQUEAK -40
 #define INIT_ORDER_PATH -50
 #define INIT_ORDER_PERSISTENCE -100
