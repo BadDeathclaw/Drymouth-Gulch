@@ -256,7 +256,7 @@
 			first_status = "Set"
 		else
 			first_status = "Auth S1."
-	var/second_status = exploded ? "Warhead triggered, thanks for flying Nanotrasen" : (safety ? "Safe" : "Engaged")
+	var/second_status = exploded ? "Warhead triggered, thanks for flying Vault-Tec" : (safety ? "Safe" : "Engaged")
 	data["status1"] = first_status
 	data["status2"] = second_status
 	data["anchored"] = anchored
