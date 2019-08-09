@@ -32,7 +32,7 @@
 	BB.suppressed = quiet
 	BB.damage += extra_damage
 	BB.armour_penetration += extra_penetration
-	BB.speed *= muzzle_speed_multiplier
+	BB.speed /= muzzle_speed_multiplier
 
 	if(reagents && BB.reagents)
 		reagents.trans_to(BB, reagents.total_volume) //For chemical darts/bullets
