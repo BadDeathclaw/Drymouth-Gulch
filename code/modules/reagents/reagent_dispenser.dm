@@ -203,8 +203,8 @@
 	icon_state = "compostbin"
 	anchored = TRUE
 	reagent_id = null
-	var/seed_value = 10
-	var/produce_value = 20
+	var/seed_value = 4
+	var/produce_value = 10
 
 /obj/structure/reagent_dispensers/compostbin/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
