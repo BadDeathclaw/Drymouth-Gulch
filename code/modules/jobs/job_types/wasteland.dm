@@ -208,11 +208,15 @@ Pusher
 		/obj/item/flashlight/flare/torch, \
 		/obj/item/flashlight/flare)
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
+	suit_store = pick( /obj/item/gun/ballistic/revolver/caravan_shotgun,\
+	    /obj/item/gun/ballistic/automatic/pistol/n99,\
+	    /obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/shotgun/remington )
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/jet=3, \
 		/obj/item/reagent_containers/syringe/medx=2,\
 		/obj/item/reagent_containers/food/snacks/grown/cannabis=1,\
-		/obj/item/gun/ballistic/automatic/pistol/n99)
+		)
 
 /*
 Punished Raider
