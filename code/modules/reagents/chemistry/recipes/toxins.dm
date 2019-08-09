@@ -115,40 +115,39 @@
 	required_reagents = list("radium" = 1, "mutetoxin" = 1, "nothing" = 1)
 
 /datum/chemical_reaction/healitemconflict1
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Conflict Resolution 1"
+	id = "cr1"
+	results = list("stimpak" = 1)
 	required_reagents = list("stimpak"= 1, "healing_powder" = 1)
 
-
 /datum/chemical_reaction/healitemconflict2
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Conflict Resolution 2"
+	id = "cr2"
+	results = list("super_stimpak" = 1)
 	required_reagents = list("stimpak"= 1, "super_stimpak" = 1)
 
 /datum/chemical_reaction/healitemconflict3
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Conflict Resolution 3"
+	id = "cr3"
+	results = list("healing_poultice" = 1)
 	required_reagents = list("stimpak"= 1, "healing_poultice" = 1)
 
 /datum/chemical_reaction/healitemconflict4
-	name = "Anacea"	
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Conflict Resolution 4"
+	id = "cr4"
+	results = list("healing_poultice" = 1)
 	required_reagents = list("healing_powder"= 1, "healing_poultice" = 1)
 
 /datum/chemical_reaction/healitemconflict5
-	name = "Anacea"
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Conflict Resolution 5"
+	id = "cr5"
+	results = list("super_stimpak" = 1)
 	required_reagents = list("healing_powder"= 1, "super_stimpak" = 1)
 
 /datum/chemical_reaction/healitemconflict6
-	name = "Anacea"	
-	id = "anacea"
-	results = list("anacea" = 1)
+	name = "Conflict Resolution 6"
+	id = "cr6"
+	results = list("super_stimpak" = 1)
 	required_reagents = list("healing_poultice"= 1, "super_stimpak" = 1)
 
 
