@@ -32,7 +32,7 @@
 		to_chat(U, "<span class='notice'>Virus Sent!</span>")
 		target.honkamt = (rand(15,20))
 	else
-		to_chat(U, "PDA not found.")
+		to_chat(U, "Pip-Boy 3000 not found.")
 
 /obj/item/cartridge/virus/mime
 	name = "\improper Gestur-O 1000 cartridge"
@@ -49,7 +49,7 @@
 		target.silent = TRUE
 		target.ttone = "silence"
 	else
-		to_chat(U, "PDA not found.")
+		to_chat(U, "Pip-Boy 3000 not found.")
 
 /obj/item/cartridge/virus/syndicate
 	name = "\improper Detomatix cartridge"
@@ -83,7 +83,7 @@
 			U.show_message("<span class='notice'>Success!</span>", 1)
 			target.explode()
 	else
-		to_chat(U, "PDA not found.")
+		to_chat(U, "Pip-Boy 3000 not found.")
 
 /obj/item/cartridge/virus/frame
 	name = "\improper F.R.A.M.E. cartridge"
@@ -108,4 +108,4 @@
 		telecrystals = 0
 		hidden_uplink.active = TRUE
 	else
-		to_chat(U, "PDA not found.")
+		to_chat(U, "Pip-Boy 3000 not found.")
