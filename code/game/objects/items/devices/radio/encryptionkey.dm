@@ -168,6 +168,13 @@
 	icon_state = "cypherkey"
 	channels = list("Kebab" = 1)
 
+/obj/item/encryptionkey/headset_legion
+	name = "Legion radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the Legion channel, use :v."
+	icon_state = "cypherkey"
+	channels = list("Legion" = 1)
+
+
 /obj/item/encryptionkey/headset_cent
 	name = "\improper CentCom radio encryption key"
 	desc = "An encryption key for a radio headset.  To access the CentCom channel, use :y."

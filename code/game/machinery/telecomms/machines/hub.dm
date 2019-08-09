@@ -38,6 +38,6 @@
 	id = "Hub"
 	network = "tcommsat"
 	autolinkers = list("hub", "relay", "s_relay", "m_relay", "r_relay", "h_relay", "science", "medical",
-	"supply", "service", "vault", "ncr", "bos", "enclave", "kebab", "common", "command", "engineering", "security",
+	"supply", "service", "vault", "ncr", "bos", "enclave", "kebab", "legion", "common", "command", "engineering", "security",
 	"receiverA", "receiverB", "broadcasterA", "broadcasterB")
 

@@ -108,7 +108,8 @@ GLOBAL_LIST_INIT(radiochannels, list(
 	"NCR" = FREQ_NCR,
 	"BOS" = FREQ_BOS,
 	"Enclave" = FREQ_ENCLAVE,
-	"Kebab" = FREQ_DEN
+	"Kebab" = FREQ_DEN,
+	"Legion" = FREQ_LEGION
 ))
 
 GLOBAL_LIST_INIT(reverseradiochannels, list(
@@ -129,7 +130,8 @@ GLOBAL_LIST_INIT(reverseradiochannels, list(
 	"[FREQ_NCR]" = "NCR",
 	"[FREQ_BOS]" = "BOS",
 	"[FREQ_ENCLAVE]" = "Enclave",
-	"[FREQ_DEN]" = "Kebab"
+	"[FREQ_DEN]" = "Kebab",
+	"[FREQ_LEGION]" = "Legion"
 ))
 
 /datum/radio_frequency

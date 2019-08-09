@@ -58,6 +58,7 @@ em						{font-style: normal;	font-weight: bold;}
 .bosradio      			{color: #686868;}
 .enclaveradio      		{color: #003000;}
 .denradio      			{color: #a8732b;}
+.legionradio			{color: #c24d44;}
 
 .yell					{					font-weight: bold;}
 
