@@ -39,7 +39,8 @@
 	var/distro = 0						//Affects distance between shotgun pellets, ignore unless you're altering shotguns
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
-	var/muzzle_speed_multiplier = 1		//Base projectile speed(1/deciseconds) multiplier. A multiplier of 2 will double the projectile velocity, hence halve the time it takes to hit the target
+	var/muzzle_speed_multiplier = 1		//Base projectile speed multiplier. Ex: A multiplier value of 2 will double the projectile velocity(tiles/deci), hence halve the time it takes to cover a specific distance
+										//Muzzle_speed_multiplier is based on the projectile var/speed from /obj/item/projectile, which is set to 0.8 deciseconds per tile.
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
