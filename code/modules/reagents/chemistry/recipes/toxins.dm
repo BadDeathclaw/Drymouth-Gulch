@@ -117,37 +117,37 @@
 /datum/chemical_reaction/healitemconflict1
 	name = "Conflict Resolution 1"
 	id = "cr1"
-	results = list("stimpak" = 1)
+	results = list("stimpak" = 0.75)
 	required_reagents = list("stimpak"= 1, "healing_powder" = 1)
 
 /datum/chemical_reaction/healitemconflict2
 	name = "Conflict Resolution 2"
 	id = "cr2"
-	results = list("super_stimpak" = 1)
+	results = list("super_stimpak" = 0.75)
 	required_reagents = list("stimpak"= 1, "super_stimpak" = 1)
 
 /datum/chemical_reaction/healitemconflict3
 	name = "Conflict Resolution 3"
 	id = "cr3"
-	results = list("healing_poultice" = 1)
+	results = list("healing_poultice" = 0.75)
 	required_reagents = list("stimpak"= 1, "healing_poultice" = 1)
 
 /datum/chemical_reaction/healitemconflict4
 	name = "Conflict Resolution 4"
 	id = "cr4"
-	results = list("healing_poultice" = 1)
+	results = list("healing_poultice" = 0.75)
 	required_reagents = list("healing_powder"= 1, "healing_poultice" = 1)
 
 /datum/chemical_reaction/healitemconflict5
 	name = "Conflict Resolution 5"
 	id = "cr5"
-	results = list("super_stimpak" = 1)
+	results = list("super_stimpak" = 0.75)
 	required_reagents = list("healing_powder"= 1, "super_stimpak" = 1)
 
 /datum/chemical_reaction/healitemconflict6
 	name = "Conflict Resolution 6"
 	id = "cr6"
-	results = list("super_stimpak" = 1)
+	results = list("super_stimpak" = 0.75)
 	required_reagents = list("healing_poultice"= 1, "super_stimpak" = 1)
 
 
