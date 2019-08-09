@@ -33,6 +33,14 @@
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = "<span class='notice'>You feel like swinging for the fences!</span>"
 	lose_text = "<span class='danger'>You feel like bunting.</span>"
+
+/datum/quirk/powerpitcher
+	name = "Power Pitcher"
+	desc = "Throw hard, throw fast, and if you hit the batter, make sure he can't walk to first. You deal additional damage with throwing weapons. "
+	value = 1
+	mob_trait = TRAIT_POWER_PITCHER
+	gain_text = "<span class='notice'>You feel like throwing a few fastballs!</span>"
+	lose_text = "<span class='danger'>You feel like tossing out some granny throws.</span>"
 /*
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"

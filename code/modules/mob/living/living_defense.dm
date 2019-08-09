@@ -70,6 +70,7 @@
 		var/zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
 		var/dtype = BRUTE
 		var/volume = I.get_volume_by_throwforce_and_or_w_class()
+		var/mob/living/carbon/human/H = I.thrownby // Apparently we need to do this for syntax reasons
 		SEND_SIGNAL(I, COMSIG_MOVABLE_IMPACT_ZONE, src, zone)
 		dtype = I.damtype
 
@@ -89,7 +90,10 @@
 			visible_message("<span class='danger'>[src] has been hit by [I].</span>", \
 							"<span class='userdanger'>[src] has been hit by [I].</span>")
 			var/armor = run_armor_check(zone, "melee", "Your armor has protected your [parse_zone(zone)].", "Your armor has softened hit to your [parse_zone(zone)].",I.armour_penetration)
-			apply_damage(I.throwforce, dtype, zone, armor)
+			if(H.has_trait(TRAIT_POWER_PITCHER) && I.throwforce >= 5)
+				apply_damage(I.throwforce + 5, dtype, zone, armor)
+			else
+				apply_damage(I.throwforce, dtype, zone, armor)
 			if(I.thrownby)
 				add_logs(I.thrownby, src, "threw and hit", I)
 		else
