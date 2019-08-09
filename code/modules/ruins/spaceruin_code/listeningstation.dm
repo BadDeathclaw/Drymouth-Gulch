@@ -20,7 +20,7 @@
 
 /obj/item/paper/fluff/ruins/listeningstation/reports/june
 	name = "june report"
-	info = "Nanotrasen communications have been noticeably less frequent recently.  The pirate radio station I found last month has been transmitting pro-Nanotrasen propaganda. I will continue to monitor it."
+	info = "Vault-Tec communications have been noticeably less frequent recently.  The pirate radio station I found last month has been transmitting pro-Vault-Tec propaganda. I will continue to monitor it."
 
 /obj/item/paper/fluff/ruins/listeningstation/reports/may
 	name = "may report"
@@ -28,7 +28,7 @@
 
 /obj/item/paper/fluff/ruins/listeningstation/reports/april
 	name = "april report"
-	info = "A good start to the operation: intercepted Nanotrasen military communications. A convoy is scheduled to transfer nuclear warheads to a new military base. This is as good a chance as any to get our hands on some heavy weaponry, I suggest we take it."
+	info = "A good start to the operation: intercepted Vault-Tec military communications. A convoy is scheduled to transfer nuclear warheads to a new military base. This is as good a chance as any to get our hands on some heavy weaponry, I suggest we take it."
 
 /obj/item/paper/fluff/ruins/listeningstation/receipt
 	name = "receipt"
@@ -40,6 +40,6 @@
 
 /obj/item/paper/fluff/ruins/listeningstation/briefing
 	name = "mission briefing"
-	info = "<b>Mission Details</b>: You have been assigned to a newly constructed listening post constructed within an asteroid in Nanotrasen space to monitor their plasma mining operations. Accurate intel is crucial to the success of our operatives onboard, do not fail us."
+	info = "<b>Mission Details</b>: You have been assigned to a newly constructed listening post constructed within an asteroid in Vault-Tec space to monitor their plasma mining operations. Accurate intel is crucial to the success of our operatives onboard, do not fail us."
 
 

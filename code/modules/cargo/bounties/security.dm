@@ -1,6 +1,6 @@
 /datum/bounty/item/security/headset
 	name = "Security Headset"
-	description = "Nanotrasen wants to ensure that their encryption is working correctly. Ship them a security headset so that they can check."
+	description = "Vault-Tec wants to ensure that their encryption is working correctly. Ship them a security headset so that they can check."
 	reward = 800
 	wanted_types = list(/obj/item/radio/headset/headset_sec, /obj/item/radio/headset/heads/hos)
 
@@ -49,7 +49,7 @@
 
 /datum/bounty/item/security/recharger
 	name = "Rechargers"
-	description = "Nanotrasen military academy is conducting marksmanship exercises. They request that rechargers be shipped."
+	description = "Vault-Tec military academy is conducting marksmanship exercises. They request that rechargers be shipped."
 	reward = 2000
 	required_count = 3
 	wanted_types = list(/obj/machinery/recharger)

@@ -7,7 +7,7 @@
 
 
 /mob/living/silicon/pai/var/list/available_software = list(
-															"crew manifest" = 5,
+															"wasteland census" = 5,
 															"digital messenger" = 5,
 															"medical records" = 15,
 															"security records" = 15,
@@ -287,8 +287,8 @@
 	for(var/s in software)
 		if(s == "digital messenger")
 			dat += "<a href='byond://?src=[REF(src)];software=pdamessage;sub=0'>Digital Messenger</a> <br>"
-		if(s == "crew manifest")
-			dat += "<a href='byond://?src=[REF(src)];software=manifest;sub=0'>Crew Manifest</a> <br>"
+		if(s == "wasteland census")
+			dat += "<a href='byond://?src=[REF(src)];software=manifest;sub=0'>Wasteland Census</a> <br>"
 		if(s == "medical records")
 			dat += "<a href='byond://?src=[REF(src)];software=medicalrecord;sub=0'>Medical Records</a> <br>"
 		if(s == "security records")
@@ -409,9 +409,9 @@
 	<A href='byond://?src=[REF(src)];software=signaller;send=1'>Send Signal</A><BR>"}
 	return dat
 
-// Crew Manifest
+// Wasteland Census
 /mob/living/silicon/pai/proc/softwareManifest()
-	. += "<h2>Crew Manifest</h2><br><br>"
+	. += "<h2>Wasteland Census</h2><br><br>"
 	if(GLOB.data_core.general)
 		for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 			. += "[t.fields["name"]] - [t.fields["rank"]]<BR>"

@@ -91,7 +91,6 @@
 /obj/structure/barricade/wooden/make_debris()
 	new /obj/item/stack/sheet/mineral/wood(get_turf(src), drop_amount)
 
-
 /obj/structure/barricade/sandbags
 	name = "sandbags"
 	desc = "Bags of sand, stacked together to provide decent cover."
@@ -116,6 +115,7 @@
 		new /obj/item/stack/sheet/mineral/sandbags(src.loc)
 		qdel(src)
 		return
+
 /obj/structure/barricade/sandbags/make_debris()
 	new /obj/item/stack/ore/glass(get_turf(src), drop_amount)
 
@@ -132,7 +132,6 @@
 
 	var/deploy_time = 40
 	var/deploy_message = TRUE
-
 
 /obj/structure/barricade/security/Initialize()
 	. = ..()
