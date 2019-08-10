@@ -138,7 +138,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			equipped = TRUE
 
 /obj/item/pda/proc/update_label()
-	name = "PDA-[owner] ([ownjob])" //Name generalisation
+	name = "Pip-Boy 3000-[owner] ([ownjob])" //Name generalisation
 
 /obj/item/pda/GetAccess()
 	if(id)
@@ -650,7 +650,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	// Log it in our logs
 	tnote += "<i><b>&rarr; To [target_text]:</b></i><br>[signal.format_message()]<br>"
 	// Show it to ghosts
-	var/ghost_message = "<span class='name'>[owner] </span><span class='game say'>PDA Message</span> --> <span class='name'>[target_text]</span>: <span class='message'>[signal.format_message()]</span>"
+	var/ghost_message = "<span class='name'>[owner] </span><span class='game say'>Pip-Boy 3000 Message</span> --> <span class='name'>[target_text]</span>: <span class='message'>[signal.format_message()]</span>"
 	for(var/mob/M in GLOB.player_list)
 		if(isobserver(M) && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTPDA))
 			to_chat(M, "[FOLLOW_LINK(M, user)] [ghost_message]")
@@ -901,7 +901,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		QDEL_NULL(inserted_item)
 	return ..()
 
-//AI verb and proc for sending PDA messages.
+//AI verb and proc for sending Pip-Boy 3000 messages.
 
 /mob/living/silicon/ai/proc/cmd_send_pdamesg(mob/user)
 	var/list/plist = list()
@@ -919,7 +919,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 		plist[avoid_assoc_duplicate_keys(P.owner, namecounts)] = P
 
-	var/c = input(user, "Please select a PDA") as null|anything in sortList(plist)
+	var/c = input(user, "Please select a Pip-Boy 3000") as null|anything in sortList(plist)
 
 	if (!c)
 		return
@@ -940,35 +940,35 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 /mob/living/silicon/ai/verb/cmd_toggle_pda_receiver()
 	set category = "AI Commands"
-	set name = "PDA - Toggle Sender/Receiver"
+	set name = "Pip-Boy 3000 - Toggle Sender/Receiver"
 	if(usr.stat == DEAD)
 		return //won't work if dead
 	if(!isnull(aiPDA))
 		aiPDA.toff = !aiPDA.toff
-		to_chat(usr, "<span class='notice'>PDA sender/receiver toggled [(aiPDA.toff ? "Off" : "On")]!</span>")
+		to_chat(usr, "<span class='notice'>Pip-Boy 3000 sender/receiver toggled [(aiPDA.toff ? "Off" : "On")]!</span>")
 	else
-		to_chat(usr, "You do not have a PDA. You should make an issue report about this.")
+		to_chat(usr, "You do not have a Pip-Boy 3000. You should make an issue report about this.")
 
 /mob/living/silicon/ai/verb/cmd_toggle_pda_silent()
 	set category = "AI Commands"
-	set name = "PDA - Toggle Ringer"
+	set name = "Pip-Boy 3000 - Toggle Ringer"
 	if(usr.stat == DEAD)
 		return //won't work if dead
 	if(!isnull(aiPDA))
 		//0
 		aiPDA.silent = !aiPDA.silent
-		to_chat(usr, "<span class='notice'>PDA ringer toggled [(aiPDA.silent ? "Off" : "On")]!</span>")
+		to_chat(usr, "<span class='notice'>Pip-Boy 3000 ringer toggled [(aiPDA.silent ? "Off" : "On")]!</span>")
 	else
-		to_chat(usr, "You do not have a PDA. You should make an issue report about this.")
+		to_chat(usr, "You do not have a Pip-Boy 3000. You should make an issue report about this.")
 
 /mob/living/silicon/ai/proc/cmd_show_message_log(mob/user)
 	if(incapacitated())
 		return
 	if(!isnull(aiPDA))
-		var/HTML = "<html><head><title>AI PDA Message Log</title></head><body>[aiPDA.tnote]</body></html>"
+		var/HTML = "<html><head><title>AI Pip-Boy 3000 Message Log</title></head><body>[aiPDA.tnote]</body></html>"
 		user << browse(HTML, "window=log;size=400x444;border=1;can_resize=1;can_close=1;can_minimize=0")
 	else
-		to_chat(user, "You do not have a PDA. You should make an issue report about this.")
+		to_chat(user, "You do not have a Pip-Boy 3000. You should make an issue report about this.")
 
 
 // Pass along the pulse to atoms in contents, largely added so pAIs are vulnerable to EMP

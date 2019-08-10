@@ -154,7 +154,7 @@
 
 /turf/closed/indestructible/fakeglass/Initialize()
 	icon_state = "rock"
-	..()
+	. = ..()
 
 /turf/closed/indestructible/rock/snow
 	name = "mountainside"
