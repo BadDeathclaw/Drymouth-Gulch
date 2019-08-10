@@ -650,7 +650,7 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
+	
 /datum/crafting_recipe/goliathcloak
 	name = "deathclaw cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/goliath
