@@ -26,7 +26,7 @@
 /mob/living/carbon/alien/humanoid/royal/praetorian/movement_delay()
 	. = ..()
 	//. += 1	//making praetorian even slower to account for new movement delays
-	. += 4		//xeno movement delay balance
+	. += 2		//xeno movement delay balance
 
 /obj/effect/proc_holder/alien/royal/praetorian/evolve
 	name = "Evolve"
