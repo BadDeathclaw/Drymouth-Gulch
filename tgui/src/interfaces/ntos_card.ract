@@ -5,14 +5,14 @@
 <ui-button action='PRG_switchm' icon='home' params='{"target" : "mod"}' state='{{data.mmode == 1 ? "disabled" : null}}'>Access Modification</ui-button>
 {{/if}}
 <ui-button action='PRG_switchm' icon='folder-open' params='{"target" : "manage"}' state='{{data.mmode == 2 ? "disabled" : null}}'>Job Management</ui-button>
-<ui-button action='PRG_switchm' icon='folder-open' params='{"target" : "manifest"}' state='{{!data.mmode ? "disabled" : null}}'>Crew Manifest</ui-button>
+<ui-button action='PRG_switchm' icon='folder-open' params='{"target" : "manifest"}' state='{{!data.mmode ? "disabled" : null}}'>Wasteland Census</ui-button>
 {{#if data.have_printer}}
 <ui-button action='PRG_print' icon='print' state='{{!data.mmode || data.has_id && data.mmode == 1  ? null : "disabled"}}'>Print</ui-button>
 {{/if}}
 
 {{#if !data.mmode}}
 <div class='item'>
-  <h2>Crew Manifest</h2>
+  <h2>Wasteland Census</h2>
   <br>Please use security record computer to modify entries.<br><br>
 </div>
 {{#each data.manifest}}

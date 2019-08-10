@@ -41,7 +41,7 @@
 	if(padlock)
 		padlock.forceMove(get_turf(src))
 		padlock = null
-	..()
+	return ..()
 
 /obj/structure/simple_door/proc/attach_padlock(var/obj/item/lock/P, force = FALSE)
 	if(!force && (!can_hold_padlock || !P || !P.open || !P.id))
@@ -108,9 +108,9 @@
 
 /obj/structure/simple_door/attackby(obj/item/weapon/I, mob/living/user, params)
 	if(!istype(I, /obj/item/stack/sheet/mineral/wood))
-		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
+		for(var/obj/structure/barricade/wooden/planks/P in loc)
 			P.attackby(I, user, params)
-			return 1
+			return TRUE
 	if(istype(I, /obj/item/screwdriver) && can_disasemble && do_after(user, 5, target = src))
 		if(padlock)
 			to_chat(user, "<span class='warning'>Remove padlock before door dissasembling.</span>")

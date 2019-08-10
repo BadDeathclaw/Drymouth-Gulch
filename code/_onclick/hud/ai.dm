@@ -47,7 +47,7 @@
 	AI.toggle_camera_light()
 
 /obj/screen/ai/crew_monitor
-	name = "Crew Monitoring Console"
+	name = "Monitoring Console"
 	icon_state = "crew_monitor"
 
 /obj/screen/ai/crew_monitor/Click()
@@ -57,7 +57,7 @@
 	GLOB.crewmonitor.show(AI,AI)
 
 /obj/screen/ai/crew_manifest
-	name = "Crew Manifest"
+	name = "Wasteland Census"
 	icon_state = "manifest"
 
 /obj/screen/ai/crew_manifest/Click()
@@ -222,7 +222,7 @@
 	using.screen_loc = ui_ai_crew_monitor
 	static_inventory += using
 
-//Crew Manifest
+//Wasteland Census
 	using = new /obj/screen/ai/crew_manifest()
 	using.screen_loc = ui_ai_crew_manifest
 	static_inventory += using

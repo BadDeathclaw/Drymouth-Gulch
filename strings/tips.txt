@@ -15,12 +15,12 @@ You can recolor certain items like jumpsuits and gloves in washing machines by a
 If you obtain one, a hypospray is like a refillable instant injection syringe that can hold 30 units as opposed to the standard 15.
 While both heal toxin damage, the difference between charcoal and antitoxin is that charcoal will actively remove all other reagents from one's body, while antitoxin only removes various toxins - but can overdose.
 With surgery, you can implant or extract things from people's chests. This can range from putting in a bomb to pulling out an alien larva.
-With Surgery you must target the correct limb and be on help intent when trying to perform surgery on someone. Using disarm attempt will intentionally fail the surgery step.
+With surgery you must target the correct limb and be on help intent when trying to perform surgery on someone. Using disarm attempt will intentionally fail the surgery step.
 With surgery, you can extract implants by holding an empty implant case in your offhand while performing the extraction step.
 Clone scanning people will implant them with a health tracker that displays their vitals in the clone records. Useful to check on your possibly dead friends!
 There are dozens of chemicals out in the wastes that can heal, and even more that can cause harm. Experiment!
 Some chemicals can only be synthesized by heating up the contents in the chemical heater.
-With a Chem dispenser, you can make 100u bottles from plastic sheets. The ChemMaster can produce infinite 30u glass bottles as well.
+With a chem dispenser, you can make 100u bottles from plastic sheets. The ChemMaster can produce infinite 30u glass bottles as well.
 With a cloning machine set up, you can eject someone from cloning early by disabling power in genetics. Note that they will suffer more genetic damage and may lose vital organs from this.
 With the robotics console, you can lock down cyborgs instead of blowing them up. Then you can have their laws reset or if that doesn't work, safely dismantled.
 Researchable stock parts from the protolathe can seriously improve the efficiency and speed of machines around the wastes. In some cases, it can even unlock new functions.
@@ -45,7 +45,7 @@ As an Engineer, you can pry open secure storage by disabling the engine room APC
 An RCD can be reloaded with mineral sheets instead of just compressed matter cartridges.
 Don't let the power go to your head. You may have drugs, great equipment, and a miniature army at your side, but even the greatest can fall.
 Communicate and coordinate with your faction via radios printed from a construction lathe.
-You can hack the MegaSeed Vendor to get access to more exotic seeds. These seeds can alternatively be ordered from cargo.
+You can hack the MegaSeed Vendor to get access to more exotic seeds.
 You can mutate the plants growing in a hydroponics trays with unstable FEV solution or, as an alternative, crude radioactives from chemistry to get special variations.
 Mousetraps can be used to create bombs or booby-trap containers.
 As a Ghost, you can see the inside of a container on the ground by clicking on it.
@@ -55,8 +55,8 @@ When hacking doors, cutting and mending the "test light wire" will restore power
 When crafting most items, you can either manually combine parts or use the crafting menu.
 Suit storage units not only remove blood and dirt from clothing, but also radiation!
 Remote devices will work when used through cameras. For example: Bluespace RPEDs and door remotes.
-As a raider, you can gain valuable goods, drugs, armor, and weapons by taking them from the weak.
-As a raider, you are beholden only to your lack of morals, you monster.
+As a Raider, you can gain valuable goods, drugs, armor, and weapons by taking them from the weak.
+As a Raider, you are beholden only to your lack of morals, you monster.
 Make sure to read a factions rules before you break the rules inadverdently.
 Before entering combat, make sure you ready all your advantages. Drugs, spare weapons, healing, friends.
 Never give up, never give up, never give up, kill kill kill!
