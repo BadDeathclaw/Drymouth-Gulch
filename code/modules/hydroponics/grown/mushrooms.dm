@@ -375,11 +375,11 @@
 //Fallout mushrooms
 
 /obj/item/seeds/fungus
-	name = "pack of shroom seeds"
-	desc = "These seeds grow into shroom mushrooms."
+	name = "pack of cave fungus mycelium"
+	desc = "This mycelium grows into cave fungi, an edible variety of mushroom with anti-toxic properties."
 	icon_state = "seed-fungus"
-	species = "fungus"
-	plantname = "Fungus"
+	species = "cave fungus"
+	plantname = "cave fungi"
 	product = /obj/item/reagent_containers/food/snacks/grown/fungus
 	growing_icon = 'icons/obj/hydroponics/growing_mushrooms.dmi'
 	icon_grow = "cave_fungus-grow"
@@ -395,8 +395,8 @@
 
 /obj/item/reagent_containers/food/snacks/grown/fungus
 	seed = /obj/item/seeds/fungus
-	name = "shrooms"
-	desc = "Cave fungus is an edible mushroom which has the ability to decrease radioation."
+	name = "cave fungus"
+	desc = "Cave fungus is an edible mushroom which has the ability to purge bodily toxins."
 	icon_state = "fungus"
 	filling_color = "#FF6347"
 
@@ -405,35 +405,6 @@
 		reagents.add_reagent("nutriment", 1 + round((seed.potency / 20), 1))
 		reagents.add_reagent("charcoal", 1 + round((seed.potency / 20), 1))
 		bitesize = 1 + round(reagents.total_volume / 3, 1)
-
-/obj/item/seeds/shroom
-	name = "pack of shroom seeds"
-	desc = "These seeds grow into shrooms."
-	icon = 'icons/obj/hydroponics/seeds.dmi'
-	icon_state = "mycelium-shroom"
-	species = "shroom"
-	plantname = "Shrooms"
-	product = /obj/item/reagent_containers/food/snacks/grown/shroom
-	lifespan = 50
-	endurance = 10
-	yield = 5
-	growthstages = 3
-	production = 20
-	maturation = 20
-	growing_icon = 'icons/fallout/flora/flora.dmi'
-	icon_grow = "shroom-grow"
-	icon_dead = "shroom-dead"
-	icon_harvest = "shroom-harvest"
-	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list("charcoal" = 0.04, "nutriment" = 0.1, "radium" = 0.05)
-
-/obj/item/reagent_containers/food/snacks/grown/shroom
-	seed = /obj/item/seeds/shroom
-	name = "shroom"
-	desc = "An edible mushroom which has the ability to decrease radiation levels."
-	icon_state = "shroom"
-	icon = 'icons/obj/hydroponics/harvest.dmi'
-	filling_color = "#FF6347"
 
 /obj/item/seeds/glow
 	name = "pack of glowing fungus seeds"
