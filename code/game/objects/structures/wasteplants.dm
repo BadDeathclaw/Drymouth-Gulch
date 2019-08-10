@@ -29,37 +29,42 @@
 		icon_state = "[initial(icon_state)]_no"
 
 /obj/structure/flora/wasteplant/wild_broc
-	name = "Broc Flower"
+	name = "wild broc flower"
 	icon_state = "wild_broc"
+	desc = "A tall stalk bearing a vibrant, orange flower famed for its healing properties."
 	produce = /obj/item/reagent_containers/food/snacks/grown/broc
 
 
 /obj/structure/flora/wasteplant/wild_xander
-	name = "Xander Root"
+	name = "wild xander roots"
 	icon_state = "wild_xander"
+	desc = "A hardy, onion-like root with mild healing properties."
 	produce = /obj/item/reagent_containers/food/snacks/grown/xander
 
 
 /obj/structure/flora/wasteplant/wild_feracactus
-	name = "Feracactus"
+	name = "wild barrel cactus"
 	icon_state = "wild_feracactus"
+	desc = "A squat, spherical cactus blooming with a toxic fruit."
 	produce = /obj/item/reagent_containers/food/snacks/grown/feracactus
 
 
 /obj/structure/flora/wasteplant/wild_mutfruit
-	name = "Mutfruit"
-
+	name = "wild mutfruit sapling"
 	icon_state = "wild_mutfruit"
+	desc = "This irradiated sapling offers a fruit that is highly nutritious and hydrating."
 	produce = /obj/item/reagent_containers/food/snacks/grown/mutfruit
 
 
 /obj/structure/flora/wasteplant/wild_fungus
-	name = "Cave fungus"
+	name = "cave fungi"
 	icon_state = "wild_fungus"
+	desc = "This edible strain of fungus grows in dark places and is said to have anti-toxic properties."
 	produce = /obj/item/reagent_containers/food/snacks/grown/fungus
 
 
 /obj/structure/flora/wasteplant/wild_agave
-	name = "Wild agave"
+	name = "wild agave"
 	icon_state = "wild_agave"
+	desc = "The juice of this fleshy plant soothes burns, but it also removes nutrients from the body."
 	produce = /obj/item/reagent_containers/food/snacks/grown/agave
