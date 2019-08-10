@@ -13,7 +13,7 @@
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
 	//. = -1	//hunters are sanic
 	. += ..()	//but they still need to slow down on stun
-	. += 2			//hunters are no longer "sanic", but also do not have positive movement delay still
+				//hunters are no longer "sanic", but also do not have positive movement delay still
 
 
 //Hunter verbs
@@ -55,7 +55,7 @@
 		leaping = 1
 		weather_immunities += "lava"
 		update_icons()
-		throw_at(A, MAX_ALIEN_LEAP_DIST, 1, src, FALSE, TRUE, callback = CALLBACK(src, .proc/leap_end))
+		throw_at(A, MAX_ALIEN_LEAP_DIST, 1, src, FALSE, TRUE, callback = CALLBACK(src, .leap_end))
 
 /mob/living/carbon/alien/humanoid/hunter/proc/leap_end()
 	leaping = 0
