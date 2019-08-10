@@ -193,8 +193,6 @@
 		set_pin_data(IC_OUTPUT, 1, WEAKREF(null))
 		if(installed_brain.brainmob)
 			installed_brain.brainmob.remote_control = installed_brain
-	..()
-
 
 //Brain changes
 /mob/living/brain/var/check_bot_self = FALSE
@@ -232,5 +230,5 @@
 
 	brainholder.do_work(6)
 
-/mob/living/brain/canUseTopic()
-	return	check_bot_self
+/mob/living/brain/canUseTopic(atom/movable/M, be_close, no_dextery)
+	return check_bot_self

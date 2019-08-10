@@ -159,13 +159,8 @@
 
 	antag_candidates = shuffle(antag_candidates)
 
-	if(CONFIG_GET(flag/protect_roles_from_antagonist))
-		replacementmode.restricted_jobs += replacementmode.protected_jobs
-	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
-		replacementmode.restricted_jobs += "Assistant"
-
 	message_admins("The roundtype will be converted. If you have other plans for the station or feel the station is too messed up to inhabit <A HREF='?_src_=holder;[HrefToken()];toggle_midround_antag=[REF(usr)]'>stop the creation of antags</A> or <A HREF='?_src_=holder;[HrefToken()];end_round=[REF(usr)]'>end the round now</A>.")
-	log_game("Roundtype converted to [replacementmode.name]")
+	log_game("Roundtype converted.")
 
 	. = 1
 
@@ -182,7 +177,7 @@
 		if(H.client)
 			replacementmode.make_antag_chance(H)
 	round_converted = 2
-	message_admins("-- IMPORTANT: The roundtype has been converted to [replacementmode.name], antagonists may have been created! --")
+	message_admins("-- IMPORTANT: The roundtype has been converted, antagonists may have been created! --")
 
 
 ///Called by the gameSSticker

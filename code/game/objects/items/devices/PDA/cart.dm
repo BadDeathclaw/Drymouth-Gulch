@@ -645,7 +645,7 @@ Code:
 
 	if(href_list["mule"]) //MULEbots are special snowflakes, and need different args due to how they work.
 
-		active_bot.bot_control(command= href_list["mule"], user= usr, pda= 1)
+		active_bot.bot_control(command= href_list["mule"], user= usr)
 
 	if(!host_pda)
 		return
@@ -720,4 +720,4 @@ Code:
 	return ""
 
 //This is called for special abilities of cartridges
-/obj/item/cartridge/proc/special(mov/living/user, list/params)
+/obj/item/cartridge/proc/special(mob/living/user, list/params)

@@ -54,4 +54,4 @@
 /obj/structure/barricade/wooden/planks/pregame/Initialize() //Place these in the map maker to have a bit of randomization with boarded up windows/doors
 	planks = rand(1, maxplanks)
 	checkplanks()
-	..()
+	. = ..()

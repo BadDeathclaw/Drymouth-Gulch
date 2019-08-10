@@ -1,6 +1,6 @@
 /obj/machinery/pdapainter
-	name = "\improper PDA painter"
-	desc = "A PDA painting machine. To use, simply insert your PDA and choose the desired preset paint scheme."
+	name = "\improper Pip-Boy 3000 painter"
+	desc = "A Pip-Boy 3000 painting machine. To use, simply insert your Pip-Boy 3000 and choose the desired preset paint scheme."
 	icon = 'icons/obj/pda.dmi'
 	icon_state = "pdapainter"
 	density = TRUE
@@ -40,8 +40,8 @@
 	for(var/P in typesof(/obj/item/pda) - blocked)
 		var/obj/item/pda/D = new P
 
-		//D.name = "PDA Style [colorlist.len+1]" //Gotta set the name, otherwise it all comes up as "PDA"
-		D.name = D.icon_state //PDAs don't have unique names, but using the sprite names works.
+		//D.name = "Pip-Boy 3000 Style [colorlist.len+1]" //Gotta set the name, otherwise it all comes up as "Pip-Boy 3000"
+		D.name = D.icon_state //Pip-Boys 3000 don't have unique names, but using the sprite names works.
 
 		src.colorlist += D
 
@@ -110,7 +110,7 @@
 
 	if(storedpda)
 		var/obj/item/pda/P
-		P = input(user, "Select your color!", "PDA Painting") as null|anything in colorlist
+		P = input(user, "Select your color!", "Pip-Boy 3000 Painting") as null|anything in colorlist
 		if(!P)
 			return
 		if(!in_range(src, user))
@@ -126,7 +126,7 @@
 
 
 /obj/machinery/pdapainter/verb/ejectpda()
-	set name = "Eject PDA"
+	set name = "Eject Pip-Boy 3000"
 	set category = "Object"
 	set src in oview(1)
 
