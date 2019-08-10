@@ -650,7 +650,7 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
+	
 /datum/crafting_recipe/goliathcloak
 	name = "deathclaw cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/goliath
@@ -887,6 +887,8 @@
 	time = 40
 	category = CAT_MEDICAL
 
+
+
 /datum/crafting_recipe/syringe
 	name = "Syringe"
 	result = /obj/item/reagent_containers/syringe
@@ -904,6 +906,3 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
-	
-	
-	
