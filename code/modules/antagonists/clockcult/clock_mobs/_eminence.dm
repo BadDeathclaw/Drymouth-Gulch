@@ -76,7 +76,7 @@
 		E = new V
 		E.Grant(src)
 
-/mob/camera/eminence/say(message)
+/mob/camera/eminence/say(message, datum/language/language = null)
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
 			to_chat(src, "You cannot send IC messages (muted).")
