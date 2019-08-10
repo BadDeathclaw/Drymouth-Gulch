@@ -17,7 +17,7 @@
 	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 50)
 	max_integrity = 100
 	integrity_failure = 50
-	var/list/network = list("vault", "kebab", "NCR", "BoS")
+	var/list/network = list("ss13", "vault", "kebab", "ncr", "bos")
 	var/c_tag = null
 	var/status = TRUE
 	var/start_active = FALSE //If it ignores the random chance to start broken on round start
@@ -53,9 +53,10 @@
 		assembly.state = 4
 	GLOB.cameranet.cameras += src
 	GLOB.cameranet.addCamera(src)
-	if (isturf(loc))
+	if(isturf(loc))
 		myarea = get_area(src)
 		LAZYADD(myarea.cameras, src)
+		c_tag = "[myarea.name] ([rand(1, 999)])"
 	proximity_monitor = new(src, 1)
 
 	if(mapload && is_station_level(z) && prob(3) && !start_active)

@@ -139,7 +139,7 @@
 	var/list/dat = list("<html><head><title>Round Status</title></head><body><h1><B>Round Status</B></h1>")
 	if(SSticker.mode.replacementmode)
 		dat += "Former Game Mode: <B>[SSticker.mode.name]</B><BR>"
-		dat += "Replacement Game Mode: <B>[SSticker.mode.replacementmode.name]</B><BR>"
+		dat += "Replacement Game Mode initialized.<BR>"
 	else
 		dat += "Current Game Mode: <B>[SSticker.mode.name]</B><BR>"
 	dat += "Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B><BR>"

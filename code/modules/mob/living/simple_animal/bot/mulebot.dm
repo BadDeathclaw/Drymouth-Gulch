@@ -216,7 +216,7 @@
 			bot_control(action, usr) // Kill this later.
 			. = TRUE
 
-/mob/living/simple_animal/bot/mulebot/bot_control(command, mob/user, pda = 0)
+/mob/living/simple_animal/bot/mulebot/bot_control(command, mob/user, turf/user_turf, list/user_access = list(), pda = FALSE)
 	if(pda && wires.is_cut(WIRE_RX)) // MULE wireless is controlled by wires.
 		return
 
