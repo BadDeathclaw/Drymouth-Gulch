@@ -657,7 +657,7 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/deathclaw = 4)
+				/obj/item/stack/sheet/animalhide/deathclaw = 4) 
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
@@ -696,7 +696,7 @@
 		        /obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_MISC
-
+	
 /datum/crafting_recipe/spooky_camera
 	name = "Camera Obscura"
 	result = /obj/item/camera/spooky
@@ -904,7 +904,6 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
-	
 	
 	
 	
