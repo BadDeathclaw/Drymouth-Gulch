@@ -19,6 +19,7 @@
 
 /mob/living/carbon/alien/humanoid/drone/movement_delay()
 	. = ..()
+	. += 3		//xeno movement delay balance
 
 /obj/effect/proc_holder/alien/evolve
 	name = "Evolve to Praetorian"

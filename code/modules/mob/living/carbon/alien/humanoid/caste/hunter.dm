@@ -11,8 +11,9 @@
 	..()
 
 /mob/living/carbon/alien/humanoid/hunter/movement_delay()
-	. = -1	//hunters are sanic
+	//. = -1	//hunters are sanic
 	. += ..()	//but they still need to slow down on stun
+	. += 2			//hunters are no longer "sanic", but also do not have positive movement delay still
 
 
 //Hunter verbs
