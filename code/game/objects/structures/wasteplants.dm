@@ -48,7 +48,6 @@
 
 /obj/structure/flora/wasteplant/wild_mutfruit
 	name = "mutfruit"
-
 	icon_state = "wild_mutfruit"
 	produce = /obj/item/reagent_containers/food/snacks/grown/mutfruit
 
