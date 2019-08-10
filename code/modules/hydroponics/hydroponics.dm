@@ -665,6 +665,12 @@
 			else
 				to_chat(user, "<span class='warning'>Nothing happens...</span>")
 
+	// Actual compost
+	if(S.has_reagent("compost", 1))
+		adjustHealth(round(S.get_reagent_amount("compost") * 0.25))
+		adjustNutri(round(S.get_reagent_amount("compost") * 0.5))
+		adjustPests(-rand(1,2))
+
 /obj/machinery/hydroponics/attackby(obj/item/O, mob/user, params)
 	//Called when mob user "attacks" it with object O
 	if(istype(O, /obj/item/reagent_containers) )  // Syringe stuff (and other reagent containers now too)
