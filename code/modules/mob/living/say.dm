@@ -11,7 +11,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"c" = "Command",
 	"n" = "Science",
 	"m" = "Medical",
-	"e" = "Engineering",
+	//"e" = "Engineering", // Stealing for lEgion
 	"s" = "Security",
 	"u" = "Supply",
 	//"v" = "Service",
@@ -24,6 +24,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"q" = "BOS",
 	"z" = "Enclave",
 	"f" = "Kebab",
+	"e" = "Legion",
 
 	// Admin
 	"p" = "admin",
