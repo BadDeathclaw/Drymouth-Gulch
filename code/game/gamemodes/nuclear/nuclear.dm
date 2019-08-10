@@ -64,6 +64,8 @@
 	return TRUE
 
 /datum/game_mode/nuclear/check_finished() //to be called by SSticker
+	if(replacementmode && round_converted == 2)
+		return replacementmode.check_finished()
 	if((SSshuttle.emergency.mode == SHUTTLE_ENDGAME) || station_was_nuked)
 		return TRUE
 	if(nuke_team.operatives_dead())

@@ -30,7 +30,7 @@
 	var/recommended_enemies = 0
 	var/antag_flag = null //preferences flag such as BE_WIZARD that need to be turned on for players to be antag
 	var/mob/living/living_antag_player = null
-	var/list/datum/game_mode/replacementmode = null
+	var/datum/game_mode/replacementmode = null
 	var/round_converted = 0 //0: round not converted, 1: round going to convert, 2: round converted
 	var/reroll_friendly 	//During mode conversion only these are in the running
 	var/continuous_sanity_checked	//Catches some cases where config options could be used to suggest that modes without antagonists should end when all antagonists die
@@ -129,7 +129,7 @@
 		else
 			qdel(G)
 
-	if(!usable_modes)
+	if(!usable_modes.len)
 		message_admins("Convert_roundtype failed due to no valid modes to convert to. Please report this error to the Coders.")
 		return null
 
@@ -159,8 +159,13 @@
 
 	antag_candidates = shuffle(antag_candidates)
 
+	if(CONFIG_GET(flag/protect_roles_from_antagonist))
+		replacementmode.restricted_jobs += replacementmode.protected_jobs
+	if(CONFIG_GET(flag/protect_assistant_from_antagonist))
+		replacementmode.restricted_jobs += "Assistant"
+
 	message_admins("The roundtype will be converted. If you have other plans for the station or feel the station is too messed up to inhabit <A HREF='?_src_=holder;[HrefToken()];toggle_midround_antag=[REF(usr)]'>stop the creation of antags</A> or <A HREF='?_src_=holder;[HrefToken()];end_round=[REF(usr)]'>end the round now</A>.")
-	log_game("Roundtype converted.")
+	log_game("Roundtype converted to [replacementmode.name]")
 
 	. = 1
 
@@ -177,7 +182,7 @@
 		if(H.client)
 			replacementmode.make_antag_chance(H)
 	round_converted = 2
-	message_admins("-- IMPORTANT: The roundtype has been converted, antagonists may have been created! --")
+	message_admins("-- IMPORTANT: The roundtype has been converted to [replacementmode.name], antagonists may have been created! --")
 
 
 ///Called by the gameSSticker

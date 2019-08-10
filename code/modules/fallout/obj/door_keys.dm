@@ -52,12 +52,9 @@
 	var/try_id = 1
 	if(used_ids.len)
 		try_id = text2num(used_ids[used_ids.len]) + 1
-	CYCLE
-	if(!used_ids[num2text(try_id)])
-		return try_id
-	try_id++
-	goto CYCLE
-	return null
+	while(used_ids[num2text(try_id)])
+		try_id++
+	return try_id++
 
 /obj/item/storage/keys_set
 	name       = "key chain"

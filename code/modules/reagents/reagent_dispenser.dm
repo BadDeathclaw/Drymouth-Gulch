@@ -202,7 +202,7 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "compostbin"
 	anchored = TRUE
-	reagent_id = null
+	reagent_id = "compost"
 	var/seed_value = 4
 	var/produce_value = 10
 
