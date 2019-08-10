@@ -39,6 +39,7 @@
 	var/distro = 0						//Affects distance between shotgun pellets, ignore unless you're altering shotguns
 	var/extra_damage = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
+	var/projectile_speed = 0.8			//Speed of the projectiles shot from gun in deciseconds per 1 tile
 
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
@@ -236,7 +237,7 @@
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread))
 
-		if(!chambered.fire_casing(target, user, params, distro,suppressed, zone_override, sprd, extra_damage, extra_penetration))
+		if(!chambered.fire_casing(target, user, params, distro,suppressed, zone_override, sprd, extra_damage, extra_penetration, projectile_speed))
 			shoot_with_empty_chamber(user)
 			firing_burst = FALSE
 			return FALSE
@@ -284,7 +285,7 @@
 					to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 					return
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
-			if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, extra_damage, extra_penetration))
+			if(!chambered.fire_casing(target, user, params, distro, suppressed, zone_override, sprd, extra_damage, extra_penetration, projectile_speed))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -423,15 +424,15 @@
 		azoom.Grant(user)
 	if(alight)
 		alight.Grant(user)
-	
-		
+
+
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		zoom(user, FALSE)
 		if(zoomable == TRUE)
 			azoom.Remove(user)
-	
+
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	if(zoomed)
@@ -440,7 +441,7 @@
 		azoom.Remove(user)
 	if(alight)
 		alight.Remove(user)
-	
+
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params)
 	if(!ishuman(user) || !ishuman(target))
 		return
@@ -578,7 +579,7 @@
 	..()
 	if(wielded)
 		addZoom(user)
-	
+
 
 /obj/item/twohanded/binocs/dropped(mob/user)
 	..()
