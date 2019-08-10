@@ -21,7 +21,7 @@
 	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
+	
 /datum/crafting_recipe/IED
 	name = "IED"
 	result = /obj/item/grenade/iedcasing
@@ -904,3 +904,7 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
+	
+	
+	
+	
