@@ -40,12 +40,6 @@
 				to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
 
-		if(require_ooc_consent)
-			if(user.client && user.client.prefs)
-				if(user.client.prefs.wasteland_toggles & !VERB_CONSENT)
-					to_chat(user, "<span class = 'warning'>You can only use ERP verbs if you turn on the Allow Lewd Verbs preference.</span>")
-					return FALSE
-
 		if(require_user_bottomless && !user.is_bottomless())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>Your pants are in the way.</span>")
@@ -76,6 +70,12 @@
 				to_chat(user, "<span class = 'warning'>You don't have breasts.</span>")
 			return FALSE
 
+		if(require_ooc_consent)
+			if(user.client && user.client.prefs)
+				if(user.client.prefs.wasteland_toggles & VERB_CONSENT)
+					return TRUE
+				else
+					return FALSE
 		return TRUE
 	return FALSE
 
@@ -85,12 +85,6 @@
 			if(!silent) //same with this
 				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
 			return FALSE
-
-		if(require_ooc_consent)
-			if(target.client && target.client.prefs)
-				if(target.client.prefs.wasteland_toggles & !VERB_CONSENT)
-					to_chat(user, "<span class = 'warning'>You can only use this on players that have the Allow Lewd Verbs preference.</span>")
-					return FALSE
 
 		if(require_target_bottomless && !target.is_bottomless())
 			if(!silent)
@@ -121,10 +115,18 @@
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have a vagina.</span>")
 			return FALSE
+
 		if(require_target_breasts && !target.has_breasts())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have breasts.</span>")
 			return FALSE
+
+		if(require_ooc_consent)
+			if(target.client && target.client.prefs)
+				if(target.client.prefs.wasteland_toggles & VERB_CONSENT)
+					return TRUE
+				else
+					return FALSE
 		return TRUE
 	return FALSE
 

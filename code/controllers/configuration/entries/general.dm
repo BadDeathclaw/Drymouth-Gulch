@@ -49,13 +49,13 @@
 /datum/config_entry/flag/log_adminchat	// log admin chat messages
 	protection = CONFIG_ENTRY_LOCKED
 
-/datum/config_entry/flag/log_pda	// log pda messages
+/datum/config_entry/flag/log_pda	// log Pip-Boy 3000 messages
 
 /datum/config_entry/flag/log_twitter	// log certain expliotable parrots and other such fun things in a JSON file of twitter valid phrases.
 
 /datum/config_entry/flag/log_world_topic	// log all world.Topic() calls
 
-/datum/config_entry/flag/log_manifest	// log crew manifest to seperate file
+/datum/config_entry/flag/log_manifest	// log Wasteland Census to seperate file
 
 /datum/config_entry/flag/allow_admin_ooccolor	// Allows admins with relevant permissions to have their own ooc colour
 

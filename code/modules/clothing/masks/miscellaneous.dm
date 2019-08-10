@@ -295,30 +295,62 @@
 	desc = "A fine black bandana with nanotech lining and a skull emblem."
 	icon_state = "bandskull"
 
+//Legion Bandanas - We make these as much like normal bandanas as possible without repathing them.
+
 /obj/item/clothing/mask/bandana/legrecruit
 	name = "recruit bandana"
 	desc = "A fine recruit bandana."
 	icon_state = "legrecruit"
+	flags_inv = HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legdecan
 	name = "decan bandana"
 	desc = "A fine decan bandana."
 	icon_state = "legdecan"
+	flags_inv = HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legcenturion
 	name = "centurion bandana"
 	desc = "A fine centurion bandana."
 	icon_state = "legcenturion"
+	flags_inv = HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legvet
 	name = "veteran bandana"
 	desc = "A fine veteran bandana."
-	icon_state = "bandred"
+	icon_state = "legvet"
+	flags_inv = HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legprime
 	name = "prime bandana"
 	desc = "A fine prime bandana"
 	icon_state = "legdecan"
+	flags_inv = HIDEFACE
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH
+	adjusted_flags = null
+	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/mummy
 	name = "mummy mask"

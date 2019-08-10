@@ -493,7 +493,7 @@
 		M.emote(pick("twitch","drool","moan"))
 	..()
 	. = 1
-/
+
 /datum/reagent/drug/psycho
 	name = "Psycho Fluid"
 	id = "psycho"
@@ -587,4 +587,3 @@
 		M.emote(pick("twitch","scream","laugh"))
 	..()
 	return
-/
