@@ -1284,13 +1284,14 @@
 	..()
 
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-4*REM, 0)
-	M.adjustFireLoss(-4*REM, 0)
-	M.adjustToxLoss(-1*REM, 0)
-	M.AdjustStun(-5, 0)
-	M.AdjustKnockdown(-5, 0)
-	M.adjustStaminaLoss(-2*REM, 0)
-	. = 1
+	if(!M.reagents.has_reagent("healing_powder")) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
+		M.adjustBruteLoss(-4*REM, 0)
+		M.adjustFireLoss(-4*REM, 0)
+		M.adjustToxLoss(-1*REM, 0)
+		M.AdjustStun(-5, 0)
+		M.AdjustKnockdown(-5, 0)
+		M.adjustStaminaLoss(-2*REM, 0)
+		. = 1
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
@@ -1309,14 +1310,15 @@ datum/reagent/medicine/super_stimpak
 	overdose_threshold = 20
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
-	M.adjustBruteLoss(-6*REM)
-	M.adjustFireLoss(-6*REM)
-	M.adjustOxyLoss(-2*REM)
-	M.adjustToxLoss(-2*REM, 0)
-	M.AdjustStun(-10, 0)
-	M.AdjustKnockdown(-10, 0)
-	M.adjustStaminaLoss(-4*REM, 0)
-	. = 1
+	if(!M.reagents.has_reagent("healing_poultice") && !M.reagents.has_reagent("stimpak") && !M.reagents.has_reagent("healing_powder")) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
+		M.adjustBruteLoss(-6*REM)
+		M.adjustFireLoss(-6*REM)
+		M.adjustOxyLoss(-2*REM)
+		M.adjustToxLoss(-2*REM, 0)
+		M.AdjustStun(-10, 0)
+		M.AdjustKnockdown(-10, 0)
+		M.adjustStaminaLoss(-4*REM, 0)
+		. = 1
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
@@ -1358,10 +1360,11 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	overdose_threshold = 20
 
 /datum/reagent/medicine/healing_poultice/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-4*REM)
-	M.adjustBruteLoss(-4*REM)
-	M.adjustOxyLoss(-2*REM)
-	M.hallucination = max(M.hallucination, 5)
+	if(!M.reagents.has_reagent("stimpak") && !M.reagents.has_reagent("healing_powder")) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
+		M.adjustFireLoss(-4*REM)
+		M.adjustBruteLoss(-4*REM)
+		M.adjustOxyLoss(-2*REM)
+		M.hallucination = max(M.hallucination, 5)
 	..()
 
 /datum/reagent/medicine/radx

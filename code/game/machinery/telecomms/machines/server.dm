@@ -116,6 +116,11 @@
 	freq_listening = list(FREQ_DEN)
 	autolinkers = list("kebab")
 
+/obj/machinery/telecomms/server/presets/legion
+	id = "Legion Server"
+	freq_listening = list(FREQ_LEGION)
+	autolinkers = list("legion")
+
 /obj/machinery/telecomms/server/presets/common
 	id = "Common Server"
 	freq_listening = list()

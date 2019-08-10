@@ -1,13 +1,13 @@
 /obj/item/seeds/feracactus
-	name = "pack of feracactus seeds"
-	desc = "These seeds grow into feracactus."
+	name = "pack of barrel cactus seeds"
+	desc = "These seeds grow into a barrel cactus."
 	icon_state = "seed-feracactus"
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "feracactus-grow"
 	icon_dead = "feracactus-dead"
 	icon_harvest = "feracactus-harvest"
-	species = "feracactus"
-	plantname = "Feracactus"
+	species = "barrel cactus"
+	plantname = "barrel cactus"
 	product = /obj/item/reagent_containers/food/snacks/grown/feracactus
 	lifespan = 60
 	endurance = 20
@@ -19,8 +19,8 @@
 
 /obj/item/reagent_containers/food/snacks/grown/feracactus
 	seed = /obj/item/seeds/feracactus
-	name = "Barrel cactus fruit"
-	desc = "Barrel cactus fruit are found on barrel cactus; a spherical cacti that can be encountered while wandering the Mojave. They usually form in groups, with one large barrel cactus that contains the fruit surrounded by several smaller cacti. Like all other Mojave plants, fruit-bearing barrel cacti will eventually grow back after being picked."
+	name = "barrel cactus fruit"
+	desc = "Barrel cactus fruit are found on spherical barrel cacti and are both nutritious and highly toxic."
 	icon_state = "feracactus"
 	filling_color = "#FF6347"
 

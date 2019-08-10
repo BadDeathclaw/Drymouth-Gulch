@@ -19,6 +19,7 @@
 #define FREQ_BOS 1365 //BOS
 #define FREQ_ENCLAVE 1367 //ENCLAVE
 #define FREQ_DEN 1369 //DEN
+#define FREQ_LEGION 1371 //LEGION
 
 #define FREQ_STATUS_DISPLAYS 1435
 #define FREQ_ATMOS_ALARMS 1437  // air alarms <-> alert computers
