@@ -209,5 +209,5 @@
 /obj/item/flag/dropped(mob/user)
 	..()
 	anchored = 1
-/obj/item/flag/throw_at(atom/target, range, speed, mob/thrower, spin=1)
+/obj/item/flag/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first)
 	dropped(thrower)
