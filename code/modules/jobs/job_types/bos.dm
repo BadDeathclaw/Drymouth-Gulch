@@ -19,7 +19,7 @@ Main doors: ACCESS_CAPTAIN 20
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	belt = 			/obj/item/storage/belt/military
+	belt = 			/obj/item/storage/belt/military/assault
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
 
@@ -41,7 +41,7 @@ Elder
 /datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
-//	faction = "Station"
+	faction = "BOS"
 	head_announce = list("Security")
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
