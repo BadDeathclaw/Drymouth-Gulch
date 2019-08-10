@@ -211,3 +211,14 @@
 	anchored = 1
 /obj/item/flag/throw_at(atom/target, range, speed, mob/thrower, spin=1)
 	dropped(thrower)
+////////Viper stuff////// subject to change, but this way was simple
+/obj/item/viper_venom
+	name = "Viper venom"
+	desc = "A container of special Mojave viper venom, prepared by a skilled Viper shaman." //only used for viper spear recipe
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "bottle7"
+	throwforce = 2
+	throw_speed = 2
+	throw_range = 3
+	w_class = WEIGHT_CLASS_BULKY
+	attack_verb = list("bashed")
