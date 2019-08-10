@@ -29,37 +29,37 @@
 		icon_state = "[initial(icon_state)]_no"
 
 /obj/structure/flora/wasteplant/wild_broc
-	name = "Broc Flower"
+	name = "broc flower"
 	icon_state = "wild_broc"
 	produce = /obj/item/reagent_containers/food/snacks/grown/broc
 
 
 /obj/structure/flora/wasteplant/wild_xander
-	name = "Xander Root"
+	name = "xander root"
 	icon_state = "wild_xander"
 	produce = /obj/item/reagent_containers/food/snacks/grown/xander
 
 
 /obj/structure/flora/wasteplant/wild_feracactus
-	name = "Feracactus"
+	name = "barrel cactus"
 	icon_state = "wild_feracactus"
 	produce = /obj/item/reagent_containers/food/snacks/grown/feracactus
 
 
 /obj/structure/flora/wasteplant/wild_mutfruit
-	name = "Mutfruit"
+	name = "mutfruit"
 
 	icon_state = "wild_mutfruit"
 	produce = /obj/item/reagent_containers/food/snacks/grown/mutfruit
 
 
 /obj/structure/flora/wasteplant/wild_fungus
-	name = "Cave fungus"
+	name = "cave fungus"
 	icon_state = "wild_fungus"
 	produce = /obj/item/reagent_containers/food/snacks/grown/fungus
 
 
 /obj/structure/flora/wasteplant/wild_agave
-	name = "Wild agave"
+	name = "wild agave"
 	icon_state = "wild_agave"
 	produce = /obj/item/reagent_containers/food/snacks/grown/agave
