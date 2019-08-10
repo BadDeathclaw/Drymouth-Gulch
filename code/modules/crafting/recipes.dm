@@ -887,8 +887,6 @@
 	time = 40
 	category = CAT_MEDICAL
 
-
-
 /datum/crafting_recipe/syringe
 	name = "Syringe"
 	result = /obj/item/reagent_containers/syringe
