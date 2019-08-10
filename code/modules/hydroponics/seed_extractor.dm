@@ -191,7 +191,7 @@
 
 	piles += new /datum/seed_pile(O.plantname, O.lifespan, O.endurance, O.maturation, O.production, O.yield, O.potency)
 
-//Simple extractor, not very similar.
+// Simple extractor, not very similar.
 /obj/structure/legion_extractor
 	name = "seed grinder"
 	desc = "A crude grinding machine repurposed from kitchen appliances. Plants go in, seeds come out."
