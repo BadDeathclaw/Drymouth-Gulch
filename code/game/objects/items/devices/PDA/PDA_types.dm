@@ -140,7 +140,7 @@
 /obj/item/pda/syndicate
 	default_cartridge = /obj/item/cartridge/virus/syndicate
 	icon_state = "pda-syndi"
-	name = "military PDA"
+	name = "military Pip-Boy 3000"
 	owner = "John Doe"
 	hidden = 1
 

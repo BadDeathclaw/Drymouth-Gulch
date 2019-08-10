@@ -79,7 +79,7 @@
 	var/unburylevel = 0
 
 /turf/open/indestructible/ground/outside/desert/Initialize()
-	..()
+	. = ..()
 	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 		plantGrass()
 	if(icon_state != "wasteland")

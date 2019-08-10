@@ -645,7 +645,7 @@ Code:
 
 	if(href_list["mule"]) //MULEbots are special snowflakes, and need different args due to how they work.
 
-		active_bot.bot_control(command= href_list["mule"], user= usr, pda= 1)
+		active_bot.bot_control(command= href_list["mule"], user= usr)
 
 	if(!host_pda)
 		return

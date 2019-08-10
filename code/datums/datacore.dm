@@ -108,7 +108,7 @@
 		.manifest tr.alt td {[monochrome?"border-top-width: 2px":"background-color: #DEF"]}
 	</style></head>
 	<table class="manifest" width='350px'>
-	<tr class='head'><th>Name</th><th>Rank</th></tr>
+	<tr class='head'><th>Name</th><th>Occupation</th></tr>
 	"}
 	var/even = 0
 	// sort mobs
