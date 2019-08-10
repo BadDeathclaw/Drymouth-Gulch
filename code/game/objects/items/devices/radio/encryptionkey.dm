@@ -1,6 +1,6 @@
 /obj/item/encryptionkey
 	name = "standard encryption key"
-	desc = "An encryption key for a radio headset.  Has no special codes in it.  WHY DOES IT EXIST?  ASK NANOTRASEN."
+	desc = "An encryption key for a radio headset.  Has no special codes in it.  WHY DOES IT EXIST?"
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "cypherkey"
 	w_class = WEIGHT_CLASS_TINY
@@ -146,27 +146,27 @@
 
 /obj/item/encryptionkey/headset_ncr
 	name = "NCR radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the vault channel, use :w."
+	desc = "An encryption key for a radio headset.  To access the NCR channel, use :w."
 	icon_state = "cypherkey"
 	channels = list("NCR" = 1)
 
 /obj/item/encryptionkey/headset_bos
 	name = "Brotherhood radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the vault channel, use :q."
+	desc = "An encryption key for a radio headset.  To access the Enclave channel, use :q."
 	icon_state = "cypherkey"
 	channels = list("BOS" = 1)
 
 /obj/item/encryptionkey/headset_enclave
 	name = "Enclave radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the vault channel, use :z."
+	desc = "An encryption key for a radio headset.  To access the Brotherhood channel, use :z."
 	icon_state = "cypherkey"
 	channels = list("Enclave" = 1)
 
 /obj/item/encryptionkey/headset_den
-	name = "Den radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the vault channel, use :f."
+	name = "Kebab radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the Kebab channel, use :f."
 	icon_state = "cypherkey"
-	channels = list("Den" = 1)
+	channels = list("Kebab" = 1)
 
 /obj/item/encryptionkey/headset_cent
 	name = "\improper CentCom radio encryption key"

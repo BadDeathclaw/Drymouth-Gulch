@@ -26,6 +26,10 @@
 		H.gender = MALE
 		H.real_name = random_unique_name(MALE)
 		H.name = H.real_name
+		if(H.wear_id)
+			var/obj/item/card/id/dogtag/L = H.wear_id
+			L.registered_name = H.name
+			L.update_label()
 	if(H.real_name == ("Biggus Dickus" || "Bigus Dickus"))
 		H.real_name = "Minimae Coles"
 		H.name = "Minimae Coles"
@@ -441,7 +445,7 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
-	r_pocket = /obj/item/binocs
+	r_pocket = /obj/item/twohanded/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
 	title = "Legion Scout"

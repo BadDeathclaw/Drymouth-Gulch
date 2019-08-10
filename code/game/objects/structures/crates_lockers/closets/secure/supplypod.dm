@@ -6,7 +6,7 @@
 //------------------------------------SUPPLY POD-------------------------------------//
 /obj/structure/closet/supplypod
 	name = "Supply Drop Pod"
-	desc = "A Nanotrasen supply drop pod."
+	desc = "A supply drop pod."
 	icon = 'icons/obj/2x2.dmi'
 	icon_state = "supplypod"
 	pixel_x = -16//2x2 sprite
@@ -24,12 +24,12 @@
 
 /obj/structure/closet/supplypod/bluespacepod
 	name = "Bluespace Drop Pod"
-	desc = "A Nanotrasen Bluespace drop pod. Teleports back to CentCom after delivery."
+	desc = "A Bluespace drop pod. Teleports back to CentCom after delivery."
 	icon_state = "bluespacepod"
 
 /obj/structure/closet/supplypod/bluespacepod/centcompod
 	name = "CentCom Drop Pod"
-	desc = "A Nanotrasen Bluespace drop pod, this one has been marked with Central Command's designations. Teleports back to Centcom after delivery."
+	desc = "A Bluespace drop pod, this one has been marked with Central Command's designations. Teleports back to Centcom after delivery."
 	icon_state = "centcompod"
 
 /obj/structure/closet/supplypod/Initialize(mapload, SO)
@@ -149,7 +149,7 @@
 //------------------------------------UPGRADES-------------------------------------//
 /obj/item/disk/cargo/bluespace_pod
 	name = "Bluespace Drop Pod Upgrade"
-	desc = "This disk provides a firmware update to the Express Supply Console, granting the use of Nanotrasen's Bluespace Drop Pods to the supply department."
+	desc = "This disk provides a firmware update to the Express Supply Console, granting the use of Bluespace Drop Pods to the supply department."
 	icon = 'icons/obj/module.dmi'
 	icon_state = "cargodisk"
 	item_state = "card-id"

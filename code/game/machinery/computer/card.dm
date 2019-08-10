@@ -175,11 +175,11 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	var/dat
 	if(!SSticker)
 		return
-	if (mode == 1) // accessing crew manifest
+	if (mode == 1) // accessing Wasteland Census
 		var/crew = ""
 		for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 			crew += t.fields["name"] + " - " + t.fields["rank"] + "<br>"
-		dat = "<tt><b>Crew Manifest:</b><br>Please use security record computer to modify entries.<br><br>[crew]<a href='?src=[REF(src)];choice=print'>Print</a><br><br><a href='?src=[REF(src)];choice=mode;mode_target=0'>Access ID modification console.</a><br></tt>"
+		dat = "<tt><b>Wasteland Census:</b><br>Please use security record computer to modify entries.<br><br>[crew]<a href='?src=[REF(src)];choice=print'>Print</a><br><br><a href='?src=[REF(src)];choice=mode;mode_target=0'>Access ID modification console.</a><br></tt>"
 
 	else if(mode == 2)
 		// JOB MANAGEMENT
@@ -287,7 +287,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			header += "<div align='center'><br>"
 			header += "<a href='?src=[REF(src)];choice=modify'>Remove [target_name]</a> || "
 			header += "<a href='?src=[REF(src)];choice=scan'>Remove [scan_name]</a> <br> "
-			header += "<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a> <br> "
+			header += "<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Wasteland Census</a> <br> "
 			header += "<a href='?src=[REF(src)];choice=logout'>Log Out</a></div>"
 
 		header += "<hr>"
@@ -371,7 +371,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 		else
 			body = "<a href='?src=[REF(src)];choice=auth'>{Log in}</a> <br><hr>"
-			body += "<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Crew Manifest</a>"
+			body += "<a href='?src=[REF(src)];choice=mode;mode_target=1'>Access Wasteland Census</a>"
 			if(!target_dept)
 				body += "<br><hr><a href = '?src=[REF(src)];choice=mode;mode_target=2'>Job Management</a>"
 
@@ -556,11 +556,11 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				printing = 1
 				sleep(50)
 				var/obj/item/paper/P = new /obj/item/paper( loc )
-				var/t1 = "<B>Crew Manifest:</B><BR>"
+				var/t1 = "<B>Wasteland Census:</B><BR>"
 				for(var/datum/data/record/t in sortRecord(GLOB.data_core.general))
 					t1 += t.fields["name"] + " - " + t.fields["rank"] + "<br>"
 				P.info = t1
-				P.name = "paper- 'Crew Manifest'"
+				P.name = "paper- 'Wasteland Census'"
 				printing = null
 				playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
 	if (modify)

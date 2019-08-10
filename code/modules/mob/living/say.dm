@@ -23,7 +23,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"w" = "NCR",
 	"q" = "BOS",
 	"z" = "Enclave",
-	"f" = "Den",
+	"f" = "Kebab",
 
 	// Admin
 	"p" = "admin",

@@ -99,7 +99,7 @@
 		/obj/item/ammo_casing/shotgun/buckshot,
 		/obj/item/kitchen/knife/butcher, /obj/item/geiger_counter,
 		/obj/item/ammo_box/magazine/m10mm_adv, /obj/item/ammo_box/magazine/m10mm_auto,
-		/obj/item/crafting/lunchbox, /obj/item/gun/ballistic/automatic/pistol/ninemil
+		/obj/item/crafting/lunchbox, /obj/item/gun/ballistic/automatic/pistol/ninemil,
 		/obj/item/ammo_box/magazine/m9mm, /obj/item/gun/ballistic/revolver/colt6250,
 		/obj/item/ammo_box/magazine/r20, /obj/item/ammo_box/magazine/greasegun,
 		/obj/item/ammo_box/m44,/obj/item/ammo_box/magazine/m45,
@@ -108,7 +108,7 @@
 		/obj/item/ammo_box/c9mm, /obj/item/ammo_box/c10mm,
 		/obj/item/ammo_box/a556, /obj/item/ammo_box/c45,
 		/obj/item/storage/pill_bottle/chem_tin/mentats, /obj/item/storage/pill_bottle/chem_tin/fixer,
-		/obj/item/storage/pill_bottle/chem_tin/radx
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice, /obj/item/reagent_containers/food/drinks/bottle/cognac,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey, /obj/item/reagent_containers/hypospray/medipen/psycho,
 		/obj/item/clothing/glasses/sunglasses/big, /obj/item/clothing/glasses/sunglasses,
