@@ -1,6 +1,6 @@
 /obj/item/seeds/poppy/broc
 	name = "pack of broc seeds"
-	desc = "These seeds grow into broc flower."
+	desc = "These seeds grow into broc flowers."
 	icon_state = "seed-broc"
 	species = "broc"
 	plantname = "broc flowers"
@@ -17,7 +17,7 @@
 /obj/item/reagent_containers/food/snacks/grown/broc
 	seed = /obj/item/seeds/poppy/broc
 	name = "broc flower"
-	desc = "Broc flower grows on broc plants and can be used in the crafting of healing powder and stimpaks due to it's mild healing properties."
+	desc = "This vibrant, orange flower grows on tall stalks in the wasteland and exhibits moderate healing properties, even when unprocessed."
 	icon_state = "broc"
 	//slot_flags = SLOT_HEAD
 	filling_color = "#FF6347"

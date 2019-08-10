@@ -1,6 +1,6 @@
 /obj/item/seeds/mutfruit
 	name = "pack of mutfruit seeds"
-	desc = "These seeds grow into mutfruit."
+	desc = "These seeds grow into a mutfruit sapling."
 	icon_state = "seed-mutfruit"
 	species = "mutfruit"
 	plantname = "mutfruit sapling"
@@ -18,7 +18,7 @@
 /obj/item/reagent_containers/food/snacks/grown/mutfruit
 	seed = /obj/item/seeds/mutfruit
 	name = "mutfruit"
-	desc = "Mutfruit provides both hydration and sustenance, and provides them at moderately higher levels than other fruits, it gives a small amount of Radiation."
+	desc = "Mutfruit provides both hydration and sustenance, but the mutated plant also carries small amounts of radiation."
 	icon_state = "mutfruit"
 	filling_color = "#FF6347"
 

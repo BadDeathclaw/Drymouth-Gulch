@@ -1,6 +1,6 @@
 /obj/item/seeds/feracactus
 	name = "pack of barrel cactus seeds"
-	desc = "These seeds grow into barrel cactus."
+	desc = "These seeds grow into a barrel cactus."
 	icon_state = "seed-feracactus"
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "feracactus-grow"
@@ -20,7 +20,7 @@
 /obj/item/reagent_containers/food/snacks/grown/feracactus
 	seed = /obj/item/seeds/feracactus
 	name = "barrel cactus fruit"
-	desc = "Barrel cactus fruit are found on barrel cactus; a spherical cacti that can be encountered while wandering the Mojave. They usually form in groups, with one large barrel cactus that contains the fruit surrounded by several smaller cacti. Like all other Mojave plants, fruit-bearing barrel cacti will eventually grow back after being picked."
+	desc = "Barrel cactus fruit are found on spherical barrel cacti and are both nutritious and highly toxic."
 	icon_state = "feracactus"
 	filling_color = "#FF6347"
 
