@@ -19,4 +19,4 @@
 
 /mob/living/carbon/alien/humanoid/sentinel/movement_delay()
 	. = ..()
-	. += 3		//added to make xeno speed more balanced
+	. += 2		//added to make xeno speed more balanced
