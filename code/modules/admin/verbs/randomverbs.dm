@@ -65,7 +65,7 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list("CentCom","Syndicate")
+		sender = input("Who is the message from?", "Sender") as null|anything in list("Vault-Tec","Enclave")
 		if(!sender)
 			return
 
@@ -77,7 +77,7 @@
 
 	log_admin("[key_name(src)] replied to [key_name(H)]'s [sender] message with the message [input].")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Syndicate" ? "your benefactor" : "Central Command"].  Message as follows[sender == "Syndicate" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
+	to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Enclave" ? "your benefactor" : "Central Command"].  Message as follows[sender == "Enclave" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -1375,8 +1375,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	if(!message)
 		return
 
-	message_admins("[key_name_admin(usr)] triggered a CentCom recall, with the admiral message of: [message]")
-	log_game("[key_name(usr)] triggered a CentCom recall, with the message of: [message]")
+	message_admins("[key_name_admin(usr)] triggered a Vault-Tec recall, with the admiral message of: [message]")
+	log_game("[key_name(usr)] triggered a Vault-Tec recall, with the message of: [message]")
 	SSshuttle.centcom_recall(SSshuttle.emergency.timer, message)
 
 /client/proc/cmd_admin_check_player_exp()	//Allows admins to determine who the newer players are.

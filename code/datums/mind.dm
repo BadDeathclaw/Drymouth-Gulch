@@ -243,7 +243,7 @@
 	remove_rev()
 	SSticker.mode.update_cult_icons_removed(src)
 
-/datum/mind/proc/equip_traitor(employer = "The Syndicate", silent = FALSE, datum/antagonist/uplink_owner)
+/datum/mind/proc/equip_traitor(employer = "The Enclave", silent = FALSE, datum/antagonist/uplink_owner)
 	if(!current)
 		return
 	var/mob/living/carbon/human/traitor_mob = current
@@ -304,20 +304,20 @@
 			R.traitor_frequency = sanitize_frequency(rand(MIN_FREQ, MAX_FREQ))
 
 			if(!silent)
-				to_chat(traitor_mob, "[employer] has cunningly disguised a Syndicate Uplink as your [R.name]. Simply dial the frequency [format_frequency(R.traitor_frequency)] to unlock its hidden features.")
+				to_chat(traitor_mob, "[employer] has cunningly disguised an Enclave Uplink as your [R.name]. Simply dial the frequency [format_frequency(R.traitor_frequency)] to unlock its hidden features.")
 			unlock_note = "<B>Radio Frequency:</B> [format_frequency(R.traitor_frequency)] ([R.name])."
 		else if(uplink_loc == PDA)
 			PDA.lock_code = "[rand(100,999)] [pick(GLOB.phonetic_alphabet)]"
 
 			if(!silent)
-				to_chat(traitor_mob, "[employer] has cunningly disguised a Syndicate Uplink as your [PDA.name]. Simply enter the code \"[PDA.lock_code]\" into the ringtone select to unlock its hidden features.")
+				to_chat(traitor_mob, "[employer] has cunningly disguised an Enclave Uplink as your [PDA.name]. Simply enter the code \"[PDA.lock_code]\" into the ringtone select to unlock its hidden features.")
 			unlock_note = "<B>Uplink Passcode:</B> [PDA.lock_code] ([PDA.name])."
 
 		else if(uplink_loc == P)
 			P.traitor_unlock_degrees = rand(1, 360)
 
 			if(!silent)
-				to_chat(traitor_mob, "[employer] has cunningly disguised a Syndicate Uplink as your [P.name]. Simply twist the top of the pen [P.traitor_unlock_degrees] from its starting position to unlock its hidden features.")
+				to_chat(traitor_mob, "[employer] has cunningly disguised an Enclave Uplink as your [P.name]. Simply twist the top of the pen [P.traitor_unlock_degrees] from its starting position to unlock its hidden features.")
 			unlock_note = "<B>Uplink Degrees:</B> [P.traitor_unlock_degrees] ([P.name])."
 
 		if(uplink_owner)
