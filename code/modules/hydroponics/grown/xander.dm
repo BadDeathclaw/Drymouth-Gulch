@@ -3,7 +3,7 @@
 	desc = "These seeds grow into xander root."
 	icon_state = "seed-xander"
 	species = "xander"
-	plantname = "xander root"
+	plantname = "xander roots"
 	product = /obj/item/reagent_containers/food/snacks/grown/xander
 	lifespan = 25
 	endurance = 10

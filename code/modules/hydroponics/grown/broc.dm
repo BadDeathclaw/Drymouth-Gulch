@@ -3,7 +3,7 @@
 	desc = "These seeds grow into broc flower."
 	icon_state = "seed-broc"
 	species = "broc"
-	plantname = "Broc Plants"
+	plantname = "broc flowers"
 	product = /obj/item/reagent_containers/food/snacks/grown/broc
 	lifespan = 25
 	endurance = 10

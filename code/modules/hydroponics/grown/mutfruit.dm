@@ -3,7 +3,7 @@
 	desc = "These seeds grow into mutfruit."
 	icon_state = "seed-mutfruit"
 	species = "mutfruit"
-	plantname = "mutfruit"
+	plantname = "mutfruit sapling"
 	growing_icon = 'icons/obj/hydroponics/growing_fruits.dmi'
 	icon_grow = "mutfruit-grow"
 	icon_dead = "mutfruit-dead"

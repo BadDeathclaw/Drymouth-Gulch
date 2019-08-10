@@ -4,7 +4,7 @@
 	icon = 'icons/obj/hydroponics/seeds.dmi'
 	icon_state = "seed-agave"
 	species = "agave"
-	plantname = "agave"
+	plantname = "agave plant"
 	product = /obj/item/reagent_containers/food/snacks/grown/agave
 	lifespan = 60
 	endurance = 10
