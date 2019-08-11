@@ -19,7 +19,7 @@ Main doors: ACCESS_CAPTAIN 20
 	uniform =		/obj/item/clothing/under/f13/recon
 	shoes = 		/obj/item/clothing/shoes/combat/swat
 	gloves = 		/obj/item/clothing/gloves/combat
-	belt = 			/obj/item/storage/belt/military/assault
+	belt = 			/obj/item/storage/belt/military
 	glasses =		/obj/item/clothing/glasses/night
 	id = 			/obj/item/card/id/dogtag
 
