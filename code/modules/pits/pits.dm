@@ -178,6 +178,9 @@ obj/dugpit/New(lnk)
 			playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1) //FUCK YO RUSTLE I GOT'S THE DIGS SOUND HERE
 			if(do_after(user, (50 * digging_speed), target = src))
 				if(istype(src, /turf/open/indestructible/ground/outside/desert))
+					if(pit_sand < 2)
+						user.show_message("<span class='notice'>The ground has been already dug up!</span>", 1)
+						return
 					user.show_message("<span class='notice'>You dig a hole.</span>", 1)
 					gets_dug(user)
 					new /obj/item/stack/ore/glass(src)

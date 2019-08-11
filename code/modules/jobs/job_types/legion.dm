@@ -136,7 +136,7 @@ Veteran Decan
 	faction = "Legion"
 	total_positions = 1
 	spawn_positions = 1
-	description = "You answer directly to the Centurion, working with them to organize the Veteran Legionaries and organzing the other Decanii as needed. You help run the camp and lead the Veterans on patrols, raids and scouting missions on behalf of your Centurion."
+	description = "You answer directly to the Centurion, working with them to organize the Veteran Legionaries and organize the other Decanii as needed. You help run the camp and lead the Veterans on patrols, raids and scouting missions on behalf of your Centurion."
 	supervisors = "The Centurion and up."
 	forbids = "The Legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
