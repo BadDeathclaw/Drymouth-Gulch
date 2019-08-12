@@ -14,8 +14,8 @@
 	anchored = 1
 	icon             = LIGHTING_ICON
 	icon_state       = "transparent"
-	plane = LIGHTING_PLANE
-	layer = ABOVE_LIGHTING_LAYER
+	plane = SUNLIGHTING_PLANE //LIGHTING_PLANE
+	layer = SUNLIGHTING_LAYER //ABOVE_LIGHTING_LAYER
 	invisibility = INVISIBILITY_SYSTEM
 	light_color = COLOR_PURPLE
 	color = COLOR_PURPLE
@@ -24,7 +24,7 @@
 	var/state = 1
 	// appearance_flags = 0
 	var/turf/list/neighbourTurfs = list() //so we dont have to call AdjacentTurfs a billion times
-
+	
 	var/rp = 0
 	var/bp = 0
 	var/gp = 0
@@ -60,11 +60,12 @@
 /* essentially, we make this a big coloured square, but don"t light up the corners lit by neighbouring sunlight turfs */
 /atom/movable/sunlight_overlay/proc/update_corner()
 	var/turf/T = loc
+
 	/* wether or not we need to compensate */
-	cr = (T.corners[3].globAffect.len ? 1 : 0) /* check if we are globally affected or not */
-	cg = (T.corners[2].globAffect.len ? 1 : 0)
-	cb = (T.corners[4].globAffect.len ? 1 : 0)
-	ca = (T.corners[1].globAffect.len ? 1 : 0)
+	cr = ((T.corners[3] && T.corners[3].globAffect.len) ? 1 : 0) /* check if we are globally affected or not */
+	cg = ((T.corners[2] && T.corners[2].globAffect.len) ? 1 : 0)
+	cb = ((T.corners[4] && T.corners[4].globAffect.len) ? 1 : 0)
+	ca = ((T.corners[1] && T.corners[1].globAffect.len) ? 1 : 0)
 
 	/* no corners (for whatever reason, so turn off) */
 	if(!(cr || cg || cb || ca))
@@ -75,48 +76,9 @@
 	invisibility = INVISIBILITY_LIGHTING
 	luminosity = 1
 
-	rp = sqrt(GetRedPart(SSsunlight.light_color)   / 255 )
-	bp = sqrt(GetBluePart(SSsunlight.light_color)  / 255 )
-	gp = sqrt(GetGreenPart(SSsunlight.light_color) / 255 )
-
-	var/mx = max(rp, bp, gp) // Scale it so 1 is the strongest lum, if it is above 1.
-	. = 1 // factor
-	if (mx > 1)
-		. = 1 / mx
-
-	rp = round(rp * ., LIGHTING_ROUND_VALUE)
-	bp = round(bp * ., LIGHTING_ROUND_VALUE)
-	gp = round(gp * ., LIGHTING_ROUND_VALUE)
-
-	/* bottom left */
-	var/rr = rp * cr
-	var/rg = gp * cr
-	var/rb = bp * cr
-
-	/* bottom right*/
-	var/gr = rp * cg
-	var/gg = gp * cg
-	var/gb = bp * cg
-
-	/* top right */
-	var/br = rp * cb
-	var/bg = gp * cb
-	var/bb = bp * cb
-
-	/* top left */
-	var/ar = rp * ca
-	var/ag = gp * ca
-	var/ab = bp * ca
-
 	icon_state = null
-	color = list(
-		rr, rg, rb, 00,
-		gr, gg, gb, 00,
-		br, bg, bb, 00,
-		ar, ag, ab, 00,
-		00, 00, 00, 01
-	)
-	
+	color = SSsunlight.cornerColour["[cr][cg][cb][ca]"]
+
 /* We have three states as a sunlight overlay */
 /* 1 - we are unroofed and fully surrounded by state 1 or 4 sunlight overlays, so we are simple coloured square   					*/
 /* 2 - we are roofed, so we check our corners to pick up light emitted by state 3 turfs						     					*/
@@ -147,7 +109,7 @@
 	getNewState()
 	if(oldState == 2 && state != oldState)
 		disableLight()
-	
+
 
 /atom/movable/sunlight_overlay/proc/getNewState(neighbourLight = FALSE)
 	var/turf/T = loc
@@ -198,3 +160,5 @@
 			C.globAffect |= src;
 			affectingCorners |= C
 			SSsunlight.cornerQueue += C.masters /* update the boys */
+
+

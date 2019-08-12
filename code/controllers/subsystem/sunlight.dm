@@ -19,7 +19,7 @@ GLOBAL_REAL_VAR(GLOBAL_LIGHT_RANGE)
 /var/sunlight_overlays_initialised = FALSE
 
 // cannibalized from lighting.dm
- 
+
 
 
 /*
@@ -42,7 +42,7 @@ GLOBAL_REAL_VAR(GLOBAL_LIGHT_RANGE)
 
 
 */
- 
+
 SUBSYSTEM_DEF(sunlight)
 	name = "sunlight"
 	wait = 1
@@ -74,31 +74,32 @@ SUBSYSTEM_DEF(sunlight)
 	var/list/cornerQueue = list()    /* turfs to have their colours updated via corners (filter out the unroofed dudes) */
 	var/cq_indeq = 1
 
-	var/light_color = COLOR_PURPLE
+	var/light_color = "#808080"
 	var/light_power = 3
 	var/light_range = 3
-	var/color = COLOR_PURPLE
-
+	var/color = "#808080"
+	var/list/cornerColour = list()
 	var/currentTime
-	
-	
-		
+
+
+
 /datum/controller/subsystem/sunlight/Initialize()
-	InitializeTurfs()
+	// InitializeTurfs()
 	workQueue = GLOB.GLOBAL_LIGHT_OVERLAYS
-	setColour()
 	fire(FALSE,TRUE)
 	sunlight_overlays_initialised = TRUE
 	..()
- 
+
 // It's safe to pass a list of non-turfs to this list - it'll only check turfs.
 /* This is the proc that starts the crash loop. Maybe log what passes through it?
 	-Thooloo
 	*/
 /datum/controller/subsystem/sunlight/proc/InitializeTurfs(list/targets)
-	for (var/turf/T in (targets || world))
-		if (T.dynamic_lighting && T.loc:dynamic_lighting)
-			T.sunlight_overlay = new /atom/movable/sunlight_overlay(T)
+	//for (var/turf/T in (targets || world))
+	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
+		for (var/turf/T in block(locate(1,1,z), locate(world.maxx,world.maxy,z)))
+			if (T.dynamic_lighting && T.loc:dynamic_lighting)
+				T.sunlight_overlay = new /atom/movable/sunlight_overlay(T)
 
 // // It's safe to pass a list of non-turfs to this list - it'll only check turfs.
 
@@ -125,35 +126,30 @@ SUBSYSTEM_DEF(sunlight)
 	bp = round(bp * ., LIGHTING_ROUND_VALUE)
 	gp = round(gp * ., LIGHTING_ROUND_VALUE)
 
-	/* bottom left */
-	var/rr = rp
-	var/rg = gp
-	var/rb = bp
-
-	/* bottom right*/
-	var/gr = rp
-	var/gg = gp
-	var/gb = bp
-
-	/* top right */
-	var/br = rp
-	var/bg = gp
-	var/bb = bp
-
-	/* top left */
-	var/ar = rp
-	var/ag = gp
-	var/ab = bp
-
 	color = list(
-		rr, rg, rb, 00,
-		gr, gg, gb, 00,
-		br, bg, bb, 00,
-		ar, ag, ab, 00,
-		00, 00, 00, 01
+		-rp, -gp, -bp, 00,
+		-rp, -gp, -bp, 00,
+		-rp, -gp, -bp, 00,
+		-rp, -gp, -bp, 00,
+		-00, -00, -00, 01
 	)
 
 
+	//SSsunlight.cornerColour["[cr][cg][cb][ca]"]
+	/* get all variations of corner colours, so we dont have to recalc this */
+	/* I couldn't think of a neater way to do this */
+	for( var/cr = 0 to 1)
+		for( var/cg = 0 to 1)
+			for( var/cb = 0 to 1)	
+				for( var/ca = 0 to 1)
+					cornerColour["[cr][cg][cb][ca]"] = \
+					list(
+						(cr * rp), (cr * gp), (cr * bp), 00,
+						(cg * rp), (cg * gp), (cg * bp), 00,
+						(cb * rp), (cb * gp), (cb * bp), 00,
+						(ca * rp), (ca * gp), (ca * bp), 00,
+						 01       ,  01       ,  01       , 01
+					)
 
 
 
@@ -161,34 +157,10 @@ SUBSYSTEM_DEF(sunlight)
 
 /datum/controller/subsystem/sunlight/fire(resumed = FALSE, no_mc_tick = FALSE)
 
-	
+	if(!(SSlighting.initialized))
+		return
 	nextBracket()
 
-
-	// if (!resumed)
-	// 	stats_queues["Overlay"] += processed_overlays
-	// 	stats_queues["Color"] += processed_colours
-
-	// 	processed_colours = 0
-	// 	processed_overlays = 0
-
-	// 	if(next_stats_update <= world.time)
-	// 		next_stats_update = world.time + update_stats_every
-	// 		for(var/stat_name in stats_queues)
-	// 			var/stat_sum = 0
-	// 			var/list/stats_queue = stats_queues[stat_name]
-	// 			for(var/count in stats_queue)
-	// 				stat_sum += count
-	// 			stats_queue.Cut()
-
-	// 			var/list/stats_list = stats_lists[stat_name]
-	// 			stats_list.Insert(1, stat_sum)
-	// 			if(stats_list.len > stat_updates_to_keep)
-	// 				stats_list.Cut(stats_list.len)
-
-    // idk what the fuck this is
-    // it looks like it lets us run as many times as possible,
-    // before we start taking up too many ticks ?
 	MC_SPLIT_TICK_INIT(3)
 	if (!no_mc_tick)
 		MC_SPLIT_TICK
@@ -282,29 +254,31 @@ SUBSYSTEM_DEF(sunlight)
 	if (newTime != currentTime)
 		currentTime = newTime
 		updateLight(currentTime)
+		setColour()
 		. = TRUE
-		
+
 
 /datum/controller/subsystem/sunlight/proc/updateLight(newTime)
-	switch (newTime)
-		if ("SUNRISE")
-			light_color = "#ffd1b3"
-			light_power = 0.3
-		if ("MORNING")
-			light_color = "#fff2e6"
-			light_power = 0.5
-		if ("DAYTIME")
-			light_color = "#FFFFFF"
-			light_power = 0.75
-		if ("AFTERNOON")
-			light_color = "#fff2e6"
-			light_power = 0.5
-		if ("SUNSET")
-			light_color = "#ffcccc"
-			light_power = 0.3
-		if("NIGHTTIME")
-			light_color = "#00111a"
-			light_power = 0.15
+	light_color = "#808080"
+	// switch (newTime)
+	// 	if ("SUNRISE")
+	// 		light_color = "#ffd1b3"
+	// 		light_power = 0.3
+	// 	if ("MORNING")
+	// 		light_color = "#fff2e6"
+	// 		light_power = 0.5
+	// 	if ("DAYTIME")
+	// 		light_color = "#FFFFFF"
+	// 		light_power = 0.75
+	// 	if ("AFTERNOON")
+	// 		light_color = "#fff2e6"
+	// 		light_power = 0.5
+	// 	if ("SUNSET")
+	// 		light_color = "#ffcccc"
+	// 		light_power = 0.3
+	// 	if("NIGHTTIME")
+	// 		light_color = "#00111a"
+	// 		light_power = 0.15
 
 
 #undef CYCLE_SUNRISE

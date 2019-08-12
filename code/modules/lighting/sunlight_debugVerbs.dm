@@ -11,7 +11,7 @@ mob/verb/newSunlight()
     if(T.sunlight_overlay)
         world << "Sunlight overlay already exists"
         return
-    
+
     new /atom/movable/sunlight_overlay(src.loc)
     world << "Sunlight overlay created"
 
@@ -29,7 +29,7 @@ mob/verb/SunlightInfo()
     world << "Sunlight"
     world << "There are [GLOB.GLOBAL_LIGHT_OVERLAYS.len] sunlight turfs"
     var/turf/T = loc
-    
+
     var/atom/movable/sunlight_overlay/SL = T.sunlight_overlay
 
     var/cr = (T.corners[3].globAffect.len ? 0 : 1) /* check if we are globally affected or not */
@@ -69,7 +69,7 @@ mob/verb/SunlightInfo()
     var/ar = rp * ca
     var/ag = gp * ca
     var/ab = bp * ca
-    
+
     world << "cr [cr] "
     world << "cg [cg] "
     world << "cb [cb] "

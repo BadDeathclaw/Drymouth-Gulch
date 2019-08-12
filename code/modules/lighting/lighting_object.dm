@@ -2,7 +2,7 @@
 	name          = ""
 
 	anchored      = TRUE
-
+	blend_mode = BLEND_OVERLAY
 	icon             = LIGHTING_ICON
 	icon_state       = "transparent"
 	color            = LIGHTING_BASE_MATRIX
@@ -115,11 +115,11 @@
 	else
 		icon_state = null
 		color = list(
-			rr, rg, rb, 00,
-			gr, gg, gb, 00,
-			br, bg, bb, 00,
-			ar, ag, ab, 00,
-			00, 00, 00, 01
+			-rr, -rg, -rb, 00,
+			-gr, -gg, -gb, 00,
+			-br, -bg, -bb, 00,
+			-ar, -ag, -ab, 00,
+			01, 01, 01, 01
 		)
 
 	luminosity = set_luminosity
