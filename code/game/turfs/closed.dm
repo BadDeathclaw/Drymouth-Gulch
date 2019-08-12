@@ -93,9 +93,16 @@
 /turf/closed/indestructible/splashscreen/proc/swapImage()
 	animate(fullDark,alpha=255,time=10,easing=CUBIC_EASING)
 	sleep(12) //buffer of about 1/5 of the time of the animation, since they are not synchronized: the sleep happens on the server, but the animation is played for each client using directX. It's good to leave a buffer, but most of the time the directX will be much faster than the server anyway so you probably wont have any problems.
-	icon_state = "title[rand(1,13)]"
+	chooseIcon()
 	animate(fullDark,alpha=0,time=10,easing=CUBIC_EASING)
 	return
+
+/turf/closed/indestructible/splashscreen/proc/chooseIcon()
+	var/chosen_icon = "title[rand(1,13)]"
+	if(icon_state != chosen_icon)
+		icon_state = chosen_icon
+	else
+		chooseIcon()
 
 /turf/closed/indestructible/splashscreen/vv_edit_var(var_name, var_value)
 	. = ..()
