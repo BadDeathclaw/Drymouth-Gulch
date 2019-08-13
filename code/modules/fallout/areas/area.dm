@@ -365,6 +365,7 @@
 	blob_allowed = 0
 	environment = 4
 	grow_chance = 5
+	requires_power = FALSE
 
 /area/f13/legion
 	name = "Legion"
