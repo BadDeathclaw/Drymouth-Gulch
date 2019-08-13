@@ -51,9 +51,6 @@
 /turf/closed/indestructible/oldshuttle/corner
 	icon_state = "corner"
 
-
-
-
 /turf/closed/indestructible/splashscreen
 	var/tickerPeriod = 300 //in deciseconds
 	var/atom/movable/fullDark
@@ -65,7 +62,7 @@
 
 /turf/closed/indestructible/splashscreen/New()
 	icon = 'icons/misc/splashscreen.dmi'
-	icon_state = "title1"
+	icon_state = "title[rand(1,12)]"
 
 	src.fullDark = new/atom/movable{
 		icon = 'icons/misc/splashscreen.dmi' //Replace with actual icon
@@ -98,7 +95,7 @@
 	return
 
 /turf/closed/indestructible/splashscreen/proc/chooseIcon()
-	var/chosen_icon = "title[rand(1,13)]"
+	var/chosen_icon = "title[rand(1,12)]"
 	if(icon_state != chosen_icon)
 		icon_state = chosen_icon
 	else
@@ -110,10 +107,6 @@
 		switch(var_name)
 			if("icon")
 				SStitle.icon = icon
-
-
-
-
 
 /turf/closed/indestructible/riveted
 	icon = 'icons/turf/walls/riveted.dmi'
