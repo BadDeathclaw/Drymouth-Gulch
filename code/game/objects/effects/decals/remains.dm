@@ -13,6 +13,7 @@
 /obj/effect/decal/remains/attack_hand(mob/user)
 	visible_message("<span class='notice'>[user] begins to clean up [src].</span>")
 	if(do_after(user, 40, target = src))
+		to_chat(user, "<span class='notice'>You clean up [src].</span>")
 		make_debris()
 		qdel(src)
 	else
