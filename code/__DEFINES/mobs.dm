@@ -257,4 +257,4 @@
 #define AI_VOX // Comment out if you don't want VOX to be enabled and have players download the voice sounds.
 
 //Respawn timer
-#define RESPAWN_TIMER 6000 // in deciseconds, the time to wait before allowing respawn. 10 minutes = 10 * 60 (seconds in minute) * 10 (seconds to deciseconds)
+#define RESPAWN_TIMER 9000 // in deciseconds, the time to wait before allowing respawn. 15 minutes = 15 * 60 (seconds in minute) * 15 (seconds to deciseconds)
