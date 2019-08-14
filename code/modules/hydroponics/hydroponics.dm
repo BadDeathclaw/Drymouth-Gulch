@@ -356,7 +356,13 @@
 	pestlevel = 0 // Reset
 	update_icon()
 	visible_message("<span class='warning'>The [oldPlantName] is overtaken by some [myseed.plantname]!</span>")
-
+	name = "hydroponics tray ([myseed.plantname])"
+	if(myseed.product)
+		var/obj/item/P = new myseed.product
+		desc = P.desc
+		qdel(P)
+	else
+		desc = initial(desc)
 
 /obj/machinery/hydroponics/proc/mutate(lifemut = 2, endmut = 5, productmut = 1, yieldmut = 2, potmut = 25, wrmut = 2, wcmut = 5, traitmut = 0) // Mutates the current seed
 	if(!myseed)
@@ -390,7 +396,13 @@
 	sleep(5) // Wait a while
 	update_icon()
 	visible_message("<span class='warning'>[oldPlantName] suddenly mutates into [myseed.plantname]!</span>")
-
+	name = "hydroponics tray ([myseed.plantname])"
+	if(myseed.product)
+		var/obj/item/P = new myseed.product
+		desc = P.desc
+		qdel(P)
+	else
+		desc = initial(desc)
 
 /obj/machinery/hydroponics/proc/mutateweed() // If the weeds gets the FEV_solutiont instead. Mind you, this pretty much destroys the old plant
 	if( weedlevel > 5 )
@@ -745,6 +757,12 @@
 			to_chat(user, "<span class='notice'>You plant [O].</span>")
 			dead = 0
 			myseed = O
+			name = "hydroponics tray ([myseed.plantname])"
+			if(!myseed.productdesc && myseed.product)
+				var/obj/item/P = new myseed.product
+				myseed.productdesc = P.desc
+				qdel(P)
+			desc = myseed.productdesc
 			age = 1
 			plant_health = myseed.endurance
 			lastcycle = world.time
@@ -810,6 +828,8 @@
 					harvest = FALSE //To make sure they can't just put in another seed and insta-harvest it
 				qdel(myseed)
 				myseed = null
+				name = initial(name)
+				desc = initial(desc)
 			weedlevel = 0 //Has a side effect of cleaning up those nasty weeds
 			update_icon()
 
@@ -842,6 +862,8 @@
 		qdel(myseed)
 		myseed = null
 		update_icon()
+		name = initial(name)
+		desc = initial(desc)
 	else
 		if(user)
 			examine(user)
@@ -859,6 +881,8 @@
 		qdel(myseed)
 		myseed = null
 		dead = 0
+		name = initial(name)
+		desc = initial(desc)
 	update_icon()
 
 /// Tray Setters - The following procs adjust the tray or plants variables, and make sure that the stat doesn't go out of bounds.///
