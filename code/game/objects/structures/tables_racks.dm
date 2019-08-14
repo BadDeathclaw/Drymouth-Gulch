@@ -442,7 +442,7 @@
 /obj/structure/rack
 	name = "rack"
 	desc = "Different from the Middle Ages version."
-	icon = 'icons/obj/objects.dmi'
+	icon = 'icons/fallout/objects/structures/furniture.dmi'
 	icon_state = "rack"
 	layer = TABLE_LAYER
 	density = TRUE

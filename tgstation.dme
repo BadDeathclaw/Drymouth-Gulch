@@ -1569,7 +1569,6 @@
 #include "code\modules\fallout\misc\boarding.dm"
 #include "code\modules\fallout\misc\overlays.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\eyebot.dm"
-#include "code\modules\fallout\mob\simple_animal\mobs\rad_scorpion.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\supermutant.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\wolf.dm"
 #include "code\modules\fallout\obj\campfire.dm"
