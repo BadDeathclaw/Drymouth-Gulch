@@ -201,3 +201,13 @@
 	icon = 'icons/obj/clothing/neck.dmi'
 	icon_state = "bling"
 	item_color = "bling"
+
+///////////////////////////
+//CptPatriot Donator Item//
+///////////////////////////
+
+/obj/item/clothing/neck/scarf/cptpatriot
+	name = "chocolate chip camo scarf"
+	icon_state = "cptpatriotscarf"
+	item_color = "cptpatriotscarf"
+	desc = "A stylish scarf. This one has a camoflage pattern popularized during the Gulf War nearly five hundred years ago."
