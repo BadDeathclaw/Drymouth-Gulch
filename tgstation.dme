@@ -1583,7 +1583,6 @@
 #include "code\modules\fallout\obj\krotchy.dm"
 #include "code\modules\fallout\obj\trash.dm"
 #include "code\modules\fallout\obj\trash_stack.dm"
-#include "code\modules\fallout\obj\flora\flora.dm"
 #include "code\modules\fallout\obj\flora\wildplant.dm"
 #include "code\modules\fallout\obj\food_and_drinks\drink.dm"
 #include "code\modules\fallout\obj\food_and_drinks\food.dm"
