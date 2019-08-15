@@ -70,7 +70,7 @@
 	slowdown = 1
 	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
-	var/pit_sand = 2
+	var/pit_sand = 1
 	var/storedindex = 0			//amount of stored items
 	var/mob/living/gravebody	//is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
