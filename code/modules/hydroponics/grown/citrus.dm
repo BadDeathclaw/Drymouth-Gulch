@@ -76,7 +76,7 @@
 	icon_grow = "lime-grow"
 	icon_dead = "lime-dead"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/firelemon)
+//	mutatelist = list(/obj/item/seeds/firelemon) //got eem
 	reagents_add = list("vitamin" = 0.04, "nutriment" = 0.05)
 
 /obj/item/reagent_containers/food/snacks/grown/citrus/lemon
@@ -87,7 +87,7 @@
 	filling_color = "#FFD700"
 	juice_results = list("lemonjuice" = 0)
 
-// Combustible lemon
+// Combustible lemon	//Thes - took out the mutation for lemons, but left this here in case someone wants to allow combustible lemons for an event or something, for whatever reason
 /obj/item/seeds/firelemon //combustible lemon is too long so firelemon
 	name = "pack of combustible lemon seeds"
 	desc = "When life gives you lemons, don't make lemonade. Make life take the lemons back! Get mad! I don't want your damn lemons!"
