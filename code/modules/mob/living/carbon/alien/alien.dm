@@ -28,6 +28,7 @@
 /mob/living/carbon/alien/Initialize()
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
+	verbs += /mob/living/proc/surrender
 
 	create_bodyparts() //initialize bodyparts
 
