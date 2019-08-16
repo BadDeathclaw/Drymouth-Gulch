@@ -2,6 +2,7 @@
 /datum/weather/acid_rain
 	name = "acid rain"
 	desc = "The planet's thunderstorms are by nature acidic, and will incinerate anyone standing beneath them without protection."
+	probability = 1
 
 	telegraph_duration = 400
 	telegraph_message = "<span class='boldwarning'>Thunder rumbles far above. You hear droplets drumming against the canopy. Seek shelter.</span>"
@@ -17,13 +18,12 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	area_type = /area/f13/desert
+	area_type = /area/f13/wasteland
 	target_trait = ZTRAIT_STATION
 
 	immunity_type = "acid" // temp
 
 	barometer_predictable = TRUE
-
 
 /datum/weather/acid_rain/weather_act(mob/living/L)
 	if(is_acidrain_immune(L))
