@@ -17,6 +17,7 @@
 	end_overlay = "light_ash"
 
 	area_type = /area/f13/wasteland
+	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
 	immunity_type = "ash"
@@ -93,7 +94,7 @@
 	name = "sand storm"
 	desc = "A passing sand storm blankets the area in harmless sands."
 
-	telegraph_message = "<span class='userdanger'>An eerie moan rises on the wind. Sandstorm is coming... Be careful out there.</span>"
+	telegraph_message = "<span class='userdanger'>Sandstorm is coming to the area, decreasing overall visibility outside.</span>"
 
 	weather_message = "<span class='notice'>Sand waft down around you like grotesque snow. The storm seems to have passed you by...</span>"
 

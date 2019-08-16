@@ -3,9 +3,10 @@
 	desc = "Harsh cold wave will grip an entire area."
 	probability = 5
 
-	telegraph_message = "<span class='userdanger'><i>Cold wave incoming! Seek shelter and warm clothes!</i></span>"
+	telegraph_message = "<span class='userdanger'><i>Cold wave is coming to the area, gradually decreasing temperature of anyone caught outside.</i></span>"
 	telegraph_duration = 300
 	telegraph_overlay = "light_snow"
+	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
 	weather_message = "<span class='boldannounce'>The air suddenly gets very cold...</span>"
 	weather_overlay = "snow_storm"
@@ -16,6 +17,7 @@
 	end_message = "<span class='boldannounce'>The cold wave dies down, it should be safe to go outside again.</span>"
 
 	area_type = /area/f13/wasteland
+	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
 	immunity_type = "snow"
