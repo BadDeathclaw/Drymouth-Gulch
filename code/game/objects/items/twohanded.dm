@@ -855,6 +855,45 @@
 /obj/item/twohanded/bonespear/update_icon()
 	icon_state = "bone_spear[wielded]"
 
+/obj/item/twohanded/bonespear/venom //added for Viper raiders -Thes
+ 	container_type = INJECTABLE
+ 	name = "Viper spear"
+ 	desc = "A bone spear which has been modified to envenomate targets without drawing as much blood. Wielding it with both hands allows for stronger blows, but renders the venom ineffective.<br>It has been designed to allow for easily refitting the tip with a typical spear blade after the venom is dry."
+ 	force_unwielded = 11 //unwielded force decreased to reflect special spear point design and prevent excessive damage during envenomation
+
+/obj/item/twohanded/bonespear/venom/attack(mob/living/L, mob/user)
+	..()
+	if(!istype(L))
+		return
+
+	if(!wielded) //sends empty message when venom is dry and defaults back to normal attack, and allows for injection attack if possible//
+		if(!reagents.total_volume)
+			to_chat(user, "<span class='warning'>[src]'s venom has been used up!</span>")
+		else
+			if(L.can_inject(user, 1))
+				to_chat(user, "<span class='warning'>Your light strike successfully injects venom into [L]'s veins.</span>")
+				. = 1
+
+				add_logs(user, L, "stabbed", src) //left this here, but it may or may not work properly
+
+				var/amount_per_transfer_from_this = 8
+				var/fraction = min(amount_per_transfer_from_this/reagents.total_volume, 1)
+
+				if(reagents.total_volume)
+					if(L.reagents)
+						reagents.reaction(L, INJECT, fraction)
+						reagents.trans_to(L, amount_per_transfer_from_this)
+			else
+				..()
+
+/obj/item/twohanded/bonespear/venom/Initialize()
+	. = ..()
+	create_reagents(72) //mix that causes quick incap without significant risk of death, at least with one attacker. 4-5 attacks on a single target typically causes histamine symptoms, fatigue, sleep, as well as minor suffocation, toxins, and possible liver damage
+	reagents.add_reagent("venom",12)
+	reagents.add_reagent("sodium_thiopental", 50)
+	reagents.add_reagent("pancuronium", 10)
+//end of Viper spear. Venom mix is interesting but a simpler poisoned weapon solution might be more generally useful, with injectable or open container weapons that have lower volume but can be easily refilled with small doses of venom or something
+
 //Baeball
 
 /obj/item/twohanded/baseball
