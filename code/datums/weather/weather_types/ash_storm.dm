@@ -102,4 +102,4 @@
 
 	aesthetic = TRUE
 
-	probability = 10
+	probability = 15
