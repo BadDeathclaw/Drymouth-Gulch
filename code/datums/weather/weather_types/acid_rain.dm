@@ -5,7 +5,7 @@
 	probability = 1
 
 	telegraph_duration = 400
-	telegraph_message = "<span class='boldwarning'>Thunder rumbles far above. You hear droplets drumming against the canopy. Seek shelter.</span>"
+	telegraph_message = "<span class='userdanger'>Thunder rumbles far above. You hear droplets drumming against the canopy. Seek shelter. RUN YOU FOOL.</span>"
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
 	weather_message = "<span class='userdanger'><i>Acidic rain pours down around you! Get inside!</i></span>"

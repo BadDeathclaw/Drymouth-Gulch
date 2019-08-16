@@ -7,7 +7,7 @@
 	telegraph_duration = 300
 	telegraph_overlay = "light_snow"
 
-	weather_message = "<span class='boldannounce'>The air is getting very hot...</span>"
+	weather_message = "<span class='boldannounce'>The air suddenly gets very hot...</span>"
 	weather_overlay = "light_snow"
 	weather_duration_lower = 600
 	weather_duration_upper = 1500
