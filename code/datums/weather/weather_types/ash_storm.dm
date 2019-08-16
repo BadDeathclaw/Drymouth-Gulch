@@ -93,12 +93,11 @@
 	name = "sand storm"
 	desc = "A passing sand storm blankets the area in harmless sands."
 
-	telegraph_message = "<span class='boldwarning'>An eerie moan rises on the wind. Sandstorm is coming... Seek shelter.</span>"
+	telegraph_message = "<span class='userdanger'>An eerie moan rises on the wind. Sandstorm is coming... Be careful out there.</span>"
 
 	weather_message = "<span class='notice'>Sand waft down around you like grotesque snow. The storm seems to have passed you by...</span>"
-	weather_overlay = "light_ash"
 
-	end_message = "<span class='notice'>The sandstorm slows, stops. Another layer of sand to the ground beneath your feet.</span>"
+	end_message = "<span class='boldannounce'>The sandstorm slows, stops. Another layer of sand to the ground beneath your feet.</span>"
 	end_sound = null
 
 	aesthetic = TRUE
