@@ -5,7 +5,7 @@
 
 	telegraph_message = "<span class='userdanger'><i>Cold wave is coming to the area, gradually decreasing temperature of anyone caught outside.</i></span>"
 	telegraph_duration = 300
-	telegraph_overlay = "light_snow"
+	telegraph_overlay = "snow_storm"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
 	weather_message = "<span class='boldannounce'>The air suddenly gets very cold...</span>"
