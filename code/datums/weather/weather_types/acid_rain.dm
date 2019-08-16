@@ -30,7 +30,7 @@
 		return
 	var/resist = L.getarmor(null, "acid")
 	if(prob(max(0,100-resist)))
-		L.acid_act(10, 10)
+		L.acid_act(5, 5)
 
 /datum/weather/acid_rain/proc/is_acidrain_immune(atom/L)
 	while (L && !isturf(L))

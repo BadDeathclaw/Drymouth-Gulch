@@ -12,6 +12,7 @@ SUBSYSTEM_DEF(weather)
 	var/list/processing = list()
 	var/list/eligible_zlevels = list()
 	var/list/next_hit_by_zlevel = list() //Used by barometers to know when the next storm is coming
+	var/weather_on_start = FALSE
 
 /datum/controller/subsystem/weather/fire()
 	// process active weather
@@ -28,10 +29,14 @@ SUBSYSTEM_DEF(weather)
 	for(var/z in eligible_zlevels)
 		var/possible_weather = eligible_zlevels[z]
 		var/datum/weather/W = pickweight(possible_weather)
-		run_weather(W, list(text2num(z)))
-		eligible_zlevels -= z
-		var/randTime = rand(18000, 24000)
-		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 30-40 minutes between weathers
+		if(weather_on_start)
+			run_weather(W, list(text2num(z)))
+			eligible_zlevels -= z
+		else
+			eligible_zlevels -= z
+			weather_on_start = TRUE
+		var/randTime = rand(15000, 21000)
+		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-35 minutes between weathers
 		next_hit_by_zlevel["[z]"] = world.time + randTime + initial(W.telegraph_duration)
 
 /datum/controller/subsystem/weather/Initialize(start_timeofday)
