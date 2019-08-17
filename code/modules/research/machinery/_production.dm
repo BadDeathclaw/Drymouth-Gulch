@@ -116,10 +116,10 @@
 	if(!istype(D))
 		return FALSE
 	if(!(isnull(allowed_department_flags) || (D.departmental_flags & allowed_department_flags)))
-		say("Warning: Printing failed: This fabricator does not have the necessary keys to decrypt design schematics. Please update the research data with the on-screen button and contact Nanotrasen Support!")
+		say("Warning: Printing failed: This fabricator does not have the necessary keys to decrypt design schematics. Please update the research data with the on-screen button and contact Vault-Tec Support!")
 		return FALSE
 	if(D.build_type && !(D.build_type & allowed_buildtypes))
-		say("This machine does not have the necessary manipulation systems for this design. Please contact Nanotrasen Support!")
+		say("This machine does not have the necessary manipulation systems for this design. Please contact Vault-Tec Support!")
 		return FALSE
 	var/power = 1000
 	amount = CLAMP(amount, 1, 50)

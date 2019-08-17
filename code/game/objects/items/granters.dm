@@ -118,7 +118,7 @@
 
 /obj/item/book/granter/trait/chemistry
 	name = "Chemistry for Wastelanders"
-	desc = "A useful book on chemistry. Written by Sarah Prescott."
+	desc = "A useful book on chemistry."
 	oneuse = TRUE
 	granted_trait = TRAIT_CHEMWHIZ
 	traitname = "chemistry"

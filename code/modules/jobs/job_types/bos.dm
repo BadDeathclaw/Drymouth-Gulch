@@ -41,7 +41,7 @@ Elder
 /datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
-//	faction = "Station"
+	faction = "BOS"
 	head_announce = list("Security")
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
@@ -100,6 +100,9 @@ Paladin
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2)
+
+/datum/job/bos/f13paladin/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
 
 
 /*Head Scribe
@@ -171,6 +174,9 @@ Knight
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2)
+
+/datum/job/bos/f13knight/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
 
 
 /*

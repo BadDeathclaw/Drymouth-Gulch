@@ -229,9 +229,9 @@ Code:
 [radio.code]
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=1'>+</a>
 <a href='byond://?src=[REF(src)];choice=Signal Code;scode=5'>+</a><br>"}
-		if (41) //crew manifest
+		if (41) //Wasteland Census
 
-			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
+			menu = "<h4>[PDAIMG(notes)] Wasteland Census</h4>"
 			menu += "Entries cannot be modified from this terminal.<br><br>"
 			if(GLOB.data_core.general)
 				for (var/datum/data/record/t in sortRecord(GLOB.data_core.general))
@@ -645,7 +645,7 @@ Code:
 
 	if(href_list["mule"]) //MULEbots are special snowflakes, and need different args due to how they work.
 
-		active_bot.bot_control(command= href_list["mule"], user= usr, pda= 1)
+		active_bot.bot_control(command= href_list["mule"], user= usr)
 
 	if(!host_pda)
 		return
@@ -720,4 +720,4 @@ Code:
 	return ""
 
 //This is called for special abilities of cartridges
-/obj/item/cartridge/proc/special(mov/living/user, list/params)
+/obj/item/cartridge/proc/special(mob/living/user, list/params)

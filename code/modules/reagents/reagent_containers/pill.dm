@@ -163,21 +163,21 @@
 	list_reagents = list("shadowmutationtoxin" = 1)
 
 /obj/item/reagent_containers/pill/mentat
-	name = "mentat pill"
+	name = "Mentat"
 	desc = "A chalky pill that induces increased memory and cognitive functions, as well as heightened perception and creative faculties. \
 	Also known for fixing eye damage and blindness, for some reason."
 	icon_state = "pill20"
 	list_reagents = list("mentat" = 10)
 
 /obj/item/reagent_containers/pill/fixer
-	name = "fixer pill"
+	name = "Fixer pill"
 	desc = "A bitter pill that is known to rapidly treat the addictions, withdrawal effects, and other drawbacks of other chemicals. \
 	Side effects include heavy nausea."
 	icon_state = "pill3"
 	list_reagents = list("fixer" = 10)
 
 /obj/item/reagent_containers/pill/radx
-	name = "rad-x pill"
+	name = "Rad-X pill"
 	desc = "A pill that stabilizes radiation levels and treats small amounts of toxin damage."
 	icon_state = "pill18"
 	list_reagents = list("radx" = 20)

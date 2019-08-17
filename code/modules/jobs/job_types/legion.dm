@@ -26,6 +26,10 @@
 		H.gender = MALE
 		H.real_name = random_unique_name(MALE)
 		H.name = H.real_name
+		if(H.wear_id)
+			var/obj/item/card/id/dogtag/L = H.wear_id
+			L.registered_name = H.name
+			L.update_label()
 	if(H.real_name == ("Biggus Dickus" || "Bigus Dickus"))
 		H.real_name = "Minimae Coles"
 		H.name = "Minimae Coles"
@@ -132,7 +136,7 @@ Veteran Decan
 	faction = "Legion"
 	total_positions = 1
 	spawn_positions = 1
-	description = "You answer directly to the Centurion, working with them to organize the Veteran Legionaries and organzing the other Decanii as needed. You help run the camp and lead the Veterans on patrols, raids and scouting missions on behalf of your Centurion."
+	description = "You answer directly to the Centurion, working with them to organize the Veteran Legionaries and organize the other Decanii as needed. You help run the camp and lead the Veterans on patrols, raids and scouting missions on behalf of your Centurion."
 	supervisors = "The Centurion and up."
 	forbids = "The Legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
@@ -441,7 +445,7 @@ Legionary
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
-	r_pocket = /obj/item/binocs
+	r_pocket = /obj/item/twohanded/binocs
 
 /datum/job/CaesarsLegion/Legionnaire/f13scout
 	title = "Legion Scout"

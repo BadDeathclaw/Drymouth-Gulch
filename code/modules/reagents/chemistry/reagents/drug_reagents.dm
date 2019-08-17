@@ -493,7 +493,7 @@
 		M.emote(pick("twitch","drool","moan"))
 	..()
 	. = 1
-/
+
 /datum/reagent/drug/psycho
 	name = "Psycho Fluid"
 	id = "psycho"
@@ -503,6 +503,8 @@
 	overdose_threshold = 20
 	addiction_threshold = 15
 	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
+
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>FUCKING KILL!</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
@@ -519,10 +521,16 @@
 
 /datum/reagent/drug/psycho/on_mob_add(mob/living/L)
 	..()
-	L.add_trait(TRAIT_PSYCHO, id)
+	L.add_trait(TRAIT_SLEEPIMMUNE, id)
+	if(iscarbon(L))
+		var/mob/living/carbon/C = L
+		rage = new()
+		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/reagent/drug/psycho/on_mob_delete(mob/living/L)
-	L.remove_trait(TRAIT_PSYCHO, id)
+	L.remove_trait(TRAIT_SLEEPIMMUNE, id)
+	if(rage)
+		QDEL_NULL(rage)
 	..()
 
 /datum/reagent/drug/psycho/overdose_process(mob/living/M)
@@ -579,4 +587,3 @@
 		M.emote(pick("twitch","scream","laugh"))
 	..()
 	return
-/

@@ -6,12 +6,13 @@
 //Used for all kinds of weather, ex. lavaland ash storms.
 SUBSYSTEM_DEF(weather)
 	name = "Weather"
-	flags = SS_NO_FIRE|SS_NO_INIT //SS_BACKGROUND < disabled it for now
+	flags = SS_BACKGROUND
 	wait = 10
 	runlevels = RUNLEVEL_GAME
 	var/list/processing = list()
 	var/list/eligible_zlevels = list()
 	var/list/next_hit_by_zlevel = list() //Used by barometers to know when the next storm is coming
+	var/weather_on_start = FALSE
 
 /datum/controller/subsystem/weather/fire()
 	// process active weather
@@ -28,11 +29,16 @@ SUBSYSTEM_DEF(weather)
 	for(var/z in eligible_zlevels)
 		var/possible_weather = eligible_zlevels[z]
 		var/datum/weather/W = pickweight(possible_weather)
-		run_weather(W, list(text2num(z)))
-		eligible_zlevels -= z
-		var/randTime = rand(3000, 6000)
-		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 5-10 minutes between weathers
+		if(weather_on_start)
+			run_weather(W, list(text2num(z)))
+			eligible_zlevels -= z
+		else
+			eligible_zlevels -= z
+		var/randTime = rand(15000, 18000)
+		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-30 minutes between weathers
 		next_hit_by_zlevel["[z]"] = world.time + randTime + initial(W.telegraph_duration)
+	if(!weather_on_start)
+		weather_on_start = TRUE
 
 /datum/controller/subsystem/weather/Initialize(start_timeofday)
 	for(var/V in subtypesof(/datum/weather))
@@ -43,9 +49,11 @@ SUBSYSTEM_DEF(weather)
 		// any weather with a probability set may occur at random
 		if (probability)
 			for(var/z in SSmapping.levels_by_trait(target_trait))
+				if(z == 3) // Ignore sewers
+					continue
 				LAZYINITLIST(eligible_zlevels["[z]"])
 				eligible_zlevels["[z]"][W] = probability
-	..()
+	return ..()
 
 /datum/controller/subsystem/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels)
 	if (istext(weather_datum_type))

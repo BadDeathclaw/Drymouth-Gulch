@@ -605,7 +605,7 @@
 	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
 	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "protectron"
-	moduleselect_icon = "protectron"
+	moduleselect_icon = "brobot"
 	can_be_pushed = FALSE
 	hat_offset = 3
 
@@ -617,7 +617,7 @@
 	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
 	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
 	cyborg_base_icon = "pleasure"
-	moduleselect_icon = "pleasure"
+	moduleselect_icon = "brobot"
 	can_be_pushed = TRUE
 	hat_offset = 3
 
