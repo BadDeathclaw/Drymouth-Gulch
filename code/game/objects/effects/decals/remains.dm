@@ -2,7 +2,7 @@
 	name = "remains"
 	gender = PLURAL
 	icon = 'icons/effects/blood.dmi'
-	var/drop_amount = 0
+	var/drop_amount = 1
 
 /obj/effect/decal/remains/acid_act()
 	visible_message("<span class='warning'>[src] dissolve[gender==PLURAL?"":"s"] into a puddle of sizzling goop!</span>")
@@ -28,7 +28,6 @@
 /obj/effect/decal/remains/human
 	desc = "They look like human remains. They have a strange aura about them."
 	icon_state = "remains"
-	drop_amount = 1
 
 /obj/effect/decal/remains/plasma
 	icon_state = "remainsplasma"
@@ -40,12 +39,12 @@
 
 /obj/effect/decal/remains/xeno/larva
 	icon_state = "remainslarva"
-	drop_amount = 1
 
 /obj/effect/decal/remains/robot
 	desc = "They look like the remains of something mechanical. They have a strange aura about them."
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "remainsrobot"
+	drop_amount = 0
 
 /obj/effect/decal/cleanable/robot_debris/old
 	name = "dusty robot debris"

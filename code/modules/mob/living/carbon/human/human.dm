@@ -673,7 +673,7 @@
 		add_logs(src, C, "CPRed")
 
 		if(they_breathe && they_lung)
-			var/suff = min(C.getOxyLoss(), 7)
+			var/suff = min(C.getOxyLoss(), 14)
 			C.adjustOxyLoss(-suff)
 			C.updatehealth()
 			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air enter your lungs... It feels good...</span>")
