@@ -574,6 +574,24 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
+/datum/crafting_recipe/viperspear
+	name = "Viper Spear"
+	result = /obj/item/twohanded/bonespear/venom
+	time = 45
+	reqs = list(/obj/item/twohanded/bonespear = 1,
+				/obj/item/viper_venom = 1)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
+/datum/crafting_recipe/viperrecycle //an empty viper spear can already be used to make new bone spears, but I still like this idea
+	name = "Recycled Viper Spear"
+	result = /obj/item/twohanded/bonespear
+	time = 25
+	reqs = list(/obj/item/twohanded/bonespear/venom = 1,
+				/obj/item/stack/sheet/bone = 2)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
 /datum/crafting_recipe/boneaxe
 	name = "Bone Axe"
 	result = /obj/item/twohanded/fireaxe/boneaxe
@@ -886,6 +904,3 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
-
-
-
