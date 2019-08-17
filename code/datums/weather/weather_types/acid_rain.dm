@@ -5,7 +5,7 @@
 	probability = 1
 
 	telegraph_duration = 400
-	telegraph_message = "<span class='userdanger'>Thunder rumbles far above. You hear acidic droplets drumming against the canopy. RUN YOU FOOL.</span>"
+	telegraph_message = "<span class='userdanger'>Acid rain is coming to the area, bringing suffering and death to all life. Save yourself.</span>"
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
 	weather_message = "<span class='userdanger'><i>Acidic rain pours down around you! Get inside!</i></span>"
@@ -18,7 +18,7 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	area_type = /area/f13/wasteland
+	area_type = list(/area/f13/wasteland, /area/f13/forest, /area/f13/ruins, /area/f13/farm, /area/f13/radiation_outside)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 

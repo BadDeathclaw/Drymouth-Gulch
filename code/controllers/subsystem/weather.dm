@@ -34,10 +34,11 @@ SUBSYSTEM_DEF(weather)
 			eligible_zlevels -= z
 		else
 			eligible_zlevels -= z
-			weather_on_start = TRUE
 		var/randTime = rand(15000, 18000)
 		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-30 minutes between weathers
 		next_hit_by_zlevel["[z]"] = world.time + randTime + initial(W.telegraph_duration)
+	if(!weather_on_start)
+		weather_on_start = TRUE
 
 /datum/controller/subsystem/weather/Initialize(start_timeofday)
 	for(var/V in subtypesof(/datum/weather))
@@ -48,6 +49,8 @@ SUBSYSTEM_DEF(weather)
 		// any weather with a probability set may occur at random
 		if (probability)
 			for(var/z in SSmapping.levels_by_trait(target_trait))
+				if(z == 3) // Ignore sewers
+					continue
 				LAZYINITLIST(eligible_zlevels["[z]"])
 				eligible_zlevels["[z]"][W] = probability
 	return ..()

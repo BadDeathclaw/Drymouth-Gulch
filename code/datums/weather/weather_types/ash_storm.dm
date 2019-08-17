@@ -16,7 +16,7 @@
 	end_duration = 300
 	end_overlay = "light_ash"
 
-	area_type = /area/f13/wasteland
+	area_type = list(/area/f13/wasteland, /area/f13/forest, /area/f13/ruins, /area/f13/farm, /area/f13/radiation_outside)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
