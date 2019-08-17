@@ -455,7 +455,7 @@ SLIME SCANNER
 	if(user.canUseTopic(src))
 
 		if(cooldown)
-			to_chat(user, "<span class='warning'>[src]'s barometer function is prepraring itself.</span>")
+			to_chat(user, "<span class='warning'>[src]'s barometer function is preparing itself.</span>")
 			return
 
 		var/turf/T = get_turf(user)
@@ -467,7 +467,7 @@ SLIME SCANNER
 		var/datum/weather/ongoing_weather = null
 
 		if(!user_area.outdoors)
-			to_chat(user, "<span class='warning'>[src]'s barometer function won't work indoors!</span>")
+			to_chat(user, "<span class='warning'>[src]'s barometer function won't work indoors or underground!</span>")
 			return
 
 		for(var/V in SSweather.processing)
