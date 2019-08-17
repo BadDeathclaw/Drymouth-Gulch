@@ -16,12 +16,11 @@
 	end_duration = 300
 	end_overlay = "light_ash"
 
-	area_type = /area/lavaland/surface/outdoors
-	target_trait = ZTRAIT_MINING
+	area_type = /area/f13/wasteland
+	protected_areas = list(/area/shuttle)
+	target_trait = ZTRAIT_STATION
 
 	immunity_type = "ash"
-
-	//probability = 90
 
 	barometer_predictable = TRUE
 
@@ -91,18 +90,17 @@
 		return
 	L.adjustFireLoss(4)
 
-
-//Emberfalls are the result of an ash storm passing by close to the playable area of lavaland. They have a 10% chance to trigger in place of an ash storm.
 /datum/weather/ash_storm/emberfall
-	name = "emberfall"
-	desc = "A passing ash storm blankets the area in harmless embers."
+	name = "sand storm"
+	desc = "A passing sand storm blankets the area in harmless sands."
 
-	weather_message = "<span class='notice'>Gentle embers waft down around you like grotesque snow. The storm seems to have passed you by...</span>"
-	weather_overlay = "light_ash"
+	telegraph_message = "<span class='userdanger'>Sandstorm is coming to the area, decreasing overall visibility outside.</span>"
 
-	end_message = "<span class='notice'>The emberfall slows, stops. Another layer of hardened soot to the basalt beneath your feet.</span>"
+	weather_message = "<span class='notice'>Sand waft down around you like grotesque snow. The storm seems to have passed you by...</span>"
+
+	end_message = "<span class='boldannounce'>The sandstorm slows, stops. Another layer of sand to the ground beneath your feet.</span>"
 	end_sound = null
 
 	aesthetic = TRUE
 
-	probability = 10
+	probability = 15

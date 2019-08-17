@@ -92,7 +92,7 @@
 			var/datum/design/D = SSresearch.techweb_designs[d]
 			if(!istype(D))
 				WARNING("Invalid research design with ID [d] detected in node [N.display_name]\[[N.id]\] removed.")
-				N.designs -= d
+				N.design_ids -= d
 				design_id_error(d)
 		for(var/p in N.prerequisites)
 			var/datum/techweb_node/P = N.prerequisites[p]

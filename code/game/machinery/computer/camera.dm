@@ -1,6 +1,6 @@
 /obj/machinery/computer/security
 	name = "security camera console"
-	desc = "Used to access the various cameras on the station."
+	desc = "Used to access the various cameras in the Wasteland."
 	icon_screen = "cameras"
 	icon_keyboard = "security_key"
 	circuit = /obj/item/circuitboard/computer/security
@@ -181,7 +181,7 @@
 
 /obj/machinery/computer/security/wooden_tv
 	name = "security camera monitor"
-	desc = "An old TV hooked into the stations camera network."
+	desc = "An old TV hooked to a camera network."
 	icon_state = "television"
 	icon_keyboard = null
 	icon_screen = "detective_tv"
@@ -201,3 +201,30 @@
 	desc = "Used to access the various cameras in science."
 	network = list("rd")
 	circuit = /obj/item/circuitboard/computer/research
+
+/obj/machinery/computer/security/kebab
+	name = "kebabtown checkpoint camera terminal"
+	desc = "Used to access the various cameras located in the town."
+	icon_state = "terminal"
+	icon_keyboard = "terminal_key"
+	icon_screen = "terminal_on_alt"
+	network = list("kebab")
+	circuit = /obj/item/circuitboard/computer/kebab
+
+/obj/machinery/computer/security/ncr
+	name = "NCR camp camera terminal"
+	desc = "Used to access the various cameras located in the NCR camp."
+	icon_state = "terminal"
+	icon_keyboard = "terminal_key"
+	icon_screen = "terminal_on_alt"
+	network = list("NCR")
+	circuit = /obj/item/circuitboard/computer/ncr
+
+/obj/machinery/computer/security/bos
+	name = "brootherhood bunker camera terminal"
+	desc = "Used to access the various cameras inside the bunker"
+	icon_state = "terminal"
+	icon_keyboard = "terminal_key"
+	icon_screen = "terminal_on_alt"
+	network = list("BoS")
+	circuit = /obj/item/circuitboard/computer/bos

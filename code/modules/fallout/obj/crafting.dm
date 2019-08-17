@@ -121,7 +121,7 @@
 
 /obj/item/crafting/turpentine
 	name = "turpentine"
-	desc = "A flammable liquid distilled from pine resin, used as a solvent."
+	desc = "A liquid distilled from pine resin, can function as an antiseptic or solvent."
 	icon_state = "turpentine"
 
 /obj/item/crafting/abraxo

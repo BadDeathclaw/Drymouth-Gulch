@@ -44,7 +44,7 @@
 			if(PLAYER_READY_TO_OBSERVE)
 				output += "<p>\[ [LINKIFY_READY("Ready", PLAYER_READY_TO_PLAY)] | [LINKIFY_READY("Not Ready", PLAYER_NOT_READY)] | <b> Observe </b> \]</p>"
 	else
-		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
+		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Wasteland Census</a></p>"
 		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>Join Game!</a></p>"
 		output += "<p>[LINKIFY_READY("Observe", PLAYER_READY_TO_OBSERVE)]</p>"
 
@@ -134,6 +134,11 @@
 				SSticker.queued_players += usr
 				to_chat(usr, "<span class='notice'>You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len].</span>")
 			return
+
+		if(GLOB.data_core.get_record_by_name(client.prefs.real_name))
+			alert(src, "This character name is already in use. Choose another.")
+			return
+
 		LateChoices()
 
 	if(href_list["manifest"])
@@ -511,7 +516,7 @@
 
 /mob/dead/new_player/proc/ViewManifest()
 	var/dat = "<html><body>"
-	dat += "<h4>Crew Manifest</h4>"
+	dat += "<h4>Wasteland Census</h4>"
 	dat += GLOB.data_core.get_manifest(OOC = 1)
 
 	src << browse(dat, "window=manifest;size=387x420;can_close=1")

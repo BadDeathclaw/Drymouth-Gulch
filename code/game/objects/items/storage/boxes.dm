@@ -825,7 +825,7 @@
 			if(NODESIGN)
 				desc = "A sack neatly crafted out of paper."
 			if(NANOTRASEN)
-				desc = "A standard Nanotrasen paper lunch sack for loyal employees on the go."
+				desc = "A standard paper lunch sack for loyal employees on the go."
 			if(SYNDI)
 				desc = "The design on this paper sack is a remnant of the notorious 'SyndieSnacks' program."
 			if(HEART)

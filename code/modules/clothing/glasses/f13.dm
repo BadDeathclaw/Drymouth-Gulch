@@ -10,8 +10,8 @@
 	item_state = "biker"
 
 /obj/item/clothing/glasses/legiongoggles
-	name = "Legion goggles"
-	desc = "Standard issue goggles for Caesar's Legion."
+	name = "sandstorm goggles"
+	desc = "Post-war makeshift goggles fasioned together inside Legion camps. Standard issue to most legionarys."
 	icon_state = "legion"
 	item_state = "legion"
 

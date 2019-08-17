@@ -586,7 +586,7 @@ we
 
 /obj/structure/sign/poster/official/anniversary_vintage_reprint
 	name = "50th Anniversary Vintage Reprint"
-	desc = "A reprint of a poster from 2505, commemorating the 50th Aniversery of Nanoposters Manufacturing, a subsidary of Nanotrasen."
+	desc = "A reprint of a poster from 2067, commemorating the Aniversery of RobCo Industries."
 	icon_state = "poster26_legit"
 
 /obj/structure/sign/poster/official/fruit_bowl
@@ -595,13 +595,13 @@ we
 	icon_state = "poster27_legit"
 
 /obj/structure/sign/poster/official/pda_ad
-	name = "PDA Ad"
-	desc = "A poster advertising the latest PDA from Nanotrasen suppliers."
+	name = "Pip-Boy 3000 Ad"
+	desc = "A poster advertising the latest Pip-Boy 3000 from RobCo Industries."
 	icon_state = "poster28_legit"
 
 /obj/structure/sign/poster/official/enlist
 	name = "Enlist" // but I thought deathsquad was never acknowledged
-	desc = "Enlist in the Nanotrasen Deathsquadron reserves today!"
+	desc = "Enlist in the Vault-Tec Deathsquadron reserves today!"
 	icon_state = "poster29_legit"
 
 /obj/structure/sign/poster/official/nanomichi_ad
@@ -621,12 +621,12 @@ we
 
 /obj/structure/sign/poster/official/the_owl
 	name = "The Owl"
-	desc = "The Owl would do his best to protect the station. Will you?"
+	desc = "The Owl would do his best to protect the Vault. Will you?"
 	icon_state = "poster33_legit"
 
 /obj/structure/sign/poster/official/no_erp
 	name = "No ERP"
-	desc = "This poster reminds the crew that Eroticism, Rape and Pornography are banned on Nanotrasen stations."
+	desc = "This poster reminds the crew that Eroticism, Rape and Pornography are banned in Vault-Tec facilities."
 	icon_state = "poster34_legit"
 
 /obj/structure/sign/poster/official/wtf_is_co2
@@ -677,7 +677,7 @@ we
 	var/list/posters = list()
 
 /obj/effect/landmark/poster_spawner/Initialize()
-	..()
+	. = ..()
 	var/obj/structure/sign/poster/P = pick(posters)
 	world << "[P]"
 	new P(loc)

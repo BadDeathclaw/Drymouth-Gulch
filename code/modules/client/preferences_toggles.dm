@@ -70,11 +70,11 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Ghost/chatterbox, toggle_ghost_radio)
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Ghost/chatterbox, toggle_ghost_pda)()
 	set name = "Show/Hide GhostPDA"
 	set category = "Preferences"
-	set desc = "See All PDA Messages"
+	set desc = "See All Pip-Boy 3000 Messages"
 	usr.client.prefs.chat_toggles ^= CHAT_GHOSTPDA
-	to_chat(usr, "As a ghost, you will now [(usr.client.prefs.chat_toggles & CHAT_GHOSTPDA) ? "see all pda messages in the world" : "only see pda messages from nearby mobs"].")
+	to_chat(usr, "As a ghost, you will now [(usr.client.prefs.chat_toggles & CHAT_GHOSTPDA) ? "see all Pip-Boy 3000 messages in the world" : "only see Pip-Boy 3000 messages from nearby mobs"].")
 	usr.client.prefs.save_preferences()
-	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost PDA", "[usr.client.prefs.chat_toggles & CHAT_GHOSTPDA ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost Pip-Boy 3000", "[usr.client.prefs.chat_toggles & CHAT_GHOSTPDA ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/Settings/Ghost/chatterbox/toggle_ghost_pda/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_GHOSTPDA
 
@@ -266,6 +266,26 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_ooc)()
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Seeing OOC", "[usr.client.prefs.chat_toggles & CHAT_OOC ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/Settings/listen_ooc/Get_checked(client/C)
 	return C.prefs.chat_toggles & CHAT_OOC
+
+TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, verb_consent)()
+	set name = "Toggle Lewd Verbs"
+	set category = "Preferences"
+	set desc = "Allow Lewd Verbs"
+
+	if (usr && isliving(usr))
+		var/mob/living/L = usr
+		if(L.refactory_period)
+			to_chat(usr, "You need to wait [DisplayTimeText(L.refactory_period * 10, TRUE)] to change your consent setting.")
+			return
+	
+	usr.client.prefs.wasteland_toggles ^= VERB_CONSENT
+	usr.client.prefs.save_preferences()
+	to_chat(usr, "You [(usr.client.prefs.wasteland_toggles & VERB_CONSENT) ? "consent" : "do not consent"] to the use of lewd verbs on your character.")
+	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Allow Lewd Verbs", "[usr.client.prefs.wasteland_toggles & VERB_CONSENT ? "Yes" : "No"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/datum/verbs/menu/Settings/verb_consent/Get_checked(client/C)
+	return C.prefs.wasteland_toggles & VERB_CONSENT
+
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings, listen_looc)()
 	set name = "Show/Hide LOOC"

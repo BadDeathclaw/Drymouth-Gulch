@@ -90,6 +90,56 @@
 	name = "internals crate"
 	icon_state = "o2crate"
 
+// f13
+
+/obj/structure/closet/crate/footlocker
+	name = "footlocker"
+	desc = "A metal footlocker. The lock appears to be broken off."
+	icon_state = "footlocker"
+
+/obj/structure/closet/crate/footlocker/legion
+	name = "legion footlocker"
+	desc = "A metal footlocker. This one contains a set of Caesar's Legion equipment."
+
+/obj/structure/closet/crate/footlocker/legion/PopulateContents()
+	. = ..()
+	new /obj/item/clothing/shoes/legionleather(src)
+	new /obj/item/clothing/suit/armor/f13/legrecruit/prime(src)
+	new /obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime(src)
+	new /obj/item/clothing/mask/bandana/legprime(src)
+	new /obj/item/clothing/glasses/legiongoggles(src)
+	new /obj/item/gun/ballistic/revolver/colt357(src)
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/claymore/machete/gladius(src)
+
+/obj/structure/closet/crate/footlocker/brotherhood
+	name = "brotherhood footlocker"
+	desc = "A metal footlocker. This one contains a set of Brotherhood of Steel equipment."
+
+/obj/structure/closet/crate/footlocker/brotherhood/PopulateContents()
+	. = ..()
+	new /obj/item/radio/headset/headset_bos(src)
+	new /obj/item/clothing/under/f13/recon(src)
+	new /obj/item/storage/backpack/explorer(src)
+	new /obj/item/clothing/shoes/combat/swat(src)
+	new /obj/item/clothing/gloves/combat(src)
+	new /obj/item/storage/belt/utility/full/engi(src)
+	new /obj/item/clothing/glasses/sunglasses/big(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+
+/obj/structure/closet/crate/footlocker/ncr
+	name = "NCR footlocker"
+	desc = "A metal footlocker. This one contains a set of New California Republic equipment."
+
+/obj/structure/closet/crate/footlocker/ncr/PopulateContents()
+	. = ..()
+	new /obj/item/clothing/under/f13/ncr(src)
+	new /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced(src)
+	new /obj/item/clothing/head/f13/ncr/goggles(src)
+	new /obj/item/storage/belt/military/NCR_Bandolier(src)
+	new /obj/item/gun/ballistic/automatic/marksman/servicerifle(src)
+	new /obj/item/clothing/shoes/f13/military/ncr(src)
+
 /obj/structure/closet/crate/trashcart
 	desc = "A heavy, metal trashcart with wheels."
 	name = "trash cart"

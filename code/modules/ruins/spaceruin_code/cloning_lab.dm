@@ -10,7 +10,7 @@
 	<i>Please note that resulting clones will have a DEVELOPMENTAL DEFECT as a result of genetic drift. We hope to reduce this through further testing.<br>
 	Clones may also experience memory loss and radical changes in personality as a result of the cloning process.</i><br>
 	<br>
-	<font size=1>This technology produced under license from Thinktronic Systems, LTD.</font>"}
+	<font size=1>This technology produced under license from RobCo Industries.</font>"}
 
 /obj/item/paper/fluff/ruins/exp_cloning/log
 	name = "experiment log"
@@ -18,7 +18,7 @@
 	We are very excited to be part of the first crew of the SC Irmanda!<br>
 	This ship is made to test an innovative FTL technology. I had some concerns at first, \
 	but the engineers assure me that it is safe and there is absolutely no risk of the external wings breaking off from the acceleration.<br>
-	We've been tasked with testing the latest model of the Thinktronic Cloning Pod. We'll stay in dock for a week before launching, but we're going to get started right away. \
+	We've been tasked with testing the latest model of the RobCo Cloning Pod. We'll stay in dock for a week before launching, but we're going to get started right away. \
 	If the engine is as fast as they say, we might not have the time to run all the routine tests on the cloned subject!<br>
 	<br>
 	<h4>Day 2</h4>

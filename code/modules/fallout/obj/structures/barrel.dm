@@ -55,6 +55,46 @@
 	..() //extend the zap
 	boom()
 
+obj/structure/reagent_dispensers/barrel/explosive/bullet_act(obj/item/projectile/P)
+	..()
+	if(!QDELETED(src)) //wasn't deleted by the projectile's effects.
+		if(!P.nodamage && ((P.damage_type == BURN) || (P.damage_type == BRUTE)))
+			var/boom_message = "[ADMIN_LOOKUPFLW(P.firer)] triggered a fueltank explosion via projectile."
+			GLOB.bombers += boom_message
+			message_admins(boom_message)
+			var/log_message = "triggered a fueltank explosion via projectile."
+			P.firer.log_message(log_message, INDIVIDUAL_ATTACK_LOG)
+			log_attack("[key_name(P.firer)] [log_message]")
+			boom()
+
+/obj/structure/reagent_dispensers/barrel/explosive/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/weldingtool))
+		if(!reagents.has_reagent("welding_fuel"))
+			to_chat(user, "<span class='warning'>[src] is out of fuel!</span>")
+			return
+		var/obj/item/weldingtool/W = I
+		if(!W.welding)
+			if(W.reagents.has_reagent("welding_fuel", W.max_fuel))
+				to_chat(user, "<span class='warning'>Your [W.name] is already full!</span>")
+				return
+			reagents.trans_to(W, W.max_fuel)
+			user.visible_message("<span class='notice'>[user] refills [user.p_their()] [W.name].</span>", "<span class='notice'>You refill [W].</span>")
+			playsound(src, 'sound/effects/refill.ogg', 50, 1)
+			W.update_icon()
+		else
+			var/turf/T = get_turf(src)
+			user.visible_message("<span class='warning'>[user] catastrophically fails at refilling [user.p_their()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
+			var/message_admins = "[ADMIN_LOOKUPFLW(user)] triggered a fuelbarrel explosion via welding tool at [ADMIN_VERBOSEJMP(T)]."
+			GLOB.bombers += message_admins
+			message_admins(message_admins)
+			var/message_log = "triggered a fuelbarrel explosion via welding tool at [AREACOORD(T)]."
+			user.log_message(message_log, INDIVIDUAL_ATTACK_LOG)
+			log_game("[key_name(user)] [message_log]")
+			log_attack("[key_name(user)] [message_log]")
+			boom()
+		return
+	return ..()
+
 /obj/structure/reagent_dispensers/barrel/old
 	name = "old barrel"
 	desc = "An old barrel. Oddly enough, it stands undamaged after all this time.<br>You wonder if there is anything left in it."

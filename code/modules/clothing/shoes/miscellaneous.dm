@@ -76,7 +76,7 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "Standard Security combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -105,7 +105,7 @@
 
 /obj/item/clothing/shoes/workboots
 	name = "work boots"
-	desc = "Nanotrasen-issue Engineering lace-up work boots for the especially blue-collar."
+	desc = "Standard Engineering lace-up work boots for the especially blue-collar."
 	icon_state = "workboots"
 	item_state = "jackboots"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
@@ -116,7 +116,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/laced
-	name = "laced boots"
+	name = "desert patrol boots"
 	desc = "A pair of laced, heavy-duty boots, adopted by NCR veteran rangers following the Ranger Unification Treaty."
 	icon_state = "laced"
 	item_state = "laced"
@@ -344,13 +344,13 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
 
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
-	name = "\improper SWAT boots"
+	name = "tactical boots"
 	desc = "High speed, no drag combat boots."
 	permeability_coefficient = 0.01
 
 /obj/item/clothing/shoes/combat/plate
 	name = "plated combat boots"
-	desc = "A pair of boots with armored plates on them"
+	desc = "A pair of heavily worn leather boots with armored plates strapped around them, protecting the users feet from low flying shrapnel or projectiles."
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	item_color = "cult"

@@ -398,7 +398,7 @@
 	return FALSE
 
 /obj/item/melee/curator_whip
-	name = "curator's whip"
+	name = "leather whip"
 	desc = "Somewhat eccentric and outdated, it still stings like hell to be hit by."
 	icon_state = "whip"
 	item_state = "chain"

@@ -15,6 +15,8 @@
 	response_harm = "hits"
 	emote_taunt = list("buzzes")
 	emote_taunt_sound = 'sound/creatures/cazador_buzz.ogg'
+	stat_attack = UNCONSCIOUS
+	robust_searching = 1
 	taunt_chance = 30
 	speed = 0
 	maxHealth = 40
@@ -84,7 +86,7 @@
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/carpmeat = 2)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/radscorpion_meat = 2)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
@@ -185,7 +187,7 @@
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat = 2,
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 2,
 							/obj/item/stack/sheet/sinew = 1)
 	response_help = "pets"
 	response_disarm = "gently pushes aside"

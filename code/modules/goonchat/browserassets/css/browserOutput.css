@@ -10,7 +10,7 @@ html, body {
 	color: #000000;
 }
 body {
-	background: #fff;
+	background: #fff8e8;
     font-family: Verdana, sans-serif;
     font-size: 9pt;
     line-height: 1.2;
@@ -293,6 +293,7 @@ em						{font-style: normal;	font-weight: bold;}
 .bosradio			{color: #686868;}
 .enclaveradio			{color: #003000;}
 .denradio			{color: #a8732b;}
+.legionradio		{color: #c24d44;}
 
 .yell					{					font-weight: bold;}
 

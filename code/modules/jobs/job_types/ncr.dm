@@ -86,7 +86,7 @@ Captain
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/binocs=1, \
+		/obj/item/twohanded/binocs=1, \
 		/obj/item/storage/bag/money/small/ncr, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
@@ -129,7 +129,7 @@ Lieutenant
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/ammo_box/magazine/m9mm=2, \
-		/obj/item/binocs=1, \
+		/obj/item/twohanded/binocs=1, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
@@ -155,6 +155,7 @@ Medic
 /datum/outfit/job/ncr/f13medic
 	name = "NCR Medical Officer"
 	jobtype = /datum/job/ncr/f13medic
+	chemwhiz = TRUE
 	id		= /obj/item/card/id/dogtag/ncrlieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =     /obj/item/clothing/accessory/ncr/LT
@@ -172,7 +173,7 @@ Medic
 		/obj/item/storage/pill_bottle/mining, \
 		/obj/item/storage/firstaid/regular,  \
 		/obj/item/storage/bag/money/small/ncrofficers,  \
-		)
+		/obj/item/book/granter/trait/chemistry)
 	box = null
 
 //sergeant
@@ -350,7 +351,7 @@ Recruit
 	faction = "NCR"
 	total_positions = 10
 	spawn_positions = 10
-	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
+	forbids = "The NCR forbids: Drugs (except for med-X) Drinking, Gambling, and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
@@ -369,10 +370,10 @@ Recruit
 	gloves = null
 	head = 			/obj/item/clothing/head/f13/ncr
 	glasses = 		null
-	suit_store = 	/obj/item/gun/ballistic/shotgun/remington
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/a762=2, \
+		/obj/item/ammo_box/magazine/r10=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -397,13 +398,17 @@ Heavy Trooper
 
 	outfit = /datum/outfit/job/ncr/f13heavytroop
 
+/datum/job/ncr/f13heavytroop/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
+
+
 /datum/outfit/job/ncr/f13heavytroop
 	name = "NCR Heavy Trooper"
 	jobtype = /datum/job/ncr/f13heavytroop
 	id = 			/obj/item/card/id/dogtag/ncrsergeant
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
-	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/t45b
+	suit = 			/obj/item/clothing/suit/armor/f13/brokenpa/ncr
 	belt =			/obj/item/storage/belt/military/assault
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45b
 	gloves =        /obj/item/clothing/gloves/combat
@@ -456,7 +461,7 @@ Veteran Ranger
 		/obj/item/gun/ballistic/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=2, \
 		/obj/item/ammo_box/a50MG=2, \
-		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrofficers)
 
@@ -498,10 +503,10 @@ Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44=3, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted)
-	r_pocket = /obj/item/binocs
+	r_pocket = /obj/item/twohanded/binocs
 
 /*
 Recon Ranger
@@ -541,7 +546,7 @@ Recon Ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/a357=3, \
 		/obj/item/restraints/handcuffs=1, \
-		/obj/item/kitchen/knife/combat/survival=1, \
+		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null

@@ -108,7 +108,7 @@
 		.manifest tr.alt td {[monochrome?"border-top-width: 2px":"background-color: #DEF"]}
 	</style></head>
 	<table class="manifest" width='350px'>
-	<tr class='head'><th>Name</th><th>Rank</th></tr>
+	<tr class='head'><th>Name</th><th>Occupation</th></tr>
 	"}
 	var/even = 0
 	// sort mobs
@@ -140,7 +140,7 @@
 		if(!department && !(name in command))
 			misc[name] = rank
 	if(command.len > 0)
-		dat += "<tr><th colspan=3>Command</th></tr>"
+		dat += "<tr><th colspan=3>Leaders</th></tr>"
 		for(var/name in command)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[command[name]]</td></tr>"
 			even = !even
@@ -150,7 +150,7 @@
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[bos[name]]</td></tr>"
 			even = !even
 	if(den.len > 0)
-		dat += "<tr><th colspan=3>Den</th></tr>"
+		dat += "<tr><th colspan=3>Kebab</th></tr>"
 		for(var/name in den)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[den[name]]</td></tr>"
 			even = !even
@@ -281,3 +281,22 @@
 	if(C)
 		P = C.prefs
 	return get_flat_human_icon(null, J, P, DUMMY_HUMAN_SLOT_MANIFEST, show_directions)
+
+
+/datum/datacore/proc/get_record_by_name(username)
+	for(var/i in general)
+		var/datum/data/record/to_check = i
+		if(username != to_check.fields["name"])
+			continue
+		return to_check
+
+
+/datum/datacore/proc/remove_record_by_name(username)
+	for(var/datacore_list in list(general, medical, security, locked))
+		for(var/j in datacore_list)
+			var/datum/data/record/to_remove = j
+			if(username != to_remove.fields["name"])
+				continue
+			datacore_list -= to_remove
+			qdel(to_remove)
+			break
