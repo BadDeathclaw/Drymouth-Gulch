@@ -119,7 +119,7 @@
 	icon_state = "outermiddle"
 
 /turf/open/floor/wood/f13
-	icon = 'icons/turf/f13floorsmisc.dmi'
+	icon = 'icons/turf/floors.dmi'
 	icon_state = "housewood1"
 
 	New()
@@ -128,7 +128,6 @@
 			icon_state = "housewood[rand(1,3)]"
 
 /turf/open/floor/wood/f13/carpet
-	icon = 'icons/turf/fo13floorsmisc2.dmi'
 	icon_state="carpet"
 
 /turf/open/floor/wood/f13/old
@@ -138,75 +137,62 @@
 /turf/open/floor/wood/f13/old/ruinedcornerendbr	//WHAT THE FUCK IS THIS
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandcornerbr"
 
 /turf/open/floor/wood/f13/old/ruinedcornerendbl
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandcornerbl"
 
 /turf/open/floor/wood/f13/old/ruinedcornerendtr
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandcornertr"
 
 /turf/open/floor/wood/f13/old/ruinedcornerendtl
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandcornertl"
 
 /turf/open/floor/wood/f13/old/ruinedcornerbr
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandmorecornerbr"
 
 /turf/open/floor/wood/f13/old/ruinedcornerbl
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandmorecornerbl"
 
 /turf/open/floor/wood/f13/old/ruinedcornertr
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandmorecornertr"
 
 /turf/open/floor/wood/f13/old/ruinedcornertl
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandmorecornertl"
 
 /turf/open/floor/wood/f13/old/ruinedstraightsouth
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandsouth"
 
 /turf/open/floor/wood/f13/old/ruinedstraightnorth
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandnorth"
 
 /turf/open/floor/wood/f13/old/ruinedstraighteast
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandeast"
 
 /turf/open/floor/wood/f13/old/ruinedstraightwest
 	name = "wood planks"
 	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon = 'icons/turf/f13floorsmisc.dmi'
 	icon_state = "housewastelandwest"
-
 
 /turf/open/floor/wood/f13/stage_tl
 	icon_state = "housewood_stage_top_left"

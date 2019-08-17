@@ -449,7 +449,7 @@ SLIME SCANNER
 			to_chat(user, "<span class='alert'>[env_gases[id][GAS_META][META_GAS_NAME]]: [round(gas_concentration*100, 0.01)] % ([round(env_gases[id][MOLES], 0.01)] mol)</span>")
 		to_chat(user, "<span class='info'>Temperature: [round(environment.temperature-T0C, 0.01)] &deg;C ([round(environment.temperature, 0.01)] K)</span>")
 
-/obj/item/analyzer/AltClick(mob/user) //Barometer output for measuring when the next storm happens
+/obj/item/analyzer/AltClick(mob/user) //Barometer output for measuring when the next weather event happens
 	..()
 
 	if(user.canUseTopic(src))
@@ -478,19 +478,19 @@ SLIME SCANNER
 
 		if(ongoing_weather)
 			if((ongoing_weather.stage == MAIN_STAGE) || (ongoing_weather.stage == WIND_DOWN_STAGE))
-				to_chat(user, "<span class='warning'>[src]'s barometer function can't trace anything while the storm is [ongoing_weather.stage == MAIN_STAGE ? "already here!" : "winding down."]</span>")
+				to_chat(user, "<span class='warning'>[src]'s barometer function can't trace anything while the weather event is [ongoing_weather.stage == MAIN_STAGE ? "already here!" : "winding down."]</span>")
 				return
 
 			to_chat(user, "<span class='notice'>The next [ongoing_weather] will hit in [butchertime(ongoing_weather.next_hit_time - world.time)].</span>")
 			if(ongoing_weather.aesthetic)
-				to_chat(user, "<span class='warning'>[src]'s barometer function says that the next storm will breeze on by.</span>")
+				to_chat(user, "<span class='warning'>[src]'s barometer function says that the next weather event will breeze on by.</span>")
 		else
 			var/next_hit = SSweather.next_hit_by_zlevel["[T.z]"]
 			var/fixed = next_hit ? next_hit - world.time : -1
 			if(fixed < 0)
 				to_chat(user, "<span class='warning'>[src]'s barometer function was unable to trace any weather patterns.</span>")
 			else
-				to_chat(user, "<span class='warning'>[src]'s barometer function says a storm will land in approximately [butchertime(fixed)].</span>")
+				to_chat(user, "<span class='warning'>[src]'s barometer function says a weather event will land in approximately [butchertime(fixed)].</span>")
 		cooldown = TRUE
 		addtimer(CALLBACK(src,/obj/item/analyzer/proc/ping), cooldown_time)
 

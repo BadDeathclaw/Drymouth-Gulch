@@ -35,8 +35,8 @@ SUBSYSTEM_DEF(weather)
 		else
 			eligible_zlevels -= z
 			weather_on_start = TRUE
-		var/randTime = rand(15000, 21000)
-		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-35 minutes between weathers
+		var/randTime = rand(15000, 18000)
+		addtimer(CALLBACK(src, .proc/make_eligible, z, possible_weather), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-30 minutes between weathers
 		next_hit_by_zlevel["[z]"] = world.time + randTime + initial(W.telegraph_duration)
 
 /datum/controller/subsystem/weather/Initialize(start_timeofday)
