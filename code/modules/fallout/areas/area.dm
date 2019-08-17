@@ -296,6 +296,14 @@
 	environment = 19
 	grow_chance = 5
 
+/area/f13/radiation_outside
+	name = "Radiation outside"
+	icon_state = "radiation"
+	ambientsounds = list('sound/f13ambience/rattlesnake_1.ogg','sound/f13ambience/rattlesnake_2.ogg','sound/f13ambience/rattlesnake_3.ogg')
+	outdoors = 1
+	environment = 19
+	grow_chance = 5
+
 //Faction related areas
 
 /area/f13/raiders
