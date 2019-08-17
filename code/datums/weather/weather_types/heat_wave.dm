@@ -3,7 +3,7 @@
 	desc = "Harsh heat wave will grip an entire area."
 	probability = 5
 
-	telegraph_message = "<span class='userdanger'><i>Heat wave is coming to the area, gradually increasing temperature of anyone caught outside.</i></span>"
+	telegraph_message = "<span class='userdanger'><i>Heat wave is coming to the area, increasing temperature of anyone caught outside.</i></span>"
 	telegraph_duration = 300
 	telegraph_overlay = "light_ash"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
