@@ -305,6 +305,16 @@
 	..()
 	. = 1
 
+/datum/reagent/consumable/lemonade
+	name = "Lemonade"
+	id = "lemonade"
+	description = "Sweet, tangy lemonade. Good for the soul."
+	color = "#FFE978"
+	taste_description = "sunshine and summertime"
+	glass_icon_state = "lemonpitcher"
+	glass_name = "pitcher of lemonade"
+	glass_desc = "This drink leaves you feeling nostalgic for some reason."
+
 /datum/reagent/consumable/tea/arnold_palmer
 	name = "Arnold Palmer"
 	id = "arnold_palmer"

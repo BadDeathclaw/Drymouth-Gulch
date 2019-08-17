@@ -139,7 +139,9 @@ SUBSYSTEM_DEF(blackbox)
 		if(FREQ_ENCLAVE)
 			record_feedback("tally", "radio_usage", 1, "Enclave")
 		if(FREQ_DEN)
-			record_feedback("tally", "radio_usage", 1, "Den")
+			record_feedback("tally", "radio_usage", 1, "Kebab")
+		if(FREQ_LEGION)
+			record_feedback("tally", "radio_usage", 1, "Legion")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 

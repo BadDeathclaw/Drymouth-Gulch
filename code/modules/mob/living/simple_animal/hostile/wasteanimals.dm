@@ -4,7 +4,7 @@
 	icon = 'icons/mob/wastemobs.dmi'
 	icon_state = "cazador"
 	icon_living = "cazador"
-	icon_dead = "cazador_dead"
+	icon_dead = "cazador_dead1"
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	speak_chance = 0
 	turns_per_move = 5
@@ -38,6 +38,10 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent("cazador_venom", 5)
+
+/mob/living/simple_animal/hostile/cazador/death(gibbed)
+	icon_dead = "cazador_dead[rand(1,5)]"
+	. = ..()
 
 /mob/living/simple_animal/hostile/cazador/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
@@ -106,12 +110,25 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("radscorpion")
 	gold_core_spawnable = HOSTILE_SPAWN
+	var/scorpion_color = "radscorpion" //holder for icon set
+	var/list/icon_sets = list("radscorpion", "radscorpion_blue", "radscorpion_black")
 
 /mob/living/simple_animal/hostile/radscorpion/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent("toxin", 5)
+
+/mob/living/simple_animal/hostile/radscorpion/Initialize()
+	. = ..()
+	scorpion_randomify()
+	update_icons()
+
+/mob/living/simple_animal/hostile/radscorpion/proc/scorpion_randomify()
+	scorpion_color = pick(icon_sets)
+	icon_state = "[scorpion_color]"
+	icon_living = "[scorpion_color]"
+	icon_dead = "[scorpion_color]_dead"
 
 /mob/living/simple_animal/hostile/gecko
 	name = "gecko"

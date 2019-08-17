@@ -7,7 +7,7 @@
 #define WRITE_LOG(log, text) rustg_log_write(log, text)
 
 //print a warning message to world.log
-#define WARNING(MSG) warning("[MSG] in [__FILE__] at line [__LINE__] src: [src] usr: [usr].")
+#define WARNING(MSG) warning("[MSG] in [__FILE__] at line [__LINE__] src: [UNLINT(src)] usr: [usr].")
 /proc/warning(msg)
 	msg = "## WARNING: [msg]"
 	log_world(msg)
@@ -100,7 +100,7 @@
 
 /proc/log_pda(text)
 	if (CONFIG_GET(flag/log_pda))
-		WRITE_LOG(GLOB.world_pda_log, "PDA: [text]")
+		WRITE_LOG(GLOB.world_pda_log, "Pip-Boy 3000: [text]")
 
 /proc/log_comment(text)
 	if (CONFIG_GET(flag/log_pda))

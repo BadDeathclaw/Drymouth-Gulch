@@ -9,7 +9,7 @@
 	equip_delay_other = 40
 	max_integrity = 250
 	resistance_flags = NONE
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 16, "energy" = 16, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	allowed = list(/obj/item/gun)
 
 /obj/item/clothing/suit/armor/Initialize()
@@ -79,7 +79,7 @@
 
 /obj/item/clothing/suit/armor/vest/leather
 	name = "security overcoat"
-	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security."
+	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Vault-Tec Security."
 	icon_state = "leathercoat-sec"
 	item_state = "hostrench"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -335,7 +335,7 @@
 	icon_state = "leatherarmor"
 	item_state = "leatherarmor"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list("melee" = 45, "bullet" = 25, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 35, "bullet" = 15, "laser" = 30, "energy" = 20, "bomb" = 0, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
 
@@ -595,7 +595,7 @@
 	icon_state = "ncr_infantry_vest"
 	item_state = "ncr_infantry_vest"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 60
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
@@ -679,4 +679,4 @@
 	icon_state = "duster_recon"
 	item_state = "duster_recon"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 60, "rad" = 70, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)

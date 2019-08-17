@@ -27,9 +27,6 @@
 	mutatelist = list()
 	rarity = 20
 
-
-
-
 /obj/item/grown/log
 	seed = /obj/item/seeds/tower
 	name = "tower-cap log"
@@ -87,6 +84,8 @@
 	seed = null
 	name = "wood log"
 	desc = "TIMMMMM-BERRRRRRRRRRR!"
+	icon = 'icons/fallout/flora/flora.dmi'
+	icon_state = "tree_timber"
 
 /obj/item/grown/log/steel
 	seed = /obj/item/seeds/tower/steel
@@ -98,4 +97,3 @@
 
 /obj/item/grown/log/steel/CheckAccepted(obj/item/I)
 	return FALSE
-

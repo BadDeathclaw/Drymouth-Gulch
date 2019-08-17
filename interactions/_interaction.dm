@@ -40,6 +40,7 @@ var/list/interactions
 	var/interaction_sound
 
 	var/max_distance = 1
+	var/require_ooc_consent = FALSE
 	var/require_user_mouth
 	var/require_user_hands
 	var/require_target_mouth

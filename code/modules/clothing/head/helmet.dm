@@ -403,10 +403,10 @@
 
 /obj/item/clothing/head/helmet/f13/legion/explorer
 	name = "legion explorer hood"
-	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted."
+	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted and reinforced."
 	icon_state = "cult_hoodalt"
 	item_state = "cult_hoodalt"
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legveteran
 	name = "legion veteran helmet"

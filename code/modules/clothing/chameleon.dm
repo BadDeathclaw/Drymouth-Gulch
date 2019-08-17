@@ -583,14 +583,14 @@
 	chameleon_action.emp_randomise(INFINITY)
 
 /obj/item/pda/chameleon
-	name = "PDA"
+	name = "Pip-Boy 3000"
 	var/datum/action/item_action/chameleon/change/chameleon_action
 
 /obj/item/pda/chameleon/Initialize()
 	. = ..()
 	chameleon_action = new(src)
 	chameleon_action.chameleon_type = /obj/item/pda
-	chameleon_action.chameleon_name = "PDA"
+	chameleon_action.chameleon_name = "Pip-Boy 3000"
 	chameleon_action.chameleon_blacklist = typecacheof(list(/obj/item/pda/heads, /obj/item/pda/ai, /obj/item/pda/ai/pai), only_root_path = TRUE)
 	chameleon_action.initialize_disguises()
 

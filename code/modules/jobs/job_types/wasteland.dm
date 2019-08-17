@@ -269,7 +269,7 @@ Punished Raider
 		/obj/item/clothing/head/rice_hat,\
 		/obj/item/clothing/head/jester,\
 		/obj/item/clothing/head/cone,\
-		/obj/item/clothing/head/hooded/carp_hood
+		/obj/item/clothing/head/hooded/carp_hood,\
 		/obj/item/clothing/head/fedora,\
 		/obj/item/clothing/head/lobsterhat,\
 		null)

@@ -359,12 +359,14 @@
 /obj/item/reagent_containers/food/drinks/flask/gold
 	name = "captain's flask"
 	desc = "A gold flask belonging to the captain."
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = "flask_gold"
 	materials = list(MAT_GOLD=500)
 
 /obj/item/reagent_containers/food/drinks/flask/det
 	name = "detective's flask"
 	desc = "The detective's only true friend."
+	icon = 'icons/obj/drinks.dmi'
 	icon_state = "detflask"
 	list_reagents = list("whiskey" = 30)
 

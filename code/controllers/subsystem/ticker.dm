@@ -418,8 +418,17 @@ SUBSYSTEM_DEF(ticker)
 		to_chat(world, "<font color='purple'><b>Tip of the round: </b>[html_encode(m)]</font>")
 
 /datum/controller/subsystem/ticker/proc/check_queue()
+	if(!queued_players.len)
+		return
 	var/hpc = CONFIG_GET(number/hard_popcap)
-	if(!queued_players.len || !hpc)
+	if(!hpc)
+		listclearnulls(queued_players)
+		for (var/mob/dead/new_player/NP in queued_players)
+			to_chat(NP, "<span class='userdanger'>The alive players limit has been released!<br><a href='?src=[REF(NP)];late_join=override'>[html_encode(">>Join Game<<")]</a></span>")
+			SEND_SOUND(NP, sound('sound/misc/notice1.ogg'))
+			NP.LateChoices()
+		queued_players.len = 0
+		queue_delay = 0
 		return
 
 	queue_delay++
@@ -509,7 +518,7 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/send_news_report()
 	var/news_message
-	var/news_source = "Nanotrasen News Network"
+	var/news_source = "News Network"
 	switch(news_report)
 		if(NUKE_SYNDICATE_BASE)
 			news_message = "In a daring raid, the heroic crew of [station_name()] detonated a nuclear device in the heart of a terrorist base."
@@ -550,7 +559,7 @@ SUBSYSTEM_DEF(ticker)
 		if(CLOCK_PROSELYTIZATION)
 			news_message = "The burst of energy released near [station_name()] has been confirmed as merely a test of a new weapon. However, due to an unexpected mechanical error, their communications system has been knocked offline."
 		if(SHUTTLE_HIJACK)
-			news_message = "During routine evacuation procedures, the emergency shuttle of [station_name()] had its navigation protocols corrupted and went off course, but was recovered shortly after."
+			news_message = "During routine evacuation procedures, the train of [station_name()] had its navigation protocols corrupted and went off course, but was recovered shortly after."
 
 	if(news_message)
 		send2otherserver(news_source, news_message,"News_Report")
