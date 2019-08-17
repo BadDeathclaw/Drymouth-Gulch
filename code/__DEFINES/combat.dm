@@ -18,7 +18,6 @@
 #define OXYLOSS 		(1<<3)
 #define SHAME 			(1<<4)
 #define MANUAL_SUICIDE	(1<<5)	//suicide_act will do the actual killing.
-
 #define EFFECT_PARALYZE	"paralyze"
 #define EFFECT_STUN		"stun"
 #define EFFECT_KNOCKDOWN		"knockdown"
@@ -140,7 +139,8 @@
 #define EXPLODE_NONE 0				//Don't even ask me why we need this.
 #define EXPLODE_DEVASTATE 1
 #define EXPLODE_HEAVY 2
-#define EXPLODE_LIGHT 3
+#define EXPLODE_MEDIUM 3
+#define EXPLODE_LIGHT 4
 
 #define EMP_HEAVY 1
 #define EMP_LIGHT 2

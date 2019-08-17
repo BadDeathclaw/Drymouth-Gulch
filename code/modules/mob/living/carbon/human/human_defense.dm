@@ -388,8 +388,8 @@
 				return
 
 		if (2)
-			b_loss = 60
-			f_loss = 60
+			b_loss = 70
+			f_loss = 70
 			if(bomb_armor)
 				b_loss = 30*(2 - round(bomb_armor*0.01, 0.05))
 				f_loss = b_loss
@@ -398,8 +398,18 @@
 				adjustEarDamage(30, 120)
 			if (prob(max(70 - (bomb_armor * 0.5), 0)))
 				Unconscious(200)
-
 		if(3)
+			b_loss = 40
+			f_loss = 40
+			if(bomb_armor)
+				b_loss = 23*(2 - round(bomb_armor*0.01, 0.05))
+				f_loss = b_loss
+			damage_clothes(125 - bomb_armor, BRUTE, "bomb")
+			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
+				adjustEarDamage(23, 90)
+			if (prob(max(60 - (bomb_armor * 0.5), 0)))
+				Unconscious(180)
+		if(4)
 			b_loss = 30
 			if(bomb_armor)
 				b_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
