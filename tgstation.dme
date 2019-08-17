@@ -2748,6 +2748,8 @@
 #include "code\modules\VR\vr_sleeper.dm"
 #include "code\modules\Wasteland\Wasteland Flora\hay_crafts.dm"
 #include "code\modules\Wasteland\Wasteland Flora\wastelandPlants.dm"
+#include "code\modules\WVM\items.dm"
+#include "code\modules\WVM\wvm.dm"
 #include "code\modules\zombie\items.dm"
 #include "code\modules\zombie\organs.dm"
 #include "interactions\_interaction.dm"
