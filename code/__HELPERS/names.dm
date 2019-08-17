@@ -189,7 +189,7 @@ GLOBAL_VAR(syndicate_code_response) //Code response for traitors.
 	var/list/locations = GLOB.teleportlocs.len ? GLOB.teleportlocs : drinks //if null, defaults to drinks instead.
 
 	var/list/names = list()
-	for(var/datum/data/record/t in GLOB.data_core.general)//Picks from crew manifest.
+	for(var/datum/data/record/t in GLOB.data_core.general)//Picks from Wasteland Census.
 		names += t.fields["name"]
 
 	var/maxwords = words//Extra var to check for duplicates.

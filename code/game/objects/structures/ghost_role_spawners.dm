@@ -224,7 +224,7 @@
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/orange
 			outfit.back = /obj/item/storage/backpack
 		if(3)
-			flavour_text += "you were a doctor on one of Nanotrasen's space stations, but you left behind that damn corporation's tyranny and everything it stood for. From a metaphorical hell \
+			flavour_text += "you were a doctor on one of Vault-Tec's space stations, but you left behind that damn corporation's tyranny and everything it stood for. From a metaphorical hell \
 			to a literal one, you find yourself nonetheless missing the recycled air and warm floors of what you left behind... but you'd still rather be here than there.</b>"
 			outfit.uniform = /obj/item/clothing/under/rank/medical
 			outfit.suit = /obj/item/clothing/suit/toggle/labcoat
@@ -232,7 +232,7 @@
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
 		if(4)
 			flavour_text += "you were always joked about by your friends for \"not playing with a full deck\", as they so <i>kindly</i> put it. It seems that they were right when you, on a tour \
-			at one of Nanotrasen's state-of-the-art research facilities, were in one of the escape pods alone and saw the red button. It was big and shiny, and it caught your eye. You pressed \
+			at one of Vault-Tec's state-of-the-art research facilities, were in one of the escape pods alone and saw the red button. It was big and shiny, and it caught your eye. You pressed \
 			it, and after a terrifying and fast ride for days, you landed here. You've had time to wisen up since then, and you think that your old friends wouldn't be laughing now.</b>"
 			outfit.uniform = /obj/item/clothing/under/color/grey/glorf
 			outfit.shoes = /obj/item/clothing/shoes/sneakers/black
@@ -267,17 +267,17 @@
 	outfit = /datum/outfit/lavalandprisoner
 	roundstart = FALSE
 	death = FALSE
-	flavour_text = "<b>Good. It seems as though your ship crashed. <span class='big bold'>You're a prisoner,</span> sentenced to hard work in one of Nanotrasen's labor camps, but it seems as \
+	flavour_text = "<b>Good. It seems as though your ship crashed. <span class='big bold'>You're a prisoner,</span> sentenced to hard work in one of Vault-Tec's labor camps, but it seems as \
 	though fate has other plans for you. You remember that you were convicted of "
 	assignedrole = "Escaped Prisoner"
 
 /obj/effect/mob_spawn/human/prisoner_transport/special(mob/living/L)
-	L.real_name = "NTP #LL-0[rand(111,999)]" //Nanotrasen Prisoner #Lavaland-(numbers)
+	L.real_name = "NTP #LL-0[rand(111,999)]" //Vault-Tec Prisoner #Lavaland-(numbers)
 	L.name = L.real_name
 
 /obj/effect/mob_spawn/human/prisoner_transport/Initialize(mapload)
 	. = ..()
-	var/list/crimes = list("murder", "larceny", "embezzlement", "unionization", "dereliction of duty", "kidnapping", "gross incompetence", "grand theft", "collaboration with the Syndicate", \
+	var/list/crimes = list("murder", "larceny", "embezzlement", "unionization", "dereliction of duty", "kidnapping", "gross incompetence", "grand theft", "collaboration with the Enclave", \
 	"worship of a forbidden deity", "interspecies relations", "mutiny")
 	flavour_text += "[pick(crimes)]. but regardless of that, it seems like your crime doesn't matter now. You don't know where you are, but you know that it's out to kill you, and you're not going \
 	to lose this opportunity. Find a way to get out of this mess and back to where you rightfully belong - your [pick("house", "apartment", "spaceship", "station")]</b>."
@@ -475,7 +475,7 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
-	flavour_text = "<span class='big bold'>You are a security officer working for Nanotrasen,</span><b> stationed onboard a state of the art research station. You vaguely recall rushing into a \
+	flavour_text = "<span class='big bold'>You are a security officer working for Vault-Tec,</span><b> stationed onboard a state of the art research station. You vaguely recall rushing into a \
 	cryogenics pod due to an oncoming radiation storm. The last thing you remember is the station's Artifical Program telling you that you would only be asleep for eight hours. As you open \
 	your eyes, everything seems rusted and broken, a dark feeling sweels in your gut as you climb out of your pod.</b>"
 	uniform = /obj/item/clothing/under/rank/security
@@ -499,7 +499,7 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
-	flavour_text = "<span class='big bold'>You are an engineer working for Nanotrasen,</span><b> stationed onboard a state of the art research station. You vaguely recall rushing into a \
+	flavour_text = "<span class='big bold'>You are an engineer working for Vault-Tec,</span><b> stationed onboard a state of the art research station. You vaguely recall rushing into a \
 	cryogenics pod due to an oncoming radiation storm. The last thing you remember is the station's Artifical Program telling you that you would only be asleep for eight hours. As you open \
 	your eyes, everything seems rusted and broken, a dark feeling sweels in your gut as you climb out of your pod.</b>"
 	uniform = /obj/item/clothing/under/rank/engineer
@@ -523,7 +523,7 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
-	flavour_text = "<span class='big bold'>You are a scientist working for Nanotrasen,</span><b> stationed onboard a state of the art research station. You vaguely recall rushing into a \
+	flavour_text = "<span class='big bold'>You are a scientist working for Vault-Tec,</span><b> stationed onboard a state of the art research station. You vaguely recall rushing into a \
 	cryogenics pod due to an oncoming radiation storm. The last thing you remember is the station's Artifical Program telling you that you would only be asleep for eight hours. As you open \
 	your eyes, everything seems rusted and broken, a dark feeling sweels in your gut as you climb out of your pod.</b>"
 	uniform = /obj/item/clothing/under/rank/scientist

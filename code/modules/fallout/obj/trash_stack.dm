@@ -56,7 +56,7 @@
 		/obj/item/crafting/turpentine, /obj/item/crafting/abraxo, /obj/item/crafting/reloader,
 		/obj/item/crafting/igniter, /obj/item/crafting/timer, /obj/item/crafting/sensor,
 		/obj/item/gun/ballistic/automatic/pistol/n99,
-		/obj/item/ammo_box/magazine/m10mm, /obj/item/stock_parts/cell, /obj/item/pipe,
+		/obj/item/ammo_box/magazine/m10mm_adv, /obj/item/stock_parts/cell, /obj/item/pipe,
 		/obj/item/reagent_containers/food/snacks/f13/bubblegum,
 		/obj/item/reagent_containers/food/snacks/f13/bubblegum/large,
 		/obj/item/reagent_containers/food/snacks/f13/cram,
@@ -99,7 +99,7 @@
 		/obj/item/ammo_casing/shotgun/buckshot,
 		/obj/item/kitchen/knife/butcher, /obj/item/geiger_counter,
 		/obj/item/ammo_box/magazine/m10mm_adv, /obj/item/ammo_box/magazine/m10mm_auto,
-		/obj/item/crafting/lunchbox, /obj/item/gun/ballistic/automatic/pistol/ninemil
+		/obj/item/crafting/lunchbox, /obj/item/gun/ballistic/automatic/pistol/ninemil,
 		/obj/item/ammo_box/magazine/m9mm, /obj/item/gun/ballistic/revolver/colt6250,
 		/obj/item/ammo_box/magazine/r20, /obj/item/ammo_box/magazine/greasegun,
 		/obj/item/ammo_box/m44,/obj/item/ammo_box/magazine/m45,
@@ -108,7 +108,7 @@
 		/obj/item/ammo_box/c9mm, /obj/item/ammo_box/c10mm,
 		/obj/item/ammo_box/a556, /obj/item/ammo_box/c45,
 		/obj/item/storage/pill_bottle/chem_tin/mentats, /obj/item/storage/pill_bottle/chem_tin/fixer,
-		/obj/item/storage/pill_bottle/chem_tin/radx
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/reagent_containers/food/drinks/bottle/orangejuice, /obj/item/reagent_containers/food/drinks/bottle/cognac,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey, /obj/item/reagent_containers/hypospray/medipen/psycho,
 		/obj/item/clothing/glasses/sunglasses/big, /obj/item/clothing/glasses/sunglasses,
@@ -117,7 +117,9 @@
 		/obj/item/clothing/shoes/f13/explorer, /obj/item/clothing/shoes/f13/military/diesel,
 		/obj/item/clothing/shoes/f13/military/female/diesel, /obj/item/clothing/gloves/f13/leather,
 		/obj/item/clothing/gloves/f13/military, /obj/item/clothing/gloves/f13/ncr,
-		/obj/item/gun/ballistic/shotgun/boltaction)
+		/obj/item/gun/ballistic/shotgun/boltaction, /obj/item/toy/crayon/spraycan, /obj/item/stock_parts/capacitor/adv,
+		/obj/item/stock_parts/scanning_module/adv, /obj/item/stock_parts/manipulator/nano, /obj/item/stock_parts/micro_laser/high,
+		/obj/item/stock_parts/matter_bin/adv, /obj/item/stock_parts/manipulator/pico, /obj/item/stock_parts/matter_bin/super)
 		var/I = new itemtype(src)
 		back += I
 	return back

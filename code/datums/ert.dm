@@ -13,7 +13,7 @@
 
 /datum/ert/New()
 	if (!polldesc)
-		polldesc = "a Code [code] Nanotrasen Emergency Response Team"
+		polldesc = "a Code [code] Emergency Response Team"
 
 /datum/ert/blue
 	opendoors = FALSE
@@ -33,7 +33,7 @@
 	rename_team = "Deathsquad"
 	code = "Delta"
 	mission = "Leave no witnesses."
-	polldesc = "an elite Nanotrasen Strike Team"
+	polldesc = "an elite Strike Team"
 
 /datum/ert/centcom_official
 	code = "Green"
@@ -52,4 +52,4 @@
 	leader_role = /datum/antagonist/ert/commander/inquisitor
 	rename_team = "Inquisition"
 	mission = "Destroy any traces of paranormal activity aboard the station."
-	polldesc = "a Nanotrasen paranormal response team"
+	polldesc = "a paranormal response team"
