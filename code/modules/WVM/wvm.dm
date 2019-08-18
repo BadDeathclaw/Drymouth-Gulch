@@ -18,6 +18,7 @@
 
 	anchored = 1
 	density = 1
+	layer = 2.9
 	verb_say = "beeps"
 	verb_ask = "beeps"
 	verb_exclaim = "beeps"
@@ -525,3 +526,109 @@
 		I.examine(usr)
 
 	ui_interact()
+
+/**********************Trading Protectron Vendors**************************/
+
+/obj/machinery/mineral/wasteland_vendor
+	name = "Wasteland Vending Machine"
+	desc = "Wasteland Vending Machine manned by old RobCo trading protectrons. It's a miracle it is still functional."
+	icon = 'icons/WVM/machines.dmi'
+	icon_state = "weapon_idle"
+
+	density = TRUE
+	use_power = FALSE
+	resistance_flags = INDESTRUCTIBLE
+	can_be_unanchored = FALSE
+	layer = 2.9
+
+	var/stored_caps = 0	// store caps
+	var/expected_price = 0
+	var/list/prize_list = list()  //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
+
+/obj/machinery/mineral/wasteland_vendor/medical
+	icon_state = "med_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
+		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
+		new /datum/data/wasteland_equipment("Stimpack",						/obj/item/reagent_containers/hypospray/medipen/stimpack,			120),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
+		)
+
+/datum/data/wasteland_equipment
+	var/equipment_name = "generic"
+	var/equipment_path = null
+	var/cost = 0
+
+/datum/data/wasteland_equipment/New(name, path, cost)
+	src.equipment_name = name
+	src.equipment_path = path
+	src.cost = cost
+
+/obj/machinery/mineral/wasteland_vendor/ui_interact(mob/user)
+	. = ..()
+	var/dat
+	dat +="<div class='statusDisplay'>"
+	dat += "Bottle caps stored: [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "</div>"
+	dat += "<br><b>Vendor goods:</b><BR><table border='0' width='300'>"
+	for(var/datum/data/wasteland_equipment/prize in prize_list)
+		dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
+	dat += "</table>"
+
+	var/datum/browser/popup = new(user, "miningvendor", "Wasteland Vending Machine", 400, 350)
+	popup.set_content(dat)
+	popup.open()
+	return
+
+/obj/machinery/mineral/wasteland_vendor/Topic(href, href_list)
+	if(..())
+		return
+	if(href_list["removecaps"])
+		remove_all_caps()
+	if(href_list["purchase"])
+		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
+		if (!prize || !(prize in prize_list))
+			to_chat(usr, "<span class='warning'>Error: Invalid choice!</span>")
+			return
+		if(prize.cost > stored_caps)
+			to_chat(usr, "<span class='warning'>Error: Insufficent caps for [prize.equipment_name]!</span>")
+		else
+			stored_caps -= prize.cost
+			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
+			new prize.equipment_path(src.loc)
+			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
+	updateUsrDialog()
+	return
+
+/obj/machinery/mineral/wasteland_vendor/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
+		add_caps(I)
+	else
+		attack_hand(user)
+
+/* Adding a caps to caps storage and release vending item. */
+/obj/machinery/mineral/wasteland_vendor/proc/add_caps(obj/item/I)
+	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
+		var/obj/item/stack/f13Cash/bottle_cap/currency = I
+		stored_caps += currency.amount
+		I.use(currency.amount)
+		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
+		to_chat(usr, "You put [currency.amount] caps value to vending machine.")
+		src.ui_interact(usr)
+
+/* Spawn all caps on world and clear caps storage */
+/obj/machinery/mineral/wasteland_vendor/proc/remove_all_caps()
+	if(stored_caps <= 0)
+		return
+	var/obj/item/stack/f13Cash/bottle_cap/C = new /obj/item/stack/f13Cash/bottle_cap
+	if(stored_caps > C.max_amount)
+		C.add(C.max_amount - 1)
+		C.forceMove(src.loc)
+		stored_caps -= C.max_amount
+	else
+		C.add(stored_caps - 1)
+		C.forceMove(src.loc)
+		stored_caps = 0
+	playsound(src, 'sound/items/coinflip.ogg', 60, 1)
+	src.ui_interact(usr)
