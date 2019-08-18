@@ -25,12 +25,11 @@
 	max_integrity = 300
 	integrity_failure = 100
 	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 50, acid = 70)
+	use_power = 0
 
 	var/stored_item_type = list()
-
 	var/content[0]		// store items
 	var/stored_caps = 0	// store caps
-
 	var/obj/item/lock_part/lock = null
 	var/machine_state = STATE_IDLE // 0 - working, 1 - on service, 2 - on vending, 3 - open lock
 	var/id = 0
@@ -45,13 +44,11 @@
 /* Weapon Vending Machine*/
 /obj/machinery/trading_machine/weapon
 	name = "Weapon Vending Machine"
-
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "weapon_idle"
 	idle_icon_state = "weapon_idle"
 	service_icon_state = "weapon_service"
 	lock_icon_state = "weapon_lock"
-
 	stored_item_type = list(/obj/item/gun)
 	item_not_acceptable_message = "You need to remove ammo from your weapon first."
 
@@ -86,7 +83,8 @@
 	stored_item_type = list(/obj/item/reagent_containers)
 
 /* Initialization */
-/obj/machinery/trading_machine/New()
+/obj/machinery/trading_machine/Initialize()
+	. = ..()
 	if(create_lock)
 		lock = new /obj/item/lock_part()
 		lock.forceMove(src)
@@ -194,7 +192,7 @@
 	if(machine_state != STATE_VEND)
 		return
 
-	if(istype(I, /obj/item/stack/f13Cash))
+	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
 		if(I.use(expected_price))
 			stored_caps += expected_price
 			playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
@@ -210,7 +208,7 @@
 /obj/machinery/trading_machine/proc/remove_all_caps()
 	if(stored_caps <= 0)
 		return
-	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash
+	var/obj/item/stack/f13Cash/bottle_cap/C = new /obj/item/stack/f13Cash/bottle_cap
 	if(stored_caps > C.max_amount)
 		C.add(C.max_amount - 1)
 		C.forceMove(src.loc)
@@ -327,7 +325,7 @@
 		if(STATE_SERVICE) // service
 
 			/* Screwdriver */
-			if(istype(OtherItem, /obj/item/screwdriver/))
+			if(istype(OtherItem, /obj/item/screwdriver))
 				set_state(STATE_LOCKOPEN)
 				playsound(src, 'sound/items/Screwdriver.ogg', 60, 1)
 
@@ -359,7 +357,7 @@
 
 		if(STATE_VEND) // vending
 			// Caps
-			if(istype(OtherItem, /obj/item/stack/f13Cash))
+			if(istype(OtherItem, /obj/item/stack/f13Cash/bottle_cap))
 				add_caps(OtherItem)
 			else
 				attack_hand(user)
