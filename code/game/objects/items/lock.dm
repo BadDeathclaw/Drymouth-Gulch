@@ -71,7 +71,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 	var/lock_data = ""
 
 /obj/item/key/Initialize()
-	..()
+	. = ..()
 	desc = "A simple key for locks. It has [src.lock_data ? src.lock_data : "nothing"] engraved on it."
 
 /obj/item/key/attackby(obj/item/I, mob/user, params)

@@ -573,7 +573,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 	item_state = "sheet-greatergem"
 	novariants = TRUE
 
-	/*
+/*
  * Bones
  */
 /obj/item/stack/sheet/bone

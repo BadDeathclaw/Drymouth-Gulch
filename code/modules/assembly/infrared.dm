@@ -138,7 +138,7 @@
 	. = ..()
 	setDir(t)
 
-/obj/item/assembly/infra/throw_at()
+/obj/item/assembly/infra/throw_at(diagonals_first)
 	. = ..()
 	olddir = dir
 
