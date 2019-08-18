@@ -6,6 +6,11 @@
 #define STATE_VEND 2
 #define STATE_LOCKOPEN 3
 
+/* exchange rates X * CAP*/
+#define CASH_AUR_VENDOR 100 /* 100 caps to 1 AUR */
+#define CASH_DEN_VENDOR 4 /* 4 caps to 1 DEN */
+#define CASH_NCR_VENDOR 0.4 /* $100 to 40 caps */
+
 /obj/machinery/trading_machine
 	name = "Wasteland Vending Machine"
 	desc = "Wasteland Vending Machine!"
@@ -34,9 +39,9 @@
 	var/obj/item/lock_part/lock = null
 	var/machine_state = STATE_IDLE // 0 - working, 1 - on service, 2 - on vending, 3 - open lock
 	var/id = 0
-	var/create_lock = 1
-	var/create_key = 1
-	var/create_description = 1
+	var/create_lock = TRUE
+	var/create_key = TRUE
+	var/create_description = FALSE
 	var/basic_price = 20
 	var/expected_price = 0
 	var/obj/item/vending_item
@@ -549,10 +554,11 @@
 	icon_state = "med_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
+		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
 		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
-		new /datum/data/wasteland_equipment("Stimpack",						/obj/item/reagent_containers/hypospray/medipen/stimpack,			120),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
 		)
 
 /datum/data/wasteland_equipment
@@ -569,7 +575,15 @@
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
-	dat += "Bottle caps stored: [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "Bottle cap value stored: [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "</div>"
+	dat += "<br>"
+	dat +="<div class='statusDisplay'>"
+	dat += "Conversion rates: <br>"
+	dat += "1 Bottle cap = 1 bottle cap value <br>"
+	dat += "1 NCR dollar = 0.4 bottle caps value <br>"
+	dat += "1 Denarius = 4 bottle caps value <br>"
+	dat += "1 Aureus = 100 bottle caps value <br>"
 	dat += "</div>"
 	dat += "<br><b>Vendor goods:</b><BR><table border='0' width='300'>"
 	for(var/datum/data/wasteland_equipment/prize in prize_list)
@@ -592,7 +606,7 @@
 			to_chat(usr, "<span class='warning'>Error: Invalid choice!</span>")
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, "<span class='warning'>Error: Insufficent caps for [prize.equipment_name]!</span>")
+			to_chat(usr, "<span class='warning'>Error: Insufficent caps value for [prize.equipment_name]!</span>")
 		else
 			stored_caps -= prize.cost
 			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
@@ -602,7 +616,7 @@
 	return
 
 /obj/machinery/mineral/wasteland_vendor/attackby(obj/item/I, mob/user, params)
-	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
+	if(istype(I, /obj/item/stack/f13Cash))
 		add_caps(I)
 	else
 		attack_hand(user)
@@ -614,8 +628,32 @@
 		stored_caps += currency.amount
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [currency.amount] caps value to vending machine.")
+		to_chat(usr, "You put [currency.amount] caps value to a vending machine.")
 		src.ui_interact(usr)
+	else if(istype(I, /obj/item/stack/f13Cash/ncr))
+		var/obj/item/stack/f13Cash/ncr/currency = I
+		stored_caps += currency.amount * CASH_NCR_VENDOR
+		I.use(currency.amount)
+		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
+		to_chat(usr, "You put [currency.amount * CASH_NCR_VENDOR] caps value to a vending machine.")
+		src.ui_interact(usr)
+	else if(istype(I, /obj/item/stack/f13Cash/denarius))
+		var/obj/item/stack/f13Cash/denarius/currency = I
+		stored_caps += currency.amount * CASH_DEN_VENDOR
+		I.use(currency.amount)
+		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
+		to_chat(usr, "You put [currency.amount * CASH_DEN_VENDOR] caps value to a vending machine.")
+		src.ui_interact(usr)
+	else if(istype(I, /obj/item/stack/f13Cash/aureus))
+		var/obj/item/stack/f13Cash/aureus/currency = I
+		stored_caps += currency.amount * CASH_AUR_VENDOR
+		I.use(currency.amount)
+		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
+		to_chat(usr, "You put [currency.amount * CASH_AUR_VENDOR] caps value to a vending machine.")
+		src.ui_interact(usr)
+	else
+		to_chat(usr, "Invalid currency!")
+		return
 
 /* Spawn all caps on world and clear caps storage */
 /obj/machinery/mineral/wasteland_vendor/proc/remove_all_caps()
