@@ -260,6 +260,81 @@
 	list_reagents = list("nutriment" = 10)
 	filling_color = "#B22222"
 
+//WASTELAND EGGS
+
+/obj/item/reagent_containers/food/snacks/f13/deathclawegg
+    name = "Deathclaw Egg"
+    desc = "A deathclaw egg. It has a brownish-red shell. Look at this thing, it's as big as your torso!"
+    icon_state = "deathclawegg"
+    bonus_reagents = list("toxin" = 30)
+    list_reagents = list("eggyolk" = 40)
+    filling_color = "#F0E68C"
+
+//WASTELAND PREPARED MEALS
+
+/obj/item/reagent_containers/food/snacks/f13/molejerky
+    name = "Molerat Wondermeat"
+    desc = "Molerat meat cured with wonderglue in a metal container. Has a nutty aftertaste."
+    icon_state = "baconcookedb"
+    bonus_reagents = list("vitamin" = 5)
+    list_reagents = list("nutriment" = 12)
+    filling_color = "#B22222"
+
+/obj/item/reagent_containers/food/snacks/f13/caravanlunch
+    name = "Caravan Lunch"
+    desc = "A collection of food with the radiation removed. Simple, fast and filling. Often eaten by merchants."
+    icon_state = "lunchbox"
+    bonus_reagents = list("vitamin" = 5)
+    list_reagents = list("nutriment" = 50)
+    filling_color = "B#22222"
+    trash = /obj/item/crafting/lunchbox
+
+/obj/item/reagent_containers/food/snacks/f13/wastelandwellington
+    name = "Wasteland Wellington"
+    desc = "Meat from wasteland critters wrapped in puffy pastry. Delicious, rich and certainly high class."
+    icon_state = "meatbun"
+    bonus_reagents = list("vitamin" = 5, "tricordrazine = 5")
+    list_reagents = list("nutriment" = 30)
+    filling_color = "B#22222"
+
+/obj/item/reagent_containers/food/snacks/f13/deathclawomelette
+    name = "Deathclaw Omelette"
+    desc = "A delicious omelette made from one big deathclaw egg. Hope you're not allergic."
+    icon_state = "deathclawomlette"
+    bonus_reagents = list ("vitamin" = 5, "omnizine" = 40, "dexalin" = 10)
+    list_reagents = list("nutriment" = 60)
+    filling_color = "B#22222"
+
+/obj/item/reagent_containers/food/snacks/f13/moleratstew
+   name = "Molerat Stew"
+   desc = "A hearty stew, simmered in beer with some vegetables. It's good, if you can get over the bitter taste of the meat."
+   icon_state = "moleratstew"
+   bonus_reagents = list("vitamin" = 5, "tricordrazine" = 5)
+   list_reagents = list("nutriment" = 20)
+   filling_color = "B#22222"
+
+/obj/item/reagent_containers/food/snacks/f13/crispysquirrel
+   name = "Crispy Squirrel Bits"
+   desc = "Bits of squirrel meat roasted on a skewer. Tasty."
+   icon_state = "squrrielbits"
+   list_reagents = list("nutriment" = 12)
+   filling_color = "B#22222"
+
+/obj/item/reagent_containers/food/snacks/f13/squirrelstick
+   name = "Squirrel on a Stick"
+   desc = "It's a whole squirrel roasted on a stick. Tastes of home on the wastes."
+   icon_state = "squrrielstick"
+   list_reagents = list("nutriment" = 24)
+   filling_color = "B#22222"
+
+/obj/item/reagent_containers/food/snacks/f13/squirrelstew
+   name = "Squirrel Stew"
+   desc = "Stewed squirrel meat with veggies. There's more vegetable than meat."
+   icon_state = "squrrielsoup"
+   bonus_reagents = list("vitamin" = 6)
+   list_reagents = list("nutriment" = 32)
+   filling_color = "B#22222"
+
 //Grownable
 /*
 /obj/item/reagent_containers/food/snacks/grown/broc

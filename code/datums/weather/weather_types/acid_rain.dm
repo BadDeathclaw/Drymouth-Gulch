@@ -5,6 +5,7 @@
 	probability = 1
 
 	telegraph_duration = 400
+	telegraph_overlay = "snow_storm"
 	telegraph_message = "<span class='userdanger'>Acid rain is coming to the area, bringing suffering and death to all life. Save yourself.</span>"
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
@@ -18,7 +19,7 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	area_type = list(/area/f13/wasteland, /area/f13/forest, /area/f13/ruins, /area/f13/farm, /area/f13/radiation_outside)
+	area_type = /area/f13/wasteland
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
@@ -31,7 +32,7 @@
 		return
 	var/resist = L.getarmor(null, "acid")
 	if(prob(max(0,100-resist)))
-		L.acid_act(5, 5)
+		L.acid_act(10, 10)
 
 /datum/weather/acid_rain/proc/is_acidrain_immune(atom/L)
 	while (L && !isturf(L))
