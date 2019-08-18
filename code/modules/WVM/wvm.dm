@@ -6,6 +6,7 @@
 #define STATE_VEND 2
 #define STATE_LOCKOPEN 3
 
+#define CASH_CAP_VENDOR 1
 /* exchange rates X * CAP*/
 #define CASH_AUR_VENDOR 100 /* 100 caps to 1 AUR */
 #define CASH_DEN_VENDOR 4 /* 4 caps to 1 DEN */
@@ -401,7 +402,7 @@
 /obj/machinery/trading_machine/examine(mob/user)
 	..(user)
 	var/msg
-	msg += "Wastland Vending Machine<BR>"
+	msg += "Wasteland Vending Machine<BR>"
 	msg += "Lock: " + lock + "<BR>"
 	to_chat(user, msg)
 
@@ -429,7 +430,7 @@
 /* Design UI here */
 /obj/machinery/trading_machine/ui_interact(mob/user)
 	. = ..()
-	var/datum/browser/popup = new(user, "vending", (name))
+	var/datum/browser/popup = new(user, "vending", (name), 400, 500)
 	popup.set_content(get_ui_content(machine_state))
 	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
@@ -442,7 +443,7 @@
 			dat += "<h3>Select an item</h3>"
 			dat += "<div class='statusDisplay'>"
 			if(content.len == 0)
-				dat += "<font color = 'red'>No product loaded!</font>"
+				dat += "<font color = 'red'>No products loaded!</font>"
 			else
 				for(var/obj/item/Itm in content)
 					var/item_name = url_encode(Itm.name)
@@ -580,17 +581,20 @@
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
 	dat += "Conversion rates: <br>"
-	dat += "1 Bottle cap = 1 bottle cap value <br>"
-	dat += "1 NCR dollar = 0.4 bottle caps value <br>"
-	dat += "1 Denarius = 4 bottle caps value <br>"
-	dat += "1 Aureus = 100 bottle caps value <br>"
+	dat += "1 Bottle cap = [CASH_CAP_VENDOR] bottle cap value <br>"
+	dat += "1 NCR dollar = [CASH_NCR_VENDOR] value <br>"
+	dat += "1 Denarius = [CASH_DEN_VENDOR] bottle caps value <br>"
+	dat += "1 Aureus = [CASH_AUR_VENDOR] bottle caps value <br>"
 	dat += "</div>"
-	dat += "<br><b>Vendor goods:</b><BR><table border='0' width='300'>"
+	dat += "<br>"
+	dat +="<div class='statusDisplay'>"
+	dat += "<b>Vendor goods:</b><BR><table border='0' width='300'>"
 	for(var/datum/data/wasteland_equipment/prize in prize_list)
 		dat += "<tr><td>[prize.equipment_name]</td><td>[prize.cost]</td><td><A href='?src=[REF(src)];purchase=[REF(prize)]'>Purchase</A></td></tr>"
 	dat += "</table>"
+	dat += "</div>"
 
-	var/datum/browser/popup = new(user, "miningvendor", "Wasteland Vending Machine", 400, 350)
+	var/datum/browser/popup = new(user, "miningvendor", "Wasteland Vending Machine", 400, 500)
 	popup.set_content(dat)
 	popup.open()
 	return
@@ -598,7 +602,7 @@
 /obj/machinery/mineral/wasteland_vendor/Topic(href, href_list)
 	if(..())
 		return
-	if(href_list["removecaps"])
+	if(href_list["choice"] == "eject")
 		remove_all_caps()
 	if(href_list["purchase"])
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
@@ -625,31 +629,35 @@
 /obj/machinery/mineral/wasteland_vendor/proc/add_caps(obj/item/I)
 	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
 		var/obj/item/stack/f13Cash/bottle_cap/currency = I
-		stored_caps += currency.amount
+		var/inserted_value = currency.amount * CASH_CAP_VENDOR
+		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [currency.amount] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
-		stored_caps += currency.amount * CASH_NCR_VENDOR
+		var/inserted_value = currency.amount * CASH_NCR_VENDOR
+		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [currency.amount * CASH_NCR_VENDOR] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
-		stored_caps += currency.amount * CASH_DEN_VENDOR
+		var/inserted_value = currency.amount * CASH_DEN_VENDOR
+		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [currency.amount * CASH_DEN_VENDOR] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
-		stored_caps += currency.amount * CASH_AUR_VENDOR
+		var/inserted_value = currency.amount * CASH_AUR_VENDOR
+		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [currency.amount * CASH_AUR_VENDOR] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
 		src.ui_interact(usr)
 	else
 		to_chat(usr, "Invalid currency!")
