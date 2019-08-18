@@ -432,7 +432,6 @@
 	. = ..()
 	var/datum/browser/popup = new(user, "vending", (name), 400, 500)
 	popup.set_content(get_ui_content(machine_state))
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
 	popup.open()
 
 /obj/machinery/trading_machine/proc/get_ui_content(var/state)
