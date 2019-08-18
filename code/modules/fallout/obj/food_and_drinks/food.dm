@@ -39,6 +39,15 @@
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/deathclaw
 	slice_path = null
 
+/obj/item/reagent_containers/food/snacks/meat/slab/squirrel
+    name = "squirrel meat"
+    desc = "Squirrel meat, the staple of many wasteland dishes."
+    list_reagents = list("nutriment" = 6, "vitamin" = 2)
+    bitesize = 2
+    filling_color = "#FA8072"
+    cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
+    slice_path = null
+
 //WASTELAND STEAKS
 
 /obj/item/reagent_containers/food/snacks/meat/steak/gecko
