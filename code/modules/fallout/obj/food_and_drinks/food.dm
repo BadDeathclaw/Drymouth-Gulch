@@ -68,6 +68,12 @@
 	list_reagents = list("nutriment" = 10)
 	bonus_reagents = list("nutriment" = 5, "vitamin" = 10) //It wouldn't make sense for it to be worse than the normal
 
+/obj/item/reagent_containers/food/snacks/meat/steak/squirrel
+    name = "squirrel steak"
+    desc = "A steak made from a small slab of squirrel meat. It is, unsurprisingly, small."
+    list_reagents = list("nutriment" = 9)
+    bonus_reagents = list("vitamin" = 4)
+
 //WASTELAND JUNK FOOD
 
 /obj/item/reagent_containers/food/snacks/f13
