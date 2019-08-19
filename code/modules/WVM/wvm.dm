@@ -551,7 +551,68 @@
 	var/list/prize_list = list()  //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 
 /obj/machinery/mineral/wasteland_vendor/medical
+	name = "Wasteland Vending Machine - Medical"
 	icon_state = "med_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								10),
+		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										15),
+		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								25),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							50),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				120),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
+		)
+	
+/obj/machinery/mineral/wasteland_vendor/weapons
+	name = "Wasteland Vending Machine - Weapons"
+	icon_state = "weapon_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
+		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
+		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		)
+
+/obj/machinery/mineral/wasteland_vendor/ammo
+	name = "Wasteland Vending Machine - Ammo"
+	icon_state = "ammo_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
+		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
+		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		)
+
+/obj/machinery/mineral/wasteland_vendor/clothing
+	name = "Wasteland Vending Machine - Clothing"
+	icon_state = "armor_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
+		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
+		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		)
+
+/obj/machinery/mineral/wasteland_vendor/general
+	name = "Wasteland Vending Machine - General"
+	icon_state = "generic_idle"
+	prize_list = list(
+		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
+		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
+		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		)
+
+/obj/machinery/mineral/wasteland_vendor/special
+	name = "Wasteland Vending Machine - Special"
+	icon_state = "liberationstation_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
 		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
@@ -575,13 +636,13 @@
 	. = ..()
 	var/dat
 	dat +="<div class='statusDisplay'>"
-	dat += "Bottle cap value stored: [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
+	dat += "<b>Bottle caps stored:</b> [stored_caps]. <A href='?src=[REF(src)];choice=eject'>Eject caps</A><br>"
 	dat += "</div>"
 	dat += "<br>"
 	dat +="<div class='statusDisplay'>"
-	dat += "Conversion rates: <br>"
-	dat += "1 Bottle cap = [CASH_CAP_VENDOR] bottle cap value <br>"
-	dat += "1 NCR dollar = [CASH_NCR_VENDOR] value <br>"
+	dat += "<b>Currency conversion rates:</b><br>"
+	dat += "1 Bottle cap = [CASH_CAP_VENDOR] bottle caps value <br>"
+	dat += "1 NCR dollar = [CASH_NCR_VENDOR] bottle caps value <br>"
 	dat += "1 Denarius = [CASH_DEN_VENDOR] bottle caps value <br>"
 	dat += "1 Aureus = [CASH_AUR_VENDOR] bottle caps value <br>"
 	dat += "</div>"
@@ -593,7 +654,7 @@
 	dat += "</table>"
 	dat += "</div>"
 
-	var/datum/browser/popup = new(user, "miningvendor", "Wasteland Vending Machine", 400, 500)
+	var/datum/browser/popup = new(user, "tradingvendor", "Wasteland Vending Machine", 400, 500)
 	popup.set_content(dat)
 	popup.open()
 	return
@@ -609,7 +670,7 @@
 			to_chat(usr, "<span class='warning'>Error: Invalid choice!</span>")
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, "<span class='warning'>Error: Insufficent caps value for [prize.equipment_name]!</span>")
+			to_chat(usr, "<span class='warning'>Error: Insufficent bottle caps value for [prize.equipment_name]!</span>")
 		else
 			stored_caps -= prize.cost
 			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
@@ -628,35 +689,35 @@
 /obj/machinery/mineral/wasteland_vendor/proc/add_caps(obj/item/I)
 	if(istype(I, /obj/item/stack/f13Cash/bottle_cap))
 		var/obj/item/stack/f13Cash/bottle_cap/currency = I
-		var/inserted_value = currency.amount * CASH_CAP_VENDOR
+		var/inserted_value = FLOOR(currency.amount * CASH_CAP_VENDOR, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/ncr))
 		var/obj/item/stack/f13Cash/ncr/currency = I
-		var/inserted_value = currency.amount * CASH_NCR_VENDOR
+		var/inserted_value = FLOOR(currency.amount * CASH_NCR_VENDOR, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/denarius))
 		var/obj/item/stack/f13Cash/denarius/currency = I
-		var/inserted_value = currency.amount * CASH_DEN_VENDOR
+		var/inserted_value = FLOOR(currency.amount * CASH_DEN_VENDOR, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else if(istype(I, /obj/item/stack/f13Cash/aureus))
 		var/obj/item/stack/f13Cash/aureus/currency = I
-		var/inserted_value = currency.amount * CASH_AUR_VENDOR
+		var/inserted_value = FLOOR(currency.amount * CASH_AUR_VENDOR, 1)
 		stored_caps += inserted_value
 		I.use(currency.amount)
 		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] caps value to a vending machine.")
+		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
 		src.ui_interact(usr)
 	else
 		to_chat(usr, "Invalid currency!")
