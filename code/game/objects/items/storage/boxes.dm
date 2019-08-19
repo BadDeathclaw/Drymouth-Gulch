@@ -979,7 +979,8 @@
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
 	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
-	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
+	new /obj/item/reagent_containers/food/snacks/meat/slab/squirrel(src)
+//	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src) // replaced with squirrel meat for wasteland food update
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/faggot(src)
 
