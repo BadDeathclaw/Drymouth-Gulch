@@ -557,7 +557,7 @@
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								10),
 		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										15),
 		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								25),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							50),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				120),
 		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
 		)
@@ -566,60 +566,58 @@
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
-		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911, 					180),
+		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					210),
+		new /datum/data/wasteland_equipment(".44 magnum revolver",			/obj/item/gun/ballistic/revolver/m29,								230),
+		new /datum/data/wasteland_equipment("Fireaxe",						/obj/item/twohanded/fireaxe,										250),
+		new /datum/data/wasteland_equipment("Cowboy repeater",				/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,			300),
+		new /datum/data/wasteland_equipment("Powerfist",					/obj/item/melee/powerfist,											1000)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/ammo
 	name = "Wasteland Vending Machine - Ammo"
 	icon_state = "ammo_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
-		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
+		new /datum/data/wasteland_equipment("9mm pistol magazine (9mm)",	/obj/item/ammo_box/magazine/m9mm,									50),
+		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv,								70),
+		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											80),
+		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												80),
+		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												80),
+		new /datum/data/wasteland_equipment("Small 5.56 magazine (5.56mm)",	/obj/item/ammo_box/magazine/r10,									120)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
 	name = "Wasteland Vending Machine - Clothing"
 	icon_state = "armor_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
-		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		new /datum/data/wasteland_equipment("Worn outft",						/obj/item/clothing/under/f13/worn,								15),
+		new /datum/data/wasteland_equipment("Settler outfit",					/obj/item/clothing/under/f13/settler,							30),
+		new /datum/data/wasteland_equipment("Merchant outfit",					/obj/item/clothing/under/f13/merchant,							40),
+		new /datum/data/wasteland_equipment("Followers outfit",					/obj/item/clothing/under/f13/followers,							100),
+		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							300),
+		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							1000)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/general
 	name = "Wasteland Vending Machine - General"
 	icon_state = "generic_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
-		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
+		new /datum/data/wasteland_equipment("Zippo",						/obj/item/lighter,													25),
+		new /datum/data/wasteland_equipment("Backpack",						/obj/item/storage/backpack,											30),
+		new /datum/data/wasteland_equipment("Soap",							/obj/item/soap,														35),
+		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				50)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
 	name = "Wasteland Vending Machine - Special"
 	icon_state = "liberationstation_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								15),
-		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										20),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								30),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							70),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				150),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1200)
+		new /datum/data/wasteland_equipment("Random manual",					/obj/item/book/manual/random,									50),
+		new /datum/data/wasteland_equipment("Box of ingredients - American",	/obj/item/storage/box/ingredients/american,						100),
+		new /datum/data/wasteland_equipment("Music box",						/obj/item/holodisk/musicbox,									500),
+		new /datum/data/wasteland_equipment("???",								/obj/item/toy/syndicateballoon,									5000)
 		)
 
 /datum/data/wasteland_equipment
