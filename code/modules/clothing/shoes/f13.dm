@@ -85,29 +85,36 @@
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/shoes/f13/military/ncr
-	name = "trooper boots"
-	desc = "A pair of tan leather boots with footcloths commonly worn by NCR servicemen."
-	icon_state = "ncr"
+	name = "NCR patrol boots"
+	desc = "A pair of standard issue NCR brown boots, with a puttee."
+	icon_state = "ncr_boots"
 	item_state = "ncr"
+	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
+
+/obj/item/clothing/shoes/f13/military/ncr_officer
+	name = "NCR officer boots"
+	desc = "A pair of calf high black, highly polished, leather boot that have been tightly laced. These definitely belong to a officer."
+	icon_state = "ncr_officer_boots"
+	item_state = "explorer"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
 /obj/item/clothing/shoes/f13/military/legionleather
 	name = "leather boots"
-	desc = "A pair of leather boots commonly worn by the Caesar's Legion recruits."
+	desc = "A pair of leather boots that appear to be mostly intact and lightly used. These belong to a Recruit Legionary of Caesar's Legion"
 	icon_state = "legionleather"
 	item_state = "legionleather"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
 /obj/item/clothing/shoes/f13/military/legionmetal
-	name = "metal boots"
-	desc = "A pair of metal boots commonly worn by Caesar's Legion veterans."
+	name = "plated metal boots"
+	desc = "A pair of leather boots that have been patched heavily and reinforced with light metal plates around the heel and ankles to protect the user. These belong to a Veteran of Caesar's Legion."
 	icon_state = "legionmetal"
 	item_state = "legionmetal"
 	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
 
 /obj/item/clothing/shoes/f13/military/legionlegate
-	name = "legate boots"
-	desc = "A pair of heavy boots worn by the Caesar's Legion Legate."
+	name = "legion legate boots"
+	desc = "A pair of heavy leather boots with overlapping steel plates affixed to the front, sides, and back of them, in size 14. These belong to a Legatus of Caesar's Legion."
 	icon_state = "legionlegate"
 	item_state = "legionlegate"
 	armor = list(melee = 30, bullet = 30, laser = 20, energy = 20, bomb = 30, bio = 0, rad = 10, fire = 30, acid = 10)

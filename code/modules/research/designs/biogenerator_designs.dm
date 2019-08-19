@@ -170,3 +170,19 @@
 	materials = list(MAT_BIOMASS = 300)
 	build_path = /obj/item/clothing/head/rice_hat
 	category = list("initial","Accessories")
+
+/datum/design/crayon_box
+	name = "Crayon Box"
+	id = "crayon_box"
+	build_type = BIOGENERATOR
+	materials = list(MAT_BIOMASS = 150)
+	build_path = /obj/item/storage/crayons
+	category = list("initial","Misc")
+
+/datum/design/carpet
+	name = "Synthetic Carpet"
+	id = "carpet"
+	build_type = BIOGENERATOR
+	materials = list(MAT_BIOMASS = 5)
+	build_path = /obj/item/stack/tile/carpet
+	category = list("initial","Misc")

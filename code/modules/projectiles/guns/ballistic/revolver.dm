@@ -86,24 +86,18 @@
 	to_chat(user, "[get_ammo(0,0)] of those are live rounds.")
 
 /obj/item/gun/ballistic/revolver/detective
-	name = "\improper .38 Special"
+	name = ".38 revolver"
 	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
 	icon_state = "detective"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
 						"Leopard Spots" = "detective_leopard",
 						"Black Panther" = "detective_panther",
-						"Fitz Special" = "detective_fitz",
-						"Police Positive Special" = "detective_police",
-						"Blued Steel" = "detective_blued",
-						"Stainless Steel" = "detective_stainless",
 						"Gold Trim" = "detective_gold",
-						"The Peacemaker" = "detective_peacemaker",
-						"Leopard Spots" = "detective_leopard",
-						"The Peacemaker" = "detective_peacemaker",
-						"Black Panther" = "detective_panther"
+						"The Peacemaker" = "detective_peacemaker"
 						)
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
@@ -369,13 +363,16 @@
 //Fallout 13
 
 /obj/item/gun/ballistic/revolver/m29
-	name = "\improper .44 Magnum revolver"
+	name = "\improper .44 magnum revolver"
 	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
 	item_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 3
+	extra_damage = 30
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/m29/alt
 	item_state = "44magnum"
@@ -392,12 +389,15 @@
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/gun/ballistic/revolver/colt357
-	name = "\improper .357 Magnum revolver"
-	desc = "A relatively primitive .357 magnum revolver. Due to it's usage of a loading gate, it can only load one round a time."
+	name = "\improper .357 magnum revolver"
+	desc = "A relatively primitive .357 magnum revolver."
 	item_state = "colt357"
 	icon_state = "colt357"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 5
+	extra_damage = 30
+
 
 /obj/item/gun/ballistic/revolver/m29/sadokist
 	name = "Wise's Warmaker"
@@ -423,18 +423,23 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 3
+	extra_damage = 30
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/revolver/sequoia
-	name = "Ranger Sequoia"
+	name = "ranger sequoia"
 	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
 	icon_state = "sequoia"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
+	fire_delay = 4
+	extra_damage = 45
 
 /obj/item/gun/ballistic/revolver/sequoia/scoped
-	name = "Hunting revolver"
+	name = "hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
 	zoomable = TRUE
@@ -449,6 +454,7 @@
 	item_state = "gun"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
+	extra_damage = 40
 
 /obj/item/gun/ballistic/revolver/pipe_rifle
 	name = "pipe rifle"
@@ -459,4 +465,5 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	extra_damage = 50
 

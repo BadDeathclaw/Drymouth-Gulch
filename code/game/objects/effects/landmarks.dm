@@ -466,6 +466,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/ncrengineer
 	name = "NCR Engineer"
 
+/obj/effect/landmark/start/f13/ncrcorporal
+	name = "NCR Corporal"
+
 /obj/effect/landmark/start/f13/ncrtrooper
 	name = "NCR Trooper"
 	icon_state = "NCR Trooper"
@@ -595,18 +598,30 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Vault Dweller"
 	icon_state = "Vault Dweller"
 
-// Den
+// Kebab
+
+/obj/effect/landmark/start/f13/mayor
+	name = "Mayor"
 
 /obj/effect/landmark/start/f13/sheriff
 	name = "Sheriff"
 	icon_state = "Sheriff"
+
+/obj/effect/landmark/start/f13/deputy
+	name = "Deputy"
+
+/obj/effect/landmark/start/f13/farmer
+	name = "Farmer"
+
+/obj/effect/landmark/start/f13/prospector
+	name = "Prospector"
 
 /obj/effect/landmark/start/f13/settler
 	name = "Settler"
 	icon_state = "Settler"
 
 /obj/effect/landmark/start/f13/dendoc
-	name = "Den Doctor"
+	name = "Doctor"
 
 // Wasteland
 

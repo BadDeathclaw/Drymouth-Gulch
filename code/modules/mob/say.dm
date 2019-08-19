@@ -20,7 +20,7 @@
 /mob/proc/whisper(message, datum/language/language=null)
 	say(message, language) //only living mobs actually whisper, everything else just talks
 
-/mob/verb/me_verb(message as message) //messages give you bigger boxes on text inputs, null| can be set before them too.
+/mob/verb/me_verb(message as text) //Moving from message to text because single-line input boxes are more user-friendly
 	set name = "Me"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problem

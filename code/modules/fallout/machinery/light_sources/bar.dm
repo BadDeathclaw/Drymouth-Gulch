@@ -47,3 +47,19 @@
 
 /obj/machinery/light/kebab_sign/break_light_tube()
 	return 0
+
+/obj/machinery/light/chiken_ranch
+	name = "Chiken Ranch sign"
+	icon_state = "chiken_ranch"
+	base_state = "chiken_ranch"
+	icon = 'icons/fallout/objects/structures/chiken_ranch.dmi'
+	fitting = "sign"
+	brightness = 4
+	active_power_usage = 50
+	density = 1
+	desc = "Where the west is still wild!"
+	light_color = LIGHT_COLOR_PINK
+	light_type = null
+
+/obj/machinery/light/chiken_ranch/break_light_tube()
+	return 0

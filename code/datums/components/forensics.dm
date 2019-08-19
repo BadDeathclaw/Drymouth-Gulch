@@ -66,7 +66,7 @@
 		if(H.gloves) //Check if the gloves (if any) hide fingerprints
 			var/obj/item/clothing/gloves/G = H.gloves
 			if(G.transfer_prints)
-				ignoregloves = TRUE
+				ignoregloves = 1
 			if(!ignoregloves)
 				H.gloves.add_fingerprint(H, TRUE) //ignoregloves = 1 to avoid infinite loop.
 				return

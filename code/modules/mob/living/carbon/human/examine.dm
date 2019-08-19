@@ -125,6 +125,12 @@
 		else
 			msg += "[t_He] has a strange masculine quality to [t_him].\n"
 
+	if(client && client.prefs)
+		if(client.prefs.wasteland_toggles & VERB_CONSENT)
+			msg += "[t_His] player has allowed lewd verbs.\n"
+		else
+			msg += "[t_His] player has not allowed lewd verbs.\n"
+
 	var/appears_dead = 0
 	if(stat == DEAD || (has_trait(TRAIT_FAKEDEATH)))
 		appears_dead = 1
@@ -288,7 +294,7 @@
 				msg += "[t_He] [t_is] barely conscious.\n"
 		if(getorgan(/obj/item/organ/brain))
 			if(!key)
-				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
+				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of the Wasteland must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
 			else if(!client)
 				msg += "[t_He] [t_has] a blank, absent-minded stare and appears completely unresponsive to anything. [t_He] may snap out of it soon.\n"
 
@@ -304,7 +310,6 @@
 			if(perpname)
 				var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 				if(R)
-					msg += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]<br>"
 					msg += "<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a> "
 					msg += "<a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a><br>"
 				if(istype(H.glasses, /obj/item/clothing/glasses/hud/health) || istype(CIH, /obj/item/organ/cyberimp/eyes/hud/medical))

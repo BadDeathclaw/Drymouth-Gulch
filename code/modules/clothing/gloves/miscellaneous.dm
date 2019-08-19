@@ -12,7 +12,7 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/rifleman
-	name = "rifleman's gloves"
+	name = "rifleman gloves"
 	desc = "A pair of rifleman's gloves. The thumb and finger have been removed to not impair the wearer's shooting ability."
 	icon_state = "rifleman"
 	item_state = "rifleman"
@@ -83,7 +83,7 @@
 	transfer_prints = FALSE
 
 /obj/item/clothing/gloves/Biker
-	name = "Future Gloves"
+	name = "future gloves"
 	desc = "Gloves in a futuristic color."
 	icon_state = "biker_gloves"
 	item_state = "biker_gloves"

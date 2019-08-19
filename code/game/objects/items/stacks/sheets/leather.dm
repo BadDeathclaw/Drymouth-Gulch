@@ -163,18 +163,33 @@ GLOBAL_LIST_INIT(xeno_recipes, list ( \
 GLOBAL_LIST_INIT(leather_recipes, list ( \
 	new/datum/stack_recipe("wallet", /obj/item/storage/wallet, 1), \
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2), \
-	new/datum/stack_recipe("botany gloves", /obj/item/clothing/gloves/botanic_leather, 3), \
 	new/datum/stack_recipe("toolbelt", /obj/item/storage/belt/utility, 4), \
+	null, \
+	new/datum/stack_recipe("leather gloves", /obj/item/clothing/gloves/f13/leather, 3), \
+	new/datum/stack_recipe("leather shoes", /obj/item/clothing/shoes/f13/brownie, 4), \
 	new/datum/stack_recipe("leather satchel", /obj/item/storage/backpack/satchel/leather, 5), \
-	new/datum/stack_recipe("bandolier", /obj/item/storage/belt/bandolier, 5), \
+	new/datum/stack_recipe("tanned vest", /obj/item/clothing/suit/f13/vest, 4), \
 	new/datum/stack_recipe("leather jacket", /obj/item/clothing/suit/jacket/leather, 7), \
-	new/datum/stack_recipe("leather shoes", /obj/item/clothing/shoes/laceup, 2), \
 	new/datum/stack_recipe("leather overcoat", /obj/item/clothing/suit/jacket/leather/overcoat, 10), \
+	null, \
+	new/datum/stack_recipe("leather armor", /obj/item/clothing/suit/armor/f13/leatherarmor, 13), \
 ))
 
 /obj/item/stack/sheet/leather/Initialize(mapload, new_amount, merge = TRUE)
 	recipes = GLOB.leather_recipes
 	return ..()
+
+/obj/item/stack/sheet/leather/twenty
+	amount = 20
+
+/obj/item/stack/sheet/leather/fifteen
+	amount = 15
+
+/obj/item/stack/sheet/leather/ten
+	amount = 10
+
+/obj/item/stack/sheet/leather/five
+	amount = 5
 
 /*
  * Sinew

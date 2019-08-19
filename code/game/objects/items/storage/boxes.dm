@@ -825,7 +825,7 @@
 			if(NODESIGN)
 				desc = "A sack neatly crafted out of paper."
 			if(NANOTRASEN)
-				desc = "A standard Nanotrasen paper lunch sack for loyal employees on the go."
+				desc = "A standard paper lunch sack for loyal employees on the go."
 			if(SYNDI)
 				desc = "The design on this paper sack is a remnant of the notorious 'SyndieSnacks' program."
 			if(HEART)
@@ -979,7 +979,8 @@
 	new /obj/item/reagent_containers/food/snacks/meat/slab/spider(src)
 	new /obj/item/reagent_containers/food/snacks/spidereggs(src)
 	new /obj/item/reagent_containers/food/snacks/carpmeat(src)
-	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src)
+	new /obj/item/reagent_containers/food/snacks/meat/slab/squirrel(src)
+//	new /obj/item/reagent_containers/food/snacks/meat/slab/xeno(src) // replaced with squirrel meat for wasteland food update
 	new /obj/item/reagent_containers/food/snacks/meat/slab/corgi(src)
 	new /obj/item/reagent_containers/food/snacks/faggot(src)
 

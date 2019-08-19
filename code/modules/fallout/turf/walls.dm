@@ -23,6 +23,7 @@
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/ruins, /turf/closed/wall)
+	unbreakable = 0
 
 
 /turf/closed/wall/f13/wood
@@ -33,13 +34,12 @@
 	icon_type_smooth = "wood"
 	hardness = 60
 	smooth = SMOOTH_OLD
-	//	disasemblable = 0
+	unbreakable = 0
 	baseturfs = /turf/open/floor/plating/wooden
 	sheet_type = /obj/item/stack/sheet/mineral/wood
 	sheet_amount = 2
 	girder_type = 0
 	canSmoothWith = list(/turf/closed/wall/f13/wood, /turf/closed/wall)
-	unbreakable = 0
 
 /turf/closed/wall/f13/wood/house
 	name = "house wall"
@@ -50,7 +50,6 @@
 	hardness = 50
 	var/broken = 0
 	canSmoothWith = list(/turf/closed/wall/f13/wood/house, /turf/closed/wall/f13/wood/house/broken, /turf/closed/wall)
-	unbreakable = 0
 
 /turf/closed/wall/f13/wood/house/broken
 	broken = 1
@@ -84,7 +83,6 @@
 	hardness = 10
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/wood/interior, /turf/closed/wall)
-	unbreakable = 0
 
 /turf/closed/wall/f13/store
 	name = "store wall"
@@ -174,6 +172,42 @@
 	name = "matrix"
 	desc = "<font color='#6eaa2c'>You suddenly realize the truth - there is no spoon.<br>Digital simulation ends here.</font>"
 	icon_state = "matrix"
+
+/turf/closed/indestructible/f13/matrix/MouseDrop_T(atom/dropping, mob/user)
+	. = ..()
+	if(!isliving(user) || user.incapacitated())
+		return //No ghosts or incapacitated folk allowed to do this.
+	if(!ishuman(dropping))
+		return //Only humans have job slots to be freed.
+	var/mob/living/carbon/human/departing_mob = dropping
+	if(departing_mob.stat == DEAD)
+		to_chat(user, "<span class='warning'>This one kicked the bucket. Won't be traveling anywhere.</span>")
+		return
+	if(departing_mob != user && departing_mob.client)
+		to_chat(user, "<span class='warning'>This one retains their free will. It's their choice if they want to depart or not.</span>")
+		return
+	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the Mojave", "Confirm", "Cancel") != "Confirm")
+		return
+	if(user.incapacitated() || QDELETED(departing_mob) || departing_mob.stat == DEAD || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
+		return //Things have changed since the alert happened.
+	if(departing_mob.logout_time && departing_mob.logout_time + 5 MINUTES > world.time)
+		to_chat(user, "<span class='warning'>This mind has only recently departed. Better give it some more time before taking such a drastic measure.</span>")
+		return
+	var/dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
+	if(!length(departing_mob.contents))
+		dat += " none."
+	else
+		var/atom/movable/content = departing_mob.contents[1]
+		dat += " [content.name]"
+		for(var/i in 2 to length(departing_mob.contents))
+			content = departing_mob.contents[i]
+			dat += ", [content.name]"
+		dat += "."
+	message_admins(dat)
+	log_admin(dat)
+	departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the Mojave.</span>")
+	departing_mob.despawn()
+
 
 /turf/closed/indestructible/f13/obsidian //Just like that one game studio that worked on the original game, or that block in Minecraft!
 	name = "obsidian"

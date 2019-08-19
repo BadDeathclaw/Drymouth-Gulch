@@ -124,7 +124,7 @@
 		client.images.Remove(human_image)
 	return ..()
 
-/mob/camera/imaginary_friend/say(message)
+/mob/camera/imaginary_friend/say(message, datum/language/language = null)
 	if (!message)
 		return
 

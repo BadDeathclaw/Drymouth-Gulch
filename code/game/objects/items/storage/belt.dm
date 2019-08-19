@@ -325,20 +325,20 @@
 	icon_state = "explorer2"
 	item_state = "explorer2"
 
-/obj/item/storage/belt/military/legion/
+/obj/item/storage/belt/military/assault/legion
 	name = "legionnaire marching belt"
 	desc = "A belt capable of holding the necessities of a legionnaire."
 	icon_state = "legion_belt"
 	item_state = "legion_belt"
 
-/obj/item/storage/belt/military/ncr
-	name = "NCR duty belt"
-	desc = "A standard issue robust duty belt for all NCR troopers."
+/obj/item/storage/belt/military/assault/ncr
+	name = "NCR patrol belt"
+	desc = "A standard issue robust duty belt for the NCR."
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 
 /obj/item/storage/belt/military/reconbandolier
-	name = "recon ranger bandolier"
+	name = "NCR recon ranger bandolier"
 	desc = "A belt with many pockets, now at an angle."
 	icon_state = "reconbandolier"
 	item_state = "reconbandolier"
@@ -347,6 +347,17 @@
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/storage/belt/military/NCR_Bandolier
+	name = "NCR bandolier"
+	desc = "A standard issue NCR bandolier."
+	icon_state = "ncr_bandolier"
+	item_state = "ncr_bandolier"
+
+/obj/item/storage/belt/military/NCR_Bandolier/ComponentInitialize()
+	. = ..()
+	GET_COMPONENT(STR, /datum/component/storage)
+	STR.max_items = 7
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -426,7 +437,7 @@
 /obj/item/storage/belt/military/assault/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.max_items = 6
+	STR.max_items = 7
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -688,3 +699,17 @@
 /obj/item/storage/belt/sabre/PopulateContents()
 	new /obj/item/melee/sabre(src)
 	update_icon()
+
+/obj/item/storage/belt/sabre/legion
+	name = "machete sheath"
+	desc = "A leather sheath designed to hold machetes"
+	icon_state = "sheath"
+	item_state = "sheath"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/belt/sabre/legion/pouch
+	name = "pouched machete sheath"
+	desc = "A leather sheath designed to hold machetes. This one has a small pouch on the outside of it, allowing it to hold a few small items"
+	icon_state = "sheath"
+	item_state = "sheath"
+	w_class = WEIGHT_CLASS_BULKY

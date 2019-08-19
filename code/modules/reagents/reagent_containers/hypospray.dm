@@ -197,4 +197,3 @@
 	volume = 10
 	amount_per_transfer_from_this = 10
 	list_reagents = list("psycho" = 10)
-/

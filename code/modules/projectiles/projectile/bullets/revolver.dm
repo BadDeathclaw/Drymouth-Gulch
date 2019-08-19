@@ -8,4 +8,4 @@
 
 /obj/item/projectile/bullet/a50AE
 	name = ".50AE bullet"
-	damage = 60
+	damage = 0

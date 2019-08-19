@@ -9,13 +9,15 @@
 	gender = MALE
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	stat_attack = UNCONSCIOUS
+	robust_searching = 1
+	anchored = 1
 	speak = list("ROAR!","Rawr!","GRRAAGH!","Growl!")
 	speak_emote = list("growls", "roars")
 	emote_hear = list("grumbles.","grawls.")
 	emote_taunt = list("stares ferociously", "stomps")
 	speak_chance = 10
 	taunt_chance = 25
-	speed = 0
+	speed = -1
 	see_in_dark = 8
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 4,
 							/obj/item/stack/sheet/animalhide/deathclaw = 2,
@@ -96,7 +98,7 @@
 	var/obj/effect/temp_visual/decoy/D = new /obj/effect/temp_visual/decoy(loc,src)
 	animate(D, alpha = 0, color = "#FF0000", transform = matrix()*2, time = 1)
 	sleep(3)
-	throw_at(T, get_dist(src, T), 1, src, 0, callback = CALLBACK(src, .charge_end))
+	throw_at(T, get_dist(src, T), 1, src, 0, callback = CALLBACK(src, .proc/charge_end))
 
 /mob/living/simple_animal/hostile/deathclaw/proc/charge_end(list/effects_to_destroy)
 	charging = FALSE

@@ -121,7 +121,7 @@
 
 /obj/item/crafting/turpentine
 	name = "turpentine"
-	desc = "A flammable liquid distilled from pine resin, used as a solvent."
+	desc = "A liquid distilled from pine resin, can function as an antiseptic or solvent."
 	icon_state = "turpentine"
 
 /obj/item/crafting/abraxo
@@ -130,10 +130,10 @@
 	icon_state = "abraxo"
 
 /obj/item/crafting/reloader
-	name = "cartrige reloader"
-	desc = "This device allows to hand-load your own gun rounds using certain raw materials."
+	name = "makeshift reloader"
+	desc = "This device allows you to hand-craft your own gun rounds using certain raw materials."
 	icon_state = "reloader"
-	tool_behaviour = TOOL_RELOADER
+	tool_behaviour = TOOL_MSRELOADER
 
 /obj/item/crafting/igniter
 	name = "igniter"
@@ -154,3 +154,4 @@
 	name = "lunch box"
 	desc = "This was a promotional item created by Vault-Tec before the Great War and used in the company's advertisements. With the right schematics, it can be used to make bottlecap mines."
 	icon_state = "lunchbox"
+	tool_behaviour = TOOL_LUNCHBOX

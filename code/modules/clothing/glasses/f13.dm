@@ -9,6 +9,12 @@
 	icon_state = "biker"
 	item_state = "biker"
 
+/obj/item/clothing/glasses/legiongoggles
+	name = "sandstorm goggles"
+	desc = "Post-war makeshift goggles fasioned together inside Legion camps. Standard issue to most legionarys."
+	icon_state = "legion"
+	item_state = "legion"
+
 //Fallout 13 sunglasses
 
 /obj/item/clothing/glasses/sunglasses/f13

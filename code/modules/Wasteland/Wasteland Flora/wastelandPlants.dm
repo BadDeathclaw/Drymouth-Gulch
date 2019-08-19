@@ -29,7 +29,7 @@
 	desc = "It's a tree. Useful for combustion and/or construction."
 	icon = 'icons/fallout/flora/trees.dmi'
 	icon_state = "deadtree_1"
-	log_amount = 5
+	log_amount = 4
 	obj_integrity = 100
 	max_integrity = 100
 

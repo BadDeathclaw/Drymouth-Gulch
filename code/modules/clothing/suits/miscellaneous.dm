@@ -204,6 +204,10 @@
 	desc = "Your classic, non-racist poncho."
 	icon_state = "classicponcho"
 	item_state = "classicponcho"
+	body_parts_covered = CHEST
+	armor = list(melee = 10, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 0, acid = 0)
+	allowed = list(/obj/item/pen,/obj/item/paper,/obj/item/stamp,/obj/item/reagent_containers/food/drinks/flask,/obj/item/storage/box/matches,/obj/item/lighter,/obj/item/clothing/mask/cigarette,/obj/item/storage/fancy/cigarettes,/obj/item/flashlight,/obj/item/gun,/obj/item/ammo_box,/obj/item/ammo_casing)
+
 
 /obj/item/clothing/suit/poncho/green
 	name = "green poncho"
