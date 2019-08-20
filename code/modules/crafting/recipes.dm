@@ -419,6 +419,7 @@
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/*
 /datum/crafting_recipe/kittyears
 	name = "Kitty Ears"
 	result = /obj/item/clothing/head/kitty/genuine
@@ -426,6 +427,7 @@
 	reqs = list(/obj/item/organ/tail/cat = 1,
 				/obj/item/organ/ears/cat = 1)
 	category = CAT_MISC
+*/
 /*
 /datum/crafting_recipe/skateboard
 	name = "Skateboard"
