@@ -203,13 +203,13 @@
 		if(I.use(expected_price))
 			stored_caps += expected_price
 			playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
+			to_chat(usr, "You put [expected_price] caps to a vending machine. [vending_item.name] is vended out of it. ")
 			remove_item(vending_item)
-			to_chat(usr, "You put [expected_price] caps to vending machine. Your item")
 			set_state(STATE_IDLE)
-			src.ui_interact(usr)
+			onclose(usr, "vending")
 		else
 			playsound(src, 'sound/machines/DeniedBeep.ogg', 60, 1)
-			to_chat(usr, "Not enough caps")
+			to_chat(usr, "Not enough caps.")
 
 /* Spawn all caps on world and clear caps storage */
 /obj/machinery/trading_machine/proc/remove_all_caps()
@@ -403,7 +403,6 @@
 	..(user)
 	var/msg
 	msg += "Wasteland Vending Machine<BR>"
-	msg += "Lock: " + lock + "<BR>"
 	to_chat(user, msg)
 
 /* Spawn input dialog and set item price */
@@ -420,7 +419,7 @@
 /* Find item by name and price in content and return type */
 /obj/machinery/trading_machine/proc/find_item(var/item_name, var/item_price)
 	for(var/obj/item/Itm in content)
-		if(content[Itm] == item_price && Itm.name == item_name)
+		if(content[Itm] == item_price && sanitize(Itm.name) == sanitize(item_name))
 			return Itm
 
 /* Attack Hand */
@@ -459,7 +458,7 @@
 			dat += "<h4> Items </h4> "
 
 			if(content.len == 0)
-				dat += "<font color = 'red'>No product loaded!</font>"
+				dat += "<font color = 'red'>No products loaded!</font>"
 			else
 				for(var/obj/item/Itm in content)
 					var/item_name = url_encode(Itm.name)
@@ -606,7 +605,7 @@
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
 		new /datum/data/wasteland_equipment("Zippo",						/obj/item/lighter,													25),
 		new /datum/data/wasteland_equipment("Backpack",						/obj/item/storage/backpack,											30),
-		new /datum/data/wasteland_equipment("Soap",							/obj/item/soap,														35),
+		new /datum/data/wasteland_equipment("Spray bottle",					/obj/item/reagent_containers/spray,									40),
 		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				50)
 		)
 
