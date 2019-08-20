@@ -20,6 +20,14 @@ SUBSYSTEM_DEF(weather)
 		var/datum/weather/W = V
 		if(W.aesthetic || W.stage != MAIN_STAGE)
 			continue
+		if(!W.turfs_impacted && W.affects_turfs)
+			W.turfs_impacted = TRUE
+			for(var/i in W.impacted_areas)
+				var/area/A = i
+				for(var/t in A.contents)
+					var/turf/T = t
+					if(W.can_weather_act_turf(T))
+						W.weather_act_turf(T)
 		for(var/i in GLOB.mob_living_list)
 			var/mob/living/L = i
 			if(W.can_weather_act(L))
