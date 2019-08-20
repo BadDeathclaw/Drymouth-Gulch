@@ -212,7 +212,7 @@
 /obj/item/ammo_box/a308
 	name = "stripper clip (.308)"
 	desc = "A stripper clip."
-	icon_state = "762"
+	icon_state = "308"
 	ammo_type = /obj/item/ammo_casing/a308
 	max_ammo = 5
 	multiple_sprites = 1
