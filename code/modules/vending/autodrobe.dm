@@ -18,7 +18,7 @@
 					/obj/item/clothing/under/schoolgirl/red = 1,
 					/obj/item/clothing/under/schoolgirl/green = 1,
 					/obj/item/clothing/under/schoolgirl/orange = 1,
-					/obj/item/clothing/head/kitty = 1,
+					///obj/item/clothing/head/kitty = 1,
 					/obj/item/clothing/under/skirt/black = 1,
 					/obj/item/clothing/head/beret = 1,
 					/obj/item/clothing/accessory/waistcoat = 1,

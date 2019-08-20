@@ -299,7 +299,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mob_spawn/human/corpse/damaged{
-	head = /obj/item/clothing/head/kitty
+	//head = /obj/item/clothing/head/kitty
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
@@ -629,7 +629,7 @@
 	name = "kitty bed"
 	},
 /obj/effect/mob_spawn/human/corpse/damaged{
-	head = /obj/item/clothing/head/kitty
+	//head = /obj/item/clothing/head/kitty
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)

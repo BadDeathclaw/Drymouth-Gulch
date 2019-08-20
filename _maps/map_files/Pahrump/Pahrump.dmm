@@ -5458,7 +5458,7 @@
 "rWw" = (/obj/item/reagent_containers/hypospray/medipen/stimpak/super,/turf/open/floor/f13{tag = "icon-greenrustyfull";icon_state = "greenrustyfull"},/area/f13/clinic)
 "rZc" = (/obj/structure/table/wood,/obj/effect/spawner/lootdrop/f13/weapon/gun/random,/turf/open/floor/f13/wood{tag = "icon-housewood2";icon_state = "housewood2"},/area/f13/building)
 "sdl" = (/obj/effect/landmark/start/f13/ncrengineer,/turf/open/floor/plating/tunnel,/area/f13/ncr)
-"seA" = (/obj/structure/table/reinforced,/obj/item/clothing/head/kitty,/obj/item/clothing/neck/petcollar,/obj/item/clothing/neck/petcollar,/obj/item/clothing/head/kitty,/turf/open/floor/f13{tag = "icon-floorrusty";icon_state = "floorrusty"},/area/f13/building)
+"seA" = (/obj/structure/table/reinforced,/obj/item/clothing/neck/petcollar,/obj/item/clothing/neck/petcollar,/turf/open/floor/f13{tag = "icon-floorrusty";icon_state = "floorrusty"},/area/f13/building)
 "sfb" = (/obj/structure/table,/obj/machinery/computer/terminal{dir = 8;termtag = "Secret"},/turf/open/floor/f13{tag = "icon-greenrustyfull";icon_state = "greenrustyfull"},/area/f13/clinic)
 "shJ" = (/obj/machinery/light/small{dir = 1},/mob/living/simple_animal/hostile/radroach,/turf/open/floor/f13/wood,/area/f13/building)
 "siy" = (/obj/structure/closet,/obj/effect/spawner/lootdrop/clothing_low,/obj/item/stack/f13Cash/random/bottle_cap/med,/turf/open/floor/f13/wood,/area/f13/building)
