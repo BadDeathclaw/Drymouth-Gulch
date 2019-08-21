@@ -45,6 +45,8 @@
 	for(var/obj/effect/O in T)
 		if(is_cleanable(O))
 			qdel(O)
+	for(var/obj/item/ammo_casing/C in T)
+		qdel(C)
 
 /datum/weather/acid_rain/proc/is_acidrain_immune(atom/L)
 	while (L && !isturf(L))

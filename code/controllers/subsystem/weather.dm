@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(weather)
 				eligible_zlevels["[z]"][W] = probability
 	return ..()
 
-/datum/controller/subsystem/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels)
+/datum/controller/subsystem/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels, duration)
 	if (istext(weather_datum_type))
 		for (var/V in subtypesof(/datum/weather))
 			var/datum/weather/W = V
@@ -82,7 +82,11 @@ SUBSYSTEM_DEF(weather)
 		CRASH("run_weather called with invalid z_levels: [z_levels || "null"]")
 		return
 
-	var/datum/weather/W = new weather_datum_type(z_levels)
+	if(duration && !isnum(duration))
+		CRASH("run_weather called with invalid duration: [duration || "null"]")
+		return
+
+	var/datum/weather/W = new weather_datum_type(z_levels, duration)
 	W.telegraph()
 
 /datum/controller/subsystem/weather/proc/make_eligible(z, possible_weather)
