@@ -532,8 +532,7 @@
 		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					210),
 		new /datum/data/wasteland_equipment(".44 magnum revolver",			/obj/item/gun/ballistic/revolver/m29,								230),
 		new /datum/data/wasteland_equipment("Fireaxe",						/obj/item/twohanded/fireaxe,										250),
-		new /datum/data/wasteland_equipment("Cowboy repeater",				/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,			300),
-		new /datum/data/wasteland_equipment("Powerfist",					/obj/item/melee/powerfist,											1000)
+		new /datum/data/wasteland_equipment("Cowboy repeater",				/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,			300)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/ammo
