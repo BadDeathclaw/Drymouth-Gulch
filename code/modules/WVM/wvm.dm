@@ -14,7 +14,7 @@
 
 /obj/machinery/trading_machine
 	name = "Wasteland Vending Machine"
-	desc = "Wasteland Vending Machine!"
+	desc = "Wasteland Vending Machine! Unlock with a key, load your goods, and profit!"
 
 	icon = 'icons/obj/vending.dmi'
 	icon_state = "sec"
@@ -57,7 +57,6 @@
 	service_icon_state = "weapon_service"
 	lock_icon_state = "weapon_lock"
 	stored_item_type = list(/obj/item/gun)
-	item_not_acceptable_message = "You need to remove ammo from your weapon first."
 
 /* Ammo Vending Machine*/
 /obj/machinery/trading_machine/ammo
@@ -150,42 +149,6 @@
 /* Hook for check item parameters */
 /obj/machinery/trading_machine/proc/is_acceptable_item_state(obj/item/Itm)
 	return 1
-
-/* Check acceptable item in Weapon Wending Machine */
-/obj/machinery/trading_machine/weapon/is_acceptable_item_state(obj/item/Itm)
-
-	// It's energy weapon
-	if(istype(Itm, /obj/item/gun/energy))
-		var/obj/item/gun/energy/Gun = Itm
-
-		if(Gun.cell)
-			return 0
-		else
-			return 1
-
-	// It's balistic weapon
-	else if(istype(Itm, /obj/item/gun/ballistic))
-		var/obj/item/gun/ballistic/Gun = Itm
-		if(istype(Itm, /obj/item/gun/ballistic/revolver))
-			if(Gun.magazine.ammo_count(0) > 0)
-				return 0
-			else
-				return 1
-
-		else if(istype(Itm, /obj/item/gun/ballistic/automatic))
-			if(Gun.magazine)
-				return 0
-			else
-				return 1
-
-		else if(istype(Itm, /obj/item/gun/ballistic/shotgun))
-			if(Gun.magazine.ammo_count(0) > 0)
-				return 0
-			else
-				return 1
-
-	else
-		return 1
 
 /* Remove item from machine. */
 /obj/machinery/trading_machine/proc/remove_item(obj/item/ItemToRemove)
