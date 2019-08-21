@@ -17,7 +17,7 @@
 	var/weather_overlay
 	var/weather_color = null
 
-	var/end_message = "<span class='danger'>The wind relents its assault.</span>" //Displayed once the wather is over
+	var/end_message = "<span class='danger'>The wind relents its assault.</span>" //Displayed once the weather is over
 	var/end_duration = 300 //In deciseconds, how long the "wind-down" graphic will appear before vanishing entirely
 	var/end_sound
 	var/end_overlay
@@ -39,6 +39,9 @@
 
 	var/barometer_predictable = FALSE
 	var/next_hit_time = 0 //For barometers to know when the next storm will hit
+
+	var/affects_turfs = FALSE //Does this weather affect turfs at all?
+	var/turfs_impacted = FALSE // Did this weather already impact turfs?
 
 /datum/weather/New(z_levels)
 	..()
@@ -114,7 +117,18 @@
 		return
 	return 1
 
+/datum/weather/proc/can_weather_act_turf(turf/T) //Can this weather impact a turf?
+	var/turf/turfs = T
+	if(turfs && !(turfs.z in impacted_z_levels))
+		return
+	if(!(get_area(turfs) in impacted_areas))
+		return
+	return 1
+
 /datum/weather/proc/weather_act(mob/living/L) //What effect does this weather have on the hapless mob?
+	return
+
+/datum/weather/proc/weather_act_turf(turf/T) //What effect does this weather have on the turf? One time effect on the start of the weather event.
 	return
 
 /datum/weather/proc/update_areas()

@@ -1,10 +1,10 @@
-//Acid rain is part of the natural weather cycle in the humid forests of Planetstation, and cause acid damage to anyone unprotected.
 /datum/weather/acid_rain
 	name = "acid rain"
 	desc = "The planet's thunderstorms are by nature acidic, and will incinerate anyone standing beneath them without protection."
-	probability = 1
+	probability = 2
 
 	telegraph_duration = 400
+	telegraph_overlay = "snow_storm"
 	telegraph_message = "<span class='userdanger'>Acid rain is coming to the area, bringing suffering and death to all life. Save yourself.</span>"
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
@@ -18,7 +18,7 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	area_type = list(/area/f13/wasteland, /area/f13/forest, /area/f13/ruins, /area/f13/farm, /area/f13/radiation_outside)
+	area_type = /area/f13/wasteland
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
@@ -26,12 +26,25 @@
 
 	barometer_predictable = TRUE
 
+	affects_turfs = TRUE
+
 /datum/weather/acid_rain/weather_act(mob/living/L)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+		SEND_SIGNAL(H, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
+		H.wash_cream()
 	if(is_acidrain_immune(L))
 		return
 	var/resist = L.getarmor(null, "acid")
 	if(prob(max(0,100-resist)))
-		L.acid_act(5, 5)
+		L.acid_act(10, 10)
+
+/datum/weather/acid_rain/weather_act_turf(turf/T)
+	SEND_SIGNAL(T, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
+	for(var/obj/effect/O in T)
+		if(is_cleanable(O))
+			qdel(O)
 
 /datum/weather/acid_rain/proc/is_acidrain_immune(atom/L)
 	while (L && !isturf(L))
