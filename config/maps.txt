@@ -17,9 +17,3 @@ map pahrump
 	default
 	votable
 endmap
-
-map boxstation
-	disabled
-	#voteweight 0.5
-	votable
-endmap
