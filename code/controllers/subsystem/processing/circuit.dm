@@ -42,7 +42,7 @@ PROCESSING_SUBSYSTEM_DEF(circuit)
 		all_assemblies[name] = path
 		cached_assemblies[A] = new path
 
-
+/*
 	circuit_fabricator_recipe_list["Assemblies"] = list(
 		/obj/item/electronic_assembly/default,
 		/obj/item/electronic_assembly/calc,
@@ -83,3 +83,4 @@ PROCESSING_SUBSYSTEM_DEF(circuit)
 		/obj/item/card/data/full_color,
 		/obj/item/card/data/disk
 		)
+*/

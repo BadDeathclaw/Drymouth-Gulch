@@ -56,6 +56,7 @@
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/* This is all gone until it stops being such a broken, overpowered, href-exploitable piece of junk. It's fun, but it's not worth the headache.
 /datum/design/integrated_printer
 	name = "Integrated circuit printer"
 	desc = "This machine provides all neccesary things for circuitry."
@@ -85,3 +86,4 @@
 	build_path = /obj/item/disk/integrated_circuit/upgrade/clone
 	category = list("Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+*/
