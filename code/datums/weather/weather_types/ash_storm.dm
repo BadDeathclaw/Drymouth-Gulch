@@ -90,13 +90,13 @@
 		return
 	L.adjustFireLoss(4)
 
-/datum/weather/ash_storm/emberfall
-	name = "sand storm"
+/datum/weather/ash_storm/sandstorm
+	name = "sandstorm"
 	desc = "A passing sand storm blankets the area in harmless sands."
 
 	telegraph_message = "<span class='userdanger'>Sandstorm is coming to the area, decreasing overall visibility outside.</span>"
 
-	weather_message = "<span class='notice'>Sand waft down around you like grotesque snow. The storm seems to have passed you by...</span>"
+	weather_message = "<span class='boldannounce'>Sand waft down around you like grotesque snow. The sandstorm is here...</span>"
 
 	end_message = "<span class='boldannounce'>The sandstorm slows, stops. Another layer of sand to the ground beneath your feet.</span>"
 	end_sound = null
