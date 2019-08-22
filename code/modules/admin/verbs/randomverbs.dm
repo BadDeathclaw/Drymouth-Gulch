@@ -1082,12 +1082,12 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 /client/proc/run_weather()
 	set category = "Fun"
 	set name = "Run Weather"
-	set desc = "Triggers a weather on the z-level you choose."
+	set desc = "Triggers a weather on the z-level you choose with a custom duration."
 
 	if(!holder)
 		return
 
-	var/weather_type = input("Choose a weather", "Weather")  as null|anything in subtypesof(/datum/weather)
+	var/datum/weather/weather_type = input("Choose a weather", "Weather")  as null|anything in subtypesof(/datum/weather)
 	if(!weather_type)
 		return
 
@@ -1097,11 +1097,17 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 			return
 		z_level = src.mob.z
 
-	SSweather.run_weather(weather_type, z_level)
-
-	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level].")
-	log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level].")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
+	var/forced_duration = input("Duration of the weather in deciseconds? Leave blank to use default weather duration.", "Weather duration")  as num|null
+	if(forced_duration && isnum(forced_duration))
+		SSweather.run_weather(weather_type, z_level, forced_duration)
+		message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level] with duration of [forced_duration] deciseconds.")
+		log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level] with duration of [forced_duration] deciseconds.")
+		SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
+	else
+		SSweather.run_weather(weather_type, z_level)
+		message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level].")
+		log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level].")
+		SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
 
 /client/proc/mass_zombie_infection()
 	set category = "Fun"
