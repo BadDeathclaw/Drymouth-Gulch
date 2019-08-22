@@ -382,6 +382,19 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	materials = list(MAT_METAL=1150, MAT_WOOD=2075)
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 
+/obj/item/throwing_star/spear/harpoon/throwingknife
+	name = "Throwing Knife"
+	desc = "A knife, weighted and designed to be thrown. Looks pretty sharp."
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	icon = 'icons/fallout/objects/melee.dmi'
+	icon_state = "throwing"
+	item_state = "knife"
+	force = 15
+	throwforce = 25
+	embedding = list("embedded_pain_multiplier" = 3, "embed_chance" = 40, "embedded_fall_chance" = 20)
+	w_class = WEIGHT_CLASS_SMALL
+
 
 /obj/item/switchblade
 	name = "switchblade"
