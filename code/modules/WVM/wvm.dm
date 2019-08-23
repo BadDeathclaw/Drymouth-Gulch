@@ -521,18 +521,19 @@
 		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								25),
 		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
 		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				120),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								1000)
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								800)
 		)
 	
 /obj/machinery/mineral/wasteland_vendor/weapons
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911, 					180),
-		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					210),
-		new /datum/data/wasteland_equipment(".44 magnum revolver",			/obj/item/gun/ballistic/revolver/m29,								230),
-		new /datum/data/wasteland_equipment("Fireaxe",						/obj/item/twohanded/fireaxe,										250),
-		new /datum/data/wasteland_equipment("Cowboy repeater",				/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy,			300)
+		new /datum/data/wasteland_equipment("Surrival knife",				/obj/item/kitchen/knife/combat/survival, 							50),
+		new /datum/data/wasteland_equipment("Combat knife",					/obj/item/kitchen/knife/combat, 									100),
+		new /datum/data/wasteland_equipment("Mosin nagant",					/obj/item/gun/ballistic/shotgun/boltaction,							100),
+		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						160),
+		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					180),
+		new /datum/data/wasteland_equipment("Riot shield",					/obj/item/shield/riot,												1000)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/ammo
@@ -557,7 +558,7 @@
 		new /datum/data/wasteland_equipment("Merchant outfit",					/obj/item/clothing/under/f13/merchant,							40),
 		new /datum/data/wasteland_equipment("Followers outfit",					/obj/item/clothing/under/f13/followers,							100),
 		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							300),
-		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							1000)
+		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							800)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/general
@@ -566,7 +567,7 @@
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
 		new /datum/data/wasteland_equipment("Zippo",						/obj/item/lighter,													25),
-		new /datum/data/wasteland_equipment("Backpack",						/obj/item/storage/backpack,											30),
+		new /datum/data/wasteland_equipment("Explorer satchel",				/obj/item/storage/backpack/satchel/explorer,						30),
 		new /datum/data/wasteland_equipment("Spray bottle",					/obj/item/reagent_containers/spray,									40),
 		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				50)
 		)
