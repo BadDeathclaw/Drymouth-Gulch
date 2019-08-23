@@ -77,7 +77,6 @@
 	'sound/f13ambience/ambigen_6.ogg','sound/f13ambience/ambigen_7.ogg','sound/f13ambience/ambigen_8.ogg','sound/f13ambience/ambigen_9.ogg')
 	environment = 2
 	grow_chance = 5
-	requires_power = FALSE
 
 /area/f13/farm
 	name = "Farm"
