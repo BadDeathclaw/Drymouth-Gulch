@@ -69,4 +69,4 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.apply_effect(5,EFFECT_IRRADIATE,0)
+		H.apply_effect(20, EFFECT_IRRADIATE, 0)
