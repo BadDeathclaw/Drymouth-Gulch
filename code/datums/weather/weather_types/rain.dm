@@ -28,7 +28,7 @@
 
 	affects_turfs = TRUE
 
-/datum/weather/rain/weather_act(mob/living/carbon/human/L)
+/datum/weather/rain/weather_act(mob/living/L)
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
