@@ -23090,16 +23090,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"biI" = (
-/obj/structure/rack,
-/obj/item/gun/energy/laser/pistol,
-/obj/item/gun/energy/laser/pistol,
-/obj/item/gun/energy/laser/pistol,
-/obj/item/gun/energy/laser/pistol,
-/obj/item/gun/energy/laser/pistol,
-/obj/item/gun/energy/laser/pistol,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
-/area/f13/brotherhood)
 "biJ" = (
 /obj/structure/toilet{
 	pixel_y = 13
@@ -25428,11 +25418,6 @@
 "boF" = (
 /obj/structure/table,
 /obj/machinery/recharger,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
-/area/f13/brotherhood)
-"boG" = (
-/obj/structure/table,
-/obj/machinery/cell_charger,
 /turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
 /area/f13/brotherhood)
 "boH" = (
@@ -28063,8 +28048,15 @@
 	},
 /area/f13/brotherhood)
 "bvw" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/obj/structure/closet,
+/obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/turf/open/floor/f13{
+	tag = "icon-floordirtysolid";
+	icon_state = "floordirtysolid"
+	},
 /area/f13/brotherhood)
 "bvx" = (
 /obj/structure/closet,
@@ -28091,7 +28083,11 @@
 /obj/item/clothing/under/f13/roving,
 /obj/item/clothing/under/f13/roving,
 /obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/obj/machinery/light,
+/turf/open/floor/f13{
+	tag = "icon-floordirtysolid";
+	icon_state = "floordirtysolid"
+	},
 /area/f13/brotherhood)
 "bvy" = (
 /obj/structure/rack,
@@ -37728,7 +37724,6 @@
 /area/f13/vault)
 "bTe" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
@@ -38621,7 +38616,6 @@
 /area/f13/sewer)
 "bVk" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/item/dildo,
 /turf/open/floor/f13/wood{
 	tag = "icon-housewood2-broken";
@@ -39208,6 +39202,19 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"dja" = (
+/obj/structure/rack,
+/obj/item/gun/energy/laser/pistol,
+/obj/item/gun/energy/laser/pistol,
+/obj/item/gun/energy/laser/pistol,
+/obj/item/gun/energy/laser/pistol,
+/obj/item/gun/energy/laser/pistol,
+/obj/item/gun/energy/laser/pistol,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "dnD" = (
 /obj/effect/decal/remains/human,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/random,
@@ -39835,6 +39842,31 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/village)
+"hIt" = (
+/obj/structure/closet,
+/obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/f13/armor/tier2,
+/obj/effect/spawner/lootdrop/f13/armor/tier2,
+/turf/open/floor/f13{
+	tag = "icon-floordirtysolid";
+	icon_state = "floordirtysolid"
+	},
+/area/f13/brotherhood)
+"hLl" = (
+/obj/structure/closet,
+/obj/effect/turf_decal/bot,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/shoes/jackboots,
+/obj/item/clothing/shoes/f13/explorer,
+/obj/item/clothing/shoes/f13/explorer,
+/obj/item/clothing/shoes/f13/brownie,
+/obj/item/clothing/shoes/f13/brownie,
+/turf/open/floor/f13{
+	tag = "icon-floordirtysolid";
+	icon_state = "floordirtysolid"
+	},
+/area/f13/brotherhood)
 "hLm" = (
 /obj/structure/table,
 /obj/machinery/computer/terminal{
@@ -40039,6 +40071,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/office)
+"jdH" = (
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
+/turf/open/floor/f13{
+	tag = "icon-floordirtysolid";
+	icon_state = "floordirtysolid"
+	},
+/area/f13/brotherhood)
 "jfT" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/f13{
@@ -41191,6 +41233,16 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13/wood,
 /area/f13/clinic)
+"tsM" = (
+/obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/tier2,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/obj/structure/closet,
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "ttv" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -41564,6 +41616,25 @@
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
+"vIp" = (
+/obj/effect/landmark/start/f13/initiateknight,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#706891"
+	},
+/turf/open/floor/f13{
+	tag = "icon-floordirtysolid";
+	icon_state = "floordirtysolid"
+	},
+/area/f13/brotherhood)
+"vMO" = (
+/obj/structure/table,
+/obj/machinery/cell_charger,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/red/whiteredfull,
+/area/f13/brotherhood)
 "vQX" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
@@ -41691,7 +41762,6 @@
 /area/f13/tunnel)
 "xiQ" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
@@ -166234,14 +166304,14 @@ aac
 aac
 aac
 aaa
-aaa
 bgU
 biC
 biV
+bpP
 bgU
 bgU
 bgU
-bgX
+jdH
 bgX
 bvv
 bgU
@@ -166490,9 +166560,9 @@ aac
 aac
 aac
 aac
-aac
 aaa
 bgU
+biD
 biD
 biD
 blh
@@ -166747,17 +166817,17 @@ aac
 aac
 aac
 aac
-aac
 aaa
 bgU
 biE
 biD
 biD
-boF
+biD
+biD
 bgU
-bqx
-bqx
-bqx
+bgX
+bgX
+bgX
 bgU
 auS
 adt
@@ -167004,17 +167074,17 @@ aac
 aac
 aac
 aac
-aac
 aaa
 bgU
-biI
+dja
 biD
-biD
-boG
-bgU
+biM
+bvg
+brj
 bqW
-bqW
-bqW
+vIp
+bgX
+hLl
 bgU
 adt
 adt
@@ -167261,17 +167331,17 @@ aac
 aac
 aac
 aac
-aac
 aaa
 bgU
 biL
 biD
-biD
-biD
-biD
+biM
+brl
 brj
-brj
-brj
+bqW
+bqx
+bgX
+hIt
 bgU
 bgU
 bgU
@@ -167518,16 +167588,16 @@ aac
 aac
 aac
 aac
-aac
 aaa
 bgU
 biM
 biD
 biD
 biD
-biD
-biD
-biD
+brj
+bqW
+bqx
+bgX
 bvw
 bgU
 bvV
@@ -167776,15 +167846,15 @@ aac
 aaa
 aaa
 aaa
-aaa
 bgU
 biM
 biD
-biM
-biM
-bpP
-brl
-bvg
+vMO
+boF
+tsM
+bgU
+jdH
+bgX
 bvx
 bgU
 bvW
