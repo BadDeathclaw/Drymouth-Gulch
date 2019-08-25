@@ -904,3 +904,13 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
+
+/datum/crafting_recipe/spray
+	name = "Abraxo Cleaner"
+	result = /obj/item/reagent_containers/spray/cleaner
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/crafting/abraxo = 1,
+				/datum/reagent/water = 50)
+	tools = list(TOOL_WELDER)
+	time = 10
+	category = CAT_MISC
