@@ -544,9 +544,7 @@
 		burn_out()
 		return FALSE
 	cell.use(pwr)
-	set_light(brightness * bulb_emergency_brightness_mul, max(bulb_emergency_pow_min, bulb_emergency_pow_mul * (cell.charge / cell.maxcharge)))
 	return TRUE
-
 
 /obj/machinery/light/proc/flicker(var/amount = rand(10, 20))
 	set waitfor = 0
