@@ -13,7 +13,7 @@
 "aam" = (/turf/open/indestructible/ground/outside/desert,/area/hallway/secondary/exit)
 "aan" = (/obj/machinery/light/small{dir = 1},/obj/structure/reagent_dispensers/barrel/explosive,/turf/open/floor/plasteel/barber{icon = 'icons/turf/f13floors2.dmi'; icon_state = "bluerustychess2"; tag = "icon-bluerustychess2"},/area/f13/bunker)
 "aao" = (/obj/effect/decal/remains/human,/obj/effect/decal/cleanable/blood/old,/obj/machinery/light/small{dir = 1},/turf/open/floor/plasteel/barber{icon = 'icons/turf/f13floors2.dmi'; icon_state = "bluerustychess2"; tag = "icon-bluerustychess2"},/area/f13/bunker)
-"aap" = (/obj/item/mop{tag = "icon-mopbucket"; icon_state = "mopbucket"},/obj/item/mop,/turf/open/floor/f13{icon_state = "whitegreenrustychess"},/area/f13/building)
+"aap" = (/obj/item/mop,/turf/open/floor/f13{icon_state = "whitegreenrustychess"},/area/f13/building)
 "aaq" = (/obj/effect/decal/remains/human,/turf/open/floor/plasteel/barber{tag = "icon-platingdmg1"; icon_state = "platingdmg1"},/area/f13/radiation)
 "aar" = (/obj/structure/table,/obj/item/storage/pill_bottle/chem_tin/radx,/turf/open/floor/plasteel/barber{tag = "icon-platingdmg1"; icon_state = "platingdmg1"},/area/f13/radiation)
 "aas" = (/obj/structure/spider/stickyweb,/obj/structure/closet,/obj/item/reagent_containers/food/snacks/f13/galette,/turf/open/floor/plasteel/barber{tag = "icon-plating"; icon_state = "plating"},/area/f13/radiation)
