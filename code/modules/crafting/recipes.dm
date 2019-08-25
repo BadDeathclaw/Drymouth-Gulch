@@ -21,7 +21,7 @@
 	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	
+
 /datum/crafting_recipe/IED
 	name = "IED"
 	result = /obj/item/grenade/iedcasing
@@ -651,14 +651,14 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-	
+
 /datum/crafting_recipe/goliathcloak
 	name = "deathclaw cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/goliath
 	time = 50
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/deathclaw = 4) 
+				/obj/item/stack/sheet/animalhide/deathclaw = 4)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
@@ -697,7 +697,7 @@
 		        /obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_MISC
-	
+
 /datum/crafting_recipe/spooky_camera
 	name = "Camera Obscura"
 	result = /obj/item/camera/spooky
@@ -745,7 +745,7 @@
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
-				/obj/item/reagent_containers/syringe)
+				/obj/item/reagent_containers/syringe = 1)
 	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
 	time = 50
 	category = CAT_MEDICAL
@@ -867,7 +867,7 @@
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/assembly/infra = 1,
-				/obj/item/assembly/health)
+				/obj/item/assembly/health = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 10
 	category = CAT_MEDICAL
