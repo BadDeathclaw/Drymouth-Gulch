@@ -1,6 +1,6 @@
 //Fallout 13 decorative decals - the rest of pure decorative stuff is in decor.dm
 
-/obj/effect/decal/cleanable/waste
+/obj/effect/decal/waste
 	name = "puddle of goo"
 	desc = "A puddle of sticky, incredibly toxic and likely radioactive green goo."
 	icon = 'icons/fallout/objects/decals.dmi'
@@ -11,10 +11,10 @@
 	light_power = 3
 	light_range = 3
 
-/obj/effect/decal/cleanable/waste/New()
+/obj/effect/decal/waste/New()
 	..()
 	icon_state = "goo[rand(1,13)]"
-	AddComponent(/datum/component/radioactive, 50, src, 0) //half-life of 0 because we keep on going.
+	AddComponent(/datum/component/radioactive, 200, src, 0) //half-life of 0 because we keep on going.
 
 /obj/effect/decal/marking
 	name = "road marking"

@@ -300,15 +300,11 @@
 	cut_overlays()
 	switch(status)		// set icon_states
 		if(LIGHT_OK)
-			var/area/A = get_area(src)
-			if(emergency_mode || (A && A.fire))
-				icon_state = "[base_state]_emergency"
-			else
-				icon_state = "[base_state]"
-				if(on)
-					var/mutable_appearance/glowybit = mutable_appearance(overlayicon, base_state, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
-					glowybit.alpha = CLAMP(light_power*250, 30, 200)
-					add_overlay(glowybit)
+			icon_state = "[base_state]"
+			if(on)
+				var/mutable_appearance/glowybit = mutable_appearance(overlayicon, base_state, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
+				glowybit.alpha = CLAMP(light_power*250, 30, 200)
+				add_overlay(glowybit)
 		if(LIGHT_EMPTY)
 			icon_state = "[base_state]-empty"
 		if(LIGHT_BURNED)
