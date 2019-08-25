@@ -914,3 +914,4 @@
 	tools = list(TOOL_WELDER)
 	time = 10
 	category = CAT_MISC
+
