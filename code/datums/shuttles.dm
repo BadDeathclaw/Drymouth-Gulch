@@ -96,6 +96,10 @@
 	port_id = "assault_pod"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/bosbase
+	port_id = "Brotherhood_of_Steel"
+	can_be_bought = FALSE
+
 /datum/map_template/shuttle/pirate
 	port_id = "pirate"
 	can_be_bought = FALSE
@@ -438,6 +442,10 @@
 /datum/map_template/shuttle/assault_pod/default
 	suffix = "default"
 	name = "assault pod (Default)"
+
+/datum/map_template/shuttle/bosbase/base
+	suffix = "base"
+	name = "bos (base)"
 
 /datum/map_template/shuttle/pirate/default
 	suffix = "default"
