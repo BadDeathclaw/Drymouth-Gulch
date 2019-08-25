@@ -293,16 +293,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
-"aY" = (
-/obj/structure/bed/dogbed{
-	name = "kitty bed"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/human/corpse/damaged{
-	head = /obj/item/clothing/head/kitty
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/cat_man)
 "aZ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -619,17 +609,6 @@
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/cat_man)
-"bW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/bed/dogbed{
-	name = "kitty bed"
-	},
-/obj/effect/mob_spawn/human/corpse/damaged{
-	head = /obj/item/clothing/head/kitty
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
@@ -1408,7 +1387,7 @@ bC
 aG
 bO
 aK
-bW
+aA
 ad
 an
 ad
@@ -1593,7 +1572,7 @@ at
 aE
 aM
 ad
-aY
+aD
 bl
 ad
 bD
