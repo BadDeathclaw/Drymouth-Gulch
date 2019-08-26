@@ -39819,6 +39819,7 @@
 /obj/effect/spawner/lootdrop/f13/armor/tier2,
 /obj/effect/spawner/lootdrop/f13/armor/tier2,
 /obj/effect/turf_decal/bot,
+/obj/effect/spawner/lootdrop/f13/armor/tier2,
 /turf/open/floor/f13{
 	tag = "icon-floordirtysolid";
 	icon_state = "floordirtysolid"
