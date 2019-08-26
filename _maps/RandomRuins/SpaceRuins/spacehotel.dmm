@@ -618,7 +618,6 @@
 /area/ruin/space/has_grav/hotel/guestroom/room_5)
 "cd" = (
 /obj/structure/table/wood,
-/obj/item/clothing/head/collectable/kitty,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/guestroom/room_5)
 "ce" = (
