@@ -43,9 +43,13 @@
 	var/affects_turfs = FALSE //Does this weather affect turfs at all?
 	var/turfs_impacted = FALSE // Did this weather already impact turfs?
 
-/datum/weather/New(z_levels)
+/datum/weather/New(z_levels, duration)
 	..()
 	impacted_z_levels = z_levels
+	if(duration)
+		weather_duration = duration
+		weather_duration_lower = duration
+		weather_duration_upper = duration
 
 /datum/weather/proc/telegraph()
 	if(stage == STARTUP_STAGE)

@@ -23,10 +23,10 @@ Ask ninjanomnom if they're around
 
 #define RAD_MOB_MUTATE 1250							// How much stored radiation to check for mutation
 
-#define RAD_MOB_VOMIT 2000							// The amount of radiation to check for vomitting
+#define RAD_MOB_VOMIT 600							// The amount of radiation to check for vomitting
 #define RAD_MOB_VOMIT_PROB 1						// Chance per tick of vomitting
 
-#define RAD_MOB_KNOCKDOWN 2000						// How much stored radiation to check for stunning
+#define RAD_MOB_KNOCKDOWN 1000						// How much stored radiation to check for stunning
 #define RAD_MOB_KNOCKDOWN_PROB 1					// Chance of knockdown per tick when over threshold
 #define RAD_MOB_KNOCKDOWN_AMOUNT 3					// Amount of knockdown when it occurs
 

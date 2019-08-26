@@ -40,7 +40,7 @@
 		return
 
 	if(reagents.total_volume < 1)
-		to_chat(user, "<span class='warning'>You mop dry.</span>")
+		to_chat(user, "<span class='warning'>Your mop is dry.</span>")
 		return
 
 	var/turf/T = get_turf(A)

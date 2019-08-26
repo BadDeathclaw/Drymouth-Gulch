@@ -84,8 +84,8 @@
 // Standard Wastelander money bag. They have more but are liable to get robbed for it.
 /obj/item/storage/bag/money/small/wastelander/PopulateContents()
 	// ~36 worth of assorted money
-	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
 	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
+	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
 	new /obj/item/stack/f13Cash/random/denarius/low(src)
 	new /obj/item/stack/f13Cash/random/ncr/low(src)
 

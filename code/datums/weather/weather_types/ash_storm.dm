@@ -70,6 +70,8 @@
 
 /datum/weather/ash_storm/end()
 	. = ..()
+	sound_ao.stop()
+	sound_ai.stop()
 	sound_wo.stop()
 	sound_wi.stop()
 

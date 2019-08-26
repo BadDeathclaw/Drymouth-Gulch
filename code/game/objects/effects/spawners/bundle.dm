@@ -46,7 +46,6 @@
 	name = "nyangirl costume spawner"
 	items = list(
 		/obj/item/clothing/under/schoolgirl,
-		/obj/item/clothing/head/kitty,
 		/obj/item/clothing/glasses/sunglasses/blindfold)
 
 /obj/effect/spawner/bundle/costume/maid
