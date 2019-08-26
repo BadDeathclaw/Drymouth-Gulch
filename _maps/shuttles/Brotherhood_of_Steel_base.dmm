@@ -1,128 +1,20 @@
-//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/shuttle/bos)
-"b" = (
-/obj/docking_port/mobile/bos,
-/obj/machinery/door/airlock/hatch{
-	req_access_txt = "120"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"c" = (
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"d" = (
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"e" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"f" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NW"
-	},
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"g" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "NE"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"h" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SW"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"i" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "SE"
-	},
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
-"j" = (
-/obj/machinery/computer/shuttle/bos,
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos)
+"a" = (/turf/closed/wall/mineral/plastitanium,/area/shuttle/brotherhood_of_steel)
+"b" = (/obj/structure/ladder/unbreakable{height = 2; id = "NW"},/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"c" = (/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"d" = (/obj/structure/ladder/unbreakable{anchored = 1; height = 2; id = "NE"},/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"e" = (/obj/machinery/computer/shuttle/bos,/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"f" = (/obj/machinery/light{dir = 8; light_color = "#e8eaff"},/obj/structure/ladder/unbreakable{height = 2; id = "SW"},/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"g" = (/obj/structure/ladder/unbreakable{height = 2; id = "SE"},/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"h" = (/obj/machinery/light{dir = 4; light_color = "#c1caff"},/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"i" = (/obj/machinery/light{dir = 8; light_color = "#e8eaff"},/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
+"j" = (/obj/docking_port/mobile/bos{dwidth = 1; name = "Broterhood_of_Steel"},/obj/machinery/door/airlock/hatch{req_access_txt = "120"},/turf/open/floor/plasteel/dark,/area/shuttle/brotherhood_of_steel)
 
 (1,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
-"}
-(2,1,1) = {"
-a
-c
-d
-a
-f
-h
-b
-"}
-(3,1,1) = {"
-a
-c
-c
-a
-c
-c
-a
-"}
-(4,1,1) = {"
-a
-c
-c
-a
-g
-i
-a
-"}
-(5,1,1) = {"
-a
-c
-c
-j
-c
-c
-a
-"}
-(6,1,1) = {"
-a
-c
-c
-e
-c
-c
-a
-"}
-(7,1,1) = {"
-a
-a
-a
-a
-a
-a
-a
+aaaaaaa
+abcdcea
+afcgcca
+aaaacha
+aicccca
+accccca
+ajaaaaa
 "}

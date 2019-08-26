@@ -125,7 +125,7 @@
 	name = "Steel Rain"
 	blob_allowed = FALSE
 
-/area/shuttle/bos
+/area/shuttle/brotherhood_of_steel
 	name = "Brotherhood of Steel"
 	blob_allowed = FALSE
 

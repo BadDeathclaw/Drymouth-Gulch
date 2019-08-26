@@ -445,7 +445,7 @@
 
 /datum/map_template/shuttle/bosbase/base
 	suffix = "base"
-	name = "bos (base)"
+	name = "brotherhood of steel (base)"
 
 /datum/map_template/shuttle/pirate/default
 	suffix = "default"
