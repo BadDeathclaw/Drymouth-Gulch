@@ -15,11 +15,11 @@
 		
 
 /obj/docking_port/mobile/bos
-	width = 7
-	height = 7
+	width = 6
+	height = 9
 	dwidth = 1
 	dheight = 0
-	dir = NORTH
+	dir = EAST
 	id = "Brotherhood_of_Steel"
 	callTime = 0
 	ignitionTime = 0
@@ -29,9 +29,9 @@
 	id = "Brotherhood_Home"
 	dwidth = 1
 	dheight = 0
-	width = 7
-	height = 7
-	dir = NORTH
+	width = 6
+	height = 9
+	dir = EAST
 	roundstart_template = /datum/map_template/shuttle/bosbase/base
 
 /obj/docking_port/stationary/bosaway/
@@ -39,9 +39,9 @@
 	id = "Bos1"
 	dwidth = 1
 	dheight = 0
-	width = 7
-	height = 7
-	dir = NORTH
+	width = 6
+	height = 9
+	dir = EAST
 
 /obj/docking_port/stationary/bosaway/two
 	name = "Bos Base 2"
