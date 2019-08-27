@@ -108,7 +108,6 @@ Centurion
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/flashlight/flare/torch=1, \
