@@ -361,13 +361,6 @@
 
 	src.ui_interact(user)
 
-/* Examine */
-/obj/machinery/trading_machine/examine(mob/user)
-	..(user)
-	var/msg
-	msg += "Wasteland Vending Machine<BR>"
-	to_chat(user, msg)
-
 /* Spawn input dialog and set item price */
 /obj/machinery/trading_machine/proc/set_price_by_input(obj/item/Itm, mob/user)
 	if(machine_state != STATE_SERVICE)

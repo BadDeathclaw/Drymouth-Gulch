@@ -24,8 +24,7 @@
 			RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/rad_attack)
 			RegisterSignal(parent, COMSIG_ITEM_ATTACK_OBJ, .proc/rad_attack)
 	else
-		CRASH("Something that wasn't an atom was given /datum/component/radioactive")
-		return
+		return COMPONENT_INCOMPATIBLE
 
 	if(strength > RAD_MINIMUM_CONTAMINATION)
 		SSradiation.warn(src)
@@ -61,22 +60,24 @@
 /datum/component/radioactive/proc/rad_examine(mob/user, atom/thing)
 	var/atom/master = parent
 	var/list/out = list()
-	if(get_dist(master, user) <= 1)
+	if(get_dist(master, user) <= 3)
 		out += "The air around [master] feels warm"
-	switch(strength)
-		if(RAD_AMOUNT_LOW to RAD_AMOUNT_MEDIUM)
-			out += "[out ? " and it " : "[master] "]feels weird to look at."
-		if(RAD_AMOUNT_MEDIUM to RAD_AMOUNT_HIGH)
-			out += "[out ? " and it " : "[master] "]seems to be glowing a bit."
-		if(RAD_AMOUNT_HIGH to INFINITY) //At this level the object can contaminate other objects
-			out += "[out ? " and it " : "[master] "]hurts to look at."
-		else
-			out += ""
-	to_chat(user, out.Join())
+		switch(strength)
+			if(RAD_AMOUNT_LOW to RAD_AMOUNT_MEDIUM)
+				out += "[out ? " and it " : "[master] "]feels weird to look at."
+			if(RAD_AMOUNT_MEDIUM to RAD_AMOUNT_HIGH)
+				out += "[out ? " and it " : "[master] "]seems to be glowing a bit."
+			if(RAD_AMOUNT_HIGH to INFINITY) //At this level the object can contaminate other objects
+				out += "[out ? " and it " : "[master] "]hurts to look at."
+			else
+				out += "."
+		to_chat(user, out.Join())
 
 /datum/component/radioactive/proc/rad_attack(atom/movable/target, mob/living/user)
 	radiation_pulse(parent, strength/20)
 	target.rad_act(strength/2)
+	if(!hl3_release_date)
+		return
 	strength -= strength / hl3_release_date
 
 #undef RAD_AMOUNT_LOW
