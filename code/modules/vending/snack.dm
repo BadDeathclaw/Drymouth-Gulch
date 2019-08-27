@@ -1,8 +1,8 @@
 /obj/machinery/vending/snack
 	name = "\improper Getmore Chocolate Corp"
-	desc = "A snack machine courtesy of the Getmore Chocolate Corporation, based out of Mars."
+	desc = "A snack machine courtesy of the Getmore Chocolate Corporation."
 	product_slogans = "Try our new nougat bar!;Twice the calories for half the price!"
-	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my god it's so juicy!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks straight from mars.;We love chocolate!;Try our new jerky!"
+	product_ads = "The healthiest!;Award-winning chocolate bars!;Mmm! So good!;Oh my god it's so juicy!;Have a snack.;Snacks are good for you!;Have some more Getmore!;Best quality snacks!;We love chocolate!;Try our new jerky!"
 	icon_state = "snack"
 	products = list(/obj/item/reagent_containers/food/snacks/candy = 6,
 		            /obj/item/reagent_containers/food/drinks/dry_ramen = 6,
@@ -98,13 +98,7 @@
 	return INITIALIZE_HINT_QDEL
 
 /obj/machinery/vending/snack/blue
-	name = "\improper Hyena's Vendor"
-	desc = "~Give me some hyena snacks!~"
 	icon_state = "snackblue"
-	products = list(/obj/item/reagent_containers/food/snacks/candy/hyena = 6,
-					/obj/item/reagent_containers/food/snacks/hyenajerky = 6)
-	product_slogans = "~Give me some hyena snacks!~"
-	product_ads = "Refreshing!;Jyrbv dv lg jfdv fw kyrk Jyrdscvi'j Alztv!;Over 1 trillion souls eaten!;Hungry? Nyp efk uizeb kyv uribevjj?;Kyv Jyrdscvi uizebj kyv ezxyk!;eat up!;Krjkp."
 
 /obj/machinery/vending/snack/orange
 	icon_state = "snackorange"

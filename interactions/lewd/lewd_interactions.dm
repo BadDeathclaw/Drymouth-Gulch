@@ -6,6 +6,7 @@
 	simple_style = "danger"
 	interaction_sound = 'honk/sound/interactions/slap.ogg'
 	needs_physical_contact = TRUE
+	require_ooc_consent = TRUE
 	max_distance = 1
 
 	write_log_user = "ass-slapped"
@@ -69,6 +70,12 @@
 				to_chat(user, "<span class = 'warning'>You don't have breasts.</span>")
 			return FALSE
 
+		if(require_ooc_consent)
+			if(user.client && user.client.prefs)
+				if(user.client.prefs.wasteland_toggles & VERB_CONSENT)
+					return TRUE
+				else
+					return FALSE
 		return TRUE
 	return FALSE
 
@@ -77,6 +84,11 @@
 		if(target_not_tired && target.refactory_period)
 			if(!silent) //same with this
 				to_chat(user, "<span class='warning'>They're still exhausted from the last time. They need to wait [DisplayTimeText(target.refactory_period * 10, TRUE)] until you can do that!</span>")
+			return FALSE
+
+		if(require_target_bottomless && !target.is_bottomless())
+			if(!silent)
+				to_chat(user, "<span class = 'warning'>Their pants are in the way.</span>")
 			return FALSE
 
 		if(require_target_bottomless && !target.is_bottomless())
@@ -103,10 +115,18 @@
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have a vagina.</span>")
 			return FALSE
+
 		if(require_target_breasts && !target.has_breasts())
 			if(!silent)
 				to_chat(user, "<span class = 'warning'>They don't have breasts.</span>")
 			return FALSE
+
+		if(require_ooc_consent)
+			if(target.client && target.client.prefs)
+				if(target.client.prefs.wasteland_toggles & VERB_CONSENT)
+					return TRUE
+				else
+					return FALSE
 		return TRUE
 	return FALSE
 

@@ -1347,7 +1347,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	requires_power = FALSE
 
 /area/f13/underground
-	flags_2 = BLOCK_RADIO_2
+	flags_2 = NONE //BLOCK_RADIO_2
 
 /area/f13/underground/bos
 	name = "BoS"
@@ -1441,7 +1441,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = list('sound/f13ambience/enclave_vault.ogg')
 
 /area/f13/den
-	name = "Den"
+	name = "Kebab"
 	icon_state = "den"
 
 /area/f13/underground/overseer_office

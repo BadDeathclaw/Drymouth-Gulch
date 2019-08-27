@@ -2,6 +2,8 @@
 
 set -e
 
+source dependencies.sh
+
 if [ $BUILD_TOOLS = false ] && [ $BUILD_TESTING = false ]; then
     curl https://sh.rustup.rs -sSf | sh -s -- -y --default-host i686-unknown-linux-gnu
     source ~/.profile
@@ -17,5 +19,5 @@ if [ $BUILD_TOOLS = false ] && [ $BUILD_TESTING = false ]; then
 
     mkdir -p ~/.byond/bin
     ln -s $PWD/target/release/librust_g.so ~/.byond/bin/rust_g
-
+	#no bsql yet
 fi

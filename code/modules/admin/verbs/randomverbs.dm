@@ -65,7 +65,7 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list("CentCom","Syndicate")
+		sender = input("Who is the message from?", "Sender") as null|anything in list("Vault-Tec","Enclave")
 		if(!sender)
 			return
 
@@ -77,7 +77,7 @@
 
 	log_admin("[key_name(src)] replied to [key_name(H)]'s [sender] message with the message [input].")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Syndicate" ? "your benefactor" : "Central Command"].  Message as follows[sender == "Syndicate" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
+	to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Enclave" ? "your benefactor" : "Central Command"].  Message as follows[sender == "Enclave" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -1082,12 +1082,12 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 /client/proc/run_weather()
 	set category = "Fun"
 	set name = "Run Weather"
-	set desc = "Triggers a weather on the z-level you choose."
+	set desc = "Triggers a weather on the z-level you choose with a custom duration."
 
 	if(!holder)
 		return
 
-	var/weather_type = input("Choose a weather", "Weather")  as null|anything in subtypesof(/datum/weather)
+	var/datum/weather/weather_type = input("Choose a weather", "Weather")  as null|anything in subtypesof(/datum/weather)
 	if(!weather_type)
 		return
 
@@ -1097,11 +1097,17 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 			return
 		z_level = src.mob.z
 
-	SSweather.run_weather(weather_type, z_level)
-
-	message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level].")
-	log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level].")
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
+	var/forced_duration = input("Duration of the weather in deciseconds? Leave blank to use default weather duration.", "Weather duration")  as num|null
+	if(forced_duration && isnum(forced_duration))
+		SSweather.run_weather(weather_type, z_level, forced_duration)
+		message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level] with duration of [forced_duration] deciseconds.")
+		log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level] with duration of [forced_duration] deciseconds.")
+		SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
+	else
+		SSweather.run_weather(weather_type, z_level)
+		message_admins("[key_name_admin(usr)] started weather of type [weather_type] on the z-level [z_level].")
+		log_admin("[key_name(usr)] started weather of type [weather_type] on the z-level [z_level].")
+		SSblackbox.record_feedback("tally", "admin_verb", 1, "Run Weather")
 
 /client/proc/mass_zombie_infection()
 	set category = "Fun"
@@ -1375,8 +1381,8 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 	if(!message)
 		return
 
-	message_admins("[key_name_admin(usr)] triggered a CentCom recall, with the admiral message of: [message]")
-	log_game("[key_name(usr)] triggered a CentCom recall, with the message of: [message]")
+	message_admins("[key_name_admin(usr)] triggered a Vault-Tec recall, with the admiral message of: [message]")
+	log_game("[key_name(usr)] triggered a Vault-Tec recall, with the message of: [message]")
 	SSshuttle.centcom_recall(SSshuttle.emergency.timer, message)
 
 /client/proc/cmd_admin_check_player_exp()	//Allows admins to determine who the newer players are.

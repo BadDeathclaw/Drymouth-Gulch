@@ -165,9 +165,9 @@
 				obj_integrity = CLAMP(obj_integrity + 20, 0, max_integrity)
 		else
 			to_chat(user, "<span class='notice'>[src] doesn't need to be repaired.</span>")
-	else if(istype(I, /obj/item/lock_construct)) /* attempt to add a lock */
+	else if(islock(I)) /* attempt to add a lock */
 		return add_lock(I, user) /* call add_lock proc, so we can disable for airlocks */
-	else if(istype(I, /obj/item/key))
+	else if(iskey(I))
 		return check_key(I, user)
 	else if(istype(I, /obj/item/screwdriver) && state == 1)
 		to_chat(user, "<span class='notice'>You begin to take apart the [name].</span>")
@@ -180,11 +180,10 @@
 
 
 /obj/structure/mineral_door/crowbar_act(mob/living/user, obj/item/I)
-	if(Lock) /* attempt to pry the lock off */
-		if(Lock.pry_off(user,src))
-			qdel(Lock)
-			Lock = null
-			src.desc = "[initial(desc)]"
+	if(Lock && Lock.pry_off(user,src)) /* attempt to pry the lock off */
+		qdel(Lock)
+		Lock = null
+		src.desc = "[initial(desc)]"
 	return
 
 /obj/structure/mineral_door/proc/check_key(obj/item/key/K, mob/user)
@@ -195,10 +194,9 @@
 		return Lock.check_key(K,user)
 
 /obj/structure/mineral_door/proc/check_locked(mob/user)
-	if(Lock)
-		if(Lock.check_locked())
-			to_chat(user, "[src] is bolted [density ? "shut" : "open"]")
-			return TRUE
+	if(Lock && Lock.check_locked())
+		to_chat(user, "[src] is bolted [density ? "shut" : "open"]")
+		return TRUE
 	return FALSE
 
 /obj/structure/mineral_door/proc/add_lock(obj/item/lock_construct/L, mob/user)

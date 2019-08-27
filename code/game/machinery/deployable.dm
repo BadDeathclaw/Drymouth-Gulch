@@ -89,8 +89,10 @@
 	max_integrity = 75
 
 /obj/structure/barricade/wooden/make_debris()
-	new /obj/item/stack/sheet/mineral/wood(get_turf(src), drop_amount)
-
+	if(drop_amount == 0)
+		return
+	else
+		new /obj/item/stack/sheet/mineral/wood(get_turf(src), drop_amount)
 
 /obj/structure/barricade/sandbags
 	name = "sandbags"
@@ -116,6 +118,7 @@
 		new /obj/item/stack/sheet/mineral/sandbags(src.loc)
 		qdel(src)
 		return
+
 /obj/structure/barricade/sandbags/make_debris()
 	new /obj/item/stack/ore/glass(get_turf(src), drop_amount)
 
@@ -132,7 +135,6 @@
 
 	var/deploy_time = 40
 	var/deploy_message = TRUE
-
 
 /obj/structure/barricade/security/Initialize()
 	. = ..()

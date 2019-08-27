@@ -1,24 +1,23 @@
 /obj/item/seeds/poppy/broc
 	name = "pack of broc seeds"
-	desc = "These seeds grow into broc flower."
+	desc = "These seeds grow into broc flowers."
 	icon_state = "seed-broc"
 	species = "broc"
-	plantname = "Broc Plants"
+	plantname = "broc flowers"
 	product = /obj/item/reagent_containers/food/snacks/grown/broc
 	lifespan = 25
 	endurance = 10
-	maturation = 8
-	production = 6
-	yield = 6
-	potency = 20
+	yield = 4
 	growthstages = 3
+	production = 4
+	maturation = 4
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
 	//mutatelist = list(/obj/item/seeds/geraniumseed, /obj/item/seeds/lilyseed)
 
 /obj/item/reagent_containers/food/snacks/grown/broc
 	seed = /obj/item/seeds/poppy/broc
 	name = "broc flower"
-	desc = "Broc flower grows on broc plants and can be used in the crafting of healing powder and stimpaks due to it's mild healing properties."
+	desc = "This vibrant, orange flower grows on tall stalks in the wasteland and exhibits moderate healing properties, even when unprocessed."
 	icon_state = "broc"
 	//slot_flags = SLOT_HEAD
 	filling_color = "#FF6347"

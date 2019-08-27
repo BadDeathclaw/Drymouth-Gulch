@@ -44,15 +44,17 @@
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	var/message = ""
 	if(istype(M, /mob/living/carbon/human) && user.zone_selected == "groin" && M.is_bottomless())
-		if(hole == CUM_TARGET_VAGINA && M.has_vagina())
-			message = (user == M) ? pick("fucks their own pussy with \the [src]","shoves the [src] into their pussy", "jams the [src] into their pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
-		else if(hole == CUM_TARGET_ANUS && M.has_anus())
-			message = (user == M) ? pick("fucks their own ass with \the [src]","shoves the [src] into their ass", "jams the [src] into their ass") : pick("fucks [M]'s asshole with \the [src]", "jams \the [src] into [M]'s ass")
+		if(M.client && M.client.prefs)
+			if(M.client.prefs.wasteland_toggles & VERB_CONSENT)
+				if(hole == CUM_TARGET_VAGINA && M.has_vagina())
+					message = (user == M) ? pick("fucks their own pussy with \the [src]","shoves the [src] into their pussy", "jams the [src] into their pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
+				else if(hole == CUM_TARGET_ANUS && M.has_anus())
+					message = (user == M) ? pick("fucks their own ass with \the [src]","shoves the [src] into their ass", "jams the [src] into their ass") : pick("fucks [M]'s asshole with \the [src]", "jams \the [src] into [M]'s ass")
 	if(message)
 		user.visible_message("<font color=purple>[user] [message].</font>")
 		M.handle_post_sex(5, null, user)
 		playsound(loc, "honk/sound/interactions/bang[rand(4, 6)].ogg", 70, 1, -1)
-	else
+	else if(user.a_intent == INTENT_HARM)
 		return ..()
 
 /obj/item/dildo/attack_self(mob/living/carbon/human/user as mob)
@@ -108,7 +110,7 @@
 	//var/blood_DNA = list()
 
 /obj/effect/decal/cleanable/cum/Initialize()
-	..()
+	. = ..()
 	dir = pick(1,2,4,8)
 	reagents.add_reagent("cum", rand(8,13))
 	add_blood_DNA(list("Unknown DNA" = "O+"))
@@ -121,14 +123,34 @@
 /obj/item/dildo/cyborg/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	var/message = ""
 	if(istype(M, /mob/living/carbon/human) && M.is_bottomless())
-		if(hole == CUM_TARGET_VAGINA && M.has_vagina())
-			message = (user == M) ? pick("fucks their own pussy with \the [src]","shoves the [src] into their pussy", "jams the [src] into their pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
-		else if(hole == CUM_TARGET_ANUS && M.has_anus())
-			message = (user == M) ? pick("fucks their own ass with \the [src]","shoves the [src] into their ass", "jams the [src] into their ass") : pick("fucks [M]'s asshole with \the [src]", "jams \the [src] into [M]'s ass")
+		if(M.client && M.client.prefs)
+			if(M.client.prefs.wasteland_toggles & VERB_CONSENT)
+				if(hole == CUM_TARGET_VAGINA && M.has_vagina())
+					message = (user == M) ? pick("fucks their own pussy with \the [src]","shoves the [src] into their pussy", "jams the [src] into their pussy") : pick("fucks [M] right in the pussy with \the [src]", "jams \the [src] right into [M]'s pussy")
+				else if(hole == CUM_TARGET_ANUS && M.has_anus())
+					message = (user == M) ? pick("fucks their own ass with \the [src]","shoves the [src] into their ass", "jams the [src] into their ass") : pick("fucks [M]'s asshole with \the [src]", "jams \the [src] into [M]'s ass")
 	if(message)
 		user.visible_message("<font color=purple>[user] [message].</font>")
 		M.handle_post_sex(5, null, user)
 		playsound(loc, "honk/sound/interactions/bang[rand(4, 6)].ogg", 70, 1, -1)
-	else
+	else if(user.a_intent == INTENT_HARM)
 		return ..()
 //end redds code
+
+/obj/item/pneumatic_cannon/dildo
+	color = "#FFC0CB"
+	name = "pneumatic cannon"
+	desc = "A pneumatic cannon with a picture of a bus printed on the side that resembles an A-shape."
+	automatic = TRUE
+	selfcharge = TRUE
+	gasPerThrow = 0
+	checktank = FALSE
+	fire_mode = PCANNON_FIFO
+	throw_amount = 1
+	maxWeightClass = 60
+	var/static/list/dildo_typecache = typecacheof(/obj/item/dildo)
+	charge_type = /obj/item/dildo
+
+/obj/item/pneumatic_cannon/dildo/Initialize()
+	. = ..()
+	allowed_typecache = dildo_typecache

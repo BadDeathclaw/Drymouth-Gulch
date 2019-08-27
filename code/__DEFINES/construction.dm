@@ -92,6 +92,7 @@
 #define CAT_MEDICAL	"Medical"
 #define CAT_ASSEM  	"Assemblies"
 #define CAT_CLOTHING	"Clothing"
+#define CAT_WASTELAND	"Wasteland Clothing"
 #define CAT_FOOD	"Foods"
 #define CAT_BREAD	"Breads"
 #define CAT_BURGER	"Burgers"
@@ -107,6 +108,7 @@
 #define CAT_SOUP	"Soups"
 #define CAT_SPAGHETTI	"Spaghettis"
 #define CAT_DRUGS     "Drugs"
+#define CAT_WASTEFOOD "Wasteland Food"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2

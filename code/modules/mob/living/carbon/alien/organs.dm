@@ -9,7 +9,7 @@
 			alien_powers -= A
 			alien_powers += new A(src)
 
-/obj/item/organ/alien/Insert(mob/living/carbon/M, special = 0)
+/obj/item/organ/alien/Insert(mob/living/carbon/M, special = 0 , drop_if_replaced)
 	..()
 	for(var/obj/effect/proc_holder/alien/P in alien_powers)
 		M.AddAbility(P)

@@ -107,7 +107,7 @@ the new instance inside the host to be updated to the template's stats.
 			if(istype(B))
 				to_chat(user, "<span class='notice'>[B.name]</span>")
 
-/mob/camera/disease/say(message)
+/mob/camera/disease/say(message, datum/language/language = null)
 	return
 
 /mob/camera/disease/Move(NewLoc, Dir = 0)

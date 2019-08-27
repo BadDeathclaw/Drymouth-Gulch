@@ -8,7 +8,8 @@ GLOBAL_LIST_INIT(command_positions, list(
     "NCR Veteran Ranger",
     "Overseer",
     "Chief of Security",
-    "Sheriff"
+    "Sheriff",
+    "Mayor"
 ))
 
 GLOBAL_LIST_INIT(brotherhood_positions, list(
@@ -22,9 +23,13 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 
 GLOBAL_LIST_INIT(den_positions, list(
+	"Mayor",
 	"Sheriff",
-	"Den Doctor",
-	"Settler"
+	"Doctor",
+	"Settler",
+	"Deputy",
+	"Farmer",
+	"Prospector"
 ))
 
 GLOBAL_LIST_INIT(legion_positions, list(
@@ -55,6 +60,7 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Medical Officer",
 	"NCR Engineer",
 	"NCR Heavy Trooper",
+	"NCR Corporal",
 	"NCR Trooper",
 	"NCR Recruit",
 	"NCR Veteran Ranger",

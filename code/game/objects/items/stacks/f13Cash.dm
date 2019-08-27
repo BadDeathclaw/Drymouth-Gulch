@@ -56,15 +56,20 @@
 	update_icon()
 
 /obj/item/stack/f13Cash/random
+	var/money_type = /obj/item/stack/f13Cash
 	var/min_qty = LOW_MIN
 	var/max_qty = LOW_MAX
 
 /obj/item/stack/f13Cash/random/Initialize()
-	var/obj/item/stack/f13Cash/randy = new
-	randy.loc = src.loc
-	randy.amount = round(rand(min_qty, max_qty))
-	randy.update_icon()
-	qdel(src)
+	..()
+	spawn_money()
+	return INITIALIZE_HINT_QDEL
+
+/obj/item/stack/f13Cash/random/proc/spawn_money()
+	var/obj/item/stack/f13Cash/stack = new money_type
+	stack.loc = loc
+	stack.amount = round(rand(min_qty, max_qty))
+	stack.update_icon()
 
 /* we have 6 icons, so we will use our own, instead of stack's   */
 /obj/item/stack/f13Cash/update_icon()
@@ -88,12 +93,8 @@
 	flavor_desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\n\
 		A common unit of exchange, backed by water in the Hub"
 
-/obj/item/stack/f13Cash/random/bottle_cap/Initialize()
-	var/obj/item/stack/f13Cash/bottle_cap/R = new
-	R.loc = src.loc
-	R.amount = round(rand(min_qty, max_qty))
-	R.update_icon()
-	qdel(src)
+/obj/item/stack/f13Cash/random/bottle_cap
+	money_type = /obj/item/stack/f13Cash/bottle_cap
 
 /obj/item/stack/f13Cash/random/bottle_cap/low
 	min_qty = LOW_MIN / CASH_CAP
@@ -118,12 +119,8 @@
 		'Magnum Chasma' on the back."
 	value = CASH_DEN * CASH_CAP
 
-/obj/item/stack/f13Cash/random/denarius/Initialize()
-	var/obj/item/stack/f13Cash/denarius/R = new
-	R.loc = src.loc
-	R.amount = round(rand(min_qty, max_qty))
-	R.update_icon()
-	qdel(src)
+/obj/item/stack/f13Cash/random/denarius
+	money_type = /obj/item/stack/f13Cash/denarius
 
 /obj/item/stack/f13Cash/random/denarius/low
 	min_qty = LOW_MIN / CASH_DEN
@@ -160,12 +157,8 @@
 					'Pax Per Bellum' on the back."
 	value = CASH_AUR * CASH_CAP
 
-/obj/item/stack/f13Cash/random/aureus/Initialize()
-	var/obj/item/stack/f13Cash/aureus/R = new
-	R.loc = src.loc
-	R.amount = round(rand(min_qty, max_qty))
-	R.update_icon()
-	qdel(src)
+/obj/item/stack/f13Cash/random/aureus
+	money_type = /obj/item/stack/f13Cash/aureus
 
 /obj/item/stack/f13Cash/random/aureus/low
 	min_qty = 1
@@ -203,12 +196,8 @@
 		if(500 to max_amount)
 			icon_state = "[initial(icon_state)]500"
 
-/obj/item/stack/f13Cash/random/ncr/Initialize()
-	var/obj/item/stack/f13Cash/ncr/R = new
-	R.loc = src.loc
-	R.amount = round(rand(min_qty, max_qty))
-	R.update_icon()
-	qdel(src)
+/obj/item/stack/f13Cash/random/ncr
+	money_type = /obj/item/stack/f13Cash/ncr
 
 /obj/item/stack/f13Cash/random/ncr/low
 	min_qty = LOW_MIN / CASH_NCR

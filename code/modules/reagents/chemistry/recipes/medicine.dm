@@ -152,12 +152,13 @@
 	id = "epinephrine"
 	results = list("epinephrine" = 6)
 	required_reagents = list("phenol" = 1, "acetone" = 1, "diethylamine" = 1, "oxygen" = 1, "chlorine" = 1, "hydrogen" = 1)
-
+/*
 /datum/chemical_reaction/strange_reagent
 	name = "Strange Reagent"
 	id = "strange_reagent"
 	results = list("strange_reagent" = 3)
 	required_reagents = list("omnizine" = 1, "holywater" = 1, "FEV_solution" = 1)
+*/
 
 /datum/chemical_reaction/mannitol
 	name = "Mannitol"
@@ -259,3 +260,5 @@
 	results = list("stimpak" = 2)
 	required_reagents = list("blood" = 2, "spaceacillin" = 3)
 	required_temp = 300
+
+

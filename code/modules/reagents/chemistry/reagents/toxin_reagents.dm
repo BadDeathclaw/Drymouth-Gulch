@@ -492,10 +492,6 @@
 	metabolization_rate = 0.4 * REAGENTS_METABOLISM
 	toxpwr = 0
 
-/datum/reagent/toxin/itching_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
-	if(method == TOUCH || method == VAPOR)
-		M.reagents.add_reagent("itching_powder", reac_volume)
-
 /datum/reagent/toxin/itching_powder/on_mob_life(mob/living/carbon/M)
 	if(prob(15))
 		to_chat(M, "You scratch at your head.")
@@ -768,8 +764,8 @@
 	description = "A toxin that quickly purges medicines and metabolizes very slowly."
 	reagent_state = LIQUID
 	color = "#3C5133"
-	metabolization_rate = 0.08 * REAGENTS_METABOLISM
-	toxpwr = 0.15
+	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+	toxpwr = 0
 
 /datum/reagent/toxin/anacea/on_mob_life(mob/living/carbon/M)
 	var/remove_amt = 5

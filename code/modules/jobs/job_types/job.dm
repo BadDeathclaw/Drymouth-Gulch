@@ -94,6 +94,11 @@
 			H.set_species(/datum/species/human)
 			H.apply_pref_name("human", H.client)
 		purrbation_remove(H, silent=TRUE)
+	// F13 EDIT: GHOULS CANNOT BE LEGION
+	if((title in GLOB.legion_positions) || (title in GLOB.vault_positions) || (title in GLOB.brotherhood_positions))
+		if(H.dna.species.id == "ghoul")
+			H.set_species(/datum/species/human)
+			H.apply_pref_name("human", H.client)
 
 	//Equip the rest of the gear
 	H.dna.species.before_equip_job(src, H, visualsOnly)
@@ -177,6 +182,8 @@
 
 	var/pda_slot = SLOT_BELT
 
+	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
+
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	switch(H.backbag)
 		if(GBACKPACK)
@@ -200,6 +207,9 @@
 		backpack_contents.Insert(1, box) // Box always takes a first slot in backpack
 		backpack_contents[box] = 1
 
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
+
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
@@ -220,10 +230,12 @@
 
 	var/obj/item/card/id/C = H.wear_id
 	if(istype(C))
-		C.access = J.get_access()
+		if(J)
+			C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		C.assignment = J.title
+		if(J)
+			C.assignment = J.title
 		C.update_label()
 		H.sec_hud_set_ID()
 
@@ -232,6 +244,9 @@
 		PDA.owner = H.real_name
 		PDA.ownjob = J.title
 		PDA.update_label()
+
+	if(chemwhiz == TRUE)
+		H.add_trait(TRAIT_CHEMWHIZ)
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()

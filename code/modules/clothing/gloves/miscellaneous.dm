@@ -12,10 +12,22 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
 /obj/item/clothing/gloves/rifleman
-	name = "rifleman's gloves"
+	name = "rifleman gloves"
 	desc = "A pair of rifleman's gloves. The thumb and finger have been removed to not impair the wearer's shooting ability."
 	icon_state = "rifleman"
 	item_state = "rifleman"
+	item_color = null	//So they don't wash.
+	transfer_prints = TRUE
+	strip_delay = 40
+	equip_delay_other = 20
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+
+/obj/item/clothing/gloves/patrol
+	name = "patrol ranger gloves"
+	desc = "A pair of ranger's gloves. The right thumb and finger have been removed to not impair the wearer's shooting ability."
+	icon_state = "patrol"
+	item_state = "patrol"
 	item_color = null	//So they don't wash.
 	transfer_prints = TRUE
 	strip_delay = 40
@@ -62,7 +74,6 @@
 	equip_delay_other = 20
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
-	armor = list("melee" = 16, "bullet" = 16, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/legion/legate
 	name = "metal gauntlet"
@@ -70,15 +81,13 @@
 	icon_state = "legionlegat"
 	item_state = "legionlegat"
 	transfer_prints = FALSE
-	armor = list("melee" = 60, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/Biker
-	name = "Future Gloves"
+	name = "future gloves"
 	desc = "Gloves in a futuristic color."
 	icon_state = "biker_gloves"
 	item_state = "biker_gloves"
 	transfer_prints = FALSE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/bracer
 	name = "bone bracers"
@@ -94,7 +103,6 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list("melee" = 15, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/rapid
 	name = "Gloves of the North Star"

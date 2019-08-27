@@ -40,6 +40,7 @@ var/list/interactions
 	var/interaction_sound
 
 	var/max_distance = 1
+	var/require_ooc_consent = FALSE
 	var/require_user_mouth
 	var/require_user_hands
 	var/require_target_mouth
@@ -47,6 +48,11 @@ var/list/interactions
 	var/needs_physical_contact
 
 /datum/interaction/proc/evaluate_user(mob/living/carbon/human/user, silent = TRUE)
+	if(user.refactory_period)
+		if(!silent) //bye spam
+			to_chat(user, "<span class='warning'>You're still exhausted from the last time. You need to wait [DisplayTimeText(user.refactory_period * 10, TRUE)] until you can do that!</span>")
+		return FALSE
+
 	if(require_user_mouth)
 		if(!user.has_mouth())
 			if(!silent)
@@ -119,7 +125,7 @@ var/list/interactions
 
 	display_interaction(user, target)
 	post_interaction(user, target)
-
+	user.refactory_period = 3
 
 	//if(write_log_user)
 		//add_logs(target, user, "fucked")
@@ -139,26 +145,26 @@ var/list/interactions
 		playsound(get_turf(user), interaction_sound, 50, 1, -1)
 	return
 /*
-/atom/movable/attack_hand(mob/living/user)
+/atom/movable/attack_hand(mob/living/carbon/human/user)
 	. = ..()
 	if(can_buckle && buckled_mob)
 		if(user_unbuckle_mob(user))
 			return TRUE
 
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
+/atom/movable/MouseDrop_T(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	. = ..()
 	if(can_buckle && istype(M) && !buckled_mob)
 		if(user_buckle_mob(M, user))
 			return TRUE
 
 
-/atom/movable/attack_hand(mob/living/user)
+/atom/movable/attack_hand(mob/living/carbon/human/user)
 	. = ..()
 	if(can_buckle && buckled_mob)
 		if(user_unbuckle_mob(user))
 			return TRUE
 
-/atom/movable/MouseDrop_T(mob/living/M, mob/living/user)
+/atom/movable/MouseDrop_T(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	. = ..()
 	if(can_buckle && istype(M) && !buckled_mob)
 		if(user_buckle_mob(M, user))

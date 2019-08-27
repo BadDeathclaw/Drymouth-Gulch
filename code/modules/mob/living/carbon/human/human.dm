@@ -5,24 +5,11 @@
 	icon_state = "caucasian_m"
 	appearance_flags = KEEP_TOGETHER|TILE_BOUND|PIXEL_SCALE
 	var/obj/item/rig/wearing_rig
-	var/has_penis = FALSE
-	var/has_vagina = FALSE
-	var/has_breasts = FALSE
-
-//lewd
-	var/last_partner
-	var/last_orifice
-	var/lastmoan
-	var/sexual_potency =  15
-	var/lust_tolerance = 100
-	var/lust = 0
-	var/multiorgasms = 0
-	var/refactory_period = 0
-//end of lewd
 
 /mob/living/carbon/human/Initialize()
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
+	verbs += /mob/living/proc/surrender
 
 	//initialize limbs first
 	create_bodyparts()
@@ -41,19 +28,6 @@
 
 	handcrafting = new()
 
-//lewd
-	sexual_potency = (prob(80) ? rand(9, 14) : pick(rand(5, 13), rand(15, 20)))
-	lust_tolerance = (prob(80) ? rand(150, 300) : pick(rand(10, 100), rand(350,600)))
-	if(gender == MALE)
-		has_penis = TRUE
-		has_vagina = FALSE
-		has_breasts = FALSE
-
-	if(gender == FEMALE)
-		has_vagina = TRUE
-		has_breasts = TRUE
-		has_penis = FALSE
-//end of lewd
 	. = ..()
 
 	AddComponent(/datum/component/redirect, list(COMSIG_COMPONENT_CLEAN_ACT), CALLBACK(src, .proc/clean_blood))
@@ -673,18 +647,24 @@
 	if(C.is_mouth_covered())
 		to_chat(src, "<span class='warning'>Remove [p_their()] mask first!</span>")
 		return 0
+	if(doing_cpr)
+		to_chat(src, "<span class='warning'>You are already performing CPR!</span>")
+		return 0
 
 	if(C.cpr_time < world.time + 30)
+		doing_cpr = TRUE
 		visible_message("<span class='notice'>[src] is trying to perform CPR on [C.name]!</span>", \
 						"<span class='notice'>You try to perform CPR on [C.name]... Hold still!</span>")
 		if(!do_mob(src, C))
 			to_chat(src, "<span class='warning'>You fail to perform CPR on [C]!</span>")
+			doing_cpr = FALSE
 			return 0
 
 		var/they_breathe = !C.has_trait(TRAIT_NOBREATH)
 		var/they_lung = C.getorganslot(ORGAN_SLOT_LUNGS)
 
 		if(C.health > C.crit_modifier())
+			doing_cpr = FALSE
 			return
 
 		src.visible_message("[src] performs CPR on [C.name]!", "<span class='notice'>You perform CPR on [C.name].</span>")
@@ -693,7 +673,7 @@
 		add_logs(src, C, "CPRed")
 
 		if(they_breathe && they_lung)
-			var/suff = min(C.getOxyLoss(), 7)
+			var/suff = min(C.getOxyLoss(), 14)
 			C.adjustOxyLoss(-suff)
 			C.updatehealth()
 			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air enter your lungs... It feels good...</span>")
@@ -701,6 +681,7 @@
 			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... but you don't feel any better...</span>")
 		else
 			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... which is a sensation you don't recognise...</span>")
+		doing_cpr = FALSE
 
 /mob/living/carbon/human/cuff_resist(obj/item/I)
 	if(dna && dna.check_mutation(HULK))
@@ -921,6 +902,20 @@
 	else
 		. = ..(M,force,check_loc)
 		stop_pulling()
+
+
+/mob/living/carbon/human/proc/despawn()
+	var/datum/job/job_to_free = SSjob.GetJob(job)
+	job_to_free?.current_positions--
+	GLOB.data_core.remove_record_by_name(real_name)
+	var/dat = "[key_name(src)] has despawned as [src], job [job], in [AREACOORD(src)]. Contents despawned along:"
+	for(var/i in contents)
+		var/atom/movable/content = i
+		dat += " [content.type]"
+	log_game(dat)
+	ghostize()
+	qdel(src)
+
 
 /mob/living/carbon/human/do_after_coefficent()
 	. = ..()

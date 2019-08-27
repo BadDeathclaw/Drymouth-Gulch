@@ -138,7 +138,7 @@
 	to_chat(src, "<span class='notice'>As a split personality, you cannot do anything but observe. However, you will eventually gain control of your body, switching places with the current personality.</span>")
 	to_chat(src, "<span class='warning'><b>Do not commit suicide or put the body in a deadly position. Behave like you care about it as much as the owner.</b></span>")
 
-/mob/living/split_personality/say(message)
+/mob/living/split_personality/say(message, var/list/spans = list(), sanitize, datum/language/language = null, language, ignore_spam)
 	to_chat(src, "<span class='warning'>You cannot speak, your other self is controlling your body!</span>")
 	return FALSE
 

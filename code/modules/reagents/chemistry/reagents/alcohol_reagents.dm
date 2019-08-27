@@ -609,14 +609,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "beepskysmashglass"
 	glass_name = "Beepsky Smash"
 	glass_desc = "Heavy, hot and strong. Just like the Iron fist of the LAW."
-
-/datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
-	if(M.has_trait(TRAIT_ALCOHOL_TOLERANCE))
-		M.Stun(30, 0) //this realistically does nothing to prevent chainstunning but will cause them to recover faster once it's out of their system
-	else
-		M.Stun(40, 0)
-	return ..()
-
+	
 /datum/reagent/consumable/ethanol/irish_cream
 	name = "Irish Cream"
 	id = "irishcream"
@@ -934,7 +927,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/grog
 	name = "Grog"
 	id = "grog"
-	description = "Watered down rum, Nanotrasen approves!"
+	description = "Watered down rum, Vault-Tec approves!"
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 1 //Basically nothing
 	taste_description = "a poor excuse for alcohol"
@@ -985,12 +978,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "stomach acid"
 	glass_icon_state = "acidspitglass"
 	glass_name = "Acid Spit"
-	glass_desc = "A drink from Nanotrasen. Made from live aliens."
+	glass_desc = "A drink from Vault-Tec. Made from live aliens."
 
 /datum/reagent/consumable/ethanol/amasec
 	name = "Amasec"
 	id = "amasec"
-	description = "Official drink of the Nanotrasen Gun-Club!"
+	description = "Official drink of the Vault-Tec Gun-Club!"
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 35
 	taste_description = "dark and metallic"
@@ -1202,7 +1195,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "da bomb"
 	glass_icon_state = "atomicbombglass"
 	glass_name = "Atomic Bomb"
-	glass_desc = "Nanotrasen cannot take legal responsibility for your actions after imbibing."
+	glass_desc = "Bartender cannot take legal responsibility for your actions after imbibing."
 
 /datum/reagent/consumable/ethanol/atomicbomb/on_mob_life(mob/living/carbon/M)
 	M.set_drugginess(50)
@@ -1253,32 +1246,14 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/neurotoxin
 	name = "Neurotoxin"
 	id = "neurotoxin"
-	description = "A strong neurotoxin that puts the subject into a death-like state."
+	description = "A strong neurotoxin that induces effects similar to extremely potent alcohol."
 	color = "#2E2E61" // rgb: 46, 46, 97
-	boozepwr = 0 //custom drunk effect
+	boozepwr = 150 //very powerful to compensate for losing its instant KO
 	taste_description = "a numbing sensation"
 	glass_icon_state = "neurotoxinglass"
 	glass_name = "Neurotoxin"
 	glass_desc = "A drink that is guaranteed to knock you silly."
-
-/datum/reagent/consumable/ethanol/neurotoxin/on_mob_life(mob/living/carbon/M)
-	M.Knockdown(60, 1, 0)
-	M.dizziness +=2
-	switch(current_cycle)
-		if(15 to 45)
-			if(!M.slurring)
-				M.slurring = 1
-			M.slurring += 3
-		if(45 to 55)
-			if(prob(50))
-				M.confused = max(M.confused+3,0)
-		if(55 to 200)
-			M.set_drugginess(55)
-		if(200 to INFINITY)
-			M.adjustToxLoss(2, 0)
-	..()
-	. = 1
-
+	
 /datum/reagent/consumable/ethanol/hippies_delight
 	name = "Hippie's Delight"
 	id = "hippiesdelight"
@@ -1622,7 +1597,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	taste_description = "seduction"
 	glass_icon_state = "between_the_sheets"
 	glass_name = "Between the Sheets"
-	glass_desc = "The only drink that comes with a label reminding you of Nanotrasen's zero-tolerance promiscuity policy."
+	glass_desc = "The only drink that comes with a label reminding you of Vault-Tec's zero-tolerance promiscuity policy."
 
 /datum/reagent/consumable/ethanol/between_the_sheets/on_mob_life(mob/living/L)
 	..()

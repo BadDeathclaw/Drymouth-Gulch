@@ -1,17 +1,16 @@
 /obj/item/seeds/xander
 	name = "pack of xander seeds"
-	desc = "These seeds grow into xander root."
+	desc = "These seeds grow into xander roots."
 	icon_state = "seed-xander"
 	species = "xander"
-	plantname = "Xander Plants"
+	plantname = "xander roots"
 	product = /obj/item/reagent_containers/food/snacks/grown/xander
 	lifespan = 25
 	endurance = 10
-	maturation = 8
-	production = 3
-	yield = 6
-	potency = 20
+	yield = 3 //6 //Where did you get 6 from???
 	growthstages = 3
+	production = 1
+	maturation = 1
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
 	icon_grow = "potato-grow"
 	icon_dead = "potato-dead"
@@ -19,7 +18,7 @@
 /obj/item/reagent_containers/food/snacks/grown/xander
 	seed = /obj/item/seeds/xander
 	name = "xander root"
-	desc = "Xander root is a large, turnip-like root with mild healing properties. It can easily be identified by its exposed head and tall green stalk protruding from a raised ring of dirt, resembling an onion. Once collected, xander root can be used in the crafting of both healing powder and stimpaks."
+	desc = "Xander roots are large, hardy, turnip-like roots with mild healing properties."
 	icon_state = "xander"
 	filling_color = "#FF6347"
 

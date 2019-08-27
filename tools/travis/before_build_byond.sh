@@ -5,26 +5,27 @@ set -e
 if [ "$BUILD_TOOLS" = true ]; then
   exit 0
 fi;
+
 echo "Combining maps for building"
 if [ $BUILD_TESTING = true ]; then
     python tools/travis/template_dm_generator.py
 fi;
 
-if [ -d "$HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin" ];
+source dependencies.sh
+
+if [ -d "$HOME/BYOND/byond/bin" ] && grep -Fxq "${BYOND_MAJOR}.${BYOND_MINOR}" $HOME/BYOND/version.txt;
 then
   echo "Using cached directory."
-  exit 0
 else
   echo "Setting up BYOND."
-  mkdir -p "$HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}"
-  cd "$HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}"
+  rm -rf "$HOME/BYOND"
+  mkdir -p "$HOME/BYOND"
+  cd "$HOME/BYOND"
   curl "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip
   unzip byond.zip
+  rm byond.zip
   cd byond
   make here
+  echo "$BYOND_MAJOR.$BYOND_MINOR" > "$HOME/BYOND/version.txt"
   cd ~/
-  exit 0
 fi
-
-#some variable not set correctly, panic
-exit 1

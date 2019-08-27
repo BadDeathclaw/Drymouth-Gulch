@@ -10,13 +10,12 @@
 	density = TRUE
 	pixel_x = -16
 	layer = FLY_LAYER
-	var/log_amount = 10
+	var/log_amount = 9
 
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
-		if(W.sharpness && W.force > 0)
-			if(W.hitsound)
-				playsound(get_turf(src), W.hitsound, 100, 0, 0)
+		if(W.sharpness && W.force > 0 && W.tool_behaviour != TOOL_SHOVEL)
+			playsound(get_turf(src), 'sound/effects/wood_cutting.ogg', 100, 0, 0)
 			user.visible_message("<span class='notice'>[user] begins to cut down [src] with [W].</span>","<span class='notice'>You begin to cut down [src] with [W].</span>", "You hear the sound of sawing.")
 			if(do_after(user, 1000/W.force, target = src)) //5 seconds with 20 force, 8 seconds with a hatchet, 20 seconds with a shard.
 				user.visible_message("<span class='notice'>[user] fells [src] with the [W].</span>","<span class='notice'>You fell [src] with the [W].</span>", "You hear the sound of a tree falling.")
@@ -26,19 +25,40 @@
 
 				var/obj/structure/flora/stump/S = new(loc)
 				S.name = "[name] stump"
-
 				qdel(src)
-
 	else
 		return ..()
 
 /obj/structure/flora/stump
 	name = "stump"
-	desc = "This represents our promise to the crew, and the station itself, to cut down as many trees as possible." //running naked through the trees
-	icon = 'icons/obj/flora/pinetrees.dmi'
+	desc = "This represents our promise to the people of Wasteland, and the planet itself, to cut down as many trees as possible." //running naked through the trees
+	icon = 'icons/fallout/flora/trees.dmi'
 	icon_state = "tree_stump"
 	density = FALSE
 	pixel_x = -16
+
+/obj/structure/flora/stump/attacked_by(obj/item/I, mob/living/user)
+	if(I.tool_behaviour == TOOL_SHOVEL)
+		to_chat(user, "<span class='notice'>You start digging up [src].</span>")
+		if(I.use_tool(src, user, 40, volume=50))
+			to_chat(user, "<span class='notice'>You dig up [src].</span>")
+			new /obj/item/grown/log/tree(get_turf(src))
+			qdel(src)
+	else
+		return ..()
+
+/obj/structure/flora/tree/tall
+	name = "dead tree"
+	desc = "A rather tall tree that has been dead for a long time.<br>Interestingly it is still standing, as a reminder of its green past."
+	icon = 'icons/fallout/flora/talltrees.dmi'
+	icon_state = "tree_1"
+	log_amount = 6
+	obj_integrity = 350
+	max_integrity = 350
+
+/obj/structure/flora/tree/tall/New()
+	icon_state = "tree_[rand(1,3)]"
+	..()
 
 /obj/structure/flora/tree/pine
 	name = "pine tree"
@@ -84,6 +104,37 @@
 	icon = 'icons/obj/flora/deadtrees.dmi'
 	desc = "A dead tree. How it died, you know not."
 	icon_state = "tree_1"
+
+/obj/structure/flora/tree/joshua
+	name = "joshua tree"
+	desc = "A tree named by mormons, who said it's branches mimiced the biblical Joshua, raising his hands in prayer."
+	icon = 'icons/obj/flora/deadtrees.dmi'
+	log_amount = 3
+	icon_state = "joshua_1"
+
+/obj/structure/flora/tree/joshua/Initialize()
+	. = ..()
+	icon_state = "joshua_[rand(1,4)]"
+
+/obj/structure/flora/tree/cactus
+	name = "cactus"
+	desc = "It's a giant cowboy hat! It's waving hello! It wants you to hug it!"
+	icon = 'icons/obj/flora/deadtrees.dmi'
+	icon_state = "cactus"
+	log_amount = 2
+
+/obj/structure/flora/tree/tall
+	name = "dead tree"
+	desc = "A rather tall tree that has been dead for a long time.<br>Interestingly it is still standing, as a reminder of its green past."
+	icon = 'icons/fallout/flora/talltrees.dmi'
+	icon_state = "tree_1"
+	log_amount = 6
+	obj_integrity = 350
+	max_integrity = 350
+
+/obj/structure/flora/tree/tall/New()
+	icon_state = "tree_[rand(1,3)]"
+	..()
 
 /obj/structure/flora/tree/palm
 	icon = 'icons/misc/beach2.dmi'

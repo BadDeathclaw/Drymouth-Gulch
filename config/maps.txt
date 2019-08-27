@@ -13,26 +13,7 @@ Format:
 	disabled (disables the map)
 endmap
 
-map boxstation
+map pahrump
 	default
-	#voteweight 1.5
-endmap
-
-map metastation
-	minplayers 25
-	#voteweight 0.5
-endmap
-
-map pubbystation
-endmap
-
-map omegastation
-	maxplayers 35
-endmap
-
-map deltastation
-	minplayers 50
-endmap
-
-map runtimestation
+	votable
 endmap

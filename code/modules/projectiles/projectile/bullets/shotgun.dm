@@ -1,11 +1,11 @@
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = 50
-	armour_penetration = 20
+	armour_penetration = 0
 
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
-	damage = 5
+	damage = 0
 	stamina = 80
 
 /obj/item/projectile/bullet/incendiary/shotgun
@@ -65,7 +65,7 @@
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
-	damage = 2
+	damage = 0
 	stamina = 14
 
 /obj/item/projectile/bullet/pellet/Range()

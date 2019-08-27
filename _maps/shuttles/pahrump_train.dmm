@@ -1,0 +1,20 @@
+"a" = (/turf/closed/wall/mineral/titanium/survival,/area/shuttle/escape)
+"b" = (/obj/effect/spawner/structure/window/survival_pod,/turf/open/floor/plasteel/f13/vault_floor/plating,/area/shuttle/escape)
+"c" = (/obj/structure/chair{dir = 4},/turf/open/floor/f13{icon_state = "floorrustysolid"},/area/shuttle/escape)
+"d" = (/turf/open/floor/f13{icon_state = "floorrustysolid"},/area/shuttle/escape)
+"e" = (/obj/structure/chair{dir = 8},/turf/open/floor/f13{icon_state = "floorrustysolid"},/area/shuttle/escape)
+"f" = (/obj/structure/chair{dir = 4},/obj/machinery/light/small{dir = 8; light_color = "#d8b1b1"},/turf/open/floor/f13{icon_state = "floorrustysolid"},/area/shuttle/escape)
+"g" = (/obj/structure/chair{dir = 8},/obj/machinery/light/small{dir = 4},/turf/open/floor/f13{icon_state = "floorrustysolid"},/area/shuttle/escape)
+"h" = (/obj/structure/simple_door/bunker/glass,/turf/open/floor/f13{icon_state = "floorrustysolid"},/area/shuttle/escape)
+
+(1,1,1) = {"
+aabbaa
+acddea
+afddga
+hcddeh
+adddda
+hcddeh
+afddga
+acddea
+aabbaa
+"}

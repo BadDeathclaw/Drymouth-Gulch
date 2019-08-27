@@ -804,7 +804,7 @@
 /mob/living/silicon/ai/can_buckle()
 	return 0
 
-/mob/living/silicon/ai/incapacitated()
+/mob/living/silicon/ai/incapacitated(ignore_restraints)
 	if(aiRestorePowerRoutine)
 		return TRUE
 	return ..()

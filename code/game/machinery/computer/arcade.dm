@@ -50,7 +50,6 @@
 		/obj/item/extendohand/acme								= 1,
 		/obj/item/hot_potato/harmless/toy						= 1,
 		/obj/item/card/emagfake									= 1,
-		/obj/item/clothing/shoes/wheelys				= 2,
 		/obj/item/clothing/shoes/kindleKicks				= 2,
 		/obj/item/storage/belt/military/snack					= 2
 		)

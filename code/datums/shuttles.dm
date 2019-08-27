@@ -142,7 +142,7 @@
 /datum/map_template/shuttle/emergency/asteroid
 	suffix = "asteroid"
 	name = "Asteroid Station Emergency Shuttle"
-	description = "A respectable mid-sized shuttle that first saw service shuttling Nanotrasen crew to and from their asteroid belt embedded facilities."
+	description = "A respectable mid-sized shuttle that first saw service shuttling Vault-Tec crew to and from their asteroid belt embedded facilities."
 	credit_cost = 3000
 
 /datum/map_template/shuttle/emergency/bar
@@ -177,7 +177,7 @@
 /datum/map_template/shuttle/emergency/discoinferno
 	suffix = "discoinferno"
 	name = "Disco Inferno"
-	description = "The glorious results of centuries of plasma research done by Nanotrasen employees. This is the reason why you are here. Get on and dance like you're on fire, burn baby burn!"
+	description = "The glorious results of centuries of plasma research done by Vault-Tec employees. This is the reason why you are here. Get on and dance like you're on fire, burn baby burn!"
 	admin_notes = "Flaming hot."
 	credit_cost = 10000
 
@@ -287,7 +287,7 @@
 /datum/map_template/shuttle/emergency/goon
 	suffix = "goon"
 	name = "NES Port"
-	description = "The Nanotrasen Emergency Shuttle Port(NES Port for short) is a shuttle used at other less known Nanotrasen facilities and has a more open inside for larger crowds, but fewer onboard shuttle facilities."
+	description = "The Vault-Tec Emergency Shuttle Port is a shuttle used at other less known Vault-Tec facilities and has a more open inside for larger crowds, but fewer onboard shuttle facilities."
 	credit_cost = 500
 
 /datum/map_template/shuttle/emergency/wabbajack
@@ -478,3 +478,10 @@
 /datum/map_template/shuttle/bos/elevator
 	suffix = "elevator"
 	name = "BOS Elevator"
+
+
+/datum/map_template/shuttle/emergency/pahrump
+	suffix = "pahrump"
+	name = "Pahrump train"
+	credit_cost = 2000
+	description = "A train to return the occupants back to New California."

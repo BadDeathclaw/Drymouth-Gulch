@@ -41,7 +41,7 @@ Elder
 /datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
-//	faction = "Station"
+	faction = "BOS"
 	head_announce = list("Security")
 	supervisors = "the high elders"
 	selection_color = "#7f8c8d"
@@ -98,7 +98,11 @@ Paladin
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
+
+/datum/job/bos/f13paladin/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
 
 
 /*Head Scribe
@@ -127,11 +131,13 @@ Paladin
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
 	jobtype = /datum/job/bos/f13headscribe
+	chemwhiz = TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
 	suit_store =	/obj/item/gun/energy/laser/pistol
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	backpack_contents = list(
-		/obj/item/kitchen/knife/combat=1)
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)
 
 
 /*
@@ -166,7 +172,11 @@ Knight
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
 		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/ballistic/automatic/pistol/n99=1)
+		/obj/item/gun/ballistic/automatic/pistol/n99=1, \
+		/obj/item/ammo_box/magazine/m10mm_adv=2)
+
+/datum/job/bos/f13knight/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
 
 
 /*
@@ -193,6 +203,7 @@ Scribe
 /datum/outfit/job/bos/f13scribe
 	name = "Scribe"
 	jobtype = /datum/job/bos/f13scribe
+	chemwhiz = TRUE
 	shoes = 		/obj/item/clothing/shoes/combat
 	suit = 			/obj/item/clothing/suit/f13/scribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
@@ -234,9 +245,8 @@ Initiate Knight
 	suit_store =	/obj/item/gun/energy/laser/aer9
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2, \
-		/obj/item/kitchen/knife/combat=1, \
-		/obj/item/gun/energy/laser/pistol=1)
-
+		/obj/item/gun/energy/laser/pistol=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)
 /*
 Initiate Scribe
 */
@@ -269,4 +279,5 @@ Initiate Scribe
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol=1)
+		/obj/item/gun/energy/laser/pistol=1, \
+		/obj/item/stock_parts/cell/ammo/ec=2)

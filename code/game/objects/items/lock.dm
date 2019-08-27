@@ -1,3 +1,4 @@
+GLOBAL_LIST_EMPTY(global_locks)
 /obj/item/lock_construct
 	name = "\improper lock"
 	icon = 'icons/obj/lock.dmi'
@@ -11,9 +12,14 @@
 	..()
 	lock_data = lock_uid++
 	desc = "A heavy-duty lock for doors. It has [lock_data] engraved on it."
+	GLOB.global_locks += src
+	
+/obj/item/lock_construct/Destroy()
+	..()
+	GLOB.global_locks -= src
 
-/obj/item/lock_construct/attackby(var/obj/item/I, var/mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
-	if(istype(I,/obj/item/key))
+/obj/item/lock_construct/attackby(obj/item/I, mob/user) // Blatantly borrowed from Baystation coders and modified for simplicity. Thanks for pointing me in that direction, Rhicora.
+	if(iskey(I))
 		var/obj/item/key/K = I
 		if(!K.lock_data)
 			to_chat(user, "<span class='notice'>You fashion \the [I] to unlock \the [src]</span>")
@@ -22,7 +28,7 @@
 		else
 			to_chat(user, "<span class='warning'>\The [I] already unlocks something...</span>")
 		return
-	if(istype(I,/obj/item/lock_construct))
+	if(islock(I))
 		var/obj/item/lock_construct/L = I
 		L.lock_data = src.lock_data
 		to_chat(user, "<span class='notice'>You copy the lock from \the [src] to \the [L], making them identical.</span>")
@@ -51,7 +57,7 @@
 		var/time_to_open = 50
 		playsound(src, 'sound/machines/airlock_alien_prying.ogg',100,1) //is it aliens or just the CE being a dick?
 		prying = TRUE
-		var/result = do_after(user, time_to_open,target = A)
+		var/result = do_after(user, time_to_open, target = A)
 		prying = FALSE
 		if(result)
 			user.visible_message("<span class='notice'>[src] breaks off [A] and falls to pieces.</span>")
@@ -65,11 +71,11 @@
 	var/lock_data = ""
 
 /obj/item/key/Initialize()
-	..()
+	. = ..()
 	desc = "A simple key for locks. It has [src.lock_data ? src.lock_data : "nothing"] engraved on it."
 
-/obj/item/key/attackby(var/obj/item/I, mob/user, params)
-	if(istype(I,/obj/item/stack/rods))
+/obj/item/key/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/stack/rods))
 		var/obj/item/stack/rods/M = I
 		to_chat(user, "<span class='notice'>You begin to shape a rod into [src]...</span>")
 		if(do_after(user, 35, target = src))

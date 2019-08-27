@@ -27,12 +27,10 @@
 
 /obj/structure/fence/Initialize()
 	. = ..()
-
 	update_cut_status()
 
 /obj/structure/fence/examine(mob/user)
-	.=..()
-
+	. = ..()
 	switch(hole_size)
 		if(MEDIUM_HOLE)
 			user.show_message("There is a large hole in \the [src].")
@@ -132,19 +130,25 @@
 
 				update_cut_status()
 	else if(istype(W, /obj/item/stack/sheet/mineral/wood))
-		var /obj/item/stack/sheet/mineral/wood/Z = W
-		if(locate(/obj/structure/barricade/wooden/crude) in get_turf(src))
+		var/obj/item/stack/sheet/mineral/wood/Z = W
+		if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
 			to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
 			return
 		if(Z.get_amount() < 3)
-			to_chat(user, "<span class='warning'>You need at three four wooden planks to reinforce this fence!</span>")
+			to_chat(user, "<span class='warning'>You need atleast 3 wooden planks to reinforce this fence!</span>")
 			return
 		else
 			to_chat(user, "<span class='notice'>You start adding [Z] to [src]...</span>")
 			if(do_after(user, 50, target=src))
+				if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
+					to_chat(user, "<span class='warning'>This fence is already barricaded!</span>")
+					return
+				if(Z.get_amount() < 3)
+					to_chat(user, "<span class='warning'>You need atleast 3 wooden planks to reinforce this fence!</span>")
+					return
 				Z.use(3)
-				new /obj/structure/barricade/wooden/crude(get_turf(src))
-				user.visible_message("<span class='notice'>[user] reinforces the fence with some planks</span>", "<span class='notice'>You reinforce the fence with some planks.</span>")
+				new /obj/structure/barricade/wooden/planks(get_turf(src))
+				user.visible_message("<span class='notice'>[user] reinforces the fence with some planks.</span>", "<span class='notice'>You reinforce the fence with some planks.</span>")
 				return
 	return TRUE
 
@@ -254,9 +258,21 @@
 		if(TRUE)
 			density = FALSE
 			icon_state = "door_opened"
-
+			
 /obj/structure/fence/door/proc/can_open(mob/user)
 	return TRUE
+
+/obj/structure/simple_door/metal/fence
+	name = "fence gate"
+	desc = "A gate for a fence."
+	icon_state = "fence"
+	door_type = "fence"
+	open_sound = "sound/f13machines/doorchainlink_open.ogg"
+	close_sound = "sound/f13machines/doorchainlink_close.ogg"
+	opaque = 0
+	can_hold_padlock = TRUE
+	icon = 'icons/obj/fence.dmi'
+
 
 #undef CUT_TIME
 #undef CLIMB_TIME
