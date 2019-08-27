@@ -21,27 +21,28 @@ All ShuttleMove procs go here
 		return
 
 	var/shuttle_dir = shuttle.dir
-	for(var/i in contents)
-		var/atom/movable/thing = i
-		if(ismob(thing))
-			if(isliving(thing))
-				var/mob/living/M = thing
-				if(M.buckled)
-					M.buckled.unbuckle_mob(M, 1)
-				if(M.pulledby)
-					M.pulledby.stop_pulling()
-				M.stop_pulling()
-				M.visible_message("<span class='warning'>[shuttle] slams into [M]!</span>")
-				SSblackbox.record_feedback("tally", "shuttle_gib", 1, M.type)
-				M.gib()
+	if(!istype(shuttle, /obj/docking_port/mobile/elevator))
+		for(var/i in contents)
+			var/atom/movable/thing = i
+			if(ismob(thing))
+				if(isliving(thing))
+					var/mob/living/M = thing
+					if(M.buckled)
+						M.buckled.unbuckle_mob(M, 1)
+					if(M.pulledby)
+						M.pulledby.stop_pulling()
+					M.stop_pulling()
+					M.visible_message("<span class='warning'>[shuttle] slams into [M]!</span>")
+					SSblackbox.record_feedback("tally", "shuttle_gib", 1, M.type)
+					M.gib()
 
-		else //non-living mobs shouldn't be affected by shuttles, which is why this is an else
-			if(istype(thing, /obj/singularity) && !istype(thing, /obj/singularity/narsie)) //it's a singularity but not a god, ignore it.
-				continue
-			if(!thing.anchored)
-				step(thing, shuttle_dir)
-			else
-				qdel(thing)
+			else //non-living mobs shouldn't be affected by shuttles, which is why this is an else
+				if(istype(thing, /obj/singularity) && !istype(thing, /obj/singularity/narsie)) //it's a singularity but not a god, ignore it.
+					continue
+				if(!thing.anchored)
+					step(thing, shuttle_dir)
+				else
+					qdel(thing)
 
 // Called on the old turf to move the turf data
 /turf/proc/onShuttleMove(turf/newT, list/movement_force, move_dir)
