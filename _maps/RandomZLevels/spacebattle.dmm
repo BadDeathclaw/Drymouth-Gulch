@@ -2396,9 +2396,9 @@
 /area/awaymission/spacebattle/cruiser)
 "jF" = (
 /obj/structure/closet/crate,
-/obj/item/ammo_box/magazine/automatic/recharge,
-/obj/item/ammo_box/magazine/automatic/recharge,
-/obj/item/ammo_box/magazine/automatic/recharge,
+/obj/item/ammo_box/magazine/recharge,
+/obj/item/ammo_box/magazine/recharge,
+/obj/item/ammo_box/magazine/recharge,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "jG" = (
@@ -2453,7 +2453,7 @@
 /area/awaymission/spacebattle/cruiser)
 "jN" = (
 /obj/structure/closet/crate,
-/obj/item/ammo_box/magazine/automatic/recharge,
+/obj/item/ammo_box/magazine/recharge,
 /turf/open/floor/plating,
 /area/awaymission/spacebattle/cruiser)
 "jO" = (
