@@ -132,6 +132,7 @@
 	to_chat(user, "<span class='notice'>[icon2html(src, user)] You switch [scanning ? "on" : "off"] [src].</span>")
 
 /obj/item/geiger_counter/afterattack(atom/target, mob/user)
+	. = ..()
 	if(user.a_intent == INTENT_HELP)
 		if(!(obj_flags & EMAGGED))
 			user.visible_message("<span class='notice'>[user] scans [target] with [src].</span>", "<span class='notice'>You scan [target]'s radiation levels with [src]...</span>")
