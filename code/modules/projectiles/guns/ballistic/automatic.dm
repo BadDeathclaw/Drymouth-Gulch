@@ -685,7 +685,34 @@
 
 //Fallout 13
 //Magazines
+/obj/item/ammo_box/lmgbelt/
+	name = "7.62 belt (7.62mm)"
+	icon_state = "762belt"
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 100
+	caliber = "7.62"
 
+/obj/item/ammo_box/lmgbelt/r75
+	name = "7.62 belt (7.62mm)"
+	icon_state = "762belt"
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 75
+	caliber = "7.62"
+
+/obj/item/ammo_box/lmgbelt/r50
+	name = "7.62 belt (7.62mm)"
+	icon_state = "762belt"
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 50
+	caliber = "7.62"
+
+/obj/item/ammo_box/lmgbelt/r25
+	name = "7.62 belt (7.62mm)"
+	icon_state = "762belt"
+	ammo_type = /obj/item/ammo_casing/a762
+	max_ammo = 25
+	caliber = "7.62"
+	
 /obj/item/ammo_box/magazine/automatic/r10
 	name = "small 5.56 magazine (5.56mm)"
 	icon_state = "r10"
