@@ -342,6 +342,7 @@
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
+	extra_damage = 15
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
@@ -699,7 +700,8 @@
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-
+	extra_damage = 20
+	
 /obj/item/gun/ballistic/automatic/lmg/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
@@ -733,7 +735,7 @@
 /obj/item/ammo_box/magazine/mm195x129/m38/
 	name = "7.62 belt (7.62mm)"
 	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762
+	ammo_type = /obj/item/ammo_casing/a762/lp
 	max_ammo = 100
 	caliber = "a762"
 
