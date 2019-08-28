@@ -13,7 +13,7 @@
 	var/static/list/allowed_devices = typecacheof(list(
 		/obj/item/gun/energy,
 		/obj/item/melee/baton,
-		/obj/item/ammo_box/magazine/recharger,
+		/obj/item/ammo_box/magazine/recharge,
 		/obj/item/modular_computer))
 
 /obj/machinery/recharger/RefreshParts()
@@ -110,8 +110,8 @@
 				using_power = 1
 			update_icon(using_power)
 
-		if(istype(charging, /obj/item/ammo_box/magazine/automatic/recharge))
-			var/obj/item/ammo_box/magazine/automatic/recharge/R = charging
+		if(istype(charging, /obj/item/ammo_box/magazine/recharge))
+			var/obj/item/ammo_box/magazine/rechargeR = charging
 			if(R.stored_ammo.len < R.max_ammo)
 				R.stored_ammo += new R.ammo_type(R)
 				use_power(200 * recharge_coeff)

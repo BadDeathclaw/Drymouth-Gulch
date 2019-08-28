@@ -401,7 +401,7 @@
 	. = ..()
 
 /obj/item/gun/ballistic/automatic/laser/ctf
-	mag_type = /obj/item/ammo_box/magazine/automatic/recharge/ctf
+	mag_type = /obj/item/ammo_box/magazine/rechargectf
 	desc = "This looks like it could really hurt in melee."
 	force = 50
 
@@ -413,14 +413,14 @@
 	if(isturf(loc))
 		qdel(src)
 
-/obj/item/ammo_box/magazine/automatic/recharge/ctf
+/obj/item/ammo_box/magazine/rechargectf
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf
 
-/obj/item/ammo_box/magazine/automatic/recharge/ctf/dropped()
+/obj/item/ammo_box/magazine/rechargectf/dropped()
 	. = ..()
 	addtimer(CALLBACK(src, .proc/floor_vanish), 1)
 
-/obj/item/ammo_box/magazine/automatic/recharge/ctf/proc/floor_vanish()
+/obj/item/ammo_box/magazine/rechargectf/proc/floor_vanish()
 	if(isturf(loc))
 		qdel(src)
 
@@ -448,9 +448,9 @@
 // RED TEAM GUNS
 
 /obj/item/gun/ballistic/automatic/laser/ctf/red
-	mag_type = /obj/item/ammo_box/magazine/automatic/recharge/ctf/red
+	mag_type = /obj/item/ammo_box/magazine/rechargectf/red
 
-/obj/item/ammo_box/magazine/automatic/recharge/ctf/red
+/obj/item/ammo_box/magazine/rechargectf/red
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/red
 
 /obj/item/ammo_casing/caseless/laser/ctf/red
@@ -463,9 +463,9 @@
 // BLUE TEAM GUNS
 
 /obj/item/gun/ballistic/automatic/laser/ctf/blue
-	mag_type = /obj/item/ammo_box/magazine/automatic/recharge/ctf/blue
+	mag_type = /obj/item/ammo_box/magazine/rechargectf/blue
 
-/obj/item/ammo_box/magazine/automatic/recharge/ctf/blue
+/obj/item/ammo_box/magazine/rechargectf/blue
 	ammo_type = /obj/item/ammo_casing/caseless/laser/ctf/blue
 
 /obj/item/ammo_casing/caseless/laser/ctf/blue
@@ -485,8 +485,8 @@
 	gloves = /obj/item/clothing/gloves/combat
 	id = /obj/item/card/id/syndicate
 	belt = /obj/item/gun/ballistic/automatic/pistol/deagle/ctf
-	l_pocket = /obj/item/ammo_box/magazine/automatic/recharge/ctf
-	r_pocket = /obj/item/ammo_box/magazine/automatic/recharge/ctf
+	l_pocket = /obj/item/ammo_box/magazine/rechargectf
+	r_pocket = /obj/item/ammo_box/magazine/rechargectf
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf
 
 /datum/outfit/ctf/post_equip(mob/living/carbon/human/H, visualsOnly=FALSE)
@@ -514,8 +514,8 @@
 /datum/outfit/ctf/red
 	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/red
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/red
-	l_pocket = /obj/item/ammo_box/magazine/automatic/recharge/ctf/red
-	r_pocket = /obj/item/ammo_box/magazine/automatic/recharge/ctf/red
+	l_pocket = /obj/item/ammo_box/magazine/rechargectf/red
+	r_pocket = /obj/item/ammo_box/magazine/rechargectf/red
 
 /datum/outfit/ctf/red/instagib
 	r_hand = /obj/item/gun/energy/laser/instakill/red
@@ -524,8 +524,8 @@
 /datum/outfit/ctf/blue
 	suit = /obj/item/clothing/suit/space/hardsuit/shielded/ctf/blue
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/blue
-	l_pocket = /obj/item/ammo_box/magazine/automatic/recharge/ctf/blue
-	r_pocket = /obj/item/ammo_box/magazine/automatic/recharge/ctf/blue
+	l_pocket = /obj/item/ammo_box/magazine/rechargectf/blue
+	r_pocket = /obj/item/ammo_box/magazine/rechargectf/blue
 
 /datum/outfit/ctf/blue/instagib
 	r_hand = /obj/item/gun/energy/laser/instakill/blue
