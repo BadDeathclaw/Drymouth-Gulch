@@ -649,7 +649,7 @@
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2.3
+	fire_delay = 2
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
@@ -661,25 +661,21 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			fire_delay += 0.3
 			spread = 8
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size += 2
-			fire_delay += 0.3
 			spread = 14
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size += 3
-			fire_delay += 0.4
 			spread = 24
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
 			burst_size = 1
-			fire_delay = 2
 			spread = 1
 			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
