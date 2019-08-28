@@ -327,7 +327,52 @@
 		return
 	..()
 
+/obj/item/gun/ballistic/automatic/l6_saw/m38
+	name = "M38 LMG"
+	desc = "A special lmg used by elite legionairs to support regular infantry."
+	icon_state = "M38"
+	item_state = "M38"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/mm195x129/m38/
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	can_suppress = FALSE
+	burst_size = 3
+	fire_delay = 2
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	spread = 2
+	randomspread = 1
 
+/obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
+	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
+	item_state = "M38[cover_open ? "openmag" : "closedmag"]"
+
+/obj/item/gun/ballistic/automatic/l6_saw/m38/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size += 2
+			spread = 8
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select += 1
+			burst_size += 2
+			spread = 14
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(2)
+			select += 1
+			burst_size += 3
+			spread = 24
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(3)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 // SNIPER //
 
@@ -685,34 +730,19 @@
 
 //Fallout 13
 //Magazines
-/obj/item/ammo_box/lmgbelt/
+/obj/item/ammo_box/magazine/mm195x129/m38/
 	name = "7.62 belt (7.62mm)"
 	icon_state = "762belt"
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 100
-	caliber = "7.62"
+	caliber = "a762"
 
-/obj/item/ammo_box/lmgbelt/r75
-	name = "7.62 belt (7.62mm)"
-	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762
-	max_ammo = 75
-	caliber = "7.62"
+/obj/item/ammo_box/magazine/mm195x129/m38/can_load()
+	return 0
 
-/obj/item/ammo_box/lmgbelt/r50
-	name = "7.62 belt (7.62mm)"
-	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762
-	max_ammo = 50
-	caliber = "7.62"
-
-/obj/item/ammo_box/lmgbelt/r25
-	name = "7.62 belt (7.62mm)"
-	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762
-	max_ammo = 25
-	caliber = "7.62"
-	
+/obj/item/ammo_box/magazine/mm195x129/m38/update_icon()
+	..()
+	icon_state = "762belt-[round(ammo_count(),25)]"
 /obj/item/ammo_box/magazine/automatic/r10
 	name = "small 5.56 magazine (5.56mm)"
 	icon_state = "r10"
