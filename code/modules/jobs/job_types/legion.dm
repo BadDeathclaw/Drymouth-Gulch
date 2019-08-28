@@ -155,7 +155,7 @@ Veteran Decan
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store = 	/obj/item/gun/ballistic/automatic/l6_saw/m38
 	r_hand = 		/obj/item/twohanded/fireaxe/bmprsword
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
@@ -163,7 +163,7 @@ Veteran Decan
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/tube/m44=2, \
+		/obj/item/ammo_box/magazine/mm195x129/m38=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 
