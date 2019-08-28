@@ -518,6 +518,8 @@
 	fire_delay = 3
 	extra_damage = 35
 	extra_penetration = 10
+	icon_state = "R82"
+	item_state = "R82"
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	name = "varmint rifle"
