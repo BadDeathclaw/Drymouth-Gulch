@@ -161,26 +161,25 @@
 		var/datum/terminal/document/N = new file_in_memory
 		doc_title_1 = "[N.title]"
 		doc_content_1 = "[N.content]"
-	if (2)
+	if (doc_title_2)
 		var/file_in_memory = text2path("/datum/terminal/document/[doc_title_2]")
 		var/datum/terminal/document/N = new file_in_memory
 		doc_title_2 = "[N.title]"
 		doc_content_2 = "[N.content]"
-	if (3)
+	if (doc_title_3)
 		var/file_in_memory = text2path("/datum/terminal/document/[doc_title_3]")
 		var/datum/terminal/document/N = new file_in_memory
 		doc_title_3 = "[N.title]"
 		doc_content_3 = "[N.content]"
-	if (4)
+	if (doc_title_4)
 		var/file_in_memory = text2path("/datum/terminal/document/[doc_title_4]")
 		var/datum/terminal/document/N = new file_in_memory
 		doc_title_4 = "[N.title]"
 		doc_content_4 = "[N.content]"
-	if (5)
+	if (doc_title_5)
 		var/file_in_memory = text2path("/datum/terminal/document/[doc_title_5]")
 		var/datum/terminal/document/N = new file_in_memory
 		doc_title_5 = "[N.title]"
 		doc_content_5 = "[N.content]"
 
 	return
-
