@@ -289,9 +289,9 @@ Corporal
 	head = 			/obj/item/clothing/head/f13/ncr/goggles
 	glasses = 		null
 	belt =          /obj/item/storage/belt/military/NCR_Bandolier
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic=2, \
+		/obj/item/ammo_box/magazine/automatic/r30=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -414,9 +414,9 @@ Heavy Trooper
 	gloves =        /obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	shoes =         /obj/item/clothing/shoes/combat/swat
-	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
+	suit_store = 	/obj/item/gun/ballistic/automatic/lmg
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot, \
+		/obj/item/ammo_box/magazine/lmg, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/kitchen/knife/combat=1, \
