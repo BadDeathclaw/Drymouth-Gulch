@@ -77,7 +77,7 @@ Needs whitelist
 		/obj/item/throwing_star/spear, \
 		/obj/item/melee/powerfist=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/ammo_box/magazine/automatic=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legion)
 

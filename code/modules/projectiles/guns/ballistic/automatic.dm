@@ -395,7 +395,7 @@
 	desc = "Though sometimes mocked for the relatively weak firepower of their energy weapons, the logistic miracle of rechargeable ammunition has given it's users a decisive edge over many a foe."
 	icon_state = "oldrifle"
 	item_state = "arg"
-	mag_type = /obj/item/ammo_box/magazine/recharge
+	mag_type = /obj/item/ammo_box/magazine/automatic/recharge
 	fire_delay = 2
 	can_suppress = FALSE
 	burst_size = 0
@@ -456,7 +456,7 @@
 	icon_state = "assault_rifle"
 	item_state = "fnfal"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/r20
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
 	fire_delay = 3
@@ -487,7 +487,7 @@
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/r20
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = FALSE
 	fire_delay = 6
@@ -508,7 +508,7 @@
 	fire_delay = 3
 	extra_damage = 25
 	extra_penetration = 5
-	mag_type = /obj/item/ammo_box/magazine/r50
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
 
@@ -528,7 +528,7 @@
 	item_state = "varmintrifle"
 	fire_delay = 8
 	extra_damage = 30
-	mag_type = /obj/item/ammo_box/magazine/r10
+	mag_type = /obj/item/ammo_box/magazine/automatic/r10
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
@@ -596,7 +596,7 @@
 	icon_state = "bozar"
 	item_state = "sniper"
 	slot_flags = SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/r20
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	burst_size = 2
 	fire_delay = 3
 	extra_damage = 35
@@ -645,10 +645,9 @@
 	icon_state = "R84"
 	item_state = "R84"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/r50
+	mag_type = /obj/item/ammo_box/magazine/lmg
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	can_suppress = FALSE
-	var/burst_sizes = list(1,3,5,8)
 	burst_size = 3
 	fire_delay = 2.3
 	w_class = WEIGHT_CLASS_BULKY
@@ -690,7 +689,16 @@
 
 //Fallout 13
 //Magazines
-/obj/item/ammo_box/magazine/r20
+
+/obj/item/ammo_box/magazine/automatic/r10
+	name = "small 5.56 magazine (5.56mm)"
+	icon_state = "r10"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 10
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/automatic/
 	name = "5.56 Magazine (5.56mm)"
 	icon_state = "r20"
 	ammo_type = /obj/item/ammo_casing/a556
@@ -698,7 +706,7 @@
 	max_ammo = 20
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/r30
+/obj/item/ammo_box/magazine/automatic/r30
 	name = "Large 5.56 Magazine (5.56mm)"
 	icon_state = "r30"
 	ammo_type = /obj/item/ammo_casing/a556
@@ -706,7 +714,7 @@
 	max_ammo = 30
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/r50
+/obj/item/ammo_box/magazine/automatic/r50
 	name = "Extra Large 5.56 Magazine (5.56mm)"
 	icon_state = "r50"
 	ammo_type = /obj/item/ammo_casing/a556
@@ -714,12 +722,12 @@
 	max_ammo = 50
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/r10
-	name = "small 5.56 magazine (5.56mm)"
-	icon_state = "r10"
+/obj/item/ammo_box/magazine/lmg/
+	name = "5.56 ammo box"
+	icon_state = "r80"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
-	max_ammo = 10
+	max_ammo = 80
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_auto

@@ -1,4 +1,4 @@
-/obj/item/ammo_box/magazine/recharge
+/obj/item/ammo_box/magazine/automatic/recharge
  	name = "microfusion cell"
  	desc = "A rechargeable, detachable battery that serves as a magazine for laser rifles."
  	icon_state = "oldrifle-20"
@@ -6,9 +6,9 @@
  	caliber = "laser"
  	max_ammo = 20
 
-/obj/item/ammo_box/magazine/recharge/update_icon()
+/obj/item/ammo_box/magazine/automatic/recharge/update_icon()
 	desc = "[initial(desc)] It has [stored_ammo.len] shot\s left."
 	icon_state = "oldrifle-[round(ammo_count(),4)]"
 
-/obj/item/ammo_box/magazine/recharge/attack_self() //No popping out the "bullets"
+/obj/item/ammo_box/magazine/automatic/recharge/attack_self() //No popping out the "bullets"
  	return
