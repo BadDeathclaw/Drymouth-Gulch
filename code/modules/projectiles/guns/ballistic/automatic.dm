@@ -508,7 +508,7 @@
 	fire_delay = 3
 	extra_damage = 25
 	extra_penetration = 5
-	mag_type = /obj/item/ammo_box/magazine/r20
+	mag_type = /obj/item/ammo_box/magazine/r50
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
 
@@ -639,6 +639,54 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/automatic/lmg
+	name = "R84 LMG"
+	desc = "A post war lmg manufactured by the NCR. Issued to heavy troopers to support regular infantry."
+	icon_state = "R84"
+	item_state = "R84"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/r50
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	can_suppress = FALSE
+	var/burst_sizes = list(1,3,5,8)
+	burst_size = 3
+	fire_delay = 2.3
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	spread = 2
+	randomspread = 1
+
+/obj/item/gun/ballistic/automatic/lmg/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size += 2
+			fire_delay += 0.3
+			spread = 4
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select += 1
+			burst_size += 2
+			fire_delay += 0.3
+			spread = 12
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(2)
+			select += 1
+			burst_size += 3
+			fire_delay += 0.4
+			spread = 24
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(3)
+			select = 0
+			burst_size = 1
+			fire_delay = 2
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
 
 //Fallout 13
 //Magazines
@@ -648,6 +696,22 @@
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
 	max_ammo = 20
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/r30
+	name = "Large 5.56 Magazine (5.56mm)"
+	icon_state = "r30"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 30
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/r50
+	name = "Extra Large 5.56 Magazine (5.56mm)"
+	icon_state = "r50"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 50
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/r10
@@ -750,6 +814,7 @@
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556
+
 
 /obj/item/ammo_casing/a357
 	name = "357 bullet casing"
