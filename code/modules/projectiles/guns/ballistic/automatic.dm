@@ -662,13 +662,13 @@
 			select += 1
 			burst_size += 2
 			fire_delay += 0.3
-			spread = 4
+			spread = 8
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size += 2
 			fire_delay += 0.3
-			spread = 12
+			spread = 14
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
