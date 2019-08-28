@@ -410,7 +410,9 @@
 	if(user.a_intent == INTENT_DISARM)
 		do_disarm(M, user)
 		return
-
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, "<span class='warning'>You do not know how to use the [src]!</span>")
+		return
 	if(!iscarbon(M))
 		if(req_defib)
 			to_chat(user, "<span class='warning'>The instructions on [defib] don't mention how to revive that...</span>")

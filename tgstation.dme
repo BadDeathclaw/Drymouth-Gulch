@@ -1574,6 +1574,7 @@
 #include "code\modules\fallout\mob\simple_animal\mobs\eyebot.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\supermutant.dm"
 #include "code\modules\fallout\mob\simple_animal\mobs\wolf.dm"
+#include "code\modules\fallout\obj\bosbasepicker.dm"
 #include "code\modules\fallout\obj\campfire.dm"
 #include "code\modules\fallout\obj\crafting.dm"
 #include "code\modules\fallout\obj\decals.dm"

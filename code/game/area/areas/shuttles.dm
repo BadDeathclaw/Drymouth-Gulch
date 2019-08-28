@@ -125,6 +125,10 @@
 	name = "Steel Rain"
 	blob_allowed = FALSE
 
+/area/shuttle/brotherhood_of_steel
+	name = "Brotherhood of Steel"
+	blob_allowed = FALSE
+
 /area/shuttle/abandoned
 	name = "Abandoned Ship"
 	blob_allowed = FALSE
