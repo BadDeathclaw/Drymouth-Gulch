@@ -359,13 +359,13 @@ All ShuttleMove procs go here
 	. = ..()
 	if (!(resistance_flags & INDESTRUCTIBLE))
 		LateInitialize()
-
+/*
 /obj/structure/ladder/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
 	if (resistance_flags & INDESTRUCTIBLE)
 		// simply don't be moved
 		return FALSE
 	return ..()
-
+*/
 /************************************Misc move procs************************************/
 
 /atom/movable/lighting_object/onShuttleMove()
