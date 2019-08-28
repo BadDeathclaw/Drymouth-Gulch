@@ -512,6 +512,13 @@
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
+	name = "R82 heavy service rifle"
+	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
+	fire_delay = 3
+	extra_damage = 35
+	extra_penetration = 10
+
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	name = "varmint rifle"
 	desc = "A low powered 5.56, easy to use rifle."
