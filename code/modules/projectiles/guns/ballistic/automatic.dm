@@ -342,7 +342,7 @@
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 15
+	extra_damage = 5
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
@@ -354,17 +354,17 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			spread = 8
+			spread = 15
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size += 2
-			spread = 14
+			spread = 30
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 24
+			spread = 55
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
@@ -700,7 +700,7 @@
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 20
+	extra_damage = 7.5
 	
 /obj/item/gun/ballistic/automatic/lmg/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -708,17 +708,17 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			spread = 8
+			spread = 16
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size += 2
-			spread = 14
+			spread = 28
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 24
+			spread = 50
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
