@@ -7,10 +7,14 @@
 #define STATE_LOCKOPEN 3
 
 #define CASH_CAP_VENDOR 1
+
 /* exchange rates X * CAP*/
 #define CASH_AUR_VENDOR 100 /* 100 caps to 1 AUR */
 #define CASH_DEN_VENDOR 4 /* 4 caps to 1 DEN */
 #define CASH_NCR_VENDOR 0.4 /* $100 to 40 caps */
+
+// Total number of caps value spent in the Trading Protectrons Vendors
+GLOBAL_VAR_INIT(VendorCash, 0)
 
 /obj/machinery/trading_machine
 	name = "Wasteland Vending Machine"
@@ -56,7 +60,7 @@
 	idle_icon_state = "weapon_idle"
 	service_icon_state = "weapon_service"
 	lock_icon_state = "weapon_lock"
-	stored_item_type = list(/obj/item/gun)
+	stored_item_type = list(/obj/item/gun, /obj/item/melee)
 
 /* Ammo Vending Machine*/
 /obj/machinery/trading_machine/ammo
@@ -76,7 +80,7 @@
 	idle_icon_state = "armor_idle"
 	service_icon_state = "armor_service"
 	lock_icon_state = "armor_lock"
-	stored_item_type = list(/obj/item/clothing)
+	stored_item_type = list(/obj/item/clothing, /obj/item/storage/belt)
 
 /* Medical Vending Machine*/
 /obj/machinery/trading_machine/medical
@@ -137,7 +141,6 @@
 		else if (!is_acceptable_item_state(Itm))
 			playsound(src, 'sound/machines/DeniedBeep.ogg', 60, 1)
 			to_chat(usr, item_not_acceptable_message)
-
 
 /* Check item type and compare it with stored_item_type */
 /obj/machinery/trading_machine/proc/is_available_category(obj/item/Itm)
@@ -491,13 +494,13 @@
 
 /obj/machinery/mineral/wasteland_vendor
 	name = "Wasteland Vending Machine"
-	desc = "Wasteland Vending Machine manned by old RobCo trading protectrons. It's a miracle it is still functional."
+	desc = "Wasteland Vending Machine manned by old reprogrammed RobCo trading protectrons."
 	icon = 'icons/WVM/machines.dmi'
 	icon_state = "weapon_idle"
 
 	density = TRUE
 	use_power = FALSE
-	resistance_flags = INDESTRUCTIBLE
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	can_be_unanchored = FALSE
 	layer = 2.9
 
@@ -511,10 +514,10 @@
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Syringe",						/obj/item/reagent_containers/syringe,								10),
 		new /datum/data/wasteland_equipment("Empty pillbottle",				/obj/item/storage/pill_bottle,										15),
-		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								25),
-		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							40),
-		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				120),
-		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								800)
+		new /datum/data/wasteland_equipment("Rad-X pill",					/obj/item/reagent_containers/pill/radx,								20),
+		new /datum/data/wasteland_equipment("RadAway",						/obj/item/reagent_containers/blood/radaway,							30),
+		new /datum/data/wasteland_equipment("Stimpak",						/obj/item/reagent_containers/hypospray/medipen/stimpak,				100),
+		new /datum/data/wasteland_equipment("Chemistry for Wastelanders",	/obj/item/book/granter/trait/chemistry,								600)
 		)
 	
 /obj/machinery/mineral/wasteland_vendor/weapons
@@ -535,11 +538,11 @@
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
 		new /datum/data/wasteland_equipment("9mm pistol magazine (9mm)",	/obj/item/ammo_box/magazine/m9mm,									50),
-		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv,								70),
-		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											80),
-		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												80),
-		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												80),
-		new /datum/data/wasteland_equipment("Small 5.56 magazine (5.56mm)",	/obj/item/ammo_box/magazine/r10,									120)
+		new /datum/data/wasteland_equipment("10mm pistol magazine (10mm)",	/obj/item/ammo_box/magazine/m10mm_adv,								60),
+		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
+		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												70),
+		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												70),
+		new /datum/data/wasteland_equipment("Small 5.56 magazine (5.56mm)",	/obj/item/ammo_box/magazine/r10,									100)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
@@ -549,9 +552,9 @@
 		new /datum/data/wasteland_equipment("Worn outft",						/obj/item/clothing/under/f13/worn,								15),
 		new /datum/data/wasteland_equipment("Settler outfit",					/obj/item/clothing/under/f13/settler,							30),
 		new /datum/data/wasteland_equipment("Merchant outfit",					/obj/item/clothing/under/f13/merchant,							40),
-		new /datum/data/wasteland_equipment("Followers outfit",					/obj/item/clothing/under/f13/followers,							100),
-		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							300),
-		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							800)
+		new /datum/data/wasteland_equipment("Followers outfit",					/obj/item/clothing/under/f13/followers,							80),
+		new /datum/data/wasteland_equipment("Combat uniform",					/obj/item/clothing/under/f13/combat,							250),
+		new /datum/data/wasteland_equipment("Ranger's Guide to the Wasteland",	/obj/item/book/granter/trait/trekking,							600)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/general
@@ -559,20 +562,20 @@
 	icon_state = "generic_idle"
 	prize_list = list(
 		new /datum/data/wasteland_equipment("Drinking glass",				/obj/item/reagent_containers/food/drinks/drinkingglass,				5),
-		new /datum/data/wasteland_equipment("Zippo",						/obj/item/lighter,													25),
-		new /datum/data/wasteland_equipment("Explorer satchel",				/obj/item/storage/backpack/satchel/explorer,						30),
-		new /datum/data/wasteland_equipment("Spray bottle",					/obj/item/reagent_containers/spray,									40),
-		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				50)
+		new /datum/data/wasteland_equipment("Zippo",						/obj/item/lighter,													20),
+		new /datum/data/wasteland_equipment("Explorer satchel",				/obj/item/storage/backpack/satchel/explorer,						25),
+		new /datum/data/wasteland_equipment("Spray bottle",					/obj/item/reagent_containers/spray,									35),
+		new /datum/data/wasteland_equipment("Bottle of E-Z-Nutrient",		/obj/item/reagent_containers/glass/bottle/nutrient/ez,				40)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/special
 	name = "Wasteland Vending Machine - Special"
 	icon_state = "liberationstation_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Random manual",					/obj/item/book/manual/random,									50),
-		new /datum/data/wasteland_equipment("Box of ingredients - American",	/obj/item/storage/box/ingredients/american,						100),
-		new /datum/data/wasteland_equipment("Music box",						/obj/item/holodisk/musicbox,									500),
-		new /datum/data/wasteland_equipment("???",								/obj/item/toy/syndicateballoon,									5000)
+		new /datum/data/wasteland_equipment("Random manual",					/obj/item/book/manual/random,									40),
+		new /datum/data/wasteland_equipment("Box of ingredients - American",	/obj/item/storage/box/ingredients/american,						80),
+		new /datum/data/wasteland_equipment("Music box",						/obj/item/holodisk/musicbox,									400),
+		new /datum/data/wasteland_equipment("???",								/obj/item/toy/syndicateballoon,									3000)
 		)
 
 /datum/data/wasteland_equipment
@@ -626,6 +629,7 @@
 			to_chat(usr, "<span class='warning'>Error: Insufficent bottle caps value for [prize.equipment_name]!</span>")
 		else
 			stored_caps -= prize.cost
+			GLOB.VendorCash += prize.cost
 			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
 			new prize.equipment_path(src.loc)
 			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
