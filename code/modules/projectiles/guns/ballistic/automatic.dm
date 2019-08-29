@@ -575,7 +575,7 @@
 	fire_delay = 8
 	extra_damage = 30
 	mag_type = /obj/item/ammo_box/magazine/automatic/r10
-
+//putting this comment in to reset ci.
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
 	desc = "A modified Varmint Rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
