@@ -128,6 +128,10 @@
 	port_id = "bunker"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/northbunker
+	port_id = "northbunker"
+	can_be_bought = FALSE
+
 // Shuttles start here:
 
 /datum/map_template/shuttle/emergency/airless
@@ -494,6 +498,10 @@
 /datum/map_template/shuttle/bunker/elevator
 	suffix = "elevator"
 	name = "Bunker Elevator"
+
+/datum/map_template/shuttle/northbunker/elevator
+	suffix = "elevator"
+	name = "North Bunker Elevator"
 
 /datum/map_template/shuttle/emergency/pahrump
 	suffix = "pahrump"
