@@ -91,6 +91,7 @@ Raider
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = "Wastelander"
+	social_faction = "Raiders"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "no one"
@@ -110,7 +111,6 @@ Raider
 	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-
 
 /datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -168,6 +168,12 @@ Raider
 		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
 		/obj/item/gun/ballistic/revolver/single_shotgun)
 
+/datum/outfit/job/wasteland/f13raider/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	H.verbs |= /mob/living/proc/creategang
 
 /*
 Pusher

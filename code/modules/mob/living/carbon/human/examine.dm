@@ -352,6 +352,12 @@
 		msg += "<span class='info'><b>Traits:</b> [traitstring]</span><br>"
 	msg += "*---------*</span>"
 
+	if(social_faction && !skipface)
+		if(social_faction == "Raiders")
+			msg += "\n<font size=3>[t_He] [t_is] a <span class='warning'>Raider</span>!</font>"
+		else
+			msg += "\n<font size=3>[t_He] [t_is] a member of the <span class='warning'>[social_faction]</span> gang!</font>"
+
 	to_chat(user, msg)
 	return msg
 
