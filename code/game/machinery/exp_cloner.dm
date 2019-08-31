@@ -9,7 +9,7 @@
 	internal_radio = FALSE
 
 //Start growing a human clone in the pod!
-/obj/machinery/clonepod/experimental/growclone(ckey, clonename, ui, se, datum/species/mrace, list/features, factions)
+/obj/machinery/clonepod/experimental/growclone(ckey, clonename, ui, se, datum/species/mrace, list/features, factions, social_faction)
 	if(panel_open)
 		return FALSE
 	if(mess || attempting)
@@ -48,6 +48,7 @@
 	H.add_trait(TRAIT_NOBREATH, "cloning")
 	H.add_trait(TRAIT_NOCRITDAMAGE, "cloning")
 	H.faction |= factions
+	H.social_faction = social_faction
 	H.Unconscious(80)
 
 	RegisterSignal(src, COMSIG_NOTIFY_JOIN, .proc/join_as_defective_clone)
@@ -327,6 +328,6 @@
 		temp = "<font class='bad'>Cloning cycle already in progress.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 	else
-		pod.growclone(null, mob_occupant.real_name, dna.uni_identity, dna.struc_enzymes, clone_species, dna.features, mob_occupant.faction)
+		pod.growclone(null, mob_occupant.real_name, dna.uni_identity, dna.struc_enzymes, clone_species, dna.features, mob_occupant.faction, mob_occupant.social_faction)
 		temp = "[mob_occupant.real_name] => <font class='good'>Cloning data sent to pod.</font>"
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
