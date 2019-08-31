@@ -94,8 +94,8 @@ Raider
 	social_faction = "Raiders"
 	total_positions = -1
 	spawn_positions = -1
-	description = "As a Raider, everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
-	supervisors = "no one"
+	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
+	supervisors = "your desires"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13raider

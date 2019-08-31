@@ -352,7 +352,7 @@
 		msg += "<span class='info'><b>Traits:</b> [traitstring]</span><br>"
 	msg += "*---------*</span>"
 
-	if((social_faction && (!skipface || user.social_faction)) || isobserver(user))
+	if(social_faction && ((!skipface || user.social_faction) || isobserver(user)))
 		var/datum/gang/G = gang
 		var/datum/gang/UserGang = user.gang
 		if(social_faction == "Raiders")
