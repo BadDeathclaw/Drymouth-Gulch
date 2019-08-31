@@ -353,8 +353,11 @@
 	msg += "*---------*</span>"
 
 	if(social_faction && !skipface)
+		var/datum/gang/G = gang
 		if(social_faction == "Raiders")
 			msg += "\n<font size=3>[t_He] [t_is] a <span class='warning'>Raider</span>!</font>"
+		else if(G && G.leader == src)
+			msg += "\n<font size=3>[t_He] [t_is] a leader of the <span class='warning'>[social_faction]</span> gang!</font>"
 		else
 			msg += "\n<font size=3>[t_He] [t_is] a member of the <span class='warning'>[social_faction]</span> gang!</font>"
 
