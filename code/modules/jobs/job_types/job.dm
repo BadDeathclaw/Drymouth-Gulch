@@ -19,6 +19,9 @@
 	//Players will be allowed to spawn in as jobs that are set to "Station"
 	var/faction = "None"
 
+	//Special faction system
+	var/social_faction = null
+
 	//How many players can be this job
 	var/total_positions = 0
 
@@ -117,6 +120,9 @@
 			H.faction |= faction
 		else
 			H.faction += faction
+
+	if(social_faction)
+		H.social_faction = social_faction
 
 /datum/job/proc/get_access()
 	if(!config)	//Needed for robots.
