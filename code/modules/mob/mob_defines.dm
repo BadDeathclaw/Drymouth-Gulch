@@ -77,6 +77,8 @@
 
 	var/social_faction = null //A social faction a mob is in, for special actions
 
+	var/gang = null // A gang a mob is in
+
 	var/move_on_shuttle = 1 // Can move on the shuttle.
 
 //The last mob/living/carbon to push/drag/grab this mob (mostly used by slimes friend recognition)
