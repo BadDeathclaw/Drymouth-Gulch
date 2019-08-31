@@ -121,7 +121,7 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 	G.remove_member(src)
 
 /mob/living/proc/assumeleader()
-	set name = "Assume leadership"
+	set name = "Assume Leadership"
 	set category = "Gang"
 
 	var/datum/gang/G = gang
@@ -134,6 +134,9 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 			G.remove_leader(L)
 			G.add_leader(src)
 			to_chat(src, "<span class='notice'>You have become a new leader of [G.name] gang!</span>")
+	else if(G)
+		G.add_leader(src)
+		to_chat(src, "<span class='notice'>You have become a new leader of [G.name] gang!</span>")
 
 /mob/living/proc/transferleader()
 	set name = "Transfer Leadership"
