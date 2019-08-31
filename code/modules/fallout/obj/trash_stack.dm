@@ -71,7 +71,7 @@
 		/obj/item/ammo_box/magazine/m10mm_adv, /obj/item/ammo_box/magazine/m10mm_auto,
 		/obj/item/crafting/lunchbox, /obj/item/gun/ballistic/automatic/pistol/ninemil,
 		/obj/item/ammo_box/magazine/m9mm, /obj/item/gun/ballistic/revolver/colt6250,
-		/obj/item/ammo_box/magazine/r20, /obj/item/ammo_box/magazine/greasegun,
+		/obj/item/ammo_box/magazine/automatic/, /obj/item/ammo_box/magazine/greasegun,
 		/obj/item/ammo_box/m44,/obj/item/ammo_box/magazine/m45,
 		/obj/item/reagent_containers/pill/patch/healingpowder, /obj/item/ammo_box/a762,
 		/obj/item/ammo_box/a308, /obj/item/ammo_box/a762/doublestacked,

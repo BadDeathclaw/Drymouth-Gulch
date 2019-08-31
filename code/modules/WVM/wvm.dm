@@ -539,7 +539,7 @@
 		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											80),
 		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												80),
 		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												80),
-		new /datum/data/wasteland_equipment("Small 5.56 magazine (5.56mm)",	/obj/item/ammo_box/magazine/r10,									120)
+		new /datum/data/wasteland_equipment("Small 5.56 magazine (5.56mm)",	/obj/item/ammo_box/magazine/automatic/r10,									120)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing
