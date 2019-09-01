@@ -342,7 +342,7 @@
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 5
+	extra_damage = 25
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
@@ -553,7 +553,7 @@
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	fire_delay = 3
 	extra_damage = 25
-	extra_penetration = 5
+	extra_penetration = 10
 	mag_type = /obj/item/ammo_box/magazine/automatic/
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
@@ -562,7 +562,7 @@
 	name = "R82 heavy service rifle"
 	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
 	fire_delay = 3
-	extra_damage = 35
+	extra_damage = 25
 	extra_penetration = 10
 	icon_state = "R82"
 	item_state = "R82"
@@ -700,7 +700,8 @@
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 7.5
+	extra_damage = 25
+	extra_penetration = 5
 	
 /obj/item/gun/ballistic/automatic/lmg/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -718,7 +719,7 @@
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 50
+			spread = 40
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
