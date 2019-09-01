@@ -199,6 +199,13 @@ update_label("John Doe", "Clowny")
 	name = "Mayor's identification card"
 	desc = "A golden identification card reserved for the Mayor of Kebob."
 
+/obj/item/card/id/dendoctor
+	name = "doctor's name badge"
+	desc = "A plastic-sealed name badge certifying the medical expertise of its holder."
+	icon_state = "doctor"
+	item_state = "card-doctor"
+	id_type = "name badge"
+
 /obj/item/card/id/syndicate
 	name = "agent card"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)

@@ -33,6 +33,7 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 	new_leader.verbs |= /mob/living/proc/removemember
 	new_leader.verbs |= /mob/living/proc/transferleader
 	new_leader.verbs |= /mob/living/proc/leavegang
+	to_chat(new_leader, "<span class='notice'>You have becomed a new leader of the [src.name] gang! You can now invite and remove members at will.</span>")
 
 /datum/gang/proc/remove_leader(mob/living/old_leader)
 	leader = null
@@ -95,7 +96,7 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 		return
 	GLOB.gang_names |= input
 	social_faction = input
-	to_chat(src, "<span class='notice'>You have become a leader of the [social_faction] gang!</span>")
+	to_chat(src, "<span class='notice'>You have created [social_faction] gang!</span>")
 
 	var/datum/gang/G = new()
 	G.name = input
@@ -133,10 +134,8 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 		else
 			G.remove_leader(L)
 			G.add_leader(src)
-			to_chat(src, "<span class='notice'>You have become a new leader of [G.name] gang!</span>")
 	else if(G)
 		G.add_leader(src)
-		to_chat(src, "<span class='notice'>You have become a new leader of [G.name] gang!</span>")
 
 /mob/living/proc/transferleader()
 	set name = "Transfer Leadership"
