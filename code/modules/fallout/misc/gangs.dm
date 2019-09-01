@@ -69,7 +69,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 /mob/living/proc/invitegang()
 	set name = "Invite To Gang"
-	set desc = "Invite others to your gang. Only independent raiders can join!"
+	set desc = "Invite others to your gang. Only independent raiders in view can be offered to join!"
 	set category = "Gang"
 
 	var/list/possible_targets = list()
@@ -145,6 +145,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 /mob/living/proc/assumeleader()
 	set name = "Assume Leadership"
+	set desc = "Become a new gang leader if the old one is missing or dead."
 	set category = "Gang"
 
 	var/datum/gang/G = gang
@@ -161,6 +162,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 /mob/living/proc/transferleader()
 	set name = "Transfer Leadership"
+	set desc = "Transfer your leader position to a different gang member in view."
 	set category = "Gang"
 
 	var/list/possible_targets = list()
@@ -188,6 +190,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 /mob/living/proc/removemember()
 	set name = "Remove Member"
+	set desc = "Remove member from the gang in view."
 	set category = "Gang"
 
 	var/list/possible_targets = list()
