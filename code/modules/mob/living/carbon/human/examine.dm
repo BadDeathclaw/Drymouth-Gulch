@@ -363,9 +363,9 @@
 			else
 				msg += "\n<span class='nicegreen'><font size=3>[t_He] [t_is] a <span class='bold'>member</span> of your gang!</span></font>"
 		else if(G && G.leader == src)
-			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>leader</span> of the <span class='bold'>[social_faction]</span> gang!</span></font>"
+			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang leader</span> of the <span class='bold'>[social_faction]</span>!</span></font>"
 		else
-			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>member</span> of the <span class='bold'>[social_faction]</span> gang!</span></font>"
+			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang member</span> of the <span class='bold'>[social_faction]</span>!</span></font>"
 
 	to_chat(user, msg)
 	return msg
