@@ -8,7 +8,8 @@
 /datum/outfit/job/ncr/
 	name = "NCRdatums"
 	jobtype = /datum/job/ncr/
-	backpack = /obj/item/storage/backpack/explorer
+	backpack = /obj/item/storage/backpack/trekker
+	satchel = /obj/item/storage/backpack/satchel/trekker
 	ears = 			/obj/item/radio/headset/headset_ncr
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	gloves =        /obj/item/clothing/gloves/f13/ncr
@@ -160,7 +161,7 @@ Medic
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =     /obj/item/clothing/accessory/ncr/LT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
-	head = 			/obj/item/clothing/head/beret/ncr
+	head = 			/obj/item/clothing/head/f13/ncr/medic
 	glasses = 		/obj/item/clothing/glasses/hud/health
 	gloves = null
 	suit_store =    /obj/item/healthanalyzer
@@ -244,7 +245,7 @@ Engineer
 	id = 			/obj/item/card/id/dogtag/ncrsergeant
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	head = 			/obj/item/clothing/head/hardhat/orange
+	head = 			/obj/item/clothing/head/hardhat/ncr
 	glasses = 		/obj/item/clothing/glasses/welding
 	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
