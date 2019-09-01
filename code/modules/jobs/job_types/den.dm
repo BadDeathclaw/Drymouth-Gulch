@@ -383,7 +383,7 @@ Doctor
 	backpack = 		/obj/item/storage/backpack/satchel/explorer
 	satchel =       /obj/item/storage/backpack/satchel/explorer
 	shoes =         /obj/item/clothing/shoes/sneakers/white
-	id = null
+	id = /obj/item/card/id/dendoctor
 	l_pocket =      /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
