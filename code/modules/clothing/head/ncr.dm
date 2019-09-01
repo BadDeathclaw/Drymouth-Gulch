@@ -2,9 +2,15 @@
 	name = "NCR patrol helmet"
 	desc = "A standard issue NCR Infantry helmet."
 	icon_state = "ncr_infantry_helmet"
-	item_state = "ncr__infantry_helmet"
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	item_state = "ncr_infantry_helmet"
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 50
+
+/obj/item/clothing/head/f13/ncr/medic
+	name = "NCR medical helmet"
+	desc = "A standard issue NCR Infantry helmet, colored to suit a medical officer."
+	icon_state = "ncr_medical_helmet"
+	item_state = "ncr_medical_helmet"
 
 /obj/item/clothing/head/f13/ncr/goggles
 	name = "NCR storm helmet"
@@ -20,6 +26,17 @@
 	flags_cover = HEADCOVERSEYES
 	visor_flags_cover = HEADCOVERSEYES
 	dog_fashion = null
+
+/obj/item/clothing/head/hardhat/ncr
+	name = "NCR engineer helmet"
+	desc = "A standard issue NCR Infantry helmet, modified with a head lamp for engineers."
+	icon_state = "hardhat0_ncr"
+	item_state = "hardhat0_ncr"
+	item_color = "ncr"
+	flags_inv = HIDEEARS
+	dog_fashion = null
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	strip_delay = 50
 
 /obj/item/clothing/head/f13/ncr/goggles/attack_self(mob/user)
 	if(can_toggle && !user.incapacitated())
@@ -61,4 +78,4 @@
 	desc = "An NCR ranger hat, standard issue amongst all but the most elite rangers."
 	icon_state = "drill_hat"
 	item_state = "drillhat"
-	armor = list("melee" = 40, "bullet" = 35, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)

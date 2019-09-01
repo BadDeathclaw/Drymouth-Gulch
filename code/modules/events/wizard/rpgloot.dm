@@ -71,11 +71,7 @@
 
 /datum/rpg_loot/New(attached_item=null)
 	attached = attached_item
-
 	randomise()
-
-/datum/rpg_loot/Destroy()
-	attached = null
 
 /datum/rpg_loot/proc/randomise()
 	var/static/list/prefixespositive = list("greater", "major", "blessed", "superior", "enpowered", "honed", "true", "glorious", "robust")

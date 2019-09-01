@@ -4,7 +4,7 @@
 	var/open_space = 0
 //	var/list/ambientmusic = list('sound/misc/null.ogg')
 //	var/ambience_area =  list('sound/f13ambience/wasteland.ogg')
-	ambientsounds = list()
+	ambientsounds = list('sound/misc/null.ogg')
 	var/environment = -1
 	var/grow_chance = 100
 

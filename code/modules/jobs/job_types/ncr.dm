@@ -8,7 +8,8 @@
 /datum/outfit/job/ncr/
 	name = "NCRdatums"
 	jobtype = /datum/job/ncr/
-	backpack = /obj/item/storage/backpack/explorer
+	backpack = /obj/item/storage/backpack/trekker
+	satchel = /obj/item/storage/backpack/satchel/trekker
 	ears = 			/obj/item/radio/headset/headset_ncr
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	gloves =        /obj/item/clothing/gloves/f13/ncr
@@ -43,7 +44,7 @@ Colonel
 	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
-		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/ammo_box/magazine/automatic=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
@@ -160,7 +161,7 @@ Medic
 	uniform =  		/obj/item/clothing/under/f13/ncr/officer
 	accessory =     /obj/item/clothing/accessory/ncr/LT
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
-	head = 			/obj/item/clothing/head/beret/ncr
+	head = 			/obj/item/clothing/head/f13/ncr/medic
 	glasses = 		/obj/item/clothing/glasses/hud/health
 	gloves = null
 	suit_store =    /obj/item/healthanalyzer
@@ -244,7 +245,7 @@ Engineer
 	id = 			/obj/item/card/id/dogtag/ncrsergeant
 	accessory =     /obj/item/clothing/accessory/ncr/SGT
 	suit =          /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
-	head = 			/obj/item/clothing/head/hardhat/orange
+	head = 			/obj/item/clothing/head/hardhat/ncr
 	glasses = 		/obj/item/clothing/glasses/welding
 	gloves =		/obj/item/clothing/gloves/color/yellow
 	belt =          /obj/item/storage/belt/utility/full/engi
@@ -289,9 +290,9 @@ Corporal
 	head = 			/obj/item/clothing/head/f13/ncr/goggles
 	glasses = 		null
 	belt =          /obj/item/storage/belt/military/NCR_Bandolier
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/ammo_box/magazine/automatic/r30=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -334,7 +335,7 @@ Trooper
 	glasses = 		null
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/ammo_box/magazine/automatic=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -373,7 +374,7 @@ Recruit
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/r10=2, \
+		/obj/item/ammo_box/magazine/automatic/r10=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -414,9 +415,9 @@ Heavy Trooper
 	gloves =        /obj/item/clothing/gloves/combat
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	shoes =         /obj/item/clothing/shoes/combat/swat
-	suit_store = 	/obj/item/gun/ballistic/shotgun/riot
+	suit_store = 	/obj/item/gun/ballistic/automatic/lmg
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot, \
+		/obj/item/ammo_box/magazine/lmg, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/kitchen/knife/combat=1, \

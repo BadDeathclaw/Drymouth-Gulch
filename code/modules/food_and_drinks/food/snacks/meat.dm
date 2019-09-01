@@ -235,6 +235,21 @@
 	list_reagents = list("nutriment" = 3, "vitamin" = 3)
 	tastes = list("meat" = 3)
 
+/obj/item/reagent_containers/food/snacks/meat/slab/human/centaur
+	name = "centaur meat"
+	icon_state = "flymeat"
+	desc = "Absolutely disgusting"
+	list_reagents = list("nutriment" = 3, "uranium" = 3, "bad_food" = 4, "FEV_solution" = 6)
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/centaur
+	slice_path = null
+
+/obj/item/reagent_containers/food/snacks/meat/steak/centaur
+	name = "centaur steak"
+	desc = "No matter how much you cook, it doesn't seem safe to eat."
+	list_reagents = list("nutriment" = 4)
+	bonus_reagents = list("uranium" = 3, "FEV_solution" = 6)
+
 
 ////////////////////////////////////// OTHER MEATS ////////////////////////////////////////////////////////
 

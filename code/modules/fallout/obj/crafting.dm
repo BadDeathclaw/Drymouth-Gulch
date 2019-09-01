@@ -154,3 +154,4 @@
 	name = "lunch box"
 	desc = "This was a promotional item created by Vault-Tec before the Great War and used in the company's advertisements. With the right schematics, it can be used to make bottlecap mines."
 	icon_state = "lunchbox"
+	tool_behaviour = TOOL_LUNCHBOX

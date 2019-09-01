@@ -16,7 +16,7 @@
 	end_duration = 100
 	end_message = "<span class='notice'>The air seems to be cooling off again.</span>"
 
-	area_type = list(/area/f13/wasteland, /area/f13/forest, /area/f13/ruins, /area/f13/farm, /area/f13/radiation_outside)
+	area_type = /area/f13/wasteland
 	protected_areas = list(/area/maintenance, /area/ai_monitored/turret_protected/ai_upload, /area/ai_monitored/turret_protected/ai_upload_foyer,
 	/area/ai_monitored/turret_protected/ai, /area/storage/emergency/starboard, /area/storage/emergency/port, /area/shuttle)
 	target_trait = ZTRAIT_STATION
@@ -26,7 +26,6 @@
 /datum/weather/rad_storm/telegraph()
 	..()
 	status_alarm(TRUE)
-
 
 /datum/weather/rad_storm/weather_act(mob/living/L)
 	var/resist = L.getarmor(null, "rad")
@@ -47,7 +46,7 @@
 /datum/weather/rad_storm/end()
 	if(..())
 		return
-	priority_announce("The radiation threat has passed. Please return to your workplaces.", "Anomaly Alert")
+	priority_announce("The radiation threat has passed.", "Anomaly Alert")
 	status_alarm(FALSE)
 
 /datum/weather/rad_storm/proc/status_alarm(active)	//Makes the status displays show the radiation warning for those who missed the announcement.
