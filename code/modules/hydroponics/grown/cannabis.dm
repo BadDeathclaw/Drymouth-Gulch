@@ -52,7 +52,7 @@
 	reagents_add = list("omnizine" = 0.35, "space_drugs" = 0.15, "lipolicide" = 0.15)
 	rarity = 40
 
-
+/*
 /obj/item/seeds/cannabis/ultimate
 	name = "pack of omega weed seeds"
 	desc = "These seeds grow into omega weed."
@@ -77,7 +77,7 @@
 						"histamine" = 0.15,
 						"lipolicide" = 0.15)
 	rarity = 69
-
+*/
 
 // ---------------------------------------------------------------
 
@@ -113,7 +113,7 @@
 	desc = "It feels smooth and nice to the touch."
 	icon_state = "whitecannabis"
 	wine_power = 10
-
+/*
 /obj/item/reagent_containers/food/snacks/grown/cannabis/ultimate
 	seed = /obj/item/seeds/cannabis/ultimate
 	name = "omega cannabis leaf"
@@ -121,3 +121,4 @@
 	icon_state = "ocannabis"
 	volume = 420
 	wine_power = 90
+*/
