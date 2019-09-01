@@ -1087,7 +1087,7 @@
 	illustration = "fruit"
 	var/list/banned = list(/obj/item/seeds/ambrosia/deus, /obj/item/seeds/ambrosia/gaia, /obj/item/seeds/angel, /obj/item/seeds/apple/gold,
 	/obj/item/seeds/berry/death, /obj/item/seeds/berry/glow, /obj/item/seeds/berry/poison, /obj/item/seeds/cabbage, /obj/item/seeds/cannabis/death,
-	/obj/item/seeds/cannabis/rainbow, /obj/item/seeds/cannabis/ultimate, /obj/item/seeds/cannabis/white, /obj/item/seeds/cherry/bomb,
+	/obj/item/seeds/cannabis/rainbow, /obj/item/seeds/cannabis/white, /obj/item/seeds/cherry/bomb,
 	/obj/item/seeds/chili/ice, /obj/item/seeds/corn/snapcorn, /obj/item/seeds/eggplant/eggy, /obj/item/seeds/firelemon, /obj/item/seeds/glowshroom,
 	/obj/item/seeds/glowshroom/glowcap, /obj/item/seeds/glowshroom/shadowshroom,/obj/item/seeds/grass/carpet, /obj/item/seeds/kudzu, /obj/item/seeds/lavaland,
 	/obj/item/seeds/nettle, /obj/item/seeds/nettle/death, /obj/item/seeds/plump/walkingmushroom, /obj/item/seeds/pumpkin/blumpkin, /obj/item/seeds/random,
