@@ -20,6 +20,14 @@ SUBSYSTEM_DEF(weather)
 		var/datum/weather/W = V
 		if(W.aesthetic || W.stage != MAIN_STAGE)
 			continue
+		if(!W.turfs_impacted && W.affects_turfs)
+			W.turfs_impacted = TRUE
+			for(var/i in W.impacted_areas)
+				var/area/A = i
+				for(var/t in A.contents)
+					var/turf/T = t
+					if(W.can_weather_act_turf(T))
+						W.weather_act_turf(T)
 		for(var/i in GLOB.mob_living_list)
 			var/mob/living/L = i
 			if(W.can_weather_act(L))
@@ -55,7 +63,7 @@ SUBSYSTEM_DEF(weather)
 				eligible_zlevels["[z]"][W] = probability
 	return ..()
 
-/datum/controller/subsystem/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels)
+/datum/controller/subsystem/weather/proc/run_weather(datum/weather/weather_datum_type, z_levels, duration)
 	if (istext(weather_datum_type))
 		for (var/V in subtypesof(/datum/weather))
 			var/datum/weather/W = V
@@ -74,7 +82,11 @@ SUBSYSTEM_DEF(weather)
 		CRASH("run_weather called with invalid z_levels: [z_levels || "null"]")
 		return
 
-	var/datum/weather/W = new weather_datum_type(z_levels)
+	if(duration && !isnum(duration))
+		CRASH("run_weather called with invalid duration: [duration || "null"]")
+		return
+
+	var/datum/weather/W = new weather_datum_type(z_levels, duration)
 	W.telegraph()
 
 /datum/controller/subsystem/weather/proc/make_eligible(z, possible_weather)

@@ -1,8 +1,7 @@
-//Acid rain is part of the natural weather cycle in the humid forests of Planetstation, and cause acid damage to anyone unprotected.
 /datum/weather/acid_rain
 	name = "acid rain"
 	desc = "The planet's thunderstorms are by nature acidic, and will incinerate anyone standing beneath them without protection."
-	probability = 1
+	probability = 2
 
 	telegraph_duration = 400
 	telegraph_overlay = "snow_storm"
@@ -27,12 +26,26 @@
 
 	barometer_predictable = TRUE
 
+	affects_turfs = TRUE
+
 /datum/weather/acid_rain/weather_act(mob/living/L)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+		SEND_SIGNAL(H, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
+		H.wash_cream()
 	if(is_acidrain_immune(L))
 		return
 	var/resist = L.getarmor(null, "acid")
-	if(prob(max(0,100-resist)))
+	if(prob(max(0, 100 - resist)))
 		L.acid_act(10, 10)
+
+/datum/weather/acid_rain/weather_act_turf(turf/T)
+	for(var/obj/effect/O in T) //Clean cleanable decals in affected areas
+		if(is_cleanable(O))
+			qdel(O)
+	for(var/obj/item/ammo_casing/C in T) //Clean ammo casings in affected areas
+		qdel(C)
 
 /datum/weather/acid_rain/proc/is_acidrain_immune(atom/L)
 	while (L && !isturf(L))
