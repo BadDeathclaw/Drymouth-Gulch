@@ -15,8 +15,7 @@
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	mutatelist = list(/obj/item/seeds/cannabis/rainbow,
 						/obj/item/seeds/cannabis/death,
-						/obj/item/seeds/cannabis/white,
-						/obj/item/seeds/cannabis/ultimate)
+						/obj/item/seeds/cannabis/white)
 	reagents_add = list("space_drugs" = 0.15, "lipolicide" = 0.35) // gives u the munchies
 
 
