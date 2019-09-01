@@ -881,7 +881,7 @@
 
 /datum/crafting_recipe/throwingknife
 	name = "Throwing Knife"
-	result = /obj/item/throwing_star/spear/harpoon/throwingknife
+	result = /obj/item/throwing_star/throwingknife
 	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_WELDER)
