@@ -3,10 +3,14 @@
 // Names of all created gangs, starting with a default one
 GLOBAL_LIST_INIT(gang_names, list ( \
 "Raiders", \
+"Raider", \
 ))
 
+// List of all existing gangs
+GLOBAL_LIST_EMPTY(all_gangs)
+
 /datum/gang
-	var/name = "team"
+	var/name = "gang"
 	var/description = null
 	var/welcome_text = null //Showing text on faction joining
 	var/leader = null //Leader of this faction
@@ -32,21 +36,27 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 	new_leader.verbs |= /mob/living/proc/invitegang
 	new_leader.verbs |= /mob/living/proc/removemember
 	new_leader.verbs |= /mob/living/proc/transferleader
+	new_leader.verbs |= /mob/living/proc/setwelcome
 	new_leader.verbs |= /mob/living/proc/leavegang
-	to_chat(new_leader, "<span class='notice'>You have becomed a new leader of the [src.name] gang! You can now invite and remove members at will.</span>")
+	to_chat(new_leader, "<span class='notice'>You have become a new leader of the [name] gang! You can now invite and remove members at will.</span>")
 
 /datum/gang/proc/remove_leader(mob/living/old_leader)
 	leader = null
 	old_leader.verbs -= /mob/living/proc/invitegang
 	old_leader.verbs -= /mob/living/proc/removemember
 	old_leader.verbs -= /mob/living/proc/transferleader
+	old_leader.verbs -= /mob/living/proc/setwelcome
 	old_leader.verbs |= /mob/living/proc/assumeleader
+	to_chat(old_leader, "<span class='warning'>You are no longer the leader of the [name]!</span>")
 
 /datum/gang/proc/add_member(mob/living/new_member)
 	members |= new_member
 	new_member.verbs -= /mob/living/proc/creategang
 	new_member.verbs |= /mob/living/proc/leavegang
 	new_member.verbs |= /mob/living/proc/assumeleader
+	to_chat(new_member, "<span class='notice'>You are now a member of [name]! Everyone can recognize your gang membership now.</span>")
+	if(welcome_text)
+		to_chat(new_member, "<span class='notice'>Gang welcome text: </span><span class='purple'>[welcome_text]</span>")
 
 /datum/gang/proc/remove_member(mob/living/member)
 	members -= member
@@ -55,33 +65,43 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 	member.verbs -= /mob/living/proc/leavegang
 	member.verbs -= /mob/living/proc/assumeleader
 	member.verbs |= /mob/living/proc/creategang
+	to_chat(member, "<span class='warning'>You are no longer a member of the [name]!</span>")
 
-/mob/living/proc/invitegang(mob/M in oview())
+/mob/living/proc/invitegang()
 	set name = "Invite To Gang"
+	set desc = "Invite others to your gang. Only independent raiders can join!"
 	set category = "Gang"
 
-	if(!M.mind || !M.client)
-		return
-	if(M.social_faction == social_faction)
-		return
-	if(!M.social_faction)
-		to_chat(src, "They are not tough enough to join [social_faction] gang]." )
-		return
-	else if(M.social_faction != "Raiders")
-		to_chat(src, "They are already in a different gang!" )
-		return
-	if(alert(M, "[src] invites you to the [social_faction] gang.", "Invitation", "Yes", "No") == "No")
-		to_chat(src, "<span class='warning'>[M.name] refused the offer to [social_faction] gang.</span>")
-		return
-	else
-		to_chat(src, "<span class='notice'>[M.name] accepted the offer to join [social_faction] gang.</span>")
+	var/list/possible_targets = list()
+	for(var/mob/living/carbon/target in oview())
+		if(target.stat || !target.mind || !target.client)
+			continue
+		if(target.social_faction == social_faction)
+			continue
+		if(target.social_faction != "Raiders")
+			continue
+		if(target.gang)
+			continue
+		possible_targets += target
 
-	M.social_faction = social_faction
-	to_chat(M, "<span class='notice'>You have joined the [social_faction] gang!</span>")
+	if(!possible_targets.len)
+		return
+
+	var/mob/living/carbon/C
+	C = input("Choose who to invite to your gang!", "Gang invitation") as null|mob in possible_targets
+	if(!C)
+		return
 
 	var/datum/gang/G = gang
-	G.add_member(M)
-	M.gang = G
+	if(alert(C, "[src] invites you to the [G.name].", "Gang invitation", "Yes", "No") == "No")
+		visible_message(C, "<span class='warning'>[C.name] refused the offer to join [G.name]!</span>")
+		return
+	else
+		visible_message(C, "<span class='notice'>[C.name] accepted the offer to join [G.name]!</span>")
+
+	C.social_faction = social_faction
+	G.add_member(C)
+	C.gang = G
 
 /mob/living/proc/creategang()
 	set name = "Create Gang"
@@ -95,15 +115,18 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 		to_chat(src, "<span class='notice'>This gang name is already taken!</span>")
 		return
 	GLOB.gang_names |= input
-	social_faction = input
-	to_chat(src, "<span class='notice'>You have created [social_faction] gang!</span>")
 
 	var/datum/gang/G = new()
 	G.name = input
+	to_chat(src, "<span class='notice'>You have created [G.name]!</span>")
+
 	G.add_member(src)
 	G.add_leader(src)
 
 	gang = G
+	social_faction = G.name
+
+	GLOB.all_gangs |= G
 
 /mob/living/proc/leavegang()
 	set name = "Leave Gang"
@@ -112,11 +135,10 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 	if(!social_faction || social_faction == "Raiders")
 		to_chat(src, "You are already not in any gang!")
 		return
-	if(alert("Are you sure you want to leave [social_faction] gang?", "Leave gang", "Yes", "No") == "No")
-		return
-	to_chat(src, "<span class='warning'>You have left the [social_faction] gang!</span>")
-
 	var/datum/gang/G = gang
+	if(alert("Are you sure you want to leave the [G.name]?", "Leave gang", "Yes", "No") == "No")
+		return
+
 	if(G.leader == src)
 		G.remove_leader(src)
 	G.remove_member(src)
@@ -129,7 +151,7 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 	if(G && G.leader)
 		var/mob/living/L = G.leader
 		if(L.stat != DEAD)
-			to_chat(src, "<span class='warning'>Old leader is still alive!</span>")
+			to_chat(src, "<span class='warning'>Gang leader is still alive!</span>")
 			return
 		else
 			G.remove_leader(L)
@@ -141,29 +163,64 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 	set name = "Transfer Leadership"
 	set category = "Gang"
 
+	var/list/possible_targets = list()
+	for(var/mob/living/carbon/target in oview())
+		if(target.stat || !target.mind || !target.client)
+			continue
+		if(target.gang != gang)
+			continue
+		possible_targets += target
+
+	if(!possible_targets.len)
+		return
+
 	var/datum/gang/G = gang
 	if(G && G.leader == src)
-		var/list/members = G.members
-		var/new_leader = input(src, "Choose a new leader of the [G.name] gang!", "Transfer Leadership") as null|anything in members
+		var/mob/living/carbon/new_leader
+		new_leader = input(src, "Choose a new gang leader of the [G.name]!", "Transfer Leadership") as null|mob in possible_targets
 		if(!new_leader || new_leader == src)
 			return
 		var/mob/living/H = new_leader
-		G.remove_leader(src)
-		G.add_leader(H)
 		to_chat(src, "<span class='notice'>You have transferred leadership of the [G.name] gang to [H.real_name]!</span>")
 		to_chat(H, "<span class='notice'>You have received leadership of the [G.name] gang from [src.real_name]!</span>")
+		G.remove_leader(src)
+		G.add_leader(H)
 
 /mob/living/proc/removemember()
 	set name = "Remove Member"
 	set category = "Gang"
 
+	var/list/possible_targets = list()
+	for(var/mob/living/carbon/target in oview())
+		if(target.gang != gang)
+			continue
+		possible_targets += target
+
+	if(!possible_targets.len)
+		return
+
 	var/datum/gang/G = gang
 	if(G && G.leader == src)
-		var/list/members = G.members
-		var/kicked_member = input(src, "Choose a member to remove from the [G.name] gang!", "Member removal") as null|anything in members
+		var/mob/living/carbon/kicked_member
+		kicked_member = input(src, "Choose a gang member to remove from the [G.name]!", "Gang member removal") as null|mob in possible_targets
 		if(!kicked_member || kicked_member == src)
 			return
+
 		var/mob/living/H = kicked_member
-		G.remove_member(H)
 		to_chat(src, "<span class='notice'>You have removed [H.real_name] from of the [G.name] gang!</span>")
 		to_chat(H, "<span class='warning'>You have been kicked from the [G.name] gang by [src.real_name]!</span>")
+		G.remove_member(H)
+
+/mob/living/proc/setwelcome()
+	set name = "Set Welcome Text"
+	set desc = "Set a welcome text that will show to all new members of the gang upon joining."
+	set category = "Gang"
+
+	var/datum/gang/G = gang
+	var/input = input(src, "Set a welcome text for a new members!", "Gang name", G.welcome_text) as text|null
+	if(!input)
+		return
+	input = copytext(sanitize(input), 1, 200)
+	G.welcome_text = input
+
+	to_chat(src, "<span class='notice'>You have set a welcome text for a new members!</span>")

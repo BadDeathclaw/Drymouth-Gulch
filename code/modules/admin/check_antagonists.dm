@@ -213,3 +213,30 @@
 
 	dat += "</body></html>"
 	usr << browse(dat.Join(), "window=roundstatus;size=500x500")
+
+/datum/admins/proc/check_gangs()
+	if(!SSticker.HasRoundStarted())
+		alert("The game hasn't started yet!")
+		return
+	var/list/dat = list("<html><head><title>Gangs Overview</title></head><body><h1><B>Gangs Overview</B></h1>")
+
+	for(var/datum/gang/G in GLOB.all_gangs)
+		var/mob/living/Leader = G.leader
+		dat += "<BR><b>Name:</b> [G.name]"
+		if(G.welcome_text)
+			dat += "<BR><b>Welcome text:</b> [G.welcome_text]"
+		else
+			dat += "<BR><b>No welcome text set!</b>"
+		if(Leader)
+			dat += "<BR><b>Leader:</b> [Leader.real_name] <b>as</b> [G.leader] <a href='?priv_msg=[ckey(Leader.key)]'>PM</a> <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(Leader)]'>FLW</a>"
+		else
+			dat += "<BR><b>No leader!</b>"
+		if(G.members.len)
+			dat += "<BR><b>Members:</b>"
+				for(var/mob/living/L in G.members)
+					dat += "<BR>[L.real_name] <b>as</b> [L] <a href='?priv_msg=[ckey(L.key)]'>PM</a> <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(L)]'>FLW</a>"
+		else
+			dat += "<BR><b>No members!</b>"
+		dat += "<br>"
+	dat += "</body></html>"
+	usr << browse(dat.Join(), "window=gangstatus;size=500x500")
