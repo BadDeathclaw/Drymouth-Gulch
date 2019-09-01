@@ -1,7 +1,7 @@
 /obj/machinery/computer/camera_advanced/abductor
 	name = "Human Observation Console"
+	networks = list("ss13", "vault", "kebab", "ncr", "bos", "abductor")
 	var/team_number = 0
-	networks = list("ss13", "abductor")
 	var/datum/action/innate/teleport_in/tele_in_action = new
 	var/datum/action/innate/teleport_out/tele_out_action = new
 	var/datum/action/innate/teleport_self/tele_self_action = new
@@ -9,7 +9,6 @@
 	var/datum/action/innate/vest_disguise_swap/vest_disguise_action = new
 	var/datum/action/innate/set_droppoint/set_droppoint_action = new
 	var/obj/machinery/abductor/console/console
-	lock_override = TRUE
 
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "camera"

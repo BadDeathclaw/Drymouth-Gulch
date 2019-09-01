@@ -96,6 +96,10 @@
 	port_id = "assault_pod"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/bosbase
+	port_id = "Brotherhood_of_Steel"
+	can_be_bought = FALSE
+
 /datum/map_template/shuttle/pirate
 	port_id = "pirate"
 	can_be_bought = FALSE
@@ -120,6 +124,14 @@
 	port_id = "bos"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/bunker
+	port_id = "bunker"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/northbunker
+	port_id = "northbunker"
+	can_be_bought = FALSE
+
 // Shuttles start here:
 
 /datum/map_template/shuttle/emergency/airless
@@ -142,7 +154,7 @@
 /datum/map_template/shuttle/emergency/asteroid
 	suffix = "asteroid"
 	name = "Asteroid Station Emergency Shuttle"
-	description = "A respectable mid-sized shuttle that first saw service shuttling Nanotrasen crew to and from their asteroid belt embedded facilities."
+	description = "A respectable mid-sized shuttle that first saw service shuttling Vault-Tec crew to and from their asteroid belt embedded facilities."
 	credit_cost = 3000
 
 /datum/map_template/shuttle/emergency/bar
@@ -177,7 +189,7 @@
 /datum/map_template/shuttle/emergency/discoinferno
 	suffix = "discoinferno"
 	name = "Disco Inferno"
-	description = "The glorious results of centuries of plasma research done by Nanotrasen employees. This is the reason why you are here. Get on and dance like you're on fire, burn baby burn!"
+	description = "The glorious results of centuries of plasma research done by Vault-Tec employees. This is the reason why you are here. Get on and dance like you're on fire, burn baby burn!"
 	admin_notes = "Flaming hot."
 	credit_cost = 10000
 
@@ -287,7 +299,7 @@
 /datum/map_template/shuttle/emergency/goon
 	suffix = "goon"
 	name = "NES Port"
-	description = "The Nanotrasen Emergency Shuttle Port(NES Port for short) is a shuttle used at other less known Nanotrasen facilities and has a more open inside for larger crowds, but fewer onboard shuttle facilities."
+	description = "The Vault-Tec Emergency Shuttle Port is a shuttle used at other less known Vault-Tec facilities and has a more open inside for larger crowds, but fewer onboard shuttle facilities."
 	credit_cost = 500
 
 /datum/map_template/shuttle/emergency/wabbajack
@@ -439,6 +451,10 @@
 	suffix = "default"
 	name = "assault pod (Default)"
 
+/datum/map_template/shuttle/bosbase/base
+	suffix = "base"
+	name = "brotherhood of steel (base)"
+
 /datum/map_template/shuttle/pirate/default
 	suffix = "default"
 	name = "pirate ship (Default)"
@@ -479,6 +495,13 @@
 	suffix = "elevator"
 	name = "BOS Elevator"
 
+/datum/map_template/shuttle/bunker/elevator
+	suffix = "elevator"
+	name = "Bunker Elevator"
+
+/datum/map_template/shuttle/northbunker/elevator
+	suffix = "elevator"
+	name = "North Bunker Elevator"
 
 /datum/map_template/shuttle/emergency/pahrump
 	suffix = "pahrump"

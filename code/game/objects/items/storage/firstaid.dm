@@ -244,7 +244,7 @@
 	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/pill, /obj/item/reagent_containers/syringe, /obj/item/dice))
 
 /obj/item/storage/pill_bottle/chem_tin/mentats
-	name = "tin of mentat pills"
+	name = "Mentats"
 	icon_state = "pill_canister_mentats"
 	desc = "Contains pills used to increase intelligence and perception."
 
@@ -253,7 +253,7 @@
 		new /obj/item/reagent_containers/pill/mentat(src)
 
 /obj/item/storage/pill_bottle/chem_tin/fixer
-	name = "tin of fixer pills"
+	name = "Fixer"
 	icon_state = "pill_canister_fixer"
 	desc = "Contains pills used to treat addiction and overdose on other chems."
 
@@ -262,7 +262,7 @@
 		new /obj/item/reagent_containers/pill/fixer(src)
 
 /obj/item/storage/pill_bottle/chem_tin/radx
-	name = "tin of rad-x pills"
+	name = "Rad-X"
 	icon_state = "pill_canister_radx"
 	desc = "Contains pills used to treat and prevent radiation and minor toxin damage."
 

@@ -138,7 +138,7 @@
 	. = ..()
 	setDir(t)
 
-/obj/item/assembly/infra/throw_at()
+/obj/item/assembly/infra/throw_at(diagonals_first)
 	. = ..()
 	olddir = dir
 
@@ -192,10 +192,11 @@
 
 /obj/item/assembly/infra/Topic(href, href_list)
 	..()
-	if(usr.incapacitated() || !in_range(loc, usr))
+	if(!usr.canUseTopic(src, BE_CLOSE))
 		usr << browse(null, "window=infra")
 		onclose(usr, "infra")
 		return
+
 	if(href_list["state"])
 		on = !(on)
 		update_icon()

@@ -19,6 +19,9 @@
 	//Players will be allowed to spawn in as jobs that are set to "Station"
 	var/faction = "None"
 
+	//Special faction system
+	var/social_faction = null
+
 	//How many players can be this job
 	var/total_positions = 0
 
@@ -117,6 +120,9 @@
 			H.faction |= faction
 		else
 			H.faction += faction
+
+	if(social_faction)
+		H.social_faction = social_faction
 
 /datum/job/proc/get_access()
 	if(!config)	//Needed for robots.
@@ -230,10 +236,12 @@
 
 	var/obj/item/card/id/C = H.wear_id
 	if(istype(C))
-		C.access = J.get_access()
+		if(J)
+			C.access = J.get_access()
 		shuffle_inplace(C.access) // Shuffle access list to make NTNet passkeys less predictable
 		C.registered_name = H.real_name
-		C.assignment = J.title
+		if(J)
+			C.assignment = J.title
 		C.update_label()
 		H.sec_hud_set_ID()
 

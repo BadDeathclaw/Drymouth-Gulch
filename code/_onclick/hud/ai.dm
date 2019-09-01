@@ -47,7 +47,7 @@
 	AI.toggle_camera_light()
 
 /obj/screen/ai/crew_monitor
-	name = "Crew Monitoring Console"
+	name = "Monitoring Console"
 	icon_state = "crew_monitor"
 
 /obj/screen/ai/crew_monitor/Click()
@@ -57,7 +57,7 @@
 	GLOB.crewmonitor.show(AI,AI)
 
 /obj/screen/ai/crew_manifest
-	name = "Crew Manifest"
+	name = "Wasteland Census"
 	icon_state = "manifest"
 
 /obj/screen/ai/crew_manifest/Click()
@@ -107,7 +107,7 @@
 	AI.checklaws()
 
 /obj/screen/ai/pda_msg_send
-	name = "PDA - Send Message"
+	name = "Pip-Boy 3000 - Send Message"
 	icon_state = "pda_send"
 
 /obj/screen/ai/pda_msg_send/Click()
@@ -117,7 +117,7 @@
 	AI.cmd_send_pdamesg(usr)
 
 /obj/screen/ai/pda_msg_show
-	name = "PDA - Show Message Log"
+	name = "Pip-Boy 3000 - Show Message Log"
 	icon_state = "pda_receive"
 
 /obj/screen/ai/pda_msg_show/Click()
@@ -222,7 +222,7 @@
 	using.screen_loc = ui_ai_crew_monitor
 	static_inventory += using
 
-//Crew Manifest
+//Wasteland Census
 	using = new /obj/screen/ai/crew_manifest()
 	using.screen_loc = ui_ai_crew_manifest
 	static_inventory += using
@@ -247,7 +247,7 @@
 	using.screen_loc = ui_ai_state_laws
 	static_inventory += using
 
-//PDA message
+//Pip-Boy 3000 message
 	using = new /obj/screen/ai/pda_msg_send()
 	using.screen_loc = ui_ai_pda_send
 	static_inventory += using

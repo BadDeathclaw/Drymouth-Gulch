@@ -124,7 +124,7 @@
 
 /obj/item/storage/backpack/captain
 	name = "captain's backpack"
-	desc = "It's a special backpack made exclusively for Nanotrasen officers."
+	desc = "It's a special backpack made exclusively for officers."
 	icon_state = "captainpack"
 	item_state = "captainpack"
 
@@ -164,6 +164,12 @@
 	desc = "A backpack made of hypo-allergenic fibers. It's designed to help prevent the spread of disease. Smells like monkey."
 	icon_state = "viropack"
 	item_state = "viropack"
+
+/obj/item/storage/backpack/trekker
+	name = "trekkers pack"
+	desc = "A light and durable pack often seen in use by those prone to wandering the wastes, often alone."
+	icon_state = "trekkerpack"
+	item_state = "trekkerpack"
 
 /obj/item/storage/backpack/spearquiver
 	name = "sturdy quiver"
@@ -260,9 +266,15 @@
 
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
-	desc = "An exclusive satchel for Nanotrasen officers."
+	desc = "An exclusive satchel for Vault-Tec officers."
 	icon_state = "satchel-cap"
 	item_state = "captainpack"
+
+/obj/item/storage/backpack/satchel/trekker
+	name = "trekkers satchel"
+	desc = "A light and durable satchel often seen in use by those prone to wandering the wastes, often alone."
+	icon_state = "satchel-trekker"
+	item_state = "satchel-trekker"
 
 /obj/item/storage/backpack/satchel/flat
 	name = "smuggler's satchel"
@@ -425,7 +437,7 @@
 	STR.silent = TRUE
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman
-	desc = "A large duffel bag for holding extra things. There is a Nanotrasen logo on the back."
+	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel-syndieammo"
 	item_state = "duffel-syndieammo"
 

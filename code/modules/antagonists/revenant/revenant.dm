@@ -143,7 +143,7 @@
 /mob/living/simple_animal/revenant/med_hud_set_status()
 	return //we use no hud
 
-/mob/living/simple_animal/revenant/say(message)
+/mob/living/simple_animal/revenant/say(message, var/list/spans = list(), sanitize, datum/language/language = null, language, ignore_spam)
 	if(!message)
 		return
 	log_talk(src,"[key_name(src)] : [message]",LOGSAY)

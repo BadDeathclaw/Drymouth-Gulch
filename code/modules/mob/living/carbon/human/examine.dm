@@ -125,6 +125,12 @@
 		else
 			msg += "[t_He] has a strange masculine quality to [t_him].\n"
 
+	if(client && client.prefs)
+		if(client.prefs.wasteland_toggles & VERB_CONSENT)
+			msg += "[t_His] player has allowed lewd verbs.\n"
+		else
+			msg += "[t_His] player has not allowed lewd verbs.\n"
+
 	var/appears_dead = 0
 	if(stat == DEAD || (has_trait(TRAIT_FAKEDEATH)))
 		appears_dead = 1
@@ -288,7 +294,7 @@
 				msg += "[t_He] [t_is] barely conscious.\n"
 		if(getorgan(/obj/item/organ/brain))
 			if(!key)
-				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
+				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of the Wasteland must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
 			else if(!client)
 				msg += "[t_He] [t_has] a blank, absent-minded stare and appears completely unresponsive to anything. [t_He] may snap out of it soon.\n"
 
@@ -345,6 +351,21 @@
 	else if(isobserver(user) && traitstring)
 		msg += "<span class='info'><b>Traits:</b> [traitstring]</span><br>"
 	msg += "*---------*</span>"
+
+	if(social_faction && ((!skipface || user.social_faction) || isobserver(user)))
+		var/datum/gang/G = gang
+		var/datum/gang/UserGang = user.gang
+		if(social_faction == "Raiders")
+			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>Raider</span>!</span></font>"
+		else if(G && G == UserGang)
+			if(G.leader == src)
+				msg += "\n<span class='nicegreen'><font size=3>[t_He] [t_is] a <span class='bold'>leader</span> of your gang!</span></font>"
+			else
+				msg += "\n<span class='nicegreen'><font size=3>[t_He] [t_is] a <span class='bold'>member</span> of your gang!</span></font>"
+		else if(G && G.leader == src)
+			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang leader</span> of the <span class='bold'>[social_faction]</span>!</span></font>"
+		else
+			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang member</span> of the <span class='bold'>[social_faction]</span>!</span></font>"
 
 	to_chat(user, msg)
 	return msg

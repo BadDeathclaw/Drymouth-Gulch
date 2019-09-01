@@ -95,8 +95,6 @@
 	return
 
 /turf/open/proc/update_icon()
-	if(!..())
-		return 0
 	update_visuals()
 	if(!broken && !burnt)
 		if( !(icon_state in icons) )

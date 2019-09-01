@@ -21,7 +21,7 @@
 	time = 50
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-	
+
 /datum/crafting_recipe/IED
 	name = "IED"
 	result = /obj/item/grenade/iedcasing
@@ -112,7 +112,7 @@
 /datum/crafting_recipe/c45
 	name = ".45 ammo box"
 	result = /obj/item/ammo_box/c45
-	reqs = list(/obj/item/stack/sheet/metal = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -121,119 +121,119 @@
 
 /datum/crafting_recipe/m44/makeshift
 	name = "Makeshift .44 Magnum ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/a357/makeshift
 	name = "Makeshift .357 Magnum ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/c10mm/makeshift
 	name = "Makeshift 10mm ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/lethalshot/makeshift
 	name = "Makeshift buckshot shotgun box"
-	reqs = list(/obj/item/stack/sheet/metal = 7)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/slugshot/makeshift
 	name = "Makeshift slug shotgun box"
-	reqs = list(/obj/item/stack/sheet/metal = 7)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/beanbag/makeshift
 	name = "Makeshift beanbag shotgun box"
-	reqs = list(/obj/item/stack/sheet/metal = 7)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/rubbershot/makeshift
 	name = "Makeshift rubbershot shotgun box"
-	reqs = list(/obj/item/stack/sheet/metal = 7)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/a556/makeshift
 	name = "Makeshift 5.56mm ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/c9mm/makeshift
 	name = "Makeshift 9mm ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 9)
+	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/c38/makeshift
 	name = "Makeshift 38 ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 9)
+	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/a762/makeshift
 	name = "Makeshift 7.62mm ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/a762lp/makeshift
 	name = "Makeshift 7.62mm lowpower ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 14)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/a308/makeshift
 	name = "Makeshift .308 ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 14)
+	reqs = list(/obj/item/stack/sheet/metal = 18)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/c45/makeshift
 	name = "Makeshift .45 ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/c4570/makeshift
 	name = "Makeshift 45-70 ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 14)
+	reqs = list(/obj/item/stack/sheet/metal = 18)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/a50aebox/makeshift
 	name = "Makeshift 50 AE ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 14)
+	reqs = list(/obj/item/stack/sheet/metal = 18)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
 
 /datum/crafting_recipe/a50mg/makeshift
 	name = "Makeshift 50MG ammo box"
-	reqs = list(/obj/item/stack/sheet/metal = 16)
+	reqs = list(/obj/item/stack/sheet/metal = 20)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
 	time = 30
@@ -241,7 +241,7 @@
 /datum/crafting_recipe/m44
 	name = ".44 Magnum ammo box"
 	result = /obj/item/ammo_box/m44box
-	reqs = list(/obj/item/stack/sheet/metal = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -251,7 +251,7 @@
 /datum/crafting_recipe/a357
 	name = ".357 Magnum ammo box"
 	result = /obj/item/ammo_box/a357box
-	reqs = list(/obj/item/stack/sheet/metal = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -261,7 +261,7 @@
 /datum/crafting_recipe/c4570
 	name = "45-70 ammo box"
 	result = /obj/item/ammo_box/c4570box
-	reqs = list(/obj/item/stack/sheet/metal = 10)
+	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -271,7 +271,7 @@
 /datum/crafting_recipe/a50aebox
 	name = "50 AE ammo box"
 	result = /obj/item/ammo_box/a50AEbox
-	reqs = list(/obj/item/stack/sheet/metal = 10)
+	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -281,7 +281,7 @@
 /datum/crafting_recipe/a50mg
 	name = "50MG ammo box"
 	result = /obj/item/ammo_box/a50MGbox
-	reqs = list(/obj/item/stack/sheet/metal = 12)
+	reqs = list(/obj/item/stack/sheet/metal = 15)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -291,7 +291,7 @@
 /datum/crafting_recipe/c10mm
 	name = "10mm ammo box"
 	result = /obj/item/ammo_box/c10mm
-	reqs = list(/obj/item/stack/sheet/metal = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -301,7 +301,7 @@
 /datum/crafting_recipe/lethalshot
 	name = "buckshot shotgun box"
 	result = /obj/item/storage/box/lethalshot
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -311,7 +311,7 @@
 /datum/crafting_recipe/slugshot
 	name = "slug shotgun box"
 	result = /obj/item/storage/box/slugshot
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -321,7 +321,7 @@
 /datum/crafting_recipe/beanbag
 	name = "beanbag shotgun box"
 	result = /obj/item/storage/box/rubbershot/beanbag
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -331,7 +331,7 @@
 /datum/crafting_recipe/rubbershot
 	name = "rubbershot shotgun box"
 	result = /obj/item/storage/box/rubbershot
-	reqs = list(/obj/item/stack/sheet/metal = 5)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -341,7 +341,7 @@
 /datum/crafting_recipe/a556
 	name = "5.56mm ammo box"
 	result = /obj/item/ammo_box/a556
-	reqs = list(/obj/item/stack/sheet/metal = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -351,7 +351,7 @@
 /datum/crafting_recipe/c9mm
 	name = "9mm ammo box"
 	result = /obj/item/ammo_box/c9mm
-	reqs = list(/obj/item/stack/sheet/metal = 6)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -361,7 +361,7 @@
 /datum/crafting_recipe/c38
 	name = "38 ammo box"
 	result = /obj/item/ammo_box/box38
-	reqs = list(/obj/item/stack/sheet/metal = 6)
+	reqs = list(/obj/item/stack/sheet/metal = 8)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -371,7 +371,7 @@
 /datum/crafting_recipe/a762
 	name = "7.62mm ammo box"
 	result = /obj/item/ammo_box/a762box
-	reqs = list(/obj/item/stack/sheet/metal = 8)
+	reqs = list(/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
 	time = 10
@@ -391,9 +391,19 @@
 /datum/crafting_recipe/a308
 	name = ".308 ammo box"
 	result = /obj/item/ammo_box/a308box
-	reqs = list(/obj/item/stack/sheet/metal = 10)
+	reqs = list(/obj/item/stack/sheet/metal = 12)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_RELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
+/datum/crafting_recipe/m38belt
+	name = "M38 ammo belt"
+	result = /obj/item/ammo_box/magazine/mm195x129/m38/
+	reqs = list(/obj/item/stack/sheet/metal = 20)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
 	time = 10
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -418,7 +428,7 @@
 	time = 50
 	category= CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
+/*
 /datum/crafting_recipe/kittyears
 	name = "Kitty Ears"
 	result = /obj/item/clothing/head/kitty/genuine
@@ -426,6 +436,7 @@
 	reqs = list(/obj/item/organ/tail/cat = 1,
 				/obj/item/organ/ears/cat = 1)
 	category = CAT_MISC
+*/
 /*
 /datum/crafting_recipe/skateboard
 	name = "Skateboard"
@@ -574,6 +585,24 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
+/datum/crafting_recipe/viperspear
+	name = "Viper Spear"
+	result = /obj/item/twohanded/bonespear/venom
+	time = 45
+	reqs = list(/obj/item/twohanded/bonespear = 1,
+				/obj/item/viper_venom = 1)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
+/datum/crafting_recipe/viperrecycle //an empty viper spear can already be used to make new bone spears, but I still like this idea
+	name = "Recycled Viper Spear"
+	result = /obj/item/twohanded/bonespear
+	time = 25
+	reqs = list(/obj/item/twohanded/bonespear/venom = 1,
+				/obj/item/stack/sheet/bone = 2)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
 /datum/crafting_recipe/boneaxe
 	name = "Bone Axe"
 	result = /obj/item/twohanded/fireaxe/boneaxe
@@ -632,14 +661,14 @@
 	result = /obj/structure/headpike
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-	
+
 /datum/crafting_recipe/goliathcloak
 	name = "deathclaw cloak"
 	result = /obj/item/clothing/suit/hooded/cloak/goliath
 	time = 50
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/sinew = 2,
-				/obj/item/stack/sheet/animalhide/deathclaw = 4) 
+				/obj/item/stack/sheet/animalhide/deathclaw = 4)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
@@ -678,7 +707,7 @@
 		        /obj/item/stack/cable_coil = 10)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
 	category = CAT_MISC
-	
+
 /datum/crafting_recipe/spooky_camera
 	name = "Camera Obscura"
 	result = /obj/item/camera/spooky
@@ -688,11 +717,28 @@
 	parts = list(/obj/item/camera = 1)
 	category = CAT_MISC
 
+//drugs
 /datum/crafting_recipe/jet
 	name = "Jet"
 	result = /obj/item/reagent_containers/pill/patch/jet
 	time = 20
-	reqs = list(/datum/reagent/consumable/milk = 25, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
+	reqs = list(/datum/reagent/consumable/milk = 10, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
+	category = CAT_DRUGS
+
+/datum/crafting_recipe/psycho
+	name = "Psycho"
+	result = /obj/item/reagent_containers/hypospray/medipen/psycho
+	time = 20
+	reqs = list(/obj/item/reagent_containers/syringe = 1, /obj/item/reagent_containers/food/snacks/grown/feracactus = 2, /obj/item/reagent_containers/food/snacks/grown/fungus = 2, /datum/reagent/consumable/nuka_cola = 10)
+	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
+	category = CAT_DRUGS
+
+/datum/crafting_recipe/medx
+	name = "med-x"
+	result = /obj/item/reagent_containers/syringe/medx
+	time = 20
+	reqs = list(/obj/item/reagent_containers/syringe = 1, /obj/item/reagent_containers/food/snacks/grown/feracactus = 2, /obj/structure/flora/wasteplant/wild_agave = 1, /datum/reagent/consumable/ethanol/whiskey = 10)
+	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
 	category = CAT_DRUGS
 
 
@@ -700,6 +746,20 @@
 	name = "Cut clothing into rags"
 	result = /obj/item/stack/sheet/cloth/three
 	reqs = list(/obj/item/clothing/under = 1)
+	time = 20
+	category = CAT_MISC
+
+/datum/crafting_recipe/blindfold
+	name = "Blindfold"
+	result = /obj/item/clothing/glasses/sunglasses/blindfold
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	time = 20
+	category = CAT_MISC
+
+/datum/crafting_recipe/muzzle
+	name = "muzzle"
+	result = /obj/item/clothing/mask/muzzle
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
 	time = 20
 	category = CAT_MISC
 
@@ -724,9 +784,10 @@
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
-	reqs = list(/datum/reagent/blood = 10,
-				/obj/item/crafting/turpentine = 1,
-				/obj/item/stack/sheet/metal = 1)
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
+				/obj/item/reagent_containers/syringe = 1)
+	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
 	time = 50
 	category = CAT_MEDICAL
 
@@ -735,11 +796,9 @@
 	name = "Super Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-				/obj/item/stack/sheet/leather = 1,
-				/obj/item/crafting/turpentine = 1,
-				/datum/reagent/blood = 5,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
-				/obj/item/stack/sheet/metal = 1)
+				/obj/item/stack/sheet/leather = 2,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
+	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
 	time = 80
 	category = CAT_MEDICAL
 
@@ -759,6 +818,15 @@
 				/obj/item/reagent_containers/glass/rag = 1)
 	time = 30
 	category = CAT_MISC
+
+/datum/crafting_recipe/reversebeartrap
+	name = "Reverse Bear Trap"
+	result = /obj/item/reverse_bear_trap
+	reqs = list(/obj/item/stack/sheet/metal = 4,
+				/obj/item/crafting/timer = 1)
+	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH)
+	time = 60
+	category = CAT_ASSEM
 
 /datum/crafting_recipe/whip
 	name = "Leather whip"
@@ -840,7 +908,7 @@
 	reqs = list(/obj/item/stack/sheet/glass = 1,
 				/obj/item/stack/sheet/metal = 1,
 				/obj/item/assembly/infra = 1,
-				/obj/item/assembly/health)
+				/obj/item/assembly/health = 1)
 	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER)
 	time = 10
 	category = CAT_MEDICAL
@@ -879,5 +947,13 @@
 	time = 30
 	category = CAT_MEDICAL
 
-
+/datum/crafting_recipe/spray
+	name = "Abraxo Cleaner"
+	result = /obj/item/reagent_containers/spray/cleaner
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/crafting/abraxo = 1,
+				/datum/reagent/water = 50)
+	tools = list(TOOL_WELDER)
+	time = 10
+	category = CAT_MISC
 

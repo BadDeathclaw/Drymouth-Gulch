@@ -2,7 +2,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/alarmed = 0
 	var/select = 1
-	can_suppress = TRUE
+	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	burst_size = 3
 	fire_delay = 2
@@ -45,7 +45,7 @@
 				else
 					to_chat(user, "<span class='notice'>You insert the magazine into \the [src].</span>")
 
-				playsound(user, 'sound/weapons/autoguninsert.ogg', 60, 1)
+				playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
 				chamber_round()
 				A.update_icon()
 				update_icon()
@@ -327,22 +327,68 @@
 		return
 	..()
 
+/obj/item/gun/ballistic/automatic/l6_saw/m38
+	name = "M38 LMG"
+	desc = "A special lmg used by elite legionairs to support regular infantry."
+	icon_state = "M38"
+	item_state = "M38"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/mm195x129/m38/
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	can_suppress = FALSE
+	burst_size = 3
+	fire_delay = 2
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	spread = 2
+	randomspread = 1
+	extra_damage = 25
 
+/obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
+	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
+	item_state = "M38[cover_open ? "openmag" : "closedmag"]"
+
+/obj/item/gun/ballistic/automatic/l6_saw/m38/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size += 2
+			spread = 15
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select += 1
+			burst_size += 2
+			spread = 30
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(2)
+			select += 1
+			burst_size += 3
+			spread = 55
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(3)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 // SNIPER //
 
 /obj/item/gun/ballistic/automatic/sniper_rifle
 	name = "anti materiel rifle"
 	desc = "A long ranged weapon that does significant damage. No, you can't quickscope."
-	icon_state = "sniper"
+	icon_state = "sniper-mag"
 	item_state = "sniper"
 	recoil = 2
 	weapon_weight = WEAPON_HEAVY
 	mag_type = /obj/item/ammo_box/magazine/sniper_rounds
 	fire_delay = 40
 	burst_size = 1
-	can_unsuppress = TRUE
-	can_suppress = TRUE
+	can_unsuppress = FALSE
+	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
@@ -375,8 +421,8 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm/rifle
 	fire_delay = 10
 	burst_size = 1
-	can_unsuppress = TRUE
-	can_suppress = TRUE
+	can_unsuppress = FALSE
+	can_suppress = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	actions_types = list()
@@ -431,7 +477,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 1
+	fire_delay = 2
 	extra_damage = 25
 
 /obj/item/gun/ballistic/automatic/smg10mm
@@ -451,12 +497,12 @@
 	force = 15
 
 /obj/item/gun/ballistic/automatic/assault_rifle
-	name = "R91 assault rifle"
+	name = "assault rifle"
 	desc = "A standard R91 combat rifle, out of use around the time of the Great War."
 	icon_state = "assault_rifle"
 	item_state = "fnfal"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/r20
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
 	fire_delay = 3
@@ -466,12 +512,12 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
-	name = "R91 infiltrator"
+	name = "infiltrator"
 	desc = "A customized R91 assault rifle, with a scope, integrated suppressor, cut down stock and polymer furniture."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	suppressed = 1
-	fire_delay = 1
+	fire_delay = 3
 	extra_damage = 20
 	extra_penetration = 10
 	zoomable = TRUE
@@ -482,16 +528,17 @@
 	force = 15
 
 /obj/item/gun/ballistic/automatic/marksman
-	name = "R94 marksman carbine"
+	name = "marksman carbine"
 	desc = "A R94 marksman carbine, chambered in 5.56x45. Seen heavy usage in pre-war conflicts. This one isn't a select fire variant."
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/r20
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
-	can_suppress = 0
-	fire_delay = 8
+	can_suppress = FALSE
+	fire_delay = 6
 	extra_damage = 40
+	extra_penetration = 5
 	burst_size = 1
 	zoomable = TRUE
 	zoom_amt = 10
@@ -499,29 +546,38 @@
 	weapon_weight = WEAPON_HEAVY
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle
-	name = "R81 service rifle"
+	name = "service rifle"
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	fire_delay = 3
 	extra_damage = 25
-	extra_penetration = 5
-	mag_type = /obj/item/ammo_box/magazine/r20
+	extra_penetration = 10
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
+	name = "R82 heavy service rifle"
+	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
+	fire_delay = 3
+	extra_damage = 25
+	extra_penetration = 10
+	icon_state = "R82"
+	item_state = "R82"
+	burst_size = 3
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
-	name = "Varmint Rifle"
+	name = "varmint rifle"
 	desc = "A low powered 5.56, easy to use rifle."
 	icon_state = "varmint_rifle"
 	item_state = "varmintrifle"
-	fire_delay = 6
+	fire_delay = 8
 	extra_damage = 30
-	mag_type = /obj/item/ammo_box/magazine/r10
+	mag_type = /obj/item/ammo_box/magazine/automatic/r10
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
-	name = "Ratslayer"
+	name = "ratslayer"
 	desc = "A modified Varmint Rifle with better stopping power, a scope, and suppressor. Oh, don't forget the sick paint job."
 	icon_state = "rat_slayer"
 	item_state = "ratslayer"
@@ -573,7 +629,7 @@
 	item_state = "smg9mm"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
-	can_suppress = 0
+	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
 	extra_damage = 20
@@ -586,7 +642,7 @@
 	icon_state = "bozar"
 	item_state = "sniper"
 	slot_flags = SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/r20
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	burst_size = 2
 	fire_delay = 3
 	extra_damage = 35
@@ -606,7 +662,7 @@
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
-	can_suppress = 0
+	can_suppress = FALSE
 	burst_size = 1//Setting it to 0 is dumb. Just set it to one.
 	fire_delay = 10
 	zoomable = TRUE
@@ -623,16 +679,82 @@
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m556
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	can_suppress = 0
+	can_suppress = FALSE
 	burst_size = 5
 	fire_delay = 0.3
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/automatic/lmg
+	name = "R84 LMG"
+	desc = "A post war lmg manufactured by the NCR. Issued to heavy troopers to support regular infantry."
+	icon_state = "R84"
+	item_state = "R84"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/lmg
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	can_suppress = FALSE
+	burst_size = 3
+	fire_delay = 2
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	spread = 2
+	randomspread = 1
+	extra_damage = 25
+	extra_penetration = 5
+	
+/obj/item/gun/ballistic/automatic/lmg/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size += 2
+			spread = 16
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select += 1
+			burst_size += 2
+			spread = 28
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(2)
+			select += 1
+			burst_size += 3
+			spread = 40
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(3)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
 
 //Fallout 13
 //Magazines
-/obj/item/ammo_box/magazine/r20
+/obj/item/ammo_box/magazine/mm195x129/m38/
+	name = "7.62 belt (7.62mm)"
+	icon_state = "762belt"
+	ammo_type = /obj/item/ammo_casing/a762/lp
+	max_ammo = 100
+	caliber = "a762"
+
+/obj/item/ammo_box/magazine/mm195x129/m38/can_load()
+	return 0
+
+/obj/item/ammo_box/magazine/mm195x129/m38/update_icon()
+	..()
+	icon_state = "762belt-[round(ammo_count(),25)]"
+/obj/item/ammo_box/magazine/automatic/r10
+	name = "small 5.56 magazine (5.56mm)"
+	icon_state = "r10"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 10
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/automatic/
 	name = "5.56 Magazine (5.56mm)"
 	icon_state = "r20"
 	ammo_type = /obj/item/ammo_casing/a556
@@ -640,16 +762,32 @@
 	max_ammo = 20
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/r10
-	name = "Varmint Rifle Magazine (5.56mm)"
-	icon_state = "r10"
+/obj/item/ammo_box/magazine/automatic/r30
+	name = "Large 5.56 Magazine (5.56mm)"
+	icon_state = "r30"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
-	max_ammo = 10
+	max_ammo = 30
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/automatic/r50
+	name = "Extra Large 5.56 Magazine (5.56mm)"
+	icon_state = "r50"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 50
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/lmg/
+	name = "5.56 ammo box"
+	icon_state = "r80"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 80
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_auto
-	name = "Advanced SMG Magazine (10mm)"
+	name = "10mm submachine gun magazine (10mm)"
 	icon_state = "smg10mm"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
@@ -657,7 +795,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_adv
-	name = "Advanced 10mm Pistol Magazine (10mm)"
+	name = "10mm pistol magazine (10mm)"
 	icon_state = "10mmadv"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
@@ -665,7 +803,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m9mm
-	name = "9mm Pistol Magazine (9mm)"
+	name = "9mm pistol magazine (9mm)"
 	icon_state = "9mmp"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -673,7 +811,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/greasegun
-	name = "9mm SMG Magazine (9mm)"
+	name = "9mm submachine gun magazine (9mm)"
 	icon_state = "grease"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
@@ -681,7 +819,7 @@
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/d12g
-	name = "shotgun magazine (12g slugs)"
+	name = "shotgun drum magazine (12g slugs)"
 	desc = "A 12g drum magazine."
 	icon_state = "riotmag"
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -740,6 +878,7 @@
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/a556
+
 
 /obj/item/ammo_casing/a357
 	name = "357 bullet casing"

@@ -237,7 +237,7 @@
 	build_path = /obj/machinery/computer/cargo/request
 
 /obj/item/circuitboard/computer/bounty
-	name = "Nanotrasen Bounty Console (Computer Board)"
+	name = "Bounty Console (Computer Board)"
 	build_path = /obj/machinery/computer/cargo/request
 
 /obj/item/circuitboard/computer/operating
@@ -251,6 +251,18 @@
 /obj/item/circuitboard/computer/research
 	name = "Research Monitor (Computer Board)"
 	build_path = /obj/machinery/computer/security/research
+
+/obj/item/circuitboard/computer/kebab
+	name = "Kebab Monitor (Computer Board)"
+	build_path = /obj/machinery/computer/security/kebab
+
+/obj/item/circuitboard/computer/ncr
+	name = "Republic Monitor (Computer Board)"
+	build_path = /obj/machinery/computer/security/ncr
+
+/obj/item/circuitboard/computer/bos
+	name = "Brotherhood Monitor (Computer Board)"
+	build_path = /obj/machinery/computer/security/bos
 
 /obj/item/circuitboard/computer/comm_monitor
 	name = "Telecommunications Monitor (Computer Board)"
@@ -347,6 +359,12 @@
 	name = "Satellite Network Control (Computer Board)"
 	build_path = /obj/machinery/computer/sat_control
 
+/obj/item/circuitboard/computer/robco_terminal
+	name = "RobCo Terminal Mainboard (Computer board)"
+	build_path = /obj/machinery/computer/terminal
+
+//Elevators
+
 /obj/item/circuitboard/computer/enclave_control
 	name = "Enclave Elevator Control (Computer board)"
 	build_path = /obj/machinery/computer/shuttle/enclavefortelevator
@@ -358,3 +376,11 @@
 /obj/item/circuitboard/computer/vault_control
 	name = "Vault Elevator Control (Computer board)"
 	build_path = /obj/machinery/computer/shuttle/vaultelevator
+
+/obj/item/circuitboard/computer/bunker_control
+	name = "Bunker Elevator Control (Computer board)"
+	build_path = /obj/machinery/computer/shuttle/bunkerelevator
+
+/obj/item/circuitboard/computer/northbunker_control
+	name = "North Bunker Elevator Control (Computer board)"
+	build_path = /obj/machinery/computer/shuttle/northbunkerelevator

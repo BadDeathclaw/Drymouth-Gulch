@@ -9,6 +9,7 @@
 	resistance_flags = FLAMMABLE
 	var/plantname = "Plants"		// Name of plant when planted.
 	var/product						// A type path. The thing that is created when the plant is harvested.
+	var/productdesc
 	var/species = ""				// Used to update icons. Should match the name in the sprites unless all icon_* are overriden.
 
 	var/growing_icon = 'icons/obj/hydroponics/growing.dmi' //the file that stores the sprites of the growing plant from this seed.
@@ -79,6 +80,10 @@
 	S.potency = potency
 	S.weed_rate = weed_rate
 	S.weed_chance = weed_chance
+	S.name = name
+	S.plantname = plantname
+	S.desc = desc
+	S.productdesc = productdesc
 	S.genes = list()
 	for(var/g in genes)
 		var/datum/plant_gene/G = g
@@ -144,11 +149,18 @@
 	var/product_name
 	while(t_amount < getYield())
 		var/obj/item/reagent_containers/food/snacks/grown/t_prod = new product(output_loc, src)
+		if(parent.myseed.plantname != initial(parent.myseed.plantname))
+			t_prod.name = lowertext(parent.myseed.plantname)
+		if(productdesc)
+			t_prod.desc = productdesc
+		t_prod.seed.name = parent.myseed.name
+		t_prod.seed.desc = parent.myseed.desc
+		t_prod.seed.plantname = parent.myseed.plantname
 		result.Add(t_prod) // User gets a consumable
 		if(!t_prod)
 			return
 		t_amount++
-		product_name = t_prod.name
+		product_name = parent.myseed.plantname
 	if(getYield() >= 1)
 		SSblackbox.record_feedback("tally", "food_harvested", getYield(), product_name)
 	parent.update_tray(user)
@@ -318,10 +330,56 @@
 			to_chat(user, "<span class='notice'>[text]</span>")
 
 		return
-	..() // Fallthrough to item/attackby() so that bags can pick seeds up
 
-
-
+	if(istype(O, /obj/item/pen))
+		var/choice = input("What would you like to change?") in list("Plant Name", "Seed Description", "Product Description", "Cancel")
+		if(!user.canUseTopic(src, BE_CLOSE))
+			return
+		switch(choice)
+			if("Plant Name")
+				var/newplantname = reject_bad_text(stripped_input(user, "Write a new plant name:", name, plantname))
+				if(!user.canUseTopic(src, BE_CLOSE))
+					return
+				if (length(newplantname) > 20)
+					to_chat(user, "That name is too long!")
+					return
+				if(!newplantname)
+					to_chat(user, "That name is invalid.")
+					return
+				else
+					name = "[lowertext(newplantname)]"
+					plantname = newplantname
+			if("Seed Description")
+				var/newdesc = stripped_input(user, "Write a new description:", name, desc)
+				if(!user.canUseTopic(src, BE_CLOSE))
+					return
+				if (length(newdesc) > 180)
+					to_chat(user, "That description is too long!")
+					return
+				if(!newdesc)
+					to_chat(user, "That description is invalid.")
+					return
+				else
+					desc = newdesc
+			if("Product Description")
+				if(product && !productdesc)
+					var/obj/item/P = new product
+					productdesc = P.desc
+					qdel(P)
+				var/newproductdesc = stripped_input(user, "Write a new description:", name, productdesc)
+				if(!user.canUseTopic(src, BE_CLOSE))
+					return
+				if (length(newproductdesc) > 180)
+					to_chat(user, "That description is too long!")
+					return
+				if(!newproductdesc)
+					to_chat(user, "That description is invalid.")
+					return
+				else
+					productdesc = newproductdesc
+			else
+				return
+ 	..() // Fallthrough to item/attackby() so that bags can pick seeds up
 
 
 

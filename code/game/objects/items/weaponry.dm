@@ -365,6 +365,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "tribalspear"
 	force = 20
 	throwforce = 35
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.3
 	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 60, "embedded_fall_chance" = 20)
 	w_class = WEIGHT_CLASS_NORMAL
 

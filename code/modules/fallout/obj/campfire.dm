@@ -52,7 +52,7 @@
 /obj/structure/campfire/fire_act(exposed_temperature, exposed_volume)
 	fire()
 
-/obj/structure/campfire/Crossed(go/AM)
+/obj/structure/campfire/Crossed(atom/movable/AM)
 	if(fired)
 		burn_process()
 

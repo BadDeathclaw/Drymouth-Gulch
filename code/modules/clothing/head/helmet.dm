@@ -269,10 +269,10 @@
 /obj/item/clothing/head/helmet/riot/vaultsec
 	name = "security helmet"
 	desc = "A standard issue vault security helmet, pretty robust."
-	
+
 //Remnants
 /obj/item/clothing/head/donor/enclave
-	name = "Remnant Cap"
+	name = "enclave forge cap"
 	desc = "A resistant, black forage cap issued to Enclave soldiers."
 	icon_state = "enclave_cap"
 	item_state = "enclave_cap"
@@ -333,6 +333,7 @@
 /obj/item/clothing/head/helmet/f13/combat
 	name = "combat helmet"
 	desc = "An old military grade pre-war combat helmet."
+	desc = "A pre-war ceramic and kevlar helmet designed to absorb kinetic impacts and stop projectiles from entering the users skull. Has the words BORN TO KILL written on the outside in chalk."
 	icon_state = "combat_helmet"
 	item_state = "combat_helmet"
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 30, "energy" = 60, "bomb" = 25, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 0)
@@ -355,10 +356,10 @@
 
 /obj/item/clothing/head/helmet/f13/combat/mk2
 	name = "reinforced combat helmet"
-	desc = "An reinforced combat helmet based off the original pre-war model."
+	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
 	icon_state = "combat_helmet_mk2"
 	item_state = "combat_helmet_mk2"
-	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 20)
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 39, "bio" = 70, "rad" = 70, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood
 	name = "brotherhood combat helmet"
@@ -389,22 +390,23 @@
 /obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
 	name = "legion prime helmet"
 	desc = "A helmet belonging to a legion prime, it looks sturdier than a normal legion recruit helmet."
-	item_state = "legprime"
+	item_state = "legprim"
+	icon_state = "legprim"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/scout
 	name = "legion scout hood"
 	desc = "It's a leather hood worn by legion scouts."
-	icon_state = "cult_hoodalt"
-	item_state = "cult_hoodalt"
+	icon_state = "legscout"
+	item_state = "legscout"
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/explorer
 	name = "legion explorer hood"
-	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted."
-	icon_state = "cult_hoodalt"
-	item_state = "cult_hoodalt"
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
+	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted and reinforced."
+	icon_state = "legexplorer"
+	item_state = "legexplorer"
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legveteran
 	name = "legion veteran helmet"
@@ -431,7 +433,7 @@
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan
 	name = "legion recruit decanus helmet"
-	desc = "It's leather legion recruit decan helmet."
+	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers."
 	icon_state = "legdecan"
 	item_state = "legdecan"
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
@@ -443,13 +445,14 @@
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
 	name = "legion prime decanus helmet"
-	desc = "It's a helmet belonging to a prime decanus, it looks sturdier than the normal decanus helmet."
-	item_state = "legdecanprime"
+	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has a few small white feathers woven inside of it aswell."
+	item_state = "legdecanprim"
+	icon_state = "legdecanprim"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	name = "legion veteran decanus helmet"
-	desc = "It's leather legion veteran decan helmet."
+	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has several large white and black feathers sewn along side the rest of the feathers aswell."
 	icon_state = "legdecanvet"
 	item_state = "legdecanvet"
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
@@ -461,7 +464,7 @@
 
 /obj/item/clothing/head/helmet/f13/legion/legcenturion
 	name = "legion centurion helmet"
-	desc = "It's metal legion centurion helmet."
+	desc = "It's a large forged and case hardened bronze helmet with a steel insert around the skull and back of the neck. It has a large plume of red horse hair across the top of it going horizontally, symbolizing the position of a Centurion."
 	icon_state = "legcenturion"
 	item_state = "legcenturion"
 	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 0, "fire" = 80, "acid" = 0)
@@ -472,7 +475,7 @@
 
 /obj/item/clothing/head/helmet/f13/legion/leglegat
 	name = "legion legate helmet"
-	desc = "It's metal legion legat helmet."
+	desc = "A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Caesar, given to his second legate in exchange for his undying loyalty to Caesar."
 	icon_state = "leglegat"
 	item_state = "leglegat"
 	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 60, "fire" = 80, "acid" = 0)
@@ -507,7 +510,7 @@
 	desc = "An U.S Marine Corps helmet, used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-	armor = list("melee" = 65, "bullet" = 55, "laser" = 35, "energy" = 55, "bomb" = 48, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 50, "bomb" = 39, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
 	name = "elite riot gear helmet"
@@ -618,7 +621,7 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 
 /obj/item/clothing/head/helmet/power_armor/t45b
-	name = "Salvaged T-45b helmet"
+	name = "salvaged T-45b helmet"
 	desc = "It's a salvaged power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
@@ -627,14 +630,14 @@
 	lighting_alpha = null
 
 /obj/item/clothing/head/helmet/power_armor/advanced
-	name = "Advanced power helmet"
+	name = "advanced power helmet"
 	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
 	icon_state = "advhelmet1"
 	item_state = "advhelmet1"
 	armor = list("melee" = 90, "bullet" = 75, "laser" = 60, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
 /obj/item/clothing/head/helmet/power_armor/advanced/mk2
-	name = "Advanced power helmet MK2"
+	name = "advanced power helmet MK2"
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
 	icon_state = "advhelmet2"
 	item_state = "advhelmet2"
@@ -726,7 +729,7 @@
 	return ..()
 
 /obj/item/clothing/head/helmet/proc/toggle_helmlight()
-	set name = "Toggle Helmetlight"
+	set name = "Toggle Helmet Light"
 	set category = "Object"
 	set desc = "Click to toggle your helmet's attached flashlight."
 

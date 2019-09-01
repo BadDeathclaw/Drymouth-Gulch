@@ -7,7 +7,6 @@
 	slot_flags = SLOT_BELT
 	var/id = null
 	var/static/list/used_ids = list()
-	var/transfer_prints = FALSE
 
 /obj/item/door_key/New()
 	..()
@@ -52,12 +51,9 @@
 	var/try_id = 1
 	if(used_ids.len)
 		try_id = text2num(used_ids[used_ids.len]) + 1
-	CYCLE
-	if(!used_ids[num2text(try_id)])
-		return try_id
-	try_id++
-	goto CYCLE
-	return null
+	while(used_ids[num2text(try_id)])
+		try_id++
+	return try_id++
 
 /obj/item/storage/keys_set
 	name       = "key chain"
@@ -70,7 +66,7 @@
 /obj/item/storage/keys_set/ComponentInitialize()
 	. = ..()
 	GET_COMPONENT(STR, /datum/component/storage)
-	STR.can_hold = list(/obj/item/door_key)
+	STR.can_hold = typecacheof(list(/obj/item/door_key))
 	STR.max_combined_w_class = 35
 
 /obj/item/storage/keys_set/update_icon()
@@ -81,7 +77,6 @@
 		if(K.id == id)
 			return K
 	return null
-
 
 /obj/item/lock
 	name = "unusable padlock"
