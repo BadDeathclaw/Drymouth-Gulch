@@ -47,8 +47,11 @@ Elder
 	selection_color = "#7f8c8d"
 	req_admin_notify = 1
 	exp_requirements = 2700
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are a newly promoted elder, charged with promoting the Brotherhood mission, ensuring the safety of your subordinates, and setting goals and overall expectations for the mission in this region. As the Elder you will oversee the Paladin, and the Head Scribe in their mission to safeguard technology from the wastes in the manner you yourself see as most appropriate, as long as it does not go against the core tenants of the Brotherhood Codex."
+	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
+	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	outfit = /datum/outfit/job/bos/f13elder
 
 	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR)
@@ -76,7 +79,7 @@ Paladin
 	head_announce = list("Security")
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the field commander for the security team assigned to this region and are the direct superior to the Knights. As a Paladin, you lead your subordinates on patrols and scouting missions throughout the region. You are also responsible for managing the bunkers operations and security, and should take extra care in ensuring that your presence or location in the region is hidden to any outsider."
+	description = "You are the field commander for the security team assigned to this region and are the direct superior to the Knights. As a Paladin, you lead your subordinates on patrols and scouting missions throughout the region. You are also responsible for managing the bunkers operations and security, and should take extra care in ensuring that your presence or location in the region is hidden to any outsider, unless otherwise ordered to by the elder."
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the elder"
