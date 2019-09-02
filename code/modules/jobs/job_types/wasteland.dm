@@ -186,8 +186,10 @@ Pusher
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = "Wastelander"
+	social_faction = "Pushers"
 	total_positions = 4
 	spawn_positions = 4
+	description = "Due to your experience dealing with underground elements, you can recognize raiders at a glance even if they have their face covered."
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
@@ -218,6 +220,13 @@ Pusher
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/jet=3, \
 		/obj/item/reagent_containers/syringe/medx=2)
+
+/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	H.verbs |= /mob/living/proc/creategang
 
 /*
 Punished Raider
