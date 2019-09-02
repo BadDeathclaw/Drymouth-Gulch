@@ -385,7 +385,7 @@
 	desc = "A helmet of some sort as if from the distant future."
 	icon_state = "biker_helmet"
 	item_state = "biker_helmet"
-	armor = list("melee" = 5, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 20, "energy" = 60, "bomb" = 25, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 0)
 	resistance_flags = FIRE_PROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
