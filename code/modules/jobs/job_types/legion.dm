@@ -318,7 +318,7 @@ Veteran
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	r_hand = 		/obj/item/twohanded/fireaxe
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
@@ -326,7 +326,7 @@ Veteran
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/ammo_box/tube/a357=2, \
+		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
@@ -359,13 +359,13 @@ Prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
 	mask =			/obj/item/clothing/mask/bandana/legprime
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
-	suit_store = 	/obj/item/gun/ballistic/revolver/colt357
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/ammo_box/a357=2, \
+		/obj/item/ammo_box/m44=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
