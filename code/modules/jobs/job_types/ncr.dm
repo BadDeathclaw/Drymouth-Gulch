@@ -120,11 +120,11 @@ Lieutenant
 	head 		= /obj/item/clothing/head/beret/ncr
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
-	suit_store 	= /obj/item/gun/ballistic/shotgun/automatic/hunting
+	suit_store 	= /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
 	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/magazine/automatic/r30=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
@@ -204,12 +204,12 @@ Medic
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	belt =          /obj/item/storage/belt/military/assault/ncr
-	suit_store = 	/obj/item/gun/ballistic/shotgun
+	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	head =          /obj/item/clothing/head/f13/ncr
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	gloves =        /obj/item/clothing/gloves/f13/ncr
 	backpack_contents = list(
-		/obj/item/storage/box/lethalshot, \
+		/obj/item/ammo_box/magazine/automatic/r30=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -417,7 +417,7 @@ Heavy Trooper
 	shoes =         /obj/item/clothing/shoes/combat/swat
 	suit_store = 	/obj/item/gun/ballistic/automatic/lmg
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/lmg, \
+		/obj/item/ammo_box/magazine/lmg=2, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/kitchen/knife/combat=1, \

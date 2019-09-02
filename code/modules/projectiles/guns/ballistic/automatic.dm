@@ -561,12 +561,13 @@
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	name = "R82 heavy service rifle"
 	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
-	fire_delay = 3
-	extra_damage = 25
+	fire_delay = 5
+	extra_damage = 30
 	extra_penetration = 10
+	mag_type = /obj/item/ammo_box/magazine/automatic/r30
 	icon_state = "R82"
 	item_state = "R82"
-	burst_size = 3
+	burst_size = 1
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	name = "varmint rifle"
 	desc = "A low powered 5.56, easy to use rifle."
