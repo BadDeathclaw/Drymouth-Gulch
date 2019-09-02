@@ -37,6 +37,7 @@ require only minor tweaks.
 #define ZTRAIT_AWAY "Away Mission"
 #define ZTRAIT_SPACE_RUINS "Space Ruins"
 #define ZTRAIT_LAVA_RUINS "Lava Ruins"
+#define ZTRAIT_DUNGEON "Dungeons"
 
 // number - bombcap is multiplied by this before being applied to bombs
 #define ZTRAIT_BOMBCAP_MULTIPLIER "Bombcap Multiplier"
@@ -63,6 +64,7 @@ require only minor tweaks.
 #define ZTRAITS_SPACE list(ZTRAIT_LINKAGE = CROSSLINKED, ZTRAIT_SPACE_RUINS = TRUE)
 #define ZTRAITS_LAVALAND list(ZTRAIT_MINING = TRUE, ZTRAIT_LAVA_RUINS = TRUE, ZTRAIT_BOMBCAP_MULTIPLIER = 2)
 #define ZTRAITS_REEBE list(ZTRAIT_REEBE = TRUE, ZTRAIT_BOMBCAP_MULTIPLIER = 0.5)
+#define ZTRAITS_DUNGEON list(ZTRAIT_DUNGEON = TRUE)
 
 #define DL_NAME "name"
 #define DL_TRAITS "traits"
@@ -78,6 +80,7 @@ require only minor tweaks.
 #define CAMERA_LOCK_MINING 2
 #define CAMERA_LOCK_CENTCOM 4
 #define CAMERA_LOCK_REEBE 8
+#define CAMERA_LOCK_DUNGEON 16
 
 //Reserved/Transit turf type
 #define RESERVED_TURF_TYPE /turf/open/space/basic			//What the turf is when not being used
