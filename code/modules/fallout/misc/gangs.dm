@@ -1,9 +1,16 @@
 // Fallout Gangs
 
-// Names of all created gangs, starting with a default one
+// Names of all created gangs, starting with a default one, serves as a blacklisted to prevent inappropiate or duplicit gang names
 GLOBAL_LIST_INIT(gang_names, list ( \
 "Raiders", \
 "Raider", \
+"Pushers", \
+"Pusher", \
+))
+
+GLOBAL_LIST_INIT(allowed_gang_factions, list ( \
+"Raiders", \
+"Pushers", \
 ))
 
 // List of all existing gangs
@@ -60,7 +67,6 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 /datum/gang/proc/remove_member(mob/living/member)
 	members -= member
-	member.social_faction = "Raiders"
 	member.gang = null
 	member.verbs -= /mob/living/proc/leavegang
 	member.verbs -= /mob/living/proc/assumeleader
@@ -69,16 +75,16 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 /mob/living/proc/invitegang()
 	set name = "Invite To Gang"
-	set desc = "Invite others to your gang. Only independent raiders in view can be offered to join!"
+	set desc = "Invite others to your gang. Only independent raiders or pushers in view can be offered to join!"
 	set category = "Gang"
 
 	var/list/possible_targets = list()
 	for(var/mob/living/carbon/target in oview())
 		if(target.stat || !target.mind || !target.client)
 			continue
-		if(target.social_faction == social_faction)
+		if(target.gang == gang)
 			continue
-		if(target.social_faction != "Raiders")
+		if(!(target.social_faction in GLOB.allowed_gang_factions))
 			continue
 		if(target.gang)
 			continue
@@ -99,7 +105,6 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	else
 		visible_message(C, "<span class='notice'>[C.name] accepted the offer to join [G.name]!</span>")
 
-	C.social_faction = social_faction
 	G.add_member(C)
 	C.gang = G
 
@@ -124,7 +129,6 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	G.add_leader(src)
 
 	gang = G
-	social_faction = G.name
 
 	GLOB.all_gangs |= G
 
@@ -132,7 +136,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	set name = "Leave Gang"
 	set category = "Gang"
 
-	if(!social_faction || social_faction == "Raiders")
+	if(!social_faction || !(social_faction in GLOB.allowed_gang_factions))
 		to_chat(src, "You are already not in any gang!")
 		return
 	var/datum/gang/G = gang

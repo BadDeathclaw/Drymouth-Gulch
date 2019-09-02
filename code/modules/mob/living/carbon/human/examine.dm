@@ -355,17 +355,17 @@
 	if(social_faction)
 		var/datum/gang/G = gang
 		var/datum/gang/UserGang = user.gang
-		if(social_faction == "Raiders" && (!skipface || isobserver(user) || user.social_faction == "Raiders" || G))
+		if(social_faction == "Raiders" && !G && (!skipface || isobserver(user) || (user.social_faction in GLOB.allowed_gang_factions)))
 			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>Raider</span>!</span></font>"
-		if(G && G == UserGang)
+		else if(G && G == UserGang)
 			if(G.leader == src)
 				msg += "\n<span class='nicegreen'><font size=3>[t_He] [t_is] a <span class='bold'>leader</span> of your gang!</span></font>"
 			else
 				msg += "\n<span class='nicegreen'><font size=3>[t_He] [t_is] a <span class='bold'>member</span> of your gang!</span></font>"
 		else if(G && G.leader == src)
-			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang leader</span> of the <span class='bold'>[social_faction]</span>!</span></font>"
+			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang leader</span> of the <span class='bold'>[G.name]</span>!</span></font>"
 		else if(G)
-			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang member</span> of the <span class='bold'>[social_faction]</span>!</span></font>"
+			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>gang member</span> of the <span class='bold'>[G.name]</span>!</span></font>"
 
 	to_chat(user, msg)
 	return msg
