@@ -120,13 +120,6 @@
 	required_temp = 370
 	mix_message = "The mixture rapidly turns into a dense pink liquid."
 
-/datum/chemical_reaction/ephedrine
-	name = "Ephedrine"
-	id = "ephedrine"
-	results = list("ephedrine" = 4)
-	required_reagents = list("sugar" = 1, "oil" = 1, "hydrogen" = 1, "diethylamine" = 1)
-	mix_message = "The solution fizzes and gives off toxic fumes."
-
 /datum/chemical_reaction/diphenhydramine
 	name = "Diphenhydramine"
 	id = "diphenhydramine"
