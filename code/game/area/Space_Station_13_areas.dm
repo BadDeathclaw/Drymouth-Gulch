@@ -1478,6 +1478,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Bunker Elevator"
 	flags_2 = BLOCK_RADIO_2
 
+/area/shuttle/northbunker_elevator
+	name = "North Bunker Elevator"
+	flags_2 = BLOCK_RADIO_2
+
 /area/f13/underground/cave/vault
 	name = "Vault Mine"
 	icon_state = "klamat"
