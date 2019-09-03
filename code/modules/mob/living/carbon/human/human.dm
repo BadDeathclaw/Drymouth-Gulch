@@ -80,8 +80,10 @@
 			var/datum/gang/G = gang
 			stat(null, "Gang name: [G.name]")
 			var/mob/living/L = G.leader
-			stat(null, "Gang leader: [L.real_name]")
-			stat(null, "Members: [G.members.len]")
+			if(L)
+				stat(null, "Gang leader: [L.real_name]")
+			else
+				stat(null, "Gang leader: No leader!")
 
 	//NINJACODE
 	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)) //Only display if actually a ninja.
