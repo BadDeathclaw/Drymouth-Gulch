@@ -160,7 +160,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	var/input = input(src, "Enter the name of your new gang!", "Gang name") as text|null
 	if(!input)
 		return
-	input = copytext(sanitize(input), 1, 20)
+	input = copytext(sanitize(input), 1, 30)
 	if(lowertext(input) in GLOB.gang_names)
 		to_chat(src, "<span class='notice'>This gang name is already taken!</span>")
 		return
@@ -273,7 +273,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	var/input = input(src, "Set a welcome text for a new gang members!", "Welcome text", G.welcome_text) as text|null
 	if(!input)
 		return
-	input = copytext(sanitize(input), 1, 200)
+	input = copytext(sanitize(input), 1, 300)
 	G.welcome_text = input
 
 	to_chat(src, "<span class='notice'>You have set a welcome text for a new gang members!</span>")
