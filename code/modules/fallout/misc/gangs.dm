@@ -8,6 +8,7 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 "Pusher", \
 ))
 
+//Which social factions are allowed to join gangs?
 GLOBAL_LIST_INIT(allowed_gang_factions, list ( \
 "Raiders", \
 "Pushers", \
@@ -22,6 +23,24 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	var/color = "#ff0000" //Red is a default gang color
 	var/leader = null //Leader of this gang
 	var/list/members = list()
+	var/obj/item/device/gangtool/assigned_tool //Unique gangtool that the gang is using
+	var/influence = 0 //Currency in the gangtool
+	var/boss_item_list
+	var/list/boss_items = list(
+		/datum/gang_item/weapon/shuriken,
+		/datum/gang_item/weapon/switchblade,
+
+		/datum/gang_item/equipment/emp,
+
+		/datum/gang_item/clothing/prostitute_dress,
+		/datum/gang_item/clothing/hat,
+		/datum/gang_item/clothing/khan_uniform,
+		/datum/gang_item/clothing/raider_uniform,
+		/datum/gang_item/clothing/jester_uniform,
+		/datum/gang_item/clothing/soviet_uniform,
+		/datum/gang_item/clothing/biker_uniform,
+		/datum/gang_item/clothing/chairmen_uniform
+	)
 
 /datum/gang/New(starting_members, starting_leader)
 	. = ..()
@@ -37,7 +56,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 /datum/gang/proc/is_solo()
 	return members.len == 1
 
-/datum/gang/proc/add_leader(mob/living/new_leader)
+/datum/gang/proc/add_leader(mob/living/carbon/new_leader)
 	leader = new_leader
 	new_leader.verbs -= /mob/living/proc/assumeleader
 	new_leader.verbs |= /mob/living/proc/invitegang
@@ -46,9 +65,23 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	new_leader.verbs |= /mob/living/proc/setwelcome
 	new_leader.verbs |= /mob/living/proc/setcolor
 	new_leader.verbs |= /mob/living/proc/leavegang
-	to_chat(new_leader, "<span class='notice'>You have become a new leader of the [name]! You can now invite and remove members at will.</span>")
+	to_chat(new_leader, "<span class='notice'>You have become a new leader of the [name]! You can now invite and remove members at will. You have also received a Gangtool device that allows you to buy a special gear for you and your gang.</span>")
 
-/datum/gang/proc/remove_leader(mob/living/old_leader)
+	var/obj/item/device/gangtool/gangtool = new(new_leader)
+	gangtool.gang = new_leader.gang
+	assigned_tool = gangtool
+
+	var/list/slots = list (
+		"backpack" = SLOT_IN_BACKPACK,
+		"left pocket" = SLOT_L_STORE,
+		"right pocket" = SLOT_R_STORE
+	)
+
+	var/where = new_leader.equip_in_one_of_slots(gangtool, slots, FALSE)
+	if(!where)
+		gangtool.forceMove(get_turf(new_leader))
+
+/datum/gang/proc/remove_leader(mob/living/carbon/old_leader)
 	leader = null
 	old_leader.verbs -= /mob/living/proc/invitegang
 	old_leader.verbs -= /mob/living/proc/removemember
@@ -57,8 +90,11 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	old_leader.verbs -= /mob/living/proc/setcolor
 	old_leader.verbs |= /mob/living/proc/assumeleader
 	to_chat(old_leader, "<span class='warning'>You are no longer the leader of the [name]!</span>")
+	if(assigned_tool)
+		assigned_tool.audible_message("<span class='warning'>With a change of the gang leadership, Gangtool ceases to function!</span>")
+		qdel(assigned_tool)
 
-/datum/gang/proc/add_member(mob/living/new_member)
+/datum/gang/proc/add_member(mob/living/carbon/new_member)
 	members |= new_member
 	new_member.verbs -= /mob/living/proc/creategang
 	new_member.verbs |= /mob/living/proc/leavegang
@@ -67,7 +103,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	if(welcome_text)
 		to_chat(new_member, "<span class='notice'>Welcome text: </span><span class='purple'>[welcome_text]</span>")
 
-/datum/gang/proc/remove_member(mob/living/member)
+/datum/gang/proc/remove_member(mob/living/carbon/member)
 	members -= member
 	member.gang = null
 	member.verbs -= /mob/living/proc/leavegang
@@ -75,7 +111,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	member.verbs |= /mob/living/proc/creategang
 	to_chat(member, "<span class='warning'>You are no longer a member of the [name]!</span>")
 
-	if(!(members.len))
+	if(!members.len)
 		GLOB.gang_names -= name
 		GLOB.all_gangs -= src
 		qdel(src)
@@ -130,14 +166,12 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 	var/datum/gang/G = new()
 	G.name = input
-	to_chat(src, "<span class='notice'>You have created the [G.name]!</span>")
-
+	GLOB.all_gangs |= G
+	gang = G
+	to_chat(src, "<span class='notice'>You have created [G.name]!</span>")
+	
 	G.add_member(src)
 	G.add_leader(src)
-
-	gang = G
-
-	GLOB.all_gangs |= G
 
 /mob/living/proc/leavegang()
 	set name = "Leave Gang"
@@ -248,6 +282,6 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	var/picked_color = input(src, "", "Choose Color", color) as color|null
 	if(!picked_color)
 		return
-	G.color = picked_color 
+	G.color = picked_color
 
 	to_chat(src, "<span class='notice'>You have chosen a new gang color!</span>")
