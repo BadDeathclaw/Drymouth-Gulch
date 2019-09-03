@@ -2,10 +2,12 @@
 
 // Names of all created gangs, starting with a default one, serves as a blacklisted to prevent inappropiate or duplicit gang names
 GLOBAL_LIST_INIT(gang_names, list ( \
-"Raiders", \
-"Raider", \
-"Pushers", \
-"Pusher", \
+"raiders", \
+"raider", \
+"pushers", \
+"pusher", \
+"gang", \
+"gangs", \
 ))
 
 //Which social factions are allowed to join gangs?
@@ -91,7 +93,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	old_leader.verbs |= /mob/living/proc/assumeleader
 	to_chat(old_leader, "<span class='warning'>You are no longer the leader of the [name]!</span>")
 	if(assigned_tool)
-		assigned_tool.audible_message("<span class='warning'>With a change of the gang leadership, Gangtool ceases to function!</span>")
+		assigned_tool.audible_message("<span class='warning'>With a change of the [name] leadership, [assigned_tool] ceases to function and self-destructs!</span>")
 		qdel(assigned_tool)
 
 /datum/gang/proc/add_member(mob/living/carbon/new_member)
@@ -159,7 +161,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	if(!input)
 		return
 	input = copytext(sanitize(input), 1, 20)
-	if(input in GLOB.gang_names)
+	if(lowertext(input) in GLOB.gang_names)
 		to_chat(src, "<span class='notice'>This gang name is already taken!</span>")
 		return
 	GLOB.gang_names |= input
@@ -169,9 +171,12 @@ GLOBAL_LIST_EMPTY(all_gangs)
 	GLOB.all_gangs |= G
 	gang = G
 	to_chat(src, "<span class='notice'>You have created [G.name]!</span>")
-	
+
 	G.add_member(src)
 	G.add_leader(src)
+	if(G.assigned_tool)
+		var/obj/item/device/gangtool/tool = G.assigned_tool
+		tool.name = "[initial(tool.name)] - [G.name]"
 
 /mob/living/proc/leavegang()
 	set name = "Leave Gang"
