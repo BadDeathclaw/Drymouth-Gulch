@@ -398,6 +398,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/m38belt
+	name = "M38 ammo belt"
+	result = /obj/item/ammo_box/magazine/mm195x129/m38/
+	reqs = list(/obj/item/stack/sheet/metal = 20)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/spear
 	name = "Spear"
 	result = /obj/item/twohanded/spear

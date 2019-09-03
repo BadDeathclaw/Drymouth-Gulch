@@ -46,6 +46,7 @@
 	melee_damage_upper = 15
 
 /mob/living/simple_animal/hostile/ghoul/glowing
+	name = "glowing feral ghoul"
 	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly.."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"

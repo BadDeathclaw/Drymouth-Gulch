@@ -91,9 +91,11 @@ Raider
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = "Wastelander"
+	social_faction = "Raiders"
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "no one"
+	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
+	supervisors = "your desires"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13raider
@@ -110,7 +112,6 @@ Raider
 	belt = null
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-
 
 /datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -168,6 +169,12 @@ Raider
 		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
 		/obj/item/gun/ballistic/revolver/single_shotgun)
 
+/datum/outfit/job/wasteland/f13raider/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	H.verbs |= /mob/living/proc/creategang
 
 /*
 Pusher
@@ -179,8 +186,10 @@ Pusher
 	department_head = list("Captain")
 	head_announce = list("Security")
 	faction = "Wastelander"
+	social_faction = "Pushers"
 	total_positions = 4
 	spawn_positions = 4
+	description = "Due to your experience dealing with underground elements, you can recognize raiders at a glance even if they have their face covered."
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
@@ -211,6 +220,13 @@ Pusher
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/jet=3, \
 		/obj/item/reagent_containers/syringe/medx=2)
+
+/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	H.verbs |= /mob/living/proc/creategang
 
 /*
 Punished Raider

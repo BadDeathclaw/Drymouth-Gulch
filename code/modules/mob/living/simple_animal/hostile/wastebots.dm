@@ -82,7 +82,7 @@
 	icon = 'icons/fallout/mobs/animal.dmi'
 	icon_state = "protectron"
 	icon_living = "protectron"
-	icon_dead = "protectron_dead"
+	icon_dead = "protectron_d"
 	maxHealth = 200
 	health = 200
 	speak_chance = 5
