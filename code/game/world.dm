@@ -251,7 +251,7 @@ GLOBAL_PROTECT(security_mode)
 			features += "vote"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>\Fallout 13 - 18+<br>"
+	s += "<b>\[ENG] Fallout 13 - 18+<br>"
 	s += "<br>"
 	s += "Medium RP \[https://discord.gg/TCj5cJN]<br>"
 	s += "Hosted by Ren"
