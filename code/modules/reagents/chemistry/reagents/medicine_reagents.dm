@@ -220,7 +220,7 @@
 /datum/reagent/medicine/silver_sulfadiazine
 	name = "Silver Sulfadiazine"
 	id = "silver_sulfadiazine"
-	description = "If used in touch-based applications, immediately restores burn wounds as well as restoring more over time. If ingested through other means, deals minor toxin damage."
+	description = "If used in touch-based applications, restores burn wounds over time. If ingested through other means, deals minor toxin damage."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 
@@ -232,11 +232,6 @@
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-		else if(M.getFireLoss())
-			M.adjustFireLoss(-reac_volume)
-			if(show_message)
-				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
-				M.emote("scream")
 	..()
 
 /datum/reagent/medicine/silver_sulfadiazine/on_mob_life(mob/living/M)
@@ -270,7 +265,7 @@
 /datum/reagent/medicine/styptic_powder
 	name = "Styptic Powder"
 	id = "styptic_powder"
-	description = "If used in touch-based applications, immediately restores bruising as well as restoring more over time. If ingested through other means, deals minor toxin damage."
+	description = "If used in touch-based applications, restores bruising over time. If ingested through other means, deals minor toxin damage."
 	reagent_state = LIQUID
 	color = "#FF9696"
 
@@ -282,11 +277,6 @@
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-		else if(M.getBruteLoss())
-			M.adjustBruteLoss(-reac_volume)
-			if(show_message)
-				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
-				M.emote("scream")
 	..()
 
 /datum/reagent/medicine/styptic_powder/on_mob_life(mob/living/M)
@@ -377,17 +367,20 @@
 /datum/reagent/medicine/synthflesh
 	name = "Synthflesh"
 	id = "synthflesh"
-	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal one point of damage. Touch application only."
+	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal 1.25 points of damage. Touch application only. Causes toxloss equal to 66% of what was healed."
 	reagent_state = LIQUID
 	color = "#FFEBEB"
 
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
 	if(iscarbon(M))
-		if (M.stat == DEAD)
-			show_message = FALSE
+		var/mob/living/carbon/C = M
+		if (C.stat == DEAD)
+			show_message = 0
 		if(method in list(PATCH, TOUCH))
-			M.adjustBruteLoss(-1.25 * reac_volume)
-			M.adjustFireLoss(-1.25 * reac_volume)
+			var/brute = min(C.getBruteLoss(),C.adjustBruteLoss(-1.25 * reac_volume)*-1)
+			var/burn = min(C.getFireLoss(),C.adjustFireLoss(-1.25 * reac_volume)*-1)
+			if(C.stat != DEAD)
+				C.adjustToxLoss((brute+burn)*0.66)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns and bruises healing! It stings like hell!</span>")
 	..()
@@ -548,14 +541,6 @@
 	overdose_threshold = 45
 	addiction_threshold = 30
 
-/datum/reagent/medicine/ephedrine/on_mob_add(mob/living/L)
-	..()
-	L.add_trait(TRAIT_GOTTAGOFAST, id)
-
-/datum/reagent/medicine/ephedrine/on_mob_delete(mob/living/L)
-	L.remove_trait(TRAIT_GOTTAGOFAST, id)
-	..()
-
 /datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
@@ -623,14 +608,6 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	addiction_threshold = 25
-
-/datum/reagent/medicine/morphine/on_mob_add(mob/living/L)
-	..()
-	L.add_trait(TRAIT_IGNORESLOWDOWN, id)
-
-/datum/reagent/medicine/morphine/on_mob_delete(mob/living/L)
-	L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
-	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
 	switch(current_cycle)
@@ -1403,25 +1380,27 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx
 	name = "Med-X"
 	id = "medx"
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive and mildly toxic."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	addiction_threshold = 10
+	addiction_threshold = .1 //good luck
 
 /datum/reagent/medicine/medx/on_mob_add(mob/M)
 	..()
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.add_trait(TRAIT_NOHARDCRIT, id)
+		L.add_trait(TRAIT_NOSOFTCRIT, id)
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.remove_trait(TRAIT_NOHARDCRIT, id)
+		L.remove_trait(TRAIT_NOSOFTCRIT, id)
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
@@ -1429,6 +1408,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)
 	M.adjustStaminaLoss(-5, 0)
+	M.adjustToxLoss(1.5, 0)
 	..()
 	. = 1
 
@@ -1475,25 +1455,36 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/legionmedx
 	name = "natural painkiller"
 	id = "legion_medx"
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Weakens the body, causing it to take more damage, and is poisonous."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.7 * REAGENTS_METABOLISM
-	overdose_threshold = 14
-	addiction_threshold = 50
+	overdose_threshold = 16
+	addiction_threshold = 16
 
 /datum/reagent/medicine/legionmedx/on_mob_add(mob/M)
 	..()
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.add_trait(TRAIT_NOHARDCRIT, id)
+		L.add_trait(TRAIT_NOSOFTCRIT, id)
+		var/datum/physiology/phis = L.physiology
+		phis.brute_mod = 2
+		phis.burn_mod = 2
+		phis.oxy_mod = 1.5
 
 /datum/reagent/medicine/legionmedx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.remove_trait(TRAIT_NOHARDCRIT, id)
+		L.remove_trait(TRAIT_NOSOFTCRIT, id)
+		var/datum/physiology/phis = L.physiology
+		phis.brute_mod = 1
+		phis.burn_mod = 1
+		phis.oxy_mod = 1
+		vomit(L)
 	..()
 
 /datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
@@ -1501,8 +1492,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
-	..()
-	. = 1
+	M.adjustToxLoss(2.5, 0)
 
 /datum/reagent/medicine/legionmedx/overdose_process(mob/living/M)
 	if(prob(33))

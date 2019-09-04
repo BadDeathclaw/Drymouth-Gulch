@@ -741,6 +741,14 @@
 	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
 	category = CAT_DRUGS
 
+/datum/crafting_recipe/natural_painkiller
+	name = "Natural Painkiller"
+	result = /obj/item/reagent_containers/pill/patch/naturalpainkiller
+	time = 30
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/feracactus = 2, /obj/structure/flora/wasteplant/wild_agave = 1, /obj/item/reagent_containers/food/snacks/grown/fungus = 1)
+	tools = list(TOOL_FORGE)
+	category = CAT_DRUGS
+
 
 /datum/crafting_recipe/rags
 	name = "Cut clothing into rags"
@@ -780,6 +788,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
 	time = 80
 	category = CAT_MEDICAL
+
 
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
