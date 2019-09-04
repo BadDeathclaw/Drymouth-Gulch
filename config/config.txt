@@ -14,7 +14,8 @@ $include antag_rep.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
- @SERVERNAME Bad Deathclaw TG Edition
+ @SERVERNAME [ENG] Drymouth Gulch
+## Napist Note: honestly all the display garbage should be setup to be handled via config, not in their own separate files. cross-ref code/game/world.dm #L245
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
  SERVERSQLNAME baddeathclaw
