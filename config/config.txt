@@ -217,13 +217,13 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-FORUMURL https://discord.gg/BbsYDrR
+DISCORDURL https://discord.gg/TCj5cJN
 
 ## Wiki address
 WIKIURL https://bad-deathclaw.fandom.com/wiki/Bad_Deathclaw_Wiki
 
 ## Rules address
-RULESURL https://discord.gg/ppWGX2j
+RULESURL https://discord.gg/TCj5cJN
 
 
 ## Github address
