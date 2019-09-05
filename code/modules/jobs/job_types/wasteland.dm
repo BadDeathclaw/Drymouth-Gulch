@@ -21,8 +21,8 @@ Cult Leader
 	name = "Cult Leader"
 	jobtype = /datum/job/wasteland/f13cultleader
 
-	id = 			/obj/item/card/id/gold
-	uniform =  		/obj/item/clothing/under/rank/captain
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
 
 */
 
@@ -54,7 +54,7 @@ Great Khan
 
 	id = null
 	ears = null
-	belt = null
+	belt = /obj/item/claymore/machete/pipe
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
@@ -74,7 +74,9 @@ Great Khan
 	suit_store = pick(
 		/obj/item/gun/ballistic/revolver/detective, \
 		/obj/item/gun/ballistic/shotgun/remington, \
-		/obj/item/gun/ballistic/revolver/caravan_shotgun)
+		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
+		/obj/item/gun/ballistic/revolver/pipe_rifle, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil)
 	head = /obj/item/clothing/head/helmet/f13/khan
 	shoes = /obj/item/clothing/shoes/f13/khan
 
@@ -228,7 +230,7 @@ Wastelander
 		/obj/item/clothing/suit/armor/f13/leatherarmor)
 	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
 	r_pocket = /obj/item/flashlight/flare
-	belt = 			/obj/item/kitchen/knife/combat/survival
+	belt = 	/obj/item/kitchen/knife/combat/survival
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/reagent_containers/pill/radx=1, \
@@ -320,7 +322,7 @@ Punished Raider
 		/obj/item/restraints/handcuffs, \
 		/obj/item/gun/ballistic/revolver/russian, \
 		/obj/item/reagent_containers/food/snacks/grown/banana)
-	belt  = (/obj/item/claymore/machete/pipe)
+	belt  = /obj/item/claymore/machete/pipe
 
 */
 

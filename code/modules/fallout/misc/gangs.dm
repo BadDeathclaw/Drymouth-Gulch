@@ -52,7 +52,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 //Round-start gangs
 /datum/gang/greatkhans
 	name = "Great Khans"
-	color = "#9e8a49" 
+	color = "#917f44" 
 	influence = 0 
 	round_start = TRUE
 	boss_items = list(
@@ -68,7 +68,6 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 		/datum/gang_item/clothing/khan_boots,
 		/datum/gang_item/clothing/khan_helmet,
-		/datum/gang_item/clothing/khan_pants,
 		/datum/gang_item/clothing/khan_uniform,
 		/datum/gang_item/clothing/khan_vest
 	)
