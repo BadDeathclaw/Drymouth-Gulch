@@ -14,7 +14,7 @@
 
 /client/verb/discord()
 
-	set name = "discordurl"
+	set name = "discord"
 
 	set desc = "Visit the Discord."
 	set hidden = 1
