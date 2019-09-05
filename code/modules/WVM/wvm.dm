@@ -14,7 +14,7 @@
 #define CASH_NCR_VENDOR 0.4 /* $100 to 40 caps */
 
 // Total number of caps value spent in the Trading Protectrons Vendors
-GLOBAL_VAR_INIT(VendorCash, 0)
+GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/trading_machine
 	name = "Wasteland Vending Machine"
@@ -629,7 +629,7 @@ GLOBAL_VAR_INIT(VendorCash, 0)
 			to_chat(usr, "<span class='warning'>Error: Insufficent bottle caps value for [prize.equipment_name]!</span>")
 		else
 			stored_caps -= prize.cost
-			GLOB.VendorCash += prize.cost
+			GLOB.vendor_cash += prize.cost
 			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
 			new prize.equipment_path(src.loc)
 			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))

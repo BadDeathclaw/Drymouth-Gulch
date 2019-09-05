@@ -41,7 +41,7 @@ Great Khan
 	spawn_positions = 5
 	description = "Due to your experience dealing with underground elements, you can recognize common raiders at a glance even if they have their face covered."
 	supervisors = "your gang leadership"
-	selection_color = "#68510c"
+	selection_color = "#c2a959"
 
 	outfit = /datum/outfit/job/wasteland/f13pusher
 
@@ -74,10 +74,109 @@ Great Khan
 	suit_store = pick(
 		/obj/item/gun/ballistic/revolver/detective, \
 		/obj/item/gun/ballistic/shotgun/remington, \
+		/obj/item/gun/ballistic/revolver/caravan_shotgun)
+	head = /obj/item/clothing/head/helmet/f13/khan
+	shoes = /obj/item/clothing/shoes/f13/khan
+
+/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	if(!H.gang)
+		var/datum/gang/greatkhans/GK = GLOB.greatkhans
+		GLOB.all_gangs |= GK
+		GK.add_member(H)
+		H.gang = GK
+
+/*
+Raider
+*/
+
+/datum/job/wasteland/f13raider
+	title = "Raider"
+	flag = F13RAIDER
+	department_head = list("Captain")
+	head_announce = list("Security")
+	faction = "Wastelander"
+	social_faction = "Raiders"
+	total_positions = -1
+	spawn_positions = -1
+	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
+	supervisors = "your desires"
+	selection_color = "#dddddd"
+
+	outfit = /datum/outfit/job/wasteland/f13raider
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/wasteland/f13raider
+	name = "Raider"
+	jobtype = /datum/job/wasteland/f13raider
+
+	id = null
+	ears = null
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+
+/datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
+	..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/merca, \
+		/obj/item/clothing/under/f13/mercc, \
+		/obj/item/clothing/under/f13/lumberjack, \
+		/obj/item/clothing/under/f13/machinist, \
+		/obj/item/clothing/under/f13/cowboyb, \
+		/obj/item/clothing/under/f13/cowboyg, \
+		/obj/item/clothing/under/f13/caravaneer, \
+		/obj/item/clothing/under/f13/ranger, \
+		/obj/item/clothing/under/f13/roving, \
+		/obj/item/clothing/under/f13/doctorm, \
+		/obj/item/clothing/under/roman)
+	suit = pick(
+		/obj/item/clothing/suit/armor/f13/raider,\
+		/obj/item/clothing/suit/armor/f13/raider/yankee, \
+		/obj/item/clothing/suit/armor/f13/raider/sadist, \
+		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
+	if(prob(10))
+		mask = pick(
+			/obj/item/clothing/mask/bandana/red,\
+			/obj/item/clothing/mask/bandana/blue,\
+			/obj/item/clothing/mask/bandana/green,\
+			/obj/item/clothing/mask/bandana/gold,\
+			/obj/item/clothing/mask/bandana/black,\
+			/obj/item/clothing/mask/bandana/skull,\
+			/obj/item/clothing/mask/rat/bear,\
+			/obj/item/clothing/mask/rat/bat,\
+			/obj/item/clothing/mask/rat/raven,\
+			/obj/item/clothing/mask/rat/jackal)
+	head = pick(
+		/obj/item/clothing/head/sombrero,\
+		/obj/item/clothing/head/sombrero/green,\
+		/obj/item/clothing/head/helmet/f13/raider,\
+		/obj/item/clothing/head/helmet/f13/eyebot,\
+		/obj/item/clothing/head/helmet/f13/raider/arclight,\
+		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
+		/obj/item/clothing/head/helmet/f13/raider/yankee)
+	r_pocket = /obj/item/flashlight/flare
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(
+		/obj/item/restraints/handcuffs=2, \
+		/obj/item/claymore/machete/pipe=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/storage/bag/money/small/raider=1)
+
+	suit_store = pick(
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/shotgun/remington, \
+		/obj/item/gun/ballistic/revolver/zipgun, \
+		/obj/item/gun/ballistic/revolver/pipe_rifle, \
 		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
 		/obj/item/gun/ballistic/revolver/single_shotgun)
 
-/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/wasteland/f13raider/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -139,103 +238,6 @@ Wastelander
 	/obj/item/gun/ballistic/shotgun/remington, \
 	/obj/item/gun/ballistic/revolver/zipgun, \
 	/obj/item/gun/ballistic/revolver/pipe_rifle)
-
-
-
-/*
-Raider
-*/
-
-/datum/job/wasteland/f13raider
-	title = "Raider"
-	flag = F13RAIDER
-	department_head = list("Captain")
-	head_announce = list("Security")
-	faction = "Wastelander"
-	social_faction = "Raiders"
-	total_positions = -1
-	spawn_positions = -1
-	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
-	supervisors = "your desires"
-	selection_color = "#dddddd"
-
-	outfit = /datum/outfit/job/wasteland/f13raider
-
-	access = list()
-	minimal_access = list()
-
-/datum/outfit/job/wasteland/f13raider
-	name = "Raider"
-	jobtype = /datum/job/wasteland/f13raider
-
-	id = null
-	ears = null
-	belt = null
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
-
-/datum/outfit/job/wasteland/f13raider/pre_equip(mob/living/carbon/human/H)
-	..()
-	uniform = pick(
-		/obj/item/clothing/under/f13/merca, \
-		/obj/item/clothing/under/f13/mercc, \
-		/obj/item/clothing/under/f13/lumberjack, \
-		/obj/item/clothing/under/f13/machinist, \
-		/obj/item/clothing/under/f13/cowboyb, \
-		/obj/item/clothing/under/f13/cowboyg, \
-		/obj/item/clothing/under/f13/caravaneer, \
-		/obj/item/clothing/under/f13/khan, \
-		/obj/item/clothing/under/f13/ranger, \
-		/obj/item/clothing/under/f13/roving, \
-		/obj/item/clothing/under/f13/doctorm, \
-		/obj/item/clothing/under/roman)
-	suit = pick(
-		/obj/item/clothing/suit/armor/f13/raider,\
-		/obj/item/clothing/suit/armor/f13/raider/yankee, \
-		/obj/item/clothing/suit/armor/f13/raider/sadist, \
-		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
-	if(prob(10))
-		mask = pick(
-			/obj/item/clothing/mask/bandana/red,\
-			/obj/item/clothing/mask/bandana/blue,\
-			/obj/item/clothing/mask/bandana/green,\
-			/obj/item/clothing/mask/bandana/gold,\
-			/obj/item/clothing/mask/bandana/black,\
-			/obj/item/clothing/mask/bandana/skull,\
-			/obj/item/clothing/mask/rat/bear,\
-			/obj/item/clothing/mask/rat/bat,\
-			/obj/item/clothing/mask/rat/raven,\
-			/obj/item/clothing/mask/rat/jackal)
-	head = pick(
-		/obj/item/clothing/head/sombrero,\
-		/obj/item/clothing/head/sombrero/green,\
-		/obj/item/clothing/head/helmet/f13/raider,\
-		/obj/item/clothing/head/helmet/f13/eyebot,\
-		/obj/item/clothing/head/helmet/f13/raider/arclight,\
-		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
-		/obj/item/clothing/head/helmet/f13/raider/yankee)
-	r_pocket = /obj/item/flashlight/flare
-	shoes = /obj/item/clothing/shoes/jackboots
-	backpack_contents = list(
-		/obj/item/restraints/handcuffs=2, \
-		/obj/item/claymore/machete/pipe=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
-		/obj/item/storage/bag/money/small/raider=1)
-
-	suit_store = pick(
-		/obj/item/gun/ballistic/revolver/detective, \
-		/obj/item/gun/ballistic/shotgun/remington, \
-		/obj/item/gun/ballistic/revolver/zipgun, \
-		/obj/item/gun/ballistic/revolver/pipe_rifle, \
-		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
-		/obj/item/gun/ballistic/revolver/single_shotgun)
-
-/datum/outfit/job/wasteland/f13raider/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	H.verbs |= /mob/living/proc/creategang
 
 /*
 Punished Raider
