@@ -4,8 +4,8 @@
 GLOBAL_LIST_INIT(gang_names, list ( \
 "raiders", \
 "raider", \
-"pushers", \
-"pusher", \
+"great khan", \
+"great khans", \
 "gang", \
 "gangs", \
 ))
@@ -13,7 +13,6 @@ GLOBAL_LIST_INIT(gang_names, list ( \
 //Which social factions are allowed to join gangs?
 GLOBAL_LIST_INIT(allowed_gang_factions, list ( \
 "Raiders", \
-"Pushers", \
 ))
 
 // List of all existing gangs
@@ -120,7 +119,7 @@ GLOBAL_LIST_EMPTY(all_gangs)
 
 /mob/living/proc/invitegang()
 	set name = "Invite To Gang"
-	set desc = "Invite others to your gang. Only independent raiders or pushers in view can be offered to join!"
+	set desc = "Invite others to your gang. Only independent raiders in view can be offered to join!"
 	set category = "Gang"
 
 	var/list/possible_targets = list()

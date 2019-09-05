@@ -4,6 +4,8 @@
 /*
 Cult Leader
 */
+
+/*
 /datum/job/wasteland/f13cultleader
 	title = "Cult Leader"
 	flag = F13CULTLEADER
@@ -22,9 +24,68 @@ Cult Leader
 	id = 			/obj/item/card/id/gold
 	uniform =  		/obj/item/clothing/under/rank/captain
 
+*/
 
 /*
-wasteland
+Great Khan
+*/
+
+/datum/job/wasteland/f13pusher
+	title = "Great Khan"
+	flag = F13PUSHER
+	department_head = list("Captain")
+	head_announce = list("Security")
+	faction = "Wastelander"
+	social_faction = "Raiders"
+	total_positions = 5
+	spawn_positions = 5
+	description = "Due to your experience dealing with underground elements, you can recognize common raiders at a glance even if they have their face covered."
+	supervisors = "your gang leadership"
+	selection_color = "#68510c"
+
+	outfit = /datum/outfit/job/wasteland/f13pusher
+
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/wasteland/f13pusher
+	name = "Great Khan"
+	jobtype = /datum/job/wasteland/f13pusher
+
+	id = null
+	ears = null
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+
+	suit = /obj/item/clothing/suit/armor/khan
+	uniform = /obj/item/clothing/under/f13/khan
+
+/datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
+	..()
+	r_pocket = pick(
+		/obj/item/flashlight/flare/torch, \
+		/obj/item/flashlight/flare)
+	l_pocket = /obj/item/storage/bag/money/small/khan
+	backpack_contents = list(
+		/obj/item/restraints/handcuffs=1, \
+		/obj/item/reagent_containers/pill/patch/jet=2, \
+		/obj/item/reagent_containers/syringe/medx=1)
+	suit_store = pick(
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/shotgun/remington, \
+		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
+		/obj/item/gun/ballistic/revolver/single_shotgun)
+
+/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+
+	H.verbs |= /mob/living/proc/creategang
+
+/*
+Wastelander
 */
 
 /datum/job/wasteland/f13wastelander
@@ -177,61 +238,10 @@ Raider
 	H.verbs |= /mob/living/proc/creategang
 
 /*
-Pusher
-*/
-
-/datum/job/wasteland/f13pusher
-	title = "Pusher"
-	flag = F13PUSHER
-	department_head = list("Captain")
-	head_announce = list("Security")
-	faction = "Wastelander"
-	social_faction = "Pushers"
-	total_positions = 4
-	spawn_positions = 4
-	description = "Due to your experience dealing with underground elements, you can recognize raiders at a glance even if they have their face covered."
-	supervisors = "no one"
-	selection_color = "#dddddd"
-
-	outfit = /datum/outfit/job/wasteland/f13pusher
-
-	access = list()
-	minimal_access = list()
-
-/datum/outfit/job/wasteland/f13pusher
-	name = "Pusher"
-	jobtype = /datum/job/wasteland/f13pusher
-
-	id = null
-	ears = null
-	belt = null
-	backpack = /obj/item/storage/backpack/satchel/explorer
-	satchel = /obj/item/storage/backpack/satchel/explorer
-
-	suit = /obj/item/clothing/suit/armor/khan
-	uniform = /obj/item/clothing/under/f13/khan
-
-/datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
-	..()
-	r_pocket = pick(
-		/obj/item/flashlight/flare/torch, \
-		/obj/item/flashlight/flare)
-	l_pocket = /obj/item/storage/bag/money/small/wastelander
-	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/jet=3, \
-		/obj/item/reagent_containers/syringe/medx=2)
-
-/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	H.verbs |= /mob/living/proc/creategang
-
-/*
 Punished Raider
 */
 
+/*
 /datum/job/wasteland/f13punraider
 	title = "Punished Raider"
 	flag = F13PUNRAIDER
@@ -309,6 +319,8 @@ Punished Raider
 		/obj/item/gun/ballistic/revolver/russian, \
 		/obj/item/reagent_containers/food/snacks/grown/banana)
 	belt  = (/obj/item/claymore/machete/pipe)
+
+*/
 
 /*
 Trader

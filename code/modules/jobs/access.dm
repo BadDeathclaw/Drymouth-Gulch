@@ -353,7 +353,7 @@
 				"NCR Veteran Ranger", "NCR Patrol Ranger", "NCR Recon Ranger",
 				"Chief of Security", "Vault-tec Doctor", "Vault-tec Scientist",
 				"Vault-tec Security", "Vault-tec Engineer", "Vault Dweller",
-				"Wastelander", "Raider", "Pusher", "Preacher")
+				"Wastelander", "Raider", "Great Khan", "Preacher")
 
 /proc/get_all_job_icons() //For all existing HUD icons
 	return get_all_jobs() + list("Prisoner")
