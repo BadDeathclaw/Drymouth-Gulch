@@ -13,7 +13,9 @@
 	return
 
 /client/verb/discord()
+
 	set name = "discordurl"
+
 	set desc = "Visit the Discord."
 	set hidden = 1
 	var/discordurl = CONFIG_GET(string/discordurl)

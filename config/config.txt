@@ -216,14 +216,16 @@ CHECK_RANDOMIZER
 ## Don't set this to the same server, BYOND will automatically restart players to the server when it has restarted.
 # SERVER ss13.example.com:2506
 
-## discord address
-DISCORDURL https://discord.gg/WEFnDhK
+
+## forum address
+DISCORDURL https://discord.gg/TCj5cJN
 
 ## Wiki address
 WIKIURL https://bad-deathclaw.fandom.com/wiki/Bad_Deathclaw_Wiki
 
 ## Rules address
-RULESURL https://discord.gg/WEFnDhK
+RULESURL https://discord.gg/TCj5cJN
+
 
 
 ## Github address
