@@ -270,7 +270,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /mob/living/proc/removemember()
 	set name = "Remove Member"
-	set desc = "Remove a gang member from the gang in view."
+	set desc = "Remove an alive gang member from the gang in view."
 	set category = "Gang"
 
 	var/list/possible_targets = list()

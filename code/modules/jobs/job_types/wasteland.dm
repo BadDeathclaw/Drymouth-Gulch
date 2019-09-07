@@ -106,7 +106,7 @@ Raider
 	spawn_positions = 40
 	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
 	supervisors = "your desires"
-	selection_color = "#a1a1a1"
+	selection_color = "#ff4747"
 
 	outfit = /datum/outfit/job/wasteland/f13raider
 

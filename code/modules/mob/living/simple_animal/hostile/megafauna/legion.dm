@@ -175,7 +175,7 @@ Difficulty: Medium
 	var/datum/weather/A
 	for(var/V in SSweather.processing)
 		var/datum/weather/W = V
-		if((user_turf.z in W.impacted_z_levels) && W.area_type == user_area.type)
+		if((user_turf.z in W.impacted_z_levels) && W.areas_type in user_area.type)
 			A = W
 			break
 
@@ -192,7 +192,7 @@ Difficulty: Medium
 	else
 		A = new storm_type(list(user_turf.z))
 		A.name = "staff storm"
-		A.area_type = user_area.type
+		A.areas_type = list(user_area.type)
 		A.telegraph_duration = 100
 		A.end_duration = 100
 
