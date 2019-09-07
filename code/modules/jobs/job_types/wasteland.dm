@@ -85,7 +85,7 @@ Great Khan
 	if(visualsOnly)
 		return
 
-	H.social_faction |= "Raiders"
+	H.social_faction = "Raiders"
 
 	if(!H.gang)
 		var/datum/gang/greatkhans/GK = GLOB.greatkhans
@@ -185,7 +185,7 @@ Raider
 	if(visualsOnly)
 		return
 
-	H.social_faction |= "Raiders"
+	H.social_faction = "Raiders"
 	H.verbs |= /mob/living/proc/creategang
 
 /*
