@@ -352,10 +352,10 @@
 		msg += "<span class='info'><b>Traits:</b> [traitstring]</span><br>"
 	msg += "*---------*</span>"
 
-	if(social_faction && src != user)
+	if(social_faction)
 		var/datum/gang/G = gang
 		var/datum/gang/UserGang = user.gang
-		if(social_faction == "Raiders" && !G && (!skipface || isobserver(user) || (user.social_faction in GLOB.allowed_gang_factions)))
+		if(social_faction == "Raiders" && !G && (!skipface || isobserver(user) || (user.social_faction in GLOB.allowed_gang_factions && src != user)))
 			msg += "\n<span class='danger'><font size=3>[t_He] [t_is] a <span class='bold'>Raider</span>!</span></font>"
 		else if(G && G == UserGang)
 			if(G.leader == src)

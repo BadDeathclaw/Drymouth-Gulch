@@ -68,7 +68,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	"Punished Raider",
 	"Wastelander",
 	"Raider",
-	"Pusher",
+	"Great Khan",
 	"Preacher"
 		)
 
