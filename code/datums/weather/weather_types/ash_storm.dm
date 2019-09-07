@@ -8,8 +8,8 @@
 	telegraph_overlay = "light_ash"
 
 	weather_message = "<span class='userdanger'><i>Smoldering clouds of scorching ash billow down around you! Get inside!</i></span>"
-	weather_duration_lower = 600
-	weather_duration_upper = 1200
+	weather_duration_lower = 1200
+	weather_duration_upper = 2400
 	weather_overlay = "ash_storm"
 
 	end_message = "<span class='boldannounce'>The shrieking wind whips away the last of the ash and falls to its usual murmur. It should be safe to go outside now.</span>"

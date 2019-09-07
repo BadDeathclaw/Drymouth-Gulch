@@ -524,12 +524,12 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Surrival knife",				/obj/item/kitchen/knife/combat/survival, 							50),
+		new /datum/data/wasteland_equipment("Surrival knife",				/obj/item/kitchen/knife/combat/survival, 							70),
 		new /datum/data/wasteland_equipment("Combat knife",					/obj/item/kitchen/knife/combat, 									100),
-		new /datum/data/wasteland_equipment("Mosin nagant",					/obj/item/gun/ballistic/shotgun/boltaction,							100),
-		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						160),
-		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					180),
-		new /datum/data/wasteland_equipment("Riot shield",					/obj/item/shield/riot,												1000)
+		new /datum/data/wasteland_equipment("Mosin nagant",					/obj/item/gun/ballistic/shotgun/boltaction,							120),
+		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					150),
+		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						170),
+		new /datum/data/wasteland_equipment("Riot shield",					/obj/item/shield/riot,												600)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/ammo

@@ -3,15 +3,15 @@
 	desc = "Rain will fall on the Wasteland, cleaning it."
 	probability = 10
 
-	telegraph_duration = 400
+	telegraph_duration = 300
 	telegraph_overlay = "snow_storm"
 	telegraph_message = "<span class='userdanger'>Rain is coming to the area, bringing purity and sustenance to all life. Rejoice!</span>"
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
 	weather_message = "<span class='userdanger'><i>Rain pours down around you!</i></span>"
 	weather_overlay = "rain"
-	weather_duration_lower = 600
-	weather_duration_upper = 1500
+	weather_duration_lower = 1200
+	weather_duration_upper = 2400
 	weather_sound = 'sound/ambience/acidrain_mid.ogg'
 
 	end_duration = 100
