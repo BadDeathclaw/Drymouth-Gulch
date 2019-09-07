@@ -175,7 +175,7 @@ Difficulty: Medium
 	var/datum/weather/A
 	for(var/V in SSweather.processing)
 		var/datum/weather/W = V
-		if((user_turf.z in W.impacted_z_levels) && W.areas_type in user_area.type)
+		if((user_turf.z in W.impacted_z_levels) && user_area.type in W.areas_type)
 			A = W
 			break
 
