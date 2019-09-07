@@ -413,7 +413,7 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
-	faction = list("neutral")
+	faction = list("neutral", "bighorner")
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
 	attack_same = 1
 	attacktext = "rams"
@@ -462,7 +462,7 @@
 			if((prob(3)))
 				is_calf = 0
 				udder = new()
-				if (name == "bighorn lamb")
+				if(name == "bighorn lamb")
 					name = "bighorn"
 				else
 					name = "bighorn"
