@@ -37,8 +37,8 @@ Great Khan
 	head_announce = list("Security")
 	faction = "Wastelander"
 	social_faction = "Raiders"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 6
+	spawn_positions = 6
 	description = "Due to your experience dealing with underground elements, you can recognize common raiders at a glance even if they have their face covered."
 	supervisors = "your gang leadership"
 	selection_color = "#ff915e"

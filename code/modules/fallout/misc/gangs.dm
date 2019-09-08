@@ -131,6 +131,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /datum/gang/proc/add_member(mob/living/carbon/new_member)
 	members |= new_member
+	new_member.faction |= name
 	new_member.verbs -= /mob/living/proc/creategang
 	new_member.verbs |= /mob/living/proc/leavegang
 	new_member.verbs |= /mob/living/proc/assumeleader
@@ -141,6 +142,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 /datum/gang/proc/remove_member(mob/living/carbon/member)
 	members -= member
 	member.gang = null
+	member.faction -= name
 	member.verbs -= /mob/living/proc/leavegang
 	member.verbs -= /mob/living/proc/assumeleader
 	member.verbs |= /mob/living/proc/creategang
