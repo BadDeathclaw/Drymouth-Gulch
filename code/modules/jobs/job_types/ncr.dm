@@ -135,7 +135,7 @@ Lieutenant
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
 
-	/*
+/*
 Medic
 */
 /datum/job/ncr/f13medic
@@ -177,9 +177,9 @@ Medic
 		/obj/item/book/granter/trait/chemistry)
 	box = null
 
-//sergeant
-
-
+/*
+Sergeant
+*/
 /datum/job/ncr/f13sergeant
 	title = "NCR Sergeant"
 	flag = F13SERGEANT

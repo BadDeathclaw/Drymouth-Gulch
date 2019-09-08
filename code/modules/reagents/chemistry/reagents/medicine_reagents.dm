@@ -1415,13 +1415,13 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.add_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.remove_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
@@ -1487,13 +1487,13 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.add_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 
 /datum/reagent/medicine/legionmedx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.remove_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 	..()
 
 /datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
