@@ -52,8 +52,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 //Round-start gangs
 /datum/gang/greatkhans
 	name = "Great Khans"
-	color = "#917f44" 
-	influence = 0 
+	color = "#b07f43"
 	round_start = TRUE
 	boss_items = list(
 		/datum/gang_item/equipment/spraycan,
@@ -148,7 +147,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 	to_chat(member, "<span class='warning'>You are no longer a member of the [name]!</span>")
 
 	if(!members.len && !round_start)
-		GLOB.gang_names -= name
+		GLOB.gang_names -= lowertext(name)
 		GLOB.all_gangs -= src
 		qdel(src)
 
@@ -198,7 +197,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 	if(lowertext(input) in GLOB.gang_names)
 		to_chat(src, "<span class='notice'>This gang name is already taken!</span>")
 		return
-	GLOB.gang_names |= input
+	GLOB.gang_names |= lowertext(input)
 
 	var/datum/gang/G = new()
 	G.name = input
@@ -271,12 +270,14 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /mob/living/proc/removemember()
 	set name = "Remove Member"
-	set desc = "Remove a gang member from the gang in view."
+	set desc = "Remove an alive gang member from the gang in view."
 	set category = "Gang"
 
 	var/list/possible_targets = list()
 	for(var/mob/living/carbon/target in oview())
 		if(target.gang != gang)
+			continue
+		if(target.stat == DEAD)
 			continue
 		possible_targets += target
 
