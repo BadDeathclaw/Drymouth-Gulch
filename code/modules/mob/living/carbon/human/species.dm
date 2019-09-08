@@ -1118,7 +1118,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(I.item_flags & SLOWS_WHILE_IN_HAND)
 				. += I.slowdown
 		var/health_deficiency = (100 - H.health + H.staminaloss)
-		if(health_deficiency >= 40)
+		if(health_deficiency >= 40 && !H.has_trait(TRAIT_IGNOREDAMAGESLOWDOWN))
 			if(flight)
 				. += (health_deficiency / 75)
 			else
