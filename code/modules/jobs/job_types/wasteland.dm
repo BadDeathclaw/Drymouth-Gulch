@@ -41,7 +41,7 @@ Great Khan
 	spawn_positions = 5
 	description = "Due to your experience dealing with underground elements, you can recognize common raiders at a glance even if they have their face covered."
 	supervisors = "your gang leadership"
-	selection_color = "#c2a959"
+	selection_color = "#ff915e"
 
 	outfit = /datum/outfit/job/wasteland/f13pusher
 
@@ -85,6 +85,8 @@ Great Khan
 	if(visualsOnly)
 		return
 
+	H.social_faction = "Raiders"
+
 	if(!H.gang)
 		var/datum/gang/greatkhans/GK = GLOB.greatkhans
 		GLOB.all_gangs |= GK
@@ -102,11 +104,11 @@ Raider
 	head_announce = list("Security")
 	faction = "Wastelander"
 	social_faction = "Raiders"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 40
+	spawn_positions = 40
 	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
 	supervisors = "your desires"
-	selection_color = "#dddddd"
+	selection_color = "#ff4747"
 
 	outfit = /datum/outfit/job/wasteland/f13raider
 
@@ -183,6 +185,7 @@ Raider
 	if(visualsOnly)
 		return
 
+	H.social_faction = "Raiders"
 	H.verbs |= /mob/living/proc/creategang
 
 /*

@@ -15,6 +15,7 @@
 	resistance_flags = UNACIDABLE
 	strip_delay = 30
 	icon = 'icons/fallout/clothing/suits.dmi'
+
 /obj/item/clothing/suit/armor/f13/doom
 	name = "green chestplate"
 	desc = "An odd green chestplate.<br>It's lightweight and strangely comfortable."
@@ -135,14 +136,14 @@
 	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons and gauntlets, worn by NCR scouts in combat environments.<br>This one has the facewrap, designed to be pulled over the user's face to protect oneself from dust particles and other mainly radioactive elements."
 	icon_state = "ncr_armor9"
 	item_state = "ncr_armor9"
-	armor = list(melee = 30, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 50, fire = 10, acid = 10) //Better radiation protection, thank the facewrap bro!
+	armor = list(melee = 30, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 30, fire = 10, acid = 10) //Better radiation protection, thank the facewrap bro!
 	icon = 'icons/fallout/clothing/suits.dmi'
 /obj/item/clothing/suit/armor/f13/rangercombat/old
 	name = "worn veteran ranger combat armor"
 	desc = "A unique armor, that has been in countless battles and caused much bloodshed."
 	icon_state = "oldranger"
 	item_state = "oldranger"
-	armor = list(melee = 40, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 0, rad = 40, fire = 20, acid = 20)
+	armor = list(melee = 40, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 0, rad = 30, fire = 20, acid = 20)
 	icon = 'icons/fallout/clothing/suits.dmi'
 /obj/item/clothing/suit/armor/f13/battlecoat //Maxson's battlecoat from Fallout 4
 	name = "battlecoat"
@@ -150,7 +151,7 @@
 	icon_state = "battlecoat"
 	item_state = "battlecoat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 50, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 0, rad = 50, fire = 30, acid = 30)
+	armor = list(melee = 50, bullet = 30, laser = 30, energy = 30, bomb = 30, bio = 0, rad = 30, fire = 30, acid = 30)
 	strip_delay = 30
 	allowed = list(/obj/item/weapon)
 	icon = 'icons/fallout/clothing/suits.dmi'

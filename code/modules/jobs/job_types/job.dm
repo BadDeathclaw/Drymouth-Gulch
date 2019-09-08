@@ -168,7 +168,6 @@
 /datum/job/proc/map_check()
 	return TRUE
 
-
 /datum/outfit/job
 	name = "Standard Gear"
 
