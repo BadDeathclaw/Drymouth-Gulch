@@ -1114,6 +1114,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			. += H.shoes.slowdown
 		if(H.back)
 			. += H.back.slowdown
+		if(H.head)
+			. += H.head.slowdown
 		for(var/obj/item/I in H.held_items)
 			if(I.item_flags & SLOWS_WHILE_IN_HAND)
 				. += I.slowdown
