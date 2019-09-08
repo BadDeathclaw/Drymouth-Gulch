@@ -569,7 +569,7 @@
 //Busted/salvaged power armor helmets, does not require PA training
 
 /obj/item/clothing/head/helmet/f13/brokenpa
-	weight_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_BULKY
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -604,7 +604,7 @@
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/power_armor
-	weight_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_BULKY
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
