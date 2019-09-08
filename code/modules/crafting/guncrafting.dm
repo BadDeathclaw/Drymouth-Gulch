@@ -51,18 +51,3 @@
 /obj/machinery/ammobench/makeshift/wrench_act(mob/living/user, obj/item/I)
 	default_unfasten_wrench(user, I, 10)
 	return TRUE
-
-
-/obj/machinery/ammobench/ncr
-	name = "NCR reloading bench"
-	desc = "A reloading bench used for inefficiently  crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This one can be used to create most NCR rounds."
-	icon = 'icons/obj/recycling.dmi' //placeholder
-	icon_state = "grinder-b1" //placeholder
-	machine_tool_behaviour = TOOL_NCR
-
-/obj/machinery/ammobench/legion
-	name = "Legion reloading bench"
-	desc = "A reloading bench used for inefficiently crafting new ammunition out of scrap metal. There's a substantial supply of powder and primer. This one can be used to create most Legion rounds."
-	icon = 'icons/obj/recycling.dmi' //placeholder
-	icon_state = "grinder-b1" //placeholder
-	machine_tool_behaviour = TOOL_NCR
