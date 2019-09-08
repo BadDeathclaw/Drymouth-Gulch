@@ -637,7 +637,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Raider"
 
 /obj/effect/landmark/start/f13/pusher
-	name = "Pusher"
+	name = "Great Khan"
 	icon_state = "Pusher"
 
 /obj/effect/landmark/start/f13/preacher

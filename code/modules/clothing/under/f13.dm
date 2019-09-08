@@ -262,7 +262,7 @@
 	item_color = "rusty_armor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 
-//Khans
+//Great Khans
 
 /obj/item/clothing/under/f13/khan
 	name = "great khan uniform"
@@ -270,7 +270,6 @@
 	icon_state = "khan"
 	item_state = "khan"
 	item_color = "khan"
-
 
 /obj/item/clothing/suit/armor/khan
 	name = "khan armored vest"
