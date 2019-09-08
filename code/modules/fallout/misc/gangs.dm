@@ -1,6 +1,6 @@
 // Fallout Gangs
 
-// Names of all created gangs, starting with a default one, serves as a blacklisted to prevent inappropiate or duplicit gang names
+// Names that serve as a blacklist to prevent inappropiate or duplicit gang names
 GLOBAL_LIST_INIT(gang_names, list ( \
 "raider", \
 "raiders", \
@@ -131,7 +131,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /datum/gang/proc/add_member(mob/living/carbon/new_member)
 	members |= new_member
-	new_member.faction |= name
+	new_member.faction |= "[name]-gang"
 	new_member.verbs -= /mob/living/proc/creategang
 	new_member.verbs |= /mob/living/proc/leavegang
 	new_member.verbs |= /mob/living/proc/assumeleader
@@ -142,7 +142,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 /datum/gang/proc/remove_member(mob/living/carbon/member)
 	members -= member
 	member.gang = null
-	member.faction -= name
+	member.faction -= "[name]-gang"
 	member.verbs -= /mob/living/proc/leavegang
 	member.verbs -= /mob/living/proc/assumeleader
 	member.verbs |= /mob/living/proc/creategang
