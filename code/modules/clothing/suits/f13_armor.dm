@@ -78,17 +78,17 @@
 	strip_delay = 60
 	resistance_flags = FIRE_PROOF
 	icon = 'icons/fallout/clothing/suits.dmi'
-/obj/item/clothing/suit/armor/f13/bmetalarmor
-	name = "black metal armor"
-	desc = "A set of sturdy metal armor made from various bits of scrap metal. It looks like it might impair movement."
-	icon_state = "bmetalarmor"
-	item_state = "bmetalarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 50, bullet = 40, laser = 30, energy = 30, bomb = 40, bio = 0, rad = 0, fire = 20, acid = 0)
-	flags_inv = HIDEJUMPSUIT
-	strip_delay = 60
-	resistance_flags = FIRE_PROOF
-	icon = 'icons/fallout/clothing/suits.dmi'
+///obj/item/clothing/suit/armor/f13/bmetalarmor //uses the same path as bmetalarmor in armor.dm, causing the assless chaps bug
+//	name = "black metal armor"
+//	desc = "A set of sturdy metal armor made from various bits of scrap metal. It looks like it might impair movement."
+//	icon_state = "bmetalarmor"
+//	item_state = "bmetalarmor"
+//	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+//	armor = list(melee = 50, bullet = 40, laser = 30, energy = 30, bomb = 40, bio = 0, rad = 0, fire = 20, acid = 0)
+//	flags_inv = HIDEJUMPSUIT
+//	strip_delay = 60
+//	resistance_flags = FIRE_PROOF
+//	icon = 'icons/fallout/clothing/suits.dmi'
 /obj/item/clothing/suit/armor/f13/ncrarmor/soldier
 	name = "standard issue trooper armor"
 	desc = "A set of NCR armor that consists of an armored breastplate, metal pauldrons, and gauntlets, worn by NCR soldiers in combat environments.<br>This one has had its breastplate emblazoned with the emblem of the NCR, that has slightly faded over time."
