@@ -233,8 +233,8 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 	var/datum/gang/G = gang
 	if(G && G.leader)
 		var/mob/living/L = G.leader
-		if(L.stat != DEAD)
-			to_chat(src, "<span class='warning'>Gang leader is still alive!</span>")
+		if(L.stat != DEAD && L.client)
+			to_chat(src, "<span class='warning'>Gang leader is still alive and well!</span>")
 			return
 		else
 			G.remove_leader(L)
