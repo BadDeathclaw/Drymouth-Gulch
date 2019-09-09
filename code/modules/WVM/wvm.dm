@@ -14,7 +14,7 @@
 #define CASH_NCR_VENDOR 0.4 /* $100 to 40 caps */
 
 // Total number of caps value spent in the Trading Protectrons Vendors
-GLOBAL_VAR_INIT(VendorCash, 0)
+GLOBAL_VAR_INIT(vendor_cash, 0)
 
 /obj/machinery/trading_machine
 	name = "Wasteland Vending Machine"
@@ -524,12 +524,12 @@ GLOBAL_VAR_INIT(VendorCash, 0)
 	name = "Wasteland Vending Machine - Weapons"
 	icon_state = "weapon_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Surrival knife",				/obj/item/kitchen/knife/combat/survival, 							50),
+		new /datum/data/wasteland_equipment("Surrival knife",				/obj/item/kitchen/knife/combat/survival, 							70),
 		new /datum/data/wasteland_equipment("Combat knife",					/obj/item/kitchen/knife/combat, 									100),
-		new /datum/data/wasteland_equipment("Mosin nagant",					/obj/item/gun/ballistic/shotgun/boltaction,							100),
-		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						160),
-		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					180),
-		new /datum/data/wasteland_equipment("Riot shield",					/obj/item/shield/riot,												1000)
+		new /datum/data/wasteland_equipment("Mosin nagant",					/obj/item/gun/ballistic/shotgun/boltaction,							120),
+		new /datum/data/wasteland_equipment("9mm pistol",					/obj/item/gun/ballistic/automatic/pistol/ninemil,					150),
+		new /datum/data/wasteland_equipment("M1911",						/obj/item/gun/ballistic/automatic/pistol/m1911,						170),
+		new /datum/data/wasteland_equipment("Riot shield",					/obj/item/shield/riot,												600)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/ammo
@@ -629,7 +629,7 @@ GLOBAL_VAR_INIT(VendorCash, 0)
 			to_chat(usr, "<span class='warning'>Error: Insufficent bottle caps value for [prize.equipment_name]!</span>")
 		else
 			stored_caps -= prize.cost
-			GLOB.VendorCash += prize.cost
+			GLOB.vendor_cash += prize.cost
 			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
 			new prize.equipment_path(src.loc)
 			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))

@@ -96,7 +96,7 @@
 	discordmsg += "Survivors: [num_survivors]\n"
 	discordmsg += "Escapees: [num_escapees]\n"
 	discordmsg += "Integrity: [station_integrity]\n"
-	discordmsg += "Trading Protectrons profits: [GLOB.VendorCash]\n"
+	discordmsg += "Trading Protectrons profits: [GLOB.vendor_cash]\n"
 	if(largest_gang)
 		discordmsg += "Largest Gang: [largest_gang.name] - [largest_gang.members.len] members, lead by [largest_leader.real_name]!\n"
 	discordmsg += "Gamemode: [SSticker.mode.name]\n"
@@ -318,7 +318,7 @@
 
 	parts += "[GLOB.TAB]Shift Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
 	parts += "[GLOB.TAB]Wasteland Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
-	parts += "[GLOB.TAB]Trading Protectrons Profits: <B>[GLOB.VendorCash]</B>"
+	parts += "[GLOB.TAB]Trading Protectrons Profits: <B>[GLOB.vendor_cash]</B>"
 	if(largest_gang)
 		parts += "[GLOB.TAB]Largest Gang: <B>[largest_gang.name]</B> - [largest_gang.members.len] members, lead by <B>[largest_leader.real_name]!</B>"
 	var/total_players = GLOB.joined_player_list.len

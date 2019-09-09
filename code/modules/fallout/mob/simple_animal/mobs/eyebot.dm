@@ -22,7 +22,7 @@
 //	self_weight = 50
 	healable = 0
 
-	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant")
+	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
 
 //	ambient_sound = 'sound/f13npc/eyebot_loop.ogg'
 

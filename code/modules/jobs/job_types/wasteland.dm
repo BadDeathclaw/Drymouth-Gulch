@@ -4,6 +4,8 @@
 /*
 Cult Leader
 */
+
+/*
 /datum/job/wasteland/f13cultleader
 	title = "Cult Leader"
 	flag = F13CULTLEADER
@@ -19,67 +21,77 @@ Cult Leader
 	name = "Cult Leader"
 	jobtype = /datum/job/wasteland/f13cultleader
 
-	id = 			/obj/item/card/id/gold
-	uniform =  		/obj/item/clothing/under/rank/captain
+	id = /obj/item/card/id/gold
+	uniform =  /obj/item/clothing/under/rank/captain
 
-
-/*
-wasteland
 */
 
-/datum/job/wasteland/f13wastelander
-	title = "Wastelander"
-	flag = F13WASTELANDER
+/*
+Great Khan
+*/
+
+/datum/job/wasteland/f13pusher
+	title = "Great Khan"
+	flag = F13PUSHER
+	department_head = list("Captain")
+	head_announce = list("Security")
 	faction = "Wastelander"
-	total_positions = -1
-	spawn_positions = -1
-	supervisors = "no one"
-	selection_color = "#dddddd"
+	social_faction = "Raiders"
+	total_positions = 5
+	spawn_positions = 5
+	description = "Due to your experience dealing with underground elements, you can recognize common raiders at a glance even if they have their face covered."
+	supervisors = "your gang leadership"
+	selection_color = "#ff915e"
 
-	outfit = /datum/outfit/job/wasteland/f13wastelander
+	outfit = /datum/outfit/job/wasteland/f13pusher
 
-/datum/outfit/job/wasteland/f13wastelander
-	name = "Wastelander"
-	jobtype = /datum/job/wasteland/f13wastelander
+	access = list()
+	minimal_access = list()
+
+/datum/outfit/job/wasteland/f13pusher
+	name = "Great Khan"
+	jobtype = /datum/job/wasteland/f13pusher
 
 	id = null
 	ears = null
-	belt = null
+	belt = /obj/item/claymore/machete/pipe
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-/datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
+	suit = /obj/item/clothing/suit/armor/khan
+	uniform = /obj/item/clothing/under/f13/khan
+
+/datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
 	..()
-	r_hand = pick(
-		/obj/item/claymore/machete/pipe, \
-		/obj/item/claymore/machete/golf, \
-		/obj/item/switchblade, \
-		/obj/item/kitchen/knife)
-	uniform = pick(
-		/obj/item/clothing/under/f13/settler, \
-		/obj/item/clothing/under/f13/brahminm, \
-		/obj/item/clothing/under/f13/machinist, \
-		/obj/item/clothing/under/f13/lumberjack, \
-		/obj/item/clothing/under/f13/roving)
-	suit = pick(
-		/obj/item/clothing/suit/armor/f13/kit, \
-		/obj/item/clothing/suit/f13/veteran, \
-		/obj/item/clothing/suit/toggle/labcoat/f13/wanderer, \
-		/obj/item/clothing/suit/armor/f13/leatherarmor)
-	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
-	r_pocket = /obj/item/flashlight/flare
-	belt = 			/obj/item/kitchen/knife/combat/survival
+	r_pocket = pick(
+		/obj/item/flashlight/flare/torch, \
+		/obj/item/flashlight/flare)
+	l_pocket = /obj/item/storage/bag/money/small/khan
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
-		/obj/item/reagent_containers/pill/radx=1, \
-		/obj/item/storage/bag/money/small/wastelander)
+		/obj/item/restraints/handcuffs=1, \
+		/obj/item/reagent_containers/pill/patch/jet=2, \
+		/obj/item/reagent_containers/syringe/medx=1)
 	suit_store = pick(
-	/obj/item/gun/ballistic/revolver/detective, \
-	/obj/item/gun/ballistic/shotgun/remington, \
-	/obj/item/gun/ballistic/revolver/zipgun, \
-	/obj/item/gun/ballistic/revolver/pipe_rifle)
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/shotgun/remington, \
+		/obj/item/gun/ballistic/revolver/caravan_shotgun, \
+		/obj/item/gun/ballistic/revolver/pipe_rifle, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil)
+	head = /obj/item/clothing/head/helmet/f13/khan
+	shoes = /obj/item/clothing/shoes/f13/khan
 
+/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
 
+	H.social_faction = "Raiders"
+
+	if(!H.gang)
+		var/datum/gang/greatkhans/GK = GLOB.greatkhans
+		GLOB.all_gangs |= GK
+		GK.add_member(H)
+		H.gang = GK
 
 /*
 Raider
@@ -92,11 +104,11 @@ Raider
 	head_announce = list("Security")
 	faction = "Wastelander"
 	social_faction = "Raiders"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 40
+	spawn_positions = 40
 	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
 	supervisors = "your desires"
-	selection_color = "#dddddd"
+	selection_color = "#ff4747"
 
 	outfit = /datum/outfit/job/wasteland/f13raider
 
@@ -123,7 +135,6 @@ Raider
 		/obj/item/clothing/under/f13/cowboyb, \
 		/obj/item/clothing/under/f13/cowboyg, \
 		/obj/item/clothing/under/f13/caravaneer, \
-		/obj/item/clothing/under/f13/khan, \
 		/obj/item/clothing/under/f13/ranger, \
 		/obj/item/clothing/under/f13/roving, \
 		/obj/item/clothing/under/f13/doctorm, \
@@ -174,33 +185,27 @@ Raider
 	if(visualsOnly)
 		return
 
+	H.social_faction = "Raiders"
 	H.verbs |= /mob/living/proc/creategang
 
 /*
-Pusher
+Wastelander
 */
 
-/datum/job/wasteland/f13pusher
-	title = "Pusher"
-	flag = F13PUSHER
-	department_head = list("Captain")
-	head_announce = list("Security")
+/datum/job/wasteland/f13wastelander
+	title = "Wastelander"
+	flag = F13WASTELANDER
 	faction = "Wastelander"
-	social_faction = "Pushers"
-	total_positions = 4
-	spawn_positions = 4
-	description = "Due to your experience dealing with underground elements, you can recognize raiders at a glance even if they have their face covered."
+	total_positions = -1
+	spawn_positions = -1
 	supervisors = "no one"
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/wasteland/f13pusher
+	outfit = /datum/outfit/job/wasteland/f13wastelander
 
-	access = list()
-	minimal_access = list()
-
-/datum/outfit/job/wasteland/f13pusher
-	name = "Pusher"
-	jobtype = /datum/job/wasteland/f13pusher
+/datum/outfit/job/wasteland/f13wastelander
+	name = "Wastelander"
+	jobtype = /datum/job/wasteland/f13wastelander
 
 	id = null
 	ears = null
@@ -208,30 +213,42 @@ Pusher
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	suit = /obj/item/clothing/suit/armor/khan
-	uniform = /obj/item/clothing/under/f13/khan
-
-/datum/outfit/job/wasteland/f13pusher/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
 	..()
-	r_pocket = pick(
-		/obj/item/flashlight/flare/torch, \
-		/obj/item/flashlight/flare)
-	l_pocket = /obj/item/storage/bag/money/small/wastelander
+	r_hand = pick(
+		/obj/item/claymore/machete/pipe, \
+		/obj/item/claymore/machete/golf, \
+		/obj/item/switchblade, \
+		/obj/item/kitchen/knife)
+	uniform = pick(
+		/obj/item/clothing/under/f13/settler, \
+		/obj/item/clothing/under/f13/brahminm, \
+		/obj/item/clothing/under/f13/machinist, \
+		/obj/item/clothing/under/f13/lumberjack, \
+		/obj/item/clothing/under/f13/roving)
+	suit = pick(
+		/obj/item/clothing/suit/armor/f13/kit, \
+		/obj/item/clothing/suit/f13/veteran, \
+		/obj/item/clothing/suit/toggle/labcoat/f13/wanderer, \
+		/obj/item/clothing/suit/armor/f13/leatherarmor)
+	l_pocket = 	/obj/item/reagent_containers/food/drinks/flask
+	r_pocket = /obj/item/flashlight/flare
+	belt = 	/obj/item/kitchen/knife/combat/survival
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/jet=3, \
-		/obj/item/reagent_containers/syringe/medx=2)
-
-/datum/outfit/job/wasteland/f13pusher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	..()
-	if(visualsOnly)
-		return
-
-	H.verbs |= /mob/living/proc/creategang
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/reagent_containers/pill/radx=1, \
+		/obj/item/storage/bag/money/small/wastelander)
+	suit_store = pick(
+	/obj/item/gun/ballistic/revolver/detective, \
+	/obj/item/gun/ballistic/shotgun/remington, \
+	/obj/item/gun/ballistic/revolver/zipgun, \
+	/obj/item/gun/ballistic/revolver/pipe_rifle)
 
 /*
 Punished Raider
 */
 
+/*
 /datum/job/wasteland/f13punraider
 	title = "Punished Raider"
 	flag = F13PUNRAIDER
@@ -308,7 +325,9 @@ Punished Raider
 		/obj/item/restraints/handcuffs, \
 		/obj/item/gun/ballistic/revolver/russian, \
 		/obj/item/reagent_containers/food/snacks/grown/banana)
-	belt  = (/obj/item/claymore/machete/pipe)
+	belt  = /obj/item/claymore/machete/pipe
+
+*/
 
 /*
 Trader
