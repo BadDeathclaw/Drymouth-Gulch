@@ -62,9 +62,3 @@
 	desc = "A concoction of broc flower, cave fungus, agrave fruit and xander root."
 	list_reagents = list("healing_poultice" = 10)
 	icon_state = "bandaid_healingpoultice"
-
-/obj/item/reagent_containers/pill/patch/naturalpainkiller
-	name = "Natural painkiller"
-	desc = "A mixture of various plants used to numb severe pain, allowing the seriously wounded to continue fighting. Weakens the body, causing it to take more damage, and is poisonous."
-	list_reagents = list("legion_medx" = 15)
-	icon_state = "heal_powder"
