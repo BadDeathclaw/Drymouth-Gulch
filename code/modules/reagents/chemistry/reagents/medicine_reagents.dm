@@ -1380,7 +1380,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx
 	name = "Med-X"
 	id = "medx"
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive and mildly toxic."
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive and mildly toxic, increases damage resistance."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -1391,16 +1391,14 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	if(isliving(M))
 		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_NOHARDCRIT, id)
-		L.add_trait(TRAIT_NOSOFTCRIT, id)
-
+		L.physiology.brute_mod *= 0.8
+		L.physiology.burn_mod *= 0.8
+		
 /datum/reagent/medicine/medx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_NOHARDCRIT, id)
-		L.remove_trait(TRAIT_NOSOFTCRIT, id)
+		L.physiology.burn_mod *= 1.25
+		L.physiology.brute_mod *= 1.25
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
@@ -1408,7 +1406,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)
 	M.adjustStaminaLoss(-5, 0)
-	M.adjustToxLoss(1.5, 0)
+	M.adjustToxLoss(.5, 0)
 	..()
 	. = 1
 
@@ -1455,7 +1453,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/legionmedx
 	name = "natural painkiller"
 	id = "legion_medx"
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Weakens the body, causing it to take more damage, and is poisonous."
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.7 * REAGENTS_METABOLISM
@@ -1467,24 +1465,13 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_NOHARDCRIT, id)
-		L.add_trait(TRAIT_NOSOFTCRIT, id)
-		var/datum/physiology/phis = L.physiology
-		phis.brute_mod = 2
-		phis.burn_mod = 2
-		phis.oxy_mod = 1.5
+		L.add_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 
 /datum/reagent/medicine/legionmedx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_NOHARDCRIT, id)
-		L.remove_trait(TRAIT_NOSOFTCRIT, id)
-		var/datum/physiology/phis = L.physiology
-		phis.brute_mod = 1
-		phis.burn_mod = 1
-		phis.oxy_mod = 1
-		vomit(L)
+		L.remove_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 	..()
 
 /datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
@@ -1492,7 +1479,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
-	M.adjustToxLoss(2.5, 0)
 
 /datum/reagent/medicine/legionmedx/overdose_process(mob/living/M)
 	if(prob(33))
