@@ -300,15 +300,11 @@
 	cut_overlays()
 	switch(status)		// set icon_states
 		if(LIGHT_OK)
-			var/area/A = get_area(src)
-			if(emergency_mode || (A && A.fire))
-				icon_state = "[base_state]_emergency"
-			else
-				icon_state = "[base_state]"
-				if(on)
-					var/mutable_appearance/glowybit = mutable_appearance(overlayicon, base_state, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
-					glowybit.alpha = CLAMP(light_power*250, 30, 200)
-					add_overlay(glowybit)
+			icon_state = "[base_state]"
+			if(on)
+				var/mutable_appearance/glowybit = mutable_appearance(overlayicon, base_state, ABOVE_LIGHTING_LAYER, ABOVE_LIGHTING_PLANE)
+				glowybit.alpha = CLAMP(light_power*250, 30, 200)
+				add_overlay(glowybit)
 		if(LIGHT_EMPTY)
 			icon_state = "[base_state]-empty"
 		if(LIGHT_BURNED)
@@ -327,10 +323,7 @@
 		var/BR = brightness
 		var/PO = bulb_power
 		var/CO = bulb_colour
-		var/area/A = get_area(src)
-		if (A && A.fire)
-			CO = bulb_emergency_colour
-		else if (nightshift_enabled)
+		if (nightshift_enabled)
 			BR = nightshift_brightness
 			PO = nightshift_light_power
 			CO = nightshift_light_color
@@ -551,9 +544,7 @@
 		burn_out()
 		return FALSE
 	cell.use(pwr)
-	set_light(brightness * bulb_emergency_brightness_mul, max(bulb_emergency_pow_min, bulb_emergency_pow_mul * (cell.charge / cell.maxcharge)), bulb_emergency_colour)
 	return TRUE
-
 
 /obj/machinery/light/proc/flicker(var/amount = rand(10, 20))
 	set waitfor = 0

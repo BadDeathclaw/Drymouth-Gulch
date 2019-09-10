@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(vault_positions, list(
 
 GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Raider",
-	"Pusher",
+	"Great Khan",
 	"Preacher",
 	"Wastelander"
 ))

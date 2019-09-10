@@ -93,6 +93,7 @@ GLOBAL_PROTECT(security_mode)
 	GLOB.world_qdel_log = "[GLOB.log_directory]/qdel.log"
 	GLOB.world_runtime_log = "[GLOB.log_directory]/runtime.log"
 	GLOB.query_debug_log = "[GLOB.log_directory]/query_debug.log"
+	GLOB.href_exploit_attempt_log = "[GLOB.log_directory]/href_exploit_attempt.log"
 
 #ifdef UNIT_TESTS
 	GLOB.test_log = file("[GLOB.log_directory]/tests.log")
@@ -113,7 +114,7 @@ GLOBAL_PROTECT(security_mode)
 
 	if(GLOB.round_id)
 		log_game("Round ID: [GLOB.round_id]")
-		
+
 	// This was printed early in startup to the world log and config_error.log,
 	// but those are both private, so let's put the commit info in the runtime
 	// log which is ultimately public.
@@ -241,7 +242,7 @@ GLOBAL_PROTECT(security_mode)
 
 	var/s = ""
 	var/hostedby
-	if(config)
+	if(config) // this should definitely have handlers for just being a config in it's entirety, instead of this mess
 		var/server_name = CONFIG_GET(string/servername)
 		if (server_name)
 			s += "<b>[server_name]</b> &#8212; "
@@ -250,10 +251,10 @@ GLOBAL_PROTECT(security_mode)
 			features += "vote"
 		hostedby = CONFIG_GET(string/hostedby)
 
-	s += "<b>\[ENG] Bad Deathclaw</b> - 18+ Unofficial Fallout 13<br>"
+	s += "<b>\[ENG] Fallout 13 - 18+<br>"
 	s += "<br>"
-	s += "Medium RP \[https://discord.gg/pY33Q8c]<br>"
-	s += "Hosted by degenerates"
+	s += "Medium RP \[https://discord.gg/TCj5cJN]<br>"
+	s += "Hosted by Ren"
 
 	var/n = 0
 	for (var/mob/M in GLOB.player_list)

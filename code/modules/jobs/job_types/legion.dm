@@ -77,7 +77,7 @@ Needs whitelist
 		/obj/item/throwing_star/spear, \
 		/obj/item/melee/powerfist=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/r20=2, \
+		/obj/item/ammo_box/magazine/automatic=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legion)
 
@@ -120,7 +120,6 @@ Centurion
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/book/granter/martial/cqc=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/flashlight/flare/torch=1, \
@@ -156,7 +155,7 @@ Veteran Decan
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit_store = 	/obj/item/gun/ballistic/automatic/l6_saw/m38
 	r_hand = 		/obj/item/twohanded/fireaxe/bmprsword
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
@@ -164,7 +163,7 @@ Veteran Decan
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/tube/m44=2, \
+		/obj/item/ammo_box/magazine/mm195x129/m38=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 
@@ -197,14 +196,14 @@ Prime Decan
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/revolver/m29/alt
+	suit_store = 	/obj/item/gun/ballistic/automatic/greasegun
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/m44=2, \
+		/obj/item/ammo_box/magazine/greasegun=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 
@@ -278,13 +277,13 @@ Vexillarius
 	suit = 			/obj/item/clothing/suit/armor/f13/legvexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legvexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/revolver/m29
+	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
 	backpack_contents = list(
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/m44=2, \
+		/obj/item/ammo_box/tube/a357=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/megaphone/cornu=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
@@ -319,7 +318,7 @@ Veteran
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legveteran
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	suit_store = 	/obj/item/gun/ballistic/shotgun/trench
 	r_hand = 		/obj/item/twohanded/fireaxe
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
@@ -327,7 +326,7 @@ Veteran
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/ammo_box/tube/a357=2, \
+		/obj/item/storage/box/lethalshot, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
@@ -360,13 +359,13 @@ Prime
 	head = 			/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
 	mask =			/obj/item/clothing/mask/bandana/legprime
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
-	suit_store = 	/obj/item/gun/ballistic/revolver/colt357
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/ammo_box/a357=2, \
+		/obj/item/ammo_box/m44=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
@@ -400,12 +399,14 @@ Legionary
 	mask =			/obj/item/clothing/mask/bandana/legrecruit
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	r_pocket =      /obj/item/restraints/handcuffs
+	suit_store = 	/obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete=1, \
+		/obj/item/ammo_box/a357=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1)
 
@@ -437,11 +438,11 @@ Legionary
 	suit = 		/obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = 		/obj/item/clothing/head/helmet/f13/legion/explorer
 	glasses = null
-	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/ammo_box/a762/doublestacked=2, \
+		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)

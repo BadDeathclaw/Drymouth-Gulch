@@ -95,7 +95,7 @@
 	minimize_when_attached = FALSE
 
 
-//ranks//
+//Ranks
 
 /obj/item/clothing/accessory/ncr
     name = "(O-6) Colonel rank pin"
@@ -162,8 +162,7 @@
     minimize_when_attached = TRUE
 
 
-
-//medals//
+//Medals
 
 /obj/item/clothing/accessory/medal
 	name = "bronze medal"
@@ -285,7 +284,6 @@
 /obj/item/clothing/accessory/medal/plasma/nobel_science
 	name = "nobel sciences award"
 	desc = "A plasma medal which represents significant contributions to the field of science or engineering."
-
 
 
 ////////////

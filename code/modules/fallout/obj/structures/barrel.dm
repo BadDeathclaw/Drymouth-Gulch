@@ -15,15 +15,14 @@
 	icon_state = "dangerous"
 	tank_volume = 500
 	reagent_id = "radium"
-//	rad_heavy_range = 1
-//	rad_light_range = 4
-//	rad_severity = 10
+	light_color = LIGHT_COLOR_GREEN
+	light_power = 3
+	light_range = 2
 //	self_weight = 200
 
-/obj/structure/reagent_dispensers/barrel/dangerous/New()
-	..()
-	START_PROCESSING(SSobj, src)
-	SSradiation.processing += src
+/obj/structure/reagent_dispensers/barrel/dangerous/Initialize()
+	. = ..()
+	AddComponent(/datum/component/radioactive, 100, src, 0) //half-life of 0 because we keep on going.
 
 /obj/structure/reagent_dispensers/barrel/boom()
 	visible_message("<span class='danger'>\The [src] ruptures!</span>")

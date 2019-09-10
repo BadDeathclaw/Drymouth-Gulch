@@ -46,6 +46,7 @@
 	melee_damage_upper = 15
 
 /mob/living/simple_animal/hostile/ghoul/glowing
+	name = "glowing feral ghoul"
 	desc = "A feral ghoul that has absorbed massive amounts of radiation, causing them to glow in the dark and radiate constantly.."
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
@@ -69,4 +70,4 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.apply_effect(5,EFFECT_IRRADIATE,0)
+		H.apply_effect(20, EFFECT_IRRADIATE, 0)
