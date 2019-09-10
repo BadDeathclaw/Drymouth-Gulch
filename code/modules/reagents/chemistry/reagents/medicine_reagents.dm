@@ -1393,7 +1393,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		var/mob/living/carbon/L = M
 		L.physiology.brute_mod *= 0.8
 		L.physiology.burn_mod *= 0.8
-		
+
 /datum/reagent/medicine/medx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
