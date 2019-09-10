@@ -84,10 +84,14 @@
 // Standard Wastelander money bag. They have more but are liable to get robbed for it.
 /obj/item/storage/bag/money/small/wastelander/PopulateContents()
 	// ~36 worth of assorted money
-	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
 	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
+	new /obj/item/stack/f13Cash/random/bottle_cap/low(src)
 	new /obj/item/stack/f13Cash/random/denarius/low(src)
 	new /obj/item/stack/f13Cash/random/ncr/low(src)
+
+// Standard Great Khan money bag. They have a little more caps than common raiders.
+/obj/item/storage/bag/money/small/khan/PopulateContents()
+	new /obj/item/stack/f13Cash/random/bottle_cap/med(src)
 
 // Standard Settler money bag. They are pretty wealthy, with NCR bucks and caps, no Legion money.
 /obj/item/storage/bag/money/small/settler/PopulateContents()

@@ -36,7 +36,8 @@
 							CAT_SALAD,
 							CAT_SANDWICH,
 							CAT_SOUP,
-							CAT_SPAGHETTI),
+							CAT_SPAGHETTI,
+						    CAT_WASTEFOOD),
 						list(	//Clothing subcategories
 							CAT_CLOTHING,
 							CAT_WASTELAND),

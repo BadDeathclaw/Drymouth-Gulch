@@ -132,6 +132,10 @@
 /proc/log_query_debug(text)
 	WRITE_LOG(GLOB.query_debug_log, "SQL: [text]")
 
+/proc/log_href_exploit(atom/user)
+	WRITE_LOG(GLOB.href_exploit_attempt_log, "HREF: [key_name(user)] has potentially attempted an href exploit.")
+	message_admins("[key_name_admin(user)] has potentially attempted an href exploit.")
+
 /* Log to both DD and the logfile. */
 /proc/log_world(text)
 	WRITE_LOG(GLOB.world_runtime_log, text)
@@ -146,7 +150,6 @@
 	WRITE_LOG(GLOB.config_error_log, text)
 	SEND_TEXT(world.log, text)
 
-
 /* For logging round startup. */
 /proc/start_log(log)
 	WRITE_LOG(log, "Starting up round ID [GLOB.round_id].\n-------------------------")
@@ -154,7 +157,6 @@
 /* Close open log handles. This should be called as late as possible, and no logging should hapen after. */
 /proc/shutdown_logging()
 	rustg_log_close_all()
-
 
 /* Helper procs for building detailed log lines */
 /proc/datum_info_line(datum/D)

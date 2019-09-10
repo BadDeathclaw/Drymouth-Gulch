@@ -425,7 +425,6 @@
 	else
 		to_chat(usr, "<span class='warning'>The few weeds in [src] seem to react, but only for a moment...</span>")
 
-
 /obj/machinery/hydroponics/proc/plantdies() // OH NOES!!!!! I put this all in one function to make things easier
 	plant_health = 0
 	harvest = 0
@@ -433,8 +432,6 @@
 	if(!dead)
 		update_icon()
 		dead = 1
-
-
 
 /obj/machinery/hydroponics/proc/mutatepest(mob/user)
 	if(pestlevel > 5)
@@ -949,3 +946,7 @@
 		qdel(src)
 	else
 		return ..()
+
+/obj/machinery/hydroponics/soil/crafted
+	waterlevel = 0
+	nutrilevel = 0
