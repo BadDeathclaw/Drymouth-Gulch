@@ -37,11 +37,11 @@ Great Khan
 	head_announce = list("Security")
 	faction = "Wastelander"
 	social_faction = "Raiders"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 6
+	spawn_positions = 6
 	description = "Due to your experience dealing with underground elements, you can recognize common raiders at a glance even if they have their face covered."
 	supervisors = "your gang leadership"
-	selection_color = "#c2a959"
+	selection_color = "#ff915e"
 
 	outfit = /datum/outfit/job/wasteland/f13pusher
 
@@ -85,6 +85,8 @@ Great Khan
 	if(visualsOnly)
 		return
 
+	H.social_faction = "Raiders"
+
 	if(!H.gang)
 		var/datum/gang/greatkhans/GK = GLOB.greatkhans
 		GLOB.all_gangs |= GK
@@ -102,16 +104,23 @@ Raider
 	head_announce = list("Security")
 	faction = "Wastelander"
 	social_faction = "Raiders"
-	total_positions = -1
-	spawn_positions = -1
+	total_positions = 40
+	spawn_positions = 40
 	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
 	supervisors = "your desires"
-	selection_color = "#dddddd"
+	selection_color = "#ff4747"
 
 	outfit = /datum/outfit/job/wasteland/f13raider
 
 	access = list()
 	minimal_access = list()
+	loadout_options = list(
+	/datum/outfit/loadout/raider_supafly,
+	/datum/outfit/loadout/raider_yankee,
+	/datum/outfit/loadout/raider_blast,
+	/datum/outfit/loadout/raider_sadist,
+	/datum/outfit/loadout/raider_metal,
+	/datum/outfit/loadout/raider_metal/chestplate)
 
 /datum/outfit/job/wasteland/f13raider
 	name = "Raider"
@@ -183,7 +192,44 @@ Raider
 	if(visualsOnly)
 		return
 
+	H.social_faction = "Raiders"
 	H.verbs |= /mob/living/proc/creategang
+
+
+
+/datum/outfit/loadout/raider_supafly
+	name = "Supa-fly"
+	suit = /obj/item/clothing/suit/armor/f13/raider
+	head = /obj/item/clothing/head/helmet/f13/raider
+
+/datum/outfit/loadout/raider_yankee
+	name = "Yankee"
+	suit = /obj/item/clothing/suit/armor/f13/raider/yankee
+	head = /obj/item/clothing/head/helmet/f13/raider/yankee
+
+/datum/outfit/loadout/raider_blast
+	name = "Blastmaster"
+	suit = /obj/item/clothing/suit/armor/f13/raider/blastmaster
+	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
+
+/datum/outfit/loadout/raider_sadist
+	name = "Sadist"
+	suit = /obj/item/clothing/suit/armor/f13/raider/sadist
+	head = /obj/item/clothing/head/helmet/f13/raider/arclight
+
+/datum/outfit/loadout/raider_metal
+	name = "Metal - Black"
+	suit = /obj/item/clothing/suit/armor/f13/bmetalarmor
+	head = list(/obj/item/clothing/head/helmet/f13/metalmask,
+	/obj/item/clothing/head/helmet/knight/fluff/metal,
+	/obj/item/clothing/head/helmet/f13/motorcycle,
+	/obj/item/clothing/head/helmet/f13/eyebot = 0.2)
+	//This 0.2 weight will make the eyebot less common. Everything has a weight of 1 if not specified
+
+//As a subclass, this inherits the helmets from the raider_metal outfit
+/datum/outfit/loadout/raider_metal/chestplate
+	name = "Metal - Chest"
+	suit = /obj/item/clothing/suit/armor/fluff/chestplate
 
 /*
 Wastelander

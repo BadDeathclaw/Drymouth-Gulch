@@ -1,6 +1,6 @@
 // Fallout Gangs
 
-// Names of all created gangs, starting with a default one, serves as a blacklisted to prevent inappropiate or duplicit gang names
+// Names that serve as a blacklist to prevent inappropiate or duplicit gang names
 GLOBAL_LIST_INIT(gang_names, list ( \
 "raider", \
 "raiders", \
@@ -52,8 +52,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 //Round-start gangs
 /datum/gang/greatkhans
 	name = "Great Khans"
-	color = "#917f44" 
-	influence = 0 
+	color = "#b07f43"
 	round_start = TRUE
 	boss_items = list(
 		/datum/gang_item/equipment/spraycan,
@@ -132,6 +131,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /datum/gang/proc/add_member(mob/living/carbon/new_member)
 	members |= new_member
+	new_member.faction |= "[name]-gang"
 	new_member.verbs -= /mob/living/proc/creategang
 	new_member.verbs |= /mob/living/proc/leavegang
 	new_member.verbs |= /mob/living/proc/assumeleader
@@ -142,13 +142,14 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 /datum/gang/proc/remove_member(mob/living/carbon/member)
 	members -= member
 	member.gang = null
+	member.faction -= "[name]-gang"
 	member.verbs -= /mob/living/proc/leavegang
 	member.verbs -= /mob/living/proc/assumeleader
 	member.verbs |= /mob/living/proc/creategang
 	to_chat(member, "<span class='warning'>You are no longer a member of the [name]!</span>")
 
 	if(!members.len && !round_start)
-		GLOB.gang_names -= name
+		GLOB.gang_names -= lowertext(name)
 		GLOB.all_gangs -= src
 		qdel(src)
 
@@ -198,7 +199,7 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 	if(lowertext(input) in GLOB.gang_names)
 		to_chat(src, "<span class='notice'>This gang name is already taken!</span>")
 		return
-	GLOB.gang_names |= input
+	GLOB.gang_names |= lowertext(input)
 
 	var/datum/gang/G = new()
 	G.name = input
@@ -232,8 +233,8 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 	var/datum/gang/G = gang
 	if(G && G.leader)
 		var/mob/living/L = G.leader
-		if(L.stat != DEAD)
-			to_chat(src, "<span class='warning'>Gang leader is still alive!</span>")
+		if(L.stat != DEAD && L.client)
+			to_chat(src, "<span class='warning'>Gang leader is still alive and well!</span>")
 			return
 		else
 			G.remove_leader(L)
@@ -271,12 +272,14 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 
 /mob/living/proc/removemember()
 	set name = "Remove Member"
-	set desc = "Remove a gang member from the gang in view."
+	set desc = "Remove an alive gang member from the gang in view."
 	set category = "Gang"
 
 	var/list/possible_targets = list()
 	for(var/mob/living/carbon/target in oview())
 		if(target.gang != gang)
+			continue
+		if(target.stat == DEAD)
 			continue
 		possible_targets += target
 
