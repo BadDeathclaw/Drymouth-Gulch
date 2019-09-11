@@ -452,6 +452,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 //MAIN FUNCTIONS===================================
 
 			if("Light")
+				if(issilicon(usr) || !usr.canUseTopic(src, BE_CLOSE))
+					return
 				if(fon)
 					fon = FALSE
 					set_light(0)

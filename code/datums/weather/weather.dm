@@ -22,7 +22,7 @@
 	var/end_sound
 	var/end_overlay
 
-	var/area_type = /area/space //Types of area to affect
+	var/list/areas_type = /area/space //Types of areas to affect
 	var/list/impacted_areas = list() //Areas to be affected by the weather, calculated when the weather begins
 	var/list/protected_areas = list()//Areas that are protected and excluded from the affected areas.
 	var/impacted_z_levels // The list of z-levels that this weather is actively affecting
@@ -43,17 +43,22 @@
 	var/affects_turfs = FALSE //Does this weather affect turfs at all?
 	var/turfs_impacted = FALSE // Did this weather already impact turfs?
 
-/datum/weather/New(z_levels)
+/datum/weather/New(z_levels, duration)
 	..()
 	impacted_z_levels = z_levels
+	if(duration)
+		weather_duration = duration
+		weather_duration_lower = duration
+		weather_duration_upper = duration
 
 /datum/weather/proc/telegraph()
 	if(stage == STARTUP_STAGE)
 		return
 	stage = STARTUP_STAGE
 	var/list/affectareas = list()
-	for(var/V in get_areas(area_type))
-		affectareas += V
+	for(var/area_type in areas_type)
+		for(var/V in get_areas(area_type))
+			affectareas += V
 	for(var/V in protected_areas)
 		affectareas -= get_areas(V)
 	for(var/V in affectareas)

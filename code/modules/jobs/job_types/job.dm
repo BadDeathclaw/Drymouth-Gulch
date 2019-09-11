@@ -19,6 +19,9 @@
 	//Players will be allowed to spawn in as jobs that are set to "Station"
 	var/faction = "None"
 
+	//Special faction system
+	var/social_faction = null
+
 	//How many players can be this job
 	var/total_positions = 0
 
@@ -63,10 +66,15 @@
 
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
+	//List of outfit datums that can be selected by this job - after spawning - as additional equipment.
+	//This is ontop of the base job outfit
+	var/list/datum/outfit/loadout_options = list()
+
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
 	//do actions on H but send messages to M as the key may not have been transferred_yet
+
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)
@@ -106,6 +114,10 @@
 	if(outfit)
 		H.equipOutfit(outfit, visualsOnly)
 
+	//If we have any additional loadouts, notify the player
+	if (!visualsOnly && loadout_options.len)
+		enable_loadout_select(H)
+
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 
 	if(!visualsOnly && announce)
@@ -117,6 +129,9 @@
 			H.faction |= faction
 		else
 			H.faction += faction
+
+	if(social_faction)
+		H.social_faction = social_faction
 
 /datum/job/proc/get_access()
 	if(!config)	//Needed for robots.
@@ -161,7 +176,6 @@
 
 /datum/job/proc/map_check()
 	return TRUE
-
 
 /datum/outfit/job
 	name = "Standard Gear"

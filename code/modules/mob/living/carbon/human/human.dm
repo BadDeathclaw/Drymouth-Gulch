@@ -62,8 +62,8 @@
 	if(statpanel("Status"))
 		stat(null, "Intent: [a_intent]")
 		stat(null, "Move Mode: [m_intent]")
-		if (internal)
-			if (!internal.air_contents)
+		if(internal)
+			if(!internal.air_contents)
 				qdel(internal)
 			else
 				stat("Internal Atmosphere Info", internal.name)
@@ -76,6 +76,14 @@
 				stat("Chemical Storage", "[changeling.chem_charges]/[changeling.chem_storage]")
 				stat("Absorbed DNA", changeling.absorbedcount)
 
+		if(gang)
+			var/datum/gang/G = gang
+			stat(null, "Gang name: [G.name]")
+			var/mob/living/L = G.leader
+			if(L)
+				stat(null, "Gang leader: [L.real_name]")
+			else
+				stat(null, "Gang leader: No leader!")
 
 	//NINJACODE
 	if(istype(wear_suit, /obj/item/clothing/suit/space/space_ninja)) //Only display if actually a ninja.

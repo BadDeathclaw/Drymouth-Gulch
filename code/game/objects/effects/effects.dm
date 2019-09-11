@@ -38,6 +38,9 @@
 				if(prob(60))
 					qdel(src)
 			if(3)
+				if(prob(42))
+					qdel(src)
+			if(4)
 				if(prob(25))
 					qdel(src)
 

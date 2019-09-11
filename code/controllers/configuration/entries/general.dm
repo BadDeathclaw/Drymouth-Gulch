@@ -170,7 +170,7 @@
 /datum/config_entry/string/wikiurl
 	config_entry_value = "http://www.tgstation13.org/wiki"
 
-/datum/config_entry/string/forumurl
+/datum/config_entry/string/discordurl
 	config_entry_value = "http://tgstation13.org/phpBB/index.php"
 
 /datum/config_entry/string/rulesurl

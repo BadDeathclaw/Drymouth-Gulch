@@ -303,6 +303,10 @@
 /mob/proc/temporarilyRemoveItemFromInventory(obj/item/I, force = FALSE, idrop = TRUE)
 	return doUnEquip(I, force, null, TRUE, idrop)
 
+/mob/proc/deleteWornItem(obj/item/I)
+	.= temporarilyRemoveItemFromInventory(I, TRUE)
+	qdel(I)
+
 //DO NOT CALL THIS PROC
 //use one of the above 3 helper procs
 //you may override it, but do not modify the args

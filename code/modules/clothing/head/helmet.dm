@@ -397,15 +397,15 @@
 /obj/item/clothing/head/helmet/f13/legion/scout
 	name = "legion scout hood"
 	desc = "It's a leather hood worn by legion scouts."
-	icon_state = "cult_hoodalt"
-	item_state = "cult_hoodalt"
+	icon_state = "legscout"
+	item_state = "legscout"
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/explorer
 	name = "legion explorer hood"
 	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted and reinforced."
-	icon_state = "cult_hoodalt"
-	item_state = "cult_hoodalt"
+	icon_state = "legexplorer"
+	item_state = "legexplorer"
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/legveteran
@@ -569,6 +569,7 @@
 //Busted/salvaged power armor helmets, does not require PA training
 
 /obj/item/clothing/head/helmet/f13/brokenpa
+	w_class = WEIGHT_CLASS_BULKY
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -603,12 +604,14 @@
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/power_armor
+	w_class = WEIGHT_CLASS_BULKY
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
 	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
 	ispowerarmor = 1
 	strip_delay = 200
+	slowdown = 0.25
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEJUMPSUIT
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	clothing_flags = THICKMATERIAL
@@ -625,6 +628,7 @@
 	desc = "It's a salvaged power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
+	slowdown = 0.75
 	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	darkness_view = 0
 	lighting_alpha = null

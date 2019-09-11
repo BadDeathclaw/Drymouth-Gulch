@@ -15,19 +15,18 @@ Main doors: ACCESS_CAPTAIN 20
 	name = "bosdatums"
 	jobtype = /datum/job/bos
 	backpack = /obj/item/storage/backpack/explorer
-	ears = 			/obj/item/radio/headset/headset_bos
-	uniform =		/obj/item/clothing/under/f13/recon
-	shoes = 		/obj/item/clothing/shoes/combat/swat
-	gloves = 		/obj/item/clothing/gloves/combat
-	belt = 			/obj/item/storage/belt/military
-	glasses =		/obj/item/clothing/glasses/night
-	id = 			/obj/item/card/id/dogtag
+	ears = /obj/item/radio/headset/headset_bos
+	uniform = /obj/item/clothing/under/f13/recon
+	shoes = /obj/item/clothing/shoes/combat/swat
+	gloves = /obj/item/clothing/gloves/combat
+	belt = /obj/item/storage/belt/military
+	glasses = /obj/item/clothing/glasses/night
+	id = /obj/item/card/id/dogtag
 
 /datum/outfit/job/bos/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.add_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC)
 
 /datum/outfit/job/bos/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -38,6 +37,7 @@ Main doors: ACCESS_CAPTAIN 20
 /*
 Elder
 */
+
 /datum/job/bos/f13elder
 	title = "Elder"
 	flag = F13ELDER
@@ -64,7 +64,6 @@ Elder
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/gun/ballistic/automatic/pistol/n99=1)
 
-
 /*
 Paladin
 */
@@ -80,7 +79,7 @@ Paladin
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the elder"
-	selection_color = "#95a5a6"
+	selection_color = "#7f8c8d"
 	exp_requirements = 1800
 
 	outfit = /datum/outfit/job/bos/f13paladin
@@ -105,7 +104,8 @@ Paladin
 	H.add_quirk("Hard Yards")
 
 
-/*Head Scribe
+/*
+Head Scribe
 */
 
 /datum/job/bos/f13headscribe
@@ -119,7 +119,7 @@ Paladin
 	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the elder"
-	selection_color = "#95a5a6"
+	selection_color = "#7f8c8d"
 	exp_requirements = 1800
 	exp_type = EXP_TYPE_BROTHERHOOD
 
@@ -139,10 +139,10 @@ Paladin
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/stock_parts/cell/ammo/ec=2)
 
-
 /*
 Knight
 */
+
 /datum/job/bos/f13knight
 	title = "Knight"
 	flag = F13KNIGHT
@@ -178,10 +178,10 @@ Knight
 /datum/job/bos/f13knight/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
 
-
 /*
 Scribe
 */
+
 /datum/job/bos/f13scribe
 	title = "Scribe"
 	flag = F13SCRIBE
@@ -219,6 +219,7 @@ Scribe
 /*
 Initiate Knight
 */
+
 /datum/job/bos/f13initiateknight
 	title = "Initiate Knight"
 	flag = F13INITIATEKNIGHT
@@ -230,7 +231,6 @@ Initiate Knight
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the knights"
 	selection_color = "#95a5a6"
-
 
 	outfit = /datum/outfit/job/bos/f13initiateknight
 
@@ -250,6 +250,7 @@ Initiate Knight
 /*
 Initiate Scribe
 */
+
 /datum/job/bos/f13initiatescribe
 	title = "Initiate Scribe"
 	flag = F13INITIATESCRIBE

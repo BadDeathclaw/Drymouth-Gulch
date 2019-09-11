@@ -7,7 +7,6 @@
 	slot_flags = SLOT_BELT
 	var/id = null
 	var/static/list/used_ids = list()
-	var/transfer_prints = FALSE
 
 /obj/item/door_key/New()
 	..()
@@ -78,7 +77,6 @@
 		if(K.id == id)
 			return K
 	return null
-
 
 /obj/item/lock
 	name = "unusable padlock"
