@@ -16,11 +16,11 @@
 	armor = list("melee" = 95, "bullet" = 75, "laser" = 75, "energy" = 75, "bomb" = 95, "bio" = 100, "rad" = 100, "fire" = 99, "acid" = 100) //it's a fucking steel door 2.0
 
 /obj/structure/vaultdoor/blob_act()
-	ex_act(3)
+	ex_act(4)
 	return
 
 /obj/structure/vaultdoor/ex_act(severity, target)
-	if(severity == 1)
+	if(severity == 2)
 		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 		s.set_up(2, 1, src)
 		s.start()

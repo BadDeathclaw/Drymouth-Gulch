@@ -128,8 +128,12 @@
 			if(prob(bomb_armor))
 				bloss = bloss / 1.5
 			adjustBruteLoss(bloss)
-
-		if(3)
+		if (3)
+			var/bloss = 45
+			if(prob(bomb_armor))
+				bloss = bloss / 1.5
+			adjustBruteLoss(bloss)
+		if(4)
 			var/bloss = 30
 			if(prob(bomb_armor))
 				bloss = bloss / 1.5

@@ -67,6 +67,9 @@
 		if(2)
 			if(prob(50))
 				ScrapeAway()
+		if(3)
+			if(prob(25))
+				ScrapeAway()
 
 /turf/open/floor/engine/singularity_pull(S, current_size)
 	..()
