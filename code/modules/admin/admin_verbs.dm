@@ -1,4 +1,4 @@
-//admin verb groups - They can overlap if you so wish. Only one of each verb will exist in the verbs list regardless
+F//admin verb groups - They can overlap if you so wish. Only one of each verb will exist in the verbs list regardless
 //the procs are cause you can't put the comments in the GLOB var define
 GLOBAL_LIST_INIT(admin_verbs_default, world.AVerbsDefault())
 GLOBAL_PROTECT(admin_verbs_default)
@@ -481,7 +481,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		if("Big Bomb (3, 5, 7, 5)")
 			explosion(epicenter, 3, 5, 7, 5, TRUE, TRUE)
 		if("Maxcap")
-			explosion(epicenter, GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
+			explosion(epicenter, GLOB.MAX_EX_DEVESTATION_RANGE, GLOB.MAX_EX_MEDIUM_RANGE, GLOB.MAX_EX_HEAVY_RANGE, GLOB.MAX_EX_LIGHT_RANGE, GLOB.MAX_EX_FLASH_RANGE)
 		if("Custom Bomb")
 			var/devastation_range = input("Devastation range (in tiles):") as null|num
 			if(devastation_range == null)
@@ -489,13 +489,16 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 			var/heavy_impact_range = input("Heavy impact range (in tiles):") as null|num
 			if(heavy_impact_range == null)
 				return
+			var/medium_impact_range = input("Medium impact range(in tiles):") as null|num
+			if(medium_impact_range == null)
+				return
 			var/light_impact_range = input("Light impact range (in tiles):") as null|num
 			if(light_impact_range == null)
 				return
 			var/flash_range = input("Flash range (in tiles):") as null|num
 			if(flash_range == null)
 				return
-			if(devastation_range > GLOB.MAX_EX_DEVESTATION_RANGE || heavy_impact_range > GLOB.MAX_EX_HEAVY_RANGE || light_impact_range > GLOB.MAX_EX_LIGHT_RANGE || flash_range > GLOB.MAX_EX_FLASH_RANGE)
+			if(devastation_range > GLOB.MAX_EX_DEVESTATION_RANGE || heavy_impact_range > GLOB.MAX_EX_HEAVY_RANGE || medium_impact_range > GLOB.MAX_EX_MEDIUM_RANGE || light_impact_range > GLOB.MAX_EX_LIGHT_RANGE || flash_range > GLOB.MAX_EX_FLASH_RANGE)
 				if(alert("Bomb is bigger than the maxcap. Continue?",,"Yes","No") != "Yes")
 					return
 			epicenter = mob.loc //We need to reupdate as they may have moved again

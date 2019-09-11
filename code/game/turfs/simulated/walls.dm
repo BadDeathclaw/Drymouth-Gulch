@@ -93,6 +93,11 @@
 			else
 				dismantle_wall(1,1)
 		if(3)
+			if(prob(40))
+				dismantle_wall(0,1)
+			else
+				dismantle_wall(1,1)
+		if(4)
 			if (prob(hardness))
 				dismantle_wall(0,1)
 	if(!density)

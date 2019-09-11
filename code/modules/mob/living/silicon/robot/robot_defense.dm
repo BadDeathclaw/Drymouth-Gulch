@@ -171,9 +171,13 @@
 			return
 		if(2)
 			if (stat != DEAD)
-				adjustBruteLoss(60)
-				adjustFireLoss(60)
+				adjustBruteLoss(70)
+				adjustFireLoss(70)
 		if(3)
+			if (stat != DEAD)
+				adjustBruteLoss(40)
+				adjustFireLoss(40)
+		if(4)
 			if (stat != DEAD)
 				adjustBruteLoss(30)
 
