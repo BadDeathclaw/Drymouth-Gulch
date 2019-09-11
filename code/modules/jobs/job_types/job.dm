@@ -94,8 +94,6 @@
 
 //Don't override this unless the job transforms into a non-human (Silicons do this for example)
 /datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE)
-
-	to_chat(world, "equip triggered")
 	if(!H)
 		return FALSE
 
