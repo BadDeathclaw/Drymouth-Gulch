@@ -66,10 +66,15 @@
 
 	var/display_order = JOB_DISPLAY_ORDER_DEFAULT
 
+	//List of outfit datums that can be selected by this job - after spawning - as additional equipment.
+	//This is ontop of the base job outfit
+	var/list/datum/outfit/loadout_options = list()
+
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 /datum/job/proc/after_spawn(mob/living/H, mob/M, latejoin = FALSE)
 	//do actions on H but send messages to M as the key may not have been transferred_yet
+
 
 /datum/job/proc/announce(mob/living/carbon/human/H)
 	if(head_announce)
@@ -89,6 +94,8 @@
 
 //Don't override this unless the job transforms into a non-human (Silicons do this for example)
 /datum/job/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE)
+
+	to_chat(world, "equip triggered")
 	if(!H)
 		return FALSE
 
@@ -108,6 +115,10 @@
 
 	if(outfit)
 		H.equipOutfit(outfit, visualsOnly)
+
+	//If we have any additional loadouts, notify the player
+	if (!visualsOnly && loadout_options.len)
+		enable_loadout_select(H)
 
 	H.dna.species.after_equip_job(src, H, visualsOnly)
 

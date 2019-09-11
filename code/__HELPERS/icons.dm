@@ -706,6 +706,16 @@ world
 		((hi3 >= 65 ? hi3-55 : hi3-48)<<4) | (lo3 >= 65 ? lo3-55 : lo3-48),
 		((hi4 >= 65 ? hi4-55 : hi4-48)<<4) | (lo4 >= 65 ? lo4-55 : lo4-48))
 
+// Creates a single icon from a given /atom type and store it for future use.  Only the first argument is required.
+/proc/getFlatTypeIcon(var/path, defdir=2, deficon=null, defstate="", defblend=BLEND_DEFAULT, always_use_defdir = 0)
+	if(GLOB.initialTypeIcon[path])
+		return GLOB.initialTypeIcon[path]
+	else
+		var/atom/A = new path()
+		GLOB.initialTypeIcon[path] = getFlatIcon(A, defdir, deficon, defstate, defblend, always_use_defdir)
+		qdel(A)
+		return GLOB.initialTypeIcon[path]
+
 // Creates a single icon from a given /atom or /image.  Only the first argument is required.
 /proc/getFlatIcon(image/A, defdir, deficon, defstate, defblend, start = TRUE, no_anim = FALSE)
 	//Define... defines.
@@ -741,10 +751,8 @@ world
 			defstate = A.icon_state
 		if(!defblend)
 			defblend = A.blend_mode
-
 	var/curicon = A.icon || deficon
 	var/curstate = A.icon_state || defstate
-
 	if(!((noIcon = (!curicon))))
 		var/curstates = icon_states(curicon)
 		if(!(curstate in curstates))
@@ -774,7 +782,6 @@ world
 		if(!exist)
 			base_icon_dir = SOUTH
 	//
-
 	if(!base_icon_dir)
 		base_icon_dir = curdir
 
@@ -818,7 +825,6 @@ world
 				layers[current] = current_layer
 
 		//sortTim(layers, /proc/cmp_image_layer_asc)
-
 		var/icon/add // Icon of overlay being added
 
 		// Current dimensions of flattened icon
@@ -858,7 +864,6 @@ world
 
 			// Blend the overlay into the flattened icon
 			flat.Blend(add, blendMode2iconMode(curblend), I.pixel_x + 2 - flatX1, I.pixel_y + 2 - flatY1)
-
 		if(A.color)
 			flat.Blend(A.color, ICON_MULTIPLY)
 		if(A.alpha < 255)
