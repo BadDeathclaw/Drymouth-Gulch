@@ -957,3 +957,13 @@
 	time = 10
 	category = CAT_MISC
 
+/datum/crafting_recipe/throwingknife
+
+	name = "Throwing Knife"
+	result = /obj/item/throwing_star/throwingknife
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WELDER)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
