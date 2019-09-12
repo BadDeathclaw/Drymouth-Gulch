@@ -640,6 +640,13 @@
 	item_state = "advhelmet1"
 	armor = list("melee" = 90, "bullet" = 75, "laser" = 60, "energy" = 75, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
+/obj/item/clothing/head/helmet/power_armor/advanced/rusted
+    name = "rusted advanced power helmet"
+    desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It's rendered near useless by corrosion."
+    icon_state = "advhelmet1"
+    item_state = "advhelmet1"
+    armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 0)
+
 /obj/item/clothing/head/helmet/power_armor/advanced/mk2
 	name = "advanced power helmet MK2"
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
