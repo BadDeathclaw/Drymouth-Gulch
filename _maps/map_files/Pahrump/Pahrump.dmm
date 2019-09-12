@@ -61,7 +61,7 @@
 "abi" = (/turf/open/indestructible/ground/outside/road{tag = "icon-horizontalinnermain2"; icon_state = "horizontalinnermain2"},/area/f13/tunnel)
 "abj" = (/obj/effect/decal/marking{tag = "icon-doublevertical"; icon_state = "doublevertical"},/turf/open/indestructible/ground/outside/road{icon_state = "horizontalinnermain0"},/area/f13/tunnel)
 "abk" = (/turf/closed/wall/f13/store,/area/f13/building)
-"abl" = (/obj/structure/statue/wood/headstonewood,/obj/item/clothing/head/fedora{step_x = 0; step_y = 1},/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
+"abl" = (/obj/structure/statue/wood/headstonewood,/obj/item/clothing/head/fedora,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "abm" = (/obj/item/picket_sign{desc = "COWARD!!!"; name = "pahrump protest sign"},/turf/open/indestructible/ground/outside/road{icon_state = "horizontalinnermain0"},/area/f13/wasteland)
 "abn" = (/obj/item/picket_sign{desc = "YOU CAUSED THIS!"; name = "pahrump protest sign"},/turf/open/indestructible/ground/outside/road{tag = "icon-horizontalinnermain2"; icon_state = "horizontalinnermain2"},/area/f13/wasteland)
 "abo" = (/obj/item/card/id/dendoctor{desc = "A plastic-sealed name badge for Mayor Richards, of Pahrump. It appears this ID is access level 2."; name = "Mayor Richard's ID"},/turf/open/indestructible/ground/outside/road{icon_state = "horizontalinnermain0"},/area/f13/wasteland)
