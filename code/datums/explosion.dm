@@ -4,8 +4,8 @@ GLOBAL_LIST_EMPTY(explosions)
 //Against my better judgement, I will return the explosion datum
 //If I see any GC errors for it I will find you
 //and I will gib you
-/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE)
-	return new /datum/explosion(epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke)
+/proc/explosion(atom/epicenter, devastation_range, heavy_impact_range, medium_impact_range, light_impact_range, flash_range, adminlog = TRUE, ignorecap = FALSE, flame_range = 0, silent = FALSE, smoke = FALSE)
+	return new /datum/explosion(epicenter, devastation_range, heavy_impact_range, medium_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke)
 
 //This datum creates 3 async tasks
 //1 GatherSpiralTurfsProc runs spiral_range_turfs(tick_checked = TRUE) to populate the affected_turfs list
@@ -33,7 +33,7 @@ GLOBAL_LIST_EMPTY(explosions)
 		EX_PREPROCESS_EXIT_CHECK\
 	}
 
-/datum/explosion/New(atom/epicenter, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke)
+/datum/explosion/New(atom/epicenter, devastation_range, heavy_impact_range, medium_impact_range, light_impact_range, flash_range, adminlog, ignorecap, flame_range, silent, smoke)
 	set waitfor = FALSE
 
 	var/id = ++id_counter
@@ -53,9 +53,10 @@ GLOBAL_LIST_EMPTY(explosions)
 	// Archive the uncapped explosion for the doppler array
 	var/orig_dev_range = devastation_range
 	var/orig_heavy_range = heavy_impact_range
+	var/orig_medium_range = medium_impact_range
 	var/orig_light_range = light_impact_range
 
-	var/orig_max_distance = max(devastation_range, heavy_impact_range, light_impact_range, flash_range, flame_range)
+	var/orig_max_distance = max(devastation_range, heavy_impact_range, medium_impact_range, light_impact_range, flash_range, flame_range)
 
 	//Zlevel specific bomb cap multiplier
 	var/cap_multiplier = SSmapping.level_trait(epicenter.z, ZTRAIT_BOMBCAP_MULTIPLIER)
@@ -65,6 +66,7 @@ GLOBAL_LIST_EMPTY(explosions)
 	if(!ignorecap)
 		devastation_range = min(GLOB.MAX_EX_DEVESTATION_RANGE * cap_multiplier, devastation_range)
 		heavy_impact_range = min(GLOB.MAX_EX_HEAVY_RANGE * cap_multiplier, heavy_impact_range)
+		medium_impact_range =min(GLOB.MAX_EX_MEDIUM_RANGE * cap_multiplier, medium_impact_range)
 		light_impact_range = min(GLOB.MAX_EX_LIGHT_RANGE * cap_multiplier, light_impact_range)
 		flash_range = min(GLOB.MAX_EX_FLASH_RANGE * cap_multiplier, flash_range)
 		flame_range = min(GLOB.MAX_EX_FLAME_RANGE * cap_multiplier, flame_range)
@@ -82,17 +84,17 @@ GLOBAL_LIST_EMPTY(explosions)
 
 	started_at = REALTIMEOFDAY
 
-	var/max_range = max(devastation_range, heavy_impact_range, light_impact_range, flame_range)
+	var/max_range = max(devastation_range, heavy_impact_range, medium_impact_range, light_impact_range, flame_range)
 
 	if(adminlog)
-		message_admins("Explosion with size ([devastation_range], [heavy_impact_range], [light_impact_range], [flame_range]) in [ADMIN_VERBOSEJMP(epicenter)]")
-		log_game("Explosion with size ([devastation_range], [heavy_impact_range], [light_impact_range], [flame_range]) in [AREACOORD(epicenter)]")
+		message_admins("Explosion with size ([devastation_range], [heavy_impact_range], [medium_impact_range], [light_impact_range], [flame_range]) in [ADMIN_VERBOSEJMP(epicenter)]")
+		log_game("Explosion with size ([devastation_range], [heavy_impact_range], [medium_impact_range], [light_impact_range], [flame_range]) in [AREACOORD(epicenter)]")
 
 	var/x0 = epicenter.x
 	var/y0 = epicenter.y
 	var/z0 = epicenter.z
 	var/area/areatype = get_area(epicenter)
-	SSblackbox.record_feedback("associative", "explosion", 1, list("dev" = devastation_range, "heavy" = heavy_impact_range, "light" = light_impact_range, "flash" = flash_range, "flame" = flame_range, "orig_dev" = orig_dev_range, "orig_heavy" = orig_heavy_range, "orig_light" = orig_light_range, "x" = x0, "y" = y0, "z" = z0, "area" = areatype.type))
+	SSblackbox.record_feedback("associative", "explosion", 1, list("dev" = devastation_range, "heavy" = heavy_impact_range, "medium" = medium_impact_range, "light" = light_impact_range, "flash" = flash_range, "flame" = flame_range, "orig_dev" = orig_dev_range, "orig_heavy" = orig_heavy_range, "orig_light" = orig_light_range, "x" = x0, "y" = y0, "z" = z0, "area" = areatype.type))
 
 	// Play sounds; we want sounds to be different depending on distance so we will manually do it ourselves.
 	// Stereo users will also hear the direction of the explosion!
@@ -101,6 +103,7 @@ GLOBAL_LIST_EMPTY(explosions)
 	// 3/7/14 will calculate to 80 + 35
 
 	var/far_dist = 0
+	far_dist += medium_impact_range * 3
 	far_dist += heavy_impact_range * 5
 	far_dist += devastation_range * 20
 
@@ -187,6 +190,8 @@ GLOBAL_LIST_EMPTY(explosions)
 			dist = EXPLODE_DEVASTATE
 		else if(dist < heavy_impact_range)
 			dist = EXPLODE_HEAVY
+		else if(dist < medium_impact_range)
+			dist = EXPLODE_MEDIUM
 		else if(dist < light_impact_range)
 			dist = EXPLODE_LIGHT
 		else
@@ -276,13 +281,13 @@ GLOBAL_LIST_EMPTY(explosions)
 
 	//You need to press the DebugGame verb to see these now....they were getting annoying and we've collected a fair bit of data. Just -test- changes to explosion code using this please so we can compare
 	if(GLOB.Debug2)
-		log_world("## DEBUG: Explosion([x0],[y0],[z0])(d[devastation_range],h[heavy_impact_range],l[light_impact_range]): Took [took] seconds.")
+		log_world("## DEBUG: Explosion([x0],[y0],[z0])(d[devastation_range],h[heavy_impact_range], m[medium_impact_range], l[light_impact_range]): Took [took] seconds.")
 
 	if(running)	//if we aren't in a hurry
 		//Machines which report explosions.
 		for(var/array in GLOB.doppler_arrays)
 			var/obj/machinery/doppler_array/A = array
-			A.sense_explosion(epicenter, devastation_range, heavy_impact_range, light_impact_range, took,orig_dev_range, orig_heavy_range, orig_light_range)
+			A.sense_explosion(epicenter, devastation_range, heavy_impact_range, medium_impact_range, light_impact_range, took,orig_dev_range, orig_heavy_range, orig_medium_range, orig_light_range)
 
 	++stopped
 	qdel(src)
@@ -339,6 +344,7 @@ GLOBAL_LIST_EMPTY(explosions)
 
 	var/dev = 0
 	var/heavy = 0
+	var/medium = 0
 	var/light = 0
 	var/list/choices = list("Small Bomb","Medium Bomb","Big Bomb","Custom Bomb")
 	var/choice = input("Bomb Size?") in choices
@@ -346,23 +352,27 @@ GLOBAL_LIST_EMPTY(explosions)
 		if(null)
 			return 0
 		if("Small Bomb")
-			dev = 1
+			dev = 0
+			medium = 1
 			heavy = 2
 			light = 3
 		if("Medium Bomb")
-			dev = 2
+			dev = 1
+			medium = 2
 			heavy = 3
 			light = 4
 		if("Big Bomb")
-			dev = 3
+			dev = 1
+			medium = 3
 			heavy = 5
 			light = 7
 		if("Custom Bomb")
 			dev = input("Devestation range (Tiles):") as num
 			heavy = input("Heavy impact range (Tiles):") as num
+			medium = input("Medium impact range (Tiles):") as num
 			light = input("Light impact range (Tiles):") as num
 
-	var/max_range = max(dev, heavy, light)
+	var/max_range = max(dev, heavy, medium, light)
 	var/x0 = epicenter.x
 	var/y0 = epicenter.y
 	var/list/wipe_colours = list()
@@ -387,6 +397,9 @@ GLOBAL_LIST_EMPTY(explosions)
 		else if (dist < heavy)
 			T.color = "yellow"
 			T.maptext = "Heavy"
+		else if (dist < medium)
+			T.color = "orange"
+			T.maptext = "Medium"
 		else if (dist < light)
 			T.color = "blue"
 			T.maptext = "Light"
@@ -406,7 +419,7 @@ GLOBAL_LIST_EMPTY(explosions)
 		return
 	var/range = 0
 	range = round((2 * power)**GLOB.DYN_EX_SCALE)
-	explosion(epicenter, round(range * 0.25), round(range * 0.5), round(range), flash_range*range, adminlog, ignorecap, flame_range*range, silent, smoke)
+	explosion(epicenter, round(range * 0.25), round(range * 0.5), round(range * 0.25), round(range), flash_range*range, adminlog, ignorecap, flame_range*range, silent, smoke)
 
 // Using default dyn_ex scale:
 // 100 explosion power is a (5, 10, 20) explosion.
