@@ -547,7 +547,7 @@
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				 /obj/item/stack/sheet/animalhide/goliath_hide = 1)
+				 /obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
@@ -584,7 +584,7 @@
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
+/*
 /datum/crafting_recipe/viperspear
 	name = "Viper Spear"
 	result = /obj/item/twohanded/bonespear/venom
@@ -602,7 +602,7 @@
 				/obj/item/stack/sheet/bone = 2)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
+*/ 
 /datum/crafting_recipe/boneaxe
 	name = "Bone Axe"
 	result = /obj/item/twohanded/fireaxe/boneaxe
@@ -746,20 +746,6 @@
 	name = "Cut clothing into rags"
 	result = /obj/item/stack/sheet/cloth/three
 	reqs = list(/obj/item/clothing/under = 1)
-	time = 20
-	category = CAT_MISC
-
-/datum/crafting_recipe/blindfold
-	name = "Blindfold"
-	result = /obj/item/clothing/glasses/sunglasses/blindfold
-	reqs = list(/obj/item/stack/sheet/cloth = 1)
-	time = 20
-	category = CAT_MISC
-
-/datum/crafting_recipe/muzzle
-	name = "muzzle"
-	result = /obj/item/clothing/mask/muzzle
-	reqs = list(/obj/item/stack/sheet/cloth = 1)
 	time = 20
 	category = CAT_MISC
 
