@@ -1427,19 +1427,19 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	overdose_threshold = 20
 	addiction_threshold = 1 //good luck
 
-/datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/M)
+/datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
 		M.physiology.brute_mod *= 0.8
 		M.physiology.burn_mod *= 0.8
 
-/datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/M)
+/datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		M.physiology.burn_mod *= 1.25
 		M.physiology.brute_mod *= 1.25
 	..()
 
-/datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/human/M)
 	M.AdjustStun(-30, 0)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)
