@@ -186,6 +186,10 @@
 	require_comms_key = TRUE
 
 /datum/world_topic/dooc/Run(list/input)
+	if(!GLOB.ooc_allowed)
+		return
+	if(GLOB.say_disabled)
+		return
 	if(!CONFIG_GET(flag/using_discord_ooc))
 		return
 	log_ooc("DSCRD: [input["user"]]: [input["text"]]")
