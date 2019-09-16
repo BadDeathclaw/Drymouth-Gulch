@@ -18,7 +18,7 @@
 
 ## Screenshots (if appropriate):
 
-## Changelog (neccesary)
+## Changelog (necessary)
 :cl:
 add: Added new things
 add: Added more things
