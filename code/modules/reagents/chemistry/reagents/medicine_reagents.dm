@@ -1430,13 +1430,17 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		M.physiology.brute_mod *= 0.8
-		M.physiology.burn_mod *= 0.8
+		M.physiology.armor.melee += 25
+		M.physiology.armor.bullet += 20
+		M.physiology.armor.laser += 25
+		M.physiology.armor.energy += 20
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
-		M.physiology.burn_mod *= 1.25
-		M.physiology.brute_mod *= 1.25
+		M.physiology.armor.melee -= 25
+		M.physiology.armor.bullet -= 20
+		M.physiology.armor.laser -= 25
+		M.physiology.armor.energy -= 20
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/human/M)
