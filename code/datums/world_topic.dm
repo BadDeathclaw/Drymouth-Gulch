@@ -192,8 +192,10 @@
 		return
 	if(!CONFIG_GET(flag/using_discord_ooc))
 		return
-	log_ooc("DSCRD: [input["user"]]: [input["text"]]")
+	var/msg = copytext(sanitize(input["text"]), 1, MAX_MESSAGE_LEN)
+	var/user = copytext(sanitize(input["user"]), 1, MAX_MESSAGE_LEN)
+	log_ooc("DSCRD: [user]: [msg]")
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC)
-			if(!(input["user"] in C.prefs.ignoring))
-				to_chat(C, "<font color='#9d00ff'><span class='ooc'><span class='prefix'>DSCRD:</span> <EM>[input["user"]]:</EM> <span class='message'>[input["message"]]</span></span></font>")
+			if(!(user in C.prefs.ignoring))
+				to_chat(C, "<font color='#9d00ff'><span class='ooc'><span class='prefix'>DSCRD:</span> <EM>[user]:</EM> <span class='message'>[msg]</span></span></font>")
