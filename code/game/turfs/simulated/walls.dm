@@ -98,7 +98,7 @@
 			else
 				dismantle_wall(1,1)
 		if(4)
-			if (prob(hardness))
+			if (prob(hardness) && hardness <= 60)
 				dismantle_wall(0,1)
 	if(!density)
 		..()
