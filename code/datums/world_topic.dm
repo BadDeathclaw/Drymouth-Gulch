@@ -192,7 +192,7 @@
 		return
 	if(!CONFIG_GET(flag/using_discord_ooc))
 		return
-	var/msg = copytext(sanitize(input["text"]), 1, MAX_MESSAGE_LEN)
+	var/msg = copytext(sanitize(input["message"]), 1, MAX_MESSAGE_LEN)
 	var/user = copytext(sanitize(input["user"]), 1, MAX_MESSAGE_LEN)
 	log_ooc("DSCRD: [user]: [msg]")
 	for(var/client/C in GLOB.clients)
