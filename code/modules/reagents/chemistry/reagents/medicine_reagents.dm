@@ -1385,21 +1385,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	addiction_threshold = .1 //good luck
-
-/datum/reagent/medicine/medx/on_mob_add(mob/M)
-	..()
-	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.physiology.brute_mod *= 0.8
-		L.physiology.burn_mod *= 0.8
-
-/datum/reagent/medicine/medx/on_mob_delete(mob/M)
-	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.physiology.burn_mod *= 1.25
-		L.physiology.brute_mod *= 1.25
-	..()
+	addiction_threshold = 1
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-30, 0)
