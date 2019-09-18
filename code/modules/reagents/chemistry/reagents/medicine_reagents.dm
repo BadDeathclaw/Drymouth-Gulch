@@ -1441,25 +1441,64 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx
 	name = "Med-X"
 	id = "medx"
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive and mildly toxic, increases damage resistance."
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive. Prolonged presence in the body can cause seizures and organ damage.
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	addiction_threshold = 10
+	addiction_threshold = 1 //good luck
 
-/datum/reagent/medicine/medx/on_mob_add(mob/M)
+/datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
+		M.physiology.armor.melee += 25
+		M.physiology.armor.bullet += 20
+		M.physiology.armor.laser += 25
+		M.physiology.armor.energy += 20
 
-/datum/reagent/medicine/medx/on_mob_delete(mob/M)
+/datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
+		M.physiology.armor.melee -= 25
+		M.physiology.armor.bullet -= 20
+		M.physiology.armor.laser -= 25
+		M.physiology.armor.energy -= 20
+	switch(current_cycle)
+		if(1 to 9)
+			M.confused += 20
+			M.blur_eyes(20)
+			to_chat(M, "<span class='notice'>(Your head is pounding. Med-X is hard on the body.)</span>")
+		if(10 to 29)
+			M.confused +=30
+			M.blur_eyes(30)
+			M.losebreath += 8
+			M.adjust_eye_damage(6)
+			M.set_disgust(12)
+			M.adjustStaminaLoss(30)
+			M.vomit(0, 1, 1, 1, 0, 0, 0, 1)
+			to_chat(M, "<span class='danger'>(Your stomach churns, your eyes cloud and you're pretty sure you just popped a lung. You shouldn't take so much med-X at once. </span>")
+		if(30 to 49)
+			M.confused +=50
+			M.blur_eyes(30)
+			M.losebreath += 10
+			M.adjust_eye_damage(12)
+			M.set_disgust(25)
+			M.adjustStaminaLoss(30)
+			M.vomit(30, 1, 1, 5, 0, 0, 0, 1)
+			M.Unconscious(200)
+			M.Jitter(1000)
+			var/datum/disease/D = new /datum/disease/heart_failure
+			M.ForceContractDisease(D)
+			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
+			M.visible_message("<span class='userdanger'>[M] collapses to the ground, bloody froth covering their lips!</span>")
+			to_chat(M, "<span class='userdanger'>(You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too. </span>")
+		if(50 to INFINITY)
+			M.adjust_eye_damage(30)
+			M.Unconsious(400)
+			M.Jitter(1000)
+			M.set_heartattack(TRUE)
+				M.visible_message("<span class='userdanger'>[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!</span>")
+			to_chat(M, "<span class='danger'>(Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
+
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
