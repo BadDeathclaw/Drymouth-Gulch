@@ -1438,7 +1438,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx
 	name = "Med-X"
 	id = "medx"
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive. Prolonged presence in the body can cause seizures and organ damage.
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive. Prolonged presence in the body can cause seizures and organ damage."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
@@ -1493,9 +1493,8 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 			M.Unconsious(400)
 			M.Jitter(1000)
 			M.set_heartattack(TRUE)
-				M.visible_message("<span class='userdanger'>[M] clutches at [M.p_their()] chest as if [M.p_their()] heart stopped!</span>")
+				M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
 			to_chat(M, "<span class='danger'>(Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
-
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
