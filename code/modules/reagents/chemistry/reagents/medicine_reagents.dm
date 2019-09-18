@@ -232,14 +232,11 @@
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-<<<<<<< HEAD
-=======
 		else if(M.getFireLoss())
 			M.adjustFireLoss()
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
 				M.emote("scream")
->>>>>>> 2ff7bce46fd71b320aeeeeab595b86ad90e8beff
 	..()
 
 /datum/reagent/medicine/silver_sulfadiazine/on_mob_life(mob/living/M)
@@ -1470,7 +1467,6 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	M.AdjustKnockdown(-30, 0)
 	M.AdjustUnconscious(-30, 0)
 	M.adjustStaminaLoss(-5, 0)
-	M.adjustToxLoss(.5, 0)
 	..()
 	. = 1
 
@@ -1521,8 +1517,8 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.7 * REAGENTS_METABOLISM
-	overdose_threshold = 16
-	addiction_threshold = 16
+	overdose_threshold = 14
+	addiction_threshold = 50
 
 /datum/reagent/medicine/legionmedx/on_mob_add(mob/M)
 	..()
@@ -1543,6 +1539,8 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
+	..()
+	. = 1
 
 /datum/reagent/medicine/legionmedx/overdose_process(mob/living/M)
 	if(prob(33))
