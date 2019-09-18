@@ -180,4 +180,22 @@
 		// Shuttle status, see /__DEFINES/stat.dm
 		.["shuttle_timer"] = SSshuttle.emergency.timeLeft()
 		// Shuttle timer, in seconds
-	
+
+/datum/world_topic/dooc
+	keyword = "dooc"
+	require_comms_key = TRUE
+
+/datum/world_topic/dooc/Run(list/input)
+	if(!GLOB.ooc_allowed)
+		return
+	if(GLOB.say_disabled)
+		return
+	if(!CONFIG_GET(flag/using_discord_ooc))
+		return
+	var/msg = copytext(sanitize(input["message"]), 1, MAX_MESSAGE_LEN)
+	var/user = copytext(sanitize(input["user"]), 1, MAX_MESSAGE_LEN)
+	log_ooc("DSCRD: [user]: [msg]")
+	for(var/client/C in GLOB.clients)
+		if(C.prefs.chat_toggles & CHAT_OOC)
+			if(!(user in C.prefs.ignoring))
+				to_chat(C, "<font color='#9d00ff'><span class='ooc'><span class='prefix'>DSCRD:</span> <EM>[user]:</EM> <span class='message'>[msg]</span></span></font>")

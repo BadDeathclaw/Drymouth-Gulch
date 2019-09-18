@@ -236,10 +236,10 @@
 			dat += "<BR><b>No leader!</b>"
 		if(G.members.len)
 			dat += "<BR><b>Members:</b>"
-				for(var/mob/living/L in G.members)
-					if(L == G.leader)
-						continue
-					dat += "<BR>[L.real_name] <b>as</b> [L] [L.mob_dead_or_alive_print()] <a href='?priv_msg=[ckey(L.key)]'>PM</a> <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(L)]'>FLW</a>"
+			for(var/mob/living/L in G.members)
+				if(L == G.leader)
+					continue
+				dat += "<BR>[L.real_name] <b>as</b> [L] [L.mob_dead_or_alive_print()] <a href='?priv_msg=[ckey(L.key)]'>PM</a> <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(L)]'>FLW</a>"
 		else
 			dat += "<BR><b>No members!</b>"
 		dat += "<br>"

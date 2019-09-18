@@ -181,6 +181,8 @@
 
 /datum/config_entry/flag/using_discord
 
+/datum/config_entry/flag/using_discord_ooc
+
 /datum/config_entry/string/roundstatsurl
 
 /datum/config_entry/string/gamelogurl
