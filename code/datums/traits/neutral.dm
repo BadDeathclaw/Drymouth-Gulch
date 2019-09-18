@@ -163,6 +163,24 @@
 /datum/quirk/family_heirloom/on_clone(data)
 	heirloom = data
 
+/datum/quirk/nearsighted //t. errorage
+	name = "Nearsighted"
+	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
+	value = 0
+	gain_text = "<span class='danger'>Things far away from you start looking blurry.</span>"
+	lose_text = "<span class='notice'>You start seeing faraway things normally again.</span>"
+	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
+
+/datum/quirk/nearsighted/add()
+	quirk_holder.become_nearsighted(ROUNDSTART_TRAIT)
+
+/datum/quirk/nearsighted/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/clothing/glasses/regular/glasses = new(get_turf(H))
+	H.put_in_hands(glasses)
+	H.equip_to_slot_if_possible(glasses, SLOT_GLASSES)
+	H.regenerate_icons() //this is to remove the inhand icon, which persists even if it's not in their hands
+
 /datum/quirk/monochromatic
 	name = "Monochromacy"
 	desc = "You suffer from full colorblindness, and perceive nearly the entire world in blacks and whites."
