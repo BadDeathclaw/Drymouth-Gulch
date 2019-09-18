@@ -1449,9 +1449,6 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-<<<<<<< HEAD
-	addiction_threshold = 1
-=======
 	addiction_threshold = 10
 
 /datum/reagent/medicine/medx/on_mob_add(mob/M)
@@ -1467,7 +1464,6 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		L.hal_screwyhud = SCREWYHUD_NONE
 		L.remove_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 	..()
->>>>>>> 2ff7bce46fd71b320aeeeeab595b86ad90e8beff
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-30, 0)
