@@ -378,11 +378,12 @@
 
 /obj/item/clothing/suit/armor/f13/brokenpa
 	w_class = WEIGHT_CLASS_HUGE
-	slowdown = 2
+	slowdown = 1.25
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	flags_inv = HIDEJUMPSUIT
+	item_flags = SLOWS_WHILE_IN_HAND
 	clothing_flags = THICKMATERIAL
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -405,11 +406,12 @@
 
 /obj/item/clothing/suit/armor/f13/power_armor
 	w_class = WEIGHT_CLASS_HUGE
-	slowdown = 1
+	slowdown = 0.75
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	flags_inv = HIDEJUMPSUIT
+	item_flags = SLOWS_WHILE_IN_HAND
 	clothing_flags = THICKMATERIAL
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF

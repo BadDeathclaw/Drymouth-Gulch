@@ -39,6 +39,9 @@
 		if (2)
 			if (prob(50))
 				qdel(src)
+		if (3)
+			if (prob(25))
+				qdel(src)
 
 /obj/item/latexballon/bullet_act()
 	burst()

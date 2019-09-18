@@ -168,6 +168,11 @@ GLOBAL_LIST_INIT(freqtospan, list(
 
 /atom/movable/proc/GetRadio()
 
+/mob/living/GetJob()
+	if (mind && mind.assigned_role)
+		return SSjob.GetJob(mind.assigned_role)
+
+
 //VIRTUALSPEAKERS
 /atom/movable/virtualspeaker
 	var/job

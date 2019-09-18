@@ -91,7 +91,6 @@
 	else
 		return ..()
 
-
 /mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
@@ -126,14 +125,14 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 50
 	maxHealth = 50
+	gold_core_spawnable = FRIENDLY_SPAWN
+	blood_volume = BLOOD_VOLUME_NORMAL
+	faction = list("neutral", "wastebot")
 	var/is_calf = 0
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0
 	var/young_type = /mob/living/simple_animal/cow/calf
 	var/obj/item/udder/udder = null
-	gold_core_spawnable = FRIENDLY_SPAWN
-	blood_volume = BLOOD_VOLUME_NORMAL
-	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/cow/Initialize()
 	if(!is_calf)
@@ -163,7 +162,6 @@
 			qdel(O)
 	else
 		return ..()
-
 
 /mob/living/simple_animal/cow/Life()
 	. = ..()
@@ -237,11 +235,11 @@
 	health = 3
 	maxHealth = 3
 	ventcrawler = VENTCRAWLER_ALWAYS
-	var/amount_grown = 0
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	gold_core_spawnable = FRIENDLY_SPAWN
 	faction = list("neutral", "wastebot")
+	var/amount_grown = 0
 
 /mob/living/simple_animal/chick/Initialize()
 	. = ..()
@@ -278,8 +276,6 @@
 	speak_chance = 2
 	turns_per_move = 3
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
-	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
@@ -287,18 +283,20 @@
 	health = 15
 	maxHealth = 15
 	ventcrawler = VENTCRAWLER_ALWAYS
+	pass_flags = PASSTABLE | PASSMOB
+	mob_size = MOB_SIZE_SMALL
+	gold_core_spawnable = FRIENDLY_SPAWN
+	faction = list("neutral", "wastebot")
+	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
+	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/eggsleft = 0
 	var/eggsFertile = TRUE
 	var/body_color
 	var/icon_prefix = "chicken"
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
 	var/list/feedMessages = list("It clucks happily.","It clucks happily.")
 	var/list/layMessage = EGG_LAYING_MESSAGES
 	var/list/validColors = list("brown","black","white")
-	gold_core_spawnable = FRIENDLY_SPAWN
 	var/static/chicken_count = 0
-	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/chicken/Initialize()
 	. = ..()
@@ -413,22 +411,21 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
-	faction = list("neutral")
+	faction = list("neutral", "bighorner")
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
-	attack_same = 1
 	attacktext = "rams"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	health = 80
-	maxHealth = 80
+	health = 120
+	maxHealth = 120
 	melee_damage_lower = 25
 	melee_damage_upper = 20
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	stop_automated_movement_when_pulled = 1
+	blood_volume = BLOOD_VOLUME_NORMAL
 	var/is_calf = 0
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0
 	var/young_type = /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
-	stop_automated_movement_when_pulled = 1
-	blood_volume = BLOOD_VOLUME_NORMAL
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
@@ -462,7 +459,7 @@
 			if((prob(3)))
 				is_calf = 0
 				udder = new()
-				if (name == "bighorn lamb")
+				if(name == "bighorn lamb")
 					name = "bighorn"
 				else
 					name = "bighorn"
@@ -472,11 +469,12 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
 	name = "bighoner lamb"
-	resize = 0.55
+	resize = 0.7
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf/Initialize() //calfs should not be a separate critter, they should just be a normal whatever with these vars
 	. = ..()
-	resize = 0.55
+	resize = 0.7
+	update_transform()
 
 /mob/living/simple_animal/cow/calf
 	name = "cow calf"
@@ -484,7 +482,8 @@
 
 /mob/living/simple_animal/cow/calf/Initialize()
 	. = ..()
-	resize = 0.55
+	resize = 0.7
+	update_transform()
 
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
@@ -492,4 +491,5 @@
 
 /mob/living/simple_animal/cow/brahmin/calf/Initialize()
 	. = ..()
-	resize = 0.55
+	resize = 0.7
+	update_transform()

@@ -64,7 +64,8 @@
 
 /mob/living/simple_animal/hostile/cazador/young/Initialize()
 	. = ..()
-	src.resize = 0.5
+	resize = 0.8
+	update_transform()
 
 /datum/reagent/toxin/cazador_venom
 	name = "Cazador venom"

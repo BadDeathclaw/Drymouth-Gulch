@@ -8,15 +8,15 @@
 	telegraph_overlay = "light_ash"
 	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
 
-	weather_message = "<span class='boldannounce'>The air suddenly gets very hot...</span>"
+	weather_message = "<span class='userdanger'>The air suddenly gets very hot...</span>"
 	weather_overlay = "light_ash"
-	weather_duration_lower = 600
-	weather_duration_upper = 1500
+	weather_duration_lower = 1200
+	weather_duration_upper = 2400
 
 	end_duration = 100
 	end_message = "<span class='boldannounce'>The heat wave dies down, it should be safe to go outside again.</span>"
 
-	area_type = /area/f13/wasteland
+	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins, /area/f13/radiation_outside)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 

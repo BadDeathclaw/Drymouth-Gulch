@@ -29,6 +29,9 @@ HUB
 ## Uncomment and set the config in tools/discord/config.yml to enable sending stuff to discord's webhooks
 # USING_DISCORD
 
+## Uncomment to allow users to send discord messages to ooc, requires a bot and a comms_key
+# USING_DISCORD_OOC
+
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
 LOBBY_COUNTDOWN 160
 ## initialization totaly factored in(TM)
@@ -217,13 +220,13 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-FORUMURL https://discord.gg/BbsYDrR
+DISCORDURL https://discord.gg/TCj5cJN
 
 ## Wiki address
 WIKIURL https://bad-deathclaw.fandom.com/wiki/Bad_Deathclaw_Wiki
 
 ## Rules address
-RULESURL https://discord.gg/ppWGX2j
+RULESURL https://discord.gg/TCj5cJN
 
 
 ## Github address
