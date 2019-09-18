@@ -382,21 +382,26 @@
 	color = "#FFEBEB"
 	overdose_threshold = 10
 
+/datum/reagent/medicine/synthflesh
+	name = "Synthflesh"
+	id = "synthflesh"
+	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal 1.25 points of damage. Touch application only. Causes toxloss equal to 66% of what was healed."
+	reagent_state = LIQUID
+	color = "#FFEBEB"
+
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
 	if(iscarbon(M))
-		if (M.stat == DEAD)
-			show_message = FALSE
+		var/mob/living/carbon/C = M
+		if (C.stat == DEAD)
+			show_message = 0
 		if(method in list(PATCH, TOUCH))
-			M.adjustBruteLoss(-1.25 * reac_volume)
-			M.adjustFireLoss(-1.25 * reac_volume)
+			var/brute = min(C.getBruteLoss(),C.adjustBruteLoss(-1.25 * reac_volume)*-1)
+			var/burn = min(C.getFireLoss(),C.adjustFireLoss(-1.25 * reac_volume)*-1)
+			if(C.stat != DEAD)
+				C.adjustToxLoss((brute+burn)*0.66)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns and bruises healing! It stings like hell!</span>")
 	..()
-
-/datum/reagent/medicine/synthflesh/overdose_process(mob/living/M)
-	M.adjustToxLoss(0.75*REM, 0)
-	..()
-	. = 0.5
 
 /datum/reagent/medicine/charcoal
 	name = "Charcoal"
