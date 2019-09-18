@@ -43,7 +43,7 @@
 	icon_state = "healthhudnight"
 	item_state = "glasses"
 	darkness_view = 128
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/hud/health/sunglasses
@@ -68,7 +68,7 @@
 	icon_state = "diagnostichudnight"
 	item_state = "glasses"
 	darkness_view = 128
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/hud/security
@@ -121,7 +121,7 @@
 	desc = "An advanced heads-up display which provides id data and vision in complete darkness."
 	icon_state = "securityhudnight"
 	darkness_view = 128
-	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/hud/security/sunglasses/gars
