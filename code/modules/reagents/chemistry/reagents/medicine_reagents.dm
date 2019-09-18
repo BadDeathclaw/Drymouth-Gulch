@@ -282,14 +282,11 @@
 			M.adjustToxLoss(0.5*reac_volume)
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-<<<<<<< HEAD
-=======
 		else if(M.getBruteLoss())
 			M.adjustBruteLoss()
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
 				M.emote("scream")
->>>>>>> 2ff7bce46fd71b320aeeeeab595b86ad90e8beff
 	..()
 
 /datum/reagent/medicine/styptic_powder/on_mob_life(mob/living/M)
