@@ -338,11 +338,13 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 25
+	extra_damage = 15
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
@@ -697,12 +699,12 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 25
-	extra_penetration = 5
+	extra_damage = 20
 	
 /obj/item/gun/ballistic/automatic/lmg/burst_select()
 	var/mob/living/carbon/human/user = usr
