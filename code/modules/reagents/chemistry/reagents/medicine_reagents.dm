@@ -1493,7 +1493,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 			M.Unconsious(400)
 			M.Jitter(1000)
 			M.set_heartattack(TRUE)
-				M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
+			M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
 			to_chat(M, "<span class='danger'>(Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
 	..()
 
