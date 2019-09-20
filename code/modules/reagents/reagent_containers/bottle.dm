@@ -302,3 +302,10 @@
 	name = "BVAK bottle"
 	desc = "A small bottle containing Bio Virus Antidote Kit."
 	list_reagents = list("atropine" = 5, "epinephrine" = 5, "salbutamol" = 10, "spaceacillin" = 10)
+
+/obj/item/reagent_containers/glass/bottle/bitter_drink //stuck this here for now, at least
+	name = "Bitter Drink bottle"
+	desc = "A clay bottle containing bitter drink made from broc flowers and xander roots."
+//	icon = 'icons/obj/drinks.dmi' //tacked this on for testing. Icon doesn't change back into a bottle when empty, but the bitter drink bottle is opaque anyway
+//	icon_state = "bitterdrink"
+	list_reagents = list("bitter_drink" = 30)

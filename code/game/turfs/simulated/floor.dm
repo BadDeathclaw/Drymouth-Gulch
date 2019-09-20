@@ -56,13 +56,13 @@
 		ScrapeAway()
 		return
 	if(target != null)
-		severity = 3
+		severity = 4
 
 	switch(severity)
 		if(1)
 			ScrapeAway(2)
 		if(2)
-			switch(pick(1,2;75,3))
+			switch(pick(1,2;75,4))
 				if(1)
 					if(!length(baseturfs) || !ispath(baseturfs[baseturfs.len-1], /turf/open/floor))
 						ScrapeAway()
@@ -73,7 +73,7 @@
 						new /obj/item/stack/sheet/metal(src)
 				if(2)
 					ScrapeAway(2)
-				if(3)
+				if(4)
 					if(prob(80))
 						ScrapeAway()
 					else
@@ -82,6 +82,11 @@
 					if(prob(33))
 						new /obj/item/stack/sheet/metal(src)
 		if(3)
+			if (prob(75))
+				src.break_tile()
+				src.hotspot_expose(1000,CELL_VOLUME)
+
+		if(4)
 			if (prob(50))
 				src.break_tile()
 				src.hotspot_expose(1000,CELL_VOLUME)

@@ -218,11 +218,12 @@
 		result = first ^ second
 	return result
 
-//Picks a random element from a list based on a weighting system:
-//1. Adds up the total of weights for each element
-//2. Gets a number between 1 and that total
-//3. For each element in the list, subtracts its weighting from that number
-//4. If that makes the number 0 or less, return that element.
+
+//Picks an element based on its weight
+//Must be given an associative list in the format
+/*
+	list(item = weight, item = weight) ..etc
+*/
 /proc/pickweight(list/L)
 	var/total = 0
 	var/item
@@ -231,9 +232,10 @@
 			L[item] = 1
 		total += L[item]
 
-	total = rand(1, total)
+	total = rand()* total
+
 	for (item in L)
-		total -=L [item]
+		total -= L[item]
 		if (total <= 0)
 			return item
 
@@ -550,3 +552,5 @@
 			L1[key] += other_value
 		else
 			L1[key] = other_value
+
+

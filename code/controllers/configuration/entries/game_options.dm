@@ -269,6 +269,7 @@
 	if(.)
 		GLOB.MAX_EX_DEVESTATION_RANGE = round(config_entry_value / 4)
 		GLOB.MAX_EX_HEAVY_RANGE = round(config_entry_value / 2)
+		GLOB.MAX_EX_MEDIUM_RANGE = round(config_entry_value/ 1.5)
 		GLOB.MAX_EX_LIGHT_RANGE = config_entry_value
 		GLOB.MAX_EX_FLASH_RANGE = config_entry_value
 		GLOB.MAX_EX_FLAME_RANGE = config_entry_value

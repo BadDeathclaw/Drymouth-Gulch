@@ -65,7 +65,7 @@
 
 /datum/gang_item/clothing/khan_helmet
 	name = "Great Khan helmet"
-	id = "khan_boots"
+	id = "khan_helmet"
 	cost = 20
 	item_path = /obj/item/clothing/head/helmet/f13/khan
 
@@ -85,7 +85,7 @@
 	name = "Great Khan armored vest"
 	id = "khan_vest"
 	cost = 60
-	item_path = /obj/item/clothing/under/f13/khan
+	item_path = /obj/item/clothing/suit/armor/khan
 
 /datum/gang_item/clothing/prostitute_dress
 	name = "Prostitute dress"
