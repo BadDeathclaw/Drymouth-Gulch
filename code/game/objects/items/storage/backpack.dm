@@ -20,6 +20,8 @@
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
+	dog_fashion = /datum/dog_fashion/back //added this for testing and excluding it last time might have been what broke compile, so I'm leaving it
+	brahmin_fashion = /datum/brahmin_fashion/back
 
 /obj/item/storage/backpack/ComponentInitialize()
 	. = ..()
