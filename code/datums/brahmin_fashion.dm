@@ -6,7 +6,7 @@
 	var/speak
 	var/speak_emote
 
-	// This isn't applied to the dog, but stores the icon_state of the
+	// This isn't applied to the brahmin, but stores the icon_state of the
 	// sprite that the associated item uses
 	var/icon_file
 	var/obj_icon_state
@@ -17,7 +17,7 @@
 	name = replacetext(name, "REAL_NAME", M.real_name)
 	desc = replacetext(desc, "NAME", name)
 
-/datum/brahmin_fashion/proc/apply(mob/living/simple_animal/cow/brahmin/D)
+/datum/brahmin_fashion/proc/apply(mob/living/simple_animal/cow/brahmin/D) //none of this currently seems to work, but the backpacks go on so I'm content for now
 	if(name)
 		D.name = name
 	if(desc)
