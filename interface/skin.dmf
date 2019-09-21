@@ -211,7 +211,7 @@ window "infowindow"
 		text-color = #ffffff
 		background-color = #411d1e
 		saved-params = "is-checked"
-		text = "Patreon"
+		text = "Wiki"
 		command = "wiki"
 	elem "forum"
 		type = BUTTON

@@ -375,17 +375,19 @@
 
 	switch (severity)
 		if (1)
-			if(prob(bomb_armor))
-				b_loss = 500
-				var/atom/throw_target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
-				throw_at(throw_target, 200, 4)
-				damage_clothes(400 - bomb_armor, BRUTE, "bomb")
-			else
-				for(var/I in contents)
-					var/atom/A = I
-					A.ex_act(severity)
-				gib()
-				return
+			b_loss = 80
+			f_loss = 80
+			var/atom/throw_target = get_edge_target_turf(src, get_dir(src, get_step_away(src, src)))
+			throw_at(throw_target, 200, 4)
+			damage_clothes(400 - bomb_armor, BRUTE, "bomb")
+			if(bomb_armor)
+				b_loss = 40*(2 - round(bomb_armor*0.01, 0.05))
+				f_loss = b_loss
+				if (!istype(ears, /obj/item/clothing/ears/earmuffs))
+					adjustEarDamage(40, 150)
+				if (prob(max(70 - (bomb_armor * 0.5), 0)))
+					Unconscious(220)
+
 
 		if (2)
 			b_loss = 60
@@ -398,11 +400,22 @@
 				adjustEarDamage(30, 120)
 			if (prob(max(70 - (bomb_armor * 0.5), 0)))
 				Unconscious(200)
-
 		if(3)
-			b_loss = 30
+			b_loss = 40
+			f_loss = 40
 			if(bomb_armor)
-				b_loss = 15*(2 - round(bomb_armor*0.01, 0.05))
+				b_loss = 20*(2 - round(bomb_armor*0.01, 0.05))
+				f_loss = b_loss
+			damage_clothes(125 - bomb_armor, BRUTE, "bomb")
+			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
+				adjustEarDamage(23, 90)
+			if (prob(max(60 - (bomb_armor * 0.5), 0)))
+				Unconscious(180)
+		if(4)
+			b_loss = 20
+			f_loss = 20
+			if(bomb_armor)
+				b_loss = 10*(2 - round(bomb_armor*0.01, 0.05))
 			damage_clothes(max(50 - bomb_armor, 0), BRUTE, "bomb")
 			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
 				adjustEarDamage(15,60)
@@ -413,10 +426,10 @@
 
 	//attempt to dismember bodyparts
 	if(severity <= 2 || !bomb_armor)
-		var/max_limb_loss = round(4/severity) //so you don't lose four limbs at severity 3.
+		var/max_limb_loss = round(2/severity) //so you don't lose four limbs at severity 3.
 		for(var/X in bodyparts)
 			var/obj/item/bodypart/BP = X
-			if(prob(50/severity) && !prob(getarmor(BP, "bomb")) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
+			if(prob(25/severity) && !prob(getarmor(BP, "bomb")) && BP.body_zone != BODY_ZONE_HEAD && BP.body_zone != BODY_ZONE_CHEST)
 				BP.brute_dam = BP.max_damage
 				BP.dismember()
 				max_limb_loss--

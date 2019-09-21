@@ -82,11 +82,11 @@
 	icon = 'icons/fallout/mobs/animal.dmi'
 	icon_state = "protectron"
 	icon_living = "protectron"
-	icon_dead = "protectron_dead"
+	icon_dead = "protectron_d"
 	maxHealth = 200
 	health = 200
 	speak_chance = 5
-	faction = list("neutral", "silicon", "dog", "hostile", "pirate", "wastebot", "wolf", "plants", "turret", "enclave", "ghoul", "cazador", "supermutant", "gecko", "slime", "radscorpion", "skeleton", "carp", "bs")
+	faction = list("neutral", "silicon", "dog", "hostile", "pirate", "wastebot", "wolf", "plants", "turret", "enclave", "ghoul", "cazador", "supermutant", "gecko", "slime", "radscorpion", "skeleton", "carp", "bs", "bighorner")
 	speak = list("Welcome to my trading stale! On behalf of our company we wish you a to survive long enough to buy our products!", "Welcome back, traveler! How can I help you today? Fancy bying something from this vending machine? It is good!", "Line up for another great series of purchases! It will keep you alive a bit longer! Just a bit.", "My sensor tell it's almost 40 degrees Celsius in here. Good think I am trustworthy machine and not a sweating chunk of meat like you.", "You can blame the RobCo Industries for making androids with Genuine People Personalities. I'm a personality prototype. You can tell, can't you...?", "Remember three important rules of our trading stale! 1. No refunds. 2. No damaging the stale. 3. No refunds. Seriously.", "The first hundred years were the worst. And the second hundred - they were the worst, too. The third hundred I didn't enjoy at all. After that, I went into a bit of a decline.", "You think you've got problems. What are you supposed to do if you are a manically depressed robot? No, don't even bother answering. I'm 50,000 times more intelligent than you and even I don't know the answer.", "What a beautiful day! Shame I can't have a walk. On the other hand - I don't have to deal with all these terrible creatures out there. Speaking of which - you should totally buy something to protect yourself!")
 	speak_emote = list()
 	emote_hear = list()

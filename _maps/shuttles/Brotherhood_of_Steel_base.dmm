@@ -1,0 +1,130 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/closed/wall/f13/vault,
+/area/shuttle/brotherhood_of_steel)
+"b" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "NW"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+"c" = (
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+"d" = (
+/obj/structure/ladder/unbreakable{
+	anchored = 1;
+	height = 2;
+	id = "NE"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+"e" = (
+/obj/machinery/computer/shuttle/bos,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+"f" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "SW"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+"g" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "SE"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+"h" = (
+/turf/template_noop,
+/area/template_noop)
+"j" = (
+/obj/docking_port/mobile/bos{
+	dwidth = 1;
+	name = "Broterhood_of_Steel"
+	},
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "120"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/brotherhood_of_steel)
+
+(1,1,1) = {"
+a
+j
+a
+h
+h
+h
+"}
+(2,1,1) = {"
+a
+c
+a
+h
+h
+h
+"}
+(3,1,1) = {"
+a
+c
+a
+a
+a
+a
+"}
+(4,1,1) = {"
+a
+c
+c
+b
+f
+a
+"}
+(5,1,1) = {"
+a
+c
+c
+c
+c
+a
+"}
+(6,1,1) = {"
+a
+c
+c
+d
+g
+a
+"}
+(7,1,1) = {"
+a
+c
+c
+c
+c
+a
+"}
+(8,1,1) = {"
+a
+c
+c
+c
+e
+a
+"}
+(9,1,1) = {"
+a
+a
+a
+a
+a
+a
+"}

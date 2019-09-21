@@ -398,6 +398,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/datum/crafting_recipe/m38belt
+	name = "M38 ammo belt"
+	result = /obj/item/ammo_box/magazine/mm195x129/m38/
+	reqs = list(/obj/item/stack/sheet/metal = 20)
+	tools = list(TOOL_SCREWDRIVER,
+				TOOL_MSRELOADER)
+	time = 10
+	category = CAT_WEAPONRY
+	subcategory = CAT_AMMO
+
 /datum/crafting_recipe/spear
 	name = "Spear"
 	result = /obj/item/twohanded/spear
@@ -537,7 +547,7 @@
 	result = /obj/item/clothing/accessory/skullcodpiece
 	time = 20
 	reqs = list(/obj/item/stack/sheet/bone = 2,
-				 /obj/item/stack/sheet/animalhide/goliath_hide = 1)
+				 /obj/item/stack/sheet/animalhide/deathclaw = 1) //changed from goliath to deathclaw
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
@@ -574,7 +584,7 @@
 				 /obj/item/stack/sheet/sinew = 1)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
+/*
 /datum/crafting_recipe/viperspear
 	name = "Viper Spear"
 	result = /obj/item/twohanded/bonespear/venom
@@ -592,7 +602,7 @@
 				/obj/item/stack/sheet/bone = 2)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
-
+*/ 
 /datum/crafting_recipe/boneaxe
 	name = "Bone Axe"
 	result = /obj/item/twohanded/fireaxe/boneaxe
@@ -707,13 +717,29 @@
 	parts = list(/obj/item/camera = 1)
 	category = CAT_MISC
 
+//drugs
 /datum/crafting_recipe/jet
 	name = "Jet"
 	result = /obj/item/reagent_containers/pill/patch/jet
 	time = 20
-	reqs = list(/datum/reagent/consumable/milk = 25, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
+	reqs = list(/datum/reagent/consumable/milk = 10, /obj/item/clothing/mask/cigarette = 3, /obj/item/toy/crayon/spraycan)
 	category = CAT_DRUGS
 
+/datum/crafting_recipe/psycho
+	name = "Psycho"
+	result = /obj/item/reagent_containers/hypospray/medipen/psycho
+	time = 20
+	reqs = list(/obj/item/reagent_containers/syringe = 1, /obj/item/reagent_containers/food/snacks/grown/feracactus = 2, /obj/item/reagent_containers/food/snacks/grown/fungus = 2, /datum/reagent/consumable/nuka_cola = 10)
+	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
+	category = CAT_DRUGS
+
+/datum/crafting_recipe/medx
+	name = "med-x"
+	result = /obj/item/reagent_containers/syringe/medx
+	time = 20
+	reqs = list(/obj/item/reagent_containers/syringe = 1, /obj/item/reagent_containers/food/snacks/grown/feracactus = 2, /obj/structure/flora/wasteplant/wild_agave = 1, /datum/reagent/consumable/ethanol/whiskey = 10)
+	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
+	category = CAT_DRUGS
 
 /datum/crafting_recipe/rags
 	name = "Cut clothing into rags"
@@ -739,6 +765,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
 	time = 80
 	category = CAT_MEDICAL
+
 
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
@@ -905,3 +932,24 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_MEDICAL
+
+/datum/crafting_recipe/spray
+	name = "Abraxo Cleaner"
+	result = /obj/item/reagent_containers/spray/cleaner
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/crafting/abraxo = 1,
+				/datum/reagent/water = 50)
+	tools = list(TOOL_WELDER)
+	time = 10
+	category = CAT_MISC
+
+/datum/crafting_recipe/throwingknife
+
+	name = "Throwing Knife"
+	result = /obj/item/throwing_star/throwingknife
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WELDER)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON

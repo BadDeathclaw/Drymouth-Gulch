@@ -365,9 +365,23 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_state = "tribalspear"
 	force = 20
 	throwforce = 35
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.3
 	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 60, "embedded_fall_chance" = 20)
 	w_class = WEIGHT_CLASS_NORMAL
 
+/obj/item/throwing_star/throwingknife
+	name = "throwing knife"
+	desc = "A knife, weighted and designed to be thrown. Looks pretty sharp."
+	lefthand_file = 'icons/mob/inhands/equipment/kitchen_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/kitchen_righthand.dmi'
+	icon = 'icons/fallout/objects/melee.dmi'
+	icon_state = "throwing"
+	item_state = "knife"
+	force = 20
+	throwforce = 20
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 40, "embedded_fall_chance" = 10)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/throwing_star/spear/harpoon
 	name = "harpoon"

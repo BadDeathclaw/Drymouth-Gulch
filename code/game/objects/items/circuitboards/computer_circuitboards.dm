@@ -359,6 +359,12 @@
 	name = "Satellite Network Control (Computer Board)"
 	build_path = /obj/machinery/computer/sat_control
 
+/obj/item/circuitboard/computer/robco_terminal
+	name = "RobCo Terminal Mainboard (Computer board)"
+	build_path = /obj/machinery/computer/terminal
+
+//Elevators
+
 /obj/item/circuitboard/computer/enclave_control
 	name = "Enclave Elevator Control (Computer board)"
 	build_path = /obj/machinery/computer/shuttle/enclavefortelevator
@@ -375,6 +381,6 @@
 	name = "Bunker Elevator Control (Computer board)"
 	build_path = /obj/machinery/computer/shuttle/bunkerelevator
 
-/obj/item/circuitboard/computer/robco_terminal
-	name = "RobCo Terminal Mainboard (Computer board)"
-	build_path = /obj/machinery/computer/terminal
+/obj/item/circuitboard/computer/northbunker_control
+	name = "North Bunker Elevator Control (Computer board)"
+	build_path = /obj/machinery/computer/shuttle/northbunkerelevator

@@ -217,7 +217,7 @@
 	else
 		location = get_turf(src)
 	if(location)
-		explosion(location,0,0,3)
+		explosion(location,1,2,3,4,5)
 	qdel(src)
 
 /obj/item/grenade/plastic/c4/attack(mob/M, mob/user, def_zone)

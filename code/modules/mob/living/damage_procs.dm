@@ -98,6 +98,8 @@
 			Unconscious(effect * hit_percent)
 		if(EFFECT_IRRADIATE)
 			radiation += max(effect * hit_percent, 0)
+			if(prob(20))
+				to_chat(src, "<span class ='warning'>Your skin feels warm...</span>")
 		if(EFFECT_SLUR)
 			slurring = max(slurring,(effect * hit_percent))
 		if(EFFECT_STUTTER)

@@ -96,6 +96,10 @@
 	port_id = "assault_pod"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/bosbase
+	port_id = "Brotherhood_of_Steel"
+	can_be_bought = FALSE
+
 /datum/map_template/shuttle/pirate
 	port_id = "pirate"
 	can_be_bought = FALSE
@@ -122,6 +126,10 @@
 
 /datum/map_template/shuttle/bunker
 	port_id = "bunker"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/northbunker
+	port_id = "northbunker"
 	can_be_bought = FALSE
 
 // Shuttles start here:
@@ -443,6 +451,10 @@
 	suffix = "default"
 	name = "assault pod (Default)"
 
+/datum/map_template/shuttle/bosbase/base
+	suffix = "base"
+	name = "brotherhood of steel (base)"
+
 /datum/map_template/shuttle/pirate/default
 	suffix = "default"
 	name = "pirate ship (Default)"
@@ -486,6 +498,10 @@
 /datum/map_template/shuttle/bunker/elevator
 	suffix = "elevator"
 	name = "Bunker Elevator"
+
+/datum/map_template/shuttle/northbunker/elevator
+	suffix = "elevator"
+	name = "North Bunker Elevator"
 
 /datum/map_template/shuttle/emergency/pahrump
 	suffix = "pahrump"

@@ -28,7 +28,7 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 
 //This proc sends the asset to the client, but only if it needs it.
 //This proc blocks(sleeps) unless verify is set to false
-/proc/send_asset(var/client/client, var/asset_name, var/verify = TRUE)
+/proc/send_asset(var/client/client, var/asset_name, var/verify = TRUE, var/custom_asset = null)
 	if(!istype(client))
 		if(ismob(client))
 			var/mob/M = client
@@ -44,7 +44,13 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 	if(client.cache.Find(asset_name) || client.sending.Find(asset_name))
 		return 0
 
-	client << browse_rsc(SSassets.cache[asset_name], asset_name)
+	var/asset
+	if (custom_asset)
+		asset = custom_asset
+	else
+		asset = SSassets.cache[asset_name]
+
+	client << browse_rsc(asset, asset_name)
 	if(!verify)
 		client.cache += asset_name
 		return 1
@@ -602,3 +608,23 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 		Insert(initial(D.id), I)
 	return ..()
+
+
+/datum/asset/simple/loadout_icons/register()
+	var/list/outfits = list()
+	for(var/j in subtypesof(/datum/job))
+		var/datum/job/J = new j
+		for (var/D in J.loadout_options)
+			if (D in outfits)
+				continue
+			outfits += D
+			var/datum/outfit/O = new D
+			var/list/types = O.get_all_possible_item_paths()
+
+			for (var/item in types)
+				var/filename = sanitize_filename("[item].png")
+				var/icon/I = getFlatTypeIcon(item)
+				register_asset(filename, I)
+				assets[filename] = I
+
+				//design.ui_data["icon"] = filename

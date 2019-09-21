@@ -51,14 +51,6 @@
 	make_reagents = list()
 	category = list("initial","Food")
 
-/datum/design/monkey_cube
-	name = "Monkey Cube"
-	id = "mcube"
-	build_type = BIOGENERATOR
-	materials = list(MAT_BIOMASS = 250)
-	build_path = /obj/item/reagent_containers/food/snacks/monkeycube
-	category = list("initial", "Food")
-
 /datum/design/ez_nut
 	name = "E-Z Nutrient"
 	id = "ez_nut"
