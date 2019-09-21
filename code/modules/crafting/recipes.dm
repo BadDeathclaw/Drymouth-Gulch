@@ -741,7 +741,6 @@
 	tools = list(/obj/item/lighter, /obj/item/reagent_containers/glass/beaker)
 	category = CAT_DRUGS
 
-
 /datum/crafting_recipe/rags
 	name = "Cut clothing into rags"
 	result = /obj/item/stack/sheet/cloth/three
@@ -766,6 +765,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
 	time = 80
 	category = CAT_MEDICAL
+
 
 /datum/crafting_recipe/stimpak
 	name = "Stimpak"
