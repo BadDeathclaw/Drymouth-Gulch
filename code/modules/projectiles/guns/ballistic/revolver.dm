@@ -5,7 +5,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
 	casing_ejector = FALSE
 	w_class = WEIGHT_CLASS_NORMAL
-	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/ballistic/revolver/Initialize()
 	. = ..()
