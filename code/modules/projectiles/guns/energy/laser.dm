@@ -169,6 +169,7 @@
 	fire_delay = 2
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/gun/energy/laser/scatter
 	name = "tribeam laser rifle"
@@ -210,6 +211,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = WEAPON_LIGHT
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	slot_flags = ITEM_SLOT_BELT
 
 
 //projectiles
