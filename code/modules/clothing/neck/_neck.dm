@@ -180,9 +180,9 @@
 	icon_state = "stripedbluescarf"
 	item_color = "stripedbluescarf"
 
-/obj/item/clothing/neck/petcollar //don't really wear this though please c'mon seriously guys
+/obj/item/clothing/neck/petcollar //Be a good doggo
 	name = "pet collar"
-	desc = "It's for pets. Though you probably could wear it yourself, you'd doubtless be the subject of ridicule."
+	desc = "A sturdy brown leather dog collar. Kinky."
 	icon_state = "petcollar"
 	item_color = "petcollar"
 	var/tagname = null
