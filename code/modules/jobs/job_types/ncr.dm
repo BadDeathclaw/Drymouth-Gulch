@@ -4,6 +4,8 @@
 	exp_type = EXP_TYPE_NCR
 	access = list(ACCESS_SECURITY)
 	minimal_access = list(ACCESS_SECURITY)
+	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, raiders (anywhere, being one is a crime), allying with factions you are at war with (such as the Legion or Brotherhood of Steel), and sex on duty."
+	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 
 /datum/outfit/job/ncr/
 	name = "NCRdatums"
@@ -61,8 +63,6 @@ Captain
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant, coordinating with your staff you must ensure that the objectives of central command are completed to the letter. Working closely with them on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
 	req_admin_notify = 1
@@ -101,8 +101,6 @@ Lieutenant
 	total_positions = 1
 	spawn_positions = 1
 	faction = "NCR"
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are the direct superior to the Sergeant and Enlisted, working with the Captain and under special circumstances, Rangers. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
@@ -144,8 +142,6 @@ Medic
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are in charge of providing medical support to the NCR throughout the region. You are a non-combat role and should not be using your authority for anything outside of medical purposes. You answer to the Captain and should defer to Sergeants or higher on military matters."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
@@ -186,8 +182,6 @@ Sergeant
 	total_positions = 2
 	spawn_positions = 2
 	faction = "NCR"
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are the direct superior to the enlisted troops, working with the chain of command you echo the orders of your superiors and ensure that the Enlisted follow them to the letter. Additionally you are responsible for the well being of the troops and their ongoing training with the NCR."
 	supervisors = "Lieutenants and above"
 	selection_color = "#fff5cc"
@@ -229,8 +223,6 @@ Engineer
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are in charge of fortifying and building for NCR strategic locations throughout the region. You answer directly to the Lieutenant and Captain, while also organizing grunts to assist you as needed."
 	supervisors = "Lieutenants and above"
 	selection_color = "#fff5cc"
@@ -271,8 +263,6 @@ Corporal
 	faction = "NCR"
 	total_positions = 4
 	spawn_positions = 4
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
@@ -313,8 +303,6 @@ Trooper
 	faction = "NCR"
 	total_positions = 8
 	spawn_positions = 8
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description =  "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -352,8 +340,6 @@ Recruit
 	faction = "NCR"
 	total_positions = 10
 	spawn_positions = 10
-	forbids = "The NCR forbids: Drugs (except for med-X) Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -390,8 +376,6 @@ Heavy Trooper
 	total_positions = 2
 	spawn_positions = 2
 	faction = "NCR"
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You are an elite, heavy trooper with the NCR that has years of experience and training under their belt. You are also equivalent to a Sergeant, and as such, can organize lower troops as you see fit to assist in NCR interests and goals throughout the region."
 	supervisors = "Lieutenants and above"
 	selection_color = "#fff5cc"
@@ -433,8 +417,6 @@ Veteran Ranger
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
-	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. As a Veteran Ranger you work closely with the Captain in planning special operations with your team while also carrying out those orders in the field by any means necessary."
 	supervisors = "Lieutenants and above"
 	selection_color = "#ffeeaa"
@@ -475,8 +457,6 @@ Ranger
 	faction = "NCR"
 	total_positions = 2
 	spawn_positions = 2
-	forbids = "The NCR forbids: Drugs (xcept for med-X) Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer directly to the Veteran Ranger and Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Ranger, you seize, destroy, capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
@@ -518,8 +498,6 @@ Recon Ranger
 	faction = "NCR"
 	total_positions = 3
 	spawn_positions = 3
-	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, and sex on duty."
-	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 	description = "You answer directly to the Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Recon Ranger, you perform reconnaissance, seize or destroy assets and capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
