@@ -19,6 +19,26 @@
 	max_items = 1
 	attack_hand_interact = FALSE
 
+//start of locked collars
+
+/datum/component/storage/concrete/pockets/small/collar
+	max_items = 1
+
+/datum/component/storage/concrete/pockets/small/collar/Initialize()
+	. = ..()
+	can_hold = typecacheof(list(
+	/obj/item/reagent_containers/food/snacks/cookie,
+	/obj/item/reagent_containers/food/snacks/sugarcookie))
+
+/datum/component/storage/concrete/pockets/small/collar/locked/Initialize()
+	. = ..()
+	can_hold = typecacheof(list(
+	/obj/item/reagent_containers/food/snacks/cookie,
+	/obj/item/reagent_containers/food/snacks/sugarcookie,
+	/obj/item/key/collar))
+
+//End of locked collars
+
 /datum/component/storage/concrete/pockets/tiny
 	max_items = 1
 	max_w_class = WEIGHT_CLASS_TINY
