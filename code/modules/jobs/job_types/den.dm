@@ -47,7 +47,7 @@ Sheriff
 	spawn_positions = 1
 	supervisors = "the mayor"
 	selection_color = "#d7b088"
-	exp_requirements = 1440
+	exp_requirements = 1080
 	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13sheriff
@@ -97,7 +97,7 @@ Deputy
 	spawn_positions = 2
 	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
-	exp_requirements = 1080
+	exp_requirements = 720
 	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13deputy
@@ -135,7 +135,7 @@ Farmer
 	spawn_positions = 1
 	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
-	exp_requirements = 360
+	exp_requirements = 180
 	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13settler
