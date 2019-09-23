@@ -82,6 +82,7 @@
 #define EXP_TYPE_NCRCOMMAND     "NCRCommand"
 #define EXP_TYPE_RANGER         "Ranger"
 #define EXP_TYPE_SCRIBE         "Scribe"
+#define EXP_TYPE_DECANUS        "Decanus"
 
 //Flags in the players table in the db
 #define DB_FLAG_EXEMPT 1
