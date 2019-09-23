@@ -150,7 +150,10 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_NCR         = list("titles" = ncr_positions		),
 	EXP_TYPE_VAULT       = list("titles" = vault_positions		),
 	EXP_TYPE_WASTELAND	 = list("titles" = wasteland_positions	),
-	EXP_TYPE_SECURITY 	= list("titles" = security_positions)
+	EXP_TYPE_SECURITY 	= list("titles" = security_positions),
+	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant","NCR Heavy Trooper","NCR Captain")),
+	EXP_TYPE_RANGER     = list("titles" = list("NCR Recon Ranger","NCR Patrol Ranger")),
+	EXP_TYPE_SCRIBE     = list("titles" = "Sribe"),
 	//EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
 	// EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
 	// EXP_TYPE_COMMAND = list("titles" = command_positions),
