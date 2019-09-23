@@ -150,7 +150,7 @@ Medic
 	description = "You are in charge of providing medical support to the NCR throughout the region. You are a non-combat role and should not be using your authority for anything outside of medical purposes. You answer to the Captain and should defer to Sergeants or higher on military matters."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
-	exp_requirements = 1800
+	exp_requirements = 1500
 
 	outfit = /datum/outfit/job/ncr/f13medic
 
