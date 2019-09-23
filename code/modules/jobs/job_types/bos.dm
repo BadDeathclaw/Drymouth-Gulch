@@ -231,7 +231,7 @@ Initiate Knight
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the knights"
 	selection_color = "#95a5a6"
-	exp_requirements = 360
+	exp_requirements = 1440
 	exp_type = EXP_TYPE_LIVING
 
 	outfit = /datum/outfit/job/bos/f13initiateknight
@@ -264,7 +264,7 @@ Initiate Scribe
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the scribes"
 	selection_color = "#95a5a6"
-	exp_requirements = 360
+	exp_requirements = 1440
 	exp_type = EXP_TYPE_LIVING
 
 	outfit = /datum/outfit/job/bos/f13initiatescribe
