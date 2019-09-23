@@ -66,7 +66,8 @@ Captain
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant, coordinating with your staff you must ensure that the objectives of central command are completed to the letter. Working closely with them on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
 	req_admin_notify = 1
-	exp_requirements = 3000
+	exp_requirements = 1200
+	exp_type = EXP_TYPE_NCRCOMMAND
 
 	outfit = /datum/outfit/job/ncr/f13captain
 
