@@ -89,7 +89,6 @@ Centurion
 	flag = F13CENTURION
 	faction = "Legion"
 	head_announce = list("Security")
-
 	total_positions = 1
 	spawn_positions = 1
 	description = "You are the commander of the Centuria and are the direct superior to the Decanii, working with them and your soldiers to ensure that your Garrison is prepared for the coming battle of Hoover Dam. You are to establish yourself within the region in order to defeat the Profligates who would oppose Caesar, while allying with those who would make your Legion stronger."
@@ -98,7 +97,7 @@ Centurion
 	supervisors = "Legate"
 	selection_color = "#ffdddd"
 	req_admin_notify = 1
-	exp_requirements = 1920
+	exp_requirements = 3240
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 
@@ -139,7 +138,7 @@ Veteran Decan
 	supervisors = "The Centurion and up."
 	forbids = "The Legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
-	exp_requirements = 1500
+	exp_requirements = 2880
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetdecan
 
@@ -181,8 +180,7 @@ Prime Decan
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	description = "You answer directly to the Centurion, but are still expected to obey orders from the Veteran Decanus as needed. You work with them to help run the camp and organize your Prime Legionaries, leading them on raids and scouting missions on behalf of the Centurion."
 	supervisors = "Veteran Decanus and up."
-
-	exp_requirements = 1320
+	exp_requirements = 2160
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13primedecan
 
@@ -221,8 +219,7 @@ Decan
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	description = "You answer directly to the Centurion, but are still expected to obey orders from the Prime and Veteran Decanii. You work with them to help run the camp and train recruits, leading them on raids and scouting missions on behalf of the Centurion."
 	supervisors = "Prime Decanus and up."
-
-	exp_requirements = 1080
+	exp_requirements = 1800
 
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
@@ -261,8 +258,7 @@ Vexillarius
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	description = "You answer directly to the Decanii and the Centurion, acting as a standard bearer for your Centuria. You raise troop morale, relay orders from the Decanii and the Centurion, and rally men when ordered, however, you hold no actual authority over the troops and should instead only relay orders from your superiors."
 	supervisors = "Recruit Decanus and up."
-
-	exp_requirements = 840
+	exp_requirements = 2520
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
 
@@ -302,7 +298,7 @@ Veteran
 	forbids = "The Legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	supervisors = "Veteran Decanus and up."
-	exp_requirements = 720
+	exp_requirements = 1080
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
 
@@ -346,7 +342,7 @@ Prime
 	forbids = "The Legion forbids: Ghouls(Anywhere), Women in armed roles, chems and medicine besides healing powder. Lethally harming any servants of Caesar without proper reason."
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	supervisors = "Prime Decanus and up."
-	exp_requirements = 180
+	exp_requirements = 360
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
 
@@ -385,6 +381,8 @@ Legionary
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	description = "You answer directly to the Recruit Decanus and the Centurion, but are expected to follow orders from the Prime and Veteran Decanii as needed. You act as a loyal soldier within the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave."
 	supervisors = "Recruit Decanus and up."
+	exp_requirements = 300
+	exp_type = EXP_TYPE_CREW
 
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
@@ -421,8 +419,7 @@ Legionary
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	description = "You answer directly to the Centurion and the Decanii, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your superiors and organizing the Scouts to do the same."
 	supervisors = "Recruit Decanus and up."
-
-	exp_requirements = 600
+	exp_requirements = 1440
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 
@@ -458,7 +455,7 @@ Legionary
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	description = "You answer directly to the Explorer and the Centurion, but are expected to follow orders from the Decanii as needed, acting as the eyes of the Centuria. You bear the responsibility of obtaining intelligence for your commander."
 	supervisors = "Explorers, Decanii, and the Centurion."
-	exp_requirements = 300
+	exp_requirements = 720
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
 
@@ -494,6 +491,7 @@ Legionary
 	enforces = "The Legion expects: Obeying orders of superiors. A roman style name. Wearing the uniform, unless acting as a nonlethal infiltrator. Expansion of Caesars Domain."
 	description = "You answer directly to any member of the Legion, working as a Camp Follower for the Centuria, you bear the great honor of supporting Caesar?s Army in its conquest of the Mojave in whatever capacity required from those whom you serve. You perform any tasks required of you, for you know how to serve the Legion well."
 	supervisors = "the entire legion"
+	exp_requirements = 300
 
 	outfit = /datum/outfit/job/CaesarsLegion/f13campfollower
 
