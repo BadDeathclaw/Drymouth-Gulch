@@ -81,7 +81,7 @@
 #define EXP_TYPE_ENCLAVE		"Enclave"
 #define EXP_TYPE_NCRCOMMAND     "NCRCommand"
 #define EXP_TYPE_RANGER         "Ranger"
-#define EXP_TYPE_SCRIBE         "Sribe"
+#define EXP_TYPE_SCRIBE         "Scribe"
 
 //Flags in the players table in the db
 #define DB_FLAG_EXEMPT 1
