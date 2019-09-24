@@ -66,7 +66,8 @@ Captain
 	description = "You are the commanding officer of your company and direct superior to the Veteran Ranger and Lieutenant, coordinating with your staff you must ensure that the objectives of central command are completed to the letter. Working closely with them on logistics, mission planning and special operations with the Rangers, you are here to establish a strong foothold for the NCR within the region."
 	supervisors = "Colonel"
 	req_admin_notify = 1
-	exp_requirements = 3000
+	exp_requirements = 900
+	exp_type = EXP_TYPE_NCRCOMMAND
 
 	outfit = /datum/outfit/job/ncr/f13captain
 
@@ -106,7 +107,7 @@ Lieutenant
 	description = "You are the direct superior to the Sergeant and Enlisted, working with the Captain and under special circumstances, Rangers. You plan patrols, training and missions, working in some cases with Rangers in accomplishing objectives otherwise beyond the capabilities of ordinary enlisted personnel."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
-	exp_requirements = 2400
+	exp_requirements = 2100
 
 	outfit = /datum/outfit/job/ncr/f13lieutenant
 
@@ -149,7 +150,7 @@ Medic
 	description = "You are in charge of providing medical support to the NCR throughout the region. You are a non-combat role and should not be using your authority for anything outside of medical purposes. You answer to the Captain and should defer to Sergeants or higher on military matters."
 	supervisors = "Captain and above"
 	selection_color = "#fff5cc"
-	exp_requirements = 1800
+	exp_requirements = 1200
 
 	outfit = /datum/outfit/job/ncr/f13medic
 
@@ -276,7 +277,7 @@ Corporal
 	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
-	exp_requirements = 900
+	exp_requirements = 600
 
 	outfit = /datum/outfit/job/ncr/f13corporal
 
@@ -440,7 +441,7 @@ Veteran Ranger
 	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. As a Veteran Ranger you work closely with the Captain in planning special operations with your team while also carrying out those orders in the field by any means necessary."
 	supervisors = "Lieutenants and above"
 	selection_color = "#ffeeaa"
-	exp_requirements = 3000
+	exp_requirements = 1500
 	exp_type = EXP_TYPE_RANGER
 
 	outfit = /datum/outfit/job/ncr/f13vetranger
@@ -483,7 +484,7 @@ Ranger
 	description = "You answer directly to the Veteran Ranger and Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Ranger, you seize, destroy, capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
-	exp_requirements = 1200
+	exp_requirements = 720
 	exp_type = EXP_TYPE_NCRCOMMAND
 
 	outfit = /datum/outfit/job/ncr/f13ranger
@@ -527,7 +528,7 @@ Recon Ranger
 	description = "You answer directly to the Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Recon Ranger, you perform reconnaissance, seize or destroy assets and capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
-	exp_requirements = 1200
+	exp_requirements = 720
 	exp_type = EXP_TYPE_NCRCOMMAND
 
 	outfit = /datum/outfit/job/ncr/f13recranger
