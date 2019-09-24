@@ -180,7 +180,9 @@
 	icon_state = "stripedbluescarf"
 	item_color = "stripedbluescarf"
 
-//COLLARS
+//////////////
+////COLLARS///
+//////////////
 
 /obj/item/clothing/neck/petcollar //Be a good doggo
 	name = "pet collar"
