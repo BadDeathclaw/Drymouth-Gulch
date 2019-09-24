@@ -42,7 +42,7 @@ Great Khan
 	description = "Due to your experience dealing with underground elements, you can recognize common raiders at a glance even if they have their face covered."
 	supervisors = "your gang leadership"
 	selection_color = "#ff915e"
-	exp_requirements = 600
+	exp_requirements = 300
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/wasteland/f13pusher
