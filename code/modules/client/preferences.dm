@@ -673,6 +673,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		var/datum/job/overflow = SSjob.GetJob(SSjob.overflow_role)
 
 		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+			if(job.total_positions == 0)
+				continue
 
 			index += 1
 			if((index >= limit) || (job.title in splitJobs))
@@ -734,7 +736,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				prefLevelColor = "red"
 				prefUpperLevel = 3
 				prefLowerLevel = 1
-
 
 			HTML += "<a class='white' href='?_src_=prefs;preference=job;task=setJobLevel;level=[prefUpperLevel];text=[rank]' oncontextmenu='javascript:return setJobPrefRedirect([prefLowerLevel], \"[rank]\");'>"
 
@@ -970,7 +971,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	SetChoices(user)
 
 	return 1
-
 
 /datum/preferences/proc/ResetJobs()
 

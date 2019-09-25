@@ -22,7 +22,7 @@
 	var/end_sound
 	var/end_overlay
 
-	var/area_type = /area/space //Types of area to affect
+	var/list/areas_type = /area/space //Types of areas to affect
 	var/list/impacted_areas = list() //Areas to be affected by the weather, calculated when the weather begins
 	var/list/protected_areas = list()//Areas that are protected and excluded from the affected areas.
 	var/impacted_z_levels // The list of z-levels that this weather is actively affecting
@@ -56,8 +56,9 @@
 		return
 	stage = STARTUP_STAGE
 	var/list/affectareas = list()
-	for(var/V in get_areas(area_type))
-		affectareas += V
+	for(var/area_type in areas_type)
+		for(var/V in get_areas(area_type))
+			affectareas += V
 	for(var/V in protected_areas)
 		affectareas -= get_areas(V)
 	for(var/V in affectareas)

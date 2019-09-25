@@ -214,7 +214,7 @@
 	dat += "</body></html>"
 	usr << browse(dat.Join(), "window=roundstatus;size=500x500")
 
-// Check Gangs part
+// Check Gangs
 
 /datum/admins/proc/check_gangs()
 	if(!SSticker.HasRoundStarted())
@@ -225,6 +225,7 @@
 	for(var/datum/gang/G in GLOB.all_gangs)
 		var/mob/living/Leader = G.leader
 		dat += "<BR><b>Name:</b> [G.name]"
+		dat += "<BR><b>Gang Color:</b> [G.color]"
 		if(G.welcome_text)
 			dat += "<BR><b>Welcome text:</b> [G.welcome_text]"
 		else
@@ -235,8 +236,10 @@
 			dat += "<BR><b>No leader!</b>"
 		if(G.members.len)
 			dat += "<BR><b>Members:</b>"
-				for(var/mob/living/L in G.members)
-					dat += "<BR>[L.real_name] <b>as</b> [L] [L.mob_dead_or_alive_print()] <a href='?priv_msg=[ckey(L.key)]'>PM</a> <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(L)]'>FLW</a>"
+			for(var/mob/living/L in G.members)
+				if(L == G.leader)
+					continue
+				dat += "<BR>[L.real_name] <b>as</b> [L] [L.mob_dead_or_alive_print()] <a href='?priv_msg=[ckey(L.key)]'>PM</a> <a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(L)]'>FLW</a>"
 		else
 			dat += "<BR><b>No members!</b>"
 		dat += "<br>"
@@ -247,4 +250,4 @@
 	if(stat == DEAD)
 		return "<font color=red>(DEAD)</font>"
 	else
-		return "(ALIVE)"
+		return "<b>(ALIVE)</b>"

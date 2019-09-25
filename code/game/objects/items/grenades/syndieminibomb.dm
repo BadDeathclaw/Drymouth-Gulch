@@ -18,13 +18,15 @@
 
 /obj/item/grenade/syndieminibomb/concussion/prime()
 	update_mob()
-	explosion(src.loc,0,2,3,flame_range = 3)
+	explosion(src.loc,1,3,4,6,flame_range = 0)
 	qdel(src)
 
 /obj/item/grenade/syndieminibomb/concussion/frag
 	name = "frag grenade"
 	desc = "Fire in the hole."
 	icon_state = "frag"
+
+
 
 /obj/item/grenade/gluon
 	desc = "An advanced grenade that releases a harmful stream of gluons inducing radiation in those nearby. These gluon streams will also make victims feel exhausted, and induce shivering. This extreme coldness will also likely wet any nearby floors."

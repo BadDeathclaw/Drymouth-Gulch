@@ -91,7 +91,6 @@
 	else
 		return ..()
 
-
 /mob/living/simple_animal/hostile/retaliate/goat/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
@@ -126,14 +125,14 @@
 	attack_sound = 'sound/weapons/punch1.ogg'
 	health = 50
 	maxHealth = 50
+	gold_core_spawnable = FRIENDLY_SPAWN
+	blood_volume = BLOOD_VOLUME_NORMAL
+	faction = list("neutral", "wastebot")
 	var/is_calf = 0
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0
 	var/young_type = /mob/living/simple_animal/cow/calf
 	var/obj/item/udder/udder = null
-	gold_core_spawnable = FRIENDLY_SPAWN
-	blood_volume = BLOOD_VOLUME_NORMAL
-	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/cow/Initialize()
 	if(!is_calf)
@@ -163,7 +162,6 @@
 			qdel(O)
 	else
 		return ..()
-
 
 /mob/living/simple_animal/cow/Life()
 	. = ..()
@@ -237,11 +235,11 @@
 	health = 3
 	maxHealth = 3
 	ventcrawler = VENTCRAWLER_ALWAYS
-	var/amount_grown = 0
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	mob_size = MOB_SIZE_TINY
 	gold_core_spawnable = FRIENDLY_SPAWN
 	faction = list("neutral", "wastebot")
+	var/amount_grown = 0
 
 /mob/living/simple_animal/chick/Initialize()
 	. = ..()
@@ -278,8 +276,6 @@
 	speak_chance = 2
 	turns_per_move = 3
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2)
-	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
@@ -287,18 +283,20 @@
 	health = 15
 	maxHealth = 15
 	ventcrawler = VENTCRAWLER_ALWAYS
+	pass_flags = PASSTABLE | PASSMOB
+	mob_size = MOB_SIZE_SMALL
+	gold_core_spawnable = FRIENDLY_SPAWN
+	faction = list("neutral", "wastebot")
+	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
+	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/eggsleft = 0
 	var/eggsFertile = TRUE
 	var/body_color
 	var/icon_prefix = "chicken"
-	pass_flags = PASSTABLE | PASSMOB
-	mob_size = MOB_SIZE_SMALL
 	var/list/feedMessages = list("It clucks happily.","It clucks happily.")
 	var/list/layMessage = EGG_LAYING_MESSAGES
 	var/list/validColors = list("brown","black","white")
-	gold_core_spawnable = FRIENDLY_SPAWN
 	var/static/chicken_count = 0
-	faction = list("neutral", "wastebot")
 
 /mob/living/simple_animal/chicken/Initialize()
 	. = ..()
@@ -388,6 +386,7 @@
 	speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
 	young_type = /mob/living/simple_animal/cow/brahmin/calf
 	emote_hear = list("brays.")
+	var/obj/item/inventory_back
 	speak_chance = 0.4
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 6,
 							/obj/item/stack/sheet/animalhide/brahmin = 3)
@@ -413,22 +412,21 @@
 	response_help  = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm   = "kicks"
-	faction = list("neutral")
+	faction = list("neutral", "bighorner")
 	mob_biotypes = list(MOB_ORGANIC, MOB_BEAST)
-	attack_same = 1
 	attacktext = "rams"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	health = 80
-	maxHealth = 80
+	health = 120
+	maxHealth = 120
 	melee_damage_lower = 25
 	melee_damage_upper = 20
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	stop_automated_movement_when_pulled = 1
+	blood_volume = BLOOD_VOLUME_NORMAL
 	var/is_calf = 0
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
 	var/has_calf = 0
 	var/young_type = /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
-	stop_automated_movement_when_pulled = 1
-	blood_volume = BLOOD_VOLUME_NORMAL
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/attackby(obj/item/O, mob/user, params)
 	if(stat == CONSCIOUS && istype(O, /obj/item/reagent_containers/glass)) // Should probably be bound into a proc at this point.
@@ -462,7 +460,7 @@
 			if((prob(3)))
 				is_calf = 0
 				udder = new()
-				if (name == "bighorn lamb")
+				if(name == "bighorn lamb")
 					name = "bighorn"
 				else
 					name = "bighorn"
@@ -472,11 +470,12 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf
 	name = "bighoner lamb"
-	resize = 0.55
+	resize = 0.7
 
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn/calf/Initialize() //calfs should not be a separate critter, they should just be a normal whatever with these vars
 	. = ..()
-	resize = 0.55
+	resize = 0.7
+	update_transform()
 
 /mob/living/simple_animal/cow/calf
 	name = "cow calf"
@@ -484,7 +483,8 @@
 
 /mob/living/simple_animal/cow/calf/Initialize()
 	. = ..()
-	resize = 0.55
+	resize = 0.7
+	update_transform()
 
 /mob/living/simple_animal/cow/brahmin/calf
 	name = "brahmin calf"
@@ -492,4 +492,132 @@
 
 /mob/living/simple_animal/cow/brahmin/calf/Initialize()
 	. = ..()
-	resize = 0.55
+	resize = 0.7
+	update_transform()
+
+//////
+//Tangle of mess for brahmin packs
+//////
+
+/mob/living/simple_animal/cow/brahmin/show_inv(mob/user)
+	user.set_machine(src)
+	if(user.stat)
+		return
+
+	var/dat = 	"<div align='center'><b>Inventory of [name]</b></div><p>"
+	if(inventory_back)
+		dat +=	"<br><b>Back:</b> [inventory_back] (<a href='?src=[REF(src)];remove_inv=back'>Remove</a>)"
+	else
+		dat +=	"<br><b>Back:</b> <a href='?src=[REF(src)];add_inv=back'>Nothing</a>"
+
+	user << browse(dat, text("window=mob[];size=325x500", real_name))
+	onclose(user, "mob[real_name]")
+	return
+
+mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
+	if(usr.stat)
+		return
+
+	//Removing from inventory
+	if(href_list["remove_inv"])
+		if(!Adjacent(usr) || !(ishuman(usr) || ismonkey(usr) || iscyborg(usr) ||  isalienadult(usr)))
+			return
+		var/remove_from = href_list["remove_inv"]
+		switch(remove_from)
+			if("back")
+				if(inventory_back)
+					inventory_back.forceMove(drop_location())
+					inventory_back = null
+					update_brahmin_fluff()
+					regenerate_icons()
+				else
+					to_chat(usr, "<span class='danger'>There is nothing to remove from its [remove_from].</span>")
+					return
+
+		show_inv(usr)
+
+	//Adding things to inventory
+	else if(href_list["add_inv"])
+		if(!Adjacent(usr) || !(ishuman(usr) || ismonkey(usr) || iscyborg(usr) ||  isalienadult(usr)))
+			return
+
+		var/add_to = href_list["add_inv"]
+
+		switch(add_to)
+
+			if("back")
+				if(inventory_back)
+					to_chat(usr, "<span class='warning'>It's already wearing something!</span>")
+					return
+				else
+					var/obj/item/item_to_add = usr.get_active_held_item()
+
+					if(!item_to_add)
+						usr.visible_message("[usr] pets [src].","<span class='notice'>You rest your hand on [src]'s back for a moment.</span>")
+						return
+
+					if(!usr.temporarilyRemoveItemFromInventory(item_to_add))
+						to_chat(usr, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s back!</span>")
+						return
+
+					//The objects that brahmin can wear on their backs.
+					var/allowed = FALSE
+					if(ispath(item_to_add.brahmin_fashion, /datum/brahmin_fashion/back))
+						allowed = TRUE
+
+					if(!allowed)
+						to_chat(usr, "<span class='warning'>You set [item_to_add] on [src]'s back, but it falls off!</span>")
+						item_to_add.forceMove(drop_location())
+						if(prob(25))
+							step_rand(item_to_add)
+						for(var/i in list(1,2,4,8,4,8,4,dir))
+							setDir(i)
+							sleep(1)
+						return
+
+					item_to_add.forceMove(src)
+					src.inventory_back = item_to_add
+					update_brahmin_fluff()
+					regenerate_icons()
+
+		show_inv(usr)
+	else
+		..()
+
+
+/mob/living/simple_animal/cow/brahmin/proc/update_brahmin_fluff() //none of this should do anything for now, but it may be used for updating sprites later
+	// First, change back to defaults
+	name = real_name
+	desc = initial(desc)
+	// BYOND/DM doesn't support the use of initial on lists.
+	speak = list("Moo?","Moo!","Mooo!","Moooo!","Moooo.")
+	emote_hear = list("brays.")
+	desc = initial(desc)
+	set_light(0)
+
+	if(inventory_back && inventory_back.brahmin_fashion)
+		var/datum/brahmin_fashion/BF = new inventory_back.brahmin_fashion(src)
+		BF.apply(src)
+
+/mob/living/simple_animal/cow/brahmin/regenerate_icons()
+	..()
+	if(inventory_back)
+		var/image/back_icon
+		var/datum/brahmin_fashion/BF = new inventory_back.brahmin_fashion(src)
+
+		if(!BF.obj_icon_state)
+			BF.obj_icon_state = inventory_back.icon_state
+		if(!BF.obj_alpha)
+			BF.obj_alpha = inventory_back.alpha
+		if(!BF.obj_color)
+			BF.obj_color = inventory_back.color
+
+		if(health <= 0)
+			back_icon = BF.get_overlay(dir = EAST)
+			back_icon.pixel_y = -11
+			back_icon.transform = turn(back_icon.transform, 180)
+		else
+			back_icon = BF.get_overlay()
+		add_overlay(back_icon)
+
+	return 

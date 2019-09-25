@@ -265,6 +265,15 @@
 		return new_comp
 	return old_comp
 
+/datum/proc/RemoveComponentByType(var/path)
+	for (var/datum/component/dc in datum_components)
+		if (istype(dc, path))
+			var/datum/old_parent = dc.parent
+			dc.PreTransfer()
+			dc._RemoveFromParent()
+			dc.parent = null
+			SEND_SIGNAL(old_parent, COMSIG_COMPONENT_REMOVING, dc)
+
 /datum/proc/LoadComponent(component_type, ...)
 	. = GetComponent(component_type)
 	if(!.)

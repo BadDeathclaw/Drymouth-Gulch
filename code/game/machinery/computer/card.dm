@@ -65,10 +65,9 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	"NCR Veteran Ranger",
 	"NCR Patrol Ranger",
 	"NCR Recon Ranger",
-	"Punished Raider",
 	"Wastelander",
 	"Raider",
-	"Pusher",
+	"Great Khan",
 	"Preacher"
 		)
 

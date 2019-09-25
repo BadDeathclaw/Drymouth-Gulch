@@ -1,10 +1,12 @@
 /obj/machinery/computer/shuttle/bos
-	name = "Bos Base Lockdown override."
-	desc = "Can be used to disable the lockdown on the bos base."
+	name = "Brotherhood Base Lockdown override."
+	desc = "Can be used to disable the lockdown on the Brotherhood of Steel base."
 	req_access = null //because of how this works only bos should be able to get to it.
 	shuttleId = "Brotherhood_of_Steel"
 	circuit = /obj/item/circuitboard/computer/bos
 	possible_destinations = "Brotherhood_Home;Bos1;Bos2;Bos3;Bos4;Bos5;Bos6;Bos7;Bos8;Bos9;Bos10;Bos11;Bos12;Bos home"
+	flags_1 = NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
 /obj/machinery/computer/shuttle/bos/Topic(href, href_list)
 	if(href_list["move"])
@@ -12,8 +14,7 @@
 			to_chat(usr, "<span class='warning'>The controls have malfunctioned. And you cannot seem to lock the base down!</span>")
 			return 0
 	..()
-		
-
+	
 /obj/docking_port/mobile/bos
 	width = 6
 	height = 9

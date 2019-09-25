@@ -64,7 +64,7 @@
 /*see __DEFINES/inventory.dm for bodypart bitflag defines*/
 
 // Health/damage defines for carbon mobs
-#define HUMAN_MAX_OXYLOSS 3
+#define HUMAN_MAX_OXYLOSS 1
 #define HUMAN_CRIT_MAX_OXYLOSS (SSmobs.wait/30)
 
 #define HEAT_DAMAGE_LEVEL_1 2 //Amount of damage applied when your body temperature just passes the 360.15k safety point

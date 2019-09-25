@@ -12,6 +12,7 @@
 #define TRAIT_MONKEYLIKE		"monkeylike" //sets IsAdvancedToolUser to FALSE
 #define TRAIT_PACIFISM			"pacifism"
 #define TRAIT_IGNORESLOWDOWN	"ignoreslow"
+#define TRAIT_IGNOREDAMAGESLOWDOWN	"ignoredamageslow"
 #define TRAIT_GOTTAGOFAST		"fast"
 #define TRAIT_GOTTAGOREALLYFAST	"2fast"
 #define TRAIT_LEGIONBOIS		"SpeedyLegionBois"

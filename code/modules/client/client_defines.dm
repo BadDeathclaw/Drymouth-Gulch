@@ -77,3 +77,8 @@
 	var/list/credits //lazy list of all credit object bound to this client
 
 	var/datum/player_details/player_details //these persist between logins/logouts during the same round.
+
+	var/client_keysend_amount = 0
+	var/next_keysend_reset = 0
+	var/next_keysend_trip_reset = 0
+	var/keysend_tripped = FALSE

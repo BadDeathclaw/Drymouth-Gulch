@@ -338,11 +338,13 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 25
+	extra_damage = 15
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
@@ -561,12 +563,13 @@
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	name = "R82 heavy service rifle"
 	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
-	fire_delay = 3
-	extra_damage = 25
+	fire_delay = 5
+	extra_damage = 30
 	extra_penetration = 10
+	mag_type = /obj/item/ammo_box/magazine/automatic/r30
 	icon_state = "R82"
 	item_state = "R82"
-	burst_size = 3
+	burst_size = 1
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	name = "varmint rifle"
 	desc = "A low powered 5.56, easy to use rifle."
@@ -696,12 +699,12 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 25
-	extra_penetration = 5
+	extra_damage = 20
 	
 /obj/item/gun/ballistic/automatic/lmg/burst_select()
 	var/mob/living/carbon/human/user = usr

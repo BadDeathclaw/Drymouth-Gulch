@@ -20,12 +20,30 @@
 	var/r_hand = null
 	var/l_hand = null
 	var/internals_slot = null //ID of slot containing a gas tank
-	var/list/backpack_contents = null // In the list(path=count,otherpath=count) format
-	var/list/implants = null
+	var/list/backpack_contents = list() // In the list(path=count,otherpath=count) format
+	var/list/implants = list()
 	var/accessory = null
 
 	var/can_be_admin_equipped = TRUE // Set to FALSE if your outfit requires runtime parameters
 	var/list/chameleon_extras //extra types for chameleon outfit changes, mostly guns
+
+	var/list/all_types = list()
+	var/list/all_possible_types = list()
+	var/contains_randomisation = FALSE //Used to redo asset loading with randomised outfits
+
+//Simple randomisation support. If any of the piece types is a list, a random item is picked from that list
+//Supports weighted selection too, optionally
+/datum/outfit/New()
+	for (var/a in ALL_OUTFIT_SLOTS)
+		if (islist(vars[a]))
+			contains_randomisation = TRUE
+			all_possible_types += vars[a]
+			vars[a] = pickweight(vars[a])
+			all_types += vars[a]
+		else if(vars[a])
+			all_possible_types += vars[a]
+			all_types += vars[a]
+	.=..()
 
 /datum/outfit/proc/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	//to be overriden for customization depending on client prefs,species etc
@@ -35,35 +53,61 @@
 	//to be overriden for toggling internals, id binding, access etc
 	return
 
-/datum/outfit/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/proc/equip(mob/living/carbon/human/H, visualsOnly = FALSE, var/overwrite = FALSE)
 	pre_equip(H, visualsOnly)
 
 	//Start with uniform,suit,backpack for additional slots
 	if(uniform)
+		if (overwrite && H.w_uniform)
+			H.deleteWornItem(H.w_uniform)
 		H.equip_to_slot_or_del(new uniform(H),SLOT_W_UNIFORM)
 	if(suit)
+		if (overwrite && H.wear_suit)
+			H.deleteWornItem(H.wear_suit)
 		H.equip_to_slot_or_del(new suit(H),SLOT_WEAR_SUIT)
 	if(back)
+		if (overwrite && H.back)
+			H.deleteWornItem(H.back)
 		H.equip_to_slot_or_del(new back(H),SLOT_BACK)
 	if(belt)
+		if (overwrite && H.belt)
+			H.deleteWornItem(H.belt)
 		H.equip_to_slot_or_del(new belt(H),SLOT_BELT)
 	if(gloves)
+		if (overwrite && H.gloves)
+			H.deleteWornItem(H.gloves)
 		H.equip_to_slot_or_del(new gloves(H),SLOT_GLOVES)
 	if(shoes)
+		if (overwrite && H.shoes)
+			H.deleteWornItem(H.shoes)
 		H.equip_to_slot_or_del(new shoes(H),SLOT_SHOES)
 	if(head)
+		if (overwrite && H.head)
+			H.deleteWornItem(H.head)
 		H.equip_to_slot_or_del(new head(H),SLOT_HEAD)
 	if(mask)
+		if (overwrite && H.wear_mask)
+			H.deleteWornItem(H.wear_mask)
 		H.equip_to_slot_or_del(new mask(H),SLOT_WEAR_MASK)
 	if(neck)
+		if (overwrite && H.wear_neck)
+			H.deleteWornItem(H.wear_neck)
 		H.equip_to_slot_or_del(new neck(H),SLOT_NECK)
 	if(ears)
+		if (overwrite && H.ears)
+			H.deleteWornItem(H.ears)
 		H.equip_to_slot_or_del(new ears(H),SLOT_EARS)
 	if(glasses)
+		if (overwrite && H.glasses)
+			H.deleteWornItem(H.glasses)
 		H.equip_to_slot_or_del(new glasses(H),SLOT_GLASSES)
 	if(id)
+		if (overwrite && H.wear_id)
+			H.deleteWornItem(H.wear_id)
 		H.equip_to_slot_or_del(new id(H),SLOT_WEAR_ID)
 	if(suit_store)
+		if (overwrite && H.s_store)
+			H.deleteWornItem(H.s_store)
 		H.equip_to_slot_or_del(new suit_store(H),SLOT_S_STORE)
 
 	if(accessory)
@@ -109,6 +153,27 @@
 
 	H.update_body()
 	return TRUE
+
+
+
+//Spawns the entire contents of the outfit into a location.
+//This could be a turf or a container, it should probably be one of those two
+/datum/outfit/proc/spawn_at(var/atom/location)
+	var/list/paths = get_all_item_paths()
+	var/list/items = list()
+	for (var/a in paths)
+		while (paths[a] > 0)
+			items.Add(new a)
+			paths[a]--
+
+	for (var/obj/a in items)
+		if (location.GetComponent(/datum/component/storage))
+			SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, a, null, TRUE, TRUE)
+		else
+			a.forceMove(location)
+
+
+
 
 /datum/outfit/proc/apply_fingerprints(mob/living/carbon/human/H)
 	if(!istype(H))
@@ -156,3 +221,44 @@
 	types += chameleon_extras
 	listclearnulls(types)
 	return types
+
+//Returns a list of all the item paths this outfit contains, along with a quantity
+//Returned list is in the format path = quantity
+/datum/outfit/proc/get_all_item_paths()
+	var/list/data = list()
+	for (var/item in all_types)
+		data[item] = 1
+	for (var/implant in implants)
+		data[implant] = 1
+
+	data.Add(backpack_contents)
+	return data
+
+//Returns a list of all the paths this outfit could contain. This includes the entireity of random lists
+/datum/outfit/proc/get_all_possible_item_paths()
+	var/list/data = list()
+	for (var/item in all_possible_types)
+		data[item] = 1
+	for (var/implant in implants)
+		data[implant] = 1
+
+	data.Add(backpack_contents)
+	return data
+
+
+//Returns data useful for displaying the contents of this outfit in a UI
+//The return format is a list of lists, with each sublist being:
+	//"name" = name of the item
+	//"icon" = path of the cached icon for the typepath
+	//"quantity" = how many of the item there are. 1 in most cases
+/datum/outfit/ui_data()
+	var/list/data = list()
+	var/list/items = get_all_item_paths()
+	for (var/item in items)
+		var/list/subdata = list()
+		var/datum/outfit/d = item
+		subdata["name"] = initial(d.name)
+		subdata["icon"] = sanitize_filename("[item].png")
+		subdata["quantity"] = items[item]
+		data += list(subdata)
+	return data
