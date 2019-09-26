@@ -102,16 +102,16 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 	set category = "Fun"
 	GLOB.normal_ooc_colour = newColor
 //	GLOB.normal_ooc_colour = sanitize_ooccolor(newColor) // Who did this, monsters. Leaving here incase it's needed though.
-	log_admin("Player OOC Color was changed by [key_name_admin(usr)]")
-	message_admins("Player OOC Color has being changed by [key_name_admin(usr)]")
+	log_admin("[key_name_admin(usr)] changed Player OOC Color.")
+	message_admins("[key_name_admin(usr)] changed Player OOC Color.")
 
 /client/proc/reset_ooc()
 	set name = "Reset Player OOC Color"
 	set desc = "Returns player OOC Color to default"
 	set category = "Fun"
 	GLOB.normal_ooc_colour = OOC_COLOR
-	log_admin("Player OOC Color was reset by [key_name_admin(usr)]")
-	message_admins("Player OOC Color has being reset by [key_name_admin(usr)]")
+	log_admin("[key_name_admin(usr)] reset Player OOC Color.]")
+	message_admins("[key_name_admin(usr)] reset Player OOC Color.")
 
 /client/verb/colorooc()
 	set name = "Set Your OOC Color"
