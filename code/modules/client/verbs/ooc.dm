@@ -100,7 +100,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 	set name = "Set Player OOC Color"
 	set desc = "Modifies player OOC Color"
 	set category = "Fun"
-	GLOB.normal_ooc_colour = sanitize_ooccolor(newColor)
+	GLOB.normal_ooc_colour = newColor
+//	GLOB.normal_ooc_colour = sanitize_ooccolor(newColor) // Who did this, monsters. Leaving here incase it's needed though.
 
 /client/proc/reset_ooc()
 	set name = "Reset Player OOC Color"
