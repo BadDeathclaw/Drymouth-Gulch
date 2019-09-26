@@ -501,8 +501,6 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	flash_protect = 1
-	darkness_view = 128
-	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 	glass_colour_type = /datum/client_colour/glass_colour/red
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
@@ -518,6 +516,8 @@
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 40, "energy" = 60, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 0)
+	darkness_view = 128
+	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 
 //Metal masks
 /obj/item/clothing/head/helmet/f13/metalmask
