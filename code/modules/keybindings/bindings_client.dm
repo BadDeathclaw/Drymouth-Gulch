@@ -78,7 +78,7 @@ GLOBAL_LIST_INIT(valid_keys, list(
 	"Return" = 1,
 	"Escape" = 1,
 	"Tab" = 1,
-	"Space" = 1,
+	// "Space" = 1,
 	"Back" = 1,
 	"Insert" = 1,
 	"Delete" = 1,
