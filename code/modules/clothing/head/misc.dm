@@ -115,6 +115,13 @@
 
 	dog_fashion = /datum/dog_fashion/head/rabbit
 
+/obj/item/clothing/head/simplekitty //See if these cant be put into the map because theyre functionally identical to rabbit ears
+	name = "Kitty Headband"
+	desc = "A headband with a pair of cute kitty ears"
+	icon_state = "kittyb"
+	color = "#999999"
+	dynamic_hair_suffix = ""
+
 
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
