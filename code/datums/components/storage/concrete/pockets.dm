@@ -27,14 +27,11 @@
 /datum/component/storage/concrete/pockets/small/collar/Initialize()
 	. = ..()
 	can_hold = typecacheof(list(
-	/obj/item/reagent_containers/food/snacks/cookie,
-	/obj/item/reagent_containers/food/snacks/sugarcookie))
+	/obj/item/card/id))
 
 /datum/component/storage/concrete/pockets/small/collar/locked/Initialize()
 	. = ..()
 	can_hold = typecacheof(list(
-	/obj/item/reagent_containers/food/snacks/cookie,
-	/obj/item/reagent_containers/food/snacks/sugarcookie,
 	/obj/item/key/collar))
 
 //End of locked collars

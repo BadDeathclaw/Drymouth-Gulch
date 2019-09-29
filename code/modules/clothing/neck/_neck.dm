@@ -224,7 +224,6 @@
 
 /obj/item/clothing/neck/petcollar/Initialize()
 	. = ..()
-	new /obj/item/reagent_containers/food/snacks/cookie(src)
 
 /obj/item/clothing/neck/petcollar/locked/Initialize()
 	. = ..()
