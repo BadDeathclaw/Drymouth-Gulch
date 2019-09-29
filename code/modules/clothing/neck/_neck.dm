@@ -200,16 +200,22 @@
 	name = "locked collar"
 	desc = "A collar that has a small lock on it to keep it from being removed."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar/locked
+	body_parts_covered = NECK
 	var/lock = FALSE
+	var/collarID = 0
+	GLOBAL_VAR_INIT(collar_number, 0)
 
 /obj/item/clothing/neck/petcollar/locked/attackby(obj/item/K, mob/user, params)
 	if(istype(K, /obj/item/key/collar))
 		if(lock != FALSE)
 			to_chat(user, "<span class='warning'>With a click the collar unlocks!</span>")
 			lock = FALSE
+			item_flags = null
 		else
 			to_chat(user, "<span class='warning'>With a click the collar locks!</span>")
 			lock = TRUE
+			if(SLOT_NECK)
+				item_flags = NODROP
 	return
 
 /obj/item/clothing/neck/petcollar/locked/attack_hand(mob/user)
@@ -221,6 +227,11 @@
 /obj/item/key/collar
 	name = "Collar Key"
 	desc = "A key for a tiny lock on a collar or bag."
+//	var/keyID = 0 //USE FOR UNIQUE KEYING?
+
+/obj/item/key/collar/Initialize()
+	. = ..()
+//	keyID = GLOB.collar_number
 
 /obj/item/clothing/neck/petcollar/Initialize()
 	. = ..()
@@ -228,10 +239,10 @@
 /obj/item/clothing/neck/petcollar/locked/Initialize()
 	. = ..()
 	new /obj/item/key/collar(src)
+//	collarID = GLOB.collar_number
+//	GLOB.collar_number = collarID + 1 //USE FOR UNIQUE KEYING?
 
 
-
-//End Collars
 
 //////////////
 //DOPE BLING//

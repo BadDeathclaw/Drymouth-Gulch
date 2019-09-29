@@ -97,7 +97,7 @@ Code:
 //F13 EDIT
 /obj/item/assembly/signaler/electropack/shockcollar
 	name = "slave collar"
-	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. Strange.."
+	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. Strange... A small lock is present, though it seems impossible to get it off anyway without external help."
 	icon = 'icons/obj/f13misc.dmi'
 	icon_state = "slavecollar_ico"
 	item_state = "slavecollar"
@@ -106,12 +106,26 @@ Code:
 	body_parts_covered = NECK
 	strip_delay = 60
 	equip_delay_other = 60
+	var/lock = FALSE
 
 /obj/item/assembly/signaler/electropack/shockcollar/Initialize()
 	. = ..()
 	set_frequency(pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459))
 	code = rand(1,100)
 	name = "[name] #[frequency]/[code]"
+
+/obj/item/assembly/signaler/electropack/shockcollar/attackby(obj/item/K, mob/user, params)
+	if(istype(K, /obj/item/key/scollar))
+		if(lock != FALSE)
+			to_chat(user, "<span class='warning'>With a click the shock collar unlocks!</span>")
+			lock = FALSE
+			item_flags = null
+		else
+			to_chat(user, "<span class='warning'>With a click the shock collar locks!</span>")
+			lock = TRUE
+			if(SLOT_NECK)
+				item_flags = NODROP
+	return
 
 /obj/item/assembly/signaler/electropack/shockcollar/attack_hand(mob/user)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK))
@@ -164,3 +178,7 @@ Code:
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
+
+/obj/item/key/scollar
+	name = "Shock Collar Key"
+	desc = "A small key designed to work with shock collars."
