@@ -57,14 +57,14 @@
 /datum/dog_fashion/head/captain
 	name = "Captain REAL_NAME"
 	desc = "Probably better than the last captain."
-/*
+
 /datum/dog_fashion/head/kitty
 	name = "Runtime"
 	emote_see = list("coughs up a furball", "stretches")
 	emote_hear = list("purrs")
 	speak = list("Purrr", "Meow!", "MAOOOOOW!", "HISSSSS", "MEEEEEEW")
 	desc = "It's a cute little kitty-cat! ... wait ... what the hell?"
-*/
+
 /datum/dog_fashion/head/rabbit
 	name = "Hoppy"
 	emote_see = list("twitches its nose", "hops around a bit")

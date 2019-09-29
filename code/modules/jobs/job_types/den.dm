@@ -11,7 +11,7 @@ Mayor
 	spawn_positions = 1
 	supervisors = "the people of the town"
 	selection_color = "#d7b088"
-	exp_requirements = 720
+	exp_requirements = 1080
 	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13mayor
@@ -136,6 +136,7 @@ Farmer
 	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
 
+
 	outfit = /datum/outfit/job/den/f13settler
 
 /datum/outfit/job/den/f13farmer
@@ -178,6 +179,8 @@ Prospector
 	spawn_positions = 1
 	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
+	exp_requirements = 180
+	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13prospector
 
@@ -219,7 +222,8 @@ Doctor
 	description = "You are in charge of providing medical assistance to the inhabitants of the town as needed."
 	supervisors = "the sheriff and the mayor"
 	selection_color = "#dcba97"
-	exp_requirements = 300
+	exp_requirements = 540
+	exp_type = EXP_TYPE_DEN
 
 	outfit = /datum/outfit/job/den/f13dendoc
 
