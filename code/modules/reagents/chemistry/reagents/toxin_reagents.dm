@@ -40,10 +40,7 @@
 		return  //No robots, AIs, aliens, Ians or other mobs should be affected by this.
 	if((method==VAPOR && prob(min(33, reac_volume))) || method==INGEST || method==PATCH || method==INJECT)
 		M.randmuti()
-		if(prob(98))
-			M.randmutb()
-		else
-			M.randmutg()
+		M.randmutb()
 		M.updateappearance()
 		M.domutcheck()
 	..()
