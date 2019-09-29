@@ -22,7 +22,7 @@
 
 /obj/structure/reagent_dispensers/barrel/dangerous/Initialize()
 	. = ..()
-	AddComponent(/datum/component/radioactive, 100, src, 0) //half-life of 0 because we keep on going.
+	//AddComponent(/datum/component/radioactive, 100, src, 0) //half-life of 0 because we keep on going.
 
 /obj/structure/reagent_dispensers/barrel/boom()
 	visible_message("<span class='danger'>\The [src] ruptures!</span>")
