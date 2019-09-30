@@ -564,7 +564,8 @@
 	fire_delay = 5
 	extra_damage = 30
 	extra_penetration = 10
-	mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	icon_state = "R82"
 	item_state = "R82"
 	burst_size = 1
@@ -575,7 +576,8 @@
 	item_state = "varmintrifle"
 	fire_delay = 8
 	extra_damage = 30
-	mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
