@@ -61,11 +61,9 @@
 	select = !select
 	if(!select)
 		burst_size = 1
-		fire_delay = 0
 		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	else
 		burst_size = initial(burst_size)
-		fire_delay = initial(fire_delay)
 		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
@@ -462,7 +460,7 @@
 	icon_state = "mini-uzi"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_size = 2
+	burst_size = 3
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
@@ -492,7 +490,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	burst_size = 3
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	can_suppress = FALSE //we dont have sprites therefore cease
@@ -507,7 +505,7 @@
 	mag_type = /obj/item/ammo_box/magazine/automatic/
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 20
 	w_class = WEIGHT_CLASS_BULKY
@@ -519,7 +517,7 @@
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	suppressed = 1
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	zoomable = TRUE
@@ -634,7 +632,7 @@
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
+	fire_delay = 3
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
