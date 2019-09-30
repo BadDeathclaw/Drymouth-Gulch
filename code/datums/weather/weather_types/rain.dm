@@ -85,7 +85,7 @@
 				H.update_inv_belt()
 
 /datum/weather/rain/weather_act_turf(turf/T)
-	for(var/obj/effect/O in T) //Clean cleanable decals in affected areas
+	for(var/O in T) //Clean cleanable decals in affected areas
 		if(is_cleanable(O))
 			qdel(O)
 

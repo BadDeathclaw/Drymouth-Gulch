@@ -98,9 +98,10 @@ Code:
 /obj/item/assembly/signaler/electropack/shockcollar
 	name = "slave collar"
 	desc = "A reinforced metal collar. It seems to have some form of wiring near the front. Strange... A small lock is present, though it seems impossible to get it off anyway without external help."
-	icon = 'icons/obj/f13misc.dmi'
-	icon_state = "slavecollar_ico"
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "slavecollar"
 	item_state = "slavecollar"
+	alternate_worn_icon = 'icons/mob/neck.dmi'
 	slot_flags = ITEM_SLOT_NECK  //CEASE THE POCKET SHOCKER MEMES | Pocket shocker meme is hilarious. - Nappist
 	w_class = WEIGHT_CLASS_SMALL
 	body_parts_covered = NECK
