@@ -38,7 +38,7 @@
 		L.adjustFireLoss(4)
 
 /datum/weather/acid_rain/weather_act_turf(turf/T)
-	for(var/obj/O in T) 
+	for(var/O in T) 
 		if(is_cleanable(O)) //Clean cleanable decals in affected areas
 			qdel(O)
 		else if(istype(O, /obj/item/ammo_casing)) //Clean ammo casings in affected areas

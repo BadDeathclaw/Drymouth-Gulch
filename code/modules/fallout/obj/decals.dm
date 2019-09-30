@@ -14,7 +14,7 @@
 /obj/effect/decal/waste/New()
 	..()
 	icon_state = "goo[rand(1,13)]"
-	//AddComponent(/datum/component/radioactive, 200, src, 0) //half-life of 0 because we keep on going.
+	AddComponent(/datum/component/radioactive, 200, src, 0, TRUE, TRUE) //half-life of 0 because we keep on going.
 
 /obj/effect/decal/marking
 	name = "road marking"
