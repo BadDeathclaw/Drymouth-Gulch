@@ -530,3 +530,9 @@ Proc for attack log creation, because really why not
 		chosen = pick(mob_spawn_meancritters)
 	var/mob/living/simple_animal/C = new chosen(spawn_location)
 	return C
+
+
+/mob/proc/get_preferences()
+	if (client && client.prefs)
+		return client.prefs
+	return null

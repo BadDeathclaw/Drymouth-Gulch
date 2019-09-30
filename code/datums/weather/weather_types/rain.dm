@@ -3,22 +3,22 @@
 	desc = "Rain will fall on the Wasteland, cleaning it."
 	probability = 10
 
-	telegraph_duration = 400
+	telegraph_duration = 300
 	telegraph_overlay = "snow_storm"
 	telegraph_message = "<span class='userdanger'>Rain is coming to the area, bringing purity and sustenance to all life. Rejoice!</span>"
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
 	weather_message = "<span class='userdanger'><i>Rain pours down around you!</i></span>"
 	weather_overlay = "rain"
-	weather_duration_lower = 600
-	weather_duration_upper = 1500
+	weather_duration_lower = 1200
+	weather_duration_upper = 2400
 	weather_sound = 'sound/ambience/acidrain_mid.ogg'
 
 	end_duration = 100
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. The rain is over.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	area_type = /area/f13/wasteland
+	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins, /area/f13/radiation_outside)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
@@ -85,7 +85,7 @@
 				H.update_inv_belt()
 
 /datum/weather/rain/weather_act_turf(turf/T)
-	for(var/obj/effect/O in T) //Clean cleanable decals in affected areas
+	for(var/O in T) //Clean cleanable decals in affected areas
 		if(is_cleanable(O))
 			qdel(O)
 

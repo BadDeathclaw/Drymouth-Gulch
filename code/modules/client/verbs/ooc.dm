@@ -100,13 +100,18 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 	set name = "Set Player OOC Color"
 	set desc = "Modifies player OOC Color"
 	set category = "Fun"
-	GLOB.normal_ooc_colour = sanitize_ooccolor(newColor)
+	GLOB.normal_ooc_colour = newColor
+//	GLOB.normal_ooc_colour = sanitize_ooccolor(newColor) // Who did this, monsters. Leaving here incase it's needed though.
+	log_admin("[key_name_admin(usr)] changed Player OOC Color.")
+	message_admins("[key_name_admin(usr)] changed Player OOC Color.")
 
 /client/proc/reset_ooc()
 	set name = "Reset Player OOC Color"
 	set desc = "Returns player OOC Color to default"
 	set category = "Fun"
 	GLOB.normal_ooc_colour = OOC_COLOR
+	log_admin("[key_name_admin(usr)] reset Player OOC Color.]")
+	message_admins("[key_name_admin(usr)] reset Player OOC Color.")
 
 /client/verb/colorooc()
 	set name = "Set Your OOC Color"
@@ -261,7 +266,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 		return
 
 	var/list/body = list()
-	body += "<html><head><title>Playtime for [key]</title></head><BODY><BR>Playtime:"
+	body += "<html><head><title>Playtime for [key]</title></head><BODY><BR>Playtime: "
 	body += get_exp_report()
 	body += "</BODY></HTML>"
 	usr << browse(body.Join(), "window=playerplaytime[ckey];size=550x615")

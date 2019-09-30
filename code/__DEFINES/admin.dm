@@ -81,3 +81,5 @@
 
 #define SPAM_TRIGGER_WARNING	5	//Number of identical messages required before the spam-prevention will warn you to stfu
 #define SPAM_TRIGGER_AUTOMUTE	10	//Number of identical messages required before the spam-prevention will automute you
+#define MAX_KEYPRESS_COMMANDLENGTH 32 //Max length of a keypress command before it's considered to be a forged packet
+#define MAX_KEYPRESS_AUTOKICK 50 //Max amount of keypress messages per second over two seconds before client is autokicked

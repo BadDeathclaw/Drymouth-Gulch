@@ -3,20 +3,20 @@
 	name = "ash storm"
 	desc = "An intense atmospheric storm lifts ash off of the planet's surface and billows it down across the area, dealing intense fire damage to the unprotected."
 
-	telegraph_message = "<span class='boldwarning'>An eerie moan rises on the wind. Sheets of burning ash blacken the horizon. Seek shelter.</span>"
+	telegraph_message = "<span class='userdanger'>An eerie moan rises on the wind. Sheets of burning ash blacken the horizon. Seek shelter.</span>"
 	telegraph_duration = 300
 	telegraph_overlay = "light_ash"
 
 	weather_message = "<span class='userdanger'><i>Smoldering clouds of scorching ash billow down around you! Get inside!</i></span>"
-	weather_duration_lower = 600
-	weather_duration_upper = 1200
+	weather_duration_lower = 1200
+	weather_duration_upper = 2400
 	weather_overlay = "ash_storm"
 
 	end_message = "<span class='boldannounce'>The shrieking wind whips away the last of the ash and falls to its usual murmur. It should be safe to go outside now.</span>"
 	end_duration = 300
 	end_overlay = "light_ash"
 
-	area_type = /area/f13/wasteland
+	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins, /area/f13/radiation_outside)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
@@ -98,7 +98,7 @@
 
 	telegraph_message = "<span class='userdanger'>Sandstorm is coming to the area, decreasing overall visibility outside.</span>"
 
-	weather_message = "<span class='boldannounce'>Sand waft down around you like grotesque snow. The sandstorm is here...</span>"
+	weather_message = "<span class='userdanger'>Sand waft down around you like grotesque snow. The sandstorm is here...</span>"
 
 	end_message = "<span class='boldannounce'>The sandstorm slows, stops. Another layer of sand to the ground beneath your feet.</span>"
 	end_sound = null

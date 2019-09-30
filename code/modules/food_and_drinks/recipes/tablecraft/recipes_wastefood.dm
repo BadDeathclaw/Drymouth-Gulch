@@ -7,7 +7,7 @@
 		/obj/item/reagent_containers/food/snacks/meat/steak/molerat = 1,
 		/obj/item/crafting/wonderglue = 1
 	)
-	tools = (TOOL_LUNCHBOX)
+	tools = list(TOOL_LUNCHBOX)
 	result = /obj/item/reagent_containers/food/snacks/f13/molejerky
 	category = CAT_FOOD
 	subcategory = CAT_WASTEFOOD

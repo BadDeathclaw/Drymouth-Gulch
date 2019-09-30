@@ -109,21 +109,6 @@
 	gain_text = "<span class='notice'>You walk with a little more litheness.</span>"
 	lose_text = "<span class='danger'>You start tromping around like a barbarian.</span>"
 
-/datum/quirk/night_vision
-	name = "Night Vision"
-	desc = "You can see slightly more clearly in full darkness than most people."
-	value = 1
-	mob_trait = TRAIT_NIGHT_VISION
-	gain_text = "<span class='notice'>The shadows seem a little less dark.</span>"
-	lose_text = "<span class='danger'>Everything seems a little darker.</span>"
-
-/datum/quirk/night_vision/on_spawn()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
-	if(!eyes || eyes.lighting_alpha)
-		return
-	eyes.Insert(H) //refresh their eyesight and vision
-
 /datum/quirk/selfaware
 	name = "Self-Aware"
 	desc = "You know your body well, and can accurately assess the extent of your wounds."

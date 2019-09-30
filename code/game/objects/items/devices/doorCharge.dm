@@ -24,8 +24,12 @@
 			if(prob(50))
 				ex_act(EXPLODE_DEVASTATE)
 		if(3)
+			if(prob(38))
+				ex_act(EXPLODE_DEVASTATE)
+		if(4)
 			if(prob(25))
 				ex_act(EXPLODE_DEVASTATE)
+
 
 /obj/item/doorCharge/Destroy()
 	if(istype(loc, /obj/machinery/door/airlock))

@@ -1,0 +1,33 @@
+<table width="750" height="450"><tr>
+<td width="25%" height="100%" style="vertical-align: top;">
+	<ui-display title='Loadouts' height = "450" button>
+		{{#each data.outfits}}
+			<ui-button state='{{data.selected != name ? null : "disabled"}}' action='loadout_select' params='{name: {{name}}}' style='width: 50px; padding: 10px; text-align: center;'>{{name}}</ui-button> <br>
+		{{else}}
+			No loadout options.
+		{{/each}}
+	</ui-display>
+</td><td width="40%" height="100%" style="vertical-align: top;">
+	<ui-display title='Contents' button>
+		{{#each data.items}}
+			<img style="vertical-align:middle" src= {{icon}} height=48 width=48>{{name}} {{quantity > 1 ? 'x' + quantity : ""}}<br>
+		{{else}}
+			No outfit selected.
+		{{/each}}
+		
+	</ui-display>
+</td><td width="35%" height="100%" style="vertical-align: top;">
+	<ui-display title='Preview' button>
+		{{#if data.preview}}
+			<img src={{data.preview}} width=220 height=220><br>
+			<ui-button action='loadout_preview_direction' params='{direction: -1}' style='width: 50px; padding: 5px; text-align: center;'>  	&lt;&lt;</ui-button>
+			<ui-button action='loadout_preview_direction' params='{direction: 1}' style='width: 50px; padding: 5px; text-align: center;'>  	&gt;&gt;</ui-button>
+			
+			<ui-button action='loadout_confirm' style='width: 50px; padding: 5px; text-align: center;'>Finish</ui-button>
+			
+		{{else}}
+			No outfit selected.
+		{{/if}}
+	</ui-display>
+</td>
+</tr></table>

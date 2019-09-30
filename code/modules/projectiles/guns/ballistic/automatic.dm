@@ -61,11 +61,9 @@
 	select = !select
 	if(!select)
 		burst_size = 1
-		fire_delay = 0
 		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	else
 		burst_size = initial(burst_size)
-		fire_delay = initial(fire_delay)
 		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
@@ -338,11 +336,13 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 25
+	extra_damage = 15
+	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
@@ -460,7 +460,7 @@
 	icon_state = "mini-uzi"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
-	burst_size = 2
+	burst_size = 3
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
@@ -490,7 +490,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	burst_size = 3
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	can_suppress = FALSE //we dont have sprites therefore cease
@@ -505,7 +505,7 @@
 	mag_type = /obj/item/ammo_box/magazine/automatic/
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 20
 	w_class = WEIGHT_CLASS_BULKY
@@ -517,7 +517,7 @@
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	suppressed = 1
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	zoomable = TRUE
@@ -561,12 +561,14 @@
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	name = "R82 heavy service rifle"
 	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
-	fire_delay = 3
-	extra_damage = 25
+	fire_delay = 5
+	extra_damage = 30
 	extra_penetration = 10
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	icon_state = "R82"
 	item_state = "R82"
-	burst_size = 3
+	burst_size = 1
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	name = "varmint rifle"
 	desc = "A low powered 5.56, easy to use rifle."
@@ -574,7 +576,8 @@
 	item_state = "varmintrifle"
 	fire_delay = 8
 	extra_damage = 30
-	mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
@@ -631,7 +634,7 @@
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
+	fire_delay = 3
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
@@ -696,12 +699,12 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	spread = 2
 	randomspread = 1
-	extra_damage = 25
-	extra_penetration = 5
+	extra_damage = 20
 	
 /obj/item/gun/ballistic/automatic/lmg/burst_select()
 	var/mob/living/carbon/human/user = usr

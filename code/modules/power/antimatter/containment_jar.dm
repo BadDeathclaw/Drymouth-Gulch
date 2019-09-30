@@ -29,6 +29,13 @@
 				return
 			stability -= 40
 		if(3)
+			if(prob((fuel/10)-stability))
+				explosion(get_turf(src), 0, 1, 2, 4)
+				if(src)
+					qdel(src)
+				return
+			stability -=30
+		if(4)
 			stability -= 20
 	//check_stability()
 	return

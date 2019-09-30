@@ -455,7 +455,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Lieutenant"
 	icon_state = "NCR Lieutenant"
 
-
 /obj/effect/landmark/start/f13/ncrsergeant
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"
@@ -637,7 +636,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	icon_state = "Raider"
 
 /obj/effect/landmark/start/f13/pusher
-	name = "Pusher"
+	name = "Great Khan"
 	icon_state = "Pusher"
 
 /obj/effect/landmark/start/f13/preacher

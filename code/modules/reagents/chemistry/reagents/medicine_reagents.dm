@@ -220,11 +220,11 @@
 /datum/reagent/medicine/silver_sulfadiazine
 	name = "Silver Sulfadiazine"
 	id = "silver_sulfadiazine"
-	description = "If used in touch-based applications, immediately restores burn wounds as well as restoring more over time. If ingested through other means, deals minor toxin damage."
+	description = "If used in touch-based applications, restores burn wounds over time. If ingested through other means, deals minor toxin damage."
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 
-/datum/reagent/medicine/silver_sulfadiazine/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/silver_sulfadiazine/reaction_mob(mob/living/M, method=PATCH, reac_volume, show_message = 1)
 	if(iscarbon(M))
 		if (M.stat == DEAD)
 			show_message = FALSE
@@ -233,14 +233,14 @@
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getFireLoss())
-			M.adjustFireLoss(-reac_volume)
+			M.adjustFireLoss()
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns healing! It stings like hell!</span>")
 				M.emote("scream")
 	..()
 
 /datum/reagent/medicine/silver_sulfadiazine/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-2*REM, 0)
+	M.adjustFireLoss(-2.5*REM, 0)
 	..()
 	. = 0.5
 
@@ -270,11 +270,11 @@
 /datum/reagent/medicine/styptic_powder
 	name = "Styptic Powder"
 	id = "styptic_powder"
-	description = "If used in touch-based applications, immediately restores bruising as well as restoring more over time. If ingested through other means, deals minor toxin damage."
+	description = "If used in touch-based applications, restores bruising over time. If ingested through other means, deals minor toxin damage."
 	reagent_state = LIQUID
 	color = "#FF9696"
 
-/datum/reagent/medicine/styptic_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+/datum/reagent/medicine/styptic_powder/reaction_mob(mob/living/M, method=PATCH, reac_volume, show_message = 1)
 	if(iscarbon(M))
 		if (M.stat == DEAD)
 			show_message = FALSE
@@ -283,14 +283,14 @@
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 		else if(M.getBruteLoss())
-			M.adjustBruteLoss(-reac_volume)
+			M.adjustBruteLoss()
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your bruises healing! It stings like hell!</span>")
 				M.emote("scream")
 	..()
 
 /datum/reagent/medicine/styptic_powder/on_mob_life(mob/living/M)
-	M.adjustBruteLoss(-2*REM, 0)
+	M.adjustBruteLoss(-2.5*REM, 0)
 	..()
 	. = 0.5
 
@@ -377,17 +377,28 @@
 /datum/reagent/medicine/synthflesh
 	name = "Synthflesh"
 	id = "synthflesh"
-	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal one point of damage. Touch application only."
+	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal 1.25 points of damage. Touch application only. Causes toxloss equal to 66% of what was healed."
+	reagent_state = LIQUID
+	color = "#FFEBEB"
+	overdose_threshold = 10
+
+/datum/reagent/medicine/synthflesh
+	name = "Synthflesh"
+	id = "synthflesh"
+	description = "Has a 100% chance of instantly healing brute and burn damage. One unit of the chemical will heal 1.25 points of damage. Touch application only. Causes toxloss equal to 66% of what was healed."
 	reagent_state = LIQUID
 	color = "#FFEBEB"
 
 /datum/reagent/medicine/synthflesh/reaction_mob(mob/living/M, method=TOUCH, reac_volume,show_message = 1)
 	if(iscarbon(M))
-		if (M.stat == DEAD)
-			show_message = FALSE
+		var/mob/living/carbon/C = M
+		if (C.stat == DEAD)
+			show_message = 0
 		if(method in list(PATCH, TOUCH))
-			M.adjustBruteLoss(-1.25 * reac_volume)
-			M.adjustFireLoss(-1.25 * reac_volume)
+			var/brute = min(C.getBruteLoss(),C.adjustBruteLoss(-1.25 * reac_volume)*-1)
+			var/burn = min(C.getFireLoss(),C.adjustFireLoss(-1.25 * reac_volume)*-1)
+			if(C.stat != DEAD)
+				C.adjustToxLoss((brute+burn)*0.66)
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your burns and bruises healing! It stings like hell!</span>")
 	..()
@@ -548,14 +559,6 @@
 	overdose_threshold = 45
 	addiction_threshold = 30
 
-/datum/reagent/medicine/ephedrine/on_mob_add(mob/living/L)
-	..()
-	L.add_trait(TRAIT_GOTTAGOFAST, id)
-
-/datum/reagent/medicine/ephedrine/on_mob_delete(mob/living/L)
-	L.remove_trait(TRAIT_GOTTAGOFAST, id)
-	..()
-
 /datum/reagent/medicine/ephedrine/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
@@ -623,14 +626,6 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
 	addiction_threshold = 25
-
-/datum/reagent/medicine/morphine/on_mob_add(mob/living/L)
-	..()
-	L.add_trait(TRAIT_IGNORESLOWDOWN, id)
-
-/datum/reagent/medicine/morphine/on_mob_delete(mob/living/L)
-	L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
-	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
 	switch(current_cycle)
@@ -1278,7 +1273,7 @@
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
 		if(method in list(INGEST, VAPOR))
-			M.adjustToxLoss(0.5*reac_volume)
+			M.adjustToxLoss(3.75*reac_volume) //increased from 0.5*reac_volume, which was amusingly low since stimpak heals toxins. now a pill at safe max crits and then heals back up to low health within a few seconds
 			if(show_message)
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
@@ -1327,6 +1322,30 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	..()
 	. = 1
 
+/datum/reagent/medicine/bitter_drink
+	name = "bitter drink"
+	id = "bitter_drink"
+	description = "An herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."
+	reagent_state = LIQUID
+	color ="#A9FBFB"
+	taste_description = "bitterness"
+	metabolization_rate = 0.4 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
+	overdose_threshold = 30
+
+datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
+	if(!M.reagents.has_reagent("stimpak") && !M.reagents.has_reagent("healing_powder")) //should prevent stacking with healing powder and stimpaks
+		M.adjustFireLoss(-3*REM)
+		M.adjustBruteLoss(-3*REM)
+		M.hallucination = max(M.hallucination, 5)
+		. = 1
+	..()
+
+/datum/reagent/medicine/bitter_drink/overdose_process(mob/living/M)
+	M.adjustToxLoss(2*REM, 0)
+	M.adjustOxyLoss(4*REM, 0)
+	..()
+	. = 1
+
 /datum/reagent/medicine/healing_powder
 	name = "Healing Powder"
 	id = "healing_powder"
@@ -1342,6 +1361,14 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.adjustBruteLoss(-3*REM)
 	M.hallucination = max(M.hallucination, 5)
 	. = 1
+	..()
+
+/datum/reagent/medicine/healing_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(iscarbon(M) && M.stat != DEAD)
+		if(method in list(INGEST, VAPOR, INJECT))
+			M.adjustToxLoss(3*reac_volume) //also increased from 0.5, reduced from 6
+			if(show_message)
+				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
@@ -1365,6 +1392,14 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 		M.adjustBruteLoss(-4*REM)
 		M.adjustOxyLoss(-2*REM)
 		M.hallucination = max(M.hallucination, 5)
+	..()
+
+/datum/reagent/medicine/healing_poultice/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
+	if(iscarbon(M) && M.stat != DEAD)
+		if(method in list(INGEST, VAPOR, INJECT))
+			M.adjustToxLoss(4.5*reac_volume) //changed from 0.5*reac_volume, reduced from 6
+			if(show_message)
+				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
 
 /datum/reagent/medicine/radx
@@ -1403,25 +1438,63 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 /datum/reagent/medicine/medx
 	name = "Med-X"
 	id = "medx"
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
+	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning. Addictive. Prolonged presence in the body can cause seizures and organ damage."
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	addiction_threshold = 10
+	addiction_threshold = 1 //good luck
 
-/datum/reagent/medicine/medx/on_mob_add(mob/M)
+/datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+		M.physiology.armor.melee += 25
+		M.physiology.armor.bullet += 20
+		M.physiology.armor.laser += 25
+		M.physiology.armor.energy += 20
 
-/datum/reagent/medicine/medx/on_mob_delete(mob/M)
+/datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+		M.physiology.armor.melee -= 25
+		M.physiology.armor.bullet -= 20
+		M.physiology.armor.laser -= 25
+		M.physiology.armor.energy -= 20
+	switch(current_cycle)
+		if(1 to 15)
+			M.confused += 20
+			M.blur_eyes(20)
+			to_chat(M, "<span class='notice'>Your head is pounding. Med-X is hard on the body. </span>")
+		if(16 to 39)
+			M.confused +=30
+			M.blur_eyes(30)
+			M.losebreath += 8
+			M.adjust_eye_damage(6)
+			M.set_disgust(12)
+			M.adjustStaminaLoss(30)
+			M.vomit(0, 1, 1, 1, 0, 0, 0, 1)
+			to_chat(M, "<span class='danger'>Your stomach churns, your eyes cloud and you're pretty sure you just popped a lung. You shouldn't take so much med-X at once. </span>")
+		if(40 to 69)
+			M.confused +=50
+			M.blur_eyes(30)
+			M.losebreath += 10
+			M.adjust_eye_damage(12)
+			M.set_disgust(25)
+			M.adjustStaminaLoss(30)
+			M.vomit(30, 1, 1, 5, 0, 0, 0, 1)
+			M.Unconscious(200)
+			M.Jitter(1000)
+			var/datum/disease/D = new /datum/disease/heart_failure
+			M.ForceContractDisease(D)
+			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
+			M.visible_message("<span class='userdanger'>[M] collapses to the ground, bloody froth covering their lips!</span>")
+			to_chat(M, "<span class='userdanger'>You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too. </span>")
+		if(70 to INFINITY)
+			M.adjust_eye_damage(30)
+			M.Unconscious(400)
+			M.Jitter(1000)
+			M.set_heartattack(TRUE)
+			M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
+			to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
@@ -1487,13 +1560,13 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		L.add_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.add_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 
 /datum/reagent/medicine/legionmedx/on_mob_delete(mob/M)
 	if(isliving(M))
 		var/mob/living/carbon/L = M
 		L.hal_screwyhud = SCREWYHUD_NONE
-		L.remove_trait(TRAIT_IGNORESLOWDOWN, id)
+		L.remove_trait(TRAIT_IGNOREDAMAGESLOWDOWN, id)
 	..()
 
 /datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
