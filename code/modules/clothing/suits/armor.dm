@@ -381,7 +381,7 @@
 	slowdown = 1.25
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
 	clothing_flags = THICKMATERIAL
@@ -409,7 +409,7 @@
 	slowdown = 0.75
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	flags_inv = HIDEJUMPSUIT
 	item_flags = SLOWS_WHILE_IN_HAND
 	clothing_flags = THICKMATERIAL
