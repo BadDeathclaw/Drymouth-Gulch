@@ -90,6 +90,7 @@ Paladin
 /datum/outfit/job/bos/f13paladin
 	name = "Paladin"
 	jobtype = /datum/job/bos/f13paladin
+	pa_wear = TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
 	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
 	suit_store =	/obj/item/gun/energy/laser/scatter
@@ -102,7 +103,6 @@ Paladin
 
 /datum/job/bos/f13paladin/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
-
 
 /*
 Head Scribe
@@ -131,6 +131,7 @@ Head Scribe
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
 	jobtype = /datum/job/bos/f13headscribe
+	pa_wear = TRUE
 	chemwhiz = TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
 	suit_store =	/obj/item/gun/energy/laser/pistol
@@ -164,6 +165,7 @@ Knight
 /datum/outfit/job/bos/f13knight
 	name = "Knight"
 	jobtype = /datum/job/bos/f13knight
+	pa_wear = TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
 	suit_store =	/obj/item/gun/energy/laser/aer9
