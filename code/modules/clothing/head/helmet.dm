@@ -614,6 +614,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	clothing_flags = THICKMATERIAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+//	slots_flags = ITEM_SLOT_HEAD
 	item_flags = SLOWS_WHILE_IN_HAND
 	flash_protect = 2
 	tint = 0
@@ -621,6 +622,20 @@
 	dynamic_fhair_suffix = ""
 	darkness_view = 128
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+
+/obj/item/clothing/head/helmet/power_armor/mob_can_equip(mob/user, slot, disable_warning = 1)
+	if (ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(src == H.head) //Suit is already equipped
+			return TRUE
+
+		if (!H.has_trait(TRAIT_PA_WEAR) && !istype(src, /obj/item/clothing/head/helmet/power_armor/t45b ))
+			to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+			return 0
+		else
+			user.equip_to_slot(src, SLOT_HEAD)
+			return TRUE
+	return
 
 /obj/item/clothing/head/helmet/power_armor/t45b
 	name = "salvaged T-45b helmet"
