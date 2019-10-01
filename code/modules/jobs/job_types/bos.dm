@@ -57,6 +57,7 @@ Elder
 /datum/outfit/job/bos/f13elder
 	name = "Elder"
 	jobtype = /datum/job/bos/f13elder
+	pa_wear == TRUE
 	suit = 			/obj/item/clothing/suit/f13/elder
 	suit_store =	/obj/item/gun/energy/laser/plasma
 	backpack_contents = list(
@@ -90,6 +91,7 @@ Paladin
 /datum/outfit/job/bos/f13paladin
 	name = "Paladin"
 	jobtype = /datum/job/bos/f13paladin
+	pa_wear == TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t51b
 	head = 			/obj/item/clothing/head/helmet/power_armor/t51b
 	suit_store =	/obj/item/gun/energy/laser/scatter
@@ -131,6 +133,7 @@ Head Scribe
 /datum/outfit/job/bos/f13headscribe
 	name = "Head Scribe"
 	jobtype = /datum/job/bos/f13headscribe
+	pa_wear == TRUE
 	chemwhiz = TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
 	suit_store =	/obj/item/gun/energy/laser/pistol
@@ -164,6 +167,7 @@ Knight
 /datum/outfit/job/bos/f13knight
 	name = "Knight"
 	jobtype = /datum/job/bos/f13knight
+	pa_wear == TRUE
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/t45d
 	head = 			/obj/item/clothing/head/helmet/power_armor/t45d
 	suit_store =	/obj/item/gun/energy/laser/aer9
