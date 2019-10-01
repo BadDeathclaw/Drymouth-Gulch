@@ -80,6 +80,7 @@
 
 	//F13 special access meme
 #define ACCESS_BOS 120 //general bos access
+#define ACCESS_NCR 121 //NCR access
 
 	//The Syndicate
 #define ACCESS_SYNDICATE 150//General Syndicate Access. Includes Syndicate mechs and ruins.
