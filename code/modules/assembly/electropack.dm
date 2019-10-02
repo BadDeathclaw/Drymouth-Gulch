@@ -183,3 +183,95 @@ Code:
 /obj/item/key/scollar
 	name = "Shock Collar Key"
 	desc = "A small key designed to work with shock collars."
+
+/////////////////////
+//Explosive Collars//
+/////////////////////
+
+/obj/item/assembly/signaler/electropack/boomcollar
+	name = "explosive collar"
+	desc = "A thick reinforced metal collar. 'Explosion' danger symbols line the outside. A small lock is present, though it seems impossible to get it off anyway without external help."
+	icon = 'icons/obj/clothing/neck.dmi'
+	icon_state = "slavecollarb"
+	item_state = "slavecollarb"
+	alternate_worn_icon = 'icons/mob/neck.dmi'
+	slot_flags = ITEM_SLOT_NECK
+	w_class = WEIGHT_CLASS_SMALL
+	body_parts_covered = NECK
+	strip_delay = 60
+	equip_delay_other = 60
+	var/lock = FALSE
+
+/obj/item/assembly/signaler/electropack/boomcollar/Initialize()
+	. = ..()
+	set_frequency(pick(1441,1443,1445,1447,1449,1451,1453,1455,1457,1459))
+	code = rand(1,100)
+	name = "[name] #[frequency]/[code]"
+
+/obj/item/assembly/signaler/electropack/boomcollar/attackby(obj/item/K, mob/user, params)
+	if(istype(K, /obj/item/key/bcollar))
+		if(lock != FALSE)
+			to_chat(user, "<span class='warning'>With a click the explosive collar unlocks!</span>")
+			lock = FALSE
+			item_flags = null
+		else
+			to_chat(user, "<span class='warning'>With a click the explosive collar locks!</span>")
+			lock = TRUE
+			if(SLOT_NECK)
+				item_flags = NODROP
+	return
+
+/obj/item/assembly/signaler/electropack/boomcollar/attack_hand(mob/user)
+	if(loc == user && user.get_item_by_slot(SLOT_NECK))
+		to_chat(user, "<span class='warning'>The collar is fastened tight! You'll need help taking this off!</span>")
+		return
+	..()
+
+/obj/item/assembly/signaler/electropack/boomcollar/receive_signal(datum/signal/signal) //this removes the "on" check
+	if(!signal || signal.data["code"] != code)
+		return
+
+	if(isliving(loc))
+		if(shock_cooldown != 0)
+			return
+		shock_cooldown = 1
+		spawn(100)
+			shock_cooldown = 0
+		var/mob/living/L = loc
+		step(L, pick(GLOB.cardinals))
+		L.Knockdown(100)
+		to_chat(L, "<span class='danger'>Beep beep</span>")
+		boom()
+
+	if(master)
+		master.receive_signal()
+	return
+
+/obj/item/assembly/signaler/electropack/boomcollar/attack_self(mob/user)
+	if(!ishuman(user))
+		return
+
+	user.set_machine(src)
+	var/dat = {"<B>Frequency/Code</B> for explosive collar:<BR>
+Frequency:
+<A href='byond://?src=[REF(src)];freq=-10'>-</A>
+<A href='byond://?src=[REF(src)];freq=-2'>-</A> [format_frequency(frequency)]
+<A href='byond://?src=[REF(src)];freq=2'>+</A>
+<A href='byond://?src=[REF(src)];freq=10'>+</A><BR>
+
+Code:
+<A href='byond://?src=[REF(src)];code=-5'>-</A>
+<A href='byond://?src=[REF(src)];code=-1'>-</A> [code]
+<A href='byond://?src=[REF(src)];code=1'>+</A>
+<A href='byond://?src=[REF(src)];code=5'>+</A><BR>
+</TT>"}
+	user << browse(dat, "window=radio")
+	onclose(user, "radio")
+	return
+
+/obj/item/assembly/signaler/electropack/boomcollar/proc/boom()
+	explosion(src.loc,1,2,3, flame_range = 2)
+
+/obj/item/key/bcollar
+	name = "Explosive Collar Key"
+	desc = "A small key designed to work with explosive collars."
