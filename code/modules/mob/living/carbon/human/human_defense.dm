@@ -421,7 +421,6 @@
 			damage_clothes(max(50 - bomb_armor, 0), BRUTE, "bomb")
 			if (!istype(ears, /obj/item/clothing/ears/earmuffs))
 				adjustEarDamage(15,60)
-			if (prob(max(50 - (bomb_armor * 0.5), 0)))	
 
 	take_overall_damage(b_loss,f_loss)
 
