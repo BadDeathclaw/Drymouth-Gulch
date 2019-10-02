@@ -415,31 +415,26 @@
 	clothing_flags = THICKMATERIAL
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	slot_flags = ITEM_SLOT_OCLOTHING
 
-/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, slot, disable_warning = 1)
+/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+	var/mob/living/carbon/human/H = user
+	if(src == H.wear_suit) //Suit is already equipped
+		return TRUE	
 	if (ishuman(user))
-		var/mob/living/carbon/human/H = user
-		if(src == H.wear_suit) //Suit is already equipped
-			return TRUE	
-		if(SLOT_WEAR_SUIT)   // WIP, need a remove armor proc probably
-			H.add_trait(TRAIT_STUNIMMUNE)
-			H.add_trait(TRAIT_PUSHIMMUNE)
-		else
-			H.remove_trait(TRAIT_STUNIMMUNE)
-			H.remove_trait(TRAIT_PUSHIMMUNE)
-
-	/*	if(slot == SLOT_WEAR_SUIT)  // wip
-			return FALSE
-		return TRUE */
-
 		if (!H.has_trait(TRAIT_PA_WEAR))
 			to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 			return 0
-		else
-			user.equip_to_slot(src, SLOT_WEAR_SUIT)
+		if(slot == SLOT_WEAR_SUIT)
+			H.add_trait(TRAIT_STUNIMMUNE)
+			H.add_trait(TRAIT_PUSHIMMUNE)
 			return TRUE
-	return
+		if(slot == SLOT_HANDS) //Lets it be put into hands
+			return TRUE
+
+/obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
+	var/mob/living/carbon/human/H = user
+	H.remove_trait(TRAIT_STUNIMMUNE)
+	H.remove_trait(TRAIT_PUSHIMMUNE)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
