@@ -18,7 +18,7 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. The rain is over.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins, /area/f13/radiation_outside)
+	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
@@ -27,6 +27,8 @@
 	barometer_predictable = TRUE
 
 	affects_turfs = TRUE
+
+	carbons_only = TRUE
 
 /datum/weather/rain/weather_act(mob/living/L)
 	if(iscarbon(L))
