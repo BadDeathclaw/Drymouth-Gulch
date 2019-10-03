@@ -416,16 +416,25 @@
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/M, slot)
-	if(!..() || !ishuman(M))
-		return FALSE
-	if(isliving(M))
-		var/mob/living/L = M
-		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC))//living proc
-			to_chat(M, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+	var/mob/living/carbon/human/H = user
+	if(src == H.wear_suit) //Suit is already equipped
+		return TRUE	
+	if (ishuman(user))
+		if (!H.has_trait(TRAIT_PA_WEAR))
+			to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+			return 0
+		if(slot == SLOT_WEAR_SUIT)
+			H.add_trait(TRAIT_STUNIMMUNE)
+			H.add_trait(TRAIT_PUSHIMMUNE)
+			return TRUE
+		if(slot == SLOT_HANDS) //Lets it be put into hands
+			return TRUE
 
-
-	else ..()
+/obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
+	var/mob/living/carbon/human/H = user
+	H.remove_trait(TRAIT_STUNIMMUNE)
+	H.remove_trait(TRAIT_PUSHIMMUNE)
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
