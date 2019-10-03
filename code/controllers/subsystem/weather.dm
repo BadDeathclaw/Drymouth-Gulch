@@ -24,8 +24,7 @@ SUBSYSTEM_DEF(weather)
 			W.turfs_impacted = TRUE
 			for(var/i in W.impacted_areas)
 				var/area/A = i
-				for(var/t in A.contents)
-					var/turf/T = t
+				for(var/turf/T in get_area_turfs(A))
 					W.weather_act_turf(T)
 		if(W.carbons_only)
 			for(var/i in GLOB.carbon_list)
