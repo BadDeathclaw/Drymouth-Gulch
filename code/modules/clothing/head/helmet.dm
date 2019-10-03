@@ -622,6 +622,20 @@
 	darkness_view = 128
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
 
+/obj/item/clothing/head/helmet/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+	var/mob/living/carbon/human/H = user
+	if(src == H.head) //Suit is already equipped
+		return TRUE	
+	if (ishuman(user))
+		if (!H.has_trait(TRAIT_PA_WEAR) && !istype(src, /obj/item/clothing/head/helmet/power_armor/t45b ))
+			to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+			return 0
+		if(slot == SLOT_HEAD)
+			return TRUE
+		if(slot == SLOT_HANDS) //Lets it be put into hands
+			return TRUE
+	return 
+
 /obj/item/clothing/head/helmet/power_armor/t45b
 	name = "salvaged T-45b helmet"
 	desc = "It's a salvaged power armor helmet."
