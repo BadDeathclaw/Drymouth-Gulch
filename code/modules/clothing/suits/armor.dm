@@ -420,21 +420,19 @@
 	var/mob/living/carbon/human/H = user
 	if(src == H.wear_suit) //Suit is already equipped
 		return TRUE	
-	if (ishuman(user))
-		if (!H.has_trait(TRAIT_PA_WEAR))
-			to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-			return 0
-		if(slot == SLOT_WEAR_SUIT)
-			H.add_trait(TRAIT_STUNIMMUNE)
-			H.add_trait(TRAIT_PUSHIMMUNE)
-			return TRUE
-		if(slot == SLOT_HANDS) //Lets it be put into hands
-			return TRUE
+	if (!H.has_trait(TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT)
+		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		return 0
+	if(slot == SLOT_WEAR_SUIT)
+		H.add_trait(TRAIT_STUNIMMUNE)
+		H.add_trait(TRAIT_PUSHIMMUNE)
+		return TRUE
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 	var/mob/living/carbon/human/H = user
 	H.remove_trait(TRAIT_STUNIMMUNE)
 	H.remove_trait(TRAIT_PUSHIMMUNE)
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"

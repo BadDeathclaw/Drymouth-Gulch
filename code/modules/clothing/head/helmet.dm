@@ -626,14 +626,11 @@
 	var/mob/living/carbon/human/H = user
 	if(src == H.head) //Suit is already equipped
 		return TRUE	
-	if (ishuman(user))
-		if (!H.has_trait(TRAIT_PA_WEAR) && !istype(src, /obj/item/clothing/head/helmet/power_armor/t45b ))
-			to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-			return 0
-		if(slot == SLOT_HEAD)
-			return TRUE
-		if(slot == SLOT_HANDS) //Lets it be put into hands
-			return TRUE
+	if (!H.has_trait(TRAIT_PA_WEAR) && !istype(src, /obj/item/clothing/head/helmet/power_armor/t45b) && slot == SLOT_HEAD)
+		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		return 0
+	if(slot == SLOT_HEAD)
+		return TRUE
 	return 
 
 /obj/item/clothing/head/helmet/power_armor/t45b
