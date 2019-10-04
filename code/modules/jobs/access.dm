@@ -323,6 +323,8 @@
 			return "Cloning Room"
 		if(ACCESS_BOS)
 			return "BOS Access"
+		if(ACCESS_NCR)
+			return "NCR Access"
 
 /proc/get_centcom_access_desc(A)
 	switch(A)

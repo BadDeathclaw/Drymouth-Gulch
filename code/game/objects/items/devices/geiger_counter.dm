@@ -145,13 +145,12 @@
 
 /obj/item/geiger_counter/proc/scan(atom/A, mob/user)
 	var/rad_strength = 0
-	for(var/i in get_rad_contents(A)) // Yes it's intentional that you can't detect radioactive things under rad protection. Gives traitors a way to hide their glowing green rocks.
-		var/atom/thing = i
-		if(!thing)
-			continue
-		var/datum/component/radioactive/radiation = thing.GetComponent(/datum/component/radioactive)
-		if(radiation)
-			rad_strength += radiation.strength
+	var/atom/thing = A
+	if(!thing)
+		return
+	var/datum/component/radioactive/radiation = thing.GetComponent(/datum/component/radioactive)
+	if(radiation)
+		rad_strength += radiation.strength
 
 	if(isliving(A))
 		var/mob/living/M = A
