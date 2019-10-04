@@ -23,6 +23,8 @@
 
 	immunity_type = "rad"
 
+	carbons_only = TRUE
+
 /datum/weather/rad_storm/telegraph()
 	..()
 	status_alarm(TRUE)
