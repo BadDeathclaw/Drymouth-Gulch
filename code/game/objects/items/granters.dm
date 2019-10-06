@@ -124,6 +124,14 @@
 	traitname = "chemistry"
 	remarks = list("Always have a safe working environment...", "Don't give chems to strangers...", "Never drink any chemicals straight from the dispenser...", "Always wear your labcoat...", "Never forget your goggles...")
 
+/obj/item/book/granter/trait/pa_wear
+	name = "Advanced Armor and You"
+	desc = "An indepth look into how power armor functions."
+	oneuse = TRUE
+	granted_trait = TRAIT_PA_WEAR
+	traitname = "Power Armor"
+	remarks = list("Don't forget to do daily maintenance...","Keep your armor well guarded..","Slow and steady wins the race...","Positioning is important while moving slow...","Tired? Take a nap in your suit...","Saftey comes first when wearing your gear...")
+
 /obj/item/book/granter/trait/trekking
 	name = "Ranger's Guide to the Wasteland"
 	desc = "An extensive guide about trekking through the wastes. Written by Allesandra Hall, former NCR Ranger."

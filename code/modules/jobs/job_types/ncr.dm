@@ -2,8 +2,8 @@
 	department_flag = NCR
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_NCR
-	access = list(ACCESS_SECURITY)
-	minimal_access = list(ACCESS_SECURITY)
+	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_NCR)
+	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_NCR)
 	forbids = "The NCR forbids: Drugs (except for med-X), Drinking, Gambling, raiders (anywhere, being one is a crime), allying with factions you are at war with (such as the Legion or Brotherhood of Steel), and sex on duty."
 	enforces = "The NCR expects: Obeying the lawful orders of superiors. Proper treatment of prisoners.  Good conduct within the Republics laws. Wearing the uniform."
 
