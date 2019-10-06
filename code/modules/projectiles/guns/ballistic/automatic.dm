@@ -1067,3 +1067,24 @@
 /obj/item/projectile/bullet/c2mm
 	damage = 60
 	armour_penetration = 40
+
+/obj/item/ammo_casing/a762r
+	name = "7.62 bullet casing"
+	desc = "A 7.62 bullet casing."
+	icon_state = "762-casing"
+	caliber = "a762"
+	projectile_type = /obj/item/projectile/bullet/a762r
+
+/obj/item/projectile/bullet/a762r
+	damage = 40
+	armour_penetration = 0
+
+/obj/item/ammo_casing/c9mmr
+	name = "9mm bullet casing"
+	desc = "A 9mm bullet casing."
+	caliber = "9mm"
+	projectile_type = /obj/item/projectile/bullet/c9mmr
+
+/obj/item/projectile/bullet/c9mmr
+	damage = 20
+	armour_penetration = 20
