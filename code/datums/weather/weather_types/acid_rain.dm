@@ -18,7 +18,7 @@
 	end_message = "<span class='boldannounce'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
-	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins, /area/f13/radiation_outside)
+	areas_type = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
 
@@ -28,24 +28,23 @@
 
 	affects_turfs = TRUE
 
+	carbons_only = TRUE
+
 /datum/weather/acid_rain/weather_act(mob/living/L)
-	if(ishuman(L))
+	if(iscarbon(L))
 		if(is_acidrain_immune(L))
 			return
 		var/resist = L.getarmor(null, "acid")
 		if(prob(max(0, 100 - resist)))
-			L.acid_act(90, 10)
-		L.adjustFireLoss(4)
+			L.acid_act(15, 10)
 
 /datum/weather/acid_rain/weather_act_turf(turf/T)
 	for(var/O in T) 
-		if(is_cleanable(O)) //Clean cleanable decals in affected areas
-			qdel(O)
-		else if(istype(O, /obj/item/ammo_casing)) //Clean ammo casings in affected areas
+		if(is_acidrain_cleanable(O)) //Clean cleanable decals and ammo casings in affected areas
 			qdel(O)
 
 /datum/weather/acid_rain/proc/is_acidrain_immune(atom/L)
-	while (L && !isturf(L))
+	while(L && !isturf(L))
 		if(ismecha(L)) //Mechs are immune
 			return TRUE
 		if(ishuman(L)) //Are you immune?
