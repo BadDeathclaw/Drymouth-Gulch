@@ -232,16 +232,10 @@ Code:
 		return
 
 	if(isliving(loc))
-		if(shock_cooldown != 0)
-			return
-		shock_cooldown = 1
-		spawn(100)
-			shock_cooldown = 0
 		var/mob/living/L = loc
 		step(L, pick(GLOB.cardinals))
-		L.Knockdown(100)
 		to_chat(L, "<span class='danger'>Beep beep</span>")
-		boom()
+		boom(L)
 
 	if(master)
 		master.receive_signal()
@@ -269,8 +263,11 @@ Code:
 	onclose(user, "radio")
 	return
 
-/obj/item/assembly/signaler/electropack/boomcollar/proc/boom()
-	explosion(src.loc,1,2,3, flame_range = 2)
+/obj/item/assembly/signaler/electropack/boomcollar/proc/boom(mob/living/L)
+	explosion(src.loc,0,1,2, flame_range = 2)
+	if (SLOT_NECK)
+		var/obj/item/bodypart/head/victimhead = L.get_bodypart(BODY_ZONE_HEAD)
+		victimhead.dismember()
 
 /obj/item/key/bcollar
 	name = "Explosive Collar Key"
