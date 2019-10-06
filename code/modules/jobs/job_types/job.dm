@@ -197,6 +197,7 @@
 	var/pda_slot = SLOT_BELT
 
 	var/chemwhiz = FALSE //F13 Chemwhiz, for chemistry machines
+	var/pa_wear = FALSE //F13 pa_wear, ability to wear PA
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	switch(H.backbag)
@@ -223,6 +224,9 @@
 
 	if(chemwhiz == TRUE)
 		H.add_trait(TRAIT_CHEMWHIZ)
+
+	if(pa_wear == TRUE)
+		H.add_trait(TRAIT_PA_WEAR)
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -261,6 +265,9 @@
 
 	if(chemwhiz == TRUE)
 		H.add_trait(TRAIT_CHEMWHIZ)
+
+	if(pa_wear == TRUE)
+		H.add_trait(TRAIT_PA_WEAR)
 
 /datum/outfit/job/get_chameleon_disguise_info()
 	var/list/types = ..()
