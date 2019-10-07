@@ -381,6 +381,8 @@
 	desc = "Unadorned legion helmet"
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
+	lefthand_file = ""
+	righthand_file = ""
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
@@ -403,8 +405,8 @@
 /obj/item/clothing/head/helmet/f13/legion/prime
 	name = "legion prime helmet"
 	desc = "A helmet belonging to a legion prime, it looks sturdier than a normal legion recruit helmet."
-	item_state = "legprim"
-	icon_state = "legprim"
+	item_state = "legprime"
+	icon_state = "legprime"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/vet
