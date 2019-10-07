@@ -158,7 +158,11 @@
 	icon_state = "legskirt"
 	item_state = "legskirt"
 	item_color = "legskirt"
-
+	var/sleeves_adjusted = 0
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	alt_covers_chest = TRUE
+	can_adjust = TRUE
 
 // Generic
 
