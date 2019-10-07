@@ -101,7 +101,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 	set desc = "Modifies player OOC Color"
 	set category = "Fun"
 	GLOB.normal_ooc_colour = newColor
-//	GLOB.normal_ooc_colour = sanitize_ooccolor(newColor) // Who did this, monsters. Leaving here incase it's needed though.
+//	GLOB.normal_ooc_colour = sanitize_color(newColor) // Who did this, monsters. Leaving here incase it's needed though.
 	log_admin("[key_name_admin(usr)] changed Player OOC Color.")
 	message_admins("[key_name_admin(usr)] changed Player OOC Color.")
 
@@ -123,7 +123,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, OOC_COLOR)
 
 	var/new_ooccolor = input(src, "Please select your OOC color.", "OOC color", prefs.ooccolor) as color|null
 	if(new_ooccolor)
-		prefs.ooccolor = sanitize_ooccolor(new_ooccolor)
+		prefs.ooccolor = sanitize_color(new_ooccolor)
 		prefs.save_preferences()
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Set OOC Color") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return

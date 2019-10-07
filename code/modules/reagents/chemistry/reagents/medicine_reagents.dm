@@ -1460,11 +1460,11 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 		M.physiology.armor.laser -= 25
 		M.physiology.armor.energy -= 20
 	switch(current_cycle)
-		if(1 to 15)
+		if(1 to 25)
 			M.confused += 20
 			M.blur_eyes(20)
 			to_chat(M, "<span class='notice'>Your head is pounding. Med-X is hard on the body. </span>")
-		if(16 to 39)
+		if(26 to 50)
 			M.confused +=30
 			M.blur_eyes(30)
 			M.losebreath += 8
@@ -1473,7 +1473,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 			M.adjustStaminaLoss(30)
 			M.vomit(0, 1, 1, 1, 0, 0, 0, 1)
 			to_chat(M, "<span class='danger'>Your stomach churns, your eyes cloud and you're pretty sure you just popped a lung. You shouldn't take so much med-X at once. </span>")
-		if(40 to 69)
+		if(51 to 100)
 			M.confused +=50
 			M.blur_eyes(30)
 			M.losebreath += 10
@@ -1488,7 +1488,7 @@ datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/M)
 			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
 			M.visible_message("<span class='userdanger'>[M] collapses to the ground, bloody froth covering their lips!</span>")
 			to_chat(M, "<span class='userdanger'>You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too. </span>")
-		if(70 to INFINITY)
+		if(101 to INFINITY)
 			M.adjust_eye_damage(30)
 			M.Unconscious(400)
 			M.Jitter(1000)
