@@ -294,7 +294,7 @@ Vexillarius
 	spawn_positions = 2
 	description = "You answer directly to the Veteran Decanus and the Centurion, acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a gun-toting Libritor, and have been waging war with the Legion for the better part of ten years."
 	supervisors = "Veteran Decanus and up."
-	exp_requirements = 2400
+	exp_requirements = 1800
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13libritor
 
@@ -447,7 +447,8 @@ Legionary
 	spawn_positions = 1
 	description = "You answer directly to the Centurion and the Decanii, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your superiors and organizing the Scouts and Explorers to do the same.  As a Venator, there is no failure."
 	supervisors = "Decanii and the Centurion."
-	exp_requirements = 2400
+	exp_requirements = 1500
+	exp_type = EXP_TYPE_LEGION_RECON
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
 
