@@ -233,7 +233,7 @@
 
 /obj/item/radio/headset/headset_vault_hos/alt
 	name = "\proper the head of security's bowman headset"
-	desc = "The headset of the man in charge of keeping order and protecting the station. Protects ears from flashbangs.\nTo access the security channel, use :s. For command, use :c."
+	desc = "The headset of the man in charge of keeping order and protecting the station. Protects ears from flashbangs.\nTo access the security channel, use :s. For command, use :c. For vault, use :v"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 

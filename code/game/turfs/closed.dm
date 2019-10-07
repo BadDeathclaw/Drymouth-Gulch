@@ -217,3 +217,10 @@
 	desc = "A wall made out of metal, really fucking tough metal. They definitely didn't want everything to give away around the door."
 	icon = 'icons/turf/walls/f13vault_reinforced_wall.dmi'
 	icon_state = "vaultwall"
+
+/turf/closed/indestructible/ncrwall
+	name = "sturdy wall"
+	desc = "This metal was forged in the fires of nuclear desolation, brought up from the mantle by the disruption of tectonic plates. In short, you can't break these cuffs."
+	icon = 'icons/fallout/turfs/walls/superstore.dmi'
+	icon_state = "supermart0"
+	icon_type_smooth = "supermart"

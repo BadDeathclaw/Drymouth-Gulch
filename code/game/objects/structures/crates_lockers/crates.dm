@@ -104,7 +104,7 @@
 /obj/structure/closet/crate/footlocker/legion/PopulateContents()
 	. = ..()
 	new /obj/item/clothing/shoes/legionleather(src)
-	new /obj/item/clothing/suit/armor/f13/legrecruit/prime(src)
+	new /obj/item/clothing/suit/armor/f13/legprim(src)
 	new /obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime(src)
 	new /obj/item/clothing/mask/bandana/legprime(src)
 	new /obj/item/clothing/glasses/legiongoggles(src)

@@ -158,7 +158,9 @@
 	icon_state = "legskirt"
 	item_state = "legskirt"
 	item_color = "legskirt"
-
+	var/sleeves_adjusted = 0
+	alt_covers_chest = TRUE
+	can_adjust = TRUE
 
 // Generic
 
