@@ -4,8 +4,8 @@
 	set instant = TRUE
 	set hidden = TRUE
 
-		client_keysend_amount += 1
-		
+	client_keysend_amount += 1
+
 	var/cache = client_keysend_amount
 
 	if(keysend_tripped && next_keysend_trip_reset <= world.time)
@@ -43,7 +43,7 @@
 	var/movement = SSinput.movement_keys[_key]
 	if(!(next_move_dir_sub & movement) && !keys_held["Ctrl"])
 		next_move_dir_add |= movement
-		
+
 	// Client-level keybindings are ones anyone should be able to do at any time
 	// Things like taking screenshots, hitting tab, and adminhelps.
 
@@ -88,5 +88,5 @@
 /client/keyLoop()
 	if(holder)
 		holder.keyLoop(src)
-	if(mob.focus)
+	if(mob?.focus)
 		mob.focus.keyLoop(src)
