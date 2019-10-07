@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_RANGER     = list("titles" = list("NCR Recon Ranger","NCR Patrol Ranger")),
 	EXP_TYPE_SCRIBE     = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS    = list("titles" = list("Legion Veteran Decanus","Legion Prime Decanus","Legion Recruit Decanus")),
-	EXP_TYPE_SCOUT      = list("titles" = list("Legion Scout","Legion Explorer")),
+	EXP_TYPE_LEGION_RECON = list("titles" = list("Legion Scout","Legion Explorer")),
 	//EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
 	// EXP_TYPE_CREW = list("titles" = command_positions | engineering_positions | medical_positions | science_positions | supply_positions | security_positions | civilian_positions | list("AI","Cyborg")), // crew positions
 	// EXP_TYPE_COMMAND = list("titles" = command_positions),
