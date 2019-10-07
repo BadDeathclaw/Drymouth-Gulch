@@ -60,10 +60,15 @@
 		if("F12") // Toggles minimal HUD
 			mob.button_pressed_F12()
 			return
+		if("Tab") // Toggles hotkey mode
+			keys_held.Cut()
+			for(var/i in 1 to HELD_KEY_BUFFER_LENGTH)
+				keys_held += null
+			return
 
 	if(holder)
 		holder.key_down(_key, src)
-	if(mob.focus)
+	if(mob?.focus)
 		mob.focus.key_down(_key, src)
 
 /client/verb/keyUp(_key as text)
@@ -81,7 +86,7 @@
 
 	if(holder)
 		holder.key_up(_key, src)
-	if(mob.focus)
+	if(mob?.focus)
 		mob.focus.key_up(_key, src)
 
 // Called every game tick
