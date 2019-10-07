@@ -124,7 +124,9 @@ Centurion
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/key/scollar=1, \
+		/obj/item/key/bcollar=1, \
 		/obj/item/assembly/signaler/electropack/shockcollar=1, \
+		/obj/item/assembly/signaler/electropack/boomcollar=2, \
 		/obj/item/storage/bag/money/small/legion)
 
 
