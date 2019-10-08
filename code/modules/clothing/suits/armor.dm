@@ -708,3 +708,27 @@
 	item_state = "duster_recon"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/town
+	name = "town trenchcoat"
+	desc = "A non-descript black trenchcoat."
+	icon_state = "towntrench"
+	item_state = "hostrench"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/town/mayor
+	name = "mayor trenchcoat"
+	desc = "A symbol of the mayor's authority (or lack thereof)."
+
+/obj/item/clothing/suit/armor/f13/town/sheriff
+	name = "sheriff trenchcoat"
+	desc = "A trenchcoat which does not attempt to hide the full-body combat armor beneath it."
+	icon_state = "towntrench_heavy"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/town/deputy
+	name = "deputy trenchcoat"
+	desc = "An armored trench coat with added shoulderpads, a chestplate, and legguards."
+	icon_state = "towntrench_medium"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
