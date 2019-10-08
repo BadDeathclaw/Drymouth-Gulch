@@ -430,14 +430,14 @@
 
 /obj/item/clothing/head/helmet/f13/legion/venator
 	name = "legion venator hood"
-	desc = ""
+	desc = "It's a leather hood worn by legion venators. It looks carefully crafted and reinforced."
 	icon_state = "legvenator"
 	item_state = "legvenator"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/legion/libritor
 	name = "legion libritor helmet"
-	desc = ""
+	desc = "A metal legion veteran helmet with an inverted color scheme for libritors"
 	icon_state = "legheavy"
 	item_state = "legheavy"
 	armor = list("melee" = 65, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
