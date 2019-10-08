@@ -515,6 +515,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Legion Recruit Decanus"
 	icon_state = "Decanus"
 
+/obj/effect/landmark/start/f13/libritor
+	name = "Legion Libritor"
+	icon_state = "Veteran Legionnaire"
+
 /obj/effect/landmark/start/f13/veteranlegionnaire
 	name = "Veteran Legionnaire"
 	icon_state = "Veteran Legionnaire"
@@ -531,6 +535,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/start/f13/explorer
 	name = "Legion Explorer"
+
+/obj/effect/landmark/start/f13/venator
+	name = "Legion Venator"
 
 /obj/effect/landmark/start/f13/campfollower
 	name = "Camp Follower"
