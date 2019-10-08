@@ -716,8 +716,8 @@
 
 	var/loot11 = list(
 				/obj/item/gun/ballistic/revolver/colt6250,
-				/obj/item/ammo_box/c10mm,
-				""
+				/obj/item/ammo_box/l10mm,
+				/obj/item/ammo_box/l10mm
 				)
 
 	var/loot12 = list(
