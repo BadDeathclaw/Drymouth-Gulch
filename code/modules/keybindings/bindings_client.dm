@@ -4,8 +4,8 @@
 	set instant = TRUE
 	set hidden = TRUE
 
-		client_keysend_amount += 1
-		
+	client_keysend_amount += 1
+
 	var/cache = client_keysend_amount
 
 	if(keysend_tripped && next_keysend_trip_reset <= world.time)
@@ -43,7 +43,7 @@
 	var/movement = SSinput.movement_keys[_key]
 	if(!(next_move_dir_sub & movement) && !keys_held["Ctrl"])
 		next_move_dir_add |= movement
-		
+
 	// Client-level keybindings are ones anyone should be able to do at any time
 	// Things like taking screenshots, hitting tab, and adminhelps.
 
@@ -60,10 +60,15 @@
 		if("F12") // Toggles minimal HUD
 			mob.button_pressed_F12()
 			return
+		if("Tab") // Toggles hotkey mode
+			keys_held.Cut()
+			for(var/i in 1 to HELD_KEY_BUFFER_LENGTH)
+				keys_held += null
+			return
 
 	if(holder)
 		holder.key_down(_key, src)
-	if(mob.focus)
+	if(mob?.focus)
 		mob.focus.key_down(_key, src)
 
 /client/verb/keyUp(_key as text)
@@ -81,12 +86,12 @@
 
 	if(holder)
 		holder.key_up(_key, src)
-	if(mob.focus)
+	if(mob?.focus)
 		mob.focus.key_up(_key, src)
 
 // Called every game tick
 /client/keyLoop()
 	if(holder)
 		holder.keyLoop(src)
-	if(mob.focus)
+	if(mob?.focus)
 		mob.focus.keyLoop(src)

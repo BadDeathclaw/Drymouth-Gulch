@@ -55,7 +55,7 @@
 /client/proc/play_radio_sound(S as sound)
 	set category = "IC"
 	set name = "Play Radio Song"
-	if(!check_rights(R_DJ))
+	if(!check_rights(R_DJ|R_SOUNDS))
 		return
 
 	var/freq = 1
