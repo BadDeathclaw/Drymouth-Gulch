@@ -345,3 +345,32 @@
 	item_state = "welding"
 	tint = 1
 	armor = list(melee = 40, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0, fire = 30, acid = 0)
+
+/obj/item/clothing/head/f13/town
+	name = "town tricorn"
+	desc = "Why are there tricorns in the desert again?"
+	icon_state = "tricorn"
+	item_state = "dethat"
+	flags_inv = HIDEHAIR
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/head/f13/town/mayor
+	name = "mayoral tricorn"
+	desc = "A tricorn in the desert.  Stranger things have happened."
+
+/obj/item/clothing/head/f13/town/big
+	name = "big hat"
+	desc = "It's a big hat."
+	icon_state = "bigcowboyhat"
+
+/obj/item/clothing/head/f13/town/deputy
+	name = "deputy hat"
+	desc = "A black cowboy hat."
+	icon_state = "deputyhat"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/head/f13/town/sheriff
+	name = "sheriff hat"
+	desc = "A black cowboy hat with a snakeskin band."
+	icon_state = "sheriffhat"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
