@@ -1339,11 +1339,11 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 //FALLOUT
 /area/f13
-	icon = 'icons/turf/f13areas.dmi'
 	has_gravity = STANDARD_GRAVITY
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 
 /area/f13/admeme
+	icon_state = "secret"
 	requires_power = FALSE
 
 /area/f13/underground
@@ -1357,6 +1357,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/underground/mountain
 	name = "mountain"
+	icon_state = "cave"
 	requires_power = TRUE
 
 /area/f13/tcoms
@@ -1413,6 +1414,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/deepmine
 	name = "Klamat deep mine"
+	icon_state = "klamat_mine"
 	requires_power = TRUE
 
 /area/f13/farmhouse
@@ -1441,7 +1443,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambientsounds = list('sound/f13ambience/enclave_vault.ogg')
 
 /area/f13/den
-	name = "Kebab"
+	name = "Den"
 	icon_state = "den"
 
 /area/f13/underground/overseer_office
@@ -1484,7 +1486,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/f13/underground/cave/vault
 	name = "Vault Mine"
-	icon_state = "klamat"
+	icon_state = "caves"
 	outdoors = TRUE
 
 /area/f13/underground/cave

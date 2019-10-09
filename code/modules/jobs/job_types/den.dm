@@ -27,10 +27,12 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/obj/item/clothing/shoes/workboots
-	uniform = /obj/item/clothing/under/f13/cowboyg
-	suit = /obj/item/clothing/suit/f13/cowboygvest
+	shoes = 		/obj/item/clothing/shoes/f13/tan
+	uniform = /obj/item/clothing/under/f13/gentlesuit
+	suit = /obj/item/clothing/suit/armor/f13/town/mayor
+	head = /obj/item/clothing/head/f13/town/mayor
 	backpack_contents = list(
+		/obj/item/clothing/head/f13/town/big, \
 		/obj/item/ammo_box/a357=2)
 
 /*
@@ -62,16 +64,16 @@ Sheriff
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
 	ears = 			/obj/item/radio/headset/headset_den
-	uniform =  		/obj/item/clothing/under/f13/cowboyb
-	shoes = 		/obj/item/clothing/shoes/workboots
-	suit = 			/obj/item/clothing/suit/det_suit
-	head = 			/obj/item/clothing/head/fluff/cowboy
+	uniform =  		/obj/item/clothing/under/f13/sheriff
+	shoes = 		/obj/item/clothing/shoes/f13/cowboy
+	suit = 			/obj/item/clothing/suit/armor/f13/town/sheriff
+	head = 			/obj/item/clothing/head/f13/town/sheriff
 	glasses =		/obj/item/clothing/glasses/sunglasses
-	l_hand = 		/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	l_hand = 		/obj/item/gun/ballistic/shotgun/automatic/hunting/brush
 	l_pocket =		/obj/item/storage/bag/money/small/den
 	backpack_contents = list(
 		/obj/item/storage/box/deputy_badges=1, \
-		/obj/item/ammo_box/tube/a357=2, \
+		/obj/item/ammo_box/tube/c4570=2, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/restraints/handcuffs=1)
 	r_pocket = /obj/item/flashlight/flare
@@ -112,14 +114,15 @@ Deputy
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
-	r_hand = /obj/item/gun/ballistic/shotgun/remington
-	suit = 			/obj/item/clothing/suit/det_suit
+	r_hand = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	suit = 			/obj/item/clothing/suit/armor/f13/town/deputy
+	head =	/obj/item/clothing/head/f13/town/deputy
 	belt = /obj/item/gun/ballistic/revolver/colt357
-	shoes = 		/obj/item/clothing/shoes/workboots
-	uniform = /obj/item/clothing/under/f13/shiny
+	shoes = 		/obj/item/clothing/shoes/f13/explorer
+	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
-		/obj/item/ammo_box/a762=1, \
 		/obj/item/ammo_box/a357=2, \
+		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/restraints/handcuffs=1)
 
 /*

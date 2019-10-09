@@ -295,7 +295,6 @@ GLOBAL_LIST_INIT(admin_verbs_hideable, list(
 	/client/proc/set_round_end_sound,
 	/client/proc/togglebuildmodeself,
 	/client/proc/jumptocoord,
-	/client/proc/Getmob,
 	/client/proc/Getkey,
 	/client/proc/jumptoarea,
 	/client/proc/jumptokey,
