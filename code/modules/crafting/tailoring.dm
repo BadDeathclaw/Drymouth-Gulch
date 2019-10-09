@@ -32,7 +32,7 @@
 				/obj/item/stack/sheet/leather = 4)
 	time = 40
 	category = CAT_CLOTHING
-	subcategory = CAT_CLOTHING
+	subcategory = CAT_BELTS
 
 /* - Commented out for now, these are particularly rare without rnd anyway and dont fit all sunglasses types.
 /datum/crafting_recipe/hudsunsec
@@ -213,3 +213,30 @@
 	time = 40
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/chestrig
+	name = "Chest Rig"
+	result = /obj/item/storage/belt/military
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/sheet/leather = 3)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/shoulderholster
+	name = "Shoulder Holster"
+	result = /obj/item/storage/belt/holster
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/hay = 1)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/belt
+	name = "Belt"
+	result = /obj/item/storage/belt
+	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/hay = 2)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
