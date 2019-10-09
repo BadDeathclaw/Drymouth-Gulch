@@ -763,3 +763,10 @@
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
+
+/obj/item/clothing/head/helmet/fiend
+	name = "Fiend Helmet"
+	desc = "A leather cap cobbled together adorned with a bighorner skull, perfect for any drug-fueled frenzy."
+	icon_state = "fiend"
+	item_state = "fiend"
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
