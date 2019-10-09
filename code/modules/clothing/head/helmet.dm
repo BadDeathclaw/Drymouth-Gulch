@@ -251,6 +251,13 @@
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 20,"energy" = 10, "bomb" = 30, "bio" = 15, "rad" = 20, "fire" = 100, "acid" = 50)
 	strip_delay = 60
 
+/obj/item/clothing/head/helmet/vanhat
+	name = "Vanquero Hat"
+	desc = "An old sombrero worn by Vanqueros to keep off the harsh sun."
+	icon_state = "vanquerohat"
+	item_state = "vanquerohat"
+armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
 //Fallout 13
 /obj/item/clothing/head/helmet/knight/fluff/metal
 	name = "metal helmet"
