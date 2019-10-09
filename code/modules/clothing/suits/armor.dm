@@ -733,13 +733,6 @@
 	icon_state = "towntrench_medium"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/head/helmet/fiend
-	name = "Fiend Helmet"
-	desc = "A leather cap cobbled together adorned with a bighorner skull, perfect for any drug-fueled frenzy."
-	icon_state = "fiend"
-	item_state = "fiend"
-	armor = list("melee" = 50, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
-
 /obj/item/clothing/head/helmet/vanhat
 	name = "Vanquero Hat"
 	desc = "An old sombrero worn by Vanqueros to keep off the harsh sun."
