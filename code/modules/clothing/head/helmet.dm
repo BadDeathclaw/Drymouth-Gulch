@@ -251,6 +251,13 @@
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 20,"energy" = 10, "bomb" = 30, "bio" = 15, "rad" = 20, "fire" = 100, "acid" = 50)
 	strip_delay = 60
 
+/obj/item/clothing/head/helmet/vanhat
+	name = "Vanquero Hat"
+	desc = "An old sombrero worn by Vanqueros to keep off the harsh sun."
+	icon_state = "vanquerohat"
+	item_state = "vanquerohat"
+	armor = list("melee" = 5, "bullet" = 10, "laser" = 0,"energy" = 5, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 15, "acid" = 5)
+
 //Fallout 13
 /obj/item/clothing/head/helmet/knight/fluff/metal
 	name = "metal helmet"
@@ -312,6 +319,13 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 60, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
+
+/obj/item/clothing/head/helmet/fiend
+	name = "Fiend Helmet"
+	desc = "A leather cap cobbled together adorned with a bighorner skull, perfect for any drug-fueled frenzy."
+	icon_state = "fiend"
+	item_state = "fiend"
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 
 /obj/item/clothing/head/helmet/f13/eyebot
 	name = "eyebot helmet"
