@@ -278,6 +278,13 @@
 	item_state = "enclave_cap"
 	armor = list("melee" = 10, "bullet" = 15, "laser" = 20, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
+/obj/item/clothing/head/helmet/vaqhat
+	name = "Vaquero Hat"
+	desc = "An old sombrero worn by Vaqueros to keep off the harsh sun."
+	icon_state = "vaquerohat"
+	item_state = "vaquerohat"
+	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
 //Raider
 /obj/item/clothing/head/helmet/f13/raider
 	name = "supa-fly raider helmet"
@@ -325,6 +332,14 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	
+/obj/item/clothing/head/helmet/fiend
+	name = "Fiend Helmet"
+	desc = "A leather cap cobbled together adorned with a bighorner skull, perfect for any drug-fueled frenzy."
+	icon_state = "fiend"
+	item_state = "fiend"
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
+	
 //Combat armor
 /obj/item/clothing/head/helmet/f13
 	icon_state = "helmet"
