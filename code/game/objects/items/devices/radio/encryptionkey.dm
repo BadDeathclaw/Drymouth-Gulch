@@ -163,17 +163,16 @@
 	channels = list("Enclave" = 1)
 
 /obj/item/encryptionkey/headset_den
-	name = "Kebab radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the Kebab channel, use :f."
+	name = "Town radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the Town channel, use :f."
 	icon_state = "cypherkey"
-	channels = list("Kebab" = 1)
+	channels = list("Town" = 1)
 
 /obj/item/encryptionkey/headset_legion
 	name = "Legion radio encryption key"
 	desc = "An encryption key for a radio headset.  To access the Legion channel, use :e."
 	icon_state = "cypherkey"
 	channels = list("Legion" = 1)
-
 
 /obj/item/encryptionkey/headset_cent
 	name = "\improper CentCom radio encryption key"
