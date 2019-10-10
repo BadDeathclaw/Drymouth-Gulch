@@ -275,7 +275,7 @@
 	name = "ratvarian camera observer"
 	desc = "A console used to snoop on the Wastelands's goings-on. A jet of steam occasionally whooshes out from slats on its sides."
 	use_power = FALSE
-	networks = list("ss13", "vault", "kebab", "ncr", "bos") //:eye:
+	networks = list("ss13", "vault", "kebab", "ncr", "bos", "den") //:eye:
 	var/datum/action/innate/servant_warp/warp_action = new
 
 /obj/machinery/computer/camera_advanced/ratvar/Initialize()
