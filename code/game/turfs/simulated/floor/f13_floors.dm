@@ -6,16 +6,6 @@
    just spawn more.
 */
 
-/turf/open/floor/plating/f13/outside
-	name = "What the fuck mappers? why is this here"
-	desc = "If found, scream at the github repo about this"
-	icon_state = "wasteland1"
-	icon = 'icons/turf/f13desert.dmi'
-	light_range = 3
-	light_power = 0.75
-
-
-
 /turf/open/floor/plating/f13 // don't use this for anything, /f13/ is essentially just the new /unsimulated/ but for planets and should probably be phased out entirely everywhere
 	gender = PLURAL
 	baseturfs = /turf/open/floor/plating/f13
@@ -40,8 +30,6 @@
 	desc = "If found, scream at the github repo about this"
 	icon_state = "wasteland1"
 	icon = 'icons/turf/f13desert.dmi'
-	light_range = 3
-	light_power = 0.75
 
 /* Outside turfs get global lighting */
 /turf/open/floor/plating/f13/outside/Initialize()
@@ -128,7 +116,7 @@
 			icon_state = "housewood[rand(1,3)]"
 
 /turf/open/floor/wood/f13/carpet
-	icon_state="carpet"
+	icon_state = "carpet"
 
 /turf/open/floor/wood/f13/old
 	name = "wood planks"
@@ -211,8 +199,8 @@
 /turf/open/floor/wood/f13/stage_br
 	icon_state = "housewood_stage_bottom_right"
 
-
 #define SHROOM_SPAWN	1
+
 /turf/open/floor/plating/f13/inside/mountain
 	name = "mountain"
 	desc = "Damp cave flooring."
@@ -240,7 +228,6 @@
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "vault_floor"
 	planetary_atmos = FALSE // They're _inside_ a vault.
-
 
 /turf/open/floor/plasteel/f13/vault_floor/plating
 	icon_state = "plating"
