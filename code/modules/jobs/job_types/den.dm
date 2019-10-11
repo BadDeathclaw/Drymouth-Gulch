@@ -6,7 +6,7 @@ Mayor
 	title = "Mayor"
 	flag = F13MAYOR
 	department_flag = DEN
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the people of the town"
@@ -44,7 +44,7 @@ Sheriff
 	flag = F13SHERIFF
 	department_flag = DEN
 	head_announce = list("Security")
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the mayor"
@@ -94,7 +94,7 @@ Deputy
 	title = "Deputy"
 	flag = F13DEPUTY
 	department_flag = DEN
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the sheriff and the mayor"
@@ -133,7 +133,7 @@ Farmer
 	title = "Farmer"
 	flag = F13FARMER
 	department_flag = DEN
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the sheriff and the mayor"
@@ -177,7 +177,7 @@ Prospector
 	title = "Prospector"
 	flag = F13PROSPECTOR
 	department_flag = DEN
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the sheriff and the mayor"
@@ -219,7 +219,7 @@ Doctor
 	title = "Doctor"
 	flag = F13DENDOC
 	department_flag = DEN
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 2
 	spawn_positions = 2
 	description = "You are in charge of providing medical assistance to the inhabitants of the town as needed."
@@ -259,7 +259,7 @@ Preacher
 	department_head = list("Captain")
 	department_flag = DEN
 	head_announce = list("Security")
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Your Master(s)."
@@ -366,7 +366,7 @@ Settler
 	title = "Settler"
 	flag = F13SETTLER
 	department_flag = DEN
-	faction = "Kebab"
+	faction = "Town"
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the sheriff and the mayor"
