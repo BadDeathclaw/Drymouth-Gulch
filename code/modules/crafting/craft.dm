@@ -40,7 +40,8 @@
 						    CAT_WASTEFOOD),
 						list(	//Clothing subcategories
 							CAT_CLOTHING,
-							CAT_WASTELAND),
+							CAT_WASTELAND,
+							CAT_BELTS),
 						CAT_NONE)
 
 	var/datum/action/innate/crafting/button
