@@ -33,8 +33,7 @@
 /mob/living/simple_animal/hostile/ghoul/Life()
 	. = ..()
 	if(!.) // if mob is dead
-		if(prob(0.1))
-			// 0.1% chance every cycle to decompose
+		if(prob(0.2)) // 0.2% chance every cycle to decompose
 			visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
 			gib(FALSE, FALSE, FALSE, TRUE)
 
