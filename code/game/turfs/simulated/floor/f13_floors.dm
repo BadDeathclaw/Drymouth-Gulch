@@ -30,6 +30,8 @@
 	desc = "If found, scream at the github repo about this"
 	icon_state = "wasteland1"
 	icon = 'icons/turf/f13desert.dmi'
+	turf_light_range = 3
+	turf_light_power = 0.75
 
 /* Outside turfs get global lighting */
 /turf/open/floor/plating/f13/outside/Initialize()

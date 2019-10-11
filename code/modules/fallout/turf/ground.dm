@@ -10,12 +10,14 @@
 	icon_state = "wasteland1"
 	intact = 1
 	planetary_atmos = TRUE
+	turf_light_range = 3
+	turf_light_power = 0.75
+
 	var/flags = NONE
 	var/obj/structure/flora/turfPlant = null
 
 /turf/open/indestructible/ground/New()
 	..()
-
 	baseturfs = src.type
 	baseturf_icon = icon_state
 	baseturf_dir = dir
@@ -46,10 +48,6 @@
 	return 1
 
 //////////////////////////////////////////////////////////////////////
-
-/turf/open/indestructible/ground/outside
-	var/turf_light_range = 3
-	var/turf_light_power = 0.75
 
 /turf/open/indestructible/ground/outside/Initialize()
 	. = ..()
