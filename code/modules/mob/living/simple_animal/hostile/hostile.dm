@@ -61,7 +61,7 @@
 			if(prob(0.2)) // 0.2% chance every cycle to decompose
 				visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
 				gib(FALSE, FALSE, FALSE, TRUE)
-	return 0
+		return 0
 
 /mob/living/simple_animal/hostile/handle_automated_action()
 	if(AIStatus == AI_OFF)
