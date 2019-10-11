@@ -268,8 +268,8 @@
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_den
-	name = "kebab radio headset"
-	desc = "This is used by the kebab town.\nTo access the kebab channel, use :f."
+	name = "town radio headset"
+	desc = "This is used by the town.\nTo access the town channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_den
 
