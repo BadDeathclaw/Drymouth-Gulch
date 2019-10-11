@@ -293,6 +293,7 @@
 	desc = "This will protect you against flashes."
 	icon_state = "arclight"
 	item_state = "arclight"
+	dynamic_hair_suffix = ""
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 40, "acid" = 0)
 
@@ -338,9 +339,8 @@
 	item_state = "combat_helmet"
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 30, "energy" = 60, "bomb" = 25, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 0)
 	strip_delay = 50
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	flash_protect = 1
 	tint = 0
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
