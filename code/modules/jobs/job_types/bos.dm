@@ -151,7 +151,7 @@ Knight
 	flag = F13KNIGHT
 	faction = "BOS"
 	total_positions = 2
-	spawn_positions = 2
+	spawn_positions = 1
 	description = "You answer directly to the Paladin, acting as a foot soldier on patrol and are responsible for the continued training and wellbeing of the initiate-knights. The Brotherhood's presence in the Mojave is unknown to most outsiders, so you should take care in making sure that wastelanders do not find the location of your bunker."
 	supervisors = "the Paladin"
 	selection_color = "#95a5a6"
@@ -191,7 +191,7 @@ Scribe
 	faction = "BOS"
 	total_positions = 2
 	spawn_positions = 2
-	description = "You answer directly to the Head Scribe, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to. The Brotherhood'
+	description = "You answer directly to the Head Scribe, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to. The Brotherhood's presence in the Mojave is unknown to most outsiders, so you should take care in making sure that wastelanders do not recognize the location of your bunker."
 	selection_color = "#95a5a6"
 	exp_requirements = 600
 
@@ -224,9 +224,8 @@ Initiate Knight
 	title = "Initiate Knight"
 	flag = F13INITIATEKNIGHT
 	faction = "BOS"
-	chemwhiz = TRUE
 	total_positions = 3
-	spawn_positions = 3
+	spawn_positions = 2
 	description = "You answer directly to the Knights, as an inexperienced member of the brotherhood your sole purpose is to train in order to become a fully-fledged Knight in the future. You should take care in not straying from the bunker without an escort. The Brotherhood's presence in the Mojave is unknown to most outsiders, so you should take care in making sure that wastelanders do not find the location of your bunker."
 	supervisors = "the knights"
 	selection_color = "#95a5a6"
@@ -272,7 +271,6 @@ Initiate Scribe
 /datum/outfit/job/bos/f13initiatescribe
 	name = "Initiate Scribe"
 	jobtype = /datum/job/bos/f13initiatescribe
-	chemwhiz = TRUE
 	backpack = /obj/item/storage/backpack/explorer
 	ears = 			/obj/item/radio/headset/headset_bos
 	uniform =		/obj/item/clothing/under/f13/recon
