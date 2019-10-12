@@ -5,6 +5,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	var/spawnwithmagazine = TRUE
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
+	var/init_mag_type = null
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 
@@ -14,7 +15,10 @@
 		update_icon()
 		return
 	if (!magazine)
-		magazine = new mag_type(src)
+		if(init_mag_type)
+			magazine = new init_mag_type(src)
+		else
+			magazine = new mag_type(src)
 	chamber_round()
 	update_icon()
 

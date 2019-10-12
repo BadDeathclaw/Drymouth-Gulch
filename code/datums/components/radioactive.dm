@@ -12,11 +12,14 @@
 	var/strength
 	var/can_contaminate
 
-/datum/component/radioactive/Initialize(_strength=0, _source, _half_life=RAD_HALF_LIFE, _can_contaminate=TRUE)
+	var/mob_activated //Will process only if carbon mobs are nearby
+
+/datum/component/radioactive/Initialize(_strength=0, _source, _half_life=RAD_HALF_LIFE, _can_contaminate=TRUE, _mob_activated = FALSE)
 	strength = _strength
 	source = _source
 	hl3_release_date = _half_life
 	can_contaminate = _can_contaminate
+	mob_activated = _mob_activated
 
 	if(istype(parent, /atom))
 		RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/rad_examine)
@@ -38,6 +41,13 @@
 /datum/component/radioactive/process()
 	if(!prob(50))
 		return
+	if(mob_activated)
+		var/list/targets
+		for(var/mob/living/carbon/C in range(4, parent))
+			targets += C
+		if(!targets)
+			return
+
 	radiation_pulse(parent, strength, RAD_DISTANCE_COEFFICIENT*2, FALSE, can_contaminate)
 
 	if(!hl3_release_date)

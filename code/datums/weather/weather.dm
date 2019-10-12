@@ -43,6 +43,8 @@
 	var/affects_turfs = FALSE //Does this weather affect turfs at all?
 	var/turfs_impacted = FALSE // Did this weather already impact turfs?
 
+	var/carbons_only = FALSE //Does this weather affect only carbon mobs?
+
 /datum/weather/New(z_levels, duration)
 	..()
 	impacted_z_levels = z_levels
@@ -119,14 +121,6 @@
 	if(immunity_type in L.weather_immunities)
 		return
 	if(!(get_area(L) in impacted_areas))
-		return
-	return 1
-
-/datum/weather/proc/can_weather_act_turf(turf/T) //Can this weather impact a turf?
-	var/turf/turfs = T
-	if(turfs && !(turfs.z in impacted_z_levels))
-		return
-	if(!(get_area(turfs) in impacted_areas))
 		return
 	return 1
 

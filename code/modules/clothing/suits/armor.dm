@@ -416,16 +416,23 @@
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
-/obj/item/clothing/suit/armor/f13/power_armor/equipped(mob/M, slot)
-	if(!..() || !ishuman(M))
-		return FALSE
-	if(isliving(M))
-		var/mob/living/L = M
-		if(!L.has_trait(TRAIT_TECHNOPHREAK, TRAIT_GENERIC))//living proc
-			to_chat(M, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+/obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+	var/mob/living/carbon/human/H = user
+	if(src == H.wear_suit) //Suit is already equipped
+		return TRUE	
+	if (!H.has_trait(TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT)
+		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		return 0
+	if(slot == SLOT_WEAR_SUIT)
+		H.add_trait(TRAIT_STUNIMMUNE)
+		H.add_trait(TRAIT_PUSHIMMUNE)
+		return TRUE
 
-
-	else ..()
+/obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
+	var/mob/living/carbon/human/H = user
+	H.remove_trait(TRAIT_STUNIMMUNE)
+	H.remove_trait(TRAIT_PUSHIMMUNE)
+	return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
@@ -470,57 +477,76 @@
 	item_state = "tesla"
 	armor = list("melee" = 90, "bullet" = 50, "laser" = 95, "energy" = 95, "bomb" = 62, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legrecruit
+/obj/item/clothing/suit/armor/f13/legion
+	name = "legion armor"
+	desc = "Unadorned Legion armor."
+	icon_state = "legrecruit"
+	item_state = "legarmor"
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
+	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/legion/recruit
 	name = "legion recruit armor"
 	desc = "Legion recruit armor is a common light armor, supplied to recruit legionaries and to recruit decanus units. Like most Legion armor, it is made from repurposed sports equipment, consisting of a football player's protective shoulder and chest pads reinforced with additional leather padding and worn over a baseball catcher's vest."
 	icon_state = "legrecruit"
-	item_state = "legrecruit"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
-	strip_delay = 60
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legrecruit/prime
+/obj/item/clothing/suit/armor/f13/legion/recruit/scout
+	name = "legion scout armor"
+	desc = "A modified set of recruit armor with the chestplate removed to provide greater agility and reduce weight."
+	icon_state = "legscout"
+
+/obj/item/clothing/suit/armor/f13/legion/prime
 	name = "legion prime armor"
 	desc = "It's a legion prime armor, supplied to recruits who have survived several skirmishes, and are more worthy of sturdier equipment."
-	item_state = "legprime"
-	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
+	icon_state = "legprime"
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legrecruit/vet
+/obj/item/clothing/suit/armor/f13/legion/vet
 	name = "legion veteran armor"
 	desc = "Armor worn by veteran legionaries who have proven their combat prowess in many battles, its hardened leather is sturdier than that of previous ranks."
-	item_state = "legveteran"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
+	icon_state = "legvet"
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/legvexil
+/obj/item/clothing/suit/armor/f13/legion/vet/explorer
+	name = "legion explorer armor"
+	desc = "A modified set of veteran armor with much of the metal replaced by layered strips of laminated linen and leather."
+	icon_state = "legexplorer"
+
+/obj/item/clothing/suit/armor/f13/legion/vet/vexil
 	name = "legion vexillarius armor"
 	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
 	icon_state = "legvexil"
-	item_state = "legvexil"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
-	strip_delay = 60
 
-/obj/item/clothing/suit/armor/f13/legcenturion
+/obj/item/clothing/suit/armor/f13/legion/venator
+	name = "legion venator armor"
+	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers and a chainmail skirt."
+	icon_state = "legvenator"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/legion/libritor
+	name = "legion libritor armor"
+	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers, a chainmail skirt, and large pauldrons.  A tabard emblazoned with the bull is loosely draped over the torso."
+	icon_state = "legheavy"
+	armor = list("melee" = 65, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+
+/obj/item/clothing/suit/armor/f13/legion/centurion
 	name = "legion centurion armor"
 	desc = "The Legion centurion armor is by far the strongest suit of armor available to Caesar's Legion. The armor is composed from other pieces of armor taken from that of the wearer's defeated opponents in combat."
 	icon_state = "legcenturion"
-	item_state = "legcenturion"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
-	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 0, "fire" = 80, "acid" = 0)
-	strip_delay = 60
+	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
-/obj/item/clothing/suit/armor/f13/leglegat
+/obj/item/clothing/suit/armor/f13/legion/legate
 	name = "legion legate armor"
 	desc = "The armor appears to be a full suit of heavy gauge steel and offers full body protection. It also has a cloak in excellent condition, but the armor itself bears numerous battle scars and the helmet is missing half of the left horn. The Legate's suit appears originally crafted, in contrast to other Legion armor which consists of repurposed pre-War sports equipment."
 	icon_state = "leglegat"
-	item_state = "leglegat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	allowed = list(/obj/item/gun, /obj/item/claymore, /obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola, /obj/item/twohanded)
-	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 0, "fire" = 80, "acid" = 0)
-	strip_delay = 60
+	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/combat
 	name = "combat armor"
@@ -682,3 +708,27 @@
 	item_state = "duster_recon"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/town
+	name = "town trenchcoat"
+	desc = "A non-descript black trenchcoat."
+	icon_state = "towntrench"
+	item_state = "hostrench"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 30, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/town/mayor
+	name = "mayor trenchcoat"
+	desc = "A symbol of the mayor's authority (or lack thereof)."
+
+/obj/item/clothing/suit/armor/f13/town/sheriff
+	name = "sheriff trenchcoat"
+	desc = "A trenchcoat which does not attempt to hide the full-body combat armor beneath it."
+	icon_state = "towntrench_heavy"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 40, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/town/deputy
+	name = "deputy trenchcoat"
+	desc = "An armored trench coat with added shoulderpads, a chestplate, and legguards."
+	icon_state = "towntrench_medium"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)

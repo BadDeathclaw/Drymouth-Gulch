@@ -5,7 +5,6 @@
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
 		#include "map_files\Pahrump\Pahrump.dmm"
-		#include "map_files\generic\Dungeons.dmm"
 
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"

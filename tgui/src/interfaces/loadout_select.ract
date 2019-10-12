@@ -10,7 +10,7 @@
 </td><td width="40%" height="100%" style="vertical-align: top;">
 	<ui-display title='Contents' button>
 		{{#each data.items}}
-			<img style="vertical-align:middle" src= {{icon}} height=48 width=48>{{name}} {{quantity > 1 ? 'x{{quantity}}' : ""}}<br>
+			<img style="vertical-align:middle" src= {{icon}} height=48 width=48>{{name}} {{quantity > 1 ? 'x' + quantity : ""}}<br>
 		{{else}}
 			No outfit selected.
 		{{/each}}

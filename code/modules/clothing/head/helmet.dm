@@ -293,6 +293,7 @@
 	desc = "This will protect you against flashes."
 	icon_state = "arclight"
 	item_state = "arclight"
+	dynamic_hair_suffix = ""
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 40, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 40, "acid" = 0)
 
@@ -338,9 +339,8 @@
 	item_state = "combat_helmet"
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 30, "energy" = 60, "bomb" = 25, "bio" = 60, "rad" = 60, "fire" = 60, "acid" = 0)
 	strip_delay = 50
-	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	flash_protect = 1
 	tint = 0
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
@@ -376,104 +376,99 @@
 	armor = list("melee" = 50, "bullet" = 39, "laser" = 25, "energy" = 25, "bomb" = 39, "bio" = 0, "rad" = 50, "fire" = 0, "acid" = 20)
 
 //Legion
-/obj/item/clothing/head/helmet/f13/legion/legrecruit
+/obj/item/clothing/head/helmet/f13/legion
+	name = "legion helmet"
+	desc = "Unadorned legion helmet"
+	icon_state = "legrecruit"
+	item_state = "legrecruit"
+	lefthand_file = ""
+	righthand_file = ""
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+	strip_delay = 50
+	dynamic_hair_suffix = ""
+	dynamic_fhair_suffix = ""
+
+/obj/item/clothing/head/helmet/f13/legion/recruit
 	name = "legion recruit helmet"
 	desc = "It's a leather legion recruit helmet."
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
+	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 50, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/legion/legrecruit/legprime
-	name = "legion prime helmet"
-	desc = "A helmet belonging to a legion prime, it looks sturdier than a normal legion recruit helmet."
-	item_state = "legprim"
-	icon_state = "legprim"
-	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
-
-/obj/item/clothing/head/helmet/f13/legion/scout
+/obj/item/clothing/head/helmet/f13/legion/recruit/scout
 	name = "legion scout hood"
 	desc = "It's a leather hood worn by legion scouts."
 	icon_state = "legscout"
 	item_state = "legscout"
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/legion/explorer
-	name = "legion explorer hood"
-	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted and reinforced."
-	icon_state = "legexplorer"
-	item_state = "legexplorer"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
+/obj/item/clothing/head/helmet/f13/legion/prime
+	name = "legion prime helmet"
+	desc = "A helmet belonging to a legion prime, it looks sturdier than a normal legion recruit helmet."
+	item_state = "legprime"
+	icon_state = "legprime"
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 20, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/legion/legveteran
+/obj/item/clothing/head/helmet/f13/legion/vet
 	name = "legion veteran helmet"
 	desc = "It's a metal legion veteran helmet, looks pretty sturdy."
 	icon_state = "legvet"
 	item_state = "legvet"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/legion/legvexil
+/obj/item/clothing/head/helmet/f13/legion/vet/explorer
+	name = "legion explorer hood"
+	desc = "It's a leather hood worn by legion explorers. It looks carefully crafted and reinforced."
+	icon_state = "legexplorer"
+	item_state = "legexplorer"
+	
+/obj/item/clothing/head/helmet/f13/legion/vet/vexil
 	name = "legion vexillarius helmet"
 	desc = "It's leather legion vexillarius helmet."
 	icon_state = "legvexil"
 	item_state = "legvexil"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
 
-/obj/item/clothing/head/helmet/f13/legion/legdecan
+/obj/item/clothing/head/helmet/f13/legion/venator
+	name = "legion venator hood"
+	desc = "It's a leather hood worn by legion venators. It looks carefully crafted and reinforced."
+	icon_state = "legvenator"
+	item_state = "legvenator"
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/libritor
+	name = "legion libritor helmet"
+	desc = "A metal legion veteran helmet with an inverted color scheme for libritors"
+	icon_state = "legheavy"
+	item_state = "legheavy"
+	armor = list("melee" = 65, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
+
+/obj/item/clothing/head/helmet/f13/legion/recruit/decan
 	name = "legion recruit decanus helmet"
 	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers."
 	icon_state = "legdecan"
 	item_state = "legdecan"
-	armor = list("melee" = 40, "bullet" = 25, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 50, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
 
-/obj/item/clothing/head/helmet/f13/legion/legdecan/vet/prime
+/obj/item/clothing/head/helmet/f13/legion/prime/decan
 	name = "legion prime decanus helmet"
 	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has a few small white feathers woven inside of it aswell."
 	item_state = "legdecanprim"
 	icon_state = "legdecanprim"
-	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 40, "rad" = 0, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/head/helmet/f13/legion/legdecan/vet
+/obj/item/clothing/head/helmet/f13/legion/vet/decan
 	name = "legion veteran decanus helmet"
 	desc = "It's a leather legion helmet that's been reinforced with stronger leather patches and anointed with a array of red and dark red feathers. This one has several large white and black feathers sewn along side the rest of the feathers aswell."
 	icon_state = "legdecanvet"
 	item_state = "legdecanvet"
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 25, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 0, "fire" = 70, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
 
-/obj/item/clothing/head/helmet/f13/legion/legcenturion
+/obj/item/clothing/head/helmet/f13/legion/centurion
 	name = "legion centurion helmet"
 	desc = "It's a large forged and case hardened bronze helmet with a steel insert around the skull and back of the neck. It has a large plume of red horse hair across the top of it going horizontally, symbolizing the position of a Centurion."
 	icon_state = "legcenturion"
 	item_state = "legcenturion"
-	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 0, "fire" = 80, "acid" = 0)
-	flags_inv = HIDEEARS|HIDEHAIR
-	strip_delay = 50
+	armor = list("melee" = 75, "bullet" = 50, "laser" = 35, "energy" = 35, "bomb" = 39, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
-
-/obj/item/clothing/head/helmet/f13/legion/leglegat
+/obj/item/clothing/head/helmet/f13/legion/legate
 	name = "legion legate helmet"
 	desc = "A custom forged steel full helmet complete with abstract points and arches. The face is extremely intimidating, as it was meant to be. This particular one was ordered to be forged by Caesar, given to his second legate in exchange for his undying loyalty to Caesar."
 	icon_state = "leglegat"
@@ -481,11 +476,7 @@
 	armor = list("melee" = 85, "bullet" = 60, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 60, "rad" = 60, "fire" = 80, "acid" = 0)
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
-	strip_delay = 50
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	dynamic_hair_suffix = ""
-	dynamic_fhair_suffix = ""
-
 
 //Ranger Armors
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat
@@ -621,6 +612,17 @@
 	dynamic_fhair_suffix = ""
 	darkness_view = 128
 	lighting_alpha = LIGHTING_PLANE_ALPHA_LOWLIGHT_VISION
+
+/obj/item/clothing/head/helmet/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
+	var/mob/living/carbon/human/H = user
+	if(src == H.head) //Suit is already equipped
+		return TRUE	
+	if (!H.has_trait(TRAIT_PA_WEAR) && !istype(src, /obj/item/clothing/head/helmet/power_armor/t45b) && slot == SLOT_HEAD)
+		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		return 0
+	if(slot == SLOT_HEAD)
+		return TRUE
+	return 
 
 /obj/item/clothing/head/helmet/power_armor/t45b
 	name = "salvaged T-45b helmet"

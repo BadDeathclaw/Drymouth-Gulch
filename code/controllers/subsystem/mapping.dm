@@ -44,7 +44,6 @@ SUBSYSTEM_DEF(mapping)
 #endif
 	return ..()
 
-
 /datum/controller/subsystem/mapping/Initialize(timeofday)
 	if(initialized)
 		return
@@ -75,7 +74,6 @@ SUBSYSTEM_DEF(mapping)
 	if(CONFIG_GET(flag/roundstart_away))
 		createRandomZlevel()
 
-
 	// Generate mining ruins
 	loading_ruins = TRUE
 	var/list/lava_ruins = levels_by_trait(ZTRAIT_LAVA_RUINS)
@@ -97,7 +95,7 @@ SUBSYSTEM_DEF(mapping)
 	initialize_reserved_level()
 	..()
 
-/* Nuke threats, for making the blue tiles on the station go RED
+/* Nuke threats, for making the blue tiles on the wasteland go RED
    Used by the AI doomsday and the self destruct nuke.
 */
 
@@ -219,13 +217,13 @@ SUBSYSTEM_DEF(mapping)
 	// ensure we have space_level datums for compiled-in maps
 	InitializeDefaultZLevels()
 
-	// load the station
+	// load the wasteland
 	station_start = world.maxz + 1
 	INIT_ANNOUNCE("Loading [config.map_name]...")
-	LoadGroup(FailedZs, "Station", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
+	LoadGroup(FailedZs, "Wasteland", config.map_path, config.map_file, config.traits, ZTRAITS_STATION)
 
 	// load the dungeons
-	LoadGroup(FailedZs, "Dungeons", "map_files/generic", "Dungeons.dmm", default_traits = ZTRAITS_DUNGEON)
+	LoadGroup(FailedZs, "Dungeons", config.map_path, "Dungeons.dmm", default_traits = ZTRAITS_DUNGEON)
 
 	if(SSdbcore.Connect())
 		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery("UPDATE [format_table_name("round")] SET map_name = '[config.map_name]' WHERE id = [GLOB.round_id]")
@@ -265,7 +263,7 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 				GLOB.the_station_areas.Add(A.type)
 
 	if(!GLOB.the_station_areas.len)
-		log_world("ERROR: Station areas list failed to generate!")
+		log_world("ERROR: Wasteland areas list failed to generate!")
 
 /datum/controller/subsystem/mapping/proc/maprotate()
 	var/players = GLOB.clients.len
@@ -392,9 +390,8 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 	if(!holder ||!check_rights(R_FUN))
 		return
 
-
 	if(!GLOB.the_gateway)
-		if(alert("There's no home gateway on the station. You sure you want to continue ?", "Uh oh", "Yes", "No") != "Yes")
+		if(alert("There's no home gateway in the Wasteland. You sure you want to continue ?", "Uh oh", "Yes", "No") != "Yes")
 			return
 
 	var/list/possible_options = GLOB.potentialRandomZlevels + "Custom"
@@ -426,15 +423,14 @@ GLOBAL_LIST_EMPTY(the_station_areas)
 		message_admins("Loading [away_name] failed!")
 		return
 
-
 	if(GLOB.the_gateway)
-		//Link any found away gate with station gate
+		//Link any found away gate with wasteland gate
 		var/obj/machinery/gateway/centeraway/new_gate
 		for(var/obj/machinery/gateway/centeraway/G in GLOB.machines)
 			if(G.z == away_level.z_value) //I'll have to refactor gateway shitcode before multi-away support.
 				new_gate = G
 				break
-		//Link station gate with away gate and remove wait time.
+		//Link wasteland gate with away gate and remove wait time.
 		GLOB.the_gateway.awaygate = new_gate
 		GLOB.the_gateway.wait = world.time
 

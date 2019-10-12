@@ -112,9 +112,9 @@
 	autolinkers = list("enclave")
 
 /obj/machinery/telecomms/server/presets/den
-	id = "Kebab Server"
+	id = "Town Server"
 	freq_listening = list(FREQ_DEN)
-	autolinkers = list("kebab")
+	autolinkers = list("town")
 
 /obj/machinery/telecomms/server/presets/legion
 	id = "Legion Server"

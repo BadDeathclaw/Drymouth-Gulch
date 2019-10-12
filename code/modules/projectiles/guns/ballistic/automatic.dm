@@ -61,11 +61,9 @@
 	select = !select
 	if(!select)
 		burst_size = 1
-		fire_delay = 0
 		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	else
 		burst_size = initial(burst_size)
-		fire_delay = initial(fire_delay)
 		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
@@ -466,6 +464,24 @@
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
+	spread = 18
+
+/obj/item/gun/ballistic/automatic/mini_uzi/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 18
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/tommygun
 	name = "\improper Thompson SMG"
@@ -492,11 +508,29 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	burst_size = 3
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	can_suppress = FALSE //we dont have sprites therefore cease
 	force = 15
+	spread = 18
+
+/obj/item/gun/ballistic/automatic/smg10mm/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			spread = 18
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "assault rifle"
@@ -507,7 +541,7 @@
 	mag_type = /obj/item/ammo_box/magazine/automatic/
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 20
 	w_class = WEIGHT_CLASS_BULKY
@@ -519,7 +553,7 @@
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 	suppressed = 1
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	zoomable = TRUE
@@ -566,7 +600,8 @@
 	fire_delay = 5
 	extra_damage = 30
 	extra_penetration = 10
-	mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	icon_state = "R82"
 	item_state = "R82"
 	burst_size = 1
@@ -577,7 +612,8 @@
 	item_state = "varmintrifle"
 	fire_delay = 8
 	extra_damage = 30
-	mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
@@ -634,10 +670,28 @@
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
+	fire_delay = 3
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
+	spread = 18
+
+/obj/item/gun/ballistic/automatic/greasegun/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			spread = 18
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"
@@ -1067,3 +1121,24 @@
 /obj/item/projectile/bullet/c2mm
 	damage = 60
 	armour_penetration = 40
+
+/obj/item/ammo_casing/a762r
+	name = "7.62 bullet casing"
+	desc = "A 7.62 bullet casing."
+	icon_state = "762-casing"
+	caliber = "a762"
+	projectile_type = /obj/item/projectile/bullet/a762r
+
+/obj/item/projectile/bullet/a762r
+	damage = 40
+	armour_penetration = 0
+
+/obj/item/ammo_casing/c9mmr
+	name = "9mm bullet casing"
+	desc = "A 9mm bullet casing."
+	caliber = "9mm"
+	projectile_type = /obj/item/projectile/bullet/c9mmr
+
+/obj/item/projectile/bullet/c9mmr
+	damage = 20
+	armour_penetration = 20
