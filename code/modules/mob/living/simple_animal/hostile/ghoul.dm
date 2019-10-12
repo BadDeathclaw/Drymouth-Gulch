@@ -26,17 +26,10 @@
 	stat_attack = UNCONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("ghoul")
+	decompose = TRUE
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
 							/obj/item/stack/sheet/animalhide/human = 1,
 							/obj/item/stack/sheet/bone = 1)
-
-/mob/living/simple_animal/hostile/ghoul/Life()
-	. = ..()
-	if(!.) // if mob is dead
-		if(prob(0.1))
-			// 0.1% chance every cycle to decompose
-			visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
-			gib(FALSE, FALSE, FALSE, TRUE)
 
 /mob/living/simple_animal/hostile/ghoul/reaver
 	name = "feral ghoul reaver"
