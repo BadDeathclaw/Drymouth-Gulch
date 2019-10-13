@@ -329,6 +329,13 @@
 	armor = list("melee" = 60, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	strip_delay = 40
 
+/obj/item/clothing/suit/armor/f13/badlands
+	name = "badlands raider armor"
+	icon_state = "badlands"
+	item_state = "badlands"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 40, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/leatherarmor
 	name = "leather armor"
 	desc = "A set of light armor made of boiled brahmin leather.<br>It should protect you against your average 9mm peashooter, but anything higher caliber will punch through it like butter."
@@ -419,7 +426,7 @@
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
 	if(src == H.wear_suit) //Suit is already equipped
-		return TRUE	
+		return TRUE
 	if (!H.has_trait(TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT)
 		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 		return 0
@@ -732,3 +739,12 @@
 	desc = "An armored trench coat with added shoulderpads, a chestplate, and legguards."
 	icon_state = "towntrench_medium"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/vaquero
+	name = "vaquero suit"
+	desc = "An ornate suit worn by Mexican gunfighters in the Old West, padded with leather for extra protection."
+	icon_state = "vaquero"
+	item_state = "vaquero"
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	flags_inv = HIDEJUMPSUIT

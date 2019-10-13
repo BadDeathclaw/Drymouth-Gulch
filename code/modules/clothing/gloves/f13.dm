@@ -68,3 +68,16 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 80, rad = 80, fire = 80, acid = 50)
+
+/obj/item/clothing/gloves/f13/handwraps
+	name = "handwraps"
+	desc = "A roll of cloth to roll around one's palms, provides only minimal effectiveness."
+	icon_state = "handwraps"
+	item_state = "handwraps"
+	item_color = null
+	transfer_prints = TRUE
+	strip_delay = 20
+	cold_protection = HANDS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	heat_protection = HANDS
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
