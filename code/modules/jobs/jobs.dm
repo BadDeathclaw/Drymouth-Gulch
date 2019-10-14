@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(command_positions, list(
     "Legion Centurion",
 	"Legion Venator",
     "NCR Captain",
-    "NCR Veteran Ranger",
+    "NCR Scout Lieutenant",
     "Overseer",
     "Chief of Security",
     "Sheriff",
@@ -58,9 +58,9 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Corporal",
 	"NCR Trooper",
 	"NCR Recruit",
-	"NCR Veteran Ranger",
-	"NCR Patrol Ranger",
-	"NCR Recon Ranger"
+	"NCR Scout Lieutenant",
+	"NCR Scout Sergeant",
+	"NCR Scout"
 ))
 
 GLOBAL_LIST_INIT(vault_positions, list(
@@ -146,7 +146,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_VAULT       = list("titles" = vault_positions		),
 	EXP_TYPE_WASTELAND	 = list("titles" = wasteland_positions	),
 	EXP_TYPE_SECURITY 	= list("titles" = security_positions),
-	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant","NCR Heavy Trooper","NCR Captain","NCR Medical Officer")),
+	EXP_TYPE_NCRCOMMAND = list("titles" = list("NCR Lieutenant","NCR Sergeant","NCR Heavy Trooper","NCR Captain","NCR Medical Officer","NCR Scout","NCR Scout Sergeant","NCR Scout Lieutenant")),
 	EXP_TYPE_RANGER     = list("titles" = list("NCR Recon Ranger","NCR Patrol Ranger")),
 	EXP_TYPE_SCRIBE     = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS    = list("titles" = list("Legion Veteran Decanus","Legion Prime Decanus","Legion Recruit Decanus")),
