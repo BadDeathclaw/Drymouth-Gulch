@@ -23,6 +23,7 @@
 	var/retreat_distance = null //If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
 
+	var/decompose = FALSE //Does this mob decompose over time when dead?
 
 //These vars are related to how mobs locate and target
 	var/robust_searching = 0 //By default, mobs have a simple searching method, set this to 1 for the more scrutinous searching (stat_attack, stat_exclusive, etc), should be disabled on most mobs
@@ -41,14 +42,12 @@
 	var/lose_patience_timer_id //id for a timer to call LoseTarget(), used to stop mobs fixating on a target they can't reach
 	var/lose_patience_timeout = 300 //30 seconds by default, so there's no major changes to AI behaviour, beyond actually bailing if stuck forever
 
-
 /mob/living/simple_animal/hostile/Initialize()
 	. = ..()
 
 	if(!targets_from)
 		targets_from = src
 	wanted_objects = typecacheof(wanted_objects)
-
 
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
@@ -58,6 +57,10 @@
 	. = ..()
 	if(!.) //dead
 		walk(src, 0) //stops walking
+		if(decompose)
+			if(prob(0.2)) // 0.2% chance every cycle to decompose
+				visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
+				gib(FALSE, FALSE, FALSE, TRUE)
 		return 0
 
 /mob/living/simple_animal/hostile/handle_automated_action()
@@ -122,8 +125,6 @@
 	GiveTarget(Target)
 	return Target //We now have a target
 
-
-
 /mob/living/simple_animal/hostile/proc/PossibleThreats()
 	. = list()
 	for(var/pos_targ in ListTargets())
@@ -134,8 +135,6 @@
 		if(CanAttack(A))
 			. += A
 			continue
-
-
 
 /mob/living/simple_animal/hostile/proc/Found(atom/A)//This is here as a potential override to pick a specific target if available
 	return
@@ -280,7 +279,6 @@
 		else if(target != null && prob(40))//No more pulling a mob forever and having a second player attack it, it can switch targets now if it finds a more suitable one
 			FindTarget()
 
-
 /mob/living/simple_animal/hostile/proc/AttackingTarget()
 	return target.attack_animal(src)
 
@@ -291,7 +289,6 @@
 		taunt_chance = max(taunt_chance-7,2)
 		if(emote_taunt_sound)
 			playsound(loc, emote_taunt_sound, 50, 0)
-
 
 /mob/living/simple_animal/hostile/proc/LoseAggro()
 	stop_automated_movement = 0
@@ -337,7 +334,6 @@
 		addtimer(CALLBACK(src, .proc/Shoot, A), i * 2)
 	ranged_cooldown = world.time + ranged_cooldown_time
 
-
 /mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
 	if( QDELETED(targeted_atom) || targeted_atom == targets_from.loc || targeted_atom == targets_from )
 		return
@@ -360,10 +356,8 @@
 		P.fire()
 		return P
 
-
 /mob/living/simple_animal/hostile/proc/CanSmashTurfs(turf/T)
 	return iswallturf(T) || ismineralturf(T)
-
 
 /mob/living/simple_animal/hostile/proc/DestroyObjectsInDirection(direction)
 	var/turf/T = get_step(targets_from, direction)
@@ -390,13 +384,11 @@
 		for(var/direction in dir_list) //now we hit all of the directions we got in this fashion, since it's the only directions we should actually need
 			DestroyObjectsInDirection(direction)
 
-
-mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
+/mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with megafauna destroying everything around them
 	if(environment_smash)
 		EscapeConfinement()
 		for(var/dir in GLOB.cardinals)
 			DestroyObjectsInDirection(dir)
-
 
 /mob/living/simple_animal/hostile/proc/EscapeConfinement()
 	if(buckled)
@@ -420,8 +412,6 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		OpenFire(A)
 	..()
 
-
-
 ////// AI Status ///////
 /mob/living/simple_animal/hostile/proc/AICanContinue(var/list/possible_targets)
 	switch(AIStatus)
@@ -437,7 +427,6 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 /mob/living/simple_animal/hostile/proc/AIShouldSleep(var/list/possible_targets)
 	return !FindTarget(possible_targets, 1)
 
-
 //These two procs handle losing our target if we've failed to attack them for
 //more than lose_patience_timeout deciseconds, which probably means we're stuck
 /mob/living/simple_animal/hostile/proc/GainPatience()
@@ -445,17 +434,14 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		LosePatience()
 		lose_patience_timer_id = addtimer(CALLBACK(src, .proc/LoseTarget), lose_patience_timeout, TIMER_STOPPABLE)
 
-
 /mob/living/simple_animal/hostile/proc/LosePatience()
 	deltimer(lose_patience_timer_id)
-
 
 //These two procs handle losing and regaining search_objects when attacked by a mob
 /mob/living/simple_animal/hostile/proc/LoseSearchObjects()
 	search_objects = 0
 	deltimer(search_objects_timer_id)
 	search_objects_timer_id = addtimer(CALLBACK(src, .proc/RegainSearchObjects), search_objects_regain_time, TIMER_STOPPABLE)
-
 
 /mob/living/simple_animal/hostile/proc/RegainSearchObjects(value)
 	if(!value)

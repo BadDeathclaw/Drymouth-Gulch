@@ -266,6 +266,13 @@
 	item_color = "rusty_armor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 
+/obj/item/clothing/under/f13/raiderrags
+	name = "raider rags"
+	desc = "Fragments of clothing crudely stitched together, worn unanimously by raiders."
+	icon_state = "raiderrags"
+	item_state = "raiderrags"
+	item_color = "raiderrags"
+
 //Great Khans
 
 /obj/item/clothing/under/f13/khan
