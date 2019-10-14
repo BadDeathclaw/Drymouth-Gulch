@@ -51,6 +51,13 @@
 	item_state = "caravaneer"
 	item_color = "caravaneer"
 
+/obj/item/clothing/under/f13/ncr/scout
+	name = "NCR scouting fatigues"
+	desc = "A standard duty uniform for members of the 3rd Scout Battalion."
+	icon_state = "scoutclothes"
+	item_state = "scoutclothes"
+	item_color = "scoutclothes"
+
 //Settlers
 
 /obj/item/clothing/under/f13/brahminm

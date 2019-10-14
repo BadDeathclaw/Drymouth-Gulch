@@ -853,8 +853,8 @@
 	lootcount = 3
 	var/loot1 = list(
 				/obj/item/gun/ballistic/automatic/assault_rifle,
-				/obj/item/ammo_box/magazine/automatic/,
-				/obj/item/ammo_box/magazine/automatic/
+				/obj/item/ammo_box/magazine/automatic/r30/,
+				/obj/item/ammo_box/magazine/automatic/r30/
 				)
 
 	var/loot2 = list(

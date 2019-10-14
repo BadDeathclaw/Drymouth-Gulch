@@ -533,19 +533,39 @@
 	return
 
 /obj/item/gun/ballistic/automatic/assault_rifle
-	name = "assault rifle"
-	desc = "A standard R91 combat rifle, out of use around the time of the Great War."
+	name = "assault carbine"
+	desc = "A standard R91 carbine, out of use around the time of the Great War."
 	icon_state = "assault_rifle"
 	item_state = "fnfal"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/automatic/
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	burst_size = 3
+	burst_size = 2
 	fire_delay = 4
-	extra_damage = 20
-	extra_penetration = 20
+	burst_delay = 1.4
+	extra_damage = 25
+	spread = 8
+	extra_penetration = 10
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/automatic/assault_rifle/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 8
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	name = "infiltrator"
@@ -581,13 +601,26 @@
 	zoom_out_amt = 13
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/automatic/marksman/sniper
+	name = "sniper rifle"
+	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
+	icon_state = "sniper_rifle"
+	item_state = "sniper_rifle"
+	mag_type = /obj/item/ammo_box/magazine/w308
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 10
+	burst_size = 1
+	extra_penetration = 10
+	projectile_speed = 0.4
+
+
 /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	name = "service rifle"
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 25
 	extra_penetration = 10
 	mag_type = /obj/item/ammo_box/magazine/automatic/
@@ -597,7 +630,7 @@
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	name = "R82 heavy service rifle"
 	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
-	fire_delay = 5
+	fire_delay = 4
 	extra_damage = 30
 	extra_penetration = 10
 	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
@@ -890,6 +923,14 @@
 	ammo_type = /obj/item/ammo_casing/c2mm
 	caliber = "2mm"
 	max_ammo = 20
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/w308
+	name = "sniper rifle magazine (.308)"
+	icon_state = "sniper_mag"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = "a762"
+	max_ammo = 7
 	multiple_sprites = 2
 
 //Ammo Casings
