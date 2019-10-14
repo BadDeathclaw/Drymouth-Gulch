@@ -16,7 +16,6 @@
 	var/obj/item/seeds/myseed
 	var/lastproduce
 
-
 /obj/structure/flora/wild_plant/New(var/turf/turf,var/seed)
 	if(!seed)
 		return

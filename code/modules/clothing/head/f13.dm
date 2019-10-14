@@ -56,6 +56,21 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	strip_delay = 30
 
+/obj/item/clothing/head/helmet/f13/fiend
+	name = "fiend helmet"
+	desc = "A leather cap cobbled together adorned with a bighorner skull, perfect for any drug-fueled frenzy."
+	icon_state = "fiend"
+	item_state = "fiend"
+	armor = list("melee" = 50, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
+	flags_inv = HIDEEARS|HIDEHAIR
+
+/obj/item/clothing/head/helmet/f13/vaquerohat
+	name = "vaquero hat"
+	desc = "An old sombrero worn by Vaqueros to keep off the harsh sun."
+	icon_state = "vaquerohat"
+	item_state = "vaquerohat"
+	armor = list("melee" = 10, "bullet" = 15, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
 /obj/item/clothing/head/helmet/f13/khan
 	name = "Great Khan helmet"
 	desc = "A piece of headwear commonly worn by the Great Khans that appears to resemble stereotypical traditional Mongolian helmets - likely adapted from a pre-War motorcycle helmet.<br>It is black with two horns on either side and a small spike jutting from the top, much like a pickelhaube.<br>A leather covering protects the wearer's neck and ears from sunburn."
