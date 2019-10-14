@@ -536,39 +536,40 @@ Recon Ranger
 		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
 
-/datum/job/ncr/f13scoutcpl
-	title = "NCR Scout"
-	flag = F13SCOUTCPL
+/datum/job/ncr/f13scoutlt
+	title = "NCR Scout Lieutenant"
+	flag = F13SCOUTLT
 	faction = "NCR"
-	total_positions = 4
-	spawn_positions = 4
-	description = "You are a member of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Corporal, you were selected for your excellence in hit-and-run operations and marksmanship."
-	supervisors = "Sergeants and above"
-	selection_color = "#fff5cc"
+	total_positions = 1
+	spawn_positions = 1
+	description = "You are an officer of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Lieutenant, you are in charge of scout operations in the area."
+	supervisors = "Captain and above"
 	exp_requirements = 720
 	exp_type = EXP_TYPE_NCRCOMMAND
 
-	outfit = /datum/outfit/job/ncr/f13scoutcpl
+	outfit = /datum/outfit/job/ncr/f13scoutlt
 
 	loadout_options = list(
 	/datum/outfit/loadout/marksman,
 	/datum/outfit/loadout/assault)
 
-/datum/job/ncr/f13scoutcpl/after_spawn(mob/living/carbon/human/H, mob/M)
+/datum/job/ncr/f13scoutlt/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
 
-/datum/outfit/job/ncr/f13scoutcpl
-	name = "NCR Scout"
-	jobtype = /datum/job/ncr/f13scoutcpl
-	id = 			/obj/item/card/id/dogtag/ncrtrooper
+
+/datum/outfit/job/ncr/f13scoutlt
+	name = "NCR Scout Lieutenant"
+	jobtype = /datum/job/ncr/f13scoutlt
+	id = 			/obj/item/card/id/dogtag/ncrlieutenant
 	uniform =  		/obj/item/clothing/under/f13/ncr/scout
-	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/scout
-	accessory =     /obj/item/clothing/accessory/ncr/CPL
+	accessory =     /obj/item/clothing/accessory/ncr/LT
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
 	belt =			/obj/item/storage/belt/military/assault/ncr
-	head = 			/obj/item/clothing/head/beret/ncr_scout
+	head = 			/obj/item/clothing/head/beret/ncr_scout_lt
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/f13/military/ncr_scout
-	suit_store = 	/obj/item/gun/ballistic/revolver/m29
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29/scoped
 	backpack_contents = list(
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/ammo_box/m44=2, \
@@ -585,8 +586,7 @@ Recon Ranger
 	description = "You are an NCO of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Staff Sergeant, you are second-in-command of the scout forces in the area."
 	supervisors = "Lieutenants and above"
 	selection_color = "#fff5cc"
-	exp_requirements = 900
-	exp_type = EXP_TYPE_NCRCOMMAND
+	exp_requirements = 1200
 
 	outfit = /datum/outfit/job/ncr/f13scoutssgt
 
@@ -617,41 +617,38 @@ Recon Ranger
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted)
 
-/datum/job/ncr/f13scoutlt
-	title = "NCR Scout Lieutenant"
-	flag = F13SCOUTLT
+/datum/job/ncr/f13scoutcpl
+	title = "NCR Scout"
+	flag = F13SCOUTCPL
 	faction = "NCR"
-	total_positions = 1
-	spawn_positions = 1
-	description = "You are an officer of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Lieutenant, you are in charge of scout operations in the area."
-	supervisors = "Captain and above"
+	total_positions = 4
+	spawn_positions = 4
+	description = "You are a member of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Corporal, you were selected for your excellence in hit-and-run operations and marksmanship."
+	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
-	exp_requirements = 1080
-	exp_type = EXP_TYPE_NCRCOMMAND
+	exp_requirements = 900
 
-	outfit = /datum/outfit/job/ncr/f13scoutlt
+	outfit = /datum/outfit/job/ncr/f13scoutcpl
 
 	loadout_options = list(
 	/datum/outfit/loadout/marksman,
 	/datum/outfit/loadout/assault)
 
-/datum/job/ncr/f13scoutlt/after_spawn(mob/living/carbon/human/H, mob/M)
+/datum/job/ncr/f13scoutcpl/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
 
-
-/datum/outfit/job/ncr/f13scoutlt
-	name = "NCR Scout Lieutenant"
-	jobtype = /datum/job/ncr/f13scoutlt
-	id = 			/obj/item/card/id/dogtag/ncrlieutenant
+/datum/outfit/job/ncr/f13scoutcpl
+	name = "NCR Scout"
+	jobtype = /datum/job/ncr/f13scoutcpl
+	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr/scout
-	accessory =     /obj/item/clothing/accessory/ncr/LT
-	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
+	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/scout
+	accessory =     /obj/item/clothing/accessory/ncr/CPL
 	belt =			/obj/item/storage/belt/military/assault/ncr
-	head = 			/obj/item/clothing/head/beret/ncr_scout_lt
-	glasses = 		/obj/item/clothing/glasses/sunglasses/big
+	head = 			/obj/item/clothing/head/beret/ncr_scout
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/f13/military/ncr_scout
-	suit_store = 	/obj/item/gun/ballistic/revolver/m29/scoped
+	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/ammo_box/m44=2, \
