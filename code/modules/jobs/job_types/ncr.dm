@@ -650,6 +650,7 @@ Recon Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/ncr_scout
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/scoped
 	backpack_contents = list(
+		/obj/item/twohanded/binocs=1, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
