@@ -606,6 +606,7 @@ Recon Ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/scout/veteran
 	belt =			/obj/item/storage/belt/military/assault/ncr
 	head = 			/obj/item/clothing/head/beret/ncr_scout
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/f13/military/ncr_scout
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29
@@ -647,6 +648,7 @@ Recon Ranger
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
 	belt =			/obj/item/storage/belt/military/assault/ncr
 	head = 			/obj/item/clothing/head/beret/ncr_scout_lt
+	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	gloves =		/obj/item/clothing/gloves/rifleman
 	shoes =			/obj/item/clothing/shoes/f13/military/ncr_scout
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29/scoped
