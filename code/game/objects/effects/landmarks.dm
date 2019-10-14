@@ -491,6 +491,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Recon Ranger"
 	icon_state = "NCR Recon Ranger"
 
+/obj/effect/landmark/start/f13/ncrscoutcpl
+	name = "NCR Scout"
+
+/obj/effect/landmark/start/f13/ncrscoutssgt
+	name = "NCR Scout Sergeant"
+
+/obj/effect/landmark/start/f13/ncrscoutlt
+	name = "NCR Scout Lieutenant"
+
 // Legion
 
 /obj/effect/landmark/start/f13/legate

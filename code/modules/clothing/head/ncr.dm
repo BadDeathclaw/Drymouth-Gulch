@@ -64,14 +64,28 @@
 	desc = "A green beret, standard issue for all commissioned NCR Officers."
 	icon_state = "ncr_officer_beret"
 	item_state = "ncr_officer_beret"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/beret/ncr_recon
 	name = "NCR First Recon beret"
 	desc = "A red beret, issued to members of NCR First Recon."
 	icon_state = "ncr_recon_beret"
 	item_state = "ncr_recon_beret"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/head/beret/ncr_scout
+	name = "NCR Third Scout beret"
+	desc = "A brown beret, issued to members of the NCR Third Scout Battallion."
+	icon_state = "scoutberet"
+	item_state = "scoutberet"
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/head/beret/ncr_scout_lt
+	name = "NCR Third Scout officer beret"
+	desc = "A brown beret, issued to officers of the NCR Third Scout Battallion."
+	icon_state = "scoutberet"
+	item_state = "scoutberet"
+	armor = list("melee" = 50, "bullet" = 50, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/head/f13/ranger
 	name = "NCR ranger campaign hat"

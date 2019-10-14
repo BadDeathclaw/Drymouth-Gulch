@@ -98,6 +98,13 @@
 	item_state = "explorer"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
+/obj/item/clothing/shoes/f13/military/ncr_scout
+	name = "NCR scout boots"
+	desc = "A pair of thick-soled leather boots, well-worn by the wearer."
+	icon_state = "scoutboots"
+	item_state = "scoutboots"
+	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
+
 /obj/item/clothing/shoes/f13/military/legionleather
 	name = "leather boots"
 	desc = "A pair of leather boots that appear to be mostly intact and lightly used. These belong to a Recruit Legionary of Caesar's Legion"
