@@ -669,6 +669,25 @@
 	item_state = "ncr_captain_armour"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout
+	name = "NCR 3rd Scout combat armor"
+	desc = "A specialized variant of combat armor issued to members of the 3rd Scout Battalion."
+	icon_state = "scoutarmor"
+	item_state = "scoutarmor"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout/veteran
+	name = "NCR 3rd Scout veteran combat armor"
+	desc = "A specialized variant of combat armor issued to veteran members of the 3rd Scout Battalion."
+	armor = list("melee" = 55, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
+	name = "NCR 3rd Scout officer combat armor"
+	icon_state = "scout_armor_lt"
+	item_state = "scout_armor_lt"
+	desc = "A specialized variant of combat armor issued to officers of the 3rd Scout Battalion."
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/ghostechoe
 	name = "tattered peace coat"
 	desc = "An old coat belonging to a Desert Ranger once. It has been stripped of most useful protection, and has seen better days. A crude peace symbol has been painted on the back in white."
