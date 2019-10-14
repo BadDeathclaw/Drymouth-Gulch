@@ -503,6 +503,10 @@
 	suffix = "elevator"
 	name = "North Bunker Elevator"
 
+/datum/map_template/shuttle/mining/elevator
+	suffix = "elevator"
+	name = "Mining Elevator"
+
 /datum/map_template/shuttle/emergency/pahrump
 	suffix = "pahrump"
 	name = "Pahrump train"
