@@ -532,15 +532,15 @@
 	update_icon()
 	return
 
-/obj/item/gun/ballistic/automatic/assault_rifle
+/obj/item/gun/ballistic/automatic/assault_carbine
 	name = "assault carbine"
-	desc = "A standard R91 carbine, out of use around the time of the Great War."
-	icon_state = "assault_rifle"
-	item_state = "fnfal"
+	desc = "A variant of the R81 with increased rate of fire and a matte black exterior."
+	icon_state = "assault_carbine"
+	item_state = "assault_carbine"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/automatic/
 	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
-	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 	burst_size = 2
 	fire_delay = 4
 	burst_delay = 1.4
@@ -550,7 +550,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
-/obj/item/gun/ballistic/automatic/assault_rifle/burst_select()
+/obj/item/gun/ballistic/automatic/assault_carbine/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
@@ -567,11 +567,46 @@
 	update_icon()
 	return
 
+/obj/item/gun/ballistic/automatic/assault_rifle
+	name = "assault rifle"
+	desc = "A standard R91 assault rifle, out of use around the time of the Great War."
+	icon_state = "assault_rifle"
+	item_state = "fnfal"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/automatic/
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	burst_size = 3
+	fire_delay = 3
+	extra_damage = 20
+	spread = 8
+	extra_penetration = 20
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/automatic/assault_rifle/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			spread = 8
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	name = "infiltrator"
 	desc = "A customized R91 assault rifle, with a scope, integrated suppressor, cut down stock and polymer furniture."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/
 	suppressed = 1
 	fire_delay = 4
 	extra_damage = 20
@@ -579,9 +614,25 @@
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
+	spread = 1
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	weapon_weight = WEAPON_HEAVY
 	force = 15
+
+/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
