@@ -384,3 +384,7 @@
 /obj/item/circuitboard/computer/northbunker_control
 	name = "North Bunker Elevator Control (Computer board)"
 	build_path = /obj/machinery/computer/shuttle/northbunkerelevator
+
+/obj/item/circuitboard/computer/mining_control
+	name = "Mining Elevator Control (Computer board)"
+	build_path = /obj/machinery/computer/shuttle/miningelevator
