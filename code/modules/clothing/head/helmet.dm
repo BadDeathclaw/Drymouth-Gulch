@@ -629,7 +629,6 @@
 	desc = "It's a salvaged power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
-	slowdown = 0.75
 	armor = list("melee" = 75, "bullet" = 60, "laser" = 30, "energy" = 50, "bomb" = 48, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0)
 	darkness_view = 0
 	lighting_alpha = null

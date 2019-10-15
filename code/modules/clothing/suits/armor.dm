@@ -385,7 +385,7 @@
 
 /obj/item/clothing/suit/armor/f13/brokenpa
 	w_class = WEIGHT_CLASS_HUGE
-	slowdown = 1.25
+	slowdown = 1.50
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
@@ -539,6 +539,8 @@
 	name = "legion libritor armor"
 	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers, a chainmail skirt, and large pauldrons.  A tabard emblazoned with the bull is loosely draped over the torso."
 	icon_state = "legheavy"
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.5
 	armor = list("melee" = 65, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 

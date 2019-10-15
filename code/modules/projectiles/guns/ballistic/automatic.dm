@@ -542,10 +542,10 @@
 	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 2
-	fire_delay = 6
+	fire_delay = 4
 	burst_delay = 1.4
-	extra_damage = 20
-	spread = 10
+	extra_damage = 25
+	spread = 8
 	extra_penetration = 10
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
@@ -556,14 +556,12 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 10
-			fire_delay = 6
+			spread = 8
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select = 0
 			burst_size = 1
 			spread = 1
-			fire_delay = 4
 			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
@@ -610,9 +608,11 @@
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	fire_delay = 14
+	fire_delay = 10
 	burst_size = 1
+	extra_penetration = 10
 	projectile_speed = 0.4
+
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	name = "service rifle"
