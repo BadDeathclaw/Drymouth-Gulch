@@ -650,7 +650,6 @@ Recon Ranger
 	shoes =			/obj/item/clothing/shoes/f13/military/ncr_scout
 	suit_store = 	/obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
-		/obj/item/twohanded/binocs=1, \
 		/obj/item/ammo_box/m44=2, \
 		/obj/item/kitchen/knife/combat=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -665,6 +664,6 @@ Recon Ranger
 
 /datum/outfit/loadout/assault
 	name = "Assault"
-	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/automatic/r30=2)
