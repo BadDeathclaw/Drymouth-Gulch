@@ -550,7 +550,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
-/obj/item/gun/ballistic/automatic/assault_rifle/burst_select()
+/obj/item/gun/ballistic/automatic/assault_carbine/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
@@ -619,7 +619,7 @@
 	weapon_weight = WEAPON_HEAVY
 	force = 15
 
-/obj/item/gun/ballistic/automatic/assault_rifle/burst_select()
+/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
 		if(0)
