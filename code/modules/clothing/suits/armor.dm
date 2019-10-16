@@ -329,6 +329,13 @@
 	armor = list("melee" = 60, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 16, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	strip_delay = 40
 
+/obj/item/clothing/suit/armor/f13/badlands
+	name = "badlands raider armor"
+	icon_state = "badlands"
+	item_state = "badlands"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 0, "fire" = 40, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/leatherarmor
 	name = "leather armor"
 	desc = "A set of light armor made of boiled brahmin leather.<br>It should protect you against your average 9mm peashooter, but anything higher caliber will punch through it like butter."
@@ -378,7 +385,7 @@
 
 /obj/item/clothing/suit/armor/f13/brokenpa
 	w_class = WEIGHT_CLASS_HUGE
-	slowdown = 1.25
+	slowdown = 1.50
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
@@ -419,7 +426,7 @@
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
 	if(src == H.wear_suit) //Suit is already equipped
-		return TRUE	
+		return TRUE
 	if (!H.has_trait(TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT)
 		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
 		return 0
@@ -532,6 +539,8 @@
 	name = "legion libritor armor"
 	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of bracers, a chainmail skirt, and large pauldrons.  A tabard emblazoned with the bull is loosely draped over the torso."
 	icon_state = "legheavy"
+	item_flags = SLOWS_WHILE_IN_HAND
+	slowdown = 0.5
 	armor = list("melee" = 65, "bullet" = 50, "laser" = 30, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0)
 
 
@@ -662,6 +671,25 @@
 	item_state = "ncr_captain_armour"
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout
+	name = "NCR 3rd Scout combat armor"
+	desc = "A specialized variant of combat armor issued to members of the 3rd Scout Battalion."
+	icon_state = "scoutarmor"
+	item_state = "scoutarmor"
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout/veteran
+	name = "NCR 3rd Scout veteran combat armor"
+	desc = "A specialized variant of combat armor issued to veteran members of the 3rd Scout Battalion."
+	armor = list("melee" = 55, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/scout/officer
+	name = "NCR 3rd Scout officer combat armor"
+	icon_state = "scout_armor_lt"
+	item_state = "scout_armor_lt"
+	desc = "A specialized variant of combat armor issued to officers of the 3rd Scout Battalion."
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
+
 /obj/item/clothing/suit/armor/f13/ghostechoe
 	name = "tattered peace coat"
 	desc = "An old coat belonging to a Desert Ranger once. It has been stripped of most useful protection, and has seen better days. A crude peace symbol has been painted on the back in white."
@@ -732,3 +760,12 @@
 	desc = "An armored trench coat with added shoulderpads, a chestplate, and legguards."
 	icon_state = "towntrench_medium"
 	armor = list("melee" = 50, "bullet" = 40, "laser" = 25, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+
+/obj/item/clothing/suit/armor/f13/vaquero
+	name = "vaquero suit"
+	desc = "An ornate suit worn by Mexican gunfighters in the Old West, padded with leather for extra protection."
+	icon_state = "vaquero"
+	item_state = "vaquero"
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	flags_inv = HIDEJUMPSUIT
