@@ -24,14 +24,18 @@ SUBSYSTEM_DEF(weather)
 			W.turfs_impacted = TRUE
 			for(var/i in W.impacted_areas)
 				var/area/A = i
-				for(var/t in A.contents)
-					var/turf/T = t
-					if(W.can_weather_act_turf(T))
-						W.weather_act_turf(T)
-		for(var/i in GLOB.mob_living_list)
-			var/mob/living/L = i
-			if(W.can_weather_act(L))
-				W.weather_act(L)
+				for(var/turf/T in get_area_turfs(A))
+					W.weather_act_turf(T)
+		if(W.carbons_only)
+			for(var/i in GLOB.carbon_list)
+				var/mob/living/L = i
+				if(W.can_weather_act(L))
+					W.weather_act(L)
+		else
+			for(var/i in GLOB.mob_living_list)
+				var/mob/living/L = i
+				if(W.can_weather_act(L))
+					W.weather_act(L)
 
 	// start random weather on relevant levels
 	for(var/z in eligible_zlevels)

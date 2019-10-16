@@ -92,6 +92,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	// Needs to be in /obj/item because corgis can wear a lot of
 	// non-clothing items
 	var/datum/dog_fashion/dog_fashion = null
+	var/datum/brahmin_fashion/brahmin_fashion = null //twice just in case, since dog fashion has it, although it appears to work fine with just one
 
 	var/datum/rpg_loot/rpg_loot = null
 

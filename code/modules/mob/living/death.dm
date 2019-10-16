@@ -1,4 +1,4 @@
-/mob/living/gib(no_brain, no_organs, no_bodyparts)
+/mob/living/gib(no_brain, no_organs, no_bodyparts, lowgibs)
 	var/prev_lying = lying
 	if(stat != DEAD)
 		death(1)
@@ -11,7 +11,11 @@
 	if(!no_bodyparts)
 		spread_bodyparts(no_brain, no_organs)
 
-	spawn_gibs(no_bodyparts)
+	if(lowgibs)
+		spawn_lowgibs()
+	else
+		spawn_gibs(no_bodyparts)
+
 	qdel(src)
 
 /mob/living/proc/gib_animation()
@@ -19,6 +23,9 @@
 
 /mob/living/proc/spawn_gibs()
 	new /obj/effect/gibspawner/generic(drop_location(), null, get_static_viruses())
+
+/mob/living/proc/spawn_lowgibs()
+	new /obj/effect/decal/cleanable/blood(drop_location())
 
 /mob/living/proc/spill_organs()
 	return

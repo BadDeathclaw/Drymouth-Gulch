@@ -51,6 +51,13 @@
 	item_state = "caravaneer"
 	item_color = "caravaneer"
 
+/obj/item/clothing/under/f13/ncr/scout
+	name = "NCR scouting fatigues"
+	desc = "A standard duty uniform for members of the 3rd Scout Battalion."
+	icon_state = "scoutclothes"
+	item_state = "scoutclothes"
+	item_color = "scoutclothes"
+
 //Settlers
 
 /obj/item/clothing/under/f13/brahminm
@@ -158,7 +165,11 @@
 	icon_state = "legskirt"
 	item_state = "legskirt"
 	item_color = "legskirt"
-
+	var/sleeves_adjusted = 0
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	alt_covers_chest = TRUE
+	can_adjust = TRUE
 
 // Generic
 
@@ -261,6 +272,13 @@
 	item_state = "rustyl_armor"
 	item_color = "rusty_armor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
+
+/obj/item/clothing/under/f13/raiderrags
+	name = "raider rags"
+	desc = "Fragments of clothing crudely stitched together, worn unanimously by raiders."
+	icon_state = "raiderrags"
+	item_state = "raiderrags"
+	item_color = "raiderrags"
 
 //Great Khans
 

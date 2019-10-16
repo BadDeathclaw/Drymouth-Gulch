@@ -180,9 +180,13 @@
 	icon_state = "stripedbluescarf"
 	item_color = "stripedbluescarf"
 
-/obj/item/clothing/neck/petcollar //don't really wear this though please c'mon seriously guys
+//////////////
+////COLLARS///
+//////////////
+
+/obj/item/clothing/neck/petcollar //Be a good doggo
 	name = "pet collar"
-	desc = "It's for pets. Though you probably could wear it yourself, you'd doubtless be the subject of ridicule."
+	desc = "A sturdy brown leather dog collar. Kinky."
 	icon_state = "petcollar"
 	item_color = "petcollar"
 	var/tagname = null
@@ -190,6 +194,55 @@
 /obj/item/clothing/neck/petcollar/attack_self(mob/user)
 	tagname = copytext(sanitize(input(user, "Would you like to change the name on the tag?", "Name your new pet", "Spot") as null|text),1,MAX_NAME_LEN)
 	name = "[initial(name)] - [tagname]"
+
+
+/obj/item/clothing/neck/petcollar/locked
+	name = "locked collar"
+	desc = "A collar that has a small lock on it to keep it from being removed."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar/locked
+	body_parts_covered = NECK
+	var/lock = FALSE
+	var/collarID = 0
+	GLOBAL_VAR_INIT(collar_number, 0)
+
+/obj/item/clothing/neck/petcollar/locked/attackby(obj/item/K, mob/user, params)
+	if(istype(K, /obj/item/key/collar))
+		if(lock != FALSE)
+			to_chat(user, "<span class='warning'>With a click the collar unlocks!</span>")
+			lock = FALSE
+			item_flags = null
+		else
+			to_chat(user, "<span class='warning'>With a click the collar locks!</span>")
+			lock = TRUE
+			if(SLOT_NECK)
+				item_flags = NODROP
+	return
+
+/obj/item/clothing/neck/petcollar/locked/attack_hand(mob/user)
+	if(loc == user && user.get_item_by_slot(SLOT_NECK) && lock != FALSE)
+		to_chat(user, "<span class='warning'>The collar is locked! You'll need unlock the collar before you can take it off!</span>")
+		return
+	..()
+
+/obj/item/key/collar
+	name = "Collar Key"
+	desc = "A key for a tiny lock on a collar or bag."
+//	var/keyID = 0 //USE FOR UNIQUE KEYING?
+
+/obj/item/key/collar/Initialize()
+	. = ..()
+//	keyID = GLOB.collar_number
+
+/obj/item/clothing/neck/petcollar/Initialize()
+	. = ..()
+
+/obj/item/clothing/neck/petcollar/locked/Initialize()
+	. = ..()
+	new /obj/item/key/collar(src)
+//	collarID = GLOB.collar_number
+//	GLOB.collar_number = collarID + 1 //USE FOR UNIQUE KEYING?
+
+
 
 //////////////
 //DOPE BLING//

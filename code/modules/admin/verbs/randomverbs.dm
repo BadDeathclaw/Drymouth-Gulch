@@ -65,7 +65,7 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list("Vault-Tec","Enclave")
+		sender = input("Who is the message from?", "Sender") as null|anything in list("High Command","Elders","Legion","Unknown","Benefactor")
 		if(!sender)
 			return
 
@@ -77,7 +77,7 @@
 
 	log_admin("[key_name(src)] replied to [key_name(H)]'s [sender] message with the message [input].")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Enclave" ? "your benefactor" : "Central Command"].  Message as follows[sender == "Enclave" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
+	to_chat(H, "You hear something crackle in your ears for a moment before a voice speaks.  \"Please stand by for a message from [sender == "Benefactor" ? "your benefactor" : sender == "Elders" ? "The Elders" : sender == "Legion" ? "a Legion Legate" : sender == "Unknown" ? "an Unknown Entity" : "High Command"].  Message as follows[sender == "Benefactor" ? ", agent." : ":"] <span class='bold'>[input].</span> Message ends.\"")
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 

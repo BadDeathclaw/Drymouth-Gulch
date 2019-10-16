@@ -11,6 +11,10 @@
 #define CYCLE_SUNSET 	783000
 #define CYCLE_NIGHTTIME 810000
 
+GLOBAL_LIST_INIT(nightcycle_turfs, typecacheof(list(
+	/turf/open/indestructible/ground/outside,
+	/turf/open/floor/plating/f13/outside)))
+
 SUBSYSTEM_DEF(nightcycle)
 	name = "Day/Night Cycle"
 	wait = 4
@@ -62,8 +66,10 @@ SUBSYSTEM_DEF(nightcycle)
 	var/x = min(currentColumn + doColumns, world.maxx)
 	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
 		currentTurfs += block(locate(currentColumn,1,z), locate(x,world.maxy,z))
-	for(var/turf/open/indestructible/ground/outside/T in currentTurfs)
-		T.set_light(T.turf_light_range, sunPower, sunColour)
+	for (var/t in currentTurfs)
+		var/turf/T = t
+		if(T.type in GLOB.nightcycle_turfs)
+			T.set_light(T.turf_light_range, sunPower, sunColour)
 
 	currentColumn = x + 1
 	if (currentColumn > world.maxx)
@@ -90,7 +96,7 @@ SUBSYSTEM_DEF(nightcycle)
 			sunPower = 0.3
 		if("NIGHTTIME")
 			sunColour = "#00111a"
-			sunPower = 0.15
+			sunPower = 0.20
 
 
 

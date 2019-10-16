@@ -70,7 +70,10 @@
 	STR.max_combined_w_class = 35
 
 /obj/item/storage/keys_set/update_icon()
-	icon_state = "keychain_[contents.len]"
+	if(contents.len <= 4)
+		icon_state = "keychain_[contents.len]"
+	else
+		icon_state = "keychain_4"
 
 /obj/item/storage/keys_set/proc/get_key_with_id(id)
 	for(var/obj/item/door_key/K in contents)

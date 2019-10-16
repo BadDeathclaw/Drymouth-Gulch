@@ -61,11 +61,9 @@
 	select = !select
 	if(!select)
 		burst_size = 1
-		fire_delay = 0
 		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
 	else
 		burst_size = initial(burst_size)
-		fire_delay = initial(fire_delay)
 		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
@@ -466,6 +464,24 @@
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
+	spread = 18
+
+/obj/item/gun/ballistic/automatic/mini_uzi/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 18
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/tommygun
 	name = "\improper Thompson SMG"
@@ -492,42 +508,131 @@
 	mag_type = /obj/item/ammo_box/magazine/m10mm_auto
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	burst_size = 3
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	can_suppress = FALSE //we dont have sprites therefore cease
 	force = 15
+	spread = 18
+
+/obj/item/gun/ballistic/automatic/smg10mm/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			spread = 18
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
+
+/obj/item/gun/ballistic/automatic/assault_carbine
+	name = "assault carbine"
+	desc = "A variant of the R81 with increased rate of fire and a matte black exterior."
+	icon_state = "assault_carbine"
+	item_state = "assault_carbine"
+	slot_flags = 0
+	mag_type = /obj/item/ammo_box/magazine/automatic/
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
+	burst_size = 2
+	fire_delay = 4
+	burst_delay = 1.4
+	extra_damage = 25
+	spread = 8
+	extra_penetration = 10
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/automatic/assault_carbine/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 8
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/assault_rifle
 	name = "assault rifle"
-	desc = "A standard R91 combat rifle, out of use around the time of the Great War."
+	desc = "A standard R91 assault rifle, out of use around the time of the Great War."
 	icon_state = "assault_rifle"
 	item_state = "fnfal"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/automatic/
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
 	fire_delay = 3
 	extra_damage = 20
+	spread = 8
 	extra_penetration = 20
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+
+/obj/item/gun/ballistic/automatic/assault_rifle/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			spread = 8
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	name = "infiltrator"
 	desc = "A customized R91 assault rifle, with a scope, integrated suppressor, cut down stock and polymer furniture."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/
 	suppressed = 1
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 20
 	extra_penetration = 10
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
+	spread = 1
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 	weapon_weight = WEAPON_HEAVY
 	force = 15
+
+/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/marksman
 	name = "marksman carbine"
@@ -547,13 +652,26 @@
 	zoom_out_amt = 13
 	weapon_weight = WEAPON_HEAVY
 
+/obj/item/gun/ballistic/automatic/marksman/sniper
+	name = "sniper rifle"
+	desc = "A DKS 501, chambered in .308 Winchester.  With a light polymer body, it's suited for long treks through the desert."
+	icon_state = "sniper_rifle"
+	item_state = "sniper_rifle"
+	mag_type = /obj/item/ammo_box/magazine/w308
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 10
+	burst_size = 1
+	extra_penetration = 10
+	projectile_speed = 0.4
+
+
 /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	name = "service rifle"
 	desc = "A 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to all combat personnel."
 	icon_state = "service_rifle"
 	item_state = "servicerifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-	fire_delay = 3
+	fire_delay = 4
 	extra_damage = 25
 	extra_penetration = 10
 	mag_type = /obj/item/ammo_box/magazine/automatic/
@@ -563,10 +681,11 @@
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	name = "R82 heavy service rifle"
 	desc = "A top of the line 5.56x45 semi-automatic service rifle manufactured by the NCR and issued to high ranking personnel."
-	fire_delay = 5
+	fire_delay = 4
 	extra_damage = 30
 	extra_penetration = 10
-	mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 	icon_state = "R82"
 	item_state = "R82"
 	burst_size = 1
@@ -577,7 +696,8 @@
 	item_state = "varmintrifle"
 	fire_delay = 8
 	extra_damage = 30
-	mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	init_mag_type = /obj/item/ammo_box/magazine/automatic/r10
+	mag_type = /obj/item/ammo_box/magazine/automatic/
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
@@ -634,10 +754,28 @@
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 2
+	fire_delay = 3
 	extra_damage = 20
 	extra_penetration = 5
 	force = 15
+	spread = 18
+
+/obj/item/gun/ballistic/automatic/greasegun/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3
+			spread = 18
+			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 /obj/item/gun/ballistic/automatic/bozar
 	name = "Bozar"
@@ -836,6 +974,14 @@
 	ammo_type = /obj/item/ammo_casing/c2mm
 	caliber = "2mm"
 	max_ammo = 20
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/w308
+	name = "sniper rifle magazine (.308)"
+	icon_state = "sniper_mag"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = "a762"
+	max_ammo = 7
 	multiple_sprites = 2
 
 //Ammo Casings
@@ -1067,3 +1213,24 @@
 /obj/item/projectile/bullet/c2mm
 	damage = 60
 	armour_penetration = 40
+
+/obj/item/ammo_casing/a762r
+	name = "7.62 bullet casing"
+	desc = "A 7.62 bullet casing."
+	icon_state = "762-casing"
+	caliber = "a762"
+	projectile_type = /obj/item/projectile/bullet/a762r
+
+/obj/item/projectile/bullet/a762r
+	damage = 40
+	armour_penetration = 0
+
+/obj/item/ammo_casing/c9mmr
+	name = "9mm bullet casing"
+	desc = "A 9mm bullet casing."
+	caliber = "9mm"
+	projectile_type = /obj/item/projectile/bullet/c9mmr
+
+/obj/item/projectile/bullet/c9mmr
+	damage = 20
+	armour_penetration = 20

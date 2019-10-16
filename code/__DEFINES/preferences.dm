@@ -58,7 +58,7 @@
 
 // Playtime tracking system, see jobs_exp.dm
 #define EXP_TYPE_LIVING			"Living"
-#define EXP_TYPE_CREW			"Crew"
+#define EXP_TYPE_CREW			"Living"
 #define EXP_TYPE_COMMAND		"Command"
 #define EXP_TYPE_ENGINEERING	"Engineering"
 #define EXP_TYPE_MEDICAL		"Medical"
@@ -79,6 +79,10 @@
 #define EXP_TYPE_LEGION			"Legion"
 #define EXP_TYPE_WASTELAND		"Wasteland"
 #define EXP_TYPE_ENCLAVE		"Enclave"
+#define EXP_TYPE_NCRCOMMAND     "NCRCommand"
+#define EXP_TYPE_RANGER         "Ranger"
+#define EXP_TYPE_SCRIBE         "Scribe"
+#define EXP_TYPE_DECANUS        "Decanus"
 
 //Flags in the players table in the db
 #define DB_FLAG_EXEMPT 1

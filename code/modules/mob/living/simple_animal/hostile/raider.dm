@@ -39,7 +39,7 @@
 	retreat_distance = 4
 	minimum_distance = 6
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	casingtype = /obj/item/ammo_casing/a762
+	casingtype = /obj/item/ammo_casing/a762r
 
 /mob/living/simple_animal/hostile/raider/ranged/boss
 	name = "Raider Boss"
@@ -48,7 +48,7 @@
 	maxHealth = 170
 	health = 170
 	extra_projectiles = 2
-	casingtype = /obj/item/ammo_casing/c9mm
+	casingtype = /obj/item/ammo_casing/c9mmr
 	loot = list(/obj/effect/mob_spawn/human/corpse/raiderboss, /obj/item/gun/ballistic/automatic/greasegun)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()

@@ -321,6 +321,6 @@ GLOBAL_DATUM_INIT(greatkhans, /datum/gang/greatkhans, new)
 	var/picked_color = input(src, "", "Choose Color", color) as color|null
 	if(!picked_color)
 		return
-	G.color = picked_color
+	G.color = sanitize_color(picked_color)
 
 	to_chat(src, "<span class='notice'>You have chosen a new gang color!</span>")

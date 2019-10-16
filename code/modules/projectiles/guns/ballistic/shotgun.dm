@@ -389,9 +389,9 @@
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 5
+	fire_delay = 6
 	extra_damage = 50
-	extra_penetration = 15
+	extra_penetration = 10
 
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
@@ -406,7 +406,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
+	fire_delay = 8
 	extra_damage = 50
 	extra_penetration = 15
 
@@ -425,6 +425,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	distro = 1
+	fire_delay = 4
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
