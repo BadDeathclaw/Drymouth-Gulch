@@ -206,6 +206,8 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("bonfire", /obj/structure/bonfire, 30, time = 300, one_per_turf = TRUE),\
 	new/datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("grave marker", /obj/structure/statue/wood/headstonewood, 3, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("seed extractor", /obj/structure/legion_extractor, 25, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("compost bin", /obj/structure/reagent_dispensers/compostbin, 25, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 	))
 
 /obj/item/stack/sheet/mineral/wood
