@@ -249,3 +249,39 @@
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/maletribal
+	name = "Male Tribal Outfit"
+	result = /obj/item/clothing/under/f13/tribal
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/femaletribal
+	name = "Female Tribal Outfit"
+	result = /obj/item/clothing/under/f13/female/tribal
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/facewrap
+	name = "Desert Facewrap"
+	result = /obj/item/clothing/mask/facewrap
+	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+//Tribal armors
+
+/datum/crafting_recipe/tribalgeckoarmor
+	name = "Gecko Armor"
+	result = /obj/item/clothing/suit/armor/f13/tribal
+	reqs = list(/obj/item/stack/sheet/animalhide/geckohide = 2,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/sheet/hay = 3)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_CLOTHING
