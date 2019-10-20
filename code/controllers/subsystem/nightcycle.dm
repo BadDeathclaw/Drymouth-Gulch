@@ -96,7 +96,7 @@ SUBSYSTEM_DEF(nightcycle)
 			sunPower = 0.3
 		if("NIGHTTIME")
 			sunColour = "#00111a"
-			sunPower = 0.15
+			sunPower = 0.20
 
 
 

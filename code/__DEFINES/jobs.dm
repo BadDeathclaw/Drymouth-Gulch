@@ -58,9 +58,12 @@
 #define F13TROOPER		(1<<7)
 #define F13RECRUIT		(1<<8)
 #define F13HEAVYTROOP   (1<<9)
-#define F13VETRANGER	(1<<10)
-#define F13RANGER		(1<<11)
-#define F13RECRANGER	(1<<12)
+#define F13SCOUTCPL		(1<<10)
+#define F13SCOUTSSGT	(1<<11)
+#define F13SCOUTLT		(1<<12)
+#define F13VETRANGER	(1<<13)
+#define F13RANGER		(1<<14)
+#define F13RECRANGER	(1<<15)
 
 #define LEGION			(1<<4)
 
