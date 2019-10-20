@@ -443,13 +443,13 @@
 	name = "bone pestle"
 	desc = "An ancient, simple tool made out of a thin bone, used in conjunction with a mortar to grind or juice items."
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "pestle"
+	icon_state = "bone_pestle"
 	force = 7
 
 /obj/item/reagent_containers/glass/mortar
 	name = "bone mortar"
 	desc = "A specially formed bowl of ancient design, made out of a broad bone. It is possible to crush or juice items placed in it using a pestle; however the process, unlike modern methods, is slow and physically exhausting. Alt click to eject the item."
-	icon_state = "mortar"
+	icon_state = "bone_mortar"
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(5, 10, 15, 20, 25, 30, 50, 100)
 	volume = 100
