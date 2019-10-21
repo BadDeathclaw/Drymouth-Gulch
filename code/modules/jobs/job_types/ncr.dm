@@ -550,8 +550,7 @@ Recon Ranger
 	outfit = /datum/outfit/job/ncr/f13scoutlt
 
 	loadout_options = list(
-	/datum/outfit/loadout/marksman,
-	/datum/outfit/loadout/assault)
+	/datum/outfit/loadout/marksman)
 
 /datum/job/ncr/f13scoutlt/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
@@ -591,8 +590,7 @@ Recon Ranger
 	outfit = /datum/outfit/job/ncr/f13scoutssgt
 
 	loadout_options = list(
-	/datum/outfit/loadout/marksman,
-	/datum/outfit/loadout/assault)
+	/datum/outfit/loadout/marksman)
 
 /datum/job/ncr/f13scoutssgt/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
@@ -631,8 +629,7 @@ Recon Ranger
 	outfit = /datum/outfit/job/ncr/f13scoutcpl
 
 	loadout_options = list(
-	/datum/outfit/loadout/marksman,
-	/datum/outfit/loadout/assault)
+	/datum/outfit/loadout/marksman)
 
 /datum/job/ncr/f13scoutcpl/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
@@ -661,9 +658,3 @@ Recon Ranger
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308=2)
-
-/datum/outfit/loadout/assault
-	name = "Assault"
-	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
-	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic/r30=2)
