@@ -543,8 +543,8 @@
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 	burst_size = 2
 	fire_delay = 4
-	burst_delay = 1.4
-	extra_damage = 25
+	burst_delay = 2
+	extra_damage = 20
 	spread = 8
 	extra_penetration = 10
 	w_class = WEIGHT_CLASS_BULKY
