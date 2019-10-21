@@ -2,7 +2,7 @@
 	set category = null
 	set name = "Drop Everything"
 
-	if(!check_rights(R_FUN))
+	if(!check_rights(R_VAREDIT))
 		return
 
 	var/confirm = alert(src, "Make [M] drop everything?", "Message", "Yes", "No")
