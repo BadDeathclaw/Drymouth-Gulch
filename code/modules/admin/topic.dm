@@ -1512,6 +1512,7 @@
 		L.revive(full_heal = 1, admin_revive = 1)
 		message_admins("<span class='danger'>Admin [key_name_admin(usr)] healed / revived [key_name_admin(L)]!</span>")
 		log_admin("[key_name(usr)] healed / Revived [key_name(L)].")
+		SSblackbox.record_feedback("tally", "admin_verb", 1, "AdminHeal") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 	else if(href_list["makeai"])
 		if(!check_rights(R_SPAWN))
