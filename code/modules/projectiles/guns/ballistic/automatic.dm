@@ -327,7 +327,7 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38
 	name = "M38 LMG"
-	desc = "A special lmg used by elite legionairs to support regular infantry."
+	desc = "A special LMG used by elite legionaries to support regular infantry."
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
@@ -336,17 +336,18 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	burst_delay = 1.8
 	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	spread = 2
+	spread = 20
 	randomspread = 1
 	extra_damage = 15
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
-	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
-	item_state = "M38[cover_open ? "openmag" : "closedmag"]"
+	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/20, 1)*20 : "-empty"][suppressed ? "-suppressed" : ""]"
+	item_state = "M38[cover_open ? "open" : "closed"][magazine ? "mag" : "nomag"]"
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -354,7 +355,7 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			spread = 15
+			spread = 20
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
@@ -364,7 +365,7 @@
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 55
+			spread = 40
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
@@ -543,10 +544,10 @@
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 	burst_size = 2
 	fire_delay = 4
-	burst_delay = 1.4
+	burst_delay = 1.8
 	extra_damage = 25
-	spread = 8
-	extra_penetration = 10
+	spread = 14
+	extra_penetration = 5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
@@ -556,7 +557,7 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 8
+			spread = 14
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select = 0
@@ -661,7 +662,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	fire_delay = 10
 	burst_size = 1
-	extra_penetration = 10
+	extra_penetration = 0
 	projectile_speed = 0.4
 
 
@@ -837,10 +838,11 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	burst_delay = 1.8
 	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	spread = 2
+	spread = 18
 	randomspread = 1
 	extra_damage = 20
 	
@@ -850,17 +852,17 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			spread = 16
+			spread = 18
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size += 2
-			spread = 28
+			spread = 26
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 40
+			spread = 34
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
@@ -878,7 +880,7 @@
 	name = "7.62 belt (7.62mm)"
 	icon_state = "762belt"
 	ammo_type = /obj/item/ammo_casing/a762/lp
-	max_ammo = 100
+	max_ammo = 80
 	caliber = "a762"
 
 /obj/item/ammo_box/magazine/mm195x129/m38/can_load()
@@ -886,7 +888,7 @@
 
 /obj/item/ammo_box/magazine/mm195x129/m38/update_icon()
 	..()
-	icon_state = "762belt-[round(ammo_count(),25)]"
+	icon_state = "762belt-[round(ammo_count(),20)]"
 /obj/item/ammo_box/magazine/automatic/r10
 	name = "small 5.56 magazine (5.56mm)"
 	icon_state = "r10"
@@ -924,7 +926,7 @@
 	icon_state = "r80"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
-	max_ammo = 80
+	max_ammo = 60
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm_auto
