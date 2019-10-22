@@ -14,7 +14,7 @@
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	randomspread = 0
 	fire_delay = 2
-	distro = 0.5
+	distro = 1
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -426,7 +426,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	fire_delay = 4
-	distro = 0.5
+	distro = 1
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
@@ -449,7 +449,7 @@
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	distro = 0.5
+	distro = 1
 
 /obj/item/gun/ballistic/revolver/single_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
