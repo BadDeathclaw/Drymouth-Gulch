@@ -327,7 +327,7 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38
 	name = "M38 LMG"
-	desc = "A special LMG used by elite legionaires to support regular infantry."
+	desc = "A special LMG used by elite legionaries to support regular infantry."
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
