@@ -361,7 +361,7 @@
 	item_state = "bmetalarmor"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 60, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 90, "acid" = 0)
-	slowdown = 1
+	slowdown = 0.75
 	strip_delay = 60
 
 /obj/item/clothing/suit/armor/f13/kit/terrible
@@ -386,7 +386,7 @@
 	item_state = "bmetalarmor"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	armor = list("melee" = 65, "bullet" = 40, "laser" = 50, "energy" = 60, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 90, "acid" = 0)
-	slowdown = 1
+	slowdown = 0.75
 	strip_delay = 60
 
 // salvaged/broken power armor, does not require PA training
