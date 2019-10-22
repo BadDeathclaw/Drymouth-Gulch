@@ -340,7 +340,7 @@
 	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	spread = 22
+	spread = 20
 	randomspread = 1
 	extra_damage = 15
 	extra_penetration = 10
@@ -355,17 +355,17 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			spread = 22
+			spread = 20
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size += 2
-			spread = 34
+			spread = 30
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 46
+			spread = 40
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
@@ -857,12 +857,12 @@
 		if(1)
 			select += 1
 			burst_size += 2
-			spread = 30
+			spread = 26
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 42
+			spread = 34
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
