@@ -612,6 +612,22 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
+/datum/crafting_recipe/bonepestle
+	name = "Bone Pestle"
+	result = /obj/item/pestle
+	time = 20
+	reqs = list(/obj/item/stack/sheet/bone = 1)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
+/datum/crafting_recipe/bonemortar
+	name = "Bone Mortar"
+	result = /obj/item/reagent_containers/glass/mortar
+	time = 20
+	reqs = list(/obj/item/stack/sheet/bone = 3)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
 /datum/crafting_recipe/tribal_torch
 	name = "Tribal Torch"
 	result = /obj/item/candle/tribal_torch
