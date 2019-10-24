@@ -251,9 +251,19 @@
 	slot_flags = ITEM_SLOT_MASK
 	adjusted_flags = ITEM_SLOT_HEAD
 	icon_state = "bandbotany"
+	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/attack_self(mob/user)
 	adjustmask(user)
+
+/obj/item/clothing/mask/bandana/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/mask/bandana/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	return ..()
 
 /obj/item/clothing/mask/bandana/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wirecutters) || I.is_sharp())
