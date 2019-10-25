@@ -11,7 +11,6 @@
 /area/f13
 	name = "error"
 	icon_state = "error"
-	icon = 'icons/fallout/turfs/areas.dmi'
 	has_gravity = 1
 //	requires_power = 0
 
@@ -289,14 +288,6 @@
 //	ambience_area =  list('sound/f13ambience/wasteland.ogg')
 //	ambientmusic = list('sound/f13music/fo2_wasteland.ogg','sound/f13music/fo2_desert.ogg','sound/f13music/fo2_world.ogg','sound/misc/null.ogg')
 	ambientsounds = list('sound/f13ambience/rattlesnake_1.ogg','sound/f13ambience/rattlesnake_2.ogg','sound/f13ambience/rattlesnake_3.ogg')
-	environment = 19
-	grow_chance = 5
-
-/area/f13/radiation_outside
-	name = "Radiation outside"
-	icon_state = "radiation"
-	ambientsounds = list('sound/f13ambience/rattlesnake_1.ogg','sound/f13ambience/rattlesnake_2.ogg','sound/f13ambience/rattlesnake_3.ogg')
-	outdoors = 1
 	environment = 19
 	grow_chance = 5
 

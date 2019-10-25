@@ -266,14 +266,6 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/mechfab
-	name = "Machine Design (Exosuit Fabricator Board)"
-	desc = "The circuit board for an Exosuit Fabricator."
-	id = "mechfab"
-	build_path = /obj/item/circuitboard/machine/mechfab
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/cyborgrecharger
 	name = "Machine Design (Cyborg Recharger Board)"
 	desc = "The circuit board for a Cyborg Recharger."

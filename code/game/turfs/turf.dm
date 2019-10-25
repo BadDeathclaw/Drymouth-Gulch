@@ -1,6 +1,7 @@
 /turf
 	icon = 'icons/turf/floors.dmi'
 	level = 1
+	flags_1 = CAN_BE_DIRTY_1
 
 	var/intact = 1
 
@@ -17,8 +18,6 @@
 
 	var/blocks_air = FALSE
 
-	flags_1 = CAN_BE_DIRTY_1
-
 	var/list/image/blueprint_data //for the station blueprints, images of objects eg: pipes
 
 	var/explosion_level = 0	//for preventing explosion dodging
@@ -30,6 +29,9 @@
 	var/bullet_bounce_sound = 'sound/weapons/bulletremove.ogg' //sound played when a shell casing is ejected ontop of the turf.
 	var/bullet_sizzle = FALSE //used by ammo_casing/bounce_away() to determine if the shell casing should make a sizzle sound when it's ejected over the turf
 							//IE if the turf is supposed to be water, set TRUE.
+
+	var/turf_light_range = 0 // Used for the nightcycle subsystem
+	var/turf_light_power = 0 // Used for the nightcycle subsystem
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")

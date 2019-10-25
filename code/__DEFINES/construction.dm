@@ -109,6 +109,7 @@
 #define CAT_SPAGHETTI	"Spaghettis"
 #define CAT_DRUGS     "Drugs"
 #define CAT_WASTEFOOD "Wasteland Food"
+#define CAT_BELTS	"Belts"
 
 #define RCD_FLOORWALL 1
 #define RCD_AIRLOCK 2

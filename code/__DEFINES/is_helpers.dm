@@ -153,6 +153,9 @@
 #define ismecha(A) (istype(A, /obj/mecha))
 
 #define is_cleanable(A) (istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/rune)) //if something is cleanable
+
+#define is_acidrain_cleanable(A) (istype(A, /obj/effect/decal/cleanable) || istype(A, /obj/effect/rune) || istype(A, /obj/item/ammo_casing)) //if something is cleaned by acid rain
+
 //F13 EDIT
 #define iskey(A) istype(A, /obj/item/key)
 

@@ -9,6 +9,7 @@
 		var/static/list/ignored_things = typecacheof(list(
 			/mob/dead,
 			/mob/camera,
+			/obj/effect,
 			/obj/docking_port,
 			/atom/movable/lighting_object,
 			/obj/item/projectile

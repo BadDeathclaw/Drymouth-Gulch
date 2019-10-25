@@ -32,7 +32,7 @@
 				/obj/item/stack/sheet/leather = 4)
 	time = 40
 	category = CAT_CLOTHING
-	subcategory = CAT_CLOTHING
+	subcategory = CAT_BELTS
 
 /* - Commented out for now, these are particularly rare without rnd anyway and dont fit all sunglasses types.
 /datum/crafting_recipe/hudsunsec
@@ -213,3 +213,75 @@
 	time = 40
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/belt
+	name = "Belt"
+	result = /obj/item/storage/belt
+	reqs = list(/obj/item/stack/sheet/hay = 3,
+				/obj/item/stack/sheet/leather = 3)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/chestrig
+	name = "Chest Rig"
+	result = /obj/item/storage/belt/military
+	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/sheet/leather = 3)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/webbing
+	name = "Webbing"
+	result = /obj/item/storage/belt/military/alt
+	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/cloth = 2)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/shoulderholster
+	name = "Shoulder Holster"
+	result = /obj/item/storage/belt/holster
+	reqs = list(/obj/item/stack/sheet/leather = 2,
+				/obj/item/stack/sheet/hay = 3)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
+/datum/crafting_recipe/maletribal
+	name = "Male Tribal Outfit"
+	result = /obj/item/clothing/under/f13/tribal
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/femaletribal
+	name = "Female Tribal Outfit"
+	result = /obj/item/clothing/under/f13/female/tribal
+	reqs = list(/obj/item/stack/sheet/cloth = 3)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/facewrap
+	name = "Desert Facewrap"
+	result = /obj/item/clothing/mask/facewrap
+	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+//Tribal armors
+
+/datum/crafting_recipe/tribalgeckoarmor
+	name = "Gecko Armor"
+	result = /obj/item/clothing/suit/armor/f13/tribal
+	reqs = list(/obj/item/stack/sheet/animalhide/geckohide = 2,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/sheet/hay = 3)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_CLOTHING

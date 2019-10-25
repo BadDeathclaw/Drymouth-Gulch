@@ -372,3 +372,15 @@
 	icon_state = "scarecrow_sack"
 	item_state = "scarecrow_sack"
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+//Desert facewrap
+
+/obj/item/clothing/mask/facewrap
+	name = "desert facewrap"
+	desc = "A facewrap to help shield the face from sand and other dirt."
+	icon_state = "facewrap"
+	item_state = "facewrap"
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	flags_cover = MASKCOVERSMOUTH
+	visor_flags_inv = HIDEFACE
+	visor_flags_cover = MASKCOVERSMOUTH

@@ -19,7 +19,8 @@
 	damage = 20
 
 /obj/item/projectile/bullet/syndicate_turret
-	damage = 20
+	damage = 45
+	armour_penetration = 20
 
 // 1.95x129mm (SAW)
 
