@@ -213,3 +213,4 @@
 	else
 		new selected(loc)
 	return INITIALIZE_HINT_QDEL
+
