@@ -111,6 +111,8 @@
 	var/mob/M = parent
 	var/obj/item/storage/box/kitbox = new
 	kitbox.name = "Outfit: [selected_datum.name]"
+	kitbox.desc = "A box, supplying what you need."
+	kitbox.w_class = WEIGHT_CLASS_BULKY
 	selected_datum.spawn_at(kitbox)
 	M.put_in_hands(kitbox)
 	disable_loadout_select(M)

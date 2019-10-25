@@ -711,6 +711,9 @@
 	set desc = "Edit mobs's memory and role"
 	set name = "Show Traitor Panel"
 
+	if(!check_rights(R_FUN))
+		return
+
 	if(!istype(M))
 		to_chat(usr, "This can only be used on instances of type /mob")
 		return

@@ -10,12 +10,12 @@
 	icon_state = "wasteland1"
 	intact = 1
 	planetary_atmos = TRUE
+
 	var/flags = NONE
 	var/obj/structure/flora/turfPlant = null
 
 /turf/open/indestructible/ground/New()
 	..()
-
 	baseturfs = src.type
 	baseturf_icon = icon_state
 	baseturf_dir = dir
@@ -48,8 +48,8 @@
 //////////////////////////////////////////////////////////////////////
 
 /turf/open/indestructible/ground/outside
-	var/turf_light_range = 3
-	var/turf_light_power = 0.75
+	turf_light_range = 3
+	turf_light_power = 0.75
 
 /turf/open/indestructible/ground/outside/Initialize()
 	. = ..()
@@ -60,13 +60,12 @@
 #define LUSH_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
 #define DESOLATE_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 1)
 
-
 /turf/open/indestructible/ground/outside/desert
 	name = "desert"
 	icon_state = "wasteland"
 //	step_sounds = list("human" = "dirtfootsteps")
 //	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit, \
-	/obj/item/seeds/feracactus, /obj/item/seeds/corn,/obj/item/seeds/shroom, /obj/item/seeds/agave)
+//	/obj/item/seeds/feracactus, /obj/item/seeds/corn,/obj/item/seeds/shroom, /obj/item/seeds/agave)
 	slowdown = 1
 	flags_1 = CAN_HAVE_NATURE | ADJACENCIES_OVERLAY
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
@@ -120,12 +119,13 @@
 	if(turfPlant)
 		qdel(turfPlant)
 	. =  ..()
+
 /turf/open/indestructible/ground/outside/dirt
 	name = "dirt"
 	icon_state = "dirtfull"
 //	step_sounds = list("human" = "dirtfootsteps")
 //	allowed_plants = list(/obj/item/seeds/poppy/broc, /obj/item/seeds/xander, /obj/item/seeds/mutfruit, \
-	/obj/item/seeds/potato, /obj/item/seeds/carrot, /obj/item/seeds/pumpkin, /obj/item/seeds/corn, /obj/item/seeds/agave)
+//	/obj/item/seeds/potato, /obj/item/seeds/carrot, /obj/item/seeds/pumpkin, /obj/item/seeds/corn, /obj/item/seeds/agave)
 	slowdown = 0.2
 	flags_1 = CAN_HAVE_NATURE
 
@@ -166,12 +166,10 @@
 		if(1)
 			ChangeTurf(baseturfs)
 
-
-
 /////////////////////////////////////////////////////////
 
-
 #define SHROOM_SPAWN_GROUND	1
+
 /turf/open/indestructible/ground/inside/mountain
 	name = "cave"
 	icon_state = "rockfloor1"

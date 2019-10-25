@@ -45,7 +45,7 @@ Overseer
 	supervisors = "Vault-Tec"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1300
+	exp_requirements = 2160
 
 	outfit = /datum/outfit/job/vault/f13overseer
 
@@ -97,9 +97,8 @@ Head of Security
 	supervisors = "the overseer"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1000
-	exp_type = EXP_TYPE_VAULT
-	exp_type_department = EXP_TYPE_SECURITY
+	exp_requirements = 960
+	exp_type = EXP_TYPE_SECURITY
 
 	outfit = /datum/outfit/job/vault/f13hos
 
@@ -150,6 +149,7 @@ Medical Doctor
 	description = "You answer directly to the Overseer, administering medical aid to your fellow vault dwellers, you also work around the clock to produce the vital medicines and compounds needed to keep your department running. "
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
+	exp_requirements = 540
 
 	outfit = /datum/outfit/job/vault/f13doctor
 
@@ -159,7 +159,7 @@ Medical Doctor
 /datum/outfit/job/vault/f13doctor
 	name = "Medical Doctor"
 	jobtype = /datum/job/vault/f13doctor
-
+	chemwhiz = TRUE
 	//pda
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	ears = 			/obj/item/radio/headset/headset_vault
@@ -188,6 +188,7 @@ Scientist
 	description = "You answer directly to the Overseer, conducting vital research for the denizens of the vault, you spend your days pouring over pre-war blueprints in the hopes of revitalizing the sciences of the old world. "
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
+	exp_requirements = 360
 
 	outfit = /datum/outfit/job/vault/f13vaultscientist
 
@@ -222,8 +223,7 @@ Security Officer
 	description = "You answer directly to the Chief Of Security, acting as the first line of defense against civil unrest and outside intrusion, you enforce the laws created by the Overseer, while proactively seeking out potential threats to the safety of vault residents."
 	supervisors = "the head of security"
 	selection_color = "#ddffdd"
-	exp_requirements = 500
-	exp_type = EXP_TYPE_VAULT
+	exp_requirements = 480
 
 	outfit = /datum/outfit/job/vault/f13security
 
@@ -359,7 +359,7 @@ Security Officer
 	keyslot2 = new /obj/item/encryptionkey/headset_sci
 
 /*
-Station Engineer
+Vault Engineer
 */
 /datum/job/vault/f13vaultengineer
 	title = "Vault-tec Engineer"
@@ -374,6 +374,7 @@ Station Engineer
 	description = "You answer directly to the Overseer, tasked with the maintenance of the vaults defenses and machinery, while also overseeing the smooth operation of its generators and electrical systems."
 	supervisors = "the overseer"
 	selection_color = "#ddffdd"
+	exp_requirements = 180
 
 	outfit = /datum/outfit/job/vault/f13vaultengineer
 
@@ -412,8 +413,10 @@ Station Engineer
 	selection_color = "#ddffdd"
 	access = list()			//See /datum/job/vault/assistant/get_access()
 	minimal_access = list()	//See /datum/job/vault/assistant/get_access()
+	exp_requirements = 900
+	exp_type = EXP_TYPE_CREW
+
 	outfit = /datum/outfit/job/vault/f13vaultDweller
-	//antag_rep = 7
 
 /datum/job/vault/f13vaultDweller/get_access()
 	if(CONFIG_GET(flag/assistants_have_maint_access) || !CONFIG_GET(flag/jobs_have_minimal_access)) //Config has assistant maint access set

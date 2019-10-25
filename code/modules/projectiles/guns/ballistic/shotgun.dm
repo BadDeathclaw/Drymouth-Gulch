@@ -14,6 +14,7 @@
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	randomspread = 0
 	fire_delay = 2
+	distro = 1
 
 /obj/item/gun/ballistic/shotgun/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -253,7 +254,6 @@
 	sawn_desc = "Come with me if you want to live."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	distro = 1
 
 //Remington 700
 /obj/item/gun/ballistic/shotgun/remington
@@ -264,6 +264,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	fire_delay = 3
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 40
@@ -389,9 +390,9 @@
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 5
+	fire_delay = 6
 	extra_damage = 50
-	extra_penetration = 15
+	extra_penetration = 10
 
 
 /obj/item/gun/ballistic/shotgun/automatic/hunting/brush/scoped
@@ -406,7 +407,7 @@
 	zoom_out_amt = 13
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 7
+	fire_delay = 8
 	extra_damage = 50
 	extra_penetration = 15
 
@@ -424,6 +425,7 @@
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
+	fire_delay = 4
 	distro = 1
 
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)

@@ -1,0 +1,12 @@
+"a" = (/obj/structure/chair/f13chair2{icon_state = "f13chair2"; dir = 4},/turf/open/floor/engine,/area/shuttle/mining_elevator)
+"b" = (/turf/open/floor/engine,/area/shuttle/mining_elevator)
+"c" = (/obj/machinery/computer/shuttle/miningelevator,/turf/open/floor/engine,/area/shuttle/mining_elevator)
+"d" = (/obj/machinery/light/small{icon_state = "bulb"; dir = 8},/obj/structure/chair/f13chair2{icon_state = "f13chair2"; dir = 4},/turf/open/floor/engine,/area/shuttle/mining_elevator)
+"e" = (/obj/docking_port/mobile/elevator{dheight = 0; dir = 8; dwidth = 1; height = 3; id = "mining_elevator"; name = "mining elevator"; timid = 1; width = 4},/turf/open/floor/engine,/area/shuttle/mining_elevator)
+
+(1,1,1) = {"
+abc
+abb
+dbe
+abb
+"}

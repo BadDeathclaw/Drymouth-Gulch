@@ -716,8 +716,8 @@
 
 	var/loot11 = list(
 				/obj/item/gun/ballistic/revolver/colt6250,
-				/obj/item/ammo_box/c10mm,
-				""
+				/obj/item/ammo_box/l10mm,
+				/obj/item/ammo_box/l10mm
 				)
 
 	var/loot12 = list(
@@ -853,8 +853,8 @@
 	lootcount = 3
 	var/loot1 = list(
 				/obj/item/gun/ballistic/automatic/assault_rifle,
-				/obj/item/ammo_box/magazine/automatic/,
-				/obj/item/ammo_box/magazine/automatic/
+				/obj/item/ammo_box/magazine/automatic/r30/,
+				/obj/item/ammo_box/magazine/automatic/r30/
 				)
 
 	var/loot2 = list(

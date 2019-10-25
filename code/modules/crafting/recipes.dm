@@ -612,6 +612,22 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
+/datum/crafting_recipe/bonepestle
+	name = "Bone Pestle"
+	result = /obj/item/pestle
+	time = 20
+	reqs = list(/obj/item/stack/sheet/bone = 1)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
+/datum/crafting_recipe/bonemortar
+	name = "Bone Mortar"
+	result = /obj/item/reagent_containers/glass/mortar
+	time = 20
+	reqs = list(/obj/item/stack/sheet/bone = 3)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
 /datum/crafting_recipe/tribal_torch
 	name = "Tribal Torch"
 	result = /obj/item/candle/tribal_torch
@@ -952,4 +968,33 @@
 	tools = list(TOOL_WELDER)
 	time = 30
 	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
+/datum/crafting_recipe/salvagedpaconversion
+	name = "Salvaged NCR Power Armor"
+	result = /obj/item/clothing/suit/armor/f13/brokenpa/ncr
+	reqs = list(/obj/item/clothing/suit/armor/f13/brokenpa/t45b = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/salvagedpaconversion2
+	name = "Salvaged Power Armor"
+	result = /obj/item/clothing/suit/armor/f13/brokenpa/t45b
+	reqs = list(/obj/item/clothing/suit/armor/f13/brokenpa/ncr = 1,
+				/obj/item/toy/crayon/spraycan)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/suppressor
+	name = "Suppressor"
+	result = /obj/item/suppressor
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/sheet/plastic = 2,
+				/obj/item/crafting/duct_tape = 1)
+	tools = list(TOOL_WELDER)
+	time = 30
+	category  = CAT_WEAPONRY
 	subcategory = CAT_WEAPON

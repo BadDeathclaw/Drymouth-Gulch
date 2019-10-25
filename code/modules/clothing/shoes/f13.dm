@@ -49,6 +49,12 @@
 	item_state = "legionmetal"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
+/obj/item/clothing/shoes/f13/raidertreads
+	name = "raider treads"
+	desc = "A decrepit boot on one foot, fuckall on the other, the height of raider fashion."
+	icon_state = "raidertreads"
+	item_state = "raidertreads"
+
 /obj/item/clothing/shoes/f13/military
 	name = "military boots"
 	desc = "High speed, no-drag combat boots designed for use by the U.S. Army before the Great War."
@@ -96,6 +102,13 @@
 	desc = "A pair of calf high black, highly polished, leather boot that have been tightly laced. These definitely belong to a officer."
 	icon_state = "ncr_officer_boots"
 	item_state = "explorer"
+	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
+
+/obj/item/clothing/shoes/f13/military/ncr_scout
+	name = "NCR scout boots"
+	desc = "A pair of thick-soled leather boots, well-worn by the wearer."
+	icon_state = "scoutboots"
+	item_state = "scoutboots"
 	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
 
 /obj/item/clothing/shoes/f13/military/legionleather
