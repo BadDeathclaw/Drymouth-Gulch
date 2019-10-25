@@ -106,7 +106,7 @@ Raider
 	head_announce = list("Security")
 	faction = "Wastelander"
 	social_faction = "Raiders"
-	total_positions = 40
+	total_positions = 20
 	spawn_positions = 40
 	description = "Everyone will naturally know of your violent nature unless you cover your face. Due to your experience with your own kind, you can recognize other raiders even if they have their face covered, and they can recognize you."
 	supervisors = "your desires"
@@ -122,6 +122,8 @@ Raider
 	/datum/outfit/loadout/raider_blast,
 	/datum/outfit/loadout/raider_sadist,
 	/datum/outfit/loadout/raider_metal,
+	/datum/outfit/loadout/raider_painspike,
+	/datum/outfit/loadout/raider_badlands,
 	/datum/outfit/loadout/raider_metal/chestplate)
 
 /datum/outfit/job/wasteland/f13raider
@@ -139,20 +141,19 @@ Raider
 	uniform = pick(
 		/obj/item/clothing/under/f13/merca, \
 		/obj/item/clothing/under/f13/mercc, \
-		/obj/item/clothing/under/f13/lumberjack, \
-		/obj/item/clothing/under/f13/machinist, \
 		/obj/item/clothing/under/f13/cowboyb, \
 		/obj/item/clothing/under/f13/cowboyg, \
-		/obj/item/clothing/under/f13/caravaneer, \
-		/obj/item/clothing/under/f13/ranger, \
-		/obj/item/clothing/under/f13/roving, \
-		/obj/item/clothing/under/f13/doctorm, \
-		/obj/item/clothing/under/roman)
+		/obj/item/clothing/under/f13/raider_leather, \
+		/obj/item/clothing/under/f13/raiderrags, \
+		/obj/item/clothing/under/pants/f13/ghoul, \
+		/obj/item/clothing/under/jabroni)
 	suit = pick(
 		/obj/item/clothing/suit/armor/f13/raider,\
 		/obj/item/clothing/suit/armor/f13/raider/yankee, \
 		/obj/item/clothing/suit/armor/f13/raider/sadist, \
-		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
+		/obj/item/clothing/suit/armor/f13/raider/blastmaster, \
+		/obj/item/clothing/suit/armor/f13/badlands, \
+		/obj/item/clothing/suit/armor/f13/raider/painspike)
 	if(prob(10))
 		mask = pick(
 			/obj/item/clothing/mask/bandana/red,\
@@ -160,21 +161,21 @@ Raider
 			/obj/item/clothing/mask/bandana/green,\
 			/obj/item/clothing/mask/bandana/gold,\
 			/obj/item/clothing/mask/bandana/black,\
-			/obj/item/clothing/mask/bandana/skull,\
-			/obj/item/clothing/mask/rat/bear,\
-			/obj/item/clothing/mask/rat/bat,\
-			/obj/item/clothing/mask/rat/raven,\
-			/obj/item/clothing/mask/rat/jackal)
+			/obj/item/clothing/mask/bandana/skull)
 	head = pick(
 		/obj/item/clothing/head/sombrero,\
-		/obj/item/clothing/head/sombrero/green,\
 		/obj/item/clothing/head/helmet/f13/raider,\
 		/obj/item/clothing/head/helmet/f13/eyebot,\
 		/obj/item/clothing/head/helmet/f13/raider/arclight,\
 		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
-		/obj/item/clothing/head/helmet/f13/raider/yankee)
+		/obj/item/clothing/head/helmet/f13/raider/yankee,\
+		/obj/item/clothing/head/helmet/f13/raider/psychotic,\
+		/obj/item/clothing/head/helmet/f13/fiend)
 	r_pocket = /obj/item/flashlight/flare
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = pick(
+			/obj/item/clothing/shoes/jackboots,\
+			/obj/item/clothing/shoes/f13/raidertreads)
+	gloves = /obj/item/clothing/gloves/f13/handwraps
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs=2, \
 		/obj/item/claymore/machete/pipe=1, \
@@ -218,6 +219,16 @@ Raider
 	name = "Sadist"
 	suit = /obj/item/clothing/suit/armor/f13/raider/sadist
 	head = /obj/item/clothing/head/helmet/f13/raider/arclight
+
+/datum/outfit/loadout/raider_badlands
+	name = "Badlands"
+	suit = /obj/item/clothing/suit/armor/f13/badlands
+	head = /obj/item/clothing/head/helmet/f13/fiend
+
+/datum/outfit/loadout/raider_painspike
+	name = "Painspike"
+	suit = /obj/item/clothing/suit/armor/f13/raider/painspike
+	head = /obj/item/clothing/head/helmet/f13/raider/psychotic
 
 /datum/outfit/loadout/raider_metal
 	name = "Metal - Black"
