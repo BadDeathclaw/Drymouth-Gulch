@@ -160,6 +160,7 @@ Raider
 			/obj/item/clothing/mask/bandana/green,\
 			/obj/item/clothing/mask/bandana/gold,\
 			/obj/item/clothing/mask/bandana/black,\
+			/obj/item/clothing/mask/bandana/white,\
 			/obj/item/clothing/mask/bandana/skull,\
 			/obj/item/clothing/mask/rat/bear,\
 			/obj/item/clothing/mask/rat/bat,\

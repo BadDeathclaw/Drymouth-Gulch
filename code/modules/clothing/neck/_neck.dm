@@ -95,6 +95,11 @@
 	item_color = "white"
 	dog_fashion = /datum/dog_fashion/head
 
+/obj/item/clothing/neck/scarf/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
 	icon_state = "scarf"

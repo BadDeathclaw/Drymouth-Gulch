@@ -255,14 +255,7 @@
 /obj/item/clothing/mask/bandana/attack_self(mob/user)
 	adjustmask(user)
 
-/obj/item/clothing/mask/bandana/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spraycan_paintable)
-	START_PROCESSING(SSobj, src)
 
-/obj/item/clothing/mask/bandana/Destroy()
-	STOP_PROCESSING(SSobj, src)
-	return ..()
 
 /obj/item/clothing/mask/bandana/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/wirecutters) || I.is_sharp())
@@ -298,6 +291,11 @@
 	name = "black bandana"
 	desc = "A fine black bandana with nanotech lining."
 	icon_state = "bandblack"
+
+/obj/item/clothing/mask/bandana/white
+	name = "white bandana"
+	desc = "A fine white bandana with nanotech lining."
+	icon_state = "bandwhite"
 
 /obj/item/clothing/mask/bandana/skull
 	name = "skull bandana"
