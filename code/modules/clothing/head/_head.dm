@@ -28,3 +28,13 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.update_inv_head()
+
+/obj/item/clothing/head/beanie/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/head/soft/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
