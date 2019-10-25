@@ -348,11 +348,11 @@
 
 /obj/item/clothing/suit/armor/f13/chitinarmor
 	name = "insect chitin armor"
-	desc = "A set of light armor made of insect chitin.<br> Tough and light, it provides some mild protection from trauma while allowing the user to remain mobile and protected from the elements."
+	desc = "A set of light armor made of insect chitin.<br> Tough and light, it provides some moderate protection from trauma while allowing the user to remain mobile and protected from the elements."
 	icon_state = "insect_armor"
 	item_state = "insect_armor"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 55, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 55, "bullet" = 35, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 0)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
 
