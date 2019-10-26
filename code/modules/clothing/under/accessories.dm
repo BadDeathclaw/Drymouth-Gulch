@@ -292,9 +292,15 @@
 
 /obj/item/clothing/accessory/armband
 	name = "red armband"
-	desc = "An fancy red armband!"
+	desc = "A fancy red armband!"
 	icon_state = "redband"
 	item_color = "redband"
+
+/obj/item/clothing/accessory/armband/white
+	name = "white armband"
+	desc = "A fancy white armband!"
+	icon_state = "whiteband"
+	item_color = "whiteband"
 
 /obj/item/clothing/accessory/armband/deputy
 	name = "security deputy armband"
