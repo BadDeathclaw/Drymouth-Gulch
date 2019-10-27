@@ -72,7 +72,7 @@
 	item_color = "red"
 
 /obj/item/clothing/under/color/white
-	name = "white jumpsuit"
+	name = "jumpsuit"
 	icon_state = "white"
 	item_state = "w_suit"
 	item_color = "white"

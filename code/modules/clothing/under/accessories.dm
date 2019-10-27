@@ -297,8 +297,8 @@
 	item_color = "redband"
 
 /obj/item/clothing/accessory/armband/white
-	name = "white armband"
-	desc = "A fancy white armband!"
+	name = "armband"
+	desc = "A fancy armband!"
 	icon_state = "whiteband"
 	item_color = "whiteband"
 
