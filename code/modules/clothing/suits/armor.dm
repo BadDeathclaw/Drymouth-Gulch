@@ -360,7 +360,7 @@
 	icon_state = "insect_armor"
 	item_state = "insect_armor"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 55, "bullet" = 35, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 55, "bullet" = 30, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
 
