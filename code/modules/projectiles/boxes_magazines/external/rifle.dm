@@ -19,3 +19,29 @@
 	caliber = "a556"
 	max_ammo = 30
 	multiple_sprites = 2
+
+/*
+---Fallout 13---
+*/
+
+/obj/item/ammo_box/magazine/m556/rifle
+	name = "rifle magazine (5.56mm)"
+	icon_state = "r20"
+	caliber = "a556"
+	max_ammo = 20
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m556/rifle/small
+	name = "small rifle magazine (5.56mm)"
+	icon_state = "r10"
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/m556/rifle/assault
+	name = "rifle magazine (5.56mm)"
+	icon_state = "r30"
+	max_ammo = 30
+
+/obj/item/ammo_box/magazine/m556/rifle/extended
+	name = "extended rifle magazine (5.56mm)"
+	icon_state = "r50"
+	max_ammo = 50

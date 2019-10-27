@@ -231,6 +231,7 @@
 /obj/item/projectile/plasma
 	name = "plasma clot"
 	icon_state = "plasma_clot"
+	damage_type = BURN
 	damage = 50
 
 /obj/item/projectile/plasma/pistol
@@ -245,7 +246,7 @@
 	projectile_type = /obj/item/projectile/plasma
 	select_name = "plasma burst"
 	icon_state = "neurotoxin"
-	fire_sound = 'sound/weapons/plasma_cutter.ogg'
+	fire_sound = 'sound/f13weapons/plasma_rifle.ogg'
 	delay = 5
 	e_cost = 75
 
@@ -258,6 +259,7 @@
 
 /obj/item/ammo_casing/energy/plasma/pistol
 	projectile_type = /obj/item/projectile/plasma/pistol
+	fire_sound = 'sound/f13weapons/plasma_pistol.ogg'
 	e_cost = 75
 
 //laser
@@ -267,11 +269,14 @@
 	variance = 14
 	select_name = "scatter"
 	e_cost = 75
+	fire_sound = 'sound/f13weapons/laser_rifle.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol
 	projectile_type = /obj/item/projectile/beam/laser/pistol
 	e_cost = 10
+	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
 
 /obj/item/ammo_casing/energy/laser/lasgun
 	projectile_type = /obj/item/projectile/beam/laser/lasgun
 	e_cost = 50
+	fire_sound = 'sound/f13weapons/laser_rifle.ogg'

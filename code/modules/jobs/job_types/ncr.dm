@@ -46,7 +46,7 @@ Colonel
 	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45=3, \
-		/obj/item/ammo_box/magazine/automatic=2, \
+		/obj/item/ammo_box/magazine/m556/rifle=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
@@ -123,7 +123,7 @@ Lieutenant
 	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
 	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic/r30=2, \
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
@@ -204,7 +204,7 @@ Medic
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	gloves =        /obj/item/clothing/gloves/f13/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic/r30=2, \
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
@@ -283,7 +283,7 @@ Corporal
 	belt =          /obj/item/storage/belt/military/NCR_Bandolier
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic/r30=2, \
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -324,7 +324,7 @@ Trooper
 	glasses = 		null
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic=2, \
+		/obj/item/ammo_box/magazine/m556/rifle=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -363,7 +363,7 @@ Recruit
 	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	belt =          /obj/item/storage/belt/military/assault/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic/r10=2, \
+		/obj/item/ammo_box/magazine/m556/rifle/small=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
@@ -666,4 +666,4 @@ Recon Ranger
 	name = "Assault"
 	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/automatic/r30=2)
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2)
