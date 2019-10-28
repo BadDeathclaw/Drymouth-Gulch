@@ -400,7 +400,7 @@
 
 /datum/crafting_recipe/m38belt
 	name = "M38 ammo belt"
-	result = /obj/item/ammo_box/magazine/mm195x129/m38/
+	result = /obj/item/ammo_box/magazine/mm762
 	reqs = list(/obj/item/stack/sheet/metal = 20)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
@@ -533,6 +533,16 @@
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 
+/datum/crafting_recipe/chitinarmor
+	name = "Insect Chitin Armor"
+	result = /obj/item/clothing/suit/armor/f13/chitinarmor
+	time = 30
+	reqs = list(/obj/item/stack/sheet/animalhide/chitin = 12,
+				/obj/item/stack/sheet/sinew = 4,
+				/obj/item/stack/sheet/cloth = 4)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
 /datum/crafting_recipe/bonetalisman
 	name = "Bone Talisman"
 	result = /obj/item/clothing/accessory/talisman
@@ -609,6 +619,22 @@
 	time = 50
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				 /obj/item/stack/sheet/sinew = 3)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
+/datum/crafting_recipe/bonepestle
+	name = "Bone Pestle"
+	result = /obj/item/pestle
+	time = 20
+	reqs = list(/obj/item/stack/sheet/bone = 1)
+	category = CAT_PRIMAL
+	subcategory = CAT_TRIBAL
+
+/datum/crafting_recipe/bonemortar
+	name = "Bone Mortar"
+	result = /obj/item/reagent_containers/glass/mortar
+	time = 20
+	reqs = list(/obj/item/stack/sheet/bone = 3)
 	category = CAT_PRIMAL
 	subcategory = CAT_TRIBAL
 

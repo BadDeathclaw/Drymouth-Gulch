@@ -542,7 +542,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
 		new /datum/data/wasteland_equipment("Speed loader (.44)",			/obj/item/ammo_box/m44,												70),
 		new /datum/data/wasteland_equipment("Speed loader (.38)",			/obj/item/ammo_box/c38,												70),
-		new /datum/data/wasteland_equipment("Small 5.56 magazine (5.56mm)",	/obj/item/ammo_box/magazine/automatic/r10,							100)
+		new /datum/data/wasteland_equipment("small rifle magazine (5.56mm)",/obj/item/ammo_box/magazine/m556/rifle/small,						100)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/clothing

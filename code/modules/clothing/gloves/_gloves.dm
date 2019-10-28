@@ -41,3 +41,8 @@
 // Called just before an attack_hand(), in mob/UnarmedAttack()
 /obj/item/clothing/gloves/proc/Touch(atom/A, proximity)
 	return 0 // return 1 to cancel attack_hand()
+
+/obj/item/clothing/gloves/color/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)

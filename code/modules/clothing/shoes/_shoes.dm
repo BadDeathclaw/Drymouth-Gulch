@@ -87,3 +87,8 @@
 
 /obj/item/proc/negates_gravity()
 	return FALSE
+
+/obj/item/clothing/shoes/sneakers/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)

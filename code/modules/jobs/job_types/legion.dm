@@ -79,7 +79,7 @@ Needs whitelist
 		/obj/item/throwing_star/spear, \
 		/obj/item/melee/powerfist=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/automatic=2, \
+		/obj/item/ammo_box/magazine/m556/rifle=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legion)
 
@@ -317,7 +317,7 @@ Vexillarius
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/ammo_box/magazine/mm195x129/m38=2, \
+		/obj/item/ammo_box/magazine/mm762=2, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)

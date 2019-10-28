@@ -243,9 +243,10 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
  * Cloths
  */
 GLOBAL_LIST_INIT(cloth_recipes, list ( \
-	new/datum/stack_recipe("white jumpsuit", /obj/item/clothing/under/color/white, 3), \
-	new/datum/stack_recipe("white shoes", /obj/item/clothing/shoes/sneakers/white, 2), \
-	new/datum/stack_recipe("white scarf", /obj/item/clothing/neck/scarf, 1), \
+	new/datum/stack_recipe("jumpsuit", /obj/item/clothing/under/color/white, 3), \
+	new/datum/stack_recipe("shoes", /obj/item/clothing/shoes/sneakers/white, 2), \
+	new/datum/stack_recipe("scarf", /obj/item/clothing/neck/scarf, 1), \
+	new/datum/stack_recipe("bandana", /obj/item/clothing/mask/bandana/white, 2), \
 	null, \
 	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
@@ -292,9 +293,10 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("empty sandbag", /obj/item/stack/sheet/emptysandbag, 4), \
 	null, \
 	new/datum/stack_recipe("fingerless gloves", /obj/item/clothing/gloves/fingerless, 1), \
-	new/datum/stack_recipe("white gloves", /obj/item/clothing/gloves/color/white, 3), \
-	new/datum/stack_recipe("white softcap", /obj/item/clothing/head/soft/mime, 2), \
-	new/datum/stack_recipe("white beanie", /obj/item/clothing/head/beanie, 2), \
+	new/datum/stack_recipe("gloves", /obj/item/clothing/gloves/color/white, 3), \
+	new/datum/stack_recipe("softcap", /obj/item/clothing/head/soft/mime, 2), \
+	new/datum/stack_recipe("beanie", /obj/item/clothing/head/beanie, 2), \
+	new/datum/stack_recipe("armband", /obj/item/clothing/accessory/armband/white, 1), \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2), \

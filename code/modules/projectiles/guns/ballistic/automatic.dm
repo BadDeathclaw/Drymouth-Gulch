@@ -327,26 +327,27 @@
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38
 	name = "M38 LMG"
-	desc = "A special lmg used by elite legionairs to support regular infantry."
+	desc = "A special LMG used by elite legionaries to support regular infantry."
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/mm195x129/m38/
+	mag_type = /obj/item/ammo_box/magazine/mm762
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	burst_delay = 1.8
 	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	spread = 2
+	spread = 20
 	randomspread = 1
 	extra_damage = 15
 	extra_penetration = 10
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/update_icon()
-	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/25, 1)*25 : "-empty"][suppressed ? "-suppressed" : ""]"
-	item_state = "M38[cover_open ? "openmag" : "closedmag"]"
+	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/20, 1)*20 : "-empty"][suppressed ? "-suppressed" : ""]"
+	item_state = "M38[cover_open ? "open" : "closed"][magazine ? "mag" : "nomag"]"
 
 /obj/item/gun/ballistic/automatic/l6_saw/m38/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -354,7 +355,7 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			spread = 15
+			spread = 20
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
@@ -364,7 +365,7 @@
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 55
+			spread = 40
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
@@ -538,15 +539,15 @@
 	icon_state = "assault_carbine"
 	item_state = "assault_carbine"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/automatic/
-	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
 	burst_size = 2
 	fire_delay = 4
-	burst_delay = 1.4
+	burst_delay = 1.8
 	extra_damage = 25
-	spread = 8
-	extra_penetration = 10
+	spread = 14
+	extra_penetration = 5
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 
@@ -556,7 +557,7 @@
 		if(0)
 			select += 1
 			burst_size = 2
-			spread = 8
+			spread = 14
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select = 0
@@ -573,8 +574,8 @@
 	icon_state = "assault_rifle"
 	item_state = "fnfal"
 	slot_flags = 0
-	mag_type = /obj/item/ammo_box/magazine/automatic/
-	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	burst_size = 3
 	fire_delay = 3
@@ -606,7 +607,7 @@
 	desc = "A customized R91 assault rifle, with a scope, integrated suppressor, cut down stock and polymer furniture."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
-	init_mag_type = /obj/item/ammo_box/magazine/automatic/
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	suppressed = 1
 	fire_delay = 4
 	extra_damage = 20
@@ -640,7 +641,7 @@
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/automatic/
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = FALSE
 	fire_delay = 6
@@ -661,9 +662,8 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	fire_delay = 10
 	burst_size = 1
-	extra_penetration = 10
+	extra_penetration = 0
 	projectile_speed = 0.4
-
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	name = "service rifle"
@@ -674,7 +674,7 @@
 	fire_delay = 4
 	extra_damage = 25
 	extra_penetration = 10
-	mag_type = /obj/item/ammo_box/magazine/automatic/
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	zoomable = FALSE
 	weapon_weight = WEAPON_HEAVY
 
@@ -684,11 +684,12 @@
 	fire_delay = 4
 	extra_damage = 30
 	extra_penetration = 10
-	init_mag_type = /obj/item/ammo_box/magazine/automatic/r30
-	mag_type = /obj/item/ammo_box/magazine/automatic/
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/assault
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	icon_state = "R82"
 	item_state = "R82"
 	burst_size = 1
+
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint
 	name = "varmint rifle"
 	desc = "A low powered 5.56, easy to use rifle."
@@ -696,8 +697,8 @@
 	item_state = "varmintrifle"
 	fire_delay = 8
 	extra_damage = 30
-	init_mag_type = /obj/item/ammo_box/magazine/automatic/r10
-	mag_type = /obj/item/ammo_box/magazine/automatic/
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 /obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer
 	name = "ratslayer"
@@ -783,7 +784,7 @@
 	icon_state = "bozar"
 	item_state = "sniper"
 	slot_flags = SLOT_BACK
-	mag_type = /obj/item/ammo_box/magazine/automatic/
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	burst_size = 2
 	fire_delay = 3
 	extra_damage = 35
@@ -837,10 +838,11 @@
 	can_suppress = FALSE
 	burst_size = 3
 	fire_delay = 2
+	burst_delay = 1.8
 	slowdown = 1.0
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	spread = 2
+	spread = 18
 	randomspread = 1
 	extra_damage = 20
 	
@@ -850,17 +852,17 @@
 		if(0)
 			select += 1
 			burst_size += 2
-			spread = 16
+			spread = 18
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(1)
 			select += 1
 			burst_size += 2
-			spread = 28
+			spread = 26
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(2)
 			select += 1
 			burst_size += 3
-			spread = 40
+			spread = 34
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
 		if(3)
 			select = 0
@@ -870,367 +872,3 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
-
-
-//Fallout 13
-//Magazines
-/obj/item/ammo_box/magazine/mm195x129/m38/
-	name = "7.62 belt (7.62mm)"
-	icon_state = "762belt"
-	ammo_type = /obj/item/ammo_casing/a762/lp
-	max_ammo = 100
-	caliber = "a762"
-
-/obj/item/ammo_box/magazine/mm195x129/m38/can_load()
-	return 0
-
-/obj/item/ammo_box/magazine/mm195x129/m38/update_icon()
-	..()
-	icon_state = "762belt-[round(ammo_count(),25)]"
-/obj/item/ammo_box/magazine/automatic/r10
-	name = "small 5.56 magazine (5.56mm)"
-	icon_state = "r10"
-	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
-	max_ammo = 10
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/automatic/
-	name = "5.56 Magazine (5.56mm)"
-	icon_state = "r20"
-	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
-	max_ammo = 20
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/automatic/r30
-	name = "Large 5.56 Magazine (5.56mm)"
-	icon_state = "r30"
-	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
-	max_ammo = 30
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/automatic/r50
-	name = "Extra Large 5.56 Magazine (5.56mm)"
-	icon_state = "r50"
-	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
-	max_ammo = 50
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/lmg/
-	name = "5.56 ammo box"
-	icon_state = "r80"
-	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
-	max_ammo = 80
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/m10mm_auto
-	name = "10mm submachine gun magazine (10mm)"
-	icon_state = "smg10mm"
-	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
-	max_ammo = 24
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/m10mm_adv
-	name = "10mm pistol magazine (10mm)"
-	icon_state = "10mmadv"
-	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
-	max_ammo = 12
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/m9mm
-	name = "9mm pistol magazine (9mm)"
-	icon_state = "9mmp"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
-	max_ammo = 10
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/greasegun
-	name = "9mm submachine gun magazine (9mm)"
-	icon_state = "grease"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = "9mm"
-	max_ammo = 30
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/d12g
-	name = "shotgun drum magazine (12g slugs)"
-	desc = "A 12g drum magazine."
-	icon_state = "riotmag"
-	ammo_type = /obj/item/ammo_casing/shotgun
-	caliber = "shotgun"
-	max_ammo = 12
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/m2mm
-	name = "2mm electromagnetic magazine"
-	icon_state = "2mm"
-	ammo_type = /obj/item/ammo_casing/c2mm
-	caliber = "2mm"
-	max_ammo = 20
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/w308
-	name = "sniper rifle magazine (.308)"
-	icon_state = "sniper_mag"
-	ammo_type = /obj/item/ammo_casing/a308
-	caliber = "a762"
-	max_ammo = 7
-	multiple_sprites = 2
-
-//Ammo Casings
-//SuperSoft
-/obj/item/ammo_casing/c22
-	name = ".22 bullet casing"
-	desc = "A .22 bullet casing."
-	caliber = ".22"
-	projectile_type = /obj/item/projectile/bullet/c22
-
-//Soft
-/obj/item/ammo_casing/c45
-	name = ".45 bullet casing"
-	desc = "A .45 bullet casing."
-	caliber = ".45"
-	projectile_type = /obj/item/projectile/bullet/c45
-
-/obj/item/ammo_casing/c9mm
-	name = "9mm bullet casing"
-	desc = "A 9mm bullet casing."
-	caliber = "9mm"
-	projectile_type = /obj/item/projectile/bullet/c9mm
-
-/obj/item/ammo_casing/c10mm
-	name = "10mm bullet casing"
-	desc = "A 10mm bullet casing."
-	caliber = "10mm"
-	projectile_type = /obj/item/projectile/bullet/c10mm
-
-//Med
-/obj/item/ammo_casing/m44
-	desc = "A 44 Magnum bullet casing."
-	caliber = "44"
-	projectile_type = /obj/item/projectile/bullet/m44
-
-/obj/item/ammo_casing/c38
-	name = ".38 bullet casing"
-	desc = "A .38 bullet casing."
-	caliber = "38"
-	projectile_type = /obj/item/projectile/bullet/c38
-
-/obj/item/ammo_casing/a556
-	desc = "A 5.56mm bullet casing."
-	caliber = "a556"
-	projectile_type = /obj/item/projectile/bullet/a556
-
-
-/obj/item/ammo_casing/a357
-	name = "357 bullet casing"
-	desc = "A .357 bullet casing."
-	caliber = "357"
-	projectile_type = /obj/item/projectile/bullet/a357
-
-/obj/item/ammo_casing/a762/lp
-	name = "7.62 lowpower bullet casing"
-	desc = "A 7.62 bullet casing."
-	icon_state = "762-casing"
-	caliber = "a762"
-	projectile_type = /obj/item/projectile/bullet/a762
-
-//MedAP
-/obj/item/ammo_casing/a762
-	name = "7.62 bullet casing"
-	desc = "A 7.62 bullet casing."
-	icon_state = "762-casing"
-	caliber = "a762"
-	projectile_type = /obj/item/projectile/bullet/a762m
-
-/obj/item/ammo_casing/a308
-	name = ".308 bullet casing"
-	desc = "A .308 bullet casing."
-	icon_state = "762-casing"
-	caliber = "a762"
-	projectile_type = /obj/item/projectile/bullet/a308
-
-/obj/item/ammo_casing/caseless/needle
-	name = "A needler round."
-	desc = "A dart for use in needler pistols."
-	caliber = "needle"
-	projectile_type = /obj/item/projectile/bullet/needle
-
-//HeavySP
-/obj/item/ammo_casing/c4570
-	name = ".45-70 bullet casing"
-	desc = "A .45-70 bullet casing."
-	caliber = "4570"
-	projectile_type = /obj/item/projectile/bullet/c4570
-
-/*/obj/item/ammo_casing/c4570SP
-	name = ".45 LC bullet casing"
-	desc = "A .45 Long Colt bullet casing."
-	caliber = "4570"
-	projectile_type = /obj/item/projectile/bullet/c4570SP*/
-
-//Heavy
-/obj/item/ammo_casing/a50AE
-	name = ".50AE bullet casing"
-	desc = "A .50AE bullet casing."
-	caliber = ".50"
-	projectile_type = /obj/item/projectile/bullet/a50AE
-
-/obj/item/ammo_casing/c2mm
-	name = "2mm gauss projectile casing"
-	desc = "A 2mm gauss projectile casing."
-	caliber = "2mm"
-	projectile_type = /obj/item/projectile/bullet/c2mm
-
-/obj/item/ammo_casing/a50MG
-	name = ".50MG bullet casing"
-	desc = "A .50MG bullet casing."
-	caliber = "a50MG"
-	icon_state = "50mg2"
-	projectile_type = /obj/item/projectile/bullet/a50MG
-
-/obj/item/ammo_casing/a50MG/incendiary
-	name = ".50 MG incendiary bullet casing"
-	desc = "A .50 MG incendiary bullet casing."
-	icon_state = "50in2"
-	caliber = "a50MG"
-	projectile_type = /obj/item/projectile/bullet/a50MG/incendiary
-
-/*/obj/item/ammo_casing/a50MG/AP
-	name = ".50 MG AP bullet casing"
-	desc = "A .50 MG armor-piercing bullet casing."
-	caliber = "a50MG"
-	icon_state = "50ap2"
-	projectile_type = /obj/item/projectile/bullet/a50MG/AP*/
-
-/obj/item/ammo_casing/a50MG/explosive
-	name = ".50 MG explosive bullet casing"
-	desc = "Comes in 5 bullet racks...more then enough to kill anything that moves.."
-	caliber = "a50MG"
-	icon_state = "50ex2"
-	projectile_type = /obj/item/projectile/bullet/a50MG/explosive
-
-//Projectiles
-/obj/item/projectile/bullet/c45
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/c22
-	damage = 15
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/m44
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/c9mm
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/c10mm
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/needle
-	name = "needle"
-	icon_state = "cbbolt"
-	damage = 30
-	armour_penetration = 30
-
-/obj/item/projectile/bullet/c38
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/a762
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/a762m
-	damage = 0
-	armour_penetration = 10
-
-/obj/item/projectile/bullet/a308
-	damage = 0
-	armour_penetration = 20
-
-/obj/item/projectile/bullet/a556
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/c4570
-	damage = 0
-	armour_penetration = 0
-
-/*/obj/item/projectile/bullet/c4570SP
-	damage = 45
-	armour_penetration = 20*/
-
-/obj/item/projectile/bullet/a357
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/a50AE
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/a50MG
-	damage = 0
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/a50MG/incendiary
-	damage = -30
-	armour_penetration = -20
-	var/fire_stacks = 4
-
-/obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
-
-/*
-	/obj/item/projectile/bullet/a50MG/AP
-	damage = 35
-	armour_penetration = 65 will punch through anything short of Enclave power armor*/
-
-/obj/item/projectile/bullet/a50MG/explosive
-	damage = -10
-	armour_penetration = 0
-
-/obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
-	..()
-	explosion(target, 0, 2, 2, 2)
-
-
-/obj/item/projectile/bullet/c2mm
-	damage = 60
-	armour_penetration = 40
-
-/obj/item/ammo_casing/a762r
-	name = "7.62 bullet casing"
-	desc = "A 7.62 bullet casing."
-	icon_state = "762-casing"
-	caliber = "a762"
-	projectile_type = /obj/item/projectile/bullet/a762r
-
-/obj/item/projectile/bullet/a762r
-	damage = 40
-	armour_penetration = 0
-
-/obj/item/ammo_casing/c9mmr
-	name = "9mm bullet casing"
-	desc = "A 9mm bullet casing."
-	caliber = "9mm"
-	projectile_type = /obj/item/projectile/bullet/c9mmr
-
-/obj/item/projectile/bullet/c9mmr
-	damage = 20
-	armour_penetration = 20

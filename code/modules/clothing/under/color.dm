@@ -72,10 +72,17 @@
 	item_color = "red"
 
 /obj/item/clothing/under/color/white
-	name = "white jumpsuit"
+	name = "jumpsuit"
 	icon_state = "white"
 	item_state = "w_suit"
 	item_color = "white"
+
+/obj/item/clothing/under/color/white/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)
+
+
 
 /obj/item/clothing/under/color/yellow
 	name = "yellow jumpsuit"

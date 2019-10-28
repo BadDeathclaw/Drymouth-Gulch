@@ -531,7 +531,7 @@
 			return
 		M.regenerate_icons()
 	else if(href_list["expose"])
-		if(!check_rights(R_ADMIN, FALSE))
+		if(!check_rights(R_DEBUG))
 			return
 		var/thing = locate(href_list["expose"])
 		if (!thing)
@@ -790,7 +790,7 @@
 				usr.client.cmd_assume_direct_control(M)
 
 		else if(href_list["offer_control"])
-			if(!check_rights(NONE))
+			if(!check_rights(R_VAREDIT))
 				return
 
 			var/mob/M = locate(href_list["offer_control"]) in GLOB.mob_list
@@ -987,7 +987,7 @@
 			href_list["datumrefresh"] = href_list["rotatedatum"]
 
 		else if(href_list["editorgans"])
-			if(!check_rights(NONE))
+			if(!check_rights(R_SPAWN))
 				return
 
 			var/mob/living/carbon/C = locate(href_list["editorgans"]) in GLOB.mob_list
@@ -999,7 +999,7 @@
 			href_list["datumrefresh"] = href_list["editorgans"]
 
 		else if(href_list["givemartialart"])
-			if(!check_rights(NONE))
+			if(!check_rights(R_FUN))
 				return
 
 			var/mob/living/carbon/C = locate(href_list["givemartialart"]) in GLOB.carbon_list
@@ -1026,7 +1026,7 @@
 				MA.teach(C)
 
 		else if(href_list["givetrauma"])
-			if(!check_rights(NONE))
+			if(!check_rights(R_FUN))
 				return
 
 			var/mob/living/carbon/C = locate(href_list["givetrauma"]) in GLOB.mob_list
@@ -1061,7 +1061,7 @@
 			href_list["datumrefresh"] = href_list["curetraumas"]
 
 		else if(href_list["hallucinate"])
-			if(!check_rights(NONE))
+			if(!check_rights(R_FUN))
 				return
 
 			var/mob/living/carbon/C = locate(href_list["hallucinate"]) in GLOB.mob_list
@@ -1243,7 +1243,7 @@
 
 
 		else if(href_list["purrbation"])
-			if(!check_rights(R_SPAWN))
+			if(!check_rights(R_FUN))
 				return
 
 			var/mob/living/carbon/human/H = locate(href_list["purrbation"]) in GLOB.mob_list

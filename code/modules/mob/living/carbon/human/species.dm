@@ -1124,7 +1124,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(flight)
 				. += (health_deficiency / 75)
 			else
-				. += (health_deficiency / 25)
+				. += (health_deficiency / 40)
 		if(CONFIG_GET(flag/disable_human_mood))
 			var/hungry = (500 - H.nutrition) / 5 //So overeat would be 100 and default level would be 80
 			if((hungry >= 70) && !flight) //Being hungry will still allow you to use a flightsuit/wings.

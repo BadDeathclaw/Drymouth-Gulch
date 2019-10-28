@@ -153,3 +153,8 @@
 				to_chat(user, "Its vital tracker and tracking beacon appear to be enabled.")
 	if(attached_accessory)
 		to_chat(user, "\A [attached_accessory] is attached to it.")
+
+/obj/item/clothing/accessory/armband/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spraycan_paintable)
+	START_PROCESSING(SSobj, src)

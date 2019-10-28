@@ -11,7 +11,7 @@
 	name = "speed loader (.38)"
 	desc = "Designed to quickly reload revolvers."
 	icon_state = "38"
-	ammo_type = /obj/item/ammo_casing/c38
+	ammo_type = /obj/item/ammo_casing/a357/c38
 	max_ammo = 6
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 2000)
@@ -92,7 +92,7 @@
 /obj/item/ammo_box/box38
 	name = "ammo box (.38)"
 	icon_state = "38box"
-	ammo_type = /obj/item/ammo_casing/c38
+	ammo_type = /obj/item/ammo_casing/a357/c38
 	max_ammo = 30
 	materials = list(MAT_METAL = 15000)
 	w_class = WEIGHT_CLASS_NORMAL

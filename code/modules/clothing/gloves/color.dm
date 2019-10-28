@@ -176,7 +176,7 @@
 	transfer_prints = FALSE
 
 /obj/item/clothing/gloves/color/white
-	name = "white gloves"
+	name = "gloves"
 	desc = "These look pretty fancy."
 	icon_state = "white"
 	item_state = "wgloves"
@@ -213,3 +213,4 @@
 	else
 		new selected(loc)
 	return INITIALIZE_HINT_QDEL
+

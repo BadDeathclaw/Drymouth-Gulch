@@ -70,7 +70,7 @@
 	item_color = "red"
 
 /obj/item/clothing/shoes/sneakers/white
-	name = "white shoes"
+	name = "shoes"
 	icon_state = "white"
 	permeability_coefficient = 0.01
 	item_color = "white"
@@ -120,5 +120,4 @@
 			to_chat(c, "<span class='warning'>You need help taking these off!</span>")
 			return
 	return ..()
-	
-	
+
