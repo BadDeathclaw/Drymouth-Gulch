@@ -57,3 +57,24 @@
 	caliber = ".50"
 	max_ammo = 7
 	multiple_sprites = 1
+
+/*
+---Fallout 13---
+*/
+
+/obj/item/ammo_box/magazine/m10mm_adv
+	name = "10mm pistol magazine (10mm)"
+	icon_state = "10mmadv"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 12
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m9mm
+	name = "9mm pistol magazine (9mm)"
+	icon_state = "9mmp"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 10
+	multiple_sprites = 2
+

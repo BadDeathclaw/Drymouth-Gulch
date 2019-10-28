@@ -722,8 +722,8 @@
 
 	var/loot12 = list(
 				/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint,
-				/obj/item/ammo_box/magazine/automatic/r10,
-				/obj/item/ammo_box/magazine/automatic/r10)
+				/obj/item/ammo_box/magazine/m556/rifle/small,
+				/obj/item/ammo_box/magazine/m556/rifle/small)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier1/Initialize(mapload) //on mapload, pick what shit to spawn
 	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11, loot12)
@@ -779,17 +779,22 @@
 
 	var/loot9 = list(
 				/obj/item/gun/ballistic/automatic/marksman/servicerifle,
-				/obj/item/ammo_box/magazine/automatic/,
-				/obj/item/ammo_box/magazine/automatic/
+				/obj/item/ammo_box/magazine/m556/rifle,
+				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
 	var/loot10 = list(
 				/obj/item/gun/ballistic/automatic/marksman/servicerifle/varmint/ratslayer,
-				/obj/item/ammo_box/magazine/automatic/r10,
-				/obj/item/ammo_box/magazine/automatic/r10)
+				/obj/item/ammo_box/magazine/m556/rifle/small,
+				/obj/item/ammo_box/magazine/m556/rifle/small)
+	var/loot11 = list(
+				/obj/item/gun/ballistic/revolver/police,
+				/obj/item/ammo_box/a357,
+				/obj/item/ammo_box/a357
+	)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier2/Initialize(mapload) //on mapload, pick what shit to spawn
-	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10)
+	loot = pick(loot1, loot2, loot3, loot4, loot5, loot6, loot7, loot8, loot9, loot10, loot11)
 	. = ..()
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/tier3 //TIER 3 GUN
@@ -853,14 +858,14 @@
 	lootcount = 3
 	var/loot1 = list(
 				/obj/item/gun/ballistic/automatic/assault_rifle,
-				/obj/item/ammo_box/magazine/automatic/r30/,
-				/obj/item/ammo_box/magazine/automatic/r30/
+				/obj/item/ammo_box/magazine/m556/rifle/assault,
+				/obj/item/ammo_box/magazine/m556/rifle/assault
 				)
 
 	var/loot2 = list(
 				/obj/item/gun/ballistic/automatic/marksman,
-				/obj/item/ammo_box/magazine/automatic/,
-				/obj/item/ammo_box/magazine/automatic/
+				/obj/item/ammo_box/magazine/m556/rifle,
+				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
 	var/loot3 = list(
@@ -895,8 +900,8 @@
 
 	var/loot8 = list(
 				/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator,
-				/obj/item/ammo_box/magazine/automatic/,
-				/obj/item/ammo_box/magazine/automatic/
+				/obj/item/ammo_box/magazine/m556/rifle,
+				/obj/item/ammo_box/magazine/m556/rifle
 				)
 
 	var/loot9 = list(
@@ -980,7 +985,7 @@
 				/obj/item/storage/box/rubbershot/beanbag,
 				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m10mm_adv,
-				/obj/item/ammo_box/magazine/automatic/r10
+				/obj/item/ammo_box/magazine/m556/rifle/small
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2
@@ -992,13 +997,13 @@
 				/obj/item/ammo_box/a762,
         		/obj/item/ammo_box/a308,
 				/obj/item/ammo_box/magazine/m10mm_adv,
-				/obj/item/ammo_box/magazine/automatic/,
+				/obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m9mm,
 				/obj/item/ammo_box/m44,
 				/obj/item/ammo_box/tube/a357,
 				/obj/item/ammo_box/a357,
-				/obj/item/ammo_box/magazine/automatic/r10
+				/obj/item/ammo_box/magazine/m556/rifle/small
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2/Initialize(mapload) //on mapload, pick how many shit to spawn
@@ -1032,7 +1037,7 @@
 	loot = list(
 				/obj/item/ammo_box/magazine/d12g,
 				/obj/item/ammo_box/magazine/m50,
-				/obj/item/ammo_box/magazine/automatic/,
+				/obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/c4570,
 				/obj/item/ammo_box/tube/c4570,
 				/obj/item/ammo_box/a50MG,
