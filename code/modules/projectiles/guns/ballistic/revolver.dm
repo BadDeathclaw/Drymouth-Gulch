@@ -87,11 +87,10 @@
 	to_chat(user, "[get_ammo(0,0)] of those are live rounds.")
 
 /obj/item/gun/ballistic/revolver/detective
-	name = ".38 revolver"
-	desc = "A cheap law enforcement firearm. Uses .38-special rounds."
+	name = "old revolver"
+	desc = "A cheap law enforcement firearm, you're not really confident in it's reliability. Uses .357 and .38 special rounds."
 	icon_state = "detective"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 25
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("Default" = "detective",
@@ -103,14 +102,14 @@
 
 /obj/item/gun/ballistic/revolver/detective/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(magazine.caliber != initial(magazine.caliber))
-		if(prob(70 - (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60
+		if(prob(70 - (magazine.ammo_count() * 15)))	//minimum probability of 15, maximum of 60
 			playsound(user, fire_sound, 50, 1)
 			to_chat(user, "<span class='userdanger'>[src] blows up in your face!</span>")
 			user.take_bodypart_damage(0,20)
 			user.dropItemToGround(src)
 			return 0
 	..()
-
+/*
 /obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
 	if(magazine.caliber == "38")
 		to_chat(user, "<span class='notice'>You begin to reinforce the barrel of [src]...</span>")
@@ -139,7 +138,7 @@
 			desc = initial(desc)
 			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
 	return TRUE
-
+*/
 
 /obj/item/gun/ballistic/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
@@ -399,7 +398,6 @@
 	fire_delay = 5
 	extra_damage = 30
 
-
 /obj/item/gun/ballistic/revolver/m29/sadokist
 	name = "Wise's Warmaker"
 	desc = "A pre-war 4 inch barrel Colt Anaconda. It has a high quality blued finish, and parkerized wooden grips. Engraved on the grip is the word Wise."
@@ -467,4 +465,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 50
+
+/obj/item/gun/ballistic/revolver/police
+	name = "police pistol"
+	desc = "An old pre-war double action police revolver. Uses .357 and .38 special rounds."
+	icon_state = "police"
+	fire_sound = 'sound/f13weapons/policepistol.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	w_class = WEIGHT_CLASS_SMALL
+	extra_damage = 15
 

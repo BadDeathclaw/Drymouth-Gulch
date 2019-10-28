@@ -1,5 +1,11 @@
 // 10mm (Stechkin)
 
+/obj/item/ammo_casing/c10mm
+	name = "10mm bullet casing"
+	desc = "A 10mm bullet casing."
+	caliber = "10mm"
+	projectile_type = /obj/item/projectile/bullet/c10mm
+
 /obj/item/ammo_casing/c10mm/ap
 	name = "10mm armor-piercing bullet casing"
 	desc = "A 10mm armor-piercing bullet casing."
@@ -17,6 +23,12 @@
 
 // 9mm (Stechkin APS)
 
+/obj/item/ammo_casing/c9mm
+	name = "9mm bullet casing"
+	desc = "A 9mm bullet casing."
+	caliber = "9mm"
+	projectile_type = /obj/item/projectile/bullet/c9mm
+
 /obj/item/ammo_casing/c9mm/ap
 	name = "9mm armor-piercing bullet casing"
 	desc = "A 9mm armor-piercing bullet casing."
@@ -26,3 +38,25 @@
 	name = "9mm incendiary bullet casing"
 	desc = "A 9mm incendiary bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c9mm
+
+/obj/item/ammo_casing/c22
+	name = ".22 bullet casing"
+	desc = "A .22 bullet casing."
+	caliber = ".22"
+	projectile_type = /obj/item/projectile/bullet/c22
+
+// 45 ACP
+
+/obj/item/ammo_casing/c45
+	name = ".45 bullet casing"
+	desc = "A .45 bullet casing."
+	caliber = ".45"
+	projectile_type = /obj/item/projectile/bullet/c45
+
+// .50 AE
+
+/obj/item/ammo_casing/a50AE
+	name = ".50AE bullet casing"
+	desc = "A .50AE bullet casing."
+	caliber = ".50"
+	projectile_type = /obj/item/projectile/bullet/a50AE

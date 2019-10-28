@@ -182,3 +182,28 @@
 		var/mob/living/carbon/M = target
 		M.visible_message("<span class='danger'>[M] explodes into a shower of gibs!</span>")
 		M.gib()
+
+/obj/item/projectile/beam/laser/lasgun
+	name = "laser beam"
+	damage = 35
+	armour_penetration = 0
+
+/obj/item/projectile/beam/laser/pistol
+	name = "laser beam"
+	damage = 20
+
+/obj/item/projectile/beam/laser/tribeam
+	name = "tribeam laser"
+	damage = 15
+
+/obj/item/projectile/plasma
+	name = "plasma clot"
+	icon_state = "plasma_clot"
+	damage_type = BURN
+	damage = 50
+
+/obj/item/projectile/plasma/pistol
+	damage = 45
+
+/obj/item/projectile/plasma/scatter
+	damage = 25

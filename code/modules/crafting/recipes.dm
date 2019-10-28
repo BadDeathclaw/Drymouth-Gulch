@@ -400,7 +400,7 @@
 
 /datum/crafting_recipe/m38belt
 	name = "M38 ammo belt"
-	result = /obj/item/ammo_box/magazine/mm195x129/m38/
+	result = /obj/item/ammo_box/magazine/mm762
 	reqs = list(/obj/item/stack/sheet/metal = 20)
 	tools = list(TOOL_SCREWDRIVER,
 				TOOL_MSRELOADER)
