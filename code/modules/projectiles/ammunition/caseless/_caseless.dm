@@ -13,3 +13,9 @@
 /obj/item/ammo_casing/caseless/update_icon()
 	..()
 	icon_state = "[initial(icon_state)]"
+
+/obj/item/ammo_casing/caseless/needle
+	name = "A needler round."
+	desc = "A dart for use in needler pistols."
+	caliber = "needle"
+	projectile_type = /obj/item/projectile/bullet/needle
