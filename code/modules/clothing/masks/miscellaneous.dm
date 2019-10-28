@@ -293,8 +293,8 @@
 	icon_state = "bandblack"
 
 /obj/item/clothing/mask/bandana/white
-	name = "white bandana"
-	desc = "A fine white bandana with nanotech lining."
+	name = "bandana"
+	desc = "A fine bandana with nanotech lining."
 	icon_state = "bandwhite"
 
 /obj/item/clothing/mask/bandana/skull
