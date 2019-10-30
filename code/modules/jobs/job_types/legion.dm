@@ -164,7 +164,7 @@ Decanus
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/tube/a44=2, \
+		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/key/scollar=1, \
 		/obj/item/assembly/signaler/electropack/shockcollar=1, \
