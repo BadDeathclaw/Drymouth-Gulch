@@ -192,7 +192,7 @@ Corporal
 	loadout_options = list(
 	/datum/outfit/loadout/corporal,
 	/datum/outfit/loadout/medic,
-	/datum/outfit/loadout/scout)
+	/datum/outfit/loadout/marksman)
 
 /datum/outfit/job/ncr/f13corporal
 	name = "NCR Corporal"
@@ -229,8 +229,8 @@ Corporal
 		/obj/item/storage/pill_bottle/mining=1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1)
 
-/datum/outfit/loadout/scout
-	name = "Scout"
+/datum/outfit/loadout/marksman
+	name = "Marksman"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	head = /obj/item/clothing/head/beret/ncr_scout
 	backpack_contents = list(
