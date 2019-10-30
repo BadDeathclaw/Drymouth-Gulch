@@ -220,8 +220,8 @@ Veteran
 	exp_requirements = 600
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
-	
-		loadout_options = list(
+
+	loadout_options = list(
 	/datum/outfit/loadout/veteran,
 	/datum/outfit/loadout/explorer)
 
@@ -280,7 +280,7 @@ Prime
 	exp_requirements = 300
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
-	
+
 	loadout_options = list(
 	/datum/outfit/loadout/prime,
 	/datum/outfit/loadout/scout)
@@ -304,7 +304,7 @@ Prime
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
 	r_pocket = /obj/item/restraints/handcuffs
-	
+
 /datum/outfit/loadout/prime
 	name = "Prime"
 	suit_store = /obj/item/gun/ballistic/shotgun
