@@ -406,4 +406,5 @@ Recon Ranger
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
-*/
+	/*
+
