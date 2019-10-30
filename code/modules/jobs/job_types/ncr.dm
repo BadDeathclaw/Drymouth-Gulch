@@ -187,7 +187,7 @@ Corporal
 	exp_requirements = 600
 
 	outfit = /datum/outfit/job/ncr/f13corporal
-	
+
 	loadout_options = list(
 	/datum/outfit/loadout/corporal,
 	/datum/outfit/loadout/medic,
@@ -211,7 +211,7 @@ Corporal
 		/obj/item/storage/bag/money/small/ncrenlisted, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
-	
+
 /datum/outfit/loadout/corporal
 	name = "Corporal"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle
@@ -248,7 +248,7 @@ Trooper
 	exp_requirements = 300
 
 	outfit = /datum/outfit/job/ncr/f13trooper
-	
+
 	loadout_options = list(
 	/datum/outfit/loadout/trooper,
 	/datum/outfit/loadout/recon)
@@ -272,7 +272,7 @@ Trooper
 		/obj/item/storage/bag/money/small/ncrenlisted, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
-	
+
 /datum/outfit/loadout/trooper
 	name = "Trooper"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle
@@ -282,7 +282,7 @@ Trooper
 
 /datum/outfit/loadout/recon
 	name = "Recon"
-	suit_store = obj/item/gun/ballistic/shotgun/remington
+	suit_store = /obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
 		/obj/item/ammo_box/a308=2,
 		/obj/item/twohanded/binocs=1)
