@@ -227,7 +227,8 @@ Corporal
 		/obj/item/ammo_box/magazine/m9mm=2,
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/storage/pill_bottle/mining=1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1,
+		/obj/item/clothing/head/f13/ncr/medic=1)
 
 /datum/outfit/loadout/marksman
 	name = "Marksman"
