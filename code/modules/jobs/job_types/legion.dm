@@ -113,8 +113,8 @@ Centurion
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
-	r_hand =		/obj/item/twohanded/required/thermic_lance
-	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
+	r_hand =		/obj/item/gun/ballistic/automatic/smg10mm
+	suit_store =	/obj/item/twohanded/required/thermic_lance
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
