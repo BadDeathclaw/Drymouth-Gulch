@@ -118,8 +118,6 @@ Centurion
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1, \
-		/obj/item/throwing_star/spear, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/flashlight/flare/torch=1, \
