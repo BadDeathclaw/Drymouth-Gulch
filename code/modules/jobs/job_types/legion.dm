@@ -252,9 +252,9 @@ Veteran
 	suit_store = /obj/item/gun/ballistic/shotgun/trench
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot=1,
-		/obj/item/twohanded/fireaxe,
-		/obj/item/clothing/suit/armor/f13/legion/vet,
-		/obj/item/clothing/head/helmet/f13/legion/vet,
+		/obj/item/twohanded/fireaxe=1,
+		/obj/item/clothing/suit/armor/f13/legion/vet=1,
+		/obj/item/clothing/head/helmet/f13/legion/vet=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1)
 
 /datum/outfit/loadout/explorer
@@ -263,8 +263,8 @@ Veteran
 	backpack_contents = list(
 		/obj/item/ammo_box/a308=2,
 		/obj/item/claymore/machete/gladius=1,
-		/obj/item/clothing/suit/armor/f13/legion/vet/explorer,
-		/obj/item/clothing/head/helmet/f13/legion/vet/explorer)
+		/obj/item/clothing/suit/armor/f13/legion/vet/explorer=1,
+		/obj/item/clothing/head/helmet/f13/legion/vet/explorer=1)
 
 /*
 Prime
@@ -310,8 +310,8 @@ Prime
 	suit_store = /obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot=1,
-		/obj/item/clothing/suit/armor/f13/legion/prime,
-		/obj/item/clothing/head/helmet/f13/legion/prime,
+		/obj/item/clothing/suit/armor/f13/legion/prime=1,
+		/obj/item/clothing/head/helmet/f13/legion/prime=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1)
 
 /datum/outfit/loadout/scout
@@ -320,8 +320,8 @@ Prime
 	backpack_contents = list(
 		/obj/item/ammo_box/m44=2,
 		/obj/item/twohanded/binocs=1,
-		/obj/item/clothing/suit/armor/f13/legion/recruit/scout,
-		/obj/item/clothing/head/helmet/f13/legion/recruit/scout)
+		/obj/item/clothing/suit/armor/f13/legion/recruit/scout=1,
+		/obj/item/clothing/head/helmet/f13/legion/recruit/scout=1)
 
 
 /*
