@@ -292,8 +292,8 @@ Legionary
 	title = "Recruit Legionnaire"
 	flag = F13LEGIONARY
 	faction = "Legion"
-	total_positions = 12
-	spawn_positions = 12
+	total_positions = 4
+	spawn_positions = 4
 	description = "You answer directly to the Decanus and the Centurion. You act as a loyal soldier within the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave."
 	supervisors = "Decanus and up."
 	exp_requirements = 300
