@@ -200,7 +200,7 @@ Corporal
 	belt =          /obj/item/storage/belt/military/NCR_Bandolier
 	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/internal/boltaction/remington=3, \
+		/obj/item/ammo_box/a308=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
