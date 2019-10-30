@@ -220,6 +220,10 @@ Veteran
 	exp_requirements = 600
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vetlegion
+	
+		loadout_options = list(
+	/datum/outfit/loadout/veteran,
+	/datum/outfit/loadout/explorer)
 
 /datum/job/CaesarsLegion/Legionnaire/f13vetlegion/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
@@ -229,22 +233,38 @@ Veteran
 	name = "Veteran Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13vetlegion
 	id = 			/obj/item/card/id/dogtag/legveteran
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet
-	head = 			/obj/item/clothing/head/helmet/f13/legion/vet
+	suit = 			null
+	head = 			null
 	mask =			/obj/item/clothing/mask/bandana/legvet
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
-	suit_store = 	/obj/item/gun/ballistic/shotgun/trench
-	r_hand = 		/obj/item/twohanded/fireaxe
+	suit_store = 	null
+	r_hand = 		null
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/storage/box/lethalshot=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=1, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
 
+/datum/outfit/loadout/veteran
+	name = "Veteran"
+	suit_store = /obj/item/gun/ballistic/shotgun/trench
+	backpack_contents = list(
+		/obj/item/storage/box/lethalshot=1,
+		/obj/item/twohanded/fireaxe,
+		/obj/item/clothing/suit/armor/f13/legion/vet,
+		/obj/item/clothing/head/helmet/f13/legion/vet,
+		/obj/item/reagent_containers/pill/patch/healpoultice=1)
+
+/datum/outfit/loadout/explorer
+	name = "Explorer"
+	suit_store = /obj/item/gun/ballistic/shotgun/remington/scoped
+	backpack_contents = list(
+		/obj/item/ammo_box/a308=2,
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/clothing/suit/armor/f13/legion/vet/explorer,
+		/obj/item/clothing/head/helmet/f13/legion/vet/explorer)
 
 /*
 Prime
@@ -260,27 +280,48 @@ Prime
 	exp_requirements = 300
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
+	
+	loadout_options = list(
+	/datum/outfit/loadout/prime,
+	/datum/outfit/loadout/scout)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
 	name = "Prime Legionnaire"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primelegion
 	id = 			/obj/item/card/id/dogtag/legprime
 	shoes =         /obj/item/clothing/shoes/f13/military/legionleather
-	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime
-	head = 			/obj/item/clothing/head/helmet/f13/legion/prime
+	suit = 			null
+	head = 			null
 	mask =			/obj/item/clothing/mask/bandana/legprime
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
-	suit_store = 	/obj/item/gun/ballistic/shotgun
+	suit_store = 	null
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
-		/obj/item/storage/box/lethalshot=1, \
-		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
+		/obj/item/reagent_containers/pill/patch/healingpowder=1, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
 	r_pocket = /obj/item/restraints/handcuffs
+	
+/datum/outfit/loadout/prime
+	name = "Prime"
+	suit_store = /obj/item/gun/ballistic/shotgun
+	backpack_contents = list(
+		/obj/item/storage/box/lethalshot=1,
+		/obj/item/clothing/suit/armor/f13/legion/prime,
+		/obj/item/clothing/head/helmet/f13/legion/prime,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1)
+
+/datum/outfit/loadout/scout
+	name = "Scout"
+	suit_store = /obj/item/gun/ballistic/revolver/m29
+	backpack_contents = list(
+		/obj/item/ammo_box/m44=2,
+		/obj/item/twohanded/binocs=1,
+		/obj/item/clothing/suit/armor/f13/legion/recruit/scout,
+		/obj/item/clothing/head/helmet/f13/legion/recruit/scout)
 
 
 /*
