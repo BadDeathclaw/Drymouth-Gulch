@@ -133,11 +133,9 @@ Lieutenant
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
-
-	/*
-
-//sergeant
-
+/*
+Sergeant
+*/
 /datum/job/ncr/f13sergeant
 	title = "NCR Sergeant"
 	flag = F13SERGEANT
@@ -174,10 +172,7 @@ Lieutenant
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
-
-
 /*
-
 Corporal
 */
 /datum/job/ncr/f13corporal
@@ -212,11 +207,6 @@ Corporal
 		/obj/item/storage/bag/money/small/ncrenlisted, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
-
-
-
-
-
 /*
 Trooper
 */
