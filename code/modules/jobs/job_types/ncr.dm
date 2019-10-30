@@ -179,8 +179,8 @@ Corporal
 	title = "NCR Corporal"
 	flag = F13CORPORAL
 	faction = "NCR"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 6
+	spawn_positions = 6
 	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
@@ -214,8 +214,8 @@ Trooper
 	title = "NCR Trooper"
 	flag = F13TROOPER
 	faction = "NCR"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 6
+	spawn_positions = 6
 	description =  "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
@@ -251,8 +251,8 @@ Recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
 	faction = "NCR"
-	total_positions = 10
-	spawn_positions = 10
+	total_positions = 4
+	spawn_positions = 4
 	description = "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
