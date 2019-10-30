@@ -224,8 +224,8 @@ Corporal
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=2,
-		/obj/item/storage/pill_bottle/stimulant,
-		/obj/item/storage/firstaid/regular)
+		/obj/item/reagent_containers/pill/patch/styptic=1,
+		/obj/item/storage/pill_bottle/mining=1)
 
 /datum/outfit/loadout/scout
 	name = "Scout"
