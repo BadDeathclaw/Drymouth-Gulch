@@ -187,6 +187,11 @@ Corporal
 	exp_requirements = 600
 
 	outfit = /datum/outfit/job/ncr/f13corporal
+	
+	loadout_options = list(
+	/datum/outfit/loadout/corporal,
+	/datum/outfit/loadout/medic,
+	/datum/outfit/loadout/scout)
 
 /datum/outfit/job/ncr/f13corporal
 	name = "NCR Corporal"
@@ -198,15 +203,36 @@ Corporal
 	head = 			/obj/item/clothing/head/f13/ncr/goggles
 	glasses = 		null
 	belt =          /obj/item/storage/belt/military/NCR_Bandolier
-	suit_store = 	/obj/item/gun/ballistic/shotgun/remington/scoped
+	suit_store = 	null
 	backpack_contents = list(
-		/obj/item/ammo_box/a308=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
+	
+/datum/outfit/loadout/corporal
+	name = "Corporal"
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle=3,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+
+/datum/outfit/loadout/medic
+	name = "Medic"
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/ninemil
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m9mm=2,
+		/obj/item/storage/pill_bottle/stimulant,
+		/obj/item/storage/firstaid/regular)
+
+/datum/outfit/loadout/scout
+	name = "Scout"
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
+	head = /obj/item/clothing/head/beret/ncr_scout
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/w308=2)
 /*
 Trooper
 */
@@ -222,6 +248,10 @@ Trooper
 	exp_requirements = 300
 
 	outfit = /datum/outfit/job/ncr/f13trooper
+	
+	loadout_options = list(
+	/datum/outfit/loadout/trooper,
+	/datum/outfit/loadout/recon)
 
 /datum/outfit/job/ncr/f13trooper
 	name = "NCR Trooper"
@@ -234,15 +264,28 @@ Trooper
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor
 	belt =          /obj/item/storage/belt/military/NCR_Bandolier
 	glasses = 		null
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit_store = 	null
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/storage/bag/money/small/ncrenlisted, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
+	
+/datum/outfit/loadout/trooper
+	name = "Trooper"
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle=2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+
+/datum/outfit/loadout/recon
+	name = "Recon"
+	suit_store = obj/item/gun/ballistic/shotgun/remington
+	backpack_contents = list(
+		/obj/item/ammo_box/a308=2,
+		/obj/item/twohanded/binocs=1)
 
 /*
 Recruit
