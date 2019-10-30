@@ -407,4 +407,5 @@ Recon Ranger
 		/obj/item/storage/bag/money/small/ncrenlisted)
 	box = null
 	/*
+	*/
 
