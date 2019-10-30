@@ -561,7 +561,7 @@
 	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	slot_flags = ITEM_SLOT_BACK, ITEM_SLOT_SUIT
+	slot_flags = ITEM_SLOT_BACK
 	force = 10
 	var/force_on = 72
 	w_class = WEIGHT_CLASS_HUGE
