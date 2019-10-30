@@ -2,7 +2,7 @@
 	name = "shield"
 	block_chance = 50
 	item_flags = SLOWS_WHILE_IN_HAND
-	slowdown = 0.3
+	slowdown = 0.1
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 
 /obj/item/shield/riot
