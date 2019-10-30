@@ -4500,7 +4500,7 @@
 "hru" = (/obj/structure/grille,/obj/structure/window/reinforced/fulltile,/obj/machinery/door/poddoor/preopen{id = "outerkebab_window"},/turf/open/floor/f13{tag = "icon-floorrusty"; icon_state = "floorrusty"},/area/f13/city)
 "huD" = (/obj/effect/spawner/lootdrop/f13/foodspawner,/turf/open/indestructible/ground/outside/desert,/area/f13/wasteland)
 "hvP" = (/obj/machinery/mineral/processing_unit_console,/turf/closed/wall/r_wall/rust,/area/f13/bunker)
-"hwH" = (/obj/effect/landmark/start/f13/vetdecanus,/turf/open/floor/plasteel/f13{icon_state = "plating"},/area/f13/legion)
+"hwH" = (/obj/effect/landmark/start/f13/decanus,/turf/open/floor/plasteel/f13{icon_state = "plating"},/area/f13/legion)
 "hxc" = (/turf/open/indestructible/ground/outside/dirt{dir = 8; icon_state = "dirt"},/area/f13/farm)
 "hzH" = (/obj/structure/rack,/obj/item/clothing/head/crown,/turf/open/floor/f13{tag = "icon-floorrusty"; icon_state = "floorrusty"},/area/f13/building)
 "hBo" = (/mob/living/simple_animal/hostile/radroach,/turf/open/indestructible/ground/outside/sidewalk{tag = "icon-outermaincornerinner"; icon_state = "outermaincornerinner"},/area/f13/wasteland)

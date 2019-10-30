@@ -69,9 +69,7 @@
 
 #define F13LEGATE		(1<<0)
 #define F13CENTURION	(1<<1)
-#define F13VETDECAN		(1<<2)
-#define F13PRIMEDECAN   (1<<3)
-#define F13DECAN        (1<<4)
+#define F13DECAN		(1<<2)
 #define F13VEXILLARIUS	(1<<5)
 #define F13LIBRITOR		(1<<6)
 #define F13VETLEGION	(1<<7)

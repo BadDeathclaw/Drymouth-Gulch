@@ -135,7 +135,7 @@ Decanus
 */
 /datum/job/CaesarsLegion/Legionnaire/f13decan
 	title = "Legion Decanus"
-	flag = F13VETDECAN
+	flag = F13DECAN
 	faction = "Legion"
 	total_positions = 2
 	spawn_positions = 2
