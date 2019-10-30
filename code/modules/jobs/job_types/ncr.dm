@@ -87,6 +87,7 @@ Captain
 		/obj/item/ammo_box/magazine/m50=3, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/deagle=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/storage/bag/money/small/ncr, \
@@ -166,7 +167,7 @@ Sergeant
 		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/stack/medical/gauze=1, \
 		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
@@ -216,8 +217,8 @@ Corporal
 	name = "Corporal"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle=3,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2)
+		/obj/item/ammo_box/magazine/m556/rifle/assault =2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
 
 /datum/outfit/loadout/medic
 	name = "Medic"
