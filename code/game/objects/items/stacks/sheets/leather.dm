@@ -44,6 +44,13 @@ GLOBAL_LIST_INIT(human_recipes, list( \
 	singular_name = "gecko skin piece"
 	icon_state = "sheet-gekkonhide"
 
+/obj/item/stack/sheet/animalhide/chitin
+	name = "insect chitin"
+	desc = "Thick insect chitin, tough but light."
+	singular_name = "piece of insect chitin"
+	icon_state = "sheet-chitin"
+	grind_results = list("sodium" = 3, "chlorine" = 3)
+
 /obj/item/stack/sheet/animalhide/corgi
 	name = "corgi hide"
 	desc = "The by-product of corgi farming."
