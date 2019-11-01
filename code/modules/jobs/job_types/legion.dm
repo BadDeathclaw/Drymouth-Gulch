@@ -120,6 +120,7 @@ Centurion
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_auto=2, \
+		/obj/item/twohanded/binocs=1, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/key/scollar=1, \
 		/obj/item/key/bcollar=1, \
@@ -165,6 +166,7 @@ Decanus
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
+		/obj/item/twohanded/binocs=1, \
 		/obj/item/key/scollar=1, \
 		/obj/item/assembly/signaler/electropack/shockcollar=1, \
 		/obj/item/storage/bag/money/small/legofficers)
@@ -283,7 +285,7 @@ Prime
 
 	loadout_options = list(
 	/datum/outfit/loadout/prime,
-	/datum/outfit/loadout/scout)
+	/datum/outfit/loadout/primerev)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
 	name = "Prime Legionnaire"
@@ -305,20 +307,19 @@ Prime
 	r_pocket = /obj/item/restraints/handcuffs
 
 /datum/outfit/loadout/prime
-	name = "Prime"
+	name = "Shotgun"
 	suit_store = /obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot=1,
 		/obj/item/claymore/machete/gladius=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1)
 
-/datum/outfit/loadout/scout
-	name = "Scout"
+/datum/outfit/loadout/primerev
+	name = "Revolver"
 	suit_store = /obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
 		/obj/item/ammo_box/a357=2,
-		/obj/item/claymore/machete=1,
-		/obj/item/twohanded/binocs=1)
+		/obj/item/claymore/machete=1)
 
 
 /*
