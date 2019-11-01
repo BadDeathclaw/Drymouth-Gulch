@@ -70,6 +70,10 @@ Captain
 	exp_type = EXP_TYPE_NCRCOMMAND
 
 	outfit = /datum/outfit/job/ncr/f13captain
+	
+	loadout_options = list(
+	/datum/outfit/loadout/deagle,
+	/datum/outfit/loadout/carbine)
 
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
@@ -81,13 +85,13 @@ Captain
 	head 		= /obj/item/clothing/head/beret/ncr
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
+	suit_store 	= /obj/item/gun/ballistic/automatic/pistol/deagle
 	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
 	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m50=3, \
-		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/deagle=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/kitchen/knife/combat=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/melee/classic_baton/telescopic=1, \
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/storage/bag/money/small/ncr, \
@@ -128,7 +132,7 @@ Lieutenant
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/ammo_box/magazine/m45=2, \
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
@@ -149,6 +153,10 @@ Sergeant
 	exp_requirements = 1200
 
 	outfit = /datum/outfit/job/ncr/f13sergeant
+	
+	loadout_options = list(
+	/datum/outfit/loadout/rifle,
+	/datum/outfit/loadout/leader)
 
 /datum/outfit/job/ncr/f13sergeant
 	name = "NCR Sergeant"
@@ -159,20 +167,36 @@ Sergeant
 	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	belt =          /obj/item/storage/belt/military/assault/ncr
-	suit_store = 	/obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
+	suit_store = 	null
 	head =          /obj/item/clothing/head/f13/ncr
 	shoes = 		/obj/item/clothing/shoes/f13/military/ncr
 	gloves =        /obj/item/clothing/gloves/f13/ncr
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
-		/obj/item/gun/ballistic/automatic/pistol/ninemil=1, \
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1, \
 		/obj/item/stack/medical/gauze=1, \
-		/obj/item/ammo_box/magazine/m9mm=2, \
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
+	
+/datum/outfit/loadout/rifle
+	name = "Rifleman"
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/m556/rifle/assault=2,
+		/obj/item/gun/ballistic/automatic/pistol/ninemil=1,
+		/obj/item/ammo_box/magazine/m9mm=2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
+
+/datum/outfit/loadout/leader
+	name = "Patrol Leader"
+	suit_store = /obj/item/gun/ballistic/shotgun/trench
+	backpack_contents = list(
+		/obj/item/gun/ballistic/automatic/pistol/m1911=1,
+		/obj/item/ammo_box/magazine/m45=2,
+		/obj/item/storage/box/lethalshot=1,
+		/obj/item/twohanded/binocs=1)
+		
 /*
 Corporal
 */
@@ -200,8 +224,8 @@ Corporal
 	id = 			/obj/item/card/id/dogtag/ncrtrooper
 	uniform =  		/obj/item/clothing/under/f13/ncr
 	accessory =     /obj/item/clothing/accessory/ncr/CPL
-	suit = 			/obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	head = 			/obj/item/clothing/head/f13/ncr/goggles
+	suit = 			null
+	head = 			null
 	glasses = 		null
 	belt =          /obj/item/storage/belt/military/NCR_Bandolier
 	suit_store = 	null
@@ -216,24 +240,28 @@ Corporal
 /datum/outfit/loadout/corporal
 	name = "Corporal"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	head = /obj/item/clothing/head/f13/ncr/goggles
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault =2,
+		/obj/item/ammo_box/magazine/m556/rifle=3,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
 
 /datum/outfit/loadout/medic
 	name = "Medic"
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ninemil
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	head = /obj/item/clothing/head/f13/ncr/medic
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=2,
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/storage/pill_bottle/mining=1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1,
-		/obj/item/clothing/head/f13/ncr/medic=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1)
 
 /datum/outfit/loadout/marksman
 	name = "Marksman"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	head = /obj/item/clothing/head/beret/ncr_scout
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/scout
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/w308=2)
 /*
