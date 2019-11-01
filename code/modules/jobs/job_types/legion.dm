@@ -106,9 +106,8 @@ Centurion
 	H.add_quirk("Hard Yards")
 	
 	loadout_options = list(
-	/datum/outfit/loadout/SMG,
-	/datum/outfit/loadout/Thermic)
-
+	/datum/outfit/loadout/smg,
+	/datum/outfit/loadout/thermic)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Legion Centurion"
@@ -131,16 +130,16 @@ Centurion
 		/obj/item/assembly/signaler/electropack/boomcollar=2, \
 		/obj/item/storage/bag/money/small/legion)
 		
-/datum/outfit/loadout/SMG
+/datum/outfit/loadout/smg
 	name = "SMG & Powerfist"
 	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
 	backpack_contents = list(
 		/obj/item/melee/powerfist=1,
 		/obj/item/ammo_box/magazine/m10mm_auto=2)
 
-/datum/outfit/loadout/Thermic
+/datum/outfit/loadout/thermic
 	name = "Thermic Lance"
-	suit_store = null
+	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
 	backpack_contents = list(
 		/obj/item/twohanded/required/thermic_lance=1)
 
