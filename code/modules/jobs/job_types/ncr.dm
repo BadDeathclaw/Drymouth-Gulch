@@ -120,7 +120,7 @@ Lieutenant
 	head 		= /obj/item/clothing/head/beret/ncr
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
-	suit_store 	= /obj/item/gun/ballistic/automatic/assault_carbine
+	suit_store 	= /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
 	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
@@ -179,7 +179,7 @@ Sergeant
 	name = "Rifleman"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault=2,
+		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil=1,
 		/obj/item/ammo_box/magazine/m9mm=2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
