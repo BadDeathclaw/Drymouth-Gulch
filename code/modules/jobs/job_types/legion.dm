@@ -101,13 +101,13 @@ Centurion
 	exp_type = EXP_TYPE_DECANUS
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
-
-/datum/job/CaesarsLegion/Legionnaire/f13centurion/after_spawn(mob/living/carbon/human/H, mob/M)
-	H.add_quirk("Hard Yards")
 	
 	loadout_options = list(
 	/datum/outfit/loadout/smg,
 	/datum/outfit/loadout/thermic)
+
+/datum/job/CaesarsLegion/Legionnaire/f13centurion/after_spawn(mob/living/carbon/human/H, mob/M)
+	H.add_quirk("Hard Yards")
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	name = "Legion Centurion"
