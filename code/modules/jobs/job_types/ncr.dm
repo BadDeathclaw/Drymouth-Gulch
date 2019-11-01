@@ -70,10 +70,6 @@ Captain
 	exp_type = EXP_TYPE_NCRCOMMAND
 
 	outfit = /datum/outfit/job/ncr/f13captain
-	
-	loadout_options = list(
-	/datum/outfit/loadout/deagle,
-	/datum/outfit/loadout/carbine)
 
 /datum/outfit/job/ncr/f13captain
 	name = "NCR Captain"
