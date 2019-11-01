@@ -264,7 +264,7 @@ Vexillarius
 	suit_store = /obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
 		/obj/item/twohanded/fireaxe=1,
-		/obj/item/ammo_box/tube/m44=2)
+		/obj/item/ammo_box/m44=2)
 
 /*
 Veteran
