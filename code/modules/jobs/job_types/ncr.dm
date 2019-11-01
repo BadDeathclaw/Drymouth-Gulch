@@ -120,11 +120,11 @@ Lieutenant
 	head 		= /obj/item/clothing/head/beret/ncr
 	belt        = /obj/item/storage/belt/military/assault/ncr
 	glasses 	= /obj/item/clothing/glasses/sunglasses/big
-	suit_store 	= /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
+	suit_store 	= /obj/item/gun/ballistic/automatic/assault_carbine
 	shoes       = /obj/item/clothing/shoes/f13/military/ncr_officer
 	gloves      = /obj/item/clothing/gloves/f13/leather/ncr_officer
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m556/rifle/assault=2, \
+		/obj/item/ammo_box/magazine/m556/rifle=2, \
 		/obj/item/kitchen/knife/combat/survival=1, \
 		/obj/item/gun/ballistic/automatic/pistol/m1911=1, \
 		/obj/item/melee/classic_baton/telescopic=1, \
