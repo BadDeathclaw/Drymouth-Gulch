@@ -103,8 +103,9 @@ Centurion
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
 	
 	loadout_options = list(
-	/datum/outfit/loadout/smg,
-	/datum/outfit/loadout/thermic)
+	/datum/outfit/loadout/powerfist,
+	/datum/outfit/loadout/thermic,
+	/datum/outfit/loadout/amr)
 
 /datum/job/CaesarsLegion/Legionnaire/f13centurion/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
@@ -130,7 +131,7 @@ Centurion
 		/obj/item/assembly/signaler/electropack/boomcollar=2, \
 		/obj/item/storage/bag/money/small/legion)
 		
-/datum/outfit/loadout/smg
+/datum/outfit/loadout/powerfist
 	name = "SMG & Powerfist"
 	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
 	backpack_contents = list(
@@ -139,9 +140,19 @@ Centurion
 
 /datum/outfit/loadout/thermic
 	name = "Thermic Lance"
-	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
+	suit_store = /obj/item/gun/ballistic/revolver/m29
 	backpack_contents = list(
-		/obj/item/twohanded/required/thermic_lance=1)
+		/obj/item/twohanded/required/thermic_lance=1,
+		/obj/item/ammo_box/m44=3)
+		
+/datum/outfit/loadout/amr
+	name = "Anti Material Rifle"
+	suit_store = /obj/item/gun/ballistic/shotgun/antimateriel
+	backpack_contents = list(
+		/obj/item/gun/ballistic/revolver/colt357=1,
+		/obj/item/ammo_box/a357=2,
+		/obj/item/ammo_box/a50MG=2,
+		/obj/item/claymore/machete/gladius=1)
 
 /*
 Decanus
@@ -157,6 +168,10 @@ Decanus
 	exp_requirements = 1200
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13decan
+	
+	loadout_options = list(
+	/datum/outfit/loadout/smg,
+	/datum/outfit/loadout/trail)
 
 /datum/job/CaesarsLegion/Legionnaire/f13decan/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
@@ -170,20 +185,34 @@ Decanus
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/decan
 	mask =			/obj/item/clothing/mask/bandana/legdecan
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/trail
-	r_hand = 		/obj/item/twohanded/fireaxe/bmprsword
+	suit_store = 	null
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/tube/m44=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/key/scollar=1, \
 		/obj/item/assembly/signaler/electropack/shockcollar=1, \
 		/obj/item/storage/bag/money/small/legofficers)
+		
+/datum/outfit/loadout/smg
+	name = "SMG & Sword"
+	suit_store = /obj/item/gun/ballistic/automatic/greasegun
+	backpack_contents = list(
+		/obj/item/twohanded/fireaxe/bmprsword=1,
+		/obj/item/ammo_box/magazine/greasegun=2)
+
+/datum/outfit/loadout/trail
+	name = "Trail Carbine"
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/trail
+	backpack_contents = list(
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/ammo_box/tube/m44=2,
+		/obj/item/gun/ballistic/revolver/colt357=1,
+		/obj/item/ammo_box/a357=2)
 
 /*
 Vexillarius
@@ -199,6 +228,10 @@ Vexillarius
 	exp_requirements = 900
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13vexillarius
+	
+	loadout_options = list(
+	/datum/outfit/loadout/cowboy,
+	/datum/outfit/loadout/axe)
 
 /datum/job/CaesarsLegion/Legionnaire/f13vexillarius/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
@@ -211,16 +244,27 @@ Vexillarius
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/vet/vexil
 	head = 			/obj/item/clothing/head/helmet/f13/legion/vet/vexil
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
-	suit_store = 	/obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	suit_store = 	null
 	backpack_contents = list(
-		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/tube/a357=2, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/megaphone/cornu=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
 	r_pocket = /obj/item/restraints/handcuffs
+	
+/datum/outfit/loadout/cowboy
+	name = "Cowboy Repeater"
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	backpack_contents = list(
+		/obj/item/ammo_box/tube/a357=2,
+		/obj/item/claymore/machete/gladius=1)
+
+/datum/outfit/loadout/axe
+	name = "Axe & Revolver"
+	suit_store = /obj/item/gun/ballistic/revolver/m29
+	backpack_contents = list(
+		/obj/item/twohanded/fireaxe=1,
+		/obj/item/ammo_box/tube/m44=2)
 
 /*
 Veteran
@@ -239,6 +283,7 @@ Veteran
 
 	loadout_options = list(
 	/datum/outfit/loadout/veteran,
+	/datum/outfit/loadout/vetrep,
 	/datum/outfit/loadout/explorer)
 
 /datum/job/CaesarsLegion/Legionnaire/f13vetlegion/after_spawn(mob/living/carbon/human/H, mob/M)
@@ -273,12 +318,23 @@ Veteran
 		/obj/item/clothing/head/helmet/f13/legion/vet=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=1)
 
+/datum/outfit/loadout/vetrep
+	name = "Veteran: Repeater"
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/hunting/cowboy
+	backpack_contents = list(
+		/obj/item/ammo_box/tube/a357=2,
+		/obj/item/claymore/machete/gladius=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/clothing/suit/armor/f13/legion/vet=1,
+		/obj/item/clothing/head/helmet/f13/legion/vet=1,)
+
 /datum/outfit/loadout/explorer
 	name = "Explorer"
 	suit_store = /obj/item/gun/ballistic/shotgun/remington/scoped
 	backpack_contents = list(
 		/obj/item/ammo_box/a308=2,
 		/obj/item/claymore/machete/gladius=1,
+		/obj/item/throwing_star/throwingknife=1,
 		/obj/item/clothing/suit/armor/f13/legion/vet/explorer=1,
 		/obj/item/clothing/head/helmet/f13/legion/vet/explorer=1)
 
@@ -299,7 +355,8 @@ Prime
 
 	loadout_options = list(
 	/datum/outfit/loadout/prime,
-	/datum/outfit/loadout/primerev)
+	/datum/outfit/loadout/primerev,
+	/datum/outfit/loadout/primerifle)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13primelegion
 	name = "Prime Legionnaire"
@@ -333,6 +390,14 @@ Prime
 	suit_store = /obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
 		/obj/item/ammo_box/a357=2,
+		/obj/item/claymore/machete=1,
+		/obj/item/reagent_containers/pill/patch/healingpowder=1)
+		
+/datum/outfit/loadout/primerifle
+	name = "Rifle"
+	suit_store = /obj/item/gun/ballistic/shotgun/remington
+	backpack_contents = list(
+		/obj/item/ammo_box/a308=2,
 		/obj/item/claymore/machete=1)
 
 
