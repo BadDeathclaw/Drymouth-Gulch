@@ -254,7 +254,7 @@ Trooper
 
 	loadout_options = list(
 	/datum/outfit/loadout/trooper,
-	/datum/outfit/loadout/recon)
+	/datum/outfit/loadout/hunting)
 
 /datum/outfit/job/ncr/f13trooper
 	name = "NCR Trooper"
@@ -277,18 +277,17 @@ Trooper
 	box = null
 
 /datum/outfit/loadout/trooper
-	name = "Trooper"
+	name = "Service Rifle"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle=2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1)
 
-/datum/outfit/loadout/recon
-	name = "Recon"
+/datum/outfit/loadout/hunting
+	name = ".308 Rifle"
 	suit_store = /obj/item/gun/ballistic/shotgun/remington
 	backpack_contents = list(
-		/obj/item/ammo_box/a308=2,
-		/obj/item/twohanded/binocs=1)
+		/obj/item/ammo_box/a308=3)
 
 /*
 Recruit
