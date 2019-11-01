@@ -104,6 +104,10 @@ Centurion
 
 /datum/job/CaesarsLegion/Legionnaire/f13centurion/after_spawn(mob/living/carbon/human/H, mob/M)
 	H.add_quirk("Hard Yards")
+	
+	loadout_options = list(
+	/datum/outfit/loadout/SMG,
+	/datum/outfit/loadout/Thermic)
 
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion
@@ -113,13 +117,12 @@ Centurion
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	mask =			/obj/item/clothing/mask/bandana/legcenturion
-	r_hand =		/obj/item/melee/powerfist
-	suit_store =	/obj/item/gun/ballistic/automatic/smg10mm
+	r_hand =		null
+	suit_store =	null
 	glasses = 		/obj/item/clothing/glasses/sunglasses/big
 	r_pocket =      /obj/item/restraints/handcuffs
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
-		/obj/item/ammo_box/magazine/m10mm_auto=2, \
 		/obj/item/twohanded/binocs=1, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/key/scollar=1, \
@@ -127,7 +130,19 @@ Centurion
 		/obj/item/assembly/signaler/electropack/shockcollar=1, \
 		/obj/item/assembly/signaler/electropack/boomcollar=2, \
 		/obj/item/storage/bag/money/small/legion)
+		
+/datum/outfit/loadout/SMG
+	name = "SMG & Powerfist"
+	suit_store = /obj/item/gun/ballistic/automatic/smg10mm
+	backpack_contents = list(
+		/obj/item/melee/powerfist=1,
+		/obj/item/ammo_box/magazine/m10mm_auto=2)
 
+/datum/outfit/loadout/Thermic
+	name = "Thermic Lance"
+	suit_store = null
+	backpack_contents = list(
+		/obj/item/twohanded/required/thermic_lance=1)
 
 /*
 Decanus
