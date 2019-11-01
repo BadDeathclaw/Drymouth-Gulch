@@ -290,8 +290,8 @@ Prime
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13primelegion
 	id = 			/obj/item/card/id/dogtag/legprime
 	shoes =         /obj/item/clothing/shoes/f13/military/legionleather
-	suit = 			null
-	head = 			null
+	suit = 			/obj/item/clothing/suit/armor/f13/legion/prime
+	head = 			/obj/item/clothing/head/helmet/f13/legion/prime
 	mask =			/obj/item/clothing/mask/bandana/legprime
 	glasses = 		/obj/item/clothing/glasses/legiongoggles
 	suit_store = 	null
@@ -299,7 +299,6 @@ Prime
 		/obj/item/restraints/legcuffs/bola=1, \
 		/obj/item/throwing_star/spear, \
 		/obj/item/throwing_star/spear, \
-		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=1, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legenlisted)
@@ -310,18 +309,16 @@ Prime
 	suit_store = /obj/item/gun/ballistic/shotgun
 	backpack_contents = list(
 		/obj/item/storage/box/lethalshot=1,
-		/obj/item/clothing/suit/armor/f13/legion/prime=1,
-		/obj/item/clothing/head/helmet/f13/legion/prime=1,
+		/obj/item/claymore/machete/gladius=1,
 		/obj/item/reagent_containers/pill/patch/healingpowder=1)
 
 /datum/outfit/loadout/scout
 	name = "Scout"
-	suit_store = /obj/item/gun/ballistic/revolver/m29
+	suit_store = /obj/item/gun/ballistic/revolver/colt357
 	backpack_contents = list(
-		/obj/item/ammo_box/m44=2,
-		/obj/item/twohanded/binocs=1,
-		/obj/item/clothing/suit/armor/f13/legion/recruit/scout=1,
-		/obj/item/clothing/head/helmet/f13/legion/recruit/scout=1)
+		/obj/item/ammo_box/a357=2,
+		/obj/item/claymore/machete=1,
+		/obj/item/twohanded/binocs=1)
 
 
 /*
