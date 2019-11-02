@@ -255,11 +255,11 @@ Corporal
 
 /datum/outfit/loadout/marksman
 	name = "Marksman"
-	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
+	suit_store = /obj/item/gun/ballistic/shotgun/remington/scoped
 	head = /obj/item/clothing/head/beret/ncr_scout
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/scout
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/w308=2)
+		/obj/item/ammo_box/a308=3)
 /*
 Trooper
 */
