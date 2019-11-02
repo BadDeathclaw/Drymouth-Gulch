@@ -149,7 +149,7 @@ Sergeant
 	exp_requirements = 1200
 
 	outfit = /datum/outfit/job/ncr/f13sergeant
-	
+
 	loadout_options = list(
 	/datum/outfit/loadout/rifle,
 	/datum/outfit/loadout/leader)
@@ -174,7 +174,7 @@ Sergeant
 		/obj/item/storage/bag/money/small/ncrofficers, \
 		/obj/item/clothing/mask/ncr_facewrap)
 	box = null
-	
+
 /datum/outfit/loadout/rifle
 	name = "Rifleman"
 	suit_store = /obj/item/gun/ballistic/automatic/marksman/servicerifle/r82
@@ -192,7 +192,7 @@ Sergeant
 		/obj/item/ammo_box/magazine/m45=2,
 		/obj/item/storage/box/lethalshot=1,
 		/obj/item/twohanded/binocs=1)
-		
+
 /*
 Corporal
 */
@@ -251,7 +251,7 @@ Corporal
 		/obj/item/ammo_box/magazine/m9mm=2,
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/storage/pill_bottle/mining=1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1,
 		/obj/item/book/granter/trait/chemistry=1)
 
 /datum/outfit/loadout/marksman
