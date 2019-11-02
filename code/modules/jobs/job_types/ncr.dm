@@ -200,8 +200,8 @@ Corporal
 	title = "NCR Corporal"
 	flag = F13CORPORAL
 	faction = "NCR"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 4
+	spawn_positions = 4
 	description = "You answer to your Sergeant and follow the chain of command, to your commanding officer, the Captain."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
@@ -245,13 +245,14 @@ Corporal
 /datum/outfit/loadout/medic
 	name = "Medic"
 	suit_store = /obj/item/gun/ballistic/automatic/pistol/ninemil
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
 	head = /obj/item/clothing/head/f13/ncr/medic
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm=2,
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/storage/pill_bottle/mining=1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1)
+		/obj/item/reagent_containers/hypospray/medipen/stimpak/super=1
+		/obj/item/book/granter/trait/chemistry=1)
 
 /datum/outfit/loadout/marksman
 	name = "Marksman"
@@ -320,8 +321,8 @@ Recruit
 	title = "NCR Recruit"
 	flag = F13RECRUIT
 	faction = "NCR"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 6
+	spawn_positions = 6
 	description = "You answer to the Sergeants or Corporals,  following the chain of command, to your commanding officer, the Captain."
 	supervisors = "Corporals and above"
 	selection_color = "#fff5cc"
