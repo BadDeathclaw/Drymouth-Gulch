@@ -345,8 +345,8 @@ Prime
 	title = "Prime Legionnaire"
 	flag = F13PRIMELEGION
 	faction = "Legion"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 6
+	spawn_positions = 6
 	description = "You answer directly to the Decanus and the Centurion. You act as a loyal soldier within the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave."
 	supervisors = "Decanus and up."
 	exp_requirements = 300
@@ -408,8 +408,8 @@ Legionary
 	title = "Recruit Legionnaire"
 	flag = F13LEGIONARY
 	faction = "Legion"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 6
+	spawn_positions = 6
 	description = "You answer directly to the Decanus and the Centurion. You act as a loyal soldier within the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave."
 	supervisors = "Decanus and up."
 	exp_requirements = 300
