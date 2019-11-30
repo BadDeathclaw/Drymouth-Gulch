@@ -85,6 +85,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("lock", /obj/item/lock, 1), \
 	new/datum/stack_recipe("key", /obj/item/door_key, 1), \
 	new/datum/stack_recipe("key chain", /obj/item/storage/keys_set, 1), \
+	new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \
 	null, \
 	new/datum/stack_recipe("floodlight frame", /obj/structure/floodlight_frame, 5, one_per_turf = TRUE, on_floor = TRUE), \
 ))
@@ -302,6 +303,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2), \
 	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2), \
 	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
+	new/datum/stack_recipe("thread", /obj/item/stack/sheet/durathread/three, 1), \
 	null, \
 	))
 

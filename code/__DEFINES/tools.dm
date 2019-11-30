@@ -14,6 +14,9 @@
 #define TOOL_RELOADER		"pre-war reloading press"
 #define TOOL_MSRELOADER     "makeshift reloading tool"
 #define TOOL_LUNCHBOX       "lunchbox"
+#define TOOL_BWORKBENCH     "basic workbench"
+#define TOOL_SWORKBENCH     "standard workbench"
+#define TOOL_AWORKBENCH     "advanced workbench"
 
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
 // tool sound is only played when op is started. If not, it's played twice.

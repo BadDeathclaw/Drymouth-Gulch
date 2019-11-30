@@ -309,3 +309,9 @@
 //	icon = 'icons/obj/drinks.dmi' //tacked this on for testing. Icon doesn't change back into a bottle when empty, but the bitter drink bottle is opaque anyway
 //	icon_state = "bitterdrink"
 	list_reagents = list("bitter_drink" = 30)
+
+/obj/item/reagent_containers/glass/bottle/blackpowder
+	name = "blackpowder bottle"
+	desc = "A large bottle containing black powder."
+	volume = 60
+	list_reagents = list("blackpowder" = 60)
