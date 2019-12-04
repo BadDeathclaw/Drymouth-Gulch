@@ -27,7 +27,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = FALSE
 	fire_delay = 3
-	extra_damage = 30
+	extra_damage = 35
 
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "desert eagle"
