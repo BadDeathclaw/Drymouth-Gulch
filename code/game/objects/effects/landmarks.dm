@@ -459,6 +459,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Sergeant"
 	icon_state = "NCR Sergeant"
 
+/obj/effect/landmark/start/f13/ncrmedic
+	name = "NCR Medical Officer"
+
+/obj/effect/landmark/start/f13/ncrengineer
+	name = "NCR Engineer"
+
 /obj/effect/landmark/start/f13/ncrcorporal
 	name = "NCR Corporal"
 
@@ -469,6 +475,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/ncrrecruit
 	name = "NCR Recruit"
 	icon_state = "NCR Recruit"
+
+/obj/effect/landmark/start/f13/ncrheavytroop
+	name = "NCR Heavy Trooper"
 
 /obj/effect/landmark/start/f13/ncrveteranranger
 	name = "NCR Veteran Ranger"
@@ -482,6 +491,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "NCR Recon Ranger"
 	icon_state = "NCR Recon Ranger"
 
+/obj/effect/landmark/start/f13/ncrscoutcpl
+	name = "NCR Scout"
+
+/obj/effect/landmark/start/f13/ncrscoutssgt
+	name = "NCR Scout Sergeant"
+
+/obj/effect/landmark/start/f13/ncrscoutlt
+	name = "NCR Scout Lieutenant"
+
 // Legion
 
 /obj/effect/landmark/start/f13/legate
@@ -492,12 +510,23 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	name = "Legion Centurion"
 	icon_state = "Centurion"
 
-/obj/effect/landmark/start/f13/decanus
-	name = "Legion Decanus"
+/obj/effect/landmark/start/f13/vetdecanus
+	name = "Legion Veteran Decanus"
 
 /obj/effect/landmark/start/f13/vexillarius
 	name = "Legion Vexillarius"
 	icon_state = "Vexillarius"
+
+/obj/effect/landmark/start/f13/primedecanus
+	name = "Legion Prime Decanus"
+
+/obj/effect/landmark/start/f13/decanus
+	name = "Legion Recruit Decanus"
+	icon_state = "Decanus"
+
+/obj/effect/landmark/start/f13/libritor
+	name = "Legion Libritor"
+	icon_state = "Veteran Legionnaire"
 
 /obj/effect/landmark/start/f13/veteranlegionnaire
 	name = "Veteran Legionnaire"
@@ -509,6 +538,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/start/f13/legionary
 	name = "Recruit Legionnaire"
 	icon_state = "Legionary"
+
+/obj/effect/landmark/start/f13/scout
+	name = "Legion Scout"
+
+/obj/effect/landmark/start/f13/explorer
+	name = "Legion Explorer"
+
+/obj/effect/landmark/start/f13/venator
+	name = "Legion Venator"
 
 /obj/effect/landmark/start/f13/campfollower
 	name = "Camp Follower"
