@@ -264,7 +264,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/remington
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-	fire_delay = 6
+	fire_delay = 3
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	extra_damage = 40

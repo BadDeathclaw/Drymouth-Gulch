@@ -340,7 +340,7 @@
 /obj/item/clothing/mask/bandana/legvet
 	name = "veteran bandana"
 	desc = "A fine veteran bandana."
-	icon_state = "legdecan"
+	icon_state = "legvet"
 	flags_inv = HIDEFACE
 	flags_cover = MASKCOVERSMOUTH
 	visor_flags_inv = HIDEFACE
