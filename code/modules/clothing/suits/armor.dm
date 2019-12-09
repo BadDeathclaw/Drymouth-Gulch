@@ -260,13 +260,13 @@
 	strip_delay = 30
 
 /obj/item/clothing/suit/armor/fluff/chestplate
-	name = "metal chestplate"
+	name = "metal armor"
 	desc = "A set of plates formed together to form a crude chestplate."
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
 	body_parts_covered = CHEST|GROIN|ARMS
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
-	slowdown = 0.5
+	slowdown = 0.25
 	strip_delay = 10
 
 /obj/item/clothing/suit/armor/fluff/chestplate/Initialize()
@@ -279,13 +279,13 @@
 	return ..()
 
 /obj/item/clothing/suit/armor/fluff/chestplate/mk2
-	name = "reflective metal chestplate"
+	name = "metal armor mark 2"
 	desc = "A set of polished plates formed together to form a reflective chestplate specially effective agaisnt energy weaponry."
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 50, "energy" = 50, "bomb" = 25, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 0)
-	slowdown = 0.5
+	slowdown = 0.25
 	strip_delay = 10
 
 /obj/item/clothing/suit/armor/f13/kit

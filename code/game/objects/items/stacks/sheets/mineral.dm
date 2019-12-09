@@ -287,6 +287,7 @@ GLOBAL_LIST_INIT(bananium_recipes, list ( \
 
 GLOBAL_LIST_INIT(titanium_recipes, list ( \
 	new/datum/stack_recipe("titanium tile", /obj/item/stack/tile/mineral/titanium, 1, 4, 20), \
+	new/datum/stack_recipe("high quality metal parts", /obj/item/stack/crafting/goodparts, 5), \
 	))
 
 /obj/item/stack/sheet/mineral/titanium/Initialize(mapload, new_amount, merge = TRUE)

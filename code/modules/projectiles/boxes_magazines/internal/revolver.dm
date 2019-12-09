@@ -56,3 +56,9 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
 	max_ammo = 1
+
+/obj/item/ammo_box/magazine/internal/cylinder/thatgun
+	name = ".223 pistol cylinder"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 5
