@@ -7,6 +7,9 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
+/obj/item/ammo_box/a357/empty
+	stored_ammo = 0
+
 /obj/item/ammo_box/c38
 	name = "speed loader (.38)"
 	desc = "Designed to quickly reload revolvers."
@@ -15,6 +18,9 @@
 	max_ammo = 6
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 2000)
+
+/obj/item/ammo_box/c38/empty
+	stored_ammo = 0
 
 /obj/item/ammo_box/l10mm
 	name = "speed loader (10mm)"
@@ -25,6 +31,9 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
 
+/obj/item/ammo_box/l10mm/empty
+	stored_ammo = 0
+
 /obj/item/ammo_box/m44
 	name = "speed loader (.44)"
 	desc = "Designed to quickly reload revolvers."
@@ -33,6 +42,9 @@
 	max_ammo = 6
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 4000)
+
+/obj/item/ammo_box/m44/empty
+	stored_ammo = 0
 
 /obj/item/ammo_box/c4570
 	name = "speed loader (.45-70)"
@@ -43,6 +55,8 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 8000)
 
+/obj/item/ammo_box/c4570/empty
+	stored_ammo = 0
 
 /*/obj/item/ammo_box/c4570SP
 	name = "speed loader (.45 LC)"
@@ -62,6 +76,9 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 6000)
 
+/obj/item/ammo_box/tube/m44/empty
+	stored_ammo = 0
+
 /obj/item/ammo_box/tube/a357
 	name = "speed loader tube (.357)"
 	desc = "Designed to quickly reload repeaters."
@@ -71,6 +88,9 @@
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 7000)
 
+/obj/item/ammo_box/tube/a357/empty
+	stored_ammo = 0
+
 /obj/item/ammo_box/tube/c4570
 	name = "speed loader tube (.45-70)"
 	desc = "Designed to quickly reload repeaters."
@@ -79,6 +99,9 @@
 	max_ammo = 8
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 12000)
+
+/obj/item/ammo_box/tube/c4570/empty
+	stored_ammo = 0
 
 /*/obj/item/ammo_box/tube/c4570SP
 	name = "speed loader tube (.45 LC)"
@@ -226,6 +249,15 @@
 	max_ammo = 5
 	multiple_sprites = 1
 	materials = list(MAT_METAL = 7000)
+
+/obj/item/ammo_box/a556
+	name = "stripper clip (5.56x45mm)"
+	desc = "A stripper clip."
+	icon_state = "762"
+	ammo_type = /obj/item/ammo_casing/a556
+	max_ammo = 5
+	multiple_sprites = 1
+	materials = list(MAT_METAL = 2500)
 
 /obj/item/ammo_box/a762/doublestacked
 	name = "lowpower double stacked stripper clip (7.62mm)"

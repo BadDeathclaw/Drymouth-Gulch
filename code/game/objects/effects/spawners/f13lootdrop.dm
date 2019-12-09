@@ -580,7 +580,8 @@
 				/obj/item/instrument/guitar,
 				/obj/item/instrument/violin,
 				/obj/item/instrument/saxophone,
-				/obj/item/claymore/machete/pipe
+				/obj/item/claymore/machete/pipe,
+				/obj/item/kitchen/knife/cosmicdirty,
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3 //TIER 3 MELEE WEAPON
@@ -1203,7 +1204,10 @@
 				/obj/item/crafting/igniter,
 				/obj/item/crafting/timer,
 				/obj/item/crafting/sensor,
-				/obj/item/crafting/lunchbox)
+				/obj/item/crafting/lunchbox,
+				/obj/item/stack/crafting/metalparts/five,
+				/obj/item/stack/crafting/goodparts/three,
+				/obj/item/reagent_containers/glass/bottle/blackpowder)
 
 /obj/effect/spawner/lootdrop/f13/crafting/Initialize(mapload) //on mapload, pick how many shit to spawn
 	lootcount = pick(1, 2)
@@ -1259,7 +1263,9 @@
 				/obj/item/stack/sheet/plasteel/five = 1,
 				/obj/item/stack/sheet/plastic/five = 4,
 				/obj/item/stack/sheet/paperframes/twenty = 1,
-				/obj/item/stack/sheet/cloth/ten = 1
+				/obj/item/stack/sheet/cloth/ten = 1,
+				/obj/item/stack/crafting/metalparts/five = 4,
+				/obj/item/stack/crafting/goodparts/three = 2
 				)
 
 /obj/effect/spawner/lootdrop/f13/cash_random_low

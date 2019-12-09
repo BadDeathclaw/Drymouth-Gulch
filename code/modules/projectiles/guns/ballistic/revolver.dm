@@ -475,3 +475,11 @@
 	w_class = WEIGHT_CLASS_SMALL
 	extra_damage = 15
 
+/obj/item/gun/ballistic/revolver/thatgun
+	name = ".223 pistol"
+	desc = "A .223 rifle modified and cut down to a pistol. This is a one-of-a kind firearm, obviously made with love and skill."
+	icon_state = "thatgun"
+	fire_sound = 'sound/f13weapons/that_gun.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
+	w_class = WEIGHT_CLASS_NORMAL
+	extra_penetration = 15
