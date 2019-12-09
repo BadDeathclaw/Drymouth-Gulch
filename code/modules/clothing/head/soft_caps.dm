@@ -87,8 +87,8 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/mime
-	name = "white cap"
-	desc = "It's a baseball hat in a tasteless white colour."
+	name = "cap"
+	desc = "It's a baseball hat in a tasteless colour."
 	icon_state = "mimesoft"
 	item_color = "mime"
 	dog_fashion = null
