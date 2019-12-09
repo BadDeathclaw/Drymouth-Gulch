@@ -723,9 +723,9 @@
 	icon_state = "lethalshot_box"
 	illustration = null
 
-/obj/item/storage/box/lethalshot/PopulateContents()
+/obj/item/storage/box/magnumshot/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/projectile/bullet/pellet/magnum_buckshot(src)
+		new /obj/item/ammo_casing/shotgun/magnumshot(src)
 
 /obj/item/storage/box/slugshot
 	name = "box of slug shotgun shots"
