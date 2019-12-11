@@ -63,9 +63,9 @@
 	name = "buckshot pellet"
 	damage = 14 //Up to 84 damage point blank
 
-/obj/item/projectile/bullet/pellet/magnum_buckshot
+/*/obj/item/projectile/bullet/pellet/magnum_buckshot
 	name = "magnum buckshot pellet"
-	damage = 18.2 //Up to 109 damage point blank or x1.3 of ordinary buckshot
+	damage = 18.2 //Up to 109 damage point blank or x1.3 of ordinary buckshot*/
 
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"

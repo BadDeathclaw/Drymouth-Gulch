@@ -717,7 +717,7 @@
 	for(var/i in 1 to 7)
 		new /obj/item/ammo_casing/shotgun/buckshot(src)
 
-/obj/item/storage/box/magnumshot
+/*/obj/item/storage/box/magnumshot
 	name = "box of magnum buckshot shotgun shots"
 	desc = "A box full of lethal magnum buckshot rounds, designed for hunting shotguns."
 	icon_state = "lethalshot_box"
@@ -725,7 +725,7 @@
 
 /obj/item/storage/box/lethalshot/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/projectile/bullet/pellet/magnum_buckshot(src)
+		new /obj/item/projectile/bullet/pellet/magnum_buckshot(src)*/
 
 /obj/item/storage/box/slugshot
 	name = "box of slug shotgun shots"
