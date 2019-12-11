@@ -57,3 +57,6 @@
 	caliber = "shotgun"
 	max_ammo = 12
 	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/d12g/empty
+	stored_ammo = 0

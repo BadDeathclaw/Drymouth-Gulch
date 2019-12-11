@@ -8,6 +8,8 @@
 	fire_delay = 2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	force = 20
+	var/auto_eject = 0
+	var/auto_eject_sound = null
 
 /obj/item/gun/ballistic/automatic/proto
 	name = "compact submachine gun"
@@ -81,6 +83,21 @@
 		update_icon()
 		alarmed = 1
 	return
+
+/obj/item/gun/ballistic/automatic/afterattack(atom/target, mob/living/user)
+	..()
+	if(auto_eject && magazine && magazine.stored_ammo && !magazine.stored_ammo.len)
+		magazine.dropped()
+		user.visible_message(
+			"[magazine] falls out and clatters on the floor!",
+			"<span class='notice'>[magazine] falls out and clatters on the floor!</span>"
+		)
+		if(auto_eject_sound)
+			playsound(user, auto_eject_sound, 40, 1)
+		magazine.forceMove(get_turf(src.loc))
+		magazine.update_icon()
+		magazine = null
+		update_icon()
 
 /obj/item/gun/ballistic/automatic/c20r
 	name = "tactical submachine gun"

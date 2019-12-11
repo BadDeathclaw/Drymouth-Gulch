@@ -58,7 +58,7 @@
 
 /obj/item/kitchen/knife
 	name = "kitchen knife"
-	icon_state = "knife"
+	icon_state = "kitchen_knife"
 	desc = "A general purpose Chef's Knife made by VaultCook Incorporated. Guaranteed to stay sharp for knife guys for years to come."
 	flags_1 = CONDUCT_1
 	force = 10
@@ -129,6 +129,34 @@
 	desc = "A hunting grade survival knife."
 	force = 25
 	bayonet = TRUE
+
+/obj/item/kitchen/knife/cosmicdirty
+	name = "dirty cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy."
+	icon_state = "cosmic_knife_dirty"
+	item_state = "knife"
+	force = 15
+	throwforce = 10
+	armour_penetration = 10
+
+/obj/item/kitchen/knife/cosmic
+	name = "cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy, this one seems to be in better condition."
+	icon_state = "cosmic_knife"
+	item_state = "knife"
+	force = 20
+	throwforce = 15
+	armour_penetration = 10
+
+/obj/item/kitchen/knife/cosmicheated
+	name = "superheated cosmic knife"
+	desc = "A high-quality kitchen knife made from Saturnite alloy, this one looks like it has been heated to high temperatures."
+	icon_state = "cosmic_knife_heated"
+	item_state = "knife"
+	damtype = BURN
+	force = 25
+	throwforce = 20
+	armour_penetration = 10
 
 /obj/item/kitchen/knife/combat/bone
 	name = "bone dagger"

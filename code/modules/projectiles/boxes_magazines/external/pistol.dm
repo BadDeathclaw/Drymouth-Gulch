@@ -39,6 +39,9 @@
 	else
 		icon_state = "45-[ammo_count()]"
 
+/obj/item/ammo_box/magazine/m45/empty
+	stored_ammo = 0
+
 /obj/item/ammo_box/magazine/pistolm9mm
 	name = "pistol magazine (9mm)"
 	icon_state = "9x19p-8"
@@ -58,6 +61,9 @@
 	max_ammo = 7
 	multiple_sprites = 1
 
+/obj/item/ammo_box/magazine/m50/empty
+	stored_ammo = 0
+
 /*
 ---Fallout 13---
 */
@@ -70,6 +76,9 @@
 	max_ammo = 12
 	multiple_sprites = 2
 
+/obj/item/ammo_box/magazine/m10mm_adv/empty
+	stored_ammo = 0
+
 /obj/item/ammo_box/magazine/m9mm
 	name = "9mm pistol magazine (9mm)"
 	icon_state = "9mmp"
@@ -77,4 +86,7 @@
 	caliber = "9mm"
 	max_ammo = 10
 	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m9mm/empty
+	stored_ammo = 0
 

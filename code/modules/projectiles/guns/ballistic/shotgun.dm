@@ -1,5 +1,5 @@
 /obj/item/gun/ballistic/shotgun
-	name = "Ithaca M37"
+	name = "hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "Itaca"
 	item_state = "huntingshotgun"
