@@ -103,7 +103,8 @@
 	. = ..()
 	if(.)
 		return
-	user.Move_Pulled(src)
+	if(user.pulling)
+		user.Move_Pulled(src)
 
 /turf/proc/handleRCL(obj/item/twohanded/rcl/C, mob/user)
 	if(C.loaded)

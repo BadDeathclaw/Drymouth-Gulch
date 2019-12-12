@@ -175,7 +175,8 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 	. = ..()
 	if(.)
 		return
-	user.Move_Pulled(src)
+	if(user.pulling)
+		user.Move_Pulled(src)
 
 // make the conveyor broken
 // also propagate inoperability to any connected conveyor with the same ID
