@@ -71,7 +71,7 @@ Class Procs:
 	verb_yell = "blares"
 	pressure_resistance = 15
 	max_integrity = 200
-
+	drag_delay = 0.6 SECONDS
 	anchored = TRUE
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 

@@ -112,6 +112,8 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if (!materials)
 		materials = list()
 	. = ..()
+	if(w_class <= WEIGHT_CLASS_NORMAL) //pulling small items doesn't slow you down much
+		drag_delay = 0.1 SECONDS
 	for(var/path in actions_types)
 		new path(src)
 	actions_types = null

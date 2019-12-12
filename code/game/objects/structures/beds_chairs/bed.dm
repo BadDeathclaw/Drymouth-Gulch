@@ -53,6 +53,7 @@
 	icon_state = "down"
 	anchored = FALSE
 	resistance_flags = NONE
+	drag_delay = 0 //Pulling something on wheels is easy
 	var/foldabletype = /obj/item/roller
 
 /obj/structure/bed/roller/attackby(obj/item/W, mob/user, params)

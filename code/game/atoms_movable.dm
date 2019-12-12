@@ -2,6 +2,7 @@
 	layer = OBJ_LAYER
 	var/last_move = null
 	var/anchored = FALSE
+	var/drag_delay = 0.3 SECONDS
 	var/datum/thrownthing/throwing = null
 	var/throw_speed = 2 //How many tiles to move per ds when being thrown. Float values are fully supported
 	var/throw_range = 7
@@ -107,20 +108,21 @@
 
 /atom/movable/proc/Move_Pulled(atom/A)
 	if(!pulling)
-		return
+		return FALSE
 	if(pulling.anchored || !pulling.Adjacent(src))
 		stop_pulling()
-		return
+		return FALSE
 	if(isliving(pulling))
 		var/mob/living/L = pulling
 		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
 			stop_pulling()
-			return
+			return FALSE
 	if(A == loc && pulling.density)
-		return
+		return FALSE
 	if(!Process_Spacemove(get_dir(pulling.loc, A)))
-		return
+		return FALSE
 	step(pulling, get_dir(pulling.loc, A))
+	return TRUE
 
 /atom/movable/proc/check_pulling()
 	if(pulling)

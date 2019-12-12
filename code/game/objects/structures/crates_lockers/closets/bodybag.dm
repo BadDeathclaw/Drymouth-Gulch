@@ -12,6 +12,7 @@
 	material_drop = /obj/item/stack/sheet/cloth
 	delivery_icon = null //unwrappable
 	anchorable = FALSE
+	drag_delay = 0.1 SECONDS
 	var/foldedbag_path = /obj/item/bodybag
 	var/tagged = 0 // so closet code knows to put the tag overlay back
 
@@ -37,6 +38,12 @@
 		name = "body bag"
 		tagged = 0
 		update_icon()
+
+/obj/structure/closet/body_bag/take_contents()
+	var/atom/L = drop_location()
+	for(var/mob/living/body in L)
+		if(insert(body) == -1) // limit reached
+			break
 
 /obj/structure/closet/body_bag/update_icon()
 	..()

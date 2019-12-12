@@ -7,6 +7,7 @@
 	icon_state = "iv_drip"
 	anchored = FALSE
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
+	drag_delay = 0.1 SECONDS
 	var/mob/living/carbon/attached = null
 	var/mode = IV_INJECTING
 	var/obj/item/reagent_containers/beaker = null

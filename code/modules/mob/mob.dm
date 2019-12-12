@@ -922,3 +922,11 @@
 
 	var/datum/language_holder/H = get_language_holder()
 	H.open_language_menu(usr)
+
+/mob/Move_Pulled(atom/A)
+	var/pulling_delay = pulling.drag_delay
+	. = ..()
+	if(!.)
+		return
+	if(client && pulling_delay)
+		client.move_delay += pulling_delay

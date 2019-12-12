@@ -3,6 +3,7 @@
 	pressure_resistance = 8
 	max_integrity = 300
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
+	drag_delay = 0.6 SECONDS
 	var/climb_time = 20
 	var/climb_stun = 20
 	var/climbable = FALSE

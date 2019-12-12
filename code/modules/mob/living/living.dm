@@ -208,6 +208,8 @@
 		step(AM, t)
 		if(current_dir)
 			AM.setDir(current_dir)
+		if(client && AM.drag_delay)
+			client.move_delay += AM.drag_delay
 		now_pushing = 0
 
 /mob/living/start_pulling(atom/movable/AM, supress_message = 0)
@@ -543,6 +545,8 @@
 				. += config_run_delay.value_cache
 			if(MOVE_INTENT_WALK)
 				. += config_walk_delay.value_cache
+		if(pulling?.drag_delay)
+			. += pulling.drag_delay
 
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)
 	if(!has_gravity())
