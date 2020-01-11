@@ -1,6 +1,6 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Bad Deathclaw!</h1>
+<h1>Welcome to LiquidClaw13 - Wasteland Warfare</h1>
 
 <b>This is an 18+ server, do not play if you are underage.</b>
 
@@ -9,10 +9,8 @@ Don't be a dick, and <b>read the rules</b> before you play.
 
 Development is active and we are always looking for more talent, we are open source and running a ported /tg/ version of legacy F13 code.
 
-Questions regarding the server can be directed to anyone with a Scribe or Paladin role on our Discord.
-
-Github: https://github.com/BadDeathclaw/TG-Claw
-Discord: https://discord.gg/TCj5cJN
+Github: https://github.com/SwiGs1/LiquidClaw13-Wasteland-Warfare
+Discord: https://discord.gg/QVJCPE5
 
 This server takes place before the Second Battle of Hoover Dam, in Nevada.
 </i>

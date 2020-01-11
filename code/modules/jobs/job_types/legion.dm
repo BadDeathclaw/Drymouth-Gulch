@@ -290,8 +290,8 @@ Vexillarius
 	title = "Legion Libritor"
 	flag = F13LIBRITOR
 	faction = "Legion"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer directly to the Veteran Decanus and the Centurion, acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a gun-toting Libritor, and have been waging war with the Legion for the better part of ten years."
 	supervisors = "Veteran Decanus and up."
 	exp_requirements = 2400
@@ -443,8 +443,8 @@ Legionary
 	title = "Legion Venator"
 	flag = F13VENATOR
 	faction = "Legion"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer directly to the Centurion and the Decanii, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your superiors and organizing the Scouts and Explorers to do the same.  As a Venator, there is no failure."
 	supervisors = "Decanii and the Centurion."
 	exp_requirements = 2400

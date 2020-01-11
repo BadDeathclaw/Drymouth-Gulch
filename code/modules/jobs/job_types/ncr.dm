@@ -418,8 +418,8 @@ Veteran Ranger
 	title = "NCR Veteran Ranger"
 	flag = F13VETRANGER
 	faction = "NCR"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	description = "You answer directly to the Captain, working either independently or in a team to complete your mission objectives however required, operating either alone, in a squad or with the NCR Army. As a Veteran Ranger you work closely with the Captain in planning special operations with your team while also carrying out those orders in the field by any means necessary."
 	supervisors = "Lieutenants and above"
 	selection_color = "#ffeeaa"
@@ -459,8 +459,8 @@ Ranger
 	title = "NCR Patrol Ranger"
 	flag = F13RANGER
 	faction = "NCR"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 3
+	spawn_positions = 3
 	description = "You answer directly to the Veteran Ranger and Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Ranger, you seize, destroy, capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
@@ -501,8 +501,8 @@ Recon Ranger
 	title = "NCR Recon Ranger"
 	flag = F13RECRANGER
 	faction = "NCR"
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 	description = "You answer directly to the Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Recon Ranger, you perform reconnaissance, seize or destroy assets and capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
@@ -540,8 +540,8 @@ Recon Ranger
 	title = "NCR Scout Lieutenant"
 	flag = F13SCOUTLT
 	faction = "NCR"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are an officer of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Lieutenant, you are in charge of scout operations in the area."
 	supervisors = "Captain and above"
 	exp_requirements = 720
@@ -581,8 +581,8 @@ Recon Ranger
 	title = "NCR Scout Sergeant"
 	flag = F13SCOUTSSGT
 	faction = "NCR"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are an NCO of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Staff Sergeant, you are second-in-command of the scout forces in the area."
 	supervisors = "Lieutenants and above"
 	selection_color = "#fff5cc"
@@ -621,8 +621,8 @@ Recon Ranger
 	title = "NCR Scout"
 	flag = F13SCOUTCPL
 	faction = "NCR"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are a member of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Corporal, you were selected for your excellence in hit-and-run operations and marksmanship."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
