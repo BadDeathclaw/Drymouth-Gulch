@@ -482,7 +482,7 @@ Legionary
 	total_positions = 2
 	spawn_positions = 2
 	description = "You answer directly to the Centurion and the Decanii, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your superiors and organizing the Scouts to do the same."
-	supervisors = "Venators, Decanii and the Centurion."
+	supervisors = "Decanii and the Centurion."
 	exp_requirements = 1200
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
@@ -516,7 +516,7 @@ Legionary
 	total_positions = 4
 	spawn_positions = 4
 	description = "You answer directly to the Explorer and the Centurion, but are expected to follow orders from the Decanii as needed, acting as the eyes of the Centuria. You bear the responsibility of obtaining intelligence for your commander."
-	supervisors = "Venators, Explorers, Decanii, and the Centurion."
+	supervisors = "Explorers, Decanii, and the Centurion."
 	exp_requirements = 600
 
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13scout
