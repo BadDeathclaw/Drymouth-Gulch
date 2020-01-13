@@ -4,8 +4,6 @@
 	..()
 	MAP_JOB_CHECK
 
-
-
 MAP_REMOVE_JOB(f13scoutlt)
 MAP_REMOVE_JOB(f13scoutssgt)
 MAP_REMOVE_JOB(f13scoutcpl)
