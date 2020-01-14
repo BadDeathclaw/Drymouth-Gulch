@@ -459,8 +459,8 @@ Ranger
 	title = "NCR Patrol Ranger"
 	flag = F13RANGER
 	faction = "NCR"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	description = "You answer directly to the Veteran Ranger and Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Ranger, you seize, destroy, capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
@@ -501,8 +501,8 @@ Recon Ranger
 	title = "NCR Recon Ranger"
 	flag = F13RECRANGER
 	faction = "NCR"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = "You answer directly to the Captain, working either independently with other Rangers or Infantry to complete your mission objectives however required, working either alone, in a squad or with the Army. As a Recon Ranger, you perform reconnaissance, seize or destroy assets and capture, exploit, or recover designated targets on behalf of the NCR."
 	supervisors = "Veteran Ranger"
 	selection_color = "#fff5cc"
