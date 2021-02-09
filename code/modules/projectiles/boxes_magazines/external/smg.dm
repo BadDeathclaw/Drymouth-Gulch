@@ -87,9 +87,6 @@
 	max_ammo = 24
 	multiple_sprites = 2
 
-/obj/item/ammo_box/magazine/m10mm_auto/empty
-	stored_ammo = 0
-
 /obj/item/ammo_box/magazine/greasegun
 	name = "9mm submachine gun magazine (9mm)"
 	icon_state = "grease"
@@ -97,6 +94,3 @@
 	caliber = "9mm"
 	max_ammo = 30
 	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/greasegun/empty
-	stored_ammo = 0
