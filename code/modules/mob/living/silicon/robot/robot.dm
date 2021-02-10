@@ -216,9 +216,7 @@
 	"Medical" = /obj/item/robot_module/medical, \
 	"Miner" = /obj/item/robot_module/miner, \
 	"Janitor" = /obj/item/robot_module/janitor, \
-	"Service" = /obj/item/robot_module/butler, \
-	"Handy Fisto" = /obj/item/robot_module/sexy_handy, \
-	"Fisto" = /obj/item/robot_module/fisto_protectron)
+	"Service" = /obj/item/robot_module/butler)
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		modulelist["Peacekeeper"] = /obj/item/robot_module/peacekeeper
 	if(!CONFIG_GET(flag/disable_secborg))
@@ -800,12 +798,6 @@
 
 /mob/living/silicon/robot/modules/janitor
 	set_module = /obj/item/robot_module/janitor
-
-/mob/living/silicon/robot/modules/sexyhandy
-	set_module = /obj/item/robot_module/sexy_handy
-
-/mob/living/silicon/robot/modules/fistobot
-	set_module = /obj/item/robot_module/fisto_protectron
 
 /mob/living/silicon/robot/modules/syndicate
 	icon_state = "synd_sec"
