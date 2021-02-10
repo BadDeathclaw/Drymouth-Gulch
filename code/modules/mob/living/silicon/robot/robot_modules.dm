@@ -598,9 +598,8 @@
 
 //SexBot module begin
 /obj/item/robot_module/fisto_protectron
-	name = "Fisto"
+	name = "Idito"
 	basic_modules = list(
-		/obj/item/dildo/cyborg,
 		/obj/item/reagent_containers/spray/sexborg_oil)
 	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
 	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)
@@ -612,7 +611,6 @@
 /obj/item/robot_module/sexy_handy
 	name = "Hans"
 	basic_modules = list(
-		/obj/item/dildo/cyborg,
 		/obj/item/reagent_containers/spray/sexborg_oil)
 	emag_modules = list(/obj/item/reagent_containers/spray/cyborg_lube)
 	ratvar_modules = list(/obj/item/clockwork/weapon/ratvarian_spear)

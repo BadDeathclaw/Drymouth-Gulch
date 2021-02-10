@@ -842,7 +842,7 @@
 			    /obj/item/ammo_box/tube/m44,
 				/obj/item/ammo_box/tube/m44
 				)
-	
+
 	var/loot8 = list(
 				/obj/item/gun/ballistic/shotgun/automatic/hunting/trail/scoped,
 				/obj/item/ammo_box/tube/m44,
@@ -1099,7 +1099,6 @@
 				/obj/item/storage/box/snappops,
 				/obj/item/bikehorn/rubberducky,
 				/obj/item/stack/packageWrap,
-				/obj/item/dildo,
 				/obj/item/storage/box/matches,
 				/obj/item/reagent_containers/food/snacks/deadmouse,
 				/obj/item/toner,
@@ -1399,5 +1398,5 @@
 	name = "trait book spawner"
 	lootcount = 1
 	loot = list(/obj/item/book/granter/trait/chemistry = 30,
-	/obj/item/book/granter/trait/trekking = 30, 
+	/obj/item/book/granter/trait/trekking = 30,
 	"" = 40)
