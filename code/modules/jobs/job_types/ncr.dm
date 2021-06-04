@@ -135,10 +135,10 @@ Lieutenant
 	box = null
 
 	/*
-Medic
+Medic, TODO: make into one role (engineer/MO hybrid)
 */
 /datum/job/ncr/f13medic
-	title = "NCR Medical Officer"
+	title = "NCR Support Officer"
 	flag = F13MEDIC
 	faction = "NCR"
 	total_positions = 1
@@ -151,7 +151,7 @@ Medic
 	outfit = /datum/outfit/job/ncr/f13medic
 
 /datum/outfit/job/ncr/f13medic
-	name = "NCR Medical Officer"
+	name = "NCR Support Officer"
 	jobtype = /datum/job/ncr/f13medic
 	chemwhiz = TRUE
 	id		= /obj/item/card/id/dogtag/ncrlieutenant
