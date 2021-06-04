@@ -621,8 +621,8 @@ Recon Ranger
 	title = "NCR Scout"
 	flag = F13SCOUTCPL
 	faction = "NCR"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	description = "You are a member of the Third Scout Battalion and are entrusted with reconnassaince, sabotage, and destruction of Legion assets.  As a Corporal, you were selected for your excellence in hit-and-run operations and marksmanship."
 	supervisors = "Sergeants and above"
 	selection_color = "#fff5cc"
