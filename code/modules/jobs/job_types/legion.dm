@@ -91,8 +91,8 @@ Centurion
 	flag = F13CENTURION
 	faction = "Legion"
 	head_announce = list("Security")
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You are the commander of the Centuria and are the direct superior to the Decanii, working with them and your soldiers to ensure that your Garrison is prepared for the coming battle of Hoover Dam. You are to establish yourself within the region in order to defeat the Profligates who would oppose Caesar, while allying with those who would make your Legion stronger."
 	supervisors = "Legate"
 	selection_color = "#ffdddd"
@@ -244,6 +244,7 @@ Decan
 		/obj/item/claymore/machete/gladius=1, \
 		/obj/item/reagent_containers/pill/patch/healingpowder=2, \
 		/obj/item/ammo_box/magazine/m10mm_adv=2, \
+		/obj/item/megaphone/cornu=1, \
 		/obj/item/flashlight/flare/torch=1, \
 		/obj/item/storage/bag/money/small/legofficers)
 
@@ -255,8 +256,8 @@ Vexillarius
 	title = "Legion Vexillarius"
 	flag = F13VEXILLARIUS
 	faction = "Legion"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer directly to the Decanii and the Centurion, acting as a standard bearer for your Centuria. You raise troop morale, relay orders from the Decanii and the Centurion, and rally men when ordered, however, you hold no actual authority over the troops and should instead only relay orders from your superiors."
 	supervisors = "Recruit Decanus and up."
 	exp_requirements = 2100
@@ -290,8 +291,8 @@ Vexillarius
 	title = "Legion Libritor"
 	flag = F13LIBRITOR
 	faction = "Legion"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer directly to the Veteran Decanus and the Centurion, acting as a loyal soldier of the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave. You are a gun-toting Libritor, and have been waging war with the Legion for the better part of ten years."
 	supervisors = "Veteran Decanus and up."
 	exp_requirements = 2400
@@ -408,8 +409,8 @@ Legionary
 	title = "Recruit Legionnaire"
 	flag = F13LEGIONARY
 	faction = "Legion"
-	total_positions = 12
-	spawn_positions = 12
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer directly to the Recruit Decanus and the Centurion, but are expected to follow orders from the Prime and Veteran Decanii as needed. You act as a loyal soldier within the Centuria, you have the great honour of serving under Caesar in his quest to unite the scattered tribes of The Mojave."
 	supervisors = "Recruit Decanus and up."
 	exp_requirements = 300
@@ -443,8 +444,8 @@ Legionary
 	title = "Legion Venator"
 	flag = F13VENATOR
 	faction = "Legion"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer directly to the Centurion and the Decanii, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your superiors and organizing the Scouts and Explorers to do the same.  As a Venator, there is no failure."
 	supervisors = "Decanii and the Centurion."
 	exp_requirements = 2400
@@ -479,8 +480,8 @@ Legionary
 	title = "Legion Explorer"
 	flag = F13EXPLORER
 	faction = "Legion"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	description = "You answer directly to the Centurion and the Decanii, acting as the eyes of the Centuria you bear the responsibility of obtaining intelligence for your superiors and organizing the Scouts to do the same."
 	supervisors = "Venators, Decanii and the Centurion."
 	exp_requirements = 1200
@@ -547,8 +548,8 @@ Legionary
 	title = "Camp Follower"
 	flag = F13CAMPFOLLOWER
 	faction = "Legion"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 2
+	spawn_positions = 2
 	description = "You answer directly to any member of the Legion, working as a Camp Follower for the Centuria, you bear the great honor of supporting Caesar?s Army in its conquest of the Mojave in whatever capacity required from those whom you serve. You perform any tasks required of you, for you know how to serve the Legion well."
 	supervisors = "the entire legion"
 	exp_requirements = 300
