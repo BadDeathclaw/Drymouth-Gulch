@@ -5,7 +5,7 @@
 
 /datum/map_config
 	// Metadata
-	var/config_filename = "_maps/boxstation.json"
+	var/config_filename = "_maps/sunnydale.json"
 	var/defaulted = TRUE  // set to FALSE by LoadConfig() succeeding
 	// Config from maps.txt
 	var/config_max_users = 0
@@ -14,8 +14,8 @@
 
 	// Config actually from the JSON - should default to Box
 	var/map_name = "Box Station"
-	var/map_path = "map_files/BoxStation"
-	var/map_file = "BoxStation.dmm"
+	var/map_path = "map_files/Sunnydale"
+	var/map_file = "Sunnydale.dmm"
 
 	var/traits = null
 	var/space_ruin_levels = 1
@@ -71,7 +71,7 @@
 	map_path = json["map_path"]
 
 	map_file = json["map_file"]
-	// "map_file": "BoxStation.dmm"
+	// "map_file": "Sunnydale.dmm"
 	if (istext(map_file))
 		if (!fexists("_maps/[map_path]/[map_file]"))
 			log_world("Map file ([map_path]/[map_file]) does not exist!")
